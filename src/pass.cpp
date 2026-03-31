@@ -42,6 +42,14 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
   env.append("WSLENV=PASSWORD_STORE_DIR/p");
 }
 
+/**
+ * @brief Executes a wrapper command.
+ * @param id Process ID
+ * @param app Application to execute
+ * @param args Arguments
+ * @param readStdout Whether to read stdout
+ * @param readStderr Whether to read stderr
+ */
 void Pass::executeWrapper(PROCESS id, const QString &app,
                           const QStringList &args, bool readStdout,
                           bool readStderr) {
@@ -58,6 +66,9 @@ void Pass::executeWrapper(PROCESS id, const QString &app,
                readStdout, readStderr);
 }
 
+/**
+ * @brief Initializes the pass wrapper environment.
+ */
 void Pass::init() {
 #ifdef __APPLE__
   // If it exists, add the gpgtools to PATH
@@ -430,6 +441,11 @@ auto Pass::getRecipientString(const QString &for_file, const QString &separator,
 /* Copyright (C) 2017 Jason A. Donenfeld <Jason@zx2c4.com>. All Rights Reserved.
  */
 
+/**
+ * @brief Generates a random number bounded by the given value.
+ * @param bound Upper bound (exclusive)
+ * @return Random number in range [0, bound)
+ */
 auto Pass::boundedRandom(quint32 bound) -> quint32 {
   if (bound < 2) {
     return 0;
@@ -445,6 +461,12 @@ auto Pass::boundedRandom(quint32 bound) -> quint32 {
   return randval % bound;
 }
 
+/**
+ * @brief Generates a random password from the given charset.
+ * @param charset Characters to use in the password
+ * @param length Desired password length
+ * @return Generated password string
+ */
 auto Pass::generateRandomPassword(const QString &charset, unsigned int length)
     -> QString {
   QString out;

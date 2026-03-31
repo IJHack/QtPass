@@ -179,17 +179,29 @@ auto Util::getDir(const QModelIndex &index, bool forPass,
   return filePath;
 }
 
+/**
+ * @brief Returns a regex to match .gpg file extensions.
+ * @return Reference to static regex
+ */
 auto Util::endsWithGpg() -> const QRegularExpression & {
   static const QRegularExpression expr{"\\.gpg$"};
   return expr;
 }
 
+/**
+ * @brief Returns a regex to match URL protocols.
+ * @return Reference to static regex
+ */
 auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
       "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^\" <>\\)\\]\\[]+)"};
   return regex;
 }
 
+/**
+ * @brief Returns a regex to match newline characters.
+ * @return Reference to static regex
+ */
 auto Util::newLinesRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{"[\r\n]"};
   return regex;

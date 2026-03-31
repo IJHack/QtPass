@@ -237,6 +237,10 @@ void PasswordDialog::usePwgen(bool usePwgen) {
   ui->label_characterset->setDisabled(usePwgen);
 }
 
+/**
+ * @brief Sets the password from pass show output.
+ * @param output Output from pass show command
+ */
 void PasswordDialog::setPass(const QString &output) {
   setPassword(output);
   // TODO(bezet): enable ui
