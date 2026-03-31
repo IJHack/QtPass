@@ -186,8 +186,12 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
 }
 
 /**
- * @brief RealPass::executePass easy wrapper for running pass
- * @param args
+ * @brief Wrapper for executing pass commands.
+ * @param id Process identifier for this operation
+ * @param args Command-line arguments for pass
+ * @param input Input to pass to the process (typically empty)
+ * @param readStdout Whether to capture standard output
+ * @param readStderr Whether to capture standard error output
  */
 void RealPass::executePass(PROCESS id, const QStringList &args, QString input,
                            bool readStdout, bool readStderr) {

@@ -49,7 +49,7 @@ private:
   void populateList(const QString &filter = QString());
   bool passesFilter(const UserInfo &user, const QString &filter,
                     const QRegularExpression &nameFilter) const;
-  bool isUserExpired(const UserInfo &user) const;
+  auto isUserExpired(const UserInfo &user) const -> bool;
   QString buildUserText(const UserInfo &user) const;
   void applyUserStyling(QListWidgetItem *item, const UserInfo &user) const;
 };

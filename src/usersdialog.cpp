@@ -192,6 +192,13 @@ void UsersDialog::populateList(const QString &filter) {
   }
 }
 
+/**
+ * @brief Checks if a user passes the filter criteria.
+ * @param user User to check
+ * @param filter Filter string
+ * @param nameFilter Compiled name filter regex
+ * @return true if user passes filter
+ */
 bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
                                const QRegularExpression &nameFilter) const {
   if (!filter.isEmpty() && !nameFilter.match(user.name).hasMatch()) {
@@ -204,11 +211,21 @@ bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
   return !(expired && !ui->checkBox->isChecked());
 }
 
-bool UsersDialog::isUserExpired(const UserInfo &user) const {
+/**
+ * @brief Checks if a user's key has expired.
+ * @param user User to check
+ * @return true if user's key is expired
+ */
+auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
   return user.expiry.toSecsSinceEpoch() > 0 &&
          QDateTime::currentDateTime() > user.expiry;
 }
 
+/**
+ * @brief Builds display text for a user.
+ * @param user User to format
+ * @return Formatted user text
+ */
 QString UsersDialog::buildUserText(const UserInfo &user) const {
   QString text = user.name + "\n" + user.key_id;
   if (user.created.toSecsSinceEpoch() > 0) {
@@ -222,6 +239,11 @@ QString UsersDialog::buildUserText(const UserInfo &user) const {
   return text;
 }
 
+/**
+ * @brief Applies visual styling to a user list item based on key status.
+ * @param item List widget item to style
+ * @param user User whose status determines styling
+ */
 void UsersDialog::applyUserStyling(QListWidgetItem *item,
                                    const UserInfo &user) const {
   const QString originalText = item->text();

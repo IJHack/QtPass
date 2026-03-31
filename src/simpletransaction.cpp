@@ -11,7 +11,8 @@ using Enums::INVALID;
 using Enums::PROCESS;
 
 /**
- * @brief simpleTransaction::transactionStart
+ * @brief Marks the start of a sequence of processes that shall be treated as
+ * one operation.
  */
 void simpleTransaction::transactionStart() {
 #ifdef QT_DEBUG
@@ -21,8 +22,10 @@ void simpleTransaction::transactionStart() {
 }
 
 /**
- * @brief simpleTransaction::transactionAdd
- * @param id
+ * @brief If called after transactionStart() and before transactionEnd(),
+ *        this marks the given process as the next step in the transaction.
+ *        Otherwise it marks the process as the only step in the transaction.
+ * @param id Process that shall be treated as part of the transaction
  */
 void simpleTransaction::transactionAdd(PROCESS id) {
 #ifdef QT_DEBUG
@@ -36,8 +39,8 @@ void simpleTransaction::transactionAdd(PROCESS id) {
 }
 
 /**
- * @brief simpleTransaction::transactionEnd
- * @param pid
+ * @brief Marks the end of the current transaction.
+ * @param pid Value that will be used as the result of the transaction
  */
 void simpleTransaction::transactionEnd(PROCESS pid) {
 #ifdef QT_DEBUG
@@ -53,9 +56,11 @@ void simpleTransaction::transactionEnd(PROCESS pid) {
 }
 
 /**
- * @brief simpleTransaction::transactionIsOver
- * @param id
- * @return
+ * @brief Checks whether the currently finished process is last in current
+ * transaction.
+ * @param id The process id to check
+ * @return Result of transaction as set by transactionAdd or transactionEnd,
+ *         or PROCESS::INVALID if the transaction is not yet over
  */
 auto simpleTransaction::transactionIsOver(PROCESS id) -> PROCESS {
 #ifdef QT_DEBUG
