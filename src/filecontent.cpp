@@ -25,7 +25,10 @@ auto FileContent::parse(const QString &fileContent,
                         const QStringList &templateFields, bool allFields)
     -> FileContent {
   QStringList lines = fileContent.split("\n");
-  QString password = lines.takeFirst();
+  QString password;
+  if (!lines.isEmpty()) {
+    password = lines.takeFirst();
+  }
   QStringList remainingData;
   QStringList remainingDataDisplay;
   NamedValues namedValues;
