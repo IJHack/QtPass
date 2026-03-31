@@ -92,19 +92,19 @@ auto Util::findBinaryInPath(QString binary) -> QString {
 
     for (const QString &entryConst : entries) {
       QString fullPath = entryConst + binary;
-      QScopedPointer<QFileInfo> qfi(new QFileInfo(fullPath));
+      QFileInfo qfi(fullPath);
 #ifdef Q_OS_WIN
-      if (!qfi->exists()) {
+      if (!qfi.exists()) {
         QString fullPathExe = fullPath + ".exe";
-        qfi.reset(new QFileInfo(fullPathExe));
+        qfi = QFileInfo(fullPathExe);
       }
 
 #endif
-      if (!qfi->isExecutable()) {
+      if (!qfi.isExecutable()) {
         continue;
       }
 
-      ret = qfi->absoluteFilePath();
+      ret = qfi.absoluteFilePath();
       break;
     }
   }
