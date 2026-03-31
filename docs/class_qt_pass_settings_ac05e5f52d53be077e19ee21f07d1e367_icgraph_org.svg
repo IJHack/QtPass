@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get whether to hide password in UI.">
 <polygon fill="#999999" stroke="#666666" points="355,-19 183,-19 183,0 355,0 355,-19"/>
 <text text-anchor="middle" x="269" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isHidePassword</text>
 </a>

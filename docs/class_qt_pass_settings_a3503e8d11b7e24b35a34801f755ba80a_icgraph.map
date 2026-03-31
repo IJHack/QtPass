@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="249,47,459,87"/>
 <area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,201,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,47,168,33,169,28,239,42"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a8cff21960fa7bc334a8fba8c3fff5d07" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="36,55,171,80"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a8cff21960fa7bc334a8fba8c3fff5d07" title="Generate random password." alt="" coords="36,55,171,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,70,171,70,171,65,235,65"/>
 <area shape="rect" id="Node000004" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="6,105,201,145"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="253,93,192,107,191,102,252,88"/>

@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title="Get password store directory path.">
 <polygon fill="white" stroke="#666666" points="293.5,-56 135.5,-56 135.5,-37 293.5,-37 293.5,-56"/>
 <text text-anchor="middle" x="214.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>

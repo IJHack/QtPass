@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Execute git move operation.">
 <polygon fill="#999999" stroke="#666666" points="159,-75 0,-75 0,-56 159,-56 159,-75"/>
 <text text-anchor="middle" x="79.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeMoveGit</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" target="_top" xlink:title="ImitatePass::executeGit easy wrapper for running git commands.">
+<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" target="_top" xlink:title="Execute git command.">
 <polygon fill="white" stroke="#666666" points="521,-56 389,-56 389,-37 521,-37 521,-56"/>
 <text text-anchor="middle" x="455" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeGit</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title="Get password store directory path.">
 <polygon fill="white" stroke="#666666" points="353,-56 195,-56 195,-37 353,-37 353,-56"/>
 <text text-anchor="middle" x="274" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_imitate_pass.html#a4633664040a5b817c944736653778e74" target="_top" xlink:title="ImitatePass::GitCommit commit a file to git with an appropriate commit message.">
+<g id="a_Node000009"><a xlink:href="class_imitate_pass.html#a4633664040a5b817c944736653778e74" target="_top" xlink:title="Commit changes to git.">
 <polygon fill="white" stroke="#666666" points="340.5,-19 207.5,-19 207.5,0 340.5,0 340.5,-19"/>
 <text text-anchor="middle" x="274" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitCommit</text>
 </a>
@@ -92,7 +92,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" target="_top" xlink:title="executeWrapper overrided so that every execution is a transaction">
+<g id="a_Node000004"><a xlink:href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" target="_top" xlink:title="Execute command wrapper.">
 <polygon fill="white" stroke="#666666" points="726,-75 567,-75 567,-56 726,-56 726,-75"/>
 <text text-anchor="middle" x="646.5" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeWrapper</text>
 </a>
@@ -110,7 +110,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title="Get git executable path.">
 <polygon fill="white" stroke="#666666" points="736,-38 557,-38 557,-19 736,-19 736,-38"/>
 <text text-anchor="middle" x="646.5" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGitExecutable</text>
 </a>
@@ -128,7 +128,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Executes a wrapper command.">
+<g id="a_Node000005"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Execute external wrapper command.">
 <polygon fill="white" stroke="#666666" points="896,-96 772,-96 772,-77 896,-77 896,-96"/>
 <text text-anchor="middle" x="834" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::executeWrapper</text>
 </a>

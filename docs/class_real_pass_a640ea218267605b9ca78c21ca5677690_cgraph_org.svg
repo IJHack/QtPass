@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="RealPass::Copy copy a file (or folder)">
+<g id="a_Node000001"><a xlink:title="Copy password file or directory.">
 <polygon fill="#999999" stroke="#666666" points="91,-37 0,-37 0,-18 91,-18 91,-37"/>
 <text text-anchor="middle" x="45.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::Copy</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title="Get password store directory path.">
 <polygon fill="white" stroke="#666666" points="285,-19 127,-19 127,0 285,0 285,-19"/>
 <text text-anchor="middle" x="206" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>

@@ -57,7 +57,7 @@ var sectionId = 'dynsection-19';
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="ImitatePass::GitCommit commit a file to git with an appropriate commit message.">
+<g id="a_Node000001"><a xlink:title="Commit changes to git.">
 <polygon fill="#999999" stroke="#666666" points="133,-37 0,-37 0,-18 133,-18 133,-37"/>
 <text text-anchor="middle" x="66.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitCommit</text>
 </a>
@@ -66,7 +66,7 @@ var sectionId = 'dynsection-19';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" target="_top" xlink:title="ImitatePass::executeGit easy wrapper for running git commands.">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" target="_top" xlink:title="Execute git command.">
 <polygon fill="white" stroke="#666666" points="301,-37 169,-37 169,-18 301,-18 301,-37"/>
 <text text-anchor="middle" x="235" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeGit</text>
 </a>
@@ -84,7 +84,7 @@ var sectionId = 'dynsection-19';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" target="_top" xlink:title="executeWrapper overrided so that every execution is a transaction">
+<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" target="_top" xlink:title="Execute command wrapper.">
 <polygon fill="white" stroke="#666666" points="506,-56 347,-56 347,-37 506,-37 506,-56"/>
 <text text-anchor="middle" x="426.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeWrapper</text>
 </a>
@@ -102,7 +102,7 @@ var sectionId = 'dynsection-19';
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title="Get git executable path.">
 <polygon fill="white" stroke="#666666" points="516,-19 337,-19 337,0 516,0 516,-19"/>
 <text text-anchor="middle" x="426.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGitExecutable</text>
 </a>
@@ -120,7 +120,7 @@ var sectionId = 'dynsection-19';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Executes a wrapper command.">
+<g id="a_Node000004"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Execute external wrapper command.">
 <polygon fill="white" stroke="#666666" points="676,-78 552,-78 552,-59 676,-59 676,-78"/>
 <text text-anchor="middle" x="614" y="-66" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::executeWrapper</text>
 </a>

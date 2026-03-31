@@ -1,8 +1,8 @@
 <map id="Pass" name="Pass">
-<area shape="rect" id="Node000001" title="Acts as an abstraction for pass or pass imitation." alt="" coords="85,79,136,104"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html" title="Imitates pass features when pass is not enabled or available." alt="" coords="5,152,104,177"/>
+<area shape="rect" id="Node000001" title="Abstract base class for password store operations." alt="" coords="85,79,136,104"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable." alt="" coords="5,152,104,177"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="95,117,66,154,62,150,91,113"/>
-<area shape="rect" id="Node000004" href="$class_real_pass.html" title="Wrapper for executing pass to handle the password&#45;store." alt="" coords="128,152,208,177"/>
+<area shape="rect" id="Node000004" href="$class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command&#45;line tool." alt="" coords="128,152,208,177"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="131,113,161,150,157,154,126,116"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="73,5,148,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,44,113,79,108,79,108,44"/>

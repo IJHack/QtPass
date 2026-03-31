@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get whether to auto&#45;add GPG ID when receiving files.">
 <polygon fill="#999999" stroke="#666666" points="335,-37 183,-37 183,-18 335,-18 335,-37"/>
 <text text-anchor="middle" x="259" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAddGPGId</text>
 </a>
@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title="Initialize store.">
 <polygon fill="white" stroke="#666666" points="121,-19 26,-19 26,0 121,0 121,-19"/>
 <text text-anchor="middle" x="73.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>

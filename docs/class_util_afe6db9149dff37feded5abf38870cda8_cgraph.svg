@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="322,-130 138,-130 138,-111 322,-111 322,-130"/>
 <text text-anchor="middle" x="230" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>
@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" target="_top" xlink:title="Get pass executable path.">
 <polygon fill="white" stroke="#666666" points="323,-93 137,-93 137,-74 323,-74 323,-93"/>
 <text text-anchor="middle" x="230" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassExecutable</text>
 </a>
@@ -66,7 +66,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title="Get password store directory path.">
 <polygon fill="white" stroke="#666666" points="309,-56 151,-56 151,-37 309,-37 309,-56"/>
 <text text-anchor="middle" x="230" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>
@@ -84,7 +84,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" target="_top" xlink:title="Get whether to use pass (true) or GPG (false).">
 <polygon fill="white" stroke="#666666" points="302,-19 158,-19 158,0 302,0 302,-19"/>
 <text text-anchor="middle" x="230" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUsePass</text>
 </a>

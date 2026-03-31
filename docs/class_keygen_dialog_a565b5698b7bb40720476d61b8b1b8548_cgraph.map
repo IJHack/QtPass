@@ -1,11 +1,11 @@
 <map id="KeygenDialog::KeygenDialog" name="KeygenDialog::KeygenDialog">
 <area shape="rect" id="Node000001" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="5,31,216,56"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Pass::getDefaultKeyTemplate return default key generation template Uses ed25519 if supported,..." alt="" coords="264,31,476,56"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Get default key template for new GPG keys." alt="" coords="264,31,476,56"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,41,250,41,250,46,216,46"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Pass::gpgSupportsEd25519 check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much ..." alt="" coords="524,31,720,56"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Check if GPG supports Ed25519 encryption." alt="" coords="524,31,720,56"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="476,41,510,41,510,46,476,46"/>
 <area shape="rect" id="Node000004" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="794,5,987,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="720,31,780,26,781,31,720,37"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="768,55,1013,80"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="768,55,1013,80"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="720,49,754,52,754,58,720,55"/>
 </map>

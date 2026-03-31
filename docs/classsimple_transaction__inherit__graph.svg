@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass.html" target="_top" xlink:title="Imitates pass features when pass is not enabled or available.">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass.html" target="_top" xlink:title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">
 <polygon fill="white" stroke="#666666" points="89.5,-19 15.5,-19 15.5,0 89.5,0 89.5,-19"/>
 <text text-anchor="middle" x="52.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass</text>
 </a>

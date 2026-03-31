@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Pass::getDefaultKeyTemplate return default key generation template Uses ed25519 if supported,...">
+<g id="a_Node000001"><a xlink:title="Get default key template for new GPG keys.">
 <polygon fill="#999999" stroke="#666666" points="353,-19 194,-19 194,0 353,0 353,-19"/>
 <text text-anchor="middle" x="273.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::getDefaultKeyTemplate</text>
 </a>

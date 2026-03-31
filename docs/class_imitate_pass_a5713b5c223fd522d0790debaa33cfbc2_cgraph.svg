@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="ImitatePass::GitPull_b git pull wrapper.">
+<g id="a_Node000001"><a xlink:title="Pull with rebase.">
 <polygon fill="#999999" stroke="#666666" points="123,-37 0,-37 0,-18 123,-18 123,-37"/>
 <text text-anchor="middle" x="61.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPull_b</text>
 </a>
@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title="Get git executable path.">
 <polygon fill="white" stroke="#666666" points="338,-19 159,-19 159,0 338,0 338,-19"/>
 <text text-anchor="middle" x="248.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGitExecutable</text>
 </a>

@@ -80,6 +80,9 @@ $(function() {
   <div class="headertitle"><div class="title">debughelper.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Debug utilities for <a class="el" href="class_qt_pass.html">QtPass</a>.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;QDebug&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for debughelper.h:</div>
@@ -94,9 +97,14 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:a1b089898deebf895757ee5e095615ec7" id="r_a1b089898deebf895757ee5e095615ec7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>()&#160;&#160;&#160;qDebug() &lt;&lt; __FILE__ &quot;:&quot; &lt;&lt; __LINE__</td></tr>
+<tr class="memdesc:a1b089898deebf895757ee5e095615ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple debug macro that includes file and line number.  <br /></td></tr>
 <tr class="separator:a1b089898deebf895757ee5e095615ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Debug utilities for <a class="el" href="class_qt_pass.html">QtPass</a>. </p>
+
+<p class="definition">Definition in file <a class="el" href="debughelper_8h_source.html">debughelper.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a1b089898deebf895757ee5e095615ec7" name="a1b089898deebf895757ee5e095615ec7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1b089898deebf895757ee5e095615ec7">&#9670;&#160;</a></span>dbg</h2>
 
@@ -112,7 +120,11 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="debughelper_8h_source.html#l00009">9</a> of file <a class="el" href="debughelper_8h_source.html">debughelper.h</a>.</p>
+<p>Simple debug macro that includes file and line number. </p>
+<p>Usage: <a class="el" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7" title="Simple debug macro that includes file and line number.">dbg()</a> &lt;&lt; "message"; Output: "filename.cpp:123 message"</p>
+<p>Only available in debug builds. </p>
+
+<p class="definition">Definition at line <a class="el" href="debughelper_8h_source.html#l00021">21</a> of file <a class="el" href="debughelper_8h_source.html">debughelper.h</a>.</p>
 
 </div>
 </div>

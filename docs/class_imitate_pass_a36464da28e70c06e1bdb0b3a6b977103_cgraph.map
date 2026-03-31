@@ -1,21 +1,21 @@
 <map id="ImitatePass::verifyGpgIdForDir" name="ImitatePass::verifyGpgIdForDir">
-<area shape="rect" id="Node000001" title="ImitatePass::reencryptPath reencrypt all files under the chosen directory." alt="" coords="5,97,187,137"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#a0eafb54675479378ec98307f0e4fff65" title=" " alt="" coords="295,5,398,31"/>
+<area shape="rect" id="Node000001" title="Find .gpg&#45;id file for directory." alt="" coords="5,97,187,137"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a0eafb54675479378ec98307f0e4fff65" title="Emit critical error." alt="" coords="295,5,398,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,94,176,66,234,39,281,26,282,31,236,45,178,71,130,99"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7" title=" " alt="" coords="235,55,459,80"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7" title="Emitted after finishing re&#45;encryption." alt="" coords="235,55,459,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,96,268,80,269,85,187,101"/>
-<area shape="rect" id="Node000004" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Pass::getGpgIdPath return gpgid file path for some file (folder)." alt="" coords="273,104,420,129"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Get .gpg&#45;id file path for a password file." alt="" coords="273,104,420,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="187,114,259,114,259,119,187,119"/>
-<area shape="rect" id="Node000006" href="$class_pass.html#a693825d2ad62813cf103860ef6211370" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for." alt="" coords="265,153,429,179"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a693825d2ad62813cf103860ef6211370" title="Get list of recipients for a password file." alt="" coords="265,153,429,179"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="187,132,269,148,268,153,186,137"/>
-<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" title="ImitatePass::verifyGpgIdFile verify detached gpgid file signature." alt="" coords="245,203,449,228"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" title="Verify .gpg&#45;id file exists and is valid." alt="" coords="245,203,449,228"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="130,134,179,162,236,188,264,197,263,202,234,192,177,167,128,139"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="526,104,737,129"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="526,104,737,129"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="420,114,512,114,512,119,420,119"/>
 <area shape="rect" id="Node000008" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="535,153,728,179"/>
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="420,200,543,179,544,184,421,205"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="509,203,754,228"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="509,203,754,228"/>
 <area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="449,213,495,213,495,218,449,218"/>
-<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" title=" " alt="" coords="507,252,756,277"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" title="Get GPG signing key for pass." alt="" coords="507,252,756,277"/>
 <area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="421,225,544,247,543,252,420,231"/>
 </map>

@@ -84,7 +84,7 @@ var sectionId = 'dynsection-10';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title="Get password store directory path.">
 <polygon fill="white" stroke="#666666" points="493,-894 335,-894 335,-875 493,-875 493,-894"/>
 <text text-anchor="middle" x="414" y="-882" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>
@@ -120,7 +120,7 @@ var sectionId = 'dynsection-10';
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" target="_top" xlink:title="Get panel autoclear delay in seconds.">
 <polygon fill="white" stroke="#666666" points="275,-189.5 117,-189.5 117,-159.5 275,-159.5 275,-189.5"/>
 <text text-anchor="start" x="125" y="-177.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="196" y="-166.5" font-family="Helvetica,sans-Serif" font-size="10.00">PanelSeconds</text>
@@ -139,7 +139,7 @@ var sectionId = 'dynsection-10';
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" target="_top" xlink:title="Get autoclear delay in seconds.">
 <polygon fill="white" stroke="#666666" points="275,-141.5 117,-141.5 117,-111.5 275,-111.5 275,-141.5"/>
 <text text-anchor="start" x="125" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="196" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">Seconds</text>
@@ -195,7 +195,7 @@ var sectionId = 'dynsection-10';
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="class_qt_pass_settings.html#a5623f8d47534a6c21eb9fd95540b253e" target="_top" xlink:title=" ">
+<g id="a_Node000013"><a xlink:href="class_qt_pass_settings.html#a5623f8d47534a6c21eb9fd95540b253e" target="_top" xlink:title="Get saved application version.">
 <polygon fill="white" stroke="#666666" points="269.5,-56 122.5,-56 122.5,-37 269.5,-37 269.5,-56"/>
 <text text-anchor="middle" x="196" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getVersion</text>
 </a>
@@ -213,7 +213,7 @@ var sectionId = 'dynsection-10';
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title=" ">
+<g id="a_Node000014"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title="Initialize executable paths by auto&#45;detecting them.">
 <polygon fill="white" stroke="#666666" points="281,-641 111,-641 111,-622 281,-622 281,-641"/>
 <text text-anchor="middle" x="196" y="-629" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::initExecutables</text>
 </a>
@@ -249,7 +249,7 @@ var sectionId = 'dynsection-10';
 <!-- Node24 -->
 <g id="Node000024" class="node">
 <title>Node24</title>
-<g id="a_Node000024"><a xlink:href="class_qt_pass_settings.html#a0a5bcdb628ca6614d5c26c5c24a0a54f" target="_top" xlink:title=" ">
+<g id="a_Node000024"><a xlink:href="class_qt_pass_settings.html#a0a5bcdb628ca6614d5c26c5c24a0a54f" target="_top" xlink:title="Save panel autoclear seconds.">
 <polygon fill="white" stroke="#666666" points="492.5,-462.5 335.5,-462.5 335.5,-432.5 492.5,-432.5 492.5,-462.5"/>
 <text text-anchor="start" x="343.5" y="-450.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setAutoclear</text>
 <text text-anchor="middle" x="414" y="-439.5" font-family="Helvetica,sans-Serif" font-size="10.00">PanelSeconds</text>
@@ -268,7 +268,7 @@ var sectionId = 'dynsection-10';
 <!-- Node25 -->
 <g id="Node000025" class="node">
 <title>Node25</title>
-<g id="a_Node000025"><a xlink:href="class_qt_pass_settings.html#ac5fa2696d8fe671f7a1c8b401c87441c" target="_top" xlink:title=" ">
+<g id="a_Node000025"><a xlink:href="class_qt_pass_settings.html#ac5fa2696d8fe671f7a1c8b401c87441c" target="_top" xlink:title="Save autoclear seconds.">
 <polygon fill="white" stroke="#666666" points="274.5,-423.5 117.5,-423.5 117.5,-393.5 274.5,-393.5 274.5,-423.5"/>
 <text text-anchor="start" x="125.5" y="-411.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setAutoclear</text>
 <text text-anchor="middle" x="196" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">Seconds</text>
@@ -287,7 +287,7 @@ var sectionId = 'dynsection-10';
 <!-- Node26 -->
 <g id="Node000026" class="node">
 <title>Node26</title>
-<g id="a_Node000026"><a xlink:href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" target="_top" xlink:title=" ">
+<g id="a_Node000026"><a xlink:href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" target="_top" xlink:title="Save password store path.">
 <polygon fill="white" stroke="#666666" points="275,-375 117,-375 117,-356 275,-356 275,-375"/>
 <text text-anchor="middle" x="196" y="-363" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setPassStore</text>
 </a>
@@ -341,7 +341,7 @@ var sectionId = 'dynsection-10';
 <!-- Node29 -->
 <g id="Node000029" class="node">
 <title>Node29</title>
-<g id="a_Node000029"><a xlink:href="class_qt_pass_settings.html#a8cd81cd735281c71eab54091bde73081" target="_top" xlink:title=" ">
+<g id="a_Node000029"><a xlink:href="class_qt_pass_settings.html#a8cd81cd735281c71eab54091bde73081" target="_top" xlink:title="Save application version.">
 <polygon fill="white" stroke="#666666" points="269,-264 123,-264 123,-245 269,-245 269,-264"/>
 <text text-anchor="middle" x="196" y="-252" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setVersion</text>
 </a>
@@ -359,7 +359,7 @@ var sectionId = 'dynsection-10';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="506,-820 322,-820 322,-801 506,-801 506,-820"/>
 <text text-anchor="middle" x="414" y="-808" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>
@@ -377,7 +377,7 @@ var sectionId = 'dynsection-10';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" target="_top" xlink:title="Get pass executable path.">
 <polygon fill="white" stroke="#666666" points="507,-783 321,-783 321,-764 507,-764 507,-783"/>
 <text text-anchor="middle" x="414" y="-771" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassExecutable</text>
 </a>
@@ -404,7 +404,7 @@ var sectionId = 'dynsection-10';
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" target="_top" xlink:title="Get whether to use pass (true) or GPG (false).">
 <polygon fill="white" stroke="#666666" points="486,-857 342,-857 342,-838 486,-838 486,-857"/>
 <text text-anchor="middle" x="414" y="-845" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUsePass</text>
 </a>
@@ -485,7 +485,7 @@ var sectionId = 'dynsection-10';
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title=" ">
+<g id="a_Node000017"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title="Get git executable path.">
 <polygon fill="white" stroke="#666666" points="503.5,-660 324.5,-660 324.5,-641 503.5,-641 503.5,-660"/>
 <text text-anchor="middle" x="414" y="-648" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGitExecutable</text>
 </a>
@@ -503,7 +503,7 @@ var sectionId = 'dynsection-10';
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a xlink:href="class_qt_pass_settings.html#a423f05b95badd51857630009e9ce629f" target="_top" xlink:title=" ">
+<g id="a_Node000018"><a xlink:href="class_qt_pass_settings.html#a423f05b95badd51857630009e9ce629f" target="_top" xlink:title="Save git executable path.">
 <polygon fill="white" stroke="#666666" points="503,-537 325,-537 325,-518 503,-518 503,-537"/>
 <text text-anchor="middle" x="414" y="-525" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setGitExecutable</text>
 </a>
@@ -539,7 +539,7 @@ var sectionId = 'dynsection-10';
 <!-- Node21 -->
 <g id="Node000021" class="node">
 <title>Node21</title>
-<g id="a_Node000021"><a xlink:href="class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f" target="_top" xlink:title=" ">
+<g id="a_Node000021"><a xlink:href="class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f" target="_top" xlink:title="Save pass executable path.">
 <polygon fill="white" stroke="#666666" points="506.5,-623 321.5,-623 321.5,-604 506.5,-604 506.5,-623"/>
 <text text-anchor="middle" x="414" y="-611" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setPassExecutable</text>
 </a>
@@ -594,7 +594,7 @@ var sectionId = 'dynsection-10';
 <!-- Node19 -->
 <g id="Node000019" class="node">
 <title>Node19</title>
-<g id="a_Node000019"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title=" ">
+<g id="a_Node000019"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title="Get the singleton instance.">
 <polygon fill="white" stroke="#666666" points="695,-436 543,-436 543,-417 695,-417 695,-436"/>
 <text text-anchor="middle" x="619" y="-424" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getInstance</text>
 </a>

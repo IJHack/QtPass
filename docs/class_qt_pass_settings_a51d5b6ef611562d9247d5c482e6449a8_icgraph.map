@@ -1,5 +1,5 @@
 <map id="QtPassSettings::isUsePass" name="QtPassSettings::isUsePass">
-<area shape="rect" id="Node000001" title=" " alt="" coords="677,53,869,79"/>
+<area shape="rect" id="Node000001" title="Get whether to use pass (true) or GPG (false)." alt="" coords="677,53,869,79"/>
 <area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,5,447,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="663,56,447,32,447,26,664,51"/>
 <area shape="rect" id="Node000003" href="$class_util.html#afe6db9149dff37feded5abf38870cda8" title="Verify that the required configuration is complete." alt="" coords="495,79,629,104"/>

@@ -66,7 +66,7 @@ var sectionId = 'dynsection-9';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" target="_top" xlink:title="Read recipients from file.">
 <polygon fill="white" stroke="#666666" points="484,-56 323,-56 323,-37 484,-37 484,-56"/>
 <text text-anchor="middle" x="403.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::getKeysFromFile</text>
 </a>
@@ -84,7 +84,7 @@ var sectionId = 'dynsection-9';
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" target="_top" xlink:title="Pass::listKeys list users.">
+<g id="a_Node000006"><a xlink:href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" target="_top" xlink:title="List GPG keys matching patterns.">
 <polygon fill="white" stroke="#666666" points="445,-19 362,-19 362,0 445,0 445,-19"/>
 <text text-anchor="middle" x="403.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::listKeys</text>
 </a>
@@ -102,7 +102,7 @@ var sectionId = 'dynsection-9';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" target="_top" xlink:title="Re&#45;encrypt entire directory.">
 <polygon fill="white" stroke="#666666" points="287,-56 140,-56 140,-37 287,-37 287,-56"/>
 <text text-anchor="middle" x="213.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptPath</text>
 </a>
@@ -120,7 +120,7 @@ var sectionId = 'dynsection-9';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" target="_top" xlink:title="Copy password file.">
 <polygon fill="white" stroke="#666666" points="104,-75 0,-75 0,-56 104,-56 104,-75"/>
 <text text-anchor="middle" x="52" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Copy</text>
 </a>
@@ -138,7 +138,7 @@ var sectionId = 'dynsection-9';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title="Initialize store.">
 <polygon fill="white" stroke="#666666" points="99.5,-38 4.5,-38 4.5,-19 99.5,-19 99.5,-38"/>
 <text text-anchor="middle" x="52" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>

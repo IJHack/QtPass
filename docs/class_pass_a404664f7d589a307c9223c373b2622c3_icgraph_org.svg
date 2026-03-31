@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Emit status message.">
 <polygon fill="#999999" stroke="#666666" points="418,-37 323,-37 323,-18 418,-18 418,-37"/>
 <text text-anchor="middle" x="370.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::statusMsg</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" target="_top" xlink:title="Re&#45;encrypt entire directory.">
 <polygon fill="white" stroke="#666666" points="287,-37 140,-37 140,-18 287,-18 287,-37"/>
 <text text-anchor="middle" x="213.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptPath</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" target="_top" xlink:title="Copy password file.">
 <polygon fill="white" stroke="#666666" points="104,-56 0,-56 0,-37 104,-37 104,-56"/>
 <text text-anchor="middle" x="52" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Copy</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title="Initialize store.">
 <polygon fill="white" stroke="#666666" points="99.5,-19 4.5,-19 4.5,0 99.5,0 99.5,-19"/>
 <text text-anchor="middle" x="52" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>

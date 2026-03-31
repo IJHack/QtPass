@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="166,5,307,31"/>
 <area shape="rect" id="Node000002" href="$filecontent_8h.html" title=" " alt="" coords="68,79,171,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,33,152,74,149,69,216,28"/>
-<area shape="rect" id="Node000006" href="$helpers_8h.html" title=" " alt="" coords="195,79,278,104"/>
+<area shape="rect" id="Node000006" href="$helpers_8h.html" title="Utility macros for QtPass." alt="" coords="195,79,278,104"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="239,31,239,65,234,65,234,31"/>
 <area shape="rect" id="Node000007" title=" " alt="" coords="303,79,363,104"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="254,29,307,68,304,72,251,33"/>

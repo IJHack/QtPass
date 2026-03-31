@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Pass::Pass wrapper for using either pass or the pass imitation.">
+<g id="a_Node000001"><a xlink:title="Construct a Pass instance.">
 <polygon fill="#999999" stroke="#666666" points="66,-185 0,-185 0,-166 66,-166 66,-185"/>
 <text text-anchor="middle" x="33" y="-173" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Pass</text>
 </a>
@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" target="_top" xlink:title="Pass::processFinished reemits specific signal based on what process has finished.">
+<g id="a_Node000002"><a xlink:href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" target="_top" xlink:title="Handle process completion.">
 <polygon fill="white" stroke="#666666" points="224,-222 141,-222 141,-203 224,-203 224,-222"/>
 <text text-anchor="middle" x="182.5" y="-210" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finished</text>
 </a>
@@ -66,7 +66,7 @@
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" target="_top" xlink:title=" ">
+<g id="a_Node000016"><a xlink:href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" target="_top" xlink:title="Emitted before executing a command.">
 <polygon fill="white" stroke="#666666" points="263,-148 102,-148 102,-129 263,-129 263,-148"/>
 <text text-anchor="middle" x="182.5" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::startingExecuteWrapper</text>
 </a>
@@ -84,7 +84,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_pass.html#a22febea5d24676854f3dad24260df4d5" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_pass.html#a22febea5d24676854f3dad24260df4d5" target="_top" xlink:title="Emitted when copy finishes.">
 <polygon fill="white" stroke="#666666" points="438.5,-426 331.5,-426 331.5,-407 438.5,-407 438.5,-426"/>
 <text text-anchor="middle" x="385" y="-414" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedCopy</text>
 </a>
@@ -102,7 +102,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_pass.html#aeb0213d032e070ad788398328c0a080c" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_pass.html#aeb0213d032e070ad788398328c0a080c" target="_top" xlink:title="Emitted when GPG key generation finishes.">
 <polygon fill="white" stroke="#666666" points="471,-389 299,-389 299,-370 471,-370 471,-389"/>
 <text text-anchor="middle" x="385" y="-377" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedGenerateGPGKeys</text>
 </a>
@@ -120,7 +120,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_pass.html#a52541582298af5b2707447e3a57f85bf" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_pass.html#a52541582298af5b2707447e3a57f85bf" target="_top" xlink:title="Emitted when Git init finishes.">
 <polygon fill="white" stroke="#666666" points="441.5,-352 328.5,-352 328.5,-333 441.5,-333 441.5,-352"/>
 <text text-anchor="middle" x="385" y="-340" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedGitInit</text>
 </a>
@@ -138,7 +138,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_pass.html#ab6d3acbdce8a5bc579bef175c85382df" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_pass.html#ab6d3acbdce8a5bc579bef175c85382df" target="_top" xlink:title="Emitted when Git pull finishes.">
 <polygon fill="white" stroke="#666666" points="442.5,-315 327.5,-315 327.5,-296 442.5,-296 442.5,-315"/>
 <text text-anchor="middle" x="385" y="-303" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedGitPull</text>
 </a>
@@ -156,7 +156,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_pass.html#ab892bcacdbe3081f677e456a3a8ac328" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="class_pass.html#ab892bcacdbe3081f677e456a3a8ac328" target="_top" xlink:title="Emitted when Git push finishes.">
 <polygon fill="white" stroke="#666666" points="445,-278 325,-278 325,-259 445,-259 445,-278"/>
 <text text-anchor="middle" x="385" y="-266" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedGitPush</text>
 </a>
@@ -174,7 +174,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_pass.html#a7a4c2bbb80372455e0d406fbc940e219" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="class_pass.html#a7a4c2bbb80372455e0d406fbc940e219" target="_top" xlink:title="Emitted when init finishes.">
 <polygon fill="white" stroke="#666666" points="434,-241 336,-241 336,-222 434,-222 434,-241"/>
 <text text-anchor="middle" x="385" y="-229" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedInit</text>
 </a>
@@ -192,7 +192,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_pass.html#a71d8c179a7875dd2983de2aabff0a8cb" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_pass.html#a71d8c179a7875dd2983de2aabff0a8cb" target="_top" xlink:title="Emitted when insert finishes.">
 <polygon fill="white" stroke="#666666" points="440,-204 330,-204 330,-185 440,-185 440,-204"/>
 <text text-anchor="middle" x="385" y="-192" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedInsert</text>
 </a>
@@ -210,7 +210,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_pass.html#a3ca180cb5769aa87186474f7eda9e2a5" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="class_pass.html#a3ca180cb5769aa87186474f7eda9e2a5" target="_top" xlink:title="Emitted when move finishes.">
 <polygon fill="white" stroke="#666666" points="440,-167 330,-167 330,-148 440,-148 440,-167"/>
 <text text-anchor="middle" x="385" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedMove</text>
 </a>
@@ -228,7 +228,7 @@
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="class_pass.html#a8ca44f13c68a03c1e91fbbfee37388ed" target="_top" xlink:title=" ">
+<g id="a_Node000011"><a xlink:href="class_pass.html#a8ca44f13c68a03c1e91fbbfee37388ed" target="_top" xlink:title="Emitted when OTP generation finishes.">
 <polygon fill="white" stroke="#666666" points="457.5,-130 312.5,-130 312.5,-111 457.5,-111 457.5,-130"/>
 <text text-anchor="middle" x="385" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedOtpGenerate</text>
 </a>
@@ -246,7 +246,7 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_pass.html#a263cc9ceb5269427237ea43267667197" target="_top" xlink:title=" ">
+<g id="a_Node000012"><a xlink:href="class_pass.html#a263cc9ceb5269427237ea43267667197" target="_top" xlink:title="Emitted when remove finishes.">
 <polygon fill="white" stroke="#666666" points="446.5,-93 323.5,-93 323.5,-74 446.5,-74 446.5,-93"/>
 <text text-anchor="middle" x="385" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedRemove</text>
 </a>
@@ -264,7 +264,7 @@
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba" target="_top" xlink:title=" ">
+<g id="a_Node000013"><a xlink:href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba" target="_top" xlink:title="Emitted when show finishes.">
 <polygon fill="white" stroke="#666666" points="439.5,-56 330.5,-56 330.5,-37 439.5,-37 439.5,-56"/>
 <text text-anchor="middle" x="385" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::finishedShow</text>
 </a>
@@ -282,7 +282,7 @@
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" target="_top" xlink:title=" ">
+<g id="a_Node000014"><a xlink:href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" target="_top" xlink:title="Emitted on process error exit.">
 <polygon fill="white" stroke="#666666" points="447,-19 323,-19 323,0 447,0 447,-19"/>
 <text text-anchor="middle" x="385" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::processErrorExit</text>
 </a>

@@ -1,13 +1,13 @@
 <map id="Util::newLinesRegex" name="Util::newLinesRegex">
 <area shape="rect" id="Node000001" title="Returns a regex to match newline characters." alt="" coords="699,56,853,81"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title=" " alt="" coords="436,31,651,56"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title="Read recipients from file." alt="" coords="436,31,651,56"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="684,61,651,58,651,52,685,56"/>
-<area shape="rect" id="Node000006" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="Pass::listKeys list users." alt="" coords="488,80,599,105"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="488,80,599,105"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="685,81,599,90,598,84,684,75"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title=" " alt="" coords="192,31,388,56"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="192,31,388,56"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,46,388,46,388,41,422,41"/>
-<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title=" " alt="" coords="5,5,144,31"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,5,144,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="178,33,144,29,145,23,178,28"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title=" " alt="" coords="11,55,138,80"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,55,138,80"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="178,58,138,63,138,58,178,53"/>
 </map>

@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Read recipients from file.">
 <polygon fill="#999999" stroke="#666666" points="161,-56 0,-56 0,-37 161,-37 161,-56"/>
 <text text-anchor="middle" x="80.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::getKeysFromFile</text>
 </a>
@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="381,-56 197,-56 197,-37 381,-37 381,-56"/>
 <text text-anchor="middle" x="289" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>

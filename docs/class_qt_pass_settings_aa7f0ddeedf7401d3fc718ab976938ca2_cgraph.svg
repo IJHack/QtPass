@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Save use pass setting.">
 <polygon fill="#999999" stroke="#666666" points="151,-56 0,-56 0,-37 151,-37 151,-56"/>
 <text text-anchor="middle" x="75.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setUsePass</text>
 </a>
@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title="Get the singleton instance.">
 <polygon fill="white" stroke="#666666" points="347,-56 195,-56 195,-37 347,-37 347,-56"/>
 <text text-anchor="middle" x="271" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getInstance</text>
 </a>

@@ -57,7 +57,7 @@ var sectionId = 'dynsection-49';
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get whether to use pass (true) or GPG (false).">
 <polygon fill="#999999" stroke="#666666" points="648,-112 504,-112 504,-93 648,-93 648,-112"/>
 <text text-anchor="middle" x="576" y="-100" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUsePass</text>
 </a>

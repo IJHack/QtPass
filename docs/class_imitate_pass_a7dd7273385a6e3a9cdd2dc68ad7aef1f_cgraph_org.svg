@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Sign .gpg&#45;id file with signing keys.">
 <polygon fill="#999999" stroke="#666666" points="146,-75 0,-75 0,-56 146,-56 146,-75"/>
 <text text-anchor="middle" x="73" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::signGpgIdFile</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_pass.html#a0eafb54675479378ec98307f0e4fff65" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_pass.html#a0eafb54675479378ec98307f0e4fff65" target="_top" xlink:title="Emit critical error.">
 <polygon fill="white" stroke="#666666" points="297,-132 220,-132 220,-113 297,-113 297,-132"/>
 <text text-anchor="middle" x="258.5" y="-120" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::critical</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="556.5,-19 372.5,-19 372.5,0 556.5,0 556.5,-19"/>
 <text text-anchor="middle" x="464.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" target="_top" xlink:title="ImitatePass::verifyGpgIdFile verify detached gpgid file signature.">
+<g id="a_Node000005"><a xlink:href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" target="_top" xlink:title="Verify .gpg&#45;id file exists and is valid.">
 <polygon fill="white" stroke="#666666" points="335,-56 182,-56 182,-37 335,-37 335,-56"/>
 <text text-anchor="middle" x="258.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::verifyGpgIdFile</text>
 </a>
@@ -110,7 +110,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" target="_top" xlink:title="Get GPG signing key for pass.">
 <polygon fill="white" stroke="#666666" points="558,-56 371,-56 371,-37 558,-37 558,-56"/>
 <text text-anchor="middle" x="464.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassSigningKey</text>
 </a>

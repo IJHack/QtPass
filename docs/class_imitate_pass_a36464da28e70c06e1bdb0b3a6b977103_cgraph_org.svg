@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="ImitatePass::reencryptPath reencrypt all files under the chosen directory.">
+<g id="a_Node000001"><a xlink:title="Find .gpg&#45;id file for directory.">
 <polygon fill="#999999" stroke="#666666" points="136,-135.5 0,-135.5 0,-105.5 136,-105.5 136,-135.5"/>
 <text text-anchor="start" x="8" y="-123.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::verifyGpgId</text>
 <text text-anchor="middle" x="68" y="-112.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForDir</text>
@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_pass.html#a0eafb54675479378ec98307f0e4fff65" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_pass.html#a0eafb54675479378ec98307f0e4fff65" target="_top" xlink:title="Emit critical error.">
 <polygon fill="white" stroke="#666666" points="294.5,-204 217.5,-204 217.5,-185 294.5,-185 294.5,-204"/>
 <text text-anchor="middle" x="256" y="-192" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::critical</text>
 </a>
@@ -39,7 +39,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7" target="_top" xlink:title="Emitted after finishing re&#45;encryption.">
 <polygon fill="white" stroke="#666666" points="340,-167 172,-167 172,-148 340,-148 340,-167"/>
 <text text-anchor="middle" x="256" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::endReencryptPath</text>
 </a>
@@ -57,7 +57,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" target="_top" xlink:title="Pass::getGpgIdPath return gpgid file path for some file (folder).">
+<g id="a_Node000004"><a xlink:href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" target="_top" xlink:title="Get .gpg&#45;id file path for a password file.">
 <polygon fill="white" stroke="#666666" points="311,-130 201,-130 201,-111 311,-111 311,-130"/>
 <text text-anchor="middle" x="256" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::getGpgIdPath</text>
 </a>
@@ -75,7 +75,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_pass.html#a693825d2ad62813cf103860ef6211370" target="_top" xlink:title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for.">
+<g id="a_Node000006"><a xlink:href="class_pass.html#a693825d2ad62813cf103860ef6211370" target="_top" xlink:title="Get list of recipients for a password file.">
 <polygon fill="white" stroke="#666666" points="317.5,-93 194.5,-93 194.5,-74 317.5,-74 317.5,-93"/>
 <text text-anchor="middle" x="256" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::getRecipientList</text>
 </a>
@@ -93,7 +93,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" target="_top" xlink:title="ImitatePass::verifyGpgIdFile verify detached gpgid file signature.">
+<g id="a_Node000007"><a xlink:href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" target="_top" xlink:title="Verify .gpg&#45;id file exists and is valid.">
 <polygon fill="white" stroke="#666666" points="332.5,-56 179.5,-56 179.5,-37 332.5,-37 332.5,-56"/>
 <text text-anchor="middle" x="256" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::verifyGpgIdFile</text>
 </a>
@@ -111,7 +111,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title="Get password store directory path.">
 <polygon fill="white" stroke="#666666" points="548.5,-130 390.5,-130 390.5,-111 548.5,-111 548.5,-130"/>
 <text text-anchor="middle" x="469.5" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>
@@ -147,7 +147,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="561.5,-56 377.5,-56 377.5,-37 561.5,-37 561.5,-56"/>
 <text text-anchor="middle" x="469.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>
@@ -165,7 +165,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" target="_top" xlink:title="Get GPG signing key for pass.">
 <polygon fill="white" stroke="#666666" points="563,-19 376,-19 376,0 563,0 563,-19"/>
 <text text-anchor="middle" x="469.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassSigningKey</text>
 </a>

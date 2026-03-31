@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" target="_top" xlink:title="Copy password file.">
 <polygon fill="white" stroke="#666666" points="104,-261 0,-261 0,-242 104,-242 104,-261"/>
 <text text-anchor="middle" x="52" y="-249" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Copy</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" target="_top" xlink:title="ImitatePass::GitPush git init wrapper.">
+<g id="a_Node000004"><a xlink:href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" target="_top" xlink:title="Push to remote.">
 <polygon fill="white" stroke="#666666" points="468,-206 351,-206 351,-187 468,-187 468,-206"/>
 <text text-anchor="middle" x="409.5" y="-194" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPush</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title="Initialize store.">
 <polygon fill="white" stroke="#666666" points="99.5,-168 4.5,-168 4.5,-149 99.5,-149 99.5,-168"/>
 <text text-anchor="middle" x="52" y="-156" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>
@@ -92,7 +92,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" target="_top" xlink:title="ImitatePass::Insert create new file with encrypted content.">
+<g id="a_Node000007"><a xlink:href="class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" target="_top" xlink:title="Insert new password.">
 <polygon fill="white" stroke="#666666" points="463,-169 356,-169 356,-150 463,-150 463,-169"/>
 <text text-anchor="middle" x="409.5" y="-157" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Insert</text>
 </a>
@@ -110,7 +110,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" target="_top" xlink:title="Move password file.">
 <polygon fill="white" stroke="#666666" points="463,-132 356,-132 356,-113 463,-113 463,-132"/>
 <text text-anchor="middle" x="409.5" y="-120" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Move</text>
 </a>
@@ -146,7 +146,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" target="_top" xlink:title="Re&#45;encrypt single file with new recipients.">
 <polygon fill="white" stroke="#666666" points="496,-243 323,-243 323,-224 496,-224 496,-243"/>
 <text text-anchor="middle" x="409.5" y="-231" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptSingleFile</text>
 </a>
@@ -164,7 +164,7 @@
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" target="_top" xlink:title="ImitatePass::Remove custom implementation of &quot;pass remove&quot;.">
+<g id="a_Node000011"><a xlink:href="class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" target="_top" xlink:title="Remove password.">
 <polygon fill="white" stroke="#666666" points="469.5,-19 349.5,-19 349.5,0 469.5,0 469.5,-19"/>
 <text text-anchor="middle" x="409.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Remove</text>
 </a>
@@ -182,7 +182,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" target="_top" xlink:title="Re&#45;encrypt entire directory.">
 <polygon fill="white" stroke="#666666" points="287,-224 140,-224 140,-205 287,-205 287,-224"/>
 <text text-anchor="middle" x="213.5" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptPath</text>
 </a>

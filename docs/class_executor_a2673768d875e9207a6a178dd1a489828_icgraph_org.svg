@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a607cc25575bf718f57333bb7854870b4" target="_top" xlink:title="ImitatePass::Init initialize pass repository.">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a607cc25575bf718f57333bb7854870b4" target="_top" xlink:title="Check if signing keys are valid.">
 <polygon fill="white" stroke="#666666" points="351,-45.77 184,-45.77 184,-26.77 351,-26.77 351,-45.77"/>
 <text text-anchor="middle" x="267.5" y="-33.77" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::checkSigningKeys</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_pass.html#a8cff21960fa7bc334a8fba8c3fff5d07" target="_top" xlink:title="Pass::Generate use either pwgen or internal password generator.">
+<g id="a_Node000008"><a xlink:href="class_pass.html#a8cff21960fa7bc334a8fba8c3fff5d07" target="_top" xlink:title="Generate random password.">
 <polygon fill="white" stroke="#666666" points="730,-345.77 629,-345.77 629,-326.77 730,-326.77 730,-345.77"/>
 <text text-anchor="middle" x="679.5" y="-333.77" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Generate_b</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" target="_top" xlink:title="Read recipients from file.">
 <polygon fill="white" stroke="#666666" points="552.5,-364.77 391.5,-364.77 391.5,-345.77 552.5,-345.77 552.5,-364.77"/>
 <text text-anchor="middle" x="472" y="-352.77" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::getKeysFromFile</text>
 </a>
@@ -92,7 +92,7 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" target="_top" xlink:title="ImitatePass::GitPull_b git pull wrapper.">
+<g id="a_Node000012"><a xlink:href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2" target="_top" xlink:title="Pull with rebase.">
 <polygon fill="white" stroke="#666666" points="533.5,-307.77 410.5,-307.77 410.5,-288.77 533.5,-288.77 533.5,-307.77"/>
 <text text-anchor="middle" x="472" y="-295.77" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPull_b</text>
 </a>
@@ -110,7 +110,7 @@
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210" target="_top" xlink:title="RealPass::GitInit pass git pull wrapper which blocks until process finishes.">
+<g id="a_Node000013"><a xlink:href="class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210" target="_top" xlink:title="Pull with rebase.">
 <polygon fill="white" stroke="#666666" points="734.5,-232.77 624.5,-232.77 624.5,-213.77 734.5,-213.77 734.5,-232.77"/>
 <text text-anchor="middle" x="679.5" y="-220.77" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::GitPull_b</text>
 </a>
@@ -128,7 +128,7 @@
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b" target="_top" xlink:title="Pass::gpgSupportsEd25519 check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much ...">
+<g id="a_Node000014"><a xlink:href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b" target="_top" xlink:title="Check if GPG supports Ed25519 encryption.">
 <polygon fill="white" stroke="#666666" points="753,-82.77 606,-82.77 606,-63.77 753,-63.77 753,-82.77"/>
 <text text-anchor="middle" x="679.5" y="-70.77" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::gpgSupportsEd25519</text>
 </a>
@@ -146,7 +146,7 @@
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" target="_top" xlink:title="Pass::listKeys list users.">
+<g id="a_Node000017"><a xlink:href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" target="_top" xlink:title="List GPG keys matching patterns.">
 <polygon fill="white" stroke="#666666" points="721,-158.77 638,-158.77 638,-139.77 721,-139.77 721,-158.77"/>
 <text text-anchor="middle" x="679.5" y="-146.77" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::listKeys</text>
 </a>
@@ -164,7 +164,7 @@
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a xlink:href="class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" target="_top" xlink:title=" ">
+<g id="a_Node000018"><a xlink:href="class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" target="_top" xlink:title="Re&#45;encrypt single file with new recipients.">
 <polygon fill="white" stroke="#666666" points="766,-269.77 593,-269.77 593,-250.77 766,-250.77 766,-269.77"/>
 <text text-anchor="middle" x="679.5" y="-257.77" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptSingleFile</text>
 </a>
@@ -182,7 +182,7 @@
 <!-- Node19 -->
 <g id="Node000019" class="node">
 <title>Node19</title>
-<g id="a_Node000019"><a xlink:href="class_imitate_pass.html#a7dd7273385a6e3a9cdd2dc68ad7aef1f" target="_top" xlink:title=" ">
+<g id="a_Node000019"><a xlink:href="class_imitate_pass.html#a7dd7273385a6e3a9cdd2dc68ad7aef1f" target="_top" xlink:title="Sign .gpg&#45;id file with signing keys.">
 <polygon fill="white" stroke="#666666" points="545,-133.77 399,-133.77 399,-114.77 545,-114.77 545,-133.77"/>
 <text text-anchor="middle" x="472" y="-121.77" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::signGpgIdFile</text>
 </a>
@@ -200,7 +200,7 @@
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" target="_top" xlink:title="ImitatePass::verifyGpgIdFile verify detached gpgid file signature.">
+<g id="a_Node000020"><a xlink:href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" target="_top" xlink:title="Verify .gpg&#45;id file exists and is valid.">
 <polygon fill="white" stroke="#666666" points="756,-195.77 603,-195.77 603,-176.77 756,-176.77 756,-195.77"/>
 <text text-anchor="middle" x="679.5" y="-183.77" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::verifyGpgIdFile</text>
 </a>
@@ -218,7 +218,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title="Initialize store.">
 <polygon fill="white" stroke="#666666" points="121.5,-133.77 26.5,-133.77 26.5,-114.77 121.5,-114.77 121.5,-133.77"/>
 <text text-anchor="middle" x="74" y="-121.77" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>
@@ -236,7 +236,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title="Initialize executable paths by auto&#45;detecting them.">
 <polygon fill="white" stroke="#666666" points="557,-421.77 387,-421.77 387,-402.77 557,-402.77 557,-421.77"/>
 <text text-anchor="middle" x="472" y="-409.77" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::initExecutables</text>
 </a>
@@ -290,7 +290,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" target="_top" xlink:title="Re&#45;encrypt entire directory.">
 <polygon fill="white" stroke="#666666" points="341,-269.77 194,-269.77 194,-250.77 341,-250.77 341,-269.77"/>
 <text text-anchor="middle" x="267.5" y="-257.77" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptPath</text>
 </a>
@@ -317,7 +317,7 @@
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" target="_top" xlink:title=" ">
+<g id="a_Node000011"><a xlink:href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" target="_top" xlink:title="Copy password file.">
 <polygon fill="white" stroke="#666666" points="126,-269.77 22,-269.77 22,-250.77 126,-250.77 126,-269.77"/>
 <text text-anchor="middle" x="74" y="-257.77" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Copy</text>
 </a>
@@ -344,7 +344,7 @@
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" target="_top" xlink:title="Pass::getDefaultKeyTemplate return default key generation template Uses ed25519 if supported,...">
+<g id="a_Node000015"><a xlink:href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" target="_top" xlink:title="Get default key template for new GPG keys.">
 <polygon fill="white" stroke="#666666" points="551.5,-82.77 392.5,-82.77 392.5,-63.77 551.5,-63.77 551.5,-82.77"/>
 <text text-anchor="middle" x="472" y="-70.77" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::getDefaultKeyTemplate</text>
 </a>
@@ -407,7 +407,7 @@
 <!-- Node21 -->
 <g id="Node000021" class="node">
 <title>Node21</title>
-<g id="a_Node000021"><a xlink:href="class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" target="_top" xlink:title="ImitatePass::Insert create new file with encrypted content.">
+<g id="a_Node000021"><a xlink:href="class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" target="_top" xlink:title="Insert new password.">
 <polygon fill="white" stroke="#666666" points="525.5,-183.77 418.5,-183.77 418.5,-164.77 525.5,-164.77 525.5,-183.77"/>
 <text text-anchor="middle" x="472" y="-171.77" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Insert</text>
 </a>
@@ -425,7 +425,7 @@
 <!-- Node22 -->
 <g id="Node000022" class="node">
 <title>Node22</title>
-<g id="a_Node000022"><a xlink:href="class_imitate_pass.html#a36464da28e70c06e1bdb0b3a6b977103" target="_top" xlink:title="ImitatePass::reencryptPath reencrypt all files under the chosen directory.">
+<g id="a_Node000022"><a xlink:href="class_imitate_pass.html#a36464da28e70c06e1bdb0b3a6b977103" target="_top" xlink:title="Find .gpg&#45;id file for directory.">
 <polygon fill="white" stroke="#666666" points="540,-232.27 404,-232.27 404,-202.27 540,-202.27 540,-232.27"/>
 <text text-anchor="start" x="412" y="-220.27" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::verifyGpgId</text>
 <text text-anchor="middle" x="472" y="-209.27" font-family="Helvetica,sans-Serif" font-size="10.00">ForDir</text>

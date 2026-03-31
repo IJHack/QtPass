@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="1324,5,1427,31"/>
 <area shape="rect" id="Node000002" href="$pass_8h.html" title=" " alt="" coords="293,225,357,251"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1324,21,1182,22,979,30,743,48,623,62,505,81,431,89,370,92,343,98,318,108,294,126,270,153,265,169,270,185,282,201,298,215,294,219,278,204,265,187,259,169,265,151,290,122,315,104,342,93,370,87,431,83,504,76,622,57,743,42,978,24,1182,17,1324,16"/>
-<area shape="rect" id="Node000013" href="$helpers_8h.html" title=" " alt="" coords="517,79,599,104"/>
+<area shape="rect" id="Node000013" href="$helpers_8h.html" title="Utility macros for QtPass." alt="" coords="517,79,599,104"/>
 <area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1324,24,1027,40,824,57,614,82,613,76,823,52,1026,35,1324,18"/>
 <area shape="rect" id="Node000014" href="$qtpasssettings_8h.html" title=" " alt="" coords="624,79,753,104"/>
 <area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="1324,27,768,85,767,79,1323,22"/>

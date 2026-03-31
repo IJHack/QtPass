@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass wrapper for using either pass or the pass imitation.">
+<g id="a_Node000003"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Construct a Pass instance.">
 <polygon fill="white" stroke="#666666" points="86.5,-19 20.5,-19 20.5,0 86.5,0 86.5,-19"/>
 <text text-anchor="middle" x="53.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Pass</text>
 </a>

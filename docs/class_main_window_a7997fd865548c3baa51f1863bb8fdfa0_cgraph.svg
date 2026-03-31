@@ -120,7 +120,7 @@ var sectionId = 'dynsection-19';
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be" target="_top" xlink:title="Get whether to use panel autoclear.">
 <polygon fill="white" stroke="#666666" points="368,-78 199,-78 199,-48 368,-48 368,-78"/>
 <text text-anchor="start" x="207" y="-66" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseAutoclear</text>
 <text text-anchor="middle" x="283.5" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">Panel</text>
@@ -158,7 +158,7 @@ var sectionId = 'dynsection-19';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" target="_top" xlink:title="Get whether to use autoclear for clipboard.">
 <polygon fill="white" stroke="#666666" points="581,-227.5 412,-227.5 412,-208.5 581,-208.5 581,-227.5"/>
 <text text-anchor="middle" x="496.5" y="-215.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseAutoclear</text>
 </a>
@@ -176,7 +176,7 @@ var sectionId = 'dynsection-19';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" target="_top" xlink:title="Get whether to use selection (X11) for clipboard.">
 <polygon fill="white" stroke="#666666" points="580,-190.5 413,-190.5 413,-171.5 580,-171.5 580,-190.5"/>
 <text text-anchor="middle" x="496.5" y="-178.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseSelection</text>
 </a>

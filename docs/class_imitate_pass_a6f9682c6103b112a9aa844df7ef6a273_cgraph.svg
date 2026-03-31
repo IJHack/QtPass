@@ -57,7 +57,7 @@ var sectionId = 'dynsection-6';
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="ImitatePass::executeGit easy wrapper for running git commands.">
+<g id="a_Node000001"><a xlink:title="Execute git command.">
 <polygon fill="#999999" stroke="#666666" points="132,-37 0,-37 0,-18 132,-18 132,-37"/>
 <text text-anchor="middle" x="66" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeGit</text>
 </a>
@@ -66,7 +66,7 @@ var sectionId = 'dynsection-6';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" target="_top" xlink:title="executeWrapper overrided so that every execution is a transaction">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" target="_top" xlink:title="Execute command wrapper.">
 <polygon fill="white" stroke="#666666" points="337,-56 178,-56 178,-37 337,-37 337,-56"/>
 <text text-anchor="middle" x="257.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeWrapper</text>
 </a>
@@ -84,7 +84,7 @@ var sectionId = 'dynsection-6';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title="Get git executable path.">
 <polygon fill="white" stroke="#666666" points="347,-19 168,-19 168,0 347,0 347,-19"/>
 <text text-anchor="middle" x="257.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGitExecutable</text>
 </a>
@@ -102,7 +102,7 @@ var sectionId = 'dynsection-6';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Executes a wrapper command.">
+<g id="a_Node000003"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Execute external wrapper command.">
 <polygon fill="white" stroke="#666666" points="507,-78 383,-78 383,-59 507,-59 507,-78"/>
 <text text-anchor="middle" x="445" y="-66" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::executeWrapper</text>
 </a>

@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Move password file.">
 <polygon fill="#999999" stroke="#666666" points="107,-67.5 0,-67.5 0,-48.5 107,-48.5 107,-67.5"/>
 <text text-anchor="middle" x="53.5" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Move</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098" target="_top" xlink:title="Execute git move operation.">
 <polygon fill="white" stroke="#666666" points="302,-104.5 143,-104.5 143,-85.5 302,-85.5 302,-104.5"/>
 <text text-anchor="middle" x="222.5" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeMoveGit</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563" target="_top" xlink:title=" ">
+<g id="a_Node000012"><a xlink:href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563" target="_top" xlink:title="Resolve destination for move operation.">
 <polygon fill="white" stroke="#666666" points="294,-30 151,-30 151,0 294,0 294,-30"/>
 <text text-anchor="start" x="159" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::resolveMove</text>
 <text text-anchor="middle" x="222.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Destination</text>
@@ -93,7 +93,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" target="_top" xlink:title="ImitatePass::executeGit easy wrapper for running git commands.">
+<g id="a_Node000004"><a xlink:href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" target="_top" xlink:title="Execute git command.">
 <polygon fill="white" stroke="#666666" points="664,-85.5 532,-85.5 532,-66.5 664,-66.5 664,-85.5"/>
 <text text-anchor="middle" x="598" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeGit</text>
 </a>
@@ -111,7 +111,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title="Get password store directory path.">
 <polygon fill="white" stroke="#666666" points="496,-85.5 338,-85.5 338,-66.5 496,-66.5 496,-85.5"/>
 <text text-anchor="middle" x="417" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>
@@ -129,7 +129,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_imitate_pass.html#a4633664040a5b817c944736653778e74" target="_top" xlink:title="ImitatePass::GitCommit commit a file to git with an appropriate commit message.">
+<g id="a_Node000010"><a xlink:href="class_imitate_pass.html#a4633664040a5b817c944736653778e74" target="_top" xlink:title="Commit changes to git.">
 <polygon fill="white" stroke="#666666" points="483.5,-48.5 350.5,-48.5 350.5,-29.5 483.5,-29.5 483.5,-48.5"/>
 <text text-anchor="middle" x="417" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitCommit</text>
 </a>
@@ -147,7 +147,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" target="_top" xlink:title="executeWrapper overrided so that every execution is a transaction">
+<g id="a_Node000005"><a xlink:href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" target="_top" xlink:title="Execute command wrapper.">
 <polygon fill="white" stroke="#666666" points="869,-104.5 710,-104.5 710,-85.5 869,-85.5 869,-104.5"/>
 <text text-anchor="middle" x="789.5" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeWrapper</text>
 </a>
@@ -165,7 +165,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title="Get git executable path.">
 <polygon fill="white" stroke="#666666" points="879,-67.5 700,-67.5 700,-48.5 879,-48.5 879,-67.5"/>
 <text text-anchor="middle" x="789.5" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGitExecutable</text>
 </a>
@@ -183,7 +183,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Executes a wrapper command.">
+<g id="a_Node000006"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Execute external wrapper command.">
 <polygon fill="white" stroke="#666666" points="1039,-125.5 915,-125.5 915,-106.5 1039,-106.5 1039,-125.5"/>
 <text text-anchor="middle" x="977" y="-113.5" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::executeWrapper</text>
 </a>

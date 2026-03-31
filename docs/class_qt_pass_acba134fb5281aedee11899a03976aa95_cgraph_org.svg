@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" target="_top" xlink:title="Get whether to use autoclear for clipboard.">
 <polygon fill="white" stroke="#666666" points="369,-93 200,-93 200,-74 369,-74 369,-93"/>
 <text text-anchor="middle" x="284.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseAutoclear</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" target="_top" xlink:title="Get whether to use selection (X11) for clipboard.">
 <polygon fill="white" stroke="#666666" points="368,-56 201,-56 201,-37 368,-37 368,-56"/>
 <text text-anchor="middle" x="284.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseSelection</text>
 </a>

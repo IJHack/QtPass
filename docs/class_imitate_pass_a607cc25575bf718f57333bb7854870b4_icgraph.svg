@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="ImitatePass::Init initialize pass repository.">
+<g id="a_Node000001"><a xlink:title="Check if signing keys are valid.">
 <polygon fill="#999999" stroke="#666666" points="298,-19 131,-19 131,0 298,0 298,-19"/>
 <text text-anchor="middle" x="214.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::checkSigningKeys</text>
 </a>
@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" target="_top" xlink:title="Initialize store.">
 <polygon fill="white" stroke="#666666" points="95,-19 0,-19 0,0 95,0 95,-19"/>
 <text text-anchor="middle" x="47.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Init</text>
 </a>

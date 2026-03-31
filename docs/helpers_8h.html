@@ -80,6 +80,9 @@ $(function() {
   <div class="headertitle"><div class="title">helpers.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Utility macros for <a class="el" href="class_qt_pass.html">QtPass</a>.  
+<a href="#details">More...</a></p>
 <div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -93,9 +96,14 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:adc90de3a8181fb745eeea1b76cfd2ed7" id="r_adc90de3a8181fb745eeea1b76cfd2ed7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="helpers_8h.html#adc90de3a8181fb745eeea1b76cfd2ed7">AS_CONST</a>(x)&#160;&#160;&#160;qAsConst(x)</td></tr>
+<tr class="memdesc:adc90de3a8181fb745eeea1b76cfd2ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cross-platform const_cast for range-based for loops.  <br /></td></tr>
 <tr class="separator:adc90de3a8181fb745eeea1b76cfd2ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Utility macros for <a class="el" href="class_qt_pass.html">QtPass</a>. </p>
+
+<p class="definition">Definition in file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="adc90de3a8181fb745eeea1b76cfd2ed7" name="adc90de3a8181fb745eeea1b76cfd2ed7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adc90de3a8181fb745eeea1b76cfd2ed7">&#9670;&#160;</a></span>AS_CONST</h2>
 
@@ -112,7 +120,10 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00009">9</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
+<p>Cross-platform const_cast for range-based for loops. </p>
+<p>Provides std::as_const (C++17) or qAsConst (older) for safe iteration over containers that might be modified. </p>
+
+<p class="definition">Definition at line <a class="el" href="helpers_8h_source.html#l00020">20</a> of file <a class="el" href="helpers_8h_source.html">helpers.h</a>.</p>
 
 </div>
 </div>

@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="StoreModel::setModelAndStore update the source model and store.">
+<g id="a_Node000001"><a xlink:title="Initialize model with source model and store path.">
 <polygon fill="#999999" stroke="#666666" points="351,-19 184,-19 184,0 351,0 351,-19"/>
 <text text-anchor="middle" x="267.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">StoreModel::setModelAndStore</text>
 </a>

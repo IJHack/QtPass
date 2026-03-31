@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Pass::getDefaultKeyTemplate return default key generation template Uses ed25519 if supported,...">
+<g id="a_Node000001"><a xlink:title="Get default key template for new GPG keys.">
 <polygon fill="#999999" stroke="#666666" points="159,-37 0,-37 0,-18 159,-18 159,-37"/>
 <text text-anchor="middle" x="79.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::getDefaultKeyTemplate</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b" target="_top" xlink:title="Pass::gpgSupportsEd25519 check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much ...">
+<g id="a_Node000002"><a xlink:href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b" target="_top" xlink:title="Check if GPG supports Ed25519 encryption.">
 <polygon fill="white" stroke="#666666" points="342,-37 195,-37 195,-18 342,-18 342,-37"/>
 <text text-anchor="middle" x="268.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::gpgSupportsEd25519</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="562,-19 378,-19 378,0 562,0 562,-19"/>
 <text text-anchor="middle" x="470" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>

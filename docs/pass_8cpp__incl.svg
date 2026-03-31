@@ -84,7 +84,7 @@ var sectionId = 'dynsection-0';
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="helpers_8h.html" target="_top" xlink:title=" ">
+<g id="a_Node000013"><a xlink:href="helpers_8h.html" target="_top" xlink:title="Utility macros for QtPass.">
 <polygon fill="white" stroke="#666666" points="445.5,-239 383.5,-239 383.5,-220 445.5,-220 445.5,-239"/>
 <text text-anchor="middle" x="414.5" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">helpers.h</text>
 </a>

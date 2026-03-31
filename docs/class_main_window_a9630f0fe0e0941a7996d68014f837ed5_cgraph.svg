@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#af927e98c41ba80029ce3267a7dcc4ca1" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#af927e98c41ba80029ce3267a7dcc4ca1" target="_top" xlink:title="Get saved window geometry.">
 <polygon fill="white" stroke="#666666" points="363,-290 203,-290 203,-271 363,-271 363,-290"/>
 <text text-anchor="middle" x="283" y="-278" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGeometry</text>
 </a>
@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#acad75f76a1c9128bd15d5679a8cd78d9" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#acad75f76a1c9128bd15d5679a8cd78d9" target="_top" xlink:title="Get saved window position.">
 <polygon fill="white" stroke="#666666" points="347,-253 219,-253 219,-234 347,-234 347,-253"/>
 <text text-anchor="middle" x="283" y="-241" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPos</text>
 </a>
@@ -66,7 +66,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#afeada475d9f9777f06b9f624026dde18" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#afeada475d9f9777f06b9f624026dde18" target="_top" xlink:title="Get saved window state.">
 <polygon fill="white" stroke="#666666" points="363,-216 203,-216 203,-197 363,-197 363,-216"/>
 <text text-anchor="middle" x="283" y="-204" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getSavestate</text>
 </a>
@@ -84,7 +84,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a2eda707ef417b1198898c6b162ebc142" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a2eda707ef417b1198898c6b162ebc142" target="_top" xlink:title="Get saved window size.">
 <polygon fill="white" stroke="#666666" points="348.5,-179 217.5,-179 217.5,-160 348.5,-160 348.5,-179"/>
 <text text-anchor="middle" x="283" y="-167" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getSize</text>
 </a>
@@ -121,7 +121,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#a974f845c0549b4789546c1a5a1e70102" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#a974f845c0549b4789546c1a5a1e70102" target="_top" xlink:title="Get maximized state.">
 <polygon fill="white" stroke="#666666" points="362,-93 204,-93 204,-74 362,-74 362,-93"/>
 <text text-anchor="middle" x="283" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isMaximized</text>
 </a>

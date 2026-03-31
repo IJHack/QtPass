@@ -1,5 +1,5 @@
 <map id="Pass::getRecipientString" name="Pass::getRecipientString">
-<area shape="rect" id="Node000001" title="Pass::getRecipientString formatted string for use with GPG." alt="" coords="5,5,184,31"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#a693825d2ad62813cf103860ef6211370" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for." alt="" coords="232,5,396,31"/>
+<area shape="rect" id="Node000001" title="Get recipients as string." alt="" coords="5,5,184,31"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a693825d2ad62813cf103860ef6211370" title="Get list of recipients for a password file." alt="" coords="232,5,396,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,15,218,15,218,21,184,21"/>
 </map>

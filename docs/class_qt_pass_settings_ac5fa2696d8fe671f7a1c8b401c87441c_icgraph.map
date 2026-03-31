@@ -1,5 +1,5 @@
 <map id="QtPassSettings::setAutoclearSeconds" name="QtPassSettings::setAutoclearSeconds">
-<area shape="rect" id="Node000001" title=" " alt="" coords="393,5,603,45"/>
+<area shape="rect" id="Node000001" title="Save autoclear seconds." alt="" coords="393,5,603,45"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="251,13,345,38"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="379,28,346,28,346,23,379,23"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,13,203,38"/>

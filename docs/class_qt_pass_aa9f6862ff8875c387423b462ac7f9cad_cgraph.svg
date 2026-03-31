@@ -84,7 +84,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" target="_top" xlink:title="Get autoclear delay in seconds.">
 <polygon fill="white" stroke="#666666" points="478.5,-30 320.5,-30 320.5,0 478.5,0 478.5,-30"/>
 <text text-anchor="start" x="328.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="399.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Seconds</text>

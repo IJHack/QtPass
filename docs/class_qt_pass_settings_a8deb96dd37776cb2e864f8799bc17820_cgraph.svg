@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Save use autoclear setting.">
 <polygon fill="#999999" stroke="#666666" points="176,-19 0,-19 0,0 176,0 176,-19"/>
 <text text-anchor="middle" x="88" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setUseAutoclear</text>
 </a>
@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title="Get the singleton instance.">
 <polygon fill="white" stroke="#666666" points="364,-19 212,-19 212,0 364,0 364,-19"/>
 <text text-anchor="middle" x="288" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getInstance</text>
 </a>

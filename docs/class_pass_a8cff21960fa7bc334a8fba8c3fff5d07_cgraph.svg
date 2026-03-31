@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Pass::Generate use either pwgen or internal password generator.">
+<g id="a_Node000001"><a xlink:title="Generate random password.">
 <polygon fill="#999999" stroke="#666666" points="101,-148 0,-148 0,-129 101,-129 101,-148"/>
 <text text-anchor="middle" x="50.5" y="-136" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Generate_b</text>
 </a>

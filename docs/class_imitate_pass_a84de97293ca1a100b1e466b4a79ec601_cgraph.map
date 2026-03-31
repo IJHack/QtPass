@@ -1,44 +1,44 @@
 <map id="ImitatePass::Insert" name="ImitatePass::Insert">
-<area shape="rect" id="Node000001" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="5,256,148,281"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#a0eafb54675479378ec98307f0e4fff65" title=" " alt="" coords="253,5,356,31"/>
+<area shape="rect" id="Node000001" title="Insert new password." alt="" coords="5,256,148,281"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a0eafb54675479378ec98307f0e4fff65" title="Emit critical error." alt="" coords="253,5,356,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,255,89,213,111,155,146,93,168,64,194,40,216,28,239,20,240,25,218,33,198,44,172,68,150,96,116,157,94,215,83,257"/>
 <area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="235,55,375,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="80,255,94,221,118,176,151,129,172,107,195,89,220,76,222,81,197,94,175,111,156,132,123,179,99,224,85,257"/>
-<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="ImitatePass::executeGit easy wrapper for running git commands." alt="" coords="498,155,674,180"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="498,155,674,180"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="91,254,135,220,164,203,195,190,269,172,345,161,419,157,484,158,484,163,419,163,346,167,270,177,197,195,166,208,138,225,94,258"/>
-<area shape="rect" id="Node000009" href="$class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a" title="ImitatePass::executeGpg easy wrapper for running gpg commands." alt="" coords="213,356,396,381"/>
+<area shape="rect" id="Node000009" href="$class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a" title="Execute GPG command." alt="" coords="213,356,396,381"/>
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="95,279,140,311,197,342,218,350,216,355,195,347,137,315,92,284"/>
-<area shape="rect" id="Node000011" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Pass::getGpgIdPath return gpgid file path for some file (folder)." alt="" coords="231,205,378,231"/>
+<area shape="rect" id="Node000011" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Get .gpg&#45;id file path for a password file." alt="" coords="231,205,378,231"/>
 <area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="134,253,233,231,234,236,135,258"/>
-<area shape="rect" id="Node000012" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="481,231,691,256"/>
+<area shape="rect" id="Node000012" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="481,231,691,256"/>
 <area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="148,262,467,247,467,252,149,268"/>
-<area shape="rect" id="Node000013" href="$class_pass.html#a693825d2ad62813cf103860ef6211370" title="Pass::getRecipientList return list of gpg&#45;id&#39;s to encrypt for." alt="" coords="223,307,387,332"/>
+<area shape="rect" id="Node000013" href="$class_pass.html#a693825d2ad62813cf103860ef6211370" title="Get list of recipients for a password file." alt="" coords="223,307,387,332"/>
 <area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="135,279,234,301,233,306,134,284"/>
-<area shape="rect" id="Node000014" href="$class_imitate_pass.html#a4633664040a5b817c944736653778e74" title="ImitatePass::GitCommit commit a file to git with an appropriate commit message." alt="" coords="216,104,393,129"/>
+<area shape="rect" id="Node000014" href="$class_imitate_pass.html#a4633664040a5b817c944736653778e74" title="Commit changes to git." alt="" coords="216,104,393,129"/>
 <area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="85,254,128,202,159,172,195,146,228,131,230,136,197,151,163,176,132,206,89,257"/>
 <area shape="rect" id="Node000015" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="213,405,396,431"/>
 <area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="88,280,131,335,162,366,197,392,210,398,208,403,195,396,158,370,127,338,84,283"/>
 <area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title=" " alt="" coords="196,455,413,480"/>
 <area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="85,281,100,314,123,358,156,403,176,424,198,441,207,447,204,451,194,446,172,428,152,407,119,360,95,316,80,283"/>
-<area shape="rect" id="Node000017" href="$class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" title="ImitatePass::verifyGpgIdFile verify detached gpgid file signature." alt="" coords="203,504,407,529"/>
+<area shape="rect" id="Node000017" href="$class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" title="Verify .gpg&#45;id file exists and is valid." alt="" coords="203,504,407,529"/>
 <area shape="poly" id="edge20_Node000001_Node000017" title=" " alt="" coords="83,281,95,322,117,380,150,440,172,467,198,491,205,496,202,500,194,495,168,471,146,443,112,382,90,324,78,282"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="772,264,984,289"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="Execute command wrapper." alt="" coords="772,264,984,289"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="622,178,832,257,830,262,620,183"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="759,155,997,180"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title="Get git executable path." alt="" coords="759,155,997,180"/>
 <area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="674,165,745,165,745,170,674,170"/>
-<area shape="rect" id="Node000006" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Executes a wrapper command." alt="" coords="1045,235,1211,260"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="1045,235,1211,260"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="984,262,1031,256,1032,261,985,267"/>
 <area shape="rect" id="Node000007" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="1054,285,1202,325"/>
 <area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="985,286,1041,292,1040,298,984,291"/>
 <area shape="poly" id="edge6_Node000006_Node000006" title=" " alt="" coords="1088,236,1079,226,1084,216,1100,210,1128,208,1163,212,1173,217,1177,222,1172,225,1169,221,1162,217,1128,213,1101,215,1087,220,1084,226,1092,233"/>
 <area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="384,353,784,289,785,294,385,359"/>
-<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="463,385,709,411"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="463,385,709,411"/>
 <area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="396,375,451,381,450,387,396,381"/>
 <area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="378,222,467,230,467,235,378,227"/>
 <area shape="poly" id="edge17_Node000014_Node000004" title=" " alt="" coords="376,127,502,150,501,155,375,132"/>
 <area shape="poly" id="edge22_Node000017_Node000010" title=" " alt="" coords="376,501,412,490,549,415,551,420,414,495,377,506"/>
 <area shape="rect" id="Node000018" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="489,479,683,504"/>
 <area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="407,505,475,499,476,504,407,510"/>
-<area shape="rect" id="Node000019" href="$class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" title=" " alt="" coords="461,528,711,553"/>
+<area shape="rect" id="Node000019" href="$class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" title="Get GPG signing key for pass." alt="" coords="461,528,711,553"/>
 <area shape="poly" id="edge23_Node000017_Node000019" title=" " alt="" coords="407,523,448,526,447,532,407,528"/>
 </map>

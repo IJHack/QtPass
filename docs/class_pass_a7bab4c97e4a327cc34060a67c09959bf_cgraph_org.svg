@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Pass::getGpgIdPath return gpgid file path for some file (folder).">
+<g id="a_Node000001"><a xlink:title="Get .gpg&#45;id file path for a password file.">
 <polygon fill="#999999" stroke="#666666" points="110,-19 0,-19 0,0 110,0 110,-19"/>
 <text text-anchor="middle" x="55" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::getGpgIdPath</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title="Get password store directory path.">
 <polygon fill="white" stroke="#666666" points="304,-19 146,-19 146,0 304,0 304,-19"/>
 <text text-anchor="middle" x="225" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>

@@ -1,10 +1,10 @@
 <map id="ImitatePass::executeGit" name="ImitatePass::executeGit">
-<area shape="rect" id="Node000001" title="ImitatePass::executeGit easy wrapper for running git commands." alt="" coords="5,84,181,109"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="243,59,455,84"/>
+<area shape="rect" id="Node000001" title="Execute git command." alt="" coords="5,84,181,109"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="Execute command wrapper." alt="" coords="243,59,455,84"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,85,229,81,229,86,182,91"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="229,108,468,133"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title="Get git executable path." alt="" coords="229,108,468,133"/>
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="182,102,216,105,215,111,181,108"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Executes a wrapper command." alt="" coords="516,29,681,55"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="516,29,681,55"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="455,56,502,51,503,56,455,62"/>
 <area shape="rect" id="Node000004" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="525,79,673,119"/>
 <area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="455,81,511,87,511,92,455,86"/>

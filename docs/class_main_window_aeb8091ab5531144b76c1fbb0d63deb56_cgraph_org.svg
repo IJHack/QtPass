@@ -47,7 +47,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" target="_top" xlink:title="Get pass executable path.">
 <polygon fill="white" stroke="#666666" points="535,-433 349,-433 349,-414 535,-414 535,-433"/>
 <text text-anchor="middle" x="442" y="-421" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassExecutable</text>
 </a>
@@ -65,7 +65,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title="Get password store directory path.">
 <polygon fill="white" stroke="#666666" points="521,-322 363,-322 363,-303 521,-303 521,-322"/>
 <text text-anchor="middle" x="442" y="-310" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>
@@ -83,7 +83,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" target="_top" xlink:title="Get panel autoclear delay in seconds.">
 <polygon fill="white" stroke="#666666" points="310.5,-293.5 152.5,-293.5 152.5,-263.5 310.5,-263.5 310.5,-293.5"/>
 <text text-anchor="start" x="160.5" y="-281.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="231.5" y="-270.5" font-family="Helvetica,sans-Serif" font-size="10.00">PanelSeconds</text>
@@ -192,7 +192,7 @@
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" target="_top" xlink:title=" ">
+<g id="a_Node000014"><a xlink:href="class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" target="_top" xlink:title="Save use pass setting.">
 <polygon fill="white" stroke="#666666" points="307,-59 156,-59 156,-40 307,-40 307,-59"/>
 <text text-anchor="middle" x="231.5" y="-47" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setUsePass</text>
 </a>
@@ -210,7 +210,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="534,-396 350,-396 350,-377 534,-377 534,-396"/>
 <text text-anchor="middle" x="442" y="-384" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>
@@ -246,7 +246,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" target="_top" xlink:title="Get whether to use pass (true) or GPG (false).">
 <polygon fill="white" stroke="#666666" points="514,-359 370,-359 370,-340 514,-340 514,-359"/>
 <text text-anchor="middle" x="442" y="-347" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUsePass</text>
 </a>
@@ -264,7 +264,7 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" target="_top" xlink:title=" ">
+<g id="a_Node000012"><a xlink:href="class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" target="_top" xlink:title="Get autoclear delay in seconds.">
 <polygon fill="white" stroke="#666666" points="521,-141.5 363,-141.5 363,-111.5 521,-111.5 521,-141.5"/>
 <text text-anchor="start" x="371" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="442" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">Seconds</text>
@@ -301,7 +301,7 @@
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title=" ">
+<g id="a_Node000016"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title="Get the singleton instance.">
 <polygon fill="white" stroke="#666666" points="518,-56 366,-56 366,-37 518,-37 518,-56"/>
 <text text-anchor="middle" x="442" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getInstance</text>
 </a>

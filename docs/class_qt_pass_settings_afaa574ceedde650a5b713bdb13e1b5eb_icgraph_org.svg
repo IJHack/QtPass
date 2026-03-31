@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get whether to display password as&#45;is (no modification).">
 <polygon fill="#999999" stroke="#666666" points="369,-37 208,-37 208,-18 369,-18 369,-37"/>
 <text text-anchor="middle" x="288.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isDisplayAsIs</text>
 </a>

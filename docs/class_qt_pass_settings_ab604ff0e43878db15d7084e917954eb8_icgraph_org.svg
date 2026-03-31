@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get panel autoclear delay in seconds.">
 <polygon fill="#999999" stroke="#666666" points="525,-61.5 367,-61.5 367,-31.5 525,-31.5 525,-61.5"/>
 <text text-anchor="start" x="375" y="-49.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="446" y="-38.5" font-family="Helvetica,sans-Serif" font-size="10.00">PanelSeconds</text>

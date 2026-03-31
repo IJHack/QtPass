@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Resolve destination for move operation.">
 <polygon fill="#999999" stroke="#666666" points="286,-30 143,-30 143,0 286,0 286,-30"/>
 <text text-anchor="start" x="151" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::resolveMove</text>
 <text text-anchor="middle" x="214.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Destination</text>
@@ -31,7 +31,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" target="_top" xlink:title="Move password file.">
 <polygon fill="white" stroke="#666666" points="107,-24.5 0,-24.5 0,-5.5 107,-5.5 107,-24.5"/>
 <text text-anchor="middle" x="53.5" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Move</text>
 </a>

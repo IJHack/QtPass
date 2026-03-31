@@ -1,8 +1,8 @@
 <map id="Pass::executeWrapper" name="Pass::executeWrapper">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,171,80"/>
+<area shape="rect" id="Node000001" title="Execute wrapper with input." alt="" coords="5,55,171,80"/>
 <area shape="rect" id="Node000002" href="$class_executor.html#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app." alt="" coords="255,29,393,55"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="171,56,241,48,241,54,171,61"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="219,79,429,104"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="219,79,429,104"/>
 <area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="171,73,205,77,205,82,171,78"/>
 <area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="286,31,278,21,282,11,298,5,324,3,357,7,370,16,366,20,355,11,324,8,299,10,285,15,283,20,290,27"/>
 </map>

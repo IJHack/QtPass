@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Wrapper for executing pass to handle the password&#45;store.">
+<g id="a_Node000001"><a xlink:title="Implementation of Pass that wraps the &#39;pass&#39; command&#45;line tool.">
 <polygon fill="#999999" stroke="#666666" points="62,-19 2,-19 2,0 62,0 62,-19"/>
 <text text-anchor="middle" x="32" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass</text>
 </a>
@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_pass.html" target="_top" xlink:title="Acts as an abstraction for pass or pass imitation.">
+<g id="a_Node000002"><a xlink:href="class_pass.html" target="_top" xlink:title="Abstract base class for password store operations.">
 <polygon fill="white" stroke="#666666" points="51,-75 13,-75 13,-56 51,-56 51,-75"/>
 <text text-anchor="middle" x="32" y="-63" font-family="Helvetica,sans-Serif" font-size="10.00">Pass</text>
 </a>

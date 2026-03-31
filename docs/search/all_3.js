@@ -8,7 +8,6 @@ var searchData=
   ['deselectabletreeview_5',['deselectabletreeview',['../class_deselectable_tree_view.html',1,'DeselectableTreeView'],['../class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26',1,'DeselectableTreeView::DeselectableTreeView()']]],
   ['deselectabletreeview_2eh_6',['deselectabletreeview.h',['../deselectabletreeview_8h.html',1,'']]],
   ['displayasis_7',['displayAsIs',['../class_settings_constants.html#adc29ead56e2fe252b128f1557825182b',1,'SettingsConstants']]],
-  ['draganddropinfo_8',['dragAndDropInfo',['../structdrag_and_drop_info.html',1,'']]],
-  ['draganddropinfopasswordstore_9',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
-  ['dropmimedata_10',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]]
+  ['draganddropinfopasswordstore_8',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
+  ['dropmimedata_9',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]]
 ];

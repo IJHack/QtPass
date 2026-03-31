@@ -67,7 +67,7 @@ var sectionId = 'dynsection-98';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title="Initialize executable paths by auto&#45;detecting them.">
 <polygon fill="white" stroke="#666666" points="461,-24.5 291,-24.5 291,-5.5 461,-5.5 461,-24.5"/>
 <text text-anchor="middle" x="376" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::initExecutables</text>
 </a>

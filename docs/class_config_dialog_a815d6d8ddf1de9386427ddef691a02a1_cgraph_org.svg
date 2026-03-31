@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="583,-2112 399,-2112 399,-2093 583,-2093 583,-2112"/>
 <text text-anchor="middle" x="491" y="-2100" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" target="_top" xlink:title="Get pass executable path.">
 <polygon fill="white" stroke="#666666" points="584,-2056 398,-2056 398,-2037 584,-2037 584,-2056"/>
 <text text-anchor="middle" x="491" y="-2044" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassExecutable</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" target="_top" xlink:title="Get password store directory path.">
 <polygon fill="white" stroke="#666666" points="570,-2013 412,-2013 412,-1994 570,-1994 570,-2013"/>
 <text text-anchor="middle" x="491" y="-2001" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassStore</text>
 </a>
@@ -92,7 +92,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" target="_top" xlink:title="Get whether to use pass (true) or GPG (false).">
 <polygon fill="white" stroke="#666666" points="563,-1976 419,-1976 419,-1957 563,-1957 563,-1976"/>
 <text text-anchor="middle" x="491" y="-1964" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUsePass</text>
 </a>
@@ -110,7 +110,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" target="_top" xlink:title="Get panel autoclear delay in seconds.">
 <polygon fill="white" stroke="#666666" points="351.5,-1932.5 193.5,-1932.5 193.5,-1902.5 351.5,-1902.5 351.5,-1932.5"/>
 <text text-anchor="start" x="201.5" y="-1920.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="272.5" y="-1909.5" font-family="Helvetica,sans-Serif" font-size="10.00">PanelSeconds</text>
@@ -129,7 +129,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" target="_top" xlink:title="Get autoclear delay in seconds.">
 <polygon fill="white" stroke="#666666" points="351.5,-1884.5 193.5,-1884.5 193.5,-1854.5 351.5,-1854.5 351.5,-1884.5"/>
 <text text-anchor="start" x="201.5" y="-1872.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getAutoclear</text>
 <text text-anchor="middle" x="272.5" y="-1861.5" font-family="Helvetica,sans-Serif" font-size="10.00">Seconds</text>
@@ -148,7 +148,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a0fc94e3edf8c46231ae697b57c18b238" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a0fc94e3edf8c46231ae697b57c18b238" target="_top" xlink:title="Get clipboard type preference.">
 <polygon fill="white" stroke="#666666" points="351.5,-1836.5 193.5,-1836.5 193.5,-1806.5 351.5,-1806.5 351.5,-1836.5"/>
 <text text-anchor="start" x="201.5" y="-1824.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getClipBoard</text>
 <text text-anchor="middle" x="272.5" y="-1813.5" font-family="Helvetica,sans-Serif" font-size="10.00">TypeRaw</text>
@@ -167,7 +167,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" target="_top" xlink:title="Get git executable path.">
 <polygon fill="white" stroke="#666666" points="362,-1788 183,-1788 183,-1769 362,-1769 362,-1788"/>
 <text text-anchor="middle" x="272.5" y="-1776" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGitExecutable</text>
 </a>
@@ -277,7 +277,7 @@
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69" target="_top" xlink:title=" ">
+<g id="a_Node000016"><a xlink:href="class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69" target="_top" xlink:title="Get whether to auto&#45;add GPG ID when receiving files.">
 <polygon fill="white" stroke="#666666" points="348.5,-1542 196.5,-1542 196.5,-1523 348.5,-1523 348.5,-1542"/>
 <text text-anchor="middle" x="272.5" y="-1530" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAddGPGId</text>
 </a>
@@ -386,7 +386,7 @@
 <!-- Node22 -->
 <g id="Node000022" class="node">
 <title>Node22</title>
-<g id="a_Node000022"><a xlink:href="class_qt_pass_settings.html#afaa574ceedde650a5b713bdb13e1b5eb" target="_top" xlink:title=" ">
+<g id="a_Node000022"><a xlink:href="class_qt_pass_settings.html#afaa574ceedde650a5b713bdb13e1b5eb" target="_top" xlink:title="Get whether to display password as&#45;is (no modification).">
 <polygon fill="white" stroke="#666666" points="353,-1308 192,-1308 192,-1289 353,-1289 353,-1308"/>
 <text text-anchor="middle" x="272.5" y="-1296" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isDisplayAsIs</text>
 </a>
@@ -404,7 +404,7 @@
 <!-- Node23 -->
 <g id="Node000023" class="node">
 <title>Node23</title>
-<g id="a_Node000023"><a xlink:href="class_qt_pass_settings.html#a2e45500a82b847412e95f93e5e1d8fc3" target="_top" xlink:title=" ">
+<g id="a_Node000023"><a xlink:href="class_qt_pass_settings.html#a2e45500a82b847412e95f93e5e1d8fc3" target="_top" xlink:title="Get whether to hide content (password + username).">
 <polygon fill="white" stroke="#666666" points="354.5,-1271 190.5,-1271 190.5,-1252 354.5,-1252 354.5,-1271"/>
 <text text-anchor="middle" x="272.5" y="-1259" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isHideContent</text>
 </a>
@@ -441,7 +441,7 @@
 <!-- Node25 -->
 <g id="Node000025" class="node">
 <title>Node25</title>
-<g id="a_Node000025"><a xlink:href="class_qt_pass_settings.html#ac05e5f52d53be077e19ee21f07d1e367" target="_top" xlink:title=" ">
+<g id="a_Node000025"><a xlink:href="class_qt_pass_settings.html#ac05e5f52d53be077e19ee21f07d1e367" target="_top" xlink:title="Get whether to hide password in UI.">
 <polygon fill="white" stroke="#666666" points="358.5,-1185 186.5,-1185 186.5,-1166 358.5,-1166 358.5,-1185"/>
 <text text-anchor="middle" x="272.5" y="-1173" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isHidePassword</text>
 </a>
@@ -477,7 +477,7 @@
 <!-- Node27 -->
 <g id="Node000027" class="node">
 <title>Node27</title>
-<g id="a_Node000027"><a xlink:href="class_qt_pass_settings.html#a2876bf9c55e3abcc0460de1985d5234f" target="_top" xlink:title=" ">
+<g id="a_Node000027"><a xlink:href="class_qt_pass_settings.html#a2876bf9c55e3abcc0460de1985d5234f" target="_top" xlink:title="Get whether to disable line wrapping.">
 <polygon fill="white" stroke="#666666" points="341,-1110.5 204,-1110.5 204,-1080.5 341,-1080.5 341,-1110.5"/>
 <text text-anchor="start" x="212" y="-1098.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isNoLine</text>
 <text text-anchor="middle" x="272.5" y="-1087.5" font-family="Helvetica,sans-Serif" font-size="10.00">Wrapping</text>
@@ -533,7 +533,7 @@
 <!-- Node30 -->
 <g id="Node000030" class="node">
 <title>Node30</title>
-<g id="a_Node000030"><a xlink:href="class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" target="_top" xlink:title=" ">
+<g id="a_Node000030"><a xlink:href="class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" target="_top" xlink:title="Get whether to use autoclear for clipboard.">
 <polygon fill="white" stroke="#666666" points="357,-976 188,-976 188,-957 357,-957 357,-976"/>
 <text text-anchor="middle" x="272.5" y="-964" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseAutoclear</text>
 </a>
@@ -551,7 +551,7 @@
 <!-- Node31 -->
 <g id="Node000031" class="node">
 <title>Node31</title>
-<g id="a_Node000031"><a xlink:href="class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be" target="_top" xlink:title=" ">
+<g id="a_Node000031"><a xlink:href="class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be" target="_top" xlink:title="Get whether to use panel autoclear.">
 <polygon fill="white" stroke="#666666" points="357,-938.5 188,-938.5 188,-908.5 357,-908.5 357,-938.5"/>
 <text text-anchor="start" x="196" y="-926.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseAutoclear</text>
 <text text-anchor="middle" x="272.5" y="-915.5" font-family="Helvetica,sans-Serif" font-size="10.00">Panel</text>
@@ -588,7 +588,7 @@
 <!-- Node33 -->
 <g id="Node000033" class="node">
 <title>Node33</title>
-<g id="a_Node000033"><a xlink:href="class_qt_pass_settings.html#aa6bc2d2f460a567417dd46f134ebacd9" target="_top" xlink:title=" ">
+<g id="a_Node000033"><a xlink:href="class_qt_pass_settings.html#aa6bc2d2f460a567417dd46f134ebacd9" target="_top" xlink:title="Get whether to use monospace font.">
 <polygon fill="white" stroke="#666666" points="361.5,-853 183.5,-853 183.5,-834 361.5,-834 361.5,-853"/>
 <text text-anchor="middle" x="272.5" y="-841" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseMonospace</text>
 </a>
@@ -660,7 +660,7 @@
 <!-- Node37 -->
 <g id="Node000037" class="node">
 <title>Node37</title>
-<g id="a_Node000037"><a xlink:href="class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" target="_top" xlink:title=" ">
+<g id="a_Node000037"><a xlink:href="class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" target="_top" xlink:title="Get whether to use selection (X11) for clipboard.">
 <polygon fill="white" stroke="#666666" points="356,-705 189,-705 189,-686 356,-686 356,-705"/>
 <text text-anchor="middle" x="272.5" y="-693" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseSelection</text>
 </a>

@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Pass::gpgSupportsEd25519 check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much ...">
+<g id="a_Node000001"><a xlink:title="Check if GPG supports Ed25519 encryption.">
 <polygon fill="#999999" stroke="#666666" points="147,-37 0,-37 0,-18 147,-18 147,-37"/>
 <text text-anchor="middle" x="73.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::gpgSupportsEd25519</text>
 </a>
@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="367,-19 183,-19 183,0 367,0 367,-19"/>
 <text text-anchor="middle" x="275" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>

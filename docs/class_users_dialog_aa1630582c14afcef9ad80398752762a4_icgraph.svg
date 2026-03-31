@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="UsersDialog::accept.">
+<g id="a_Node000001"><a xlink:title="Handle dialog acceptance.">
 <polygon fill="#999999" stroke="#666666" points="291,-19 177,-19 177,0 291,0 291,-19"/>
 <text text-anchor="middle" x="234" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::accept</text>
 </a>
@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" target="_top" xlink:title="UsersDialog::UsersDialog basic constructor.">
+<g id="a_Node000002"><a xlink:href="class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" target="_top" xlink:title="Construct users dialog.">
 <polygon fill="white" stroke="#666666" points="141,-19 0,-19 0,0 141,0 141,-19"/>
 <text text-anchor="middle" x="70.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::UsersDialog</text>
 </a>

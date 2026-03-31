@@ -66,7 +66,7 @@ var sectionId = 'dynsection-3';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a423f05b95badd51857630009e9ce629f" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a423f05b95badd51857630009e9ce629f" target="_top" xlink:title="Save git executable path.">
 <polygon fill="white" stroke="#666666" points="372.5,-93 194.5,-93 194.5,-74 372.5,-74 372.5,-93"/>
 <text text-anchor="middle" x="283.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setGitExecutable</text>
 </a>
@@ -102,7 +102,7 @@ var sectionId = 'dynsection-3';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f" target="_top" xlink:title="Save pass executable path.">
 <polygon fill="white" stroke="#666666" points="376,-19 191,-19 191,0 376,0 376,-19"/>
 <text text-anchor="middle" x="283.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setPassExecutable</text>
 </a>
@@ -120,7 +120,7 @@ var sectionId = 'dynsection-3';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" target="_top" xlink:title="Get the singleton instance.">
 <polygon fill="white" stroke="#666666" points="564,-56 412,-56 412,-37 564,-37 564,-56"/>
 <text text-anchor="middle" x="488" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getInstance</text>
 </a>

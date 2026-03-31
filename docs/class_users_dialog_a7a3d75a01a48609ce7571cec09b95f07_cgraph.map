@@ -1,6 +1,6 @@
 <map id="UsersDialog::UsersDialog" name="UsersDialog::UsersDialog">
-<area shape="rect" id="Node000001" title="UsersDialog::UsersDialog basic constructor." alt="" coords="5,31,193,56"/>
-<area shape="rect" id="Node000002" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="UsersDialog::accept." alt="" coords="241,5,393,31"/>
+<area shape="rect" id="Node000001" title="Construct users dialog." alt="" coords="5,31,193,56"/>
+<area shape="rect" id="Node000002" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance." alt="" coords="241,5,393,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,30,227,26,228,31,194,35"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title=" " alt="" coords="441,31,619,56"/>
 <area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="194,41,428,41,428,46,194,46"/>

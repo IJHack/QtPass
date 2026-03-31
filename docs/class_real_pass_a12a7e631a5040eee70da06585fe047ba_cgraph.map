@@ -1,5 +1,5 @@
 <map id="RealPass::Init" name="RealPass::Init">
-<area shape="rect" id="Node000001" title="RealPass::Init initialize pass repository." alt="" coords="5,5,115,31"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="163,5,373,31"/>
+<area shape="rect" id="Node000001" title="Initialize password store." alt="" coords="5,5,115,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="163,5,373,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,15,149,15,149,21,115,21"/>
 </map>

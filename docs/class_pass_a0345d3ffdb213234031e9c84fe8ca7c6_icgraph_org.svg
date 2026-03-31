@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Emitted before executing a command.">
 <polygon fill="#999999" stroke="#666666" points="263,-19 102,-19 102,0 263,0 263,-19"/>
 <text text-anchor="middle" x="182.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::startingExecuteWrapper</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Pass::Pass wrapper for using either pass or the pass imitation.">
+<g id="a_Node000002"><a xlink:href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" target="_top" xlink:title="Construct a Pass instance.">
 <polygon fill="white" stroke="#666666" points="66,-19 0,-19 0,0 66,0 66,-19"/>
 <text text-anchor="middle" x="33" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Pass</text>
 </a>

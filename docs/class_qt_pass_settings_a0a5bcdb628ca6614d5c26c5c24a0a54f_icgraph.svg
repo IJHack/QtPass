@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Save panel autoclear seconds.">
 <polygon fill="#999999" stroke="#666666" points="448,-30 291,-30 291,0 448,0 448,-30"/>
 <text text-anchor="start" x="299" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setAutoclear</text>
 <text text-anchor="middle" x="369.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">PanelSeconds</text>

@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" target="_top" xlink:title="UsersDialog::accept.">
+<g id="a_Node000002"><a xlink:href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" target="_top" xlink:title="Handle dialog acceptance.">
 <polygon fill="white" stroke="#666666" points="324.5,-369.5 210.5,-369.5 210.5,-350.5 324.5,-350.5 324.5,-369.5"/>
 <text text-anchor="middle" x="267.5" y="-357.5" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::accept</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" target="_top" xlink:title="UsersDialog::UsersDialog basic constructor.">
+<g id="a_Node000003"><a xlink:href="class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" target="_top" xlink:title="Construct users dialog.">
 <polygon fill="white" stroke="#666666" points="148.5,-350.5 7.5,-350.5 7.5,-331.5 148.5,-331.5 148.5,-350.5"/>
 <text text-anchor="middle" x="78" y="-338.5" font-family="Helvetica,sans-Serif" font-size="10.00">UsersDialog::UsersDialog</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e" target="_top" xlink:title="StoreModel::dropMimeData.">
+<g id="a_Node000005"><a xlink:href="class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e" target="_top" xlink:title="Handle dropped MIME data.">
 <polygon fill="white" stroke="#666666" points="343,-238.5 192,-238.5 192,-219.5 343,-219.5 343,-238.5"/>
 <text text-anchor="middle" x="267.5" y="-226.5" font-family="Helvetica,sans-Serif" font-size="10.00">StoreModel::dropMimeData</text>
 </a>

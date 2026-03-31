@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Execute git move operation.">
 <polygon fill="#999999" stroke="#666666" points="302,-19 143,-19 143,0 302,0 302,-19"/>
 <text text-anchor="middle" x="222.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeMoveGit</text>
 </a>
@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" target="_top" xlink:title="Move password file.">
 <polygon fill="white" stroke="#666666" points="107,-19 0,-19 0,0 107,0 107,-19"/>
 <text text-anchor="middle" x="53.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::Move</text>
 </a>

@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="ImitatePass::Init initialize pass repository.">
+<g id="a_Node000001"><a xlink:title="Check if signing keys are valid.">
 <polygon fill="#999999" stroke="#666666" points="167,-37 0,-37 0,-18 167,-18 167,-37"/>
 <text text-anchor="middle" x="83.5" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::checkSigningKeys</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="387,-19 203,-19 203,0 387,0 387,-19"/>
 <text text-anchor="middle" x="295" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>

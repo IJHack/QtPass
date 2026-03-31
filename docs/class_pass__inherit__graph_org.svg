@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Acts as an abstraction for pass or pass imitation.">
+<g id="a_Node000001"><a xlink:title="Abstract base class for password store operations.">
 <polygon fill="#999999" stroke="#666666" points="98,-74 60,-74 60,-55 98,-55 98,-74"/>
 <text text-anchor="middle" x="79" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">Pass</text>
 </a>
@@ -20,7 +20,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_imitate_pass.html" target="_top" xlink:title="Imitates pass features when pass is not enabled or available.">
+<g id="a_Node000003"><a xlink:href="class_imitate_pass.html" target="_top" xlink:title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">
 <polygon fill="white" stroke="#666666" points="74,-19 0,-19 0,0 74,0 74,-19"/>
 <text text-anchor="middle" x="37" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_real_pass.html" target="_top" xlink:title="Wrapper for executing pass to handle the password&#45;store.">
+<g id="a_Node000004"><a xlink:href="class_real_pass.html" target="_top" xlink:title="Implementation of Pass that wraps the &#39;pass&#39; command&#45;line tool.">
 <polygon fill="white" stroke="#666666" points="152,-19 92,-19 92,0 152,0 152,-19"/>
 <text text-anchor="middle" x="122" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass</text>
 </a>

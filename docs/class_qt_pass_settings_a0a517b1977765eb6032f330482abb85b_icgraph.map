@@ -1,5 +1,5 @@
 <map id="QtPassSettings::isUseAutoclear" name="QtPassSettings::isUseAutoclear">
-<area shape="rect" id="Node000001" title=" " alt="" coords="804,31,1029,56"/>
+<area shape="rect" id="Node000001" title="Get whether to use autoclear for clipboard." alt="" coords="804,31,1029,56"/>
 <area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="554,5,750,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="790,34,750,30,750,25,791,29"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="548,55,756,80"/>

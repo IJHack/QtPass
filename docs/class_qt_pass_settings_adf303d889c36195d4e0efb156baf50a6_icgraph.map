@@ -1,5 +1,5 @@
 <map id="QtPassSettings::setSize" name="QtPassSettings::setSize">
-<area shape="rect" id="Node000001" title=" " alt="" coords="237,5,412,31"/>
+<area shape="rect" id="Node000001" title="Save window size." alt="" coords="237,5,412,31"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" title="MainWindow::closeEvent hide or quit." alt="" coords="5,5,189,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,21,190,21,190,15,223,15"/>
 </map>

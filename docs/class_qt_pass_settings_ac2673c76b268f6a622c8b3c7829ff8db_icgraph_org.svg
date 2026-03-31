@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get pass executable path.">
 <polygon fill="#999999" stroke="#666666" points="759,-93 573,-93 573,-74 759,-74 759,-93"/>
 <text text-anchor="middle" x="666" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassExecutable</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210" target="_top" xlink:title="RealPass::GitInit pass git pull wrapper which blocks until process finishes.">
+<g id="a_Node000008"><a xlink:href="class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210" target="_top" xlink:title="Pull with rebase.">
 <polygon fill="white" stroke="#666666" points="507,-19 397,-19 397,0 507,0 507,-19"/>
 <text text-anchor="middle" x="452" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">RealPass::GitPull_b</text>
 </a>
@@ -92,7 +92,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" target="_top" xlink:title="Initialize executable paths by auto&#45;detecting them.">
 <polygon fill="white" stroke="#666666" points="537,-56 367,-56 367,-37 537,-37 537,-56"/>
 <text text-anchor="middle" x="452" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::initExecutables</text>
 </a>

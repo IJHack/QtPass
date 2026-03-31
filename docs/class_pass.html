@@ -84,7 +84,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Acts as an abstraction for pass or pass imitation.  
+<p>Abstract base class for password store operations.  
  <a href="class_pass.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="pass_8h_source.html">pass.h</a>&gt;</code></p>
@@ -106,106 +106,135 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:ad0afad0f75995803c1aa90d936e3db18" id="r_ad0afad0f75995803c1aa90d936e3db18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ad0afad0f75995803c1aa90d936e3db18">error</a> (QProcess::ProcessError)</td></tr>
+<tr class="memdesc:ad0afad0f75995803c1aa90d936e3db18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when a process error occurs.  <br /></td></tr>
 <tr class="separator:ad0afad0f75995803c1aa90d936e3db18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0345d3ffdb213234031e9c84fe8ca7c6" id="r_a0345d3ffdb213234031e9c84fe8ca7c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</a> ()</td></tr>
+<tr class="memdesc:a0345d3ffdb213234031e9c84fe8ca7c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted before executing a command.  <br /></td></tr>
 <tr class="separator:a0345d3ffdb213234031e9c84fe8ca7c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a404664f7d589a307c9223c373b2622c3" id="r_a404664f7d589a307c9223c373b2622c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a404664f7d589a307c9223c373b2622c3">statusMsg</a> (const QString &amp;, int)</td></tr>
+<tr class="memdesc:a404664f7d589a307c9223c373b2622c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit status message.  <br /></td></tr>
 <tr class="separator:a404664f7d589a307c9223c373b2622c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0eafb54675479378ec98307f0e4fff65" id="r_a0eafb54675479378ec98307f0e4fff65"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a0eafb54675479378ec98307f0e4fff65">critical</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:a0eafb54675479378ec98307f0e4fff65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emit critical error.  <br /></td></tr>
 <tr class="separator:a0eafb54675479378ec98307f0e4fff65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bb040e1a33322a27cd85d8a367ef24f" id="r_a9bb040e1a33322a27cd85d8a367ef24f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a> (int exitCode, const QString &amp;err)</td></tr>
+<tr class="memdesc:a9bb040e1a33322a27cd85d8a367ef24f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted on process error exit.  <br /></td></tr>
 <tr class="separator:a9bb040e1a33322a27cd85d8a367ef24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6811d3de9b04450c59cf17d7ce9272a5" id="r_a6811d3de9b04450c59cf17d7ce9272a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a6811d3de9b04450c59cf17d7ce9272a5">finishedAny</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:a6811d3de9b04450c59cf17d7ce9272a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when any operation finishes.  <br /></td></tr>
 <tr class="separator:a6811d3de9b04450c59cf17d7ce9272a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a52541582298af5b2707447e3a57f85bf" id="r_a52541582298af5b2707447e3a57f85bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a52541582298af5b2707447e3a57f85bf">finishedGitInit</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:a52541582298af5b2707447e3a57f85bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when Git init finishes.  <br /></td></tr>
 <tr class="separator:a52541582298af5b2707447e3a57f85bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6d3acbdce8a5bc579bef175c85382df" id="r_ab6d3acbdce8a5bc579bef175c85382df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ab6d3acbdce8a5bc579bef175c85382df">finishedGitPull</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:ab6d3acbdce8a5bc579bef175c85382df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when Git pull finishes.  <br /></td></tr>
 <tr class="separator:ab6d3acbdce8a5bc579bef175c85382df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab892bcacdbe3081f677e456a3a8ac328" id="r_ab892bcacdbe3081f677e456a3a8ac328"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ab892bcacdbe3081f677e456a3a8ac328">finishedGitPush</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:ab892bcacdbe3081f677e456a3a8ac328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when Git push finishes.  <br /></td></tr>
 <tr class="separator:ab892bcacdbe3081f677e456a3a8ac328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24cdfb567ab68940f2a823704e2ab1ba" id="r_a24cdfb567ab68940f2a823704e2ab1ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba">finishedShow</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:a24cdfb567ab68940f2a823704e2ab1ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when show finishes.  <br /></td></tr>
 <tr class="separator:a24cdfb567ab68940f2a823704e2ab1ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ca44f13c68a03c1e91fbbfee37388ed" id="r_a8ca44f13c68a03c1e91fbbfee37388ed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a8ca44f13c68a03c1e91fbbfee37388ed">finishedOtpGenerate</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:a8ca44f13c68a03c1e91fbbfee37388ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when OTP generation finishes.  <br /></td></tr>
 <tr class="separator:a8ca44f13c68a03c1e91fbbfee37388ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71d8c179a7875dd2983de2aabff0a8cb" id="r_a71d8c179a7875dd2983de2aabff0a8cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a71d8c179a7875dd2983de2aabff0a8cb">finishedInsert</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:a71d8c179a7875dd2983de2aabff0a8cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when insert finishes.  <br /></td></tr>
 <tr class="separator:a71d8c179a7875dd2983de2aabff0a8cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a263cc9ceb5269427237ea43267667197" id="r_a263cc9ceb5269427237ea43267667197"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a263cc9ceb5269427237ea43267667197">finishedRemove</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:a263cc9ceb5269427237ea43267667197"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when remove finishes.  <br /></td></tr>
 <tr class="separator:a263cc9ceb5269427237ea43267667197"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a4c2bbb80372455e0d406fbc940e219" id="r_a7a4c2bbb80372455e0d406fbc940e219"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a7a4c2bbb80372455e0d406fbc940e219">finishedInit</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:a7a4c2bbb80372455e0d406fbc940e219"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when init finishes.  <br /></td></tr>
 <tr class="separator:a7a4c2bbb80372455e0d406fbc940e219"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ca180cb5769aa87186474f7eda9e2a5" id="r_a3ca180cb5769aa87186474f7eda9e2a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a3ca180cb5769aa87186474f7eda9e2a5">finishedMove</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:a3ca180cb5769aa87186474f7eda9e2a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when move finishes.  <br /></td></tr>
 <tr class="separator:a3ca180cb5769aa87186474f7eda9e2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22febea5d24676854f3dad24260df4d5" id="r_a22febea5d24676854f3dad24260df4d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a22febea5d24676854f3dad24260df4d5">finishedCopy</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:a22febea5d24676854f3dad24260df4d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when copy finishes.  <br /></td></tr>
 <tr class="separator:a22febea5d24676854f3dad24260df4d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc6173e796622bf53878d7bd64861c7c" id="r_abc6173e796622bf53878d7bd64861c7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#abc6173e796622bf53878d7bd64861c7c">finishedGenerate</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:abc6173e796622bf53878d7bd64861c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when generate finishes.  <br /></td></tr>
 <tr class="separator:abc6173e796622bf53878d7bd64861c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeb0213d032e070ad788398328c0a080c" id="r_aeb0213d032e070ad788398328c0a080c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#aeb0213d032e070ad788398328c0a080c">finishedGenerateGPGKeys</a> (const QString &amp;, const QString &amp;)</td></tr>
+<tr class="memdesc:aeb0213d032e070ad788398328c0a080c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when GPG key generation finishes.  <br /></td></tr>
 <tr class="separator:aeb0213d032e070ad788398328c0a080c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5d0cea4019f5c123fb4a4417de8d95b9" id="r_a5d0cea4019f5c123fb4a4417de8d95b9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9">Pass</a> ()</td></tr>
-<tr class="memdesc:a5d0cea4019f5c123fb4a4417de8d95b9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation.">Pass::Pass</a> wrapper for using either pass or the pass imitation.  <br /></td></tr>
+<tr class="memdesc:a5d0cea4019f5c123fb4a4417de8d95b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance.  <br /></td></tr>
 <tr class="separator:a5d0cea4019f5c123fb4a4417de8d95b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a012c47a55b3cc3467ad0f013716f623a" id="r_a012c47a55b3cc3467ad0f013716f623a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a012c47a55b3cc3467ad0f013716f623a">init</a> ()</td></tr>
-<tr class="memdesc:a012c47a55b3cc3467ad0f013716f623a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the pass wrapper environment.  <br /></td></tr>
+<tr class="memdesc:a012c47a55b3cc3467ad0f013716f623a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance.  <br /></td></tr>
 <tr class="separator:a012c47a55b3cc3467ad0f013716f623a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9575bbed98a8dfb8a3f5a30c18d8bfcf" id="r_a9575bbed98a8dfb8a3f5a30c18d8bfcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a9575bbed98a8dfb8a3f5a30c18d8bfcf">~Pass</a> () override=default</td></tr>
 <tr class="separator:a9575bbed98a8dfb8a3f5a30c18d8bfcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26bec7c69e7c35ccb67f8057db90825e" id="r_a26bec7c69e7c35ccb67f8057db90825e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a26bec7c69e7c35ccb67f8057db90825e">GitInit</a> ()=0</td></tr>
+<tr class="memdesc:a26bec7c69e7c35ccb67f8057db90825e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize Git repository in password store.  <br /></td></tr>
 <tr class="separator:a26bec7c69e7c35ccb67f8057db90825e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30c3829a890d65d3e4ba90c12b1852e8" id="r_a30c3829a890d65d3e4ba90c12b1852e8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8">GitPull</a> ()=0</td></tr>
+<tr class="memdesc:a30c3829a890d65d3e4ba90c12b1852e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pull changes from remote Git repository.  <br /></td></tr>
 <tr class="separator:a30c3829a890d65d3e4ba90c12b1852e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a109d5c0a7f565398b7238c32bb6328" id="r_a7a109d5c0a7f565398b7238c32bb6328"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a7a109d5c0a7f565398b7238c32bb6328">GitPull_b</a> ()=0</td></tr>
+<tr class="memdesc:a7a109d5c0a7f565398b7238c32bb6328"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pull with rebase from remote.  <br /></td></tr>
 <tr class="separator:a7a109d5c0a7f565398b7238c32bb6328"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b5fa97ca6f3795512ac7c10db5c8f09" id="r_a7b5fa97ca6f3795512ac7c10db5c8f09"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09">GitPush</a> ()=0</td></tr>
+<tr class="memdesc:a7b5fa97ca6f3795512ac7c10db5c8f09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push changes to remote Git repository.  <br /></td></tr>
 <tr class="separator:a7b5fa97ca6f3795512ac7c10db5c8f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6520ffa669cd7934091934b24593d99c" id="r_a6520ffa669cd7934091934b24593d99c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a6520ffa669cd7934091934b24593d99c">Show</a> (QString file)=0</td></tr>
+<tr class="memdesc:a6520ffa669cd7934091934b24593d99c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show decrypted password file.  <br /></td></tr>
 <tr class="separator:a6520ffa669cd7934091934b24593d99c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfe228b7e546aeb0e33bb8102f2e7f19" id="r_abfe228b7e546aeb0e33bb8102f2e7f19"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#abfe228b7e546aeb0e33bb8102f2e7f19">OtpGenerate</a> (QString file)=0</td></tr>
+<tr class="memdesc:abfe228b7e546aeb0e33bb8102f2e7f19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate OTP for password file.  <br /></td></tr>
 <tr class="separator:abfe228b7e546aeb0e33bb8102f2e7f19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86ad2005a6517f9c304a9e156755778c" id="r_a86ad2005a6517f9c304a9e156755778c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a86ad2005a6517f9c304a9e156755778c">Insert</a> (QString file, QString value, bool force)=0</td></tr>
+<tr class="memdesc:a86ad2005a6517f9c304a9e156755778c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert or update password.  <br /></td></tr>
 <tr class="separator:a86ad2005a6517f9c304a9e156755778c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5aedb6df7aa57385eb19a78cdbd3e764" id="r_a5aedb6df7aa57385eb19a78cdbd3e764"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a5aedb6df7aa57385eb19a78cdbd3e764">Remove</a> (QString file, bool isDir)=0</td></tr>
+<tr class="memdesc:a5aedb6df7aa57385eb19a78cdbd3e764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove password file or directory.  <br /></td></tr>
 <tr class="separator:a5aedb6df7aa57385eb19a78cdbd3e764"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9dde6644865bd583dc09a52d17ffb49" id="r_ab9dde6644865bd583dc09a52d17ffb49"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ab9dde6644865bd583dc09a52d17ffb49">Move</a> (const QString srcDir, const QString dest, const bool force=false)=0</td></tr>
+<tr class="memdesc:ab9dde6644865bd583dc09a52d17ffb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move password file or directory.  <br /></td></tr>
 <tr class="separator:ab9dde6644865bd583dc09a52d17ffb49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a41ce3d629b20902e9d14ff285c1f49" id="r_a1a41ce3d629b20902e9d14ff285c1f49"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49">Copy</a> (const QString srcDir, const QString dest, const bool force=false)=0</td></tr>
+<tr class="memdesc:a1a41ce3d629b20902e9d14ff285c1f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy password file or directory.  <br /></td></tr>
 <tr class="separator:a1a41ce3d629b20902e9d14ff285c1f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee98d184ed11013a9a9dc08d05fbb1a2" id="r_aee98d184ed11013a9a9dc08d05fbb1a2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2">Init</a> (QString path, const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;users)=0</td></tr>
+<tr class="memdesc:aee98d184ed11013a9a9dc08d05fbb1a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize new password store.  <br /></td></tr>
 <tr class="separator:aee98d184ed11013a9a9dc08d05fbb1a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cff21960fa7bc334a8fba8c3fff5d07" id="r_a8cff21960fa7bc334a8fba8c3fff5d07"><td class="memItemLeft" align="right" valign="top">virtual auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a8cff21960fa7bc334a8fba8c3fff5d07">Generate_b</a> (unsigned int length, const QString &amp;charset) -&gt; QString</td></tr>
-<tr class="memdesc:a8cff21960fa7bc334a8fba8c3fff5d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass::Generate use either pwgen or internal password generator.  <br /></td></tr>
+<tr class="memdesc:a8cff21960fa7bc334a8fba8c3fff5d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random password.  <br /></td></tr>
 <tr class="separator:a8cff21960fa7bc334a8fba8c3fff5d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c29f7bd4ca235d00d9dac6a37e14f4f" id="r_a0c29f7bd4ca235d00d9dac6a37e14f4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f">GenerateGPGKeys</a> (QString batch)</td></tr>
-<tr class="memdesc:a0c29f7bd4ca235d00d9dac6a37e14f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . .">Pass::GenerateGPGKeys</a> internal gpg keypair generator . .  <br /></td></tr>
+<tr class="memdesc:a0c29f7bd4ca235d00d9dac6a37e14f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate GPG keys using batch script.  <br /></td></tr>
 <tr class="separator:a0c29f7bd4ca235d00d9dac6a37e14f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6ed6c10b07137f62e127b290ebd428a2" id="r_a6ed6c10b07137f62e127b290ebd428a2"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2">listKeys</a> (QStringList keystrings, bool secret=false) -&gt; QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;</td></tr>
-<tr class="memdesc:a6ed6c10b07137f62e127b290ebd428a2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="Pass::listKeys list users.">Pass::listKeys</a> list users.  <br /></td></tr>
+<tr class="memdesc:a6ed6c10b07137f62e127b290ebd428a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">List GPG keys matching patterns.  <br /></td></tr>
 <tr class="separator:a6ed6c10b07137f62e127b290ebd428a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a170c0e1d359eb3f2d7b5f75f60082bd6" id="r_a170c0e1d359eb3f2d7b5f75f60082bd6"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6">listKeys</a> (const QString &amp;keystring=&quot;&quot;, bool secret=false) -&gt; QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt;</td></tr>
-<tr class="memdesc:a170c0e1d359eb3f2d7b5f75f60082bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="Pass::listKeys list users.">Pass::listKeys</a> list users.  <br /></td></tr>
+<tr class="memdesc:a170c0e1d359eb3f2d7b5f75f60082bd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">List GPG keys.  <br /></td></tr>
 <tr class="separator:a170c0e1d359eb3f2d7b5f75f60082bd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac679a086b289cdb9245906948ba0458a" id="r_ac679a086b289cdb9245906948ba0458a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a">updateEnv</a> ()</td></tr>
-<tr class="memdesc:ac679a086b289cdb9245906948ba0458a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles)">Pass::updateEnv</a> update the execution environment (used when switching profiles)  <br /></td></tr>
+<tr class="memdesc:ac679a086b289cdb9245906948ba0458a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update environment for subprocesses.  <br /></td></tr>
 <tr class="separator:ac679a086b289cdb9245906948ba0458a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a4c2bca8a9a59a032adc68846055b056b" id="r_a4c2bca8a9a59a032adc68846055b056b"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b">gpgSupportsEd25519</a> ()</td></tr>
-<tr class="memdesc:a4c2bca8a9a59a032adc68846055b056b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Pass::gpgSupportsEd25519 check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much ...">Pass::gpgSupportsEd25519</a> check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much faster for key generation.  <br /></td></tr>
+<tr class="memdesc:a4c2bca8a9a59a032adc68846055b056b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if GPG supports Ed25519 encryption.  <br /></td></tr>
 <tr class="separator:a4c2bca8a9a59a032adc68846055b056b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3284a937d0ca8ae2ea2d81ec556c37b" id="r_ae3284a937d0ca8ae2ea2d81ec556c37b"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b">getDefaultKeyTemplate</a> ()</td></tr>
-<tr class="memdesc:ae3284a937d0ca8ae2ea2d81ec556c37b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Pass::getDefaultKeyTemplate return default key generation template Uses ed25519 if supported,...">Pass::getDefaultKeyTemplate</a> return default key generation template Uses ed25519 if supported, otherwise falls back to RSA.  <br /></td></tr>
+<tr class="memdesc:ae3284a937d0ca8ae2ea2d81ec556c37b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get default key template for new GPG keys.  <br /></td></tr>
 <tr class="separator:ae3284a937d0ca8ae2ea2d81ec556c37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bab4c97e4a327cc34060a67c09959bf" id="r_a7bab4c97e4a327cc34060a67c09959bf"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">getGpgIdPath</a> (const QString &amp;for_file) -&gt; QString</td></tr>
-<tr class="memdesc:a7bab4c97e4a327cc34060a67c09959bf"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Pass::getGpgIdPath return gpgid file path for some file (folder).">Pass::getGpgIdPath</a> return gpgid file path for some file (folder).  <br /></td></tr>
+<tr class="memdesc:a7bab4c97e4a327cc34060a67c09959bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get .gpg-id file path for a password file.  <br /></td></tr>
 <tr class="separator:a7bab4c97e4a327cc34060a67c09959bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a693825d2ad62813cf103860ef6211370" id="r_a693825d2ad62813cf103860ef6211370"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a693825d2ad62813cf103860ef6211370">getRecipientList</a> (const QString &amp;for_file) -&gt; QStringList</td></tr>
-<tr class="memdesc:a693825d2ad62813cf103860ef6211370"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a693825d2ad62813cf103860ef6211370" title="Pass::getRecipientList return list of gpg-id&#39;s to encrypt for.">Pass::getRecipientList</a> return list of gpg-id's to encrypt for.  <br /></td></tr>
+<tr class="memdesc:a693825d2ad62813cf103860ef6211370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of recipients for a password file.  <br /></td></tr>
 <tr class="separator:a693825d2ad62813cf103860ef6211370"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1f31c62b7117b99882625dbef654533" id="r_ae1f31c62b7117b99882625dbef654533"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ae1f31c62b7117b99882625dbef654533">getRecipientString</a> (const QString &amp;for_file, const QString &amp;separator=&quot; &quot;, int *count=nullptr) -&gt; QStringList</td></tr>
-<tr class="memdesc:ae1f31c62b7117b99882625dbef654533"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#ae1f31c62b7117b99882625dbef654533" title="Pass::getRecipientString formatted string for use with GPG.">Pass::getRecipientString</a> formatted string for use with GPG.  <br /></td></tr>
+<tr class="memdesc:ae1f31c62b7117b99882625dbef654533"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get recipients as string.  <br /></td></tr>
 <tr class="separator:ae1f31c62b7117b99882625dbef654533"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
@@ -216,21 +245,22 @@ Protected Types</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-slots" name="pro-slots"></a>
 Protected Slots</h2></td></tr>
 <tr class="memitem:ad51174f24ecdbc14a55e4588a34b8563" id="r_ad51174f24ecdbc14a55e4588a34b8563"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">finished</a> (int id, int exitCode, const QString &amp;out, const QString &amp;err)</td></tr>
-<tr class="memdesc:ad51174f24ecdbc14a55e4588a34b8563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass::processFinished reemits specific signal based on what process has finished.  <br /></td></tr>
+<tr class="memdesc:ad51174f24ecdbc14a55e4588a34b8563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle process completion.  <br /></td></tr>
 <tr class="separator:ad51174f24ecdbc14a55e4588a34b8563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
-<tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a wrapper command.  <br /></td></tr>
+<tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
 <tr class="separator:a66f59138ffe856fd421410d9af9ddc62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff660edce34d33f5a2adfa8c130470f0" id="r_aff660edce34d33f5a2adfa8c130470f0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a> (const QString &amp;charset, unsigned int length) -&gt; QString</td></tr>
-<tr class="memdesc:aff660edce34d33f5a2adfa8c130470f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random password from the given charset.  <br /></td></tr>
+<tr class="memdesc:aff660edce34d33f5a2adfa8c130470f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random password from charset.  <br /></td></tr>
 <tr class="separator:aff660edce34d33f5a2adfa8c130470f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f63e4e86c7ffec6df333e466fb38c3b" id="r_a4f63e4e86c7ffec6df333e466fb38c3b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">boundedRandom</a> (quint32 bound) -&gt; quint32</td></tr>
-<tr class="memdesc:a4f63e4e86c7ffec6df333e466fb38c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random number bounded by the given value.  <br /></td></tr>
+<tr class="memdesc:a4f63e4e86c7ffec6df333e466fb38c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random number in range.  <br /></td></tr>
 <tr class="separator:a4f63e4e86c7ffec6df333e466fb38c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a924b4cd54e4b5e24fa42661b7eccec07" id="r_a924b4cd54e4b5e24fa42661b7eccec07"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout=true, bool readStderr=true)</td></tr>
+<tr class="memdesc:a924b4cd54e4b5e24fa42661b7eccec07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute wrapper with input.  <br /></td></tr>
 <tr class="separator:a924b4cd54e4b5e24fa42661b7eccec07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
@@ -239,9 +269,16 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a903a833ade1109f9cb75e3bbeab8d0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Acts as an abstraction for pass or pass imitation. </p>
+<div class="textblock"><p>Abstract base class for password store operations. </p>
+<p><a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> provides an abstraction layer for password management, supporting both the native 'pass' utility and gopass/imitation backends. It handles:</p><ul>
+<li>Password file operations (show, insert, remove, move, copy)</li>
+<li>GPG key management and Git integration</li>
+<li>OTP generation</li>
+<li>Random password generation</li>
+</ul>
+<p>Subclasses must implement Git and password operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00020">20</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00029">29</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2e71b5174b4ef25a1e91d8c56177b772" name="a2e71b5174b4ef25a1e91d8c56177b772"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e71b5174b4ef25a1e91d8c56177b772">&#9670;&#160;</a></span>PROCESS</h2>
@@ -263,7 +300,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00029">29</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00038">38</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -283,7 +320,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation.">Pass::Pass</a> wrapper for using either pass or the pass imitation. </p>
+<p>Construct a <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance. </p>
+<p><a class="el" href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance.">Pass::Pass</a> wrapper for using either pass or the pass imitation. </p>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00031">31</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -346,7 +384,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Generates a random number bounded by the given value. </p>
+<p>Generate random number in range. </p>
+<p>Generates a random number bounded by the given value.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bound</td><td>Upper bound (exclusive). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Random number.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">bound</td><td>Upper bound (exclusive) </td></tr>
@@ -399,6 +445,16 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Copy password file or directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">srcDir</td><td>Source path. </td></tr>
+    <tr><td class="paramname">dest</td><td>Destination path. </td></tr>
+    <tr><td class="paramname">force</td><td>Overwrite existing. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a640ea218267605b9ca78c21ca5677690">RealPass</a>.</p>
 
 </div>
@@ -436,6 +492,15 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emit critical error. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">title</td><td>Error title. </td></tr>
+    <tr><td class="paramname">message</td><td>Error message. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -469,6 +534,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when a process error occurs. </p>
 
 </div>
 </div>
@@ -524,9 +591,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Executes a wrapper command. </p>
+<p>Execute external wrapper command. </p>
+<p>Executes a wrapper command.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">id</td><td>Process identifier. </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">readStdout</td><td>Capture stdout. </td></tr>
+    <tr><td class="paramname">readStderr</td><td>Capture stderr.</td></tr>
     <tr><td class="paramname">id</td><td>Process ID </td></tr>
     <tr><td class="paramname">app</td><td>Application to execute </td></tr>
     <tr><td class="paramname">args</td><td>Arguments </td></tr>
@@ -612,6 +685,19 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Execute wrapper with input. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Process identifier. </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">input</td><td>Input to pass to stdin. </td></tr>
+    <tr><td class="paramname">readStdout</td><td>Capture stdout. </td></tr>
+    <tr><td class="paramname">readStderr</td><td>Capture stderr. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe">ImitatePass</a>.</p>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00059">59</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
@@ -671,10 +757,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Pass::processFinished reemits specific signal based on what process has finished. </p>
+<p>Handle process completion. </p>
+<p>Pass::processFinished reemits specific signal based on what process has finished.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>id of <a class="el" href="class_pass.html" title="Acts as an abstraction for pass or pass imitation.">Pass</a> process that was scheduled and finished </td></tr>
+    <tr><td class="paramname">id</td><td>Process identifier. </td></tr>
+    <tr><td class="paramname">exitCode</td><td>Process exit code. </td></tr>
+    <tr><td class="paramname">out</td><td>Standard output. </td></tr>
+    <tr><td class="paramname">err</td><td>Standard error.</td></tr>
+    <tr><td class="paramname">id</td><td>id of <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> process that was scheduled and finished </td></tr>
     <tr><td class="paramname">exitCode</td><td>return code of a process </td></tr>
     <tr><td class="paramname">out</td><td>output generated by process(if capturing was requested, empty
              otherwise) </td></tr>
@@ -738,6 +829,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Emitted when any operation finishes. </p>
+
 </div>
 </div>
 <a id="a22febea5d24676854f3dad24260df4d5" name="a22febea5d24676854f3dad24260df4d5"></a>
@@ -773,6 +866,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when copy finishes. </p>
 <div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -817,6 +912,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Emitted when generate finishes. </p>
+
 </div>
 </div>
 <a id="aeb0213d032e070ad788398328c0a080c" name="aeb0213d032e070ad788398328c0a080c"></a>
@@ -852,6 +949,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when GPG key generation finishes. </p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -895,6 +994,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when Git init finishes. </p>
 <div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
@@ -938,6 +1039,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when Git pull finishes. </p>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
@@ -981,6 +1084,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when Git push finishes. </p>
 <div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
@@ -1024,6 +1129,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when init finishes. </p>
 <div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
@@ -1067,6 +1174,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when insert finishes. </p>
 <div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
@@ -1110,6 +1219,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when move finishes. </p>
 <div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
@@ -1143,6 +1254,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when OTP generation finishes. </p>
 <div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
@@ -1186,6 +1299,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when remove finishes. </p>
 <div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary" style="display:block;">
@@ -1219,6 +1334,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted when show finishes. </p>
 <div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-19-summary" class="dynsummary" style="display:block;">
@@ -1263,7 +1380,16 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Pass::Generate use either pwgen or internal password generator. </p>
+<p>Generate random password. </p>
+<p>Pass::Generate use either pwgen or internal password generator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">length</td><td>Password length. </td></tr>
+    <tr><td class="paramname">charset</td><td>Character set to use. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Generated password.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">length</td><td>of the desired password </td></tr>
@@ -1300,9 +1426,11 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Pass::GenerateGPGKeys internal gpg keypair generator . .">Pass::GenerateGPGKeys</a> internal gpg keypair generator . . </p>
+<p>Generate GPG keys using batch script. </p>
+<p><a class="el" href="class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Generate GPG keys using batch script.">Pass::GenerateGPGKeys</a> internal gpg keypair generator . .</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">batch</td><td>GPG batch script content.</td></tr>
     <tr><td class="paramname">batch</td><td>GnuPG style configuration string </td></tr>
   </table>
   </dd>
@@ -1353,7 +1481,16 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Generates a random password from the given charset. </p>
+<p>Generate random password from charset. </p>
+<p>Generates a random password from the given charset.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">charset</td><td>Character set. </td></tr>
+    <tr><td class="paramname">length</td><td>Password length. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Generated password.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">charset</td><td>Characters to use in the password </td></tr>
@@ -1390,8 +1527,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Pass::getDefaultKeyTemplate return default key generation template Uses ed25519 if supported,...">Pass::getDefaultKeyTemplate</a> return default key generation template Uses ed25519 if supported, otherwise falls back to RSA. </p>
-<dl class="section return"><dt>Returns</dt><dd>GPG batch template string </dd></dl>
+<p>Get default key template for new GPG keys. </p>
+<p><a class="el" href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Get default key template for new GPG keys.">Pass::getDefaultKeyTemplate</a> return default key generation template Uses ed25519 if supported, otherwise falls back to RSA.</p>
+<dl class="section return"><dt>Returns</dt><dd>Default template string.</dd>
+<dd>
+GPG batch template string </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00172">172</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1435,7 +1575,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Pass::getGpgIdPath return gpgid file path for some file (folder).">Pass::getGpgIdPath</a> return gpgid file path for some file (folder). </p>
+<p>Get .gpg-id file path for a password file. </p>
+<p><a class="el" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Get .gpg-id file path for a password file.">Pass::getGpgIdPath</a> return gpgid file path for some file (folder).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">for_file</td><td>Path to password file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Path to .gpg-id file.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">for_file</td><td>which file (folder) would you like the gpgid file path for. </td></tr>
@@ -1486,7 +1634,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#a693825d2ad62813cf103860ef6211370" title="Pass::getRecipientList return list of gpg-id&#39;s to encrypt for.">Pass::getRecipientList</a> return list of gpg-id's to encrypt for. </p>
+<p>Get list of recipients for a password file. </p>
+<p><a class="el" href="class_pass.html#a693825d2ad62813cf103860ef6211370" title="Get list of recipients for a password file.">Pass::getRecipientList</a> return list of gpg-id's to encrypt for.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">for_file</td><td>Path to password file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>List of recipient key IDs.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">for_file</td><td>which file (folder) would you like recipients for </td></tr>
@@ -1546,7 +1702,17 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#ae1f31c62b7117b99882625dbef654533" title="Pass::getRecipientString formatted string for use with GPG.">Pass::getRecipientString</a> formatted string for use with GPG. </p>
+<p>Get recipients as string. </p>
+<p><a class="el" href="class_pass.html#ae1f31c62b7117b99882625dbef654533" title="Get recipients as string.">Pass::getRecipientString</a> formatted string for use with GPG.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">for_file</td><td>Path to password file. </td></tr>
+    <tr><td class="paramname">separator</td><td>Separator between recipients. </td></tr>
+    <tr><td class="paramname">count</td><td>Pointer to store recipient count. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>List of recipient key IDs.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">for_file</td><td>which file (folder) would you like recipients for </td></tr>
@@ -1591,6 +1757,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Initialize Git repository in password store. </p>
+
 <p>Implemented in <a class="el" href="class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb">ImitatePass</a>, and <a class="el" href="class_real_pass.html#aacaf85a65fc1398c356dd44370e5e22f">RealPass</a>.</p>
 
 </div>
@@ -1617,6 +1785,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Pull changes from remote Git repository. </p>
 
 <p>Implemented in <a class="el" href="class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ac3206e85bc586214e6cc75186cff65c3">RealPass</a>.</p>
 
@@ -1645,6 +1815,8 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Pull with rebase from remote. </p>
+
 <p>Implemented in <a class="el" href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210">RealPass</a>.</p>
 
 </div>
@@ -1671,6 +1843,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Push changes to remote Git repository. </p>
 
 <p>Implemented in <a class="el" href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ae32fd82fe5e57b2c45df05bfe2991b5b">RealPass</a>.</p>
 
@@ -1699,8 +1873,11 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Pass::gpgSupportsEd25519 check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much ...">Pass::gpgSupportsEd25519</a> check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much faster for key generation. </p>
-<dl class="section return"><dt>Returns</dt><dd>true if ed25519 is supported </dd></dl>
+<p>Check if GPG supports Ed25519 encryption. </p>
+<p><a class="el" href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Check if GPG supports Ed25519 encryption.">Pass::gpgSupportsEd25519</a> check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much faster for key generation.</p>
+<dl class="section return"><dt>Returns</dt><dd>true if Ed25519 is supported.</dd>
+<dd>
+true if ed25519 is supported </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00151">151</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -1735,6 +1912,7 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Initialize the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance. </p>
 <p>Initializes the pass wrapper environment. </p>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00072">72</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
@@ -1782,6 +1960,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Initialize new password store. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Root of password store. </td></tr>
+    <tr><td class="paramname">users</td><td>List of recipient GPG keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a12a7e631a5040eee70da06585fe047ba">RealPass</a>.</p>
 
 </div>
@@ -1826,6 +2013,16 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Insert or update password. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>Path to password file. </td></tr>
+    <tr><td class="paramname">value</td><td>Password content to store. </td></tr>
+    <tr><td class="paramname">force</td><td>Overwrite existing file. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a45193fab522965fe8b1c8f8996e6a49a">RealPass</a>.</p>
 
 </div>
@@ -1856,7 +2053,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="Pass::listKeys list users.">Pass::listKeys</a> list users. </p>
+<p>List GPG keys. </p>
+<p><a class="el" href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns.">Pass::listKeys</a> list users.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keystring</td><td>Search pattern. </td></tr>
+    <tr><td class="paramname">secret</td><td>Include secret keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>List of matching keys.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">keystring</td><td></td></tr>
@@ -1896,7 +2102,16 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="Pass::listKeys list users.">Pass::listKeys</a> list users. </p>
+<p>List GPG keys matching patterns. </p>
+<p><a class="el" href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns.">Pass::listKeys</a> list users.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keystrings</td><td>List of search patterns. </td></tr>
+    <tr><td class="paramname">secret</td><td>Include secret keys. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>List of matching keys.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">keystrings</td><td></td></tr>
@@ -1957,6 +2172,16 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Move password file or directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">srcDir</td><td>Source path. </td></tr>
+    <tr><td class="paramname">dest</td><td>Destination path. </td></tr>
+    <tr><td class="paramname">force</td><td>Overwrite existing. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ad9f71cf753e5fce4772bec086237d033">RealPass</a>.</p>
 
 </div>
@@ -1984,6 +2209,14 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Generate OTP for password file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>Path to password file. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Implemented in <a class="el" href="class_imitate_pass.html#a18eac6111a1d77a3f8ded93b7be16270">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a39c56e5ad8b46fc6c4f00b7000bccc99">RealPass</a>.</p>
 
@@ -2022,6 +2255,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted on process error exit. </p>
 <div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-32-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-32-summary" class="dynsummary" style="display:block;">
@@ -2066,6 +2301,15 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Remove password file or directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>Path to remove. </td></tr>
+    <tr><td class="paramname">isDir</td><td>true if removing a directory. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a96679194b4a0e6b99eb41cf25349c7fd">RealPass</a>.</p>
 
 </div>
@@ -2094,6 +2338,14 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Show decrypted password file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file</td><td>Path to password file relative to store root. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Implemented in <a class="el" href="class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a63da21db00da709ae5aa8f7a992e16e1">RealPass</a>.</p>
 
 </div>
@@ -2120,6 +2372,8 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emitted before executing a command. </p>
 <div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-33-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary" style="display:block;">
@@ -2163,6 +2417,15 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Emit status message. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Message</td><td>text. </td></tr>
+    <tr><td class="paramname">Timeout</td><td>in ms. </td></tr>
+  </table>
+  </dd>
+</dl>
 <div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-34-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-34-summary" class="dynsummary" style="display:block;">
@@ -2188,7 +2451,8 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles)">Pass::updateEnv</a> update the execution environment (used when switching profiles) </p>
+<p>Update environment for subprocesses. </p>
+<p><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses.">Pass::updateEnv</a> update the execution environment (used when switching profiles) </p>
 
 <p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00337">337</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -2222,7 +2486,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00027">27</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00036">36</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

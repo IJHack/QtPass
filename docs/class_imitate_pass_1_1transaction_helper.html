@@ -82,18 +82,24 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>RAII helper for wrapping operations in transactions.  
+ <a href="class_imitate_pass_1_1transaction_helper.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab37f5a0aff46fb0aa7ae9cc9cc17f38e" id="r_ab37f5a0aff46fb0aa7ae9cc9cc17f38e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imitate_pass_1_1transaction_helper.html#ab37f5a0aff46fb0aa7ae9cc9cc17f38e">transactionHelper</a> (<a class="el" href="classsimple_transaction.html">simpleTransaction</a> *trans, <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> result)</td></tr>
+<tr class="memdesc:ab37f5a0aff46fb0aa7ae9cc9cc17f38e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start transaction.  <br /></td></tr>
 <tr class="separator:ab37f5a0aff46fb0aa7ae9cc9cc17f38e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa359cfd5a9b65156dbca7b159cda9f2b" id="r_aa359cfd5a9b65156dbca7b159cda9f2b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_imitate_pass_1_1transaction_helper.html#aa359cfd5a9b65156dbca7b159cda9f2b">~transactionHelper</a> ()</td></tr>
+<tr class="memdesc:aa359cfd5a9b65156dbca7b159cda9f2b"><td class="mdescLeft">&#160;</td><td class="mdescRight">End transaction on destruction.  <br /></td></tr>
 <tr class="separator:aa359cfd5a9b65156dbca7b159cda9f2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00046">46</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<div class="textblock"><p>RAII helper for wrapping operations in transactions. </p>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00142">142</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ab37f5a0aff46fb0aa7ae9cc9cc17f38e" name="ab37f5a0aff46fb0aa7ae9cc9cc17f38e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab37f5a0aff46fb0aa7ae9cc9cc17f38e">&#9670;&#160;</a></span>transactionHelper()</h2>
@@ -129,7 +135,16 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00051">51</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p>Start transaction. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trans</td><td>Transaction object. </td></tr>
+    <tr><td class="paramname">result</td><td>Result code on commit. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00152">152</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -163,7 +178,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00055">55</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
+<p>End transaction on destruction. </p>
+
+<p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00159">159</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">

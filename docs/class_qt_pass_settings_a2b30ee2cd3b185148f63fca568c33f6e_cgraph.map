@@ -1,5 +1,5 @@
 <map id="QtPassSettings::setPassStore" name="QtPassSettings::setPassStore">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,216,31"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title=" " alt="" coords="264,5,467,31"/>
+<area shape="rect" id="Node000001" title="Save password store path." alt="" coords="5,5,216,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="264,5,467,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,15,250,15,250,21,216,21"/>
 </map>

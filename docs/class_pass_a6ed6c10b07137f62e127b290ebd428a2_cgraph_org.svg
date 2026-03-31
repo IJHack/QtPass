@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Pass::listKeys list users.">
+<g id="a_Node000001"><a xlink:title="List GPG keys matching patterns.">
 <polygon fill="#999999" stroke="#666666" points="83,-56 0,-56 0,-37 83,-37 83,-56"/>
 <text text-anchor="middle" x="41.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::listKeys</text>
 </a>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" target="_top" xlink:title="Get GPG executable path.">
 <polygon fill="white" stroke="#666666" points="303,-56 119,-56 119,-37 303,-37 303,-56"/>
 <text text-anchor="middle" x="211" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgExecutable</text>
 </a>

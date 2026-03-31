@@ -1,5 +1,5 @@
 <map id="QtPassSettings::getSize" name="QtPassSettings::getSize">
-<area shape="rect" id="Node000001" title=" " alt="" coords="264,5,439,31"/>
+<area shape="rect" id="Node000001" title="Get saved window size." alt="" coords="264,5,439,31"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title=" " alt="" coords="5,5,216,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,21,216,21,216,15,250,15"/>
 </map>

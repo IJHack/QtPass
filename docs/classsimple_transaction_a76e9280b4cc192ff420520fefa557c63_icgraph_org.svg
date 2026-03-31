@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_imitate_pass_1_1transaction_helper.html#aa359cfd5a9b65156dbca7b159cda9f2b" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_imitate_pass_1_1transaction_helper.html#aa359cfd5a9b65156dbca7b159cda9f2b" target="_top" xlink:title="End transaction on destruction.">
 <polygon fill="white" stroke="#666666" points="150,-30 0,-30 0,0 150,0 150,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::transaction</text>
 <text text-anchor="middle" x="75" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Helper::~transactionHelper</text>

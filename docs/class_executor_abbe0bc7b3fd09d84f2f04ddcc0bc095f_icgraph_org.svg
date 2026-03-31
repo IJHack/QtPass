@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_pass.html#ac679a086b289cdb9245906948ba0458a" target="_top" xlink:title="Pass::updateEnv update the execution environment (used when switching profiles)">
+<g id="a_Node000002"><a xlink:href="class_pass.html#ac679a086b289cdb9245906948ba0458a" target="_top" xlink:title="Update environment for subprocesses.">
 <polygon fill="white" stroke="#666666" points="96,-19 0,-19 0,0 96,0 96,-19"/>
 <text text-anchor="middle" x="48" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::updateEnv</text>
 </a>
