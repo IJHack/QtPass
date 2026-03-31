@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Util::checkConfig do we have prequisite settings?">
+<g id="a_Node000002"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Util::checkConfig do we have prerequisite settings?">
 <polygon fill="white" stroke="#666666" points="670,-618 571,-618 571,-599 670,-599 670,-618"/>
 <text text-anchor="middle" x="620.5" y="-606" font-family="Helvetica,sans-Serif" font-size="10.00">Util::checkConfig</text>
 </a>
@@ -164,7 +164,7 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_util.html#a5df2739baa9b1df5f183c66739699d3d" target="_top" xlink:title="Util::getDir get selectd folder path.">
+<g id="a_Node000012"><a xlink:href="class_util.html#a5df2739baa9b1df5f183c66739699d3d" target="_top" xlink:title="Util::getDir get selected folder path.">
 <polygon fill="white" stroke="#666666" points="655.5,-393 585.5,-393 585.5,-374 655.5,-374 655.5,-393"/>
 <text text-anchor="middle" x="620.5" y="-381" font-family="Helvetica,sans-Serif" font-size="10.00">Util::getDir</text>
 </a>

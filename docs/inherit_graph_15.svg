@@ -20,7 +20,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:href="class_q_progress_indicator.html" target="_top" xlink:title="The QProgressIndicator class lets an application display a progress indicator to show that a lengthy ...">
+<g id="a_Node000001"><a xlink:href="class_q_progress_indicator.html" target="_top" xlink:title="QProgressIndicator provides a simple indeterminate progress indicator widget that spins to show the a...">
 <polygon fill="white" stroke="#666666" points="204,-56 95,-56 95,-37 204,-37 204,-56"/>
 <text text-anchor="middle" x="149.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QProgressIndicator</text>
 </a>

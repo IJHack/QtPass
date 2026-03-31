@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Executes external commands for handleing password, git and other data.  
+<p>id Identifier provided by the caller for this queued request.  
  <a href="class_executor.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="executor_8h_source.html">executor.h</a>&gt;</code></p>
@@ -146,9 +146,39 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:ae7d1bf72e67a3e7217747e8944bf8786"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Executes external commands for handleing password, git and other data. </p>
+<div class="textblock"><p>id Identifier provided by the caller for this queued request. </p>
+<p><a class="el" href="class_executor.html" title="id Identifier provided by the caller for this queued request.">Executor</a> executes external commands used for password, git, and other non-interactive operations.</p>
+<p>Uses a single QProcess and an internal FIFO queue to run requested commands in order and emit completion or error signals for each request. Execution queue item representing a single non-interactive process request.</p>
+<p>Contains the command, its arguments, optional stdin content, capture flags, and an optional working directory.</p>
+<p>app Path to the executable to run.</p>
+<p>args Arguments to pass to the executable.</p>
+<p>input Data to write to the process's stdin.</p>
+<p>readStdout When true, capture the process's stdout for the result.</p>
+<p>readStderr When true, capture the process's stderr for the result. Note: stderr is captured regardless of this flag when the process exits with a non-zero exit code.</p>
+<p>workingDir Working directory in which the process will be started.</p>
+<p>finished Emitted when a queued process completes.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identifier of the completed request. </td></tr>
+    <tr><td class="paramname">exitCode</td><td>Process exit code. </td></tr>
+    <tr><td class="paramname">output</td><td>Captured stdout produced by the process (may be empty). </td></tr>
+    <tr><td class="paramname">errout</td><td>Captured stderr produced by the process (may be empty).</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>starting Emitted when the executor begins running a queued process.</p>
+<p>error Emitted when a queued process finishes with an error condition.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Identifier of the failed request. </td></tr>
+    <tr><td class="paramname">exitCode</td><td>Process exit code. </td></tr>
+    <tr><td class="paramname">output</td><td>Captured stdout produced by the process (may be empty). </td></tr>
+    <tr><td class="paramname">errout</td><td>Captured stderr produced by the process (may be empty). </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00014">14</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00076">76</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa15bf32ce5a10a04dce8fe549247ac7d" name="aa15bf32ce5a10a04dce8fe549247ac7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa15bf32ce5a10a04dce8fe549247ac7d">&#9670;&#160;</a></span>Executor()</h2>

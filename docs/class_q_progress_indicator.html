@@ -80,7 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_q_progress_indicator.html" title="The QProgressIndicator class lets an application display a progress indicator to show that a lengthy ...">QProgressIndicator</a> class lets an application display a progress indicator to show that a lengthy task is under way.  
+<p><a class="el" href="class_q_progress_indicator.html" title="QProgressIndicator provides a simple indeterminate progress indicator widget that spins to show the a...">QProgressIndicator</a> provides a simple indeterminate progress indicator widget that spins to show the application is busy.  
  <a href="class_q_progress_indicator.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>&gt;</code></p>
@@ -151,10 +151,50 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a38d3e8644a4e74d892b42270c9b6ae8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_q_progress_indicator.html" title="The QProgressIndicator class lets an application display a progress indicator to show that a lengthy ...">QProgressIndicator</a> class lets an application display a progress indicator to show that a lengthy task is under way. </p>
-<p>Progress indicators are indeterminate and do nothing more than spin to show that the application is busy. </p><dl class="section see"><dt>See also</dt><dd>QProgressBar </dd></dl>
+<div class="textblock"><p><a class="el" href="class_q_progress_indicator.html" title="QProgressIndicator provides a simple indeterminate progress indicator widget that spins to show the a...">QProgressIndicator</a> provides a simple indeterminate progress indicator widget that spins to show the application is busy. </p>
+<dl class="section see"><dt>See also</dt><dd>QProgressBar</dd></dl>
+<p>Returns the delay between animation steps.</p>
+<dl class="section return"><dt>Returns</dt><dd>The number of milliseconds between animation steps. The default value is 40. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#acf826f02de241cb47fa329bf437d450d" title="Sets the delay between animation steps.">setAnimationDelay</a></dd></dl>
+<p>Indicates whether the indicator is currently animating.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the indicator is animating, <code>false</code> otherwise. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation.">startAnimation</a> <a class="el" href="class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95" title="Stops the spin animation.">stopAnimation</a></dd></dl>
+<p>Indicates whether the indicator remains visible when not animating.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the indicator shows itself when stopped, <code>false</code> otherwise. The default is <code>false</code>. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#ab50e609e706868a0cd28caee364c3d13" title="Sets whether the component hides itself when it is not animating.">setDisplayedWhenStopped</a></dd></dl>
+<p>Returns the current drawing color used by the indicator.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to the indicator's QColor. </dd></dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color.">setColor</a></dd></dl>
+<p>Starts the spin animation.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95" title="Stops the spin animation.">stopAnimation</a> <a class="el" href="class_q_progress_indicator.html#a47b1957d5839a55ce0ea7b25c15ec464" title="Returns a Boolean value indicating whether the component is currently animated.">isAnimated</a></dd></dl>
+<p>Stops the spin animation.</p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06" title="Starts the spin animation.">startAnimation</a> <a class="el" href="class_q_progress_indicator.html#a47b1957d5839a55ce0ea7b25c15ec464" title="Returns a Boolean value indicating whether the component is currently animated.">isAnimated</a></dd></dl>
+<p>Sets the delay between animation steps.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">delay</td><td>Delay in milliseconds. Values larger than 40 slow the animation; values smaller than 40 speed it up. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a05684f369a8e1b8b790ace81adfb33d8" title="Returns the delay between animation steps.">animationDelay</a></dd></dl>
+<p>Sets whether the indicator remains visible when not animating.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>Set to <code>true</code> to keep the indicator visible when stopped; set to <code>false</code> to hide it when stopped. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a5ca2c2e3a6e271add0a72ab5b3609d30" title="Returns a Boolean value indicating whether the receiver shows itself even when it is not animating.">isDisplayedWhenStopped</a></dd></dl>
+<p>Sets the drawing color for the indicator.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">color</td><td>The new color to use for rendering the indicator. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#afce11eec7046594b7a9cf28b69cdcc40" title="Returns the color of the component.">color</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00045">45</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00102">102</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a3228b3ca2a8a5a5de146a4ae29f259f7" name="a3228b3ca2a8a5a5de146a4ae29f259f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3228b3ca2a8a5a5de146a4ae29f259f7">&#9670;&#160;</a></span>QProgressIndicator()</h2>
@@ -220,7 +260,7 @@ Protected Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>The number of milliseconds between animation steps. By default, the animation delay is set to 40 milliseconds. </dd></dl>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#acf826f02de241cb47fa329bf437d450d" title="Sets the delay between animation steps.">setAnimationDelay</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00056">56</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00113">113</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
 
 </div>
 </div>
@@ -250,7 +290,7 @@ Protected Member Functions</h2></td></tr>
 <p>Returns the color of the component. </p>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color.">setColor</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00076">76</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qprogressindicator_8h_source.html#l00133">133</a> of file <a class="el" href="qprogressindicator_8h_source.html">qprogressindicator.h</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">

@@ -80,7 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_single_application.html" title="The SingleApplication class is used for commandline intergration.">SingleApplication</a> class is used for commandline intergration.  
+<p>Provide single-instance application behavior and inter-process messaging using a unique key.  
  <a href="class_single_application.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>&gt;</code></p>
@@ -124,10 +124,38 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad63149f60ac6676dda4397a90116e351"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_single_application.html" title="The SingleApplication class is used for commandline intergration.">SingleApplication</a> class is used for commandline intergration. </p>
-<p>This class needs a bit of work or possibly replacement. </p>
+<div class="textblock"><p>Provide single-instance application behavior and inter-process messaging using a unique key. </p>
+<p>This QApplication subclass detects whether another instance with the same unique key is already running and enables sending and receiving textual messages between instances (typically to forward command-line arguments to the already-running instance).</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Reference to program argc forwarded to QApplication. </td></tr>
+    <tr><td class="paramname">argv</td><td>Program argv forwarded to QApplication. </td></tr>
+    <tr><td class="paramname">uniqueKey</td><td>Identifier used to scope the single-instance mechanism and the local IPC resources.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>Query whether another instance of the application is already running.</p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if an instance with the same unique key is already running, <code>false</code> otherwise.</dd></dl>
+<p>Send a textual message to the running instance identified by the unique key.</p>
+<p>The message is delivered to the existing instance; intended use is to forward command-line arguments.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>Text to send to the running instance. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the message was successfully delivered, <code>false</code> otherwise.</dd></dl>
+<p>Slot invoked when an incoming message is received on the local server.</p>
+<p>Emits messageAvailable() with the received payload.</p>
+<p>Notification emitted when a textual message from another process is received.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>The message payload (for example, forwarded command-line arguments). </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00016">16</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00048">48</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a55e5986206cf99fe05d33169d9eb71f5" name="a55e5986206cf99fe05d33169d9eb71f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55e5986206cf99fe05d33169d9eb71f5">&#9670;&#160;</a></span>SingleApplication()</h2>

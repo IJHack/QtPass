@@ -117,8 +117,24 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Stylish widget to display the field as QR Code. </p>
+<p>Stylish QPushButton that represents a field as a QR code and holds a text payload to copy or transmit. Create a QPushButton configured to present text as a QR-code-related action. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textToCopy</td><td>Initial text stored for copying or QR-code use (may be empty). </td></tr>
+    <tr><td class="paramname">parent</td><td>Optional parent widget. Return the stored text used for copy or QR-code actions. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The current stored text. Update the stored text used for copy or QR-code actions. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>New text to store. Emitted when the button is activated, delivering the current text payload. </td></tr>
+    <tr><td class="paramname">text</td><td>The current stored text. Reset the button's icon to its default appearance. Handle a change/click event reported as a boolean state. </td></tr>
+    <tr><td class="paramname">checked</td><td>True if the button is in the checked/active state, false otherwise. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="qpushbuttonasqrcode_8h_source.html#l00013">13</a> of file <a class="el" href="qpushbuttonasqrcode_8h_source.html">qpushbuttonasqrcode.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qpushbuttonasqrcode_8h_source.html#l00046">46</a> of file <a class="el" href="qpushbuttonasqrcode_8h_source.html">qpushbuttonasqrcode.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8b9e33d9c6a605b6071267d0f5bd3c00" name="a8b9e33d9c6a605b6071267d0f5bd3c00"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8b9e33d9c6a605b6071267d0f5bd3c00">&#9670;&#160;</a></span>QPushButtonAsQRCode()</h2>

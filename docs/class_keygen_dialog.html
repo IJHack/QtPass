@@ -115,8 +115,24 @@ Protected Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles GPG keypair generation. </p>
+<p>Construct the <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Optional parent <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a> used to return to the configuration UI. Destroy the <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a> and release associated resources. Handle the widget close event to perform any cleanup or confirm actions before closing. </td></tr>
+    <tr><td class="paramname">event</td><td>Close event provided by Qt. Update internal state when the first passphrase text changes. </td></tr>
+    <tr><td class="paramname">arg1</td><td>New passphrase text from the first input field. Update internal state when the confirmation passphrase text changes. </td></tr>
+    <tr><td class="paramname">arg1</td><td>New passphrase text from the confirmation input field. React to changes of the checkbox controlling protection options. </td></tr>
+    <tr><td class="paramname">arg1</td><td>New checkbox state (value corresponds to Qt::CheckState). Update internal state when the email text changes. </td></tr>
+    <tr><td class="paramname">arg1</td><td>New email text from the email input field. Update internal state when the name text changes. </td></tr>
+    <tr><td class="paramname">arg1</td><td>New name text from the name input field. Perform a text replacement within the dialog using the provided strings. </td></tr>
+    <tr><td class="paramname">from</td><td>Text to be replaced. </td></tr>
+    <tr><td class="paramname">to</td><td>Replacement text. Finalize the dialog with the given result code and perform any necessary teardown. </td></tr>
+    <tr><td class="paramname">r</td><td>Result code passed to QDialog::done. Enable or disable "no protection" behavior for generated keys or inputs. </td></tr>
+    <tr><td class="paramname">enable</td><td><code>true</code> to enable no-protection mode, <code>false</code> to disable it. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00018">18</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00072">72</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a565b5698b7bb40720476d61b8b1b8548" name="a565b5698b7bb40720476d61b8b1b8548"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a565b5698b7bb40720476d61b8b1b8548">&#9670;&#160;</a></span>KeygenDialog()</h2>

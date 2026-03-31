@@ -124,8 +124,25 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles the systemtray icon and menu. </p>
+<p>Construct a <a class="el" href="class_tray_icon.html" title="Handles the systemtray icon and menu.">TrayIcon</a> associated with the given main window. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Pointer to the QMainWindow this tray icon controls and mirrors. Display a transient notification message via the tray icon. </td></tr>
+    <tr><td class="paramname">title</td><td>Title text of the notification. </td></tr>
+    <tr><td class="paramname">msg</td><td>Body text of the notification. </td></tr>
+    <tr><td class="paramname">time</td><td>Duration to display the notification in milliseconds. Show or hide the tray-related UI and behavior. </td></tr>
+    <tr><td class="paramname">visible</td><td><code>true</code> to make tray UI active/visible, <code>false</code> to deactivate/hide it. Report whether tray resources have been allocated and initialized. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if resources are allocated, <code>false</code> otherwise. Toggle the visibility/state of the associated main window in response to user interaction. Handle activation events from the system tray icon. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reason</td><td>The activation reason provided by QSystemTrayIcon. Create and configure the tray menu actions (show, hide, minimize, maximize, restore, quit). Initialize the QSystemTrayIcon and its context menu, wiring actions and event handling. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="trayicon_8h_source.html#l00016">16</a> of file <a class="el" href="trayicon_8h_source.html">trayicon.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trayicon_8h_source.html#l00047">47</a> of file <a class="el" href="trayicon_8h_source.html">trayicon.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a587e1467cf97c27f4269f1c47c1e4ac5" name="a587e1467cf97c27f4269f1c47c1e4ac5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a587e1467cf97c27f4269f1c47c1e4ac5">&#9670;&#160;</a></span>TrayIcon()</h2>

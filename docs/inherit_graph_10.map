@@ -1,6 +1,6 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" title=" " alt="" coords="5,252,80,277"/>
-<area shape="rect" id="Node000001" href="$class_executor.html" title="Executes external commands for handleing password, git and other data." alt="" coords="170,5,249,31"/>
+<area shape="rect" id="Node000001" href="$class_executor.html" title="id Identifier provided by the caller for this queued request." alt="" coords="170,5,249,31"/>
 <area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="44,238,51,195,65,142,90,87,106,62,126,40,147,27,169,20,171,25,149,32,130,44,110,66,94,90,70,144,56,196,49,239"/>
 <area shape="rect" id="Node000002" href="$class_pass.html" title="Acts as an abstraction for pass or pass imitation." alt="" coords="184,55,235,80"/>
 <area shape="poly" id="edge9_Node000000_Node000002" title=" " alt="" coords="47,238,57,204,73,164,96,124,126,89,154,74,183,67,184,72,156,79,130,93,100,127,78,166,62,206,52,239"/>

@@ -79,9 +79,6 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_deselectable_tree_view.html" title="The DeselectableTreeView class loosly based on http://stackoverflow.com/questions/2761284/ thanks to ...">DeselectableTreeView</a> class loosly based on <a href="http://stackoverflow.com/questions/2761284/">http://stackoverflow.com/questions/2761284/</a> thanks to Yassir Ennazk.  
- <a href="class_deselectable_tree_view.html#details">More...</a></p>
-
 <p><code>#include &lt;<a class="el" href="deselectabletreeview_8h_source.html">deselectabletreeview.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Inheritance diagram for DeselectableTreeView:</div>
@@ -107,16 +104,25 @@ Signals</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a78b4bc9a59d8db8531a1e270a7793b26" id="r_a78b4bc9a59d8db8531a1e270a7793b26"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26">DeselectableTreeView</a> (QWidget *parent)</td></tr>
-<tr class="memdesc:a78b4bc9a59d8db8531a1e270a7793b26"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_deselectable_tree_view.html" title="The DeselectableTreeView class loosly based on http://stackoverflow.com/questions/2761284/ thanks to ...">DeselectableTreeView</a> standard constructor.  <br /></td></tr>
+<tr class="memdesc:a78b4bc9a59d8db8531a1e270a7793b26"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a> standard constructor.  <br /></td></tr>
 <tr class="separator:a78b4bc9a59d8db8531a1e270a7793b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeae99d030001a2ed590a8abfe31c462b" id="r_aeae99d030001a2ed590a8abfe31c462b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_deselectable_tree_view.html#aeae99d030001a2ed590a8abfe31c462b">~DeselectableTreeView</a> () override=default</td></tr>
 <tr class="memdesc:aeae99d030001a2ed590a8abfe31c462b"><td class="mdescLeft">&#160;</td><td class="mdescRight">~DeselectableTreeView standard destructor  <br /></td></tr>
 <tr class="separator:aeae99d030001a2ed590a8abfe31c462b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_deselectable_tree_view.html" title="The DeselectableTreeView class loosly based on http://stackoverflow.com/questions/2761284/ thanks to ...">DeselectableTreeView</a> class loosly based on <a href="http://stackoverflow.com/questions/2761284/">http://stackoverflow.com/questions/2761284/</a> thanks to Yassir Ennazk. </p>
+<div class="textblock"><p>A QTreeView subclass that clears selection and emits a signal when the user clicks an empty area or clicks a selected item in empty space.</p>
+<p>The view tracks press/release sequences to distinguish single- from double-clicks and only clears selection for qualifying single-clicks. Construct a <a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">parent</td><td>Parent widget forwarded to QTreeView. Default destructor. Emitted after the view clears its selection in response to a qualifying click on empty space or on an already-selected item. Record whether the item under the press position was selected. </td></tr>
+    <tr><td class="paramname">event</td><td>Mouse press event containing the press position. Clear selection and emit <a class="el" href="class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4" title="emptyClicked event">emptyClicked()</a> when a qualifying single-click releases over empty space or over a selected item; otherwise, handle the release normally. </td></tr>
+    <tr><td class="paramname">event</td><td>Mouse release event containing the release position. Mark that a double-click occurred and handle the double-click normally. </td></tr>
+    <tr><td class="paramname">event</td><td>Mouse double-click event. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="deselectabletreeview_8h_source.html#l00016">16</a> of file <a class="el" href="deselectabletreeview_8h_source.html">deselectabletreeview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deselectabletreeview_8h_source.html#l00049">49</a> of file <a class="el" href="deselectabletreeview_8h_source.html">deselectabletreeview.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a78b4bc9a59d8db8531a1e270a7793b26" name="a78b4bc9a59d8db8531a1e270a7793b26"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a78b4bc9a59d8db8531a1e270a7793b26">&#9670;&#160;</a></span>DeselectableTreeView()</h2>
@@ -142,7 +148,7 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_deselectable_tree_view.html" title="The DeselectableTreeView class loosly based on http://stackoverflow.com/questions/2761284/ thanks to ...">DeselectableTreeView</a> standard constructor. </p>
+<p><a class="el" href="class_deselectable_tree_view.html">DeselectableTreeView</a> standard constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">parent</td><td></td></tr>
@@ -150,7 +156,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="deselectabletreeview_8h_source.html#l00024">24</a> of file <a class="el" href="deselectabletreeview_8h_source.html">deselectabletreeview.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="deselectabletreeview_8h_source.html#l00057">57</a> of file <a class="el" href="deselectabletreeview_8h_source.html">deselectabletreeview.h</a>.</p>
 
 </div>
 </div>

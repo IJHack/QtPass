@@ -117,8 +117,25 @@ Public Member Functions</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Stylish widget to allow copying of password and account details. </p>
+<p>A QPushButton subclass that stores a text payload and emits it when activated.</p>
+<p>The button is intended for copying or emitting password/account details and toggles between default and pushed icon states. Construct a <a class="el" href="class_q_push_button_with_clipboard.html" title="Stylish widget to allow copying of password and account details.">QPushButtonWithClipboard</a> and initialize the stored text. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">textToCopy</td><td>Initial text to store and emit when the button is activated. </td></tr>
+    <tr><td class="paramname">parent</td><td>Optional parent widget. Retrieve the stored text used for copying or emission. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>QString containing the current stored text. Update the stored text used for copying or emission. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>The new text to store. Emitted when the button is activated with its associated text. </td></tr>
+    <tr><td class="paramname">text</td><td>The stored text associated with this button. Restore the button's icon to its default appearance. Handle the button's clicked/pressed state and emit the stored text when appropriate. </td></tr>
+    <tr><td class="paramname">checked</td><td>Whether the button is in the pressed/checked state. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="qpushbuttonwithclipboard_8h_source.html#l00013">13</a> of file <a class="el" href="qpushbuttonwithclipboard_8h_source.html">qpushbuttonwithclipboard.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qpushbuttonwithclipboard_8h_source.html#l00049">49</a> of file <a class="el" href="qpushbuttonwithclipboard_8h_source.html">qpushbuttonwithclipboard.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a9fcd74d855d552598d1ebf4910f53666" name="a9fcd74d855d552598d1ebf4910f53666"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9fcd74d855d552598d1ebf4910f53666">&#9670;&#160;</a></span>QPushButtonWithClipboard()</h2>
