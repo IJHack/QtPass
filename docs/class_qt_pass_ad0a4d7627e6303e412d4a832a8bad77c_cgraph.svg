@@ -66,9 +66,9 @@ var sectionId = 'dynsection-10';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Determine whether required configuration or executables are missing.">
-<polygon fill="white" stroke="#666666" points="245.5,-820 146.5,-820 146.5,-801 245.5,-801 245.5,-820"/>
-<text text-anchor="middle" x="196" y="-808" font-family="Helvetica,sans-Serif" font-size="10.00">Util::checkConfig</text>
+<g id="a_Node000002"><a xlink:href="class_util.html#afe6db9149dff37feded5abf38870cda8" target="_top" xlink:title="Verify that the required configuration is complete.">
+<polygon fill="white" stroke="#666666" points="246.5,-820 145.5,-820 145.5,-801 246.5,-801 246.5,-820"/>
+<text text-anchor="middle" x="196" y="-808" font-family="Helvetica,sans-Serif" font-size="10.00">Util::configIsValid</text>
 </a>
 </g>
 </g>
@@ -369,8 +369,8 @@ var sectionId = 'dynsection-10';
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M245.74,-810.5C265.36,-810.5 288.76,-810.5 311.75,-810.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="311.91,-814 321.91,-810.5 311.91,-807 311.91,-814"/>
+<path fill="none" stroke="#63b8ff" d="M246.55,-810.5C265.98,-810.5 289,-810.5 311.64,-810.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="311.65,-814 321.65,-810.5 311.65,-807 311.65,-814"/>
 </a>
 </g>
 </g>
@@ -387,8 +387,8 @@ var sectionId = 'dynsection-10';
 <g id="edge3_Node000002_Node000004" class="edge">
 <title>Node2&#45;&gt;Node4</title>
 <g id="a_edge3_Node000002_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M245.74,-802.15C275.74,-797.01 314.57,-790.36 347.26,-784.76"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="347.93,-788.2 357.19,-783.06 346.74,-781.3 347.93,-788.2"/>
+<path fill="none" stroke="#63b8ff" d="M246.55,-802.01C276.34,-796.91 314.61,-790.35 346.94,-784.82"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="347.94,-788.19 357.21,-783.06 346.76,-781.3 347.94,-788.19"/>
 </a>
 </g>
 </g>
@@ -414,8 +414,8 @@ var sectionId = 'dynsection-10';
 <g id="edge5_Node000002_Node000006" class="edge">
 <title>Node2&#45;&gt;Node6</title>
 <g id="a_edge5_Node000002_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M245.74,-818.85C275.74,-823.99 314.57,-830.64 347.26,-836.24"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="346.74,-839.7 357.19,-837.94 347.93,-832.8 346.74,-839.7"/>
+<path fill="none" stroke="#63b8ff" d="M246.55,-818.99C276.34,-824.09 314.61,-830.65 346.94,-836.18"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="346.76,-839.7 357.21,-837.94 347.94,-832.81 346.76,-839.7"/>
 </a>
 </g>
 </g>

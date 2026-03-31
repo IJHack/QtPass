@@ -1,23 +1,23 @@
 <map id="QtPassSettings::getPassExecutable" name="QtPassSettings::getPassExecutable">
 <area shape="rect" id="Node000001" title=" " alt="" coords="769,129,1017,155"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Determine whether required configuration or executables are missing." alt="" coords="542,129,674,155"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="756,145,674,145,674,139,756,139"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="273,29,425,55"/>
-<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="843,127,785,109,721,93,563,66,425,51,425,45,564,61,722,87,786,104,845,122"/>
-<area shape="rect" id="Node000004" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,80,447,105"/>
-<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="796,130,721,121,577,108,447,100,447,95,577,103,722,115,797,125"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="273,29,425,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="843,127,785,109,721,93,563,66,425,51,425,45,564,61,722,87,786,104,845,122"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,80,447,105"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="796,130,721,121,577,108,447,100,447,95,577,103,722,115,797,125"/>
+<area shape="rect" id="Node000004" href="$class_util.html#afe6db9149dff37feded5abf38870cda8" title="Verify that the required configuration is complete." alt="" coords="541,129,675,155"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="756,145,676,145,676,139,756,139"/>
 <area shape="rect" id="Node000008" href="$class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210" title="RealPass::GitInit pass git pull wrapper which blocks until process finishes." alt="" coords="535,228,681,253"/>
 <area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="856,163,794,192,722,219,680,231,679,225,721,214,792,187,854,158"/>
 <area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title=" " alt="" coords="495,179,721,204"/>
 <area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="806,160,683,181,682,176,805,154"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="569,125,512,97,446,70,405,57,407,52,448,65,514,92,572,120"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="528,130,416,108,417,103,529,124"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="392,20,389,15,382,12,349,8,323,10,309,15,306,20,313,27,309,31,301,21,305,11,322,5,349,3,383,7,393,11,396,17"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="569,125,512,97,446,70,405,57,407,52,448,65,514,92,572,120"/>
+<area shape="poly" id="edge6_Node000004_Node000003" title=" " alt="" coords="527,129,416,108,417,103,528,124"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="301,179,396,204"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="529,160,397,185,396,180,528,154"/>
+<area shape="poly" id="edge7_Node000004_Node000005" title=" " alt="" coords="527,160,397,185,396,180,526,155"/>
 <area shape="rect" id="Node000007" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="271,129,427,155"/>
-<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="528,145,427,145,427,139,528,139"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="392,20,389,15,382,12,349,8,323,10,309,15,306,20,313,27,309,31,301,21,305,11,322,5,349,3,383,7,393,11,396,17"/>
+<area shape="poly" id="edge9_Node000004_Node000007" title=" " alt="" coords="527,145,427,145,427,139,527,139"/>
 <area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,179,203,204"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="288,194,203,194,203,189,288,189"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="288,194,203,194,203,189,288,189"/>
 <area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="481,194,396,194,396,189,481,189"/>
 </map>

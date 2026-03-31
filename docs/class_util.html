@@ -94,9 +94,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0b3b524306360fc2f76112be924f8f6c" id="r_a0b3b524306360fc2f76112be924f8f6c"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">normalizeFolderPath</a> (QString path) -&gt; QString</td></tr>
 <tr class="memdesc:a0b3b524306360fc2f76112be924f8f6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with the native directory separator.  <br /></td></tr>
 <tr class="separator:a0b3b524306360fc2f76112be924f8f6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafdef99b126e0086d44425cbe139db22" id="r_aafdef99b126e0086d44425cbe139db22"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#aafdef99b126e0086d44425cbe139db22">checkConfig</a> () -&gt; bool</td></tr>
-<tr class="memdesc:aafdef99b126e0086d44425cbe139db22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether required configuration or executables are missing.  <br /></td></tr>
-<tr class="separator:aafdef99b126e0086d44425cbe139db22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe6db9149dff37feded5abf38870cda8" id="r_afe6db9149dff37feded5abf38870cda8"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#afe6db9149dff37feded5abf38870cda8">configIsValid</a> () -&gt; bool</td></tr>
+<tr class="memdesc:afe6db9149dff37feded5abf38870cda8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that the required configuration is complete.  <br /></td></tr>
+<tr class="separator:afe6db9149dff37feded5abf38870cda8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5df2739baa9b1df5f183c66739699d3d" id="r_a5df2739baa9b1df5f183c66739699d3d"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">getDir</a> (const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const <a class="el" href="class_store_model.html">StoreModel</a> &amp;storeModel) -&gt; QString</td></tr>
 <tr class="memdesc:a5df2739baa9b1df5f183c66739699d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected folder path, either relative to the configured pass store or absolute.  <br /></td></tr>
 <tr class="separator:a5df2739baa9b1df5f183c66739699d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,8 +115,8 @@ Static Public Member Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00020">20</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="aafdef99b126e0086d44425cbe139db22" name="aafdef99b126e0086d44425cbe139db22"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aafdef99b126e0086d44425cbe139db22">&#9670;&#160;</a></span>checkConfig()</h2>
+<a id="afe6db9149dff37feded5abf38870cda8" name="afe6db9149dff37feded5abf38870cda8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe6db9149dff37feded5abf38870cda8">&#9670;&#160;</a></span>configIsValid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -125,7 +125,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto Util::checkConfig </td>
+          <td class="memname">auto Util::configIsValid </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> -&gt; bool</td>
@@ -138,23 +138,23 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Determine whether required configuration or executables are missing. </p>
-<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the password store's <code>.gpg-id</code> is missing or the configured executable (pass or gpg, depending on settings) does not exist; <code>false</code> otherwise. </dd></dl>
+<p>Verify that the required configuration is complete. </p>
+<dl class="section return"><dt>Returns</dt><dd>bool <code>true</code> if the password store's <code>.gpg-id</code> exists AND the configured executable (pass or gpg, depending on settings) exists or is a WSL wrapper; <code>false</code> otherwise. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00125">125</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00117">117</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_util_aafdef99b126e0086d44425cbe139db22_cgraph.svg" width="439" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_util_afe6db9149dff37feded5abf38870cda8_cgraph.svg" width="442" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_util_aafdef99b126e0086d44425cbe139db22_icgraph.svg" width="632" height="208"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_util_afe6db9149dff37feded5abf38870cda8_icgraph.svg" width="635" height="208"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -185,7 +185,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Returns a regex to match .gpg file extensions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00153">153</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00152">152</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -349,7 +349,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Folder path that always ends with the native directory separator. Returns an empty string when <code>index</code> is invalid and <code>forPass</code> is true; otherwise returns the pass store root. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00135">135</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00134">134</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -393,7 +393,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Returns a regex to match newline characters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00164">164</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00163">163</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -474,7 +474,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Returns a regex to match URL protocols. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00158">158</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00157">157</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 
 </div>
 </div>

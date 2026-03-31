@@ -1,6 +1,6 @@
 <map id="QtPass::init" name="QtPass::init">
 <area shape="rect" id="Node000001" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="5,773,100,798"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Determine whether required configuration or executables are missing." alt="" coords="201,105,333,130"/>
+<area shape="rect" id="Node000002" href="$class_util.html#afe6db9149dff37feded5abf38870cda8" title="Verify that the required configuration is complete." alt="" coords="199,105,334,130"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,773,53,693,65,563,77,487,93,409,116,331,146,257,166,221,190,189,238,138,242,142,194,192,170,224,150,259,121,333,98,410,82,488,70,564,59,693,57,773"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="452,6,663,32"/>
 <area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="51,773,52,645,61,439,72,330,89,229,113,147,128,115,146,91,176,64,210,44,247,28,286,17,364,5,438,3,438,9,365,10,287,22,249,33,213,48,179,69,150,94,133,117,118,148,94,230,77,330,66,439,57,645,56,773"/>
@@ -33,12 +33,12 @@
 <area shape="rect" id="Node000029" href="$class_qt_pass_settings.html#a8cd81cd735281c71eab54091bde73081" title=" " alt="" coords="169,846,364,872"/>
 <area shape="poly" id="edge40_Node000001_Node000029" title=" " alt="" coords="75,796,109,815,149,833,175,841,174,846,147,838,107,820,73,801"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="435,105,680,130"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="333,115,421,115,421,120,333,120"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="334,115,421,115,421,120,334,120"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" title=" " alt="" coords="433,154,681,180"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="333,126,469,149,468,155,333,131"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="335,126,468,149,467,155,334,132"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="293,102,367,68,432,41,463,32,464,37,434,46,370,73,296,107"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title=" " alt="" coords="461,56,653,81"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="333,104,468,81,469,86,333,109"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="334,104,467,81,468,86,335,109"/>
 <area shape="rect" id="Node000008" href="$class_util.html#a0b3b524306360fc2f76112be924f8f6c" title="Ensure a folder path always ends with the native directory separator." alt="" coords="464,900,651,925"/>
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="353,907,450,908,450,914,353,912"/>
 <area shape="poly" id="edge18_Node000014_Node000003" title=" " alt="" coords="271,342,292,302,326,247,373,188,401,162,432,139,443,133,446,138,435,144,405,166,377,192,331,250,297,305,276,345"/>
