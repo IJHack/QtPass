@@ -17,10 +17,6 @@
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised = false;
 
-/**
- * @brief Util::initialiseEnvironment set the correct PATH for use with gpg, git
- * etc.
- */
 void Util::initialiseEnvironment() {
   if (!_envInitialised) {
     _env = QProcessEnvironment::systemEnvironment();
@@ -50,11 +46,6 @@ void Util::initialiseEnvironment() {
   }
 }
 
-/**
- * @brief Util::findPasswordStore look for common .password-store folder
- * location.
- * @return
- */
 auto Util::findPasswordStore() -> QString {
   QString path;
   initialiseEnvironment();
@@ -72,12 +63,6 @@ auto Util::findPasswordStore() -> QString {
   return Util::normalizeFolderPath(path);
 }
 
-/**
- * @brief Util::normalizeFolderPath let's always end folders with a
- * QDir::separator()
- * @param path
- * @return
- */
 auto Util::normalizeFolderPath(QString path) -> QString {
   if (!path.endsWith("/") && !path.endsWith(QDir::separator())) {
     path += QDir::separator();
@@ -85,49 +70,6 @@ auto Util::normalizeFolderPath(QString path) -> QString {
   return QDir::toNativeSeparators(path);
 }
 
-/**
- * @brief Locate an executable by searching the process PATH and (on Windows) falling back to WSL.
- *
- * @param binary Executable name or relative path to locate (e.g., "gpg" or "pass").
- * @return QString Absolute path to the executable if found, empty QString otherwise.
- */
-
-/**
- * @brief Determine whether required configuration or executables are missing.
- *
- * @return bool `true` if the password store's `.gpg-id` is missing or the configured executable
- *              (pass or gpg, depending on settings) does not exist; `false` otherwise.
- */
-
-/**
- * @brief Get the selected folder path, either relative to the configured pass store or absolute.
- *
- * @param index Model index selecting the file or folder.
- * @param forPass If true, return the path relative to the pass store; otherwise return an absolute path.
- * @param model Filesystem model used to resolve the index.
- * @param storeModel StoreModel used to map view indexes to the filesystem model.
- * @return QString Folder path that always ends with the native directory separator. Returns an empty
- *                 string when `index` is invalid and `forPass` is true; otherwise returns the pass store root.
- */
-
-/**
- * @brief Returns a regex to match file names that end with ".gpg".
- *
- * @return const QRegularExpression& Reference to a static regex matching "\.gpg$".
- */
-
-/**
- * @brief Returns a regex to match URL-like protocols and their following path.
- *
- * @return const QRegularExpression& Reference to a static regex matching protocols like
- *                                  http/https/ftp/ssh/sftp/ftps/webdav/webdavs followed by a path.
- */
-
-/**
- * @brief Returns a regex to match carriage return or newline characters.
- *
- * @return const QRegularExpression& Reference to a static regex matching "\r" or "\n".
- */
 auto Util::findBinaryInPath(QString binary) -> QString {
   initialiseEnvironment();
 
@@ -180,10 +122,6 @@ auto Util::findBinaryInPath(QString binary) -> QString {
   return ret;
 }
 
-/**
- * @brief Util::checkConfig do we have prerequisite settings?
- * @return
- */
 auto Util::checkConfig() -> bool {
   return !QFile(QDir(QtPassSettings::getPassStore()).filePath(".gpg-id"))
               .exists() ||
@@ -194,14 +132,6 @@ auto Util::checkConfig() -> bool {
                     !QFile(QtPassSettings::getGpgExecutable()).exists());
 }
 
-/**
- * @brief Util::getDir get selected folder path
- * @param index
- * @param forPass short or full path
- * @param model the filesystem model to operate on
- * @param storeModel our storemodel to operate on
- * @return path
- */
 auto Util::getDir(const QModelIndex &index, bool forPass,
                   const QFileSystemModel &model, const StoreModel &storeModel)
     -> QString {
@@ -220,29 +150,17 @@ auto Util::getDir(const QModelIndex &index, bool forPass,
   return filePath;
 }
 
-/**
- * @brief Returns a regex to match .gpg file extensions.
- * @return Reference to static regex
- */
 auto Util::endsWithGpg() -> const QRegularExpression & {
   static const QRegularExpression expr{"\\.gpg$"};
   return expr;
 }
 
-/**
- * @brief Returns a regex to match URL protocols.
- * @return Reference to static regex
- */
 auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
       "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^\" <>\\)\\]\\[]+)"};
   return regex;
 }
 
-/**
- * @brief Returns a regex to match newline characters.
- * @return Reference to static regex
- */
 auto Util::newLinesRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{"[\r\n]"};
   return regex;
