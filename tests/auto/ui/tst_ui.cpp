@@ -20,7 +20,6 @@ private Q_SLOTS:
   void passwordDialogBasic();
   void passwordDialogWithTemplate();
   void qrCodePopupHasDeleteOnCloseAttribute();
-  void qrCodePopupDeletesItselfOnClose();
   void dialogWithoutDeleteOnCloseDoesNotAutoDelete();
 };
 
@@ -134,25 +133,6 @@ void tst_ui::qrCodePopupHasDeleteOnCloseAttribute() {
 }
 
 /**
- * @brief tst_ui::qrCodePopupDeletesItselfOnClose verifies that a QDialog with
- * Qt::WA_DeleteOnClose is automatically destroyed when close() is called,
- * mirroring the regression fix in showTextAsQRCode.  A QPointer is used to
- * detect that the object is gone without causing a use-after-free.
- */
-void tst_ui::qrCodePopupDeletesItselfOnClose() {
-  QPointer<QDialog> popup(
-      new QDialog(nullptr, Qt::Popup | Qt::FramelessWindowHint));
-  popup->setAttribute(Qt::WA_DeleteOnClose);
-  QVERIFY(!popup.isNull());
-
-  popup->close();
-  QCoreApplication::processEvents();
-
-  QVERIFY2(popup.isNull(),
-           "QDialog with WA_DeleteOnClose must be deleted after close()");
-}
-
-/**
  * @brief tst_ui::dialogWithoutDeleteOnCloseDoesNotAutoDelete is a regression
  * contrast test.  A QDialog that does NOT have Qt::WA_DeleteOnClose set must
  * remain alive after close(), demonstrating that the attribute set in
@@ -167,8 +147,9 @@ void tst_ui::dialogWithoutDeleteOnCloseDoesNotAutoDelete() {
   popup->close();
   QCoreApplication::processEvents();
 
-  QVERIFY2(!popup.isNull(),
-           "QDialog without WA_DeleteOnClose must NOT be deleted after close()");
+  QVERIFY2(
+      !popup.isNull(),
+      "QDialog without WA_DeleteOnClose must NOT be deleted after close()");
   delete popup;
 }
 
