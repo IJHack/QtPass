@@ -402,8 +402,8 @@ auto Pass::getGpgIdPath(const QString &for_file) -> QString {
 
 /**
  * @brief Pass::getRecipientList return list of gpg-id's to encrypt for
- * @param for_file which file (folder) would you like recepients for
- * @return recepients gpg-id contents
+ * @param for_file which file (folder) would you like recipients for
+ * @return recipients gpg-id contents
  */
 auto Pass::getRecipientList(const QString &for_file) -> QStringList {
   QFile gpgId(getGpgIdPath(for_file));
@@ -422,11 +422,11 @@ auto Pass::getRecipientList(const QString &for_file) -> QStringList {
 }
 
 /**
- * @brief Pass::getRecipientString formated string for use with GPG
- * @param for_file which file (folder) would you like recepients for
+ * @brief Pass::getRecipientString formatted string for use with GPG
+ * @param for_file which file (folder) would you like recipients for
  * @param separator formating separator eg: " -r "
  * @param count
- * @return recepient string
+ * @return recipient string
  */
 auto Pass::getRecipientString(const QString &for_file, const QString &separator,
                               int *count) -> QStringList {
