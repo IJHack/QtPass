@@ -31,6 +31,15 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   mainWindow = parent;
   ui->setupUi(this);
 
+  // Restore dialog state
+  restoreGeometry(QtPassSettings::getDialogGeometry("configDialog"));
+  if (QtPassSettings::isDialogMaximized("configDialog")) {
+    showMaximized();
+  } else {
+    move(QtPassSettings::getDialogPos("configDialog"));
+    resize(QtPassSettings::getDialogSize("configDialog"));
+  }
+
   ui->passPath->setText(QtPassSettings::getPassExecutable());
   setGitPath(QtPassSettings::getGitExecutable());
   ui->gpgPath->setText(QtPassSettings::getGpgExecutable());
@@ -393,7 +402,7 @@ void ConfigDialog::on_toolButtonPass_clicked() {
  */
 void ConfigDialog::on_toolButtonStore_clicked() {
   QString store = selectFolder();
-  if (!store.isEmpty()) { // TODO(annejan): call check
+  if (!store.isEmpty()) {
     ui->storePath->setText(store);
   }
 }
@@ -777,7 +786,10 @@ void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
  * @param event
  */
 void ConfigDialog::closeEvent(QCloseEvent *event) {
-  // TODO(annejan): save window size or something?
+  QtPassSettings::setDialogGeometry("configDialog", saveGeometry());
+  QtPassSettings::setDialogPos("configDialog", pos());
+  QtPassSettings::setDialogSize("configDialog", size());
+  QtPassSettings::setDialogMaximized("configDialog", isMaximized());
   event->accept();
 }
 

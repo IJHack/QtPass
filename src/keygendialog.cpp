@@ -22,6 +22,16 @@ KeygenDialog::KeygenDialog(ConfigDialog *parent)
     : QDialog(parent), ui(new Ui::KeygenDialog) {
   ui->setupUi(this);
   dialog = parent;
+
+  // Restore dialog state
+  restoreGeometry(QtPassSettings::getDialogGeometry("keygenDialog"));
+  if (QtPassSettings::isDialogMaximized("keygenDialog")) {
+    showMaximized();
+  } else {
+    move(QtPassSettings::getDialogPos("keygenDialog"));
+    resize(QtPassSettings::getDialogSize("keygenDialog"));
+  }
+
   ui->plainTextEdit->setPlainText(Pass::getDefaultKeyTemplate());
 }
 
@@ -198,6 +208,9 @@ void KeygenDialog::done(int r) {
  * @param event
  */
 void KeygenDialog::closeEvent(QCloseEvent *event) {
-  // TODO(annejan): save window size or somethign
+  QtPassSettings::setDialogGeometry("keygenDialog", saveGeometry());
+  QtPassSettings::setDialogPos("keygenDialog", pos());
+  QtPassSettings::setDialogSize("keygenDialog", size());
+  QtPassSettings::setDialogMaximized("keygenDialog", isMaximized());
   event->accept();
 }

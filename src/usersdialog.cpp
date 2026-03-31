@@ -24,6 +24,15 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 
   ui->setupUi(this);
 
+  // Restore dialog state
+  restoreGeometry(QtPassSettings::getDialogGeometry("usersDialog"));
+  if (QtPassSettings::isDialogMaximized("usersDialog")) {
+    showMaximized();
+  } else {
+    move(QtPassSettings::getDialogPos("usersDialog"));
+    resize(QtPassSettings::getDialogSize("usersDialog"));
+  }
+
   QList<UserInfo> users = QtPassSettings::getPass()->listKeys();
   if (users.isEmpty()) {
     QMessageBox::critical(parent, tr("Keylist missing"),
@@ -116,7 +125,10 @@ void UsersDialog::accept() {
  * @param event
  */
 void UsersDialog::closeEvent(QCloseEvent *event) {
-  // TODO(annejan): save window size or something
+  QtPassSettings::setDialogGeometry("usersDialog", saveGeometry());
+  QtPassSettings::setDialogPos("usersDialog", pos());
+  QtPassSettings::setDialogSize("usersDialog", size());
+  QtPassSettings::setDialogMaximized("usersDialog", isMaximized());
   event->accept();
 }
 

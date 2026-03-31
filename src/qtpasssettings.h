@@ -136,6 +136,25 @@ public:
    */
   static void setMaximized(const bool &maximized);
 
+  // Dialog-specific settings
+  static auto
+  getDialogGeometry(const QString &key,
+                    const QByteArray &defaultValue = QVariant().toByteArray())
+      -> QByteArray;
+  static void setDialogGeometry(const QString &key, const QByteArray &geometry);
+  static auto getDialogPos(const QString &key,
+                           const QPoint &defaultValue = QVariant().toPoint())
+      -> QPoint;
+  static void setDialogPos(const QString &key, const QPoint &pos);
+  static auto getDialogSize(const QString &key,
+                            const QSize &defaultValue = QVariant().toSize())
+      -> QSize;
+  static void setDialogSize(const QString &key, const QSize &size);
+  static auto isDialogMaximized(const QString &key,
+                                const bool &defaultValue = QVariant().toBool())
+      -> bool;
+  static void setDialogMaximized(const QString &key, const bool &maximized);
+
   // Password store settings
   /**
    * @brief Get whether to use pass (true) or GPG (false).

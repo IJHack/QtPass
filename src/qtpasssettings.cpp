@@ -184,6 +184,51 @@ void QtPassSettings::setMaximized(const bool &maximized) {
   getInstance()->setValue(SettingsConstants::maximized, maximized);
 }
 
+auto QtPassSettings::getDialogGeometry(const QString &key,
+                                       const QByteArray &defaultValue)
+    -> QByteArray {
+  return getInstance()
+      ->value(SettingsConstants::dialogGeometry + "/" + key, defaultValue)
+      .toByteArray();
+}
+void QtPassSettings::setDialogGeometry(const QString &key,
+                                       const QByteArray &geometry) {
+  getInstance()->setValue(SettingsConstants::dialogGeometry + "/" + key,
+                          geometry);
+}
+
+auto QtPassSettings::getDialogPos(const QString &key,
+                                  const QPoint &defaultValue) -> QPoint {
+  return getInstance()
+      ->value(SettingsConstants::dialogPos + "/" + key, defaultValue)
+      .toPoint();
+}
+void QtPassSettings::setDialogPos(const QString &key, const QPoint &pos) {
+  getInstance()->setValue(SettingsConstants::dialogPos + "/" + key, pos);
+}
+
+auto QtPassSettings::getDialogSize(const QString &key,
+                                   const QSize &defaultValue) -> QSize {
+  return getInstance()
+      ->value(SettingsConstants::dialogSize + "/" + key, defaultValue)
+      .toSize();
+}
+void QtPassSettings::setDialogSize(const QString &key, const QSize &size) {
+  getInstance()->setValue(SettingsConstants::dialogSize + "/" + key, size);
+}
+
+auto QtPassSettings::isDialogMaximized(const QString &key,
+                                       const bool &defaultValue) -> bool {
+  return getInstance()
+      ->value(SettingsConstants::dialogMaximized + "/" + key, defaultValue)
+      .toBool();
+}
+void QtPassSettings::setDialogMaximized(const QString &key,
+                                        const bool &maximized) {
+  getInstance()->setValue(SettingsConstants::dialogMaximized + "/" + key,
+                          maximized);
+}
+
 auto QtPassSettings::isUsePass(const bool &defaultValue) -> bool {
   return getInstance()
       ->value(SettingsConstants::usePass, defaultValue)
