@@ -284,7 +284,7 @@ void MainWindow::config() {
       ui->treeView->setRootIndex(proxyModel.mapFromSource(
           model.setRootPath(QtPassSettings::getPassStore())));
 
-      if (m_qtPass->isFreshStart() && Util::checkConfig()) {
+      if (m_qtPass->isFreshStart() && !Util::configIsValid()) {
         config();
       }
       QtPassSettings::getPass()->updateEnv();

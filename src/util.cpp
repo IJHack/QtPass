@@ -23,7 +23,7 @@ void Util::initialiseEnvironment() {
 #ifdef __APPLE__
     QString path = _env.value("PATH");
     if (!path.contains("/usr/local/MacGPG2/bin") &&
-        QFile("/usr/local/MacGPG2/bin").exists())
+        QDir("/usr/local/MacGPG2/bin").exists())
       path += ":/usr/local/MacGPG2/bin";
     if (!path.contains("/usr/local/bin"))
       path += ":/usr/local/bin";
@@ -32,10 +32,10 @@ void Util::initialiseEnvironment() {
 #ifdef Q_OS_WIN
     QString path = _env.value("PATH");
     if (!path.contains("C:\\Program Files\\WinGPG\\x86") &&
-        QFile("C:\\Program Files\\WinGPG\\x86").exists())
+        QDir("C:\\Program Files\\WinGPG\\x86").exists())
       path += ";C:\\Program Files\\WinGPG\\x86";
     if (!path.contains("C:\\Program Files\\GnuPG\\bin") &&
-        QFile("C:\\Program Files\\GnuPG\\bin").exists())
+        QDir("C:\\Program Files\\GnuPG\\bin").exists())
       path += ";C:\\Program Files\\GnuPG\\bin";
     _env.insert("PATH", path);
 #endif
@@ -79,16 +79,8 @@ auto Util::findBinaryInPath(QString binary) -> QString {
 
   if (_env.contains("PATH")) {
     QString path = _env.value("PATH");
-
-    QStringList entries;
-#ifndef Q_OS_WIN
-    entries = path.split(':');
-    if (entries.length() < 2) {
-#endif
-      entries = path.split(';');
-#ifndef Q_OS_WIN
-    }
-#endif
+    const QChar delimiter = QDir::separator() == '\\' ? ';' : ':';
+    QStringList entries = path.split(delimiter);
 
     for (const QString &entryConst : entries) {
       QString fullPath = entryConst + binary;
@@ -122,14 +114,21 @@ auto Util::findBinaryInPath(QString binary) -> QString {
   return ret;
 }
 
-auto Util::checkConfig() -> bool {
-  return !QFile(QDir(QtPassSettings::getPassStore()).filePath(".gpg-id"))
-              .exists() ||
-         (QtPassSettings::isUsePass()
-              ? !QtPassSettings::getPassExecutable().startsWith("wsl ") &&
-                    !QFile(QtPassSettings::getPassExecutable()).exists()
-              : !QtPassSettings::getGpgExecutable().startsWith("wsl ") &&
-                    !QFile(QtPassSettings::getGpgExecutable()).exists());
+auto Util::configIsValid() -> bool {
+  const QString configFilePath =
+      QDir(QtPassSettings::getPassStore()).filePath(".gpg-id");
+  if (!QFile(configFilePath).exists()) {
+    return false;
+  }
+
+  const QString executable = QtPassSettings::isUsePass()
+                                 ? QtPassSettings::getPassExecutable()
+                                 : QtPassSettings::getGpgExecutable();
+
+  if (executable.startsWith("wsl ")) {
+    return true;
+  }
+  return QFile(executable).exists();
 }
 
 auto Util::getDir(const QModelIndex &index, bool forPass,
