@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="ImitatePass::Insert create new file with encrypted content." alt="" coords="5,256,148,281"/>
 <area shape="rect" id="Node000002" href="$class_pass.html#a0eafb54675479378ec98307f0e4fff65" title=" " alt="" coords="253,5,356,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,255,89,213,111,155,146,93,168,64,194,40,216,28,239,20,240,25,218,33,198,44,172,68,150,96,116,157,94,215,83,257"/>
-<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title=" " alt="" coords="235,55,375,80"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="235,55,375,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="80,255,94,221,118,176,151,129,172,107,195,89,220,76,222,81,197,94,175,111,156,132,123,179,99,224,85,257"/>
 <area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="ImitatePass::executeGit easy wrapper for running git commands." alt="" coords="498,155,674,180"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="91,254,135,220,164,203,195,190,269,172,345,161,419,157,484,158,484,163,419,163,346,167,270,177,197,195,166,208,138,225,94,258"/>
@@ -26,7 +26,7 @@
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="622,178,832,257,830,262,620,183"/>
 <area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="759,155,997,180"/>
 <area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="674,165,745,165,745,170,674,170"/>
-<area shape="rect" id="Node000006" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="1045,235,1211,260"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Executes a wrapper command." alt="" coords="1045,235,1211,260"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="984,262,1031,256,1032,261,985,267"/>
 <area shape="rect" id="Node000007" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="1054,285,1202,325"/>
 <area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="985,286,1041,292,1040,298,984,291"/>

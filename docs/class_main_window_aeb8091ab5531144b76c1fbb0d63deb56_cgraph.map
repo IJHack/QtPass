@@ -15,7 +15,7 @@
 <area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="158,299,225,306,224,311,157,304"/>
 <area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" title=" " alt="" coords="205,355,423,380"/>
 <area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="113,304,206,339,240,349,238,354,205,345,111,309"/>
-<area shape="rect" id="Node000011" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title=" " alt="" coords="217,404,411,429"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title="Sets the clipboard clear timer based on autoclear settings." alt="" coords="217,404,411,429"/>
 <area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="97,305,143,347,173,370,207,389,227,397,225,402,204,394,170,374,139,351,93,309"/>
 <area shape="rect" id="Node000013" href="$class_qt_pass.html#a5b63b7418723b400f0db2afa450f1199" title=" " alt="" coords="234,453,394,479"/>
 <area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="92,306,134,370,168,407,207,438,222,446,220,451,204,443,164,411,130,373,87,308"/>

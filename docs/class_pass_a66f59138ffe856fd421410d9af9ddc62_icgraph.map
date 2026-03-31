@@ -1,5 +1,5 @@
 <map id="Pass::executeWrapper" name="Pass::executeWrapper">
-<area shape="rect" id="Node000001" title=" " alt="" coords="1172,369,1337,395"/>
+<area shape="rect" id="Node000001" title="Executes a wrapper command." alt="" coords="1172,369,1337,395"/>
 <area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="1297,360,1286,351,1255,348,1230,350,1216,355,1213,360,1220,367,1217,371,1208,361,1213,351,1228,345,1255,343,1288,347,1300,356"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="912,344,1124,369"/>
 <area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="1158,374,1124,371,1124,365,1158,369"/>

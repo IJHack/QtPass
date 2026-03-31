@@ -8,7 +8,7 @@
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="388,85,439,80,440,86,389,91"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="440,108,679,133"/>
 <area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="389,102,427,106,426,111,388,107"/>
-<area shape="rect" id="Node000004" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="727,29,892,55"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Executes a wrapper command." alt="" coords="727,29,892,55"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="665,56,713,51,713,56,666,62"/>
 <area shape="rect" id="Node000005" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="735,79,883,119"/>
 <area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="666,81,722,87,721,92,665,86"/>

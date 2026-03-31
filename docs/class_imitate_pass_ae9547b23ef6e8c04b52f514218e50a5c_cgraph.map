@@ -1,6 +1,6 @@
 <map id="ImitatePass::gitAddGpgId" name="ImitatePass::gitAddGpgId">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,57,192,83"/>
-<area shape="rect" id="Node000002" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title=" " alt="" coords="259,7,399,32"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="259,7,399,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,55,256,32,258,38,158,60"/>
 <area shape="rect" id="Node000003" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="ImitatePass::executeGit easy wrapper for running git commands." alt="" coords="465,83,641,108"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,72,452,87,451,92,192,78"/>
@@ -10,7 +10,7 @@
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="641,84,689,79,689,85,642,89"/>
 <area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="689,107,928,132"/>
 <area shape="poly" id="edge7_Node000003_Node000007" title=" " alt="" coords="642,101,676,104,675,109,641,106"/>
-<area shape="rect" id="Node000005" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="976,29,1141,55"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Executes a wrapper command." alt="" coords="976,29,1141,55"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="915,55,962,50,963,55,915,61"/>
 <area shape="rect" id="Node000006" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="985,79,1133,119"/>
 <area shape="poly" id="edge6_Node000004_Node000006" title=" " alt="" coords="915,80,971,86,971,92,915,85"/>

@@ -4,6 +4,6 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,52,304,31,305,36,185,57"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="268,55,513,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="220,65,254,65,254,70,220,70"/>
-<area shape="rect" id="Node000004" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title=" " alt="" coords="313,104,468,129"/>
+<area shape="rect" id="Node000004" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="313,104,468,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,77,305,99,304,104,184,83"/>
 </map>

@@ -1,5 +1,5 @@
 <map id="Util::newLinesRegex" name="Util::newLinesRegex">
-<area shape="rect" id="Node000001" title=" " alt="" coords="699,56,853,81"/>
+<area shape="rect" id="Node000001" title="Returns a regex to match newline characters." alt="" coords="699,56,853,81"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title=" " alt="" coords="436,31,651,56"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="684,61,651,58,651,52,685,56"/>
 <area shape="rect" id="Node000006" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="Pass::listKeys list users." alt="" coords="488,80,599,105"/>

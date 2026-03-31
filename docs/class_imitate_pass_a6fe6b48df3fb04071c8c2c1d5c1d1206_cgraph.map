@@ -26,7 +26,7 @@
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="850,78,982,140,1062,174,1060,179,980,144,848,82"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="983,105,1229,131"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="894,77,1021,100,1020,105,893,83"/>
-<area shape="rect" id="Node000009" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title=" " alt="" coords="751,857,891,883"/>
+<area shape="rect" id="Node000009" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="751,857,891,883"/>
 <area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="375,912,737,876,738,881,375,917"/>
 <area shape="rect" id="Node000010" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="ImitatePass::executeGit easy wrapper for running git commands." alt="" coords="733,960,909,985"/>
 <area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="375,933,431,939,720,963,720,969,430,945,375,938"/>
@@ -35,7 +35,7 @@
 <area shape="poly" id="edge14_Node000010_Node000006" title=" " alt="" coords="876,957,932,937,974,914,1013,888,1077,840,1081,844,1017,893,976,919,934,942,878,962"/>
 <area shape="rect" id="Node000011" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="executeWrapper overrided so that every execution is a transaction" alt="" coords="1000,960,1212,985"/>
 <area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="910,970,986,970,986,975,910,975"/>
-<area shape="rect" id="Node000012" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="1279,931,1444,956"/>
+<area shape="rect" id="Node000012" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Executes a wrapper command." alt="" coords="1279,931,1444,956"/>
 <area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1212,958,1265,952,1265,957,1213,963"/>
 <area shape="rect" id="Node000013" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="1287,981,1435,1021"/>
 <area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="1213,982,1274,988,1274,994,1212,987"/>
@@ -63,7 +63,7 @@
 <area shape="poly" id="edge46_Node000018_Node000031" title=" " alt="" coords="340,452,442,430,443,435,341,457"/>
 <area shape="poly" id="edge23_Node000020_Node000003" title=" " alt="" coords="916,28,935,40,947,52,955,65,961,90,967,115,973,128,983,140,1010,160,1041,174,1039,179,1008,164,980,144,968,131,962,117,956,91,950,67,943,55,932,44,913,33"/>
 <area shape="poly" id="edge24_Node000020_Node000004" title=" " alt="" coords="892,28,934,39,1007,68,1069,97,1067,102,1005,73,933,45,891,33"/>
-<area shape="rect" id="Node000021" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title=" " alt="" coords="1029,5,1183,31"/>
+<area shape="rect" id="Node000021" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="1029,5,1183,31"/>
 <area shape="poly" id="edge25_Node000020_Node000021" title=" " alt="" coords="929,15,1015,15,1015,21,929,21"/>
 <area shape="poly" id="edge27_Node000022_Node000003" title=" " alt="" coords="900,554,932,535,945,520,954,505,962,476,966,444,979,405,1036,299,1086,217,1091,220,1040,302,984,407,972,445,967,477,959,507,949,523,935,539,903,558"/>
 <area shape="poly" id="edge28_Node000022_Node000006" title=" " alt="" coords="839,580,1082,797,1078,801,835,583"/>

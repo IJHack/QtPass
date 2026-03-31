@@ -174,7 +174,7 @@ var sectionId = 'dynsection-4';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Executes a wrapper command.">
 <polygon fill="white" stroke="#666666" points="1083,-574.1 959,-574.1 959,-555.1 1083,-555.1 1083,-574.1"/>
 <text text-anchor="middle" x="1021" y="-562.1" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::executeWrapper</text>
 </a>
@@ -446,7 +446,7 @@ var sectionId = 'dynsection-4';
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="class_util.html#aced819d4368806d046f0dc24a91843f7" target="_top" xlink:title=" ">
+<g id="a_Node000014"><a xlink:href="class_util.html#aced819d4368806d046f0dc24a91843f7" target="_top" xlink:title="Returns a regex to match newline characters.">
 <polygon fill="white" stroke="#666666" points="887.5,-403.1 771.5,-403.1 771.5,-384.1 887.5,-384.1 887.5,-403.1"/>
 <text text-anchor="middle" x="829.5" y="-391.1" font-family="Helvetica,sans-Serif" font-size="10.00">Util::newLinesRegex</text>
 </a>
@@ -554,7 +554,7 @@ var sectionId = 'dynsection-4';
 <!-- Node21 -->
 <g id="Node000021" class="node">
 <title>Node21</title>
-<g id="a_Node000021"><a xlink:href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616" target="_top" xlink:title=" ">
+<g id="a_Node000021"><a xlink:href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616" target="_top" xlink:title="Returns a regex to match .gpg file extensions.">
 <polygon fill="white" stroke="#666666" points="668.5,-366.1 563.5,-366.1 563.5,-347.1 668.5,-347.1 668.5,-366.1"/>
 <text text-anchor="middle" x="616" y="-354.1" font-family="Helvetica,sans-Serif" font-size="10.00">Util::endsWithGpg</text>
 </a>

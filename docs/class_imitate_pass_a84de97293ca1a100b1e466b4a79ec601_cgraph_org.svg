@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616" target="_top" xlink:title="Returns a regex to match .gpg file extensions.">
 <polygon fill="white" stroke="#666666" points="277,-374 172,-374 172,-355 277,-355 277,-374"/>
 <text text-anchor="middle" x="224.5" y="-362" font-family="Helvetica,sans-Serif" font-size="10.00">Util::endsWithGpg</text>
 </a>
@@ -254,7 +254,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62" target="_top" xlink:title="Executes a wrapper command.">
 <polygon fill="white" stroke="#666666" points="904,-239 780,-239 780,-220 904,-220 904,-239"/>
 <text text-anchor="middle" x="842" y="-227" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::executeWrapper</text>
 </a>

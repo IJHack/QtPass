@@ -6,7 +6,7 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="791,57,756,61,756,55,790,52"/>
 <area shape="rect" id="Node000004" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="283,29,500,55"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="534,59,500,55,500,50,535,53"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title=" " alt="" coords="306,79,477,104"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="306,79,477,104"/>
 <area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="535,81,477,86,477,81,534,75"/>
 <area shape="rect" id="Node000006" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,79,235,104"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="292,94,235,94,235,89,292,89"/>

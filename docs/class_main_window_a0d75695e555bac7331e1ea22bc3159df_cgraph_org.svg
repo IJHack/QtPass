@@ -222,7 +222,7 @@
 <!-- Node13 -->
 <g id="Node000013" class="node">
 <title>Node13</title>
-<g id="a_Node000013"><a xlink:href="class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" target="_top" xlink:title=" ">
+<g id="a_Node000013"><a xlink:href="class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" target="_top" xlink:title="Sets the text to be stored in clipboard and handles clipboard operations.">
 <polygon fill="white" stroke="#666666" points="361,-67.5 233,-67.5 233,-48.5 361,-48.5 361,-67.5"/>
 <text text-anchor="middle" x="297" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::setClippedText</text>
 </a>

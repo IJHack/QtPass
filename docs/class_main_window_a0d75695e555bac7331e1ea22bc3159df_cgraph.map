@@ -22,7 +22,7 @@
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="133,349,193,413,236,450,284,481,319,494,317,499,281,486,232,454,189,417,130,353"/>
 <area shape="rect" id="Node000012" href="$class_main_window.html#a7e1ae254673e36410d4b3a73e1e8ec8e" title=" " alt="" coords="287,546,516,586"/>
 <area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="130,349,152,385,186,434,231,486,284,530,297,538,294,542,281,535,227,490,182,438,147,388,126,352"/>
-<area shape="rect" id="Node000013" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title=" " alt="" coords="316,611,487,636"/>
+<area shape="rect" id="Node000013" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="316,611,487,636"/>
 <area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="128,350,145,397,176,465,198,501,223,536,252,568,284,596,304,607,301,611,281,600,248,572,219,539,193,504,172,467,140,399,123,352"/>
 <area shape="rect" id="Node000019" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="297,661,505,701"/>
 <area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="127,350,142,405,172,485,193,528,218,571,249,611,284,645,294,652,291,656,281,649,245,614,214,574,188,531,167,487,137,406,122,352"/>

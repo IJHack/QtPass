@@ -153,16 +153,16 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>transactionAdd If called after call to <a class="el" href="classsimple_transaction.html#aafd98f73dfc5352f307115cabc2a5ed4" title="transactionStart this function is used to mark start of the sequence of processes that shall be treat...">transactionStart()</a> and before <a class="el" href="classsimple_transaction.html#a76e9280b4cc192ff420520fefa557c63" title="transactionEnd marks end of transaction">transactionEnd()</a>, this method marks given process as next step in transaction. Otherwise it marks given process as the only step in transaction(it's value is treated as transaction result). </p>
-<p><a class="el" href="classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),...">simpleTransaction::transactionAdd</a></p>
+<p>If called after <a class="el" href="classsimple_transaction.html#aafd98f73dfc5352f307115cabc2a5ed4" title="transactionStart this function is used to mark start of the sequence of processes that shall be treat...">transactionStart()</a> and before <a class="el" href="classsimple_transaction.html#a76e9280b4cc192ff420520fefa557c63" title="transactionEnd marks end of transaction">transactionEnd()</a>, this marks the given process as the next step in the transaction. Otherwise it marks the process as the only step in the transaction.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">id</td><td>process that shall be treated as part of transaction</td></tr>
-    <tr><td class="paramname">id</td><td></td></tr>
+    <tr><td class="paramname">id</td><td>Process that shall be treated as part of the transaction </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simpletransaction_8cpp_source.html#l00027">27</a> of file <a class="el" href="simpletransaction_8cpp_source.html">simpletransaction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simpletransaction_8cpp_source.html#l00030">30</a> of file <a class="el" href="simpletransaction_8cpp_source.html">simpletransaction.cpp</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -190,16 +190,16 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>transactionEnd marks end of transaction </p>
-<p><a class="el" href="classsimple_transaction.html#a76e9280b4cc192ff420520fefa557c63" title="transactionEnd marks end of transaction">simpleTransaction::transactionEnd</a></p>
+<p>Marks the end of the current transaction.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pid</td><td>value that will be used as a result of transaction</td></tr>
-    <tr><td class="paramname">pid</td><td></td></tr>
+    <tr><td class="paramname">pid</td><td>Value that will be used as the result of the transaction </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="simpletransaction_8cpp_source.html#l00042">42</a> of file <a class="el" href="simpletransaction_8cpp_source.html">simpletransaction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simpletransaction_8cpp_source.html#l00045">45</a> of file <a class="el" href="simpletransaction_8cpp_source.html">simpletransaction.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -227,17 +227,17 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>transactionIsOver checks wheather currently finished process is last in current transaction </p>
-<p><a class="el" href="classsimple_transaction.html#a3914acc39e65586cd6671aff1ac3afe9" title="transactionIsOver checks wheather currently finished process is last in current transaction">simpleTransaction::transactionIsOver</a></p>
+<p>Checks whether the currently finished process is last in current transaction.</p>
 <dl class="section return"><dt>Returns</dt><dd>result of transaction as set by transactionAdd or transactionEnd if the transaction is over or PROCESS::INVALID if it's not yet over</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td></td></tr>
+    <tr><td class="paramname">id</td><td>The process id to check </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Result of transaction as set by transactionAdd or transactionEnd, or PROCESS::INVALID if the transaction is not yet over </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="simpletransaction_8cpp_source.html#l00060">60</a> of file <a class="el" href="simpletransaction_8cpp_source.html">simpletransaction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simpletransaction_8cpp_source.html#l00065">65</a> of file <a class="el" href="simpletransaction_8cpp_source.html">simpletransaction.cpp</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -264,9 +264,9 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>transactionStart this function is used to mark start of the sequence of processes that shall be treated as one operation. </p>
-<p><a class="el" href="classsimple_transaction.html#aafd98f73dfc5352f307115cabc2a5ed4" title="transactionStart this function is used to mark start of the sequence of processes that shall be treat...">simpleTransaction::transactionStart</a> </p>
+<p>Marks the start of a sequence of processes that shall be treated as one operation. </p>
 
-<p class="definition">Definition at line <a class="el" href="simpletransaction_8cpp_source.html#l00016">16</a> of file <a class="el" href="simpletransaction_8cpp_source.html">simpletransaction.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="simpletransaction_8cpp_source.html#l00017">17</a> of file <a class="el" href="simpletransaction_8cpp_source.html">simpletransaction.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">

@@ -1,6 +1,6 @@
 <map id="MainWindow::on_treeView_clicked" name="MainWindow::on_treeView_clicked">
 <area shape="rect" id="Node000001" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="5,47,200,87"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" title=" " alt="" coords="248,5,431,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" title="Clears the stored clipped text." alt="" coords="248,5,431,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,45,264,31,265,36,200,50"/>
 <area shape="rect" id="Node000003" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Util::getDir get selectd folder path." alt="" coords="293,55,386,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,65,279,65,279,70,200,70"/>

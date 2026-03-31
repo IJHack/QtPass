@@ -67,7 +67,7 @@ var sectionId = 'dynsection-16';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" target="_top" xlink:title="Clears the stored clipped text.">
 <polygon fill="white" stroke="#666666" points="319,-93 182,-93 182,-74 319,-74 319,-93"/>
 <text text-anchor="middle" x="250.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::clearClippedText</text>
 </a>

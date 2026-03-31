@@ -1,8 +1,8 @@
 <map id="QtPass::QtPass" name="QtPass::QtPass">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,35,124,60"/>
+<area shape="rect" id="Node000001" title="Constructs a QtPass instance." alt="" coords="5,35,124,60"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="185,8,353,33"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,37,171,31,172,36,125,42"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title=" " alt="" coords="172,59,367,84"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title="Sets the clipboard clear timer based on autoclear settings." alt="" coords="172,59,367,84"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="125,52,158,56,158,61,124,57"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="415,5,661,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="353,17,401,17,401,22,353,23"/>

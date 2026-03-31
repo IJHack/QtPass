@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Initializes the pass wrapper environment.">
 <polygon fill="#999999" stroke="#666666" points="60,-19 0,-19 0,0 60,0 60,-19"/>
 <text text-anchor="middle" x="30" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::init</text>
 </a>

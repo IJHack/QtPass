@@ -6,7 +6,7 @@
 <area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="148,141,197,141,197,146,148,146"/>
 <area shape="rect" id="Node000012" href="$class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563" title=" " alt="" coords="207,181,397,221"/>
 <area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="128,153,210,175,209,180,127,159"/>
-<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title=" " alt="" coords="491,5,631,31"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="491,5,631,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="346,79,503,32,505,37,347,84"/>
 <area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="ImitatePass::executeGit easy wrapper for running git commands." alt="" coords="715,107,891,132"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="408,86,532,85,667,91,733,101,733,107,666,97,532,90,408,92"/>
@@ -18,7 +18,7 @@
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="891,108,938,103,939,109,891,113"/>
 <area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="939,131,1177,156"/>
 <area shape="poly" id="edge8_Node000004_Node000008" title=" " alt="" coords="891,125,925,128,925,133,891,130"/>
-<area shape="rect" id="Node000006" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title=" " alt="" coords="1225,53,1391,79"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Executes a wrapper command." alt="" coords="1225,53,1391,79"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1164,79,1211,74,1212,79,1165,85"/>
 <area shape="rect" id="Node000007" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="1234,103,1382,143"/>
 <area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="1165,104,1221,110,1220,116,1164,109"/>

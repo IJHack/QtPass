@@ -111,6 +111,7 @@ Public Slots</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa9f6862ff8875c387423b462ac7f9cad" id="r_aa9f6862ff8875c387423b462ac7f9cad"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad">QtPass</a> (<a class="el" href="class_main_window.html">MainWindow</a> *mainWindow)</td></tr>
+<tr class="memdesc:aa9f6862ff8875c387423b462ac7f9cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_qt_pass.html">QtPass</a> instance.  <br /></td></tr>
 <tr class="separator:aa9f6862ff8875c387423b462ac7f9cad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70447af6f0e0540106a423a45dc27c99" id="r_a70447af6f0e0540106a423a45dc27c99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99">~QtPass</a> ()</td></tr>
 <tr class="memdesc:a70447af6f0e0540106a423a45dc27c99"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!">QtPass::~QtPass</a> destroy!  <br /></td></tr>
@@ -119,10 +120,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad0a4d7627e6303e412d4a832a8bad77c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible.">QtPass::init</a> make sure we are ready to go as soon as possible.  <br /></td></tr>
 <tr class="separator:ad0a4d7627e6303e412d4a832a8bad77c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74adba9dd6915c9db50762279b62be89" id="r_a74adba9dd6915c9db50762279b62be89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass.html#a74adba9dd6915c9db50762279b62be89">setClippedText</a> (const QString &amp;, const QString &amp;p_output=QString())</td></tr>
+<tr class="memdesc:a74adba9dd6915c9db50762279b62be89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text to be stored in clipboard and handles clipboard operations.  <br /></td></tr>
 <tr class="separator:a74adba9dd6915c9db50762279b62be89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00f9914078839b980f3d66ddbed61cab" id="r_a00f9914078839b980f3d66ddbed61cab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab">clearClippedText</a> ()</td></tr>
+<tr class="memdesc:a00f9914078839b980f3d66ddbed61cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the stored clipped text.  <br /></td></tr>
 <tr class="separator:a00f9914078839b980f3d66ddbed61cab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24eb2c0a19143db0ba3a741c66881be6" id="r_a24eb2c0a19143db0ba3a741c66881be6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6">setClipboardTimer</a> ()</td></tr>
+<tr class="memdesc:a24eb2c0a19143db0ba3a741c66881be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the clipboard clear timer based on autoclear settings.  <br /></td></tr>
 <tr class="separator:a24eb2c0a19143db0ba3a741c66881be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ac40a69378a7085bebc633984ae6a57" id="r_a2ac40a69378a7085bebc633984ae6a57"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass.html#a2ac40a69378a7085bebc633984ae6a57">isFreshStart</a> () -&gt; bool</td></tr>
 <tr class="separator:a2ac40a69378a7085bebc633984ae6a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,7 +159,15 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00030">30</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p>Constructs a <a class="el" href="class_qt_pass.html">QtPass</a> instance. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mainWindow</td><td>The main window reference </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00034">34</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -183,7 +195,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p><a class="el" href="class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!">QtPass::~QtPass</a> destroy! </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00053">53</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00057">57</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -220,7 +232,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p>MainWindow::clearClipboard remove clipboard contents. </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00395">395</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00451">451</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -253,7 +265,9 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00385">385</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p>Clears the stored clipped text. </p>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00438">438</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -296,7 +310,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00420">420</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00476">476</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -347,7 +361,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The created popup dialog </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00467">467</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00523">523</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -375,7 +389,7 @@ Static Public Member Functions</h2></td></tr>
 
 <p><a class="el" href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible.">QtPass::init</a> make sure we are ready to go as soon as possible. </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00070">70</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00074">74</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -442,7 +456,9 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00387">387</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p>Sets the clipboard clear timer based on autoclear settings. </p>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00443">443</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
@@ -486,7 +502,16 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00376">376</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p>Sets the text to be stored in clipboard and handles clipboard operations. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">password</td><td>The password or text to store </td></tr>
+    <tr><td class="paramname">p_output</td><td>Additional output text </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00426">426</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
@@ -571,7 +596,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00439">439</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00495">495</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary" style="display:block;">

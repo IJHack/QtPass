@@ -148,6 +148,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5d0cea4019f5c123fb4a4417de8d95b9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Pass::Pass wrapper for using either pass or the pass imitation.">Pass::Pass</a> wrapper for using either pass or the pass imitation.  <br /></td></tr>
 <tr class="separator:a5d0cea4019f5c123fb4a4417de8d95b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a012c47a55b3cc3467ad0f013716f623a" id="r_a012c47a55b3cc3467ad0f013716f623a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a012c47a55b3cc3467ad0f013716f623a">init</a> ()</td></tr>
+<tr class="memdesc:a012c47a55b3cc3467ad0f013716f623a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the pass wrapper environment.  <br /></td></tr>
 <tr class="separator:a012c47a55b3cc3467ad0f013716f623a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9575bbed98a8dfb8a3f5a30c18d8bfcf" id="r_a9575bbed98a8dfb8a3f5a30c18d8bfcf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a9575bbed98a8dfb8a3f5a30c18d8bfcf">~Pass</a> () override=default</td></tr>
 <tr class="separator:a9575bbed98a8dfb8a3f5a30c18d8bfcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,10 +222,13 @@ Protected Slots</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
+<tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a wrapper command.  <br /></td></tr>
 <tr class="separator:a66f59138ffe856fd421410d9af9ddc62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff660edce34d33f5a2adfa8c130470f0" id="r_aff660edce34d33f5a2adfa8c130470f0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">generateRandomPassword</a> (const QString &amp;charset, unsigned int length) -&gt; QString</td></tr>
+<tr class="memdesc:aff660edce34d33f5a2adfa8c130470f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random password from the given charset.  <br /></td></tr>
 <tr class="separator:aff660edce34d33f5a2adfa8c130470f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f63e4e86c7ffec6df333e466fb38c3b" id="r_a4f63e4e86c7ffec6df333e466fb38c3b"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">boundedRandom</a> (quint32 bound) -&gt; quint32</td></tr>
+<tr class="memdesc:a4f63e4e86c7ffec6df333e466fb38c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a random number bounded by the given value.  <br /></td></tr>
 <tr class="separator:a4f63e4e86c7ffec6df333e466fb38c3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a924b4cd54e4b5e24fa42661b7eccec07" id="r_a924b4cd54e4b5e24fa42661b7eccec07"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout=true, bool readStderr=true)</td></tr>
 <tr class="separator:a924b4cd54e4b5e24fa42661b7eccec07"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -342,7 +346,16 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00433">433</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p>Generates a random number bounded by the given value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bound</td><td>Upper bound (exclusive) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Random number in range [0, bound) </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00449">449</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 
 </div>
 </div>
@@ -511,7 +524,19 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00045">45</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p>Executes a wrapper command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Process ID </td></tr>
+    <tr><td class="paramname">app</td><td>Application to execute </td></tr>
+    <tr><td class="paramname">args</td><td>Arguments </td></tr>
+    <tr><td class="paramname">readStdout</td><td>Whether to read stdout </td></tr>
+    <tr><td class="paramname">readStderr</td><td>Whether to read stderr </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00053">53</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -589,7 +614,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00051">51</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00059">59</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -661,7 +686,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00273">273</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00284">284</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -1248,7 +1273,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the password </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00085">85</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00096">96</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary" style="display:block;">
@@ -1283,7 +1308,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00192">192</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00203">203</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
@@ -1328,7 +1353,17 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00448">448</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p>Generates a random password from the given charset. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">charset</td><td>Characters to use in the password </td></tr>
+    <tr><td class="paramname">length</td><td>Desired password length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Generated password string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00470">470</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 
 </div>
 </div>
@@ -1358,7 +1393,7 @@ Protected Attributes</h2></td></tr>
 <p><a class="el" href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Pass::getDefaultKeyTemplate return default key generation template Uses ed25519 if supported,...">Pass::getDefaultKeyTemplate</a> return default key generation template Uses ed25519 if supported, otherwise falls back to RSA. </p>
 <dl class="section return"><dt>Returns</dt><dd>GPG batch template string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00161">161</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00172">172</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
@@ -1409,7 +1444,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>path to the gpgid file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00368">368</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00379">379</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary" style="display:block;">
@@ -1460,7 +1495,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>recepients gpg-id contents </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00397">397</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00408">408</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary" style="display:block;">
@@ -1522,7 +1557,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>recepient string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00420">420</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00431">431</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary" style="display:block;">
@@ -1667,7 +1702,7 @@ Protected Attributes</h2></td></tr>
 <p><a class="el" href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Pass::gpgSupportsEd25519 check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much ...">Pass::gpgSupportsEd25519</a> check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much faster for key generation. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if ed25519 is supported </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00140">140</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00151">151</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-28-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-28-summary" class="dynsummary" style="display:block;">
@@ -1700,7 +1735,9 @@ Protected Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00061">61</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p>Initializes the pass wrapper environment. </p>
+
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00072">72</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-30-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-30-summary" class="dynsummary" style="display:block;">
@@ -1829,7 +1866,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QList&lt;UserInfo&gt; users </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00259">259</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00270">270</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 
 </div>
 </div>
@@ -1869,7 +1906,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QList&lt;UserInfo&gt; users </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00203">203</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00214">214</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-31-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary" style="display:block;">
@@ -2153,7 +2190,7 @@ Protected Attributes</h2></td></tr>
 
 <p><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Pass::updateEnv update the execution environment (used when switching profiles)">Pass::updateEnv</a> update the execution environment (used when switching profiles) </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00326">326</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00337">337</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-35-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-35-summary" class="dynsummary" style="display:block;">

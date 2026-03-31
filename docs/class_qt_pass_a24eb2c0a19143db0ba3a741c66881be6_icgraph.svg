@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Sets the clipboard clear timer based on autoclear settings.">
 <polygon fill="#999999" stroke="#666666" points="296,-37 150,-37 150,-18 296,-18 296,-37"/>
 <text text-anchor="middle" x="223" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::setClipboardTimer</text>
 </a>
@@ -48,7 +48,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" target="_top" xlink:title="Constructs a QtPass instance.">
 <polygon fill="white" stroke="#666666" points="101.5,-19 12.5,-19 12.5,0 101.5,0 101.5,-19"/>
 <text text-anchor="middle" x="57" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPass::QtPass</text>
 </a>
