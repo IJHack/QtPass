@@ -452,16 +452,28 @@ void QtPass::showTextAsQRCode(const QString &text) {
   } else {
     QPixmap image;
     image.loadFromData(output, "PNG");
-
-    auto *popup = new QDialog(nullptr, Qt::Popup | Qt::FramelessWindowHint);
-    auto *layout = new QVBoxLayout;
-    auto *popupLabel = new QLabel();
-    layout->addWidget(popupLabel);
-    popupLabel->setPixmap(image);
-    popupLabel->setScaledContents(true);
-    popupLabel->show();
-    popup->setLayout(layout);
-    popup->move(QCursor::pos());
+    QDialog *popup = createQRCodePopup(image);
     popup->exec();
   }
+}
+
+/**
+ * @brief QtPass::createQRCodePopup creates a popup dialog with the given QR
+ * code image. This is extracted for testability. The caller is responsible
+ * for showing and managing the popup lifecycle.
+ * @param image The QR code pixmap to display
+ * @return The created popup dialog
+ */
+QDialog *QtPass::createQRCodePopup(const QPixmap &image) {
+  auto *popup = new QDialog(nullptr, Qt::Popup | Qt::FramelessWindowHint);
+  popup->setAttribute(Qt::WA_DeleteOnClose);
+  auto *layout = new QVBoxLayout;
+  auto *popupLabel = new QLabel();
+  layout->addWidget(popupLabel);
+  popupLabel->setPixmap(image);
+  popupLabel->setScaledContents(true);
+  popupLabel->show();
+  popup->setLayout(layout);
+  popup->move(QCursor::pos());
+  return popup;
 }
