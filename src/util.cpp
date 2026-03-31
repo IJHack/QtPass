@@ -86,9 +86,47 @@ auto Util::normalizeFolderPath(QString path) -> QString {
 }
 
 /**
- * @brief Util::findBinaryInPath search for executables.
- * @param binary
- * @return
+ * @brief Locate an executable by searching the process PATH and (on Windows) falling back to WSL.
+ *
+ * @param binary Executable name or relative path to locate (e.g., "gpg" or "pass").
+ * @return QString Absolute path to the executable if found, empty QString otherwise.
+ */
+
+/**
+ * @brief Determine whether required configuration or executables are missing.
+ *
+ * @return bool `true` if the password store's `.gpg-id` is missing or the configured executable
+ *              (pass or gpg, depending on settings) does not exist; `false` otherwise.
+ */
+
+/**
+ * @brief Get the selected folder path, either relative to the configured pass store or absolute.
+ *
+ * @param index Model index selecting the file or folder.
+ * @param forPass If true, return the path relative to the pass store; otherwise return an absolute path.
+ * @param model Filesystem model used to resolve the index.
+ * @param storeModel StoreModel used to map view indexes to the filesystem model.
+ * @return QString Folder path that always ends with the native directory separator. Returns an empty
+ *                 string when `index` is invalid and `forPass` is true; otherwise returns the pass store root.
+ */
+
+/**
+ * @brief Returns a regex to match file names that end with ".gpg".
+ *
+ * @return const QRegularExpression& Reference to a static regex matching "\.gpg$".
+ */
+
+/**
+ * @brief Returns a regex to match URL-like protocols and their following path.
+ *
+ * @return const QRegularExpression& Reference to a static regex matching protocols like
+ *                                  http/https/ftp/ssh/sftp/ftps/webdav/webdavs followed by a path.
+ */
+
+/**
+ * @brief Returns a regex to match carriage return or newline characters.
+ *
+ * @return const QRegularExpression& Reference to a static regex matching "\r" or "\n".
  */
 auto Util::findBinaryInPath(QString binary) -> QString {
   initialiseEnvironment();
