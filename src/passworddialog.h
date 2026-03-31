@@ -14,7 +14,8 @@ class QLineEdit;
 class QWidget;
 
 /**
- * PasswordDialog — Dialog for inserting and editing passwords, optionally using templates.
+ * PasswordDialog — Dialog for inserting and editing passwords, optionally using
+ * templates.
  *
  * Manages UI for entering, generating, and templating password-related fields.
  */
@@ -30,23 +31,28 @@ class QWidget;
  */
 
 /**
- * Configure the template content used by the dialog and whether templating is enabled.
+ * Configure the template content used by the dialog and whether templating is
+ * enabled.
  * @param rawFields Template text containing field definitions.
- * @param useTemplate Set to true to enable using the provided template, false to disable.
+ * @param useTemplate Set to true to enable using the provided template, false
+ * to disable.
  */
 
 /**
  * Enable or disable applying the template to all applicable fields.
- * @param templateAll If true, apply templating to all fields; otherwise apply selectively.
+ * @param templateAll If true, apply templating to all fields; otherwise apply
+ * selectively.
  */
 
 /**
- * Set the desired password length used by the dialog (e.g., for generation or validation).
+ * Set the desired password length used by the dialog (e.g., for generation or
+ * validation).
  * @param l Desired password length.
  */
 
 /**
- * Set the password character template identifier that controls allowed/required character classes.
+ * Set the password character template identifier that controls allowed/required
+ * character classes.
  * @param t Identifier describing the character template to use.
  */
 

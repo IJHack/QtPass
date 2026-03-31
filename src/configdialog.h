@@ -26,8 +26,9 @@ class QTableWidgetItem;
 /**
  * Configuration dialog providing UI and accessors for application settings.
  *
- * Presents controls for profiles, generation tools (pwgen/pass), GPG/git/OTP/qrencode integration,
- * template handling, tray icon and autoclear options, and exposes methods to read and update those settings.
+ * Presents controls for profiles, generation tools (pwgen/pass),
+ * GPG/git/OTP/qrencode integration, template handling, tray icon and
+ * autoclear options, and exposes methods to read and update those settings.
  * Also overrides closeEvent to perform dialog-close handling.
  */
 class ConfigDialog : public QDialog {

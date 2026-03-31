@@ -15,7 +15,7 @@
 #endif
 
 QProcessEnvironment Util::_env;
-bool Util::_envInitialised;
+bool Util::_envInitialised = false;
 
 /**
  * @brief Util::initialiseEnvironment set the correct PATH for use with gpg, git

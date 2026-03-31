@@ -37,13 +37,15 @@ class QDialog;
 class QtPass;
 class TrayIcon;
 /**
- * Main application window that orchestrates UI, user interactions, and external process handlers.
+ * Main application window that orchestrates UI, user interactions, and external
+ * process handlers.
  *
- * Provides the central interface for managing items, folders, passwords, and OTPs; coordinates
- * UI components (toolbars, panels, dialogs, status/tray), selection and navigation in the
- * underlying file/store models, and lifecycle interactions with external handlers (e.g., pass,
- * Git, GPG key generation, OTP). Exposes methods to restore and configure window state,
- * control grouped UI element enablement, display transient messages, and access or reset the
+ * Provides the central interface for managing items, folders, passwords, and
+ * OTPs; coordinates UI components (toolbars, panels, dialogs, status/tray),
+ * selection and navigation in the underlying file/store models, and lifecycle
+ * interactions with external handlers (e.g., pass, Git, GPG key generation,
+ * OTP). Exposes methods to restore and configure window state, control grouped
+ * UI element enablement, display transient messages, and access or reset the
  * key-generation dialog.
  */
 class MainWindow : public QMainWindow {

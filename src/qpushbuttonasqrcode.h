@@ -11,12 +11,14 @@
 */
 class QWidget;
 /**
- * Stylish QPushButton that represents a field as a QR code and holds a text payload to copy or transmit.
+ * Stylish QPushButton that represents a field as a QR code and holds a text
+ * payload to copy or transmit.
  */
 
 /**
  * Create a QPushButton configured to present text as a QR-code-related action.
- * @param textToCopy Initial text stored for copying or QR-code use (may be empty).
+ * @param textToCopy Initial text stored for copying or QR-code use (may be
+ * empty).
  * @param parent Optional parent widget.
  */
 
@@ -41,7 +43,8 @@ class QWidget;
 
 /**
  * Handle a change/click event reported as a boolean state.
- * @param checked True if the button is in the checked/active state, false otherwise.
+ * @param checked True if the button is in the checked/active state, false
+ * otherwise.
  */
 class QPushButtonAsQRCode : public QPushButton {
   Q_OBJECT

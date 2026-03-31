@@ -12,18 +12,21 @@
 */
 class QWidget;
 /**
- * QPushButton that controls visibility of the associated QLineEdit's contents (e.g., show/hide password).
+ * QPushButton that controls visibility of the associated QLineEdit's contents
+ * (e.g., show/hide password).
  *
  * @param line QLineEdit whose contents are shown or hidden by this button.
  * @param parent Optional parent widget.
  */
 /**
- * Emitted when the button action occurs, carrying the current text of the associated QLineEdit.
+ * Emitted when the button action occurs, carrying the current text of the
+ * associated QLineEdit.
  *
  * @param The current text of the associated QLineEdit.
  */
 /**
- * Handles the button activation state and updates the associated QLineEdit accordingly.
+ * Handles the button activation state and updates the associated QLineEdit
+ * accordingly.
  *
  * @param checked The new checked/toggled state of the button.
  */

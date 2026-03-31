@@ -72,7 +72,7 @@ PasswordDialog::PasswordDialog(QString file, const bool &isNew, QWidget *parent)
 }
 
 /**
- * @brief Pass{}{}wordDialog::~PasswordDialog basic destructor.
+ * @brief PasswordDialog::~PasswordDialog basic destructor.
  */
 PasswordDialog::~PasswordDialog() { delete ui; }
 
@@ -160,7 +160,7 @@ void PasswordDialog::setPassword(const QString &password) {
 /**
  * @brief PasswordDialog::getPassword  join the (templated) fields to a QString
  * for writing back.
- * @return collappsed password.
+ * @return collapsed password.
  */
 auto PasswordDialog::getPassword() -> QString {
   QString passFile = ui->lineEditPassword->text() + "\n";
