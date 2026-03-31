@@ -13,7 +13,8 @@ class MainWindow;
 class Pass;
 /**
  * Construct a QtPass instance associated with the given main window.
- * @param mainWindow Pointer to the application's MainWindow used for UI interactions.
+ * @param mainWindow Pointer to the application's MainWindow used for UI
+ * interactions.
  */
 /**
  * Destroy the QtPass instance and perform necessary cleanup.
@@ -25,13 +26,15 @@ class Pass;
 /**
  * Update the tracked clipped text value.
  * @param text Primary text to store as clipped content.
- * @param p_output Optional additional output text used when computing the clipped value.
+ * @param p_output Optional additional output text used when computing the
+ * clipped value.
  */
 /**
  * Remove any stored clipped text value.
  */
 /**
- * Configure and start the timer that will clear the system clipboard after a delay.
+ * Configure and start the timer that will clear the system clipboard after a
+ * delay.
  */
 /**
  * Return whether this instance was created in a fresh-start state.
@@ -42,7 +45,8 @@ class Pass;
  * @param fs New fresh-start state value.
  */
 /**
- * Set up internal references and Qt connections related to the associated MainWindow.
+ * Set up internal references and Qt connections related to the associated
+ * MainWindow.
  */
 /**
  * Connect QtPass handlers to the provided Pass instance's signals.
@@ -55,7 +59,8 @@ class Pass;
  * Clear the system clipboard contents immediately.
  */
 /**
- * Copy the provided text into the system clipboard and trigger any clipboard lifecycle handling.
+ * Copy the provided text into the system clipboard and trigger any clipboard
+ * lifecycle handling.
  * @param text Text to copy into the clipboard.
  */
 /**
@@ -104,7 +109,8 @@ class Pass;
  * @param p_errout Standard error produced during key generation.
  */
 /**
- * Display the provided output string inside the application's text browser widget, optionally wrapping with prefix and postfix strings.
+ * Display the provided output string inside the application's text browser
+ * widget, optionally wrapping with prefix and postfix strings.
  * @param output Text to display in the text browser.
  * @param prefix Optional prefix to prepend to the output before display.
  * @param postfix Optional postfix to append to the output before display.

@@ -11,7 +11,8 @@
 */
 class QWidget;
 /**
- * A QPushButton subclass that stores a text payload and emits it when activated.
+ * A QPushButton subclass that stores a text payload and emits it when
+ * activated.
  *
  * The button is intended for copying or emitting password/account details and
  * toggles between default and pushed icon states.
@@ -19,7 +20,8 @@ class QWidget;
 
 /**
  * Construct a QPushButtonWithClipboard and initialize the stored text.
- * @param textToCopy Initial text to store and emit when the button is activated.
+ * @param textToCopy Initial text to store and emit when the button is
+ * activated.
  * @param parent Optional parent widget.
  */
 
@@ -43,7 +45,8 @@ class QWidget;
  */
 
 /**
- * Handle the button's clicked/pressed state and emit the stored text when appropriate.
+ * Handle the button's clicked/pressed state and emit the stored text when
+ * appropriate.
  * @param checked Whether the button is in the pressed/checked state.
  */
 class QPushButtonWithClipboard : public QPushButton {

@@ -25,24 +25,28 @@ class QMenu;
  */
 /**
  * Show or hide the tray-related UI and behavior.
- * @param visible `true` to make tray UI active/visible, `false` to deactivate/hide it.
+ * @param visible `true` to make tray UI active/visible, `false` to
+ * deactivate/hide it.
  */
 /**
  * Report whether tray resources have been allocated and initialized.
  * @returns `true` if resources are allocated, `false` otherwise.
  */
 /**
- * Toggle the visibility/state of the associated main window in response to user interaction.
+ * Toggle the visibility/state of the associated main window in response to user
+ * interaction.
  */
 /**
  * Handle activation events from the system tray icon.
  * @param reason The activation reason provided by QSystemTrayIcon.
  */
 /**
- * Create and configure the tray menu actions (show, hide, minimize, maximize, restore, quit).
+ * Create and configure the tray menu actions (show, hide, minimize, maximize,
+ * restore, quit).
  */
 /**
- * Initialize the QSystemTrayIcon and its context menu, wiring actions and event handling.
+ * Initialize the QSystemTrayIcon and its context menu, wiring actions and event
+ * handling.
  */
 class TrayIcon : public QWidget {
   Q_OBJECT

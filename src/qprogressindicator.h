@@ -34,7 +34,8 @@
 #include <QWidget>
 
 /*!
- * QProgressIndicator provides a simple indeterminate progress indicator widget that spins to show the application is busy.
+ * QProgressIndicator provides a simple indeterminate progress indicator widget
+ * that spins to show the application is busy.
  *
  * @sa QProgressBar
  */
@@ -42,7 +43,8 @@
 /*!
  * Returns the delay between animation steps.
  *
- * @return The number of milliseconds between animation steps. The default value is 40.
+ * @return The number of milliseconds between animation steps. The default value
+ * is 40.
  * @sa setAnimationDelay
  */
 
@@ -56,7 +58,8 @@
 /*!
  * Indicates whether the indicator remains visible when not animating.
  *
- * @return `true` if the indicator shows itself when stopped, `false` otherwise. The default is `false`.
+ * @return `true` if the indicator shows itself when stopped, `false` otherwise.
+ * The default is `false`.
  * @sa setDisplayedWhenStopped
  */
 
@@ -82,14 +85,16 @@
 /*!
  * Sets the delay between animation steps.
  *
- * @param delay Delay in milliseconds. Values larger than 40 slow the animation; values smaller than 40 speed it up.
+ * @param delay Delay in milliseconds. Values larger than 40 slow the animation;
+ * values smaller than 40 speed it up.
  * @sa animationDelay
  */
 
 /*!
  * Sets whether the indicator remains visible when not animating.
  *
- * @param state Set to `true` to keep the indicator visible when stopped; set to `false` to hide it when stopped.
+ * @param state Set to `true` to keep the indicator visible when stopped; set to
+ * `false` to hide it when stopped.
  * @sa isDisplayedWhenStopped
  */
 
