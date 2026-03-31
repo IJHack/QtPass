@@ -27,6 +27,10 @@
 #include "debughelper.h"
 #endif
 
+/**
+ * @brief Constructs a QtPass instance.
+ * @param mainWindow The main window reference
+ */
 QtPass::QtPass(MainWindow *mainWindow)
     : m_mainWindow(mainWindow), freshStart(true) {
   setClipboardTimer();
@@ -126,6 +130,9 @@ auto QtPass::init() -> bool {
   return true;
 }
 
+/**
+ * @brief Sets up the main window and connects signal handlers.
+ */
 void QtPass::setMainWindow() {
   m_mainWindow->restoreWindow();
 
@@ -159,6 +166,10 @@ void QtPass::setMainWindow() {
           });
 }
 
+/**
+ * @brief Connects pass signal handlers to QtPass slots.
+ * @param pass The pass instance to connect
+ */
 void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::error, this, &QtPass::processError);
   connect(pass, &Pass::processErrorExit, this, &QtPass::processErrorExit);
@@ -282,6 +293,11 @@ void QtPass::processError(QProcess::ProcessError error) {
   m_mainWindow->setUiElementsEnabled(true);
 }
 
+/**
+ * @brief Handles process error exit.
+ * @param exitCode The exit code
+ * @param p_error The error message
+ */
 void QtPass::processErrorExit(int exitCode, const QString &p_error) {
   if (nullptr != m_mainWindow->getKeygenDialog()) {
     m_mainWindow->cleanKeygenDialog();
@@ -326,17 +342,32 @@ void QtPass::processFinished(const QString &p_output, const QString &p_errout) {
   m_mainWindow->setUiElementsEnabled(true);
 }
 
+/**
+ * @brief Called when pass store has changed.
+ * @param p_out Output from the process
+ * @param p_err Error output
+ */
 void QtPass::passStoreChanged(const QString &p_out, const QString &p_err) {
   processFinished(p_out, p_err);
   doGitPush();
 }
 
+/**
+ * @brief Called when an insert operation has finished.
+ * @param p_output Output from the process
+ * @param p_errout Error output
+ */
 void QtPass::finishedInsert(const QString &p_output, const QString &p_errout) {
   processFinished(p_output, p_errout);
   doGitPush();
   m_mainWindow->on_treeView_clicked(m_mainWindow->getCurrentTreeViewIndex());
 }
 
+/**
+ * @brief Called when GPG key generation has completed.
+ * @param p_output Output from the process
+ * @param p_errout Error output
+ */
 void QtPass::onKeyGenerationComplete(const QString &p_output,
                                      const QString &p_errout) {
   if (nullptr != m_mainWindow->getKeygenDialog()) {
@@ -352,10 +383,20 @@ void QtPass::onKeyGenerationComplete(const QString &p_output,
   processFinished(p_output, p_errout);
 }
 
+/**
+ * @brief Called when pass show handler has finished.
+ * @param output The output to display
+ */
 void QtPass::passShowHandlerFinished(QString output) {
   showInTextBrowser(std::move(output));
 }
 
+/**
+ * @brief Displays text in the main window's text browser.
+ * @param output Text to display
+ * @param prefix Prefix to add to output
+ * @param postfix Postfix to add to output
+ */
 void QtPass::showInTextBrowser(QString output, const QString &prefix,
                                const QString &postfix) {
   output = output.toHtmlEscaped();
@@ -367,12 +408,20 @@ void QtPass::showInTextBrowser(QString output, const QString &prefix,
   m_mainWindow->flashText(output, false, true);
 }
 
+/**
+ * @brief Performs git push if auto-push is enabled.
+ */
 void QtPass::doGitPush() {
   if (QtPassSettings::isAutoPush()) {
     m_mainWindow->onPush();
   }
 }
 
+/**
+ * @brief Sets the clipped text and optionally copies to clipboard.
+ * @param password The password to clip
+ * @param p_output The output to display
+ */
 void QtPass::setClippedText(const QString &password, const QString &p_output) {
   if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER &&
       !p_output.isEmpty()) {
@@ -382,15 +431,22 @@ void QtPass::setClippedText(const QString &password, const QString &p_output) {
     }
   }
 }
+
+/**
+ * @brief Clears the clipped text.
+ */
 void QtPass::clearClippedText() { clippedText = ""; }
 
+/**
+ * @brief Sets up the clipboard auto-clear timer.
+ */
 void QtPass::setClipboardTimer() {
   clearClipboardTimer.setInterval(MS_PER_SECOND *
                                   QtPassSettings::getAutoclearSeconds());
 }
 
 /**
- * @brief MainWindow::clearClipboard remove clipboard contents.
+ * @brief Removes clipboard contents.
  */
 void QtPass::clearClipboard() {
   QClipboard *clipboard = QApplication::clipboard();
@@ -414,8 +470,8 @@ void QtPass::clearClipboard() {
 }
 
 /**
- * @brief MainWindow::copyTextToClipboard copies text to your clipboard
- * @param text
+ * @brief Copies text to the clipboard.
+ * @param text The text to copy
  */
 void QtPass::copyTextToClipboard(const QString &text) {
   QClipboard *clip = QApplication::clipboard();
