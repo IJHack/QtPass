@@ -157,8 +157,12 @@
       <header>
         <h1>QtPass <small>1.5.1</small></h1>
         <p>
-          A simple, beautiful password manager for everyone.
-          Works on Linux, Windows, and macOS.
+          A modern, cross-platform GUI for
+          <a
+            title="pass, the standard unix password manager"
+            href="https://www.passwordstore.org/"
+            >pass</a
+          >.
         </p>
 
         <p class="view">
@@ -196,19 +200,40 @@
 
         <div class="screenshots">
           <img id="qtpass" src="images/qtpass.png" alt="QtPass MainWindow" />
+          <img
+            id="config"
+            class="hidden"
+            src="images/config.png"
+            alt="QtPass Configuration"
+          />
         </div>
       </header>
       <section>
         <h2>
           <a id="overview" class="anchor" href="#overview" aria-hidden="true"
             ><span class="octicon octicon-link"></span></a
-          >Your passwords, safely stored and synced
+          >Password management for everyone
         </h2>
 
         <p>
-          QtPass is a password manager with a simple interface.
-          Your passwords are encrypted with GPG and stored in plain text files
-          you control. Sync them across all your devices with Git.
+          QtPass is part of the
+          <a href="https://www.passwordstore.org">pass</a> ecosystem - the
+          standard UNIX password manager. Your passwords are encrypted with GPG
+          and can be synced across all your devices using Git.
+        </p>
+
+        <p>
+          Unlike many password managers, QtPass isn't tied to one platform or
+          cloud service. Use it alongside other
+          <a href="https://www.passwordstore.org/#other"
+            >pass-compatible clients</a
+          >
+          on mobile, CLI, or browser.
+        </p>
+
+        <p>
+          Supports smartcards and YubiKeys for extra security - your private
+          keys never leave the device.
         </p>
 
         <p>
@@ -239,44 +264,9 @@
         </p>
 
         <h2>
-          <a
-            id="quick-install"
-            class="anchor"
-            href="#quick-install"
-            aria-hidden="true"
-            ><span class="octicon octicon-link"></span></a
-          >Install in 3 minutes
-        </h2>
-
-        <h3>
-          <a id="linux-quick" class="anchor" href="#linux-quick" aria-hidden="true"
-            ><span aria-hidden="true" class="octicon octicon-link"></span></a
-          >Linux
-        </h3>
-        <pre><code>sudo apt install qtpass</code></pre>
-
-        <h3>
-          <a id="windows-quick" class="anchor" href="#windows-quick" aria-hidden="true"
-            ><span aria-hidden="true" class="octicon octicon-link"></span></a
-          >Windows
-        </h3>
-        <pre><code>choco install qtpass</code></pre>
-
-        <h3>
-          <a id="macos-quick" class="anchor" href="#macos-quick" aria-hidden="true"
-            ><span aria-hidden="true" class="octicon octicon-link"></span></a
-          >macOS
-        </h3>
-        <pre><code>brew install --cask qtpass</code></pre>
-
-        <p>
-          <a href="/downloads">More installation options</a>
-        </p>
-
-        <h2>
           <a id="features" class="anchor" href="#features" aria-hidden="true"
             ><span class="octicon octicon-link"></span></a
-          >Why QtPass?
+          >Features
         </h2>
 
         <ul>
@@ -287,20 +277,33 @@
               href="https://www.passwordstore.org/"
               >pass</a
             >
-            - your passwords, your files
+            - no vendor lock-in
           </li>
-          <li>Open source and free</li>
-          <li>Linux, macOS, Windows, FreeBSD</li>
+          <li>Cross-platform: Linux, macOS, Windows, FreeBSD</li>
           <li>Native look and feel on each platform</li>
-          <li>Secure password generator</li>
-          <li>Git sync for easy backup</li>
+          <li>Secure password generation</li>
+          <li>Git sync for easy backup and sharing</li>
+          <li>Per-folder encryption keys</li>
+          <li>Smartcard and YubiKey support</li>
           <li>Clipboard with auto-clear</li>
+          <li>Shoulder surfing protection</li>
           <li>Available in 20+ languages</li>
+          <li>
+            <a title="QtPass README" href="/docs/md__r_e_a_d_m_e.html"
+              >And more...</a
+            >
+          </li>
         </ul>
 
         <p>
           New to QtPass?
           <a href="/getting-started">Follow the getting started guide</a>.
+        </p>
+
+        <p>
+          Already using QtPass?
+          <a href="/advanced">Learn about advanced features</a> like templates,
+          profiles, OTP, and more.
         </p>
 
         <h2>
@@ -310,7 +313,7 @@
             href="#installation"
             aria-hidden="true"
             ><span class="octicon octicon-link"></span></a
-          >Installation Details
+          >Installation
         </h2>
 
         <h3>
