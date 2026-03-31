@@ -40,7 +40,7 @@ void Util::initialiseEnvironment() {
       path += ";C:\\Program Files\\WinGPG\\x86";
     if (!path.contains("C:\\Program Files\\GnuPG\\bin") &&
         QFile("C:\\Program Files\\GnuPG\\bin").exists())
-      path += ";C:\\Program Files\\GnuPG\bin";
+      path += ";C:\\Program Files\\GnuPG\\bin";
     _env.insert("PATH", path);
 #endif
 #ifdef QT_DEBUG
@@ -140,7 +140,7 @@ auto Util::findBinaryInPath(QString binary) -> QString {
 }
 
 /**
- * @brief Util::checkConfig do we have prequisite settings?
+ * @brief Util::checkConfig do we have prerequisite settings?
  * @return
  */
 auto Util::checkConfig() -> bool {
@@ -154,7 +154,7 @@ auto Util::checkConfig() -> bool {
 }
 
 /**
- * @brief Util::getDir get selectd folder path
+ * @brief Util::getDir get selected folder path
  * @param index
  * @param forPass short or full path
  * @param model the filesystem model to operate on
