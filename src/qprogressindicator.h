@@ -34,13 +34,70 @@
 #include <QWidget>
 
 /*!
-    \class QProgressIndicator
-    \brief The QProgressIndicator class lets an application display a progress
-   indicator to show that a lengthy task is under way.
+ * QProgressIndicator provides a simple indeterminate progress indicator widget that spins to show the application is busy.
+ *
+ * @sa QProgressBar
+ */
 
-    Progress indicators are indeterminate and do nothing more than spin to show
-   that the application is busy.
-    \sa QProgressBar
+/*!
+ * Returns the delay between animation steps.
+ *
+ * @return The number of milliseconds between animation steps. The default value is 40.
+ * @sa setAnimationDelay
+ */
+
+/*!
+ * Indicates whether the indicator is currently animating.
+ *
+ * @return `true` if the indicator is animating, `false` otherwise.
+ * @sa startAnimation stopAnimation
+ */
+
+/*!
+ * Indicates whether the indicator remains visible when not animating.
+ *
+ * @return `true` if the indicator shows itself when stopped, `false` otherwise. The default is `false`.
+ * @sa setDisplayedWhenStopped
+ */
+
+/*!
+ * Returns the current drawing color used by the indicator.
+ *
+ * @return Reference to the indicator's QColor.
+ * @sa setColor
+ */
+
+/*!
+ * Starts the spin animation.
+ *
+ * @sa stopAnimation isAnimated
+ */
+
+/*!
+ * Stops the spin animation.
+ *
+ * @sa startAnimation isAnimated
+ */
+
+/*!
+ * Sets the delay between animation steps.
+ *
+ * @param delay Delay in milliseconds. Values larger than 40 slow the animation; values smaller than 40 speed it up.
+ * @sa animationDelay
+ */
+
+/*!
+ * Sets whether the indicator remains visible when not animating.
+ *
+ * @param state Set to `true` to keep the indicator visible when stopped; set to `false` to hide it when stopped.
+ * @sa isDisplayedWhenStopped
+ */
+
+/*!
+ * Sets the drawing color for the indicator.
+ *
+ * @param color The new color to use for rendering the indicator.
+ * @sa color
  */
 class QProgressIndicator : public QWidget {
   Q_OBJECT
@@ -78,7 +135,7 @@ public:
   [[nodiscard]] virtual auto sizeHint() const -> QSize;
   [[nodiscard]] auto heightForWidth(int w) const -> int;
 
-public Q_SLOTS:
+public slots:
   /*! Starts the spin animation.
       \sa stopAnimation isAnimated
    */

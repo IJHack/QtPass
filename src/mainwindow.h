@@ -36,6 +36,16 @@ class MainWindow;
 class QDialog;
 class QtPass;
 class TrayIcon;
+/**
+ * Main application window that orchestrates UI, user interactions, and external process handlers.
+ *
+ * Provides the central interface for managing items, folders, passwords, and OTPs; coordinates
+ * UI components (toolbars, panels, dialogs, status/tray), selection and navigation in the
+ * underlying file/store models, and lifecycle interactions with external handlers (e.g., pass,
+ * Git, GPG key generation, OTP). Exposes methods to restore and configure window state,
+ * control grouped UI element enablement, display transient messages, and access or reset the
+ * key-generation dialog.
+ */
 class MainWindow : public QMainWindow {
   Q_OBJECT
 
@@ -64,12 +74,12 @@ protected:
   void changeEvent(QEvent *event) override;
   auto eventFilter(QObject *obj, QEvent *event) -> bool override;
 
-Q_SIGNALS:
+signals:
   void passShowHandlerFinished(const QString &output);
   void passGitInitNeeded();
   void generateGPGKeyPair(const QString &batch);
 
-public Q_SLOTS:
+public slots:
   void deselect();
 
   void messageAvailable(const QString &message);
@@ -86,7 +96,7 @@ public Q_SLOTS:
   void startReencryptPath();
   void endReencryptPath();
 
-private Q_SLOTS:
+private slots:
   void addPassword();
   void addFolder();
   void onEdit();

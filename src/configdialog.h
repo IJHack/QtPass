@@ -23,6 +23,13 @@ class ConfigDialog;
 class MainWindow;
 class QCloseEvent;
 class QTableWidgetItem;
+/**
+ * Configuration dialog providing UI and accessors for application settings.
+ *
+ * Presents controls for profiles, generation tools (pwgen/pass), GPG/git/OTP/qrencode integration,
+ * template handling, tray icon and autoclear options, and exposes methods to read and update those settings.
+ * Also overrides closeEvent to perform dialog-close handling.
+ */
 class ConfigDialog : public QDialog {
   Q_OBJECT
 
@@ -49,7 +56,7 @@ public:
 protected:
   void closeEvent(QCloseEvent *event) override;
 
-private Q_SLOTS:
+private slots:
   void on_accepted();
   void on_autodetectButton_clicked();
   void on_radioButtonNative_clicked();
