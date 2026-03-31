@@ -1108,22 +1108,26 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l01043" name="l01043"></a><span class="lineno"> 1043</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(uniqueName);</div>
 <div class="line"><a id="l01044" name="l01044"></a><span class="lineno"> 1044</span> </div>
 <div class="line"><a id="l01045" name="l01045"></a><span class="lineno"> 1045</span>  <span class="comment">// Remove file before assertions so it is always cleaned up.</span></div>
-<div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span>  QFile::remove(uniquePath);</div>
-<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span> </div>
-<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>  QVERIFY2(!result.isEmpty(),</div>
-<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>           <span class="stringliteral">&quot;findBinaryInPath should locate the executable placed in a PATH &quot;</span></div>
-<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>           <span class="stringliteral">&quot;directory&quot;</span>);</div>
-<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>  QVERIFY2(result.endsWith(uniqueName),</div>
-<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>           qPrintable(QStringLiteral(<span class="stringliteral">&quot;Result &#39;%1&#39; should end with &#39;%2&#39;&quot;</span>)</div>
-<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>                          .arg(result, uniqueName)));</div>
-<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>  QVERIFY2(QFileInfo(result).isAbsolute(), <span class="stringliteral">&quot;Result must be an absolute path&quot;</span>);</div>
-<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>  QSKIP(<span class="stringliteral">&quot;Temp-executable test is Unix-only&quot;</span>);</div>
-<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>}</div>
-<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span> </div>
-<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>QTEST_MAIN(<a class="code hl_class" href="classtst__util.html">tst_util</a>)</div>
-<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span><span class="preprocessor">#include &quot;tst_util.moc&quot;</span></div>
+<div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> removed = QFile::remove(uniquePath);</div>
+<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span>  QVERIFY2(</div>
+<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>      removed,</div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>      qPrintable(</div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>          QStringLiteral(<span class="stringliteral">&quot;Failed to clean up test file &#39;%1&#39;&quot;</span>).arg(uniquePath)));</div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span> </div>
+<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>  QVERIFY2(!result.isEmpty(),</div>
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>           <span class="stringliteral">&quot;findBinaryInPath should locate the executable placed in a PATH &quot;</span></div>
+<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>           <span class="stringliteral">&quot;directory&quot;</span>);</div>
+<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>  QVERIFY2(result.endsWith(uniqueName),</div>
+<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>           qPrintable(QStringLiteral(<span class="stringliteral">&quot;Result &#39;%1&#39; should end with &#39;%2&#39;&quot;</span>)</div>
+<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>                          .arg(result, uniqueName)));</div>
+<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>  QVERIFY2(QFileInfo(result).isAbsolute(), <span class="stringliteral">&quot;Result must be an absolute path&quot;</span>);</div>
+<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>  QSKIP(<span class="stringliteral">&quot;Temp-executable test is Unix-only&quot;</span>);</div>
+<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>}</div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span> </div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>QTEST_MAIN(<a class="code hl_class" href="classtst__util.html">tst_util</a>)</div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span><span class="preprocessor">#include &quot;tst_util.moc&quot;</span></div>
 <div class="ttc" id="aclass_file_content_html"><div class="ttname"><a href="class_file_content.html">FileContent</a></div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00031">filecontent.h:31</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a845c61a8c0f52e5aa73953c9162dd47d"><div class="ttname"><a href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">FileContent::getRemainingData</a></div><div class="ttdeci">auto getRemainingData() const -&gt; QString</div><div class="ttdoc">Gets remaining data not in named values.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00076">filecontent.cpp:76</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a89393e371a598cb3e0d7d149dbc431b1"><div class="ttname"><a href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">FileContent::getNamedValues</a></div><div class="ttdeci">auto getNamedValues() const -&gt; NamedValues</div><div class="ttdoc">Gets named value pairs from the parsed file.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00068">filecontent.cpp:68</a></div></div>
