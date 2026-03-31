@@ -93,7 +93,7 @@ auto Util::normalizeFolderPath(QString path) -> QString {
 auto Util::findBinaryInPath(QString binary) -> QString {
   initialiseEnvironment();
 
-  QString ret = "";
+  QString ret;
 
   binary.prepend(QDir::separator());
 
@@ -110,11 +110,14 @@ auto Util::findBinaryInPath(QString binary) -> QString {
     }
 #endif
 
-    foreach (QString entry, entries) {
-      QScopedPointer<QFileInfo> qfi(new QFileInfo(entry.append(binary)));
+    for (const QString &entryConst : entries) {
+      QString fullPath = entryConst + binary;
+      QScopedPointer<QFileInfo> qfi(new QFileInfo(fullPath));
 #ifdef Q_OS_WIN
-      if (!qfi->exists())
-        qfi.reset(new QFileInfo(entry.append(".exe")));
+      if (!qfi->exists()) {
+        QString fullPathExe = fullPath + ".exe";
+        qfi.reset(new QFileInfo(fullPathExe));
+      }
 
 #endif
       if (!qfi->isExecutable()) {
