@@ -56,7 +56,7 @@ private Q_SLOTS:
   void boundedRandom();
   void findBinaryInPath();
   void findPasswordStore();
-  void checkConfig();
+  void configIsValid();
   void getDirBasic();
   void getDirWithIndex();
   void findBinaryInPathNotFound();
@@ -536,9 +536,18 @@ void tst_util::findPasswordStore() {
   QVERIFY(result.endsWith(QDir::separator()));
 }
 
-void tst_util::checkConfig() {
-  // Smoke test: ensure Util::checkConfig() can be called without crashing.
-  (void)Util::checkConfig();
+void tst_util::configIsValid() {
+  const QString originalStore = QtPassSettings::getPassStore();
+  QTemporaryDir tempDir;
+  QVERIFY2(tempDir.isValid(), "Temporary directory should be created");
+
+  // No .gpg-id in this store => config must be invalid.
+  QtPassSettings::setPassStore(tempDir.path());
+  const bool isValid = Util::configIsValid();
+
+  // Restore global setting before assertion to avoid leaking test state.
+  QtPassSettings::setPassStore(originalStore);
+  QVERIFY2(!isValid, "Expected invalid config when .gpg-id is missing");
 }
 
 void tst_util::getDirBasic() {
