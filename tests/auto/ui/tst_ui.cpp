@@ -19,6 +19,7 @@ private Q_SLOTS:
   void cleanupTestCase();
   void passwordDialogBasic();
   void passwordDialogWithTemplate();
+  void qrCodePopupDeletesOnClose();
   void qrCodePopupHasDeleteOnCloseAttribute();
   void dialogWithoutDeleteOnCloseDoesNotAutoDelete();
 };
@@ -119,6 +120,23 @@ void tst_ui::passwordDialogWithTemplate() {
 }
 
 /**
+ * @brief tst_ui::qrCodePopupDeletesOnClose verifies that a QDialog with
+ * Qt::WA_DeleteOnClose is automatically destroyed when closed.  This tests
+ * the memory leak fix in showTextAsQRCode where the popup dialog now has
+ * this attribute set.
+ */
+void tst_ui::qrCodePopupDeletesOnClose() {
+  QPointer<QDialog> popup(
+      new QDialog(nullptr, Qt::Popup | Qt::FramelessWindowHint));
+  popup->setAttribute(Qt::WA_DeleteOnClose);
+  QVERIFY(!popup.isNull());
+
+  popup->close();
+  QCoreApplication::processEvents();
+  QTRY_VERIFY(popup.isNull());
+}
+
+/**
  * @brief tst_ui::qrCodePopupHasDeleteOnCloseAttribute verifies that setting
  * Qt::WA_DeleteOnClose on a QDialog causes testAttribute() to return true,
  * matching the behaviour added in showTextAsQRCode (memory-leak fix).
@@ -127,9 +145,7 @@ void tst_ui::qrCodePopupHasDeleteOnCloseAttribute() {
   QDialog *popup = new QDialog(nullptr, Qt::Popup | Qt::FramelessWindowHint);
   popup->setAttribute(Qt::WA_DeleteOnClose);
   QVERIFY(popup->testAttribute(Qt::WA_DeleteOnClose));
-  // Clean up manually since we are not relying on the auto-delete here.
-  popup->deleteLater();
-  QCoreApplication::processEvents();
+  delete popup;
 }
 
 /**
