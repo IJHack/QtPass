@@ -17,10 +17,6 @@
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised = false;
 
-/**
- * @brief Util::initialiseEnvironment set the correct PATH for use with gpg, git
- * etc.
- */
 void Util::initialiseEnvironment() {
   if (!_envInitialised) {
     _env = QProcessEnvironment::systemEnvironment();
@@ -50,11 +46,6 @@ void Util::initialiseEnvironment() {
   }
 }
 
-/**
- * @brief Util::findPasswordStore look for common .password-store folder
- * location.
- * @return
- */
 auto Util::findPasswordStore() -> QString {
   QString path;
   initialiseEnvironment();
@@ -72,12 +63,6 @@ auto Util::findPasswordStore() -> QString {
   return Util::normalizeFolderPath(path);
 }
 
-/**
- * @brief Util::normalizeFolderPath let's always end folders with a
- * QDir::separator()
- * @param path
- * @return
- */
 auto Util::normalizeFolderPath(QString path) -> QString {
   if (!path.endsWith("/") && !path.endsWith(QDir::separator())) {
     path += QDir::separator();
@@ -85,15 +70,10 @@ auto Util::normalizeFolderPath(QString path) -> QString {
   return QDir::toNativeSeparators(path);
 }
 
-/**
- * @brief Util::findBinaryInPath search for executables.
- * @param binary
- * @return
- */
 auto Util::findBinaryInPath(QString binary) -> QString {
   initialiseEnvironment();
 
-  QString ret = "";
+  QString ret;
 
   binary.prepend(QDir::separator());
 
@@ -110,11 +90,14 @@ auto Util::findBinaryInPath(QString binary) -> QString {
     }
 #endif
 
-    foreach (QString entry, entries) {
-      QScopedPointer<QFileInfo> qfi(new QFileInfo(entry.append(binary)));
+    for (const QString &entryConst : entries) {
+      QString fullPath = entryConst + binary;
+      QScopedPointer<QFileInfo> qfi(new QFileInfo(fullPath));
 #ifdef Q_OS_WIN
-      if (!qfi->exists())
-        qfi.reset(new QFileInfo(entry.append(".exe")));
+      if (!qfi->exists()) {
+        QString fullPathExe = fullPath + ".exe";
+        qfi.reset(new QFileInfo(fullPathExe));
+      }
 
 #endif
       if (!qfi->isExecutable()) {
@@ -139,10 +122,6 @@ auto Util::findBinaryInPath(QString binary) -> QString {
   return ret;
 }
 
-/**
- * @brief Util::checkConfig do we have prerequisite settings?
- * @return
- */
 auto Util::checkConfig() -> bool {
   return !QFile(QDir(QtPassSettings::getPassStore()).filePath(".gpg-id"))
               .exists() ||
@@ -153,14 +132,6 @@ auto Util::checkConfig() -> bool {
                     !QFile(QtPassSettings::getGpgExecutable()).exists());
 }
 
-/**
- * @brief Util::getDir get selected folder path
- * @param index
- * @param forPass short or full path
- * @param model the filesystem model to operate on
- * @param storeModel our storemodel to operate on
- * @return path
- */
 auto Util::getDir(const QModelIndex &index, bool forPass,
                   const QFileSystemModel &model, const StoreModel &storeModel)
     -> QString {
@@ -179,29 +150,17 @@ auto Util::getDir(const QModelIndex &index, bool forPass,
   return filePath;
 }
 
-/**
- * @brief Returns a regex to match .gpg file extensions.
- * @return Reference to static regex
- */
 auto Util::endsWithGpg() -> const QRegularExpression & {
   static const QRegularExpression expr{"\\.gpg$"};
   return expr;
 }
 
-/**
- * @brief Returns a regex to match URL protocols.
- * @return Reference to static regex
- */
 auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
       "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^\" <>\\)\\]\\[]+)"};
   return regex;
 }
 
-/**
- * @brief Returns a regex to match newline characters.
- * @return Reference to static regex
- */
 auto Util::newLinesRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{"[\r\n]"};
   return regex;
