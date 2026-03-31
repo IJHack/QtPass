@@ -10,11 +10,12 @@ var searchData=
   ['clearclipboard_7',['clearClipboard',['../class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e',1,'QtPass']]],
   ['clearclippedtext_8',['clearClippedText',['../class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab',1,'QtPass']]],
   ['clicked_9',['clicked',['../class_q_push_button_as_q_r_code.html#a347f41172463a60dae8c52461436e485',1,'QPushButtonAsQRCode::clicked()'],['../class_q_push_button_show_password.html#a87b7cd7b74f800d1ba0ffd3e25d072ed',1,'QPushButtonShowPassword::clicked()'],['../class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4',1,'QPushButtonWithClipboard::clicked()']]],
-  ['closeevent_10',['closeevent',['../class_config_dialog.html#ad5f28221ebec0701bb56c43780a452b3',1,'ConfigDialog::closeEvent()'],['../class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5',1,'UsersDialog::closeEvent()'],['../class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f',1,'MainWindow::closeEvent()'],['../class_keygen_dialog.html#a37012091a78f400d9bdc7b6f6b5949ef',1,'KeygenDialog::closeEvent()']]],
+  ['closeevent_10',['closeevent',['../class_keygen_dialog.html#a37012091a78f400d9bdc7b6f6b5949ef',1,'KeygenDialog::closeEvent()'],['../class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5',1,'UsersDialog::closeEvent()'],['../class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f',1,'MainWindow::closeEvent()'],['../class_config_dialog.html#ad5f28221ebec0701bb56c43780a452b3',1,'ConfigDialog::closeEvent()']]],
   ['color_11',['color',['../class_q_progress_indicator.html#afce11eec7046594b7a9cf28b69cdcc40',1,'QProgressIndicator']]],
   ['config_12',['config',['../class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56',1,'MainWindow']]],
   ['configdialog_13',['ConfigDialog',['../class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1',1,'ConfigDialog']]],
   ['copy_14',['copy',['../class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a',1,'ImitatePass::Copy()'],['../class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49',1,'Pass::Copy()'],['../class_real_pass.html#a640ea218267605b9ca78c21ca5677690',1,'RealPass::Copy()']]],
   ['copytexttoclipboard_15',['copyTextToClipboard',['../class_qt_pass.html#acba134fb5281aedee11899a03976aa95',1,'QtPass']]],
-  ['critical_16',['critical',['../class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842',1,'MainWindow::critical()'],['../class_pass.html#a0eafb54675479378ec98307f0e4fff65',1,'Pass::critical()']]]
+  ['createqrcodepopup_16',['createQRCodePopup',['../class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d',1,'QtPass']]],
+  ['critical_17',['critical',['../class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842',1,'MainWindow::critical()'],['../class_pass.html#a0eafb54675479378ec98307f0e4fff65',1,'Pass::critical()']]]
 ];

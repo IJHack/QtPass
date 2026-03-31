@@ -519,19 +519,26 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>    QPixmap image;</div>
 <div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>    image.loadFromData(output, <span class="stringliteral">&quot;PNG&quot;</span>);</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span> </div>
-<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>    <span class="keyword">auto</span> *popup = <span class="keyword">new</span> QDialog(<span class="keyword">nullptr</span>, Qt::Popup | Qt::FramelessWindowHint);</div>
-<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>    <span class="keyword">auto</span> *layout = <span class="keyword">new</span> QVBoxLayout;</div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>    <span class="keyword">auto</span> *popupLabel = <span class="keyword">new</span> QLabel();</div>
-<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>    layout-&gt;addWidget(popupLabel);</div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>    popupLabel-&gt;setPixmap(image);</div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    popupLabel-&gt;setScaledContents(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    popupLabel-&gt;show();</div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    popup-&gt;setLayout(layout);</div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>    popup-&gt;move(QCursor::pos());</div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>    popup-&gt;exec();</div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>  }</div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>}</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    QDialog *popup = <a class="code hl_function" href="class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d">createQRCodePopup</a>(image);</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>    popup-&gt;exec();</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>  }</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>}</div>
+</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span> </div>
+<div class="foldopen" id="foldopen00467" data-start="{" data-end="}">
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno"><a class="line" href="class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d">  467</a></span>QDialog *<a class="code hl_function" href="class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d">QtPass::createQRCodePopup</a>(<span class="keyword">const</span> QPixmap &amp;image) {</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>  <span class="keyword">auto</span> *popup = <span class="keyword">new</span> QDialog(<span class="keyword">nullptr</span>, Qt::Popup | Qt::FramelessWindowHint);</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>  popup-&gt;setAttribute(Qt::WA_DeleteOnClose);</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>  <span class="keyword">auto</span> *layout = <span class="keyword">new</span> QVBoxLayout;</div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>  <span class="keyword">auto</span> *popupLabel = <span class="keyword">new</span> QLabel();</div>
+<div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>  layout-&gt;addWidget(popupLabel);</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>  popupLabel-&gt;setPixmap(image);</div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>  popupLabel-&gt;setScaledContents(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>  popupLabel-&gt;show();</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>  popup-&gt;setLayout(layout);</div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>  popup-&gt;move(QCursor::pos());</div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>  <span class="keywordflow">return</span> popup;</div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>}</div>
 </div>
 <div class="ttc" id="aclass_imitate_pass_html_a9df2c7246a8686cf92c442c00dc55af7"><div class="ttname"><a href="class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7">ImitatePass::endReencryptPath</a></div><div class="ttdeci">void endReencryptPath()</div></div>
 <div class="ttc" id="aclass_imitate_pass_html_aecffecc95bd1c0281849dbfe11231e36"><div class="ttname"><a href="class_imitate_pass.html#aecffecc95bd1c0281849dbfe11231e36">ImitatePass::startReencryptPath</a></div><div class="ttdeci">void startReencryptPath()</div></div>
@@ -577,6 +584,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclass_qt_pass_html_a70447af6f0e0540106a423a45dc27c99"><div class="ttname"><a href="class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99">QtPass::~QtPass</a></div><div class="ttdeci">~QtPass()</div><div class="ttdoc">QtPass::~QtPass destroy!</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00053">qtpass.cpp:53</a></div></div>
 <div class="ttc" id="aclass_qt_pass_html_a74adba9dd6915c9db50762279b62be89"><div class="ttname"><a href="class_qt_pass.html#a74adba9dd6915c9db50762279b62be89">QtPass::setClippedText</a></div><div class="ttdeci">void setClippedText(const QString &amp;, const QString &amp;p_output=QString())</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00376">qtpass.cpp:376</a></div></div>
 <div class="ttc" id="aclass_qt_pass_html_aa9f6862ff8875c387423b462ac7f9cad"><div class="ttname"><a href="class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad">QtPass::QtPass</a></div><div class="ttdeci">QtPass(MainWindow *mainWindow)</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00030">qtpass.cpp:30</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_abd2dacf3e88b411ef39ec78f49bbdd2d"><div class="ttname"><a href="class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d">QtPass::createQRCodePopup</a></div><div class="ttdeci">static QDialog * createQRCodePopup(const QPixmap &amp;image)</div><div class="ttdoc">QtPass::createQRCodePopup creates a popup dialog with the given QR code image. This is extracted for ...</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00467">qtpass.cpp:467</a></div></div>
 <div class="ttc" id="aclass_qt_pass_html_acba134fb5281aedee11899a03976aa95"><div class="ttname"><a href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95">QtPass::copyTextToClipboard</a></div><div class="ttdeci">void copyTextToClipboard(const QString &amp;text)</div><div class="ttdoc">MainWindow::copyTextToClipboard copies text to your clipboard.</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00420">qtpass.cpp:420</a></div></div>
 <div class="ttc" id="aclass_qt_pass_html_ad0a4d7627e6303e412d4a832a8bad77c"><div class="ttname"><a href="class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c">QtPass::init</a></div><div class="ttdeci">auto init() -&gt; bool</div><div class="ttdoc">QtPass::init make sure we are ready to go as soon as possible.</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00070">qtpass.cpp:70</a></div></div>
 <div class="ttc" id="aclass_qt_pass_html_aef5aaf0605c7681967995ede486590ef"><div class="ttname"><a href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">QtPass::showTextAsQRCode</a></div><div class="ttdeci">void showTextAsQRCode(const QString &amp;text)</div><div class="ttdoc">displays the text as qrcode</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00439">qtpass.cpp:439</a></div></div>

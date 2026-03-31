@@ -1,9 +1,13 @@
 <map id="src/qtpass.h" name="src/qtpass.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="95,5,195,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="207,5,307,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,79,80,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="130,33,72,73,69,68,127,28"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="104,79,187,104"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,31,148,65,143,65,143,31"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="211,79,282,104"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="163,28,220,68,217,73,160,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,33,91,77,90,72,222,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="104,79,179,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="240,33,173,74,171,69,237,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="203,79,312,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="260,31,260,65,255,65,255,31"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="336,79,419,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="278,28,347,69,344,74,275,33"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="443,79,514,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="294,28,431,72,430,77,292,33"/>
 </map>
