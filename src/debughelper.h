@@ -5,7 +5,19 @@
 
 #include <QDebug>
 
-//  this is soooooo ugly...
+/**
+ * @file debughelper.h
+ * @brief Debug utilities for QtPass.
+ */
+
+/**
+ * @brief Simple debug macro that includes file and line number.
+ *
+ * Usage: dbg() << "message";
+ * Output: "filename.cpp:123 message"
+ *
+ * Only available in debug builds.
+ */
 #define dbg() qDebug() << __FILE__ ":" << __LINE__
 
 #endif // SRC_DEBUGHELPER_H_

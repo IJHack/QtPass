@@ -1,5 +1,16 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+
+/**
+ * @class QtPassSettings
+ * @brief Singleton settings manager implementation.
+ *
+ * Implementation of QtPassSettings singleton. Handles persistence using
+ * QSettings with support for portable mode (qtpass.ini next to executable).
+ *
+ * @see qtpasssettings.h
+ */
+
 #include "qtpasssettings.h"
 #include "pass.h"
 
