@@ -17,7 +17,7 @@ class ConfigDialog;
 class QCloseEvent;
 /**
  * Construct the KeygenDialog.
- * @param parent Optional parent ConfigDialog used to return to the configuration UI.
+ * @param parent Optional parent ConfigDialog used to return to config UI.
  */
 
 /**
@@ -25,7 +25,8 @@ class QCloseEvent;
  */
 
 /**
- * Handle the widget close event to perform any cleanup or confirm actions before closing.
+ * Handle the widget close event to perform any cleanup or confirm
+ * actions before closing.
  * @param event Close event provided by Qt.
  */
 
@@ -61,7 +62,8 @@ class QCloseEvent;
  */
 
 /**
- * Finalize the dialog with the given result code and perform any necessary teardown.
+ * Finalize the dialog with the given result code and perform any
+ * necessary teardown.
  * @param r Result code passed to QDialog::done.
  */
 
