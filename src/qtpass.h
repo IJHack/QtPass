@@ -38,9 +38,9 @@ private:
   void connectPassSignalHandlers(Pass *pass);
   void mountWebDav();
 
-Q_SIGNALS:
+signals:
 
-public Q_SLOTS:
+public slots:
   void clearClipboard();
   void copyTextToClipboard(const QString &text);
   void showTextAsQRCode(const QString &text);

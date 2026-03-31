@@ -77,7 +77,7 @@ public:
   void Init(QString path, const QList<UserInfo> &users) override;
 
   void reencryptPath(const QString &dir);
-Q_SIGNALS:
+signals:
   void startReencryptPath();
   void endReencryptPath();
 

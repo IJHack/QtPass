@@ -78,7 +78,7 @@ public:
   [[nodiscard]] virtual auto sizeHint() const -> QSize;
   [[nodiscard]] auto heightForWidth(int w) const -> int;
 
-public Q_SLOTS:
+public slots:
   /*! Starts the spin animation.
       \sa stopAnimation isAnimated
    */

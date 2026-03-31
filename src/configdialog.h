@@ -49,7 +49,7 @@ public:
 protected:
   void closeEvent(QCloseEvent *event) override;
 
-private Q_SLOTS:
+private slots:
   void on_accepted();
   void on_autodetectButton_clicked();
   void on_radioButtonNative_clicked();

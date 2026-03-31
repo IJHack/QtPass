@@ -17,10 +17,10 @@ class QPushButtonShowPassword : public QPushButton {
 public:
   explicit QPushButtonShowPassword(QLineEdit *line, QWidget *parent = nullptr);
 
-Q_SIGNALS:
+signals:
   void clicked(const QString &);
 
-private Q_SLOTS:
+private slots:
   void buttonClicked(bool);
 
 private:

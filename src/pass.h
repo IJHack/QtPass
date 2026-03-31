@@ -74,11 +74,11 @@ protected:
                               const QStringList &args, QString input,
                               bool readStdout = true, bool readStderr = true);
 
-protected Q_SLOTS:
+protected slots:
   virtual void finished(int id, int exitCode, const QString &out,
                         const QString &err);
 
-Q_SIGNALS:
+signals:
   void error(QProcess::ProcessError);
   void startingExecuteWrapper();
   void statusMsg(const QString &, int);

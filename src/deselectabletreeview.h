@@ -27,7 +27,7 @@ public:
    */
   ~DeselectableTreeView() override = default;
 
-Q_SIGNALS:
+signals:
   /**
    * @brief emptyClicked event
    */

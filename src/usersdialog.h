@@ -29,14 +29,14 @@ public:
   explicit UsersDialog(QString dir, QWidget *parent = nullptr);
   ~UsersDialog() override;
 
-public Q_SLOTS:
+public slots:
   void accept() override;
 
 protected:
   void closeEvent(QCloseEvent *event) override;
   void keyPressEvent(QKeyEvent *event) override;
 
-private Q_SLOTS:
+private slots:
   void itemChange(QListWidgetItem *item);
   void on_lineEdit_textChanged(const QString &filter);
   void on_checkBox_clicked();

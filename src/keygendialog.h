@@ -25,7 +25,7 @@ public:
 protected:
   void closeEvent(QCloseEvent *event) override;
 
-private Q_SLOTS:
+private slots:
   void on_passphrase1_textChanged(const QString &arg1);
   void on_passphrase2_textChanged(const QString &arg1);
   void on_checkBox_stateChanged(int arg1);

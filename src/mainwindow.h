@@ -64,12 +64,12 @@ protected:
   void changeEvent(QEvent *event) override;
   auto eventFilter(QObject *obj, QEvent *event) -> bool override;
 
-Q_SIGNALS:
+signals:
   void passShowHandlerFinished(const QString &output);
   void passGitInitNeeded();
   void generateGPGKeyPair(const QString &batch);
 
-public Q_SLOTS:
+public slots:
   void deselect();
 
   void messageAvailable(const QString &message);
@@ -86,7 +86,7 @@ public Q_SLOTS:
   void startReencryptPath();
   void endReencryptPath();
 
-private Q_SLOTS:
+private slots:
   void addPassword();
   void addFolder();
   void onEdit();

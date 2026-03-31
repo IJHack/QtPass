@@ -87,9 +87,9 @@ public:
   void setEnvironment(const QStringList &env);
 
   auto cancelNext() -> int;
-private Q_SLOTS:
+private slots:
   void finished(int exitCode, QProcess::ExitStatus exitStatus);
-Q_SIGNALS:
+signals:
   /**
    * @brief finished    signal that is emited when process finishes
    *
