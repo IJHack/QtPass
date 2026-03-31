@@ -1,12 +1,12 @@
 <map id="MainWindow::passShowHandler" name="MainWindow::passShowHandler">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,325,235,351"/>
-<area shape="rect" id="Node000002" href="$class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1" title=" " alt="" coords="294,5,509,31"/>
+<area shape="rect" id="Node000002" href="$class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1" title="Gets named value pairs from the parsed file." alt="" coords="294,5,509,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,324,137,270,167,193,188,151,214,110,245,72,281,40,289,35,292,39,284,44,249,76,219,113,193,154,172,195,142,272,127,325"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef" title=" " alt="" coords="283,55,520,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,324,141,279,173,215,220,146,249,115,281,89,291,83,294,88,284,94,252,119,224,150,178,217,146,281,128,326"/>
-<area shape="rect" id="Node000004" href="$class_file_content.html#ac88e8096551d24a41fc0625a4d903139" title=" " alt="" coords="308,104,495,129"/>
+<area shape="rect" id="Node000004" href="$class_file_content.html#ac88e8096551d24a41fc0625a4d903139" title="Gets the password from the parsed file." alt="" coords="308,104,495,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="126,324,147,287,181,236,226,184,253,160,281,140,297,132,299,137,284,144,256,164,230,188,185,240,151,289,130,326"/>
-<area shape="rect" id="Node000005" href="$class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8" title=" " alt="" coords="304,154,499,194"/>
+<area shape="rect" id="Node000005" href="$class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8" title="Gets remaining data for display (excludes hidden fields like OTP)." alt="" coords="304,154,499,194"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="132,323,192,266,235,232,281,204,297,196,299,201,284,208,238,237,196,270,135,327"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#afaa574ceedde650a5b713bdb13e1b5eb" title=" " alt="" coords="294,219,509,244"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="141,323,202,288,282,253,309,245,310,250,284,258,205,293,143,327"/>

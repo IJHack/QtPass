@@ -1,5 +1,5 @@
 <map id="FileContent::getPassword" name="FileContent::getPassword">
-<area shape="rect" id="Node000001" title=" " alt="" coords="756,31,943,56"/>
+<area shape="rect" id="Node000001" title="Gets the password from the parsed file." alt="" coords="756,31,943,56"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="479,5,708,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="742,35,708,32,709,27,743,30"/>
 <area shape="rect" id="Node000003" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Sets content in the password field in the interface." alt="" coords="486,55,701,80"/>

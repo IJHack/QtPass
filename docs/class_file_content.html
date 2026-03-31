@@ -84,12 +84,16 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac88e8096551d24a41fc0625a4d903139" id="r_ac88e8096551d24a41fc0625a4d903139"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">getPassword</a> () const -&gt; QString</td></tr>
+<tr class="memdesc:ac88e8096551d24a41fc0625a4d903139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the password from the parsed file.  <br /></td></tr>
 <tr class="separator:ac88e8096551d24a41fc0625a4d903139"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89393e371a598cb3e0d7d149dbc431b1" id="r_a89393e371a598cb3e0d7d149dbc431b1"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues</a> () const -&gt; <a class="el" href="class_named_values.html">NamedValues</a></td></tr>
+<tr class="memdesc:a89393e371a598cb3e0d7d149dbc431b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets named value pairs from the parsed file.  <br /></td></tr>
 <tr class="separator:a89393e371a598cb3e0d7d149dbc431b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a845c61a8c0f52e5aa73953c9162dd47d" id="r_a845c61a8c0f52e5aa73953c9162dd47d"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData</a> () const -&gt; QString</td></tr>
+<tr class="memdesc:a845c61a8c0f52e5aa73953c9162dd47d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets remaining data not in named values.  <br /></td></tr>
 <tr class="separator:a845c61a8c0f52e5aa73953c9162dd47d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac38b9c211d6f62eb7420eecc66f935e8" id="r_ac38b9c211d6f62eb7420eecc66f935e8"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8">getRemainingDataForDisplay</a> () const -&gt; QString</td></tr>
+<tr class="memdesc:ac38b9c211d6f62eb7420eecc66f935e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets remaining data for display (excludes hidden fields like OTP).  <br /></td></tr>
 <tr class="separator:ac38b9c211d6f62eb7420eecc66f935e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
@@ -116,9 +120,13 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>the named values in the file in the order of appearence, with template values first. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00045">45</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p>Gets named value pairs from the parsed file. </p>
+<dl class="section return"><dt>Returns</dt><dd>the named values in the file in the order of appearence, with template values first.</dd>
+<dd>
+<a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> list with name:value pairs </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00068">68</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -143,9 +151,13 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>the password from the parsed file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00043">43</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p>Gets the password from the parsed file. </p>
+<dl class="section return"><dt>Returns</dt><dd>the password from the parsed file.</dd>
+<dd>
+The password string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00062">62</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -170,9 +182,13 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>the data that is not the password and not in getNamedValues. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00049">49</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p>Gets remaining data not in named values. </p>
+<dl class="section return"><dt>Returns</dt><dd>the data that is not the password and not in getNamedValues.</dd>
+<dd>
+Remaining data as string </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00076">76</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -197,9 +213,12 @@ Static Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>@like getRemainingData but without data that should not be displayed (like a TOTP secret). </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00053">53</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p>Gets remaining data for display (excludes hidden fields like OTP). </p>
+<p>@like getRemainingData but without data that should not be displayed (like a TOTP secret).</p>
+<dl class="section return"><dt>Returns</dt><dd>Remaining data suitable for display </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00084">84</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -251,17 +270,27 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>parse parses the given fileContent in a <a class="el" href="class_file_content.html">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depeding on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay. </p>
+<p>Parses password file content into structured data.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fileContent</td><td>the file content to parse.</td></tr>
-    <tr><td class="paramname">templateFields</td><td>the fields in the template. Fields in the template will always be in <a class="el" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues()</a> at the beginning of the list in the same order.</td></tr>
-    <tr><td class="paramname">allFields</td><td>whether all fields should be considered as named values. If set to false only templateFields are returned in <a class="el" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues()</a>.</td></tr>
+    <tr><td class="paramname">templateFields</td><td>the fields in the template. Fields in the template will always be in <a class="el" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1" title="Gets named value pairs from the parsed file.">getNamedValues()</a> at the beginning of the list in the same order.</td></tr>
+    <tr><td class="paramname">allFields</td><td>whether all fields should be considered as named values. If set to false only templateFields are returned in <a class="el" href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1" title="Gets named value pairs from the parsed file.">getNamedValues()</a>.</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fileContent</td><td>Raw file content </td></tr>
+    <tr><td class="paramname">templateFields</td><td>Fields defined in the template </td></tr>
+    <tr><td class="paramname">allFields</td><td>Whether to include all name:value pairs </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Parsed <a class="el" href="class_file_content.html">FileContent</a> object </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00012">12</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00024">24</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">

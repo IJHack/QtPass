@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1" target="_top" xlink:title="Gets named value pairs from the parsed file.">
 <polygon fill="white" stroke="#666666" points="377.5,-521.5 216.5,-521.5 216.5,-502.5 377.5,-502.5 377.5,-521.5"/>
 <text text-anchor="middle" x="297" y="-509.5" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::getNamedValues</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139" target="_top" xlink:title="Gets the password from the parsed file.">
 <polygon fill="white" stroke="#666666" points="367,-447.5 227,-447.5 227,-428.5 367,-428.5 367,-447.5"/>
 <text text-anchor="middle" x="297" y="-435.5" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::getPassword</text>
 </a>
@@ -74,7 +74,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8" target="_top" xlink:title="Gets remaining data for display (excludes hidden fields like OTP).">
 <polygon fill="white" stroke="#666666" points="370,-410 224,-410 224,-380 370,-380 370,-410"/>
 <text text-anchor="start" x="232" y="-398" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::getRemaining</text>
 <text text-anchor="middle" x="297" y="-387" font-family="Helvetica,sans-Serif" font-size="10.00">DataForDisplay</text>

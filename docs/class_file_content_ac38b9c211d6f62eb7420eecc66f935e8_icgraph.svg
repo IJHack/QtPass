@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Gets remaining data for display (excludes hidden fields like OTP).">
 <polygon fill="#999999" stroke="#666666" points="354,-30 208,-30 208,0 354,0 354,-30"/>
 <text text-anchor="start" x="216" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">FileContent::getRemaining</text>
 <text text-anchor="middle" x="281" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">DataForDisplay</text>

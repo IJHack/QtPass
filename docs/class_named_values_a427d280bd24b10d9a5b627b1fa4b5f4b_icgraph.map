@@ -1,5 +1,5 @@
 <map id="NamedValues::takeValue" name="NamedValues::takeValue">
-<area shape="rect" id="Node000001" title=" " alt="" coords="741,45,925,70"/>
+<area shape="rect" id="Node000001" title="Finds and removes a named value by name." alt="" coords="741,45,925,70"/>
 <area shape="rect" id="Node000002" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Sets content in the password field in the interface." alt="" coords="479,45,693,70"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="728,60,694,60,694,55,728,55"/>
 <area shape="rect" id="Node000003" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title=" " alt="" coords="248,45,431,70"/>

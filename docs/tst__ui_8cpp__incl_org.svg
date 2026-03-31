@@ -228,8 +228,8 @@
 <g id="Node000011" class="node">
 <title>Node11</title>
 <g id="a_Node000011"><a xlink:title=" ">
-<polygon fill="#e0e0e0" stroke="#999999" points="637.5,-74 555.5,-74 555.5,-55 637.5,-55 637.5,-74"/>
-<text text-anchor="middle" x="596.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">QPaintDevice</text>
+<polygon fill="#e0e0e0" stroke="#999999" points="617,-74 556,-74 556,-55 617,-55 617,-74"/>
+<text text-anchor="middle" x="586.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">QPixmap</text>
 </a>
 </g>
 </g>
@@ -237,8 +237,8 @@
 <g id="edge12_Node000009_Node000011" class="edge">
 <title>Node9&#45;&gt;Node11</title>
 <g id="a_edge12_Node000009_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M440.38,-109.98C471.88,-101.01 521.67,-86.82 556.53,-76.89"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="557.72,-80.19 566.38,-74.08 555.81,-73.46 557.72,-80.19"/>
+<path fill="none" stroke="#63b8ff" d="M438.78,-109.98C468.45,-101.05 515.29,-86.94 548.25,-77.02"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="549.43,-80.32 558,-74.08 547.42,-73.61 549.43,-80.32"/>
 </a>
 </g>
 </g>
