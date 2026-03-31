@@ -2309,7 +2309,6 @@ FN:120,126,_ZN14QScopedPointerI11ImitatePass21QScopedPointerDeleterIS0_EE5resetE
 FN:120,126,_ZN14QScopedPointerI12QLocalServer21QScopedPointerDeleterIS0_EE5resetEPS0_
 FN:120,126,_ZN14QScopedPointerI19QItemSelectionModel21QScopedPointerDeleterIS0_EE5resetEPS0_
 FN:120,126,_ZN14QScopedPointerI8RealPass21QScopedPointerDeleterIS0_EE5resetEPS0_
-FN:16,25,_ZN21QScopedPointerDeleterI9QFileInfoE7cleanupEPS0_
 FN:78,82,_ZN14QScopedPointerI11ImitatePass21QScopedPointerDeleterIS0_EED2Ev
 FN:78,82,_ZN14QScopedPointerI12ConfigDialog21QScopedPointerDeleterIS0_EED2Ev
 FN:78,82,_ZN14QScopedPointerI12QLocalServer21QScopedPointerDeleterIS0_EED2Ev
@@ -2321,7 +2320,6 @@ FNDA:0,_ZN14QScopedPointerI11ImitatePass21QScopedPointerDeleterIS0_EE5resetEPS0_
 FNDA:0,_ZN14QScopedPointerI12QLocalServer21QScopedPointerDeleterIS0_EE5resetEPS0_
 FNDA:0,_ZN14QScopedPointerI19QItemSelectionModel21QScopedPointerDeleterIS0_EE5resetEPS0_
 FNDA:0,_ZN14QScopedPointerI8RealPass21QScopedPointerDeleterIS0_EE5resetEPS0_
-FNDA:0,_ZN21QScopedPointerDeleterI9QFileInfoE7cleanupEPS0_
 FNDA:0,_ZN14QScopedPointerI11ImitatePass21QScopedPointerDeleterIS0_EED2Ev
 FNDA:0,_ZN14QScopedPointerI12ConfigDialog21QScopedPointerDeleterIS0_EED2Ev
 FNDA:0,_ZN14QScopedPointerI12QLocalServer21QScopedPointerDeleterIS0_EED2Ev
@@ -2329,22 +2327,19 @@ FNDA:0,_ZN14QScopedPointerI19QItemSelectionModel21QScopedPointerDeleterIS0_EED2E
 FNDA:0,_ZN14QScopedPointerI8RealPass21QScopedPointerDeleterIS0_EED2Ev
 FNDA:0,_ZN14QScopedPointerIN2Ui10MainWindowE21QScopedPointerDeleterIS1_EED2Ev
 FNDA:0,_ZN14QScopedPointerIN2Ui12ConfigDialogE21QScopedPointerDeleterIS1_EED2Ev
-FNF:12
+FNF:11
 FNH:0
-DA:16,0
 DA:24,0
-DA:25,0
 DA:74,0
 DA:78,0
 DA:80,0
-DA:81,0
 DA:82,0
 DA:92,0
 DA:107,0
 DA:117,0
 DA:120,0
 DA:122,0
-LF:13
+LF:10
 LH:0
 end_of_record
 TN:
@@ -9614,6 +9609,7 @@ DA:94,0
 DA:95,0
 DA:103,0
 DA:107,0
+DA:109,0
 DA:122,0
 DA:125,0
 DA:126,0
@@ -9641,7 +9637,7 @@ DA:161,0
 DA:164,0
 DA:165,0
 DA:166,0
-LF:58
+LF:59
 LH:0
 end_of_record
 TN:
