@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Util::checkConfig do we have prequisite settings?">
+<g id="a_Node000001"><a xlink:title="Util::checkConfig do we have prerequisite settings?">
 <polygon fill="#999999" stroke="#666666" points="99,-74 0,-74 0,-55 99,-55 99,-74"/>
 <text text-anchor="middle" x="49.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">Util::checkConfig</text>
 </a>

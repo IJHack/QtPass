@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,65,247,65,247,70,213,70"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" title="Clears the stored clipped text." alt="" coords="504,5,687,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="455,45,520,31,521,36,456,50"/>
-<area shape="rect" id="Node000004" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Util::getDir get selectd folder path." alt="" coords="549,55,642,80"/>
+<area shape="rect" id="Node000004" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Util::getDir get selected folder path." alt="" coords="549,55,642,80"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="456,65,535,65,535,70,456,70"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title=" " alt="" coords="507,104,684,129"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="456,85,521,99,520,104,455,90"/>

@@ -1,5 +1,5 @@
 <map id="Util::checkConfig" name="Util::checkConfig">
-<area shape="rect" id="Node000001" title="Util::checkConfig do we have prequisite settings?" alt="" coords="495,104,627,129"/>
+<area shape="rect" id="Node000001" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="495,104,627,129"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="273,29,425,55"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="521,100,446,69,408,57,409,52,448,63,523,95"/>
 <area shape="rect" id="Node000003" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,79,447,104"/>

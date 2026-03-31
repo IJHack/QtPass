@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Util::getDir get selectd folder path.">
+<g id="a_Node000001"><a xlink:title="Util::getDir get selected folder path.">
 <polygon fill="#999999" stroke="#666666" points="444,-24.5 374,-24.5 374,-5.5 444,-5.5 444,-24.5"/>
 <text text-anchor="middle" x="409" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">Util::getDir</text>
 </a>

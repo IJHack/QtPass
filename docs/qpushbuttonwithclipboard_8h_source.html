@@ -91,33 +91,33 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;QPushButton&gt;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">class </span>QWidget;</div>
-<div class="foldopen" id="foldopen00049" data-start="{" data-end="};">
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_q_push_button_with_clipboard.html">   49</a></span><span class="keyword">class </span><a class="code hl_class" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a> : <span class="keyword">public</span> QPushButton {</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  Q_OBJECT</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a>(QString textToCopy = <span class="stringliteral">&quot;&quot;</span>,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>                                    QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_q_push_button_with_clipboard.html#ab3e53e28b6caaa7276eec98432020cff">getTextToCopy</a>() <span class="keyword">const</span> -&gt; QString;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_q_push_button_with_clipboard.html#a37c9946fb4910d41ab047c2a2b1a2ca8">setTextToCopy</a>(<span class="keyword">const</span> QString &amp;value);</div>
+<div class="foldopen" id="foldopen00052" data-start="{" data-end="};">
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_q_push_button_with_clipboard.html">   52</a></span><span class="keyword">class </span><a class="code hl_class" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a> : <span class="keyword">public</span> QPushButton {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  Q_OBJECT</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">explicit</span> <a class="code hl_class" href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a>(QString textToCopy = <span class="stringliteral">&quot;&quot;</span>,</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                                    QWidget *parent = <span class="keyword">nullptr</span>);</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>signals:</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">   60</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">clicked</a>(<span class="keyword">const</span> QString &amp;);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  [[nodiscard]] <span class="keyword">auto</span> <a class="code hl_function" href="class_q_push_button_with_clipboard.html#ab3e53e28b6caaa7276eec98432020cff">getTextToCopy</a>() <span class="keyword">const</span> -&gt; QString;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_q_push_button_with_clipboard.html#a37c9946fb4910d41ab047c2a2b1a2ca8">setTextToCopy</a>(<span class="keyword">const</span> QString &amp;value);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">private</span> slots:</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">void</span> changeIconDefault();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordtype">void</span> buttonClicked(<span class="keywordtype">bool</span>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  QString textToCopy;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  QIcon iconEdit;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  QIcon iconEditPushed;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>signals:</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">   63</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">clicked</a>(<span class="keyword">const</span> QString &amp;);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keyword">private</span> slots:</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">void</span> changeIconDefault();</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordtype">void</span> buttonClicked(<span class="keywordtype">bool</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  QString textToCopy;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  QIcon iconEdit;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  QIcon iconEditPushed;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>};</div>
 </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif </span><span class="comment">// SRC_QPUSHBUTTONWITHCLIPBOARD_H_</span></div>
-<div class="ttc" id="aclass_q_push_button_with_clipboard_html"><div class="ttname"><a href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a></div><div class="ttdoc">Stylish widget to allow copying of password and account details.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonwithclipboard_8h_source.html#l00049">qpushbuttonwithclipboard.h:49</a></div></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif </span><span class="comment">// SRC_QPUSHBUTTONWITHCLIPBOARD_H_</span></div>
+<div class="ttc" id="aclass_q_push_button_with_clipboard_html"><div class="ttname"><a href="class_q_push_button_with_clipboard.html">QPushButtonWithClipboard</a></div><div class="ttdoc">Stylish widget to allow copying of password and account details.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonwithclipboard_8h_source.html#l00052">qpushbuttonwithclipboard.h:52</a></div></div>
 <div class="ttc" id="aclass_q_push_button_with_clipboard_html_a37c9946fb4910d41ab047c2a2b1a2ca8"><div class="ttname"><a href="class_q_push_button_with_clipboard.html#a37c9946fb4910d41ab047c2a2b1a2ca8">QPushButtonWithClipboard::setTextToCopy</a></div><div class="ttdeci">void setTextToCopy(const QString &amp;value)</div><div class="ttdoc">QPushButtonWithClipboard::setTextToCopy sets text from associated text field.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonwithclipboard_8cpp_source.html#l00040">qpushbuttonwithclipboard.cpp:40</a></div></div>
 <div class="ttc" id="aclass_q_push_button_with_clipboard_html_a511c59d52faad30a26bc23ac307135d4"><div class="ttname"><a href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">QPushButtonWithClipboard::clicked</a></div><div class="ttdeci">void clicked(const QString &amp;)</div></div>
 <div class="ttc" id="aclass_q_push_button_with_clipboard_html_ab3e53e28b6caaa7276eec98432020cff"><div class="ttname"><a href="class_q_push_button_with_clipboard.html#ab3e53e28b6caaa7276eec98432020cff">QPushButtonWithClipboard::getTextToCopy</a></div><div class="ttdeci">auto getTextToCopy() const -&gt; QString</div><div class="ttdoc">QPushButtonWithClipboard::getTextToCopy returns the text of associated text field.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonwithclipboard_8cpp_source.html#l00031">qpushbuttonwithclipboard.cpp:31</a></div></div>

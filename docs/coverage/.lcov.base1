@@ -3568,7 +3568,7 @@ TN:
 SF:/home/runner/work/QtPass/QtPass/src/configdialog.h
 FNF:0
 FNH:0
-DA:34,0
+DA:35,0
 LF:1
 LH:0
 end_of_record
@@ -4339,7 +4339,7 @@ TN:
 SF:/home/runner/work/QtPass/QtPass/src/keygendialog.h
 FNF:0
 FNH:0
-DA:73,0
+DA:75,0
 LF:1
 LH:0
 end_of_record
@@ -5166,8 +5166,8 @@ TN:
 SF:/home/runner/work/QtPass/QtPass/src/mainwindow.h
 FNF:0
 FNH:0
-DA:50,0
-DA:68,0
+DA:52,0
+DA:70,0
 LF:2
 LH:0
 end_of_record
@@ -7133,9 +7133,9 @@ TN:
 SF:/home/runner/work/QtPass/QtPass/src/qtpass.h
 FNF:0
 FNH:0
-DA:113,0
-DA:123,0
-DA:124,0
+DA:119,0
+DA:129,0
+DA:130,0
 LF:3
 LH:0
 end_of_record
@@ -8302,7 +8302,7 @@ TN:
 SF:/home/runner/work/QtPass/QtPass/src/trayicon.h
 FNF:0
 FNH:0
-DA:48,0
+DA:52,0
 LF:1
 LH:0
 end_of_record

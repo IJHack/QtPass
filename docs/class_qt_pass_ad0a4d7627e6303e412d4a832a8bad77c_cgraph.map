@@ -1,6 +1,6 @@
 <map id="QtPass::init" name="QtPass::init">
 <area shape="rect" id="Node000001" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="5,773,100,798"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prequisite settings?" alt="" coords="201,105,333,130"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="201,105,333,130"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,773,53,693,65,563,77,487,93,409,116,331,146,257,166,221,190,189,238,138,242,142,194,192,170,224,150,259,121,333,98,410,82,488,70,564,59,693,57,773"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="452,6,663,32"/>
 <area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="51,773,52,645,61,439,72,330,89,229,113,147,128,115,146,91,176,64,210,44,247,28,286,17,364,5,438,3,438,9,365,10,287,22,249,33,213,48,179,69,150,94,133,117,118,148,94,230,77,330,66,439,57,645,56,773"/>
