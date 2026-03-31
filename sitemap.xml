@@ -10,6 +10,11 @@
   <priority>1.00</priority>
 </url>
 <url>
+  <loc>https://qtpass.org/old.html</loc>
+  <lastmod>2026-04-01T00:00:00+00:00</lastmod>
+  <priority>0.10</priority>
+</url>
+<url>
   <loc>https://qtpass.org/downloads</loc>
   <lastmod>2023-09-11T19:48:23+00:00</lastmod>
   <priority>0.80</priority>

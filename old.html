@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>
+      QtPass - A modern GUI for pass, the standard UNIX password manager
+    </title>
+    <meta
+      name="description"
+      content="QtPass is a cross-platform GUI for pass. Manage your passwords securely on Linux, macOS, Windows and BSD with optional smartcard or YubiKey support."
+    />
+    <meta
+      name="keywords"
+      content="qtpass, pass, gpg, git, password, store, manager, security, password manager"
+    />
+    <link rel="stylesheet" href="stylesheets/styles.css" />
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css" />
+    <link rel="canonical" href="https://qtpass.org" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=yes"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./images/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./images/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./images/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./images/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./images/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./images/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./images/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./images/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./images/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./images/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./images/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./images/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <meta property="og:title" content="QtPass - A modern GUI for pass" />
+    <meta property="og:site_name" content="QtPass" />
+    <meta property="og:url" content="https://qtpass.org/" />
+    <meta property="og:image" content="https://qtpass.org/images/og.png" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta
+      property="og:description"
+      content="QtPass is a cross-platform GUI for pass. Manage your passwords securely on Linux, macOS, Windows and BSD."
+    />
+    <meta property="og:type" content="product" />
+    <meta name="twitter:card" content="product" />
+    <meta name="twitter:site" content="@annejanbrouwer" />
+    <meta name="twitter:title" content="QtPass - A modern GUI for pass" />
+    <meta
+      name="twitter:description"
+      content="QtPass is a cross-platform GUI for pass. Manage your passwords securely on Linux, macOS, Windows and BSD."
+    />
+    <meta name="twitter:url" content="https://qtpass.org/" />
+    <meta name="twitter:image" content="https://qtpass.org/images/og.png" />
+    <meta
+      name="twitter:image:src"
+      content="https://qtpass.org/images/icon.svg"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "QtPass",
+        "url": "https://qtpass.org/",
+        "author": {
+          "@type": "Organization",
+          "name": "IJHack"
+        },
+        "downloadUrl": "https://github.com/IJHack/QtPass/releases",
+        "operatingSystem": "Linux, BSD, OS X and Windows",
+        "requirements": "pass or git and gpg2",
+        "screenshot": "https://qtpass.org/images/qtpass.png",
+        "softwareVersion": "1.5.1",
+        "applicationCategory": "Security, Utility",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "EUR"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "reviewCount": "18"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="background"></div>
+    <div class="wrapper">
+      <header>
+        <h1>QtPass <small>1.5.1</small></h1>
+        <p>
+          A modern, cross-platform GUI for
+          <a
+            title="pass, the standard unix password manager"
+            href="https://www.passwordstore.org/"
+            >pass</a
+          >.
+        </p>
+
+        <p class="view">
+          <a title="Get Started" href="/getting-started"
+            ><strong>Get Started</strong></a
+          >
+          -
+          <a title="Advanced Features" href="/advanced"
+            ><strong>Advanced</strong></a
+          >
+          <a title="QtPass project" href="https://github.com/IJHack/QtPass"
+            >GitHub <small>IJHack/QtPass</small></a
+          >
+        </p>
+
+        <ul>
+          <li>
+            <a
+              title="QtPass releases"
+              href="https://github.com/IJHack/QtPass/releases"
+              >Download <strong>Releases</strong></a
+            >
+          </li>
+          <li>
+            <a title="QtPass Windows" href="/downloads#Windows"
+              >Installer .exe <strong>Windows</strong></a
+            >
+          </li>
+          <li>
+            <a title="QtPass macOS" href="/downloads#macOS"
+              >Get a .dmg <strong>macOS</strong></a
+            >
+          </li>
+        </ul>
+
+        <div class="screenshots">
+          <img id="qtpass" src="images/qtpass.png" alt="QtPass MainWindow" />
+          <img
+            id="config"
+            class="hidden"
+            src="images/config.png"
+            alt="QtPass Configuration"
+          />
+        </div>
+      </header>
+      <section>
+        <h2>
+          <a id="overview" class="anchor" href="#overview" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Password management for everyone
+        </h2>
+
+        <p>
+          QtPass is part of the
+          <a href="https://www.passwordstore.org">pass</a> ecosystem - the
+          standard UNIX password manager. Your passwords are encrypted with GPG
+          and can be synced across all your devices using Git.
+        </p>
+
+        <p>
+          Unlike many password managers, QtPass isn't tied to one platform or
+          cloud service. Use it alongside other
+          <a href="https://www.passwordstore.org/#other"
+            >pass-compatible clients</a
+          >
+          on mobile, CLI, or browser.
+        </p>
+
+        <p>
+          Supports smartcards and YubiKeys for extra security - your private
+          keys never leave the device.
+        </p>
+
+        <p>
+          <a title="Install on Linux" href="/downloads#linux-bsd"
+            ><img
+              class="compatible"
+              src="images/linux.png"
+              alt="Linux Compatible"
+          /></a>
+          <a title="Install on Windows" href="/downloads#Windows"
+            ><img
+              class="compatible"
+              src="images/win11.png"
+              alt="Windows 11 Compatible"
+          /></a>
+          <a title="Install on macOS" href="/downloads#macOS"
+            ><img
+              class="compatible"
+              src="images/macos.png"
+              alt="macOS Compatible"
+          /></a>
+          <a title="Install on FreeBSD" href="/downloads#FreeBSD"
+            ><img
+              class="compatible"
+              src="images/freebsd.png"
+              alt="FreeBSD Compatible"
+          /></a>
+        </p>
+
+        <h2>
+          <a id="features" class="anchor" href="#features" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Features
+        </h2>
+
+        <ul>
+          <li>
+            Works with
+            <a
+              title="pass, the standard unix password manager"
+              href="https://www.passwordstore.org/"
+              >pass</a
+            >
+            - no vendor lock-in
+          </li>
+          <li>Cross-platform: Linux, macOS, Windows, FreeBSD</li>
+          <li>Native look and feel on each platform</li>
+          <li>Secure password generation</li>
+          <li>Git sync for easy backup and sharing</li>
+          <li>Per-folder encryption keys</li>
+          <li>Smartcard and YubiKey support</li>
+          <li>Clipboard with auto-clear</li>
+          <li>Shoulder surfing protection</li>
+          <li>Available in 20+ languages</li>
+          <li>
+            <a title="QtPass README" href="/docs/md__r_e_a_d_m_e.html"
+              >And more...</a
+            >
+          </li>
+        </ul>
+
+        <p>
+          New to QtPass?
+          <a href="/getting-started">Follow the getting started guide</a>.
+        </p>
+
+        <p>
+          Already using QtPass?
+          <a href="/advanced">Learn about advanced features</a> like templates,
+          profiles, OTP, and more.
+        </p>
+
+        <h2>
+          <a
+            id="installation"
+            class="anchor"
+            href="#installation"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Installation
+        </h2>
+
+        <h3>
+          <a id="linux" class="anchor" href="#linux" aria-hidden="true"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >Linux
+        </h3>
+
+        <h4>Arch</h4>
+        <pre><code>pacman -S qtpass</code></pre>
+
+        <h4>OpenSUSE &amp; Fedora</h4>
+        <pre><code>zypper install qtpass</code></pre>
+        <pre><code>dnf install qtpass</code></pre>
+
+        <h4>Debian, Ubuntu and derivates like Kali &amp; Raspbian</h4>
+        <pre><code>apt install qtpass</code></pre>
+
+        <h4>Gentoo</h4>
+        <pre><code>emerge -atv qtpass</code></pre>
+
+        <h4>FreeBSD</h4>
+        <pre><code>pkg install qtpass</code></pre>
+
+        <h4><a href="/downloads">More options</a></h4>
+
+        <h3>
+          <a id="windows" class="anchor" href="#windows" aria-hidden="true"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >Windows
+        </h3>
+
+        <p>
+          Latest stable on the
+          <a
+            title="QtPass Windows releases"
+            href="https://github.com/IJHack/QtPass/releases"
+            >releases page</a
+          >, latest build via
+          <a
+            title="QtPass Windows builds"
+            href="https://ci.appveyor.com/project/annejan/qtpass/build/artifacts"
+            >AppVeyor</a
+          >.
+        </p>
+
+        Via
+        <a
+          title="choco install qtpass"
+          href="https://chocolatey.org/packages/qtpass"
+          >Chocolatey</a
+        >
+        <pre><code>choco install qtpass</code></pre>
+
+        <h3>
+          <a id="macos" class="anchor" href="#macos" aria-hidden="true"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >macOS
+        </h3>
+
+        <p>
+          Latest stable on the
+          <a
+            title="QtPass macOS releases"
+            href="https://github.com/IJHack/QtPass/releases"
+            >releases page</a
+          >.
+        </p>
+
+        Via <a title="brew install qtpass" href="https://brew.sh">Homebrew</a>
+        <pre><code>brew install --cask qtpass</code></pre>
+
+        <h3>
+          <a
+            id="dependencies"
+            class="anchor"
+            href="#dependencies"
+            aria-hidden="true"
+            ><span aria-hidden="true" class="octicon octicon-link"></span></a
+          >Build from source
+        </h3>
+        <ul>
+          <li>QtPass requires Qt 5.15 or later (Qt 6 recommended)</li>
+          <li>GnuPG 2.2+</li>
+          <li>Optional: Git and pass</li>
+        </ul>
+
+        <p>Build on Linux/BSD:</p>
+
+        <pre><code>qmake &amp;&amp; make &amp;&amp; make install</code></pre>
+
+        <p>Build on macOS:</p>
+
+        <pre><code>brew install qt
+qmake &amp;&amp; make &amp;&amp; macdeployqt QtPass.app</code></pre>
+
+        <h2>
+          <a
+            id="security-considerations"
+            class="anchor"
+            href="#security-considerations"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Security
+        </h2>
+
+        <p>
+          QtPass uses GPG encryption - your passwords are never stored in plain
+          text. Using a smartcard or YubiKey keeps your private keys secure even
+          if your computer is compromised.
+        </p>
+
+        <p>
+          Your password store syncs via Git, so you control where it's hosted
+          and always have a backup. Per-folder encryption lets you share
+          passwords securely with family or team members.
+        </p>
+
+        <p>
+          For detailed security analysis, see the
+          <a href="https://annejan.com/media/qtpass.pdf">whitepaper</a>.
+        </p>
+
+        <h2>
+          <a
+            id="contributing"
+            class="anchor"
+            href="#contributing"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Contributing
+        </h2>
+
+        <p>QtPass is open source. Contributions are welcome!</p>
+
+        <ul>
+          <li>
+            <a
+              title="Contributing"
+              href="/docs/md__c_o_n_t_r_i_b_u_t_i_n_g.html"
+              >Developer guide</a
+            >
+          </li>
+          <li>
+            <a
+              title="QtPass issue queue"
+              href="https://github.com/IJHack/QtPass/issues"
+              >Report bugs or request features</a
+            >
+          </li>
+          <li>
+            <a
+              title="Translations"
+              href="https://hosted.weblate.org/engage/qtpass/"
+              >Help translate QtPass</a
+            >
+          </li>
+        </ul>
+
+        <h2>
+          <a
+            id="known-issues"
+            class="anchor"
+            href="#known-issues"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Known issues
+        </h2>
+
+        <ul>
+          <li>Filtering (searching) breaks the tree/model sometimes.</li>
+        </ul>
+
+        <h2>
+          <a
+            id="insecure-generation"
+            class="anchor"
+            href="#insecure-generation"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Insecure Password Generation prior to 1.2.1
+        </h2>
+
+        <p>
+          All passwords generated with QtPass' built-in password generator prior
+          to 1.2.1 are possibly predictable and enumerable by hackers.<br />
+          The generator used libc's random(), seeded with srand(msecs), where
+          msecs is not the msecs since 1970 (not that that'd be secure anyway),
+          but rather the msecs since the last second. This means there are only
+          1000 different sequences of generated passwords.
+        </p>
+
+        <p>
+          Read more about this
+          <a
+            title="QtPass Insecure Password Generation"
+            href="https://github.com/IJHack/QtPass/issues/338"
+            >issue</a
+          >
+          on
+          <a
+            title="QtPass Insecure Password Generation"
+            href="https://github.com/IJHack/QtPass/issues/338"
+            >Github</a
+          >.<br />
+          Please note that this is an issue with the QtPass GUI and not in pass
+          or the greater password-store ecosystem.
+        </p>
+
+        <p>
+          We advice to <a href="/downloads">update to 1.2.1 or later</a> as soon
+          as possible and change any password you may have generated with the
+          QtPass' password generator.
+        </p>
+
+        <h2>
+          <a id="faq" class="anchor" href="#faq" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >FAQ
+        </h2>
+
+        <h3>
+          <a
+            id="cant-save-a-password"
+            class="anchor"
+            href="#cant-save-a-password"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Can't save a password
+        </h3>
+
+        <ul>
+          <li>
+            Is folder initialised? Easiest way is to use the [Users] button and
+            make sure you can encrypt for someone (eg. yourself)
+          </li>
+          <li>Are you using git? If not, make sure it is switched off.</li>
+        </ul>
+
+        <h3>
+          <a
+            id="i-have-an-issue-with-gnome-keyring"
+            class="anchor"
+            href="#i-have-an-issue-with-gnome-keyring"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >I have an issue with GNOME keyring
+        </h3>
+
+        <ul>
+          <li>Disable GNOME keyring or configure gpg-agent properly</li>
+          <li>Create a <code>~/.gnupg/gpg-agent.conf</code> containing:</li>
+        </ul>
+
+        <pre><code>enable-ssh-support
+write-env-file
+use-standard-socket
+default-cache-ttl 600
+max-cache-ttl 7200</code></pre>
+
+        <p>
+          See the
+          <a title="pass FAQ" href="https://www.passwordstore.org/#faq"
+            >pass FAQ</a
+          >
+          for more troubleshooting tips.
+        </p>
+
+        <h3>
+          <a
+            id="can-i-import-from-keepass-lastpass-or-x"
+            class="anchor"
+            href="#can-i-import-from-keepass-lastpass-or-x"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Can I import from KeePass, LastPass or X?
+        </h3>
+
+        <ul>
+          <li>
+            Yes, check
+            <a href="https://www.passwordstore.org/#migration"
+              >passwordstore.org/#migration</a
+            >
+            for more info.
+          </li>
+        </ul>
+
+        <h3>
+          <a
+            id="more-questions"
+            class="anchor"
+            href="#more-questions"
+            aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >More questions?
+        </h3>
+
+        <ul>
+          <li>
+            Check the
+            <a title="Frequently Asked Questions" href="/docs/md__f_a_q.html"
+              >FAQ</a
+            >
+          </li>
+          <li>
+            Read the
+            <a href="https://annejan.com/media/qtpass.pdf"
+              >security whitepaper</a
+            >
+          </li>
+          <li>
+            <a title="Mail us for help" href="mailto:help@qtpass.org"
+              >Email us</a
+            >
+          </li>
+        </ul>
+
+        <h2>
+          <a id="changelog" class="anchor" href="#changelog" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >Changelog
+        </h2>
+
+        <ul>
+          <li>
+            <a title="Changes in master" href="/docs/md__c_h_a_n_g_e_l_o_g.html"
+              >Current changelog</a
+            >
+          </li>
+          <li>
+            <a title="Changes in 1.5" href="/changelog">v1.5 release notes</a>
+          </li>
+          <li>
+            <a title="Changes in 1.4" href="/changelog.1.4"
+              >v1.4 release notes</a
+            >
+          </li>
+          <li>
+            <a title="Changes in 1.3" href="/changelog.1.3"
+              >v1.3 release notes</a
+            >
+          </li>
+        </ul>
+      </section>
+      <footer>
+        <p>
+          This project is maintained by
+          <a title="IJhack on GitHub" href="https://github.com/IJHack"
+            >IJHack</a
+          >
+        </p>
+        <p>
+          <a title="Latest documentation" href="/docs/">API Documentation</a>
+        </p>
+        <a href="https://repology.org/metapackage/qtpass">
+          <img
+            src="https://repology.org/badge/latest-versions/qtpass.svg"
+            alt="latest packaged version(s)"
+          />
+        </a>
+        <img
+          src="https://github.com/IJHack/QtPass/workflows/QMake/badge.svg"
+          alt="Build Status"
+        />
+        <p>
+          <small
+            >Based on a theme by
+            <a href="https://github.com/orderedlist">orderedlist</a></small
+          >
+        </p>
+        <p>
+          <small><a title="QtPass Sitemap" href="/sitemap">Sitemap</a></small>
+        </p>
+      </footer>
+    </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "url": "https://qtpass.org"
+      }
+    </script>
+    <script src="javascripts/scale.fix.js" defer></script>
+    <script src="javascripts/main.js" defer></script>
+  </body>
+</html>
