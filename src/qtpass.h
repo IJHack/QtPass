@@ -3,7 +3,9 @@
 #ifndef SRC_QTPASS_H_
 #define SRC_QTPASS_H_
 
+#include <QDialog>
 #include <QObject>
+#include <QPaintDevice>
 #include <QProcess>
 #include <QTimer>
 
@@ -42,6 +44,9 @@ public Q_SLOTS:
   void clearClipboard();
   void copyTextToClipboard(const QString &text);
   void showTextAsQRCode(const QString &text);
+
+public:
+  static QDialog *createQRCodePopup(const QPixmap &image);
 
 private slots:
   void processError(QProcess::ProcessError);

@@ -6,6 +6,7 @@
 #include <QtTest>
 
 #include "../../../src/passworddialog.h"
+#include "../../../src/qtpass.h"
 #include "passwordconfiguration.h"
 
 class tst_ui : public QObject {
@@ -21,6 +22,7 @@ private Q_SLOTS:
   void passwordDialogWithTemplate();
   void qrCodePopupDeletesOnClose();
   void qrCodePopupHasDeleteOnCloseAttribute();
+  void createQRCodePopupSetsDeleteOnClose();
   void dialogWithoutDeleteOnCloseDoesNotAutoDelete();
 };
 
@@ -144,6 +146,18 @@ void tst_ui::qrCodePopupDeletesOnClose() {
 void tst_ui::qrCodePopupHasDeleteOnCloseAttribute() {
   QDialog *popup = new QDialog(nullptr, Qt::Popup | Qt::FramelessWindowHint);
   popup->setAttribute(Qt::WA_DeleteOnClose);
+  QVERIFY(popup->testAttribute(Qt::WA_DeleteOnClose));
+  delete popup;
+}
+
+/**
+ * @brief tst_ui::createQRCodePopupSetsDeleteOnClose verifies that
+ * QtPass::createQRCodePopup creates a popup with Qt::WA_DeleteOnClose set.
+ * This provides codecov coverage for the memory leak fix in showTextAsQRCode.
+ */
+void tst_ui::createQRCodePopupSetsDeleteOnClose() {
+  QPixmap image;
+  QDialog *popup = QtPass::createQRCodePopup(image);
   QVERIFY(popup->testAttribute(Qt::WA_DeleteOnClose));
   delete popup;
 }
