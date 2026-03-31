@@ -1,6 +1,6 @@
 <map id="QtPassSettings::isUsePass" name="QtPassSettings::isUsePass">
 <area shape="rect" id="Node000001" title=" " alt="" coords="675,53,867,79"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="495,79,627,104"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Determine whether required configuration or executables are missing." alt="" coords="495,79,627,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="661,82,627,86,627,81,660,77"/>
 <area shape="rect" id="Node000004" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,5,447,31"/>
 <area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="660,56,447,32,447,26,661,51"/>

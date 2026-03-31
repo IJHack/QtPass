@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,447,108,376,116,324,128,266,146,205,172,145,205,89,249,41,271,27,274,32,252,45,210,93,176,148,151,207,133,267,121,325,114,377,108,448"/>
 <area shape="rect" id="Node000005" href="$class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4" title="emptyClicked event" alt="" coords="286,55,453,95"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="104,447,115,388,139,298,158,248,182,199,212,153,249,112,272,96,275,100,252,116,217,156,187,202,163,250,144,299,120,389,110,448"/>
-<area shape="rect" id="Node000006" href="$class_util.html#a503abb6ccbf2aa18056c220b9b45284e" title="Util::findPasswordStore look for common .password&#45;store folder location." alt="" coords="569,120,741,145"/>
+<area shape="rect" id="Node000006" href="$class_util.html#a503abb6ccbf2aa18056c220b9b45284e" title="Locate the password store directory." alt="" coords="569,120,741,145"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="105,447,116,393,141,314,159,271,184,230,213,193,249,162,288,141,330,125,374,115,418,109,504,108,578,115,578,121,504,113,418,114,375,120,331,130,290,146,252,167,217,197,188,233,164,274,145,316,121,394,110,448"/>
 <area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" title=" " alt="" coords="549,221,760,261"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="130,445,298,367,414,316,535,270,559,262,561,267,537,275,416,321,300,371,132,450"/>
@@ -26,12 +26,12 @@
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="454,15,557,15,557,21,454,21"/>
 <area shape="rect" id="Node000004" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="822,5,1069,31"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="739,15,808,15,808,21,739,21"/>
-<area shape="rect" id="Node000007" href="$class_util.html#a0b3b524306360fc2f76112be924f8f6c" title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator()" alt="" coords="852,120,1039,145"/>
+<area shape="rect" id="Node000007" href="$class_util.html#a0b3b524306360fc2f76112be924f8f6c" title="Ensure a folder path always ends with the native directory separator." alt="" coords="852,120,1039,145"/>
 <area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="741,130,838,130,838,135,741,135"/>
 <area shape="poly" id="edge16_Node000011_Node000006" title=" " alt="" coords="374,447,396,404,432,341,478,272,534,207,574,174,614,149,617,154,577,179,538,211,483,275,436,344,401,406,379,449"/>
 <area shape="poly" id="edge17_Node000011_Node000008" title=" " alt="" coords="383,446,431,401,486,342,499,322,507,304,517,287,534,271,543,265,546,269,538,275,521,291,512,307,504,324,490,345,435,405,387,450"/>
 <area shape="poly" id="edge19_Node000011_Node000010" title=" " alt="" coords="417,468,504,483,609,497,660,500,707,499,745,494,772,482,786,469,793,453,796,419,798,383,805,365,819,348,826,343,830,347,823,352,810,368,803,384,801,419,799,455,790,472,775,487,746,499,707,504,660,505,609,502,503,489,416,473"/>
-<area shape="rect" id="Node000012" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="589,549,721,575"/>
+<area shape="rect" id="Node000012" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Determine whether required configuration or executables are missing." alt="" coords="589,549,721,575"/>
 <area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="418,462,454,469,489,482,505,494,514,505,523,517,537,528,576,544,574,549,535,532,519,521,510,509,501,497,487,487,452,474,417,467"/>
 <area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" title=" " alt="" coords="549,285,760,325"/>
 <area shape="poly" id="edge18_Node000011_Node000016" title=" " alt="" coords="382,446,445,392,488,361,535,334,552,327,554,332,537,339,491,366,448,396,386,450"/>
@@ -67,7 +67,7 @@
 <area shape="poly" id="edge27_Node000020_Node000013" title=" " alt="" coords="682,648,726,622,771,584,786,561,793,539,801,518,820,497,830,491,833,495,823,501,805,521,798,541,791,564,775,588,729,626,684,653"/>
 <area shape="poly" id="edge28_Node000020_Node000014" title=" " alt="" coords="684,648,729,623,752,605,771,584,782,566,788,548,791,514,796,480,805,463,820,447,825,443,828,447,823,451,809,466,801,482,797,514,793,550,787,568,775,588,755,609,732,627,687,653"/>
 <area shape="poly" id="edge29_Node000020_Node000018" title=" " alt="" coords="732,648,772,629,787,613,795,596,803,578,820,561,836,552,839,556,823,565,807,581,800,598,792,616,775,633,734,653"/>
-<area shape="rect" id="Node000021" href="$class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" title="Util::findBinaryInPath search for executables." alt="" coords="866,576,1025,601"/>
+<area shape="rect" id="Node000021" href="$class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="866,576,1025,601"/>
 <area shape="poly" id="edge24_Node000020_Node000021" title=" " alt="" coords="706,648,772,629,821,610,854,602,855,607,822,615,774,634,708,653"/>
 <area shape="rect" id="Node000023" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="826,675,1065,700"/>
 <area shape="poly" id="edge26_Node000020_Node000023" title=" " alt="" coords="768,670,813,674,812,679,768,675"/>

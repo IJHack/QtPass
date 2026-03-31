@@ -57,7 +57,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e" target="_top" xlink:title="Util::findPasswordStore look for common .password&#45;store folder location.">
+<g id="a_Node000006"><a xlink:href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e" target="_top" xlink:title="Locate the password store directory.">
 <polygon fill="white" stroke="#666666" points="551.5,-794 422.5,-794 422.5,-775 551.5,-775 551.5,-794"/>
 <text text-anchor="middle" x="487" y="-782" font-family="Helvetica,sans-Serif" font-size="10.00">Util::findPasswordStore</text>
 </a>
@@ -258,7 +258,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_util.html#a0b3b524306360fc2f76112be924f8f6c" target="_top" xlink:title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator()">
+<g id="a_Node000007"><a xlink:href="class_util.html#a0b3b524306360fc2f76112be924f8f6c" target="_top" xlink:title="Ensure a folder path always ends with the native directory separator.">
 <polygon fill="white" stroke="#666666" points="775,-794 635,-794 635,-775 775,-775 775,-794"/>
 <text text-anchor="middle" x="705" y="-782" font-family="Helvetica,sans-Serif" font-size="10.00">Util::normalizeFolderPath</text>
 </a>
@@ -303,7 +303,7 @@
 <!-- Node12 -->
 <g id="Node000012" class="node">
 <title>Node12</title>
-<g id="a_Node000012"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Util::checkConfig do we have prerequisite settings?">
+<g id="a_Node000012"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Determine whether required configuration or executables are missing.">
 <polygon fill="white" stroke="#666666" points="536.5,-472 437.5,-472 437.5,-453 536.5,-453 536.5,-472"/>
 <text text-anchor="middle" x="487" y="-460" font-family="Helvetica,sans-Serif" font-size="10.00">Util::checkConfig</text>
 </a>
@@ -631,7 +631,7 @@
 <!-- Node21 -->
 <g id="Node000021" class="node">
 <title>Node21</title>
-<g id="a_Node000021"><a xlink:href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" target="_top" xlink:title="Util::findBinaryInPath search for executables.">
+<g id="a_Node000021"><a xlink:href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" target="_top" xlink:title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL.">
 <polygon fill="white" stroke="#666666" points="764.5,-452 645.5,-452 645.5,-433 764.5,-433 764.5,-452"/>
 <text text-anchor="middle" x="705" y="-440" font-family="Helvetica,sans-Serif" font-size="10.00">Util::findBinaryInPath</text>
 </a>

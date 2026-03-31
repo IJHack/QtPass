@@ -1,5 +1,5 @@
 <map id="Util::checkConfig" name="Util::checkConfig">
-<area shape="rect" id="Node000001" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="5,80,137,105"/>
+<area shape="rect" id="Node000001" title="Determine whether required configuration or executables are missing." alt="" coords="5,80,137,105"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="187,5,432,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,78,136,58,184,39,215,31,216,36,186,45,139,63,98,82"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" title=" " alt="" coords="185,55,433,80"/>

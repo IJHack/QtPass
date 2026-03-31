@@ -84,7 +84,7 @@ var sectionId = 'dynsection-8';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" target="_top" xlink:title="Util::findBinaryInPath search for executables.">
+<g id="a_Node000004"><a xlink:href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" target="_top" xlink:title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL.">
 <polygon fill="white" stroke="#666666" points="739,-421.77 620,-421.77 620,-402.77 739,-402.77 739,-421.77"/>
 <text text-anchor="middle" x="679.5" y="-409.77" font-family="Helvetica,sans-Serif" font-size="10.00">Util::findBinaryInPath</text>
 </a>

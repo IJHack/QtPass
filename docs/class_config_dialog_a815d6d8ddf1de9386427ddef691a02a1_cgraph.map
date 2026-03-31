@@ -1,6 +1,6 @@
 <map id="ConfigDialog::ConfigDialog" name="ConfigDialog::ConfigDialog">
 <area shape="rect" id="Node000001" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,1349,201,1375"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="303,123,435,148"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Determine whether required configuration or executables are missing." alt="" coords="303,123,435,148"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,1349,116,1126,146,748,167,550,191,374,217,240,232,194,247,166,266,150,288,140,290,145,269,155,251,169,237,196,222,241,196,375,172,551,152,748,122,1127,108,1350"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title=" " alt="" coords="537,35,783,60"/>
 <area shape="poly" id="edge10_Node000001_Node000003" title=" " alt="" coords="102,1349,113,1107,139,693,159,478,183,287,197,207,212,142,229,93,247,64,288,35,333,16,382,6,432,3,481,5,528,11,607,28,606,33,527,16,481,10,432,8,383,11,335,21,290,40,251,68,234,95,217,143,202,208,188,288,164,479,144,694,118,1107,108,1349"/>

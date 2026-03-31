@@ -1,6 +1,6 @@
 <map id="QtPassSettings::initExecutables" name="QtPassSettings::initExecutables">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,211,232,236"/>
-<area shape="rect" id="Node000002" href="$class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" title="Util::findBinaryInPath search for executables." alt="" coords="325,5,483,31"/>
+<area shape="rect" id="Node000002" href="$class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="325,5,483,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,209,147,174,181,128,225,80,251,58,279,40,311,26,313,31,281,44,254,62,229,84,185,131,151,177,130,212"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="285,55,523,80"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="129,208,189,150,232,117,279,89,297,82,299,87,281,94,235,121,193,154,133,212"/>

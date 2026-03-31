@@ -1,5 +1,5 @@
 <map id="Util::findBinaryInPath" name="Util::findBinaryInPath">
-<area shape="rect" id="Node000001" title="Util::findBinaryInPath search for executables." alt="" coords="5,5,164,31"/>
+<area shape="rect" id="Node000001" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="5,5,164,31"/>
 <area shape="rect" id="Node000002" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="212,5,405,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,15,198,15,198,21,164,21"/>
 </map>

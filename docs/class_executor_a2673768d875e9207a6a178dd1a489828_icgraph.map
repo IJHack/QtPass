@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="1075,257,1268,283"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#a607cc25575bf718f57333bb7854870b4" title="ImitatePass::Init initialize pass repository." alt="" coords="251,507,473,532"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1165,297,1148,343,1120,399,1080,454,1056,478,1028,498,989,518,948,534,862,556,774,568,687,570,604,565,529,557,412,535,413,529,529,551,605,560,687,565,774,562,861,551,946,529,987,513,1025,493,1052,474,1076,451,1115,396,1143,341,1160,295"/>
-<area shape="rect" id="Node000004" href="$class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" title="Util::findBinaryInPath search for executables." alt="" coords="832,5,991,31"/>
+<area shape="rect" id="Node000004" href="$class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="832,5,991,31"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1158,246,1139,203,1111,151,1073,97,1050,73,1025,52,987,33,989,28,1028,48,1054,69,1077,94,1115,148,1144,201,1163,244"/>
 <area shape="rect" id="Node000008" href="$class_pass.html#a8cff21960fa7bc334a8fba8c3fff5d07" title="Pass::Generate use either pwgen or internal password generator." alt="" coords="844,107,979,132"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1147,250,1095,201,1061,176,1025,154,975,135,977,130,1028,149,1064,171,1098,197,1151,246"/>

@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" target="_top" xlink:title="Util::findBinaryInPath search for executables.">
+<g id="a_Node000002"><a xlink:href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" target="_top" xlink:title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL.">
 <polygon fill="white" stroke="#666666" points="358.5,-338.5 239.5,-338.5 239.5,-319.5 358.5,-319.5 358.5,-338.5"/>
 <text text-anchor="middle" x="299" y="-326.5" font-family="Helvetica,sans-Serif" font-size="10.00">Util::findBinaryInPath</text>
 </a>

@@ -1,10 +1,10 @@
 <map id="QtPass::init" name="QtPass::init">
 <area shape="rect" id="Node000001" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="5,773,100,798"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="201,105,333,130"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Determine whether required configuration or executables are missing." alt="" coords="201,105,333,130"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,773,53,693,65,563,77,487,93,409,116,331,146,257,166,221,190,189,238,138,242,142,194,192,170,224,150,259,121,333,98,410,82,488,70,564,59,693,57,773"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title=" " alt="" coords="452,6,663,32"/>
 <area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="51,773,52,645,61,439,72,330,89,229,113,147,128,115,146,91,176,64,210,44,247,28,286,17,364,5,438,3,438,9,365,10,287,22,249,33,213,48,179,69,150,94,133,117,118,148,94,230,77,330,66,439,57,645,56,773"/>
-<area shape="rect" id="Node000007" href="$class_util.html#a503abb6ccbf2aa18056c220b9b45284e" title="Util::findPasswordStore look for common .password&#45;store folder location." alt="" coords="181,896,353,921"/>
+<area shape="rect" id="Node000007" href="$class_util.html#a503abb6ccbf2aa18056c220b9b45284e" title="Locate the password store directory." alt="" coords="181,896,353,921"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="64,797,98,840,122,863,149,882,168,891,166,896,147,887,119,867,94,843,60,800"/>
 <area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" title=" " alt="" coords="161,946,372,986"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="61,798,91,862,117,900,150,932,158,937,155,942,146,936,113,903,87,865,56,800"/>
@@ -39,12 +39,12 @@
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="293,102,367,68,432,41,463,32,464,37,434,46,370,73,296,107"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title=" " alt="" coords="461,56,653,81"/>
 <area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="333,104,468,81,469,86,333,109"/>
-<area shape="rect" id="Node000008" href="$class_util.html#a0b3b524306360fc2f76112be924f8f6c" title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator()" alt="" coords="464,900,651,925"/>
+<area shape="rect" id="Node000008" href="$class_util.html#a0b3b524306360fc2f76112be924f8f6c" title="Ensure a folder path always ends with the native directory separator." alt="" coords="464,900,651,925"/>
 <area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="353,907,450,908,450,914,353,912"/>
 <area shape="poly" id="edge18_Node000014_Node000003" title=" " alt="" coords="271,342,292,302,326,247,373,188,401,162,432,139,443,133,446,138,435,144,405,166,377,192,331,250,297,305,276,345"/>
 <area shape="poly" id="edge19_Node000014_Node000004" title=" " alt="" coords="275,342,298,311,334,269,380,226,432,190,450,182,452,187,435,195,383,230,338,273,302,314,279,345"/>
 <area shape="poly" id="edge20_Node000014_Node000012" title=" " alt="" coords="295,341,338,320,384,293,407,273,432,254,448,247,450,252,435,259,410,277,387,297,340,324,298,346"/>
-<area shape="rect" id="Node000015" href="$class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" title="Util::findBinaryInPath search for executables." alt="" coords="478,269,637,294"/>
+<area shape="rect" id="Node000015" href="$class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="478,269,637,294"/>
 <area shape="poly" id="edge15_Node000014_Node000015" title=" " alt="" coords="305,341,433,303,471,295,472,300,434,308,307,346"/>
 <area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title=" " alt="" coords="438,318,677,344"/>
 <area shape="poly" id="edge17_Node000014_Node000017" title=" " alt="" coords="380,344,424,340,425,345,380,349"/>

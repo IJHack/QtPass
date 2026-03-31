@@ -102,166 +102,169 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>QProcessEnvironment Util::_env;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keywordtype">bool</span> Util::_envInitialised = <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> Util::initialiseEnvironment() {</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>  <span class="keywordflow">if</span> (!_envInitialised) {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    _env = QProcessEnvironment::systemEnvironment();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#ifdef __APPLE__</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    QString path = _env.value(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (!path.contains(<span class="stringliteral">&quot;/usr/local/MacGPG2/bin&quot;</span>) &amp;&amp;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        QFile(<span class="stringliteral">&quot;/usr/local/MacGPG2/bin&quot;</span>).exists())</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      path += <span class="stringliteral">&quot;:/usr/local/MacGPG2/bin&quot;</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordflow">if</span> (!path.contains(<span class="stringliteral">&quot;/usr/local/bin&quot;</span>))</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>      path += <span class="stringliteral">&quot;:/usr/local/bin&quot;</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    _env.insert(<span class="stringliteral">&quot;PATH&quot;</span>, path);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    QString path = _env.value(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span> (!path.contains(<span class="stringliteral">&quot;C:\\Program Files\\WinGPG\\x86&quot;</span>) &amp;&amp;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        QFile(<span class="stringliteral">&quot;C:\\Program Files\\WinGPG\\x86&quot;</span>).exists())</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      path += <span class="stringliteral">&quot;;C:\\Program Files\\WinGPG\\x86&quot;</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordflow">if</span> (!path.contains(<span class="stringliteral">&quot;C:\\Program Files\\GnuPG\\bin&quot;</span>) &amp;&amp;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        QFile(<span class="stringliteral">&quot;C:\\Program Files\\GnuPG\\bin&quot;</span>).exists())</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      path += <span class="stringliteral">&quot;;C:\\Program Files\\GnuPG\\bin&quot;</span>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    _env.insert(<span class="stringliteral">&quot;PATH&quot;</span>, path);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="preprocessor">#ifdef QT_DEBUG</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; _env.value(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    _envInitialised = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="foldopen" id="foldopen00058" data-start="{" data-end="}">
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">   58</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">Util::findPasswordStore</a>() -&gt; QString {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  QString path;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  initialiseEnvironment();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordflow">if</span> (_env.contains(<span class="stringliteral">&quot;PASSWORD_STORE_DIR&quot;</span>)) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    path = _env.value(<span class="stringliteral">&quot;PASSWORD_STORE_DIR&quot;</span>);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    path = QDir::homePath() + QDir::separator() + <span class="stringliteral">&quot;password-store&quot;</span> +</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>           QDir::separator();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    path = QDir::homePath() + QDir::separator() + <span class="stringliteral">&quot;.password-store&quot;</span> +</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>           QDir::separator();</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  }</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">Util::normalizeFolderPath</a>(path);</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> Util::initialiseEnvironment() {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>  <span class="keywordflow">if</span> (!_envInitialised) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    _env = QProcessEnvironment::systemEnvironment();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifdef __APPLE__</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    QString path = _env.value(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keywordflow">if</span> (!path.contains(<span class="stringliteral">&quot;/usr/local/MacGPG2/bin&quot;</span>) &amp;&amp;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        QFile(<span class="stringliteral">&quot;/usr/local/MacGPG2/bin&quot;</span>).exists())</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>      path += <span class="stringliteral">&quot;:/usr/local/MacGPG2/bin&quot;</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (!path.contains(<span class="stringliteral">&quot;/usr/local/bin&quot;</span>))</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      path += <span class="stringliteral">&quot;:/usr/local/bin&quot;</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    _env.insert(<span class="stringliteral">&quot;PATH&quot;</span>, path);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    QString path = _env.value(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">if</span> (!path.contains(<span class="stringliteral">&quot;C:\\Program Files\\WinGPG\\x86&quot;</span>) &amp;&amp;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        QFile(<span class="stringliteral">&quot;C:\\Program Files\\WinGPG\\x86&quot;</span>).exists())</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      path += <span class="stringliteral">&quot;;C:\\Program Files\\WinGPG\\x86&quot;</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (!path.contains(<span class="stringliteral">&quot;C:\\Program Files\\GnuPG\\bin&quot;</span>) &amp;&amp;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        QFile(<span class="stringliteral">&quot;C:\\Program Files\\GnuPG\\bin&quot;</span>).exists())</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      path += <span class="stringliteral">&quot;;C:\\Program Files\\GnuPG\\bin&quot;</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    _env.insert(<span class="stringliteral">&quot;PATH&quot;</span>, path);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="preprocessor">#ifdef QT_DEBUG</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; _env.value(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    _envInitialised = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  }</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">   49</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">Util::findPasswordStore</a>() -&gt; QString {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  QString path;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  initialiseEnvironment();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordflow">if</span> (_env.contains(<span class="stringliteral">&quot;PASSWORD_STORE_DIR&quot;</span>)) {</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    path = _env.value(<span class="stringliteral">&quot;PASSWORD_STORE_DIR&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    path = QDir::homePath() + QDir::separator() + <span class="stringliteral">&quot;password-store&quot;</span> +</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>           QDir::separator();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    path = QDir::homePath() + QDir::separator() + <span class="stringliteral">&quot;.password-store&quot;</span> +</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>           QDir::separator();</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  }</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">Util::normalizeFolderPath</a>(path);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>}</div>
 </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="foldopen" id="foldopen00081" data-start="{" data-end="}">
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">   81</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">Util::normalizeFolderPath</a>(QString path) -&gt; QString {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordflow">if</span> (!path.endsWith(<span class="stringliteral">&quot;/&quot;</span>) &amp;&amp; !path.endsWith(QDir::separator())) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    path += QDir::separator();</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordflow">return</span> QDir::toNativeSeparators(path);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="foldopen" id="foldopen00066" data-start="{" data-end="}">
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">   66</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">Util::normalizeFolderPath</a>(QString path) -&gt; QString {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="keywordflow">if</span> (!path.endsWith(<span class="stringliteral">&quot;/&quot;</span>) &amp;&amp; !path.endsWith(QDir::separator())) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    path += QDir::separator();</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">return</span> QDir::toNativeSeparators(path);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
 </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">   93</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(QString binary) -&gt; QString {</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  initialiseEnvironment();</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  QString ret = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  binary.prepend(QDir::separator());</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="keywordflow">if</span> (_env.contains(<span class="stringliteral">&quot;PATH&quot;</span>)) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    QString path = _env.value(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    QStringList entries;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    entries = path.split(<span class="charliteral">&#39;:&#39;</span>);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keywordflow">if</span> (entries.length() &lt; 2) {</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      entries = path.split(<span class="charliteral">&#39;;&#39;</span>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">foreach</span> (QString entry, entries) {</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      QScopedPointer&lt;QFileInfo&gt; qfi(<span class="keyword">new</span> QFileInfo(entry.append(binary)));</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      <span class="keywordflow">if</span> (!qfi-&gt;exists())</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        qfi.reset(<span class="keyword">new</span> QFileInfo(entry.append(<span class="stringliteral">&quot;.exe&quot;</span>)));</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      <span class="keywordflow">if</span> (!qfi-&gt;isExecutable()) {</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      }</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      ret = qfi-&gt;absoluteFilePath();</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    }</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keywordflow">if</span> (ret.isEmpty()) {</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    binary.remove(0, 1);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    binary.prepend(<span class="stringliteral">&quot;wsl &quot;</span>);</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    QString out, err;</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a>(binary, {<span class="stringliteral">&quot;--version&quot;</span>}, &amp;out, &amp;err) == 0 &amp;&amp;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        !out.isEmpty() &amp;&amp; err.isEmpty())</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>      ret = binary;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>  }</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordflow">return</span> ret;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="foldopen" id="foldopen00073" data-start="{" data-end="}">
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">   73</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(QString binary) -&gt; QString {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  initialiseEnvironment();</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  QString ret;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  binary.prepend(QDir::separator());</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordflow">if</span> (_env.contains(<span class="stringliteral">&quot;PATH&quot;</span>)) {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    QString path = _env.value(<span class="stringliteral">&quot;PATH&quot;</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    QStringList entries;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    entries = path.split(<span class="charliteral">&#39;:&#39;</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordflow">if</span> (entries.length() &lt; 2) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      entries = path.split(<span class="charliteral">&#39;;&#39;</span>);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;entryConst : entries) {</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>      QString fullPath = entryConst + binary;</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      QScopedPointer&lt;QFileInfo&gt; qfi(<span class="keyword">new</span> QFileInfo(fullPath));</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>      <span class="keywordflow">if</span> (!qfi-&gt;exists()) {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        QString fullPathExe = fullPath + <span class="stringliteral">&quot;.exe&quot;</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        qfi.reset(<span class="keyword">new</span> QFileInfo(fullPathExe));</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>      }</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <span class="keywordflow">if</span> (!qfi-&gt;isExecutable()) {</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>      }</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      ret = qfi-&gt;absoluteFilePath();</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keywordflow">if</span> (ret.isEmpty()) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    binary.remove(0, 1);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    binary.prepend(<span class="stringliteral">&quot;wsl &quot;</span>);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    QString out, err;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a>(binary, {<span class="stringliteral">&quot;--version&quot;</span>}, &amp;out, &amp;err) == 0 &amp;&amp;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        !out.isEmpty() &amp;&amp; err.isEmpty())</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      ret = binary;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>  }</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordflow">return</span> ret;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
 </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="foldopen" id="foldopen00146" data-start="{" data-end="}">
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="class_util.html#aafdef99b126e0086d44425cbe139db22">  146</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#aafdef99b126e0086d44425cbe139db22">Util::checkConfig</a>() -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  <span class="keywordflow">return</span> !QFile(QDir(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>()).filePath(<span class="stringliteral">&quot;.gpg-id&quot;</span>))</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>              .exists() ||</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>         (<a class="code hl_function" href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8">QtPassSettings::isUsePass</a>()</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>              ? !<a class="code hl_function" href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db">QtPassSettings::getPassExecutable</a>().startsWith(<span class="stringliteral">&quot;wsl &quot;</span>) &amp;&amp;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                    !QFile(<a class="code hl_function" href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db">QtPassSettings::getPassExecutable</a>()).exists()</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>              : !<a class="code hl_function" href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a>().startsWith(<span class="stringliteral">&quot;wsl &quot;</span>) &amp;&amp;</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>                    !QFile(<a class="code hl_function" href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a>()).exists());</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>}</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="foldopen" id="foldopen00125" data-start="{" data-end="}">
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="class_util.html#aafdef99b126e0086d44425cbe139db22">  125</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#aafdef99b126e0086d44425cbe139db22">Util::checkConfig</a>() -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="keywordflow">return</span> !QFile(QDir(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>()).filePath(<span class="stringliteral">&quot;.gpg-id&quot;</span>))</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>              .exists() ||</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>         (<a class="code hl_function" href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8">QtPassSettings::isUsePass</a>()</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>              ? !<a class="code hl_function" href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db">QtPassSettings::getPassExecutable</a>().startsWith(<span class="stringliteral">&quot;wsl &quot;</span>) &amp;&amp;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>                    !QFile(<a class="code hl_function" href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db">QtPassSettings::getPassExecutable</a>()).exists()</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>              : !<a class="code hl_function" href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a>().startsWith(<span class="stringliteral">&quot;wsl &quot;</span>) &amp;&amp;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                    !QFile(<a class="code hl_function" href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a>()).exists());</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>}</div>
 </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="foldopen" id="foldopen00135" data-start="{" data-end="}">
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">  135</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a>(<span class="keyword">const</span> QModelIndex &amp;index, <span class="keywordtype">bool</span> forPass,</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>                  <span class="keyword">const</span> QFileSystemModel &amp;model, <span class="keyword">const</span> <a class="code hl_class" href="class_store_model.html">StoreModel</a> &amp;storeModel)</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    -&gt; QString {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  QString abspath =</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>      QDir(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>()).absolutePath() + QDir::separator();</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keywordflow">if</span> (!index.isValid()) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="keywordflow">return</span> forPass ? <span class="stringliteral">&quot;&quot;</span> : abspath;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  QFileInfo info = model.fileInfo(storeModel.mapToSource(index));</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  QString filePath =</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      (info.isFile() ? info.absolutePath() : info.absoluteFilePath());</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keywordflow">if</span> (forPass) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    filePath = QDir(abspath).relativeFilePath(filePath);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  filePath += QDir::separator();</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="keywordflow">return</span> filePath;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>}</div>
+</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="foldopen" id="foldopen00153" data-start="{" data-end="}">
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">  153</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">Util::endsWithGpg</a>() -&gt; <span class="keyword">const</span> QRegularExpression &amp; {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keyword">static</span> <span class="keyword">const</span> QRegularExpression expr{<span class="stringliteral">&quot;\\.gpg$&quot;</span>};</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keywordflow">return</span> expr;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>}</div>
+</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="foldopen" id="foldopen00158" data-start="{" data-end="}">
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">  158</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">Util::protocolRegex</a>() -&gt; <span class="keyword">const</span> QRegularExpression &amp; {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  <span class="keyword">static</span> <span class="keyword">const</span> QRegularExpression regex{</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>      <span class="stringliteral">&quot;((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^\&quot; &lt;&gt;\\)\\]\\[]+)&quot;</span>};</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordflow">return</span> regex;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>}</div>
+</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
 <div class="foldopen" id="foldopen00164" data-start="{" data-end="}">
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">  164</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a>(<span class="keyword">const</span> QModelIndex &amp;index, <span class="keywordtype">bool</span> forPass,</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>                  <span class="keyword">const</span> QFileSystemModel &amp;model, <span class="keyword">const</span> <a class="code hl_class" href="class_store_model.html">StoreModel</a> &amp;storeModel)</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    -&gt; QString {</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  QString abspath =</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>      QDir(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>()).absolutePath() + QDir::separator();</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keywordflow">if</span> (!index.isValid()) {</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">return</span> forPass ? <span class="stringliteral">&quot;&quot;</span> : abspath;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  }</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>  QFileInfo info = model.fileInfo(storeModel.mapToSource(index));</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  QString filePath =</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      (info.isFile() ? info.absolutePath() : info.absoluteFilePath());</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="keywordflow">if</span> (forPass) {</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    filePath = QDir(abspath).relativeFilePath(filePath);</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>  }</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>  filePath += QDir::separator();</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  <span class="keywordflow">return</span> filePath;</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>}</div>
-</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="foldopen" id="foldopen00186" data-start="{" data-end="}">
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">  186</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">Util::endsWithGpg</a>() -&gt; <span class="keyword">const</span> QRegularExpression &amp; {</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keyword">static</span> <span class="keyword">const</span> QRegularExpression expr{<span class="stringliteral">&quot;\\.gpg$&quot;</span>};</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="keywordflow">return</span> expr;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>}</div>
-</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">  195</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">Util::protocolRegex</a>() -&gt; <span class="keyword">const</span> QRegularExpression &amp; {</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="keyword">static</span> <span class="keyword">const</span> QRegularExpression regex{</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>      <span class="stringliteral">&quot;((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^\&quot; &lt;&gt;\\)\\]\\[]+)&quot;</span>};</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="keywordflow">return</span> regex;</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>}</div>
-</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
-<div class="foldopen" id="foldopen00205" data-start="{" data-end="}">
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno"><a class="line" href="class_util.html#aced819d4368806d046f0dc24a91843f7">  205</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#aced819d4368806d046f0dc24a91843f7">Util::newLinesRegex</a>() -&gt; <span class="keyword">const</span> QRegularExpression &amp; {</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keyword">static</span> <span class="keyword">const</span> QRegularExpression regex{<span class="stringliteral">&quot;[\r\n]&quot;</span>};</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keywordflow">return</span> regex;</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno"><a class="line" href="class_util.html#aced819d4368806d046f0dc24a91843f7">  164</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_util.html#aced819d4368806d046f0dc24a91843f7">Util::newLinesRegex</a>() -&gt; <span class="keyword">const</span> QRegularExpression &amp; {</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keyword">static</span> <span class="keyword">const</span> QRegularExpression regex{<span class="stringliteral">&quot;[\r\n]&quot;</span>};</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="keywordflow">return</span> regex;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>}</div>
 </div>
 <div class="ttc" id="aclass_executor_html_a2673768d875e9207a6a178dd1a489828"><div class="ttname"><a href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a></div><div class="ttdeci">static auto executeBlocking(QString app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</div><div class="ttdoc">Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00177">executor.cpp:177</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a51d5b6ef611562d9247d5c482e6449a8"><div class="ttname"><a href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8">QtPassSettings::isUsePass</a></div><div class="ttdeci">static auto isUsePass(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00176">qtpasssettings.cpp:176</a></div></div>
@@ -269,14 +272,14 @@ $(document).ready(function() { init_codefold(0); });
 <div class="ttc" id="aclass_qt_pass_settings_html_a6d9beabe93c829cacdcc6c27792ffdba"><div class="ttname"><a href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a></div><div class="ttdeci">static auto getGpgExecutable(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00379">qtpasssettings.cpp:379</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_ac2673c76b268f6a622c8b3c7829ff8db"><div class="ttname"><a href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db">QtPassSettings::getPassExecutable</a></div><div class="ttdeci">static auto getPassExecutable(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00361">qtpasssettings.cpp:361</a></div></div>
 <div class="ttc" id="aclass_store_model_html"><div class="ttname"><a href="class_store_model.html">StoreModel</a></div><div class="ttdoc">The QSortFilterProxyModel for handling filesystem searches.</div><div class="ttdef"><b>Definition</b> <a href="storemodel_8h_source.html#l00013">storemodel.h:13</a></div></div>
-<div class="ttc" id="aclass_util_html_a0b3b524306360fc2f76112be924f8f6c"><div class="ttname"><a href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">Util::normalizeFolderPath</a></div><div class="ttdeci">static auto normalizeFolderPath(QString path) -&gt; QString</div><div class="ttdoc">Util::normalizeFolderPath let's always end folders with a QDir::separator()</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00081">util.cpp:81</a></div></div>
-<div class="ttc" id="aclass_util_html_a133c5da0c8a3f106c09977679bc615c3"><div class="ttname"><a href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">Util::protocolRegex</a></div><div class="ttdeci">static auto protocolRegex() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match URL protocols.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00195">util.cpp:195</a></div></div>
-<div class="ttc" id="aclass_util_html_a2a7a32586578a9b631bc6b2a821ce616"><div class="ttname"><a href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">Util::endsWithGpg</a></div><div class="ttdeci">static auto endsWithGpg() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match .gpg file extensions.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00186">util.cpp:186</a></div></div>
-<div class="ttc" id="aclass_util_html_a503abb6ccbf2aa18056c220b9b45284e"><div class="ttname"><a href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">Util::findPasswordStore</a></div><div class="ttdeci">static auto findPasswordStore() -&gt; QString</div><div class="ttdoc">Util::findPasswordStore look for common .password-store folder location.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00058">util.cpp:58</a></div></div>
-<div class="ttc" id="aclass_util_html_a5df2739baa9b1df5f183c66739699d3d"><div class="ttname"><a href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a></div><div class="ttdeci">static auto getDir(const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const StoreModel &amp;storeModel) -&gt; QString</div><div class="ttdoc">Util::getDir get selected folder path.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00164">util.cpp:164</a></div></div>
-<div class="ttc" id="aclass_util_html_aafdef99b126e0086d44425cbe139db22"><div class="ttname"><a href="class_util.html#aafdef99b126e0086d44425cbe139db22">Util::checkConfig</a></div><div class="ttdeci">static auto checkConfig() -&gt; bool</div><div class="ttdoc">Util::checkConfig do we have prerequisite settings?</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00146">util.cpp:146</a></div></div>
-<div class="ttc" id="aclass_util_html_aced819d4368806d046f0dc24a91843f7"><div class="ttname"><a href="class_util.html#aced819d4368806d046f0dc24a91843f7">Util::newLinesRegex</a></div><div class="ttdeci">static auto newLinesRegex() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match newline characters.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00205">util.cpp:205</a></div></div>
-<div class="ttc" id="aclass_util_html_adbd6573f3b8c9bde13ca0a9aa683a3be"><div class="ttname"><a href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a></div><div class="ttdeci">static auto findBinaryInPath(QString binary) -&gt; QString</div><div class="ttdoc">Util::findBinaryInPath search for executables.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00093">util.cpp:93</a></div></div>
+<div class="ttc" id="aclass_util_html_a0b3b524306360fc2f76112be924f8f6c"><div class="ttname"><a href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">Util::normalizeFolderPath</a></div><div class="ttdeci">static auto normalizeFolderPath(QString path) -&gt; QString</div><div class="ttdoc">Ensure a folder path always ends with the native directory separator.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00066">util.cpp:66</a></div></div>
+<div class="ttc" id="aclass_util_html_a133c5da0c8a3f106c09977679bc615c3"><div class="ttname"><a href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">Util::protocolRegex</a></div><div class="ttdeci">static auto protocolRegex() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match URL protocols.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00158">util.cpp:158</a></div></div>
+<div class="ttc" id="aclass_util_html_a2a7a32586578a9b631bc6b2a821ce616"><div class="ttname"><a href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">Util::endsWithGpg</a></div><div class="ttdeci">static auto endsWithGpg() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match .gpg file extensions.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00153">util.cpp:153</a></div></div>
+<div class="ttc" id="aclass_util_html_a503abb6ccbf2aa18056c220b9b45284e"><div class="ttname"><a href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">Util::findPasswordStore</a></div><div class="ttdeci">static auto findPasswordStore() -&gt; QString</div><div class="ttdoc">Locate the password store directory.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00049">util.cpp:49</a></div></div>
+<div class="ttc" id="aclass_util_html_a5df2739baa9b1df5f183c66739699d3d"><div class="ttname"><a href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a></div><div class="ttdeci">static auto getDir(const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const StoreModel &amp;storeModel) -&gt; QString</div><div class="ttdoc">Get the selected folder path, either relative to the configured pass store or absolute.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00135">util.cpp:135</a></div></div>
+<div class="ttc" id="aclass_util_html_aafdef99b126e0086d44425cbe139db22"><div class="ttname"><a href="class_util.html#aafdef99b126e0086d44425cbe139db22">Util::checkConfig</a></div><div class="ttdeci">static auto checkConfig() -&gt; bool</div><div class="ttdoc">Determine whether required configuration or executables are missing.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00125">util.cpp:125</a></div></div>
+<div class="ttc" id="aclass_util_html_aced819d4368806d046f0dc24a91843f7"><div class="ttname"><a href="class_util.html#aced819d4368806d046f0dc24a91843f7">Util::newLinesRegex</a></div><div class="ttdeci">static auto newLinesRegex() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match newline characters.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00164">util.cpp:164</a></div></div>
+<div class="ttc" id="aclass_util_html_adbd6573f3b8c9bde13ca0a9aa683a3be"><div class="ttname"><a href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a></div><div class="ttdeci">static auto findBinaryInPath(QString binary) -&gt; QString</div><div class="ttdoc">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00073">util.cpp:73</a></div></div>
 <div class="ttc" id="adebughelper_8h_html"><div class="ttname"><a href="debughelper_8h.html">debughelper.h</a></div></div>
 <div class="ttc" id="adebughelper_8h_html_a1b089898deebf895757ee5e095615ec7"><div class="ttname"><a href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a></div><div class="ttdeci">#define dbg()</div><div class="ttdef"><b>Definition</b> <a href="debughelper_8h_source.html#l00009">debughelper.h:9</a></div></div>
 <div class="ttc" id="aqtpasssettings_8h_html"><div class="ttname"><a href="qtpasssettings_8h.html">qtpasssettings.h</a></div></div>

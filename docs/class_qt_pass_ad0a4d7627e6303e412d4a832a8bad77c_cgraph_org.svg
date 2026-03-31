@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Util::checkConfig do we have prerequisite settings?">
+<g id="a_Node000002"><a xlink:href="class_util.html#aafdef99b126e0086d44425cbe139db22" target="_top" xlink:title="Determine whether required configuration or executables are missing.">
 <polygon fill="white" stroke="#666666" points="245.5,-820 146.5,-820 146.5,-801 245.5,-801 245.5,-820"/>
 <text text-anchor="middle" x="196" y="-808" font-family="Helvetica,sans-Serif" font-size="10.00">Util::checkConfig</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e" target="_top" xlink:title="Util::findPasswordStore look for common .password&#45;store folder location.">
+<g id="a_Node000007"><a xlink:href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e" target="_top" xlink:title="Locate the password store directory.">
 <polygon fill="white" stroke="#666666" points="260.5,-227 131.5,-227 131.5,-208 260.5,-208 260.5,-227"/>
 <text text-anchor="middle" x="196" y="-215" font-family="Helvetica,sans-Serif" font-size="10.00">Util::findPasswordStore</text>
 </a>
@@ -376,7 +376,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_util.html#a0b3b524306360fc2f76112be924f8f6c" target="_top" xlink:title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator()">
+<g id="a_Node000008"><a xlink:href="class_util.html#a0b3b524306360fc2f76112be924f8f6c" target="_top" xlink:title="Ensure a folder path always ends with the native directory separator.">
 <polygon fill="white" stroke="#666666" points="484,-224 344,-224 344,-205 484,-205 484,-224"/>
 <text text-anchor="middle" x="414" y="-212" font-family="Helvetica,sans-Serif" font-size="10.00">Util::normalizeFolderPath</text>
 </a>
@@ -421,7 +421,7 @@
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" target="_top" xlink:title="Util::findBinaryInPath search for executables.">
+<g id="a_Node000015"><a xlink:href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" target="_top" xlink:title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL.">
 <polygon fill="white" stroke="#666666" points="473.5,-697 354.5,-697 354.5,-678 473.5,-678 473.5,-697"/>
 <text text-anchor="middle" x="414" y="-685" font-family="Helvetica,sans-Serif" font-size="10.00">Util::findBinaryInPath</text>
 </a>

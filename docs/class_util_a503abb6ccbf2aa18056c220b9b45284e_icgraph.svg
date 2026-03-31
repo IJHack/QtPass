@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Util::findPasswordStore look for common .password&#45;store folder location.">
+<g id="a_Node000001"><a xlink:title="Locate the password store directory.">
 <polygon fill="#999999" stroke="#666666" points="420,-19 291,-19 291,0 420,0 420,-19"/>
 <text text-anchor="middle" x="355.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Util::findPasswordStore</text>
 </a>

@@ -57,7 +57,7 @@ var sectionId = 'dynsection-10';
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Util::normalizeFolderPath let&#39;s always end folders with a QDir::separator()">
+<g id="a_Node000001"><a xlink:title="Ensure a folder path always ends with the native directory separator.">
 <polygon fill="#999999" stroke="#666666" points="596,-19 456,-19 456,0 596,0 596,-19"/>
 <text text-anchor="middle" x="526" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Util::normalizeFolderPath</text>
 </a>
@@ -66,7 +66,7 @@ var sectionId = 'dynsection-10';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e" target="_top" xlink:title="Util::findPasswordStore look for common .password&#45;store folder location.">
+<g id="a_Node000002"><a xlink:href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e" target="_top" xlink:title="Locate the password store directory.">
 <polygon fill="white" stroke="#666666" points="420,-19 291,-19 291,0 420,0 420,-19"/>
 <text text-anchor="middle" x="355.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Util::findPasswordStore</text>
 </a>

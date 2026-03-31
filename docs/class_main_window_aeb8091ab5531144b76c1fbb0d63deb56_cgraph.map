@@ -1,7 +1,7 @@
 <map id="MainWindow::config" name="MainWindow::config">
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,281,157,307"/>
 <area shape="poly" id="edge6_Node000001_Node000001" title=" " alt="" coords="44,283,35,273,40,263,55,257,81,255,114,259,126,268,123,272,112,263,81,260,56,262,43,267,41,272,48,279"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="248,91,380,116"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Determine whether required configuration or executables are missing." alt="" coords="248,91,380,116"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="87,280,129,210,163,169,204,133,234,118,236,122,207,138,167,173,133,213,91,282"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" title=" " alt="" coords="471,5,719,31"/>
 <area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="83,280,96,240,119,183,154,125,177,98,204,76,263,44,328,24,394,12,457,8,457,13,395,18,329,29,265,49,207,80,181,102,159,128,124,186,101,241,88,282"/>

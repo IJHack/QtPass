@@ -1,6 +1,6 @@
 <map id="QtPassSettings::getPassStore" name="QtPassSettings::getPassStore">
 <area shape="rect" id="Node000001" title=" " alt="" coords="987,480,1197,505"/>
-<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Util::checkConfig do we have prerequisite settings?" alt="" coords="767,129,899,155"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aafdef99b126e0086d44425cbe139db22" title="Determine whether required configuration or executables are missing." alt="" coords="767,129,899,155"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1083,467,1068,407,1040,329,1020,287,997,247,969,209,937,176,919,164,898,155,900,150,921,159,940,172,973,205,1001,244,1025,285,1045,327,1073,406,1088,466"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="487,29,639,55"/>
 <area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="1088,466,1081,387,1072,335,1059,279,1040,222,1014,168,980,118,937,76,901,54,861,38,819,28,776,23,693,23,623,32,622,27,693,18,776,17,820,23,863,33,903,49,940,72,984,114,1018,165,1045,220,1064,278,1077,334,1086,386,1093,466"/>
@@ -16,7 +16,7 @@
 <area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="1068,472,1012,420,976,393,938,370,908,359,910,354,940,365,979,388,1016,416,1072,468"/>
 <area shape="rect" id="Node000011" href="$class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07" title=" " alt="" coords="750,380,915,405"/>
 <area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="1056,475,1002,447,938,419,900,408,901,403,940,414,1004,442,1059,471"/>
-<area shape="rect" id="Node000012" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Util::getDir get selected folder path." alt="" coords="786,429,879,455"/>
+<area shape="rect" id="Node000012" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Get the selected folder path, either relative to the configured pass store or absolute." alt="" coords="786,429,879,455"/>
 <area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1012,480,879,454,880,448,1013,475"/>
 <area shape="rect" id="Node000015" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Pass::getGpgIdPath return gpgid file path for some file (folder)." alt="" coords="759,531,906,556"/>
 <area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="1013,511,899,533,898,528,1012,505"/>
