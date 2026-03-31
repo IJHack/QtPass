@@ -82,6 +82,12 @@ private Q_SLOTS:
   void getGpgIdPathBasic();
   void getGpgIdPathSubfolder();
   void getGpgIdPathNotFound();
+  void findBinaryInPathReturnedPathIsAbsolute();
+  void findBinaryInPathReturnedPathIsExecutable();
+  void findBinaryInPathMultipleKnownBinaries();
+  void findBinaryInPathConsistency();
+  void findBinaryInPathResultContainsBinaryName();
+  void findBinaryInPathTempExecutableInTempDir();
 };
 
 /**
@@ -907,6 +913,139 @@ void tst_util::getGpgIdPathNotFound() {
   QString expected = QDir::cleanPath(passStore + "/.gpg-id");
   QVERIFY2(path == expected,
            qPrintable(QString("Expected %1, got %2").arg(expected, path)));
+}
+
+// Tests for findBinaryInPath - verifies it correctly locates executables in
+// PATH.
+
+void tst_util::findBinaryInPathReturnedPathIsAbsolute() {
+  // Verify that the returned path is absolute, not a relative fragment.
+#ifdef Q_OS_WIN
+  const QString binaryName = QStringLiteral("cmd.exe");
+#else
+  const QString binaryName = QStringLiteral("sh");
+#endif
+  QString result = Util::findBinaryInPath(binaryName);
+  QVERIFY2(!result.isEmpty(), "Should find a standard shell");
+  QFileInfo fi(result);
+  QVERIFY2(
+      fi.isAbsolute(),
+      qPrintable(
+          QStringLiteral("Returned path '%1' must be absolute").arg(result)));
+}
+
+void tst_util::findBinaryInPathReturnedPathIsExecutable() {
+  // Verify the returned path satisfies the isExecutable() check that guards
+  // the assignment inside the loop.
+#ifdef Q_OS_WIN
+  const QString binaryName = QStringLiteral("cmd.exe");
+#else
+  const QString binaryName = QStringLiteral("sh");
+#endif
+  QString result = Util::findBinaryInPath(binaryName);
+  QVERIFY2(!result.isEmpty(), "Should find a standard shell");
+  QFileInfo fi(result);
+  QVERIFY2(
+      fi.isExecutable(),
+      qPrintable(
+          QStringLiteral("Returned path '%1' must be executable").arg(result)));
+}
+
+void tst_util::findBinaryInPathMultipleKnownBinaries() {
+  // Test finding multiple common binaries in PATH.
+#ifndef Q_OS_WIN
+  const QStringList binaries = {QStringLiteral("sh"), QStringLiteral("ls"),
+                                QStringLiteral("cat")};
+  for (const QString &bin : binaries) {
+    QString result = Util::findBinaryInPath(bin);
+    QVERIFY2(!result.isEmpty(),
+             qPrintable(QStringLiteral("Should find '%1' in PATH").arg(bin)));
+    QVERIFY2(result.contains(bin),
+             qPrintable(QStringLiteral("Result '%1' should contain '%2'")
+                            .arg(result, bin)));
+    QVERIFY2(
+        QFileInfo(result).isExecutable(),
+        qPrintable(
+            QStringLiteral("Result '%1' should be executable").arg(result)));
+  }
+#else
+  QSKIP("Non-Windows binary list not applicable on Windows");
+#endif
+}
+
+void tst_util::findBinaryInPathConsistency() {
+  // Calling findBinaryInPath twice for the same binary must return the same
+  // result, confirming the loop does not corrupt state across calls.
+#ifdef Q_OS_WIN
+  const QString binaryName = QStringLiteral("cmd.exe");
+#else
+  const QString binaryName = QStringLiteral("sh");
+#endif
+  QString first = Util::findBinaryInPath(binaryName);
+  QString second = Util::findBinaryInPath(binaryName);
+  QVERIFY2(!first.isEmpty(), "First call should find the binary");
+  QCOMPARE(first, second);
+}
+
+void tst_util::findBinaryInPathResultContainsBinaryName() {
+  // The returned absolute path must end with (or at least contain) the
+  // binary name, ruling out any off-by-one concatenation artefact.
+#ifdef Q_OS_WIN
+  const QString binaryName = QStringLiteral("cmd");
+#else
+  const QString binaryName = QStringLiteral("sh");
+#endif
+  QString result = Util::findBinaryInPath(binaryName);
+  QVERIFY2(!result.isEmpty(), "Should find the binary");
+  QVERIFY2(
+      result.endsWith(binaryName) ||
+          result.endsWith(binaryName + QStringLiteral(".exe")),
+      qPrintable(QStringLiteral("Path '%1' should end with binary name '%2'")
+                     .arg(result, binaryName)));
+}
+
+void tst_util::findBinaryInPathTempExecutableInTempDir() {
+  // Place a real executable in an existing PATH directory and confirm that
+  // findBinaryInPath locates it.
+  //
+  // Because Util::_env is a static cached copy we cannot inject a new PATH
+  // directory at runtime. Instead we write a uniquely named executable into
+  // the same directory as "sh" (which is already on the cached PATH) and
+  // verify the function finds it.
+#ifndef Q_OS_WIN
+  QString shPath = Util::findBinaryInPath(QStringLiteral("sh"));
+  if (shPath.isEmpty()) {
+    QSKIP("Cannot find 'sh' to determine a writable PATH directory");
+  }
+  const QString pathDir = QFileInfo(shPath).absolutePath();
+  const QString uniqueName = QStringLiteral("qtpass_test_exec_unique_99");
+  const QString uniquePath = pathDir + QDir::separator() + uniqueName;
+
+  QFile exec(uniquePath);
+  if (!exec.open(QIODevice::WriteOnly | QIODevice::Text)) {
+    QSKIP("Cannot write to the PATH directory containing 'sh' (need write "
+          "access)");
+  }
+  exec.write("#!/bin/sh\n");
+  exec.close();
+  exec.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner |
+                      QFileDevice::ExeOwner);
+
+  QString result = Util::findBinaryInPath(uniqueName);
+
+  // Remove file before assertions so it is always cleaned up.
+  QFile::remove(uniquePath);
+
+  QVERIFY2(!result.isEmpty(),
+           "findBinaryInPath should locate the executable placed in a PATH "
+           "directory");
+  QVERIFY2(result.endsWith(uniqueName),
+           qPrintable(QStringLiteral("Result '%1' should end with '%2'")
+                          .arg(result, uniqueName)));
+  QVERIFY2(QFileInfo(result).isAbsolute(), "Result must be an absolute path");
+#else
+  QSKIP("Temp-executable test is Unix-only");
+#endif
 }
 
 QTEST_MAIN(tst_util)
