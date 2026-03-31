@@ -915,13 +915,11 @@ void tst_util::getGpgIdPathNotFound() {
            qPrintable(QString("Expected %1, got %2").arg(expected, path)));
 }
 
-// Tests specifically targeting the modernized findBinaryInPath implementation
-// (range-based for, non-mutating string concatenation, empty QString init).
+// Tests for findBinaryInPath - verifies it correctly locates executables in
+// PATH.
 
 void tst_util::findBinaryInPathReturnedPathIsAbsolute() {
-  // The refactored loop builds fullPath = entryConst + binary without mutating
-  // entryConst. Verify that the returned path is absolute, not a relative
-  // fragment.
+  // Verify that the returned path is absolute, not a relative fragment.
 #ifdef Q_OS_WIN
   const QString binaryName = QStringLiteral("cmd.exe");
 #else
@@ -954,9 +952,7 @@ void tst_util::findBinaryInPathReturnedPathIsExecutable() {
 }
 
 void tst_util::findBinaryInPathMultipleKnownBinaries() {
-  // Exercise the PATH-scanning loop across several distinct binaries to confirm
-  // each iteration starts from the unmodified PATH entry (the key correctness
-  // property of the refactored non-mutating concatenation).
+  // Test finding multiple common binaries in PATH.
 #ifndef Q_OS_WIN
   const QStringList binaries = {QStringLiteral("sh"), QStringLiteral("ls"),
                                 QStringLiteral("cat")};
@@ -1010,13 +1006,10 @@ void tst_util::findBinaryInPathResultContainsBinaryName() {
 
 void tst_util::findBinaryInPathTempExecutableInTempDir() {
   // Place a real executable in an existing PATH directory and confirm that
-  // findBinaryInPath locates it.  This directly exercises the refactored
-  // for-loop path construction:
-  //   fullPath = entryConst + binary
-  // and confirms no off-by-one or mutation artefact in the concatenation.
+  // findBinaryInPath locates it.
   //
   // Because Util::_env is a static cached copy we cannot inject a new PATH
-  // directory at runtime.  Instead we write a uniquely named executable into
+  // directory at runtime. Instead we write a uniquely named executable into
   // the same directory as "sh" (which is already on the cached PATH) and
   // verify the function finds it.
 #ifndef Q_OS_WIN
