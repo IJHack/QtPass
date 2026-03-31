@@ -5,7 +5,7 @@
 
 #include <QDialog>
 #include <QObject>
-#include <QPaintDevice>
+#include <QPixmap>
 #include <QProcess>
 #include <QTimer>
 
