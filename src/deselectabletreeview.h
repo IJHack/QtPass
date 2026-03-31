@@ -9,9 +9,42 @@
 #include <QTreeView>
 
 /**
- * @brief The DeselectableTreeView class
- * loosly based on http://stackoverflow.com/questions/2761284/
- * thanks to Yassir Ennazk
+ * A QTreeView subclass that clears selection and emits a signal when the user
+ * clicks an empty area or clicks a selected item in empty space.
+ *
+ * The view tracks press/release sequences to distinguish single- from
+ * double-clicks and only clears selection for qualifying single-clicks.
+ */
+
+/**
+ * Construct a DeselectableTreeView.
+ * @param parent Parent widget forwarded to QTreeView.
+ */
+
+/**
+ * Default destructor.
+ */
+
+/**
+ * Emitted after the view clears its selection in response to a qualifying
+ * click on empty space or on an already-selected item.
+ */
+
+/**
+ * Record whether the item under the press position was selected.
+ * @param event Mouse press event containing the press position.
+ */
+
+/**
+ * Clear selection and emit emptyClicked() when a qualifying single-click
+ * releases over empty space or over a selected item; otherwise, handle the
+ * release normally.
+ * @param event Mouse release event containing the release position.
+ */
+
+/**
+ * Mark that a double-click occurred and handle the double-click normally.
+ * @param event Mouse double-click event.
  */
 class DeselectableTreeView : public QTreeView {
   Q_OBJECT
