@@ -1043,7 +1043,11 @@ void tst_util::findBinaryInPathTempExecutableInTempDir() {
   QString result = Util::findBinaryInPath(uniqueName);
 
   // Remove file before assertions so it is always cleaned up.
-  QFile::remove(uniquePath);
+  const bool removed = QFile::remove(uniquePath);
+  QVERIFY2(
+      removed,
+      qPrintable(
+          QStringLiteral("Failed to clean up test file '%1'").arg(uniquePath)));
 
   QVERIFY2(!result.isEmpty(),
            "findBinaryInPath should locate the executable placed in a PATH "
