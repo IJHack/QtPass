@@ -216,7 +216,7 @@ bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
  * @param user User to check
  * @return true if user's key is expired
  */
-bool UsersDialog::isUserExpired(const UserInfo &user) const {
+auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
   return user.expiry.toSecsSinceEpoch() > 0 &&
          QDateTime::currentDateTime() > user.expiry;
 }
