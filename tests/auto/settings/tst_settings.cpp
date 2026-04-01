@@ -420,24 +420,24 @@ void tst_settings::setAndGetSize() {
 }
 
 void tst_settings::setAndGetDialogGeometry() {
-  QByteArray geometry("test_geometry_data");
   const QString key = "testDialog";
+  QByteArray geometry("test_dialog_geometry");
   QtPassSettings::setDialogGeometry(key, geometry);
   QByteArray read = QtPassSettings::getDialogGeometry(key, QByteArray());
   QVERIFY2(read == geometry, "Dialog geometry should match");
 }
 
 void tst_settings::setAndGetDialogPos() {
-  QPoint pos(150, 250);
   const QString key = "testDialog";
+  QPoint pos(100, 200);
   QtPassSettings::setDialogPos(key, pos);
   QPoint read = QtPassSettings::getDialogPos(key, QPoint());
   QVERIFY2(read == pos, "Dialog pos should match");
 }
 
 void tst_settings::setAndGetDialogSize() {
-  QSize size(640, 480);
   const QString key = "testDialog";
+  QSize size(640, 480);
   QtPassSettings::setDialogSize(key, size);
   QSize read = QtPassSettings::getDialogSize(key, QSize());
   QVERIFY2(read == size, "Dialog size should match");
@@ -446,11 +446,11 @@ void tst_settings::setAndGetDialogSize() {
 void tst_settings::setAndGetDialogMaximized() {
   const QString key = "testDialog";
   QtPassSettings::setDialogMaximized(key, true);
-  QVERIFY2(QtPassSettings::isDialogMaximized(key, false) == true,
-           "Dialog maximized should be true");
+  bool read = QtPassSettings::isDialogMaximized(key, false);
+  QVERIFY2(read == true, "Dialog maximized should be true");
   QtPassSettings::setDialogMaximized(key, false);
-  QVERIFY2(QtPassSettings::isDialogMaximized(key, true) == false,
-           "Dialog maximized should be false");
+  read = QtPassSettings::isDialogMaximized(key, true);
+  QVERIFY2(read == false, "Dialog maximized should be false");
 }
 
 void tst_settings::setAndGetPasswordCharsSelection() {

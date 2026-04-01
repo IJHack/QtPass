@@ -27,6 +27,7 @@ const QString SettingsConstants::splitterRight =
 const QString SettingsConstants::maximized =
     SettingsConstants::groupMainwindow + "/maximized";
 
+// Dialog-specific settings (with key prefix)
 const QString SettingsConstants::dialogGeometry = "dialog/geometry";
 const QString SettingsConstants::dialogPos = "dialog/pos";
 const QString SettingsConstants::dialogSize = "dialog/size";

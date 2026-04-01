@@ -17,16 +17,16 @@ public:
   static const QString savestate;
   static const QString pos;
   static const QString size;
-  static const QString splitterLeft;
-  static const QString splitterRight;
   static const QString maximized;
 
-  // Dialog-specific settings
+  // Dialog-specific settings (with key prefix)
   static const QString dialogGeometry;
   static const QString dialogPos;
   static const QString dialogSize;
   static const QString dialogMaximized;
 
+  static const QString splitterLeft;
+  static const QString splitterRight;
   static const QString usePass;
   static const QString useAutoclear;
   static const QString useSelection;
