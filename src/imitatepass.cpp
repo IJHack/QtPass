@@ -242,8 +242,8 @@ void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
   }
 }
 
-bool ImitatePass::signGpgIdFile(const QString &gpgIdFile,
-                                const QStringList &signingKeys) {
+auto ImitatePass::signGpgIdFile(const QString &gpgIdFile,
+                                const QStringList &signingKeys) -> bool {
   QStringList args;
   // Use only the first signing key; multiple --default-key options would
   // override each other and only the last one would take effect.
