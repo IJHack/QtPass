@@ -129,7 +129,7 @@ public:
    * @param charset Character set to use.
    * @return Generated password.
    */
-  virtual auto Generate_b(unsigned int length, const QString &charset)
+  virtual auto generatePassword(unsigned int length, const QString &charset)
       -> QString;
 
   // GPG operations

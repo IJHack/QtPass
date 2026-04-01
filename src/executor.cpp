@@ -8,8 +8,8 @@
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QStringDecoder>
-#include <utility>
 #endif
+#include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -30,6 +30,42 @@ Executor::Executor(QObject *parent) : QObject(parent), running(false) {
 }
 
 /**
+ * @brief Executor::startProcess starts the internal process, handling WSL
+ * prefixes.
+ * @param app Executable path (may start with "wsl ").
+ * @param args Arguments to pass to the executable.
+ */
+void Executor::startProcess(const QString &app, const QStringList &args) {
+  if (app.startsWith("wsl ")) {
+    QStringList wslArgs = args;
+    QString actualApp = app;
+    wslArgs.prepend(actualApp.remove(0, 4));
+    m_process.start("wsl", wslArgs);
+  } else {
+    m_process.start(app, args);
+  }
+}
+
+/**
+ * @brief Executor::startProcessBlocking starts a given process, handling WSL
+ * prefixes.
+ * @param internal QProcess reference to start.
+ * @param app Executable path (may start with "wsl ").
+ * @param args Arguments to pass to the executable.
+ */
+void Executor::startProcessBlocking(QProcess &internal, const QString &app,
+                                    const QStringList &args) {
+  if (app.startsWith("wsl ")) {
+    QStringList wslArgs = args;
+    QString actualApp = app;
+    wslArgs.prepend(actualApp.remove(0, 4));
+    internal.start("wsl", wslArgs);
+  } else {
+    internal.start(app, args);
+  }
+}
+
+/**
  * @brief Executor::executeNext consumes executable tasks from the queue
  */
 void Executor::executeNext() {
@@ -40,16 +76,18 @@ void Executor::executeNext() {
       if (!i.workingDir.isEmpty()) {
         m_process.setWorkingDirectory(i.workingDir);
       }
-      if (i.app.startsWith("wsl ")) {
-        QStringList tmp = i.args;
-        QString app = i.app;
-        tmp.prepend(app.remove(0, 4));
-        m_process.start("wsl", tmp);
-      } else {
-        m_process.start(i.app, i.args);
-      }
+      startProcess(i.app, i.args);
       if (!i.input.isEmpty()) {
-        m_process.waitForStarted(-1);
+        if (!m_process.waitForStarted(-1)) {
+#ifdef QT_DEBUG
+          dbg() << "Process failed to start:" << i.id << " " << i.app;
+#endif
+          m_process.closeWriteChannel();
+          running = false;
+          m_execQueue.dequeue();
+          executeNext();
+          return;
+        }
         QByteArray data = i.input.toUtf8();
         if (m_process.write(data) != data.length()) {
 #ifdef QT_DEBUG
@@ -152,14 +190,20 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
   QTextCodec *codec = QTextCodec::codecForName("UTF-8");
   QTextCodec::ConverterState state;
   QString out = codec->toUnicode(in.constData(), in.size(), &state);
-  if (!state.invalidChars) {
+  if (state.invalidChars == 0) {
     return out;
   }
   codec = QTextCodec::codecForUtfText(in);
   return codec->toUnicode(in);
 #else
   auto converter = QStringDecoder(QStringDecoder::Utf8);
-  return converter(in);
+  QString out = converter(in);
+  if (!converter.hasError()) {
+    return out;
+  }
+  // Fallback if UTF-8 decoding failed - try system encoding
+  auto fallback = QStringDecoder(QStringDecoder::System);
+  return fallback(in);
 #endif
 }
 
@@ -180,16 +224,15 @@ auto Executor::executeBlocking(QString app, const QStringList &args,
                                const QString &input, QString *process_out,
                                QString *process_err) -> int {
   QProcess internal;
-  if (app.startsWith("wsl ")) {
-    QStringList tmp = args;
-    tmp.prepend(app.remove(0, 4));
-    internal.start("wsl", tmp);
-  } else {
-    internal.start(app, args);
+  startProcessBlocking(internal, app, args);
+  if (!internal.waitForStarted(-1)) {
+#ifdef QT_DEBUG
+    dbg() << "Process failed to start:" << app;
+#endif
+    return -1;
   }
   if (!input.isEmpty()) {
     QByteArray data = input.toUtf8();
-    internal.waitForStarted(-1);
     if (internal.write(data) != data.length()) {
 #ifdef QT_DEBUG
       dbg() << "Not all input written:" << app;

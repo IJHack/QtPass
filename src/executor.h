@@ -118,6 +118,9 @@ class Executor : public QObject {
   QProcess m_process;
   bool running;
   void executeNext();
+  void startProcess(const QString &app, const QStringList &args);
+  static void startProcessBlocking(QProcess &internal, const QString &app,
+                                   const QStringList &args);
 
 public:
   explicit Executor(QObject *parent = nullptr);

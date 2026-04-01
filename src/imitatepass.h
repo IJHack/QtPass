@@ -54,8 +54,10 @@ protected:
    * @brief Sign .gpg-id file with signing keys.
    * @param gpgIdFile Path to .gpg-id file.
    * @param signingKeys Key IDs to sign with.
+   * @return true on success, false on failure.
    */
-  void signGpgIdFile(const QString &gpgIdFile, const QStringList &signingKeys);
+  auto signGpgIdFile(const QString &gpgIdFile, const QStringList &signingKeys)
+      -> bool;
   /**
    * @brief Add .gpg-id to git staging.
    * @param gpgIdFile .gpg-id file path.

@@ -152,7 +152,7 @@ void QtPass::setMainWindow() {
   connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
           m_mainWindow, &MainWindow::endReencryptPath);
 
-  connect(m_mainWindow, &MainWindow::passGitInitNeeded, [=]() -> void {
+  connect(m_mainWindow, &MainWindow::passGitInitNeeded, [this]() {
 #ifdef QT_DEBUG
     dbg() << "Pass git init called";
 #endif
@@ -160,7 +160,7 @@ void QtPass::setMainWindow() {
   });
 
   connect(m_mainWindow, &MainWindow::generateGPGKeyPair, m_mainWindow,
-          [=](const QString &batch) -> void {
+          [this](const QString &batch) {
             QtPassSettings::getPass()->GenerateGPGKeys(batch);
             m_mainWindow->showStatusMessage(tr("Generating GPG key pair"),
                                             60000);
@@ -204,13 +204,18 @@ void QtPass::mountWebDav() {
   NETRESOURCEA netres;
   memset(&netres, 0, sizeof(netres));
   netres.dwType = RESOURCETYPE_DISK;
-  netres.lpLocalName = 0;
-  netres.lpRemoteName = QtPassSettings::getWebDavUrl().toUtf8().data();
+  netres.lpLocalName = nullptr;
+  // Store QByteArray in variables to ensure lifetime during WNetUseConnectionA
+  // call
+  QByteArray webDavUrlUtf8 = QtPassSettings::getWebDavUrl().toUtf8();
+  QByteArray webDavPasswordUtf8 = QtPassSettings::getWebDavPassword().toUtf8();
+  QByteArray webDavUserUtf8 = QtPassSettings::getWebDavUser().toUtf8();
+  netres.lpRemoteName = const_cast<char *>(webDavUrlUtf8.constData());
   DWORD size = sizeof(dst);
   DWORD r = WNetUseConnectionA(
       reinterpret_cast<HWND>(m_mainWindow->effectiveWinId()), &netres,
-      QtPassSettings::getWebDavPassword().toUtf8().constData(),
-      QtPassSettings::getWebDavUser().toUtf8().constData(),
+      const_cast<char *>(webDavPasswordUtf8.constData()),
+      const_cast<char *>(webDavUserUtf8.constData()),
       CONNECT_TEMPORARY | CONNECT_INTERACTIVE | CONNECT_REDIRECT, dst, &size,
       0);
   if (r == NO_ERROR) {
@@ -289,7 +294,6 @@ void QtPass::processError(QProcess::ProcessError error) {
     errorString = tr("QProcess::UnknownError");
     break;
   }
-
   m_mainWindow->flashText(errorString, true);
   m_mainWindow->setUiElementsEnabled(true);
 }

@@ -202,7 +202,14 @@ auto ImitatePass::checkSigningKeys(const QStringList &signingKeys) -> bool {
   QString out;
   QStringList args =
       QStringList{"--status-fd=1", "--list-secret-keys"} + signingKeys;
-  Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
+  int result =
+      Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
+  if (result != 0) {
+#ifdef QT_DEBUG
+    dbg() << "GPG list-secret-keys failed with code:" << result;
+#endif
+    return false;
+  }
   for (auto &key : signingKeys) {
     if (out.contains("[GNUPG:] KEY_CONSIDERED " + key)) {
       return true;
@@ -235,18 +242,37 @@ void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
   }
 }
 
-void ImitatePass::signGpgIdFile(const QString &gpgIdFile,
-                                const QStringList &signingKeys) {
+auto ImitatePass::signGpgIdFile(const QString &gpgIdFile,
+                                const QStringList &signingKeys) -> bool {
   QStringList args;
-  for (auto &key : signingKeys) {
-    args.append(QStringList{"--default-key", key});
+  // Use only the first signing key; multiple --default-key options would
+  // override each other and only the last one would take effect.
+  if (!signingKeys.isEmpty()) {
+#ifdef QT_DEBUG
+    if (signingKeys.size() > 1) {
+      dbg() << "Multiple signing keys configured; using only the first key:"
+            << signingKeys.first();
+    }
+#endif
+    args.append(QStringList{"--default-key", signingKeys.first()});
   }
   args.append(QStringList{"--yes", "--detach-sign", gpgIdFile});
-  Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args);
+  int result =
+      Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args);
+  if (result != 0) {
+#ifdef QT_DEBUG
+    dbg() << "GPG signing failed with code:" << result;
+#endif
+    emit critical(tr("GPG signing failed!"),
+                  tr("Failed to sign %1.").arg(gpgIdFile));
+    return false;
+  }
   if (!verifyGpgIdFile(gpgIdFile)) {
     emit critical(tr("Check .gpgid file signature!"),
                   tr("Signature for %1 is invalid.").arg(gpgIdFile));
+    return false;
   }
+  return true;
 }
 
 void ImitatePass::gitAddGpgId(const QString &gpgIdFile,
@@ -302,7 +328,9 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   writeGpgIdFile(gpgIdFile, users);
 
   if (!signingKeys.isEmpty()) {
-    signGpgIdFile(gpgIdFile, signingKeys);
+    if (!signGpgIdFile(gpgIdFile, signingKeys)) {
+      return;
+    }
   }
 
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit() &&
@@ -331,7 +359,14 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
   QString out;
   QStringList args =
       QStringList{"--verify", "--status-fd=1", pgpg(file) + ".sig", pgpg(file)};
-  Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
+  int result =
+      Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args, &out);
+  if (result != 0) {
+#ifdef QT_DEBUG
+    dbg() << "GPG verify failed with code:" << result;
+#endif
+    return false;
+  }
   QRegularExpression re(
       R"(^\[GNUPG:\] VALIDSIG ([A-F0-9]{40}) .* ([A-F0-9]{40})\r?$)",
       QRegularExpression::MultilineOption);

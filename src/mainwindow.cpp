@@ -108,8 +108,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   clearPanelTimer.setInterval(MS_PER_SECOND *
                               QtPassSettings::getAutoclearPanelSeconds());
   clearPanelTimer.setSingleShot(true);
-  connect(&clearPanelTimer, &QTimer::timeout, this,
-          [this]() -> void { clearPanel(); });
+  connect(&clearPanelTimer, &QTimer::timeout, this, [this]() { clearPanel(); });
 
   searchTimer.setInterval(350);
   searchTimer.setSingleShot(true);
@@ -1145,6 +1144,9 @@ void MainWindow::copyPasswordFromTreeview() {
 
   if (fileOrFolder.isFile()) {
     QString file = getFile(ui->treeView->currentIndex(), true);
+    // Disconnect any previous connection to avoid accumulation
+    disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+               &MainWindow::passwordFromFileToClipboard);
     connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
             &MainWindow::passwordFromFileToClipboard);
     QtPassSettings::getPass()->Show(file);
