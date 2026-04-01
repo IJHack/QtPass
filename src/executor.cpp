@@ -245,8 +245,8 @@ void Executor::setEnvironment(const QStringList &env) {
  */
 auto Executor::cancelNext() -> int {
   if (running || m_execQueue.isEmpty()) {
-    return -1; // Return -1 to indicate no process was cancelled (queue empty or
-               // currently executing)
+    return -1; // Return -1 to indicate no process was cancelled
+               // (queue empty or currently executing).
   }
   return m_execQueue.dequeue().id;
 }
