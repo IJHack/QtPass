@@ -108,8 +108,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   clearPanelTimer.setInterval(MS_PER_SECOND *
                               QtPassSettings::getAutoclearPanelSeconds());
   clearPanelTimer.setSingleShot(true);
-  connect(&clearPanelTimer, &QTimer::timeout, this,
-          [this]() -> void { clearPanel(); });
+  connect(&clearPanelTimer, &QTimer::timeout, this, [this]() { clearPanel(); });
 
   searchTimer.setInterval(350);
   searchTimer.setSingleShot(true);

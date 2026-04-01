@@ -152,7 +152,7 @@ void QtPass::setMainWindow() {
   connect(QtPassSettings::getImitatePass(), &ImitatePass::endReencryptPath,
           m_mainWindow, &MainWindow::endReencryptPath);
 
-  connect(m_mainWindow, &MainWindow::passGitInitNeeded, [this]() -> void {
+  connect(m_mainWindow, &MainWindow::passGitInitNeeded, [this]() {
 #ifdef QT_DEBUG
     dbg() << "Pass git init called";
 #endif
@@ -160,7 +160,7 @@ void QtPass::setMainWindow() {
   });
 
   connect(m_mainWindow, &MainWindow::generateGPGKeyPair, m_mainWindow,
-          [this](const QString &batch) -> void {
+          [this](const QString &batch) {
             QtPassSettings::getPass()->GenerateGPGKeys(batch);
             m_mainWindow->showStatusMessage(tr("Generating GPG key pair"),
                                             60000);

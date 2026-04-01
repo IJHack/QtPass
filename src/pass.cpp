@@ -94,7 +94,8 @@ void Pass::init() {
  * @param charset to use for generation
  * @return the password
  */
-auto Pass::Generate_b(unsigned int length, const QString &charset) -> QString {
+auto Pass::generatePassword(unsigned int length, const QString &charset)
+    -> QString {
   QString passwd;
   if (QtPassSettings::isUsePwgen()) {
     // --secure goes first as it overrides --no-* otherwise

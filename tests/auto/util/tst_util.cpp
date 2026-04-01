@@ -511,17 +511,17 @@ void tst_util::createGpgIdFileEmptyKeys() {
 void tst_util::generateRandomPassword() {
   ImitatePass pass;
   QString charset = "abcdefghijklmnopqrstuvwxyz";
-  QString result = pass.Generate_b(10, charset);
+  QString result = pass.generatePassword(10, charset);
 
   QCOMPARE(result.length(), 10);
 
-  result = pass.Generate_b(100, "abcd");
+  result = pass.generatePassword(100, "abcd");
   QCOMPARE(result.length(), 100);
 
-  result = pass.Generate_b(0, "");
+  result = pass.generatePassword(0, "");
   QVERIFY(result.isEmpty());
 
-  result = pass.Generate_b(50, "ABC");
+  result = pass.generatePassword(50, "ABC");
   QCOMPARE(result.length(), 50);
 }
 
@@ -532,9 +532,9 @@ void tst_util::boundedRandom() {
   const int iterations = 1000;
 
   for (int i = 0; i < iterations; ++i) {
-    QString result = pass.Generate_b(1, "0123456789");
+    QString result = pass.generatePassword(1, "0123456789");
     quint32 val = result.at(0).digitValue();
-    QVERIFY2(val < 10, "Generate_b should only return digit characters");
+    QVERIFY2(val < 10, "generatePassword should only return digit characters");
     counts[val]++;
   }
 
