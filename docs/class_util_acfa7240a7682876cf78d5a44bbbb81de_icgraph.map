@@ -1,0 +1,10 @@
+<map id="Util::normalizeFolderPath" name="Util::normalizeFolderPath">
+<area shape="rect" id="Node000001" title="Ensure a folder path always ends with the native directory separator." alt="" coords="613,31,800,56"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a503abb6ccbf2aa18056c220b9b45284e" title="Locate the password store directory." alt="" coords="393,31,565,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="600,46,566,46,566,41,600,41"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="251,5,345,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="379,32,345,27,346,22,380,27"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,31,203,56"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="379,46,203,46,203,41,379,41"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="237,29,201,33,201,28,237,23"/>
+</map>

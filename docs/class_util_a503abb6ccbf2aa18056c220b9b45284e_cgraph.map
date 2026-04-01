@@ -1,5 +1,5 @@
 <map id="Util::findPasswordStore" name="Util::findPasswordStore">
 <area shape="rect" id="Node000001" title="Locate the password store directory." alt="" coords="5,5,177,31"/>
-<area shape="rect" id="Node000002" href="$class_util.html#a0b3b524306360fc2f76112be924f8f6c" title="Ensure a folder path always ends with the native directory separator." alt="" coords="225,5,412,31"/>
+<area shape="rect" id="Node000002" href="$class_util.html#acfa7240a7682876cf78d5a44bbbb81de" title="Ensure a folder path always ends with the native directory separator." alt="" coords="225,5,412,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,15,212,15,212,21,178,21"/>
 </map>

@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_util.html#a0b3b524306360fc2f76112be924f8f6c" target="_top" xlink:title="Ensure a folder path always ends with the native directory separator.">
+<g id="a_Node000002"><a xlink:href="class_util.html#acfa7240a7682876cf78d5a44bbbb81de" target="_top" xlink:title="Ensure a folder path always ends with the native directory separator.">
 <polygon fill="white" stroke="#666666" points="305,-19 165,-19 165,0 305,0 305,-19"/>
 <text text-anchor="middle" x="235" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Util::normalizeFolderPath</text>
 </a>
