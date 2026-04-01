@@ -633,298 +633,298 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>}</div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span> </div>
 <div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span><span class="keywordtype">void</span> tst_util::configIsValid() {</div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>  <span class="keyword">const</span> QString originalStore = <a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>();</div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>  QVERIFY2(tempDir.isValid(), <span class="stringliteral">&quot;Temporary directory should be created&quot;</span>);</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span> </div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>  <span class="comment">// No .gpg-id in this store =&gt; config must be invalid.</span></div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(tempDir.path());</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> isValid = <a class="code hl_function" href="class_util.html#afe6db9149dff37feded5abf38870cda8">Util::configIsValid</a>();</div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span> </div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>  <span class="comment">// Restore global setting before assertion to avoid leaking test state.</span></div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(originalStore);</div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>  QVERIFY2(!isValid, <span class="stringliteral">&quot;Expected invalid config when .gpg-id is missing&quot;</span>);</div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>}</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span> </div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span><span class="keywordtype">void</span> tst_util::getDirBasic() {</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>  QVERIFY2(tempDir.isValid(),</div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>           <span class="stringliteral">&quot;Temporary directory should be created successfully&quot;</span>);</div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span> </div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>  QFileSystemModel fsm;</div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>  fsm.setRootPath(tempDir.path());</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> sm;</div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>  sm.<a class="code hl_function" href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f">setModelAndStore</a>(&amp;fsm, tempDir.path());</div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>  QVERIFY(sm.sourceModel() != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>  QVERIFY2(sm.<a class="code hl_function" href="class_store_model.html#a0adadb60fe309f7f5dad9f27cec9b7d2">getStore</a>() == tempDir.path(),</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>           <span class="stringliteral">&quot;Store path should match the set value&quot;</span>);</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>  QModelIndex rootIndex = fsm.index(tempDir.path());</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>  QVERIFY2(rootIndex.isValid(), <span class="stringliteral">&quot;Filesystem model root index should be valid&quot;</span>);</div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>  <span class="keyword">const</span> QString originalStore = <a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>();</div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(tempDir.path());</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span> </div>
-<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>  QString result = <a class="code hl_function" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a>(QModelIndex(), <span class="keyword">false</span>, fsm, sm);</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>  QString expectedDir = QDir(tempDir.path()).absolutePath();</div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>  <span class="keywordflow">if</span> (!expectedDir.endsWith(QDir::separator())) {</div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    expectedDir += QDir::separator();</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>  }</div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>  QVERIFY2(</div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>      result == expectedDir,</div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>      qPrintable(QString(<span class="stringliteral">&quot;Expected &#39;%1&#39;, got &#39;%2&#39;&quot;</span>).arg(expectedDir, result)));</div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(originalStore);</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>}</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span> </div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span><span class="keywordtype">void</span> tst_util::getDirWithIndex() {</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>  QVERIFY2(tempDir.isValid(),</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>           <span class="stringliteral">&quot;Temporary directory should be created successfully&quot;</span>);</div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>  <span class="keyword">const</span> QString dirPath = tempDir.path();</div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>  <span class="keyword">const</span> QString filePath =</div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>      QDir(dirPath).filePath(QStringLiteral(<span class="stringliteral">&quot;testfile.txt&quot;</span>));</div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span> </div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>  QFile file(filePath);</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>  QVERIFY2(file.open(QIODevice::WriteOnly),</div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>           <span class="stringliteral">&quot;Failed to create test file in temporary directory&quot;</span>);</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> testData[] = <span class="stringliteral">&quot;dummy&quot;</span>;</div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>  <span class="keyword">const</span> qint64 bytesWritten = file.write(testData, <span class="keyword">sizeof</span>(testData) - 1);</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>  QVERIFY2(bytesWritten == <span class="keyword">static_cast&lt;</span>qint64<span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(testData) - 1),</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>           <span class="stringliteral">&quot;Failed to write test data to file in temporary directory&quot;</span>);</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>  file.close();</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span> </div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>  <span class="keyword">const</span> QString originalPassStore = <a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>();</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>  PassStoreGuard passStoreGuard(originalPassStore);</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(dirPath);</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span> </div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>  QFileSystemModel fsm;</div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>  fsm.setRootPath(dirPath);</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> sm;</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>  sm.<a class="code hl_function" href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f">setModelAndStore</a>(&amp;fsm, dirPath);</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>  QVERIFY2(sm.<a class="code hl_function" href="class_store_model.html#a0adadb60fe309f7f5dad9f27cec9b7d2">getStore</a>() == dirPath, <span class="stringliteral">&quot;Store path should match the set value&quot;</span>);</div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span> </div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>  QModelIndex sourceIndex = fsm.index(filePath);</div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>  QVERIFY2(sourceIndex.isValid(),</div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>           <span class="stringliteral">&quot;Source index should be valid for the test file&quot;</span>);</div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>  QModelIndex fileIndex = sm.mapFromSource(sourceIndex);</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>  QVERIFY2(fileIndex.isValid(),</div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>           <span class="stringliteral">&quot;Proxy index should be valid for the test file&quot;</span>);</div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span> </div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>  QString result = <a class="code hl_function" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a>(fileIndex, <span class="keyword">false</span>, fsm, sm);</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>  QVERIFY2(!result.isEmpty(),</div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>           <span class="stringliteral">&quot;getDir should return a non-empty directory for a valid index&quot;</span>);</div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>  QVERIFY(result.endsWith(QDir::separator()));</div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span> </div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>  QString expectedPath = dirPath;</div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>  <span class="keywordflow">if</span> (!expectedPath.endsWith(QDir::separator())) {</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    expectedPath += QDir::separator();</div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>  }</div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>  QVERIFY2(</div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>      result == expectedPath,</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>      qPrintable(</div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>          QStringLiteral(<span class="stringliteral">&quot;Expected &#39;%1&#39;, got &#39;%2&#39;&quot;</span>).arg(expectedPath, result)));</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span> </div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>  QModelIndex invalidIndex;</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>  QString invalidResult = <a class="code hl_function" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a>(invalidIndex, <span class="keyword">false</span>, fsm, sm);</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>  QString expectedForInvalid = dirPath;</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>  <span class="keywordflow">if</span> (!expectedForInvalid.endsWith(QDir::separator())) {</div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>    expectedForInvalid += QDir::separator();</div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>  }</div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>  QVERIFY2(invalidResult == expectedForInvalid,</div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>           qPrintable(QStringLiteral(<span class="stringliteral">&quot;getDir should return pass store for &quot;</span></div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>                                     <span class="stringliteral">&quot;invalid index. Expected &#39;%1&#39;, got &#39;%2&#39;&quot;</span>)</div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>                          .arg(expectedForInvalid, invalidResult)));</div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>}</div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span> </div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span><span class="keywordtype">void</span> tst_util::findBinaryInPathNotFound() {</div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(<span class="stringliteral">&quot;this-binary-does-not-exist-12345&quot;</span>);</div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>  QVERIFY(result.isEmpty());</div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>}</div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span> </div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span><span class="keywordtype">void</span> tst_util::findPasswordStoreEnvVar() {</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>  QString result = <a class="code hl_function" href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">Util::findPasswordStore</a>();</div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>  QVERIFY(!result.isEmpty());</div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>}</div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span> </div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span><span class="keywordtype">void</span> tst_util::normalizeFolderPathMultipleCalls() {</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>  QString result1 = <a class="code hl_function" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">Util::normalizeFolderPath</a>(<span class="stringliteral">&quot;test1&quot;</span>);</div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>  QString result2 = <a class="code hl_function" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">Util::normalizeFolderPath</a>(<span class="stringliteral">&quot;test2&quot;</span>);</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>  QVERIFY(result1.endsWith(QDir::separator()));</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>  QVERIFY(result2.endsWith(QDir::separator()));</div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>}</div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span> </div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span><span class="keywordtype">void</span> tst_util::userInfoFullyValid() {</div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> ui;</div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;f&#39;</span>;</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>  QVERIFY(ui.<a class="code hl_function" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a>());</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;u&#39;</span>;</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>  QVERIFY(ui.<a class="code hl_function" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a>());</div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;-&#39;</span>;</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>  QVERIFY(!ui.<a class="code hl_function" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a>());</div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>}</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> </div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span><span class="keywordtype">void</span> tst_util::userInfoMarginallyValid() {</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> ui;</div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;m&#39;</span>;</div>
-<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>  QVERIFY(ui.<a class="code hl_function" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">marginallyValid</a>());</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;f&#39;</span>;</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>  QVERIFY(!ui.<a class="code hl_function" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">marginallyValid</a>());</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>}</div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span> </div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span><span class="keywordtype">void</span> tst_util::userInfoIsValid() {</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> ui;</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;f&#39;</span>;</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>  QVERIFY(ui.<a class="code hl_function" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">isValid</a>());</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;m&#39;</span>;</div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>  QVERIFY(ui.<a class="code hl_function" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">isValid</a>());</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;-&#39;</span>;</div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>  QVERIFY(!ui.<a class="code hl_function" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">isValid</a>());</div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>}</div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span> </div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span><span class="keywordtype">void</span> tst_util::qProgressIndicatorBasic() {</div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>  <a class="code hl_class" href="class_q_progress_indicator.html">QProgressIndicator</a> pi;</div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>  QVERIFY(!pi.<a class="code hl_function" href="class_q_progress_indicator.html#a47b1957d5839a55ce0ea7b25c15ec464">isAnimated</a>());</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>}</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span> </div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span><span class="keywordtype">void</span> tst_util::qProgressIndicatorStartStop() {</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>  <a class="code hl_class" href="class_q_progress_indicator.html">QProgressIndicator</a> pi;</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>  pi.<a class="code hl_slot" href="class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06">startAnimation</a>();</div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>  QVERIFY(pi.<a class="code hl_function" href="class_q_progress_indicator.html#a47b1957d5839a55ce0ea7b25c15ec464">isAnimated</a>());</div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>  pi.<a class="code hl_slot" href="class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95">stopAnimation</a>();</div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>  QVERIFY(!pi.<a class="code hl_function" href="class_q_progress_indicator.html#a47b1957d5839a55ce0ea7b25c15ec464">isAnimated</a>());</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>}</div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span> </div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span><span class="keywordtype">void</span> tst_util::namedValueBasic() {</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>  <a class="code hl_struct" href="struct_named_value.html">NamedValue</a> nv;</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>  nv.<a class="code hl_variable" href="struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867">name</a> = <span class="stringliteral">&quot;key&quot;</span>;</div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>  nv.<a class="code hl_variable" href="struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d">value</a> = <span class="stringliteral">&quot;value&quot;</span>;</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>  QCOMPARE(nv.<a class="code hl_variable" href="struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867">name</a>, QString(<span class="stringliteral">&quot;key&quot;</span>));</div>
-<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>  QCOMPARE(nv.<a class="code hl_variable" href="struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d">value</a>, QString(<span class="stringliteral">&quot;value&quot;</span>));</div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>}</div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span> </div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span><span class="keywordtype">void</span> tst_util::namedValueMultiple() {</div>
-<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> nvs;</div>
-<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>  <a class="code hl_struct" href="struct_named_value.html">NamedValue</a> nv1;</div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>  nv1.<a class="code hl_variable" href="struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867">name</a> = <span class="stringliteral">&quot;user1&quot;</span>;</div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>  nv1.<a class="code hl_variable" href="struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d">value</a> = <span class="stringliteral">&quot;pass1&quot;</span>;</div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>  nvs.append(nv1);</div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>  QCOMPARE(nvs.size(), 1);</div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>}</div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span> </div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span><span class="keywordtype">void</span> tst_util::imitatePassResolveMoveDestination() {</div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>  QTemporaryDir tmpDir;</div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>  QString srcPath = tmpDir.path() + <span class="stringliteral">&quot;/test.gpg&quot;</span>;</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>  QFile srcFile(srcPath);</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>  QVERIFY(srcFile.open(QFile::WriteOnly));</div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>  srcFile.write(<span class="stringliteral">&quot;test&quot;</span>);</div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>  srcFile.close();</div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span> </div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>  QString destPath = tmpDir.path() + <span class="stringliteral">&quot;/dest.gpg&quot;</span>;</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>  QString result = pass.<a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(srcPath, destPath, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>  QString expected = destPath;</div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>  QVERIFY2(result == expected, <span class="stringliteral">&quot;Destination should have .gpg extension&quot;</span>);</div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span>}</div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span> </div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span><span class="keywordtype">void</span> tst_util::imitatePassResolveMoveDestinationForce() {</div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>  QTemporaryDir tmpDir;</div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>  QString srcPath = tmpDir.path() + <span class="stringliteral">&quot;/test.gpg&quot;</span>;</div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>  QFile srcFile(srcPath);</div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>  QVERIFY(srcFile.open(QFile::WriteOnly));</div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>  srcFile.write(<span class="stringliteral">&quot;test&quot;</span>);</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>  srcFile.close();</div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span> </div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>  QString destPath = tmpDir.path() + <span class="stringliteral">&quot;/existing.gpg&quot;</span>;</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>  QFile destFile(destPath);</div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>  QVERIFY(destFile.open(QFile::WriteOnly));</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>  destFile.write(<span class="stringliteral">&quot;old&quot;</span>);</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>  destFile.close();</div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span> </div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>  QString result = pass.<a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(srcPath, destPath, <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>  QVERIFY2(result == destPath, <span class="stringliteral">&quot;Should return dest path when force=true&quot;</span>);</div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>}</div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span> </div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span><span class="keywordtype">void</span> tst_util::imitatePassResolveMoveDestinationDestExistsNoForce() {</div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>  QTemporaryDir tmpDir;</div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>  QString srcPath = tmpDir.path() + <span class="stringliteral">&quot;/test.gpg&quot;</span>;</div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>  QFile srcFile(srcPath);</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>  QVERIFY(srcFile.open(QFile::WriteOnly));</div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>  srcFile.write(<span class="stringliteral">&quot;test&quot;</span>);</div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>  srcFile.close();</div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span> </div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>  QString destPath = tmpDir.path() + <span class="stringliteral">&quot;/existing.gpg&quot;</span>;</div>
-<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>  QFile destFile(destPath);</div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>  QVERIFY(destFile.open(QFile::WriteOnly));</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>  destFile.write(<span class="stringliteral">&quot;old&quot;</span>);</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>  destFile.close();</div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span> </div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>  QString result = pass.<a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(srcPath, destPath, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>  QVERIFY2(result.isEmpty(),</div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>           <span class="stringliteral">&quot;Should return empty when dest exists and force=false&quot;</span>);</div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>}</div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span> </div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span><span class="keywordtype">void</span> tst_util::imitatePassResolveMoveDestinationDir() {</div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>  QTemporaryDir tmpDir;</div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>  QString srcPath = tmpDir.path() + <span class="stringliteral">&quot;/test.gpg&quot;</span>;</div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>  QFile srcFile(srcPath);</div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>  QVERIFY(srcFile.open(QFile::WriteOnly));</div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>  srcFile.write(<span class="stringliteral">&quot;test&quot;</span>);</div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>  srcFile.close();</div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span> </div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>  QString result = pass.<a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(srcPath, tmpDir.path(), <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>  QVERIFY2(result == tmpDir.path() + <span class="stringliteral">&quot;/test.gpg&quot;</span>,</div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>           <span class="stringliteral">&quot;Should append filename when dest is dir&quot;</span>);</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>}</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span> </div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span><span class="keywordtype">void</span> tst_util::imitatePassResolveMoveDestinationNonExistent() {</div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>  QTemporaryDir tmpDir;</div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>  QString destPath = tmpDir.path() + <span class="stringliteral">&quot;/dest.gpg&quot;</span>;</div>
-<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>  QString result =</div>
-<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>      pass.<a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(<span class="stringliteral">&quot;/non/existent/path.gpg&quot;</span>, destPath, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>  QVERIFY2(result.isEmpty(), <span class="stringliteral">&quot;Should return empty for non-existent source&quot;</span>);</div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>}</div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span> </div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span><span class="keywordtype">void</span> tst_util::imitatePassRemoveDir() {</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>  QTemporaryDir tmpDir;</div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>  QString subDir = tmpDir.path() + <span class="stringliteral">&quot;/testdir&quot;</span>;</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>  QVERIFY(QDir().mkpath(subDir));</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>  QVERIFY(QDir(subDir).exists());</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>  <span class="keywordtype">bool</span> result = pass.<a class="code hl_function" href="class_imitate_pass.html#a8740d9937714c8b6219d1857d7e2ff2c">removeDir</a>(subDir);</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>  QVERIFY(result);</div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>  QVERIFY(!QDir(subDir).exists());</div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>}</div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span> </div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span><span class="keywordtype">void</span> tst_util::getRecipientListBasic() {</div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>  QString passStore = tempDir.path();</div>
-<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>  QString gpgIdFile = passStore + <span class="stringliteral">&quot;/.gpg-id&quot;</span>;</div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span> </div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>  QFile file(gpgIdFile);</div>
-<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>  QVERIFY(file.open(QIODevice::WriteOnly));</div>
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>  file.write(<span class="stringliteral">&quot;ABCDEF12\n34567890\n&quot;</span>);</div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>  file.close();</div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span> </div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>  QStringList recipients = <a class="code hl_function" href="class_pass.html#a693825d2ad62813cf103860ef6211370">Pass::getRecipientList</a>(passStore);</div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>  QCOMPARE(recipients.size(), 2);</div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>  QCOMPARE(recipients[0], QString(<span class="stringliteral">&quot;ABCDEF12&quot;</span>));</div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>  QCOMPARE(recipients[1], QString(<span class="stringliteral">&quot;34567890&quot;</span>));</div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>}</div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span> </div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span><span class="keywordtype">void</span> tst_util::getRecipientListEmpty() {</div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>  QString passStore = tempDir.path();</div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>  QString gpgIdFile = passStore + <span class="stringliteral">&quot;/.gpg-id&quot;</span>;</div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span> </div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>  QFile file(gpgIdFile);</div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>  QVERIFY(file.open(QIODevice::WriteOnly));</div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>  file.close();</div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span> </div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>  QTemporaryDir tempDir;</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>  QVERIFY2(tempDir.isValid(), <span class="stringliteral">&quot;Temporary directory should be created&quot;</span>);</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span> </div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>  PassStoreGuard guard(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>());</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span> </div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>  <span class="comment">// No .gpg-id in this store =&gt; config must be invalid.</span></div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(tempDir.path());</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> isValid = <a class="code hl_function" href="class_util.html#afe6db9149dff37feded5abf38870cda8">Util::configIsValid</a>();</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span> </div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>  QVERIFY2(!isValid, <span class="stringliteral">&quot;Expected invalid config when .gpg-id is missing&quot;</span>);</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>}</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span> </div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="keywordtype">void</span> tst_util::getDirBasic() {</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>  QTemporaryDir tempDir;</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>  QVERIFY2(tempDir.isValid(),</div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>           <span class="stringliteral">&quot;Temporary directory should be created successfully&quot;</span>);</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span> </div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>  QFileSystemModel fsm;</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>  fsm.setRootPath(tempDir.path());</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> sm;</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>  sm.<a class="code hl_function" href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f">setModelAndStore</a>(&amp;fsm, tempDir.path());</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>  QVERIFY(sm.sourceModel() != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>  QVERIFY2(sm.<a class="code hl_function" href="class_store_model.html#a0adadb60fe309f7f5dad9f27cec9b7d2">getStore</a>() == tempDir.path(),</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>           <span class="stringliteral">&quot;Store path should match the set value&quot;</span>);</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>  QModelIndex rootIndex = fsm.index(tempDir.path());</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>  QVERIFY2(rootIndex.isValid(), <span class="stringliteral">&quot;Filesystem model root index should be valid&quot;</span>);</div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>  <span class="keyword">const</span> QString originalStore = <a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>();</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(tempDir.path());</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span> </div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>  QString result = <a class="code hl_function" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a>(QModelIndex(), <span class="keyword">false</span>, fsm, sm);</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>  QString expectedDir = QDir(tempDir.path()).absolutePath();</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>  <span class="keywordflow">if</span> (!expectedDir.endsWith(QDir::separator())) {</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>    expectedDir += QDir::separator();</div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>  }</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>  QVERIFY2(</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>      result == expectedDir,</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>      qPrintable(QString(<span class="stringliteral">&quot;Expected &#39;%1&#39;, got &#39;%2&#39;&quot;</span>).arg(expectedDir, result)));</div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(originalStore);</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>}</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span> </div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span><span class="keywordtype">void</span> tst_util::getDirWithIndex() {</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>  QTemporaryDir tempDir;</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>  QVERIFY2(tempDir.isValid(),</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>           <span class="stringliteral">&quot;Temporary directory should be created successfully&quot;</span>);</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span> </div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>  <span class="keyword">const</span> QString dirPath = tempDir.path();</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>  <span class="keyword">const</span> QString filePath =</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>      QDir(dirPath).filePath(QStringLiteral(<span class="stringliteral">&quot;testfile.txt&quot;</span>));</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span> </div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>  QFile file(filePath);</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>  QVERIFY2(file.open(QIODevice::WriteOnly),</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>           <span class="stringliteral">&quot;Failed to create test file in temporary directory&quot;</span>);</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>  <span class="keyword">const</span> <span class="keywordtype">char</span> testData[] = <span class="stringliteral">&quot;dummy&quot;</span>;</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>  <span class="keyword">const</span> qint64 bytesWritten = file.write(testData, <span class="keyword">sizeof</span>(testData) - 1);</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>  QVERIFY2(bytesWritten == <span class="keyword">static_cast&lt;</span>qint64<span class="keyword">&gt;</span>(<span class="keyword">sizeof</span>(testData) - 1),</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>           <span class="stringliteral">&quot;Failed to write test data to file in temporary directory&quot;</span>);</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>  file.close();</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span> </div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>  <span class="keyword">const</span> QString originalPassStore = <a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>();</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>  PassStoreGuard passStoreGuard(originalPassStore);</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(dirPath);</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span> </div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>  QFileSystemModel fsm;</div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>  fsm.setRootPath(dirPath);</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span> </div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> sm;</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>  sm.<a class="code hl_function" href="class_store_model.html#af223e13120a72e556a394aae4a92ad0f">setModelAndStore</a>(&amp;fsm, dirPath);</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>  QVERIFY2(sm.<a class="code hl_function" href="class_store_model.html#a0adadb60fe309f7f5dad9f27cec9b7d2">getStore</a>() == dirPath, <span class="stringliteral">&quot;Store path should match the set value&quot;</span>);</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>  QModelIndex sourceIndex = fsm.index(filePath);</div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>  QVERIFY2(sourceIndex.isValid(),</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>           <span class="stringliteral">&quot;Source index should be valid for the test file&quot;</span>);</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>  QModelIndex fileIndex = sm.mapFromSource(sourceIndex);</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>  QVERIFY2(fileIndex.isValid(),</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>           <span class="stringliteral">&quot;Proxy index should be valid for the test file&quot;</span>);</div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span> </div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>  QString result = <a class="code hl_function" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a>(fileIndex, <span class="keyword">false</span>, fsm, sm);</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>  QVERIFY2(!result.isEmpty(),</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>           <span class="stringliteral">&quot;getDir should return a non-empty directory for a valid index&quot;</span>);</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>  QVERIFY(result.endsWith(QDir::separator()));</div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span> </div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>  QString expectedPath = dirPath;</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>  <span class="keywordflow">if</span> (!expectedPath.endsWith(QDir::separator())) {</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>    expectedPath += QDir::separator();</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>  }</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>  QVERIFY2(</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>      result == expectedPath,</div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>      qPrintable(</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>          QStringLiteral(<span class="stringliteral">&quot;Expected &#39;%1&#39;, got &#39;%2&#39;&quot;</span>).arg(expectedPath, result)));</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span> </div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>  QModelIndex invalidIndex;</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>  QString invalidResult = <a class="code hl_function" href="class_util.html#a5df2739baa9b1df5f183c66739699d3d">Util::getDir</a>(invalidIndex, <span class="keyword">false</span>, fsm, sm);</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>  QString expectedForInvalid = dirPath;</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>  <span class="keywordflow">if</span> (!expectedForInvalid.endsWith(QDir::separator())) {</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>    expectedForInvalid += QDir::separator();</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>  }</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>  QVERIFY2(invalidResult == expectedForInvalid,</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>           qPrintable(QStringLiteral(<span class="stringliteral">&quot;getDir should return pass store for &quot;</span></div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>                                     <span class="stringliteral">&quot;invalid index. Expected &#39;%1&#39;, got &#39;%2&#39;&quot;</span>)</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>                          .arg(expectedForInvalid, invalidResult)));</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>}</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span> </div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span><span class="keywordtype">void</span> tst_util::findBinaryInPathNotFound() {</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(<span class="stringliteral">&quot;this-binary-does-not-exist-12345&quot;</span>);</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>  QVERIFY(result.isEmpty());</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>}</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span> </div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span><span class="keywordtype">void</span> tst_util::findPasswordStoreEnvVar() {</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>  QString result = <a class="code hl_function" href="class_util.html#a503abb6ccbf2aa18056c220b9b45284e">Util::findPasswordStore</a>();</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>  QVERIFY(!result.isEmpty());</div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>}</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span> </div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span><span class="keywordtype">void</span> tst_util::normalizeFolderPathMultipleCalls() {</div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>  QString result1 = <a class="code hl_function" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">Util::normalizeFolderPath</a>(<span class="stringliteral">&quot;test1&quot;</span>);</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>  QString result2 = <a class="code hl_function" href="class_util.html#a0b3b524306360fc2f76112be924f8f6c">Util::normalizeFolderPath</a>(<span class="stringliteral">&quot;test2&quot;</span>);</div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>  QVERIFY(result1.endsWith(QDir::separator()));</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>  QVERIFY(result2.endsWith(QDir::separator()));</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>}</div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span> </div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span><span class="keywordtype">void</span> tst_util::userInfoFullyValid() {</div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> ui;</div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;f&#39;</span>;</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>  QVERIFY(ui.<a class="code hl_function" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a>());</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;u&#39;</span>;</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>  QVERIFY(ui.<a class="code hl_function" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a>());</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>  QVERIFY(!ui.<a class="code hl_function" href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a>());</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>}</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span> </div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span><span class="keywordtype">void</span> tst_util::userInfoMarginallyValid() {</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> ui;</div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;m&#39;</span>;</div>
+<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span>  QVERIFY(ui.<a class="code hl_function" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">marginallyValid</a>());</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno">  700</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;f&#39;</span>;</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>  QVERIFY(!ui.<a class="code hl_function" href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd">marginallyValid</a>());</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>}</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span> </div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span><span class="keywordtype">void</span> tst_util::userInfoIsValid() {</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> ui;</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;f&#39;</span>;</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>  QVERIFY(ui.<a class="code hl_function" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">isValid</a>());</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;m&#39;</span>;</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>  QVERIFY(ui.<a class="code hl_function" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">isValid</a>());</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>  ui.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> = <span class="charliteral">&#39;-&#39;</span>;</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>  QVERIFY(!ui.<a class="code hl_function" href="struct_user_info.html#aa5b7b2f037ffc50ade5b78f09599d43a">isValid</a>());</div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span>}</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span> </div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span><span class="keywordtype">void</span> tst_util::qProgressIndicatorBasic() {</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>  <a class="code hl_class" href="class_q_progress_indicator.html">QProgressIndicator</a> pi;</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>  QVERIFY(!pi.<a class="code hl_function" href="class_q_progress_indicator.html#a47b1957d5839a55ce0ea7b25c15ec464">isAnimated</a>());</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>}</div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span> </div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span><span class="keywordtype">void</span> tst_util::qProgressIndicatorStartStop() {</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>  <a class="code hl_class" href="class_q_progress_indicator.html">QProgressIndicator</a> pi;</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>  pi.<a class="code hl_slot" href="class_q_progress_indicator.html#a53aa626e870ee75390766c6044788d06">startAnimation</a>();</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>  QVERIFY(pi.<a class="code hl_function" href="class_q_progress_indicator.html#a47b1957d5839a55ce0ea7b25c15ec464">isAnimated</a>());</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>  pi.<a class="code hl_slot" href="class_q_progress_indicator.html#a27ea54a92ade9c85761918cb98c96f95">stopAnimation</a>();</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>  QVERIFY(!pi.<a class="code hl_function" href="class_q_progress_indicator.html#a47b1957d5839a55ce0ea7b25c15ec464">isAnimated</a>());</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>}</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span> </div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span><span class="keywordtype">void</span> tst_util::namedValueBasic() {</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>  <a class="code hl_struct" href="struct_named_value.html">NamedValue</a> nv;</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>  nv.<a class="code hl_variable" href="struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867">name</a> = <span class="stringliteral">&quot;key&quot;</span>;</div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span>  nv.<a class="code hl_variable" href="struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d">value</a> = <span class="stringliteral">&quot;value&quot;</span>;</div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span>  QCOMPARE(nv.<a class="code hl_variable" href="struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867">name</a>, QString(<span class="stringliteral">&quot;key&quot;</span>));</div>
+<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span>  QCOMPARE(nv.<a class="code hl_variable" href="struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d">value</a>, QString(<span class="stringliteral">&quot;value&quot;</span>));</div>
+<div class="line"><a id="l00733" name="l00733"></a><span class="lineno">  733</span>}</div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span> </div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span><span class="keywordtype">void</span> tst_util::namedValueMultiple() {</div>
+<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span>  <a class="code hl_class" href="class_named_values.html">NamedValues</a> nvs;</div>
+<div class="line"><a id="l00737" name="l00737"></a><span class="lineno">  737</span>  <a class="code hl_struct" href="struct_named_value.html">NamedValue</a> nv1;</div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno">  738</span>  nv1.<a class="code hl_variable" href="struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867">name</a> = <span class="stringliteral">&quot;user1&quot;</span>;</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>  nv1.<a class="code hl_variable" href="struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d">value</a> = <span class="stringliteral">&quot;pass1&quot;</span>;</div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>  nvs.append(nv1);</div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>  QCOMPARE(nvs.size(), 1);</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>}</div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span> </div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span><span class="keywordtype">void</span> tst_util::imitatePassResolveMoveDestination() {</div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span>  QTemporaryDir tmpDir;</div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span>  QString srcPath = tmpDir.path() + <span class="stringliteral">&quot;/test.gpg&quot;</span>;</div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>  QFile srcFile(srcPath);</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>  QVERIFY(srcFile.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>  srcFile.write(<span class="stringliteral">&quot;test&quot;</span>);</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>  srcFile.close();</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span> </div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>  QString destPath = tmpDir.path() + <span class="stringliteral">&quot;/dest.gpg&quot;</span>;</div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>  QString result = pass.<a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(srcPath, destPath, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>  QString expected = destPath;</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>  QVERIFY2(result == expected, <span class="stringliteral">&quot;Destination should have .gpg extension&quot;</span>);</div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span>}</div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span> </div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span><span class="keywordtype">void</span> tst_util::imitatePassResolveMoveDestinationForce() {</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>  QTemporaryDir tmpDir;</div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>  QString srcPath = tmpDir.path() + <span class="stringliteral">&quot;/test.gpg&quot;</span>;</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>  QFile srcFile(srcPath);</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>  QVERIFY(srcFile.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>  srcFile.write(<span class="stringliteral">&quot;test&quot;</span>);</div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>  srcFile.close();</div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span> </div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>  QString destPath = tmpDir.path() + <span class="stringliteral">&quot;/existing.gpg&quot;</span>;</div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>  QFile destFile(destPath);</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>  QVERIFY(destFile.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>  destFile.write(<span class="stringliteral">&quot;old&quot;</span>);</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>  destFile.close();</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span> </div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>  QString result = pass.<a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(srcPath, destPath, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>  QVERIFY2(result == destPath, <span class="stringliteral">&quot;Should return dest path when force=true&quot;</span>);</div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>}</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span> </div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span><span class="keywordtype">void</span> tst_util::imitatePassResolveMoveDestinationDestExistsNoForce() {</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>  QTemporaryDir tmpDir;</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>  QString srcPath = tmpDir.path() + <span class="stringliteral">&quot;/test.gpg&quot;</span>;</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>  QFile srcFile(srcPath);</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>  QVERIFY(srcFile.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>  srcFile.write(<span class="stringliteral">&quot;test&quot;</span>);</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>  srcFile.close();</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span> </div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>  QString destPath = tmpDir.path() + <span class="stringliteral">&quot;/existing.gpg&quot;</span>;</div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>  QFile destFile(destPath);</div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>  QVERIFY(destFile.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>  destFile.write(<span class="stringliteral">&quot;old&quot;</span>);</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>  destFile.close();</div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span> </div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>  QString result = pass.<a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(srcPath, destPath, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>  QVERIFY2(result.isEmpty(),</div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>           <span class="stringliteral">&quot;Should return empty when dest exists and force=false&quot;</span>);</div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>}</div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span> </div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span><span class="keywordtype">void</span> tst_util::imitatePassResolveMoveDestinationDir() {</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>  QTemporaryDir tmpDir;</div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>  QString srcPath = tmpDir.path() + <span class="stringliteral">&quot;/test.gpg&quot;</span>;</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>  QFile srcFile(srcPath);</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>  QVERIFY(srcFile.open(QFile::WriteOnly));</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>  srcFile.write(<span class="stringliteral">&quot;test&quot;</span>);</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>  srcFile.close();</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span> </div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>  QString result = pass.<a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(srcPath, tmpDir.path(), <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>  QVERIFY2(result == tmpDir.path() + <span class="stringliteral">&quot;/test.gpg&quot;</span>,</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>           <span class="stringliteral">&quot;Should append filename when dest is dir&quot;</span>);</div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>}</div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span> </div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span><span class="keywordtype">void</span> tst_util::imitatePassResolveMoveDestinationNonExistent() {</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>  QTemporaryDir tmpDir;</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>  QString destPath = tmpDir.path() + <span class="stringliteral">&quot;/dest.gpg&quot;</span>;</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>  QString result =</div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>      pass.<a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(<span class="stringliteral">&quot;/non/existent/path.gpg&quot;</span>, destPath, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>  QVERIFY2(result.isEmpty(), <span class="stringliteral">&quot;Should return empty for non-existent source&quot;</span>);</div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>}</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span> </div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span><span class="keywordtype">void</span> tst_util::imitatePassRemoveDir() {</div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>  <a class="code hl_class" href="class_imitate_pass.html">ImitatePass</a> pass;</div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>  QTemporaryDir tmpDir;</div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>  QString subDir = tmpDir.path() + <span class="stringliteral">&quot;/testdir&quot;</span>;</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>  QVERIFY(QDir().mkpath(subDir));</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>  QVERIFY(QDir(subDir).exists());</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>  <span class="keywordtype">bool</span> result = pass.<a class="code hl_function" href="class_imitate_pass.html#a8740d9937714c8b6219d1857d7e2ff2c">removeDir</a>(subDir);</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>  QVERIFY(result);</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>  QVERIFY(!QDir(subDir).exists());</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>}</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span> </div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span><span class="keywordtype">void</span> tst_util::getRecipientListBasic() {</div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>  QTemporaryDir tempDir;</div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>  QString passStore = tempDir.path();</div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>  QString gpgIdFile = passStore + <span class="stringliteral">&quot;/.gpg-id&quot;</span>;</div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span> </div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>  QFile file(gpgIdFile);</div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>  QVERIFY(file.open(QIODevice::WriteOnly));</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>  file.write(<span class="stringliteral">&quot;ABCDEF12\n34567890\n&quot;</span>);</div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>  file.close();</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span> </div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>  QStringList recipients = <a class="code hl_function" href="class_pass.html#a693825d2ad62813cf103860ef6211370">Pass::getRecipientList</a>(passStore);</div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>  QCOMPARE(recipients.size(), 2);</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>  QCOMPARE(recipients[0], QString(<span class="stringliteral">&quot;ABCDEF12&quot;</span>));</div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>  QCOMPARE(recipients[1], QString(<span class="stringliteral">&quot;34567890&quot;</span>));</div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>}</div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span> </div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span><span class="keywordtype">void</span> tst_util::getRecipientListEmpty() {</div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>  QTemporaryDir tempDir;</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>  QString passStore = tempDir.path();</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>  QString gpgIdFile = passStore + <span class="stringliteral">&quot;/.gpg-id&quot;</span>;</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span> </div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>  QFile file(gpgIdFile);</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>  QVERIFY(file.open(QIODevice::WriteOnly));</div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>  file.close();</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span> </div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>  PassStoreGuard guard(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>());</div>
 <div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
 <div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>  QStringList recipients = <a class="code hl_function" href="class_pass.html#a693825d2ad62813cf103860ef6211370">Pass::getRecipientList</a>(passStore);</div>
 <div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>  QVERIFY(recipients.isEmpty());</div>
@@ -956,214 +956,216 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>  file.write(<span class="stringliteral">&quot;ABCDEF12\n34567890\n&quot;</span>);</div>
 <div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>  file.close();</div>
 <div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span> </div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>  <span class="keywordtype">int</span> count = -1;</div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>  QStringList parsedRecipients =</div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>      <a class="code hl_function" href="class_pass.html#ae1f31c62b7117b99882625dbef654533">Pass::getRecipientString</a>(passStore, <span class="stringliteral">&quot; &quot;</span>, &amp;count);</div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>  QStringList recipientsNoCount = <a class="code hl_function" href="class_pass.html#ae1f31c62b7117b99882625dbef654533">Pass::getRecipientString</a>(passStore, <span class="stringliteral">&quot; &quot;</span>);</div>
-<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span> </div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>  QStringList expectedRecipients = {<span class="stringliteral">&quot;ABCDEF12&quot;</span>, <span class="stringliteral">&quot;34567890&quot;</span>};</div>
-<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>  <span class="comment">// Verify count was actually updated from initial value</span></div>
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>  QVERIFY(count &gt; 0);</div>
-<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>  QCOMPARE(count, (<span class="keywordtype">int</span>)expectedRecipients.size());</div>
-<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>  <span class="comment">// Verify both overloads return the same result</span></div>
-<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>  QCOMPARE(parsedRecipients, recipientsNoCount);</div>
-<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>  <span class="comment">// Verify that the parsed recipients match the expected values.</span></div>
-<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>  QVERIFY(parsedRecipients.contains(<span class="stringliteral">&quot;ABCDEF12&quot;</span>));</div>
-<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>  QVERIFY(parsedRecipients.contains(<span class="stringliteral">&quot;34567890&quot;</span>));</div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>  <span class="comment">// Also verify that the recipients returned without count match the expected</span></div>
-<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>  <span class="comment">// values.</span></div>
-<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>  QVERIFY(recipientsNoCount.contains(<span class="stringliteral">&quot;ABCDEF12&quot;</span>));</div>
-<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>  QVERIFY(recipientsNoCount.contains(<span class="stringliteral">&quot;34567890&quot;</span>));</div>
-<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>}</div>
-<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span> </div>
-<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span><span class="keywordtype">void</span> tst_util::getGpgIdPathBasic() {</div>
-<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>  QString passStore = tempDir.path();</div>
-<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>  QString gpgIdFile = passStore + <span class="stringliteral">&quot;/.gpg-id&quot;</span>;</div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span> </div>
-<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>  QFile file(gpgIdFile);</div>
-<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>  QVERIFY(file.open(QIODevice::WriteOnly));</div>
-<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>  file.write(<span class="stringliteral">&quot;ABCDEF12\n&quot;</span>);</div>
-<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>  file.close();</div>
-<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span> </div>
-<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>  QString path = QDir::cleanPath(<a class="code hl_function" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a>(passStore));</div>
-<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>  QString expected = QDir::cleanPath(gpgIdFile);</div>
-<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>  QVERIFY2(path == expected,</div>
-<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>           qPrintable(QString(<span class="stringliteral">&quot;Expected %1, got %2&quot;</span>).arg(expected, path)));</div>
-<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>}</div>
-<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span> </div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span><span class="keywordtype">void</span> tst_util::getGpgIdPathSubfolder() {</div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span>  QString passStore = tempDir.path();</div>
-<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>  QString subfolder = passStore + <span class="stringliteral">&quot;/subfolder&quot;</span>;</div>
-<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>  QString gpgIdFile = subfolder + <span class="stringliteral">&quot;/.gpg-id&quot;</span>;</div>
-<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span> </div>
-<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>  QVERIFY(QDir().mkdir(subfolder));</div>
-<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span>  QFile file(gpgIdFile);</div>
-<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>  QVERIFY(file.open(QIODevice::WriteOnly));</div>
-<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>  file.write(<span class="stringliteral">&quot;ABCDEF12\n&quot;</span>);</div>
-<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>  file.close();</div>
-<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span> </div>
-<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
-<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>  QString path = <a class="code hl_function" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a>(subfolder + <span class="stringliteral">&quot;/password.gpg&quot;</span>);</div>
-<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>  QVERIFY2(path == gpgIdFile,</div>
-<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>           qPrintable(QString(<span class="stringliteral">&quot;Expected %1, got %2&quot;</span>).arg(gpgIdFile, path)));</div>
-<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>}</div>
-<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span> </div>
-<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span><span class="keywordtype">void</span> tst_util::getGpgIdPathNotFound() {</div>
-<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>  QTemporaryDir tempDir;</div>
-<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span>  QString passStore = tempDir.path();</div>
-<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span> </div>
-<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
-<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>  QString path =</div>
-<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>      QDir::cleanPath(<a class="code hl_function" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a>(passStore + <span class="stringliteral">&quot;/nonexistent&quot;</span>));</div>
-<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>  QString expected = QDir::cleanPath(passStore + <span class="stringliteral">&quot;/.gpg-id&quot;</span>);</div>
-<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>  QVERIFY2(path == expected,</div>
-<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>           qPrintable(QString(<span class="stringliteral">&quot;Expected %1, got %2&quot;</span>).arg(expected, path)));</div>
-<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>}</div>
-<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span> </div>
-<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span><span class="comment">// Tests for findBinaryInPath - verifies it correctly locates executables in</span></div>
-<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span><span class="comment">// PATH.</span></div>
-<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span> </div>
-<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span><span class="keywordtype">void</span> tst_util::findBinaryInPathReturnedPathIsAbsolute() {</div>
-<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span>  <span class="comment">// Verify that the returned path is absolute, not a relative fragment.</span></div>
-<div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;cmd.exe&quot;</span>);</div>
-<div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
-<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
-<div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span>  QVERIFY2(!result.isEmpty(), <span class="stringliteral">&quot;Should find a standard shell&quot;</span>);</div>
-<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span>  QFileInfo fi(result);</div>
-<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>  QVERIFY2(</div>
-<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>      fi.isAbsolute(),</div>
-<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>      qPrintable(</div>
-<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>          QStringLiteral(<span class="stringliteral">&quot;Returned path &#39;%1&#39; must be absolute&quot;</span>).arg(result)));</div>
-<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span>}</div>
-<div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span> </div>
-<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span><span class="keywordtype">void</span> tst_util::findBinaryInPathReturnedPathIsExecutable() {</div>
-<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span>  <span class="comment">// Verify the returned path satisfies the isExecutable() check that guards</span></div>
-<div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span>  <span class="comment">// the assignment inside the loop.</span></div>
-<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;cmd.exe&quot;</span>);</div>
-<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
-<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
-<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>  QVERIFY2(!result.isEmpty(), <span class="stringliteral">&quot;Should find a standard shell&quot;</span>);</div>
-<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>  QFileInfo fi(result);</div>
-<div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>  QVERIFY2(</div>
-<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>      fi.isExecutable(),</div>
-<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>      qPrintable(</div>
-<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>          QStringLiteral(<span class="stringliteral">&quot;Returned path &#39;%1&#39; must be executable&quot;</span>).arg(result)));</div>
-<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>}</div>
-<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span> </div>
-<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span><span class="keywordtype">void</span> tst_util::findBinaryInPathMultipleKnownBinaries() {</div>
-<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>  <span class="comment">// Test finding multiple common binaries in PATH.</span></div>
-<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
-<div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span>  <span class="keyword">const</span> QStringList binaries = {QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>), QStringLiteral(<span class="stringliteral">&quot;ls&quot;</span>),</div>
-<div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span>                                QStringLiteral(<span class="stringliteral">&quot;cat&quot;</span>)};</div>
-<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;bin : binaries) {</div>
-<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span>    QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(bin);</div>
-<div class="line"><a id="l01001" name="l01001"></a><span class="lineno"> 1001</span>    QVERIFY2(!result.isEmpty(),</div>
-<div class="line"><a id="l01002" name="l01002"></a><span class="lineno"> 1002</span>             qPrintable(QStringLiteral(<span class="stringliteral">&quot;Should find &#39;%1&#39; in PATH&quot;</span>).arg(bin)));</div>
-<div class="line"><a id="l01003" name="l01003"></a><span class="lineno"> 1003</span>    QVERIFY2(result.contains(bin),</div>
-<div class="line"><a id="l01004" name="l01004"></a><span class="lineno"> 1004</span>             qPrintable(QStringLiteral(<span class="stringliteral">&quot;Result &#39;%1&#39; should contain &#39;%2&#39;&quot;</span>)</div>
-<div class="line"><a id="l01005" name="l01005"></a><span class="lineno"> 1005</span>                            .arg(result, bin)));</div>
-<div class="line"><a id="l01006" name="l01006"></a><span class="lineno"> 1006</span>    QVERIFY2(</div>
-<div class="line"><a id="l01007" name="l01007"></a><span class="lineno"> 1007</span>        QFileInfo(result).isExecutable(),</div>
-<div class="line"><a id="l01008" name="l01008"></a><span class="lineno"> 1008</span>        qPrintable(</div>
-<div class="line"><a id="l01009" name="l01009"></a><span class="lineno"> 1009</span>            QStringLiteral(<span class="stringliteral">&quot;Result &#39;%1&#39; should be executable&quot;</span>).arg(result)));</div>
-<div class="line"><a id="l01010" name="l01010"></a><span class="lineno"> 1010</span>  }</div>
-<div class="line"><a id="l01011" name="l01011"></a><span class="lineno"> 1011</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01012" name="l01012"></a><span class="lineno"> 1012</span>  QSKIP(<span class="stringliteral">&quot;Non-Windows binary list not applicable on Windows&quot;</span>);</div>
-<div class="line"><a id="l01013" name="l01013"></a><span class="lineno"> 1013</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01014" name="l01014"></a><span class="lineno"> 1014</span>}</div>
-<div class="line"><a id="l01015" name="l01015"></a><span class="lineno"> 1015</span> </div>
-<div class="line"><a id="l01016" name="l01016"></a><span class="lineno"> 1016</span><span class="keywordtype">void</span> tst_util::findBinaryInPathConsistency() {</div>
-<div class="line"><a id="l01017" name="l01017"></a><span class="lineno"> 1017</span>  <span class="comment">// Calling findBinaryInPath twice for the same binary must return the same</span></div>
-<div class="line"><a id="l01018" name="l01018"></a><span class="lineno"> 1018</span>  <span class="comment">// result, confirming the loop does not corrupt state across calls.</span></div>
-<div class="line"><a id="l01019" name="l01019"></a><span class="lineno"> 1019</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l01020" name="l01020"></a><span class="lineno"> 1020</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;cmd.exe&quot;</span>);</div>
-<div class="line"><a id="l01021" name="l01021"></a><span class="lineno"> 1021</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01022" name="l01022"></a><span class="lineno"> 1022</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
-<div class="line"><a id="l01023" name="l01023"></a><span class="lineno"> 1023</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01024" name="l01024"></a><span class="lineno"> 1024</span>  QString first = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
-<div class="line"><a id="l01025" name="l01025"></a><span class="lineno"> 1025</span>  QString second = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
-<div class="line"><a id="l01026" name="l01026"></a><span class="lineno"> 1026</span>  QVERIFY2(!first.isEmpty(), <span class="stringliteral">&quot;First call should find the binary&quot;</span>);</div>
-<div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span>  QCOMPARE(first, second);</div>
-<div class="line"><a id="l01028" name="l01028"></a><span class="lineno"> 1028</span>}</div>
-<div class="line"><a id="l01029" name="l01029"></a><span class="lineno"> 1029</span> </div>
-<div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span><span class="keywordtype">void</span> tst_util::findBinaryInPathResultContainsBinaryName() {</div>
-<div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span>  <span class="comment">// The returned absolute path must end with (or at least contain) the</span></div>
-<div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span>  <span class="comment">// binary name, ruling out any off-by-one concatenation artefact.</span></div>
-<div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
-<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;cmd&quot;</span>);</div>
-<div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
-<div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
-<div class="line"><a id="l01039" name="l01039"></a><span class="lineno"> 1039</span>  QVERIFY2(!result.isEmpty(), <span class="stringliteral">&quot;Should find the binary&quot;</span>);</div>
-<div class="line"><a id="l01040" name="l01040"></a><span class="lineno"> 1040</span>  QVERIFY2(</div>
-<div class="line"><a id="l01041" name="l01041"></a><span class="lineno"> 1041</span>      result.endsWith(binaryName) ||</div>
-<div class="line"><a id="l01042" name="l01042"></a><span class="lineno"> 1042</span>          result.endsWith(binaryName + QStringLiteral(<span class="stringliteral">&quot;.exe&quot;</span>)),</div>
-<div class="line"><a id="l01043" name="l01043"></a><span class="lineno"> 1043</span>      qPrintable(QStringLiteral(<span class="stringliteral">&quot;Path &#39;%1&#39; should end with binary name &#39;%2&#39;&quot;</span>)</div>
-<div class="line"><a id="l01044" name="l01044"></a><span class="lineno"> 1044</span>                     .arg(result, binaryName)));</div>
-<div class="line"><a id="l01045" name="l01045"></a><span class="lineno"> 1045</span>}</div>
-<div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span> </div>
-<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span><span class="keywordtype">void</span> tst_util::findBinaryInPathTempExecutableInTempDir() {</div>
-<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span>  <span class="comment">// Place a real executable in an existing PATH directory and confirm that</span></div>
-<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span>  <span class="comment">// findBinaryInPath locates it.</span></div>
-<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>  <span class="comment">//</span></div>
-<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>  <span class="comment">// Because Util::_env is a static cached copy we cannot inject a new PATH</span></div>
-<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>  <span class="comment">// directory at runtime. Instead we write a uniquely named executable into</span></div>
-<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>  <span class="comment">// the same directory as &quot;sh&quot; (which is already on the cached PATH) and</span></div>
-<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>  <span class="comment">// verify the function finds it.</span></div>
-<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
-<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>  QString shPath = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>));</div>
-<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span>  <span class="keywordflow">if</span> (shPath.isEmpty()) {</div>
-<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>    QSKIP(<span class="stringliteral">&quot;Cannot find &#39;sh&#39; to determine a writable PATH directory&quot;</span>);</div>
-<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>  }</div>
-<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>  <span class="keyword">const</span> QString pathDir = QFileInfo(shPath).absolutePath();</div>
-<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>  <span class="keyword">const</span> QString uniqueName = QStringLiteral(<span class="stringliteral">&quot;qtpass_test_exec_unique_99&quot;</span>);</div>
-<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>  <span class="keyword">const</span> QString uniquePath = pathDir + QDir::separator() + uniqueName;</div>
-<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span> </div>
-<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>  QFile exec(uniquePath);</div>
-<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span>  <span class="keywordflow">if</span> (!exec.open(QIODevice::WriteOnly | QIODevice::Text)) {</div>
-<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>    QSKIP(<span class="stringliteral">&quot;Cannot write to the PATH directory containing &#39;sh&#39; (need write &quot;</span></div>
-<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>          <span class="stringliteral">&quot;access)&quot;</span>);</div>
-<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>  }</div>
-<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>  QVERIFY2(exec.exists(), <span class="stringliteral">&quot;File should exist after opening for writing&quot;</span>);</div>
-<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>  exec.write(<span class="stringliteral">&quot;#!/bin/sh\n&quot;</span>);</div>
-<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>  exec.close();</div>
-<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>  exec.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner |</div>
-<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>                      QFileDevice::ExeOwner);</div>
-<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span> </div>
-<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(uniqueName);</div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>  <span class="keyword">const</span> QString originalPassStore = <a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>();</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>  PassStoreGuard originalGuard(originalPassStore);</div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>  <span class="keywordtype">int</span> count = -1;</div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>  QStringList parsedRecipients =</div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>      <a class="code hl_function" href="class_pass.html#ae1f31c62b7117b99882625dbef654533">Pass::getRecipientString</a>(passStore, <span class="stringliteral">&quot; &quot;</span>, &amp;count);</div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>  QStringList recipientsNoCount = <a class="code hl_function" href="class_pass.html#ae1f31c62b7117b99882625dbef654533">Pass::getRecipientString</a>(passStore, <span class="stringliteral">&quot; &quot;</span>);</div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span> </div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>  QStringList expectedRecipients = {<span class="stringliteral">&quot;ABCDEF12&quot;</span>, <span class="stringliteral">&quot;34567890&quot;</span>};</div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>  <span class="comment">// Verify count was actually updated from initial value</span></div>
+<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>  QVERIFY(count &gt; 0);</div>
+<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>  QCOMPARE(count, (<span class="keywordtype">int</span>)expectedRecipients.size());</div>
+<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>  <span class="comment">// Verify both overloads return the same result</span></div>
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>  QCOMPARE(parsedRecipients, recipientsNoCount);</div>
+<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>  <span class="comment">// Verify that the parsed recipients match the expected values.</span></div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>  QVERIFY(parsedRecipients.contains(<span class="stringliteral">&quot;ABCDEF12&quot;</span>));</div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>  QVERIFY(parsedRecipients.contains(<span class="stringliteral">&quot;34567890&quot;</span>));</div>
+<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>  <span class="comment">// Also verify that the recipients returned without count match the expected</span></div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>  <span class="comment">// values.</span></div>
+<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>  QVERIFY(recipientsNoCount.contains(<span class="stringliteral">&quot;ABCDEF12&quot;</span>));</div>
+<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>  QVERIFY(recipientsNoCount.contains(<span class="stringliteral">&quot;34567890&quot;</span>));</div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>}</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span> </div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span><span class="keywordtype">void</span> tst_util::getGpgIdPathBasic() {</div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>  QTemporaryDir tempDir;</div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>  QString passStore = tempDir.path();</div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>  QString gpgIdFile = passStore + <span class="stringliteral">&quot;/.gpg-id&quot;</span>;</div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span> </div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>  QFile file(gpgIdFile);</div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>  QVERIFY(file.open(QIODevice::WriteOnly));</div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>  file.write(<span class="stringliteral">&quot;ABCDEF12\n&quot;</span>);</div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>  file.close();</div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span> </div>
+<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
+<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span>  QString path = QDir::cleanPath(<a class="code hl_function" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a>(passStore));</div>
+<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span>  QString expected = QDir::cleanPath(gpgIdFile);</div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>  QVERIFY2(path == expected,</div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>           qPrintable(QString(<span class="stringliteral">&quot;Expected %1, got %2&quot;</span>).arg(expected, path)));</div>
+<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span>}</div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span> </div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span><span class="keywordtype">void</span> tst_util::getGpgIdPathSubfolder() {</div>
+<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span>  QTemporaryDir tempDir;</div>
+<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>  QString passStore = tempDir.path();</div>
+<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>  QString subfolder = passStore + <span class="stringliteral">&quot;/subfolder&quot;</span>;</div>
+<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span>  QString gpgIdFile = subfolder + <span class="stringliteral">&quot;/.gpg-id&quot;</span>;</div>
+<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span> </div>
+<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>  QVERIFY(QDir().mkdir(subfolder));</div>
+<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>  QFile file(gpgIdFile);</div>
+<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>  QVERIFY(file.open(QIODevice::WriteOnly));</div>
+<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>  file.write(<span class="stringliteral">&quot;ABCDEF12\n&quot;</span>);</div>
+<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span>  file.close();</div>
+<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span> </div>
+<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
+<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span>  QString path = <a class="code hl_function" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a>(subfolder + <span class="stringliteral">&quot;/password.gpg&quot;</span>);</div>
+<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>  QVERIFY2(path == gpgIdFile,</div>
+<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span>           qPrintable(QString(<span class="stringliteral">&quot;Expected %1, got %2&quot;</span>).arg(gpgIdFile, path)));</div>
+<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>}</div>
+<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span> </div>
+<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span><span class="keywordtype">void</span> tst_util::getGpgIdPathNotFound() {</div>
+<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>  QTemporaryDir tempDir;</div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>  QString passStore = tempDir.path();</div>
+<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span> </div>
+<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(passStore);</div>
+<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>  QString path =</div>
+<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>      QDir::cleanPath(<a class="code hl_function" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a>(passStore + <span class="stringliteral">&quot;/nonexistent&quot;</span>));</div>
+<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>  QString expected = QDir::cleanPath(passStore + <span class="stringliteral">&quot;/.gpg-id&quot;</span>);</div>
+<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>  QVERIFY2(path == expected,</div>
+<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span>           qPrintable(QString(<span class="stringliteral">&quot;Expected %1, got %2&quot;</span>).arg(expected, path)));</div>
+<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span>}</div>
+<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span> </div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span><span class="comment">// Tests for findBinaryInPath - verifies it correctly locates executables in</span></div>
+<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span><span class="comment">// PATH.</span></div>
+<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span> </div>
+<div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span><span class="keywordtype">void</span> tst_util::findBinaryInPathReturnedPathIsAbsolute() {</div>
+<div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span>  <span class="comment">// Verify that the returned path is absolute, not a relative fragment.</span></div>
+<div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;cmd.exe&quot;</span>);</div>
+<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
+<div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>  QVERIFY2(!result.isEmpty(), <span class="stringliteral">&quot;Should find a standard shell&quot;</span>);</div>
+<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>  QFileInfo fi(result);</div>
+<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>  QVERIFY2(</div>
+<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>      fi.isAbsolute(),</div>
+<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span>      qPrintable(</div>
+<div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span>          QStringLiteral(<span class="stringliteral">&quot;Returned path &#39;%1&#39; must be absolute&quot;</span>).arg(result)));</div>
+<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>}</div>
+<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span> </div>
+<div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span><span class="keywordtype">void</span> tst_util::findBinaryInPathReturnedPathIsExecutable() {</div>
+<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span>  <span class="comment">// Verify the returned path satisfies the isExecutable() check that guards</span></div>
+<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span>  <span class="comment">// the assignment inside the loop.</span></div>
+<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;cmd.exe&quot;</span>);</div>
+<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
+<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>  QVERIFY2(!result.isEmpty(), <span class="stringliteral">&quot;Should find a standard shell&quot;</span>);</div>
+<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>  QFileInfo fi(result);</div>
+<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>  QVERIFY2(</div>
+<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>      fi.isExecutable(),</div>
+<div class="line"><a id="l00992" name="l00992"></a><span class="lineno">  992</span>      qPrintable(</div>
+<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>          QStringLiteral(<span class="stringliteral">&quot;Returned path &#39;%1&#39; must be executable&quot;</span>).arg(result)));</div>
+<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>}</div>
+<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span> </div>
+<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span><span class="keywordtype">void</span> tst_util::findBinaryInPathMultipleKnownBinaries() {</div>
+<div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span>  <span class="comment">// Test finding multiple common binaries in PATH.</span></div>
+<div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
+<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>  <span class="keyword">const</span> QStringList binaries = {QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>), QStringLiteral(<span class="stringliteral">&quot;ls&quot;</span>),</div>
+<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span>                                QStringLiteral(<span class="stringliteral">&quot;cat&quot;</span>)};</div>
+<div class="line"><a id="l01001" name="l01001"></a><span class="lineno"> 1001</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;bin : binaries) {</div>
+<div class="line"><a id="l01002" name="l01002"></a><span class="lineno"> 1002</span>    QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(bin);</div>
+<div class="line"><a id="l01003" name="l01003"></a><span class="lineno"> 1003</span>    QVERIFY2(!result.isEmpty(),</div>
+<div class="line"><a id="l01004" name="l01004"></a><span class="lineno"> 1004</span>             qPrintable(QStringLiteral(<span class="stringliteral">&quot;Should find &#39;%1&#39; in PATH&quot;</span>).arg(bin)));</div>
+<div class="line"><a id="l01005" name="l01005"></a><span class="lineno"> 1005</span>    QVERIFY2(result.contains(bin),</div>
+<div class="line"><a id="l01006" name="l01006"></a><span class="lineno"> 1006</span>             qPrintable(QStringLiteral(<span class="stringliteral">&quot;Result &#39;%1&#39; should contain &#39;%2&#39;&quot;</span>)</div>
+<div class="line"><a id="l01007" name="l01007"></a><span class="lineno"> 1007</span>                            .arg(result, bin)));</div>
+<div class="line"><a id="l01008" name="l01008"></a><span class="lineno"> 1008</span>    QVERIFY2(</div>
+<div class="line"><a id="l01009" name="l01009"></a><span class="lineno"> 1009</span>        QFileInfo(result).isExecutable(),</div>
+<div class="line"><a id="l01010" name="l01010"></a><span class="lineno"> 1010</span>        qPrintable(</div>
+<div class="line"><a id="l01011" name="l01011"></a><span class="lineno"> 1011</span>            QStringLiteral(<span class="stringliteral">&quot;Result &#39;%1&#39; should be executable&quot;</span>).arg(result)));</div>
+<div class="line"><a id="l01012" name="l01012"></a><span class="lineno"> 1012</span>  }</div>
+<div class="line"><a id="l01013" name="l01013"></a><span class="lineno"> 1013</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01014" name="l01014"></a><span class="lineno"> 1014</span>  QSKIP(<span class="stringliteral">&quot;Non-Windows binary list not applicable on Windows&quot;</span>);</div>
+<div class="line"><a id="l01015" name="l01015"></a><span class="lineno"> 1015</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01016" name="l01016"></a><span class="lineno"> 1016</span>}</div>
+<div class="line"><a id="l01017" name="l01017"></a><span class="lineno"> 1017</span> </div>
+<div class="line"><a id="l01018" name="l01018"></a><span class="lineno"> 1018</span><span class="keywordtype">void</span> tst_util::findBinaryInPathConsistency() {</div>
+<div class="line"><a id="l01019" name="l01019"></a><span class="lineno"> 1019</span>  <span class="comment">// Calling findBinaryInPath twice for the same binary must return the same</span></div>
+<div class="line"><a id="l01020" name="l01020"></a><span class="lineno"> 1020</span>  <span class="comment">// result, confirming the loop does not corrupt state across calls.</span></div>
+<div class="line"><a id="l01021" name="l01021"></a><span class="lineno"> 1021</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l01022" name="l01022"></a><span class="lineno"> 1022</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;cmd.exe&quot;</span>);</div>
+<div class="line"><a id="l01023" name="l01023"></a><span class="lineno"> 1023</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01024" name="l01024"></a><span class="lineno"> 1024</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
+<div class="line"><a id="l01025" name="l01025"></a><span class="lineno"> 1025</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01026" name="l01026"></a><span class="lineno"> 1026</span>  QString first = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span>  QString second = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l01028" name="l01028"></a><span class="lineno"> 1028</span>  QVERIFY2(!first.isEmpty(), <span class="stringliteral">&quot;First call should find the binary&quot;</span>);</div>
+<div class="line"><a id="l01029" name="l01029"></a><span class="lineno"> 1029</span>  QCOMPARE(first, second);</div>
+<div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span>}</div>
+<div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span> </div>
+<div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span><span class="keywordtype">void</span> tst_util::findBinaryInPathResultContainsBinaryName() {</div>
+<div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span>  <span class="comment">// The returned absolute path must end with (or at least contain) the</span></div>
+<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span>  <span class="comment">// binary name, ruling out any off-by-one concatenation artefact.</span></div>
+<div class="line"><a id="l01035" name="l01035"></a><span class="lineno"> 1035</span><span class="preprocessor">#ifdef Q_OS_WIN</span></div>
+<div class="line"><a id="l01036" name="l01036"></a><span class="lineno"> 1036</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;cmd&quot;</span>);</div>
+<div class="line"><a id="l01037" name="l01037"></a><span class="lineno"> 1037</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01038" name="l01038"></a><span class="lineno"> 1038</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
+<div class="line"><a id="l01039" name="l01039"></a><span class="lineno"> 1039</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01040" name="l01040"></a><span class="lineno"> 1040</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l01041" name="l01041"></a><span class="lineno"> 1041</span>  QVERIFY2(!result.isEmpty(), <span class="stringliteral">&quot;Should find the binary&quot;</span>);</div>
+<div class="line"><a id="l01042" name="l01042"></a><span class="lineno"> 1042</span>  QVERIFY2(</div>
+<div class="line"><a id="l01043" name="l01043"></a><span class="lineno"> 1043</span>      result.endsWith(binaryName) ||</div>
+<div class="line"><a id="l01044" name="l01044"></a><span class="lineno"> 1044</span>          result.endsWith(binaryName + QStringLiteral(<span class="stringliteral">&quot;.exe&quot;</span>)),</div>
+<div class="line"><a id="l01045" name="l01045"></a><span class="lineno"> 1045</span>      qPrintable(QStringLiteral(<span class="stringliteral">&quot;Path &#39;%1&#39; should end with binary name &#39;%2&#39;&quot;</span>)</div>
+<div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span>                     .arg(result, binaryName)));</div>
+<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span>}</div>
+<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span> </div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span><span class="keywordtype">void</span> tst_util::findBinaryInPathTempExecutableInTempDir() {</div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>  <span class="comment">// Place a real executable in an existing PATH directory and confirm that</span></div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>  <span class="comment">// findBinaryInPath locates it.</span></div>
+<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span>  <span class="comment">//</span></div>
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>  <span class="comment">// Because Util::_env is a static cached copy we cannot inject a new PATH</span></div>
+<div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>  <span class="comment">// directory at runtime. Instead we write a uniquely named executable into</span></div>
+<div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>  <span class="comment">// the same directory as &quot;sh&quot; (which is already on the cached PATH) and</span></div>
+<div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>  <span class="comment">// verify the function finds it.</span></div>
+<div class="line"><a id="l01057" name="l01057"></a><span class="lineno"> 1057</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
+<div class="line"><a id="l01058" name="l01058"></a><span class="lineno"> 1058</span>  QString shPath = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>));</div>
+<div class="line"><a id="l01059" name="l01059"></a><span class="lineno"> 1059</span>  <span class="keywordflow">if</span> (shPath.isEmpty()) {</div>
+<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span>    QSKIP(<span class="stringliteral">&quot;Cannot find &#39;sh&#39; to determine a writable PATH directory&quot;</span>);</div>
+<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span>  }</div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span>  <span class="keyword">const</span> QString pathDir = QFileInfo(shPath).absolutePath();</div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span>  <span class="keyword">const</span> QString uniqueName = QStringLiteral(<span class="stringliteral">&quot;qtpass_test_exec_unique_99&quot;</span>);</div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span>  <span class="keyword">const</span> QString uniquePath = pathDir + QDir::separator() + uniqueName;</div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span> </div>
+<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span>  QFile exec(uniquePath);</div>
+<div class="line"><a id="l01067" name="l01067"></a><span class="lineno"> 1067</span>  <span class="keywordflow">if</span> (!exec.open(QIODevice::WriteOnly | QIODevice::Text)) {</div>
+<div class="line"><a id="l01068" name="l01068"></a><span class="lineno"> 1068</span>    QSKIP(<span class="stringliteral">&quot;Cannot write to the PATH directory containing &#39;sh&#39; (need write &quot;</span></div>
+<div class="line"><a id="l01069" name="l01069"></a><span class="lineno"> 1069</span>          <span class="stringliteral">&quot;access)&quot;</span>);</div>
+<div class="line"><a id="l01070" name="l01070"></a><span class="lineno"> 1070</span>  }</div>
+<div class="line"><a id="l01071" name="l01071"></a><span class="lineno"> 1071</span>  QVERIFY2(exec.exists(), <span class="stringliteral">&quot;File should exist after opening for writing&quot;</span>);</div>
+<div class="line"><a id="l01072" name="l01072"></a><span class="lineno"> 1072</span>  exec.write(<span class="stringliteral">&quot;#!/bin/sh\n&quot;</span>);</div>
+<div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>  exec.close();</div>
+<div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>  exec.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner |</div>
+<div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span>                      QFileDevice::ExeOwner);</div>
 <div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span> </div>
-<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>  <span class="comment">// Remove file before assertions so it is always cleaned up.</span></div>
-<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> removed = QFile::remove(uniquePath);</div>
-<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>  QVERIFY2(</div>
-<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>      removed,</div>
-<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>      qPrintable(</div>
-<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span>          QStringLiteral(<span class="stringliteral">&quot;Failed to clean up test file &#39;%1&#39;&quot;</span>).arg(uniquePath)));</div>
-<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span> </div>
-<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span>  QVERIFY2(!result.isEmpty(),</div>
-<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span>           <span class="stringliteral">&quot;findBinaryInPath should locate the executable placed in a PATH &quot;</span></div>
-<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>           <span class="stringliteral">&quot;directory&quot;</span>);</div>
-<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>  QVERIFY2(result.endsWith(uniqueName),</div>
-<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>           qPrintable(QStringLiteral(<span class="stringliteral">&quot;Result &#39;%1&#39; should end with &#39;%2&#39;&quot;</span>)</div>
-<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>                          .arg(result, uniqueName)));</div>
-<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>  QVERIFY2(QFileInfo(result).isAbsolute(), <span class="stringliteral">&quot;Result must be an absolute path&quot;</span>);</div>
-<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>  QSKIP(<span class="stringliteral">&quot;Temp-executable test is Unix-only&quot;</span>);</div>
-<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>}</div>
-<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span> </div>
-<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>QTEST_MAIN(<a class="code hl_class" href="classtst__util.html">tst_util</a>)</div>
-<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span><span class="preprocessor">#include &quot;tst_util.moc&quot;</span></div>
+<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(uniqueName);</div>
+<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span> </div>
+<div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>  <span class="comment">// Remove file before assertions so it is always cleaned up.</span></div>
+<div class="line"><a id="l01080" name="l01080"></a><span class="lineno"> 1080</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> removed = QFile::remove(uniquePath);</div>
+<div class="line"><a id="l01081" name="l01081"></a><span class="lineno"> 1081</span>  QVERIFY2(</div>
+<div class="line"><a id="l01082" name="l01082"></a><span class="lineno"> 1082</span>      removed,</div>
+<div class="line"><a id="l01083" name="l01083"></a><span class="lineno"> 1083</span>      qPrintable(</div>
+<div class="line"><a id="l01084" name="l01084"></a><span class="lineno"> 1084</span>          QStringLiteral(<span class="stringliteral">&quot;Failed to clean up test file &#39;%1&#39;&quot;</span>).arg(uniquePath)));</div>
+<div class="line"><a id="l01085" name="l01085"></a><span class="lineno"> 1085</span> </div>
+<div class="line"><a id="l01086" name="l01086"></a><span class="lineno"> 1086</span>  QVERIFY2(!result.isEmpty(),</div>
+<div class="line"><a id="l01087" name="l01087"></a><span class="lineno"> 1087</span>           <span class="stringliteral">&quot;findBinaryInPath should locate the executable placed in a PATH &quot;</span></div>
+<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span>           <span class="stringliteral">&quot;directory&quot;</span>);</div>
+<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>  QVERIFY2(result.endsWith(uniqueName),</div>
+<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>           qPrintable(QStringLiteral(<span class="stringliteral">&quot;Result &#39;%1&#39; should end with &#39;%2&#39;&quot;</span>)</div>
+<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span>                          .arg(result, uniqueName)));</div>
+<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>  QVERIFY2(QFileInfo(result).isAbsolute(), <span class="stringliteral">&quot;Result must be an absolute path&quot;</span>);</div>
+<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>  QSKIP(<span class="stringliteral">&quot;Temp-executable test is Unix-only&quot;</span>);</div>
+<div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01096" name="l01096"></a><span class="lineno"> 1096</span>}</div>
+<div class="line"><a id="l01097" name="l01097"></a><span class="lineno"> 1097</span> </div>
+<div class="line"><a id="l01098" name="l01098"></a><span class="lineno"> 1098</span>QTEST_MAIN(<a class="code hl_class" href="classtst__util.html">tst_util</a>)</div>
+<div class="line"><a id="l01099" name="l01099"></a><span class="lineno"> 1099</span><span class="preprocessor">#include &quot;tst_util.moc&quot;</span></div>
 <div class="ttc" id="aclass_file_content_html"><div class="ttname"><a href="class_file_content.html">FileContent</a></div><div class="ttdef"><b>Definition</b> <a href="filecontent_8h_source.html#l00031">filecontent.h:31</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a845c61a8c0f52e5aa73953c9162dd47d"><div class="ttname"><a href="class_file_content.html#a845c61a8c0f52e5aa73953c9162dd47d">FileContent::getRemainingData</a></div><div class="ttdeci">auto getRemainingData() const -&gt; QString</div><div class="ttdoc">Gets remaining data not in named values.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00076">filecontent.cpp:76</a></div></div>
 <div class="ttc" id="aclass_file_content_html_a89393e371a598cb3e0d7d149dbc431b1"><div class="ttname"><a href="class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1">FileContent::getNamedValues</a></div><div class="ttdeci">auto getNamedValues() const -&gt; NamedValues</div><div class="ttdoc">Gets named value pairs from the parsed file.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00068">filecontent.cpp:68</a></div></div>
