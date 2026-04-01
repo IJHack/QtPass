@@ -1,11 +1,19 @@
 <map id="KeygenDialog::KeygenDialog" name="KeygenDialog::KeygenDialog">
-<area shape="rect" id="Node000001" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="5,31,216,56"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Get default key template for new GPG keys." alt="" coords="264,31,476,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="216,41,250,41,250,46,216,46"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Check if GPG supports Ed25519 encryption." alt="" coords="524,31,720,56"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="476,41,510,41,510,46,476,46"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="794,5,987,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="720,31,780,26,781,31,720,37"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="768,55,1013,80"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="720,49,754,52,754,58,720,55"/>
+<area shape="rect" id="Node000001" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="5,145,216,171"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Get default key template for new GPG keys." alt="" coords="267,31,479,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,143,186,105,263,66,289,57,291,62,265,71,189,110,131,147"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#ad15e182609e00a394ec9acdd4d1a19f5" title="Get saved dialog geometry." alt="" coords="277,81,468,121"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="169,143,267,121,268,126,170,148"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a2c8d54afd8f4caf43e1727fe27202949" title="Get saved dialog position." alt="" coords="266,145,479,171"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="216,155,252,155,252,161,216,161"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a849902104116f90df3ecba03d92b1815" title="Get saved dialog size." alt="" coords="264,195,481,220"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="179,168,291,189,290,195,178,173"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#ab343d163d18abe49c1ed2d06266c4b5e" title="Get dialog maximized state." alt="" coords="283,245,463,285"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="137,168,195,198,265,229,289,238,288,243,263,234,192,202,135,173"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Check if GPG supports Ed25519 encryption." alt="" coords="529,31,725,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="479,41,516,41,516,46,479,46"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="799,5,993,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="725,31,785,26,786,31,726,37"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="773,55,1019,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="726,49,760,52,759,58,725,55"/>
 </map>

@@ -1,0 +1,16 @@
+<map id="KeygenDialog::closeEvent" name="KeygenDialog::closeEvent">
+<area shape="rect" id="Node000001" title="KeygenDialog::closeEvent we are done here." alt="" coords="5,106,196,131"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#ac1f692aef9f02af744bcce281ba627fe" title="Save dialog geometry." alt="" coords="257,5,447,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,104,243,55,266,47,268,52,245,60,130,108"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a9d645c896deab1261f2b5df359c3a252" title="Save dialog maximized state." alt="" coords="257,69,447,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="196,105,243,99,244,105,196,110"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a692d3221b60ab8c5ed5f51814a72fcb1" title="Save dialog position." alt="" coords="246,134,458,159"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="196,127,232,131,232,136,196,132"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a980190de5a6dcba935573d00f3023804" title="Save dialog size." alt="" coords="244,183,460,209"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="135,129,245,168,279,178,278,183,243,173,133,134"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="508,106,711,131"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="425,43,461,55,568,98,566,103,459,60,423,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="447,97,495,103,494,108,446,103"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="458,133,494,129,495,134,458,138"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="411,181,459,168,561,134,563,139,461,173,412,186"/>
+</map>

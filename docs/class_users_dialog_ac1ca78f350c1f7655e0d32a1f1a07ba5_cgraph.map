@@ -1,0 +1,16 @@
+<map id="UsersDialog::closeEvent" name="UsersDialog::closeEvent">
+<area shape="rect" id="Node000001" title="Handle close event." alt="" coords="5,106,185,131"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#ac1f692aef9f02af744bcce281ba627fe" title="Save dialog geometry." alt="" coords="247,5,436,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="121,103,232,55,255,47,257,52,234,60,124,108"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a9d645c896deab1261f2b5df359c3a252" title="Save dialog maximized state." alt="" coords="247,69,436,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="185,105,233,100,234,105,186,111"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a692d3221b60ab8c5ed5f51814a72fcb1" title="Save dialog position." alt="" coords="235,134,447,159"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="186,126,222,130,222,136,185,132"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a980190de5a6dcba935573d00f3023804" title="Save dialog size." alt="" coords="233,183,449,209"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="128,129,234,168,268,177,266,183,233,173,126,134"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="497,106,700,131"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,43,450,55,557,98,555,103,448,60,413,48"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="436,97,484,103,483,108,436,103"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="447,133,483,129,484,134,448,138"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="400,181,449,168,551,134,552,139,450,173,402,186"/>
+</map>

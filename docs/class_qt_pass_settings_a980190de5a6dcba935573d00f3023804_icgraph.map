@@ -1,0 +1,9 @@
+<map id="QtPassSettings::setDialogSize" name="QtPassSettings::setDialogSize">
+<area shape="rect" id="Node000001" title="Save dialog size." alt="" coords="244,55,460,80"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#ad5f28221ebec0701bb56c43780a452b3" title="ConfigDialog::closeEvent close this window." alt="" coords="9,5,193,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="273,55,166,33,167,28,274,49"/>
+<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#a37012091a78f400d9bdc7b6f6b5949ef" title="KeygenDialog::closeEvent we are done here." alt="" coords="5,55,196,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,70,196,70,196,65,230,65"/>
+<area shape="rect" id="Node000004" href="$class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5" title="Handle close event." alt="" coords="11,104,191,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="274,85,167,107,166,101,273,80"/>
+</map>
