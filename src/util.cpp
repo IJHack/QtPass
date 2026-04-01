@@ -101,8 +101,10 @@ auto Util::findBinaryInPath(QString binary) -> QString {
         QString fullPathExe = fullPath + ".exe";
         qfi = QFileInfo(fullPathExe);
       }
-
 #endif
+      if (!qfi.exists()) {
+        continue;
+      }
       if (!qfi.isExecutable()) {
         continue;
       }
