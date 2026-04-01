@@ -74,11 +74,13 @@ auto Util::findPasswordStore() -> QString {
   return Util::normalizeFolderPath(path);
 }
 
-auto Util::normalizeFolderPath(QString path) -> QString {
-  if (!path.endsWith("/") && !path.endsWith(QDir::separator())) {
-    path += QDir::separator();
+auto Util::normalizeFolderPath(const QString &path) -> QString {
+  QString normalizedPath = path;
+  if (!normalizedPath.endsWith("/") &&
+      !normalizedPath.endsWith(QDir::separator())) {
+    normalizedPath += QDir::separator();
   }
-  return QDir::toNativeSeparators(path);
+  return QDir::toNativeSeparators(normalizedPath);
 }
 
 auto Util::findBinaryInPath(QString binary) -> QString {
@@ -86,7 +88,7 @@ auto Util::findBinaryInPath(QString binary) -> QString {
 
   QString ret;
 
-  binary.prepend(QDir::separator());
+  const QString binaryWithSep = QDir::separator() + binary;
 
   if (_env.contains("PATH")) {
     QString path = _env.value("PATH");
@@ -94,7 +96,7 @@ auto Util::findBinaryInPath(QString binary) -> QString {
     QStringList entries = path.split(delimiter);
 
     for (const QString &entryConst : entries) {
-      QString fullPath = entryConst + binary;
+      QString fullPath = entryConst + binaryWithSep;
       QFileInfo qfi(fullPath);
 #ifdef Q_OS_WIN
       if (!qfi.exists()) {
@@ -115,12 +117,6 @@ auto Util::findBinaryInPath(QString binary) -> QString {
   }
 #ifdef Q_OS_WIN
   if (ret.isEmpty()) {
-    // Remove leading path separator added earlier when searching PATH entries.
-    if (!binary.isEmpty() &&
-        (binary.at(0) == QDir::separator() || binary.at(0) == '/')) {
-      binary.remove(0, 1);
-    }
-
     // Validate binary name before attempting WSL fallback: require a non-empty,
     // whitespace-free program name to avoid confusing WSL invocations.
     const bool hasWhitespace =
@@ -158,8 +154,15 @@ auto Util::configIsValid() -> bool {
                                  ? QtPassSettings::getPassExecutable()
                                  : QtPassSettings::getGpgExecutable();
 
-  if (executable.startsWith("wsl ")) {
-    return true;
+  if (executable.startsWith(QStringLiteral("wsl "))) {
+    QString out;
+    QString err;
+    if (Executor::executeBlocking(QStringLiteral("wsl"),
+                                  {QStringLiteral("--version")}, &out,
+                                  &err) == 0 &&
+        !out.isEmpty() && err.isEmpty()) {
+      return true;
+    }
   }
   return QFile(executable).exists();
 }
