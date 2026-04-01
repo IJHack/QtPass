@@ -8,8 +8,8 @@
 #endif
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QStringDecoder>
-#include <utility>
 #endif
+#include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -49,7 +49,13 @@ void Executor::executeNext() {
         m_process.start(i.app, i.args);
       }
       if (!i.input.isEmpty()) {
-        m_process.waitForStarted(-1);
+        if (!m_process.waitForStarted(-1)) {
+#ifdef QT_DEBUG
+          dbg() << "Process failed to start:" << i.id << " " << i.app;
+#endif
+          m_process.closeWriteChannel();
+          return;
+        }
         QByteArray data = i.input.toUtf8();
         if (m_process.write(data) != data.length()) {
 #ifdef QT_DEBUG
@@ -152,14 +158,19 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
   QTextCodec *codec = QTextCodec::codecForName("UTF-8");
   QTextCodec::ConverterState state;
   QString out = codec->toUnicode(in.constData(), in.size(), &state);
-  if (!state.invalidChars) {
+  if (state.invalidChars == 0) {
     return out;
   }
   codec = QTextCodec::codecForUtfText(in);
   return codec->toUnicode(in);
 #else
   auto converter = QStringDecoder(QStringDecoder::Utf8);
-  return converter(in);
+  QString out = converter(in);
+  if (!converter.hasError()) {
+    return out;
+  }
+  // Fallback if UTF-8 decoding failed - return empty string
+  return QString();
 #endif
 }
 
@@ -189,7 +200,10 @@ auto Executor::executeBlocking(QString app, const QStringList &args,
   }
   if (!input.isEmpty()) {
     QByteArray data = input.toUtf8();
-    internal.waitForStarted(-1);
+    if (!internal.waitForStarted(-1)) {
+      // Failed to start process; return error code.
+      return -1;
+    }
     if (internal.write(data) != data.length()) {
 #ifdef QT_DEBUG
       dbg() << "Not all input written:" << app;

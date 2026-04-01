@@ -1145,6 +1145,9 @@ void MainWindow::copyPasswordFromTreeview() {
 
   if (fileOrFolder.isFile()) {
     QString file = getFile(ui->treeView->currentIndex(), true);
+    // Disconnect any previous connection to avoid accumulation
+    disconnect(QtPassSettings::getPass(), &Pass::finishedShow, this,
+               &MainWindow::passwordFromFileToClipboard);
     connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
             &MainWindow::passwordFromFileToClipboard);
     QtPassSettings::getPass()->Show(file);

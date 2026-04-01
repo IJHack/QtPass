@@ -238,8 +238,10 @@ void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
 void ImitatePass::signGpgIdFile(const QString &gpgIdFile,
                                 const QStringList &signingKeys) {
   QStringList args;
-  for (auto &key : signingKeys) {
-    args.append(QStringList{"--default-key", key});
+  // Use only the first signing key; multiple --default-key options would
+  // override each other and only the last one would take effect.
+  if (!signingKeys.isEmpty()) {
+    args.append(QStringList{"--default-key", signingKeys.first()});
   }
   args.append(QStringList{"--yes", "--detach-sign", gpgIdFile});
   Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args);
