@@ -355,73 +355,73 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt; QtPass&lt;/a&gt; versio </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="109"/>
+        <location filename="../src/configdialog.cpp" line="118"/>
         <source>No Clipboard</source>
         <translation>Ei leikepöytää</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="110"/>
+        <location filename="../src/configdialog.cpp" line="119"/>
         <source>Always copy to clipboard</source>
         <translation>Tallenna aina leikepöydälle</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="111"/>
+        <location filename="../src/configdialog.cpp" line="120"/>
         <source>On-demand copy to clipboard</source>
         <translation>Tallenna leikepöydälle tarvittaessa</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="180"/>
-        <location filename="../src/configdialog.cpp" line="195"/>
+        <location filename="../src/configdialog.cpp" line="189"/>
+        <location filename="../src/configdialog.cpp" line="204"/>
         <source>This field is required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="570"/>
+        <location filename="../src/configdialog.cpp" line="579"/>
         <source>No profile selected</source>
         <translation>Ei profiilia valittuna</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="571"/>
+        <location filename="../src/configdialog.cpp" line="580"/>
         <source>No profile selected to delete</source>
         <translation>Ei valittua profiilia poistettavaksi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="651"/>
+        <location filename="../src/configdialog.cpp" line="660"/>
         <source>GnuPG not found</source>
         <translation>GnuPG:tä ei löydy</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="665"/>
+        <location filename="../src/configdialog.cpp" line="674"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Asenna GnuPG järjestelmääsi.&lt;br&gt;Asenna &lt;strong&gt;gpg&lt;/strong&gt; käyttäen suosimaasi paketinhallintatyökalua&lt;br&gt;tai&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lataa&lt;/a&gt; se osoitteesta GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="706"/>
         <source>Create password-store?</source>
         <translation>Luo salasanasäilö?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="707"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Haluatko luoda salasanasäilön sijaintiin %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="703"/>
+        <location filename="../src/configdialog.cpp" line="712"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="704"/>
+        <location filename="../src/configdialog.cpp" line="713"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="726"/>
+        <location filename="../src/configdialog.cpp" line="735"/>
         <source>Password store not initialised</source>
         <translation>Salasanasäilöä ei käyttöönotettu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="727"/>
+        <location filename="../src/configdialog.cpp" line="736"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Kansio %1 ei näytä olevan salasanasäilö tai sitä ei ole vielä alustettu.</translation>
     </message>
@@ -436,27 +436,27 @@ email</translation>
         <translation>Automaattinen tunnistus</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="54"/>
+        <location filename="../src/configdialog.cpp" line="63"/>
         <source>System tray is not available</source>
         <translation>Järjestelmäpalkki ei ole käytettävissä</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="79"/>
+        <location filename="../src/configdialog.cpp" line="88"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation>Pass OTP -lisäosa tulee olla asennettuna</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="84"/>
+        <location filename="../src/configdialog.cpp" line="93"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode tulee olla asennettuna</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="654"/>
+        <location filename="../src/configdialog.cpp" line="663"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Asenna GnuPG järjestelmääsi.&lt;br&gt;Asenna &lt;strong&gt;Ubuntu&lt;/strong&gt; Microsoft Storesta saadaksesi sen.&lt;br&gt;Jos teit jo niin, käynnistä se ainakin kerran ja&lt;br&gt;paina &quot;Automaattinen tunnistus&quot; seuraavassa valikossa.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="659"/>
+        <location filename="../src/configdialog.cpp" line="668"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Asenna GnuPG järjestelmääsi.&lt;br&gt;Asenna &lt;strong&gt;Ubuntu&lt;/strong&gt; Microsoft Storesta&lt;br&gt;tai &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lataa&lt;/a&gt; se osoitteesta GnuPG.org</translation>
     </message>
@@ -682,27 +682,27 @@ Expire-Date: 0
         <translation>Edistyineisiin asetuksiin löydät apua &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manuaalista&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="152"/>
+        <location filename="../src/keygendialog.cpp" line="162"/>
         <source>Invalid name</source>
         <translation>Virheellinen nimi</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="153"/>
+        <location filename="../src/keygendialog.cpp" line="163"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Nimen tulee olla vähintään 5 merkkiä pitkä.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="164"/>
+        <location filename="../src/keygendialog.cpp" line="174"/>
         <source>Invalid email</source>
         <translation>Virheellinen sähköposti</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="165"/>
+        <location filename="../src/keygendialog.cpp" line="175"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Kirjoittamasi sähköpostiosoite ei kelpaa.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="180"/>
+        <location filename="../src/keygendialog.cpp" line="190"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Tämä toimenpide voi kestää joitakin minuutteja.&lt;br /&gt;Me luomme suuren määrän satunnaisia bittejä. On hyvä idea tehdä joitakin toimintoja (kirjoittaa näppäimistöllä, liikuttaa hiirtä, käyttää kovalevyjä) tämän luonnin aikana; tämä lisää satunnaisgeneraattorin entropiaa.</translation>
     </message>
@@ -1144,12 +1144,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="127"/>
+        <location filename="../src/pass.cpp" line="138"/>
         <source>No characters chosen</source>
         <translation>Ei merkkejä valittu</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="128"/>
+        <location filename="../src/pass.cpp" line="139"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Salasanaa ei voitu luoda, sillä ei ole merkkejä joista valita asetuksissa!</translation>
     </message>
@@ -1214,93 +1214,93 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="157"/>
+        <location filename="../src/qtpass.cpp" line="163"/>
         <source>Generating GPG key pair</source>
         <translation>Luodaan GPG avainpari</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="210"/>
+        <location filename="../src/qtpass.cpp" line="220"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Yhteys WebDAViin epäonnistui:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="227"/>
+        <location filename="../src/qtpass.cpp" line="237"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV salasana</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="228"/>
+        <location filename="../src/qtpass.cpp" line="238"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Syötä salasana yhdistääksesi WebDAViin:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="245"/>
+        <location filename="../src/qtpass.cpp" line="255"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav keskeytyi odottamattomasti
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="249"/>
+        <location filename="../src/qtpass.cpp" line="259"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>fusedav käynnistäminen yhdistääkseen WebDAViin epäonnistui:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="262"/>
+        <location filename="../src/qtpass.cpp" line="272"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="265"/>
+        <location filename="../src/qtpass.cpp" line="275"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="268"/>
+        <location filename="../src/qtpass.cpp" line="278"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="271"/>
+        <location filename="../src/qtpass.cpp" line="281"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="274"/>
+        <location filename="../src/qtpass.cpp" line="284"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="277"/>
+        <location filename="../src/qtpass.cpp" line="287"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="289"/>
+        <location filename="../src/qtpass.cpp" line="304"/>
         <source>GPG key pair generation failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="348"/>
+        <location filename="../src/qtpass.cpp" line="378"/>
         <source>GPG key pair generated successfully</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="408"/>
+        <location filename="../src/qtpass.cpp" line="463"/>
         <source>Clipboard cleared</source>
         <translation>Leikepöytä tyhjennetty</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="410"/>
+        <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard not cleared</source>
         <translation>Leikepöytää ei tyhjennetty</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="429"/>
+        <location filename="../src/qtpass.cpp" line="484"/>
         <source>Copied to clipboard</source>
         <translation>Tallennettu leikepöydälle</translation>
     </message>
@@ -1410,42 +1410,42 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="29"/>
+        <location filename="../src/usersdialog.cpp" line="38"/>
         <source>Keylist missing</source>
         <translation>Avainlista puuttuu</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="30"/>
+        <location filename="../src/usersdialog.cpp" line="39"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Ei voitu hakea listaa saatavilla olevista GPG avaimista</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="72"/>
+        <location filename="../src/usersdialog.cpp" line="85"/>
         <source>Key not found in keyring</source>
         <translation>Avainta ei löytynyt avainnipusta</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="195"/>
+        <location filename="../src/usersdialog.cpp" line="243"/>
         <source>created</source>
         <translation>luotu</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="199"/>
+        <location filename="../src/usersdialog.cpp" line="247"/>
         <source>expires</source>
         <translation>erääntyy</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="217"/>
+        <location filename="../src/usersdialog.cpp" line="270"/>
         <source>[INVALID] </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="220"/>
+        <location filename="../src/usersdialog.cpp" line="273"/>
         <source>[EXPIRED] </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="224"/>
+        <location filename="../src/usersdialog.cpp" line="277"/>
         <source>[PARTIAL] </source>
         <translation type="unfinished"></translation>
     </message>

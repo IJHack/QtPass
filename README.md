@@ -18,7 +18,7 @@
 QtPass is a multi-platform GUI for [pass](https://www.passwordstore.org/),
 the standard Unix password manager.
 
-_Available in 39 languages_
+_Available in 42 languages_
 
 ## Features
 
@@ -210,7 +210,11 @@ attack I can think of at least two options:
 
 ## License
 
-### GNU GPL v3.0
+This repository follows the [REUSE Specification v3.2](https://reuse.software/spec-3.2/).
+Please see [LICENSES/](./LICENSES), [REUSE.toml](./REUSE.toml) and
+the individual `*.license` files (if any) for copyright and license information.
+
+### GNU General Public License v3.0
 
 [![GNU GPL v3.0](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl.html)
 

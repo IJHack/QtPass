@@ -355,73 +355,73 @@ email</translation>
         <translation>&lt;a href = &quot;https://qtpass.org/&quot;&gt; qtpass &lt;/a&gt; பதிப்பு </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="109"/>
+        <location filename="../src/configdialog.cpp" line="118"/>
         <source>No Clipboard</source>
         <translation>இடைநிலைப்பலகை இல்லை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="110"/>
+        <location filename="../src/configdialog.cpp" line="119"/>
         <source>Always copy to clipboard</source>
         <translation>எப்போதும் இடைநிலைப்பலகைக்கு நகலெடுக்கவும்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="111"/>
+        <location filename="../src/configdialog.cpp" line="120"/>
         <source>On-demand copy to clipboard</source>
         <translation>இடைநிலைப்பலகைக்கு ஆன்-டிமாண்ட் நகல்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="180"/>
-        <location filename="../src/configdialog.cpp" line="195"/>
+        <location filename="../src/configdialog.cpp" line="189"/>
+        <location filename="../src/configdialog.cpp" line="204"/>
         <source>This field is required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="570"/>
+        <location filename="../src/configdialog.cpp" line="579"/>
         <source>No profile selected</source>
         <translation>எந்த சுயவிவரமும் தேர்ந்தெடுக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="571"/>
+        <location filename="../src/configdialog.cpp" line="580"/>
         <source>No profile selected to delete</source>
         <translation>நீக்க எந்த சுயவிவரமும் தேர்ந்தெடுக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="651"/>
+        <location filename="../src/configdialog.cpp" line="660"/>
         <source>GnuPG not found</source>
         <translation>Gnupg கண்டுபிடிக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="665"/>
+        <location filename="../src/configdialog.cpp" line="674"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>உங்கள் கணினியில் gnupg ஐ நிறுவவும். &lt;br&gt; உங்களுக்கு பிடித்த தொகுப்பு மேலாளரைப் பயன்படுத்தி &lt;strong&gt; gpg &lt;/strong&gt; ஐ நிறுவவும் &lt;br&gt; அல்லது &lt;a href = &quot; 2 &quot;&gt; பதிவிறக்கம் &lt;/a&gt; இது gnupg.org இலிருந்து</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="706"/>
         <source>Create password-store?</source>
         <translation>கடவுச்சொல்-கடையை உருவாக்கவா?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="707"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>கடவுச்சொல்-கடையை %1 இல் உருவாக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="703"/>
+        <location filename="../src/configdialog.cpp" line="712"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="704"/>
+        <location filename="../src/configdialog.cpp" line="713"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="726"/>
+        <location filename="../src/configdialog.cpp" line="735"/>
         <source>Password store not initialised</source>
         <translation>கடவுச்சொல் கடை துவக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="727"/>
+        <location filename="../src/configdialog.cpp" line="736"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>%1 கோப்புறை கடவுச்சொல் கடையாகத் தெரியவில்லை அல்லது இன்னும் துவக்கப்படவில்லை.</translation>
     </message>
@@ -436,27 +436,27 @@ email</translation>
         <translation>ஆட்டோடெடெக்ட்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="54"/>
+        <location filename="../src/configdialog.cpp" line="63"/>
         <source>System tray is not available</source>
         <translation>கணினி தட்டு கிடைக்கவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="79"/>
+        <location filename="../src/configdialog.cpp" line="88"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation>பாச் OTP நீட்டிப்பு நிறுவப்பட வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="84"/>
+        <location filename="../src/configdialog.cpp" line="93"/>
         <source>qrencode needs to be installed</source>
         <translation>Qrencode நிறுவப்பட வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="654"/>
+        <location filename="../src/configdialog.cpp" line="663"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>தயவுசெய்து உங்கள் கணினியில் gnupg ஐ நிறுவவும். &lt;br&gt; அதைப் பெற நுண்மென் ச்டோரிலிருந்து &lt;strong&gt; உபுண்டு &lt;/strong&gt; ஐ நிறுவவும். &lt;br&gt; நீங்கள் ஏற்கனவே அவ்வாறு செய்தால், நீங்கள் அதை ஒரு முறை தொடங்கியதை உறுதிசெய்து &lt;br&gt; &quot;ஆட்டோடெடெக்ட்&quot; என்பதைக் சொடுக்கு செய்க அடுத்த உரையாடலில்.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="659"/>
+        <location filename="../src/configdialog.cpp" line="668"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>உங்கள் கணினியில் gnupg ஐ நிறுவவும். &quot;&gt; பதிவிறக்கம் &lt;/a&gt; இது gnupg.org இலிருந்து</translation>
     </message>
@@ -715,27 +715,27 @@ Expire-Date: 0
         <translation>வல்லுநர் விருப்பங்களுக்கு &lt;a href = &quot;https://www.gnupg.org/documentation/manuals/gnupg/unattented-gpg-key-genary.html&quot;&gt; gnupg கையேடு &lt;/a&gt; ஐப் பாருங்கள்</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="152"/>
+        <location filename="../src/keygendialog.cpp" line="162"/>
         <source>Invalid name</source>
         <translation>தவறான பெயர்</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="153"/>
+        <location filename="../src/keygendialog.cpp" line="163"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>பெயர் குறைந்தது 5 எழுத்துக்கள் நீளமாக இருக்க வேண்டும்.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="164"/>
+        <location filename="../src/keygendialog.cpp" line="174"/>
         <source>Invalid email</source>
         <translation>தவறான மின்னஞ்சல்</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="165"/>
+        <location filename="../src/keygendialog.cpp" line="175"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>நீங்கள் தட்டச்சு செய்த மின்னஞ்சல் முகவரி சரியான மின்னஞ்சல் முகவரி அல்ல.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="180"/>
+        <location filename="../src/keygendialog.cpp" line="190"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>இந்தச் செயல்பாடு சில நிமிடங்கள் ஆகலாம். &lt;br /&gt;நாம் சீரற்ற பைட்டுகளை நிறைய உருவாக்க வேண்டும். முதன்மையான தலைமுறையின்போது வேறுசில செயல்களைச் செய்வது (விசைப்பலகையில் தட்டச்சு செய்க, சுட்டியை நகர்த்தவும், வட்டுகளைப் பயன்படுத்தவும்) ஒரு நல்ல யோசனை; இது சீரற்ற எண் செனரேட்டருக்கு போதுமான என்ட்ரோபியைப் பெற சிறந்த வாய்ப்பை வழங்குகிறது.</translation>
     </message>
@@ -1177,12 +1177,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="127"/>
+        <location filename="../src/pass.cpp" line="138"/>
         <source>No characters chosen</source>
         <translation>தேர்ந்தெடுக்கப்பட்ட எழுத்துக்கள் இல்லை</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="128"/>
+        <location filename="../src/pass.cpp" line="139"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>கடவுச்சொல்லை உருவாக்க முடியாது, உள்ளமைவில் அமைக்கப்பட்டவற்றிலிருந்து தேர்வு செய்ய எழுத்துக்கள் எதுவும் இல்லை!</translation>
     </message>
@@ -1247,93 +1247,93 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="157"/>
+        <location filename="../src/qtpass.cpp" line="163"/>
         <source>Generating GPG key pair</source>
         <translation>சிபிசி விசை சோடியை உருவாக்குகிறது</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="210"/>
+        <location filename="../src/qtpass.cpp" line="220"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>WebDAV ஐ இணைக்கத் தவறிவிட்டது:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="227"/>
+        <location filename="../src/qtpass.cpp" line="237"/>
         <source>QtPass WebDAV password</source>
         <translation>QTPASS WebDAV கடவுச்சொல்</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="228"/>
+        <location filename="../src/qtpass.cpp" line="238"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>WebDAV உடன் இணைக்க கடவுச்சொல்லை உள்ளிடவும்:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="245"/>
+        <location filename="../src/qtpass.cpp" line="255"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>ஃபுசச் ஏவ் எதிர்பாராத விதமாக வெளியேறினார்
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="249"/>
+        <location filename="../src/qtpass.cpp" line="259"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>WebDAV ஐ இணைக்க ஃபியூசாவ் தொடங்குவதில் தோல்வி:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="262"/>
+        <location filename="../src/qtpass.cpp" line="272"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess :: failetostart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="265"/>
+        <location filename="../src/qtpass.cpp" line="275"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess :: செயலிழந்தது</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="268"/>
+        <location filename="../src/qtpass.cpp" line="278"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess :: நேரம்</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="271"/>
+        <location filename="../src/qtpass.cpp" line="281"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess :: Readerror</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="274"/>
+        <location filename="../src/qtpass.cpp" line="284"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess :: writeError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="277"/>
+        <location filename="../src/qtpass.cpp" line="287"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess :: தெரியாதவர்</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="289"/>
+        <location filename="../src/qtpass.cpp" line="304"/>
         <source>GPG key pair generation failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="348"/>
+        <location filename="../src/qtpass.cpp" line="378"/>
         <source>GPG key pair generated successfully</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="408"/>
+        <location filename="../src/qtpass.cpp" line="463"/>
         <source>Clipboard cleared</source>
         <translation>இடைநிலைப்பலகை அழிக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="410"/>
+        <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard not cleared</source>
         <translation>இடைநிலைப்பலகை அழிக்கப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="429"/>
+        <location filename="../src/qtpass.cpp" line="484"/>
         <source>Copied to clipboard</source>
         <translation>இடைநிலைப்பலகைக்கு நகலெடுக்கப்பட்டது</translation>
     </message>
@@ -1443,42 +1443,42 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="29"/>
+        <location filename="../src/usersdialog.cpp" line="38"/>
         <source>Keylist missing</source>
         <translation>கீலிச்ட் காணவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="30"/>
+        <location filename="../src/usersdialog.cpp" line="39"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>கிடைக்கக்கூடிய சிபிசி விசைகளின் பட்டியலைப் பெற முடியவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="72"/>
+        <location filename="../src/usersdialog.cpp" line="85"/>
         <source>Key not found in keyring</source>
         <translation>கீ கெய்ரிங்கில் காணப்படவில்லை</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="195"/>
+        <location filename="../src/usersdialog.cpp" line="243"/>
         <source>created</source>
         <translation>உருவாக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="199"/>
+        <location filename="../src/usersdialog.cpp" line="247"/>
         <source>expires</source>
         <translation>காலாவதியாகிறது</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="217"/>
+        <location filename="../src/usersdialog.cpp" line="270"/>
         <source>[INVALID] </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="220"/>
+        <location filename="../src/usersdialog.cpp" line="273"/>
         <source>[EXPIRED] </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="224"/>
+        <location filename="../src/usersdialog.cpp" line="277"/>
         <source>[PARTIAL] </source>
         <translation type="unfinished"></translation>
     </message>
