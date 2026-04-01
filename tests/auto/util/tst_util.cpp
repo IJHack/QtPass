@@ -887,6 +887,8 @@ void tst_util::getRecipientStringCount() {
   file.write("ABCDEF12\n34567890\n");
   file.close();
 
+  const QString originalPassStore = QtPassSettings::getPassStore();
+  PassStoreGuard originalGuard(originalPassStore);
   QtPassSettings::setPassStore(passStore);
   int count = -1;
   QStringList parsedRecipients =
