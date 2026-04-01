@@ -83,6 +83,9 @@ void Executor::executeNext() {
           dbg() << "Process failed to start:" << i.id << " " << i.app;
 #endif
           m_process.closeWriteChannel();
+          running = false;
+          m_execQueue.dequeue();
+          executeNext();
           return;
         }
         QByteArray data = i.input.toUtf8();
@@ -198,8 +201,9 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
   if (!converter.hasError()) {
     return out;
   }
-  // Fallback if UTF-8 decoding failed - return empty string
-  return QString();
+  // Fallback if UTF-8 decoding failed - try system encoding
+  auto fallback = QStringDecoder(QStringDecoder::System);
+  return fallback(in);
 #endif
 }
 
@@ -221,12 +225,14 @@ auto Executor::executeBlocking(QString app, const QStringList &args,
                                QString *process_err) -> int {
   QProcess internal;
   startProcessBlocking(internal, app, args);
+  if (!internal.waitForStarted(-1)) {
+#ifdef QT_DEBUG
+    dbg() << "Process failed to start:" << app;
+#endif
+    return -1;
+  }
   if (!input.isEmpty()) {
     QByteArray data = input.toUtf8();
-    if (!internal.waitForStarted(-1)) {
-      // Failed to start process; return error code.
-      return -1;
-    }
     if (internal.write(data) != data.length()) {
 #ifdef QT_DEBUG
       dbg() << "Not all input written:" << app;

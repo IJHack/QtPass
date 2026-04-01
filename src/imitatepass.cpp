@@ -242,12 +242,18 @@ void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
   }
 }
 
-void ImitatePass::signGpgIdFile(const QString &gpgIdFile,
+bool ImitatePass::signGpgIdFile(const QString &gpgIdFile,
                                 const QStringList &signingKeys) {
   QStringList args;
   // Use only the first signing key; multiple --default-key options would
   // override each other and only the last one would take effect.
   if (!signingKeys.isEmpty()) {
+#ifdef QT_DEBUG
+    if (signingKeys.size() > 1) {
+      dbg() << "Multiple signing keys configured; using only the first key:"
+            << signingKeys.first();
+    }
+#endif
     args.append(QStringList{"--default-key", signingKeys.first()});
   }
   args.append(QStringList{"--yes", "--detach-sign", gpgIdFile});
@@ -259,12 +265,14 @@ void ImitatePass::signGpgIdFile(const QString &gpgIdFile,
 #endif
     emit critical(tr("GPG signing failed!"),
                   tr("Failed to sign %1.").arg(gpgIdFile));
-    return;
+    return false;
   }
   if (!verifyGpgIdFile(gpgIdFile)) {
     emit critical(tr("Check .gpgid file signature!"),
                   tr("Signature for %1 is invalid.").arg(gpgIdFile));
+    return false;
   }
+  return true;
 }
 
 void ImitatePass::gitAddGpgId(const QString &gpgIdFile,
@@ -320,7 +328,9 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
   writeGpgIdFile(gpgIdFile, users);
 
   if (!signingKeys.isEmpty()) {
-    signGpgIdFile(gpgIdFile, signingKeys);
+    if (!signGpgIdFile(gpgIdFile, signingKeys)) {
+      return;
+    }
   }
 
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit() &&
