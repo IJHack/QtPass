@@ -152,8 +152,9 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
   QTextCodec *codec = QTextCodec::codecForName("UTF-8");
   QTextCodec::ConverterState state;
   QString out = codec->toUnicode(in.constData(), in.size(), &state);
-  if (!state.invalidChars)
+  if (!state.invalidChars) {
     return out;
+  }
   codec = QTextCodec::codecForUtfText(in);
   return codec->toUnicode(in);
 #else
