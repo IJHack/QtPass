@@ -622,7 +622,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
     args << pgit(dest);
     executeGit(GIT_COPY, args);
 
-    QString message = QString("copied from %1 to %2 using QTPass.");
+    QString message = QString("Copied from %1 to %2 using QtPass.");
     message = message.arg(src, dest);
     GitCommit("", message);
   } else {
