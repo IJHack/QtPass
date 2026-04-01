@@ -469,7 +469,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d">QtPassSettings::getInstance</a>()-&gt;remove(<span class="stringliteral">&quot;useGit&quot;</span>);</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d">QtPassSettings::getInstance</a>()-&gt;sync();</div>
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>  QVERIFY2(!<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>(<span class="keyword">false</span>),</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>           <span class="stringliteral">&quot;Should respect false default and not auto-detect when .git exists&quot;</span>);</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>           <span class="stringliteral">&quot;Should return false when default is false, even if .git exists&quot;</span>);</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>  QVERIFY(gitDir.rmdir(<span class="stringliteral">&quot;.git&quot;</span>));</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>  <a class="code hl_function" href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d">QtPassSettings::getInstance</a>()-&gt;sync();</div>
