@@ -382,7 +382,7 @@ void tst_settings::autoDetectGit() {
   QtPassSettings::getInstance()->remove("useGit");
   QtPassSettings::getInstance()->sync();
   QVERIFY2(!QtPassSettings::isUseGit(false),
-           "Should respect false default and not auto-detect when .git exists");
+           "Should return false when default is false, even if .git exists");
 
   QVERIFY(gitDir.rmdir(".git"));
   QtPassSettings::getInstance()->sync();
