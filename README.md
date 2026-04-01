@@ -210,7 +210,7 @@ attack I can think of at least two options:
 
 ## License
 
-This repository follows the [REUSE Specfication v3.2](https://reuse.software/spec-3.2/).
+This repository follows the [REUSE Specification v3.2](https://reuse.software/spec-3.2/).
 Please see [LICENSES/](./LICENSES), [REUSE.toml](./REUSE.toml) and
 the individual `*.license` files (if any) for copyright and license information.
 
