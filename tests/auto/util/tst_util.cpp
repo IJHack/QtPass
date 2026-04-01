@@ -564,16 +564,15 @@ void tst_util::findPasswordStore() {
 }
 
 void tst_util::configIsValid() {
-  const QString originalStore = QtPassSettings::getPassStore();
   QTemporaryDir tempDir;
   QVERIFY2(tempDir.isValid(), "Temporary directory should be created");
+
+  PassStoreGuard guard(QtPassSettings::getPassStore());
 
   // No .gpg-id in this store => config must be invalid.
   QtPassSettings::setPassStore(tempDir.path());
   const bool isValid = Util::configIsValid();
 
-  // Restore global setting before assertion to avoid leaking test state.
-  QtPassSettings::setPassStore(originalStore);
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id is missing");
 }
 
