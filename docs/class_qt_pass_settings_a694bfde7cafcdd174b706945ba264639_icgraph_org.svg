@@ -38,9 +38,9 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_pass.html#a8cff21960fa7bc334a8fba8c3fff5d07" target="_top" xlink:title="Generate random password.">
-<polygon fill="white" stroke="#666666" points="124,-19 23,-19 23,0 124,0 124,-19"/>
-<text text-anchor="middle" x="73.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::Generate_b</text>
+<g id="a_Node000003"><a xlink:href="class_pass.html#a35b3cba623a22f41173670ec34ebb67c" target="_top" xlink:title="Generate random password.">
+<polygon fill="white" stroke="#666666" points="140.5,-19 6.5,-19 6.5,0 140.5,0 140.5,-19"/>
+<text text-anchor="middle" x="73.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Pass::generatePassword</text>
 </a>
 </g>
 </g>
@@ -48,7 +48,7 @@
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M172.47,-18.66C155.77,-17.1 139,-15.53 124.17,-14.14"/>
+<path fill="none" stroke="#63b8ff" d="M172.85,-18.7C161.93,-17.67 150.97,-16.65 140.54,-15.68"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="172.56,-22.18 182.85,-19.63 173.22,-15.22 172.56,-22.18"/>
 </a>
 </g>

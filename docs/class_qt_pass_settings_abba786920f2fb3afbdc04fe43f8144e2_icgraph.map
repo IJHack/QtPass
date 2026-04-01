@@ -2,8 +2,8 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="249,55,456,80"/>
 <area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,201,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,55,168,33,169,28,275,49"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a8cff21960fa7bc334a8fba8c3fff5d07" title="Generate random password." alt="" coords="36,55,171,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="235,70,171,70,171,65,235,65"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="14,55,193,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,70,193,70,193,65,236,65"/>
 <area shape="rect" id="Node000004" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="6,105,201,145"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="284,86,191,107,190,102,283,81"/>
 </map>

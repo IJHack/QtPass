@@ -2,8 +2,8 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="668,73,859,113"/>
 <area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="409,5,605,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="697,70,619,45,574,33,575,28,621,39,699,65"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a8cff21960fa7bc334a8fba8c3fff5d07" title="Generate random password." alt="" coords="439,55,574,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="654,85,574,77,575,71,654,79"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="417,55,596,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="654,85,596,79,596,73,655,79"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="251,131,345,156"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="655,107,346,141,345,136,654,102"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="393,156,620,181"/>
