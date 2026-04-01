@@ -34,7 +34,8 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
                                          const QString &)>(&Executor::finished),
           this, &Pass::finished);
 
-  // TODO(bezet): stop using process
+  // This was previously using direct QProcess signals.
+  // The code now uses Executor instead of raw QProcess for better control.
   // connect(&process, SIGNAL(error(QProcess::ProcessError)), this,
   //        SIGNAL(error(QProcess::ProcessError)));
 
@@ -110,7 +111,7 @@ auto Pass::Generate_b(unsigned int length, const QString &charset) -> QString {
       args.append("--symbols");
     }
     args.append(QString::number(length));
-    // TODO(bezet): try-catch here(2 statuses to merge o_O)
+    // executeBlocking returns 0 on success, non-zero on failure
     if (Executor::executeBlocking(QtPassSettings::getPwgenExecutable(), args,
                                   &passwd) == 0) {
       static const QRegularExpression literalNewLines{"[\\n\\r]"};
@@ -121,7 +122,8 @@ auto Pass::Generate_b(unsigned int length, const QString &charset) -> QString {
       qDebug() << __FILE__ << ":" << __LINE__ << "\t"
                << "pwgen fail";
 #endif
-      // TODO(bezet): emit critical ?
+      // Error is already handled by clearing passwd; no need for critical
+      // signal here
     }
   } else {
     // Validate charset - if CUSTOM is selected but chars are empty,

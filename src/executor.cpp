@@ -172,7 +172,8 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
  * @param process_err
  * @return
  *
- * TODO(bezet): it might make sense to throw here, a lot of possible errors
+ * Note: Returning error code instead of throwing to maintain compatibility
+ * with the existing error handling pattern used throughout QtPass.
  */
 auto Executor::executeBlocking(QString app, const QStringList &args,
                                const QString &input, QString *process_out,
@@ -207,8 +208,9 @@ auto Executor::executeBlocking(QString app, const QStringList &args,
     }
     return internal.exitCode();
   }
-  // TODO(bezet): emit error() ?
-  return -1; //    QProcess error code + qDebug error?
+  // Process failed to start or crashed; return -1 to indicate error.
+  // The calling code checks for non-zero exit codes for error handling.
+  return -1;
 }
 
 /**
@@ -243,7 +245,8 @@ void Executor::setEnvironment(const QStringList &env) {
  */
 auto Executor::cancelNext() -> int {
   if (running || m_execQueue.isEmpty()) {
-    return -1; // TODO(bezet): definitely throw here
+    return -1; // Return -1 to indicate no process was cancelled (queue empty or
+               // currently executing)
   }
   return m_execQueue.dequeue().id;
 }
