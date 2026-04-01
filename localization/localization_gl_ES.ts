@@ -226,12 +226,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Crear</translation>
+        <translation>Crear</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Crear par de claves GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="806"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Optativo: clave GPG para asinar ficheiros .gpg-id para a verificación de integridade. Deixar baleiro a non ser que precises protexer a lista de manipulacións.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Mostra tódalas liñas que comecen cunha palabra seguida por dous puntos como campos nos campos de contrasinal, non só os listados</translation>
+        <translation>Mostra todas as liñas que comecen cunha palabra seguida por dous puntos como campos nos campos de contrasinal, non só os listados</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
@@ -342,7 +342,7 @@
         <location filename="../src/configdialog.cpp" line="180"/>
         <location filename="../src/configdialog.cpp" line="195"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>Este campo é obrigatorio</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="570"/>
@@ -578,7 +578,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="282"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Non está dispoñible ningunha das chaves de sinatura.
+        <translation>Non está dispoñible ningunha das claves secretas para sinatura.
 Non poderás cambiar a lista de usuarias!</translation>
     </message>
     <message>
@@ -600,7 +600,7 @@ Non poderás cambiar a lista de usuarias!</translation>
         <location filename="../src/imitatepass.cpp" line="232"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Ningunha das chaves elexidas ten unha chave segreda dispoñible.
+        <translation>Ningunha das claves elexidas ten unha clave secreta dispoñible.
 Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     </message>
     <message>
@@ -614,12 +614,12 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Crear par de chaves GnuPG</translation>
+        <translation>Crear par de claves GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Crear novo par de chaves</translation>
+        <translation>Crear novo par de claves</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -654,7 +654,7 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>O contido do modelo vaise establecer en función da versión GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1209,7 +1209,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="157"/>
         <source>Generating GPG key pair</source>
-        <translation>Creando par de chaves GPG</translation>
+        <translation>Creando par de claves GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="210"/>
@@ -1245,12 +1245,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou a creación do par de claves GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="348"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>Creouse correctamente o par de claves GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="410"/>
@@ -1333,7 +1333,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona que usuarias van poder descifrar os contrasinais gardados neste cartafol.
+Nota: os ficheiros existentes non se van modificar, e van reter os permisos ate que os edites.
+As entradas de cor azul teñen a clave secreta dispoñible, elixe unha delas para poder descifrar.
+As entradas en cor negra teñen unha clave para cifraxe dispoñible e de confianza, elixe unha destas claves para permitir a outras persoas descifrar.
+As entradas en cor vermella non son válidas, non poderás cifrar con elas.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
@@ -1343,22 +1347,22 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>Mostra chaves non válidas</translation>
+        <translation>Mostrar claves non válidas</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="29"/>
         <source>Keylist missing</source>
-        <translation>Non hai lista de chaves</translation>
+        <translation>Non hai lista de claves</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="30"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Non se puido obter a lista de chaves GPG dispoñibles</translation>
+        <translation>Non se puido obter a lista de claves GPG dispoñibles</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Key not found in keyring</source>
-        <translation>Non se atopan chaves no anel de chaves</translation>
+        <translation>Non se atopan claves no anel de claves</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="195"/>
@@ -1373,17 +1377,17 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="217"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[NON VÁLIDA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="220"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[CADUCADA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="224"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[PARCIAL] </translation>
     </message>
 </context>
 </TS>
