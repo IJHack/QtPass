@@ -3,6 +3,7 @@
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
+#include <QFileInfo>
 #include <QList>
 #include <QTemporaryDir>
 #include <QtTest>
@@ -31,6 +32,13 @@ public:
 public Q_SLOTS:
   void init();
   void cleanup();
+
+private:
+  struct PassStoreGuard {
+    QString original;
+    explicit PassStoreGuard(const QString &orig) : original(orig) {}
+    ~PassStoreGuard() { QtPassSettings::setPassStore(original); }
+  };
 
 private Q_SLOTS:
   void cleanupTestCase();
@@ -127,12 +135,20 @@ void tst_util::cleanupTestCase() {
  */
 void tst_util::normalizeFolderPath() {
   QString result;
+  QString sep = QDir::separator();
 
   // Forward slash path
   result = Util::normalizeFolderPath("test");
-  QVERIFY(result.endsWith(QDir::separator()));
+  QVERIFY(result.endsWith(sep));
   result = Util::normalizeFolderPath("test/");
-  QVERIFY(result.endsWith(QDir::separator()));
+  QVERIFY(result.endsWith(sep));
+  // Verify exact normalized path content
+  result = Util::normalizeFolderPath("test");
+  QVERIFY2(result == "test" + sep,
+           qPrintable(QString("Expected 'test%1', got '%2'").arg(sep, result)));
+  result = Util::normalizeFolderPath("test/");
+  QVERIFY2(result == "test" + sep,
+           qPrintable(QString("Expected 'test%1', got '%2'").arg(sep, result)));
 
   // Windows-style backslash path (only on Windows)
   if (QDir::separator() == '\\') {
@@ -140,11 +156,16 @@ void tst_util::normalizeFolderPath() {
     QVERIFY(result.endsWith("\\"));
     QVERIFY(result.contains("test"));
     QVERIFY(result.contains("subdir"));
+    // Verify exact normalized path content
+    QVERIFY2(
+        result == "test\\subdir\\",
+        qPrintable(
+            QString("Expected 'test\\\\subdir\\\\', got '%1'").arg(result)));
   }
 
   // Mixed separators test
   result = Util::normalizeFolderPath("test/subdir\\folder");
-  QVERIFY(result.endsWith(QDir::separator()));
+  QVERIFY(result.endsWith(sep));
   QVERIFY(result.contains("test"));
   QVERIFY(result.contains("subdir"));
   QVERIFY(result.contains("folder"));
@@ -603,11 +624,7 @@ void tst_util::getDirWithIndex() {
   file.close();
 
   const QString originalPassStore = QtPassSettings::getPassStore();
-  struct PassStoreGuard {
-    QString original;
-    explicit PassStoreGuard(const QString &orig) : original(orig) {}
-    ~PassStoreGuard() { QtPassSettings::setPassStore(original); }
-  } passStoreGuard(originalPassStore);
+  PassStoreGuard passStoreGuard(originalPassStore);
   QtPassSettings::setPassStore(dirPath);
 
   QFileSystemModel fsm;
@@ -1049,6 +1066,7 @@ void tst_util::findBinaryInPathTempExecutableInTempDir() {
     QSKIP("Cannot write to the PATH directory containing 'sh' (need write "
           "access)");
   }
+  QVERIFY2(exec.exists(), "File should exist after opening for writing");
   exec.write("#!/bin/sh\n");
   exec.close();
   exec.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner |
