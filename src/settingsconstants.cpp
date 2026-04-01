@@ -26,6 +26,12 @@ const QString SettingsConstants::splitterRight =
     SettingsConstants::groupMainwindow + "/splitterRight";
 const QString SettingsConstants::maximized =
     SettingsConstants::groupMainwindow + "/maximized";
+
+const QString SettingsConstants::dialogGeometry = "dialog/geometry";
+const QString SettingsConstants::dialogPos = "dialog/pos";
+const QString SettingsConstants::dialogSize = "dialog/size";
+const QString SettingsConstants::dialogMaximized = "dialog/maximized";
+
 const QString SettingsConstants::usePass = "usePass";
 const QString SettingsConstants::useSelection = "useSelection";
 const QString SettingsConstants::useAutoclear = "useAutoclear";

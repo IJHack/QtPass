@@ -20,6 +20,13 @@ public:
   static const QString splitterLeft;
   static const QString splitterRight;
   static const QString maximized;
+
+  // Dialog-specific settings
+  static const QString dialogGeometry;
+  static const QString dialogPos;
+  static const QString dialogSize;
+  static const QString dialogMaximized;
+
   static const QString usePass;
   static const QString useAutoclear;
   static const QString useSelection;

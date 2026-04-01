@@ -118,9 +118,8 @@ auto QtPass::init() -> bool {
     }
   }
 
-  // TODO(annejan): this needs to be before we try to access the store,
-  // but it would be better to do it after the Window is shown,
-  // as the long delay it can cause is irritating otherwise.
+  // Note: WebDAV mount needs to happen before accessing the store,
+  // but ideally should be done after Window is shown to avoid long delay.
   if (QtPassSettings::isUseWebDav()) {
     mountWebDav();
   }
