@@ -856,6 +856,7 @@ void tst_util::getRecipientListEmpty() {
   QVERIFY(file.open(QIODevice::WriteOnly));
   file.close();
 
+  PassStoreGuard guard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(passStore);
   QStringList recipients = Pass::getRecipientList(passStore);
   QVERIFY(recipients.isEmpty());
