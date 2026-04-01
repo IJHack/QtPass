@@ -113,12 +113,28 @@ auto Util::findBinaryInPath(QString binary) -> QString {
   }
 #ifdef Q_OS_WIN
   if (ret.isEmpty()) {
-    binary.remove(0, 1);
-    binary.prepend("wsl ");
-    QString out, err;
-    if (Executor::executeBlocking(binary, {"--version"}, &out, &err) == 0 &&
-        !out.isEmpty() && err.isEmpty())
-      ret = binary;
+    // Remove leading path separator added earlier when searching PATH entries.
+    if (!binary.isEmpty() && (binary.at(0) == QDir::separator() || binary.at(0) == '/')) {
+      binary.remove(0, 1);
+    }
+
+    // Validate binary name before attempting WSL fallback: require a non-empty,
+    // whitespace-free program name to avoid confusing WSL invocations.
+    const bool hasWhitespace = binary.contains(QRegularExpression(QStringLiteral("\\s")));
+    if (!binary.isEmpty() && !hasWhitespace) {
+      QString wslCommand = QStringLiteral("wsl ") + binary;
+#ifdef QT_DEBUG
+      dbg() << "Util::findBinaryInPath(): falling back to WSL for binary" << binary;
+#endif
+      QString out, err;
+      if (Executor::executeBlocking(wslCommand, {"--version"}, &out, &err) == 0 &&
+          !out.isEmpty() && err.isEmpty()) {
+#ifdef QT_DEBUG
+        dbg() << "Util::findBinaryInPath(): using WSL binary" << wslCommand;
+#endif
+        ret = wslCommand;
+      }
+    }
   }
 #endif
 
