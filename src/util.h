@@ -40,7 +40,7 @@ public:
    * @param path The folder path to normalize.
    * @return QString Path with trailing separator added if missing.
    */
-  static auto normalizeFolderPath(QString path) -> QString;
+  static auto normalizeFolderPath(const QString &path) -> QString;
   /**
    * @brief Verify that the required configuration is complete.
    * @return bool `true` if the password store's `.gpg-id` exists AND the
