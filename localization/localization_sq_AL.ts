@@ -309,98 +309,98 @@
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="54"/>
+        <location filename="../src/configdialog.cpp" line="63"/>
         <source>System tray is not available</source>
         <translation>Tabaka e sistemit nuk është në dispozicion</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="79"/>
+        <location filename="../src/configdialog.cpp" line="88"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation>Pass OTP extension  duhet të instalohet</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="84"/>
+        <location filename="../src/configdialog.cpp" line="93"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode  duhet të instalohet</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="109"/>
+        <location filename="../src/configdialog.cpp" line="118"/>
         <source>No Clipboard</source>
         <translation>Asnjë Klipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="110"/>
+        <location filename="../src/configdialog.cpp" line="119"/>
         <source>Always copy to clipboard</source>
         <translation>Gjithmonë kopjoni në klipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="111"/>
+        <location filename="../src/configdialog.cpp" line="120"/>
         <source>On-demand copy to clipboard</source>
         <translation>Kopjoni në klipboard sipas kërkesës</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="180"/>
-        <location filename="../src/configdialog.cpp" line="195"/>
+        <location filename="../src/configdialog.cpp" line="189"/>
+        <location filename="../src/configdialog.cpp" line="204"/>
         <source>This field is required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="570"/>
+        <location filename="../src/configdialog.cpp" line="579"/>
         <source>No profile selected</source>
         <translation>Asnjë profil i zgjedhur</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="571"/>
+        <location filename="../src/configdialog.cpp" line="580"/>
         <source>No profile selected to delete</source>
         <translation>Asnjë profil i zgjedhur për të fshirë</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="651"/>
+        <location filename="../src/configdialog.cpp" line="660"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nuk u gjet</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="654"/>
+        <location filename="../src/configdialog.cpp" line="663"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. &lt;br&gt; Instaloni &lt;strong&gt; Ubuntu &lt;/strong&gt; nga Microsoft Store për ta marrë. &lt;br&gt; Nëse tashmë e keni bërë një gjë të tillë, sigurohuni që e keni filluar një herë dhe klikoni &quot;Autodetect&quot; në dialogun tjetër.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="659"/>
+        <location filename="../src/configdialog.cpp" line="668"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. Instaloni &lt;strong&gt; Ubuntu &lt;/strong&gt; nga Microsoft Store &lt;br&gt; ose &lt;a href = &quot;https://www.gnupg.org/download/#sec-1-2 &quot;&gt; shkarkoni &lt;/a&gt; nga GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="665"/>
+        <location filename="../src/configdialog.cpp" line="674"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. Instaloni &lt;strong&gt; gpg &lt;/strong&gt; duke përdorur menaxherin tuaj të preferuar të paketave (package manager)  &lt;br&gt; ose &lt;a href = &quot;https://www.gnupg.org/download/#sec-1- 2 &quot;&gt; shkarkoni &lt;/a&gt; nga GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="706"/>
         <source>Create password-store?</source>
         <translation>Krijoni password-store?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="707"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Dëshiron të krijosh një password-store në% 1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="703"/>
+        <location filename="../src/configdialog.cpp" line="712"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="704"/>
+        <location filename="../src/configdialog.cpp" line="713"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="726"/>
+        <location filename="../src/configdialog.cpp" line="735"/>
         <source>Password store not initialised</source>
         <translation>Password store jo i inicializuar</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="727"/>
+        <location filename="../src/configdialog.cpp" line="736"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Dosja %1 nuk duket të jetë një dyqan me fjalëkalime ose ende nuk është inicializuar.</translation>
     </message>
@@ -635,27 +635,27 @@ Expire-Date: 0
         <translation>Për opsionet e ekspertëve shikoni &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; Manuali GnuPG &lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="152"/>
+        <location filename="../src/keygendialog.cpp" line="162"/>
         <source>Invalid name</source>
         <translation>Emër i pavlefshëm</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="153"/>
+        <location filename="../src/keygendialog.cpp" line="163"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Emri duhet të jetë i gjatë së paku 5 karaktere.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="164"/>
+        <location filename="../src/keygendialog.cpp" line="174"/>
         <source>Invalid email</source>
         <translation>Email i pavlefshem</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="165"/>
+        <location filename="../src/keygendialog.cpp" line="175"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Adresa e emailit që keni vendosur nuk është e vlefshme .</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="180"/>
+        <location filename="../src/keygendialog.cpp" line="190"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Ky operacion mund të zgjasë disa minuta. &lt;br /&gt; Ne duhet të gjenerojmë shumë byte të rastit. është një ide e mirë për të kryer ndonjë veprim tjetër (shkruani në tastierë, lëvizni miun, përdorni disqet) gjatë gjenerimit kryesor; kjo i jep gjeneratorit të numrave të rastit një shans më të mirë për të fituar entropi të mjaftueshme.</translation>
     </message>
@@ -944,12 +944,12 @@ Expire-Date: 0
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="127"/>
+        <location filename="../src/pass.cpp" line="138"/>
         <source>No characters chosen</source>
         <translation>Asnjë karaktere e zgjedhur</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="128"/>
+        <location filename="../src/pass.cpp" line="139"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Nuk mund të gjeneroni fjalëkalim, nuk ka karaktere për të zgjedhur nga konfigurimi!</translation>
     </message>
@@ -1015,93 +1015,93 @@ Expire-Date: 0
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="157"/>
+        <location filename="../src/qtpass.cpp" line="163"/>
         <source>Generating GPG key pair</source>
         <translation>Duke gjeneruar  çiftin e kyçave  të GPG-së</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="210"/>
+        <location filename="../src/qtpass.cpp" line="220"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Nuk arriti të lidhej WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="227"/>
+        <location filename="../src/qtpass.cpp" line="237"/>
         <source>QtPass WebDAV password</source>
         <translation>Fjalëkalim QtPass WebDAV</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="228"/>
+        <location filename="../src/qtpass.cpp" line="238"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Vendosni fjalëkalimin për t&apos;u lidhur me WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="245"/>
+        <location filename="../src/qtpass.cpp" line="255"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fuseav doli papritur
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="249"/>
+        <location filename="../src/qtpass.cpp" line="259"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Dështoi  fillimi i fusedav për të lidhur WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="262"/>
+        <location filename="../src/qtpass.cpp" line="272"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="265"/>
+        <location filename="../src/qtpass.cpp" line="275"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="268"/>
+        <location filename="../src/qtpass.cpp" line="278"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="271"/>
+        <location filename="../src/qtpass.cpp" line="281"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="274"/>
+        <location filename="../src/qtpass.cpp" line="284"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="277"/>
+        <location filename="../src/qtpass.cpp" line="287"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="289"/>
+        <location filename="../src/qtpass.cpp" line="304"/>
         <source>GPG key pair generation failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="348"/>
+        <location filename="../src/qtpass.cpp" line="378"/>
         <source>GPG key pair generated successfully</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="408"/>
+        <location filename="../src/qtpass.cpp" line="463"/>
         <source>Clipboard cleared</source>
         <translation>Klipboard pastruar</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="410"/>
+        <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard not cleared</source>
         <translation>Clipboard nuk është pastruar</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="429"/>
+        <location filename="../src/qtpass.cpp" line="484"/>
         <source>Copied to clipboard</source>
         <translation>Kopjuar në clipboard</translation>
     </message>
@@ -1203,42 +1203,42 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
         <translation>Trego çelësa të papërdorshëm</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="29"/>
+        <location filename="../src/usersdialog.cpp" line="38"/>
         <source>Keylist missing</source>
         <translation>Lista kryesore  mungon</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="30"/>
+        <location filename="../src/usersdialog.cpp" line="39"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Nuk mund të marr listën e çelësave të disponueshëm GPG</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="72"/>
+        <location filename="../src/usersdialog.cpp" line="85"/>
         <source>Key not found in keyring</source>
         <translation>çelësi nuk u gjet në keyring</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="195"/>
+        <location filename="../src/usersdialog.cpp" line="243"/>
         <source>created</source>
         <translation>krijuar</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="199"/>
+        <location filename="../src/usersdialog.cpp" line="247"/>
         <source>expires</source>
         <translation>skadon</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="217"/>
+        <location filename="../src/usersdialog.cpp" line="270"/>
         <source>[INVALID] </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="220"/>
+        <location filename="../src/usersdialog.cpp" line="273"/>
         <source>[EXPIRED] </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="224"/>
+        <location filename="../src/usersdialog.cpp" line="277"/>
         <source>[PARTIAL] </source>
         <translation type="unfinished"></translation>
     </message>

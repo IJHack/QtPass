@@ -309,98 +309,98 @@
         <translation>Versión &lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="54"/>
+        <location filename="../src/configdialog.cpp" line="63"/>
         <source>System tray is not available</source>
         <translation>Non está dispoñible icona no sistema</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="79"/>
+        <location filename="../src/configdialog.cpp" line="88"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation>É preciso instalar a extensión Pass OTP</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="84"/>
+        <location filename="../src/configdialog.cpp" line="93"/>
         <source>qrencode needs to be installed</source>
         <translation>É preciso instalar qrencode</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="109"/>
+        <location filename="../src/configdialog.cpp" line="118"/>
         <source>No Clipboard</source>
         <translation>Sen Portapapeis</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="110"/>
+        <location filename="../src/configdialog.cpp" line="119"/>
         <source>Always copy to clipboard</source>
         <translation>Copiar sempre ao portapapeis</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="111"/>
+        <location filename="../src/configdialog.cpp" line="120"/>
         <source>On-demand copy to clipboard</source>
         <translation>Copiar ao portapapeis cando se solicite</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="180"/>
-        <location filename="../src/configdialog.cpp" line="195"/>
+        <location filename="../src/configdialog.cpp" line="189"/>
+        <location filename="../src/configdialog.cpp" line="204"/>
         <source>This field is required</source>
         <translation>Este campo é obrigatorio</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="570"/>
+        <location filename="../src/configdialog.cpp" line="579"/>
         <source>No profile selected</source>
         <translation>Sen perfil seleccionado</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="571"/>
+        <location filename="../src/configdialog.cpp" line="580"/>
         <source>No profile selected to delete</source>
         <translation>Non hai perfil seleccionado para eliminar</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="651"/>
+        <location filename="../src/configdialog.cpp" line="660"/>
         <source>GnuPG not found</source>
         <translation>Non se atopa GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="654"/>
+        <location filename="../src/configdialog.cpp" line="663"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Instala GnuPG no teu sistema.&lt;br&gt;Instala &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store para obtela.&lt;br&gt;Se xa o fixeches, asegúrate de que está activo e &lt;br&gt;preme en &quot;Autodetectar&quot; na seguinte xanela.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="659"/>
+        <location filename="../src/configdialog.cpp" line="668"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Instala GnuPG no teu sistema.&lt;br&gt;Instala &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store&lt;br&gt;ou podes &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descargala&lt;/a&gt; desde GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="665"/>
+        <location filename="../src/configdialog.cpp" line="674"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Instala GnuPG no teu sistema. &lt;b&gt;Instala &lt;strong&gt;gpg&lt;/strong&gt; usando o teu xestor de paquetes&lt;br&gt;ou &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descargao&lt;/a&gt; desde GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="697"/>
+        <location filename="../src/configdialog.cpp" line="706"/>
         <source>Create password-store?</source>
         <translation>Crear password-store?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="698"/>
+        <location filename="../src/configdialog.cpp" line="707"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Queres crear unha password-store en %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="703"/>
+        <location filename="../src/configdialog.cpp" line="712"/>
         <source>Error</source>
         <translation>Erro</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="704"/>
+        <location filename="../src/configdialog.cpp" line="713"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Fallo ao crear password-store en: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="726"/>
+        <location filename="../src/configdialog.cpp" line="735"/>
         <source>Password store not initialised</source>
         <translation>Password-store non inicializada</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="727"/>
+        <location filename="../src/configdialog.cpp" line="736"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>O cartafol %1 non semella ser unha password-store ou aínda non se inicializou.</translation>
     </message>
@@ -726,27 +726,27 @@ Expire-Date: 0
         <translation>Para opcións de experto mira o &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="152"/>
+        <location filename="../src/keygendialog.cpp" line="162"/>
         <source>Invalid name</source>
         <translation>Nome non válido</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="153"/>
+        <location filename="../src/keygendialog.cpp" line="163"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>O nome debe ter máis de 4 caracteres.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="164"/>
+        <location filename="../src/keygendialog.cpp" line="174"/>
         <source>Invalid email</source>
         <translation>Email non válido</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="165"/>
+        <location filename="../src/keygendialog.cpp" line="175"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>O email que escribiches non é un enderezo válido de email.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="180"/>
+        <location filename="../src/keygendialog.cpp" line="190"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Esta operación podería demorar varios minutos.&lt;br /&gt;Temos que crear un bo número de bytes aleatorios. É boa idea facer algunha outra cousa mentras (escribir no teclado, mover o rato, usar os discos duros) para crear o número primo; esto proporciona máis entropía para o creador de números aleatorios.</translation>
     </message>
@@ -1102,12 +1102,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="127"/>
+        <location filename="../src/pass.cpp" line="138"/>
         <source>No characters chosen</source>
         <translation>Non hai caracteres seleccionados</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="128"/>
+        <location filename="../src/pass.cpp" line="139"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Non se puido crear o contrasinal, non hai caracteres entre os que elixir na configuración!</translation>
     </message>
@@ -1172,93 +1172,93 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="262"/>
+        <location filename="../src/qtpass.cpp" line="272"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::Fallou o inicio</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="265"/>
+        <location filename="../src/qtpass.cpp" line="275"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Fallou</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="268"/>
+        <location filename="../src/qtpass.cpp" line="278"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Caducou</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="271"/>
+        <location filename="../src/qtpass.cpp" line="281"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::Erro de lectura</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="274"/>
+        <location filename="../src/qtpass.cpp" line="284"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::Erro de escritura</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="277"/>
+        <location filename="../src/qtpass.cpp" line="287"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::Erro descoñecido</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="408"/>
+        <location filename="../src/qtpass.cpp" line="463"/>
         <source>Clipboard cleared</source>
         <translation>Portapapeis baleiro</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="157"/>
+        <location filename="../src/qtpass.cpp" line="163"/>
         <source>Generating GPG key pair</source>
         <translation>Creando par de claves GPG</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="210"/>
+        <location filename="../src/qtpass.cpp" line="220"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Fallou a conexión WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="227"/>
+        <location filename="../src/qtpass.cpp" line="237"/>
         <source>QtPass WebDAV password</source>
         <translation>Contrasinal QtPass WebDAV</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="228"/>
+        <location filename="../src/qtpass.cpp" line="238"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Escribe o contrasinal para conectar a WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="245"/>
+        <location filename="../src/qtpass.cpp" line="255"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav pechou inesperadamente
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="249"/>
+        <location filename="../src/qtpass.cpp" line="259"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Fallou o inicio de fusedav para conectar con WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="289"/>
+        <location filename="../src/qtpass.cpp" line="304"/>
         <source>GPG key pair generation failed</source>
         <translation>Fallou a creación do par de claves GPG</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="348"/>
+        <location filename="../src/qtpass.cpp" line="378"/>
         <source>GPG key pair generated successfully</source>
         <translation>Creouse correctamente o par de claves GPG</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="410"/>
+        <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard not cleared</source>
         <translation>Portapapeis non está baleiro</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="429"/>
+        <location filename="../src/qtpass.cpp" line="484"/>
         <source>Copied to clipboard</source>
         <translation>Copiado ao portapapeis</translation>
     </message>
@@ -1350,42 +1350,42 @@ As entradas en cor vermella non son válidas, non poderás cifrar con elas.</tra
         <translation>Mostrar claves non válidas</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="29"/>
+        <location filename="../src/usersdialog.cpp" line="38"/>
         <source>Keylist missing</source>
         <translation>Non hai lista de claves</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="30"/>
+        <location filename="../src/usersdialog.cpp" line="39"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Non se puido obter a lista de claves GPG dispoñibles</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="72"/>
+        <location filename="../src/usersdialog.cpp" line="85"/>
         <source>Key not found in keyring</source>
         <translation>Non se atopan claves no anel de claves</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="195"/>
+        <location filename="../src/usersdialog.cpp" line="243"/>
         <source>created</source>
         <translation>creada</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="199"/>
+        <location filename="../src/usersdialog.cpp" line="247"/>
         <source>expires</source>
         <translation>caduca</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="217"/>
+        <location filename="../src/usersdialog.cpp" line="270"/>
         <source>[INVALID] </source>
         <translation>[NON VÁLIDA] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="220"/>
+        <location filename="../src/usersdialog.cpp" line="273"/>
         <source>[EXPIRED] </source>
         <translation>[CADUCADA] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="224"/>
+        <location filename="../src/usersdialog.cpp" line="277"/>
         <source>[PARTIAL] </source>
         <translation>[PARCIAL] </translation>
     </message>
