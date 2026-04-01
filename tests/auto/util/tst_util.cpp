@@ -103,17 +103,23 @@ tst_util::~tst_util() = default;
 /**
  * @brief tst_util::init unit test init method
  */
-void tst_util::init() {}
+void tst_util::init() {
+  // Intentionally left empty: no per-test setup required.
+}
 
 /**
  * @brief tst_util::cleanup unit test cleanup method
  */
-void tst_util::cleanup() {}
+void tst_util::cleanup() {
+  // Intentionally left empty: no per-test cleanup required.
+}
 
 /**
  * @brief tst_util::cleanupTestCase test case cleanup method
  */
-void tst_util::cleanupTestCase() {}
+void tst_util::cleanupTestCase() {
+  // No test case cleanup required; function intentionally left empty.
+}
 
 /**
  * @brief tst_util::normalizeFolderPath test to check correct working
@@ -564,6 +570,7 @@ void tst_util::getDirBasic() {
            "Store path should match the set value");
   QModelIndex rootIndex = fsm.index(tempDir.path());
   QVERIFY2(rootIndex.isValid(), "Filesystem model root index should be valid");
+  const QString originalStore = QtPassSettings::getPassStore();
   QtPassSettings::setPassStore(tempDir.path());
 
   QString result = Util::getDir(QModelIndex(), false, fsm, sm);
@@ -574,6 +581,7 @@ void tst_util::getDirBasic() {
   QVERIFY2(
       result == expectedDir,
       qPrintable(QString("Expected '%1', got '%2'").arg(expectedDir, result)));
+  QtPassSettings::setPassStore(originalStore);
 }
 
 void tst_util::getDirWithIndex() {
@@ -594,6 +602,12 @@ void tst_util::getDirWithIndex() {
            "Failed to write test data to file in temporary directory");
   file.close();
 
+  const QString originalPassStore = QtPassSettings::getPassStore();
+  struct PassStoreGuard {
+    QString original;
+    explicit PassStoreGuard(const QString &orig) : original(orig) {}
+    ~PassStoreGuard() { QtPassSettings::setPassStore(original); }
+  } passStoreGuard(originalPassStore);
   QtPassSettings::setPassStore(dirPath);
 
   QFileSystemModel fsm;
