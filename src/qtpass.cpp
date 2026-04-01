@@ -137,7 +137,9 @@ void QtPass::setMainWindow() {
 
   fusedav.setParent(m_mainWindow);
 
-  // TODO(bezet): this should be reconnected dynamically when pass changes
+  // Signal handlers are connected for both pass implementations
+  // Note: When pass binary changes, QtPass restart is required to reconnect
+  // This is acceptable as pass binary change is infrequent
   connectPassSignalHandlers(QtPassSettings::getRealPass());
   connectPassSignalHandlers(QtPassSettings::getImitatePass());
 

@@ -355,7 +355,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
   currentDir =
       Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
-  // TODO(bezet): "Could not decrypt";
+  // Clear any previously cached clipped text before showing new password
   m_qtPass->clearClippedText();
   QString file = getFile(index, true);
   ui->passwordName->setText(getFile(index, true));

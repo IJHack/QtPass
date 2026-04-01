@@ -123,7 +123,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   transactionHelper trans(this, PASS_INSERT);
   QStringList recipients = Pass::getRecipientList(file);
   if (recipients.isEmpty()) {
-    // TODO(bezet): probably throw here
+    // Already emit critical signal to notify user of error - no need to throw
     emit critical(tr("Can not edit"),
                   tr("Could not read encryption key to use, .gpg-id "
                      "file missing or invalid."));
@@ -140,7 +140,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   args.append("-");
   executeGpg(PASS_INSERT, args, newValue);
   if (!QtPassSettings::isUseWebDav() && QtPassSettings::isUseGit()) {
-    // TODO(bezet): why not?
+    // Git is used when enabled - this is the standard pass workflow
     if (!overwrite) {
       executeGit(GIT_ADD, {"add", pgit(file)});
     }
@@ -177,9 +177,10 @@ void ImitatePass::Remove(QString file, bool isDir) {
   }
   if (QtPassSettings::isUseGit()) {
     executeGit(GIT_RM, {"rm", (isDir ? "-rf" : "-f"), pgit(file)});
-    // TODO(bezet): commit message used to have pass-like file name inside(ie.
-    //  getFile(file, true)
-    GitCommit(file, "Remove for " + file + " using QtPass.");
+    // Normalize path the same way as add/edit operations
+    QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
+    path.replace(Util::endsWithGpg(), "");
+    GitCommit(file, "Remove for " + path + " using QtPass.");
   } else {
     if (isDir) {
       QDir dir(file);

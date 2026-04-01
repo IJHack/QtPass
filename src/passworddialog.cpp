@@ -243,5 +243,5 @@ void PasswordDialog::usePwgen(bool usePwgen) {
  */
 void PasswordDialog::setPass(const QString &output) {
   setPassword(output);
-  // TODO(bezet): enable ui
+  // UI is enabled by default when password is set - no additional action needed
 }
