@@ -623,8 +623,8 @@ Static Public Member Functions</h2></td></tr>
 <p>Get saved dialog geometry. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>Unique identifier for the dialog (e.g., "configDialog"). </td></tr>
-    <tr><td class="paramname">defaultValue</td><td>Geometry returned if no geometry saved. </td></tr>
+    <tr><td class="paramname">key</td><td>Dialog identifier (e.g., "usersDialog"). </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>Byte array returned if not saved. </td></tr>
   </table>
   </dd>
 </dl>
@@ -678,8 +678,8 @@ Static Public Member Functions</h2></td></tr>
 <p>Get saved dialog position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>Unique identifier for the dialog. </td></tr>
-    <tr><td class="paramname">defaultValue</td><td>Position returned if no position saved. </td></tr>
+    <tr><td class="paramname">key</td><td>Dialog identifier. </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>Point returned if not saved. </td></tr>
   </table>
   </dd>
 </dl>
@@ -733,8 +733,8 @@ Static Public Member Functions</h2></td></tr>
 <p>Get saved dialog size. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>Unique identifier for the dialog. </td></tr>
-    <tr><td class="paramname">defaultValue</td><td>Size returned if no size saved. </td></tr>
+    <tr><td class="paramname">key</td><td>Dialog identifier. </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>Size returned if not saved. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1956,7 +1956,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Get dialog maximized state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>Unique identifier for the dialog. </td></tr>
+    <tr><td class="paramname">key</td><td>Dialog identifier. </td></tr>
     <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
   </table>
   </dd>
@@ -3232,8 +3232,8 @@ Static Public Member Functions</h2></td></tr>
 <p>Save dialog geometry. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>Unique identifier for the dialog. </td></tr>
-    <tr><td class="paramname">geometry</td><td>Geometry data to save. </td></tr>
+    <tr><td class="paramname">key</td><td>Dialog identifier. </td></tr>
+    <tr><td class="paramname">geometry</td><td>Dialog geometry to save. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3293,7 +3293,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Save dialog maximized state. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>Unique identifier for the dialog. </td></tr>
+    <tr><td class="paramname">key</td><td>Dialog identifier. </td></tr>
     <tr><td class="paramname">maximized</td><td>Maximized state to save. </td></tr>
   </table>
   </dd>
@@ -3354,8 +3354,8 @@ Static Public Member Functions</h2></td></tr>
 <p>Save dialog position. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>Unique identifier for the dialog. </td></tr>
-    <tr><td class="paramname">pos</td><td>Position to save. </td></tr>
+    <tr><td class="paramname">key</td><td>Dialog identifier. </td></tr>
+    <tr><td class="paramname">pos</td><td>Dialog position to save. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3415,8 +3415,8 @@ Static Public Member Functions</h2></td></tr>
 <p>Save dialog size. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td>Unique identifier for the dialog. </td></tr>
-    <tr><td class="paramname">size</td><td>Size to save. </td></tr>
+    <tr><td class="paramname">key</td><td>Dialog identifier. </td></tr>
+    <tr><td class="paramname">size</td><td>Dialog size to save. </td></tr>
   </table>
   </dd>
 </dl>
