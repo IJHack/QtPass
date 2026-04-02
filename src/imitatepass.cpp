@@ -578,6 +578,38 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
   return true;
 }
 
+/**
+ * @brief Create git backup commit before re-encryption.
+ * @return true if backup created or not needed, false if backup failed.
+ */
+auto ImitatePass::createBackupCommit() -> bool {
+  if (!QtPassSettings::isUseGit() ||
+      QtPassSettings::getGitExecutable().isEmpty()) {
+    return true;
+  }
+  emit statusMsg(tr("Creating backup commit"), 2000);
+  const QString git = QtPassSettings::getGitExecutable();
+  QString statusOut;
+  if (Executor::executeBlocking(git, {"status", "--porcelain"}, &statusOut) !=
+      0) {
+    emit critical(
+        tr("Backup commit failed"),
+        tr("Could not inspect git status. Re-encryption was aborted."));
+    return false;
+  }
+  if (!statusOut.trimmed().isEmpty()) {
+    if (Executor::executeBlocking(git, {"add", "-A"}) != 0 ||
+        Executor::executeBlocking(
+            git, {"commit", "-m", "Backup before re-encryption"}) != 0) {
+      emit critical(tr("Backup commit failed"),
+                    tr("Re-encryption was aborted because a git backup could "
+                       "not be created."));
+      return false;
+    }
+  }
+  return true;
+}
+
 void ImitatePass::reencryptPath(const QString &dir) {
   emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);
   emit startReencryptPath();
@@ -587,30 +619,9 @@ void ImitatePass::reencryptPath(const QString &dir) {
   }
 
   // Create backup before re-encryption - abort if it fails
-  if (QtPassSettings::isUseGit() &&
-      !QtPassSettings::getGitExecutable().isEmpty()) {
-    emit statusMsg(tr("Creating backup commit"), 2000);
-    const QString git = QtPassSettings::getGitExecutable();
-    QString statusOut;
-    if (Executor::executeBlocking(git, {"status", "--porcelain"}, &statusOut) !=
-        0) {
-      emit critical(
-          tr("Backup commit failed"),
-          tr("Could not inspect git status. Re-encryption was aborted."));
-      emit endReencryptPath();
-      return;
-    }
-    if (!statusOut.trimmed().isEmpty()) {
-      if (Executor::executeBlocking(git, {"add", "-A"}) != 0 ||
-          Executor::executeBlocking(
-              git, {"commit", "-m", "Backup before re-encryption"}) != 0) {
-        emit critical(tr("Backup commit failed"),
-                      tr("Re-encryption was aborted because a git backup could "
-                         "not be created."));
-        emit endReencryptPath();
-        return;
-      }
-    }
+  if (!createBackupCommit()) {
+    emit endReencryptPath();
+    return;
   }
 
   QDir currentDir;

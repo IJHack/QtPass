@@ -81,6 +81,11 @@ protected:
   auto verifyGpgIdForDir(const QString &file, QStringList &gpgIdFilesVerified,
                          QStringList &gpgId) -> bool;
   /**
+   * @brief Create git backup commit before re-encryption.
+   * @return true if backup created or not needed, false if backup failed.
+   */
+  auto createBackupCommit() -> bool;
+  /**
    * @brief Read recipients from file.
    * @param fileName Path to file.
    * @return List of key IDs.
