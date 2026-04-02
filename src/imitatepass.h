@@ -72,9 +72,14 @@ protected:
    * @param file File path to search from.
    * @param gpgIdFilesVerified List to accumulate verified files.
    * @param gpgId Output list of .gpg-id paths.
+   * @brief Verify .gpg-id file for a directory.
+   * @param file Password file path.
+   * @param gpgIdFilesVerified List of already verified .gpg-id files.
+   * @param gpgId Output parameter for recipient key IDs.
+   * @return true on success, false on failure.
    */
-  void verifyGpgIdForDir(const QString &file, QStringList &gpgIdFilesVerified,
-                         QStringList &gpgId);
+  auto verifyGpgIdForDir(const QString &file, QStringList &gpgIdFilesVerified,
+                         QStringList &gpgId) -> bool;
   /**
    * @brief Read recipients from file.
    * @param fileName Path to file.
