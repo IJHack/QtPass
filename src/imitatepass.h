@@ -85,9 +85,10 @@ protected:
    * @brief Re-encrypt single file with new recipients.
    * @param fileName File to re-encrypt.
    * @param recipients New recipient key IDs.
+   * @return true on success, false on failure.
    */
-  void reencryptSingleFile(const QString &fileName,
-                           const QStringList &recipients);
+  auto reencryptSingleFile(const QString &fileName,
+                           const QStringList &recipients) -> bool;
   /**
    * @brief Resolve destination for move operation.
    * @param src Source path.
