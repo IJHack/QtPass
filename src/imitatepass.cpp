@@ -530,6 +530,14 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
     QFile::remove(tempPath);
     return false;
   }
+  // Verify content matches original decrypted content (defense in depth)
+  if (verifyOutput.trimmed() != local_lastDecrypt.trimmed()) {
+#ifdef QT_DEBUG
+    dbg() << "Verification content mismatch for:" << tempPath;
+#endif
+    QFile::remove(tempPath);
+    return false;
+  }
 
   // Atomic replace with backup: rename original to .bak, rename temp to
   // original, then remove backup
@@ -545,8 +553,9 @@ auto ImitatePass::reencryptSingleFile(const QString &fileName,
 #ifdef QT_DEBUG
     dbg() << "Failed to rename temp file to:" << fileName;
 #endif
-    // Restore backup
+    // Restore backup and clean up temp file
     QFile::rename(backupPath, fileName);
+    QFile::remove(tempPath);
     emit critical(
         tr("Re-encryption failed"),
         tr("Failed to replace %1. Original has been restored.").arg(fileName));
