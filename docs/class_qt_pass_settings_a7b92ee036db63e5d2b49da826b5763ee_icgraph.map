@@ -1,18 +1,11 @@
 <map id="QtPassSettings::getPassSigningKey" name="QtPassSettings::getPassSigningKey">
-<area shape="rect" id="Node000001" title="Get GPG signing key for pass." alt="" coords="917,29,1167,54"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,7,138,33"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="957,29,869,19,659,9,452,9,138,19,138,14,452,4,659,4,870,13,958,24"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses." alt="" coords="703,29,831,54"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="903,44,831,44,831,39,903,39"/>
-<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" title="Verify .gpg&#45;id file exists and is valid." alt="" coords="665,78,869,103"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="957,59,839,81,838,75,957,54"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="455,29,598,54"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="691,78,589,57,590,52,692,73"/>
-<area shape="rect" id="Node000006" href="$class_imitate_pass.html#a36464da28e70c06e1bdb0b3a6b977103" title="Find .gpg&#45;id file for directory." alt="" coords="436,79,617,119"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="652,97,617,98,617,93,652,92"/>
-<area shape="rect" id="Node000007" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="192,57,388,82"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="422,89,388,84,388,79,423,83"/>
-<area shape="poly" id="edge8_Node000007_Node000002" title=" " alt="" coords="220,56,130,35,132,30,222,51"/>
-<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,57,144,82"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="178,72,144,72,144,67,178,67"/>
+<area shape="rect" id="Node000001" title="Get GPG signing key for pass." alt="" coords="448,55,697,80"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="235,5,361,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="487,55,361,32,362,27,488,50"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses." alt="" coords="234,55,362,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="434,70,362,70,362,65,434,65"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" title="Verify .gpg&#45;id file exists and is valid." alt="" coords="196,104,400,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="488,85,370,107,369,101,487,80"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="5,104,148,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="182,119,149,119,149,114,182,114"/>
 </map>

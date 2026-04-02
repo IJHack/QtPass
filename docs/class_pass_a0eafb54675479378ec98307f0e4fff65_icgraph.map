@@ -1,20 +1,15 @@
 <map id="Pass::critical" name="Pass::critical">
-<area shape="rect" id="Node000001" title="Emit critical error." alt="" coords="719,93,821,118"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,93,138,118"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="705,108,138,108,138,103,705,103"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="484,42,627,68"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="705,93,609,70,610,65,706,88"/>
-<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" title="Re&#45;encrypt single file with new recipients." alt="" coords="440,144,671,169"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="706,123,610,146,609,141,705,118"/>
-<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a36464da28e70c06e1bdb0b3a6b977103" title="Find .gpg&#45;id file for directory." alt="" coords="465,194,646,234"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="747,130,713,158,672,184,643,196,641,191,669,179,710,154,744,126"/>
-<area shape="rect" id="Node000008" href="$class_imitate_pass.html#ae65aff95459cee83b5b999f5a83fcac1" title="Write recipients to .gpg&#45;id file." alt="" coords="192,17,392,42"/>
-<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="746,85,712,55,692,42,670,32,630,21,589,14,505,8,427,12,360,20,360,14,426,6,505,3,589,8,631,16,672,27,694,37,716,51,750,81"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="194,144,390,169"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="426,159,390,159,390,154,426,154"/>
-<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="223,143,129,121,130,116,224,138"/>
-<area shape="rect" id="Node000006" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,144,144,169"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="180,159,144,159,144,154,180,154"/>
-<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="451,194,351,172,352,166,452,188"/>
-<area shape="poly" id="edge10_Node000008_Node000002" title=" " alt="" coords="243,49,113,95,111,90,241,44"/>
+<area shape="rect" id="Node000001" title="Emit critical error." alt="" coords="440,61,543,86"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,85,138,110"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="459,56,427,39,391,25,336,13,292,8,248,12,193,25,163,37,135,54,92,87,88,82,132,49,160,33,191,20,247,7,292,3,337,8,393,20,430,34,462,51"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="221,36,363,61"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="426,68,363,60,364,55,427,63"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="194,134,390,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="456,95,393,124,352,137,351,132,391,119,454,90"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#ae65aff95459cee83b5b999f5a83fcac1" title="Write recipients to .gpg&#45;id file." alt="" coords="192,85,392,110"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="427,84,392,88,392,83,426,79"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="222,134,131,113,132,108,223,129"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,134,144,160"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="180,150,144,150,144,144,180,144"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="178,100,139,100,139,95,178,95"/>
 </map>

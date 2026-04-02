@@ -34,8 +34,9 @@ var searchData=
   ['copy_31',['copy',['../class_real_pass.html#a640ea218267605b9ca78c21ca5677690',1,'RealPass::Copy()'],['../class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49',1,'Pass::Copy()'],['../class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a',1,'ImitatePass::Copy()']]],
   ['copytexttoclipboard_32',['copyTextToClipboard',['../class_qt_pass.html#acba134fb5281aedee11899a03976aa95',1,'QtPass']]],
   ['covenant_20code_20of_20conduct_33',['Contributor Covenant Code of Conduct',['../md__c_o_d_e___o_f___c_o_n_d_u_c_t.html',1,'']]],
-  ['created_34',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]],
-  ['createqrcodepopup_35',['createQRCodePopup',['../class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d',1,'QtPass']]],
-  ['critical_36',['critical',['../class_pass.html#a0eafb54675479378ec98307f0e4fff65',1,'Pass::critical()'],['../class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842',1,'MainWindow::critical()']]],
-  ['custom_37',['CUSTOM',['../struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173af35fc83c482c602e7e5039fad8e97f3a',1,'PasswordConfiguration']]]
+  ['createbackupcommit_34',['createBackupCommit',['../class_imitate_pass.html#a086365ec85674590afbd883df0b27a80',1,'ImitatePass']]],
+  ['created_35',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]],
+  ['createqrcodepopup_36',['createQRCodePopup',['../class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d',1,'QtPass']]],
+  ['critical_37',['critical',['../class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842',1,'MainWindow::critical()'],['../class_pass.html#a0eafb54675479378ec98307f0e4fff65',1,'Pass::critical()']]],
+  ['custom_38',['CUSTOM',['../struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173af35fc83c482c602e7e5039fad8e97f3a',1,'PasswordConfiguration']]]
 ];

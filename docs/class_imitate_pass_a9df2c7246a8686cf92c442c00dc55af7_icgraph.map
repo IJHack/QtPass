@@ -1,12 +1,9 @@
 <map id="ImitatePass::endReencryptPath" name="ImitatePass::endReencryptPath">
-<area shape="rect" id="Node000001" title="Emitted after finishing re&#45;encryption." alt="" coords="665,31,889,56"/>
+<area shape="rect" id="Node000001" title="Emitted after finishing re&#45;encryption." alt="" coords="436,31,660,56"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="192,31,388,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="651,43,617,42,436,42,388,43,388,38,436,37,617,37,652,37"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a36464da28e70c06e1bdb0b3a6b977103" title="Find .gpg&#45;id file for directory." alt="" coords="436,51,617,91"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="652,60,618,64,617,59,651,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="422,46,388,46,388,41,422,41"/>
 <area shape="rect" id="Node000003" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,5,144,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="178,33,144,29,145,23,178,28"/>
 <area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,55,138,80"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="178,58,138,63,138,58,178,53"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="422,62,388,58,388,52,423,56"/>
 </map>

@@ -1,18 +1,7 @@
 <map id="Pass::getRecipientList" name="Pass::getRecipientList">
-<area shape="rect" id="Node000001" title="Get list of recipients for a password file." alt="" coords="715,80,879,105"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#ae1f31c62b7117b99882625dbef654533" title="Get recipients as string." alt="" coords="462,5,641,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="753,77,666,45,622,33,623,28,667,39,755,72"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="480,55,623,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="701,85,623,77,623,72,701,80"/>
-<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" title="Re&#45;encrypt single file with new recipients." alt="" coords="436,104,667,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="701,105,667,108,667,103,701,99"/>
-<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a36464da28e70c06e1bdb0b3a6b977103" title="Find .gpg&#45;id file for directory." alt="" coords="461,154,642,194"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="752,113,668,143,625,157,623,151,666,138,750,108"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="192,133,388,159"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="425,134,388,138,388,132,424,128"/>
-<area shape="rect" id="Node000006" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,108,144,133"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="178,135,144,131,145,126,178,130"/>
-<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,157,138,183"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="178,161,138,166,138,160,178,156"/>
-<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="447,166,388,159,389,154,448,160"/>
+<area shape="rect" id="Node000001" title="Get list of recipients for a password file." alt="" coords="232,31,396,56"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ae1f31c62b7117b99882625dbef654533" title="Get recipients as string." alt="" coords="5,5,184,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,35,184,31,184,26,219,30"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="23,55,166,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,56,166,62,166,57,218,51"/>
 </map>

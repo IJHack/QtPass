@@ -28,7 +28,7 @@
 <area shape="poly" id="edge25_Node000001_Node000022" title=" " alt="" coords="1079,518,1057,553,1025,595,986,637,940,672,915,684,888,691,887,686,913,679,937,668,982,633,1021,592,1052,550,1075,516"/>
 <area shape="rect" id="Node000023" href="$class_real_pass.html#ad9f71cf753e5fce4772bec086237d033" title="Move password file or directory." alt="" coords="771,731,895,756"/>
 <area shape="poly" id="edge28_Node000001_Node000023" title=" " alt="" coords="1083,519,1064,564,1033,619,992,675,967,700,940,722,919,733,896,740,894,735,917,728,937,717,964,696,988,671,1028,616,1059,561,1079,517"/>
-<area shape="rect" id="Node000024" href="$class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" title="Re&#45;encrypt single file with new recipients." alt="" coords="448,595,679,620"/>
+<area shape="rect" id="Node000024" href="$class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c" title="Re&#45;encrypt single file with new recipients." alt="" coords="448,595,679,620"/>
 <area shape="poly" id="edge29_Node000001_Node000024" title=" " alt="" coords="1061,515,1005,545,939,571,873,587,805,598,679,609,679,603,805,593,872,582,938,566,1003,540,1058,510"/>
 <area shape="rect" id="Node000025" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="Remove password." alt="" coords="753,780,913,805"/>
 <area shape="poly" id="edge31_Node000001_Node000025" title=" " alt="" coords="1087,519,1070,573,1041,641,998,711,971,743,940,771,914,785,911,780,937,766,967,740,994,708,1036,639,1065,571,1082,518"/>
@@ -52,7 +52,7 @@
 <area shape="rect" id="Node000014" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="192,423,400,448"/>
 <area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="452,438,400,438,400,433,452,433"/>
 <area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="751,531,631,508,632,503,752,525"/>
-<area shape="rect" id="Node000017" href="$class_imitate_pass.html#a36464da28e70c06e1bdb0b3a6b977103" title="Find .gpg&#45;id file for directory." alt="" coords="473,530,654,570"/>
+<area shape="rect" id="Node000017" href="$class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" title="Find .gpg&#45;id file for directory." alt="" coords="473,530,654,570"/>
 <area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="746,548,654,550,654,545,745,543"/>
 <area shape="rect" id="Node000018" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="198,565,394,591"/>
 <area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="459,564,394,570,394,565,458,558"/>

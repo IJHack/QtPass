@@ -318,7 +318,7 @@ var sectionId = 'dynsection-18';
 <!-- Node24 -->
 <g id="Node000024" class="node">
 <title>Node24</title>
-<g id="a_Node000024"><a xlink:href="class_imitate_pass.html#a707169592f98af60288e8df8a54f1230" target="_top" xlink:title="Re&#45;encrypt single file with new recipients.">
+<g id="a_Node000024"><a xlink:href="class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c" target="_top" xlink:title="Re&#45;encrypt single file with new recipients.">
 <polygon fill="white" stroke="#666666" points="505,-269 332,-269 332,-250 505,-250 505,-269"/>
 <text text-anchor="middle" x="418.5" y="-257" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::reencryptSingleFile</text>
 </a>
@@ -535,7 +535,7 @@ var sectionId = 'dynsection-18';
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="class_imitate_pass.html#a36464da28e70c06e1bdb0b3a6b977103" target="_top" xlink:title="Find .gpg&#45;id file for directory.">
+<g id="a_Node000017"><a xlink:href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" target="_top" xlink:title="Find .gpg&#45;id file for directory.">
 <polygon fill="white" stroke="#666666" points="486.5,-317.5 350.5,-317.5 350.5,-287.5 486.5,-287.5 486.5,-317.5"/>
 <text text-anchor="start" x="358.5" y="-305.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::verifyGpgId</text>
 <text text-anchor="middle" x="418.5" y="-294.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForDir</text>
