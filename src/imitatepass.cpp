@@ -635,8 +635,6 @@ void ImitatePass::reencryptPath(const QString &dir) {
     QString fileName = gpgFiles.next();
     if (gpgFiles.fileInfo().path() != currentDir.path()) {
       if (!verifyGpgIdForDir(fileName, gpgIdFilesVerified, gpgId)) {
-        emit critical(tr("GPG ID verification failed"),
-                      tr("Could not verify .gpg-id for directory."));
         emit endReencryptPath();
         return;
       }
