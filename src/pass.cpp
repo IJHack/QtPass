@@ -204,8 +204,15 @@ QString Pass::getDefaultKeyTemplate() {
  * @param batch GnuPG style configuration string
  */
 void Pass::GenerateGPGKeys(QString batch) {
-  executeWrapper(GPG_GENKEYS, QtPassSettings::getGpgExecutable(),
-                 {"--gen-key", "--no-tty", "--batch"}, std::move(batch));
+  // Kill any stale GPG agents that might be holding locks on the key database
+  // This helps avoid "database locked" timeouts during key generation
+  QString gpgPath = QtPassSettings::getGpgExecutable();
+  if (!gpgPath.isEmpty()) {
+    Executor::executeBlocking(gpgPath, {"gpgconf", "--kill", "gpg-agent"});
+  }
+
+  executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},
+                 std::move(batch));
 }
 
 /**
