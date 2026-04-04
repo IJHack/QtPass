@@ -1,8 +1,10 @@
 <map id="Pass::GenerateGPGKeys" name="Pass::GenerateGPGKeys">
-<area shape="rect" id="Node000001" title="Generate GPG keys using batch script." alt="" coords="5,55,184,80"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="272,29,437,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,56,258,49,259,54,184,61"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="232,79,477,104"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="184,73,218,76,218,81,184,78"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="313,31,304,21,308,11,326,5,355,3,391,7,401,11,405,17,401,20,398,15,390,12,355,8,327,10,312,15,309,20,317,27"/>
+<area shape="rect" id="Node000001" title="Generate GPG keys using batch script." alt="" coords="5,79,184,104"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="258,5,451,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,76,231,39,266,31,267,36,233,45,128,81"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="272,79,437,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,89,258,89,258,94,184,94"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="232,128,477,153"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="163,101,274,123,273,128,162,107"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="313,80,304,70,308,60,326,54,355,52,391,56,401,61,405,66,401,69,398,65,390,61,355,57,327,59,312,64,309,70,317,77"/>
 </map>
