@@ -373,7 +373,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="189"/>
         <location filename="../src/configdialog.cpp" line="204"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>See väli on kohustuslik</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="579"/>
@@ -1474,17 +1474,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="270"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[VIGANE] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="273"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[AEGUNUD] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="277"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[OSALINE] </translation>
     </message>
 </context>
 </TS>

@@ -351,7 +351,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="189"/>
         <location filename="../src/configdialog.cpp" line="204"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>Это поле обязательно к заполнению</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="580"/>
@@ -475,12 +475,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Сгенерировать</translation>
+        <translation>Сгенерировать</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Сгенерировать пару ключей GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="765"/>
@@ -500,7 +500,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дополнительно: GPG ключ для подписания файлов .gpg-id для проверки целостности. Оставьте поле пустым, если вам не нужно защищать список пользователей от несанкционированного доступа.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -636,7 +636,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Содержимое шаблона будет установлено на основе версии GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1040,12 +1040,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="456"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Код OTP скопирован в буфер обмена</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="458"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>В этом пароле не найден код OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="687"/>
@@ -1060,7 +1060,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="727"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль для генерации OTP не выбран</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="972"/>
@@ -1091,7 +1091,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1062"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось создать файл .gpg-id в: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
@@ -1262,12 +1262,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="304"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось создать ключевую пару GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="378"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>Ключевая пара GPG успешно сгенерирована</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="463"/>
