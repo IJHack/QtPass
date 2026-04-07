@@ -10,5 +10,6 @@ var searchData=
   ['path_7',['path',['../structdrag_and_drop_info_password_store.html#ac3d6eb02633ddfd1a290cbaf27ca5390',1,'dragAndDropInfoPasswordStore']]],
   ['pos_8',['pos',['../class_settings_constants.html#a80121ec23fe903e42cb557a1725bc0f6',1,'SettingsConstants']]],
   ['profile_9',['profile',['../class_settings_constants.html#a8ed5c3840acb4b3ec4f80010bfc95752',1,'SettingsConstants']]],
-  ['pwgenexecutable_10',['pwgenExecutable',['../class_settings_constants.html#a2e5906837f972ba26da95b17a299a3ba',1,'SettingsConstants']]]
+  ['program_10',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
+  ['pwgenexecutable_11',['pwgenExecutable',['../class_settings_constants.html#a2e5906837f972ba26da95b17a299a3ba',1,'SettingsConstants']]]
 ];

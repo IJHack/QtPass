@@ -144,6 +144,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae7d1bf72e67a3e7217747e8944bf8786" id="r_ae7d1bf72e67a3e7217747e8944bf8786"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#ae7d1bf72e67a3e7217747e8944bf8786">executeBlocking</a> (QString app, const QStringList &amp;args, QString *process_out, QString *process_err=nullptr) -&gt; int</td></tr>
 <tr class="memdesc:ae7d1bf72e67a3e7217747e8944bf8786"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">Executor::executeBlocking</a> blocking version of the executor.  <br /></td></tr>
 <tr class="separator:ae7d1bf72e67a3e7217747e8944bf8786"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eeaed5ce0f28a02fba08d9054213e0f" id="r_a3eeaed5ce0f28a02fba08d9054213e0f"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_executor.html#a3eeaed5ce0f28a02fba08d9054213e0f">executeBlocking</a> (const QStringList &amp;env, QString app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
+<tr class="memdesc:a3eeaed5ce0f28a02fba08d9054213e0f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">Executor::executeBlocking</a> blocking version with custom environment.  <br /></td></tr>
+<tr class="separator:a3eeaed5ce0f28a02fba08d9054213e0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>id Identifier provided by the caller for this queued request. </p>
@@ -242,7 +245,7 @@ Static Public Member Functions</h2></td></tr>
 <p><a class="el" href="class_executor.html#aee160ee2ec954bdb58a3a38555536090" title="Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running.">Executor::cancelNext</a> cancels execution of first process in queue if it's not already running. </p>
 <dl class="section return"><dt>Returns</dt><dd>id of the cancelled process or -1 on error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00290">290</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00331">331</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -608,8 +611,77 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a3eeaed5ce0f28a02fba08d9054213e0f" name="a3eeaed5ce0f28a02fba08d9054213e0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eeaed5ce0f28a02fba08d9054213e0f">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::executeBlocking </td>
+          <td>(</td>
+          <td class="paramtype">const QStringList &amp;&#160;</td>
+          <td class="paramname"><em>env</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString&#160;</td>
+          <td class="paramname"><em>app</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QStringList &amp;&#160;</td>
+          <td class="paramname"><em>args</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *&#160;</td>
+          <td class="paramname"><em>process_out</em> = <code>nullptr</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString *&#160;</td>
+          <td class="paramname"><em>process_err</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> -&gt; int</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">Executor::executeBlocking</a> blocking version with custom environment. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">env</td><td>Environment variables to set </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path </td></tr>
+    <tr><td class="paramname">args</td><td>Arguments </td></tr>
+    <tr><td class="paramname">process_out</td><td>Standard output </td></tr>
+    <tr><td class="paramname">process_err</td><td>Standard error </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Exit code </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00284">284</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a2673768d875e9207a6a178dd1a489828" name="a2673768d875e9207a6a178dd1a489828"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2673768d875e9207a6a178dd1a489828">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a2673768d875e9207a6a178dd1a489828">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -686,7 +758,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <a id="ae7d1bf72e67a3e7217747e8944bf8786" name="ae7d1bf72e67a3e7217747e8944bf8786"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae7d1bf72e67a3e7217747e8944bf8786">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7d1bf72e67a3e7217747e8944bf8786">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -830,7 +902,7 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00280">280</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00321">321</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 <div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">

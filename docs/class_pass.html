@@ -227,6 +227,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae3284a937d0ca8ae2ea2d81ec556c37b" id="r_ae3284a937d0ca8ae2ea2d81ec556c37b"><td class="memItemLeft" align="right" valign="top">static QString&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b">getDefaultKeyTemplate</a> ()</td></tr>
 <tr class="memdesc:ae3284a937d0ca8ae2ea2d81ec556c37b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get default key template for new GPG keys.  <br /></td></tr>
 <tr class="separator:ae3284a937d0ca8ae2ea2d81ec556c37b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a9aa8dc4ff288ce256351b671533a84" id="r_a6a9aa8dc4ff288ce256351b671533a84"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a6a9aa8dc4ff288ce256351b671533a84">resolveGpgconfCommand</a> (const QString &amp;gpgPath) -&gt; <a class="el" href="struct_resolved_gpgconf_command.html">ResolvedGpgconfCommand</a></td></tr>
+<tr class="memdesc:a6a9aa8dc4ff288ce256351b671533a84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the gpgconf command to kill agents.  <br /></td></tr>
+<tr class="separator:a6a9aa8dc4ff288ce256351b671533a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bab4c97e4a327cc34060a67c09959bf" id="r_a7bab4c97e4a327cc34060a67c09959bf"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">getGpgIdPath</a> (const QString &amp;for_file) -&gt; QString</td></tr>
 <tr class="memdesc:a7bab4c97e4a327cc34060a67c09959bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get .gpg-id file path for a password file.  <br /></td></tr>
 <tr class="separator:a7bab4c97e4a327cc34060a67c09959bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -278,7 +281,7 @@ Protected Attributes</h2></td></tr>
 </ul>
 <p>Subclasses must implement Git and password operations. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00029">29</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00035">35</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2e71b5174b4ef25a1e91d8c56177b772" name="a2e71b5174b4ef25a1e91d8c56177b772"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2e71b5174b4ef25a1e91d8c56177b772">&#9670;&#160;</a></span>PROCESS</h2>
@@ -300,7 +303,7 @@ Protected Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00038">38</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00044">44</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -323,7 +326,7 @@ Protected Attributes</h2></td></tr>
 <p>Construct a <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance. </p>
 <p><a class="el" href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance.">Pass::Pass</a> wrapper for using either pass or the pass imitation. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00031">31</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00033">33</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -401,7 +404,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Random number in range [0, bound) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00459">459</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00528">528</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 
 </div>
 </div>
@@ -609,7 +612,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00054">54</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00056">56</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -700,7 +703,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00060">60</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00062">62</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -777,7 +780,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00294">294</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00363">363</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
@@ -1372,13 +1375,13 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00206">206</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00270">270</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a0c29f7bd4ca235d00d9dac6a37e14f4f_cgraph.svg" width="483" height="159"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a0c29f7bd4ca235d00d9dac6a37e14f4f_cgraph.svg" width="483" height="208"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1436,7 +1439,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the password </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00097">97</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00099">99</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
@@ -1500,7 +1503,7 @@ Protected Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Generated password string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00480">480</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00549">549</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 
 </div>
 </div>
@@ -1533,7 +1536,7 @@ Protected Attributes</h2></td></tr>
 <dd>
 GPG batch template string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00175">175</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00177">177</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
@@ -1592,7 +1595,7 @@ GPG batch template string </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>path to the gpgid file. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00389">389</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00458">458</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary" style="display:block;">
@@ -1651,7 +1654,7 @@ GPG batch template string </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>recipients gpg-id contents </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00418">418</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00487">487</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary" style="display:block;">
@@ -1723,7 +1726,7 @@ GPG batch template string </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>recipient string </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00441">441</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00510">510</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary" style="display:block;">
@@ -1879,7 +1882,7 @@ GPG batch template string </dd></dl>
 <dd>
 true if ed25519 is supported </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00154">154</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00156">156</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-28-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-28-summary" class="dynsummary" style="display:block;">
@@ -1915,7 +1918,7 @@ true if ed25519 is supported </dd></dl>
 <p>Initialize the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance. </p>
 <p>Initializes the pass wrapper environment. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00073">73</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00075">75</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-30-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-30-summary" class="dynsummary" style="display:block;">
@@ -2072,7 +2075,7 @@ true if ed25519 is supported </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QList&lt;UserInfo&gt; users </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00280">280</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00349">349</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 
 </div>
 </div>
@@ -2121,7 +2124,7 @@ true if ed25519 is supported </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QList&lt;UserInfo&gt; users </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00224">224</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00293">293</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-31-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary" style="display:block;">
@@ -2314,6 +2317,50 @@ true if ed25519 is supported </dd></dl>
 
 </div>
 </div>
+<a id="a6a9aa8dc4ff288ce256351b671533a84" name="a6a9aa8dc4ff288ce256351b671533a84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a9aa8dc4ff288ce256351b671533a84">&#9670;&#160;</a></span>resolveGpgconfCommand()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Pass::resolveGpgconfCommand </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>gpgPath</em></td><td>)</td>
+          <td> -&gt; <a class="el" href="struct_resolved_gpgconf_command.html">ResolvedGpgconfCommand</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resolve the gpgconf command to kill agents. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpgPath</td><td>Path to gpg executable. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Resolved command with program and arguments. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00204">204</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-33-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a6a9aa8dc4ff288ce256351b671533a84_icgraph.svg" width="466" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a6520ffa669cd7934091934b24593d99c" name="a6520ffa669cd7934091934b24593d99c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6520ffa669cd7934091934b24593d99c">&#9670;&#160;</a></span>Show()</h2>
 
@@ -2374,11 +2421,11 @@ true if ed25519 is supported </dd></dl>
 </div><div class="memdoc">
 
 <p>Emitted before executing a command. </p>
-<div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-33-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-33-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-34-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a0345d3ffdb213234031e9c84fe8ca7c6_icgraph.svg" width="362" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -2426,11 +2473,11 @@ true if ed25519 is supported </dd></dl>
   </table>
   </dd>
 </dl>
-<div id="dynsection-34" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-34-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-35-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_a404664f7d589a307c9223c373b2622c3_icgraph.svg" width="568" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -2454,12 +2501,12 @@ true if ed25519 is supported </dd></dl>
 <p>Update environment for subprocesses. </p>
 <p><a class="el" href="class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses.">Pass::updateEnv</a> update the execution environment (used when switching profiles) </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00347">347</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-35-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00416">416</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-36" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-36-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-35-content" class="dyncontent" style="display:none;">
+<div id="dynsection-36-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="class_pass_ac679a086b289cdb9245906948ba0458a_cgraph.svg" width="436" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -2486,7 +2533,7 @@ true if ed25519 is supported </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00036">36</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00042">42</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
