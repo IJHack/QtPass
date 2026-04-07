@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [ ! -d "artwork" ]; then
+	echo "Error: required directory 'artwork' does not exist." >&2
+	exit 1
+fi
+
 (
 	cd artwork
 	cp icon.png qtpass-icon.png
