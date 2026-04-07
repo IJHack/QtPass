@@ -1,0 +1,159 @@
+// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+#include <QtTest>
+
+#include "../../../src/gpgkeystate.h"
+#include "../../../src/userinfo.h"
+
+class tst_gpgkeystate : public QObject {
+  Q_OBJECT
+
+private Q_SLOTS:
+  void parseMultiKeyPublic();
+  void parseMultiKeyPublic_data();
+  void parseSecretKeys();
+  void parseSecretKeys_data();
+  void parseSingleKey();
+  void parseSingleKey_data();
+  void parseKeyRollover();
+  void parseKeyRollover_data();
+  void classifyRecordTypes();
+};
+
+void tst_gpgkeystate::parseMultiKeyPublic() {
+  QFETCH(QString, input);
+  QFETCH(int, expectedCount);
+
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+
+  QVERIFY2(result.size() == expectedCount,
+           qPrintable(QString("Expected %1 keys, got %2")
+                          .arg(expectedCount, result.size())));
+
+  for (const UserInfo &user : result) {
+    QVERIFY2(user.have_secret == false,
+             "Public keys should not have secret capability");
+  }
+}
+
+void tst_gpgkeystate::parseMultiKeyPublic_data() {
+  QTest::addColumn<QString>("input");
+  QTest::addColumn<int>("expectedCount");
+
+  QString input = R"(tru::1:1775005973:0:3:1:5
+pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA::::::23::0:
+fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:
+uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Anne Jan Brouwer <henk@annejan.com>::::::::::0:
+sub:u:4096:1:6DF67C6BAD8383CB:1774947438::::::esa::::::23:
+pub:f:4096:1:693A0AF3FA364E76:1775005968:::f:::escarESCA::::::23::0:
+fpr:::::::::4EF2550F79F4E9E68B09F71D693A0AF3FA364E76:
+uid:f::::1775005968::8AA011711F27F6E08DF71653718C299A13B323A0::Harrie de Bot <harrie@annejan.com>::::::::::0:)";
+
+  QTest::newRow("two-public-keys") << input << 2;
+}
+
+void tst_gpgkeystate::parseSecretKeys() {
+  QFETCH(QString, input);
+  QFETCH(int, expectedCount);
+  QFETCH(bool, expectHaveSecret);
+
+  QList<UserInfo> result = parseGpgColonOutput(input, true);
+
+  QVERIFY2(result.size() == expectedCount,
+           qPrintable(QString("Expected %1 keys, got %2")
+                          .arg(expectedCount, result.size())));
+
+  if (expectedCount > 0) {
+    QVERIFY(!result.isEmpty());
+    QVERIFY(result.first().have_secret == expectHaveSecret);
+  }
+}
+
+void tst_gpgkeystate::parseSecretKeys_data() {
+  QTest::addColumn<QString>("input");
+  QTest::addColumn<int>("expectedCount");
+  QTest::addColumn<bool>("expectHaveSecret");
+
+  QString input =
+      R"(sec:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA:::+:::23::0:
+fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:
+uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Anne Jan Brouwer <henk@annejan.com>::::::::::0:
+ssb:u:4096:1:6DF67C6BAD8383CB:1774947438::::::esa:::+:::23:)";
+
+  QTest::newRow("single-secret-key") << input << 1 << true;
+}
+
+void tst_gpgkeystate::parseSingleKey() {
+  QFETCH(QString, input);
+  QFETCH(int, expectedCount);
+
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QVERIFY2(result.size() == expectedCount,
+           qPrintable(QString("Expected %1 keys, got %2")
+                          .arg(expectedCount, result.size())));
+
+  if (result.size() > 0) {
+    QVERIFY2(!result.first().key_id.isEmpty(),
+             "Parsed key should have a key_id");
+  }
+}
+
+void tst_gpgkeystate::parseSingleKey_data() {
+  QTest::addColumn<QString>("input");
+  QTest::addColumn<int>("expectedCount");
+
+  QTest::newRow("pub-only")
+      << "pub:u:4096:1:ABC123:1774947438:::u::::::23::0:" << 1;
+  QTest::newRow("pub-with-fpr") << "pub:u:4096:1:ABC123:1774947438:::u::::::23:"
+                                   ":0:\nfpr:::::::::FINGERPRINT123456789:"
+                                << 1;
+}
+
+void tst_gpgkeystate::parseKeyRollover() {
+  QFETCH(QString, input);
+  QFETCH(int, expectedCount);
+
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QVERIFY2(result.size() == expectedCount,
+           qPrintable(QString("Expected %1 keys, got %2")
+                          .arg(expectedCount, result.size())));
+}
+
+void tst_gpgkeystate::parseKeyRollover_data() {
+  QTest::addColumn<QString>("input");
+  QTest::addColumn<int>("expectedCount");
+
+  QString input = R"(pub:u:4096:1:AAA111:1774947438:::u::::
+fpr:::::::::AAA111FINGERPRINT:
+uid:u::::1774947438::NAME1::user1@test.com:::::::0:
+pub:u:4096:1:BBB222:1774947438:::u::::
+fpr:::::::::BBB222FINGERPRINT:
+uid:u::::1774947438::NAME2::user2@test.com:::::::0:
+pub:u:4096:1:CCC333:1774947438:::u::::
+fpr:::::::::CCC333FINGERPRINT:
+uid:u::::1774947438::NAME3::user3@test.com:::::::0:)";
+
+  QTest::newRow("three-keys-rollover") << input << 3;
+}
+
+void tst_gpgkeystate::classifyRecordTypes() {
+  QVERIFY2(classifyRecord("pub") == GpgRecordType::Pub,
+           "Should classify pub record");
+  QVERIFY2(classifyRecord("sec") == GpgRecordType::Sec,
+           "Should classify sec record");
+  QVERIFY2(classifyRecord("uid") == GpgRecordType::Uid,
+           "Should classify uid record");
+  QVERIFY2(classifyRecord("fpr") == GpgRecordType::Fpr,
+           "Should classify fpr record");
+  QVERIFY2(classifyRecord("sub") == GpgRecordType::Sub,
+           "Should classify sub record");
+  QVERIFY2(classifyRecord("ssb") == GpgRecordType::Ssb,
+           "Should classify ssb record");
+  QVERIFY2(classifyRecord("grp") == GpgRecordType::Grp,
+           "Should classify grp record");
+  QVERIFY2(classifyRecord("unknown") == GpgRecordType::Unknown,
+           "Should classify unknown record types as Unknown");
+}
+
+QTEST_MAIN(tst_gpgkeystate)
+#include "tst_gpgkeystate.moc"

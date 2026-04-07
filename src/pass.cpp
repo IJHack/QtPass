@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
+#include "gpgkeystate.h"
 #include "helpers.h"
 #include "qtpasssettings.h"
 #include "util.h"
@@ -307,7 +308,6 @@ void Pass::GenerateGPGKeys(QString batch) {
  * @return QList<UserInfo> users
  */
 auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
-  QList<UserInfo> users;
   QStringList args = {"--no-tty", "--with-colons", "--with-fingerprint"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
 
@@ -319,57 +319,9 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
   QString p_out;
   if (Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args,
                                 &p_out) != 0) {
-    return users;
+    return QList<UserInfo>();
   }
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
-  const QStringList keys =
-      p_out.split(Util::newLinesRegex(), Qt::SkipEmptyParts);
-#else
-  const QStringList keys =
-      p_out.split(Util::newLinesRegex(), QString::SkipEmptyParts);
-#endif
-  UserInfo current_user;
-  constexpr int GPG_MIN_FIELDS = 10; // at least 10 fields to use index 9
-  constexpr int GPG_FIELD_VALIDITY = 1;
-  constexpr int GPG_FIELD_KEY_ID = 4;
-  constexpr int GPG_FIELD_CREATED = 5;
-  constexpr int GPG_FIELD_EXPIRY = 6;
-  constexpr int GPG_FIELD_USERID = 9;
-  for (const QString &key : keys) {
-    QStringList props = key.split(':');
-    if (props.size() < GPG_MIN_FIELDS) {
-      continue;
-    }
-    if (props[0] == (secret ? "sec" : "pub")) {
-      if (!current_user.key_id.isEmpty()) {
-        users.append(current_user);
-      }
-      current_user = UserInfo();
-      current_user.key_id = props[GPG_FIELD_KEY_ID];
-      current_user.name = props[GPG_FIELD_USERID].toUtf8();
-      current_user.validity = props[GPG_FIELD_VALIDITY][0].toLatin1();
-      bool okCreated = false;
-      const qint64 createdSecs =
-          props[GPG_FIELD_CREATED].toLongLong(&okCreated);
-      if (okCreated) {
-        current_user.created.setSecsSinceEpoch(createdSecs);
-      }
-      bool okExpiry = false;
-      const qint64 expirySecs = props[GPG_FIELD_EXPIRY].toLongLong(&okExpiry);
-      if (okExpiry) {
-        current_user.expiry.setSecsSinceEpoch(expirySecs);
-      }
-    } else if (current_user.name.isEmpty() && props[0] == "uid") {
-      current_user.name = props[GPG_FIELD_USERID];
-    } else if ((props[0] == "fpr") &&
-               props[GPG_FIELD_USERID].endsWith(current_user.key_id)) {
-      current_user.key_id = props[GPG_FIELD_USERID];
-    }
-  }
-  if (!current_user.key_id.isEmpty()) {
-    users.append(current_user);
-  }
-  return users;
+  return parseGpgColonOutput(p_out, secret);
 }
 
 /**
