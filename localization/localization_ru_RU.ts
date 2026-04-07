@@ -1417,7 +1417,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="270"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[НЕДЕЙСТВИТЕЛЕН] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="273"/>
