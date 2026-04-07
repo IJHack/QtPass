@@ -5,6 +5,7 @@
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QDir>
+#include <QFileInfo>
 #include <QRandomGenerator>
 #include <QRegularExpression>
 #include <utility>
@@ -208,7 +209,14 @@ void Pass::GenerateGPGKeys(QString batch) {
   // This helps avoid "database locked" timeouts during key generation
   QString gpgPath = QtPassSettings::getGpgExecutable();
   if (!gpgPath.isEmpty()) {
-    Executor::executeBlocking("gpgconf", {"--kill", "gpg-agent"});
+    QFileInfo gpgInfo(gpgPath);
+    QString gpgconfPath =
+        gpgInfo.absolutePath() + QDir::separator() + "gpgconf";
+    if (!QFileInfo::exists(gpgconfPath) ||
+        !QFileInfo(gpgconfPath).isExecutable()) {
+      gpgconfPath = "gpgconf";
+    }
+    Executor::executeBlocking(gpgconfPath, {"--kill", "gpg-agent"});
   }
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},
