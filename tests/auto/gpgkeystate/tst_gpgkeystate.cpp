@@ -24,7 +24,8 @@ void tst_gpgkeystate::parseMultiKeyPublic() {
   QFETCH(QString, input);
   QFETCH(int, expectedCount);
 
-  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  const bool includeSecretKeys = false;
+  QList<UserInfo> result = parseGpgColonOutput(input, includeSecretKeys);
 
   QVERIFY2(result.size() == expectedCount,
            qPrintable(QString("Expected %1 keys, got %2")
@@ -58,7 +59,8 @@ void tst_gpgkeystate::parseSecretKeys() {
   QFETCH(int, expectedCount);
   QFETCH(bool, expectHaveSecret);
 
-  QList<UserInfo> result = parseGpgColonOutput(input, true);
+  const bool includeSecretKeys = true;
+  QList<UserInfo> result = parseGpgColonOutput(input, includeSecretKeys);
 
   QVERIFY2(result.size() == expectedCount,
            qPrintable(QString("Expected %1 keys, got %2")
@@ -97,7 +99,8 @@ void tst_gpgkeystate::parseSingleKey() {
   QFETCH(QString, input);
   QFETCH(int, expectedCount);
 
-  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  const bool includeSecretKeys = false;
+  QList<UserInfo> result = parseGpgColonOutput(input, includeSecretKeys);
   QVERIFY2(result.size() == expectedCount,
            qPrintable(QString("Expected %1 keys, got %2")
                           .arg(expectedCount)
@@ -124,7 +127,8 @@ void tst_gpgkeystate::parseKeyRollover() {
   QFETCH(QString, input);
   QFETCH(int, expectedCount);
 
-  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  const bool includeSecretKeys = false;
+  QList<UserInfo> result = parseGpgColonOutput(input, includeSecretKeys);
   QVERIFY2(result.size() == expectedCount,
            qPrintable(QString("Expected %1 keys, got %2")
                           .arg(expectedCount)
