@@ -72,9 +72,19 @@ protected:
    * @param file File path to search from.
    * @param gpgIdFilesVerified List to accumulate verified files.
    * @param gpgId Output list of .gpg-id paths.
+   * @brief Verify .gpg-id file for a directory.
+   * @param file Password file path.
+   * @param gpgIdFilesVerified List of already verified .gpg-id files.
+   * @param gpgId Output parameter for recipient key IDs.
+   * @return true on success, false on failure.
    */
-  void verifyGpgIdForDir(const QString &file, QStringList &gpgIdFilesVerified,
-                         QStringList &gpgId);
+  auto verifyGpgIdForDir(const QString &file, QStringList &gpgIdFilesVerified,
+                         QStringList &gpgId) -> bool;
+  /**
+   * @brief Create git backup commit before re-encryption.
+   * @return true if backup created or not needed, false if backup failed.
+   */
+  auto createBackupCommit() -> bool;
   /**
    * @brief Read recipients from file.
    * @param fileName Path to file.
@@ -85,9 +95,10 @@ protected:
    * @brief Re-encrypt single file with new recipients.
    * @param fileName File to re-encrypt.
    * @param recipients New recipient key IDs.
+   * @return true on success, false on failure.
    */
-  void reencryptSingleFile(const QString &fileName,
-                           const QStringList &recipients);
+  auto reencryptSingleFile(const QString &fileName,
+                           const QStringList &recipients) -> bool;
   /**
    * @brief Resolve destination for move operation.
    * @param src Source path.
