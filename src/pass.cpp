@@ -235,6 +235,48 @@ QString findGpgconfInGpgDir(const QString &gpgPath) {
   }
   return QString();
 }
+
+QStringList splitCommandCompat(const QString &command) {
+  QStringList result;
+  QString current;
+  bool inSingleQuote = false;
+  bool inDoubleQuote = false;
+  bool escaping = false;
+  for (QChar ch : command) {
+    if (escaping) {
+      current.append(ch);
+      escaping = false;
+      continue;
+    }
+    if (ch == '\\') {
+      escaping = true;
+      continue;
+    }
+    if (ch == '\'' && !inDoubleQuote) {
+      inSingleQuote = !inSingleQuote;
+      continue;
+    }
+    if (ch == '"' && !inSingleQuote) {
+      inDoubleQuote = !inDoubleQuote;
+      continue;
+    }
+    if (ch.isSpace() && !inSingleQuote && !inDoubleQuote) {
+      if (!current.isEmpty()) {
+        result.append(current);
+        current.clear();
+      }
+      continue;
+    }
+    current.append(ch);
+  }
+  if (escaping) {
+    current.append('\\');
+  }
+  if (!current.isEmpty()) {
+    result.append(current);
+  }
+  return result;
+}
 } // namespace
 
 auto Pass::resolveGpgconfCommand(const QString &gpgPath)
@@ -246,7 +288,7 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList parts = QProcess::splitCommand(gpgPath);
 #else
-  QStringList parts = QStringList{gpgPath};
+  QStringList parts = splitCommandCompat(gpgPath);
 #endif
 
   if (parts.isEmpty()) {
@@ -268,7 +310,7 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
     return {"gpgconf", {}};
   }
 
-  if (!gpgPath.contains('/') && !gpgPath.contains('\\')) {
+  if (!first.contains('/') && !first.contains('\\')) {
     return {"gpgconf", {}};
   }
 
@@ -457,8 +499,9 @@ auto Pass::getGpgIdPath(const QString &for_file) -> QString {
       break;
     }
   }
-  QString gpgIdPath(found ? gpgIdDir.absoluteFilePath(".gpg-id")
-                          : QtPassSettings::getPassStore() + ".gpg-id");
+  QString gpgIdPath(
+      found ? gpgIdDir.absoluteFilePath(".gpg-id")
+            : QDir(QtPassSettings::getPassStore()).filePath(".gpg-id"));
 
   return gpgIdPath;
 }
@@ -515,8 +558,11 @@ auto Pass::boundedRandom(quint32 bound) -> quint32 {
   }
 
   quint32 randval;
-  // Reject values below max_mod_bound (computed as 1 + ~bound == 2^32 -
-  // bound) to avoid modulo bias and ensure uniform randval % bound.
+  // Rejection-sampling threshold to avoid modulo bias:
+  // In quint32 arithmetic, (1 + ~bound) wraps to (2^32 - bound), so
+  // (1 + ~bound) % bound == 2^32 % bound.
+  // Values randval < max_mod_bound are rejected; accepted values produce a
+  // uniform distribution when reduced with (randval % bound).
   const quint32 max_mod_bound = (1 + ~bound) % bound;
 
   do {
