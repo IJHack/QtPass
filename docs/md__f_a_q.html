@@ -77,7 +77,7 @@ $(function() {
 <div class="textblock"><h1>Issues</h1>
 <h2>Can't save a password</h2>
 <ul>
-<li>Is folder initialized? Easiest way is to use the [Users] button and make sure you can encrypt for someone (e.g. yourself)</li>
+<li>Is the folder initialized? Easiest way is to use the [Users] button and make sure you can encrypt for someone (e.g. yourself)</li>
 <li>Are you using Git? If not, make sure it is switched off.</li>
 </ul>
 <h2>I have an issue with GNOME keyring</h2>
@@ -101,17 +101,14 @@ $(function() {
 </ul>
 <h2>I have another issue with gpg</h2>
 <ul>
-<li>Possibly you have your key only in gpg and not in gpg2</li>
+<li>On modern systems, <code>gpg</code> is usually GnuPG 2.x already. If your system has separate <code>gpg</code> and <code>gpg2</code> keyrings (typically older or custom setups), your key may exist in one but not the other.</li>
 </ul>
 <div class="fragment"><div class="line">gpg --export [ID] &gt; public.key</div>
 <div class="line">gpg --export-secret-key [ID] &gt; private.key</div>
 <div class="line">gpg2 --import public.key</div>
 <div class="line">gpg2 --import private.key</div>
 <div class="line">rm public.key private.key</div>
-</div><!-- fragment --><p>Where [ID] is your gpg key-id.</p>
-<ul>
-<li>It might be the case where it is the other way around, exchange gpg and gpg2 accordingly.</li>
-</ul>
+</div><!-- fragment --><p>Where [ID] is your gpg key-id. If your setup is reversed, exchange <code>gpg</code> and <code>gpg2</code> accordingly.</p>
 <h2>Git doesn't work on Windows</h2>
 <p>Git for Windows comes with an <code>ssh-askpass</code> compatible command, <code>git-gui--askpass</code> (located in <code>/mingw64/libexec/git-core/git-gui--askpass</code> on PortableGit version, presumably some place similar for the installed version).</p>
 <h2>Git has issues with GPG SSH Authentication</h2>
@@ -145,11 +142,12 @@ $(function() {
 </ul>
 <p>These settings can be overridden by a <code>qtpass.ini</code> file in the folder where the application resides. So-called "portable config".</p>
 <p>There are some things to take care of when trying to sync on some systems (especially macOS, with regards to text and binary .plist files).</p>
-<p>More information: <a href="https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes">https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes</a></p>
+<p>More information: <a href="https://doc.qt.io/qt-6/qsettings.html#platform-specific-notes">https://doc.qt.io/qt-6/qsettings.html#platform-specific-notes</a></p>
 <h2>Where can I ask for help?</h2>
 <ul>
 <li>Create an issue on <a href="https://github.com/IJHack/QtPass/issues">GitHub</a>.</li>
 <li>Send an email to <a href="#" onclick="location.href='mai'+'lto:'+'hel'+'p@'+'qtp'+'as'+'s.o'+'rg'; return false;">help@qtpass.org</a></li>
+<li>Visit the <a href="https://qtpass.org/">Official QtPass site</a></li>
 </ul>
 <h2>Can I import from KeePass, LastPass or X?</h2>
 <ul>
