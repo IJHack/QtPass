@@ -69,11 +69,12 @@ void tst_gpgkeystate::parseSecretKeys() {
     QVERIFY(!result.isEmpty());
     for (int i = 0; i < result.size(); ++i) {
       const UserInfo &user = result.at(i);
-      QVERIFY2(user.have_secret == expectHaveSecret,
-               qPrintable(QString("Key at index %1 has have_secret=%2, expected %3")
-                              .arg(i)
-                              .arg(user.have_secret)
-                              .arg(expectHaveSecret)));
+      QVERIFY2(
+          user.have_secret == expectHaveSecret,
+          qPrintable(QString("Key at index %1 has have_secret=%2, expected %3")
+                         .arg(i)
+                         .arg(user.have_secret)
+                         .arg(expectHaveSecret)));
     }
   }
 }
