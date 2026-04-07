@@ -201,6 +201,41 @@ QString Pass::getDefaultKeyTemplate() {
                         "%echo done");
 }
 
+namespace {
+auto resolveWslGpgconfPath(const QString &lastPart) -> QString {
+  int lastSep = lastPart.lastIndexOf('/');
+  if (lastSep < 0) {
+    lastSep = lastPart.lastIndexOf('\\');
+  }
+  if (lastSep >= 0) {
+    return lastPart.left(lastSep + 1) + "gpgconf";
+  }
+  return QStringLiteral("gpgconf");
+}
+
+QString findGpgconfInGpgDir(const QString &gpgPath) {
+  QFileInfo gpgInfo(gpgPath);
+  if (!gpgInfo.isAbsolute()) {
+    return QString();
+  }
+
+  QDir dir(gpgInfo.absolutePath());
+
+#ifdef Q_OS_WIN
+  QFileInfo candidateExe(dir.filePath("gpgconf.exe"));
+  if (candidateExe.isExecutable()) {
+    return candidateExe.filePath();
+  }
+#endif
+
+  QFileInfo candidate(dir.filePath("gpgconf"));
+  if (candidate.isExecutable()) {
+    return candidate.filePath();
+  }
+  return QString();
+}
+} // namespace
+
 auto Pass::resolveGpgconfCommand(const QString &gpgPath)
     -> ResolvedGpgconfCommand {
   if (gpgPath.trimmed().isEmpty()) {
@@ -212,52 +247,32 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
 #else
   QStringList parts = QStringList{gpgPath};
 #endif
-  if (!parts.isEmpty()) {
-    QString first = parts.first();
-    if (first == "wsl" || first == "wsl.exe") {
-      if (parts.size() >= 2 && parts.at(1).startsWith("sh")) {
-        return {"gpgconf", {}};
-      }
-      if (QFileInfo(parts.last()).fileName().startsWith("gpg")) {
-        QString lastPart = parts.last();
-        int lastSep = lastPart.lastIndexOf('/');
-        if (lastSep < 0) {
-          lastSep = lastPart.lastIndexOf('\\');
-        }
-        if (lastSep >= 0) {
-          parts.removeLast();
-          parts.append(lastPart.left(lastSep + 1) + "gpgconf");
-        } else {
-          parts.removeLast();
-          parts.append("gpgconf");
-        }
-        return {parts.first(), parts.mid(1)};
-      }
+
+  if (parts.isEmpty()) {
+    return {"gpgconf", {}};
+  }
+
+  const QString first = parts.first();
+  if (first == "wsl" || first == "wsl.exe") {
+    if (parts.size() >= 2 && parts.at(1).startsWith("sh")) {
       return {"gpgconf", {}};
     }
+    if (QFileInfo(parts.last()).fileName().startsWith("gpg")) {
+      QString wslGpgconf = resolveWslGpgconfPath(parts.last());
+      parts.removeLast();
+      parts.append(wslGpgconf);
+      return {parts.first(), parts.mid(1)};
+    }
+    return {"gpgconf", {}};
   }
 
   if (!gpgPath.contains('/') && !gpgPath.contains('\\')) {
     return {"gpgconf", {}};
   }
 
-  QFileInfo gpgInfo(gpgPath);
-  if (!gpgInfo.isAbsolute()) {
-    return {"gpgconf", {}};
-  }
-
-  QDir dir(gpgInfo.absolutePath());
-
-#ifdef Q_OS_WIN
-  QFileInfo candidateExe(dir.filePath("gpgconf.exe"));
-  if (candidateExe.isExecutable()) {
-    return {candidateExe.filePath(), {}};
-  }
-#endif
-
-  QFileInfo candidate(dir.filePath("gpgconf"));
-  if (candidate.isExecutable()) {
-    return {candidate.filePath(), {}};
+  QString gpgconfPath = findGpgconfInGpgDir(gpgPath);
+  if (!gpgconfPath.isEmpty()) {
+    return {gpgconfPath, {}};
   }
 
   return {"gpgconf", {}};
