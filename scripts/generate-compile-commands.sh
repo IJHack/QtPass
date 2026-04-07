@@ -13,8 +13,13 @@ command -v qmake6 >/dev/null 2>&1 || {
 }
 
 # Determine parallelism based on available CPUs
-NPROC=$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo 4)
-MAKE_JOBS=$((NPROC > 0 ? NPROC : 4))
+DEFAULT_JOBS=4
+NPROC=$(nproc 2>/dev/null || sysctl -n hw.ncpu 2>/dev/null || echo "${DEFAULT_JOBS}")
+if [[ "$NPROC" =~ ^[0-9]+$ ]] && [ "$NPROC" -gt 0 ]; then
+    MAKE_JOBS="$NPROC"
+else
+    MAKE_JOBS="${DEFAULT_JOBS}"
+fi
 
 echo "Generating compile_commands.json..."
 
