@@ -229,8 +229,20 @@ void tst_executor::resolveGpgconfCommand() {
   {
     QTemporaryDir tempDir;
     QVERIFY2(tempDir.isValid(), "Temp directory should be valid");
-    QString gpgPath = tempDir.filePath("gpg2");
-    QString gpgconfPath = tempDir.filePath("gpgconf");
+    QString gpgPath = tempDir.filePath(
+#ifdef Q_OS_WIN
+        "gpg2.exe"
+#else
+        "gpg2"
+#endif
+    );
+    QString gpgconfPath = tempDir.filePath(
+#ifdef Q_OS_WIN
+        "gpgconf.exe"
+#else
+        "gpgconf"
+#endif
+    );
 
     // Create dummy files and set executable
     QFile gpgFile(gpgPath);
