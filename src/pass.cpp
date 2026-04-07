@@ -218,9 +218,19 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
       if (parts.size() >= 2 && parts.at(1).startsWith("sh")) {
         return {"gpgconf", {}};
       }
-      if (parts.last().startsWith("gpg")) {
-        parts.removeLast();
-        parts.append("gpgconf");
+      if (QFileInfo(parts.last()).fileName().startsWith("gpg")) {
+        QString lastPart = parts.last();
+        int lastSep = lastPart.lastIndexOf('/');
+        if (lastSep < 0) {
+          lastSep = lastPart.lastIndexOf('\\');
+        }
+        if (lastSep >= 0) {
+          parts.removeLast();
+          parts.append(lastPart.left(lastSep + 1) + "gpgconf");
+        } else {
+          parts.removeLast();
+          parts.append("gpgconf");
+        }
         return {parts.first(), parts.mid(1)};
       }
       return {"gpgconf", {}};

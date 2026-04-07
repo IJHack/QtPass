@@ -199,6 +199,14 @@ void tst_executor::resolveGpgconfCommand() {
              "WSL with distro should preserve args");
   }
 
+  // WSL with full path
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl /usr/bin/gpg2");
+    QStringList expectedArgs = {"/usr/bin/gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
+             "WSL with full path should preserve directory");
+  }
+
   // WSL complex (should fallback)
   {
     auto result = Pass::resolveGpgconfCommand("wsl sh -c \"gpg2 --version\"");
