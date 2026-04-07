@@ -259,7 +259,8 @@ void Pass::GenerateGPGKeys(QString batch) {
   if (!gpgPath.isEmpty()) {
     ResolvedGpgconfCommand gpgconf = resolveGpgconfCommand(gpgPath);
     QStringList killArgs = gpgconf.arguments;
-    killArgs << "--kill" << "gpg-agent";
+    killArgs << "--kill";
+    killArgs << "gpg-agent";
     // Use same environment as key generation to target correct gpg-agent
     Executor::executeBlocking(env, gpgconf.program, killArgs);
   }
