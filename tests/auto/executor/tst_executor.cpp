@@ -248,16 +248,20 @@ void tst_executor::resolveGpgconfCommand() {
     QFile gpgFile(gpgPath);
     QVERIFY2(gpgFile.open(QFile::WriteOnly), "Should create gpg2 file");
     gpgFile.close();
+#ifndef Q_OS_WIN
     QFile::setPermissions(gpgPath, QFile::ReadOwner | QFile::ExeOwner);
+#endif
 
     QFile gpgconfFile(gpgconfPath);
     QVERIFY2(gpgconfFile.open(QFile::WriteOnly), "Should create gpgconf file");
     gpgconfFile.close();
+#ifndef Q_OS_WIN
     QFile::setPermissions(gpgconfPath, QFile::ReadOwner | QFile::ExeOwner);
+#endif
 
     auto result = Pass::resolveGpgconfCommand(gpgPath);
     QVERIFY2(result.program == gpgconfPath,
-             "Unix absolute should derive sibling path");
+             "Should derive sibling gpgconf path");
   }
 }
 
