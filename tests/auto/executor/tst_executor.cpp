@@ -202,9 +202,16 @@ void tst_executor::resolveGpgconfCommand() {
   QVERIFY2(Pass::resolveGpgconfCommand("gpg2") == "gpgconf",
            "PATH-only should fallback");
 
-  // Unix absolute
-  QVERIFY2(Pass::resolveGpgconfCommand("/usr/bin/gpg2") == "/usr/bin/gpgconf",
-           "Unix absolute should derive sibling path");
+  // Unix absolute - result depends on whether gpgconf exists at sibling path
+  QString unixResult = Pass::resolveGpgconfCommand("/usr/bin/gpg2");
+  bool gpgconfExists = QFileInfo("/usr/bin/gpgconf").isExecutable();
+  if (gpgconfExists) {
+    QVERIFY2(unixResult == "/usr/bin/gpgconf",
+             "Unix absolute should derive sibling path when gpgconf exists");
+  } else {
+    QVERIFY2(unixResult == "gpgconf",
+             "Unix absolute should fallback when gpgconf not at sibling path");
+  }
 }
 
 QTEST_MAIN(tst_executor)
