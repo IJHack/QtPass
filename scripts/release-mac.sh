@@ -14,6 +14,19 @@ if [[ ! -r README.md ]]; then
 	exit 1
 fi
 
+if [[ ! -r FAQ.md ]]; then
+	echo "Error: FAQ.md is missing or not readable." >&2
+	exit 1
+fi
+if [[ ! -r CONTRIBUTING.md ]]; then
+	echo "Error: CONTRIBUTING.md is missing or not readable." >&2
+	exit 1
+fi
+if [[ ! -r CHANGELOG.md ]]; then
+	echo "Error: CHANGELOG.md is missing or not readable." >&2
+	exit 1
+fi
+
 echo "Processing README links..."
 sed \
 	-e 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md__f_a_q.html/' \
@@ -24,36 +37,36 @@ sed \
 
 echo "Generating RTF documentation..."
 pandoc --standalone --from=gfm --to=rtf --output=README.rtf "$README_CLEAN" FAQ.md CONTRIBUTING.md CHANGELOG.md || {
-	echo "Error: pandoc failed."
+	echo "Error: pandoc failed while generating README.rtf from '$README_CLEAN', FAQ.md, CONTRIBUTING.md, and CHANGELOG.md. Check that input files exist and that pandoc is installed and available in PATH." >&2
 	exit 1
 }
 
 echo "Generating API documentation..."
 doxygen || {
-	echo "Error: doxygen failed."
+	echo "Error: doxygen failed." >&2
 	exit 1
 }
 
 echo "Running qmake (release)..."
 qmake CONFIG+=release || {
-	echo "Error: qmake failed."
+	echo "Error: qmake failed." >&2
 	exit 1
 }
 
 echo "Running make..."
 make || {
-	echo "Error: make failed."
+	echo "Error: make failed." >&2
 	exit 1
 }
 
 echo "Running macdeployqt..."
 macdeployqt main/QtPass.app || {
-	echo "Error: macdeployqt failed."
+	echo "Error: macdeployqt failed." >&2
 	exit 1
 }
 
 echo "Creating DMG..."
 appdmg appdmg.json main/QtPass.dmg || {
-	echo "Error: appdmg failed."
+	echo "Error: appdmg failed." >&2
 	exit 1
 }
