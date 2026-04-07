@@ -132,7 +132,7 @@ void tst_executor::gpgSupportsEd25519() {
       QSKIP("QtPassSettings not properly initialized");
     }
     QVERIFY2(
-        result == true,
+        result,
         qPrintable(
             QString("GPG %1.%2 should support Ed25519").arg(major).arg(minor)));
   } else {
