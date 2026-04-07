@@ -346,3 +346,13 @@ Path handling bugs often involve separators, encoding, or model indexing.
 ```cpp
 qDebug() << "Path:" << path << "Cleaned:" << QDir::cleanPath(path);
 ```
+
+## IDE/LSP Setup
+
+For proper code analysis (resolving Qt types like `QString`), generate `compile_commands.json`:
+
+```bash
+./scripts/generate-compile-commands.sh
+```
+
+This enables clangd/LSP to provide accurate completions and catch real issues. Without it, the LSP shows false positives about missing Qt headers.
