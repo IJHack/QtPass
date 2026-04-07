@@ -149,6 +149,11 @@ public:
                               QString *process_out,
                               QString *process_err = nullptr) -> int;
 
+  static auto executeBlocking(const QStringList &env, QString app,
+                              const QStringList &args,
+                              QString *process_out = nullptr,
+                              QString *process_err = nullptr) -> int;
+
   void setEnvironment(const QStringList &env);
 
   auto cancelNext() -> int;

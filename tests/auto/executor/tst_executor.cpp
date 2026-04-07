@@ -23,6 +23,8 @@ private Q_SLOTS:
   void executeBlockingGpgVersion();
   void gpgSupportsEd25519();
   void getDefaultKeyTemplate();
+  void executeBlockingGpgKillAgent();
+  void resolveGpgconfCommand();
 };
 
 #ifndef Q_OS_WIN
@@ -156,6 +158,110 @@ void tst_executor::getDefaultKeyTemplate() {
   } else {
     QVERIFY2(templateStr.contains("RSA"), "Template should be the RSA fallback "
                                           "when gpgSupportsEd25519() is false");
+  }
+}
+
+void tst_executor::executeBlockingGpgKillAgent() {
+#ifdef Q_OS_WIN
+  QSKIP("gpgconf not reliably available on Windows PATH");
+#endif
+  QString output;
+  QString err;
+  int result = Executor::executeBlocking("gpgconf", {"--kill", "gpg-agent"},
+                                         QString(), &output, &err);
+  if (result != 0) {
+    QSKIP("gpgconf not available in PATH");
+  }
+  QVERIFY2(result == 0, "gpgconf --kill gpg-agent should succeed");
+}
+
+void tst_executor::resolveGpgconfCommand() {
+  // Empty input
+  {
+    auto result = Pass::resolveGpgconfCommand("");
+    QVERIFY2(result.program == "gpgconf",
+             "Empty input should fallback to gpgconf");
+  }
+
+  // WSL simple
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl gpg2");
+    QStringList expectedArgs = {"gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
+             "WSL simple should replace gpg with gpgconf");
+  }
+
+  // WSL with distro
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl -d Ubuntu gpg2");
+    QStringList expectedArgs = {"-d", "Ubuntu", "gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
+             "WSL with distro should preserve args");
+  }
+
+  // WSL with full path
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl /usr/bin/gpg2");
+    QStringList expectedArgs = {"/usr/bin/gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
+             "WSL with full path should preserve directory");
+  }
+
+  // WSL complex (should fallback)
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl sh -c \"gpg2 --version\"");
+    QVERIFY2(result.program == "gpgconf", "Complex WSL shell should fallback");
+  }
+
+  // WSL malformed (only "wsl")
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl");
+    QVERIFY2(result.program == "gpgconf", "Malformed WSL should fallback");
+  }
+
+  // PATH-only
+  {
+    auto result = Pass::resolveGpgconfCommand("gpg2");
+    QVERIFY2(result.program == "gpgconf", "PATH-only should fallback");
+  }
+
+  // Unix absolute - use temp directory for filesystem-independent test
+  {
+    QTemporaryDir tempDir;
+    QVERIFY2(tempDir.isValid(), "Temp directory should be valid");
+    QString gpgPath = tempDir.filePath(
+#ifdef Q_OS_WIN
+        "gpg2.exe"
+#else
+        "gpg2"
+#endif
+    );
+    QString gpgconfPath = tempDir.filePath(
+#ifdef Q_OS_WIN
+        "gpgconf.exe"
+#else
+        "gpgconf"
+#endif
+    );
+
+    // Create dummy files and set executable
+    QFile gpgFile(gpgPath);
+    QVERIFY2(gpgFile.open(QFile::WriteOnly), "Should create gpg2 file");
+    gpgFile.close();
+#ifndef Q_OS_WIN
+    QFile::setPermissions(gpgPath, QFile::ReadOwner | QFile::ExeOwner);
+#endif
+
+    QFile gpgconfFile(gpgconfPath);
+    QVERIFY2(gpgconfFile.open(QFile::WriteOnly), "Should create gpgconf file");
+    gpgconfFile.close();
+#ifndef Q_OS_WIN
+    QFile::setPermissions(gpgconfPath, QFile::ReadOwner | QFile::ExeOwner);
+#endif
+
+    auto result = Pass::resolveGpgconfCommand(gpgPath);
+    QVERIFY2(result.program == gpgconfPath,
+             "Should derive sibling gpgconf path");
   }
 }
 

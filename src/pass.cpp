@@ -5,6 +5,8 @@
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QDir>
+#include <QFileInfo>
+#include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
 #include <utility>
@@ -199,6 +201,68 @@ QString Pass::getDefaultKeyTemplate() {
                         "%echo done");
 }
 
+auto Pass::resolveGpgconfCommand(const QString &gpgPath)
+    -> ResolvedGpgconfCommand {
+  if (gpgPath.trimmed().isEmpty()) {
+    return {"gpgconf", {}};
+  }
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
+  QStringList parts = QProcess::splitCommand(gpgPath);
+#else
+  QStringList parts = QStringList{gpgPath};
+#endif
+  if (!parts.isEmpty()) {
+    QString first = parts.first();
+    if (first == "wsl" || first == "wsl.exe") {
+      if (parts.size() >= 2 && parts.at(1).startsWith("sh")) {
+        return {"gpgconf", {}};
+      }
+      if (QFileInfo(parts.last()).fileName().startsWith("gpg")) {
+        QString lastPart = parts.last();
+        int lastSep = lastPart.lastIndexOf('/');
+        if (lastSep < 0) {
+          lastSep = lastPart.lastIndexOf('\\');
+        }
+        if (lastSep >= 0) {
+          parts.removeLast();
+          parts.append(lastPart.left(lastSep + 1) + "gpgconf");
+        } else {
+          parts.removeLast();
+          parts.append("gpgconf");
+        }
+        return {parts.first(), parts.mid(1)};
+      }
+      return {"gpgconf", {}};
+    }
+  }
+
+  if (!gpgPath.contains('/') && !gpgPath.contains('\\')) {
+    return {"gpgconf", {}};
+  }
+
+  QFileInfo gpgInfo(gpgPath);
+  if (!gpgInfo.isAbsolute()) {
+    return {"gpgconf", {}};
+  }
+
+  QDir dir(gpgInfo.absolutePath());
+
+#ifdef Q_OS_WIN
+  QFileInfo candidateExe(dir.filePath("gpgconf.exe"));
+  if (candidateExe.isExecutable()) {
+    return {candidateExe.filePath(), {}};
+  }
+#endif
+
+  QFileInfo candidate(dir.filePath("gpgconf"));
+  if (candidate.isExecutable()) {
+    return {candidate.filePath(), {}};
+  }
+
+  return {"gpgconf", {}};
+}
+
 /**
  * @brief Pass::GenerateGPGKeys internal gpg keypair generator . .
  * @param batch GnuPG style configuration string
@@ -208,7 +272,12 @@ void Pass::GenerateGPGKeys(QString batch) {
   // This helps avoid "database locked" timeouts during key generation
   QString gpgPath = QtPassSettings::getGpgExecutable();
   if (!gpgPath.isEmpty()) {
-    Executor::executeBlocking(gpgPath, {"gpgconf", "--kill", "gpg-agent"});
+    ResolvedGpgconfCommand gpgconf = resolveGpgconfCommand(gpgPath);
+    QStringList killArgs = gpgconf.arguments;
+    killArgs << "--kill";
+    killArgs << "gpg-agent";
+    // Use same environment as key generation to target correct gpg-agent
+    Executor::executeBlocking(env, gpgconf.program, killArgs);
   }
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},
