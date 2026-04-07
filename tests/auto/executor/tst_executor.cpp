@@ -162,9 +162,9 @@ void tst_executor::getDefaultKeyTemplate() {
 }
 
 void tst_executor::executeBlockingGpgKillAgent() {
-`#ifdef` Q_OS_WIN
+#ifdef Q_OS_WIN
   QSKIP("gpgconf not reliably available on Windows PATH");
-`#endif`
+#endif
   QString output;
   QString err;
   int result = Executor::executeBlocking("gpgconf", {"--kill", "gpg-agent"},
