@@ -1427,7 +1427,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="277"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[ЧАСТИЧНЫЙ] </translation>
     </message>
 </context>
 </TS>
