@@ -257,7 +257,8 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
     if (parts.size() >= 2 && parts.at(1).startsWith("sh")) {
       return {"gpgconf", {}};
     }
-    if (QFileInfo(parts.last()).fileName().startsWith("gpg")) {
+    if (parts.size() >= 2 &&
+        QFileInfo(parts.last()).fileName().startsWith("gpg")) {
       QString wslGpgconf = resolveWslGpgconfPath(parts.last());
       parts.removeLast();
       parts.append(wslGpgconf);
@@ -328,9 +329,15 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
       p_out.split(Util::newLinesRegex(), QString::SkipEmptyParts);
 #endif
   UserInfo current_user;
+  constexpr int GPG_MIN_FIELDS = 10; // at least 10 fields to use index 9
+  constexpr int GPG_FIELD_VALIDITY = 1;
+  constexpr int GPG_FIELD_KEY_ID = 4;
+  constexpr int GPG_FIELD_CREATED = 5;
+  constexpr int GPG_FIELD_EXPIRY = 6;
+  constexpr int GPG_FIELD_USERID = 9;
   for (const QString &key : keys) {
     QStringList props = key.split(':');
-    if (props.size() < 10) {
+    if (props.size() < GPG_MIN_FIELDS) {
       continue;
     }
     if (props[0] == (secret ? "sec" : "pub")) {
@@ -338,15 +345,25 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
         users.append(current_user);
       }
       current_user = UserInfo();
-      current_user.key_id = props[4];
-      current_user.name = props[9].toUtf8();
-      current_user.validity = props[1][0].toLatin1();
-      current_user.created.setSecsSinceEpoch(props[5].toUInt());
-      current_user.expiry.setSecsSinceEpoch(props[6].toUInt());
+      current_user.key_id = props[GPG_FIELD_KEY_ID];
+      current_user.name = props[GPG_FIELD_USERID].toUtf8();
+      current_user.validity = props[GPG_FIELD_VALIDITY][0].toLatin1();
+      bool okCreated = false;
+      const qint64 createdSecs =
+          props[GPG_FIELD_CREATED].toLongLong(&okCreated);
+      if (okCreated) {
+        current_user.created.setSecsSinceEpoch(createdSecs);
+      }
+      bool okExpiry = false;
+      const qint64 expirySecs = props[GPG_FIELD_EXPIRY].toLongLong(&okExpiry);
+      if (okExpiry) {
+        current_user.expiry.setSecsSinceEpoch(expirySecs);
+      }
     } else if (current_user.name.isEmpty() && props[0] == "uid") {
-      current_user.name = props[9];
-    } else if ((props[0] == "fpr") && props[9].endsWith(current_user.key_id)) {
-      current_user.key_id = props[9];
+      current_user.name = props[GPG_FIELD_USERID];
+    } else if ((props[0] == "fpr") &&
+               props[GPG_FIELD_USERID].endsWith(current_user.key_id)) {
+      current_user.key_id = props[GPG_FIELD_USERID];
     }
   }
   if (!current_user.key_id.isEmpty()) {
@@ -546,6 +563,10 @@ auto Pass::boundedRandom(quint32 bound) -> quint32 {
   }
 
   quint32 randval;
+  // Compute rejection threshold to avoid modulo bias:
+  // (1 + ~bound) is the largest 32-bit value congruent to -1 modulo 'bound',
+  // so values below 'max_mod_bound' are discarded to keep randval % bound
+  // uniform.
   const quint32 max_mod_bound = (1 + ~bound) % bound;
 
   do {
@@ -563,6 +584,9 @@ auto Pass::boundedRandom(quint32 bound) -> quint32 {
  */
 auto Pass::generateRandomPassword(const QString &charset, unsigned int length)
     -> QString {
+  if (charset.isEmpty() || length == 0U) {
+    return {};
+  }
   QString out;
   for (unsigned int i = 0; i < length; ++i) {
     out.append(charset.at(static_cast<int>(

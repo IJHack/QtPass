@@ -68,10 +68,6 @@ protected:
   void gitAddGpgId(const QString &gpgIdFile, const QString &gpgIdSigFile,
                    bool addFile, bool addSigFile);
   /**
-   * @brief Find .gpg-id file for directory.
-   * @param file File path to search from.
-   * @param gpgIdFilesVerified List to accumulate verified files.
-   * @param gpgId Output list of .gpg-id paths.
    * @brief Verify .gpg-id file for a directory.
    * @param file Password file path.
    * @param gpgIdFilesVerified List of already verified .gpg-id files.
@@ -123,7 +119,7 @@ public:
    * @param file Changed file path.
    * @param msg Commit message.
    */
-  void GitCommit(const QString &file, const QString &msg);
+  void gitCommit(const QString &file, const QString &msg);
 
   /**
    * @brief Execute git command.
