@@ -254,6 +254,20 @@ if (index < 0 || index >= m_userList.size()) {
 }
 ```
 
+### Boolean Logic Bugs
+
+When comparing booleans, use `&&` instead of `==` to avoid unexpected true values:
+
+```cpp
+// Bad - yields true when both are false (e.g., public key case)
+bool secret = false;
+bool isSec = (type == GpgRecordType::Sec);  // false
+handlePubSecRecord(props, secret == isSec);  // false == false = true!
+
+// Good - requires both conditions to be true
+handlePubSecRecord(props, secret && (type == GpgRecordType::Sec));
+```
+
 ## Key Source Files
 
 | File                 | Purpose                                 |
@@ -356,3 +370,30 @@ For proper code analysis (resolving Qt types like `QString`), generate `compile_
 ```
 
 This enables clangd/LSP to provide accurate completions and catch real issues. Without it, the LSP shows false positives about missing Qt headers.
+
+### Using Editor Fix Suggestions
+
+When the LSP shows "(fix available)" on errors:
+
+1. **Visual Studio Code**: Click the 💡 lightbulb or press `Ctrl+.` (Quick Fix)
+2. **JetBrains**: Press `Alt+Enter` on the error
+3. **vim/neovim**: Use clangd's `textDocument/codeAction` via your LSP plugin
+
+**Note:** LSP suggestions are just that - suggestions. Always verify the fix makes sense before applying, especially for complex refactoring.
+
+### Running Clangd from CLI
+
+To check a file directly for issues:
+
+```bash
+# Generate compile_commands.json first (required for Qt headers)
+./scripts/generate-compile-commands.sh
+
+# Check a specific file
+clangd --check=/path/to/file.cpp
+```
+
+Common clangd diagnostics:
+
+- `[performance-unnecessary-copy-initialization]` - Use `const T&` instead of `const T`
+- `[readability-static-definition]` - Consider making static definitions inline
