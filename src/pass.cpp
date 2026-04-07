@@ -235,6 +235,48 @@ QString findGpgconfInGpgDir(const QString &gpgPath) {
   }
   return QString();
 }
+
+QStringList splitCommandCompat(const QString &command) {
+  QStringList result;
+  QString current;
+  bool inSingleQuote = false;
+  bool inDoubleQuote = false;
+  bool escaping = false;
+  for (QChar ch : command) {
+    if (escaping) {
+      current.append(ch);
+      escaping = false;
+      continue;
+    }
+    if (ch == '\\') {
+      escaping = true;
+      continue;
+    }
+    if (ch == '\'' && !inDoubleQuote) {
+      inSingleQuote = !inSingleQuote;
+      continue;
+    }
+    if (ch == '"' && !inSingleQuote) {
+      inDoubleQuote = !inDoubleQuote;
+      continue;
+    }
+    if (ch.isSpace() && !inSingleQuote && !inDoubleQuote) {
+      if (!current.isEmpty()) {
+        result.append(current);
+        current.clear();
+      }
+      continue;
+    }
+    current.append(ch);
+  }
+  if (escaping) {
+    current.append('\\');
+  }
+  if (!current.isEmpty()) {
+    result.append(current);
+  }
+  return result;
+}
 } // namespace
 
 auto Pass::resolveGpgconfCommand(const QString &gpgPath)
@@ -246,47 +288,6 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList parts = QProcess::splitCommand(gpgPath);
 #else
-  QStringList splitCommandCompat(const QString &command) {
-    QStringList result;
-    QString current;
-    bool inSingleQuote = false;
-    bool inDoubleQuote = false;
-    bool escaping = false;
-    for (QChar ch : command) {
-      if (escaping) {
-        current.append(ch);
-        escaping = false;
-        continue;
-      }
-      if (ch == '\\') {
-        escaping = true;
-        continue;
-      }
-      if (ch == '\'' && !inDoubleQuote) {
-        inSingleQuote = !inSingleQuote;
-        continue;
-      }
-      if (ch == '"' && !inSingleQuote) {
-        inDoubleQuote = !inDoubleQuote;
-        continue;
-      }
-      if (ch.isSpace() && !inSingleQuote && !inDoubleQuote) {
-        if (!current.isEmpty()) {
-          result.append(current);
-          current.clear();
-        }
-        continue;
-      }
-      current.append(ch);
-    }
-    if (escaping) {
-      current.append('\\');
-    }
-    if (!current.isEmpty()) {
-      result.append(current);
-    }
-    return result;
-  }
   QStringList parts = splitCommandCompat(gpgPath);
 #endif
 
