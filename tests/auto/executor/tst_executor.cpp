@@ -23,6 +23,7 @@ private Q_SLOTS:
   void executeBlockingGpgVersion();
   void gpgSupportsEd25519();
   void getDefaultKeyTemplate();
+  void executeBlockingGpgKillAgent();
 };
 
 #ifndef Q_OS_WIN
@@ -157,6 +158,14 @@ void tst_executor::getDefaultKeyTemplate() {
     QVERIFY2(templateStr.contains("RSA"), "Template should be the RSA fallback "
                                           "when gpgSupportsEd25519() is false");
   }
+}
+
+void tst_executor::executeBlockingGpgKillAgent() {
+  QString output;
+  QString err;
+  int result = Executor::executeBlocking("gpgconf", {"--kill", "gpg-agent"},
+                                         QString(), &output, &err);
+  QVERIFY2(result == 0, "gpgconf --kill gpg-agent should succeed");
 }
 
 QTEST_MAIN(tst_executor)
