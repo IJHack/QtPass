@@ -563,10 +563,8 @@ auto Pass::boundedRandom(quint32 bound) -> quint32 {
   }
 
   quint32 randval;
-  // Compute rejection threshold to avoid modulo bias:
-  // (1 + ~bound) is the largest 32-bit value congruent to -1 modulo 'bound',
-  // so values below 'max_mod_bound' are discarded to keep randval % bound
-  // uniform.
+  // Reject values below max_mod_bound (computed as 1 + ~bound == 2^32 -
+  // bound) to avoid modulo bias and ensure uniform randval % bound.
   const quint32 max_mod_bound = (1 + ~bound) % bound;
 
   do {
