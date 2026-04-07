@@ -16,7 +16,8 @@
 [![Translation status](https://hosted.weblate.org/widgets/qtpass/-/qtpass/svg-badge.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)
 
 QtPass is a multi-platform GUI for [pass](https://www.passwordstore.org/),
-the standard Unix password manager.
+the standard Unix password manager. QtPass is a password manager that provides
+a secure and intuitive way to manage your passwords.
 
 _Available in 42 languages_
 
@@ -200,7 +201,7 @@ attack I can think of at least two options:
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 [CHANGELOG](CHANGELOG.md)
 
-[Site](https://qtpass.org/)
+[Official QtPass Website](https://qtpass.org/)
 [Source code](https://github.com/IJHack/QtPass)
 [Issue queue](https://github.com/IJHack/QtPass/issues)
 
