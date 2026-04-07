@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+if [ ! -d "artwork" ]; then
+	echo "Error: required directory 'artwork' does not exist." >&2
+	exit 1
+fi
+
 (
 	cd artwork
 	cp icon.png qtpass-icon.png
@@ -25,4 +30,12 @@ sudo make install || {
 	exit 1
 }
 
-sudo cp qtpass.desktop /usr/share/applications/
+if [ ! -f qtpass.desktop ]; then
+	echo "Error: qtpass.desktop not found."
+	exit 1
+fi
+
+sudo cp qtpass.desktop /usr/share/applications/ || {
+	echo "Error: failed to copy qtpass.desktop to /usr/share/applications/."
+	exit 1
+}
