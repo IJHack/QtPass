@@ -1,0 +1,21 @@
+<map id="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" name="tests/auto/gpgkeystate/tst_gpgkeystate.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="82,5,253,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,68,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="137,48,69,88,66,84,134,43"/>
+<area shape="rect" id="Node000003" href="$gpgkeystate_8h.html" title=" " alt="" coords="143,93,317,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,44,214,81,210,84,180,47"/>
+<area shape="rect" id="Node000004" href="$userinfo_8h.html" title=" " alt="" coords="63,167,149,192"/>
+<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="158,47,134,94,115,154,110,152,129,92,153,44"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="341,93,500,119"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="229,43,371,87,370,92,227,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="211,121,139,162,137,157,209,116"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="152,240,223,265"/>
+<area shape="poly" id="edge7_Node000003_Node000006" title=" " alt="" coords="229,120,197,227,192,226,224,118"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="225,167,280,192"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="236,118,247,153,242,154,231,120"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="305,167,398,192"/>
+<area shape="poly" id="edge8_Node000003_Node000008" title=" " alt="" coords="251,116,321,157,319,162,248,121"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="31,240,127,265"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="104,193,91,228,86,226,99,191"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="121,190,166,229,162,233,117,194"/>
+</map>

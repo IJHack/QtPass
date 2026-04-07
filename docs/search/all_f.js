@@ -14,9 +14,10 @@ var searchData=
   ['qpushbuttonwithclipboard_2eh_11',['qpushbuttonwithclipboard.h',['../qpushbuttonwithclipboard_8h.html',1,'']]],
   ['qrencodeexecutable_12',['qrencodeExecutable',['../class_settings_constants.html#acd17501a9a69d4aff8092aeee37d3d33',1,'SettingsConstants']]],
   ['qtpass_13',['qtpass',['../class_qt_pass.html',1,'QtPass'],['../class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad',1,'QtPass::QtPass()'],['../md__r_e_a_d_m_e.html',1,'QtPass'],['../index.html',1,'QtPass']]],
-  ['qtpass_2ecpp_14',['qtpass.cpp',['../qtpass_8cpp.html',1,'']]],
-  ['qtpass_2eh_15',['qtpass.h',['../qtpass_8h.html',1,'']]],
-  ['qtpasssettings_16',['QtPassSettings',['../class_qt_pass_settings.html',1,'']]],
-  ['qtpasssettings_2ecpp_17',['qtpasssettings.cpp',['../qtpasssettings_8cpp.html',1,'']]],
-  ['qtpasssettings_2eh_18',['qtpasssettings.h',['../qtpasssettings_8h.html',1,'']]]
+  ['qtpass_20scripts_14',['QtPass Scripts',['../md_scripts_2_r_e_a_d_m_e.html',1,'']]],
+  ['qtpass_2ecpp_15',['qtpass.cpp',['../qtpass_8cpp.html',1,'']]],
+  ['qtpass_2eh_16',['qtpass.h',['../qtpass_8h.html',1,'']]],
+  ['qtpasssettings_17',['QtPassSettings',['../class_qt_pass_settings.html',1,'']]],
+  ['qtpasssettings_2ecpp_18',['qtpasssettings.cpp',['../qtpasssettings_8cpp.html',1,'']]],
+  ['qtpasssettings_2eh_19',['qtpasssettings.h',['../qtpasssettings_8h.html',1,'']]]
 ];

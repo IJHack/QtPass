@@ -4,6 +4,16 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,52,163,39,204,31,205,36,165,45,112,57"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="164,55,409,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="116,65,150,65,150,70,116,70"/>
-<area shape="rect" id="Node000004" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="209,104,364,129"/>
+<area shape="rect" id="Node000004" href="$gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8" title="Parse GPG –with&#45;colons output into a list of UserInfo." alt="" coords="204,104,369,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="115,77,165,89,210,99,209,104,163,94,114,83"/>
+<area shape="rect" id="Node000005" href="$gpgkeystate_8cpp.html#ab1cf61cd18b2400baaea7e88b55651dd" title="Classify a GPG colon output record type." alt="" coords="479,5,595,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="368,104,408,89,423,78,431,66,441,53,456,40,468,33,470,38,459,44,445,56,436,69,426,82,411,94,370,109"/>
+<area shape="rect" id="Node000006" href="$gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178" title="Handle an fpr (fingerprint) record in GPG colon output." alt="" coords="471,55,603,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="351,101,458,80,459,85,352,107"/>
+<area shape="rect" id="Node000007" href="$gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c" title="Handle a pub or sec record in GPG colon output." alt="" coords="457,104,616,129"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="370,114,443,114,443,119,370,119"/>
+<area shape="rect" id="Node000008" href="$gpgkeystate_8cpp.html#adbcf251249671777862e00f89092058b" title="Handle a uid record in GPG colon output." alt="" coords="470,153,603,179"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="352,127,459,148,458,153,351,132"/>
+<area shape="rect" id="Node000009" href="$class_util.html#aced819d4368806d046f0dc24a91843f7" title="Returns a regex to match newline characters." alt="" coords="459,203,614,228"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="316,127,458,188,482,196,480,201,456,192,314,132"/>
 </map>

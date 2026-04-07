@@ -1,0 +1,7 @@
+<map id="classifyRecord" name="classifyRecord">
+<area shape="rect" id="Node000001" title="Classify a GPG colon output record type." alt="" coords="377,5,493,31"/>
+<area shape="rect" id="Node000002" href="$gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8" title="Parse GPG –with&#45;colons output into a list of UserInfo." alt="" coords="164,5,329,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="364,21,329,21,329,15,364,15"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="5,5,116,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="150,21,116,21,116,15,150,15"/>
+</map>
