@@ -49,7 +49,7 @@ make check
 
 ```bash
 # Create source tarball
-./release-linux
+./scripts/release-linux.sh
 
 # Or manually:
 git archive --prefix=qtpass-x.y.z/ -o qtpass-x.y.z.tar.gz HEAD
@@ -58,7 +58,7 @@ git archive --prefix=qtpass-x.y.z/ -o qtpass-x.y.z.tar.gz HEAD
 #### macOS
 
 ```bash
-./release-mac
+./scripts/release-mac.sh
 ```
 
 #### Windows
