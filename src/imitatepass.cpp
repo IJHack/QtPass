@@ -34,7 +34,7 @@ using Enums::PASS_SHOW;
 using Enums::PROCESS_COUNT;
 
 /**
- * @brief ImitatePass::ImitatePass for situaions when pass is not available
+ * @brief ImitatePass::ImitatePass for situations when pass is not available
  * we imitate the behavior of pass https://www.passwordstore.org/
  */
 ImitatePass::ImitatePass() = default;
@@ -63,7 +63,7 @@ void ImitatePass::GitInit() {
 }
 
 /**
- * @brief ImitatePass::GitPull git init wrapper
+ * @brief ImitatePass::GitPull git pull wrapper
  */
 void ImitatePass::GitPull() { executeGit(GIT_PULL, {"pull"}); }
 
@@ -75,7 +75,7 @@ void ImitatePass::GitPull_b() {
 }
 
 /**
- * @brief ImitatePass::GitPush git init wrapper
+ * @brief ImitatePass::GitPush git push wrapper
  */
 void ImitatePass::GitPush() {
   if (QtPassSettings::isUseGit()) {
@@ -148,17 +148,17 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
     path.replace(Util::endsWithGpg(), "");
     QString msg =
         QString(overwrite ? "Edit" : "Add") + " for " + path + " using QtPass.";
-    GitCommit(file, msg);
+    gitCommit(file, msg);
   }
 }
 
 /**
- * @brief ImitatePass::GitCommit commit a file to git with an appropriate commit
+ * @brief ImitatePass::gitCommit commit a file to git with an appropriate commit
  * message
  * @param file
  * @param msg
  */
-void ImitatePass::GitCommit(const QString &file, const QString &msg) {
+void ImitatePass::gitCommit(const QString &file, const QString &msg) {
   if (file.isEmpty()) {
     executeGit(GIT_COMMIT, {"commit", "-m", msg});
   } else {
@@ -180,7 +180,7 @@ void ImitatePass::Remove(QString file, bool isDir) {
     // Normalize path the same way as add/edit operations
     QString path = QDir(QtPassSettings::getPassStore()).relativeFilePath(file);
     path.replace(Util::endsWithGpg(), "");
-    GitCommit(file, "Remove for " + path + " using QtPass.");
+    gitCommit(file, "Remove for " + path + " using QtPass.");
   } else {
     if (isDir) {
       QDir dir(file);
@@ -283,14 +283,14 @@ void ImitatePass::gitAddGpgId(const QString &gpgIdFile,
   }
   QString commitPath = gpgIdFile;
   commitPath.replace(Util::endsWithGpg(), "");
-  GitCommit(gpgIdFile, "Added " + commitPath + " using QtPass.");
+  gitCommit(gpgIdFile, "Added " + commitPath + " using QtPass.");
   if (!addSigFile) {
     return;
   }
   executeGit(GIT_ADD, {"add", pgit(gpgIdSigFile)});
   commitPath = gpgIdSigFile;
   commitPath.replace(QRegularExpression("\\.gpg$"), "");
-  GitCommit(gpgIdSigFile, "Added " + commitPath + " using QtPass.");
+  gitCommit(gpgIdSigFile, "Added " + commitPath + " using QtPass.");
 }
 
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
@@ -343,7 +343,7 @@ void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
 /**
  * @brief ImitatePass::verifyGpgIdFile verify detached gpgid file signature.
  * @param file which gpgid file.
- * @return was verification succesful?
+ * @return was verification successful?
  */
 auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
@@ -387,7 +387,7 @@ auto ImitatePass::verifyGpgIdFile(const QString &file) -> bool {
 /**
  * @brief ImitatePass::removeDir delete folder recursive.
  * @param dirName which folder.
- * @return was removal succesful?
+ * @return was removal successful?
  */
 auto ImitatePass::removeDir(const QString &dirName) -> bool {
   bool result = true;
@@ -417,7 +417,7 @@ auto ImitatePass::removeDir(const QString &dirName) -> bool {
  * @brief ImitatePass::reencryptPath reencrypt all files under the chosen
  * directory
  *
- * This is stil quite experimental..
+ * This is still quite experimental..
  * @param dir
  */
 auto ImitatePass::verifyGpgIdForDir(const QString &file,
@@ -740,7 +740,7 @@ void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
   relDest.replace(Util::endsWithGpg(), "");
   QString message = QString("Moved for %1 to %2 using QtPass.");
   message = message.arg(relSrc, relDest);
-  GitCommit("", message);
+  gitCommit("", message);
 }
 
 void ImitatePass::Move(const QString src, const QString dest,
@@ -783,7 +783,7 @@ void ImitatePass::Copy(const QString src, const QString dest,
 
     QString message = QString("Copied from %1 to %2 using QtPass.");
     message = message.arg(src, dest);
-    GitCommit("", message);
+    gitCommit("", message);
   } else {
     QDir qDir;
     if (force) {

@@ -53,3 +53,4 @@ release-artifacts
 node_modules
 docs
 opencode.json
+.opencode/package-lock.json
