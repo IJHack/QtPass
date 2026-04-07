@@ -28,7 +28,8 @@ void tst_gpgkeystate::parseMultiKeyPublic() {
 
   QVERIFY2(result.size() == expectedCount,
            qPrintable(QString("Expected %1 keys, got %2")
-                          .arg(expectedCount, result.size())));
+                          .arg(expectedCount)
+                          .arg(result.size())));
 
   for (const UserInfo &user : result) {
     QVERIFY2(user.have_secret == false,
@@ -61,7 +62,8 @@ void tst_gpgkeystate::parseSecretKeys() {
 
   QVERIFY2(result.size() == expectedCount,
            qPrintable(QString("Expected %1 keys, got %2")
-                          .arg(expectedCount, result.size())));
+                          .arg(expectedCount)
+                          .arg(result.size())));
 
   if (expectedCount > 0) {
     QVERIFY(!result.isEmpty());
