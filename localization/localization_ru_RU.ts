@@ -500,7 +500,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Необязательно: ключ GPG для подписи файлов .gpg-id для проверки целостности. Оставьте пустым, если вам не нужна защита списка пользователей от подделки.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
