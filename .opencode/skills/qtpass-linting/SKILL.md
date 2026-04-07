@@ -266,6 +266,19 @@ git push -f
 
 This prevents "branch is out-of-date with base branch" errors when merging.
 
+## IDE/LSP Setup
+
+For proper code completion and analysis in editors like VSCode with clangd, generate `compile_commands.json`:
+
+```bash
+# Generate compile_commands.json using bear
+./scripts/generate-compile-commands.sh
+```
+
+This provides Qt include paths so the LSP can resolve types like `QString`, `QProcess`, etc.
+
+**Note:** `compile_commands.json` is in `.gitignore` - regenerate after cleaning or re-configuring.
+
 ## Related Skills
 
 - **qtpass-testing** - For testing patterns and `make check`
