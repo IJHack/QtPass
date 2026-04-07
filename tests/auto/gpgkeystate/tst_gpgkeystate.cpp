@@ -91,6 +91,11 @@ void tst_gpgkeystate::parseSingleKey() {
   QVERIFY2(result.size() == expectedCount,
            qPrintable(QString("Expected %1 keys, got %2")
                           .arg(expectedCount, result.size())));
+
+  if (result.size() > 0) {
+    QVERIFY2(!result.first().key_id.isEmpty(),
+             "Parsed key should have a key_id");
+  }
 }
 
 void tst_gpgkeystate::parseSingleKey_data() {

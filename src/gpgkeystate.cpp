@@ -54,7 +54,9 @@ void handlePubSecRecord(const QStringList &props, bool secret,
                         UserInfo &current_user) {
   current_user.key_id = props[GPG_FIELD_KEY_ID];
   current_user.name = props[GPG_FIELD_USERID];
-  current_user.validity = props[GPG_FIELD_VALIDITY][0].toLatin1();
+  if (!props[GPG_FIELD_VALIDITY].isEmpty()) {
+    current_user.validity = props[GPG_FIELD_VALIDITY][0].toLatin1();
+  }
 
   bool okCreated = false;
   const qint64 createdSecs = props[GPG_FIELD_CREATED].toLongLong(&okCreated);
