@@ -4,7 +4,7 @@
 
 ### Can't save a password
 
-- Is folder initialized? Easiest way is to use the [Users] button
+- Is the folder initialized? Easiest way is to use the [Users] button
   and make sure you can encrypt for someone (e.g. yourself)
 - Are you using Git? If not, make sure it is switched off.
 
@@ -35,7 +35,7 @@ max-cache-ttl 7200
 
 ### I have another issue with gpg
 
-- Possibly you have your key only in gpg and not in gpg2
+- On modern systems, `gpg` is usually GnuPG 2.x already. If your system has separate `gpg` and `gpg2` keyrings (typically older or custom setups), your key may exist in one but not the other.
 
 ```bash
 gpg --export [ID] > public.key
@@ -45,9 +45,7 @@ gpg2 --import private.key
 rm public.key private.key
 ```
 
-Where [ID] is your gpg key-id.
-
-- It might be the case where it is the other way around, exchange gpg and gpg2 accordingly.
+Where [ID] is your gpg key-id. If your setup is reversed, exchange `gpg` and `gpg2` accordingly.
 
 ### Git doesn't work on Windows
 
@@ -104,7 +102,7 @@ So-called "portable config".
 
 There are some things to take care of when trying to sync on some systems (especially macOS, with regards to text and binary .plist files).
 
-More information: <https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes>
+More information: <https://doc.qt.io/qt-6/qsettings.html#platform-specific-notes>
 
 ### Where can I ask for help?
 
