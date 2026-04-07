@@ -67,7 +67,15 @@ void tst_gpgkeystate::parseSecretKeys() {
 
   if (expectedCount > 0) {
     QVERIFY(!result.isEmpty());
-    QVERIFY(result.first().have_secret == expectHaveSecret);
+    for (int i = 0; i < result.size(); ++i) {
+      const UserInfo &user = result.at(i);
+      QVERIFY2(
+          user.have_secret == expectHaveSecret,
+          qPrintable(QString("Key at index %1 has have_secret=%2, expected %3")
+                         .arg(i)
+                         .arg(user.have_secret)
+                         .arg(expectHaveSecret)));
+    }
   }
 }
 
@@ -95,7 +103,7 @@ void tst_gpgkeystate::parseSingleKey() {
                           .arg(expectedCount)
                           .arg(result.size())));
 
-  if (result.size() > 0) {
+  if (!result.isEmpty()) {
     QVERIFY2(!result.first().key_id.isEmpty(),
              "Parsed key should have a key_id");
   }
