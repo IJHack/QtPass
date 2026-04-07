@@ -201,7 +201,7 @@ attack I can think of at least two options:
 [FAQ](FAQ.md) and [CONTRIBUTING](CONTRIBUTING.md) documentation.
 [CHANGELOG](CHANGELOG.md)
 
-[Official QtPass Website](https://qtpass.org/)
+[Official QtPass site](https://qtpass.org/)
 [Source code](https://github.com/IJHack/QtPass)
 [Issue queue](https://github.com/IJHack/QtPass/issues)
 

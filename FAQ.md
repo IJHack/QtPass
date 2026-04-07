@@ -110,7 +110,7 @@ More information: <https://doc.qt.io/qt-5/qsettings.html#platform-specific-notes
 
 - Create an issue on [GitHub](https://github.com/IJHack/QtPass/issues).
 - Send an email to [help@qtpass.org](mailto:help@qtpass.org)
-- Visit the [Official QtPass Website](https://qtpass.org/)
+- Visit the [Official QtPass site](https://qtpass.org/)
 
 ### Can I import from KeePass, LastPass or X?
 
