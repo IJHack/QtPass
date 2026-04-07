@@ -192,9 +192,9 @@ var sectionId = 'dynsection-30';
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="class_imitate_pass.html#a4633664040a5b817c944736653778e74" target="_top" xlink:title="Commit changes to git.">
-<polygon fill="white" stroke="#666666" points="291,-337 158,-337 158,-318 291,-318 291,-337"/>
-<text text-anchor="middle" x="224.5" y="-325" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitCommit</text>
+<g id="a_Node000014"><a xlink:href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" target="_top" xlink:title="Commit changes to git.">
+<polygon fill="white" stroke="#666666" points="290,-337 159,-337 159,-318 290,-318 290,-337"/>
+<text text-anchor="middle" x="224.5" y="-325" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::gitCommit</text>
 </a>
 </g>
 </g>

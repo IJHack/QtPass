@@ -74,9 +74,9 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_imitate_pass.html#a4633664040a5b817c944736653778e74" target="_top" xlink:title="Commit changes to git.">
-<polygon fill="white" stroke="#666666" points="340.5,-19 207.5,-19 207.5,0 340.5,0 340.5,-19"/>
-<text text-anchor="middle" x="274" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitCommit</text>
+<g id="a_Node000009"><a xlink:href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" target="_top" xlink:title="Commit changes to git.">
+<polygon fill="white" stroke="#666666" points="339.5,-19 208.5,-19 208.5,0 339.5,0 339.5,-19"/>
+<text text-anchor="middle" x="274" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::gitCommit</text>
 </a>
 </g>
 </g>

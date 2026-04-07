@@ -52,7 +52,7 @@
 <area shape="rect" id="Node000014" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="192,423,400,448"/>
 <area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="452,438,400,438,400,433,452,433"/>
 <area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="751,531,631,508,632,503,752,525"/>
-<area shape="rect" id="Node000017" href="$class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" title="Find .gpg&#45;id file for directory." alt="" coords="473,530,654,570"/>
+<area shape="rect" id="Node000017" href="$class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" title="Verify .gpg&#45;id file for a directory." alt="" coords="473,530,654,570"/>
 <area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="746,548,654,550,654,545,745,543"/>
 <area shape="rect" id="Node000018" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="198,565,394,591"/>
 <area shape="poly" id="edge20_Node000017_Node000018" title=" " alt="" coords="459,564,394,570,394,565,458,558"/>

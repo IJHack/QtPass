@@ -1,0 +1,17 @@
+<map id="ImitatePass::gitCommit" name="ImitatePass::gitCommit">
+<area shape="rect" id="Node000001" title="Commit changes to git." alt="" coords="456,104,631,129"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="233,5,371,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="510,99,463,71,407,44,371,33,373,28,409,40,465,66,513,94"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098" title="Execute git move operation." alt="" coords="196,55,408,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="467,104,364,83,366,77,468,99"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#ae9547b23ef6e8c04b52f514218e50a5c" title="Add .gpg&#45;id to git staging." alt="" coords="209,104,395,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="442,119,395,119,395,114,442,114"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="231,153,373,179"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="468,135,366,156,364,151,467,130"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="Remove password." alt="" coords="222,203,382,228"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="512,139,465,167,409,192,369,205,367,200,407,188,462,162,510,134"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" title="Move password file." alt="" coords="5,55,148,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="182,70,149,70,149,65,182,65"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="13,104,140,129"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="195,119,140,119,140,114,195,114"/>
+</map>

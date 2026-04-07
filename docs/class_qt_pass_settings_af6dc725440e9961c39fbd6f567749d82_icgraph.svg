@@ -283,9 +283,9 @@ var sectionId = 'dynsection-10';
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="class_imitate_pass.html#a4633664040a5b817c944736653778e74" target="_top" xlink:title="Commit changes to git.">
-<polygon fill="white" stroke="#666666" points="477.5,-209 344.5,-209 344.5,-190 477.5,-190 477.5,-209"/>
-<text text-anchor="middle" x="411" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitCommit</text>
+<g id="a_Node000011"><a xlink:href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" target="_top" xlink:title="Commit changes to git.">
+<polygon fill="white" stroke="#666666" points="476.5,-209 345.5,-209 345.5,-190 476.5,-190 476.5,-209"/>
+<text text-anchor="middle" x="411" y="-197" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::gitCommit</text>
 </a>
 </g>
 </g>
@@ -293,7 +293,7 @@ var sectionId = 'dynsection-10';
 <g id="edge12_Node000007_Node000011" class="edge">
 <title>Node7&#45;&gt;Node11</title>
 <g id="a_edge12_Node000007_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M530.18,-211.1C512.83,-209.4 494.51,-207.6 477.62,-205.94"/>
+<path fill="none" stroke="#63b8ff" d="M530.01,-211.09C512.37,-209.36 493.74,-207.53 476.63,-205.85"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="529.97,-214.6 540.26,-212.09 530.65,-207.63 529.97,-214.6"/>
 </a>
 </g>
@@ -419,8 +419,8 @@ var sectionId = 'dynsection-10';
 <g id="edge13_Node000011_Node000005" class="edge">
 <title>Node11&#45;&gt;Node5</title>
 <g id="a_edge13_Node000011_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M334.02,-199.5C265.13,-199.5 165.47,-199.5 105.63,-199.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="334.38,-203 344.38,-199.5 334.38,-196 334.38,-203"/>
+<path fill="none" stroke="#63b8ff" d="M334.85,-199.5C265.92,-199.5 165.68,-199.5 105.61,-199.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="335.21,-203 345.21,-199.5 335.21,-196 335.21,-203"/>
 </a>
 </g>
 </g>

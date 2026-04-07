@@ -290,9 +290,9 @@
 <!-- Node14 -->
 <g id="Node000014" class="node">
 <title>Node14</title>
-<g id="a_Node000014"><a xlink:href="class_imitate_pass.html#a4633664040a5b817c944736653778e74" target="_top" xlink:title="Commit changes to git.">
-<polygon fill="white" stroke="#666666" points="507,-752.5 374,-752.5 374,-733.5 507,-733.5 507,-752.5"/>
-<text text-anchor="middle" x="440.5" y="-740.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitCommit</text>
+<g id="a_Node000014"><a xlink:href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" target="_top" xlink:title="Commit changes to git.">
+<polygon fill="white" stroke="#666666" points="506,-752.5 375,-752.5 375,-733.5 506,-733.5 506,-752.5"/>
+<text text-anchor="middle" x="440.5" y="-740.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::gitCommit</text>
 </a>
 </g>
 </g>
@@ -300,8 +300,8 @@
 <g id="edge15_Node000008_Node000014" class="edge">
 <title>Node8&#45;&gt;Node14</title>
 <g id="a_edge15_Node000008_Node000014"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M294.68,-743C316.71,-743 341.19,-743 363.66,-743"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="363.83,-746.5 373.83,-743 363.83,-739.5 363.83,-746.5"/>
+<path fill="none" stroke="#63b8ff" d="M294.68,-743C317.03,-743 341.9,-743 364.63,-743"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="364.91,-746.5 374.91,-743 364.91,-739.5 364.91,-746.5"/>
 </a>
 </g>
 </g>
@@ -382,8 +382,8 @@
 <g id="edge16_Node000014_Node000010" class="edge">
 <title>Node14&#45;&gt;Node10</title>
 <g id="a_edge16_Node000014_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M507.28,-743C529.9,-743 555.39,-743 578.7,-743"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="578.89,-746.5 588.89,-743 578.89,-739.5 578.89,-746.5"/>
+<path fill="none" stroke="#63b8ff" d="M506.12,-743C529.09,-743 555.15,-743 578.92,-743"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="578.95,-746.5 588.95,-743 578.95,-739.5 578.95,-746.5"/>
 </a>
 </g>
 </g>
@@ -580,7 +580,7 @@
 <!-- Node31 -->
 <g id="Node000031" class="node">
 <title>Node31</title>
-<g id="a_Node000031"><a xlink:href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" target="_top" xlink:title="Find .gpg&#45;id file for directory.">
+<g id="a_Node000031"><a xlink:href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" target="_top" xlink:title="Verify .gpg&#45;id file for a directory.">
 <polygon fill="white" stroke="#666666" points="508.5,-30 372.5,-30 372.5,0 508.5,0 508.5,-30"/>
 <text text-anchor="start" x="380.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::verifyGpgId</text>
 <text text-anchor="middle" x="440.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ForDir</text>

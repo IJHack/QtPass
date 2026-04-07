@@ -24,8 +24,8 @@
 <area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="797,486,714,593,652,666,614,680,573,690,491,696,414,690,352,679,353,673,415,684,491,690,572,685,612,675,649,661,709,590,793,483"/>
 <area shape="rect" id="Node000010" href="$class_imitate_pass.html#ae9547b23ef6e8c04b52f514218e50a5c" title="Add .gpg&#45;id to git staging." alt="" coords="209,323,395,348"/>
 <area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="776,444,718,416,650,391,584,375,517,362,395,345,396,340,518,357,586,369,651,386,720,412,779,439"/>
-<area shape="rect" id="Node000011" href="$class_imitate_pass.html#a4633664040a5b817c944736653778e74" title="Commit changes to git." alt="" coords="465,473,642,499"/>
-<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="712,473,642,480,642,475,712,468"/>
+<area shape="rect" id="Node000011" href="$class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" title="Commit changes to git." alt="" coords="466,473,641,499"/>
+<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="712,473,641,480,641,475,712,468"/>
 <area shape="rect" id="Node000012" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="231,397,373,423"/>
 <area shape="poly" id="edge22_Node000007_Node000012" title=" " alt="" coords="767,446,712,428,650,414,577,406,503,403,374,407,374,402,503,398,577,401,651,409,713,423,768,440"/>
 <area shape="rect" id="Node000013" href="$class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5" title="Remove password." alt="" coords="222,524,382,549"/>
@@ -39,7 +39,7 @@
 <area shape="rect" id="Node000009" href="$class_imitate_pass.html#a9653850cc56714b9774221204339bbf2" title="Move password file." alt="" coords="5,651,148,676"/>
 <area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="182,666,149,666,149,661,182,661"/>
 <area shape="poly" id="edge11_Node000010_Node000006" title=" " alt="" coords="259,319,105,249,107,244,261,314"/>
-<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="451,489,146,489,146,483,451,483"/>
+<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="452,489,146,489,146,483,452,483"/>
 <area shape="poly" id="edge14_Node000011_Node000008" title=" " alt="" coords="524,509,323,653,320,648,521,505"/>
 <area shape="poly" id="edge15_Node000011_Node000010" title=" " alt="" coords="466,470,454,463,437,444,429,425,421,406,406,387,375,366,343,351,345,346,378,361,410,383,426,403,434,423,441,441,458,459,469,465"/>
 <area shape="poly" id="edge16_Node000011_Node000012" title=" " alt="" coords="488,472,455,463,339,425,340,420,457,458,489,467"/>

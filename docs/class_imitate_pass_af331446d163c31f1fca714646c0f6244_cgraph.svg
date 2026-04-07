@@ -265,7 +265,7 @@ var sectionId = 'dynsection-32';
 <!-- Node25 -->
 <g id="Node000025" class="node">
 <title>Node25</title>
-<g id="a_Node000025"><a xlink:href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" target="_top" xlink:title="Find .gpg&#45;id file for directory.">
+<g id="a_Node000025"><a xlink:href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" target="_top" xlink:title="Verify .gpg&#45;id file for a directory.">
 <polygon fill="white" stroke="#666666" points="337.5,-252.5 201.5,-252.5 201.5,-222.5 337.5,-222.5 337.5,-252.5"/>
 <text text-anchor="start" x="209.5" y="-240.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::verifyGpgId</text>
 <text text-anchor="middle" x="269.5" y="-229.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForDir</text>

@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 647;
+var viewWidth = 645;
 var viewHeight = 334;
 var sectionId = 'dynsection-9';
 </script>
@@ -58,8 +58,8 @@ var sectionId = 'dynsection-9';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title="Execute git command.">
-<polygon fill="#999999" stroke="#666666" points="639,-170 507,-170 507,-151 639,-151 639,-170"/>
-<text text-anchor="middle" x="573" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeGit</text>
+<polygon fill="#999999" stroke="#666666" points="637,-170 505,-170 505,-151 637,-151 637,-170"/>
+<text text-anchor="middle" x="571" y="-158" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::executeGit</text>
 </a>
 </g>
 </g>
@@ -76,8 +76,8 @@ var sectionId = 'dynsection-9';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M564.31,-179.53C550.73,-210.2 519.3,-269.53 471,-293.5 337.59,-359.7 149.59,-307.22 80.92,-284.06"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="567.53,-180.89 568.22,-170.32 561.09,-178.15 567.53,-180.89"/>
+<path fill="none" stroke="#63b8ff" d="M562.31,-179.53C548.73,-210.2 517.3,-269.53 469,-293.5 336.23,-359.39 149.13,-307.09 80.8,-284.02"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="565.53,-180.89 566.22,-170.32 559.09,-178.15 565.53,-180.89"/>
 </a>
 </g>
 </g>
@@ -94,8 +94,8 @@ var sectionId = 'dynsection-9';
 <g id="edge2_Node000001_Node000003" class="edge">
 <title>Node1&#45;&gt;Node3</title>
 <g id="a_edge2_Node000001_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M496.75,-160.72C439.28,-160.88 360.32,-161.11 302.05,-161.27"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="496.87,-164.22 506.86,-160.69 496.85,-157.22 496.87,-164.22"/>
+<path fill="none" stroke="#63b8ff" d="M494.8,-160.72C437.84,-160.88 359.8,-161.11 302.04,-161.27"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="494.84,-164.22 504.83,-160.69 494.82,-157.22 494.84,-164.22"/>
 </a>
 </g>
 </g>
@@ -112,17 +112,17 @@ var sectionId = 'dynsection-9';
 <g id="edge4_Node000001_Node000005" class="edge">
 <title>Node1&#45;&gt;Node5</title>
 <g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M551.75,-176.12C532.28,-190.08 501.4,-209.51 471,-217.5 396.6,-237.05 305.62,-220.1 257.36,-208.04"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="553.87,-178.9 559.85,-170.15 549.72,-173.26 553.87,-178.9"/>
+<path fill="none" stroke="#63b8ff" d="M549.75,-176.12C530.28,-190.08 499.4,-209.51 469,-217.5 395.2,-236.89 304.96,-220 257.08,-208"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="551.87,-178.9 557.85,-170.15 547.72,-173.26 551.87,-178.9"/>
 </a>
 </g>
 </g>
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_imitate_pass.html#a4633664040a5b817c944736653778e74" target="_top" xlink:title="Commit changes to git.">
-<polygon fill="white" stroke="#666666" points="471,-208 338,-208 338,-189 471,-189 471,-208"/>
-<text text-anchor="middle" x="404.5" y="-196" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitCommit</text>
+<g id="a_Node000007"><a xlink:href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" target="_top" xlink:title="Commit changes to git.">
+<polygon fill="white" stroke="#666666" points="469,-208 338,-208 338,-189 469,-189 469,-208"/>
+<text text-anchor="middle" x="403.5" y="-196" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::gitCommit</text>
 </a>
 </g>
 </g>
@@ -130,8 +130,8 @@ var sectionId = 'dynsection-9';
 <g id="edge6_Node000001_Node000007" class="edge">
 <title>Node1&#45;&gt;Node7</title>
 <g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M520.19,-172.32C496.72,-177.68 469.33,-183.93 447.21,-188.98"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="521.01,-175.73 529.99,-170.09 519.46,-168.9 521.01,-175.73"/>
+<path fill="none" stroke="#63b8ff" d="M518.19,-172.4C494.93,-177.74 467.85,-183.95 445.96,-188.98"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="519.27,-175.74 528.24,-170.09 517.71,-168.92 519.27,-175.74"/>
 </a>
 </g>
 </g>
@@ -148,8 +148,8 @@ var sectionId = 'dynsection-9';
 <g id="edge18_Node000001_Node000008" class="edge">
 <title>Node1&#45;&gt;Node8</title>
 <g id="a_edge18_Node000001_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M496.84,-152.52C430.27,-145.45 334.79,-135.32 276.09,-129.08"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="496.54,-156.01 506.86,-153.58 497.28,-149.05 496.54,-156.01"/>
+<path fill="none" stroke="#63b8ff" d="M494.49,-152.44C428.49,-145.39 334.37,-135.34 276.2,-129.13"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="494.51,-155.96 504.83,-153.54 495.25,-149 494.51,-155.96"/>
 </a>
 </g>
 </g>
@@ -166,8 +166,8 @@ var sectionId = 'dynsection-9';
 <g id="edge19_Node000001_Node000009" class="edge">
 <title>Node1&#45;&gt;Node9</title>
 <g id="a_edge19_Node000001_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M530.62,-148.16C512.43,-142.96 490.75,-137.06 471,-132.5 407.02,-117.72 332.89,-104.44 282.56,-95.99"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="529.76,-151.55 540.34,-150.96 531.7,-144.83 529.76,-151.55"/>
+<path fill="none" stroke="#63b8ff" d="M528.62,-148.17C510.42,-142.97 488.74,-137.08 469,-132.5 405.64,-117.81 332.24,-104.54 282.32,-96.07"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="527.76,-151.56 538.34,-150.97 529.7,-144.84 527.76,-151.56"/>
 </a>
 </g>
 </g>
@@ -175,8 +175,8 @@ var sectionId = 'dynsection-9';
 <g id="Node000010" class="node">
 <title>Node10</title>
 <g id="a_Node000010"><a xlink:href="class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb" target="_top" xlink:title="Initialize Git repository.">
-<polygon fill="white" stroke="#666666" points="459.5,-56 349.5,-56 349.5,-37 459.5,-37 459.5,-56"/>
-<text text-anchor="middle" x="404.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitInit</text>
+<polygon fill="white" stroke="#666666" points="458.5,-56 348.5,-56 348.5,-37 458.5,-37 458.5,-56"/>
+<text text-anchor="middle" x="403.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitInit</text>
 </a>
 </g>
 </g>
@@ -184,8 +184,8 @@ var sectionId = 'dynsection-9';
 <g id="edge12_Node000001_Node000010" class="edge">
 <title>Node1&#45;&gt;Node10</title>
 <g id="a_edge12_Node000001_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M556.65,-143.36C538.06,-123.49 505,-90.86 471,-70.5 461.13,-64.59 449.56,-59.76 438.92,-56.02"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="554.13,-145.79 563.47,-150.78 559.28,-141.05 554.13,-145.79"/>
+<path fill="none" stroke="#63b8ff" d="M554.63,-143.39C536.03,-123.54 502.95,-90.95 469,-70.5 459.28,-64.64 447.89,-59.83 437.41,-56.09"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="552.11,-145.82 561.46,-150.8 557.26,-141.07 552.11,-145.82"/>
 </a>
 </g>
 </g>
@@ -193,8 +193,8 @@ var sectionId = 'dynsection-9';
 <g id="Node000011" class="node">
 <title>Node11</title>
 <g id="a_Node000011"><a xlink:href="class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced" target="_top" xlink:title="Pull from remote.">
-<polygon fill="white" stroke="#666666" points="460.5,-19 348.5,-19 348.5,0 460.5,0 460.5,-19"/>
-<text text-anchor="middle" x="404.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPull</text>
+<polygon fill="white" stroke="#666666" points="459.5,-19 347.5,-19 347.5,0 459.5,0 459.5,-19"/>
+<text text-anchor="middle" x="403.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPull</text>
 </a>
 </g>
 </g>
@@ -202,8 +202,8 @@ var sectionId = 'dynsection-9';
 <g id="edge13_Node000001_Node000011" class="edge">
 <title>Node1&#45;&gt;Node11</title>
 <g id="a_edge13_Node000001_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M562.86,-141.66C547.81,-112.65 515.04,-57.29 471,-27.5 465.92,-24.06 460.2,-21.28 454.31,-19.03"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="559.81,-143.38 567.43,-150.73 566.06,-140.23 559.81,-143.38"/>
+<path fill="none" stroke="#63b8ff" d="M560.85,-141.68C545.78,-112.7 512.98,-57.38 469,-27.5 464,-24.1 458.37,-21.34 452.57,-19.1"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="557.79,-143.4 565.43,-150.74 564.04,-140.24 557.79,-143.4"/>
 </a>
 </g>
 </g>
@@ -211,8 +211,8 @@ var sectionId = 'dynsection-9';
 <g id="Node000012" class="node">
 <title>Node12</title>
 <g id="a_Node000012"><a xlink:href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" target="_top" xlink:title="Push to remote.">
-<polygon fill="white" stroke="#666666" points="463,-284 346,-284 346,-265 463,-265 463,-284"/>
-<text text-anchor="middle" x="404.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPush</text>
+<polygon fill="white" stroke="#666666" points="462,-284 345,-284 345,-265 462,-265 462,-284"/>
+<text text-anchor="middle" x="403.5" y="-272" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitPush</text>
 </a>
 </g>
 </g>
@@ -220,8 +220,8 @@ var sectionId = 'dynsection-9';
 <g id="edge14_Node000001_Node000012" class="edge">
 <title>Node1&#45;&gt;Node12</title>
 <g id="a_edge14_Node000001_Node000012"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M556.65,-177.64C538.06,-197.51 505,-230.14 471,-250.5 461.13,-256.41 449.56,-261.24 438.92,-264.98"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="559.28,-179.95 563.47,-170.22 554.13,-175.21 559.28,-179.95"/>
+<path fill="none" stroke="#63b8ff" d="M554.63,-177.61C536.03,-197.46 502.95,-230.05 469,-250.5 459.28,-256.36 447.89,-261.17 437.41,-264.91"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="557.26,-179.93 561.46,-170.2 552.11,-175.18 557.26,-179.93"/>
 </a>
 </g>
 </g>
@@ -265,8 +265,8 @@ var sectionId = 'dynsection-9';
 <g id="edge7_Node000007_Node000002" class="edge">
 <title>Node7&#45;&gt;Node2</title>
 <g id="a_edge7_Node000007_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M349.83,-210.19C280.74,-225.23 162.02,-251.09 98.17,-264.99"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="350.63,-213.6 359.65,-208.05 349.14,-206.76 350.63,-213.6"/>
+<path fill="none" stroke="#63b8ff" d="M348.99,-210.19C280.1,-225.23 161.71,-251.09 98.04,-264.99"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="349.75,-213.6 358.78,-208.05 348.26,-206.76 349.75,-213.6"/>
 </a>
 </g>
 </g>
@@ -274,8 +274,8 @@ var sectionId = 'dynsection-9';
 <g id="edge8_Node000007_Node000003" class="edge">
 <title>Node7&#45;&gt;Node3</title>
 <g id="a_edge8_Node000007_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M347.15,-186.92C322.34,-181.82 293.56,-175.9 270.01,-171.06"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="346.65,-190.39 357.15,-188.97 348.06,-183.53 346.65,-190.39"/>
+<path fill="none" stroke="#63b8ff" d="M346.46,-186.92C321.8,-181.82 293.17,-175.9 269.75,-171.06"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="345.9,-190.37 356.4,-188.97 347.32,-183.52 345.9,-190.37"/>
 </a>
 </g>
 </g>
@@ -283,8 +283,8 @@ var sectionId = 'dynsection-9';
 <g id="edge9_Node000007_Node000005" class="edge">
 <title>Node7&#45;&gt;Node5</title>
 <g id="a_edge9_Node000007_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M327.66,-198.5C316.07,-198.5 304.15,-198.5 292.7,-198.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="327.75,-202 337.75,-198.5 327.75,-195 327.75,-202"/>
+<path fill="none" stroke="#63b8ff" d="M327.74,-198.5C316.08,-198.5 304.08,-198.5 292.56,-198.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="327.88,-202 337.88,-198.5 327.88,-195 327.88,-202"/>
 </a>
 </g>
 </g>
@@ -292,8 +292,8 @@ var sectionId = 'dynsection-9';
 <g id="edge10_Node000007_Node000008" class="edge">
 <title>Node7&#45;&gt;Node8</title>
 <g id="a_edge10_Node000007_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M379.84,-183.5C359.77,-171.31 329.87,-154.41 302,-143.5 291.52,-139.4 279.93,-135.91 268.94,-133.05"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="378.24,-186.62 388.59,-188.89 381.92,-180.66 378.24,-186.62"/>
+<path fill="none" stroke="#63b8ff" d="M379.1,-183.48C359.23,-171.29 329.64,-154.38 302,-143.5 291.53,-139.38 279.94,-135.88 268.95,-133.02"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="377.42,-186.56 387.75,-188.88 381.12,-180.62 377.42,-186.56"/>
 </a>
 </g>
 </g>
@@ -301,8 +301,8 @@ var sectionId = 'dynsection-9';
 <g id="edge11_Node000007_Node000009" class="edge">
 <title>Node7&#45;&gt;Node9</title>
 <g id="a_edge11_Node000007_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M389.49,-180.79C371.55,-159.35 338.39,-123.74 302,-104.5 295.57,-101.1 288.52,-98.34 281.35,-96.1"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="386.97,-183.23 396.01,-188.76 392.39,-178.8 386.97,-183.23"/>
+<path fill="none" stroke="#63b8ff" d="M388.67,-180.78C370.94,-159.34 338.15,-123.72 302,-104.5 295.58,-101.09 288.53,-98.32 281.37,-96.07"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="386.1,-183.17 395.11,-188.76 391.55,-178.78 386.1,-183.17"/>
 </a>
 </g>
 </g>
@@ -319,8 +319,8 @@ var sectionId = 'dynsection-9';
 <g id="edge15_Node000012_Node000013" class="edge">
 <title>Node12&#45;&gt;Node13</title>
 <g id="a_edge15_Node000012_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M335.43,-274.5C322.6,-274.5 309.14,-274.5 296.18,-274.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="335.56,-278 345.56,-274.5 335.56,-271 335.56,-278"/>
+<path fill="none" stroke="#63b8ff" d="M334.87,-274.5C322.2,-274.5 308.91,-274.5 296.1,-274.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="334.88,-278 344.88,-274.5 334.88,-271 334.88,-278"/>
 </a>
 </g>
 </g>

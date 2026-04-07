@@ -53,7 +53,7 @@ var searchData=
   ['getwebdavurl_50',['getWebDavUrl',['../class_qt_pass_settings.html#aa6390d99bd94542bb71f05ae78d4eb6b',1,'QtPassSettings']]],
   ['getwebdavuser_51',['getWebDavUser',['../class_qt_pass_settings.html#a2a4b76e27a5a78ec408ca8a17e8f8794',1,'QtPassSettings']]],
   ['gitaddgpgid_52',['gitAddGpgId',['../class_imitate_pass.html#ae9547b23ef6e8c04b52f514218e50a5c',1,'ImitatePass']]],
-  ['gitcommit_53',['GitCommit',['../class_imitate_pass.html#a4633664040a5b817c944736653778e74',1,'ImitatePass']]],
+  ['gitcommit_53',['gitCommit',['../class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb',1,'ImitatePass']]],
   ['gitinit_54',['gitinit',['../class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb',1,'ImitatePass::GitInit()'],['../class_pass.html#a26bec7c69e7c35ccb67f8057db90825e',1,'Pass::GitInit()'],['../class_real_pass.html#aacaf85a65fc1398c356dd44370e5e22f',1,'RealPass::GitInit()']]],
   ['gitpull_55',['gitpull',['../class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8',1,'Pass::GitPull()'],['../class_real_pass.html#ac3206e85bc586214e6cc75186cff65c3',1,'RealPass::GitPull()'],['../class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced',1,'ImitatePass::GitPull() override']]],
   ['gitpull_5fb_56',['gitpull_b',['../class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2',1,'ImitatePass::GitPull_b()'],['../class_pass.html#a7a109d5c0a7f565398b7238c32bb6328',1,'Pass::GitPull_b()'],['../class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210',1,'RealPass::GitPull_b()']]],

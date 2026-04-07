@@ -38,9 +38,9 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_imitate_pass.html#a4633664040a5b817c944736653778e74" target="_top" xlink:title="Commit changes to git.">
-<polygon fill="white" stroke="#666666" points="280,-590 147,-590 147,-571 280,-571 280,-590"/>
-<text text-anchor="middle" x="213.5" y="-578" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::GitCommit</text>
+<g id="a_Node000007"><a xlink:href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" target="_top" xlink:title="Commit changes to git.">
+<polygon fill="white" stroke="#666666" points="279,-590 148,-590 148,-571 279,-571 279,-590"/>
+<text text-anchor="middle" x="213.5" y="-578" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::gitCommit</text>
 </a>
 </g>
 </g>
@@ -175,7 +175,7 @@
 <g id="edge8_Node000007_Node000002" class="edge">
 <title>Node7&#45;&gt;Node2</title>
 <g id="a_edge8_Node000007_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M280.23,-581.56C338.04,-580.92 423.96,-576.16 496,-556.5 533.87,-546.16 574.18,-524.81 598.97,-510.32"/>
+<path fill="none" stroke="#63b8ff" d="M279.1,-581.57C336.91,-580.99 423.48,-576.29 496,-556.5 533.87,-546.16 574.18,-524.81 598.97,-510.32"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="600.88,-513.26 607.68,-505.14 597.3,-507.24 600.88,-513.26"/>
 </a>
 </g>
@@ -382,7 +382,7 @@
 <!-- Node27 -->
 <g id="Node000027" class="node">
 <title>Node27</title>
-<g id="a_Node000027"><a xlink:href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" target="_top" xlink:title="Find .gpg&#45;id file for directory.">
+<g id="a_Node000027"><a xlink:href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" target="_top" xlink:title="Verify .gpg&#45;id file for a directory.">
 <polygon fill="white" stroke="#666666" points="477.5,-40.5 341.5,-40.5 341.5,-10.5 477.5,-10.5 477.5,-40.5"/>
 <text text-anchor="start" x="349.5" y="-28.5" font-family="Helvetica,sans-Serif" font-size="10.00">ImitatePass::verifyGpgId</text>
 <text text-anchor="middle" x="409.5" y="-17.5" font-family="Helvetica,sans-Serif" font-size="10.00">ForDir</text>

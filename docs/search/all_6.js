@@ -62,7 +62,7 @@ var searchData=
   ['git_5fpush_59',['GIT_PUSH',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40',1,'Enums']]],
   ['git_5frm_60',['GIT_RM',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36',1,'Enums']]],
   ['gitaddgpgid_61',['gitAddGpgId',['../class_imitate_pass.html#ae9547b23ef6e8c04b52f514218e50a5c',1,'ImitatePass']]],
-  ['gitcommit_62',['GitCommit',['../class_imitate_pass.html#a4633664040a5b817c944736653778e74',1,'ImitatePass']]],
+  ['gitcommit_62',['gitCommit',['../class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb',1,'ImitatePass']]],
   ['gitexecutable_63',['gitExecutable',['../class_settings_constants.html#a87180f2fe03867a8e572ef9d62a655d2',1,'SettingsConstants']]],
   ['gitinit_64',['gitinit',['../class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb',1,'ImitatePass::GitInit()'],['../class_pass.html#a26bec7c69e7c35ccb67f8057db90825e',1,'Pass::GitInit()'],['../class_real_pass.html#aacaf85a65fc1398c356dd44370e5e22f',1,'RealPass::GitInit() override']]],
   ['gitpull_65',['gitpull',['../class_real_pass.html#ac3206e85bc586214e6cc75186cff65c3',1,'RealPass::GitPull()'],['../class_pass.html#a30c3829a890d65d3e4ba90c12b1852e8',1,'Pass::GitPull()'],['../class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced',1,'ImitatePass::GitPull()']]],

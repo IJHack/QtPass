@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Get .gpg&#45;id file path for a password file." alt="" coords="665,35,812,60"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="455,5,598,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="651,38,598,30,598,25,652,33"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" title="Find .gpg&#45;id file for directory." alt="" coords="436,55,617,95"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" title="Verify .gpg&#45;id file for a directory." alt="" coords="436,55,617,95"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="652,61,618,66,617,61,651,56"/>
 <area shape="rect" id="Node000004" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="192,63,388,88"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="422,78,388,78,388,73,422,73"/>
