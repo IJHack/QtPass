@@ -1237,7 +1237,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="275"/>
         <source>QProcess::Crashed</source>
-        <translation>QProsess::Аварийное завершение</translation>
+        <translation>QProcess::Аварийное завершение</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="278"/>
@@ -1345,7 +1345,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите пользователей, которые смогут расшифровывать пароли, хранящиеся в этой папке.
+Примечание: Существующие файлы не будут изменены и сохранят старые права доступа до тех пор, пока вы их не отредактируете.
+Синие записи имеют закрытый ключ; выберите одну из них, чтобы иметь возможность расшифровывать.
+Чёрные записи имеют доступный и доверенный ключ шифрования; выберите одну из них, чтобы другие пользователи могли расшифровывать.
+Красные записи недействительны, их нельзя использовать для шифрования.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1417,7 +1421,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="270"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[НЕДЕЙСТВИТЕЛЕН] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="273"/>
@@ -1427,7 +1431,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="277"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[ЧАСТИЧНЫЙ] </translation>
     </message>
 </context>
 </TS>
