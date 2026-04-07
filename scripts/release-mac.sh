@@ -1,14 +1,25 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+README_FAQ="README.faq"
+README_CONTRIB="README.contrib"
+README_CHANGELOG="README.changelog"
+README_CLEAN="README.clean"
+
+cleanup() {
+	rm -f "$README_FAQ" "$README_CONTRIB" "$README_CHANGELOG" "$README_CLEAN"
+}
+
+trap cleanup EXIT
+
 echo "Processing README links..."
-sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md__f_a_q.html/' <README.md >README.faq
-sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md__c_o_n_t_r_i_b_u_t_i_n_g.html/' <README.faq >README.contrib
-sed 's/CHANGELOG\.md/https:\/\/qtpass.org\/docs\/md__c_h_a_n_g_e_l_o_g.html/' <README.contrib >README.changelog
-sed 's/\[\!.*//' <README.changelog >README.clean
+sed 's/FAQ\.md/https:\/\/qtpass.org\/docs\/md__f_a_q.html/' <README.md >"$README_FAQ"
+sed 's/CONTRIBUTING\.md/https:\/\/qtpass.org\/docs\/md__c_o_n_t_r_i_b_u_t_i_n_g.html/' <"$README_FAQ" >"$README_CONTRIB"
+sed 's/CHANGELOG\.md/https:\/\/qtpass.org\/docs\/md__c_h_a_n_g_e_l_o_g.html/' <"$README_CONTRIB" >"$README_CHANGELOG"
+sed 's/\[\!.*//' <"$README_CHANGELOG" >"$README_CLEAN"
 
 echo "Generating RTF documentation..."
-pandoc --standalone --from=gfm --to=rtf --output=README.rtf README.clean FAQ.md CONTRIBUTING.md CHANGELOG.md || {
+pandoc --standalone --from=gfm --to=rtf --output=README.rtf "$README_CLEAN" FAQ.md CONTRIBUTING.md CHANGELOG.md || {
 	echo "Error: pandoc failed."
 	exit 1
 }
