@@ -170,7 +170,8 @@ public:
    * @param gpgPath Path to gpg executable.
    * @return Resolved command with program and arguments.
    */
-  static ResolvedGpgconfCommand resolveGpgconfCommand(const QString &gpgPath);
+  static auto resolveGpgconfCommand(const QString &gpgPath)
+      -> ResolvedGpgconfCommand;
   /**
    * @brief Get .gpg-id file path for a password file.
    * @param for_file Path to password file.

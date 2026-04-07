@@ -201,12 +201,17 @@ QString Pass::getDefaultKeyTemplate() {
                         "%echo done");
 }
 
-ResolvedGpgconfCommand Pass::resolveGpgconfCommand(const QString &gpgPath) {
+auto Pass::resolveGpgconfCommand(const QString &gpgPath)
+    -> ResolvedGpgconfCommand {
   if (gpgPath.trimmed().isEmpty()) {
     return {"gpgconf", {}};
   }
 
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList parts = QProcess::splitCommand(gpgPath);
+#else
+  QStringList parts = QStringList{gpgPath};
+#endif
   if (!parts.isEmpty()) {
     QString first = parts.first();
     if (first == "wsl" || first == "wsl.exe") {
