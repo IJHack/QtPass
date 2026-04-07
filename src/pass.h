@@ -10,8 +10,14 @@
 #include <QProcess>
 #include <QQueue>
 #include <QString>
+#include <QStringList>
 #include <cassert>
 #include <map>
+
+struct ResolvedGpgconfCommand {
+  QString program;
+  QStringList arguments;
+};
 
 /**
  * @class Pass
@@ -162,9 +168,9 @@ public:
   /**
    * @brief Resolve the gpgconf command to kill agents.
    * @param gpgPath Path to gpg executable.
-   * @return Command string for gpgconf (may include WSL prefix).
+   * @return Resolved command with program and arguments.
    */
-  static QString resolveGpgconfCommand(const QString &gpgPath);
+  static ResolvedGpgconfCommand resolveGpgconfCommand(const QString &gpgPath);
   /**
    * @brief Get .gpg-id file path for a password file.
    * @param for_file Path to password file.

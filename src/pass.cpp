@@ -201,9 +201,9 @@ QString Pass::getDefaultKeyTemplate() {
                         "%echo done");
 }
 
-QString Pass::resolveGpgconfCommand(const QString &gpgPath) {
+ResolvedGpgconfCommand Pass::resolveGpgconfCommand(const QString &gpgPath) {
   if (gpgPath.trimmed().isEmpty()) {
-    return "gpgconf";
+    return {"gpgconf", {}};
   }
 
   QStringList parts = QProcess::splitCommand(gpgPath);
@@ -211,23 +211,24 @@ QString Pass::resolveGpgconfCommand(const QString &gpgPath) {
     QString first = parts.first();
     if (first == "wsl" || first == "wsl.exe") {
       if (parts.size() >= 2 && parts.at(1).startsWith("sh")) {
-        return "gpgconf";
+        return {"gpgconf", {}};
       }
       if (parts.last().startsWith("gpg")) {
-        parts.last() = "gpgconf";
-        return parts.join(' ');
+        parts.removeLast();
+        parts.append("gpgconf");
+        return {parts.first(), parts.mid(1)};
       }
-      return "gpgconf";
+      return {"gpgconf", {}};
     }
   }
 
   if (!gpgPath.contains('/') && !gpgPath.contains('\\')) {
-    return "gpgconf";
+    return {"gpgconf", {}};
   }
 
   QFileInfo gpgInfo(gpgPath);
   if (!gpgInfo.isAbsolute()) {
-    return "gpgconf";
+    return {"gpgconf", {}};
   }
 
   QDir dir(gpgInfo.absolutePath());
@@ -235,16 +236,16 @@ QString Pass::resolveGpgconfCommand(const QString &gpgPath) {
 #ifdef Q_OS_WIN
   QFileInfo candidateExe(dir.filePath("gpgconf.exe"));
   if (candidateExe.isExecutable()) {
-    return candidateExe.filePath();
+    return {candidateExe.filePath(), {}};
   }
 #endif
 
   QFileInfo candidate(dir.filePath("gpgconf"));
   if (candidate.isExecutable()) {
-    return candidate.filePath();
+    return {candidate.filePath(), {}};
   }
 
-  return "gpgconf";
+  return {"gpgconf", {}};
 }
 
 /**
@@ -256,8 +257,11 @@ void Pass::GenerateGPGKeys(QString batch) {
   // This helps avoid "database locked" timeouts during key generation
   QString gpgPath = QtPassSettings::getGpgExecutable();
   if (!gpgPath.isEmpty()) {
-    QString gpgconfCommand = resolveGpgconfCommand(gpgPath);
-    Executor::executeBlocking(gpgconfCommand, {"--kill", "gpg-agent"});
+    ResolvedGpgconfCommand gpgconf = resolveGpgconfCommand(gpgPath);
+    QStringList killArgs = gpgconf.arguments;
+    killArgs << "--kill" << "gpg-agent";
+    // Use same environment as key generation to target correct gpg-agent
+    Executor::executeBlocking(env, gpgconf.program, killArgs);
   }
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},

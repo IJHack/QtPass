@@ -273,6 +273,38 @@ auto Executor::executeBlocking(QString app, const QStringList &args,
 }
 
 /**
+ * @brief Executor::executeBlocking blocking version with custom environment
+ * @param env Environment variables to set
+ * @param app Executable path
+ * @param args Arguments
+ * @param process_out Standard output
+ * @param process_err Standard error
+ * @return Exit code
+ */
+auto Executor::executeBlocking(const QStringList &env, QString app,
+                               const QStringList &args, QString *process_out,
+                               QString *process_err) -> int {
+  QProcess process;
+  QProcessEnvironment penv;
+  for (const QString &var : env) {
+    int idx = var.indexOf('=');
+    if (idx > 0) {
+      penv.insert(var.left(idx), var.mid(idx + 1));
+    }
+  }
+  process.setProcessEnvironment(penv);
+  startProcessBlocking(process, app, args);
+  process.waitForFinished(-1);
+  if (process_out) {
+    *process_out = process.readAllStandardOutput();
+  }
+  if (process_err) {
+    *process_err = process.readAllStandardError();
+  }
+  return process.exitCode();
+}
+
+/**
  * @brief Executor::setEnvironment set environment variables
  * for executor processes
  * @param env

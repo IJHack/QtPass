@@ -177,40 +177,67 @@ void tst_executor::executeBlockingGpgKillAgent() {
 
 void tst_executor::resolveGpgconfCommand() {
   // Empty input
-  QVERIFY2(Pass::resolveGpgconfCommand("") == "gpgconf",
-           "Empty input should fallback to gpgconf");
+  {
+    auto result = Pass::resolveGpgconfCommand("");
+    QVERIFY2(result.program == "gpgconf",
+             "Empty input should fallback to gpgconf");
+  }
 
   // WSL simple
-  QVERIFY2(Pass::resolveGpgconfCommand("wsl gpg2") == "wsl gpgconf",
-           "WSL simple should replace gpg with gpgconf");
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl gpg2");
+    QStringList expectedArgs = {"gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
+             "WSL simple should replace gpg with gpgconf");
+  }
 
   // WSL with distro
-  QVERIFY2(Pass::resolveGpgconfCommand("wsl -d Ubuntu gpg2") ==
-               "wsl -d Ubuntu gpgconf",
-           "WSL with distro should preserve args");
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl -d Ubuntu gpg2");
+    QStringList expectedArgs = {"-d", "Ubuntu", "gpgconf"};
+    QVERIFY2(result.program == "wsl" && result.arguments == expectedArgs,
+             "WSL with distro should preserve args");
+  }
 
   // WSL complex (should fallback)
-  QVERIFY2(Pass::resolveGpgconfCommand("wsl sh -c \"gpg2 --version\"") ==
-               "gpgconf",
-           "Complex WSL shell should fallback");
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl sh -c \"gpg2 --version\"");
+    QVERIFY2(result.program == "gpgconf", "Complex WSL shell should fallback");
+  }
 
   // WSL malformed (only "wsl")
-  QVERIFY2(Pass::resolveGpgconfCommand("wsl") == "gpgconf",
-           "Malformed WSL should fallback");
+  {
+    auto result = Pass::resolveGpgconfCommand("wsl");
+    QVERIFY2(result.program == "gpgconf", "Malformed WSL should fallback");
+  }
 
   // PATH-only
-  QVERIFY2(Pass::resolveGpgconfCommand("gpg2") == "gpgconf",
-           "PATH-only should fallback");
+  {
+    auto result = Pass::resolveGpgconfCommand("gpg2");
+    QVERIFY2(result.program == "gpgconf", "PATH-only should fallback");
+  }
 
-  // Unix absolute - result depends on whether gpgconf exists at sibling path
-  QString unixResult = Pass::resolveGpgconfCommand("/usr/bin/gpg2");
-  bool gpgconfExists = QFileInfo("/usr/bin/gpgconf").isExecutable();
-  if (gpgconfExists) {
-    QVERIFY2(unixResult == "/usr/bin/gpgconf",
-             "Unix absolute should derive sibling path when gpgconf exists");
-  } else {
-    QVERIFY2(unixResult == "gpgconf",
-             "Unix absolute should fallback when gpgconf not at sibling path");
+  // Unix absolute - use temp directory for filesystem-independent test
+  {
+    QTemporaryDir tempDir;
+    QVERIFY2(tempDir.isValid(), "Temp directory should be valid");
+    QString gpgPath = tempDir.filePath("gpg2");
+    QString gpgconfPath = tempDir.filePath("gpgconf");
+
+    // Create dummy files and set executable
+    QFile gpgFile(gpgPath);
+    QVERIFY2(gpgFile.open(QFile::WriteOnly), "Should create gpg2 file");
+    gpgFile.close();
+    QFile::setPermissions(gpgPath, QFile::ReadOwner | QFile::ExeOwner);
+
+    QFile gpgconfFile(gpgconfPath);
+    QVERIFY2(gpgconfFile.open(QFile::WriteOnly), "Should create gpgconf file");
+    gpgconfFile.close();
+    QFile::setPermissions(gpgconfPath, QFile::ReadOwner | QFile::ExeOwner);
+
+    auto result = Pass::resolveGpgconfCommand(gpgPath);
+    QVERIFY2(result.program == gpgconfPath,
+             "Unix absolute should derive sibling path");
   }
 }
 
