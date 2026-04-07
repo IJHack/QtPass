@@ -268,7 +268,7 @@ This prevents "branch is out-of-date with base branch" errors when merging.
 
 ## IDE/LSP Setup
 
-For proper code completion and analysis in editors like VSCode with clangd, generate `compile_commands.json`:
+For proper code completion and analysis in editors like Visual Studio Code with clangd, generate `compile_commands.json`:
 
 ```bash
 # Generate compile_commands.json using bear
