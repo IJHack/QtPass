@@ -123,6 +123,28 @@ clang-format --style=file --dry-run src/main.cpp
 clang-format --style=file -i src/main.cpp
 ```
 
+### Shfmt (Shell Scripts)
+
+Formats shell scripts in `scripts/` folder. Uses LLVM style (matches clang-format).
+
+**Installation:**
+
+```bash
+# macOS
+brew install shfmt
+
+# Go
+go install mvdan.cc/sh/v3/cmd/shfmt@latest
+```
+
+```bash
+# Check formatting
+shfmt -d scripts/*.sh
+
+# Apply formatting
+shfmt -w scripts/*.sh
+```
+
 ### Clangd (LSP Analysis)
 
 Clangd provides deep static analysis via LSP. Requires `compile_commands.json`:
