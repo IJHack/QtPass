@@ -1237,7 +1237,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="275"/>
         <source>QProcess::Crashed</source>
-        <translation>QProsess::Аварийное завершение</translation>
+        <translation>QProcess::Аварийное завершение</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="278"/>
