@@ -208,8 +208,7 @@ void Pass::GenerateGPGKeys(QString batch) {
   // This helps avoid "database locked" timeouts during key generation
   QString gpgPath = QtPassSettings::getGpgExecutable();
   if (!gpgPath.isEmpty()) {
-    Executor::executeBlocking(gpgPath, {"--kill", "gpg-agent"});
-    Executor::executeBlocking(gpgPath, {"gpgconf", "--kill", "gpg-agent"});
+    Executor::executeBlocking("gpgconf", {"--kill", "gpg-agent"});
   }
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},
