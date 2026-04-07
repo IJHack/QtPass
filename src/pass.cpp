@@ -202,7 +202,7 @@ QString Pass::getDefaultKeyTemplate() {
 }
 
 namespace {
-QString resolveWslGpgconfPath(const QString &lastPart) {
+auto resolveWslGpgconfPath(const QString &lastPart) -> QString {
   int lastSep = lastPart.lastIndexOf('/');
   if (lastSep < 0) {
     lastSep = lastPart.lastIndexOf('\\');
