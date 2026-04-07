@@ -8,8 +8,14 @@ fi
 
 (
 	cd artwork
-	cp icon.png qtpass-icon.png
-	xdg-icon-resource install --size 64 qtpass-icon.png
+	cp icon.png qtpass-icon.png || {
+		echo "Error: failed to copy icon.png" >&2
+		exit 1
+	}
+	xdg-icon-resource install --size 64 qtpass-icon.png || {
+		echo "Error: icon installation failed." >&2
+		exit 1
+	}
 )
 
 echo "Running qmake (release)..."
