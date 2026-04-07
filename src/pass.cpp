@@ -6,6 +6,7 @@
 #include "util.h"
 #include <QDir>
 #include <QFileInfo>
+#include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
 #include <utility>
@@ -200,6 +201,52 @@ QString Pass::getDefaultKeyTemplate() {
                         "%echo done");
 }
 
+QString Pass::resolveGpgconfCommand(const QString &gpgPath) {
+  if (gpgPath.trimmed().isEmpty()) {
+    return "gpgconf";
+  }
+
+  QStringList parts = QProcess::splitCommand(gpgPath);
+  if (!parts.isEmpty()) {
+    QString first = parts.first();
+    if (first == "wsl" || first == "wsl.exe") {
+      if (parts.size() >= 2 && parts.at(1).startsWith("sh")) {
+        return "gpgconf";
+      }
+      if (parts.last().startsWith("gpg")) {
+        parts.last() = "gpgconf";
+        return parts.join(' ');
+      }
+      return "gpgconf";
+    }
+  }
+
+  if (!gpgPath.contains('/') && !gpgPath.contains('\\')) {
+    return "gpgconf";
+  }
+
+  QFileInfo gpgInfo(gpgPath);
+  if (!gpgInfo.isAbsolute()) {
+    return "gpgconf";
+  }
+
+  QDir dir(gpgInfo.absolutePath());
+
+#ifdef Q_OS_WIN
+  QFileInfo candidateExe(dir.filePath("gpgconf.exe"));
+  if (candidateExe.isExecutable()) {
+    return candidateExe.filePath();
+  }
+#endif
+
+  QFileInfo candidate(dir.filePath("gpgconf"));
+  if (candidate.isExecutable()) {
+    return candidate.filePath();
+  }
+
+  return "gpgconf";
+}
+
 /**
  * @brief Pass::GenerateGPGKeys internal gpg keypair generator . .
  * @param batch GnuPG style configuration string
@@ -209,14 +256,8 @@ void Pass::GenerateGPGKeys(QString batch) {
   // This helps avoid "database locked" timeouts during key generation
   QString gpgPath = QtPassSettings::getGpgExecutable();
   if (!gpgPath.isEmpty()) {
-    QFileInfo gpgInfo(gpgPath);
-    QString gpgconfPath =
-        gpgInfo.absolutePath() + QDir::separator() + "gpgconf";
-    if (!QFileInfo::exists(gpgconfPath) ||
-        !QFileInfo(gpgconfPath).isExecutable()) {
-      gpgconfPath = "gpgconf";
-    }
-    Executor::executeBlocking(gpgconfPath, {"--kill", "gpg-agent"});
+    QString gpgconfCommand = resolveGpgconfCommand(gpgPath);
+    Executor::executeBlocking(gpgconfCommand, {"--kill", "gpg-agent"});
   }
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},

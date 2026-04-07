@@ -24,6 +24,7 @@ private Q_SLOTS:
   void gpgSupportsEd25519();
   void getDefaultKeyTemplate();
   void executeBlockingGpgKillAgent();
+  void resolveGpgconfCommand();
 };
 
 #ifndef Q_OS_WIN
@@ -166,6 +167,38 @@ void tst_executor::executeBlockingGpgKillAgent() {
   int result = Executor::executeBlocking("gpgconf", {"--kill", "gpg-agent"},
                                          QString(), &output, &err);
   QVERIFY2(result == 0, "gpgconf --kill gpg-agent should succeed");
+}
+
+void tst_executor::resolveGpgconfCommand() {
+  // Empty input
+  QVERIFY2(Pass::resolveGpgconfCommand("") == "gpgconf",
+           "Empty input should fallback to gpgconf");
+
+  // WSL simple
+  QVERIFY2(Pass::resolveGpgconfCommand("wsl gpg2") == "wsl gpgconf",
+           "WSL simple should replace gpg with gpgconf");
+
+  // WSL with distro
+  QVERIFY2(Pass::resolveGpgconfCommand("wsl -d Ubuntu gpg2") ==
+               "wsl -d Ubuntu gpgconf",
+           "WSL with distro should preserve args");
+
+  // WSL complex (should fallback)
+  QVERIFY2(Pass::resolveGpgconfCommand("wsl sh -c \"gpg2 --version\"") ==
+               "gpgconf",
+           "Complex WSL shell should fallback");
+
+  // WSL malformed (only "wsl")
+  QVERIFY2(Pass::resolveGpgconfCommand("wsl") == "gpgconf",
+           "Malformed WSL should fallback");
+
+  // PATH-only
+  QVERIFY2(Pass::resolveGpgconfCommand("gpg2") == "gpgconf",
+           "PATH-only should fallback");
+
+  // Unix absolute
+  QVERIFY2(Pass::resolveGpgconfCommand("/usr/bin/gpg2") == "/usr/bin/gpgconf",
+           "Unix absolute should derive sibling path");
 }
 
 QTEST_MAIN(tst_executor)

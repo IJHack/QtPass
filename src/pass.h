@@ -160,6 +160,12 @@ public:
 
   // Static helpers
   /**
+   * @brief Resolve the gpgconf command to kill agents.
+   * @param gpgPath Path to gpg executable.
+   * @return Command string for gpgconf (may include WSL prefix).
+   */
+  static QString resolveGpgconfCommand(const QString &gpgPath);
+  /**
    * @brief Get .gpg-id file path for a password file.
    * @param for_file Path to password file.
    * @return Path to .gpg-id file.
