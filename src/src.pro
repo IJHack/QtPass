@@ -67,8 +67,9 @@ SOURCES   += mainwindow.cpp \
              qpushbuttonshowpassword.cpp \
              qtpasssettings.cpp \
              settingsconstants.cpp \
-             pass.cpp \
-             realpass.cpp \
+              pass.cpp \
+              gpgkeystate.cpp \
+              realpass.cpp \
              imitatepass.cpp \
              executor.cpp \
              simpletransaction.cpp \
@@ -91,8 +92,9 @@ HEADERS   += mainwindow.h \
              qtpasssettings.h \
              enums.h \
              settingsconstants.h \
-             pass.h \
-             realpass.h \
+              pass.h \
+              gpgkeystate.h \
+              realpass.h \
              imitatepass.h \
              debughelper.h \
              executor.h \
