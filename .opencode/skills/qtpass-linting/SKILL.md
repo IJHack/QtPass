@@ -123,6 +123,31 @@ clang-format --style=file --dry-run src/main.cpp
 clang-format --style=file -i src/main.cpp
 ```
 
+### Clangd (LSP Analysis)
+
+Clangd provides deep static analysis via LSP. Requires `compile_commands.json`:
+
+```bash
+# Generate compile_commands.json (required for Qt headers)
+./scripts/generate-compile-commands.sh
+
+# Check a specific file for issues
+clangd --check=src/gpgkeystate.cpp
+```
+
+Common diagnostics:
+
+- `[performance-unnecessary-copy-initialization]` - Use `const T&` instead of `const T`
+- `[readability-static-definition]` - Consider making static definitions inline
+
+**Using "(fix available)" in editors:**
+
+| Editor    | Command                          |
+| --------- | -------------------------------- |
+| VSCode    | Click 💡 or `Ctrl+.`             |
+| JetBrains | `Alt+Enter`                      |
+| Neovim    | `:lua vim.lsp.buf.code_action()` |
+
 ### Prettier (Web/Config)
 
 ```bash

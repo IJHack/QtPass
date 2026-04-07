@@ -286,6 +286,37 @@ Check if:
 - Ensure all CI checks pass
 - You may need admin rights to bypass some checks
 
+### Blocked by Unresolved Review Comments
+
+When PR shows "All comments must be resolved" but you've fixed the issues:
+
+**1. Identify unresolved threads via GraphQL:**
+
+```bash
+gh api graphql -f query='{ repository(owner: "OWNER", name: "REPO") { pullRequest(number: N) { id reviewThreads(first: 20) { nodes { id isResolved } } } } }' | jq -r '.data.repository.pullRequest.reviewThreads.nodes[] | "\(.id) \(.isResolved)"'
+```
+
+**2. Resolve threads programmatically:**
+
+```bash
+# Get thread IDs and resolve them
+THREAD_ID="PRRT_xxx"
+gh api graphql -f query="mutation { resolveReviewThread(input: {threadId: \"$THREAD_ID\"}) { thread { isResolved } } }"
+```
+
+**3. Alternative: Submit a review to clear blocking comments:**
+
+```bash
+# Submit a COMMENT review (not APPROVE if it's your own PR)
+gh api "repos/OWNER/REPO/pulls/N/reviews" -X POST -f "body"="All issues addressed in recent commits" -f "event"="COMMENT"
+```
+
+**4. Common causes:**
+
+- Old CodeRabbit review comments not marked resolved
+- Reviewer requested changes but didn't re-review after fixes
+- Branch protection requires all conversations resolved
+
 ## GitHub AI-Powered Bug Detection
 
 GitHub provides AI-generated code quality suggestions under **Security → AI findings**.

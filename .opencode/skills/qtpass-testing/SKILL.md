@@ -28,7 +28,30 @@ make -j4
 make lcov
 ```
 
-## Existing Test Suites (7 total)
+## Existing Test Suites (8 total)
+
+### tests/auto/gpgkeystate/tst_gpgkeystate.cpp
+
+Tests for `src/gpgkeystate.cpp`:
+
+- `parseMultiKeyPublic()` - Multiple public keys parsing
+- `parseSecretKeys()` - Secret key detection (have_secret flag)
+- `parseSingleKey()` - Single key with and without fingerprint
+- `parseKeyRollover()` - Multiple keys in sequence
+- `classifyRecordTypes()` - GPG record type classification (pub, sec, uid, fpr, etc.)
+
+### Test Fixtures
+
+Store sample test data in `tests/fixtures/`:
+
+```bash
+ls tests/fixtures/
+# gpg-colons-multi-key.txt
+# gpg-colons-public.txt
+# gpg-colons-secret.txt
+```
+
+These contain real GPG `--with-colons` output for deterministic testing.
 
 ### tests/auto/util/tst_util.cpp
 
