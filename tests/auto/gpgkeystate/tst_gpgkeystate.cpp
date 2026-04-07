@@ -95,7 +95,7 @@ void tst_gpgkeystate::parseSingleKey() {
                           .arg(expectedCount)
                           .arg(result.size())));
 
-  if (result.size() > 0) {
+  if (!result.isEmpty()) {
     QVERIFY2(!result.first().key_id.isEmpty(),
              "Parsed key should have a key_id");
   }
