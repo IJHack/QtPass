@@ -90,7 +90,8 @@ void tst_gpgkeystate::parseSingleKey() {
   QList<UserInfo> result = parseGpgColonOutput(input, false);
   QVERIFY2(result.size() == expectedCount,
            qPrintable(QString("Expected %1 keys, got %2")
-                          .arg(expectedCount, result.size())));
+                          .arg(expectedCount)
+                          .arg(result.size())));
 
   if (result.size() > 0) {
     QVERIFY2(!result.first().key_id.isEmpty(),
