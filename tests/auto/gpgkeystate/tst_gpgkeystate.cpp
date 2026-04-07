@@ -116,7 +116,8 @@ void tst_gpgkeystate::parseKeyRollover() {
   QList<UserInfo> result = parseGpgColonOutput(input, false);
   QVERIFY2(result.size() == expectedCount,
            qPrintable(QString("Expected %1 keys, got %2")
-                          .arg(expectedCount, result.size())));
+                          .arg(expectedCount)
+                          .arg(result.size())));
 }
 
 void tst_gpgkeystate::parseKeyRollover_data() {
