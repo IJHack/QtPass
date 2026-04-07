@@ -8,12 +8,21 @@ set -euo pipefail
 )
 
 echo "Running qmake (release)..."
-qmake CONFIG+=release || { echo "Error: qmake failed."; exit 1; }
+qmake CONFIG+=release || {
+	echo "Error: qmake failed."
+	exit 1
+}
 
 echo "Running make..."
-make || { echo "Error: make failed."; exit 1; }
+make || {
+	echo "Error: make failed."
+	exit 1
+}
 
 echo "Running make install..."
-sudo make install || { echo "Error: make install failed."; exit 1; }
+sudo make install || {
+	echo "Error: make install failed."
+	exit 1
+}
 
 sudo cp qtpass.desktop /usr/share/applications/

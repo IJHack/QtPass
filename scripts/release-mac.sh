@@ -8,19 +8,37 @@ sed 's/CHANGELOG\.md/https:\/\/qtpass.org\/docs\/md__c_h_a_n_g_e_l_o_g.html/' <R
 sed 's/\[\!.*//' <README.changelog >README.clean
 
 echo "Generating RTF documentation..."
-pandoc --standalone --from=gfm --to=rtf --output=README.rtf README.clean FAQ.md CONTRIBUTING.md CHANGELOG.md || { echo "Error: pandoc failed."; exit 1; }
+pandoc --standalone --from=gfm --to=rtf --output=README.rtf README.clean FAQ.md CONTRIBUTING.md CHANGELOG.md || {
+	echo "Error: pandoc failed."
+	exit 1
+}
 
 echo "Generating API documentation..."
-doxygen || { echo "Error: doxygen failed."; exit 1; }
+doxygen || {
+	echo "Error: doxygen failed."
+	exit 1
+}
 
 echo "Running qmake (release)..."
-qmake CONFIG+=release || { echo "Error: qmake failed."; exit 1; }
+qmake CONFIG+=release || {
+	echo "Error: qmake failed."
+	exit 1
+}
 
 echo "Running make..."
-make || { echo "Error: make failed."; exit 1; }
+make || {
+	echo "Error: make failed."
+	exit 1
+}
 
 echo "Running macdeployqt..."
-macdeployqt main/QtPass.app || { echo "Error: macdeployqt failed."; exit 1; }
+macdeployqt main/QtPass.app || {
+	echo "Error: macdeployqt failed."
+	exit 1
+}
 
 echo "Creating DMG..."
-appdmg appdmg.json main/QtPass.dmg || { echo "Error: appdmg failed."; exit 1; }
+appdmg appdmg.json main/QtPass.dmg || {
+	echo "Error: appdmg failed."
+	exit 1
+}
