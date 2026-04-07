@@ -13,13 +13,6 @@ enum class GpgRecordType { Unknown, Pub, Sec, Uid, Fpr, Sub, Ssb, Grp };
 
 GpgRecordType classifyRecord(const QString &record_type);
 
-void handlePubSecRecord(const QStringList &props, bool secret,
-                        UserInfo &current_user);
-
-void handleUidRecord(const QStringList &props, UserInfo &current_user);
-
-void handleFprRecord(const QStringList &props, UserInfo &current_user);
-
 QList<UserInfo> parseGpgColonOutput(const QString &output, bool secret);
 
 #endif // SRC_GPGKEYSTATE_H_

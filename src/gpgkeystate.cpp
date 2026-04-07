@@ -53,7 +53,7 @@ auto classifyRecord(const QString &record_type) -> GpgRecordType {
 void handlePubSecRecord(const QStringList &props, bool secret,
                         UserInfo &current_user) {
   current_user.key_id = props[GPG_FIELD_KEY_ID];
-  current_user.name = props[GPG_FIELD_USERID].toUtf8();
+  current_user.name = props[GPG_FIELD_USERID];
   current_user.validity = props[GPG_FIELD_VALIDITY][0].toLatin1();
 
   bool okCreated = false;
@@ -86,7 +86,8 @@ void handleUidRecord(const QStringList &props, UserInfo &current_user) {
  * @param current_user UserInfo to update with fingerprint if it matches key
  */
 void handleFprRecord(const QStringList &props, UserInfo &current_user) {
-  if (props[GPG_FIELD_USERID].endsWith(current_user.key_id)) {
+  if (!current_user.key_id.isEmpty() &&
+      props[GPG_FIELD_USERID].endsWith(current_user.key_id)) {
     current_user.key_id = props[GPG_FIELD_USERID];
   }
 }
