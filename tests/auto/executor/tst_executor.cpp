@@ -136,7 +136,7 @@ void tst_executor::gpgSupportsEd25519() {
         qPrintable(
             QString("GPG %1.%2 should support Ed25519").arg(major).arg(minor)));
   } else {
-    QVERIFY2(result == false,
+    QVERIFY2(!result,
              qPrintable(QString("GPG %1.%2 should not support Ed25519")
                             .arg(major)
                             .arg(minor)));
