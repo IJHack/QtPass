@@ -142,11 +142,11 @@ Common diagnostics:
 
 **Using "(fix available)" in editors:**
 
-| Editor    | Command                          |
-| --------- | -------------------------------- |
-| VSCode    | Click 💡 or `Ctrl+.`             |
-| JetBrains | `Alt+Enter`                      |
-| Neovim    | `:lua vim.lsp.buf.code_action()` |
+| Editor             | Command                          |
+| ------------------ | -------------------------------- |
+| Visual Studio Code | Click 💡 or `Ctrl+.`             |
+| JetBrains          | `Alt+Enter`                      |
+| Neovim             | `:lua vim.lsp.buf.code_action()` |
 
 ### Prettier (Web/Config)
 

@@ -375,7 +375,7 @@ This enables clangd/LSP to provide accurate completions and catch real issues. W
 
 When the LSP shows "(fix available)" on errors:
 
-1. **VSCode**: Click the 💡 lightbulb or press `Ctrl+.` (Quick Fix)
+1. **Visual Studio Code**: Click the 💡 lightbulb or press `Ctrl+.` (Quick Fix)
 2. **JetBrains**: Press `Alt+Enter` on the error
 3. **vim/neovim**: Use clangd's `textDocument/codeAction` via your LSP plugin
 
