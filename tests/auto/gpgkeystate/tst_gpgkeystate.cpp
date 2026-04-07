@@ -29,6 +29,11 @@ void tst_gpgkeystate::parseMultiKeyPublic() {
   QVERIFY2(result.size() == expectedCount,
            qPrintable(QString("Expected %1 keys, got %2")
                           .arg(expectedCount, result.size())));
+
+  for (const UserInfo &user : result) {
+    QVERIFY2(user.have_secret == false,
+             "Public keys should not have secret capability");
+  }
 }
 
 void tst_gpgkeystate::parseMultiKeyPublic_data() {
@@ -53,6 +58,10 @@ void tst_gpgkeystate::parseSecretKeys() {
   QFETCH(bool, expectHaveSecret);
 
   QList<UserInfo> result = parseGpgColonOutput(input, true);
+
+  QVERIFY2(result.size() == expectedCount,
+           qPrintable(QString("Expected %1 keys, got %2")
+                          .arg(expectedCount, result.size())));
 
   if (expectedCount > 0) {
     QVERIFY(!result.isEmpty());

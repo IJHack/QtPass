@@ -7,6 +7,7 @@
 
 #include <QList>
 #include <QString>
+#include <QStringList>
 
 enum class GpgRecordType { Unknown, Pub, Sec, Uid, Fpr, Sub, Ssb, Grp };
 

@@ -13,6 +13,12 @@ constexpr int GPG_FIELD_CREATED = 5;
 constexpr int GPG_FIELD_EXPIRY = 6;
 constexpr int GPG_FIELD_USERID = 9;
 
+/**
+ * @brief Classify a GPG colon output record type
+ * @param record_type The first field of a GPG colon record (e.g., "pub", "sec",
+ * "uid")
+ * @return The corresponding GpgRecordType enum value
+ */
 auto classifyRecord(const QString &record_type) -> GpgRecordType {
   if (record_type == "pub") {
     return GpgRecordType::Pub;
@@ -38,6 +44,12 @@ auto classifyRecord(const QString &record_type) -> GpgRecordType {
   return GpgRecordType::Unknown;
 }
 
+/**
+ * @brief Handle a pub or sec record in GPG colon output
+ * @param props The colon-split fields of the record
+ * @param secret True if this is a secret key record (sec)
+ * @param current_user UserInfo to populate with key data
+ */
 void handlePubSecRecord(const QStringList &props, bool secret,
                         UserInfo &current_user) {
   current_user.key_id = props[GPG_FIELD_KEY_ID];
@@ -59,16 +71,32 @@ void handlePubSecRecord(const QStringList &props, bool secret,
   current_user.have_secret = secret;
 }
 
+/**
+ * @brief Handle a uid record in GPG colon output
+ * @param props The colon-split fields of the record
+ * @param current_user UserInfo to populate with user name
+ */
 void handleUidRecord(const QStringList &props, UserInfo &current_user) {
   current_user.name = props[GPG_FIELD_USERID];
 }
 
+/**
+ * @brief Handle an fpr (fingerprint) record in GPG colon output
+ * @param props The colon-split fields of the record
+ * @param current_user UserInfo to update with fingerprint if it matches key
+ */
 void handleFprRecord(const QStringList &props, UserInfo &current_user) {
   if (props[GPG_FIELD_USERID].endsWith(current_user.key_id)) {
     current_user.key_id = props[GPG_FIELD_USERID];
   }
 }
 
+/**
+ * @brief Parse GPG --with-colons output into a list of UserInfo
+ * @param output Raw output from GPG --with-colons --with-fingerprint
+ * @param secret True if parsing secret keys (--list-secret-keys)
+ * @return QList of parsed UserInfo objects
+ */
 auto parseGpgColonOutput(const QString &output, bool secret)
     -> QList<UserInfo> {
   QList<UserInfo> users;
@@ -99,7 +127,7 @@ auto parseGpgColonOutput(const QString &output, bool secret)
         users.append(current_user);
       }
       current_user = UserInfo();
-      handlePubSecRecord(props, secret == (type == GpgRecordType::Sec),
+      handlePubSecRecord(props, secret && (type == GpgRecordType::Sec),
                          current_user);
       break;
     case GpgRecordType::Uid:
