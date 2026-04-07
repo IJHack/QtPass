@@ -294,12 +294,21 @@ auto Executor::executeBlocking(const QStringList &env, QString app,
   }
   process.setProcessEnvironment(penv);
   startProcessBlocking(process, app, args);
+  if (!process.waitForStarted(-1)) {
+#ifdef QT_DEBUG
+    dbg() << "Process failed to start:" << app;
+#endif
+    return -1;
+  }
   process.waitForFinished(-1);
+  if (process.exitStatus() != QProcess::NormalExit) {
+    return -1;
+  }
   if (process_out) {
-    *process_out = process.readAllStandardOutput();
+    *process_out = decodeAssumingUtf8(process.readAllStandardOutput());
   }
   if (process_err) {
-    *process_err = process.readAllStandardError();
+    *process_err = decodeAssumingUtf8(process.readAllStandardError());
   }
   return process.exitCode();
 }
