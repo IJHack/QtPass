@@ -18,30 +18,34 @@ fi
 	}
 )
 
-echo "Running qmake (release)..."
-qmake CONFIG+=release || {
-	echo "Error: qmake failed."
+echo "Running qmake6 (release)..."
+if ! command -v qmake6 &>/dev/null; then
+	echo "Error: qmake6 is not installed or not in PATH. Qt6 is required for building." >&2
+	exit 1
+fi
+qmake6 CONFIG+=release || {
+	echo "Error: qmake6 failed." >&2
 	exit 1
 }
 
 echo "Running make..."
 make || {
-	echo "Error: make failed."
+	echo "Error: make failed." >&2
 	exit 1
 }
 
 echo "Running make install..."
 sudo make install || {
-	echo "Error: make install failed."
+	echo "Error: make install failed." >&2
 	exit 1
 }
 
 if [ ! -f qtpass.desktop ]; then
-	echo "Error: qtpass.desktop not found."
+	echo "Error: qtpass.desktop not found." >&2
 	exit 1
 fi
 
 sudo cp qtpass.desktop /usr/share/applications/ || {
-	echo "Error: failed to copy qtpass.desktop to /usr/share/applications/."
+	echo "Error: failed to copy qtpass.desktop to /usr/share/applications/." >&2
 	exit 1
 }

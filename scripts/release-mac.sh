@@ -9,10 +9,18 @@ cleanup() {
 
 trap cleanup EXIT
 
-if [[ ! -r README.md ]]; then
-	echo "Error: README.md is missing or not readable." >&2
-	exit 1
-fi
+require_readable_file() {
+	local file="$1"
+	if [[ ! -r "$file" ]]; then
+		echo "Error: $file is missing or not readable." >&2
+		exit 1
+	fi
+}
+
+require_readable_file "README.md"
+require_readable_file "FAQ.md"
+require_readable_file "CONTRIBUTING.md"
+require_readable_file "CHANGELOG.md"
 
 echo "Processing README links..."
 sed \
@@ -24,36 +32,40 @@ sed \
 
 echo "Generating RTF documentation..."
 pandoc --standalone --from=gfm --to=rtf --output=README.rtf "$README_CLEAN" FAQ.md CONTRIBUTING.md CHANGELOG.md || {
-	echo "Error: pandoc failed."
+	echo "Error: pandoc failed while generating README.rtf from '$README_CLEAN', FAQ.md, CONTRIBUTING.md, and CHANGELOG.md. Check that input files exist and that pandoc is installed and available in PATH." >&2
 	exit 1
 }
 
 echo "Generating API documentation..."
 doxygen || {
-	echo "Error: doxygen failed."
+	echo "Error: doxygen failed." >&2
 	exit 1
 }
 
-echo "Running qmake (release)..."
-qmake CONFIG+=release || {
-	echo "Error: qmake failed."
+echo "Running qmake6 (release)..."
+if ! command -v qmake6 &>/dev/null; then
+	echo "Error: qmake6 is not installed or not in PATH. Qt6 is required for building." >&2
+	exit 1
+fi
+qmake6 CONFIG+=release || {
+	echo "Error: qmake6 failed." >&2
 	exit 1
 }
 
 echo "Running make..."
 make || {
-	echo "Error: make failed."
+	echo "Error: make failed." >&2
 	exit 1
 }
 
 echo "Running macdeployqt..."
 macdeployqt main/QtPass.app || {
-	echo "Error: macdeployqt failed."
+	echo "Error: macdeployqt failed." >&2
 	exit 1
 }
 
 echo "Creating DMG..."
 appdmg appdmg.json main/QtPass.dmg || {
-	echo "Error: appdmg failed."
+	echo "Error: appdmg failed." >&2
 	exit 1
 }
