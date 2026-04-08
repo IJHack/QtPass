@@ -214,6 +214,19 @@ auto resolveWslGpgconfPath(const QString &lastPart) -> QString {
   return QStringLiteral("gpgconf");
 }
 
+/**
+ * @brief Finds the path to the gpgconf executable in the same directory as the
+ * given GPG path.
+ * @example
+ * QString result = findGpgconfInGpgDir(gpgPath);
+ * std::cout << result.toStdString() << std::endl; // Expected output: path to
+ * gpgconf or empty string
+ *
+ * @param gpgPath - Absolute path to a GPG executable or related file used to
+ * locate gpgconf.
+ * @return QString - The full path to gpgconf if found and executable; otherwise
+ * an empty QString.
+ */
 QString findGpgconfInGpgDir(const QString &gpgPath) {
   QFileInfo gpgInfo(gpgPath);
   if (!gpgInfo.isAbsolute()) {
@@ -236,6 +249,17 @@ QString findGpgconfInGpgDir(const QString &gpgPath) {
   return QString();
 }
 
+/**
+ * @brief Splits a command string into arguments while respecting quotes and
+ * escape characters.
+ * @example
+ * QStringList result = splitCommandCompat("cmd \"arg one\" 'arg two'
+ * escaped\\ space");
+ * // Expected output: ["cmd", "arg one", "arg two", "escaped space"]
+ *
+ * @param command - The input command string to split into individual arguments.
+ * @return QStringList - A list of parsed command arguments.
+ */
 QStringList splitCommandCompat(const QString &command) {
   QStringList result;
   QString current;
@@ -279,6 +303,19 @@ QStringList splitCommandCompat(const QString &command) {
 }
 } // namespace
 
+/**
+ * @brief Resolves the appropriate gpgconf command from a given GPG executable
+ * path or command string.
+ * @example
+ * ResolvedGpgconfCommand result = Pass::resolveGpgconfCommand("wsl.exe
+ * /usr/bin/gpg"); std::cout << result.first.toStdString() << std::endl; //
+ * Expected output sample
+ *
+ * @param const QString &gpgPath - Path or command string pointing to the GPG
+ * executable.
+ * @return ResolvedGpgconfCommand - A pair containing the resolved gpgconf
+ * command and its arguments.
+ */
 auto Pass::resolveGpgconfCommand(const QString &gpgPath)
     -> ResolvedGpgconfCommand {
   if (gpgPath.trimmed().isEmpty()) {

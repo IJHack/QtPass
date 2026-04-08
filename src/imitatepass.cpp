@@ -218,6 +218,18 @@ auto ImitatePass::checkSigningKeys(const QStringList &signingKeys) -> bool {
   return false;
 }
 
+/**
+ * @brief Writes the selected users' GPG key IDs to a .gpg-id file.
+ * @details Opens the specified file for writing, stores the key ID of each
+ * enabled user on a separate line, and warns if none of the selected users has
+ * a secret key available.
+ *
+ * @param QString &gpgIdFile - Path to the .gpg-id file to be written.
+ * @param QList<UserInfo> &users - List of users to evaluate and write to the
+ * file.
+ * @return void - This function does not return a value.
+ *
+ */
 void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
                                  const QList<UserInfo> &users) {
   QFile gpgId(gpgIdFile);
@@ -242,6 +254,19 @@ void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
   }
 }
 
+/**
+ * @brief Signs a GPG ID file and verifies its signature.
+ * @example
+ * bool result = ImitatePass::signGpgIdFile(gpgIdFile, signingKeys);
+ * std::cout << result << std::endl; // Expected output: true if signing and
+ * verification succeed
+ *
+ * @param QString &gpgIdFile - Path to the .gpgid file to be signed.
+ * @param QStringList &signingKeys - List of signing keys; only the first key is
+ * used.
+ * @return bool - True if the file was signed and its signature verified
+ * successfully; otherwise false.
+ */
 auto ImitatePass::signGpgIdFile(const QString &gpgIdFile,
                                 const QStringList &signingKeys) -> bool {
   QStringList args;
@@ -275,6 +300,19 @@ auto ImitatePass::signGpgIdFile(const QString &gpgIdFile,
   return true;
 }
 
+/**
+ * @brief Adds a GPG ID file and optionally its signature file to git, then
+ * creates corresponding commit(s).
+ * @example
+ * void result = ImitatePass::gitAddGpgId(gpgIdFile, gpgIdSigFile, true, true);
+ *
+ * @param const QString &gpgIdFile - Path to the GPG ID file to add and commit.
+ * @param const QString &gpgIdSigFile - Path to the signature file associated
+ * with the GPG ID file.
+ * @param bool addFile - Whether to stage and commit the GPG ID file.
+ * @param bool addSigFile - Whether to stage and commit the signature file.
+ * @return void - This function does not return a value.
+ */
 void ImitatePass::gitAddGpgId(const QString &gpgIdFile,
                               const QString &gpgIdSigFile, bool addFile,
                               bool addSigFile) {
@@ -293,6 +331,19 @@ void ImitatePass::gitAddGpgId(const QString &gpgIdFile,
   gitCommit(gpgIdSigFile, "Added " + commitPath + " using QtPass.");
 }
 
+/**
+ * @brief Initializes the pass entry by writing and optionally signing the GPG
+ * ID files.
+ *
+ * @example
+ * void result = ImitatePass::Init(path, users);
+ *
+ * @param QString path - Base path for the pass entry where ".gpg-id" and
+ * optional signature files are created.
+ * @param const QList<UserInfo> &users - List of users whose keys are written
+ * into the GPG ID file.
+ * @return void - No return value.
+ */
 void ImitatePass::Init(QString path, const QList<UserInfo> &users) {
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   QStringList signingKeys =
@@ -438,6 +489,18 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
   return true;
 }
 
+/**
+ * @brief Extracts and returns a sorted list of valid key IDs from a GPG key
+ * listing file.
+ * @example
+ * QStringList result = ImitatePass::getKeysFromFile(fileName);
+ * std::cout << result.join(", ").toStdString() << std::endl;
+ *
+ * @param fileName - Path to the file used to query and parse GPG key
+ * information.
+ * @return QStringList - A sorted list of 16-character key IDs found in the
+ * file.
+ */
 auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
   QStringList args = {
       "-v",          "--no-secmem-warning", "--no-permission-warning",
@@ -468,6 +531,19 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
   return actualKeys;
 }
 
+/**
+ * @brief Re-encrypts a single encrypted file for a new set of recipients.
+ * @example
+ * bool result = ImitatePass::reencryptSingleFile(fileName, recipients);
+ * std::cout << result << std::endl; // Expected output: true on success, false
+ * on failure
+ *
+ * @param const QString &fileName - Path to the encrypted file to re-encrypt.
+ * @param const QStringList &recipients - List of recipient keys to encrypt the
+ * file to.
+ * @return bool - True if the file was successfully decrypted, re-encrypted,
+ * verified, and replaced; otherwise false.
+ */
 auto ImitatePass::reencryptSingleFile(const QString &fileName,
                                       const QStringList &recipients) -> bool {
 #ifdef QT_DEBUG
@@ -610,6 +686,19 @@ auto ImitatePass::createBackupCommit() -> bool {
   return true;
 }
 
+/**
+ * @brief Re-encrypts all `.gpg` files under the given directory using the
+ *        verified GPG key configuration for each folder.
+ *
+ * This method optionally pulls the latest changes before starting, creates a
+ * backup commit, verifies `.gpg-id` files per directory, and re-encrypts files
+ * whose current recipients do not match the expected keys. It emits progress,
+ * status, and error signals throughout the process, and optionally pushes the
+ * updated password-store when finished.
+ *
+ * @param dir - Root directory to scan recursively for `.gpg` files.
+ * @return void
+ */
 void ImitatePass::reencryptPath(const QString &dir) {
   emit statusMsg(tr("Re-encrypting from folder %1").arg(dir), 3000);
   emit startReencryptPath();
@@ -675,6 +764,20 @@ void ImitatePass::reencryptPath(const QString &dir) {
   emit endReencryptPath();
 }
 
+/**
+ * @brief Resolves the final destination path for moving a file or directory,
+ * applying .gpg handling for files.
+ * @example
+ * QString result = ImitatePass::resolveMoveDestination("/tmp/source.txt",
+ * "/backup", false); std::cout << result.toStdString() << std::endl; //
+ * Expected output sample: "/backup/source.txt.gpg"
+ *
+ * @param src - Source path to the file or directory.
+ * @param dest - Requested destination path, which may be a file or directory.
+ * @param force - When true, allows overwriting an existing destination file.
+ * @return QString - Resolved destination path, or an empty QString if the
+ * source/destination is invalid or conflicts occur.
+ */
 auto ImitatePass::resolveMoveDestination(const QString &src,
                                          const QString &dest, bool force)
     -> QString {
@@ -722,6 +825,17 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
   return destFile;
 }
 
+/**
+ * @brief Moves a password store item in the Git repository and commits the
+ * change.
+ * @example
+ * void result = className.executeMoveGit(src, destFile, force);
+ *
+ * @param const QString &src - Source path of the item to move.
+ * @param const QString &destFile - Destination path of the item after the move.
+ * @param bool force - Whether to force the move using Git's -f option.
+ * @return void - This method does not return a value.
+ */
 void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
                                  bool force) {
   QStringList args;
@@ -743,6 +857,17 @@ void ImitatePass::executeMoveGit(const QString &src, const QString &destFile,
   gitCommit("", message);
 }
 
+/**
+ * @brief Moves a password entry from the source path to the destination path.
+ * @example
+ * ImitatePass::Move(src, dest, true);
+ *
+ * @param const QString src - The source path or entry name to move.
+ * @param const QString dest - The destination path or entry name.
+ * @param const bool force - If true, overwrites an existing destination entry
+ * when necessary.
+ * @return void - This function does not return a value.
+ */
 void ImitatePass::Move(const QString src, const QString dest,
                        const bool force) {
   transactionHelper trans(this, PASS_MOVE);
@@ -767,6 +892,18 @@ void ImitatePass::Move(const QString src, const QString dest,
   }
 }
 
+/**
+ * @brief Copies a file or directory from source to destination, optionally
+ * forcing overwrite.
+ * @example
+ * void result = ImitatePass::Copy(src, dest, force);
+ *
+ * @param QString src - Source path to copy from.
+ * @param QString dest - Destination path to copy to.
+ * @param bool force - If true, overwrites the destination when it already
+ * exists.
+ * @return void - This function does not return a value.
+ */
 void ImitatePass::Copy(const QString src, const QString dest,
                        const bool force) {
   QFileInfo destFileInfo(dest);
