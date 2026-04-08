@@ -3,7 +3,7 @@
   <id>qtpass.desktop</id>
   <name>QtPass</name>
   <summary>GUI for the standard UNIX password store</summary>
-  <summary xml:lang="nl_NL">GUI voor de standaard UNIX wachtwoord opslag</summary>
+  <summary xml:lang="nl-NL">GUI voor de standaard UNIX wachtwoord opslag</summary>
   <developer_name>IJHack</developer_name>
   <description>
    <p>
