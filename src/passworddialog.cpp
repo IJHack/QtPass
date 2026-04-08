@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "passworddialog.h"
 #include "filecontent.h"
