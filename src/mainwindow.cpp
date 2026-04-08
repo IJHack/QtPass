@@ -1043,13 +1043,6 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     connect(edit, &QAction::triggered, this, &MainWindow::onEdit);
   }
   if (selected) {
-    // if (useClipboard != CLIPBOARD_NEVER) {
-    // contextMenu.addSeparator();
-    // QAction* copyItem = contextMenu.addAction(tr("Copy Password"));
-    // if (getClippedPassword().length() == 0) copyItem->setEnabled(false);
-    // connect(copyItem, SIGNAL(triggered()), this,
-    // SLOT(copyPasswordToClipboard()));
-    // }
     contextMenu.addSeparator();
     if (fileOrFolder.isDir()) {
       QAction *renameFolder = contextMenu.addAction(tr("Rename folder"));
@@ -1108,7 +1101,6 @@ void MainWindow::addFolder() {
     return;
   }
   newdir.prepend(dir);
-  // dbg()<< newdir;
   if (!QDir().mkdir(newdir)) {
     QMessageBox::warning(this, tr("Error"),
                          tr("Failed to create folder: %1").arg(newdir));

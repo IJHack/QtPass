@@ -78,7 +78,6 @@ auto QtPass::init() -> bool {
   QtPassSettings::initExecutables();
 
   QString version = QtPassSettings::getVersion();
-  // dbg()<< version;
 
   // Config updates
   if (version.isEmpty()) {
@@ -99,11 +98,6 @@ auto QtPass::init() -> bool {
     }
     QtPassSettings::setPassTemplate("login\nurl");
   } else {
-    // QStringList ver = version.split(".");
-    // dbg()<< ver;
-    // if (ver[0] == "0" && ver[1] == "8") {
-    //// upgrade to 0.9
-    // }
     if (QtPassSettings::getPassTemplate().isEmpty()) {
       QtPassSettings::setPassTemplate("login\nurl");
     }
@@ -125,7 +119,6 @@ auto QtPass::init() -> bool {
   }
 
   freshStart = false;
-  // startupPhase = false;
   return true;
 }
 
