@@ -35,7 +35,8 @@ struct UserInfo {
    */
   QString name;
   /**
-   * @brief UserInfo::key_id hexadecimal representation
+   * @brief UserInfo::key_id hexadecimal representation of the GnuPG key
+   * identifier
    */
   QString key_id;
   /**
