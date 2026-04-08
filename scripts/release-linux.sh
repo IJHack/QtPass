@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 set -euo pipefail
 
 if [ ! -d "artwork" ]; then

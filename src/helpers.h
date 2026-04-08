@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef SRC_HELPERS_H_
 #define SRC_HELPERS_H_

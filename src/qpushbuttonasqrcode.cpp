@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
+// SPDX-FileCopyrightText: 2018 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "qpushbuttonasqrcode.h"
 #include <QTimer>

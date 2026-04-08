@@ -1,3 +1,6 @@
+# QtPass - GUI for pass
+# SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
+
 !include(qtpass.pri) { error("Couldn't find the qtpass.pri file!") }
 
 TEMPLATE = subdirs
