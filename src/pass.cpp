@@ -249,6 +249,7 @@ QString findGpgconfInGpgDir(const QString &gpgPath) {
   return QString();
 }
 
+#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 /**
  * @brief Splits a command string into arguments while respecting quotes and
  * escape characters.
@@ -301,6 +302,8 @@ QStringList splitCommandCompat(const QString &command) {
   }
   return result;
 }
+#endif
+
 } // namespace
 
 /**
