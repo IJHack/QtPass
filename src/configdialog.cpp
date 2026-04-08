@@ -32,17 +32,18 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->setupUi(this);
 
   // Restore dialog state
-  restoreGeometry(QtPassSettings::getDialogGeometry("configDialog"));
+  QByteArray savedGeometry = QtPassSettings::getDialogGeometry("configDialog");
+  bool hasSavedGeometry = !savedGeometry.isEmpty();
+  if (hasSavedGeometry) {
+    restoreGeometry(savedGeometry);
+  }
   if (QtPassSettings::isDialogMaximized("configDialog")) {
     showMaximized();
+  } else if (!hasSavedGeometry) {
+    // Let window manager handle positioning for first launch
   } else {
-    QPoint savedPos = QtPassSettings::getDialogPos("configDialog");
-    if (savedPos.isNull()) {
-      // Let window manager handle positioning for first launch
-    } else {
-      move(savedPos);
-      resize(QtPassSettings::getDialogSize("configDialog"));
-    }
+    move(QtPassSettings::getDialogPos("configDialog"));
+    resize(QtPassSettings::getDialogSize("configDialog"));
   }
 
   ui->passPath->setText(QtPassSettings::getPassExecutable());
