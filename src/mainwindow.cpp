@@ -242,7 +242,6 @@ void MainWindow::flashText(const QString &text, const bool isError,
     ui->textBrowser->setHtml(_text);
   } else {
     ui->textBrowser->setText(text);
-    ui->textBrowser->setTextColor(Qt::black);
   }
 }
 
