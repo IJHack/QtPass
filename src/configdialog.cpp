@@ -502,7 +502,6 @@ void ConfigDialog::genKey(const QString &batch, QDialog *dialog) {
  */
 void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
                                const QString &currentProfile) {
-  // dbg()<< profiles;
   if (profiles.contains("")) {
     profiles.remove("");
     // remove weird "" key value pairs
@@ -519,7 +518,6 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
                                 new QTableWidgetItem(i.value().value("path")));
       ui->profileTable->setItem(
           n, 2, new QTableWidgetItem(i.value().value("signingKey")));
-      // dbg()<< "naam:" + i.key();
       if (i.key() == currentProfile) {
         ui->profileTable->selectRow(n);
       }

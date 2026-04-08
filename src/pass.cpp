@@ -451,8 +451,6 @@ void Pass::updateEnv() {
     }
   } else {
     if (currentSigningKey.isEmpty()) {
-      // dbg() << "Removed
-      // PASSWORD_STORE_SIGNING_KEY";
       env.removeAll(envSigningKey.first());
     } else {
       // dbg()<< "Update
@@ -464,8 +462,6 @@ void Pass::updateEnv() {
   // put PASSWORD_STORE_DIR in env
   QStringList store = env.filter("PASSWORD_STORE_DIR=");
   if (store.isEmpty()) {
-    // dbg()<< "Added
-    // PASSWORD_STORE_DIR";
     env.append("PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
   } else {
     // dbg()<< "Update
