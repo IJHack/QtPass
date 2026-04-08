@@ -527,12 +527,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG signering misslyckades!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Misslyckades att signera %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -572,33 +572,33 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
         <location filename="../src/imitatepass.cpp" line="636"/>
         <location filename="../src/imitatepass.cpp" line="743"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Återkryptering misslyckades</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="637"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Misslyckades att ersätta %1. Originalet har återställts.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>Skapar säkerhetskopieringscommit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="672"/>
         <location filename="../src/imitatepass.cpp" line="680"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Säkerhetskopieringscommit misslyckades</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="673"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte inspektera git-status. Omkrypteringen avbröts.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="681"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>Omkrypteringen avbröts eftersom en git säkerhetskopia inte kunde skapas.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -609,27 +609,27 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="731"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG ID-verifiering misslyckades</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte verifiera .gpg-id för katalog.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Misslyckades med att omkryptera %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Omkryptering slutförd: %1 lyckades, %2 misslyckades</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="756"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>Omkryptering klar: %1 filer omkrypterade</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="703"/>
