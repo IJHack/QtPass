@@ -24,12 +24,18 @@ KeygenDialog::KeygenDialog(ConfigDialog *parent)
   dialog = parent;
 
   // Restore dialog state
-  restoreGeometry(QtPassSettings::getDialogGeometry("keygenDialog"));
+  QByteArray savedGeometry = QtPassSettings::getDialogGeometry("keygenDialog");
+  bool hasSavedGeometry = !savedGeometry.isEmpty();
+  if (hasSavedGeometry) {
+    restoreGeometry(savedGeometry);
+  }
   if (QtPassSettings::isDialogMaximized("keygenDialog")) {
     showMaximized();
-  } else {
+  } else if (hasSavedGeometry) {
     move(QtPassSettings::getDialogPos("keygenDialog"));
     resize(QtPassSettings::getDialogSize("keygenDialog"));
+  } else {
+    // Let window manager handle positioning for first launch
   }
 
   ui->plainTextEdit->setPlainText(Pass::getDefaultKeyTemplate());
