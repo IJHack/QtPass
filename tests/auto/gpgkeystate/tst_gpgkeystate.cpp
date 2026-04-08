@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include <QtTest>
+#include <algorithm>
 
 #include "../../../src/gpgkeystate.h"
 #include "../../../src/userinfo.h"
@@ -37,11 +38,14 @@ void tst_gpgkeystate::parseMultiKeyPublic() {
              "Public keys should not have secret capability");
   }
 
-  QVERIFY2(result.size() >= 2, "Expected at least 2 parsed public keys");
-  QVERIFY2(!result.at(0).key_id.isEmpty(), "First key should have key_id");
-  QVERIFY2(!result.at(1).key_id.isEmpty(), "Second key should have key_id");
-  QVERIFY2(!result.at(0).name.isEmpty(), "First key should have name");
-  QVERIFY2(!result.at(1).name.isEmpty(), "Second key should have name");
+  if (expectedCount > 0) {
+    QVERIFY2(!result.at(0).key_id.isEmpty(), "First key should have key_id");
+    QVERIFY2(!result.at(0).name.isEmpty(), "First key should have name");
+  }
+  if (expectedCount > 1) {
+    QVERIFY2(!result.at(1).key_id.isEmpty(), "Second key should have key_id");
+    QVERIFY2(!result.at(1).name.isEmpty(), "Second key should have name");
+  }
 }
 
 void tst_gpgkeystate::parseMultiKeyPublic_data() {
@@ -149,12 +153,9 @@ void tst_gpgkeystate::parseKeyRollover() {
                           .arg(result.size())));
 
   auto containsKeyId = [&](const QString &keyId) {
-    for (const UserInfo &user : result) {
-      if (user.key_id == keyId) {
-        return true;
-      }
-    }
-    return false;
+    return std::any_of(
+        result.cbegin(), result.cend(),
+        [&](const UserInfo &user) { return user.key_id == keyId; });
   };
 
   QVERIFY2(containsKeyId("AAA111"), "Expected AAA111 key to be parsed");
