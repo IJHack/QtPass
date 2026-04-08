@@ -19,6 +19,7 @@ QPushButtonWithClipboard::QPushButtonWithClipboard(QString textToCopy,
       iconEditPushed(
           QIcon::fromTheme("document-new", QIcon(":/icons/document-new.svg"))) {
   setIcon(iconEdit);
+  setForegroundRole(QPalette::ButtonText);
   connect(this, &QPushButton::clicked, this,
           &QPushButtonWithClipboard::buttonClicked);
 }

@@ -14,9 +14,11 @@
 QPushButtonShowPassword::QPushButtonShowPassword(QLineEdit *line,
                                                  QWidget *parent)
     : QPushButton(parent),
-      iconEdit(QIcon::fromTheme("show", QIcon(":/icons/view.svg"))),
-      iconEditPushed(QIcon::fromTheme("hide-new", QIcon(":/icons/hide.svg"))) {
+      iconEdit(QIcon::fromTheme("view-visible", QIcon(":/icons/view.svg"))),
+      iconEditPushed(
+          QIcon::fromTheme("view-hidden", QIcon(":/icons/hide.svg"))) {
   setIcon(iconEdit);
+  setForegroundRole(QPalette::ButtonText);
   connect(this, &QPushButton::clicked, this,
           &QPushButtonShowPassword::buttonClicked);
   this->line = line;

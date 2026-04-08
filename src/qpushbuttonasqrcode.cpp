@@ -16,6 +16,7 @@ QPushButtonAsQRCode::QPushButtonAsQRCode(QString textToCopy, QWidget *parent)
     : QPushButton(parent), textToCopy(std::move(textToCopy)),
       iconEdit(QIcon::fromTheme("qrcode", QIcon(":/icons/qrcode.svg"))) {
   setIcon(iconEdit);
+  setForegroundRole(QPalette::ButtonText);
   connect(this, &QPushButton::clicked, this,
           &QPushButtonAsQRCode::buttonClicked);
 }
