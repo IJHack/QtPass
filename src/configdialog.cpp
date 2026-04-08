@@ -41,9 +41,6 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     showMaximized();
   } else if (!hasSavedGeometry) {
     // Let window manager handle positioning for first launch
-  } else {
-    move(QtPassSettings::getDialogPos("configDialog"));
-    resize(QtPassSettings::getDialogSize("configDialog"));
   }
 
   ui->passPath->setText(QtPassSettings::getPassExecutable());
