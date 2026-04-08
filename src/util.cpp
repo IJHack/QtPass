@@ -28,6 +28,16 @@
 QProcessEnvironment Util::_env;
 bool Util::_envInitialised = false;
 
+/**
+ * @brief Initializes the process environment and augments PATH with
+ * platform-specific GPG locations.
+ * @example
+ * Util::initialiseEnvironment();
+ *
+ * @note On macOS, appends common MacGPG2 and /usr/local/bin paths if available.
+ * @note On Windows, appends common WinGPG and GnuPG installation paths if
+ * available.
+ */
 void Util::initialiseEnvironment() {
   if (!_envInitialised) {
     _env = QProcessEnvironment::systemEnvironment();
@@ -57,6 +67,13 @@ void Util::initialiseEnvironment() {
   }
 }
 
+/**
+ * @brief Resolves the path to the password store directory.
+ * @details Initializes the environment, checks for the {@code
+ * PASSWORD_STORE_DIR} variable, and falls back to a platform-specific default
+ * location under the user's home directory.
+ * @return QString - Normalized path to the password store folder.
+ */
 auto Util::findPasswordStore() -> QString {
   QString path;
   initialiseEnvironment();
@@ -83,6 +100,23 @@ auto Util::normalizeFolderPath(const QString &path) -> QString {
   return QDir::toNativeSeparators(normalizedPath);
 }
 
+/**
+ * @brief Finds the absolute path of a binary by searching the PATH environment
+ * variable.
+ *
+ * Iterates through each PATH entry, checks whether the binary exists and is
+ * executable, and returns the first matching absolute file path. On Windows, if
+ * no local match is found, it may fall back to a WSL invocation when the binary
+ * name is valid and WSL appears to support it.
+ *
+ * @example
+ * QString result = Util::findBinaryInPath("git");
+ * // Expected output sample: "/usr/bin/git" or "wsl git"
+ *
+ * @param QString binary - The name of the binary to locate.
+ * @return QString - The absolute path to the binary, or an empty string if not
+ * found.
+ */
 auto Util::findBinaryInPath(QString binary) -> QString {
   initialiseEnvironment();
 
@@ -143,6 +177,16 @@ auto Util::findBinaryInPath(QString binary) -> QString {
   return ret;
 }
 
+/**
+ * @brief Checks whether the current QtPass configuration is valid.
+ * @example
+ * bool result = Util::configIsValid();
+ * std::cout << std::boolalpha << result << std::endl; // Expected output: true
+ * or false
+ *
+ * @return bool - True if the configuration file exists and the required
+ * executable is available; otherwise false.
+ */
 auto Util::configIsValid() -> bool {
   const QString configFilePath =
       QDir(QtPassSettings::getPassStore()).filePath(".gpg-id");
@@ -167,6 +211,25 @@ auto Util::configIsValid() -> bool {
   return QFile(executable).exists();
 }
 
+/**
+ * @brief Returns a directory path derived from a model index, optionally
+ * relative to the pass store.
+ * @example
+ * QString result = Util::getDir(index, true, model, storeModel);
+ * std::cout << result.toStdString() << std::endl; // Expected output: relative
+ * directory path with trailing separator
+ *
+ * @param QModelIndex &index - Source index used to resolve the file or
+ * directory path.
+ * @param bool forPass - If true, returns a path relative to the pass store;
+ * otherwise returns an absolute path.
+ * @param QFileSystemModel &model - File system model used to obtain file
+ * information.
+ * @param StoreModel &storeModel - Proxy model used to map the provided index to
+ * the source model.
+ * @return QString - The resolved directory path, always ending with the
+ * platform's directory separator.
+ */
 auto Util::getDir(const QModelIndex &index, bool forPass,
                   const QFileSystemModel &model, const StoreModel &storeModel)
     -> QString {
