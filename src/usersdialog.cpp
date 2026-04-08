@@ -25,12 +25,18 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
   ui->setupUi(this);
 
   // Restore dialog state
-  restoreGeometry(QtPassSettings::getDialogGeometry("usersDialog"));
+  QByteArray savedGeometry = QtPassSettings::getDialogGeometry("usersDialog");
+  bool hasSavedGeometry = !savedGeometry.isEmpty();
+  if (hasSavedGeometry) {
+    restoreGeometry(savedGeometry);
+  }
   if (QtPassSettings::isDialogMaximized("usersDialog")) {
     showMaximized();
-  } else {
+  } else if (hasSavedGeometry) {
     move(QtPassSettings::getDialogPos("usersDialog"));
     resize(QtPassSettings::getDialogSize("usersDialog"));
+  } else {
+    // Let window manager handle positioning for first launch
   }
 
   QList<UserInfo> users = QtPassSettings::getPass()->listKeys();
@@ -125,8 +131,10 @@ void UsersDialog::accept() {
  */
 void UsersDialog::closeEvent(QCloseEvent *event) {
   QtPassSettings::setDialogGeometry("usersDialog", saveGeometry());
-  QtPassSettings::setDialogPos("usersDialog", pos());
-  QtPassSettings::setDialogSize("usersDialog", size());
+  if (!isMaximized()) {
+    QtPassSettings::setDialogPos("usersDialog", pos());
+    QtPassSettings::setDialogSize("usersDialog", size());
+  }
   QtPassSettings::setDialogMaximized("usersDialog", isMaximized());
   event->accept();
 }
