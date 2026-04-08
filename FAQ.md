@@ -51,6 +51,34 @@ Where [ID] is your gpg key-id. If your setup is reversed, exchange `gpg` and `gp
 
 Git for Windows comes with an `ssh-askpass` compatible command, `git-gui--askpass` (located in `/mingw64/libexec/git-core/git-gui--askpass` on PortableGit version, presumably some place similar for the installed version).
 
+To use it:
+
+1. Set `SSH_ASKPASS` environment variable to the full path of `git-gui--askpass`, for example:
+
+   ```text
+   C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe
+   ```
+
+2. Optionally set `GIT_ASKPASS` to the same value so Git uses the same helper.
+
+3. Restart QtPass after setting the environment variables.
+
+Example using PowerShell:
+
+```powershell
+$env:SSH_ASKPASS = "C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe"
+$env:GIT_ASKPASS = "C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe"
+```
+
+Or to make it permanent:
+
+```powershell
+setx SSH_ASKPASS "C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe"
+setx GIT_ASKPASS "C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe"
+```
+
+**Note:** After using `setx`, you'll need to start QtPass in a new session (close and reopen your terminal, or log out and back in) for the environment variables to take effect.
+
 ### Git has issues with GPG SSH Authentication
 
 This tutorial might resolve your issues.
