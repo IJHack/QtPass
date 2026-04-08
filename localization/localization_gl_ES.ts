@@ -572,12 +572,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou a sinatura GPG!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou a sinatura de %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -617,33 +617,33 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
         <location filename="../src/imitatepass.cpp" line="636"/>
         <location filename="../src/imitatepass.cpp" line="743"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou a re-cifraxe</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="637"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou a substitución de %1. Restableceuse o orixinal.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>Creando commit da copia de apoio</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="672"/>
         <location filename="../src/imitatepass.cpp" line="680"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou o commit da copia de apoio</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="673"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non se puido comprobar o estado en git. Desbotouse a re-cifraxe.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="681"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>A re-cifraxe cancelouse porque non se puido crear unha copia de apoio git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="703"/>
@@ -653,27 +653,27 @@ Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="731"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou a verificación do ID GPG</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Non se puido verificar o .gpg-id do directorio.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fallou a re-cifraxe de %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Re-cifraxe completada: %1 con éxito, %2 con fallos</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="756"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>Completouse a re-cifraxe: %1 ficheiros re-cifrados</translation>
     </message>
 </context>
 <context>
