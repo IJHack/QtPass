@@ -24,3 +24,9 @@ precedence = "aggregate"
 SPDX-FileCopyrightText = "jsimplicio"
 SPDX-License-Identifier = "CC0-1.0"
 
+[[annotations]]
+path = "qtpass.appdata.xml"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "IJHack"
+SPDX-License-Identifier = "GFDL-1.3-or-later"
+
