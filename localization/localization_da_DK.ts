@@ -1147,7 +1147,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="499"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen OTP-kode fundet i denne adgangskodepost</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="777"/>
