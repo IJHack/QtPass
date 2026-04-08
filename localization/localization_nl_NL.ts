@@ -559,12 +559,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG-ondertekening mislukt!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ondertekening mislukt %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -604,33 +604,33 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
         <location filename="../src/imitatepass.cpp" line="636"/>
         <location filename="../src/imitatepass.cpp" line="743"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Herversleuteling mislukt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="637"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vervanging van %1 is mislukt. Het origineel is terug gezet.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="666"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>Back-up commit aan het maken</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="672"/>
         <location filename="../src/imitatepass.cpp" line="680"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>De back-up commit is mislukt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="673"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon de git-status niet controleren. Herversleuteling is afgebroken.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="681"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het herversleutelen is afgebroken omdat er geen git back-up kon worden gemaakt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="703"/>
@@ -646,27 +646,27 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="731"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG ID-verificatie mislukt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon het .gpg-id voor de map niet verifiëren.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Het opnieuw versleutelen van %1 is mislukt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="750"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Herversleuteling voltooid: %1 geslaagd, %2 mislukt</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="756"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>Herversleuteling voltooid: %1 bestanden opnieuw versleuteld</translation>
     </message>
 </context>
 <context>
