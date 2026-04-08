@@ -1,3 +1,6 @@
+# QtPass - GUI for pass
+# SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
+
 VERSION    = 1.5.1
 
 CONFIG(coverage) {

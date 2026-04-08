@@ -1,4 +1,5 @@
 #!/bin/bash
+# SPDX-FileCopyrightText: 2022 Anne Jan Brouwer
 # Generate compile_commands.json for IDE/LSP tooling using bear
 set -euo pipefail
 
