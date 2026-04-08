@@ -33,7 +33,7 @@ void tst_gpgkeystate::parseMultiKeyPublic() {
                           .arg(result.size())));
 
   for (const UserInfo &user : result) {
-    QVERIFY2(user.have_secret == false,
+    QVERIFY2(!user.have_secret,
              "Public keys should not have secret capability");
   }
 }
