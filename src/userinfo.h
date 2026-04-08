@@ -50,6 +50,9 @@ struct UserInfo {
   bool have_secret;
   /**
    * @brief UserInfo::enabled
+   * Whether this user/key is enabled for normal use.
+   * True when the key should be treated as active/usable; false when it is
+   * disabled.
    */
   bool enabled;
   /**

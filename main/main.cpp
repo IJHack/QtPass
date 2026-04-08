@@ -123,9 +123,15 @@ auto main(int argc, char *argv[]) -> int {
   QString locale = QLocale::system().name();
   if (translator.load(
           QString(":localization/localization_%1.qm").arg(locale))) {
+#if SINGLE_APP
     SingleApplication::installTranslator(&translator);
     SingleApplication::setLayoutDirection(
         QObject::tr("LTR") == "RTL" ? Qt::RightToLeft : Qt::LeftToRight);
+#else
+    QApplication::installTranslator(&translator);
+    QApplication::setLayoutDirection(
+        QObject::tr("LTR") == "RTL" ? Qt::RightToLeft : Qt::LeftToRight);
+#endif
   }
 
   MainWindow w(text);
@@ -133,9 +139,6 @@ auto main(int argc, char *argv[]) -> int {
   w.activateWindow();
 
   QApplication::setWindowIcon(QIcon(":artwork/icon.png"));
-#if !defined(Q_OS_MACOS) && !defined(Q_OS_OSX)
-  SingleApplication::setWindowIcon(QIcon(":artwork/icon.png"));
-#endif
 
 #if SINGLE_APP
   QObject::connect(&app, &SingleApplication::messageAvailable, &w,
@@ -164,5 +167,9 @@ auto main(int argc, char *argv[]) -> int {
 
   w.show();
 
+#if SINGLE_APP
   return SingleApplication::exec();
+#else
+  return QApplication::exec();
+#endif
 }
