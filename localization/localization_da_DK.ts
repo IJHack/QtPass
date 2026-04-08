@@ -1349,7 +1349,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="303"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Generering af GPG-nøglepar mislykkedes</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="377"/>
