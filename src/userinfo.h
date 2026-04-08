@@ -31,7 +31,7 @@ struct UserInfo {
   auto isValid() const -> bool { return fullyValid() || marginallyValid(); }
 
   /**
-   * @brief UserInfo::name full name
+   * @brief UserInfo::name GPG user ID / full name
    */
   QString name;
   /**
@@ -45,7 +45,7 @@ struct UserInfo {
    */
   char validity;
   /**
-   * @brief UserInfo::have_secret secret key is available
+   * @brief UserInfo::have_secret whether secret key is available
    * (can decrypt with this key)
    */
   bool have_secret;
@@ -57,11 +57,11 @@ struct UserInfo {
    */
   bool enabled;
   /**
-   * @brief UserInfo::expiry date/time key expires
+   * @brief UserInfo::expiry date/time when key expires
    */
   QDateTime expiry;
   /**
-   * @brief UserInfo::created date/time key was created
+   * @brief UserInfo::created date/time when key was created
    */
   QDateTime created;
 };
