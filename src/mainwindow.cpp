@@ -214,6 +214,17 @@ void MainWindow::cleanKeygenDialog() {
   this->keygen = nullptr;
 }
 
+/**
+ * @brief Displays the given text in the main window text browser, optionally marking it as an error and/or rendering it as HTML.
+ * @example
+ * MainWindow window;
+ * window.flashText("Operation completed.", false, false);
+ * 
+ * @param const QString &text - The text content to display.
+ * @param const bool isError - If true, sets the text color to red before displaying the text.
+ * @param const bool isHtml - If true, treats the text as HTML and appends it to the existing HTML content.
+ * @return void - No return value.
+ */
 void MainWindow::flashText(const QString &text, const bool isError,
                            const bool isHtml) {
   if (isError) {
@@ -262,6 +273,13 @@ void MainWindow::applyWindowFlagsSettings() {
   this->show();
 }
 
+/**
+ * @brief Opens and processes the application configuration dialog, then applies any accepted settings.
+ * @example
+ * config();
+ * 
+ * @return void - This function does not return a value.
+ */
 void MainWindow::config() {
   QScopedPointer<ConfigDialog> d(new ConfigDialog(this));
   d->setModal(true);
@@ -401,6 +419,15 @@ void MainWindow::executeWrapperStarted() {
   clearPanelTimer.stop();
 }
 
+/**
+ * @brief Handles displaying parsed password entry content in the main window.
+ * @example
+ * void result = MainWindow::passShowHandler(p_output);
+ * // Updates the UI with parsed fields and emits passShowHandlerFinished(output)
+ *
+ * @param p_output - The raw output text containing the password entry data.
+ * @return void - This function does not return a value.
+ */
 void MainWindow::passShowHandler(const QString &p_output) {
   QStringList templ = QtPassSettings::isUseTemplate()
                           ? QtPassSettings::getPassTemplate().split("\n")
@@ -448,6 +475,14 @@ void MainWindow::passShowHandler(const QString &p_output) {
   setUiElementsEnabled(true);
 }
 
+/**
+ * @brief Handles the OTP output by displaying it, copying it to the clipboard, and updating the UI state.
+ * @example
+ * void MainWindow::passOtpHandler(const QString &p_output);
+ *
+ * @param const QString &p_output - The OTP code text to process; if empty, an error message is shown instead.
+ * @return void - This function does not return a value.
+ */
 void MainWindow::passOtpHandler(const QString &p_output) {
   if (!p_output.isEmpty()) {
     addToGridLayout(ui->gridLayout->count() + 1, tr("OTP Code"), p_output);
@@ -500,6 +535,14 @@ void MainWindow::setUiElementsEnabled(bool state) {
   updateOtpButtonVisibility();
 }
 
+/**
+ * @brief Restores the main window geometry, state, position, size, and tray/icon settings from saved application settings.
+ * @example
+ * MainWindow window;
+ * window.restoreWindow();
+ *
+ * @return void - This function does not return a value.
+ */
 void MainWindow::restoreWindow() {
   QByteArray geometry = QtPassSettings::getGeometry(saveGeometry());
   restoreGeometry(geometry);
@@ -826,6 +869,17 @@ void MainWindow::updateProfileBox() {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
 void MainWindow::on_profileBox_currentIndexChanged(QString name) {
 #else
+/**
+ * @brief Handles changes to the selected profile in the profile combo box.
+ * @details Ignores the event during a fresh start or when the selected profile
+ * matches the current profile. Otherwise, it clears the password field, updates
+ * the active profile and related settings, refreshes the environment, and resets
+ * the tree view and action states to reflect the newly selected profile.
+ * 
+ * @param name - The newly selected profile name.
+ * @return void - This function does not return a value.
+ * 
+ */
 void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
 #endif
   if (m_qtPass->isFreshStart() || name == QtPassSettings::getProfile()) {
@@ -1138,6 +1192,13 @@ void MainWindow::clearTemplateWidgets() {
   ui->verticalLayoutPassword->setSpacing(0);
 }
 
+/**
+ * @brief Copies the password of the selected file from the tree view to the clipboard.
+ * @example
+ * MainWindow::copyPasswordFromTreeview();
+ * 
+ * @return void - This function does not return a value.
+ */
 void MainWindow::copyPasswordFromTreeview() {
   QFileInfo fileOrFolder =
       model.fileInfo(proxyModel.mapToSource(ui->treeView->currentIndex()));

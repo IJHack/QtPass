@@ -30,6 +30,14 @@ QScopedPointer<RealPass> QtPassSettings::realPass;
 QScopedPointer<ImitatePass> QtPassSettings::imitatePass;
 
 QtPassSettings *QtPassSettings::m_instance = nullptr;
+/**
+ * @brief Returns the singleton instance of QtPassSettings, creating it on first access.
+ * @example
+ * QtPassSettings *settings = QtPassSettings::getInstance();
+ * std::cout << settings << std::endl; // Expected output sample: a valid QtPassSettings pointer
+ *
+ * @return QtPassSettings* - Pointer to the shared QtPassSettings instance.
+ */
 auto QtPassSettings::getInstance() -> QtPassSettings * {
   if (!QtPassSettings::initialized) {
     QString portable_ini = QCoreApplication::applicationDirPath() +
@@ -46,6 +54,14 @@ auto QtPassSettings::getInstance() -> QtPassSettings * {
   return m_instance;
 }
 
+/**
+ * @brief Retrieves the current password configuration from application settings.
+ * @example
+ * PasswordConfiguration result = QtPassSettings::getPasswordConfiguration();
+ * std::cout << result.length << std::endl; // Expected output sample
+ *
+ * @return PasswordConfiguration - The password configuration populated from stored settings, including length, selected character set, and custom characters.
+ */
 auto QtPassSettings::getPasswordConfiguration() -> PasswordConfiguration {
   PasswordConfiguration config;
 
@@ -75,6 +91,18 @@ void QtPassSettings::setPasswordConfiguration(
                           config.Characters[PasswordConfiguration::CUSTOM]);
 }
 
+/**
+ * @brief Retrieves the stored profiles configuration as a nested hash map.
+ * @details Reads profile data from the settings group, including legacy profile
+ *          formats from versions <= v1.3.2, and returns each profile name mapped
+ *          to its properties such as path and signing key.
+ * @example
+ * QHash<QString, QHash<QString, QString>> profiles = QtPassSettings::getProfiles();
+ * std::cout << profiles.size() << std::endl; // Expected output: number of profiles
+ *
+ * @return QHash<QString, QHash<QString, QString>> - A hash map of profile names
+ *         mapped to their key/value properties.
+ */
 auto QtPassSettings::getProfiles() -> QHash<QString, QHash<QString, QString>> {
   getInstance()->beginGroup(SettingsConstants::profile);
   QHash<QString, QHash<QString, QString>> profiles;
@@ -106,6 +134,14 @@ auto QtPassSettings::getProfiles() -> QHash<QString, QHash<QString, QString>> {
   return profiles;
 }
 
+/**
+ * @brief Stores the profile settings in the application's configuration.
+ * @example
+ * QtPassSettings::setProfiles(profiles);
+ *
+ * @param profiles - A hash of profile names mapped to their key-value settings, such as "path" and "signingKey".
+ * @return void - This method does not return a value.
+ */
 void QtPassSettings::setProfiles(
     const QHash<QString, QHash<QString, QString>> &profiles) {
   getInstance()->remove(SettingsConstants::profile);
@@ -361,6 +397,15 @@ void QtPassSettings::setAddGPGId(const bool &addGPGId) {
   getInstance()->setValue(SettingsConstants::addGPGId, addGPGId);
 }
 
+/**
+ * @brief Retrieves the password store path, normalizes it, and ensures the directory exists.
+ * @example
+ * QString passStore = QtPassSettings::getPassStore("/home/user/.password-store");
+ * qDebug() << passStore; // Expected output: "/home/user/.password-store/"
+ *
+ * @param defaultValue - Fallback path used when no password store is configured.
+ * @return QString - The normalized absolute password store path, guaranteed to end with a path separator.
+ */
 auto QtPassSettings::getPassStore(const QString &defaultValue) -> QString {
   QString returnValue = getInstance()
                             ->value(SettingsConstants::passStore, defaultValue)
@@ -397,6 +442,13 @@ void QtPassSettings::setPassSigningKey(const QString &passSigningKey) {
   getInstance()->setValue(SettingsConstants::passSigningKey, passSigningKey);
 }
 
+/**
+ * @brief Initializes executable paths for Pass, Git, GPG, and Pwgen by locating them in the system PATH.
+ * @example
+ * QtPassSettings::initExecutables();
+ * 
+ * @return void - This method does not return a value.
+ */
 void QtPassSettings::initExecutables() {
   QString passExecutable =
       QtPassSettings::getPassExecutable(Util::findBinaryInPath("pass"));
@@ -502,6 +554,15 @@ void QtPassSettings::setProfile(const QString &profile) {
   getInstance()->setValue(SettingsConstants::profile, profile);
 }
 
+/**
+ * @brief Determines whether Git should be used for the current QtPass settings.
+ * @example
+ * bool result = QtPassSettings::isUseGit(true);
+ * std::cout << result << std::endl; // Expected output: true or false
+ * 
+ * @param const bool &defaultValue - The fallback value used when no explicit setting is stored.
+ * @return bool - True if Git usage is enabled, otherwise false.
+ */
 auto QtPassSettings::isUseGit(const bool &defaultValue) -> bool {
   bool storedValue =
       getInstance()->value(SettingsConstants::useGit, defaultValue).toBool();

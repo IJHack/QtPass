@@ -176,6 +176,16 @@ void ConfigDialog::usePass(bool usePass) {
   setGroupBoxState();
 }
 
+/**
+ * @brief Validates the configuration table fields and enables or disables the OK button accordingly.
+ * @example
+ * ConfigDialog dialog;
+ * QTableWidgetItem *item = dialog.findChild<QTableWidgetItem*>();
+ * dialog.validate(item);
+ * 
+ * @param QTableWidgetItem *item - The table item to validate; if null, validates all relevant items in the profile table.
+ * @return void - This function does not return a value.
+ */
 void ConfigDialog::validate(QTableWidgetItem *item) {
   bool status = true;
 
@@ -211,6 +221,15 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
   ui->buttonBox->button(QDialogButtonBox::Ok)->setEnabled(status);
 }
 
+/**
+ * @brief Saves the configuration dialog settings to persistent application settings.
+ * @example
+ * ConfigDialog dialog;
+ * dialog.on_accepted();
+ * // Expected output: All UI-selected configuration values are stored via QtPassSettings.
+ *
+ * @return void - This method does not return a value.
+ */
 void ConfigDialog::on_accepted() {
   QtPassSettings::setPassExecutable(ui->passPath->text());
   QtPassSettings::setGitExecutable(ui->gitPath->text());
@@ -259,6 +278,14 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setVersion(VERSION);
 }
 
+/**
+ * @brief Automatically detects required external binaries in the system PATH and updates the dialog fields.
+ * @example
+ * ConfigDialog configDialog;
+ * configDialog.on_autodetectButton_clicked();
+ * 
+ * @return void - This function does not return a value.
+ */
 void ConfigDialog::on_autodetectButton_clicked() {
   QString pass = Util::findBinaryInPath("pass");
   if (!pass.isEmpty()) {
@@ -606,6 +633,14 @@ void ConfigDialog::criticalMessage(const QString &title, const QString &text) {
   QMessageBox::critical(this, title, text, QMessageBox::Ok, QMessageBox::Ok);
 }
 
+/**
+ * @brief Checks whether the qrencode executable is available on the system.
+ * @example
+ * bool result = ConfigDialog::isQrencodeAvailable();
+ * std::cout << result << std::endl; // Expected output: true if qrencode is found, otherwise false
+ * 
+ * @return bool - True if qrencode is available; otherwise false. On Windows, always returns false.
+ */
 auto ConfigDialog::isQrencodeAvailable() -> bool {
 #ifdef Q_OS_WIN
   return false;
@@ -653,6 +688,14 @@ void ConfigDialog::wizard() {
   ui->checkBoxHidePassword->setCheckState(Qt::Checked);
 }
 
+/**
+ * @brief Checks whether the configured GnuPG executable exists.
+ * @example
+ * bool result = ConfigDialog::checkGpgExistence();
+ * std::cout << result << std::endl; // Expected output: true if GnuPG is found, false otherwise
+ * 
+ * @return bool - True if the GnuPG path is valid or uses a WSL command prefix; false if the executable cannot be found and an error message is shown.
+ */
 auto ConfigDialog::checkGpgExistence() -> bool {
   QString gpg = ui->gpgPath->text();
   if (!gpg.startsWith("wsl ") && !QFile(gpg).exists()) {
@@ -683,6 +726,14 @@ auto ConfigDialog::checkGpgExistence() -> bool {
   return true;
 }
 
+/**
+ * @brief Checks whether secret keys are available and, if needed, prompts the user to generate them.
+ * @example
+ * bool result = ConfigDialog.checkSecretKeys();
+ * std::cout << result << std::endl; // Expected output: true if keys are present or key generation dialog is accepted, false otherwise
+ *
+ * @return bool - Returns true when secret keys are already available or the key generation dialog is accepted; false if the dialog is rejected.
+ */
 auto ConfigDialog::checkSecretKeys() -> bool {
   QString gpg = ui->gpgPath->text();
   QStringList names = getSecretKeys();
@@ -698,6 +749,14 @@ auto ConfigDialog::checkSecretKeys() -> bool {
   return true;
 }
 
+/**
+ * @brief Checks whether the password-store path exists and prompts the user to create it if it does not.
+ * @example
+ * bool result = ConfigDialog::checkPasswordStore();
+ * std::cout << std::boolalpha << result << std::endl; // Expected output: true if the store exists or is created successfully, false if creation fails
+ *
+ * @return bool - True if the password-store exists or is successfully created, false if creation fails.
+ */
 auto ConfigDialog::checkPasswordStore() -> bool {
   QString passStore = ui->storePath->text();
 
@@ -726,6 +785,14 @@ auto ConfigDialog::checkPasswordStore() -> bool {
   return true;
 }
 
+/**
+ * @brief Handles selection and validation of the password store's .gpg-id file.
+ * @example
+ * ConfigDialog dialog;
+ * dialog.handleGpgIdFile();
+ * 
+ * @return void - This method does not return a value; it updates the UI flow and may prompt the user to choose a valid password store.
+ */
 void ConfigDialog::handleGpgIdFile() {
   QString passStore = ui->storePath->text();
   if (!QFile(QDir(passStore).filePath(".gpg-id")).exists()) {
