@@ -42,6 +42,14 @@ static auto consumeRemainingArgs(const QStringList &args, int start)
   return args.mid(start).join(" ");
 }
 
+static auto appendIfNotEmpty(QString &target, const QString &suffix) -> void {
+  if (!suffix.isEmpty()) {
+    if (!target.isEmpty())
+      target += " ";
+    target += suffix;
+  }
+}
+
 /**
  * @brief main
  * @param argc
@@ -71,12 +79,7 @@ auto main(int argc, char *argv[]) -> int {
 
     if (arg == "--") {
       consumeNextArg = false;
-      const QString remaining = consumeRemainingArgs(args, i + 1);
-      if (!remaining.isEmpty()) {
-        if (!text.isEmpty())
-          text += " ";
-        text += remaining;
-      }
+      appendIfNotEmpty(text, consumeRemainingArgs(args, i + 1));
       break;
     }
 
