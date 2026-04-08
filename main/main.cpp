@@ -112,9 +112,6 @@ auto main(int argc, char *argv[]) -> int {
   // Setup and load translator for localization
   QTranslator translator;
   QString locale = QLocale::system().name();
-  // locale = "nl_NL";
-  // locale = "he_IL";
-  // locale = "ar_MA";
   if (translator.load(
           QString(":localization/localization_%1.qm").arg(locale))) {
     SingleApplication::installTranslator(&translator);
