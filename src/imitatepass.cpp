@@ -507,8 +507,11 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
       "--list-only", "--keyid-format=long", pgpg(fileName)};
   QString keys;
   QString err;
-  Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args, &keys,
-                            &err);
+  const int result = Executor::executeBlocking(
+      QtPassSettings::getGpgExecutable(), args, &keys, &err);
+  if (result != 0 && keys.isEmpty() && err.isEmpty()) {
+    return QStringList();
+  }
   QStringList actualKeys;
   keys += err;
 #if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
