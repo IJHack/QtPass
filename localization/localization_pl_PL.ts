@@ -587,7 +587,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Nie można zweryfikować identyfikatora .gpg dla katalogu.</translation>
+        <translation>Nie można zweryfikować pliku .gpg-id dla katalogu.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="744"/>
