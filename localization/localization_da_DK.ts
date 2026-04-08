@@ -1142,7 +1142,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="497"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP-kode kopieret til udklipsholder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="499"/>
