@@ -59,6 +59,29 @@ git push -f
 
 This prevents "branch is out-of-date with base branch" errors.
 
+## Signed Commits
+
+Always sign your commits with `-S` flag:
+
+```bash
+git commit -S -m "Fix description"
+```
+
+If a PR has unsigned commits (e.g., from bots), recreate the changes on a new branch with signed commits:
+
+```bash
+# Fetch original branch
+git fetch origin <branch>
+git checkout FETCH_HEAD
+
+# Make changes, commit with signing
+git add -A
+git commit -S -m "chore: description"
+
+# Push and create new PR
+git push -u origin new-branch-name
+```
+
 ## Merging PRs
 
 ```bash
