@@ -209,8 +209,10 @@ void KeygenDialog::done(int r) {
  */
 void KeygenDialog::closeEvent(QCloseEvent *event) {
   QtPassSettings::setDialogGeometry("keygenDialog", saveGeometry());
-  QtPassSettings::setDialogPos("keygenDialog", pos());
-  QtPassSettings::setDialogSize("keygenDialog", size());
+  if (!isMaximized()) {
+    QtPassSettings::setDialogPos("keygenDialog", pos());
+    QtPassSettings::setDialogSize("keygenDialog", size());
+  }
   QtPassSettings::setDialogMaximized("keygenDialog", isMaximized());
   event->accept();
 }

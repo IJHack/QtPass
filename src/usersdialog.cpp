@@ -125,8 +125,10 @@ void UsersDialog::accept() {
  */
 void UsersDialog::closeEvent(QCloseEvent *event) {
   QtPassSettings::setDialogGeometry("usersDialog", saveGeometry());
-  QtPassSettings::setDialogPos("usersDialog", pos());
-  QtPassSettings::setDialogSize("usersDialog", size());
+  if (!isMaximized()) {
+    QtPassSettings::setDialogPos("usersDialog", pos());
+    QtPassSettings::setDialogSize("usersDialog", size());
+  }
   QtPassSettings::setDialogMaximized("usersDialog", isMaximized());
   event->accept();
 }
