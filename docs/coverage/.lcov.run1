@@ -9218,14 +9218,14 @@ end_of_record
 TN:
 SF:/home/runner/work/QtPass/QtPass/src/userinfo.h
 FN:14,14,_ZN8UserInfoC2Ev
-FN:29,29,_ZNK8UserInfo7isValidEv
+FN:31,31,_ZNK8UserInfo7isValidEv
 FNDA:13,_ZN8UserInfoC2Ev
 FNDA:0,_ZNK8UserInfo7isValidEv
 FNF:2
 FNH:1
 DA:14,13
-DA:20,0
-DA:29,0
+DA:21,0
+DA:31,0
 LF:3
 LH:1
 end_of_record
