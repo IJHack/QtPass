@@ -1354,7 +1354,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="377"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG-nøglepar blev genereret</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="462"/>
