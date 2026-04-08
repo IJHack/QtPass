@@ -1152,7 +1152,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="777"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen adgangskode valgt til OTP-generering</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1048"/>
