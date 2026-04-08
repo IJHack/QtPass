@@ -111,6 +111,21 @@ $(function() {
 </div><!-- fragment --><p>Where [ID] is your gpg key-id. If your setup is reversed, exchange <code>gpg</code> and <code>gpg2</code> accordingly.</p>
 <h2>Git doesn't work on Windows</h2>
 <p>Git for Windows comes with an <code>ssh-askpass</code> compatible command, <code>git-gui--askpass</code> (located in <code>/mingw64/libexec/git-core/git-gui--askpass</code> on PortableGit version, presumably some place similar for the installed version).</p>
+<p>To use it:</p>
+<ol type="1">
+<li><p class="startli">Set <code>SSH_ASKPASS</code> environment variable to the full path of <code>git-gui--askpass</code>, for example:</p>
+<div class="fragment"><div class="line">C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe</div>
+</div><!-- fragment --></li>
+<li>Optionally set <code>GIT_ASKPASS</code> to the same value so Git uses the same helper.</li>
+<li>Restart <a class="el" href="class_qt_pass.html">QtPass</a> after setting the environment variables.</li>
+</ol>
+<p>Example using PowerShell:</p>
+<div class="fragment"><div class="line">$env:SSH_ASKPASS = &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;</div>
+<div class="line">$env:GIT_ASKPASS = &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;</div>
+</div><!-- fragment --><p>Or to make it permanent:</p>
+<div class="fragment"><div class="line">setx SSH_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;</div>
+<div class="line">setx GIT_ASKPASS &quot;C:\Program Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;</div>
+</div><!-- fragment --><p><b>Note:</b> After using <code>setx</code>, you'll need to start <a class="el" href="class_qt_pass.html">QtPass</a> in a new session (close and reopen your terminal, or log out and back in) for the environment variables to take effect.</p>
 <h2>Git has issues with GPG SSH Authentication</h2>
 <p>This tutorial might resolve your issues. <a href="https://gitforwindows.org/OpenSSH-Integration-with-Pageant">https://gitforwindows.org/OpenSSH-Integration-with-Pageant</a></p>
 <h2>GPG says "Public key unusable" or "No secret key"</h2>
