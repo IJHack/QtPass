@@ -145,7 +145,7 @@ auto main(int argc, char *argv[]) -> int {
                    &MainWindow::messageAvailable);
 #endif
 
-  QGuiApplication::setDesktopFileName("qtpass.desktop");
+  QGuiApplication::setDesktopFileName("qtpass");
 
   // Center the MainWindow on the screen the mouse pointer is currently on
 #if QT_VERSION < QT_VERSION_CHECK(5, 12, 0)
