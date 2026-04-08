@@ -37,6 +37,11 @@
  * `qmake && make && make install`
  */
 
+static auto consumeRemainingArgs(const QStringList &args, int start)
+    -> QString {
+  return args.mid(start).join(" ");
+}
+
 /**
  * @brief main
  * @param argc
@@ -66,10 +71,11 @@ auto main(int argc, char *argv[]) -> int {
 
     if (arg == "--") {
       consumeNextArg = false;
-      for (int j = i + 1; j < args.count(); ++j) {
+      const QString remaining = consumeRemainingArgs(args, i + 1);
+      if (!remaining.isEmpty()) {
         if (!text.isEmpty())
           text += " ";
-        text += args.at(j);
+        text += remaining;
       }
       break;
     }
