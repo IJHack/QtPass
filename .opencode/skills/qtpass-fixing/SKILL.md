@@ -51,12 +51,28 @@ make -j4
 # Create branch
 git checkout -b fix/<issue-number>-short-description
 
-# Commit with issue reference
-git commit -m "Fix <description> (#issue)"
+# Commit with issue reference (always use -S for signing)
+git commit -S -m "Fix <description> (#issue)"
 
 # Push and create PR
 git push origin fix/<branch>
 gh pr create --title "Fix <description>" --body "## Summary\n- Fix description"
+```
+
+### Handling Static Analysis Findings
+
+When CodeRabbit/CodeAnt-AI flag issues in PRs:
+
+1. **Verify the finding** - Check if it's a real issue or false positive
+2. **If correct, fix it** - Make minimal changes to address
+3. **Push update** - Force push to update the PR
+4. **Respond to comments** - Comment that fix is applied
+
+```bash
+# After fixing, amend commit and force push
+git add -A
+git commit -S --amend --no-edit
+git push --force
 ```
 
 ## Common Fix Patterns

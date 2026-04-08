@@ -242,3 +242,29 @@ git commit -m "Resolve merge conflict - use theirs for translations"
 ### Weblate vs Local Editing
 
 QtPass uses Weblate for translations. Don't manually edit `.ts` files for translations - let Weblate handle it. Only run `qmake6` locally to update source references.
+
+## Fixing Translation Issues in PRs
+
+When static analysis flags translation issues (e.g., filename preservation):
+
+```bash
+# Fetch the PR branch
+git fetch origin refs/pull/<PR>/head:pr/<PR>-fix
+git checkout pr/<PR>-fix
+
+# Fix the translation
+# Edit the .ts file to preserve exact filename/token
+
+# Commit with signing and push
+git add localization/localization_<lang>.ts
+git commit -S -m "fix: preserve .gpg-id filename in <lang> translation"
+git push -u origin pr/<PR>-fix
+```
+
+### Squash Merge Pattern
+
+Translation PRs often use squash merge:
+
+```bash
+gh pr merge <PR_NUMBER> --squash --auto --delete-branch
+```
