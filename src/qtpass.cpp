@@ -98,7 +98,6 @@ auto QtPass::init() -> bool {
     }
     QtPassSettings::setPassTemplate("login\nurl");
   } else {
-    //// upgrade to 0.9
     if (QtPassSettings::getPassTemplate().isEmpty()) {
       QtPassSettings::setPassTemplate("login\nurl");
     }
