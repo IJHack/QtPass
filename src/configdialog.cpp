@@ -36,8 +36,13 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   if (QtPassSettings::isDialogMaximized("configDialog")) {
     showMaximized();
   } else {
-    move(QtPassSettings::getDialogPos("configDialog"));
-    resize(QtPassSettings::getDialogSize("configDialog"));
+    QPoint savedPos = QtPassSettings::getDialogPos("configDialog");
+    if (savedPos.isNull()) {
+      // Let window manager handle positioning for first launch
+    } else {
+      move(savedPos);
+      resize(QtPassSettings::getDialogSize("configDialog"));
+    }
   }
 
   ui->passPath->setText(QtPassSettings::getPassExecutable());
@@ -868,8 +873,10 @@ void ConfigDialog::on_checkBoxUseTrayIcon_clicked() {
  */
 void ConfigDialog::closeEvent(QCloseEvent *event) {
   QtPassSettings::setDialogGeometry("configDialog", saveGeometry());
-  QtPassSettings::setDialogPos("configDialog", pos());
-  QtPassSettings::setDialogSize("configDialog", size());
+  if (!isMaximized()) {
+    QtPassSettings::setDialogPos("configDialog", pos());
+    QtPassSettings::setDialogSize("configDialog", size());
+  }
   QtPassSettings::setDialogMaximized("configDialog", isMaximized());
   event->accept();
 }
