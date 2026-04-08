@@ -36,6 +36,12 @@ void tst_gpgkeystate::parseMultiKeyPublic() {
     QVERIFY2(!user.have_secret,
              "Public keys should not have secret capability");
   }
+
+  QVERIFY2(result.size() >= 2, "Expected at least 2 parsed public keys");
+  QVERIFY2(!result.at(0).key_id.isEmpty(), "First key should have key_id");
+  QVERIFY2(!result.at(1).key_id.isEmpty(), "Second key should have key_id");
+  QVERIFY2(!result.at(0).name.isEmpty(), "First key should have name");
+  QVERIFY2(!result.at(1).name.isEmpty(), "Second key should have name");
 }
 
 void tst_gpgkeystate::parseMultiKeyPublic_data() {
@@ -98,6 +104,7 @@ ssb:u:4096:1:6DF67C6BAD8383CB:1774947438::::::esa:::+:::23:)";
 void tst_gpgkeystate::parseSingleKey() {
   QFETCH(QString, input);
   QFETCH(int, expectedCount);
+  QFETCH(QString, expectedKeyId);
 
   const bool includeSecretKeys = false;
   QList<UserInfo> result = parseGpgColonOutput(input, includeSecretKeys);
@@ -109,18 +116,25 @@ void tst_gpgkeystate::parseSingleKey() {
   if (!result.isEmpty()) {
     QVERIFY2(!result.first().key_id.isEmpty(),
              "Parsed key should have a key_id");
+    if (!expectedKeyId.isEmpty()) {
+      QVERIFY2(result.first().key_id == expectedKeyId,
+               qPrintable(QString("Expected key_id %1, got %2")
+                              .arg(expectedKeyId)
+                              .arg(result.first().key_id)));
+    }
   }
 }
 
 void tst_gpgkeystate::parseSingleKey_data() {
   QTest::addColumn<QString>("input");
   QTest::addColumn<int>("expectedCount");
+  QTest::addColumn<QString>("expectedKeyId");
 
   QTest::newRow("pub-only")
-      << "pub:u:4096:1:ABC123:1774947438:::u::::::23::0:" << 1;
+      << "pub:u:4096:1:ABC123:1774947438:::u::::::23::0:" << 1 << "ABC123";
   QTest::newRow("pub-with-fpr") << "pub:u:4096:1:ABC123:1774947438:::u::::::23:"
                                    ":0:\nfpr:::::::::FINGERPRINT123456789:"
-                                << 1;
+                                << 1 << "ABC123";
 }
 
 void tst_gpgkeystate::parseKeyRollover() {
@@ -133,6 +147,19 @@ void tst_gpgkeystate::parseKeyRollover() {
            qPrintable(QString("Expected %1 keys, got %2")
                           .arg(expectedCount)
                           .arg(result.size())));
+
+  auto containsKeyId = [&](const QString &keyId) {
+    for (const UserInfo &user : result) {
+      if (user.key_id == keyId) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  QVERIFY2(containsKeyId("AAA111"), "Expected AAA111 key to be parsed");
+  QVERIFY2(containsKeyId("BBB222"), "Expected BBB222 key to be parsed");
+  QVERIFY2(containsKeyId("CCC333"), "Expected CCC333 key to be parsed");
 }
 
 void tst_gpgkeystate::parseKeyRollover_data() {
