@@ -18,9 +18,13 @@ fi
 	}
 )
 
-echo "Running qmake (release)..."
-qmake CONFIG+=release || {
-	echo "Error: qmake failed." >&2
+echo "Running qmake6 (release)..."
+if ! command -v qmake6 &>/dev/null; then
+	echo "Error: qmake6 is not installed or not in PATH. Qt6 is required for building." >&2
+	exit 1
+fi
+qmake6 CONFIG+=release || {
+	echo "Error: qmake6 failed." >&2
 	exit 1
 }
 
