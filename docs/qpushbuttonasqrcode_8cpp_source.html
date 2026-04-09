@@ -94,32 +94,33 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    : QPushButton(parent), textToCopy(std::move(textToCopy)),</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>      iconEdit(QIcon::fromTheme(<span class="stringliteral">&quot;qrcode&quot;</span>, QIcon(<span class="stringliteral">&quot;:/icons/qrcode.svg&quot;</span>))) {</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  setIcon(iconEdit);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  connect(<span class="keyword">this</span>, &amp;QPushButton::clicked, <span class="keyword">this</span>,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>          &amp;QPushButtonAsQRCode::buttonClicked);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>}</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>  setForegroundRole(QPalette::ButtonText);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>  connect(<span class="keyword">this</span>, &amp;QPushButton::clicked, <span class="keyword">this</span>,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>          &amp;QPushButtonAsQRCode::buttonClicked);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
 </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_q_push_button_as_q_r_code.html#ac760ad4c81ab153edbe4ab0e6215aae4">   28</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_q_push_button_as_q_r_code.html#ac760ad4c81ab153edbe4ab0e6215aae4">QPushButtonAsQRCode::getTextToCopy</a>() const -&gt; QString {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordflow">return</span> textToCopy;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="class_q_push_button_as_q_r_code.html#ac760ad4c81ab153edbe4ab0e6215aae4">   29</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_q_push_button_as_q_r_code.html#ac760ad4c81ab153edbe4ab0e6215aae4">QPushButtonAsQRCode::getTextToCopy</a>() const -&gt; QString {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>  <span class="keywordflow">return</span> textToCopy;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_q_push_button_as_q_r_code.html#ac2d3260a757c28d04758c1901e5dbd40">   37</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_q_push_button_as_q_r_code.html#ac2d3260a757c28d04758c1901e5dbd40">QPushButtonAsQRCode::setTextToCopy</a>(<span class="keyword">const</span> QString &amp;value) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  textToCopy = value;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00038" data-start="{" data-end="}">
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_q_push_button_as_q_r_code.html#ac2d3260a757c28d04758c1901e5dbd40">   38</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_q_push_button_as_q_r_code.html#ac2d3260a757c28d04758c1901e5dbd40">QPushButtonAsQRCode::setTextToCopy</a>(<span class="keyword">const</span> QString &amp;value) {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  textToCopy = value;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
 </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keywordtype">void</span> QPushButtonAsQRCode::buttonClicked(<span class="keywordtype">bool</span> <span class="comment">/*unused*/</span>) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  emit <a class="code hl_signal" href="class_q_push_button_as_q_r_code.html#a347f41172463a60dae8c52461436e485">clicked</a>(textToCopy);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>}</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keywordtype">void</span> QPushButtonAsQRCode::changeIconDefault() { this-&gt;setIcon(iconEdit); }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keywordtype">void</span> QPushButtonAsQRCode::buttonClicked(<span class="keywordtype">bool</span> <span class="comment">/*unused*/</span>) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  emit <a class="code hl_signal" href="class_q_push_button_as_q_r_code.html#a347f41172463a60dae8c52461436e485">clicked</a>(textToCopy);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keywordtype">void</span> QPushButtonAsQRCode::changeIconDefault() { this-&gt;setIcon(iconEdit); }</div>
 <div class="ttc" id="aclass_q_push_button_as_q_r_code_html_a347f41172463a60dae8c52461436e485"><div class="ttname"><a href="class_q_push_button_as_q_r_code.html#a347f41172463a60dae8c52461436e485">QPushButtonAsQRCode::clicked</a></div><div class="ttdeci">void clicked(const QString &amp;)</div></div>
 <div class="ttc" id="aclass_q_push_button_as_q_r_code_html_a8b9e33d9c6a605b6071267d0f5bd3c00"><div class="ttname"><a href="class_q_push_button_as_q_r_code.html#a8b9e33d9c6a605b6071267d0f5bd3c00">QPushButtonAsQRCode::QPushButtonAsQRCode</a></div><div class="ttdeci">QPushButtonAsQRCode(QString textToCopy=&quot;&quot;, QWidget *parent=nullptr)</div><div class="ttdoc">QPushButtonAsQRCode::QPushButtonAsQRCode basic constructor.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonasqrcode_8cpp_source.html#l00015">qpushbuttonasqrcode.cpp:15</a></div></div>
-<div class="ttc" id="aclass_q_push_button_as_q_r_code_html_ac2d3260a757c28d04758c1901e5dbd40"><div class="ttname"><a href="class_q_push_button_as_q_r_code.html#ac2d3260a757c28d04758c1901e5dbd40">QPushButtonAsQRCode::setTextToCopy</a></div><div class="ttdeci">void setTextToCopy(const QString &amp;value)</div><div class="ttdoc">QPushButtonAsQRCode::setTextToCopy sets text from associated text field.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonasqrcode_8cpp_source.html#l00037">qpushbuttonasqrcode.cpp:37</a></div></div>
-<div class="ttc" id="aclass_q_push_button_as_q_r_code_html_ac760ad4c81ab153edbe4ab0e6215aae4"><div class="ttname"><a href="class_q_push_button_as_q_r_code.html#ac760ad4c81ab153edbe4ab0e6215aae4">QPushButtonAsQRCode::getTextToCopy</a></div><div class="ttdeci">auto getTextToCopy() const -&gt; QString</div><div class="ttdoc">QPushButtonAsQRCode::getTextToCopy returns the text of associated text field.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonasqrcode_8cpp_source.html#l00028">qpushbuttonasqrcode.cpp:28</a></div></div>
+<div class="ttc" id="aclass_q_push_button_as_q_r_code_html_ac2d3260a757c28d04758c1901e5dbd40"><div class="ttname"><a href="class_q_push_button_as_q_r_code.html#ac2d3260a757c28d04758c1901e5dbd40">QPushButtonAsQRCode::setTextToCopy</a></div><div class="ttdeci">void setTextToCopy(const QString &amp;value)</div><div class="ttdoc">QPushButtonAsQRCode::setTextToCopy sets text from associated text field.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonasqrcode_8cpp_source.html#l00038">qpushbuttonasqrcode.cpp:38</a></div></div>
+<div class="ttc" id="aclass_q_push_button_as_q_r_code_html_ac760ad4c81ab153edbe4ab0e6215aae4"><div class="ttname"><a href="class_q_push_button_as_q_r_code.html#ac760ad4c81ab153edbe4ab0e6215aae4">QPushButtonAsQRCode::getTextToCopy</a></div><div class="ttdeci">auto getTextToCopy() const -&gt; QString</div><div class="ttdoc">QPushButtonAsQRCode::getTextToCopy returns the text of associated text field.</div><div class="ttdef"><b>Definition</b> <a href="qpushbuttonasqrcode_8cpp_source.html#l00029">qpushbuttonasqrcode.cpp:29</a></div></div>
 <div class="ttc" id="aqpushbuttonasqrcode_8h_html"><div class="ttname"><a href="qpushbuttonasqrcode_8h.html">qpushbuttonasqrcode.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
