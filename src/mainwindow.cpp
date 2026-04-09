@@ -1230,6 +1230,10 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   QString trimmedField = field.trimmed();
   QString trimmedValue = value.trimmed();
 
+  const QString buttonStyle =
+      "border-style: none; background: transparent; padding: 0; margin: 0; "
+      "icon-size: 16px; color: inherit;";
+
   // Combine the Copy button and the line edit in one widget
   auto *frame = new QFrame();
   QLayout *ly = new QHBoxLayout();
@@ -1241,8 +1245,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     connect(fieldLabel, &QPushButtonWithClipboard::clicked, m_qtPass,
             &QtPass::copyTextToClipboard);
 
-    fieldLabel->setStyleSheet(
-        "border-style: none ; background: transparent; padding: 0; margin: 0;");
+    fieldLabel->setStyleSheet(buttonStyle);
     frame->layout()->addWidget(fieldLabel);
   }
 
@@ -1250,8 +1253,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     auto *qrbutton = new QPushButtonAsQRCode(trimmedValue, this);
     connect(qrbutton, &QPushButtonAsQRCode::clicked, m_qtPass,
             &QtPass::showTextAsQRCode);
-    qrbutton->setStyleSheet(
-        "border-style: none ; background: transparent; padding: 0; margin: 0;");
+    qrbutton->setStyleSheet(buttonStyle);
     frame->layout()->addWidget(qrbutton);
   }
 
@@ -1271,8 +1273,7 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     line->setContentsMargins(0, 0, 0, 0);
     line->setEchoMode(QLineEdit::Password);
     auto *showButton = new QPushButtonShowPassword(line, this);
-    showButton->setStyleSheet(
-        "border-style: none ; background: transparent; padding: 0; margin: 0;");
+    showButton->setStyleSheet(buttonStyle);
     showButton->setContentsMargins(0, 0, 0, 0);
     frame->layout()->addWidget(showButton);
     frame->layout()->addWidget(line);
