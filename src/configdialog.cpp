@@ -435,7 +435,7 @@ void ConfigDialog::on_toolButtonPass_clicked() {
 
 /**
  * @brief ConfigDialog::on_toolButtonStore_clicked get .password-store
- * location.s
+ * location.
  */
 void ConfigDialog::on_toolButtonStore_clicked() {
   QString store = selectFolder();
@@ -632,7 +632,7 @@ void ConfigDialog::on_deleteButton_clicked() {
 }
 
 /**
- * @brief ConfigDialog::criticalMessage weapper for showing critical messages
+ * @brief ConfigDialog::criticalMessage wrapper for showing critical messages
  * in a popup.
  * @param title
  * @param text
@@ -899,8 +899,8 @@ void ConfigDialog::useOtp(bool useOtp) {
 }
 
 /**
- * @brief ConfigDialog::useOtp set preference for using otp plugin.
- * @param useOtp
+ * @brief ConfigDialog::useQrencode set preference for using qrencode plugin.
+ * @param useQrencode
  */
 void ConfigDialog::useQrencode(bool useQrencode) {
   ui->checkBoxUseQrencode->setChecked(useQrencode);
@@ -946,7 +946,7 @@ void ConfigDialog::setPwgenPath(const QString &pwgen) {
 }
 
 /**
- * @brief ConfigDialog::on_checkBoxUsPwgen_clicked enable or disable related
+ * @brief ConfigDialog::on_checkBoxUsePwgen_clicked enable or disable related
  * options in the interface.
  */
 void ConfigDialog::on_checkBoxUsePwgen_clicked() {
@@ -962,7 +962,7 @@ void ConfigDialog::on_checkBoxUsePwgen_clicked() {
 
 /**
  * @brief ConfigDialog::usePwgen set preference for using pwgen (can be
- * overruled buy empty pwgenPath).
+ * overruled by empty pwgenPath).
  * enable or disable related options in the interface via
  * ConfigDialog::on_checkBoxUsePwgen_clicked
  * @param usePwgen
