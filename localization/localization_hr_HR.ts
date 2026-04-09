@@ -355,73 +355,73 @@ email</translation>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verzija </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="118"/>
+        <location filename="../src/configdialog.cpp" line="121"/>
         <source>No Clipboard</source>
         <translation>Ne kopiraj u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="119"/>
+        <location filename="../src/configdialog.cpp" line="122"/>
         <source>Always copy to clipboard</source>
         <translation>Uvijek kopiraj u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="120"/>
+        <location filename="../src/configdialog.cpp" line="123"/>
         <source>On-demand copy to clipboard</source>
         <translation>Kopiraj u međuspremnik na zahtjev</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="201"/>
-        <location filename="../src/configdialog.cpp" line="216"/>
+        <location filename="../src/configdialog.cpp" line="204"/>
+        <location filename="../src/configdialog.cpp" line="219"/>
         <source>This field is required</source>
         <translation>Ovo je obavezno polje</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="609"/>
+        <location filename="../src/configdialog.cpp" line="612"/>
         <source>No profile selected</source>
         <translation>Nijedan profil nije odabran</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="610"/>
+        <location filename="../src/configdialog.cpp" line="613"/>
         <source>No profile selected to delete</source>
         <translation>Nijedan profil nije odabran za brisanje</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="710"/>
+        <location filename="../src/configdialog.cpp" line="713"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nije pronađen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="724"/>
+        <location filename="../src/configdialog.cpp" line="727"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Instaliraj GnuPG.&lt;br&gt;Instaliraj &lt;strong&gt;gpg&lt;/strong&gt; koristeći svoj omiljeni upravljač za pakete&lt;br&gt;ili ga &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;preuzmi&lt;/a&gt; sa stranice GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="778"/>
+        <location filename="../src/configdialog.cpp" line="781"/>
         <source>Create password-store?</source>
         <translation>Stvoriti spremište za lozinke?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="779"/>
+        <location filename="../src/configdialog.cpp" line="782"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Želiš li stvoriti spremište za lozinke pri %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="784"/>
+        <location filename="../src/configdialog.cpp" line="787"/>
         <source>Error</source>
         <translation>Pogreška</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="785"/>
+        <location filename="../src/configdialog.cpp" line="788"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Nije uspjelo stvaranje spremišta lozinki na: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="816"/>
+        <location filename="../src/configdialog.cpp" line="819"/>
         <source>Password store not initialised</source>
         <translation>Spremište za lozinke nije inicijalizirano</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="817"/>
+        <location filename="../src/configdialog.cpp" line="820"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Čini se da mapa %1 nije spremište lozinki ili još nije inicijalizirano spremište.</translation>
     </message>
@@ -436,27 +436,27 @@ email</translation>
         <translation>Automatsko prepoznavanje</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="63"/>
+        <location filename="../src/configdialog.cpp" line="66"/>
         <source>System tray is not available</source>
         <translation>Programska traka sustava nije dostupna</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="88"/>
+        <location filename="../src/configdialog.cpp" line="91"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation>Proširenje Pass OTP mora biti instalirano</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="93"/>
+        <location filename="../src/configdialog.cpp" line="96"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode mora biti instaliran</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="713"/>
+        <location filename="../src/configdialog.cpp" line="716"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Instaliraj GnuPG.&lt;br&gt;Preuzmi i instaliraj &lt;strong&gt;Ubuntu&lt;/strong&gt; s Microsoft Store stranice.&lt;br&gt;Ako već jesi, pokreni ga jednom i&lt;br&gt;klikni na „Automatsko prepoznavanje” u sljedećem dijalogu.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="718"/>
+        <location filename="../src/configdialog.cpp" line="721"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Instaliraj GnuPG.&lt;br&gt;Instaliraj &lt;strong&gt;Ubuntu&lt;/strong&gt; s Microsoft Store stranice&lt;br&gt;ili ga &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;preuzmi&lt;/a&gt; sa stranice GnuPG.org</translation>
     </message>
@@ -542,13 +542,13 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
-        <location filename="../src/imitatepass.cpp" line="572"/>
+        <location filename="../src/imitatepass.cpp" line="575"/>
         <source>Can not edit</source>
         <translation>Nije moguće mijenjati</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="128"/>
-        <location filename="../src/imitatepass.cpp" line="573"/>
+        <location filename="../src/imitatepass.cpp" line="576"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
         <translation>Nije moguće pročitati ključ šifriranja koji se treba koristiti, .gpg-id datoteka nedostaje ili nije valjana.</translation>
     </message>
@@ -597,70 +597,70 @@ You will not be able to decrypt any newly added passwords!</source>
 Nećeš moći dešifrirati novododane lozinke!</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="636"/>
-        <location filename="../src/imitatepass.cpp" line="743"/>
+        <location filename="../src/imitatepass.cpp" line="639"/>
+        <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="637"/>
+        <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="666"/>
+        <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="672"/>
-        <location filename="../src/imitatepass.cpp" line="680"/>
+        <location filename="../src/imitatepass.cpp" line="675"/>
+        <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="673"/>
+        <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="681"/>
+        <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="703"/>
+        <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Re-encrypting from folder %1</source>
         <translation>Ponovno šifriranje iz mape %1</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="706"/>
-        <location filename="../src/imitatepass.cpp" line="761"/>
+        <location filename="../src/imitatepass.cpp" line="709"/>
+        <location filename="../src/imitatepass.cpp" line="764"/>
         <source>Updating password-store</source>
         <translation>Aktualiziranje spremišta za lozinke</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="731"/>
+        <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="732"/>
+        <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="744"/>
+        <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="750"/>
+        <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="756"/>
+        <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
         <translation type="unfinished"></translation>
     </message>
@@ -782,27 +782,27 @@ Expire-Date: 0
         <translation>Za napredne opcije pročitaj &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;priručnik za GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="162"/>
+        <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
         <translation>Neispravno ime</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="163"/>
+        <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
         <translation>Ime mora sadržati barem pet znakova.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="174"/>
+        <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
         <translation>Neipsravna e-mail adresa</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="175"/>
+        <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
         <translation>Upisana e-mail adresa nije valjana e-mail adresa.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="190"/>
+        <location filename="../src/keygendialog.cpp" line="196"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Ova operacija može potrajati nekoliko minuta. &lt;br /&gt; Moramo generirati puno slučajnih bajtova. Dobro je provesti neku drugu radnju (utipkajte tipkovnicu, pomičite miša, koristite diskove) tijekom premijere generacije; ovo daje veću mogućnost generatora slučajnih brojeva da steknu dovoljno entropije.</translation>
     </message>
@@ -821,14 +821,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
-        <location filename="../src/mainwindow.cpp" line="1042"/>
+        <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>Edit</source>
         <translation>Uredi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
-        <location filename="../src/mainwindow.cpp" line="1056"/>
+        <location filename="../src/mainwindow.cpp" line="1055"/>
         <source>Delete</source>
         <translation>Izbriši</translation>
     </message>
@@ -916,7 +916,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
-        <location filename="../src/mainwindow.cpp" line="1036"/>
+        <location filename="../src/mainwindow.cpp" line="1035"/>
         <source>Users</source>
         <translation>Korisnici</translation>
     </message>
@@ -1000,8 +1000,8 @@ p, li { white-space: pre-wrap; }
 </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="333"/>
-        <location filename="../src/mainwindow.cpp" line="346"/>
+        <location filename="../src/mainwindow.cpp" line="332"/>
+        <location filename="../src/mainwindow.cpp" line="345"/>
         <source>Updating password-store</source>
         <translation>Aktualiziranje spremišta za lozinke</translation>
     </message>
@@ -1018,18 +1018,18 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Password hidden</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="454"/>
+        <location filename="../src/mainwindow.cpp" line="453"/>
         <source>Content hidden</source>
         <translation>Sadržaj skriven</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="458"/>
-        <location filename="../src/mainwindow.cpp" line="1266"/>
+        <location filename="../src/mainwindow.cpp" line="457"/>
+        <location filename="../src/mainwindow.cpp" line="1267"/>
         <source>Password</source>
         <translation>Lozinka</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="495"/>
+        <location filename="../src/mainwindow.cpp" line="494"/>
         <source>OTP Code</source>
         <translation>Kȏd jednokratne lozinke</translation>
     </message>
@@ -1042,7 +1042,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Clipboard not cleared</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="517"/>
+        <location filename="../src/mainwindow.cpp" line="516"/>
         <source>Password and Content hidden</source>
         <translation>Lozinka i sadržaj skriveni</translation>
     </message>
@@ -1071,40 +1071,40 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="595"/>
+        <location filename="../src/mainwindow.cpp" line="594"/>
         <source>Looking for: %1</source>
         <translation>Traži se: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="699"/>
-        <location filename="../src/mainwindow.cpp" line="1094"/>
+        <location filename="../src/mainwindow.cpp" line="698"/>
+        <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>New file</source>
         <translation>Nova datoteka</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="700"/>
+        <location filename="../src/mainwindow.cpp" line="699"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nova datoteka lozinki: 
 (Smjestit će se u %1)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="737"/>
+        <location filename="../src/mainwindow.cpp" line="736"/>
         <source> and the whole content?</source>
         <translation> i cijeli sadržaj?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="747"/>
+        <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> i cijeli sadržaj?&lt;br&gt;&lt;strong&gt;Oprez: u određenoj mapi postoje neočekivane datoteke. Provjeri ih prije nego što nastaviš.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="757"/>
+        <location filename="../src/mainwindow.cpp" line="756"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Stvarno želiš izbrisati %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="756"/>
+        <location filename="../src/mainwindow.cpp" line="755"/>
         <source>Delete password?</source>
         <translation>Izbrisati lozinku?</translation>
     </message>
@@ -1113,7 +1113,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="756"/>
+        <location filename="../src/mainwindow.cpp" line="755"/>
         <source>Delete folder?</source>
         <translation>Izbrisati mapu?</translation>
     </message>
@@ -1138,31 +1138,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="905"/>
+        <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
         <translation>Profil promijenjen u %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1033"/>
+        <location filename="../src/mainwindow.cpp" line="1032"/>
         <source>Open folder with file manager</source>
         <translation>Otvori mapu s upravljačem datoteka</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
-        <location filename="../src/mainwindow.cpp" line="1034"/>
+        <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Add folder</source>
         <translation>Dodaj mapu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
-        <location filename="../src/mainwindow.cpp" line="1035"/>
+        <location filename="../src/mainwindow.cpp" line="1034"/>
         <source>Add password</source>
         <translation>Dodaj lozinku</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1095"/>
+        <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nova mapa: 
@@ -1173,59 +1173,59 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">copied to clipboard</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="497"/>
+        <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
         <translation>OTP kod je kopiran u međuspremnik</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="499"/>
+        <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
         <translation>U ovom unosu lozinke nije pronađen OTP kod</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="777"/>
+        <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
         <translation>Nije odabrana lozinka za generiranje OTP-a</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1048"/>
+        <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
         <translation>Preimenuj mapu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1052"/>
+        <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>Rename password</source>
         <translation>Preimenuj lozinku</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1105"/>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1104"/>
+        <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>Error</source>
         <translation>Pogreška</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1106"/>
+        <location filename="../src/mainwindow.cpp" line="1105"/>
         <source>Failed to create folder: %1</source>
         <translation>Nije uspjelo stvaranje mape: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1115"/>
+        <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Neuspjelo stvaranje .gpg-id datoteke u: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1137"/>
-        <location filename="../src/mainwindow.cpp" line="1173"/>
+        <location filename="../src/mainwindow.cpp" line="1136"/>
+        <location filename="../src/mainwindow.cpp" line="1172"/>
         <source>Rename file</source>
         <translation>Preimenuj datoteku</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1137"/>
+        <location filename="../src/mainwindow.cpp" line="1136"/>
         <source>Rename Folder To: </source>
         <translation>Preimenuj mapu u: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1173"/>
+        <location filename="../src/mainwindow.cpp" line="1172"/>
         <source>Rename File To: </source>
         <translation>Preimenuj datoteku u: </translation>
     </message>
@@ -1306,7 +1306,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="119"/>
+        <location filename="../main/main.cpp" line="129"/>
+        <location filename="../main/main.cpp" line="133"/>
         <source>LTR</source>
         <translation>Lijevo-na-desno</translation>
     </message>
@@ -1514,42 +1515,42 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="38"/>
+        <location filename="../src/usersdialog.cpp" line="44"/>
         <source>Keylist missing</source>
         <translation>Popis ključeva nedostaje</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="39"/>
+        <location filename="../src/usersdialog.cpp" line="45"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Nije moguće dohvatiti popis dostupne GPG ključeve</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="85"/>
+        <location filename="../src/usersdialog.cpp" line="91"/>
         <source>Key not found in keyring</source>
         <translation>Ključ nije pronađen u privjesku ključeva</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="243"/>
+        <location filename="../src/usersdialog.cpp" line="251"/>
         <source>created</source>
         <translation>stvoren</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="247"/>
+        <location filename="../src/usersdialog.cpp" line="255"/>
         <source>expires</source>
         <translation>isteći će</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="270"/>
+        <location filename="../src/usersdialog.cpp" line="278"/>
         <source>[INVALID] </source>
         <translation>[NEVAŽEĆE] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="273"/>
+        <location filename="../src/usersdialog.cpp" line="281"/>
         <source>[EXPIRED] </source>
         <translation>[ISTEKLO] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="277"/>
+        <location filename="../src/usersdialog.cpp" line="285"/>
         <source>[PARTIAL] </source>
         <translation>[DJELOMIČNO] </translation>
     </message>

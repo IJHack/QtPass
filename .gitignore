@@ -33,6 +33,7 @@ tests/auto/executor/tst_executor
 tests/auto/passwordconfig/tst_passwordconfig
 tests/auto/simpletransaction/tst_simpletransaction
 tests/auto/filecontent/tst_filecontent
+tests/auto/gpgkeystate/tst_gpgkeystate
 **/*.gc*
 *.bak
 README.c*
