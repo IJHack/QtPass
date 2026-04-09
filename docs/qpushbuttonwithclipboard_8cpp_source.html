@@ -117,7 +117,7 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keywordtype">void</span> QPushButtonWithClipboard::buttonClicked(<span class="keywordtype">bool</span> <span class="comment">/*unused*/</span>) {</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  setIcon(iconEditPushed);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  QTimer::singleShot(500, <span class="keyword">this</span>, SLOT(changeIconDefault()));</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  QTimer::singleShot(500, <span class="keyword">this</span>, &amp;QPushButtonWithClipboard::changeIconDefault);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  emit <a class="code hl_signal" href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">clicked</a>(textToCopy);</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>}</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
