@@ -647,7 +647,7 @@ Seega sa ei saa hiljem dekrüptida nüüd lisatud salasõnu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Kausta jaoks ei õnnestunud .gpg-id faili verifitserida.</translation>
+        <translation>Kausta jaoks ei õnnestunud .gpg-id faili verifitseerida.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
