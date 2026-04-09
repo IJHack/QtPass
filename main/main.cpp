@@ -39,10 +39,12 @@
 
 static auto consumeRemainingArgs(const QStringList &args, int start)
     -> QString {
+  Q_ASSERT(start >= 0 && start <= args.size());
   return args.mid(start).join(" ");
 }
 
-static auto appendIfNotEmpty(QString &target, const QString &suffix) -> void {
+static auto appendWithSpaceIfSuffixNotEmpty(QString &target,
+                                            const QString &suffix) -> void {
   if (!suffix.isEmpty()) {
     if (!target.isEmpty())
       target += " ";
@@ -79,7 +81,7 @@ auto main(int argc, char *argv[]) -> int {
 
     if (arg == "--") {
       consumeNextArg = false;
-      appendIfNotEmpty(text, consumeRemainingArgs(args, i + 1));
+      appendWithSpaceIfSuffixNotEmpty(text, consumeRemainingArgs(args, i + 1));
       break;
     }
 
@@ -157,7 +159,7 @@ auto main(int argc, char *argv[]) -> int {
   QScreen *screen = QGuiApplication::screenAt(QCursor::pos());
   if (!screen)
     screen = QGuiApplication::primaryScreen();
-  QPoint cursorScreenCenter;
+  QPoint cursorScreenCenter(0, 0);
   if (screen)
     cursorScreenCenter = screen->geometry().center();
 #endif
