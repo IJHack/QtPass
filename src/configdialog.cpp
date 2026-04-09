@@ -205,6 +205,7 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
           status = false;
           break;
         } else {
+          _item->setBackground(QBrush());
           _item->setToolTip(QString());
         }
       }
@@ -219,6 +220,7 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
       item->setToolTip(tr("This field is required"));
       status = false;
     } else {
+      item->setBackground(QBrush());
       item->setToolTip(QString());
     }
   }
@@ -1002,7 +1004,7 @@ auto ConfigDialog::getPasswordConfiguration() -> PasswordConfiguration {
 void ConfigDialog::on_passwordCharTemplateSelector_activated(int index) {
   ui->lineEditPasswordChars->setText(
       QtPassSettings::getPasswordConfiguration().Characters[index]);
-  if (index == 3) {
+  if (index == PasswordConfiguration::CUSTOM) {
     ui->lineEditPasswordChars->setEnabled(true);
   } else {
     ui->lineEditPasswordChars->setEnabled(false);
