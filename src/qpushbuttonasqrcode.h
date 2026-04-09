@@ -59,8 +59,7 @@ public:
 signals:
   void clicked(const QString &);
 
-private slots:
-  void changeIconDefault();
+private:
   void buttonClicked(bool);
 
 private:

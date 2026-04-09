@@ -46,9 +46,3 @@ void QPushButtonAsQRCode::setTextToCopy(const QString &value) {
 void QPushButtonAsQRCode::buttonClicked(bool /*unused*/) {
   emit clicked(textToCopy);
 }
-
-/**
- * @brief QPushButtonAsQRCode::changeIconDefault change the icon back to
- * the default copy icon
- */
-void QPushButtonAsQRCode::changeIconDefault() { this->setIcon(iconEdit); }

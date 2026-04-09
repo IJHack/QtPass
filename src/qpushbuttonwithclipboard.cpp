@@ -48,7 +48,7 @@ void QPushButtonWithClipboard::setTextToCopy(const QString &value) {
  */
 void QPushButtonWithClipboard::buttonClicked(bool /*unused*/) {
   setIcon(iconEditPushed);
-  QTimer::singleShot(500, this, SLOT(changeIconDefault()));
+  QTimer::singleShot(500, this, &QPushButtonWithClipboard::changeIconDefault);
   emit clicked(textToCopy);
 }
 
