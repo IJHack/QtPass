@@ -1,5 +1,5 @@
 <map id="QtPassSettings::isAvoidNumbers" name="QtPassSettings::isAvoidNumbers">
-<area shape="rect" id="Node000001" title=" " alt="" coords="249,31,483,56"/>
+<area shape="rect" id="Node000001" title="Check whether numeric characters should be avoided." alt="" coords="249,31,483,56"/>
 <area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,201,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,33,201,30,202,25,236,28"/>
 <area shape="rect" id="Node000003" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="14,55,193,80"/>

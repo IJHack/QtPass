@@ -8,7 +8,7 @@
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="105,447,116,393,141,314,159,271,184,230,213,193,249,162,288,141,330,125,374,115,418,109,504,108,578,115,578,121,504,113,418,114,375,120,331,130,290,146,252,167,217,197,188,233,164,274,145,316,121,394,110,448"/>
 <area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" title="Get panel autoclear delay in seconds." alt="" coords="549,221,760,261"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="130,445,298,367,414,316,535,270,559,262,561,267,537,275,416,321,300,371,132,450"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title=" " alt="" coords="281,497,458,523"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="281,497,458,523"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="173,471,287,492,286,497,172,476"/>
 <area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="840,287,1051,312"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="114,446,168,387,207,352,249,321,324,276,385,246,450,225,535,206,602,194,655,189,708,192,774,206,815,220,854,238,917,276,914,281,851,243,813,225,773,211,707,198,655,194,603,199,537,211,452,230,387,251,326,280,252,326,210,357,172,391,118,449"/>
@@ -35,7 +35,7 @@
 <area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="418,462,454,469,489,482,505,494,514,505,523,517,537,528,575,544,573,549,535,532,519,521,510,509,501,497,487,487,452,474,417,467"/>
 <area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" title="Get autoclear delay in seconds." alt="" coords="549,285,760,325"/>
 <area shape="poly" id="edge19_Node000011_Node000017" title=" " alt="" coords="382,446,445,392,488,361,535,334,552,327,554,332,537,339,491,366,448,396,386,450"/>
-<area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef" title=" " alt="" coords="536,349,773,375"/>
+<area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef" title="Get pass entry template." alt="" coords="536,349,773,375"/>
 <area shape="poly" id="edge21_Node000011_Node000018" title=" " alt="" coords="393,445,457,415,535,383,564,375,566,380,537,389,459,419,396,450"/>
 <area shape="rect" id="Node000019" href="$class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" title=" " alt="" coords="850,537,1041,577"/>
 <area shape="poly" id="edge22_Node000011_Node000019" title=" " alt="" coords="418,458,455,465,490,483,502,495,509,509,514,536,519,562,525,574,537,584,559,593,589,598,665,598,752,589,836,576,837,581,753,595,665,603,588,603,558,598,535,588,521,577,514,564,508,537,504,511,497,498,486,487,453,470,417,463"/>
@@ -43,7 +43,7 @@
 <area shape="poly" id="edge23_Node000011_Node000020" title=" " alt="" coords="416,450,566,424,567,429,417,455"/>
 <area shape="rect" id="Node000021" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="541,651,768,676"/>
 <area shape="poly" id="edge24_Node000011_Node000021" title=" " alt="" coords="417,457,455,464,473,471,490,483,505,501,513,520,515,557,517,594,524,612,538,629,557,643,554,647,534,633,519,615,512,595,510,558,508,521,500,504,486,487,471,476,453,469,416,462"/>
-<area shape="rect" id="Node000029" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title=" " alt="" coords="546,448,763,473"/>
+<area shape="rect" id="Node000029" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title="Check whether WebDAV integration is enabled." alt="" coords="546,448,763,473"/>
 <area shape="poly" id="edge39_Node000011_Node000029" title=" " alt="" coords="417,458,532,458,532,463,417,463"/>
 <area shape="rect" id="Node000030" href="$class_qt_pass_settings.html#a0a5bcdb628ca6614d5c26c5c24a0a54f" title="Save panel autoclear seconds." alt="" coords="841,914,1050,954"/>
 <area shape="poly" id="edge40_Node000011_Node000030" title=" " alt="" coords="417,456,455,463,474,471,490,483,509,507,519,532,522,557,521,581,519,632,525,658,538,686,569,730,599,765,629,793,659,815,730,854,822,898,843,907,840,912,820,903,728,859,656,820,625,797,595,769,565,733,534,689,520,660,514,632,515,581,516,557,514,533,505,510,486,487,471,476,454,468,416,462"/>
@@ -51,9 +51,9 @@
 <area shape="poly" id="edge42_Node000011_Node000031" title=" " alt="" coords="417,456,456,462,474,470,490,483,517,519,530,555,533,590,529,626,521,700,525,741,538,785,556,818,578,849,623,900,619,903,574,852,552,821,534,787,519,742,516,700,524,625,527,590,525,556,512,522,486,487,471,475,454,467,416,461"/>
 <area shape="rect" id="Node000032" href="$class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e" title="Save password store path." alt="" coords="549,1003,760,1028"/>
 <area shape="poly" id="edge44_Node000011_Node000032" title=" " alt="" coords="418,455,456,462,474,470,490,483,502,501,511,524,520,581,521,648,518,721,515,795,515,863,521,921,528,944,538,962,558,981,583,995,580,1000,555,986,534,965,523,946,516,922,509,863,509,795,513,721,515,648,514,581,505,525,497,503,486,486,472,475,454,467,417,461"/>
-<area shape="rect" id="Node000033" href="$class_qt_pass_settings.html#a7c5668e2951f99c2241d7308f0228f72" title=" " alt="" coords="537,1067,773,1092"/>
+<area shape="rect" id="Node000033" href="$class_qt_pass_settings.html#a7c5668e2951f99c2241d7308f0228f72" title="Save pass entry template." alt="" coords="537,1067,773,1092"/>
 <area shape="poly" id="edge46_Node000011_Node000033" title=" " alt="" coords="418,455,456,462,474,470,490,483,504,504,513,530,522,596,522,675,517,760,512,845,511,924,518,991,526,1017,538,1038,564,1059,561,1063,534,1041,521,1019,513,992,505,925,506,845,512,760,517,675,517,597,508,532,499,506,486,486,472,475,455,467,417,460"/>
-<area shape="rect" id="Node000034" href="$class_qt_pass_settings.html#a4899b84700fb828989f74869c6516334" title=" " alt="" coords="547,1131,762,1156"/>
+<area shape="rect" id="Node000034" href="$class_qt_pass_settings.html#a4899b84700fb828989f74869c6516334" title="Save pwgen support flag." alt="" coords="547,1131,762,1156"/>
 <area shape="poly" id="edge48_Node000011_Node000034" title=" " alt="" coords="417,455,456,462,474,470,490,483,505,506,515,536,522,570,525,610,524,697,517,792,510,887,508,975,516,1049,525,1079,538,1102,564,1123,561,1127,534,1105,520,1081,511,1050,503,975,505,887,512,792,518,697,519,610,516,571,510,537,500,509,486,486,472,475,454,467,416,460"/>
 <area shape="rect" id="Node000035" href="$class_qt_pass_settings.html#a8cd81cd735281c71eab54091bde73081" title="Save application version." alt="" coords="557,1180,752,1205"/>
 <area shape="poly" id="edge50_Node000011_Node000035" title=" " alt="" coords="417,455,456,462,474,470,490,483,506,509,517,542,524,580,526,624,524,721,515,827,506,932,503,1030,506,1073,512,1110,522,1142,538,1167,547,1175,543,1179,534,1170,518,1145,507,1112,500,1073,498,1030,500,932,509,826,518,721,521,624,518,581,512,543,502,511,486,486,472,474,454,467,416,460"/>

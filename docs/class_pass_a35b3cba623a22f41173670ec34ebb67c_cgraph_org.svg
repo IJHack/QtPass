@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a3503e8d11b7e24b35a34801f755ba80a" target="_top" xlink:title=" ">
+<g id="a_Node000003"><a xlink:href="class_qt_pass_settings.html#a3503e8d11b7e24b35a34801f755ba80a" target="_top" xlink:title="Get complete password generation configuration.">
 <polygon fill="white" stroke="#666666" points="336,-263.5 179,-263.5 179,-233.5 336,-233.5 336,-263.5"/>
 <text text-anchor="start" x="187" y="-251.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassword</text>
 <text text-anchor="middle" x="257.5" y="-240.5" font-family="Helvetica,sans-Serif" font-size="10.00">Configuration</text>
@@ -76,7 +76,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a694bfde7cafcdd174b706945ba264639" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a694bfde7cafcdd174b706945ba264639" target="_top" xlink:title="Check whether uppercase characters should be avoided.">
 <polygon fill="white" stroke="#666666" points="342.5,-167 172.5,-167 172.5,-148 342.5,-148 342.5,-167"/>
 <text text-anchor="middle" x="257.5" y="-155" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAvoidCapitals</text>
 </a>
@@ -94,7 +94,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#ac00931edbba70ed05bb304df05919b9d" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#ac00931edbba70ed05bb304df05919b9d" target="_top" xlink:title="Check whether numeric characters should be avoided.">
 <polygon fill="white" stroke="#666666" points="345,-130 170,-130 170,-111 345,-111 345,-130"/>
 <text text-anchor="middle" x="257.5" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAvoidNumbers</text>
 </a>
@@ -112,7 +112,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#a901005f778f15b9ee833f2ab08573917" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#a901005f778f15b9ee833f2ab08573917" target="_top" xlink:title="Check whether less random password generation is enabled.">
 <polygon fill="white" stroke="#666666" points="340.5,-93 174.5,-93 174.5,-74 340.5,-74 340.5,-93"/>
 <text text-anchor="middle" x="257.5" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isLessRandom</text>
 </a>
@@ -130,7 +130,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#abba786920f2fb3afbdc04fe43f8144e2" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#abba786920f2fb3afbdc04fe43f8144e2" target="_top" xlink:title="Check whether pwgen support is enabled.">
 <polygon fill="white" stroke="#666666" points="335,-56 180,-56 180,-37 335,-37 335,-56"/>
 <text text-anchor="middle" x="257.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUsePwgen</text>
 </a>
@@ -148,7 +148,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a814fdd902d1ed560225331a93d9d3ccd" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a814fdd902d1ed560225331a93d9d3ccd" target="_top" xlink:title="Check whether symbol characters are enabled.">
 <polygon fill="white" stroke="#666666" points="339.5,-19 175.5,-19 175.5,0 339.5,0 339.5,-19"/>
 <text text-anchor="middle" x="257.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseSymbols</text>
 </a>

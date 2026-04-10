@@ -1,5 +1,5 @@
 <map id="QtPassSettings::setStartMinimized" name="QtPassSettings::setStartMinimized">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,184,45"/>
+<area shape="rect" id="Node000001" title="Save start&#45;minimized flag." alt="" coords="5,5,184,45"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="232,13,435,38"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,23,219,23,219,28,184,28"/>
 </map>

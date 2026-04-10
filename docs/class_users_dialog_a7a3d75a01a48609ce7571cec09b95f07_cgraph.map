@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Construct users dialog." alt="" coords="5,143,193,168"/>
 <area shape="rect" id="Node000002" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance." alt="" coords="274,5,426,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="113,140,166,96,202,70,240,48,279,32,281,37,243,52,205,74,169,100,116,144"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title=" " alt="" coords="507,31,684,56"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="507,31,684,56"/>
 <area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="123,140,176,115,241,91,305,76,371,63,493,48,493,53,372,69,306,81,242,97,178,120,125,145"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#ad15e182609e00a394ec9acdd4d1a19f5" title="Get saved dialog geometry." alt="" coords="255,106,445,146"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="193,142,241,136,241,141,194,147"/>

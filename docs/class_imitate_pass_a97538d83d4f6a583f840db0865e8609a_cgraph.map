@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,88,376,85,521,88,667,98,767,113,766,119,666,103,521,94,376,90,144,94"/>
 <area shape="rect" id="Node000007" href="$class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" title="Commit changes to git." alt="" coords="203,5,377,31"/>
 <area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="107,79,191,47,235,32,237,37,193,53,109,84"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="746,196,929,221"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title="Check whether Git integration is enabled." alt="" coords="746,196,929,221"/>
 <area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="144,91,247,94,378,102,523,118,667,143,737,164,797,188,795,193,735,169,666,149,522,123,377,108,246,100,144,97"/>
 <area shape="rect" id="Node000009" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="192,420,388,445"/>
 <area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="86,105,276,407,271,410,82,108"/>
@@ -30,9 +30,9 @@
 <area shape="poly" id="edge21_Node000009_Node000017" title=" " alt="" coords="357,417,469,396,470,401,358,423"/>
 <area shape="rect" id="Node000018" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="Push to remote." alt="" coords="473,157,629,183"/>
 <area shape="poly" id="edge24_Node000009_Node000018" title=" " alt="" coords="293,419,308,375,337,314,378,248,405,219,435,193,459,180,461,185,437,198,408,222,383,252,341,316,313,377,298,421"/>
-<area shape="rect" id="Node000019" href="$class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a" title=" " alt="" coords="455,420,647,445"/>
+<area shape="rect" id="Node000019" href="$class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a" title="Check whether automatic pull is enabled." alt="" coords="455,420,647,445"/>
 <area shape="poly" id="edge27_Node000009_Node000019" title=" " alt="" coords="388,430,442,430,442,435,388,435"/>
-<area shape="rect" id="Node000020" href="$class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" title=" " alt="" coords="452,519,651,544"/>
+<area shape="rect" id="Node000020" href="$class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" title="Check whether automatic push is enabled." alt="" coords="452,519,651,544"/>
 <area shape="poly" id="edge28_Node000009_Node000020" title=" " alt="" coords="313,443,368,474,437,505,463,513,461,518,435,510,365,479,310,448"/>
 <area shape="rect" id="Node000021" href="$class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c" title="Re&#45;encrypt single file with new recipients." alt="" coords="436,667,667,692"/>
 <area shape="poly" id="edge29_Node000009_Node000021" title=" " alt="" coords="298,445,315,486,343,543,384,603,409,630,438,653,446,658,444,663,434,658,406,634,380,607,339,546,310,488,293,447"/>
@@ -63,7 +63,7 @@
 <area shape="poly" id="edge30_Node000021_Node000022" title=" " alt="" coords="624,689,754,713,753,718,623,695"/>
 <area shape="rect" id="Node000023" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="1022,716,1233,741"/>
 <area shape="poly" id="edge34_Node000021_Node000023" title=" " alt="" coords="667,682,807,691,960,703,1028,711,1028,717,960,709,807,696,667,687"/>
-<area shape="rect" id="Node000024" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title=" " alt="" coords="729,616,946,641"/>
+<area shape="rect" id="Node000024" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title="Check whether WebDAV integration is enabled." alt="" coords="729,616,946,641"/>
 <area shape="poly" id="edge36_Node000021_Node000024" title=" " alt="" coords="623,664,751,641,752,646,624,669"/>
 <area shape="rect" id="Node000028" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Get .gpg&#45;id file path for a password file." alt="" coords="764,767,911,792"/>
 <area shape="poly" id="edge40_Node000027_Node000028" title=" " alt="" coords="643,762,751,770,750,776,642,767"/>

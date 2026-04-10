@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Check whether tray icon support is enabled.">
 <polygon fill="#999999" stroke="#666666" points="357,-56 194,-56 194,-37 357,-37 357,-56"/>
 <text text-anchor="middle" x="275.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseTrayIcon</text>
 </a>

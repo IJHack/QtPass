@@ -10,8 +10,8 @@
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="236,163,270,163,270,169,236,169"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="301,203,512,228"/>
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="195,176,319,198,319,203,195,181"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="315,252,498,277"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title="Check whether Git integration is enabled." alt="" coords="315,252,498,277"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="147,177,209,207,285,237,319,246,318,252,283,242,207,211,145,181"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title=" " alt="" coords="298,301,515,327"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title="Check whether WebDAV integration is enabled." alt="" coords="298,301,515,327"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="136,177,197,230,239,261,285,286,308,295,306,300,283,291,236,265,194,235,133,181"/>
 </map>

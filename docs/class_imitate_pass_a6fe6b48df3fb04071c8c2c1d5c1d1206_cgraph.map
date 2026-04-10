@@ -12,9 +12,9 @@
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="70,309,80,268,101,212,133,152,154,124,178,100,201,86,204,90,182,104,158,127,137,154,105,214,85,270,75,310"/>
 <area shape="rect" id="Node000015" href="$class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69" title="Get whether to auto&#45;add GPG ID when receiving files." alt="" coords="203,309,406,335"/>
 <area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="133,319,190,319,190,325,133,325"/>
-<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="787,411,970,436"/>
+<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title="Check whether Git integration is enabled." alt="" coords="787,411,970,436"/>
 <area shape="poly" id="edge18_Node000001_Node000016" title=" " alt="" coords="112,332,181,350,341,378,503,398,652,410,774,417,773,422,652,416,503,403,341,384,179,355,110,337"/>
-<area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title=" " alt="" coords="770,335,987,360"/>
+<area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title="Check whether WebDAV integration is enabled." alt="" coords="770,335,987,360"/>
 <area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="118,332,180,343,756,345,756,350,180,349,117,337"/>
 <area shape="rect" id="Node000018" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="207,609,403,635"/>
 <area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="82,333,287,597,283,600,78,337"/>
@@ -52,9 +52,9 @@
 <area shape="poly" id="edge31_Node000018_Node000023" title=" " alt="" coords="329,633,379,668,406,691,431,718,447,744,453,767,461,789,479,809,498,820,496,825,476,813,456,792,448,769,442,746,427,721,403,695,375,672,326,637"/>
 <area shape="rect" id="Node000024" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="Push to remote." alt="" coords="515,360,671,385"/>
 <area shape="poly" id="edge34_Node000018_Node000024" title=" " alt="" coords="315,607,381,537,476,448,557,390,560,395,479,452,385,540,319,611"/>
-<area shape="rect" id="Node000025" href="$class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a" title=" " alt="" coords="497,511,689,536"/>
+<area shape="rect" id="Node000025" href="$class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a" title="Check whether automatic pull is enabled." alt="" coords="497,511,689,536"/>
 <area shape="poly" id="edge37_Node000018_Node000025" title=" " alt="" coords="330,607,396,577,476,546,510,537,512,542,478,551,398,582,333,612"/>
-<area shape="rect" id="Node000026" href="$class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" title=" " alt="" coords="493,560,692,585"/>
+<area shape="rect" id="Node000026" href="$class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" title="Check whether automatic push is enabled." alt="" coords="493,560,692,585"/>
 <area shape="poly" id="edge38_Node000018_Node000026" title=" " alt="" coords="379,607,504,585,505,590,380,612"/>
 <area shape="rect" id="Node000027" href="$class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c" title="Re&#45;encrypt single file with new recipients." alt="" coords="477,461,708,487"/>
 <area shape="poly" id="edge39_Node000018_Node000027" title=" " alt="" coords="318,607,383,553,428,523,476,497,500,488,502,493,478,502,431,527,386,558,322,611"/>

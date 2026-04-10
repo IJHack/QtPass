@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get active profile name.">
 <polygon fill="#999999" stroke="#666666" points="325,-19 183,-19 183,0 325,0 325,-19"/>
 <text text-anchor="middle" x="254" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getProfile</text>
 </a>

@@ -120,7 +120,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" target="_top" xlink:title=" ">
+<g id="a_Node000007"><a xlink:href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" target="_top" xlink:title="Check whether Git integration is enabled.">
 <polygon fill="white" stroke="#666666" points="369.5,-56 232.5,-56 232.5,-37 369.5,-37 369.5,-56"/>
 <text text-anchor="middle" x="301" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseGit</text>
 </a>
@@ -138,7 +138,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" target="_top" xlink:title="Check whether WebDAV integration is enabled.">
 <polygon fill="white" stroke="#666666" points="382.5,-19 219.5,-19 219.5,0 382.5,0 382.5,-19"/>
 <text text-anchor="middle" x="301" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseWebDav</text>
 </a>

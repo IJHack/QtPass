@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Move password file." alt="" coords="5,131,148,156"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098" title="Execute git move operation." alt="" coords="196,81,408,107"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,128,229,107,231,112,136,133"/>
-<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="211,131,393,156"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title="Check whether Git integration is enabled." alt="" coords="211,131,393,156"/>
 <area shape="poly" id="edge12_Node000001_Node000011" title=" " alt="" coords="148,141,197,141,197,146,148,146"/>
 <area shape="rect" id="Node000012" href="$class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563" title="Resolve destination for move operation." alt="" coords="207,181,397,221"/>
 <area shape="poly" id="edge13_Node000001_Node000012" title=" " alt="" coords="128,153,210,175,209,180,127,159"/>

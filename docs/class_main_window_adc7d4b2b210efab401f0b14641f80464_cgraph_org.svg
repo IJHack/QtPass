@@ -57,7 +57,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" target="_top" xlink:title="Get currently active pass backend instance.">
 <polygon fill="white" stroke="#666666" points="317,-19 184,-19 184,0 317,0 317,-19"/>
 <text text-anchor="middle" x="250.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPass</text>
 </a>

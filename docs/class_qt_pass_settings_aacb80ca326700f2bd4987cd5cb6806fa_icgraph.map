@@ -1,5 +1,5 @@
 <map id="QtPassSettings::isUseWebDav" name="QtPassSettings::isUseWebDav">
-<area shape="rect" id="Node000001" title=" " alt="" coords="716,107,933,132"/>
+<area shape="rect" id="Node000001" title="Check whether WebDAV integration is enabled." alt="" coords="716,107,933,132"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="505,5,600,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="785,103,667,53,600,32,601,27,669,47,787,98"/>
 <area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,81,138,107"/>

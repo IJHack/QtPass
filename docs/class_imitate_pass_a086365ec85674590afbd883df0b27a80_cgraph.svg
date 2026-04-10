@@ -67,7 +67,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" target="_top" xlink:title="Check whether Git integration is enabled.">
 <polygon fill="white" stroke="#666666" points="340,-19 203,-19 203,0 340,0 340,-19"/>
 <text text-anchor="middle" x="271.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseGit</text>
 </a>

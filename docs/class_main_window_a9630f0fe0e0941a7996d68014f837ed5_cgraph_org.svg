@@ -92,7 +92,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#abd7d9098856e8f0d8f081fdb0e515fed" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="class_qt_pass_settings.html#abd7d9098856e8f0d8f081fdb0e515fed" target="_top" xlink:title="Check whether main window should stay always on top.">
 <polygon fill="white" stroke="#666666" points="352.5,-141.5 213.5,-141.5 213.5,-111.5 352.5,-111.5 352.5,-141.5"/>
 <text text-anchor="start" x="221.5" y="-129.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAlways</text>
 <text text-anchor="middle" x="283" y="-118.5" font-family="Helvetica,sans-Serif" font-size="10.00">OnTop</text>
@@ -129,7 +129,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#a0e4eacd30635c23c8a08cd5725a68aed" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#a0e4eacd30635c23c8a08cd5725a68aed" target="_top" xlink:title="Check whether application should start minimized.">
 <polygon fill="white" stroke="#666666" points="372,-56 194,-56 194,-37 372,-37 372,-56"/>
 <text text-anchor="middle" x="283" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isStartMinimized</text>
 </a>
@@ -147,7 +147,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" target="_top" xlink:title="Check whether tray icon support is enabled.">
 <polygon fill="white" stroke="#666666" points="364.5,-19 201.5,-19 201.5,0 364.5,0 364.5,-19"/>
 <text text-anchor="middle" x="283" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseTrayIcon</text>
 </a>

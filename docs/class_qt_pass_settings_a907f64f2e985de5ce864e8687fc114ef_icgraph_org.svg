@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get pass entry template.">
 <polygon fill="#999999" stroke="#666666" points="570,-85.5 392,-85.5 392,-66.5 570,-66.5 570,-85.5"/>
 <text text-anchor="middle" x="481" y="-73.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassTemplate</text>
 </a>

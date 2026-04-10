@@ -1,5 +1,5 @@
 <map id="QtPassSettings::setPassTemplate" name="QtPassSettings::setPassTemplate">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,241,31"/>
+<area shape="rect" id="Node000001" title="Save pass entry template." alt="" coords="5,5,241,31"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="289,5,492,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,15,276,15,276,21,242,21"/>
 </map>

@@ -16,9 +16,9 @@
 <area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="135,279,234,301,233,306,134,284"/>
 <area shape="rect" id="Node000014" href="$class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb" title="Commit changes to git." alt="" coords="217,104,392,129"/>
 <area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="85,254,128,202,159,172,195,146,228,131,230,136,197,151,163,176,132,206,89,257"/>
-<area shape="rect" id="Node000015" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="213,405,396,431"/>
+<area shape="rect" id="Node000015" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title="Check whether Git integration is enabled." alt="" coords="213,405,396,431"/>
 <area shape="poly" id="edge18_Node000001_Node000015" title=" " alt="" coords="88,280,131,335,162,366,197,392,210,398,208,403,195,396,158,370,127,338,84,283"/>
-<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title=" " alt="" coords="196,455,413,480"/>
+<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title="Check whether WebDAV integration is enabled." alt="" coords="196,455,413,480"/>
 <area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="85,281,100,314,123,358,156,403,176,424,198,441,207,447,204,451,194,446,172,428,152,407,119,360,95,316,80,283"/>
 <area shape="rect" id="Node000017" href="$class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" title="Verify .gpg&#45;id file exists and is valid." alt="" coords="203,504,407,529"/>
 <area shape="poly" id="edge20_Node000001_Node000017" title=" " alt="" coords="83,281,95,322,117,380,150,440,172,467,198,491,205,496,202,500,194,495,168,471,146,443,112,382,90,324,78,282"/>

@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="MainWindow::closeEvent hide or quit." alt="" coords="5,169,189,195"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="263,5,431,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,167,156,106,193,71,236,41,253,33,255,38,239,46,197,75,160,110,110,171"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#ad4152bd817991b07af145a0368b7cb1d" title=" " alt="" coords="253,55,440,95"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#ad4152bd817991b07af145a0368b7cb1d" title="Check whether closing the window hides the application." alt="" coords="253,55,440,95"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="118,167,171,137,236,105,256,97,258,102,238,110,173,141,120,172"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4" title="Save window geometry." alt="" coords="241,120,453,145"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="162,167,268,145,269,151,163,172"/>

@@ -1,5 +1,5 @@
 <map id="QtPassSettings::isTemplateAllFields" name="QtPassSettings::isTemplateAllFields">
-<area shape="rect" id="Node000001" title=" " alt="" coords="283,47,481,87"/>
+<area shape="rect" id="Node000001" title="Check whether template applies to all fields." alt="" coords="283,47,481,87"/>
 <area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="22,5,218,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,49,188,33,189,28,270,44"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,55,235,80"/>

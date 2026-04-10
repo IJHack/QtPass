@@ -12,9 +12,9 @@
 <area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="104,428,115,372,140,290,159,245,183,201,212,161,248,126,268,114,271,118,251,130,216,164,187,204,164,247,145,291,120,373,109,429"/>
 <area shape="rect" id="Node000012" href="$class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9" title="Push to remote." alt="" coords="287,342,443,368"/>
 <area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="130,426,184,402,249,378,282,368,284,373,250,383,186,407,132,431"/>
-<area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a" title=" " alt="" coords="269,556,461,581"/>
+<area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a" title="Check whether automatic pull is enabled." alt="" coords="269,556,461,581"/>
 <area shape="poly" id="edge22_Node000001_Node000017" title=" " alt="" coords="120,452,175,497,211,521,250,542,270,549,268,554,248,547,209,526,172,501,117,457"/>
-<area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" title=" " alt="" coords="265,605,464,630"/>
+<area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" title="Check whether automatic push is enabled." alt="" coords="265,605,464,630"/>
 <area shape="poly" id="edge23_Node000001_Node000018" title=" " alt="" coords="115,453,167,520,206,559,251,591,264,598,262,602,248,596,202,563,163,524,111,456"/>
 <area shape="rect" id="Node000019" href="$class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c" title="Re&#45;encrypt single file with new recipients." alt="" coords="249,293,480,318"/>
 <area shape="poly" id="edge24_Node000001_Node000019" title=" " alt="" coords="115,427,169,378,207,350,248,327,267,320,269,325,250,332,210,355,173,382,119,431"/>
@@ -28,7 +28,7 @@
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="420,207,478,175,492,163,501,150,511,138,527,126,541,119,543,124,529,131,515,142,505,153,496,166,482,180,422,212"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title="Get git executable path." alt="" coords="821,242,1060,268"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="462,223,609,221,774,227,859,237,858,243,773,232,609,226,462,228"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="559,344,742,369"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title="Check whether Git integration is enabled." alt="" coords="559,344,742,369"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="413,247,481,278,610,336,608,340,479,283,410,252"/>
 <area shape="poly" id="edge8_Node000008_Node000003" title=" " alt="" coords="439,138,563,117,563,122,439,143"/>
 <area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="528,141,773,166"/>
@@ -56,7 +56,7 @@
 <area shape="poly" id="edge25_Node000019_Node000020" title=" " alt="" coords="455,316,481,327,497,340,506,353,515,366,529,378,568,393,567,398,527,383,511,370,502,356,493,344,479,332,453,321"/>
 <area shape="rect" id="Node000021" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="835,518,1046,544"/>
 <area shape="poly" id="edge29_Node000019_Node000021" title=" " alt="" coords="465,316,482,328,497,346,504,366,506,405,508,443,515,460,530,477,550,489,578,499,652,514,737,523,821,527,821,532,737,528,651,519,577,504,548,494,526,481,510,463,503,444,501,405,499,367,492,349,478,332,462,321"/>
-<area shape="rect" id="Node000022" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title=" " alt="" coords="542,242,759,268"/>
+<area shape="rect" id="Node000022" href="$class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" title="Check whether WebDAV integration is enabled." alt="" coords="542,242,759,268"/>
 <area shape="poly" id="edge31_Node000019_Node000022" title=" " alt="" coords="437,290,564,267,565,273,438,295"/>
 <area shape="rect" id="Node000026" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Get .gpg&#45;id file path for a password file." alt="" coords="577,544,724,569"/>
 <area shape="poly" id="edge35_Node000025_Node000026" title=" " alt="" coords="457,428,482,442,499,463,506,483,513,503,530,522,565,540,563,545,526,526,509,506,501,485,494,465,478,446,454,432"/>

@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,325,235,351"/>
 <area shape="rect" id="Node000002" href="$class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1" title="Gets named value pairs from the parsed file." alt="" coords="294,5,509,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,324,137,270,167,193,188,151,214,110,245,72,281,40,289,35,292,39,284,44,249,76,219,113,193,154,172,195,142,272,127,325"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef" title=" " alt="" coords="283,55,520,80"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef" title="Get pass entry template." alt="" coords="283,55,520,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="123,324,141,279,173,215,220,146,249,115,281,89,291,83,294,88,284,94,252,119,224,150,178,217,146,281,128,326"/>
 <area shape="rect" id="Node000004" href="$class_file_content.html#ac88e8096551d24a41fc0625a4d903139" title="Gets the password from the parsed file." alt="" coords="308,104,495,129"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="126,324,147,287,181,236,226,184,253,160,281,140,297,132,299,137,284,144,256,164,230,188,185,240,151,289,130,326"/>
@@ -12,11 +12,11 @@
 <area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="141,323,202,288,282,253,309,245,310,250,284,258,205,293,143,327"/>
 <area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a2e45500a82b847412e95f93e5e1d8fc3" title="Get whether to hide content (password + username)." alt="" coords="292,268,511,293"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="183,323,324,293,325,299,184,328"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a4b1ea480a08bea181210fca93e4b6d54" title=" " alt="" coords="302,318,501,358"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a4b1ea480a08bea181210fca93e4b6d54" title="Check whether template applies to all fields." alt="" coords="302,318,501,358"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="235,335,289,335,289,341,235,341"/>
 <area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be" title="Get whether to use panel autoclear." alt="" coords="289,382,514,422"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="177,348,300,376,299,382,176,353"/>
-<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a579f75b719c9c4de88585f05d70e4bb0" title=" " alt="" coords="290,447,513,472"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a579f75b719c9c4de88585f05d70e4bb0" title="Check whether template usage is enabled." alt="" coords="290,447,513,472"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="140,349,202,390,242,412,284,432,312,441,310,446,282,436,239,417,199,394,137,353"/>
 <area shape="rect" id="Node000011" href="$class_file_content.html#addf22b7136ee26d2f14bb77dc49c1510" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="331,496,471,521"/>
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="133,349,193,413,236,450,284,481,319,494,317,499,281,486,232,454,189,417,130,353"/>

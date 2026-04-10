@@ -102,7 +102,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" target="_top" xlink:title="Get currently active pass backend instance.">
 <polygon fill="white" stroke="#666666" points="298,-204 165,-204 165,-185 298,-185 298,-204"/>
 <text text-anchor="middle" x="231.5" y="-192" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPass</text>
 </a>
@@ -138,7 +138,7 @@
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" target="_top" xlink:title=" ">
+<g id="a_Node000011"><a xlink:href="class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" target="_top" xlink:title="Check whether tray icon support is enabled.">
 <polygon fill="white" stroke="#666666" points="313,-130 150,-130 150,-111 313,-111 313,-130"/>
 <text text-anchor="middle" x="231.5" y="-118" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseTrayIcon</text>
 </a>

@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Push to remote." alt="" coords="5,109,161,135"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273" title="Execute git command." alt="" coords="213,84,389,109"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,110,199,106,199,111,162,116"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title=" " alt="" coords="209,133,392,159"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title="Check whether Git integration is enabled." alt="" coords="209,133,392,159"/>
 <area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="162,128,196,132,195,137,161,133"/>
 <area shape="rect" id="Node000003" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="Execute command wrapper." alt="" coords="453,59,665,84"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="388,85,439,80,440,86,389,91"/>

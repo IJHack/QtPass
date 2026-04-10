@@ -94,7 +94,7 @@
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" target="_top" xlink:title=" ">
+<g id="a_Node000009"><a xlink:href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" target="_top" xlink:title="Get currently active pass backend instance.">
 <polygon fill="white" stroke="#666666" points="339.5,-531 206.5,-531 206.5,-512 339.5,-512 339.5,-531"/>
 <text text-anchor="middle" x="273" y="-519" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPass</text>
 </a>
@@ -340,7 +340,7 @@
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a xlink:href="class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef" target="_top" xlink:title=" ">
+<g id="a_Node000018"><a xlink:href="class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef" target="_top" xlink:title="Get pass entry template.">
 <polygon fill="white" stroke="#666666" points="576,-642 398,-642 398,-623 576,-623 576,-642"/>
 <text text-anchor="middle" x="487" y="-630" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPassTemplate</text>
 </a>
@@ -413,7 +413,7 @@
 <!-- Node29 -->
 <g id="Node000029" class="node">
 <title>Node29</title>
-<g id="a_Node000029"><a xlink:href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" target="_top" xlink:title=" ">
+<g id="a_Node000029"><a xlink:href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" target="_top" xlink:title="Check whether WebDAV integration is enabled.">
 <polygon fill="white" stroke="#666666" points="568.5,-568 405.5,-568 405.5,-549 568.5,-549 568.5,-568"/>
 <text text-anchor="middle" x="487" y="-556" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseWebDav</text>
 </a>
@@ -487,7 +487,7 @@
 <!-- Node33 -->
 <g id="Node000033" class="node">
 <title>Node33</title>
-<g id="a_Node000033"><a xlink:href="class_qt_pass_settings.html#a7c5668e2951f99c2241d7308f0228f72" target="_top" xlink:title=" ">
+<g id="a_Node000033"><a xlink:href="class_qt_pass_settings.html#a7c5668e2951f99c2241d7308f0228f72" target="_top" xlink:title="Save pass entry template.">
 <polygon fill="white" stroke="#666666" points="575.5,-104 398.5,-104 398.5,-85 575.5,-85 575.5,-104"/>
 <text text-anchor="middle" x="487" y="-92" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setPassTemplate</text>
 </a>
@@ -505,7 +505,7 @@
 <!-- Node34 -->
 <g id="Node000034" class="node">
 <title>Node34</title>
-<g id="a_Node000034"><a xlink:href="class_qt_pass_settings.html#a4899b84700fb828989f74869c6516334" target="_top" xlink:title=" ">
+<g id="a_Node000034"><a xlink:href="class_qt_pass_settings.html#a4899b84700fb828989f74869c6516334" target="_top" xlink:title="Save pwgen support flag.">
 <polygon fill="white" stroke="#666666" points="567.5,-56 406.5,-56 406.5,-37 567.5,-37 567.5,-56"/>
 <text text-anchor="middle" x="487" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setUsePwgen</text>
 </a>

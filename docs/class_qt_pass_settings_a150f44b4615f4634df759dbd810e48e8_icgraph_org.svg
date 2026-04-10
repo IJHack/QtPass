@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Check whether OTP support is enabled.">
 <polygon fill="#999999" stroke="#666666" points="323,-19 183,-19 183,0 323,0 323,-19"/>
 <text text-anchor="middle" x="253" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseOtp</text>
 </a>

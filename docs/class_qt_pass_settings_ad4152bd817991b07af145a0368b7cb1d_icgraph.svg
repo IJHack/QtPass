@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Check whether closing the window hides the application.">
 <polygon fill="#999999" stroke="#666666" points="323,-42.5 183,-42.5 183,-12.5 323,-12.5 323,-42.5"/>
 <text text-anchor="start" x="191" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isHideOn</text>
 <text text-anchor="middle" x="253" y="-19.5" font-family="Helvetica,sans-Serif" font-size="10.00">Close</text>

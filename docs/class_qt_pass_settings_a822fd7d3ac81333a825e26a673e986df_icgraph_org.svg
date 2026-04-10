@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get qrencode executable path.">
 <polygon fill="#999999" stroke="#666666" points="346,-30 188,-30 188,0 346,0 346,-30"/>
 <text text-anchor="start" x="196" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getQrencode</text>
 <text text-anchor="middle" x="267" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Executable</text>

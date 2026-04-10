@@ -128,7 +128,7 @@
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" target="_top" xlink:title=" ">
+<g id="a_Node000016"><a xlink:href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" target="_top" xlink:title="Check whether Git integration is enabled.">
 <polygon fill="white" stroke="#666666" points="723.5,-487.5 586.5,-487.5 586.5,-468.5 723.5,-468.5 723.5,-487.5"/>
 <text text-anchor="middle" x="655" y="-475.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseGit</text>
 </a>
@@ -146,7 +146,7 @@
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" target="_top" xlink:title=" ">
+<g id="a_Node000017"><a xlink:href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" target="_top" xlink:title="Check whether WebDAV integration is enabled.">
 <polygon fill="white" stroke="#666666" points="736.5,-544.5 573.5,-544.5 573.5,-525.5 736.5,-525.5 736.5,-544.5"/>
 <text text-anchor="middle" x="655" y="-532.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseWebDav</text>
 </a>
@@ -490,7 +490,7 @@
 <!-- Node25 -->
 <g id="Node000025" class="node">
 <title>Node25</title>
-<g id="a_Node000025"><a xlink:href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a" target="_top" xlink:title=" ">
+<g id="a_Node000025"><a xlink:href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a" target="_top" xlink:title="Check whether automatic pull is enabled.">
 <polygon fill="white" stroke="#666666" points="512.5,-412.5 368.5,-412.5 368.5,-393.5 512.5,-393.5 512.5,-412.5"/>
 <text text-anchor="middle" x="440.5" y="-400.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAutoPull</text>
 </a>
@@ -508,7 +508,7 @@
 <!-- Node26 -->
 <g id="Node000026" class="node">
 <title>Node26</title>
-<g id="a_Node000026"><a xlink:href="class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" target="_top" xlink:title=" ">
+<g id="a_Node000026"><a xlink:href="class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" target="_top" xlink:title="Check whether automatic push is enabled.">
 <polygon fill="white" stroke="#666666" points="515,-375.5 366,-375.5 366,-356.5 515,-356.5 515,-375.5"/>
 <text text-anchor="middle" x="440.5" y="-363.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAutoPush</text>
 </a>

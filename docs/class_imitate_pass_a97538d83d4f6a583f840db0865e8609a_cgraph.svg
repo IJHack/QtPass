@@ -102,7 +102,7 @@ var sectionId = 'dynsection-4';
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" target="_top" xlink:title=" ">
+<g id="a_Node000008"><a xlink:href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" target="_top" xlink:title="Check whether Git integration is enabled.">
 <polygon fill="white" stroke="#666666" points="692.5,-447 555.5,-447 555.5,-428 692.5,-428 692.5,-447"/>
 <text text-anchor="middle" x="624" y="-435" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseGit</text>
 </a>
@@ -338,7 +338,7 @@ var sectionId = 'dynsection-4';
 <!-- Node19 -->
 <g id="Node000019" class="node">
 <title>Node19</title>
-<g id="a_Node000019"><a xlink:href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a" target="_top" xlink:title=" ">
+<g id="a_Node000019"><a xlink:href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a" target="_top" xlink:title="Check whether automatic pull is enabled.">
 <polygon fill="white" stroke="#666666" points="481.5,-279 337.5,-279 337.5,-260 481.5,-260 481.5,-279"/>
 <text text-anchor="middle" x="409.5" y="-267" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAutoPull</text>
 </a>
@@ -356,7 +356,7 @@ var sectionId = 'dynsection-4';
 <!-- Node20 -->
 <g id="Node000020" class="node">
 <title>Node20</title>
-<g id="a_Node000020"><a xlink:href="class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" target="_top" xlink:title=" ">
+<g id="a_Node000020"><a xlink:href="class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc" target="_top" xlink:title="Check whether automatic push is enabled.">
 <polygon fill="white" stroke="#666666" points="484,-205 335,-205 335,-186 484,-186 484,-205"/>
 <text text-anchor="middle" x="409.5" y="-193" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isAutoPush</text>
 </a>
@@ -636,7 +636,7 @@ var sectionId = 'dynsection-4';
 <!-- Node24 -->
 <g id="Node000024" class="node">
 <title>Node24</title>
-<g id="a_Node000024"><a xlink:href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" target="_top" xlink:title=" ">
+<g id="a_Node000024"><a xlink:href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa" target="_top" xlink:title="Check whether WebDAV integration is enabled.">
 <polygon fill="white" stroke="#666666" points="705.5,-132 542.5,-132 542.5,-113 705.5,-113 705.5,-132"/>
 <text text-anchor="middle" x="624" y="-120" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseWebDav</text>
 </a>

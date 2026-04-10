@@ -9,11 +9,11 @@
 <area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="90,342,134,290,167,262,204,240,272,217,342,205,412,201,476,202,476,207,412,206,343,211,273,223,206,244,170,266,138,294,94,345"/>
 <area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" title="Get panel autoclear delay in seconds." alt="" coords="209,254,419,294"/>
 <area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="110,341,204,303,227,296,229,301,206,309,112,346"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title=" " alt="" coords="225,319,403,344"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="225,319,403,344"/>
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="157,346,211,340,212,345,158,351"/>
 <area shape="rect" id="Node000010" href="$class_qt_pass.html#a2ac40a69378a7085bebc633984ae6a57" title=" " alt="" coords="239,368,389,393"/>
 <area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="158,362,225,369,224,374,157,367"/>
-<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" title=" " alt="" coords="205,417,423,443"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" title="Check whether tray icon support is enabled." alt="" coords="205,417,423,443"/>
 <area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="113,367,206,402,240,411,238,417,205,407,111,372"/>
 <area shape="rect" id="Node000012" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title="Sets the clipboard clear timer based on autoclear settings." alt="" coords="217,467,411,492"/>
 <area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="97,368,143,409,173,432,207,452,227,460,225,465,204,456,170,437,139,413,93,372"/>

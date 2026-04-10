@@ -1,5 +1,5 @@
 <map id="QtPassSettings::setAvoidNumbers" name="QtPassSettings::setAvoidNumbers">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,188,45"/>
+<area shape="rect" id="Node000001" title="Save numeric avoidance flag." alt="" coords="5,5,188,45"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="236,13,439,38"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,23,222,23,222,28,188,28"/>
 </map>

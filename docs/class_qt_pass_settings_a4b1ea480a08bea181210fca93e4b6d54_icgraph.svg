@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Check whether template applies to all fields.">
 <polygon fill="#999999" stroke="#666666" points="357,-73 208,-73 208,-43 357,-43 357,-73"/>
 <text text-anchor="start" x="216" y="-61" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isTemplate</text>
 <text text-anchor="middle" x="282.5" y="-50" font-family="Helvetica,sans-Serif" font-size="10.00">AllFields</text>
