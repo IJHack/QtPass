@@ -300,15 +300,15 @@ void QtPassSettings::setUsePass(const bool &usePass) {
 }
 
 auto QtPassSettings::getClipBoardTypeRaw(
-    const Enums::clipBoardType &defaultvalue) -> int {
+    const Enums::clipBoardType &defaultValue) -> int {
   return getInstance()
-      ->value(SettingsConstants::clipBoardType, static_cast<int>(defaultvalue))
+      ->value(SettingsConstants::clipBoardType, static_cast<int>(defaultValue))
       .toInt();
 }
 
-auto QtPassSettings::getClipBoardType(const Enums::clipBoardType &defaultvalue)
+auto QtPassSettings::getClipBoardType(const Enums::clipBoardType &defaultValue)
     -> Enums::clipBoardType {
-  return static_cast<Enums::clipBoardType>(getClipBoardTypeRaw(defaultvalue));
+  return static_cast<Enums::clipBoardType>(getClipBoardTypeRaw(defaultValue));
 }
 void QtPassSettings::setClipBoardType(const int &clipBoardType) {
   getInstance()->setValue(SettingsConstants::clipBoardType, clipBoardType);
