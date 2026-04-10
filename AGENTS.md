@@ -6,7 +6,7 @@ This file provides guidance for AI agents working on QtPass development.
 
 ```bash
 # Full build
-make -j4
+qmake6 && make -j4
 
 # With tests
 make check
@@ -33,6 +33,7 @@ act push -W .github/workflows/linter.yml -j build
 ```
 
 **C++ formatting:**
+
 ```bash
 clang-format --style=file -i <source-file>
 ```
@@ -58,10 +59,46 @@ clang-format --style=file -i <source-file>
 - Use `tr()` for all user-facing strings
 - Store indices, not pointers, in Qt::UserRole data
 - Use `QPalette` colors instead of hardcoded values for theme-aware UI
+- Use `std::as_const()` instead of deprecated `qAsConst()` for Qt iterations
 
-## Common Fixes
+## Handling AI Findings
 
-See `qtpass-fixing` skill for common bugfix patterns.
+When CodeRabbit/CodeAnt AI flags issues in PRs:
+
+1. **Verify the finding** - Check if it's a real issue or false positive
+2. **If correct, fix it** - Make minimal changes to address
+3. **Push update** - Force push to update the PR
+4. **Respond to comments** - Comment that fix is applied
+
+If a finding is incorrect (e.g., code is already correct, or finding is outdated), explain why in a comment and mark as resolved.
+
+## Testing
+
+QtPass uses Qt Test framework. Test files are in `tests/auto/`.
+
+```bash
+# Run specific test
+./tests/auto/util/tst_util testName
+
+# Verbose output
+./tests/auto/util/tst_util -v2
+```
+
+## Localization
+
+QtPass uses Qt Linguist (`.ts` files) in `localization/`. Don't manually edit translations - Weblate handles that. Run `qmake6` after source changes to update translation source references.
+
+See `qtpass-localization` skill for details.
+
+## Skills
+
+- `qtpass-fixing` - Common bugfix patterns
+- `qtpass-testing` - Qt Test framework and test structure
+- `qtpass-linting` - CI/CD and linters
+- `qtpass-localization` - Translation workflow
+- `qtpass-github` - PRs, issues, merging
+- `qtpass-releasing` - Release process
+- `qtpass-docs` - Documentation guide
 
 ## Release
 
