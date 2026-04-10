@@ -68,7 +68,7 @@
 <area shape="poly" id="edge60_Node000001_Node000042" title=" " alt="" coords="1077,1535,1074,1626,1068,1688,1056,1756,1038,1826,1011,1894,975,1958,953,1987,927,2013,897,2031,894,2027,924,2009,949,1984,971,1955,1007,1892,1033,1824,1051,1755,1063,1688,1069,1626,1072,1535"/>
 <area shape="rect" id="Node000043" href="$class_qt_pass_settings.html#a4635ee8c60b928d8798df35a5ba79df1" title="Save all configured profiles." alt="" coords="704,2073,899,2099"/>
 <area shape="poly" id="edge61_Node000001_Node000043" title=" " alt="" coords="1073,1535,1055,1649,1025,1808,1005,1888,982,1962,956,2022,927,2063,900,2079,898,2075,924,2059,951,2019,977,1960,1000,1887,1020,1807,1050,1648,1067,1535"/>
-<area shape="rect" id="Node000044" href="$class_qt_pass_settings.html#a169a2e42423e3c53b3cf4fd3566b27b4" title=" " alt="" coords="706,221,897,261"/>
+<area shape="rect" id="Node000044" href="$class_qt_pass_settings.html#a169a2e42423e3c53b3cf4fd3566b27b4" title="Save pwgen executable path." alt="" coords="706,221,897,261"/>
 <area shape="poly" id="edge62_Node000001_Node000044" title=" " alt="" coords="1069,1482,1054,1235,1024,849,1003,652,979,478,952,346,938,301,923,274,911,263,895,255,898,250,914,259,927,271,943,299,958,344,984,477,1008,652,1029,849,1059,1234,1075,1482"/>
 <area shape="rect" id="Node000045" href="$class_qt_pass_settings.html#a9fc49a7028760e8df558db90a8502b8e" title="Save qrencode executable path." alt="" coords="697,2123,906,2163"/>
 <area shape="poly" id="edge64_Node000001_Node000045" title=" " alt="" coords="1073,1535,1057,1658,1027,1831,1007,1919,984,2000,957,2066,943,2092,927,2112,908,2127,905,2122,923,2108,938,2089,952,2064,979,1998,1002,1918,1022,1829,1052,1657,1068,1535"/>

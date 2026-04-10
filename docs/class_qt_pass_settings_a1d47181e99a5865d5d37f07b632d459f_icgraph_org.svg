@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get pwgen executable path.">
 <polygon fill="#999999" stroke="#666666" points="640,-81.5 497,-81.5 497,-51.5 640,-51.5 640,-81.5"/>
 <text text-anchor="start" x="505" y="-69.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPwgen</text>
 <text text-anchor="middle" x="568.5" y="-58.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executable</text>

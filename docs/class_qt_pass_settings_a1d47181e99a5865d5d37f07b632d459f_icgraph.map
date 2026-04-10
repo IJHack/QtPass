@@ -1,5 +1,5 @@
 <map id="QtPassSettings::getPwgenExecutable" name="QtPassSettings::getPwgenExecutable">
-<area shape="rect" id="Node000001" title=" " alt="" coords="668,73,859,113"/>
+<area shape="rect" id="Node000001" title="Get pwgen executable path." alt="" coords="668,73,859,113"/>
 <area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="409,5,605,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="697,70,619,45,574,33,575,28,621,39,699,65"/>
 <area shape="rect" id="Node000003" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="417,55,596,80"/>

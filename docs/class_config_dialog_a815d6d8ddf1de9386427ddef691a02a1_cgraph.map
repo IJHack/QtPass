@@ -14,7 +14,7 @@
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="102,1426,102,1232,107,1075,116,900,133,721,160,556,177,483,197,419,220,365,247,325,251,322,254,325,251,328,225,368,202,420,182,484,165,557,139,722,122,900,112,1075,108,1232,107,1426"/>
 <area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" title="Get autoclear delay in seconds." alt="" coords="263,339,474,379"/>
 <area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="102,1426,104,1242,109,1094,120,929,137,762,163,606,180,537,199,477,222,427,247,389,251,386,254,389,251,392,226,429,204,479,185,539,168,607,143,762,125,930,115,1094,109,1242,107,1426"/>
-<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a0fc94e3edf8c46231ae697b57c18b238" title="Get clipboard type preference." alt="" coords="263,403,474,443"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#af667580efb0077ef2f34c6916c78a6ea" title="Get clipboard type preference." alt="" coords="263,403,474,443"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="102,1426,106,1251,112,1113,124,958,141,801,167,656,183,591,202,535,223,488,247,453,251,450,254,453,251,456,228,491,207,537,188,593,172,657,147,802,129,959,118,1113,111,1251,107,1426"/>
 <area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#ad15e182609e00a394ec9acdd4d1a19f5" title="Get saved dialog geometry." alt="" coords="273,467,464,507"/>
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="102,1426,108,1262,115,1133,128,989,146,843,171,707,187,647,204,595,225,551,247,518,260,507,263,511,251,522,229,554,209,597,192,649,176,708,151,843,133,989,121,1133,113,1262,108,1426"/>
@@ -28,7 +28,7 @@
 <area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="103,1426,113,1295,138,1085,157,974,182,872,211,788,229,756,247,732,260,721,264,725,251,735,233,759,216,790,187,874,163,976,144,1086,118,1296,108,1426"/>
 <area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#add3fe08db67b209231af21cf7b8f705d" title="Get all configured profiles." alt="" coords="271,745,467,770"/>
 <area shape="poly" id="edge18_Node000001_Node000016" title=" " alt="" coords="103,1425,115,1303,141,1108,161,1005,185,911,213,833,230,803,247,781,257,773,260,777,251,785,234,806,218,835,190,912,166,1007,147,1109,120,1303,108,1426"/>
-<area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" title=" " alt="" coords="273,795,464,835"/>
+<area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" title="Get pwgen executable path." alt="" coords="273,795,464,835"/>
 <area shape="poly" id="edge19_Node000001_Node000017" title=" " alt="" coords="103,1426,118,1315,147,1140,166,1048,190,964,217,894,232,867,247,846,260,836,263,840,251,850,236,870,222,896,195,965,172,1050,152,1141,123,1315,109,1426"/>
 <area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69" title="Get whether to auto&#45;add GPG ID when receiving files." alt="" coords="267,859,470,885"/>
 <area shape="poly" id="edge20_Node000001_Node000018" title=" " alt="" coords="104,1426,119,1322,148,1162,168,1078,192,1001,218,938,232,914,247,896,254,890,257,894,251,899,237,917,223,940,197,1003,173,1080,154,1163,124,1323,109,1426"/>

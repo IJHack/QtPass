@@ -323,7 +323,7 @@ var sectionId = 'dynsection-20';
 <!-- Node18 -->
 <g id="Node000018" class="node">
 <title>Node18</title>
-<g id="a_Node000018"><a xlink:href="class_qt_pass_settings.html#a969462178b2d4f535abadbbb646e2248" target="_top" xlink:title="Get clipboard type as enum.">
+<g id="a_Node000018"><a xlink:href="class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056" target="_top" xlink:title="Get clipboard type as enum.">
 <polygon fill="white" stroke="#666666" points="603,-49.5 422,-49.5 422,-30.5 603,-30.5 603,-49.5"/>
 <text text-anchor="middle" x="512.5" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getClipBoardType</text>
 </a>

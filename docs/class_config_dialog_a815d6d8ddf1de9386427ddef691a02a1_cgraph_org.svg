@@ -148,7 +148,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#a0fc94e3edf8c46231ae697b57c18b238" target="_top" xlink:title="Get clipboard type preference.">
+<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#af667580efb0077ef2f34c6916c78a6ea" target="_top" xlink:title="Get clipboard type preference.">
 <polygon fill="white" stroke="#666666" points="351.5,-1933.5 193.5,-1933.5 193.5,-1903.5 351.5,-1903.5 351.5,-1933.5"/>
 <text text-anchor="start" x="201.5" y="-1921.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getClipBoard</text>
 <text text-anchor="middle" x="272.5" y="-1910.5" font-family="Helvetica,sans-Serif" font-size="10.00">TypeRaw</text>
@@ -277,7 +277,7 @@
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" target="_top" xlink:title=" ">
+<g id="a_Node000017"><a xlink:href="class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" target="_top" xlink:title="Get pwgen executable path.">
 <polygon fill="white" stroke="#666666" points="344,-1639.5 201,-1639.5 201,-1609.5 344,-1609.5 344,-1639.5"/>
 <text text-anchor="start" x="209" y="-1627.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getPwgen</text>
 <text text-anchor="middle" x="272.5" y="-1616.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executable</text>

@@ -4,7 +4,7 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,208,117,174,145,128,183,81,206,59,231,41,245,33,247,38,233,46,209,64,187,85,150,132,122,177,104,210"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a3503e8d11b7e24b35a34801f755ba80a" title="Get complete password generation configuration." alt="" coords="244,55,453,95"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,207,156,158,192,129,231,105,246,98,248,103,233,110,195,134,160,162,109,211"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" title=" " alt="" coords="253,119,444,159"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" title="Get pwgen executable path." alt="" coords="253,119,444,159"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="127,207,231,169,258,161,259,166,233,174,129,212"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a694bfde7cafcdd174b706945ba264639" title="Check whether uppercase characters should be avoided." alt="" coords="235,184,462,209"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="184,210,221,207,222,212,185,216"/>

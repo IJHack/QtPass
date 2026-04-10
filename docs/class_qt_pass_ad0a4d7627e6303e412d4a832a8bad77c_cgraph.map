@@ -12,7 +12,7 @@
 <area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="58,848,66,886,83,940,110,997,128,1023,150,1045,155,1050,152,1054,146,1049,124,1026,105,999,78,942,61,888,53,849"/>
 <area shape="rect" id="Node000012" href="$class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef" title="Get pass entry template." alt="" coords="148,1124,385,1149"/>
 <area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="57,848,61,897,74,968,85,1007,101,1044,123,1079,150,1109,157,1115,154,1119,146,1113,118,1083,97,1047,80,1009,68,970,55,898,52,848"/>
-<area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" title=" " alt="" coords="462,255,653,295"/>
+<area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" title="Get pwgen executable path." alt="" coords="462,255,653,295"/>
 <area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="52,822,60,735,77,602,89,533,105,469,124,416,146,380,178,352,213,329,252,311,292,297,373,279,448,271,449,276,374,284,293,302,254,316,216,334,181,356,150,384,128,418,110,470,95,534,82,603,65,735,58,823"/>
 <area shape="rect" id="Node000014" href="$class_qt_pass_settings.html#a5623f8d47534a6c21eb9fd95540b253e" title="Get saved application version." alt="" coords="169,1173,365,1199"/>
 <area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="56,848,57,906,67,990,78,1036,95,1082,119,1124,150,1160,158,1167,155,1171,146,1164,114,1127,91,1084,73,1038,62,991,51,906,51,848"/>
@@ -56,7 +56,7 @@
 <area shape="poly" id="edge24_Node000015_Node000020" title=" " alt="" coords="380,414,422,417,422,423,380,419"/>
 <area shape="rect" id="Node000021" href="$class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f" title="Save pass executable path." alt="" coords="434,468,681,493"/>
 <area shape="poly" id="edge26_Node000015_Node000021" title=" " alt="" coords="308,418,434,454,472,463,471,468,433,459,306,423"/>
-<area shape="rect" id="Node000022" href="$class_qt_pass_settings.html#a169a2e42423e3c53b3cf4fd3566b27b4" title=" " alt="" coords="462,567,653,607"/>
+<area shape="rect" id="Node000022" href="$class_qt_pass_settings.html#a169a2e42423e3c53b3cf4fd3566b27b4" title="Save pwgen executable path." alt="" coords="462,567,653,607"/>
 <area shape="poly" id="edge28_Node000015_Node000022" title=" " alt="" coords="280,418,341,483,386,521,435,553,450,560,448,565,432,558,382,525,338,487,277,422"/>
 <area shape="poly" id="edge17_Node000016_Node000003" title=" " alt="" coords="636,318,680,305,744,275,798,244,801,248,747,280,682,310,638,323"/>
 <area shape="rect" id="Node000019" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="729,667,932,692"/>

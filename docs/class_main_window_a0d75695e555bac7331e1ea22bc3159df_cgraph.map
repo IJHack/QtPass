@@ -28,7 +28,7 @@
 <area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="127,350,142,405,172,485,193,528,218,571,249,611,284,645,294,652,291,656,281,649,245,614,214,574,188,531,167,487,137,406,122,352"/>
 <area shape="rect" id="Node000014" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="585,585,793,611"/>
 <area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="487,613,571,606,572,611,487,618"/>
-<area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#a969462178b2d4f535abadbbb646e2248" title="Get clipboard type as enum." alt="" coords="568,635,809,660"/>
+<area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056" title="Get clipboard type as enum." alt="" coords="568,635,809,660"/>
 <area shape="poly" id="edge17_Node000013_Node000018" title=" " alt="" coords="487,628,555,633,554,639,487,633"/>
 <area shape="rect" id="Node000015" href="$class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" title="Get whether to use autoclear for clipboard." alt="" coords="868,536,1093,561"/>
 <area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="764,583,891,561,892,566,765,588"/>

@@ -691,7 +691,7 @@ var sectionId = 'dynsection-13';
 <!-- Node44 -->
 <g id="Node000044" class="node">
 <title>Node44</title>
-<g id="a_Node000044"><a xlink:href="class_qt_pass_settings.html#a169a2e42423e3c53b3cf4fd3566b27b4" target="_top" xlink:title=" ">
+<g id="a_Node000044"><a xlink:href="class_qt_pass_settings.html#a169a2e42423e3c53b3cf4fd3566b27b4" target="_top" xlink:title="Save pwgen executable path.">
 <polygon fill="white" stroke="#666666" points="668.5,-2132.5 525.5,-2132.5 525.5,-2102.5 668.5,-2102.5 668.5,-2132.5"/>
 <text text-anchor="start" x="533.5" y="-2120.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setPwgen</text>
 <text text-anchor="middle" x="597" y="-2109.5" font-family="Helvetica,sans-Serif" font-size="10.00">Executable</text>
