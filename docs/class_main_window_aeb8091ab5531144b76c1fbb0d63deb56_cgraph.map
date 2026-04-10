@@ -19,8 +19,8 @@
 <area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="97,368,143,409,173,432,207,452,227,460,225,465,204,456,170,437,139,413,93,372"/>
 <area shape="rect" id="Node000014" href="$class_qt_pass.html#a5b63b7418723b400f0db2afa450f1199" title=" " alt="" coords="234,516,394,541"/>
 <area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="92,368,134,433,168,470,207,501,222,509,220,514,204,506,164,474,130,436,87,371"/>
-<area shape="rect" id="Node000015" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title="Save use pass setting." alt="" coords="213,567,415,592"/>
-<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="89,369,103,406,127,456,162,508,183,532,207,552,218,559,215,563,204,556,179,535,158,511,123,458,98,408,84,371"/>
+<area shape="rect" id="Node000015" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title="Save use pass setting." alt="" coords="213,565,415,591"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="89,369,103,406,127,456,162,508,183,532,207,552,216,557,213,562,204,556,179,536,158,511,123,458,98,408,84,371"/>
 <area shape="rect" id="Node000003" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="498,5,691,31"/>
 <area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="337,100,396,70,470,39,499,31,500,36,472,45,398,75,339,105"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="472,55,717,80"/>
@@ -29,12 +29,8 @@
 <area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="339,126,398,157,472,187,509,198,507,203,470,193,396,161,337,131"/>
 <area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title="Get whether to use pass (true) or GPG (false)." alt="" coords="499,104,691,129"/>
 <area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="382,113,484,113,484,119,382,118"/>
-<area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" title="Get autoclear delay in seconds." alt="" coords="489,457,700,497"/>
-<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="411,476,475,475,475,480,411,481"/>
-<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528" title=" " alt="" coords="483,521,707,547"/>
-<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="393,564,502,546,503,551,394,569"/>
-<area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="493,571,696,596"/>
-<area shape="poly" id="edge19_Node000015_Node000017" title=" " alt="" coords="415,578,479,579,479,584,415,583"/>
-<area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#a8f8fb086b283ad2089e64b37d4950d5e" title=" " alt="" coords="491,620,698,645"/>
-<area shape="poly" id="edge20_Node000015_Node000018" title=" " alt="" coords="382,589,514,615,513,620,381,595"/>
+<area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" title="Get autoclear delay in seconds." alt="" coords="489,459,700,499"/>
+<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="411,477,475,477,475,482,411,482"/>
+<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="493,565,696,591"/>
+<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="415,575,479,575,479,581,415,581"/>
 </map>

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>QtPass: src/qtpasssettings.cpp File Reference</title>
+<title>QtPass: Security Policy</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -69,34 +69,60 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
 </div><!-- top -->
-<div class="header">
-  <div class="headertitle"><div class="title">qtpasssettings.cpp File Reference</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">Security Policy</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="qtpasssettings_8h_source.html">qtpasssettings.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="pass_8h_source.html">pass.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
-<code>#include &lt;QCoreApplication&gt;</code><br />
-<code>#include &lt;QCursor&gt;</code><br />
-<code>#include &lt;QDebug&gt;</code><br />
-<code>#include &lt;QGuiApplication&gt;</code><br />
-<code>#include &lt;QScreen&gt;</code><br />
-<code>#include &lt;utility&gt;</code><br />
-</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for qtpasssettings.cpp:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="qtpasssettings_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-</div>
-<p><a href="qtpasssettings_8cpp_source.html">Go to the source code of this file.</a></p>
-</div><!-- contents -->
+<div class="textblock"><h1>Supported Versions</h1>
+<p><a class="el" href="class_qt_pass.html">QtPass</a> is actively maintained and security updates are provided for the latest releases. Older versions are not supported.</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Version   </th><th class="markdownTableHeadNone">Supported    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">1.5.x   </td><td class="markdownTableBodyNone">:white_check_mark:    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">&lt; 1.5   </td><td class="markdownTableBodyNone">:x:   </td></tr>
+</table>
+<h1>Reporting a Vulnerability</h1>
+<p>If you discover a security vulnerability in <a class="el" href="class_qt_pass.html">QtPass</a>, please report it responsibly:</p>
+<ol type="1">
+<li><b>Do NOT</b> create a public GitHub issue for security vulnerabilities</li>
+<li><b>Do</b> email the maintainer directly at: <code>help@qtpass.org</code></li>
+<li><b>Alternative</b>: Open a private security advisory via GitHub</li>
+<li><b>Include</b> in your report:<ul>
+<li>Description of the vulnerability</li>
+<li>Steps to reproduce the issue</li>
+<li>Potential impact assessment</li>
+<li>Any suggested fixes (optional)</li>
+</ul>
+</li>
+</ol>
+<h1>Response Timeline</h1>
+<ul>
+<li><b>Acknowledgment</b>: Within 48 hours</li>
+<li><b>Initial assessment</b>: Within 7 days</li>
+<li><b>Fix timeline</b>: Depends on severity; critical issues are prioritized</li>
+</ul>
+<h1>Security Considerations</h1>
+<p><a class="el" href="class_qt_pass.html">QtPass</a> is a GUI for <a href="https://www.passwordstore.org/">pass</a>, the standard Unix password manager. Keep in mind:</p>
+<ul>
+<li><a class="el" href="class_qt_pass.html">QtPass</a> does not encrypt passwords - encryption is handled by GPG</li>
+<li>Passwords are stored in your local password store (typically <code>~/.password-store</code>)</li>
+<li><a class="el" href="class_qt_pass.html">QtPass</a> requires GPG to be installed and configured on your system</li>
+<li>The clipboard is cleared after a configurable timeout (default: 45 seconds)</li>
+</ul>
+<h1>Dependencies</h1>
+<p><a class="el" href="class_qt_pass.html">QtPass</a> depends on:</p>
+<ul>
+<li><b>Qt6</b> (primary; use <code>qmake6</code>) — <b>Qt5</b> (5.15+, legacy; use <code>qmake</code>) - GUI framework</li>
+<li><b>GPG</b> (gpg2) - encryption</li>
+<li><b>pass</b> (optional) - password store CLI</li>
+<li><b>Git</b> (optional) - version control</li>
+</ul>
+<p>Ensure your system dependencies are kept up to date for security patches. </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
