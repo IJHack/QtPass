@@ -218,18 +218,18 @@ public:
 
   /**
    * @brief Get clipboard type preference.
-   * @param defaultvalue Default value returned if not saved.
+   * @param defaultValue Default value returned if not saved.
    * @return Clipboard type as Enums::clipBoardType.
    */
   static auto getClipBoardTypeRaw(
-      const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER) -> int;
+      const Enums::clipBoardType &defaultValue = Enums::CLIPBOARD_NEVER) -> int;
   /**
    * @brief Get clipboard type as enum.
-   * @param defaultvalue Default value returned if not saved.
+   * @param defaultValue Default value returned if not saved.
    * @return Clipboard type as Enums::clipBoardType.
    */
   static auto getClipBoardType(
-      const Enums::clipBoardType &defaultvalue = Enums::CLIPBOARD_NEVER)
+      const Enums::clipBoardType &defaultValue = Enums::CLIPBOARD_NEVER)
       -> Enums::clipBoardType;
   /**
    * @brief Save clipboard type.
@@ -456,9 +456,18 @@ public:
    */
   static void setGpgExecutable(const QString &gpgExecutable);
 
+  /**
+   * @brief Get pwgen executable path.
+   * @param defaultValue String returned if not saved.
+   * @return Path to pwgen executable.
+   */
   static auto
   getPwgenExecutable(const QString &defaultValue = QVariant().toString())
       -> QString;
+  /**
+   * @brief Save pwgen executable path.
+   * @param pwgenExecutable Path to pwgen.
+   */
   static void setPwgenExecutable(const QString &pwgenExecutable);
 
   /**
