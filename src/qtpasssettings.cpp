@@ -25,7 +25,7 @@
 
 bool QtPassSettings::initialized = false;
 
-QScopedPointer<Pass> QtPassSettings::pass;
+Pass *QtPassSettings::pass;
 // Go via pointer to avoid dynamic initialization,
 // due to "random" initialization order relative to other
 // globals, especially around QObject metadata dynamic initialization
@@ -171,15 +171,15 @@ void QtPassSettings::setProfiles(
 auto QtPassSettings::getPass() -> Pass * {
   if (!pass) {
     if (isUsePass()) {
-      pass.reset(getRealPass());
+      pass = getRealPass();
     } else {
-      pass.reset(getImitatePass());
+      pass = getImitatePass();
     }
     if (pass) {
       pass->init();
     }
   }
-  return pass.data();
+  return pass;
 }
 
 auto QtPassSettings::getVersion(const QString &defaultValue) -> QString {
@@ -295,12 +295,8 @@ auto QtPassSettings::isUsePass(const bool &defaultValue) -> bool {
       .toBool();
 }
 void QtPassSettings::setUsePass(const bool &usePass) {
-  if (usePass) {
-    pass.reset(getRealPass());
-  } else {
-    pass.reset(getImitatePass());
-  }
   getInstance()->setValue(SettingsConstants::usePass, usePass);
+  pass = nullptr;
 }
 
 auto QtPassSettings::getClipBoardTypeRaw(
