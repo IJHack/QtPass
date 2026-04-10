@@ -241,7 +241,7 @@
            <bool>false</bool>
           </property>
           <property name="styleSheet">
-           <string notr="true">background: transparent</string>
+           <string notr="true">background: palette(base)</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::NoFrame</enum>
