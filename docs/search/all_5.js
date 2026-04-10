@@ -24,7 +24,8 @@ var searchData=
   ['finishedshow_21',['finishedShow',['../class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba',1,'Pass']]],
   ['flags_22',['flags',['../class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d',1,'StoreModel']]],
   ['flashtext_23',['flashText',['../class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89',1,'MainWindow']]],
-  ['fpr_24',['Fpr',['../gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314ad9c8b6ee49fc11baca5fdda1a2957ad7',1,'gpgkeystate.h']]],
-  ['from_20source_25',['From source',['../index.html#source',1,'']]],
-  ['fullyvalid_26',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
+  ['for_20qtpass_24',['Agent Instructions for QtPass',['../md__a_g_e_n_t_s.html',1,'']]],
+  ['fpr_25',['Fpr',['../gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314ad9c8b6ee49fc11baca5fdda1a2957ad7',1,'gpgkeystate.h']]],
+  ['from_20source_26',['From source',['../index.html#source',1,'']]],
+  ['fullyvalid_27',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
 ];
