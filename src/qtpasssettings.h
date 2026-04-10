@@ -450,6 +450,10 @@ public:
   static auto
   getGpgExecutable(const QString &defaultValue = QVariant().toString())
       -> QString;
+  /**
+   * @brief Save GPG executable path.
+   * @param gpgExecutable Path to GPG executable.
+   */
   static void setGpgExecutable(const QString &gpgExecutable);
 
   static auto
