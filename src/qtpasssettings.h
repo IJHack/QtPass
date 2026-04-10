@@ -12,6 +12,7 @@
 #include <QByteArray>
 #include <QHash>
 #include <QPoint>
+#include <QScopedPointer>
 #include <QSettings>
 #include <QSize>
 #include <QVariant>
