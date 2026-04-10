@@ -288,47 +288,47 @@ email</translation>
         <translation>Скрывать содержимое</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="713"/>
+        <location filename="../src/configdialog.cpp" line="715"/>
         <source>GnuPG not found</source>
         <translation>Не найден GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="727"/>
+        <location filename="../src/configdialog.cpp" line="729"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Пожалуйста, установите GnuPG.&lt;br&gt;Для установки &lt;strong&gt;gpg&lt;/strong&gt; можно использовать любой менеджер пакетов&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;загрузить&lt;/a&gt; файл с сайта GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="781"/>
+        <location filename="../src/configdialog.cpp" line="783"/>
         <source>Create password-store?</source>
         <translation>Создать хранилище паролей?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="782"/>
+        <location filename="../src/configdialog.cpp" line="784"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Создать хранилище паролей в %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="787"/>
+        <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
         <translation>Ошибка</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="788"/>
+        <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Не удалось создать хранилище паролей на: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="819"/>
+        <location filename="../src/configdialog.cpp" line="821"/>
         <source>Password store not initialised</source>
         <translation>Хранилище паролей не инициализировано</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="820"/>
+        <location filename="../src/configdialog.cpp" line="822"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Похоже, папка %1 не является хранилищем паролей или ещё не инициализирована.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="612"/>
+        <location filename="../src/configdialog.cpp" line="614"/>
         <source>No profile selected</source>
         <translation>Профиль не выбран</translation>
     </message>
@@ -349,12 +349,12 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="204"/>
-        <location filename="../src/configdialog.cpp" line="219"/>
+        <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
         <translation>Это поле обязательно к заполнению</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="613"/>
+        <location filename="../src/configdialog.cpp" line="615"/>
         <source>No profile selected to delete</source>
         <translation>Профили для удаления не выбраны</translation>
     </message>
@@ -424,12 +424,12 @@ email</translation>
         <translation>необходимо установить qrencode</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="716"/>
+        <location filename="../src/configdialog.cpp" line="718"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Пожалуйста, установите GnuPG. &lt;br&gt;Для этого установите &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store. &lt;br&gt;Если это уже сделано, запустите его хотя бы раз и &lt;br&gt;нажмите «Автоопределение» в следующем диалоге.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
+        <location filename="../src/configdialog.cpp" line="723"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Пожалуйста, установите GnuPG.&lt;br&gt;Установите &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;загрузите&lt;/a&gt; с сайта GnuPG.org</translation>
     </message>
@@ -1253,8 +1253,8 @@ Expire-Date: 0
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="129"/>
-        <location filename="../main/main.cpp" line="133"/>
+        <location filename="../main/main.cpp" line="137"/>
+        <location filename="../main/main.cpp" line="141"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>

@@ -371,57 +371,57 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="204"/>
-        <location filename="../src/configdialog.cpp" line="219"/>
+        <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="612"/>
+        <location filename="../src/configdialog.cpp" line="614"/>
         <source>No profile selected</source>
         <translation>niciun profil selectat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="613"/>
+        <location filename="../src/configdialog.cpp" line="615"/>
         <source>No profile selected to delete</source>
         <translation>niciun profil selectat pentru ștergere</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="713"/>
+        <location filename="../src/configdialog.cpp" line="715"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nu a fost găsit</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="727"/>
+        <location filename="../src/configdialog.cpp" line="729"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Instalați GnuPG pe sistemul dvs.&lt;br&gt;Instalați &lt;strong&gt;gpg&lt;/strong&gt; folosind managerul de pachete preferat&lt;br&gt;sau &lt;a href=&quot;https://www.gnupg.org/download/#sec-1- 2&quot;&gt;descărcați-l&lt;/a&gt; de pe GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="781"/>
+        <location filename="../src/configdialog.cpp" line="783"/>
         <source>Create password-store?</source>
         <translation>Creați un depozit de parole?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="782"/>
+        <location filename="../src/configdialog.cpp" line="784"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Doriți să creați un depozit de parole la %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="787"/>
+        <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="788"/>
+        <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="819"/>
+        <location filename="../src/configdialog.cpp" line="821"/>
         <source>Password store not initialised</source>
         <translation>Depozitul de parole nu a fost inițializat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="820"/>
+        <location filename="../src/configdialog.cpp" line="822"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Se pare că dosarul %1 nu este un depozit de parole sau nu este încă inițializat.</translation>
     </message>
@@ -451,12 +451,12 @@ email</translation>
         <translation>qrencode trebuie instalat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="716"/>
+        <location filename="../src/configdialog.cpp" line="718"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Vă rugăm să instalați GnuPG pe sistemul dumneavoastră.&lt;br&gt;Instalați &lt;strong&gt;Ubuntu&lt;/strong&gt; din Microsoft Store pentru a-l obține.&lt;br&gt;Dacă ați făcut deja acest lucru, asigurați-vă că l-ați pornit o dată și&lt;br&gt;click pe &quot;Autodetect&quot; în următorul dialog.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
+        <location filename="../src/configdialog.cpp" line="723"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Vă rugăm să instalați GnuPG pe sistemul dumneavoastră.&lt;br&gt;Instalați &lt;strong&gt;Ubuntu&lt;/strong&gt; din Microsoft Store&lt;br&gt;sau &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descărcați&lt;/a&gt; de pe GnuPG.org</translation>
     </message>
@@ -1273,8 +1273,8 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="129"/>
-        <location filename="../main/main.cpp" line="133"/>
+        <location filename="../main/main.cpp" line="137"/>
+        <location filename="../main/main.cpp" line="141"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
