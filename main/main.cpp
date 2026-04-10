@@ -37,8 +37,7 @@
  * `qmake && make && make install`
  */
 
-static auto consumeRemainingArgs(const QStringList &args, int start)
-    -> QString {
+static auto joinRemainingArgs(const QStringList &args, int start) -> QString {
   Q_ASSERT(start >= 0 && start <= args.size());
   return args.mid(start).join(" ");
 }
@@ -81,7 +80,7 @@ auto main(int argc, char *argv[]) -> int {
 
     if (arg == "--") {
       consumeNextArg = false;
-      appendWithSpaceIfSuffixNotEmpty(text, consumeRemainingArgs(args, i + 1));
+      appendWithSpaceIfSuffixNotEmpty(text, joinRemainingArgs(args, i + 1));
       break;
     }
 
@@ -91,7 +90,13 @@ auto main(int argc, char *argv[]) -> int {
     }
 
     if (arg.startsWith('-')) {
-      if (!arg.contains('=') && i + 1 < args.count())
+      // We only collect positional arguments into `text`.
+      // For options in the form `--option value`, skip the separate value
+      // token. Options in the form `--option=value` are fully contained in
+      // `arg`.
+      const bool optionTakesSeparateValue =
+          !arg.contains('=') && i + 1 < args.count();
+      if (optionTakesSeparateValue)
         consumeNextArg = true;
       continue;
     }
@@ -159,13 +164,13 @@ auto main(int argc, char *argv[]) -> int {
   QScreen *screen = QGuiApplication::screenAt(QCursor::pos());
   if (!screen)
     screen = QGuiApplication::primaryScreen();
-  QPoint cursorScreenCenter(0, 0);
-  if (screen)
-    cursorScreenCenter = screen->geometry().center();
+  if (screen) {
+    const QPoint cursorScreenCenter = screen->geometry().center();
+    QRect windowFrameGeo = w.frameGeometry();
+    windowFrameGeo.moveCenter(cursorScreenCenter);
+    w.move(windowFrameGeo.topLeft());
+  }
 #endif
-  QRect windowFrameGeo = w.frameGeometry();
-  windowFrameGeo.moveCenter(cursorScreenCenter);
-  w.move(windowFrameGeo.topLeft());
 
   w.show();
 
