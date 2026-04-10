@@ -21,10 +21,11 @@
 #include <QDebug>
 #include <QGuiApplication>
 #include <QScreen>
+#include <utility>
 
 bool QtPassSettings::initialized = false;
 
-Pass *QtPassSettings::pass;
+QScopedPointer<Pass> QtPassSettings::pass;
 // Go via pointer to avoid dynamic initialization,
 // due to "random" initialization order relative to other
 // globals, especially around QObject metadata dynamic initialization
@@ -119,7 +120,7 @@ auto QtPassSettings::getProfiles() -> QHash<QString, QHash<QString, QString>> {
   // migration from version <= v1.3.2: profiles datastructure
   QStringList childKeys = getInstance()->childKeys();
   if (!childKeys.empty()) {
-    foreach (QString key, childKeys) {
+    for (const auto &key : std::as_const(childKeys)) {
       QHash<QString, QString> profile;
       profile.insert("path", getInstance()->value(key).toString());
       profile.insert("signingKey", "");
@@ -129,7 +130,7 @@ auto QtPassSettings::getProfiles() -> QHash<QString, QHash<QString, QString>> {
   // /migration from version <= v1.3.2
 
   QStringList childGroups = getInstance()->childGroups();
-  foreach (QString group, childGroups) {
+  for (const auto &group : std::as_const(childGroups)) {
     QHash<QString, QString> profile;
     profile.insert("path", getInstance()->value(group + "/path").toString());
     profile.insert("signingKey",
@@ -170,13 +171,15 @@ void QtPassSettings::setProfiles(
 auto QtPassSettings::getPass() -> Pass * {
   if (!pass) {
     if (isUsePass()) {
-      QtPassSettings::pass = getRealPass();
+      pass.reset(getRealPass());
     } else {
-      QtPassSettings::pass = getImitatePass();
+      pass.reset(getImitatePass());
     }
-    pass->init();
+    if (pass) {
+      pass->init();
+    }
   }
-  return pass;
+  return pass.data();
 }
 
 auto QtPassSettings::getVersion(const QString &defaultValue) -> QString {
@@ -293,9 +296,9 @@ auto QtPassSettings::isUsePass(const bool &defaultValue) -> bool {
 }
 void QtPassSettings::setUsePass(const bool &usePass) {
   if (usePass) {
-    QtPassSettings::pass = getRealPass();
+    pass.reset(getRealPass());
   } else {
-    QtPassSettings::pass = getImitatePass();
+    pass.reset(getImitatePass());
   }
   getInstance()->setValue(SettingsConstants::usePass, usePass);
 }

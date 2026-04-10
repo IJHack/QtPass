@@ -12,6 +12,7 @@
 #include <QByteArray>
 #include <QHash>
 #include <QPoint>
+#include <QScopedPointer>
 #include <QSettings>
 #include <QSize>
 #include <QVariant>
@@ -45,7 +46,7 @@ private:
   static bool initialized;
   static QtPassSettings *m_instance;
 
-  static Pass *pass;
+  static QScopedPointer<Pass> pass;
   static QScopedPointer<RealPass> realPass;
   static QScopedPointer<ImitatePass> imitatePass;
 
