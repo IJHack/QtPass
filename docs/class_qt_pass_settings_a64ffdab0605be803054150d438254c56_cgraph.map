@@ -12,7 +12,7 @@
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="232,221,295,221,295,226,232,226"/>
 <area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a423f05b95badd51857630009e9ce629f" title="Save git executable path." alt="" coords="285,268,523,293"/>
 <area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="183,233,327,263,326,268,182,239"/>
-<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" title=" " alt="" coords="282,317,526,343"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" title="Save GPG executable path." alt="" coords="282,317,526,343"/>
 <area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="142,234,203,268,281,302,313,312,311,317,279,307,201,273,140,239"/>
 <area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f" title="Save pass executable path." alt="" coords="281,367,527,392"/>
 <area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="133,234,193,292,235,324,281,352,302,360,300,365,279,356,232,329,189,296,130,238"/>

@@ -129,7 +129,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" target="_top" xlink:title=" ">
+<g id="a_Node000010"><a xlink:href="class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" target="_top" xlink:title="Save GPG executable path.">
 <polygon fill="white" stroke="#666666" points="390.5,-104.5 207.5,-104.5 207.5,-85.5 390.5,-85.5 390.5,-104.5"/>
 <text text-anchor="middle" x="299" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setGpgExecutable</text>
 </a>

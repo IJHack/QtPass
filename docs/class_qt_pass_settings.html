@@ -274,12 +274,14 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a6d9beabe93c829cacdcc6c27792ffdba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GPG executable path.  <br /></td></tr>
 <tr class="separator:a6d9beabe93c829cacdcc6c27792ffdba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a875e260d3a73f82c0804a5c6b282d4ca" id="r_a875e260d3a73f82c0804a5c6b282d4ca"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca">setGpgExecutable</a> (const QString &amp;gpgExecutable)</td></tr>
+<tr class="memdesc:a875e260d3a73f82c0804a5c6b282d4ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save GPG executable path.  <br /></td></tr>
 <tr class="separator:a875e260d3a73f82c0804a5c6b282d4ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d47181e99a5865d5d37f07b632d459f" id="r_a1d47181e99a5865d5d37f07b632d459f"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f">getPwgenExecutable</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
 <tr class="separator:a1d47181e99a5865d5d37f07b632d459f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a169a2e42423e3c53b3cf4fd3566b27b4" id="r_a169a2e42423e3c53b3cf4fd3566b27b4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass_settings.html#a169a2e42423e3c53b3cf4fd3566b27b4">setPwgenExecutable</a> (const QString &amp;pwgenExecutable)</td></tr>
 <tr class="separator:a169a2e42423e3c53b3cf4fd3566b27b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a36413c39a8bcd96110dd612158168946" id="r_a36413c39a8bcd96110dd612158168946"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass_settings.html#a36413c39a8bcd96110dd612158168946">getGpgHome</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
+<tr class="memdesc:a36413c39a8bcd96110dd612158168946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GPG home directory.  <br /></td></tr>
 <tr class="separator:a36413c39a8bcd96110dd612158168946"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacb80ca326700f2bd4987cd5cb6806fa" id="r_aacb80ca326700f2bd4987cd5cb6806fa"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa">isUseWebDav</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
 <tr class="memdesc:aacb80ca326700f2bd4987cd5cb6806fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether WebDAV integration is enabled.  <br /></td></tr>
@@ -984,6 +986,15 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get GPG home directory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultValue</td><td>String returned if not saved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Path to the GPG home directory. </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a22">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2qtpasssettings_8cpp-example.html#a107">/home/runner/work/QtPass/QtPass/src/qtpasssettings.cpp</a>.</dd>
 </dl>
 
@@ -4065,6 +4076,14 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Save GPG executable path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">gpgExecutable</td><td>Path to GPG executable. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a46">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2qtpasssettings_8cpp-example.html#a100">/home/runner/work/QtPass/QtPass/src/qtpasssettings.cpp</a>.</dd>
 </dl>
 

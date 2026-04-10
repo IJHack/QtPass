@@ -361,7 +361,7 @@ var sectionId = 'dynsection-13';
 <!-- Node26 -->
 <g id="Node000026" class="node">
 <title>Node26</title>
-<g id="a_Node000026"><a xlink:href="class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" target="_top" xlink:title=" ">
+<g id="a_Node000026"><a xlink:href="class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" target="_top" xlink:title="Save GPG executable path.">
 <polygon fill="white" stroke="#666666" points="688.5,-2047 505.5,-2047 505.5,-2028 688.5,-2028 688.5,-2047"/>
 <text text-anchor="middle" x="597" y="-2035" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setGpgExecutable</text>
 </a>

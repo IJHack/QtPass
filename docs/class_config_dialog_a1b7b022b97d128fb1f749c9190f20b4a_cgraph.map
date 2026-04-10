@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,..." alt="" coords="5,55,212,80"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a423f05b95badd51857630009e9ce629f" title="Save git executable path." alt="" coords="265,5,502,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,52,298,31,299,36,181,57"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" title=" " alt="" coords="261,55,505,80"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a875e260d3a73f82c0804a5c6b282d4ca" title="Save GPG executable path." alt="" coords="261,55,505,80"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="212,65,248,65,248,70,212,70"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f" title="Save pass executable path." alt="" coords="260,104,507,129"/>
 <area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="181,77,299,99,298,104,180,83"/>

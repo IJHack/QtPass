@@ -21,7 +21,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title=" ">
+<g id="a_Node000001"><a xlink:title="Get GPG home directory.">
 <polygon fill="#999999" stroke="#666666" points="256,-19 96,-19 96,0 256,0 256,-19"/>
 <text text-anchor="middle" x="176" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgHome</text>
 </a>

@@ -30,7 +30,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a36413c39a8bcd96110dd612158168946" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="class_qt_pass_settings.html#a36413c39a8bcd96110dd612158168946" target="_top" xlink:title="Get GPG home directory.">
 <polygon fill="white" stroke="#666666" points="256,-19 96,-19 96,0 256,0 256,-19"/>
 <text text-anchor="middle" x="176" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getGpgHome</text>
 </a>
