@@ -683,9 +683,9 @@ void QtPassSettings::setPasswordLength(const int &passwordLength) {
   getInstance()->setValue(SettingsConstants::passwordLength, passwordLength);
 }
 void QtPassSettings::setPasswordCharsselection(
-    const int &passwordCharsselection) {
+    const int &passwordCharsSelection) {
   getInstance()->setValue(SettingsConstants::passwordCharsselection,
-                          passwordCharsselection);
+                          passwordCharsSelection);
 }
 void QtPassSettings::setPasswordChars(const QString &passwordChars) {
   getInstance()->setValue(SettingsConstants::passwordChars, passwordChars);

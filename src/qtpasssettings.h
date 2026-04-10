@@ -34,6 +34,10 @@
  */
 class QtPassSettings : public QSettings {
 private:
+  /**
+   * @brief Private default constructor to enforce singleton usage and prevent
+   * direct instantiation.
+   */
   explicit QtPassSettings();
 
   QtPassSettings(const QString &organization, const QSettings::Format format)
@@ -677,9 +681,9 @@ public:
   static void setPasswordLength(const int &passwordLength);
   /**
    * @brief Save password character selection mode.
-   * @param passwordCharsselection Password character selection mode.
+   * @param passwordCharsSelection Password character selection mode.
    */
-  static void setPasswordCharsselection(const int &passwordCharsselection);
+  static void setPasswordCharsselection(const int &passwordCharsSelection);
   /**
    * @brief Save custom password characters.
    * @param passwordChars Custom characters used for password generation.
