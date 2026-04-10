@@ -580,7 +580,7 @@ var sectionId = 'dynsection-13';
 <!-- Node38 -->
 <g id="Node000038" class="node">
 <title>Node38</title>
-<g id="a_Node000038"><a xlink:href="class_qt_pass_settings.html#a574c4935298bf38e6c634add9ba747d6" target="_top" xlink:title="Save password character selection mode.">
+<g id="a_Node000038"><a xlink:href="class_qt_pass_settings.html#a6b260d28285ad91c4e142df4ef069f97" target="_top" xlink:title="Save password character selection mode.">
 <polygon fill="white" stroke="#666666" points="675,-924.5 519,-924.5 519,-894.5 675,-894.5 675,-924.5"/>
 <text text-anchor="start" x="527" y="-912.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::setPassword</text>
 <text text-anchor="middle" x="597" y="-901.5" font-family="Helvetica,sans-Serif" font-size="10.00">Charsselection</text>
