@@ -95,7 +95,8 @@ auto main(int argc, char *argv[]) -> int {
       // token. Options in the form `--option=value` are fully contained in
       // `arg`.
       const bool optionTakesSeparateValue =
-          !arg.contains('=') && i + 1 < args.count();
+          !arg.contains('=') && i + 1 < args.count() && arg.startsWith("--") &&
+          !arg.startsWith("---") && !args[i + 1].startsWith('-');
       if (optionTakesSeparateValue)
         consumeNextArg = true;
       continue;
@@ -160,6 +161,9 @@ auto main(int argc, char *argv[]) -> int {
       app.desktop()->screenNumber(app.desktop()->cursor().pos());
   QPoint cursorScreenCenter =
       app.desktop()->screenGeometry(cursorScreen).center();
+  QRect windowFrameGeo = w.frameGeometry();
+  windowFrameGeo.moveCenter(cursorScreenCenter);
+  w.move(windowFrameGeo.topLeft());
 #else
   QScreen *screen = QGuiApplication::screenAt(QCursor::pos());
   if (!screen)

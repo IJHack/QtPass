@@ -17,7 +17,10 @@
 #include "util.h"
 
 #include <QCoreApplication>
+#include <QCursor>
 #include <QDebug>
+#include <QGuiApplication>
+#include <QScreen>
 
 bool QtPassSettings::initialized = false;
 
@@ -205,9 +208,20 @@ void QtPassSettings::setSavestate(const QByteArray &saveState) {
 }
 
 auto QtPassSettings::getPos(const QPoint &defaultValue) -> QPoint {
-  return getInstance()->value(SettingsConstants::pos, defaultValue).toPoint();
+  QPoint pos =
+      getInstance()->value(SettingsConstants::pos, defaultValue).toPoint();
+  if (pos == QPoint(0, 0)) {
+    QScreen *screen = QGuiApplication::screenAt(QCursor::pos());
+    if (!screen)
+      screen = QGuiApplication::primaryScreen();
+    if (screen)
+      pos = screen->geometry().center();
+  }
+  return pos;
 }
 void QtPassSettings::setPos(const QPoint &pos) {
+  if (pos == QPoint(0, 0))
+    return;
   getInstance()->setValue(SettingsConstants::pos, pos);
 }
 
