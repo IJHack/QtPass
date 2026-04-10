@@ -450,6 +450,10 @@ public:
   static auto
   getGpgExecutable(const QString &defaultValue = QVariant().toString())
       -> QString;
+  /**
+   * @brief Save GPG executable path.
+   * @param gpgExecutable Path to GPG executable.
+   */
   static void setGpgExecutable(const QString &gpgExecutable);
 
   static auto
@@ -457,6 +461,11 @@ public:
       -> QString;
   static void setPwgenExecutable(const QString &pwgenExecutable);
 
+  /**
+   * @brief Get GPG home directory.
+   * @param defaultValue String returned if not saved.
+   * @return Path to the GPG home directory.
+   */
   static auto getGpgHome(const QString &defaultValue = QVariant().toString())
       -> QString;
 
