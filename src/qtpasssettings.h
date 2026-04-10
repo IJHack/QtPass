@@ -457,6 +457,11 @@ public:
       -> QString;
   static void setPwgenExecutable(const QString &pwgenExecutable);
 
+  /**
+   * @brief Get GPG home directory.
+   * @param defaultValue String returned if not saved.
+   * @return Path to the GPG home directory.
+   */
   static auto getGpgHome(const QString &defaultValue = QVariant().toString())
       -> QString;
 
