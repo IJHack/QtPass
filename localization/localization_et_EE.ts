@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="et">
+<TS version="2.1" language="et_EE">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -36,7 +36,7 @@
     </message>
     <message>
         <source>Password Behaviour:</source>
-        <translation type="vanished">Password Behaviour:</translation>
+        <translation type="vanished">Salasõna käitumine:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
@@ -155,7 +155,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation type="vanished">Use pwgen</translation>
+        <translation type="vanished">Kasuta tarvikut pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -183,7 +183,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation type="vanished">Use git</translation>
+        <translation type="vanished">Kasuta Git&apos;i</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="512"/>
@@ -207,7 +207,7 @@
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation type="vanished">Use pass otp extension</translation>
+        <translation type="vanished">Kasuta pass-otp lisamoodulit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="603"/>
