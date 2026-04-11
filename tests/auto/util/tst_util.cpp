@@ -80,6 +80,7 @@ private Q_SLOTS:
   void namedValueMultiple();
   void buildClipboardMimeDataLinux();
   void buildClipboardMimeDataWindows();
+  void buildClipboardMimeDataMac();
   void buildClipboardMimeDataDword();
   void imitatePassResolveMoveDestination();
   void imitatePassResolveMoveDestinationForce();
@@ -1145,6 +1146,21 @@ void tst_util::buildClipboardMimeDataDword() {
   QVERIFY2(one.at(3) == char(0), "DWORD 1 should be 0x00");
 #else
   QSKIP("Windows-only test");
+#endif
+}
+
+void tst_util::buildClipboardMimeDataMac() {
+#ifdef Q_OS_MAC
+  QMimeData *mime = buildClipboardMimeData(QStringLiteral("testpassword"));
+  QVERIFY(mime != nullptr);
+  QVERIFY2(mime->hasText(), "Mime data should contain text");
+  QVERIFY2(mime->text() == "testpassword", "Text should match");
+  QVERIFY2(mime->data("application/x-nspasteboard-concealed-type") ==
+               QByteArray(),
+           "macOS should set concealed type");
+  delete mime;
+#else
+  QSKIP("macOS-only test");
 #endif
 }
 
