@@ -217,15 +217,13 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
  * @param filter
  */
 void UsersDialog::populateList(const QString &filter) {
-  static QString lastFilter;
-  static QRegularExpression cachedNameFilter;
-  if (filter != lastFilter) {
-    lastFilter = filter;
-    cachedNameFilter = QRegularExpression(
+  if (filter != m_lastFilter) {
+    m_lastFilter = filter;
+    m_cachedNameFilter = QRegularExpression(
         QRegularExpression::wildcardToRegularExpression("*" + filter + "*"),
         QRegularExpression::CaseInsensitiveOption);
   }
-  const QRegularExpression &nameFilter = cachedNameFilter;
+  const QRegularExpression &nameFilter = m_cachedNameFilter;
   ui->listWidget->clear();
 
   for (int i = 0; i < m_userList.size(); ++i) {
