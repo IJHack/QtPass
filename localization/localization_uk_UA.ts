@@ -555,12 +555,12 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>Підписання GPG не вдалося!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося підписати %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -600,33 +600,33 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторне шифрування не вдалося</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося замінити %1. Оригінал відновлено.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>Створення резервного коміту</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося зробити резервну копію</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося перевірити стан git. Повторне шифрування перервано.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторне шифрування було перервано, оскільки не вдалося створити резервну копію git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -642,27 +642,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося перевірити ідентифікатор GPG</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося перевірити .gpg-id для каталогу.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не вдалося повторно зашифрувати %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторне шифрування завершено: %1 успішно, %2 не вдалося</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>Повторне шифрування завершено: %1 файлів повторно зашифровано</translation>
     </message>
 </context>
 <context>

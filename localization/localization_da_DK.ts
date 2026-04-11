@@ -61,17 +61,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Brug en monospace-skrifttype</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Vis filens indhold som det er</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen linjeombrydning</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -131,22 +131,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Generer</translation>
+        <translation>Frembringe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Generer GPG-nøglepar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Signeringsnøgle</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valgfrit: GPG-nøgle til at signere .gpg-id-filer til integritetsverifikation. Lad feltet stå tomt, medmindre du har brug for at beskytte brugerlisten mod manipulation.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -373,7 +373,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette felt er påkrævet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -408,12 +408,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke oprette adgangskodelager på: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -531,14 +531,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Tjek .gpgid-filens signatur!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Signaturen for %1 er ugyldig.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -555,23 +555,24 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG-signering mislykkedes!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke signere %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen signeringsnøgle!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen af de hemmelige signeringsnøgler er tilgængelige.
+Du vil ikke kunne ændre brugerlisten!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -599,33 +600,33 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Genkryptering mislykkedes</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke erstatte %1. Originalen er blevet gendannet.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>Opretter backup-commit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Backup-commit mislykkedes</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke inspicere git-status. Genkryptering blev afbrudt.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>Genkrypteringen blev afbrudt, fordi der ikke kunne oprettes en git-backup.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -641,27 +642,27 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG ID-bekræftelse mislykkedes</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke verificere .gpg-id for mappen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke genkryptere %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Genkryptering fuldført: %1 lykkedes, %2 mislykkedes</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>Genkryptering fuldført: %1 filer genkrypteret</translation>
     </message>
 </context>
 <context>
@@ -679,7 +680,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation>Kodeord</translation>
+        <translation>Adgangskode</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -694,12 +695,12 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Der er ingen begrænsning på lænden af kodeordet, og det bør vælges med omhu. I et sikkerhedsperspektiv er kodeordet til at låse op for den hemmelige nøgle et af de svageste punkter i GnuPG (og andre krypteringssystemer baseret på offentlige nøgler) da det er den eneste beskyttelse du har hvis nogen får fat i din hemmelige nøgle.&lt;br/&gt;Idéelt set bør kodeordet ikke indeholde ordbogsord og bør blande store og små bogstaver samt ikke-alfabetiske tegn.&lt;br/&gt;Et godt kodeord er afgørende for sikker brug af GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Der er ingen grænse for længden af en adgangskode, og den bør vælges omhyggeligt. Fra et sikkerhedsmæssigt synspunkt er adgangskoden til at låse den private nøgle op et af de svageste punkter i GnuPG (og andre offentlige nøglekrypteringssystemer), da det er den eneste beskyttelse, du har, hvis en anden person får fat i din private nøgle. &lt;br/&gt;Ideelt set bør adgangskoden ikke bruge ord fra en ordbog og bør blande store og små bogstaver samt ikke-alfabetiske tegn.&lt;br/&gt;En god adgangskode er afgørende for sikker brug af GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Gentag gennemløb</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -709,7 +710,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Skabelonindholdet vil blive indstillet baseret på GPG-versionen.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1168,17 +1169,17 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1104"/>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fejl</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1105"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke oprette mappe: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunne ikke oprette .gpg-id-fil i: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1136"/>
@@ -1433,7 +1434,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg hvilke brugere, der skal kunne dekryptere adgangskoder, der er gemt i denne mappe.
+Bemærk: Eksisterende filer vil ikke blive ændret og bevarer de gamle tilladelser, indtil du redigerer dem.
+Blå poster har en hemmelig nøgle tilgængelig. Vælg en af disse for at kunne dekryptere.
+Sorte poster har en krypteringsnøgle tilgængelig, og den er betroet. Vælg en af disse for at tillade andre at dekryptere.
+Røde poster er ikke gyldige. Du vil ikke kunne kryptere til disse.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1505,17 +1510,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="309"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[UGYLDIG] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="312"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[UDLØBET] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="316"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[DELVIS] </translation>
     </message>
 </context>
 </TS>

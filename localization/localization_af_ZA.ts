@@ -61,17 +61,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Gebruik &apos;n monospace-lettertipe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Wys die lêerinhoud soos dit is</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen lynomslag nie</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -131,22 +131,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Genereer</translation>
+        <translation>Genereer</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Genereer GPG-sleutelpaar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Ondertekeningsleutel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opsioneel: GPG-sleutel om .gpg-id-lêers te onderteken vir integriteitsverifikasie. Los leeg tensy jy die gebruikerslys teen manipulasie moet beskerm.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -352,7 +352,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt; QtPass &lt;/a&gt; weergawe </translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; weergawe </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="121"/>
@@ -373,7 +373,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>Hierdie veld is verpligtend</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -408,12 +408,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon nie wagwoordstoor skep by: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -531,14 +531,14 @@ e-pos</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontroleer die .gpgid-lêerhandtekening!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Handtekening vir %1 is ongeldig.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -555,23 +555,24 @@ e-pos</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG-ondertekening het misluk!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon nie %1 teken nie.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen ondertekeningsleutel nie!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen van die geheime handtekeningsleutels is beskikbaar nie.
+Jy sal nie die gebruikerslys kan verander nie!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -599,33 +600,33 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Herenkripsie het misluk</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon nie %1 vervang nie. Oorspronklik is herstel.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>Skep rugsteun-commit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Rugsteuntoewyding het misluk</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon nie git-status inspekteer nie. Herenkripsie is gestaak.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>Herenkripsie is gestaak omdat &apos;n git-rugsteun nie geskep kon word nie.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -641,27 +642,27 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG ID-verifikasie het misluk</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon nie .gpg-id vir gids verifieer nie.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon nie %1 herenkripteer nie</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Herenkripsie voltooi: %1 het geslaag, %2 het misluk</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>Herenkripsie voltooi: %1 lêers herenkripteer</translation>
     </message>
 </context>
 <context>
@@ -699,7 +700,7 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Herhaalde pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -709,7 +710,7 @@ U kan geen wagwoorde wat bygevoeg is ontsyfer nie!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sjablooninhoud sal ingestel word gebaseer op die GPG-weergawe.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1142,17 +1143,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>OTP-kode na knipbord gekopieer</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen OTP-kode in hierdie wagwoordinskrywing gevind nie</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen wagwoord gekies vir OTP-generering nie</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
@@ -1168,17 +1169,17 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1104"/>
         <location filename="../src/mainwindow.cpp" line="1113"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fout</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1105"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon nie vouer skep nie: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kon nie .gpg-id-lêer skep in: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1136"/>
@@ -1350,12 +1351,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/qtpass.cpp" line="303"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG-sleutelpaargenerering het misluk</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="377"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG-sleutelpaar suksesvol gegenereer</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="462"/>
@@ -1433,7 +1434,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kies watter gebruikers wagwoorde wat in hierdie vouer gestoor is, moet kan dekripteer.
+Let wel: Bestaande lêers sal nie gewysig word nie en behou die ou toestemmings totdat jy dit wysig.
+Blou inskrywings het &apos;n geheime sleutel beskikbaar, kies een hiervan om te kan dekripteer.
+Swart inskrywings het &apos;n enkripsiesleutel beskikbaar en dit word vertrou, kies een hiervan om ander mense toe te laat om te dekripteer.
+Rooi inskrywings is nie geldig nie, jy sal nie na hierdie kan enkripteer nie.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1505,17 +1510,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="309"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[ONGELDIGE] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="312"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[VERVAL] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="316"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[GEDEELTELIK] </translation>
     </message>
 </context>
 </TS>
