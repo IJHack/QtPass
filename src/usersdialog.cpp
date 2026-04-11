@@ -17,10 +17,11 @@
 #endif
 /**
  * @brief UsersDialog::UsersDialog basic constructor
+ * @param dir Password directory
  * @param parent
  */
-UsersDialog::UsersDialog(QString dir, QWidget *parent)
-    : QDialog(parent), ui(new Ui::UsersDialog), m_dir(std::move(dir)) {
+UsersDialog::UsersDialog(const QString &dir, QWidget *parent)
+    : QDialog(parent), ui(new Ui::UsersDialog), m_dir(dir) {
 
   ui->setupUi(this);
 
@@ -130,11 +131,6 @@ void UsersDialog::loadRecipients() {
  * @brief UsersDialog::~UsersDialog basic destructor.
  */
 UsersDialog::~UsersDialog() { delete ui; }
-
-#if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-Q_DECLARE_METATYPE(UserInfo *)
-Q_DECLARE_METATYPE(const UserInfo *)
-#endif
 
 /**
  * @brief UsersDialog::accept

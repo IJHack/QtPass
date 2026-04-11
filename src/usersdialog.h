@@ -34,7 +34,7 @@ public:
    * @param dir Password store directory path.
    * @param parent Parent widget.
    */
-  explicit UsersDialog(QString dir, QWidget *parent = nullptr);
+  explicit UsersDialog(const QString &dir, QWidget *parent = nullptr);
   /**
    * @brief Destructor.
    */
