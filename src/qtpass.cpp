@@ -470,6 +470,38 @@ void QtPass::clearClipboard() {
 }
 
 /**
+ * @brief Convert quint32 to byte array for Windows clipboard formats.
+ * @param value - DWORD value
+ * @return QByteArray with raw bytes
+ */
+static inline auto dwordBytes(quint32 value) -> QByteArray {
+  return QByteArray(reinterpret_cast<const char *>(&value), sizeof(value));
+}
+
+/**
+ * @brief Build clipboard MIME data with platform-specific security hints.
+ * @param text - Plain text to copy
+ * @return QMimeData with text and security hints
+ */
+auto buildClipboardMimeData(const QString &text) -> QMimeData * {
+  auto *mimeData = new QMimeData();
+  mimeData->setText(text);
+#ifdef Q_OS_LINUX
+  mimeData->setData("x-kde-passwordManagerHint", QByteArray("secret"));
+#endif
+#ifdef Q_OS_MAC
+  mimeData->setData("application/x-nspasteboard-concealed-type", QByteArray());
+#endif
+#ifdef Q_OS_WIN
+  mimeData->setData("ExcludeClipboardContentFromMonitorProcessing",
+                    dwordBytes(1));
+  mimeData->setData("CanIncludeInClipboardHistory", dwordBytes(0));
+  mimeData->setData("CanUploadToCloudClipboard", dwordBytes(0));
+#endif
+  return mimeData;
+}
+
+/**
  * @brief MainWindow::copyTextToClipboard copies text to your clipboard
  * @param text
  */
@@ -481,28 +513,8 @@ void QtPass::copyTextToClipboard(const QString &text) {
     mode = QClipboard::Selection;
   }
 
-#ifndef Q_OS_WIN
-  auto *mimeData = new QMimeData();
-  mimeData->setText(text);
-#ifdef Q_OS_LINUX
-  mimeData->setData("x-kde-passwordManagerHint", QByteArray("secret"));
-#endif
-#ifdef Q_OS_MAC
-  mimeData->setData("application/x-nspasteboard-concealed-type", QByteArray());
-#endif
+  auto *mimeData = buildClipboardMimeData(text);
   clip->setMimeData(mimeData, mode);
-#else
-  auto *mimeData = new QMimeData();
-  mimeData->setText(text);
-  const auto dwordBytes = [](quint32 value) {
-    return QByteArray(reinterpret_cast<const char *>(&value), sizeof(value));
-  };
-  mimeData->setData("ExcludeClipboardContentFromMonitorProcessing",
-                    dwordBytes(1));
-  mimeData->setData("CanIncludeInClipboardHistory", dwordBytes(0));
-  mimeData->setData("CanUploadToCloudClipboard", dwordBytes(0));
-  clip->setMimeData(mimeData, mode);
-#endif
 
   clippedText = text;
   m_mainWindow->showStatusMessage(tr("Copied to clipboard"));
