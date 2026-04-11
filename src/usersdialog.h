@@ -7,6 +7,7 @@
 
 #include <QDialog>
 #include <QList>
+#include <QRegularExpression>
 
 namespace Ui {
 class UsersDialog;
@@ -75,8 +76,10 @@ private slots:
 
 private:
   Ui::UsersDialog *ui;
-  QList<UserInfo> m_userList; /**< List of available GPG users */
-  QString m_dir;              /**< Password store directory */
+  QList<UserInfo> m_userList;            /**< List of available GPG users */
+  QString m_dir;                         /**< Password store directory */
+  QString m_lastFilter;                  /**< Last filter text for caching */
+  QRegularExpression m_cachedNameFilter; /**< Cached regex filter */
 
   void restoreDialogState();
   void connectSignals();
