@@ -14,6 +14,7 @@
 #ifndef Q_OS_WIN
 #include <QInputDialog>
 #include <QLineEdit>
+#include <QMimeData>
 #include <utility>
 #else
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
@@ -21,6 +22,7 @@
 #include <windows.h>
 #include <winnetwk.h>
 #undef DELETE
+#include <QMimeData>
 #endif
 
 #ifdef QT_DEBUG
@@ -473,11 +475,34 @@ void QtPass::clearClipboard() {
  */
 void QtPass::copyTextToClipboard(const QString &text) {
   QClipboard *clip = QApplication::clipboard();
-  if (!QtPassSettings::isUseSelection()) {
-    clip->setText(text, QClipboard::Clipboard);
-  } else {
-    clip->setText(text, QClipboard::Selection);
+
+  QClipboard::Mode mode = QClipboard::Clipboard;
+  if (QtPassSettings::isUseSelection() && clip->supportsSelection()) {
+    mode = QClipboard::Selection;
   }
+
+#ifndef Q_OS_WIN
+  auto *mimeData = new QMimeData();
+  mimeData->setText(text);
+#ifdef Q_OS_LINUX
+  mimeData->setData("x-kde-passwordManagerHint", QByteArray("secret"));
+#endif
+#ifdef Q_OS_MAC
+  mimeData->setData("application/x-nspasteboard-concealed-type", QByteArray());
+#endif
+  clip->setMimeData(mimeData, mode);
+#else
+  auto *mimeData = new QMimeData();
+  mimeData->setText(text);
+  const auto dwordBytes = [](quint32 value) {
+    return QByteArray(reinterpret_cast<const char *>(&value), sizeof(value));
+  };
+  mimeData->setData("ExcludeClipboardContentFromMonitorProcessing",
+                    dwordBytes(1));
+  mimeData->setData("CanIncludeInClipboardHistory", dwordBytes(0));
+  mimeData->setData("CanUploadToCloudClipboard", dwordBytes(0));
+  clip->setMimeData(mimeData, mode);
+#endif
 
   clippedText = text;
   m_mainWindow->showStatusMessage(tr("Copied to clipboard"));
