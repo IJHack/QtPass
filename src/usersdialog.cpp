@@ -46,6 +46,9 @@ void UsersDialog::connectSignals() {
 }
 
 void UsersDialog::restoreDialogState() {
+  /**
+   * @brief Restore dialog geometry from settings.
+   */
   QByteArray savedGeometry = QtPassSettings::getDialogGeometry("usersDialog");
   bool hasSavedGeometry = !savedGeometry.isEmpty();
   if (hasSavedGeometry) {
@@ -60,6 +63,10 @@ void UsersDialog::restoreDialogState() {
 }
 
 auto UsersDialog::loadGpgKeys() -> bool {
+  /**
+   * @brief Load GPG keys and determine secret key status.
+   * @return true if successful, false if keys could not be loaded.
+   */
   QList<UserInfo> users = QtPassSettings::getPass()->listKeys();
   if (users.isEmpty()) {
     QMessageBox::critical(parentWidget(), tr("Keylist missing"),
@@ -75,6 +82,10 @@ auto UsersDialog::loadGpgKeys() -> bool {
 }
 
 void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
+  /**
+   * @brief Mark which keys have secret counterparts.
+   * @param users List of users to mark.
+   */
   QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
   QSet<QString> secretKeyIds;
   for (const UserInfo &sec : secret_keys) {
@@ -88,9 +99,15 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
 }
 
 void UsersDialog::loadRecipients() {
-  QList<UserInfo> selectedUsers = QtPassSettings::getPass()->listKeys(
-      QtPassSettings::getPass()->getRecipientString(
-          m_dir.isEmpty() ? "" : m_dir, " "));
+  /**
+   * @brief Load recipients and handle missing keys.
+   */
+  int count = 0;
+  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
+      m_dir.isEmpty() ? "" : m_dir, " ", &count);
+
+  QList<UserInfo> selectedUsers =
+      QtPassSettings::getPass()->listKeys(recipients);
   QSet<QString> selectedKeyIds;
   for (const UserInfo &sel : selectedUsers) {
     selectedKeyIds.insert(sel.key_id);
@@ -100,10 +117,6 @@ void UsersDialog::loadRecipients() {
       user.enabled = true;
     }
   }
-
-  int count = 0;
-  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
-      m_dir.isEmpty() ? "" : m_dir, " ", &count);
 
   if (count > selectedUsers.size()) {
     QStringList allRecipients = QtPassSettings::getPass()->getRecipientList(
