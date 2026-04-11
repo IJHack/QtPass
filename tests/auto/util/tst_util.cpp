@@ -876,6 +876,7 @@ void tst_util::getRecipientListWithComments() {
   file.write("ABCDEF12\n# comment\n34567890\n");
   file.close();
 
+  PassStoreGuard guard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(passStore);
   QStringList recipients = Pass::getRecipientList(passStore);
   QCOMPARE(recipients.size(), 2);
@@ -895,13 +896,13 @@ void tst_util::getRecipientStringCount() {
   const QString originalPassStore = QtPassSettings::getPassStore();
   PassStoreGuard originalGuard(originalPassStore);
   QtPassSettings::setPassStore(passStore);
-  int count = -1;
+  int count = 0;
   QStringList parsedRecipients =
       Pass::getRecipientString(passStore, " ", &count);
   QStringList recipientsNoCount = Pass::getRecipientString(passStore, " ");
 
   QStringList expectedRecipients = {"ABCDEF12", "34567890"};
-  // Verify count was actually updated from initial value
+  // Verify count matches the expected number of parsed recipients.
   QVERIFY(count > 0);
   QCOMPARE(count, (int)expectedRecipients.size());
   // Verify both overloads return the same result
