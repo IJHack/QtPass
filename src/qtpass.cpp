@@ -470,15 +470,6 @@ void QtPass::clearClipboard() {
 }
 
 /**
- * @brief Convert quint32 to byte array for Windows clipboard formats.
- * @param value - DWORD value
- * @return QByteArray with raw bytes
- */
-static inline auto dwordBytes(quint32 value) -> QByteArray {
-  return QByteArray(reinterpret_cast<const char *>(&value), sizeof(value));
-}
-
-/**
  * @brief Build clipboard MIME data with platform-specific security hints.
  * @param text - Plain text to copy
  * @return QMimeData with text and security hints

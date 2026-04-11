@@ -124,6 +124,15 @@ class Pass;
  */
 auto buildClipboardMimeData(const QString &text) -> QMimeData *;
 
+/**
+ * @brief Convert quint32 to byte array for Windows clipboard formats.
+ * @param value - DWORD value
+ * @return QByteArray with raw bytes
+ */
+static inline auto dwordBytes(quint32 value) -> QByteArray {
+  return QByteArray(reinterpret_cast<const char *>(&value), sizeof(value));
+}
+
 class QtPass : public QObject {
   Q_OBJECT
 
