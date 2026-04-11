@@ -251,12 +251,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Gynhyrchu</translation>
+        <translation>Gynhyrchu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Cynhyrchu pâr allweddi GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="765"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dewisol: Allwedd GPG i lofnodi ffeiliau .gpg-id ar gyfer gwirio cyfanrwydd. Gadewch yn wag oni bai bod angen i chi amddiffyn y rhestr defnyddwyr rhag cael ei halogi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
@@ -401,7 +401,7 @@ e-mail</translation>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>Mae&apos;r maes hwn yn ofynnol</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -495,12 +495,12 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>Methodd llofnodi GPG!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Methwyd llofnodi %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -540,33 +540,33 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Methodd ail-amgryptio</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Methwyd disodli %1. Mae&apos;r gwreiddiol wedi&apos;i adfer.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>Creu ymrwymiad wrth gefn</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Methodd yr ymrwymiad wrth gefn</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Methwyd archwilio statws git. Cafodd yr ail-amgryptio ei atal.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cafodd yr ail-amgryptio ei atal oherwydd na ellid creu copi wrth gefn git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -582,27 +582,27 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Methodd dilysu ID GPG</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Methwyd gwirio .gpg-id ar gyfer y cyfeiriadur.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Methwyd ail-amgryptio %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ail-amgryptio wedi&apos;i gwblhau: llwyddodd %1, methodd %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>Ail-amgryptio wedi&apos;i gwblhau: %1 ffeil wedi&apos;u hail-amgryptio</translation>
     </message>
 </context>
 <context>
@@ -650,7 +650,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bydd cynnwys y templed yn cael ei osod yn seiliedig ar fersiwn GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -899,12 +899,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Cod OTP wedi&apos;i gopïo i&apos;r clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Ni chanfuwyd cod OTP yn y cofnod cyfrinair hwn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="516"/>
@@ -957,7 +957,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Dim cyfrinair wedi&apos;i ddewis ar gyfer cynhyrchu OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
@@ -1000,7 +1000,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Methwyd creu ffeil .gpg-id yn: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1136"/>
@@ -1161,12 +1161,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/qtpass.cpp" line="303"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Methodd cynhyrchu pâr allweddi GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="377"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>Pâr allweddi GPG wedi&apos;i gynhyrchu&apos;n llwyddiannus</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="462"/>
@@ -1254,7 +1254,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dewiswch pa ddefnyddwyr ddylai allu dadgryptio cyfrineiriau sydd wedi&apos;u storio yn y ffolder hon.
+Nodyn: Ni fydd ffeiliau presennol yn cael eu haddasu, a byddant yn cadw&apos;r hen ganiatâd nes i chi eu golygu.
+Mae gan gofnodion glas allwedd gyfrinachol ar gael, dewiswch un o&apos;r rhain i allu dadgryptio.
+Mae gan gofnodion du allwedd amgryptio ar gael ac mae&apos;n ddibynadwy, dewiswch un o&apos;r rhain i ganiatáu i bobl eraill ddadgryptio.
+Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
@@ -1294,17 +1298,17 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="309"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[ANNILYS] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="312"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[WEDI DOD I BEN] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="316"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[RHANNOL] </translation>
     </message>
 </context>
 </TS>
