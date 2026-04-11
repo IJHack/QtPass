@@ -78,6 +78,12 @@ private:
   QList<UserInfo> m_userList; /**< List of available GPG users */
   QString m_dir;              /**< Password store directory */
 
+  void restoreDialogState();
+  void connectSignals();
+  auto loadGpgKeys() -> bool;
+  void markSecretKeys(QList<UserInfo> &users);
+  void loadRecipients();
+
   /**
    * @brief Populate user list.
    * @param filter Optional filter text.
