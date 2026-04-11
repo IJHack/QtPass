@@ -1397,7 +1397,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
 Hinweis: Vorhandene Dateien bleiben unverändert und behalten ihre alten Berechtigungen, bis Sie sie bearbeiten.
 Blaue Einträge enthalten einen geheimen Schlüssel. Wählen Sie einen dieser Einträge aus, um die Entschlüsselung zu ermöglichen.
 Schwarze Einträge enthalten einen vertrauenswürdigen Verschlüsselungsschlüssel. Wählen Sie einen dieser Einträge aus, um anderen Benutzern die Entschlüsselung zu erlauben.
-Rote Einträge sind ungültig; Sie können mit diesen Einträgen keine Passwörter entschlüsseln.</translation>
+Rote Einträge sind ungültig; Sie können mit diesen Einträgen keine Passwörter verschlüsseln.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
