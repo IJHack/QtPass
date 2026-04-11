@@ -1,7 +1,5 @@
 <map id="QtPassSettings::getDialogSize" name="QtPassSettings::getDialogSize">
-<area shape="rect" id="Node000001" title="Get saved dialog size." alt="" coords="264,31,481,56"/>
+<area shape="rect" id="Node000001" title="Get saved dialog size." alt="" coords="264,5,481,31"/>
 <area shape="rect" id="Node000002" href="$class_keygen_dialog.html#a565b5698b7bb40720476d61b8b1b8548" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="5,5,216,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,34,216,31,217,26,251,29"/>
-<area shape="rect" id="Node000003" href="$class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07" title="Construct users dialog." alt="" coords="17,55,205,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,57,205,61,205,56,250,52"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,21,216,21,216,15,251,15"/>
 </map>
