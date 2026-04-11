@@ -502,7 +502,7 @@ void QtPass::copyTextToClipboard(const QString &text) {
   mimeData->setData("CanIncludeInClipboardHistory", dwordBytes(0));
   mimeData->setData("CanUploadToCloudClipboard", dwordBytes(0));
 
-  mode = QClipboard::Clipboard;
+  QClipboard::Mode mode = QClipboard::Clipboard;
   if (QtPassSettings::isUseSelection() && clip->supportsSelection()) {
     mode = QClipboard::Selection;
   }
