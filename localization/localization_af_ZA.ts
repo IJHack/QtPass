@@ -531,7 +531,7 @@ e-pos</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Kontroleer die .gpid-lêerhandtekening!</translation>
+        <translation>Kontroleer die .gpgid-lêerhandtekening!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
