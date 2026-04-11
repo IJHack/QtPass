@@ -22,6 +22,7 @@
 #include <windows.h>
 #include <winnetwk.h>
 #undef DELETE
+#include <QMimeData>
 #endif
 
 #ifdef QT_DEBUG
@@ -475,18 +476,13 @@ void QtPass::clearClipboard() {
 void QtPass::copyTextToClipboard(const QString &text) {
   QClipboard *clip = QApplication::clipboard();
 
+#ifndef Q_OS_WIN
   auto *mimeData = new QMimeData();
   mimeData->setText(text);
 #ifdef Q_OS_LINUX
   mimeData->setData("x-kde-passwordManagerHint", QByteArray("1"));
 #endif
-#ifdef Q_OS_WIN
-  mimeData->setData("ExcludeClipboardContentFromMonitorProcessing",
-                    QByteArray("1"));
-  mimeData->setData("CanIncludeInClipboardHistory", QByteArray("0"));
-  mimeData->setData("CanUploadToCloudClipboard", QByteArray("0"));
-#endif
-#ifdef Q_OS_MACOS
+#ifdef Q_OS_MAC
   mimeData->setData("exclude_from_history", QByteArray("1"));
 #endif
 
@@ -495,6 +491,13 @@ void QtPass::copyTextToClipboard(const QString &text) {
   } else {
     clip->setMimeData(mimeData, QClipboard::Selection);
   }
+#else
+  if (!QtPassSettings::isUseSelection()) {
+    clip->setText(text, QClipboard::Clipboard);
+  } else {
+    clip->setText(text, QClipboard::Selection);
+  }
+#endif
 
   clippedText = text;
   m_mainWindow->showStatusMessage(tr("Copied to clipboard"));
