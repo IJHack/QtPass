@@ -4,6 +4,7 @@
 #define SRC_QTPASS_H_
 
 #include <QDialog>
+#include <QMimeData>
 #include <QObject>
 #include <QPixmap>
 #include <QProcess>
@@ -115,6 +116,24 @@ class Pass;
  * @param prefix Optional prefix to prepend to the output before display.
  * @param postfix Optional postfix to append to the output before display.
  */
+
+/**
+ * @brief Build clipboard MIME data with platform-specific security hints.
+ * @param text - Plain text to copy
+ * @return QMimeData* - Ownership transferred to caller. Caller must delete
+ *         or transfer to QClipboard::setMimeData which takes ownership.
+ */
+auto buildClipboardMimeData(const QString &text) -> QMimeData *;
+
+/**
+ * @brief Convert quint32 to byte array for Windows clipboard formats.
+ * @param value - DWORD value
+ * @return QByteArray with raw bytes
+ */
+static inline auto dwordBytes(quint32 value) -> QByteArray {
+  return QByteArray(reinterpret_cast<const char *>(&value), sizeof(value));
+}
+
 class QtPass : public QObject {
   Q_OBJECT
 

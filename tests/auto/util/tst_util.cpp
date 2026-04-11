@@ -14,6 +14,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/qprogressindicator.h"
+#include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/simpletransaction.h"
 #include "../../../src/userinfo.h"
@@ -77,6 +78,10 @@ private Q_SLOTS:
   void qProgressIndicatorStartStop();
   void namedValueBasic();
   void namedValueMultiple();
+  void buildClipboardMimeDataLinux();
+  void buildClipboardMimeDataWindows();
+  void buildClipboardMimeDataMac();
+  void buildClipboardMimeDataDword();
   void imitatePassResolveMoveDestination();
   void imitatePassResolveMoveDestinationForce();
   void imitatePassResolveMoveDestinationDestExistsNoForce();
@@ -1092,6 +1097,85 @@ void tst_util::findBinaryInPathTempExecutableInTempDir() {
   QVERIFY2(QFileInfo(result).isAbsolute(), "Result must be an absolute path");
 #else
   QSKIP("Temp-executable test is Unix-only");
+#endif
+}
+
+void tst_util::buildClipboardMimeDataLinux() {
+#ifdef Q_OS_LINUX
+  QMimeData *mime = buildClipboardMimeData(QStringLiteral("testpassword"));
+  QVERIFY(mime != nullptr);
+  QVERIFY2(mime->hasText(), "Mime data should contain text");
+  QVERIFY2(mime->text() == "testpassword", "Text should match");
+  QVERIFY2(mime->data("x-kde-passwordManagerHint") == QByteArray("secret"),
+           "Linux should set password hint");
+  delete mime;
+#else
+  QSKIP("Linux-only test");
+#endif
+}
+
+void tst_util::buildClipboardMimeDataWindows() {
+#ifdef Q_OS_WIN
+  QMimeData *mime = buildClipboardMimeData(QStringLiteral("testpassword"));
+  QVERIFY(mime != nullptr);
+  QVERIFY2(mime->hasText(), "Mime data should contain text");
+  QVERIFY2(mime->text() == "testpassword", "Text should match");
+  QByteArray excl = mime->data("ExcludeClipboardContentFromMonitorProcessing");
+  QVERIFY2(excl.size() == 4, "Windows ExcludeClipboard should be 4 bytes");
+  QVERIFY2(excl == dwordBytes(1), "Windows ExcludeClipboard should be DWORD 1");
+  QVERIFY(mime->hasFormat("ExcludeClipboardContentFromMonitorProcessing"));
+  QVERIFY(mime->hasFormat("CanIncludeInClipboardHistory"));
+  QVERIFY(mime->hasFormat("CanUploadToCloudClipboard"));
+  QByteArray canHistory = mime->data("CanIncludeInClipboardHistory");
+  QVERIFY2(canHistory.size() == 4,
+           "CanIncludeInClipboardHistory should be 4 bytes");
+  QVERIFY2(canHistory == dwordBytes(0),
+           "CanIncludeInClipboardHistory should be DWORD 0");
+  QByteArray cloudClip = mime->data("CanUploadToCloudClipboard");
+  QVERIFY2(cloudClip.size() == 4,
+           "CanUploadToCloudClipboard should be 4 bytes");
+  QVERIFY2(cloudClip == dwordBytes(0),
+           "CanUploadToCloudClipboard should be DWORD 0");
+  delete mime;
+#else
+  QSKIP("Windows-only test");
+#endif
+}
+
+void tst_util::buildClipboardMimeDataDword() {
+#ifdef Q_OS_WIN
+  QByteArray zero = dwordBytes(0);
+  QVERIFY2(zero.size() == 4, "DWORD should be 4 bytes");
+  QVERIFY2(zero.at(0) == char(0), "DWORD 0 should be 0x00");
+  QVERIFY2(zero.at(1) == char(0), "DWORD 0 should be 0x00");
+  QVERIFY2(zero.at(2) == char(0), "DWORD 0 should be 0x00");
+  QVERIFY2(zero.at(3) == char(0), "DWORD 0 should be 0x00");
+
+  QByteArray one = dwordBytes(1);
+  QVERIFY2(one.size() == 4, "DWORD should be 4 bytes");
+  QVERIFY2(one.at(0) == char(1), "DWORD 1 should be 0x01");
+  QVERIFY2(one.at(1) == char(0), "DWORD 1 should be 0x00");
+  QVERIFY2(one.at(2) == char(0), "DWORD 1 should be 0x00");
+  QVERIFY2(one.at(3) == char(0), "DWORD 1 should be 0x00");
+#else
+  QSKIP("Windows-only test");
+#endif
+}
+
+void tst_util::buildClipboardMimeDataMac() {
+#ifdef Q_OS_MAC
+  QMimeData *mime = buildClipboardMimeData(QStringLiteral("testpassword"));
+  QVERIFY(mime != nullptr);
+  QVERIFY2(mime->hasText(), "Mime data should contain text");
+  QVERIFY2(mime->text() == "testpassword", "Text should match");
+  QVERIFY2(mime->hasFormat("application/x-nspasteboard-concealed-type"),
+           "macOS should have concealed type format");
+  QVERIFY2(mime->data("application/x-nspasteboard-concealed-type") ==
+               QByteArray(),
+           "macOS concealed type should be empty");
+  delete mime;
+#else
+  QSKIP("macOS-only test");
 #endif
 }
 
