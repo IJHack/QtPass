@@ -531,7 +531,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Tjek .gpid-filens signatur!</translation>
+        <translation>Tjek .gpgid-filens signatur!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
