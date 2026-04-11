@@ -476,21 +476,21 @@ void QtPass::clearClipboard() {
 void QtPass::copyTextToClipboard(const QString &text) {
   QClipboard *clip = QApplication::clipboard();
 
+  QClipboard::Mode mode = QClipboard::Clipboard;
+  if (QtPassSettings::isUseSelection() && clip->supportsSelection()) {
+    mode = QClipboard::Selection;
+  }
+
 #ifndef Q_OS_WIN
   auto *mimeData = new QMimeData();
   mimeData->setText(text);
 #ifdef Q_OS_LINUX
-  mimeData->setData("x-kde-passwordManagerHint", QByteArray("1"));
+  mimeData->setData("x-kde-passwordManagerHint", QByteArray("secret"));
 #endif
 #ifdef Q_OS_MAC
-  mimeData->setData("exclude_from_history", QByteArray("1"));
+  mimeData->setData("application/x-nspasteboard-concealed-type", QByteArray());
 #endif
-
-  if (!QtPassSettings::isUseSelection()) {
-    clip->setMimeData(mimeData, QClipboard::Clipboard);
-  } else {
-    clip->setMimeData(mimeData, QClipboard::Selection);
-  }
+  clip->setMimeData(mimeData, mode);
 #else
   auto *mimeData = new QMimeData();
   mimeData->setText(text);
@@ -501,12 +501,7 @@ void QtPass::copyTextToClipboard(const QString &text) {
                     dwordBytes(1));
   mimeData->setData("CanIncludeInClipboardHistory", dwordBytes(0));
   mimeData->setData("CanUploadToCloudClipboard", dwordBytes(0));
-
-  if (!QtPassSettings::isUseSelection()) {
-    clip->setMimeData(mimeData, QClipboard::Clipboard);
-  } else {
-    clip->setMimeData(mimeData, QClipboard::Selection);
-  }
+  clip->setMimeData(mimeData, mode);
 #endif
 
   clippedText = text;
