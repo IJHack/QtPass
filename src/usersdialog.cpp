@@ -26,7 +26,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 
   restoreDialogState();
   if (!loadGpgKeys()) {
-    connectSignals();
+    connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
     return;
   }
 
