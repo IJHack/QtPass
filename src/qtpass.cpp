@@ -14,6 +14,7 @@
 #ifndef Q_OS_WIN
 #include <QInputDialog>
 #include <QLineEdit>
+#include <QMimeData>
 #include <utility>
 #else
 #define WIN32_LEAN_AND_MEAN /*_KILLING_MACHINE*/
@@ -473,10 +474,17 @@ void QtPass::clearClipboard() {
  */
 void QtPass::copyTextToClipboard(const QString &text) {
   QClipboard *clip = QApplication::clipboard();
+
+  auto *mimeData = new QMimeData();
+  mimeData->setText(text);
+#ifdef Q_OS_LINUX
+  mimeData->setData("x-kde-passwordManagerHint", QByteArray("1"));
+#endif
+
   if (!QtPassSettings::isUseSelection()) {
-    clip->setText(text, QClipboard::Clipboard);
+    clip->setMimeData(mimeData, QClipboard::Clipboard);
   } else {
-    clip->setText(text, QClipboard::Selection);
+    clip->setMimeData(mimeData, QClipboard::Selection);
   }
 
   clippedText = text;
