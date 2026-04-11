@@ -1424,42 +1424,42 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
         <translation type="vanished">No se puede obtener lista de llaves gpg disponibles</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="44"/>
+        <location filename="../src/usersdialog.cpp" line="73"/>
         <source>Keylist missing</source>
         <translation>Falta la lista de claves</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="45"/>
+        <location filename="../src/usersdialog.cpp" line="74"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>No se pudo recuperar la lista de claves GPG disponibles</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="91"/>
+        <location filename="../src/usersdialog.cpp" line="133"/>
         <source>Key not found in keyring</source>
         <translation>La clave no se encuentra en el llavero</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="251"/>
+        <location filename="../src/usersdialog.cpp" line="282"/>
         <source>created</source>
         <translation>creado</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="255"/>
+        <location filename="../src/usersdialog.cpp" line="286"/>
         <source>expires</source>
         <translation>caduca</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="278"/>
+        <location filename="../src/usersdialog.cpp" line="309"/>
         <source>[INVALID] </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="281"/>
+        <location filename="../src/usersdialog.cpp" line="312"/>
         <source>[EXPIRED] </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="285"/>
+        <location filename="../src/usersdialog.cpp" line="316"/>
         <source>[PARTIAL] </source>
         <translation type="unfinished"></translation>
     </message>

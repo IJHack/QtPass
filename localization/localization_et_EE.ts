@@ -1515,42 +1515,42 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="44"/>
+        <location filename="../src/usersdialog.cpp" line="73"/>
         <source>Keylist missing</source>
         <translation>Võtmete loend puudub</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="45"/>
+        <location filename="../src/usersdialog.cpp" line="74"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Saadavalolevate GPG-võtmete loendi laadimine ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="91"/>
+        <location filename="../src/usersdialog.cpp" line="133"/>
         <source>Key not found in keyring</source>
         <translation>Võtit ei leidu võtmerõngas</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="251"/>
+        <location filename="../src/usersdialog.cpp" line="282"/>
         <source>created</source>
         <translation>loodud</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="255"/>
+        <location filename="../src/usersdialog.cpp" line="286"/>
         <source>expires</source>
         <translation>aegub</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="278"/>
+        <location filename="../src/usersdialog.cpp" line="309"/>
         <source>[INVALID] </source>
         <translation>[VIGANE] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="281"/>
+        <location filename="../src/usersdialog.cpp" line="312"/>
         <source>[EXPIRED] </source>
         <translation>[AEGUNUD] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="285"/>
+        <location filename="../src/usersdialog.cpp" line="316"/>
         <source>[PARTIAL] </source>
         <translation>[OSALINE] </translation>
     </message>
