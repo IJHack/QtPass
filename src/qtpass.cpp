@@ -492,10 +492,20 @@ void QtPass::copyTextToClipboard(const QString &text) {
     clip->setMimeData(mimeData, QClipboard::Selection);
   }
 #else
+  auto *mimeData = new QMimeData();
+  mimeData->setText(text);
+  const auto dwordBytes = [](quint32 value) {
+    return QByteArray(reinterpret_cast<const char *>(&value), sizeof(value));
+  };
+  mimeData->setData("ExcludeClipboardContentFromMonitorProcessing",
+                    dwordBytes(1));
+  mimeData->setData("CanIncludeInClipboardHistory", dwordBytes(0));
+  mimeData->setData("CanUploadToCloudClipboard", dwordBytes(0));
+
   if (!QtPassSettings::isUseSelection()) {
-    clip->setText(text, QClipboard::Clipboard);
+    clip->setMimeData(mimeData, QClipboard::Clipboard);
   } else {
-    clip->setText(text, QClipboard::Selection);
+    clip->setMimeData(mimeData, QClipboard::Selection);
   }
 #endif
 
