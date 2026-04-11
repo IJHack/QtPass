@@ -29,8 +29,13 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
     return;
   }
 
+  loadRecipients();
   populateList();
 
+  connectSignals();
+}
+
+void UsersDialog::connectSignals() {
   connect(ui->buttonBox, &QDialogButtonBox::accepted, this,
           &UsersDialog::accept);
   connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
@@ -63,6 +68,13 @@ auto UsersDialog::loadGpgKeys() -> bool {
     return false;
   }
 
+  markSecretKeys(users);
+
+  m_userList = users;
+  return true;
+}
+
+void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
   QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
   QSet<QString> secretKeyIds;
   for (const UserInfo &sec : secret_keys) {
@@ -73,11 +85,6 @@ auto UsersDialog::loadGpgKeys() -> bool {
       user.have_secret = true;
     }
   }
-
-  m_userList = users;
-  loadRecipients();
-
-  return true;
 }
 
 void UsersDialog::loadRecipients() {

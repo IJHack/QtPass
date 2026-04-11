@@ -78,18 +78,10 @@ private:
   QList<UserInfo> m_userList; /**< List of available GPG users */
   QString m_dir;              /**< Password store directory */
 
-  /**
-   * @brief Restore dialog geometry from settings.
-   */
   void restoreDialogState();
-  /**
-   * @brief Load GPG keys and determine secret key status.
-   * @return true if successful, false if keys could not be loaded.
-   */
+  void connectSignals();
   auto loadGpgKeys() -> bool;
-  /**
-   * @brief Load recipients and handle missing keys.
-   */
+  void markSecretKeys(QList<UserInfo> &users);
   void loadRecipients();
 
   /**
