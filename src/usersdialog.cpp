@@ -46,10 +46,10 @@ void UsersDialog::connectSignals() {
   ui->lineEdit->setClearButtonEnabled(true);
 }
 
+/**
+ * @brief Restore dialog geometry from settings.
+ */
 void UsersDialog::restoreDialogState() {
-  /**
-   * @brief Restore dialog geometry from settings.
-   */
   QByteArray savedGeometry = QtPassSettings::getDialogGeometry("usersDialog");
   bool hasSavedGeometry = !savedGeometry.isEmpty();
   if (hasSavedGeometry) {
