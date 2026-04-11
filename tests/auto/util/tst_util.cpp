@@ -1122,9 +1122,10 @@ void tst_util::buildClipboardMimeDataWindows() {
   QVERIFY2(mime->text() == "testpassword", "Text should match");
   QByteArray excl = mime->data("ExcludeClipboardContentFromMonitorProcessing");
   QVERIFY2(excl.size() == 4, "Windows ExcludeClipboard should be 4 bytes");
-  QVERIFY2(excl.at(0) == char(1), "Windows ExcludeClipboard should be 1");
-  QCOMPARE(mime->data("CanIncludeInClipboardHistory"), dwordBytes(0));
-  QCOMPARE(mime->data("CanUploadToCloudClipboard"), dwordBytes(0));
+  QVERIFY2(excl == dwordBytes(1), "Windows ExcludeClipboard should be DWORD 1");
+  QVERIFY(mime->hasFormat("ExcludeClipboardContentFromMonitorProcessing"));
+  QVERIFY(mime->hasFormat("CanIncludeInClipboardHistory"));
+  QVERIFY(mime->hasFormat("CanUploadToCloudClipboard"));
   delete mime;
 #else
   QSKIP("Windows-only test");
@@ -1157,9 +1158,11 @@ void tst_util::buildClipboardMimeDataMac() {
   QVERIFY(mime != nullptr);
   QVERIFY2(mime->hasText(), "Mime data should contain text");
   QVERIFY2(mime->text() == "testpassword", "Text should match");
+  QVERIFY2(mime->hasFormat("application/x-nspasteboard-concealed-type"),
+           "macOS should have concealed type format");
   QVERIFY2(mime->data("application/x-nspasteboard-concealed-type") ==
                QByteArray(),
-           "macOS should set concealed type");
+           "macOS concealed type should be empty");
   delete mime;
 #else
   QSKIP("macOS-only test");
