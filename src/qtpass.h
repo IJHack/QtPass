@@ -120,7 +120,8 @@ class Pass;
 /**
  * @brief Build clipboard MIME data with platform-specific security hints.
  * @param text - Plain text to copy
- * @return QMimeData with text and security hints
+ * @return QMimeData* - Ownership transferred to caller. Caller must delete
+ *         or transfer to QClipboard::setMimeData which takes ownership.
  */
 auto buildClipboardMimeData(const QString &text) -> QMimeData *;
 
