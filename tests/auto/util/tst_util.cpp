@@ -14,6 +14,7 @@
 #include "../../../src/pass.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/qprogressindicator.h"
+#include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/simpletransaction.h"
 #include "../../../src/userinfo.h"
@@ -77,6 +78,9 @@ private Q_SLOTS:
   void qProgressIndicatorStartStop();
   void namedValueBasic();
   void namedValueMultiple();
+  void buildClipboardMimeDataLinux();
+  void buildClipboardMimeDataWindows();
+  void buildClipboardMimeDataDword();
   void imitatePassResolveMoveDestination();
   void imitatePassResolveMoveDestinationForce();
   void imitatePassResolveMoveDestinationDestExistsNoForce();
@@ -1092,6 +1096,55 @@ void tst_util::findBinaryInPathTempExecutableInTempDir() {
   QVERIFY2(QFileInfo(result).isAbsolute(), "Result must be an absolute path");
 #else
   QSKIP("Temp-executable test is Unix-only");
+#endif
+}
+
+void tst_util::buildClipboardMimeDataLinux() {
+#ifdef Q_OS_LINUX
+  QMimeData *mime = buildClipboardMimeData(QStringLiteral("testpassword"));
+  QVERIFY(mime != nullptr);
+  QVERIFY2(mime->hasText(), "Mime data should contain text");
+  QVERIFY2(mime->text() == "testpassword", "Text should match");
+  QVERIFY2(mime->data("x-kde-passwordManagerHint") == QByteArray("secret"),
+           "Linux should set password hint");
+  delete mime;
+#else
+  QSKIP("Linux-only test");
+#endif
+}
+
+void tst_util::buildClipboardMimeDataWindows() {
+#ifdef Q_OS_WIN
+  QMimeData *mime = buildClipboardMimeData(QStringLiteral("testpassword"));
+  QVERIFY(mime != nullptr);
+  QVERIFY2(mime->hasText(), "Mime data should contain text");
+  QVERIFY2(mime->text() == "testpassword", "Text should match");
+  QByteArray excl = mime->data("ExcludeClipboardContentFromMonitorProcessing");
+  QVERIFY2(excl.size() == 4, "Windows ExcludeClipboard should be 4 bytes");
+  QVERIFY2(excl.at(0) == char(1), "Windows ExcludeClipboard should be 1");
+  delete mime;
+#else
+  QSKIP("Windows-only test");
+#endif
+}
+
+void tst_util::buildClipboardMimeDataDword() {
+#ifdef Q_OS_WIN
+  QByteArray zero = dwordBytes(0);
+  QVERIFY2(zero.size() == 4, "DWORD should be 4 bytes");
+  QVERIFY2(zero.at(0) == char(0), "DWORD 0 should be 0x00");
+  QVERIFY2(zero.at(1) == char(0), "DWORD 0 should be 0x00");
+  QVERIFY2(zero.at(2) == char(0), "DWORD 0 should be 0x00");
+  QVERIFY2(zero.at(3) == char(0), "DWORD 0 should be 0x00");
+
+  QByteArray one = dwordBytes(1);
+  QVERIFY2(one.size() == 4, "DWORD should be 4 bytes");
+  QVERIFY2(one.at(0) == char(1), "DWORD 1 should be 0x01");
+  QVERIFY2(one.at(1) == char(0), "DWORD 1 should be 0x00");
+  QVERIFY2(one.at(2) == char(0), "DWORD 1 should be 0x00");
+  QVERIFY2(one.at(3) == char(0), "DWORD 1 should be 0x00");
+#else
+  QSKIP("Windows-only test");
 #endif
 }
 

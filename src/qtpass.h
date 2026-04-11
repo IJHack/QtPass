@@ -4,6 +4,7 @@
 #define SRC_QTPASS_H_
 
 #include <QDialog>
+#include <QMimeData>
 #include <QObject>
 #include <QPixmap>
 #include <QProcess>
@@ -115,6 +116,14 @@ class Pass;
  * @param prefix Optional prefix to prepend to the output before display.
  * @param postfix Optional postfix to append to the output before display.
  */
+
+/**
+ * @brief Build clipboard MIME data with platform-specific security hints.
+ * @param text - Plain text to copy
+ * @return QMimeData with text and security hints
+ */
+auto buildClipboardMimeData(const QString &text) -> QMimeData *;
+
 class QtPass : public QObject {
   Q_OBJECT
 
