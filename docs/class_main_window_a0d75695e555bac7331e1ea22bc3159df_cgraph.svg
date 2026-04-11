@@ -283,20 +283,20 @@ var sectionId = 'dynsection-20';
 </a>
 </g>
 </g>
-<!-- Node19 -->
-<g id="Node000019" class="node">
-<title>Node19</title>
-<g id="a_Node000019"><a xlink:href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" target="_top" xlink:title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements.">
+<!-- Node20 -->
+<g id="Node000020" class="node">
+<title>Node20</title>
+<g id="a_Node000020"><a xlink:href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" target="_top" xlink:title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements.">
 <polygon fill="white" stroke="#666666" points="375,-30 219,-30 219,0 375,0 375,-30"/>
 <text text-anchor="start" x="227" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::setUiElements</text>
 <text text-anchor="middle" x="297" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">Enabled</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node19 -->
-<g id="edge18_Node000001_Node000019" class="edge">
-<title>Node1&#45;&gt;Node19</title>
-<g id="a_edge18_Node000001_Node000019"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node20 -->
+<g id="edge19_Node000001_Node000020" class="edge">
+<title>Node1&#45;&gt;Node20</title>
+<g id="a_edge19_Node000001_Node000020"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M89.13,-262.32C97.46,-226.8 131.21,-102.53 208,-40 210.25,-38.17 212.63,-36.47 215.11,-34.89"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="216.83,-37.94 223.86,-30.01 213.42,-31.83 216.83,-37.94"/>
 </a>
@@ -320,19 +320,19 @@ var sectionId = 'dynsection-20';
 </a>
 </g>
 </g>
-<!-- Node18 -->
-<g id="Node000018" class="node">
-<title>Node18</title>
-<g id="a_Node000018"><a xlink:href="class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056" target="_top" xlink:title="Get clipboard type as enum.">
+<!-- Node19 -->
+<g id="Node000019" class="node">
+<title>Node19</title>
+<g id="a_Node000019"><a xlink:href="class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056" target="_top" xlink:title="Get clipboard type as enum.">
 <polygon fill="white" stroke="#666666" points="603,-49.5 422,-49.5 422,-30.5 603,-30.5 603,-49.5"/>
 <text text-anchor="middle" x="512.5" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::getClipBoardType</text>
 </a>
 </g>
 </g>
-<!-- Node13&#45;&gt;Node18 -->
-<g id="edge17_Node000013_Node000018" class="edge">
-<title>Node13&#45;&gt;Node18</title>
-<g id="a_edge17_Node000013_Node000018"><a xlink:title=" ">
+<!-- Node13&#45;&gt;Node19 -->
+<g id="edge18_Node000013_Node000019" class="edge">
+<title>Node13&#45;&gt;Node19</title>
+<g id="a_edge18_Node000013_Node000019"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M361.19,-52.67C377.12,-51.33 394.62,-49.85 411.86,-48.4"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="412.3,-51.88 421.97,-47.55 411.72,-44.9 412.3,-51.88"/>
 </a>
@@ -341,9 +341,9 @@ var sectionId = 'dynsection-20';
 <!-- Node15 -->
 <g id="Node000015" class="node">
 <title>Node15</title>
-<g id="a_Node000015"><a xlink:href="class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" target="_top" xlink:title="Get whether to use autoclear for clipboard.">
-<polygon fill="white" stroke="#666666" points="816,-123.5 647,-123.5 647,-104.5 816,-104.5 816,-123.5"/>
-<text text-anchor="middle" x="731.5" y="-111.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseAutoclear</text>
+<g id="a_Node000015"><a xlink:href="qtpass_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99" target="_top" xlink:title="Build clipboard MIME data with platform&#45;specific security hints.">
+<polygon fill="white" stroke="#666666" points="800.5,-142.5 662.5,-142.5 662.5,-123.5 800.5,-123.5 800.5,-142.5"/>
+<text text-anchor="middle" x="731.5" y="-130.5" font-family="Helvetica,sans-Serif" font-size="10.00">buildClipboardMimeData</text>
 </a>
 </g>
 </g>
@@ -351,17 +351,17 @@ var sectionId = 'dynsection-20';
 <g id="edge14_Node000014_Node000015" class="edge">
 <title>Node14&#45;&gt;Node15</title>
 <g id="a_edge14_Node000014_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M569.38,-86.53C598.38,-91.47 633.99,-97.54 664.35,-102.72"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="663.98,-106.21 674.43,-104.44 665.16,-99.31 663.98,-106.21"/>
+<path fill="none" stroke="#63b8ff" d="M542.18,-86.58C567.48,-94.81 605.42,-106.64 639,-115 648.09,-117.27 657.75,-119.43 667.26,-121.42"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="666.58,-124.85 677.08,-123.42 667.98,-117.99 666.58,-124.85"/>
 </a>
 </g>
 </g>
 <!-- Node16 -->
 <g id="Node000016" class="node">
 <title>Node16</title>
-<g id="a_Node000016"><a xlink:href="class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" target="_top" xlink:title="Get whether to use selection (X11) for clipboard.">
-<polygon fill="white" stroke="#666666" points="815,-86.5 648,-86.5 648,-67.5 815,-67.5 815,-86.5"/>
-<text text-anchor="middle" x="731.5" y="-74.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseSelection</text>
+<g id="a_Node000016"><a xlink:href="class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" target="_top" xlink:title="Get whether to use autoclear for clipboard.">
+<polygon fill="white" stroke="#666666" points="816,-105.5 647,-105.5 647,-86.5 816,-86.5 816,-105.5"/>
+<text text-anchor="middle" x="731.5" y="-93.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseAutoclear</text>
 </a>
 </g>
 </g>
@@ -369,17 +369,17 @@ var sectionId = 'dynsection-20';
 <g id="edge15_Node000014_Node000016" class="edge">
 <title>Node14&#45;&gt;Node16</title>
 <g id="a_edge15_Node000014_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M590.62,-77C605.81,-77 621.89,-77 637.54,-77"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="637.75,-80.5 647.75,-77 637.75,-73.5 637.75,-80.5"/>
+<path fill="none" stroke="#63b8ff" d="M590.62,-83.75C605.51,-85.06 621.26,-86.44 636.61,-87.78"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="636.37,-91.27 646.63,-88.66 636.98,-84.3 636.37,-91.27"/>
 </a>
 </g>
 </g>
 <!-- Node17 -->
 <g id="Node000017" class="node">
 <title>Node17</title>
-<g id="a_Node000017"><a xlink:href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" target="_top" xlink:title="Displays message in status bar.">
-<polygon fill="white" stroke="#666666" points="824,-49.5 639,-49.5 639,-30.5 824,-30.5 824,-49.5"/>
-<text text-anchor="middle" x="731.5" y="-37.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::showStatusMessage</text>
+<g id="a_Node000017"><a xlink:href="class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" target="_top" xlink:title="Get whether to use selection (X11) for clipboard.">
+<polygon fill="white" stroke="#666666" points="815,-68.5 648,-68.5 648,-49.5 815,-49.5 815,-68.5"/>
+<text text-anchor="middle" x="731.5" y="-56.5" font-family="Helvetica,sans-Serif" font-size="10.00">QtPassSettings::isUseSelection</text>
 </a>
 </g>
 </g>
@@ -387,8 +387,26 @@ var sectionId = 'dynsection-20';
 <g id="edge16_Node000014_Node000017" class="edge">
 <title>Node14&#45;&gt;Node17</title>
 <g id="a_edge16_Node000014_Node000017"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M569.38,-67.47C598.38,-62.53 633.99,-56.46 664.35,-51.28"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="665.16,-54.69 674.43,-49.56 663.98,-47.79 665.16,-54.69"/>
+<path fill="none" stroke="#63b8ff" d="M590.62,-70.6C605.81,-69.34 621.89,-68.01 637.54,-66.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="638.07,-70.18 647.75,-65.86 637.49,-63.2 638.07,-70.18"/>
+</a>
+</g>
+</g>
+<!-- Node18 -->
+<g id="Node000018" class="node">
+<title>Node18</title>
+<g id="a_Node000018"><a xlink:href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" target="_top" xlink:title="Displays message in status bar.">
+<polygon fill="white" stroke="#666666" points="824,-31.5 639,-31.5 639,-12.5 824,-12.5 824,-31.5"/>
+<text text-anchor="middle" x="731.5" y="-19.5" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::showStatusMessage</text>
+</a>
+</g>
+</g>
+<!-- Node14&#45;&gt;Node18 -->
+<g id="edge17_Node000014_Node000018" class="edge">
+<title>Node14&#45;&gt;Node18</title>
+<g id="a_edge17_Node000014_Node000018"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M572.35,-67.48C582.69,-65.16 593.26,-62.35 603,-59 619.92,-53.19 622.1,-46.87 639,-41 646.82,-38.28 655.16,-35.9 663.5,-33.81"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="664.33,-37.21 673.26,-31.51 662.72,-30.4 664.33,-37.21"/>
 </a>
 </g>
 </g>

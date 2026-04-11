@@ -24,16 +24,18 @@
 <area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="130,349,152,385,186,434,231,486,284,530,297,538,294,542,281,535,227,490,182,438,147,388,126,352"/>
 <area shape="rect" id="Node000013" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="316,611,487,636"/>
 <area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="128,350,145,397,176,465,198,501,223,536,252,568,284,596,304,607,301,611,281,600,248,572,219,539,193,504,172,467,140,399,123,352"/>
-<area shape="rect" id="Node000019" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="297,661,505,701"/>
-<area shape="poly" id="edge18_Node000001_Node000019" title=" " alt="" coords="127,350,142,405,172,485,193,528,218,571,249,611,284,645,294,652,291,656,281,649,245,614,214,574,188,531,167,487,137,406,122,352"/>
+<area shape="rect" id="Node000020" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="297,661,505,701"/>
+<area shape="poly" id="edge19_Node000001_Node000020" title=" " alt="" coords="127,350,142,405,172,485,193,528,218,571,249,611,284,645,294,652,291,656,281,649,245,614,214,574,188,531,167,487,137,406,122,352"/>
 <area shape="rect" id="Node000014" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="585,585,793,611"/>
 <area shape="poly" id="edge13_Node000013_Node000014" title=" " alt="" coords="487,613,571,606,572,611,487,618"/>
-<area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056" title="Get clipboard type as enum." alt="" coords="568,635,809,660"/>
-<area shape="poly" id="edge17_Node000013_Node000018" title=" " alt="" coords="487,628,555,633,554,639,487,633"/>
-<area shape="rect" id="Node000015" href="$class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" title="Get whether to use autoclear for clipboard." alt="" coords="868,536,1093,561"/>
-<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="764,583,891,561,892,566,765,588"/>
-<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" title="Get whether to use selection (X11) for clipboard." alt="" coords="869,585,1092,611"/>
-<area shape="poly" id="edge15_Node000014_Node000016" title=" " alt="" coords="793,595,855,595,855,601,793,601"/>
-<area shape="rect" id="Node000017" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="857,635,1104,660"/>
-<area shape="poly" id="edge16_Node000014_Node000017" title=" " alt="" coords="765,608,892,630,891,635,764,613"/>
+<area shape="rect" id="Node000019" href="$class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056" title="Get clipboard type as enum." alt="" coords="568,635,809,660"/>
+<area shape="poly" id="edge18_Node000013_Node000019" title=" " alt="" coords="487,628,555,633,554,639,487,633"/>
+<area shape="rect" id="Node000015" href="$qtpass_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99" title="Build clipboard MIME data with platform&#45;specific security hints." alt="" coords="889,511,1073,536"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="727,583,857,545,894,536,896,541,858,550,729,588"/>
+<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" title="Get whether to use autoclear for clipboard." alt="" coords="868,560,1093,585"/>
+<area shape="poly" id="edge15_Node000014_Node000016" title=" " alt="" coords="793,586,854,581,854,586,793,592"/>
+<area shape="rect" id="Node000017" href="$class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" title="Get whether to use selection (X11) for clipboard." alt="" coords="869,609,1092,635"/>
+<area shape="poly" id="edge16_Node000014_Node000017" title=" " alt="" coords="793,604,856,609,855,614,793,609"/>
+<area shape="rect" id="Node000018" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="857,659,1104,684"/>
+<area shape="poly" id="edge17_Node000014_Node000018" title=" " alt="" coords="769,608,810,620,835,632,858,644,891,653,889,658,856,648,832,636,808,624,768,613"/>
 </map>

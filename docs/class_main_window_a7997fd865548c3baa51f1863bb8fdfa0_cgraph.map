@@ -1,18 +1,20 @@
 <map id="MainWindow::passOtpHandler" name="MainWindow::passOtpHandler">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,155,223,180"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="279,53,487,79"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,152,199,125,270,95,318,80,320,85,272,101,201,129,142,157"/>
-<area shape="rect" id="Node000005" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="544,104,791,129"/>
-<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="189,152,270,141,404,128,530,120,530,126,404,134,271,146,189,157"/>
-<area shape="rect" id="Node000006" href="$class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89" title=" " alt="" coords="298,155,469,180"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="223,165,284,165,284,170,223,170"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be" title="Get whether to use panel autoclear." alt="" coords="271,205,496,245"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="175,177,276,199,275,204,174,183"/>
-<area shape="rect" id="Node000008" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="279,269,487,309"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="136,178,195,215,272,254,291,262,289,267,270,259,192,220,133,182"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" title="Get whether to use autoclear for clipboard." alt="" coords="555,5,780,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="459,51,578,30,578,36,459,56"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" title="Get whether to use selection (X11) for clipboard." alt="" coords="556,55,779,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="487,64,542,64,542,69,487,69"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="456,76,582,99,581,104,455,81"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,204,223,229"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="279,103,487,128"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,201,199,174,270,145,318,129,320,134,272,150,201,179,142,206"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="544,153,791,179"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="189,201,270,190,404,178,530,170,530,175,404,183,271,195,189,207"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89" title=" " alt="" coords="298,204,469,229"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="223,214,284,214,284,219,223,219"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be" title="Get whether to use panel autoclear." alt="" coords="271,254,496,294"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="175,227,276,249,275,254,174,232"/>
+<area shape="rect" id="Node000009" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="279,318,487,358"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="136,227,195,264,272,304,291,311,289,316,270,308,192,269,133,232"/>
+<area shape="rect" id="Node000003" href="$qtpass_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99" title="Build clipboard MIME data with platform&#45;specific security hints." alt="" coords="575,5,759,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="407,100,467,70,543,39,573,31,574,36,545,45,469,75,409,105"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" title="Get whether to use autoclear for clipboard." alt="" coords="555,55,780,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="459,100,578,80,578,85,459,105"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" title="Get whether to use selection (X11) for clipboard." alt="" coords="556,104,779,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="487,113,542,113,542,119,487,118"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="456,125,582,148,581,153,455,131"/>
 </map>

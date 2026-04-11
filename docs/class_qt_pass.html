@@ -140,56 +140,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:abd2dacf3e88b411ef39ec78f49bbdd2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Construct a <a class="el" href="class_qt_pass.html">QtPass</a> instance associated with the given main window. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">mainWindow</td><td>Pointer to the application's <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a> used for UI interactions. Destroy the <a class="el" href="class_qt_pass.html">QtPass</a> instance and perform necessary cleanup. Initialize internal state and connections required for <a class="el" href="class_qt_pass.html">QtPass</a> operation. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if initialization succeeded, <code>false</code> otherwise. Update the tracked clipped text value. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">text</td><td>Primary text to store as clipped content. </td></tr>
-    <tr><td class="paramname">p_output</td><td>Optional additional output text used when computing the clipped value. Remove any stored clipped text value. Configure and start the timer that will clear the system clipboard after a delay. Return whether this instance was created in a fresh-start state. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><code>true</code> if in fresh-start state, <code>false</code> otherwise. Set the fresh-start state for this instance. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fs</td><td>New fresh-start state value. Set up internal references and Qt connections related to the associated <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a>. Connect <a class="el" href="class_qt_pass.html">QtPass</a> handlers to the provided <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance's signals. </td></tr>
-    <tr><td class="paramname">pass</td><td>Pointer to the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance whose signals will be connected. Perform WebDAV mounting operations required by the application. Clear the system clipboard contents immediately. Copy the provided text into the system clipboard and trigger any clipboard lifecycle handling. </td></tr>
-    <tr><td class="paramname">text</td><td>Text to copy into the clipboard. Request display of the provided text as a QR code in the UI. </td></tr>
-    <tr><td class="paramname">text</td><td>Text to convert into a QR code for display. Create a modal dialog configured to display the given QR code image. </td></tr>
-    <tr><td class="paramname">image</td><td>Pixmap containing the rendered QR code. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to a QDialog configured to show the provided image. Handle errors reported by the internal QProcess instance. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">error</td><td>The process error code emitted by QProcess. Handle an external process exiting with an error code and message. </td></tr>
-    <tr><td class="paramname">exitCode</td><td>Numeric exit code returned by the process. </td></tr>
-    <tr><td class="paramname">message</td><td>Associated error or status message from the process. Handle completion of an external process and provide its stdout and stderr. </td></tr>
-    <tr><td class="paramname">stdout</td><td>Output captured from the process's standard output. </td></tr>
-    <tr><td class="paramname">stderr</td><td>Output captured from the process's standard error. React to changes in the pass store and update relevant UI/state. </td></tr>
-    <tr><td class="paramname">arg1</td><td>First string parameter describing the change (context-specific). </td></tr>
-    <tr><td class="paramname">arg2</td><td>Second string parameter describing the change (context-specific). Handle completion of a "pass show" handler and process its output. </td></tr>
-    <tr><td class="paramname">output</td><td>Output produced by the pass show handler. Initiate a Git push operation for the repository managed by the application. Handle completion of an insert operation and react to its outputs. </td></tr>
-    <tr><td class="paramname">arg1</td><td>First result string related to the insert operation. </td></tr>
-    <tr><td class="paramname">arg2</td><td>Second result string related to the insert operation. Handle completion of a key generation operation and its outputs. </td></tr>
-    <tr><td class="paramname">p_output</td><td>Standard output produced during key generation. </td></tr>
-    <tr><td class="paramname">p_errout</td><td>Standard error produced during key generation. Display the provided output string inside the application's text browser widget, optionally wrapping with prefix and postfix strings. </td></tr>
-    <tr><td class="paramname">output</td><td>Text to display in the text browser. </td></tr>
-    <tr><td class="paramname">prefix</td><td>Optional prefix to prepend to the output before display. </td></tr>
-    <tr><td class="paramname">postfix</td><td>Optional postfix to append to the output before display. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#_a2">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
+<div class="textblock"><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#_a2">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00118">118</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00137">137</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa9f6862ff8875c387423b462ac7f9cad" name="aa9f6862ff8875c387423b462ac7f9cad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9f6862ff8875c387423b462ac7f9cad">&#9670;&#160;</a></span>QtPass()</h2>
@@ -364,13 +318,13 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a55">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00476">476</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00499">499</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="class_qt_pass_acba134fb5281aedee11899a03976aa95_cgraph.svg" width="514" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_qt_pass_acba134fb5281aedee11899a03976aa95_cgraph.svg" width="514" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -415,7 +369,7 @@ Static Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The created popup dialog </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00546">546</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00549">549</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -486,7 +440,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a21">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00129">129</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00148">148</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
@@ -577,7 +531,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_qt_pass_a74adba9dd6915c9db50762279b62be89_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_qt_pass_a74adba9dd6915c9db50762279b62be89_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
@@ -615,7 +569,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a27">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00130">130</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00149">149</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 <div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-17-summary" class="dynsummary" style="display:block;">
@@ -660,7 +614,7 @@ Static Public Member Functions</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a99">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00518">518</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00521">521</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary" style="display:block;">
