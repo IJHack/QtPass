@@ -1115,7 +1115,7 @@ void tst_util::buildClipboardMimeDataLinux() {
 }
 
 void tst_util::buildClipboardMimeDataWindows() {
-`#ifdef` Q_OS_WIN
+#ifdef Q_OS_WIN
   QMimeData *mime = buildClipboardMimeData(QStringLiteral("testpassword"));
   QVERIFY(mime != nullptr);
   QVERIFY2(mime->hasText(), "Mime data should contain text");
@@ -1126,10 +1126,6 @@ void tst_util::buildClipboardMimeDataWindows() {
   QCOMPARE(mime->data("CanIncludeInClipboardHistory"), dwordBytes(0));
   QCOMPARE(mime->data("CanUploadToCloudClipboard"), dwordBytes(0));
   delete mime;
-`#else`
-  QSKIP("Windows-only test");
-`#endif`
-}
 #else
   QSKIP("Windows-only test");
 #endif
