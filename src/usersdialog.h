@@ -82,9 +82,27 @@ private:
   QRegularExpression m_cachedNameFilter; /**< Cached regex filter */
 
   void restoreDialogState();
+
+  /**
+   * @brief Connect dialog signals.
+   */
   void connectSignals();
+
+  /**
+   * @brief Load GPG keys and determine secret key status.
+   * @return true if successful, false if keys could not be loaded.
+   */
   auto loadGpgKeys() -> bool;
+
+  /**
+   * @brief Mark which keys have secret counterparts.
+   * @param users List of users to mark.
+   */
   void markSecretKeys(QList<UserInfo> &users);
+
+  /**
+   * @brief Load recipients and handle missing keys.
+   */
   void loadRecipients();
 
   /**
