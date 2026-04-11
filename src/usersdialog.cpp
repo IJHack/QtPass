@@ -24,7 +24,23 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 
   ui->setupUi(this);
 
-  // Restore dialog state
+  restoreDialogState();
+  if (!loadGpgKeys()) {
+    return;
+  }
+
+  populateList();
+
+  connect(ui->buttonBox, &QDialogButtonBox::accepted, this,
+          &UsersDialog::accept);
+  connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
+  connect(ui->listWidget, &QListWidget::itemChanged, this,
+          &UsersDialog::itemChange);
+
+  ui->lineEdit->setClearButtonEnabled(true);
+}
+
+void UsersDialog::restoreDialogState() {
   QByteArray savedGeometry = QtPassSettings::getDialogGeometry("usersDialog");
   bool hasSavedGeometry = !savedGeometry.isEmpty();
   if (hasSavedGeometry) {
@@ -35,16 +51,16 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
   } else if (hasSavedGeometry) {
     move(QtPassSettings::getDialogPos("usersDialog"));
     resize(QtPassSettings::getDialogSize("usersDialog"));
-  } else {
-    // Let window manager handle positioning for first launch
   }
+}
 
+auto UsersDialog::loadGpgKeys() -> bool {
   QList<UserInfo> users = QtPassSettings::getPass()->listKeys();
   if (users.isEmpty()) {
-    QMessageBox::critical(parent, tr("Keylist missing"),
+    QMessageBox::critical(parentWidget(), tr("Keylist missing"),
                           tr("Could not fetch list of available GPG keys"));
     reject();
-    return;
+    return false;
   }
 
   QList<UserInfo> secret_keys = QtPassSettings::getPass()->listKeys("", true);
@@ -58,52 +74,46 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
     }
   }
 
-  QList<UserInfo> selected_users;
-  int count = 0;
+  m_userList = users;
+  loadRecipients();
 
-  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
-      m_dir.isEmpty() ? "" : m_dir, " ", &count);
-  if (!recipients.isEmpty()) {
-    selected_users = QtPassSettings::getPass()->listKeys(recipients);
-  }
+  return true;
+}
+
+void UsersDialog::loadRecipients() {
+  QList<UserInfo> selectedUsers = QtPassSettings::getPass()->listKeys(
+      QtPassSettings::getPass()->getRecipientString(
+          m_dir.isEmpty() ? "" : m_dir, " "));
   QSet<QString> selectedKeyIds;
-  for (const UserInfo &sel : selected_users) {
+  for (const UserInfo &sel : selectedUsers) {
     selectedKeyIds.insert(sel.key_id);
   }
-  for (auto &user : users) {
+  for (auto &user : m_userList) {
     if (selectedKeyIds.contains(user.key_id)) {
       user.enabled = true;
     }
   }
 
-  if (count > selected_users.size()) {
-    // Some keys seem missing from keyring, add them separately
+  int count = 0;
+  QStringList recipients = QtPassSettings::getPass()->getRecipientString(
+      m_dir.isEmpty() ? "" : m_dir, " ", &count);
+
+  if (count > selectedUsers.size()) {
     QStringList allRecipients = QtPassSettings::getPass()->getRecipientList(
         m_dir.isEmpty() ? "" : m_dir);
     QSet<QString> missingKeyRecipients;
     for (const QString &recipient : allRecipients) {
-      if (missingKeyRecipients.contains(recipient) ||
+      if (!missingKeyRecipients.contains(recipient) &&
           QtPassSettings::getPass()->listKeys(recipient).empty()) {
         missingKeyRecipients.insert(recipient);
         UserInfo i;
         i.enabled = true;
         i.key_id = recipient;
         i.name = " ?? " + tr("Key not found in keyring");
-        users.append(i);
+        m_userList.append(i);
       }
     }
   }
-
-  m_userList = users;
-  populateList();
-
-  connect(ui->buttonBox, &QDialogButtonBox::accepted, this,
-          &UsersDialog::accept);
-  connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
-  connect(ui->listWidget, &QListWidget::itemChanged, this,
-          &UsersDialog::itemChange);
-
-  ui->lineEdit->setClearButtonEnabled(true);
 }
 
 /**

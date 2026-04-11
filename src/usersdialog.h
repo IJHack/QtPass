@@ -79,6 +79,20 @@ private:
   QString m_dir;              /**< Password store directory */
 
   /**
+   * @brief Restore dialog geometry from settings.
+   */
+  void restoreDialogState();
+  /**
+   * @brief Load GPG keys and determine secret key status.
+   * @return true if successful, false if keys could not be loaded.
+   */
+  auto loadGpgKeys() -> bool;
+  /**
+   * @brief Load recipients and handle missing keys.
+   */
+  void loadRecipients();
+
+  /**
    * @brief Populate user list.
    * @param filter Optional filter text.
    */
