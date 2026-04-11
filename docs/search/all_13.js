@@ -16,7 +16,7 @@ var searchData=
   ['userdialog_13',['userDialog',['../class_main_window.html#abf0633782804fe58d8590d2e10f138d7',1,'MainWindow']]],
   ['userinfo_14',['userinfo',['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo::UserInfo()'],['../struct_user_info.html',1,'UserInfo']]],
   ['userinfo_2eh_15',['userinfo.h',['../userinfo_8h.html',1,'']]],
-  ['usersdialog_16',['usersdialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07',1,'UsersDialog::UsersDialog()']]],
+  ['usersdialog_16',['usersdialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#ae6e0d6aeb3519a01c154a6f087c1d9fb',1,'UsersDialog::UsersDialog()']]],
   ['usersdialog_2ecpp_17',['usersdialog.cpp',['../usersdialog_8cpp.html',1,'']]],
   ['usersdialog_2eh_18',['usersdialog.h',['../usersdialog_8h.html',1,'']]],
   ['useselection_19',['useselection',['../class_settings_constants.html#a0d0ae02026d7f4d75430d36987a3da3f',1,'SettingsConstants::useSelection'],['../class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6',1,'ConfigDialog::useSelection()']]],
