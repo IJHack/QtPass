@@ -1126,6 +1126,16 @@ void tst_util::buildClipboardMimeDataWindows() {
   QVERIFY(mime->hasFormat("ExcludeClipboardContentFromMonitorProcessing"));
   QVERIFY(mime->hasFormat("CanIncludeInClipboardHistory"));
   QVERIFY(mime->hasFormat("CanUploadToCloudClipboard"));
+  QByteArray canHistory = mime->data("CanIncludeInClipboardHistory");
+  QVERIFY2(canHistory.size() == 4,
+           "CanIncludeInClipboardHistory should be 4 bytes");
+  QVERIFY2(canHistory == dwordBytes(0),
+           "CanIncludeInClipboardHistory should be DWORD 0");
+  QByteArray cloudClip = mime->data("CanUploadToCloudClipboard");
+  QVERIFY2(cloudClip.size() == 4,
+           "CanUploadToCloudClipboard should be 4 bytes");
+  QVERIFY2(cloudClip == dwordBytes(0),
+           "CanUploadToCloudClipboard should be DWORD 0");
   delete mime;
 #else
   QSKIP("Windows-only test");
