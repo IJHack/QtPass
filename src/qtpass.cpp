@@ -480,6 +480,15 @@ void QtPass::copyTextToClipboard(const QString &text) {
 #ifdef Q_OS_LINUX
   mimeData->setData("x-kde-passwordManagerHint", QByteArray("1"));
 #endif
+#ifdef Q_OS_WIN
+  mimeData->setData("ExcludeClipboardContentFromMonitorProcessing",
+                    QByteArray("1"));
+  mimeData->setData("CanIncludeInClipboardHistory", QByteArray("0"));
+  mimeData->setData("CanUploadToCloudClipboard", QByteArray("0"));
+#endif
+#ifdef Q_OS_MACOS
+  mimeData->setData("exclude_from_history", QByteArray("1"));
+#endif
 
   if (!QtPassSettings::isUseSelection()) {
     clip->setMimeData(mimeData, QClipboard::Clipboard);
