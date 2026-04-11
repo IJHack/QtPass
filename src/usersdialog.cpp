@@ -26,6 +26,7 @@ UsersDialog::UsersDialog(QString dir, QWidget *parent)
 
   restoreDialogState();
   if (!loadGpgKeys()) {
+    connectSignals();
     return;
   }
 
