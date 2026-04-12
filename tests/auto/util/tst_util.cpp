@@ -82,6 +82,9 @@ private Q_SLOTS:
   void buildClipboardMimeDataLinux();
   void buildClipboardMimeDataWindows();
   void buildClipboardMimeDataMac();
+  void utilRegexEnsuresGpg();
+  void utilRegexProtocol();
+  void utilRegexNewLines();
   void buildClipboardMimeDataDword();
   void imitatePassResolveMoveDestination();
   void imitatePassResolveMoveDestinationForce();
@@ -1196,6 +1199,31 @@ void tst_util::buildClipboardMimeDataMac() {
 #else
   QSKIP("macOS-only test");
 #endif
+}
+
+void tst_util::utilRegexEnsuresGpg() {
+  const QRegularExpression &rex = Util::endsWithGpg();
+  QVERIFY2(rex.isValid(), "Regex should be valid");
+  QVERIFY2(rex.match("file.gpg").hasMatch(), "Should match .gpg extension");
+  QVERIFY2(!rex.match("file.txt").hasMatch(), "Should not match .txt");
+  QVERIFY2(!rex.match("test.gpgx").hasMatch(), "Should not match .gpgx");
+}
+
+void tst_util::utilRegexProtocol() {
+  const QRegularExpression &rex = Util::protocolRegex();
+  QVERIFY2(rex.isValid(), "Protocol regex should be valid");
+  QVERIFY2(rex.match("http://example.com").hasMatch(), "Should match http://");
+  QVERIFY2(rex.match("https://secure.com").hasMatch(), "Should match https://");
+  QVERIFY2(rex.match("ssh://host").hasMatch(), "Should match ssh://");
+  QVERIFY2(!rex.match("://no-protocol").hasMatch(), "Should not match invalid");
+}
+
+void tst_util::utilRegexNewLines() {
+  const QRegularExpression &rex = Util::newLinesRegex();
+  QVERIFY2(rex.isValid(), "Newlines regex should be valid");
+  QVERIFY2(rex.match("\n").hasMatch(), "Should match newline");
+  QVERIFY2(rex.match("line1\nline2").hasMatch(),
+           "Should match embedded newline");
 }
 
 QTEST_MAIN(tst_util)
