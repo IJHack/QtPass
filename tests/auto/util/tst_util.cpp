@@ -370,8 +370,10 @@ void tst_util::regexPatternEdgeCases() {
   QVERIFY(proto.match("webdavs://secure.example.com").hasMatch());
   QVERIFY(proto.match("ftps://ftp.server.org").hasMatch());
   QVERIFY(proto.match("sftp://user:pass@host").hasMatch());
-  // Note: protocolRegex is intended for network protocols only and should not
-  // match local file URLs such as file:///, so this is expected to be false.
+  // Note: protocolRegex() is intentionally scoped to remote/network endpoints
+  // used by URL handling. Local file URLs (file:///) are excluded by design
+  // because they represent local paths, not network protocols. If this behavior
+  // needs to change, update Util::protocolRegex() and this test together.
   QVERIFY(!proto.match("file:///path/to/file").hasMatch());
 
   const QRegularExpression &nl = Util::newLinesRegex();
@@ -1093,7 +1095,7 @@ void tst_util::findBinaryInPathTempExecutableInTempDir() {
   const QString uniquePath = pathDir + QDir::separator() + uniqueName;
 
   QFile exec(uniquePath);
-  if (!exec.open(QIODevice::WriteOnly | QIODevice::Text)) {
+  if (!exec.open(QIODevice::WriteOnly)) {
     QSKIP("Cannot write to the PATH directory containing 'sh' (need write "
           "access)");
   }
