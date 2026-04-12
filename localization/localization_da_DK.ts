@@ -1283,93 +1283,93 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="158"/>
+        <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
         <translation>Genererer GPG-nøglepar</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="220"/>
+        <location filename="../src/qtpass.cpp" line="222"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Kunne ikke forbinde til WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="237"/>
+        <location filename="../src/qtpass.cpp" line="239"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV-kodeord</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="238"/>
+        <location filename="../src/qtpass.cpp" line="240"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Indtast WebDAV-kodeord:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="255"/>
+        <location filename="../src/qtpass.cpp" line="257"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav afsluttedes uventet
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="259"/>
+        <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Kunne ikke starte fusedav for at forbinde til WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="272"/>
+        <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="275"/>
+        <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="278"/>
+        <location filename="../src/qtpass.cpp" line="280"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="281"/>
+        <location filename="../src/qtpass.cpp" line="283"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="284"/>
+        <location filename="../src/qtpass.cpp" line="286"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="287"/>
+        <location filename="../src/qtpass.cpp" line="289"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="303"/>
+        <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
         <translation>Generering af GPG-nøglepar mislykkedes</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="377"/>
+        <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
         <translation>GPG-nøglepar blev genereret</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="462"/>
+        <location filename="../src/qtpass.cpp" line="464"/>
         <source>Clipboard cleared</source>
         <translation>Udklipsholder ryddet</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="464"/>
+        <location filename="../src/qtpass.cpp" line="466"/>
         <source>Clipboard not cleared</source>
         <translation>Udklipsholder ikke ryddet</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="483"/>
+        <location filename="../src/qtpass.cpp" line="511"/>
         <source>Copied to clipboard</source>
         <translation>Kopieret til udklipsholderen</translation>
     </message>
@@ -1483,42 +1483,42 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="73"/>
+        <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Keylist missing</source>
         <translation>Nøglelisten mangler</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="74"/>
+        <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Kunne ikke hente listen over tilgængelige GPG-nøgler</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="133"/>
+        <location filename="../src/usersdialog.cpp" line="148"/>
         <source>Key not found in keyring</source>
         <translation>Nøgle ikke fundet i nøglering</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="282"/>
+        <location filename="../src/usersdialog.cpp" line="301"/>
         <source>created</source>
         <translation>oprettet</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="286"/>
+        <location filename="../src/usersdialog.cpp" line="305"/>
         <source>expires</source>
         <translation>udløber</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="309"/>
+        <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
         <translation>[UGYLDIG] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="312"/>
+        <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
         <translation>[UDLØBET] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="316"/>
+        <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
         <translation>[DELVIS] </translation>
     </message>

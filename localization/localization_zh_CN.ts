@@ -1275,93 +1275,93 @@ Expire-Date: 0
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="158"/>
+        <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
         <translation>正在生成 GPG 密钥对</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="220"/>
+        <location filename="../src/qtpass.cpp" line="222"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>无法连接 WebDAV：
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="237"/>
+        <location filename="../src/qtpass.cpp" line="239"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV 密码</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="238"/>
+        <location filename="../src/qtpass.cpp" line="240"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>输入 WebDAV 密码以连接：</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="255"/>
+        <location filename="../src/qtpass.cpp" line="257"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav 意外退出
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="259"/>
+        <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>无法连接 WebDAV，fusedav无法启动：
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="272"/>
+        <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::FailedToStart</source>
         <translation>系统错误：启动失败 QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="275"/>
+        <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::Crashed</source>
         <translation>系统错误：程序崩溃 QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="278"/>
+        <location filename="../src/qtpass.cpp" line="280"/>
         <source>QProcess::Timedout</source>
         <translation>系统错误：响应超时 QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="281"/>
+        <location filename="../src/qtpass.cpp" line="283"/>
         <source>QProcess::ReadError</source>
         <translation>系统错误：读取错误 QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="284"/>
+        <location filename="../src/qtpass.cpp" line="286"/>
         <source>QProcess::WriteError</source>
         <translation>系统错误：写入错误 QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="287"/>
+        <location filename="../src/qtpass.cpp" line="289"/>
         <source>QProcess::UnknownError</source>
         <translation>系统错误：未知错误 QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="303"/>
+        <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
         <translation>GPG 密钥对生成失败</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="377"/>
+        <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
         <translation>成功生成了 GPG 密钥对</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="462"/>
+        <location filename="../src/qtpass.cpp" line="464"/>
         <source>Clipboard cleared</source>
         <translation>剪贴板已清除</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="464"/>
+        <location filename="../src/qtpass.cpp" line="466"/>
         <source>Clipboard not cleared</source>
         <translation>剪贴板未清除</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="483"/>
+        <location filename="../src/qtpass.cpp" line="511"/>
         <source>Copied to clipboard</source>
         <translation>复制到剪贴板</translation>
     </message>
@@ -1475,42 +1475,42 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation type="vanished">无法获取可用的 GPG 密钥列表</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="73"/>
+        <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Keylist missing</source>
         <translation>缺少密钥列表</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="74"/>
+        <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>无法获取可用GPG密钥的列表</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="133"/>
+        <location filename="../src/usersdialog.cpp" line="148"/>
         <source>Key not found in keyring</source>
         <translation>所选密钥未找到</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="282"/>
+        <location filename="../src/usersdialog.cpp" line="301"/>
         <source>created</source>
         <translation>创建于</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="286"/>
+        <location filename="../src/usersdialog.cpp" line="305"/>
         <source>expires</source>
         <translation>过期于</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="309"/>
+        <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
         <translation>[无效] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="312"/>
+        <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
         <translation>[已过期] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="316"/>
+        <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
         <translation>[不完整] </translation>
     </message>

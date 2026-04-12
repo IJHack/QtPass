@@ -1315,93 +1315,93 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="158"/>
+        <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
         <translation>Loome uut GPG võtmepaari</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="220"/>
+        <location filename="../src/qtpass.cpp" line="222"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Ühendamine WebDAVi serveriga ei õnnestunud:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="237"/>
+        <location filename="../src/qtpass.cpp" line="239"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAVi salasõna</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="238"/>
+        <location filename="../src/qtpass.cpp" line="240"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Sisesta WebDAVi ühenduse jaoks salasõna:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="255"/>
+        <location filename="../src/qtpass.cpp" line="257"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav lõpetas ootamatult töö
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="259"/>
+        <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>WebDAVi ühenduse jaoks vajaliku fusedavi käivitamine ei õnnestunud:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="272"/>
+        <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="275"/>
+        <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="278"/>
+        <location filename="../src/qtpass.cpp" line="280"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="281"/>
+        <location filename="../src/qtpass.cpp" line="283"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="284"/>
+        <location filename="../src/qtpass.cpp" line="286"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="287"/>
+        <location filename="../src/qtpass.cpp" line="289"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="303"/>
+        <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
         <translation>GPG võtmepaari loomine ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="377"/>
+        <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
         <translation>GPG võtmepaari loomine õnnestus</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="462"/>
+        <location filename="../src/qtpass.cpp" line="464"/>
         <source>Clipboard cleared</source>
         <translation>Lõikelaua sisu on kustutatud</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="464"/>
+        <location filename="../src/qtpass.cpp" line="466"/>
         <source>Clipboard not cleared</source>
         <translation>Lõikelaua sisu pole kustutatud</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="483"/>
+        <location filename="../src/qtpass.cpp" line="511"/>
         <source>Copied to clipboard</source>
         <translation>Kopeeritud lõikelauale</translation>
     </message>
@@ -1515,42 +1515,42 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
         <translation type="vanished">Unable to get list of available gpg keys</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="73"/>
+        <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Keylist missing</source>
         <translation>Võtmete loend puudub</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="74"/>
+        <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Saadavalolevate GPG-võtmete loendi laadimine ei õnnestunud</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="133"/>
+        <location filename="../src/usersdialog.cpp" line="148"/>
         <source>Key not found in keyring</source>
         <translation>Võtit ei leidu võtmerõngas</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="282"/>
+        <location filename="../src/usersdialog.cpp" line="301"/>
         <source>created</source>
         <translation>loodud</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="286"/>
+        <location filename="../src/usersdialog.cpp" line="305"/>
         <source>expires</source>
         <translation>aegub</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="309"/>
+        <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
         <translation>[VIGANE] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="312"/>
+        <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
         <translation>[AEGUNUD] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="316"/>
+        <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
         <translation>[OSALINE] </translation>
     </message>

@@ -1326,93 +1326,93 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="158"/>
+        <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
         <translation>Nieuwe gpg-sleutelbos genereren</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="220"/>
+        <location filename="../src/qtpass.cpp" line="222"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Kan niet verbinden met WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="237"/>
+        <location filename="../src/qtpass.cpp" line="239"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV-wachtwoord</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="238"/>
+        <location filename="../src/qtpass.cpp" line="240"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Voer het wachtwoord in om te verbinden met WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="255"/>
+        <location filename="../src/qtpass.cpp" line="257"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav is onverwachts afgesloten
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="259"/>
+        <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Kan fusedav niet verbinden met WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="272"/>
+        <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::FailedToStart</source>
         <translation>Proces kan niet worden gestart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="275"/>
+        <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::Crashed</source>
         <translation>Proces is gecrasht</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="278"/>
+        <location filename="../src/qtpass.cpp" line="280"/>
         <source>QProcess::Timedout</source>
         <translation>Proces is verlopen</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="281"/>
+        <location filename="../src/qtpass.cpp" line="283"/>
         <source>QProcess::ReadError</source>
         <translation>Leesfout in proces</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="284"/>
+        <location filename="../src/qtpass.cpp" line="286"/>
         <source>QProcess::WriteError</source>
         <translation>Kan niet wegschrijven naar proces</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="287"/>
+        <location filename="../src/qtpass.cpp" line="289"/>
         <source>QProcess::UnknownError</source>
         <translation>Onbekende fout in proces</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="303"/>
+        <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
         <translation>Het genereren van GPG-sleutelparen is mislukt</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="377"/>
+        <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
         <translation>GPG-sleutelpaar succesvol gegenereerd</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="462"/>
+        <location filename="../src/qtpass.cpp" line="464"/>
         <source>Clipboard cleared</source>
         <translation>Klembord gewist</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="464"/>
+        <location filename="../src/qtpass.cpp" line="466"/>
         <source>Clipboard not cleared</source>
         <translation>Het klembord is niet gewist</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="483"/>
+        <location filename="../src/qtpass.cpp" line="511"/>
         <source>Copied to clipboard</source>
         <translation>Gekopieerd naar het klembord</translation>
     </message>
@@ -1526,42 +1526,42 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
         <translation type="vanished">Kan lijst van beschikbare gpg sleutels niet opvragen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="73"/>
+        <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Keylist missing</source>
         <translation>Sleutellijst ontbreekt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="74"/>
+        <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Kan geen lijst met beschikbare gpg-sleutels ophalen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="133"/>
+        <location filename="../src/usersdialog.cpp" line="148"/>
         <source>Key not found in keyring</source>
         <translation>Sleutel niet aangetroffen in sleutelbos</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="282"/>
+        <location filename="../src/usersdialog.cpp" line="301"/>
         <source>created</source>
         <translation>aangemaakt</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="286"/>
+        <location filename="../src/usersdialog.cpp" line="305"/>
         <source>expires</source>
         <translation>vervalt op</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="309"/>
+        <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
         <translation>[ONGELDIG] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="312"/>
+        <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
         <translation>[VERLOPEN] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="316"/>
+        <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
         <translation>[GEDEELTELIJK] </translation>
     </message>
