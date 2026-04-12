@@ -5,6 +5,7 @@
 #include "ui_usersdialog.h"
 #include <QApplication>
 #include <QCloseEvent>
+#include <QDateTime>
 #include <QKeyEvent>
 #include <QMessageBox>
 #include <QRegularExpression>
@@ -112,11 +113,35 @@ void UsersDialog::loadRecipients() {
   if (count > selectedUsers.size()) {
     QStringList allRecipients = QtPassSettings::getPass()->getRecipientList(
         m_dir.isEmpty() ? "" : m_dir);
-    QSet<QString> missingKeyRecipients;
+
+    // Use bulk lookup to resolve all recipients at once (single gpg call)
+    // This preserves the original email/UID resolution behavior
+    QList<UserInfo> resolvedKeys =
+        QtPassSettings::getPass()->listKeys(allRecipients);
+    // Track resolved recipients by their resolved key_id
+    QSet<QString> resolvedKeyIds;
+    for (const UserInfo &key : resolvedKeys) {
+      resolvedKeyIds.insert(key.key_id);
+    }
+
+    // Accept a recipient as resolved if GPG returned a key for it
+    // (either its exact key_id, or GPG resolved email/UID/fingerprint to it)
+    QSet<QString> resolvedRecipients;
+    for (const UserInfo &key : resolvedKeys) {
+      resolvedRecipients.insert(key.key_id);
+      // Also add the name (email/UID) of resolved keys as valid resolved tokens
+      // since GPG matched them to this key
+      if (!key.name.isEmpty()) {
+        resolvedRecipients.insert(
+            key.name.section('@', 0, 0));    // email local part
+        resolvedRecipients.insert(key.name); // full email/UID
+      }
+    }
+
     for (const QString &recipient : allRecipients) {
-      if (!missingKeyRecipients.contains(recipient) &&
-          QtPassSettings::getPass()->listKeys(recipient).empty()) {
-        missingKeyRecipients.insert(recipient);
+      if (!resolvedKeyIds.contains(recipient) &&
+          !resolvedRecipients.contains(recipient) &&
+          !selectedKeyIds.contains(recipient)) {
         UserInfo i;
         i.enabled = true;
         i.key_id = recipient;
@@ -202,11 +227,18 @@ void UsersDialog::itemChange(QListWidgetItem *item) {
  * @param filter
  */
 void UsersDialog::populateList(const QString &filter) {
-  if (filter != m_lastFilter) {
-    m_lastFilter = filter;
-    m_cachedNameFilter = QRegularExpression(
-        QRegularExpression::wildcardToRegularExpression("*" + filter + "*"),
+  // Invalidate cached datetime so expiry checks use fresh current time
+  m_cachedDateTimeValid = false;
+
+  QString patternString = "*" + filter + "*";
+  if (m_cachedPatternString != patternString) {
+    QRegularExpression re(
+        QRegularExpression::wildcardToRegularExpression(patternString),
         QRegularExpression::CaseInsensitiveOption);
+    if (re.isValid()) {
+      m_cachedNameFilter = re;
+      m_cachedPatternString = patternString;
+    }
   }
   const QRegularExpression &nameFilter = m_cachedNameFilter;
   ui->listWidget->clear();
@@ -250,8 +282,12 @@ bool UsersDialog::passesFilter(const UserInfo &user, const QString &filter,
  * @return true if user's key is expired
  */
 auto UsersDialog::isUserExpired(const UserInfo &user) const -> bool {
+  if (!m_cachedDateTimeValid) {
+    m_cachedCurrentDateTime = QDateTime::currentDateTime();
+    m_cachedDateTimeValid = true;
+  }
   return user.expiry.toSecsSinceEpoch() > 0 &&
-         QDateTime::currentDateTime() > user.expiry;
+         m_cachedCurrentDateTime > user.expiry;
 }
 
 /**
