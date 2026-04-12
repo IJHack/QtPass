@@ -253,6 +253,18 @@ auto Util::endsWithGpg() -> const QRegularExpression & {
   return expr;
 }
 
+/**
+ * @brief Returns a regex matching common remote/network protocol schemes.
+ *
+ * Matches http://, https://, ftp://, ftps://, ssh://, sftp://, webdav://,
+ * webdavs://
+ *
+ * Note: Local file URLs (file:///) are intentionally excluded by design, as
+ * they represent local paths rather than network protocols. If this behavior
+ * needs to change, update both this function and the corresponding test.
+ *
+ * @return QRegularExpression reference
+ */
 auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
       "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^\" <>\\)\\]\\[]+)"};
