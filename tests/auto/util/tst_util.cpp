@@ -1080,10 +1080,9 @@ void tst_util::findBinaryInPathTempExecutableInTempDir() {
   // Place a real executable in the same directory as "sh" (which is on the
   // cached PATH) and verify findBinaryInPath locates it.
   //
-  // This test is skipped in restricted environments where we cannot write
-  // to the "sh" directory. Finding 4 suggests an alternative approach
-  // (QTemporaryDir + PATH manipulation) but that doesn't work because
-  // Util::_env is cached at first use.
+  // This test is skipped in restricted environments where writing to the "sh"
+  // directory is not allowed. An alternative approach (QTemporaryDir + PATH
+  // manipulation) doesn't work because Util::_env is cached on first use.
 #ifndef Q_OS_WIN
   QString shPath = Util::findBinaryInPath(QStringLiteral("sh"));
   if (shPath.isEmpty()) {
