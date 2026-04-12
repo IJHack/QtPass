@@ -1,6 +1,7 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "gpgkeystate.h"
+#include "gpgkeystate_p.h"
 
 #include "util.h"
 
@@ -52,6 +53,9 @@ auto classifyRecord(const QString &record_type) -> GpgRecordType {
  */
 void handlePubSecRecord(const QStringList &props, bool secret,
                         UserInfo &current_user) {
+  if (props.size() < GPG_MIN_FIELDS) {
+    return;
+  }
   current_user.key_id = props[GPG_FIELD_KEY_ID];
   current_user.name = props[GPG_FIELD_USERID];
   if (!props[GPG_FIELD_VALIDITY].isEmpty()) {
@@ -88,6 +92,9 @@ void handleUidRecord(const QStringList &props, UserInfo &current_user) {
  * @param current_user UserInfo to update with fingerprint if it matches key
  */
 void handleFprRecord(const QStringList &props, UserInfo &current_user) {
+  if (props.size() < GPG_MIN_FIELDS) {
+    return;
+  }
   if (!current_user.key_id.isEmpty() &&
       props[GPG_FIELD_USERID].endsWith(current_user.key_id)) {
     current_user.key_id = props[GPG_FIELD_USERID];
