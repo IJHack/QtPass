@@ -79,7 +79,12 @@ private:
   QList<UserInfo> m_userList;            /**< List of available GPG users */
   QString m_dir;                         /**< Password store directory */
   QString m_lastFilter;                  /**< Last filter text for caching */
+  QString m_cachedPatternString;         /**< Cached pattern string */
   QRegularExpression m_cachedNameFilter; /**< Cached regex filter */
+  mutable QDateTime m_cachedCurrentDateTime; /**< Cached current date/time for
+                                                     expiry checks */
+  mutable bool m_cachedDateTimeValid =
+      false; /**< Whether cached date/time is valid */
 
   void restoreDialogState();
 
