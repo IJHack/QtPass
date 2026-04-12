@@ -725,15 +725,17 @@ void tst_util::userInfoCreatedAndExpiry() {
   ui.name = "Test User";
   ui.key_id = "ABCDEF12";
 
-  QVERIFY(ui.created.toSecsSinceEpoch() == 0);
-  QVERIFY(ui.expiry.toSecsSinceEpoch() == 0);
+  QVERIFY(!ui.created.isValid());
+  QVERIFY(!ui.expiry.isValid());
 
   QDateTime future = QDateTime::currentDateTime().addYears(1);
   ui.expiry = future;
+  QVERIFY(ui.expiry.isValid());
   QVERIFY(ui.expiry.toSecsSinceEpoch() > 0);
 
   QDateTime past = QDateTime::currentDateTime().addYears(-1);
   ui.created = past;
+  QVERIFY(ui.created.isValid());
   QVERIFY(ui.created.toSecsSinceEpoch() > 0);
 }
 

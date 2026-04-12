@@ -19,6 +19,7 @@ private Q_SLOTS:
   void parseEmptyContent();
   void parsePasswordOnly();
   void parseMultipleNamedFields();
+  void parseMatchingTemplateFields();
   void parseOtpauthHiddenLine();
   void parseColonInValue();
   void parseTemplateFieldsCaseSensitive();
@@ -64,6 +65,12 @@ void tst_filecontent::parseWithAllFields() {
 
   NamedValues nv = fc.getNamedValues();
   QVERIFY(nv.size() == 3);
+  QVERIFY(nv[0].name == "username");
+  QVERIFY(nv[0].value == "admin");
+  QVERIFY(nv[1].name == "notes");
+  QVERIFY(nv[1].value == "some notes");
+  QVERIFY(nv[2].name == "custom");
+  QVERIFY(nv[2].value == "value");
 }
 
 void tst_filecontent::getRemainingData() {
@@ -120,7 +127,13 @@ void tst_filecontent::parseMultipleNamedFields() {
   FileContent fc = FileContent::parse(content, templateFields, false);
   QVERIFY(fc.getPassword() == "pass");
   NamedValues nv = fc.getNamedValues();
-  QVERIFY(nv.size() >= 1);
+  QVERIFY2(nv.size() == 3, "Expected exactly three parsed user fields");
+  QVERIFY2(nv[0].name == "user" && nv[0].value == "u1",
+           "First user field should be parsed as user: u1");
+  QVERIFY2(nv[1].name == "user" && nv[1].value == "u2",
+           "Second user field should be parsed as user: u2");
+  QVERIFY2(nv[2].name == "user" && nv[2].value == "u3",
+           "Third user field should be parsed as user: u3");
 }
 
 void tst_filecontent::parseOtpauthHiddenLine() {
@@ -132,19 +145,26 @@ void tst_filecontent::parseOtpauthHiddenLine() {
   QVERIFY(fc.getRemainingDataForDisplay().isEmpty());
 }
 
+void tst_filecontent::parseMatchingTemplateFields() {
+  QString content = "secret123\nusername: john\npassword: doe";
+  QStringList templateFields = {"username", "password"};
+  FileContent fc = FileContent::parse(content, templateFields, false);
+  QVERIFY2(fc.getPassword() == "secret123", "Password should be secret123");
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY(nv.size() == 2);
+  QVERIFY(nv[0].name == "username");
+  QVERIFY(nv[0].value == "john");
+  QVERIFY(nv[1].name == "password");
+  QVERIFY(nv[1].value == "doe");
+}
+
 void tst_filecontent::parseColonInValue() {
   QString content = "pass\nurl: https://example.com:8080/path";
   QStringList templateFields = {"url"};
   FileContent fc = FileContent::parse(content, templateFields, false);
   NamedValues nv = fc.getNamedValues();
   QVERIFY(nv.size() == 1);
-  QString urlValue;
-  for (const auto &entry : nv) {
-    if (entry.name == "url") {
-      urlValue = entry.value;
-      break;
-    }
-  }
+  QString urlValue = nv.takeValue("url");
   QVERIFY2(urlValue == "https://example.com:8080/path",
            "url value should match full URL with port");
 }

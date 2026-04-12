@@ -238,20 +238,31 @@ void tst_gpgkeystate::handlePubSecEmptyFields() {
 }
 
 void tst_gpgkeystate::handlePubSecShortList() {
-  UserInfo user;
   QStringList shortProps;
   shortProps.append("pub");
   shortProps.append("");
   shortProps.append("4096");
   shortProps.append("1");
   shortProps.append(""); // 5: created
-  handlePubSecRecord(shortProps, true, user);
-  QVERIFY2(user.key_id.isEmpty(), "Short list should be ignored");
-  QVERIFY2(user.name.isEmpty(), "Short list ignored: name empty");
-  QVERIFY2(user.validity == '-', "Short list ignored: default validity");
-  QVERIFY2(!user.created.isValid(), "Short list ignored: created invalid");
-  QVERIFY2(!user.expiry.isValid(), "Short list ignored: expiry invalid");
-  QVERIFY2(!user.have_secret, "Short list ignored: no secret");
+
+  auto verifyShortListIgnored = [](const UserInfo &u, const char *ctx) {
+    QVERIFY2(u.key_id.isEmpty(), "Short list should be ignored");
+    QVERIFY2(u.name.isEmpty(), "Short list ignored: name empty");
+    QVERIFY2(u.validity == '-', "Short list ignored: default validity");
+    QVERIFY2(!u.created.isValid(), "Short list ignored: created invalid");
+    QVERIFY2(!u.expiry.isValid(), "Short list ignored: expiry invalid");
+    QVERIFY2(!u.have_secret, ctx);
+  };
+
+  UserInfo publicUser;
+  handlePubSecRecord(shortProps, false, publicUser);
+  verifyShortListIgnored(publicUser,
+                         "Short list ignored: no secret for public");
+
+  UserInfo secretUser;
+  handlePubSecRecord(shortProps, true, secretUser);
+  verifyShortListIgnored(secretUser,
+                         "Short list ignored: no secret for secret input");
 }
 
 void tst_gpgkeystate::handleFprEdgeCases() {
@@ -261,7 +272,6 @@ void tst_gpgkeystate::handleFprEdgeCases() {
   QStringList emptyProps;
   for (int i = 0; i < 10; ++i)
     emptyProps.append("");
-  emptyProps[9] = "";
   handleFprRecord(emptyProps, user);
   QVERIFY2(user.key_id == "id123", "Empty fpr should not change key_id");
 
