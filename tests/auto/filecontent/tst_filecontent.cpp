@@ -19,6 +19,9 @@ private Q_SLOTS:
   void parseEmptyContent();
   void parsePasswordOnly();
   void parseMultipleNamedFields();
+  void parseOtpauthHiddenLine();
+  void parseColonInValue();
+  void parseTemplateFieldsCaseSensitive();
 };
 
 void tst_filecontent::parsePlainPassword() {
@@ -44,11 +47,11 @@ void tst_filecontent::parseWithTemplateFields() {
   QVERIFY2(fc.getPassword() == "mypassword", "Password should be mypassword");
 
   NamedValues nv = fc.getNamedValues();
-  QCOMPARE(nv.size(), 2);
-  QCOMPARE(nv[0].name, QString("username"));
-  QCOMPARE(nv[0].value, QString("john@example.com"));
-  QCOMPARE(nv[1].name, QString("url"));
-  QCOMPARE(nv[1].value, QString("https://example.com"));
+  QVERIFY(nv.size() == 2);
+  QVERIFY(nv[0].name == "username");
+  QVERIFY(nv[0].value == "john@example.com");
+  QVERIFY(nv[1].name == "url");
+  QVERIFY(nv[1].value == "https://example.com");
 }
 
 void tst_filecontent::parseWithAllFields() {
@@ -60,7 +63,7 @@ void tst_filecontent::parseWithAllFields() {
   QVERIFY2(fc.getPassword() == "pass123", "Password should be pass123");
 
   NamedValues nv = fc.getNamedValues();
-  QCOMPARE(nv.size(), 3);
+  QVERIFY(nv.size() == 3);
 }
 
 void tst_filecontent::getRemainingData() {
@@ -108,16 +111,52 @@ void tst_filecontent::parseEmptyContent() {
 
 void tst_filecontent::parsePasswordOnly() {
   FileContent fc = FileContent::parse("single_line", QStringList(), false);
-  QCOMPARE(fc.getPassword(), QString("single_line"));
+  QVERIFY(fc.getPassword() == "single_line");
 }
 
 void tst_filecontent::parseMultipleNamedFields() {
   QString content = "pass\nuser: u1\nuser: u2\nuser: u3";
   QStringList templateFields = {"user"};
   FileContent fc = FileContent::parse(content, templateFields, false);
-  QCOMPARE(fc.getPassword(), QString("pass"));
+  QVERIFY(fc.getPassword() == "pass");
   NamedValues nv = fc.getNamedValues();
   QVERIFY(nv.size() >= 1);
+}
+
+void tst_filecontent::parseOtpauthHiddenLine() {
+  QString content = "secret\notpauth://totp/Example:alice@email?secret=key";
+  FileContent fc = FileContent::parse(content, QStringList(), false);
+  QString expected = "otpauth://totp/Example:alice@email?secret=key";
+  QVERIFY2(fc.getRemainingData() == expected,
+           "otpauth line should be preserved in remaining data");
+  QVERIFY(fc.getRemainingDataForDisplay().isEmpty());
+}
+
+void tst_filecontent::parseColonInValue() {
+  QString content = "pass\nurl: https://example.com:8080/path";
+  QStringList templateFields = {"url"};
+  FileContent fc = FileContent::parse(content, templateFields, false);
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY(nv.size() == 1);
+  QString urlValue;
+  for (const auto &entry : nv) {
+    if (entry.name == "url") {
+      urlValue = entry.value;
+      break;
+    }
+  }
+  QVERIFY2(urlValue == "https://example.com:8080/path",
+           "url value should match full URL with port");
+}
+
+void tst_filecontent::parseTemplateFieldsCaseSensitive() {
+  QString content = "pass\nUser: value";
+  QStringList templateFields = {"user"};
+  FileContent fc = FileContent::parse(content, templateFields, false);
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY(nv.isEmpty());
+  QVERIFY2(fc.getRemainingData().contains("User: value"),
+           "unmatched case should be in remaining data");
 }
 
 QTEST_MAIN(tst_filecontent)
