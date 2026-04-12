@@ -370,10 +370,7 @@ void tst_util::regexPatternEdgeCases() {
   QVERIFY(proto.match("webdavs://secure.example.com").hasMatch());
   QVERIFY(proto.match("ftps://ftp.server.org").hasMatch());
   QVERIFY(proto.match("sftp://user:pass@host").hasMatch());
-  // Note: protocolRegex() is intentionally scoped to remote/network endpoints
-  // used by URL handling. Local file URLs (file:///) are excluded by design
-  // because they represent local paths, not network protocols. If this behavior
-  // needs to change, update Util::protocolRegex() and this test together.
+  // See Util::protocolRegex() - file:// URLs intentionally not matched
   QVERIFY(!proto.match("file:///path/to/file").hasMatch());
 
   const QRegularExpression &nl = Util::newLinesRegex();
