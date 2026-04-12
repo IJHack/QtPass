@@ -74,6 +74,7 @@ private Q_SLOTS:
   void userInfoFullyValid();
   void userInfoMarginallyValid();
   void userInfoIsValid();
+  void userInfoCreatedAndExpiry();
   void qProgressIndicatorBasic();
   void qProgressIndicatorStartStop();
   void namedValueBasic();
@@ -714,6 +715,23 @@ void tst_util::userInfoIsValid() {
   QVERIFY(ui.isValid());
   ui.validity = '-';
   QVERIFY(!ui.isValid());
+}
+
+void tst_util::userInfoCreatedAndExpiry() {
+  UserInfo ui;
+  ui.name = "Test User";
+  ui.key_id = "ABCDEF12";
+
+  QVERIFY(ui.created.toSecsSinceEpoch() == 0);
+  QVERIFY(ui.expiry.toSecsSinceEpoch() == 0);
+
+  QDateTime future = QDateTime::currentDateTime().addYears(1);
+  ui.expiry = future;
+  QVERIFY(ui.expiry.toSecsSinceEpoch() > 0);
+
+  QDateTime past = QDateTime::currentDateTime().addYears(-1);
+  ui.created = past;
+  QVERIFY(ui.created.toSecsSinceEpoch() > 0);
 }
 
 void tst_util::qProgressIndicatorBasic() {
