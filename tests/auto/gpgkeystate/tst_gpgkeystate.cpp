@@ -4,6 +4,7 @@
 #include <algorithm>
 
 #include "../../../src/gpgkeystate.h"
+#include "../../../src/gpgkeystate_p.h"
 #include "../../../src/userinfo.h"
 
 class tst_gpgkeystate : public QObject {
@@ -19,6 +20,10 @@ private Q_SLOTS:
   void parseKeyRollover();
   void parseKeyRollover_data();
   void classifyRecordTypes();
+  void classifyRecordEmpty();
+  void handlePubSecEmptyFields();
+  void handlePubSecShortList();
+  void handleFprEdgeCases();
 };
 
 void tst_gpgkeystate::parseMultiKeyPublic() {
@@ -197,6 +202,84 @@ void tst_gpgkeystate::classifyRecordTypes() {
            "Should classify grp record");
   QVERIFY2(classifyRecord("unknown") == GpgRecordType::Unknown,
            "Should classify unknown record types as Unknown");
+}
+
+void tst_gpgkeystate::classifyRecordEmpty() {
+  QVERIFY2(classifyRecord("") == GpgRecordType::Unknown,
+           "Should classify empty as Unknown");
+  QVERIFY2(classifyRecord("PUB") == GpgRecordType::Unknown,
+           "Should be case-sensitive");
+  QVERIFY2(classifyRecord("pubx") == GpgRecordType::Unknown,
+           "Should not match partial");
+}
+
+void tst_gpgkeystate::handlePubSecEmptyFields() {
+  UserInfo user;
+  QStringList props;
+  props << "pub"
+        << "" // validity empty
+        << "4096"
+        << "1"
+        << "keyId00001"
+        << "" // created empty
+        << "" // expiry empty
+        << ""
+        << ""
+        << "Test User"; // name
+
+  handlePubSecRecord(props, false, user);
+
+  QVERIFY2(user.key_id == "keyId00001", "Should parse key_id");
+  QVERIFY2(user.name == "Test User", "Should parse name");
+  QVERIFY2(user.validity == '-', "Empty validity should be dash");
+  QVERIFY2(!user.created.isValid(), "Empty created should be invalid");
+  QVERIFY2(!user.expiry.isValid(), "Empty expiry should be invalid");
+  QVERIFY2(!user.have_secret, "Should not have secret");
+}
+
+void tst_gpgkeystate::handlePubSecShortList() {
+  UserInfo user;
+  QStringList shortProps;
+  shortProps.append("pub");
+  shortProps.append("");
+  shortProps.append("4096");
+  shortProps.append("1");
+  shortProps.append(""); // 5: created
+  handlePubSecRecord(shortProps, true, user);
+  QVERIFY2(user.key_id.isEmpty(), "Short list should be ignored");
+  QVERIFY2(user.name.isEmpty(), "Short list ignored: name empty");
+  QVERIFY2(user.validity == '-', "Short list ignored: default validity");
+  QVERIFY2(!user.created.isValid(), "Short list ignored: created invalid");
+  QVERIFY2(!user.expiry.isValid(), "Short list ignored: expiry invalid");
+  QVERIFY2(!user.have_secret, "Short list ignored: no secret");
+}
+
+void tst_gpgkeystate::handleFprEdgeCases() {
+  UserInfo user;
+  user.key_id = "id123";
+
+  QStringList emptyProps;
+  for (int i = 0; i < 10; ++i)
+    emptyProps.append("");
+  emptyProps[9] = "";
+  handleFprRecord(emptyProps, user);
+  QVERIFY2(user.key_id == "id123", "Empty fpr should not change key_id");
+
+  QStringList nonMatchingProps;
+  for (int i = 0; i < 10; ++i)
+    nonMatchingProps.append("");
+  nonMatchingProps[9] = "otherFingerprint";
+  handleFprRecord(nonMatchingProps, user);
+  QVERIFY2(user.key_id == "id123", "Non-matching fpr should not change key_id");
+
+  user.key_id = "id456";
+  QStringList matchingProps;
+  for (int i = 0; i < 10; ++i)
+    matchingProps.append("");
+  matchingProps[9] = "full fingerprint id456";
+  handleFprRecord(matchingProps, user);
+  QVERIFY2(user.key_id == "full fingerprint id456",
+           "fpr ending with key_id should update to full fingerprint");
 }
 
 QTEST_MAIN(tst_gpgkeystate)
