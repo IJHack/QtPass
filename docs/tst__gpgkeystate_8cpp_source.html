@@ -325,52 +325,62 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>}</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="keywordtype">void</span> tst_gpgkeystate::handlePubSecShortList() {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> user;</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  QStringList shortProps;</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  shortProps.append(<span class="stringliteral">&quot;pub&quot;</span>);</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  shortProps.append(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  shortProps.append(<span class="stringliteral">&quot;4096&quot;</span>);</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  shortProps.append(<span class="stringliteral">&quot;1&quot;</span>);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  shortProps.append(<span class="stringliteral">&quot;&quot;</span>); <span class="comment">// 5: created</span></div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <a class="code hl_function" href="gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c">handlePubSecRecord</a>(shortProps, <span class="keyword">true</span>, user);</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  QVERIFY2(user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a>.isEmpty(), <span class="stringliteral">&quot;Short list should be ignored&quot;</span>);</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  QVERIFY2(user.<a class="code hl_variable" href="struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb">name</a>.isEmpty(), <span class="stringliteral">&quot;Short list ignored: name empty&quot;</span>);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  QVERIFY2(user.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> == <span class="charliteral">&#39;-&#39;</span>, <span class="stringliteral">&quot;Short list ignored: default validity&quot;</span>);</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  QVERIFY2(!user.<a class="code hl_variable" href="struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6">created</a>.isValid(), <span class="stringliteral">&quot;Short list ignored: created invalid&quot;</span>);</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  QVERIFY2(!user.<a class="code hl_variable" href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">expiry</a>.isValid(), <span class="stringliteral">&quot;Short list ignored: expiry invalid&quot;</span>);</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  QVERIFY2(!user.<a class="code hl_variable" href="struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99">have_secret</a>, <span class="stringliteral">&quot;Short list ignored: no secret&quot;</span>);</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>}</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  QStringList shortProps;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  shortProps.append(<span class="stringliteral">&quot;pub&quot;</span>);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  shortProps.append(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  shortProps.append(<span class="stringliteral">&quot;4096&quot;</span>);</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>  shortProps.append(<span class="stringliteral">&quot;1&quot;</span>);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  shortProps.append(<span class="stringliteral">&quot;&quot;</span>); <span class="comment">// 5: created</span></div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <span class="keyword">auto</span> verifyShortListIgnored = [](<span class="keyword">const</span> <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> &amp;u, <span class="keyword">const</span> <span class="keywordtype">char</span> *ctx) {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    QVERIFY2(u.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a>.isEmpty(), <span class="stringliteral">&quot;Short list should be ignored&quot;</span>);</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    QVERIFY2(u.<a class="code hl_variable" href="struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb">name</a>.isEmpty(), <span class="stringliteral">&quot;Short list ignored: name empty&quot;</span>);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    QVERIFY2(u.<a class="code hl_variable" href="struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> == <span class="charliteral">&#39;-&#39;</span>, <span class="stringliteral">&quot;Short list ignored: default validity&quot;</span>);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    QVERIFY2(!u.<a class="code hl_variable" href="struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6">created</a>.isValid(), <span class="stringliteral">&quot;Short list ignored: created invalid&quot;</span>);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    QVERIFY2(!u.<a class="code hl_variable" href="struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa">expiry</a>.isValid(), <span class="stringliteral">&quot;Short list ignored: expiry invalid&quot;</span>);</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    QVERIFY2(!u.<a class="code hl_variable" href="struct_user_info.html#a0779dd42b6e6810c191b08b788ebaf99">have_secret</a>, ctx);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  };</div>
 <div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="keywordtype">void</span> tst_gpgkeystate::handleFprEdgeCases() {</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> user;</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a> = <span class="stringliteral">&quot;id123&quot;</span>;</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  QStringList emptyProps;</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; ++i)</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    emptyProps.append(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  emptyProps[9] = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  <a class="code hl_function" href="gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178">handleFprRecord</a>(emptyProps, user);</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>  QVERIFY2(user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a> == <span class="stringliteral">&quot;id123&quot;</span>, <span class="stringliteral">&quot;Empty fpr should not change key_id&quot;</span>);</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> publicUser;</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <a class="code hl_function" href="gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c">handlePubSecRecord</a>(shortProps, <span class="keyword">false</span>, publicUser);</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>  verifyShortListIgnored(publicUser,</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                         <span class="stringliteral">&quot;Short list ignored: no secret for public&quot;</span>);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> secretUser;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  <a class="code hl_function" href="gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c">handlePubSecRecord</a>(shortProps, <span class="keyword">true</span>, secretUser);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  verifyShortListIgnored(secretUser,</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                         <span class="stringliteral">&quot;Short list ignored: no secret for secret input&quot;</span>);</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>}</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  QStringList nonMatchingProps;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; ++i)</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    nonMatchingProps.append(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  nonMatchingProps[9] = <span class="stringliteral">&quot;otherFingerprint&quot;</span>;</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <a class="code hl_function" href="gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178">handleFprRecord</a>(nonMatchingProps, user);</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  QVERIFY2(user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a> == <span class="stringliteral">&quot;id123&quot;</span>, <span class="stringliteral">&quot;Non-matching fpr should not change key_id&quot;</span>);</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a> = <span class="stringliteral">&quot;id456&quot;</span>;</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  QStringList matchingProps;</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; ++i)</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    matchingProps.append(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  matchingProps[9] = <span class="stringliteral">&quot;full fingerprint id456&quot;</span>;</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <a class="code hl_function" href="gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178">handleFprRecord</a>(matchingProps, user);</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  QVERIFY2(user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a> == <span class="stringliteral">&quot;full fingerprint id456&quot;</span>,</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>           <span class="stringliteral">&quot;fpr ending with key_id should update to full fingerprint&quot;</span>);</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>}</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="keywordtype">void</span> tst_gpgkeystate::handleFprEdgeCases() {</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  <a class="code hl_struct" href="struct_user_info.html">UserInfo</a> user;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a> = <span class="stringliteral">&quot;id123&quot;</span>;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  QStringList emptyProps;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; ++i)</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    emptyProps.append(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  <a class="code hl_function" href="gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178">handleFprRecord</a>(emptyProps, user);</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  QVERIFY2(user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a> == <span class="stringliteral">&quot;id123&quot;</span>, <span class="stringliteral">&quot;Empty fpr should not change key_id&quot;</span>);</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  QStringList nonMatchingProps;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; ++i)</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    nonMatchingProps.append(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  nonMatchingProps[9] = <span class="stringliteral">&quot;otherFingerprint&quot;</span>;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  <a class="code hl_function" href="gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178">handleFprRecord</a>(nonMatchingProps, user);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  QVERIFY2(user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a> == <span class="stringliteral">&quot;id123&quot;</span>, <span class="stringliteral">&quot;Non-matching fpr should not change key_id&quot;</span>);</div>
 <div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>QTEST_MAIN(<a class="code hl_class" href="classtst__gpgkeystate.html">tst_gpgkeystate</a>)</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span><span class="preprocessor">#include &quot;tst_gpgkeystate.moc&quot;</span></div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a> = <span class="stringliteral">&quot;id456&quot;</span>;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  QStringList matchingProps;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 10; ++i)</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    matchingProps.append(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  matchingProps[9] = <span class="stringliteral">&quot;full fingerprint id456&quot;</span>;</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <a class="code hl_function" href="gpgkeystate_8cpp.html#ab4971658d9c682542957f596dc275178">handleFprRecord</a>(matchingProps, user);</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  QVERIFY2(user.<a class="code hl_variable" href="struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a> == <span class="stringliteral">&quot;full fingerprint id456&quot;</span>,</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>           <span class="stringliteral">&quot;fpr ending with key_id should update to full fingerprint&quot;</span>);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>}</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>QTEST_MAIN(<a class="code hl_class" href="classtst__gpgkeystate.html">tst_gpgkeystate</a>)</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="preprocessor">#include &quot;tst_gpgkeystate.moc&quot;</span></div>
 <div class="ttc" id="aclasstst__gpgkeystate_html"><div class="ttname"><a href="classtst__gpgkeystate.html">tst_gpgkeystate</a></div><div class="ttdef"><b>Definition</b> <a href="tst__gpgkeystate_8cpp_source.html#l00010">tst_gpgkeystate.cpp:10</a></div></div>
 <div class="ttc" id="agpgkeystate_8cpp_html_a10a7a502b6b816c2ad7d1d175d9f5a0c"><div class="ttname"><a href="gpgkeystate_8cpp.html#a10a7a502b6b816c2ad7d1d175d9f5a0c">handlePubSecRecord</a></div><div class="ttdeci">void handlePubSecRecord(const QStringList &amp;props, bool secret, UserInfo &amp;current_user)</div><div class="ttdoc">Handle a pub or sec record in GPG colon output.</div><div class="ttdef"><b>Definition</b> <a href="gpgkeystate_8cpp_source.html#l00054">gpgkeystate.cpp:54</a></div></div>
 <div class="ttc" id="agpgkeystate_8cpp_html_a12e5b0425a769a2aa80c91f3f5e1ddc8"><div class="ttname"><a href="gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8">parseGpgColonOutput</a></div><div class="ttdeci">auto parseGpgColonOutput(const QString &amp;output, bool secret) -&gt; QList&lt; UserInfo &gt;</div><div class="ttdoc">Parse GPG –with-colons output into a list of UserInfo.</div><div class="ttdef"><b>Definition</b> <a href="gpgkeystate_8cpp_source.html#l00110">gpgkeystate.cpp:110</a></div></div>
