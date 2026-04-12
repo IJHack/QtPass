@@ -5,7 +5,9 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QList>
+#include <QProcessEnvironment>
 #include <QTemporaryDir>
+#include <QUuid>
 #include <QtTest>
 
 #include "../../../src/enums.h"
@@ -368,9 +370,12 @@ void tst_util::regexPatternEdgeCases() {
 
   const QRegularExpression &proto = Util::protocolRegex();
   QVERIFY(proto.match("webdavs://secure.example.com").hasMatch());
+  QVERIFY(proto.match("webdavs://secure.example.com").hasMatch());
+  QVERIFY(proto.match("ftps://ftp.server.org").hasMatch());
   QVERIFY(proto.match("ftps://ftp.server.org").hasMatch());
   QVERIFY(proto.match("sftp://user:pass@host").hasMatch());
-  // See Util::protocolRegex() - file:// URLs intentionally not matched
+  QVERIFY(proto.match("sftp://user:pass@host").hasMatch());
+  // file:/// URLs are not matched - see Util::protocolRegex()
   QVERIFY(!proto.match("file:///path/to/file").hasMatch());
 
   const QRegularExpression &nl = Util::newLinesRegex();
@@ -1075,20 +1080,21 @@ void tst_util::findBinaryInPathResultContainsBinaryName() {
 }
 
 void tst_util::findBinaryInPathTempExecutableInTempDir() {
-  // Place a real executable in an existing PATH directory and confirm that
-  // findBinaryInPath locates it.
+  // Place a real executable in the same directory as "sh" (which is on the
+  // cached PATH) and verify findBinaryInPath locates it.
   //
-  // Because Util::_env is a static cached copy we cannot inject a new PATH
-  // directory at runtime. Instead we write a uniquely named executable into
-  // the same directory as "sh" (which is already on the cached PATH) and
-  // verify the function finds it.
+  // This test is skipped in restricted environments where we cannot write
+  // to the "sh" directory. Finding 4 suggests an alternative approach
+  // (QTemporaryDir + PATH manipulation) but that doesn't work because
+  // Util::_env is cached at first use.
 #ifndef Q_OS_WIN
   QString shPath = Util::findBinaryInPath(QStringLiteral("sh"));
   if (shPath.isEmpty()) {
     QSKIP("Cannot find 'sh' to determine a writable PATH directory");
   }
   const QString pathDir = QFileInfo(shPath).absolutePath();
-  const QString uniqueName = QStringLiteral("qtpass_test_exec_unique_99");
+  const QString uniqueName = QStringLiteral("qtpass_test_exec_") +
+                             QUuid::createUuid().toString(QUuid::WithoutBraces);
   const QString uniquePath = pathDir + QDir::separator() + uniqueName;
 
   QFile exec(uniquePath);
