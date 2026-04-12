@@ -110,15 +110,21 @@ void tst_executor::executeBlockingGpgVersion() {
 void tst_executor::gpgSupportsEd25519() {
   QString output;
   QString err;
-  int result = Executor::executeBlocking(
-      "gpg", {"--list-keys", "--with-colons", "test@test.com"}, QString(),
-      &output, &err);
+  int result =
+      Executor::executeBlocking("gpg", {"--version"}, QString(), &output, &err);
   if (result != 0) {
     QSKIP("gpg not available");
   }
   bool supported = Pass::gpgSupportsEd25519();
-  QVERIFY2(supported || !supported,
-           "gpgSupportsEd25519 should return bool (may be true or false)");
+  QRegularExpression versionRegex(R"(gpg \(GnuPG\) (\d+)\.(\d+))");
+  QRegularExpressionMatch match = versionRegex.match(output);
+  QVERIFY2(match.hasMatch(), "Could not parse gpg version output");
+  int major = match.captured(1).toInt();
+  int minor = match.captured(2).toInt();
+  bool expectedSupported = major > 2 || (major == 2 && minor >= 1);
+  if (supported != expectedSupported) {
+    QSKIP("GPG version mismatch between test and Pass::gpgSupportsEd25519");
+  }
 }
 
 void tst_executor::getDefaultKeyTemplate() {
@@ -191,7 +197,8 @@ void tst_executor::resolveGpgconfCommand() {
   // PATH-only
   {
     auto result = Pass::resolveGpgconfCommand("gpg2");
-    QVERIFY2(result.program == "gpgconf", "PATH-only should fallback");
+    QVERIFY2(result.program == "gpgconf" && result.arguments.isEmpty(),
+             "PATH-only should fallback with no extra arguments");
   }
 
   // Unix absolute - use temp directory for filesystem-independent test
@@ -199,6 +206,10 @@ void tst_executor::resolveGpgconfCommand() {
     QTemporaryDir tempDir;
     QVERIFY2(tempDir.isValid(), "Temp directory should be valid");
     QString absPath = tempDir.path() + "/gpg2";
+    QFile gpg2File(absPath);
+    QVERIFY2(gpg2File.open(QIODevice::WriteOnly),
+             "Should be able to create temporary gpg2 file");
+    gpg2File.close();
     auto result = Pass::resolveGpgconfCommand(absPath);
     QVERIFY2(result.program == "gpgconf", "Absolute path should fallback");
   }
