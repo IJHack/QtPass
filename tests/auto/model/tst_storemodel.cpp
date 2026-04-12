@@ -25,6 +25,8 @@ private Q_SLOTS:
   void filterAcceptsRowVisible();
   void setModelAndStore();
   void showThisWithNullFs();
+  void getStoreBasic();
+  void filterRegularExpression();
 };
 
 void tst_storemodel::dataRemovesGpgExtension() {
@@ -247,6 +249,23 @@ void tst_storemodel::showThisWithNullFs() {
   QModelIndex index;
   bool result = sm.showThis(index);
   QVERIFY(!result);
+}
+
+void tst_storemodel::getStoreBasic() {
+  QTemporaryDir tempDir;
+  QVERIFY2(tempDir.isValid(), "Temporary directory should be valid");
+  QFileSystemModel fsm;
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+  QString store = sm.getStore();
+  QVERIFY2(store == tempDir.path(), "Store path should match");
+}
+
+void tst_storemodel::filterRegularExpression() {
+  StoreModel sm;
+  sm.setFilterRegularExpression(QRegularExpression("test"));
+  QRegularExpression result = sm.filterRegularExpression();
+  QVERIFY2(result.pattern() == "test", "Filter should match test");
 }
 
 QTEST_MAIN(tst_storemodel)
