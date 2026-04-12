@@ -411,7 +411,7 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a57">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a14">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00262">262</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00274">274</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 <div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-9-summary" class="dynsummary" style="display:block;">
@@ -492,11 +492,15 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
 </div><div class="memdoc">
 
 <p>Returns a regex to match URL protocols. </p>
-<dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
+<p>Returns a regex matching common remote/network protocol schemes.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to static regex</dd></dl>
+<p>Matches <a href="http://">http://</a>, <a href="https://">https://</a>, <a href="ftp://">ftp://</a>, <a href="ftps://">ftps://</a>, ssh://, <a href="sftp://">sftp://</a>, webdav://, webdavs://</p>
+<p>Note: Local file URLs (<a href="file:///">file:///</a>) are intentionally excluded by design, as they represent local paths rather than network protocols. If this behavior needs to change, update both this function and the corresponding test.</p>
+<dl class="section return"><dt>Returns</dt><dd>QRegularExpression reference </dd></dl>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a102">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a13">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00256">256</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00268">268</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
 
 </div>
 </div>
