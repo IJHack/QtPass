@@ -370,10 +370,7 @@ void tst_util::regexPatternEdgeCases() {
 
   const QRegularExpression &proto = Util::protocolRegex();
   QVERIFY(proto.match("webdavs://secure.example.com").hasMatch());
-  QVERIFY(proto.match("webdavs://secure.example.com").hasMatch());
   QVERIFY(proto.match("ftps://ftp.server.org").hasMatch());
-  QVERIFY(proto.match("ftps://ftp.server.org").hasMatch());
-  QVERIFY(proto.match("sftp://user:pass@host").hasMatch());
   QVERIFY(proto.match("sftp://user:pass@host").hasMatch());
   // file:/// URLs are not matched - see Util::protocolRegex()
   QVERIFY(!proto.match("file:///path/to/file").hasMatch());
