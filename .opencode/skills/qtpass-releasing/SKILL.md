@@ -16,16 +16,22 @@ metadata:
 
 Update version in all build files:
 
-- `qtpass.pro` - `VERSION = "x.y.z"`
+- `qtpass.pri` - `VERSION = "x.y.z"` (note: .pri not .pro)
 - `qtpass.spec` - `Version:`
-- `qtpass.appdata.xml` - `<release version="">`
 - `qtpass.iss` - `AppVerName=`
-- `appdmg.json` - `version`
-- `README.md` - Download links
+- `Doxyfile` - `PROJECT_NUMBER`
+- `downloads.html` (gh-pages) - multiple references
+- `index.html` (gh-pages)
+- `getting-started.html` (gh-pages)
+- `changelog.html` (gh-pages)
+- `changelog.1.4.html` (gh-pages)
+- `old.html` (gh-pages)
+
+**NOTE:** `qtpass.appdata.xml` and `appdmg.json` don't have version fields to update.
 
 ```bash
 # Find version strings
-grep -rn "1\.5" qtpass.pro qtpass.spec qtpass.appdata.xml qtpass.iss appdmg.json
+grep -rn "1\.5" qtpass.pri qtpass.spec qtpass.iss Doxyfile
 ```
 
 ### 2. Changelog
@@ -71,27 +77,41 @@ qtpass.iss
 ### 5. Git Tags
 
 ```bash
-git tag -a v1.5.1 -m "QtPass 1.5.1 Release"
-git push origin v1.5.1
+git tag -a vX.Y.Z -m "QtPass vX.Y.Z Release"
+git push origin vX.Y.Z
 ```
 
 ### 6. GitHub Release
 
 ```bash
-gh release create v1.5.1 \
-  --title "QtPass 1.5.1" \
+gh release create vX.Y.Z \
+  --title "QtPass vX.Y.Z" \
   --notes-file CHANGELOG.md \
   qtpass-x.y.z.tar.gz
 ```
 
-### 7. GitHub Pages (if needed)
+### 7. GitHub Pages (site)
+
+Update version in HTML files on `gh-pages` branch:
 
 ```bash
-# Update stable version
 git checkout gh-pages
-# Update download links
-git commit -m "Release v1.5.1"
+
+# Update downloads.html (download links)
+# Update index.html (main page)
+# Update getting-started.html
+# Update changelog.html (add new release notes + version)
+# Update changelog.1.4.html, old.html (version only)
+
+git add -A
+git commit -m "Release v1.6.0"
 git push origin gh-pages
+```
+
+**Common version search:**
+
+```bash
+grep -rn "1\.5" *.html
 ```
 
 ## Version Numbering
@@ -121,6 +141,17 @@ See `qtpass-linting` skill for full CI workflow. Pattern:
 ```bash
 # Run linter locally BEFORE pushing
 act push -W .github/workflows/linter.yml -j build
+```
+
+## Protected Main Branch
+
+`main` is protected - cannot push directly. Must create PR:
+
+```bash
+# Make changes, commit
+git push origin main
+# Error: protected branch - create PR instead
+gh pr create --base main --head main --title "Release v1.6.0"
 ```
 
 ## Script Best Practices
