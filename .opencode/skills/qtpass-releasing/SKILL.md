@@ -16,16 +16,22 @@ metadata:
 
 Update version in all build files:
 
-- `qtpass.pro` - `VERSION = "x.y.z"`
+- `qtpass.pri` - `VERSION = "x.y.z"` (note: .pri not .pro)
 - `qtpass.spec` - `Version:`
-- `qtpass.appdata.xml` - `<release version="">`
 - `qtpass.iss` - `AppVerName=`
-- `appdmg.json` - `version`
-- `README.md` - Download links
+- `Doxyfile` - `PROJECT_NUMBER`
+- `downloads.html` (gh-pages) - multiple references
+- `index.html` (gh-pages)
+- `getting-started.html` (gh-pages)
+- `changelog.html` (gh-pages)
+- `changelog.1.4.html` (gh-pages)
+- `old.html` (gh-pages)
+
+**NOTE:** `qtpass.appdata.xml` and `appdmg.json` don't have version fields to update.
 
 ```bash
 # Find version strings
-grep -rn "1\.5" qtpass.pro qtpass.spec qtpass.appdata.xml qtpass.iss appdmg.json
+grep -rn "1\.5" qtpass.pri qtpass.spec qtpass.iss Doxyfile
 ```
 
 ### 2. Changelog
@@ -84,14 +90,27 @@ gh release create v1.5.1 \
   qtpass-x.y.z.tar.gz
 ```
 
-### 7. GitHub Pages (if needed)
+### 7. GitHub Pages (Website)
+
+Update version in HTML files on `gh-pages` branch:
 
 ```bash
-# Update stable version
 git checkout gh-pages
-# Update download links
-git commit -m "Release v1.5.1"
+
+# Update downloads.html (download links)
+# Update index.html (main page)
+# Update getting-started.html
+# Update changelog.html (add new release notes + version)
+# Update changelog.1.4.html, old.html (version only)
+
+git add -A
+git commit -m "Release v1.6.0"
 git push origin gh-pages
+```
+
+**Common version search:**
+```bash
+grep -rn "1\.5" *.html
 ```
 
 ## Version Numbering
@@ -121,6 +140,17 @@ See `qtpass-linting` skill for full CI workflow. Pattern:
 ```bash
 # Run linter locally BEFORE pushing
 act push -W .github/workflows/linter.yml -j build
+```
+
+## Protected Main Branch
+
+`main` is protected - cannot push directly. Must create PR:
+
+```bash
+# Make changes, commit
+git push origin main
+# Error: protected branch - create PR instead
+gh pr create --base main --head main --title "Release v1.6.0"
 ```
 
 ## Script Best Practices
