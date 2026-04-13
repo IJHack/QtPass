@@ -82,6 +82,9 @@ jobs:
           fi
           echo "QTPASS_VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "Extracted version: $VERSION"
+          # Doxygen doesn't expand $ENV{} in config, so substitute directly
+          sed -i "s/PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" Doxyfile
+          echo "Updated Doxyfile with version: $VERSION"
 
       - name: Generate documentation
         if: steps.need_docs.outputs.run_docs == 'true'
