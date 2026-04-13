@@ -45,7 +45,13 @@ if [[ -z "${VERSION:-}" ]]; then
 	echo "Error: Failed to extract VERSION from qtpass.pri" >&2
 	exit 1
 fi
+# Exported for doxygen: Doxyfile uses PROJECT_NUMBER = $ENV{QTPASS_VERSION}.
 export QTPASS_VERSION="$VERSION"
+require_readable_file "Doxyfile"
+if ! grep -Fq '$ENV{QTPASS_VERSION}' Doxyfile; then
+	echo "Error: Doxyfile does not reference \$ENV{QTPASS_VERSION}; PROJECT_NUMBER may be incorrect." >&2
+	exit 1
+fi
 echo "Generating API documentation (v$VERSION)..."
 doxygen || {
 	echo "Error: doxygen failed." >&2
