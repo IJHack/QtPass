@@ -70,7 +70,15 @@ jobs:
 
       - name: Install Doxygen
         if: steps.need_docs.outputs.run_docs == 'true'
-        run: sudo apt-get update && sudo apt-get install -y doxygen graphviz
+        run: |
+          # Install newer Doxygen from official release
+          curl -sL https://doxygen.org/files/1.16.1/Doxygen-1.16.1.linux.x86_64.tar.gz -o doxygen.tar.gz
+          tar -xzf doxygen.tar.gz
+          sudo cp -r doxygen-1.16.1/bin/* /usr/local/bin/
+          sudo cp -r doxygen-1.16.1/lib/* /usr/local/lib/
+          rm -rf doxygen.tar.gz doxygen-1.16.1
+          # Install graphviz via apt
+          sudo apt-get update && sudo apt-get install -y graphviz
 
       - name: Extract version
         if: steps.need_docs.outputs.run_docs == 'true'
