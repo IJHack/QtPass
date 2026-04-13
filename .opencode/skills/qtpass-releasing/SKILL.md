@@ -77,20 +77,20 @@ qtpass.iss
 ### 5. Git Tags
 
 ```bash
-git tag -a v1.5.1 -m "QtPass 1.5.1 Release"
-git push origin v1.5.1
+git tag -a vX.Y.Z -m "QtPass vX.Y.Z Release"
+git push origin vX.Y.Z
 ```
 
 ### 6. GitHub Release
 
 ```bash
-gh release create v1.5.1 \
-  --title "QtPass 1.5.1" \
+gh release create vX.Y.Z \
+  --title "QtPass vX.Y.Z" \
   --notes-file CHANGELOG.md \
   qtpass-x.y.z.tar.gz
 ```
 
-### 7. GitHub Pages (Website)
+### 7. GitHub Pages (site)
 
 Update version in HTML files on `gh-pages` branch:
 
@@ -109,6 +109,7 @@ git push origin gh-pages
 ```
 
 **Common version search:**
+
 ```bash
 grep -rn "1\.5" *.html
 ```
