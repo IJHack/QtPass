@@ -74,8 +74,67 @@ $(function() {
   <div class="headertitle"><div class="title">Changelog</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a href="https://github.com/IJHack/QtPass/tree/HEAD">Unreleased</a></h1>
-<p><a href="https://github.com/IJHack/QtPass/compare/v1.5.1...HEAD">Full Changelog</a></p>
+<div class="textblock"><h1><a href="https://github.com/IJHack/QtPass/tree/v1.6.0">1.6.0</a> (2026-04-13)</h1>
+<h2>Highlights</h2>
+<ul>
+<li>Auto-detect Git in existing password-store <a href="https://github.com/IJHack/QtPass/pull/804">#804</a></li>
+<li>Use ed25519 for GPG key generation when available <a href="https://github.com/IJHack/QtPass/pull/790">#790</a></li>
+<li>Improved GPG key parsing with new <code>gpgkeystate</code> module</li>
+</ul>
+<h2>New Features</h2>
+<ul>
+<li>Added auto-detect Git in existing password-store</li>
+<li>Use ed25519 (ECC) for GPG key generation when GPG supports it</li>
+<li>Added compile_commands.json generation script for IDE tooling</li>
+</ul>
+<h2>Improvements</h2>
+<ul>
+<li>Improved GPG key parsing with new <code>gpgkeystate</code> module <a href="https://github.com/IJHack/QtPass/pull/979">#979</a></li>
+<li>Improved WSL path handling for gpgconf resolution</li>
+<li>Re-encryption security improvements <a href="https://github.com/IJHack/QtPass/issues/815">#815</a></li>
+<li>Kill stale GPG agents before key generation <a href="https://github.com/IJHack/QtPass/issues/815">#815</a></li>
+<li>Consolidated release scripts into <code>scripts/</code> folder</li>
+<li><a class="el" href="class_users_dialog.html" title="Dialog for selecting GPG recipients for password encryption.">UsersDialog</a> performance optimizations <a href="https://github.com/IJHack/QtPass/pull/977">#977</a></li>
+</ul>
+<h2>Bugfixes</h2>
+<ul>
+<li>Fixed path separator check in gpgconf resolution</li>
+<li>Fixed .gpg-id path construction for cross-platform <a href="https://github.com/IJHack/QtPass/issues/780">#780</a></li>
+<li>Fixed re-encryption security issues</li>
+<li>Fixed GPG key generation timeout handling <a href="https://github.com/IJHack/QtPass/issues/815">#815</a></li>
+<li>Fixed clipboard history password exclusion <a href="https://github.com/IJHack/QtPass/pull/970">#970</a></li>
+<li>Fixed transparent context menu in dark mode <a href="https://github.com/IJHack/QtPass/pull/967">#967</a></li>
+<li>Fixed window positioning with window manager <a href="https://github.com/IJHack/QtPass/pull/947">#947</a></li>
+<li>Fixed theme colors for button icons <a href="https://github.com/IJHack/QtPass/pull/949">#949</a></li>
+<li>Fixed hardcoded black text in dark mode <a href="https://github.com/IJHack/QtPass/pull/946">#946</a></li>
+</ul>
+<h2>Testing</h2>
+<ul>
+<li>Added <code>gpgkeystate</code> test suite (8 test suites total) <a href="https://github.com/IJHack/QtPass/pull/979">#979</a></li>
+<li>Added GPG colon output fixtures</li>
+<li>Improved test assertions and coverage <a href="https://github.com/IJHack/QtPass/pull/978">#978</a>, <a href="https://github.com/IJHack/QtPass/pull/981">#981</a>, <a href="https://github.com/IJHack/QtPass/pull/982">#982</a></li>
+</ul>
+<h2>Documentation &amp; Maintenance</h2>
+<ul>
+<li>Added <a class="el" href="_a_g_e_n_t_s_8md.html">AGENTS.md</a> for AI agent guidance</li>
+<li>Added security policy (<a class="el" href="_s_e_c_u_r_i_t_y_8md.html">SECURITY.md</a>)</li>
+<li>Extensive doxygen documentation improvements</li>
+<li>CI/CD improvements and optimizations</li>
+</ul>
+<h2>Localization</h2>
+<ul>
+<li>Updated translations via Weblate</li>
+</ul>
+<h2>Release, CI and Maintenance</h2>
+<ul>
+<li>Consolidated release scripts into <code>scripts/</code> folder</li>
+<li>Added compile_commands.json generation script</li>
+<li>Extensive code quality improvements via AI-assisted review</li>
+<li>CI/CD workflow optimizations</li>
+</ul>
+<p><a href="https://github.com/IJHack/QtPass/compare/v1.5.1...v1.6.0">Full Changelog</a></p>
+<h1><a href="https://github.com/IJHack/QtPass/tree/HEAD">Unreleased</a></h1>
+<p><a href="https://github.com/IJHack/QtPass/compare/v1.6.0...HEAD">Full Changelog</a></p>
 <h1><a href="https://github.com/IJHack/QtPass/tree/v1.5.1">1.5.1</a> (2026-03-22)</h1>
 <h2>Fixes</h2>
 <ul>
@@ -87,7 +146,7 @@ $(function() {
 <li>Suppressed qApp deprecation warnings on Qt6</li>
 </ul>
 <h1><a href="https://github.com/IJHack/QtPass/tree/v1.5.0">1.5.0</a> (2026-03-21)</h1>
-<h2>Highlights</h2>
+<h2>Highlights </h2>
 <ul>
 <li><code>1.5.0</code> release metadata and packaging preparation across the desktop app, installer, and CI configuration.</li>
 <li>Windows release pipeline reliability improvements for AppVeyor and Inno Setup packaging.</li>
@@ -100,13 +159,13 @@ $(function() {
 <li>Removed a regression where gpg_id comments could be altered <a href="https://github.com/IJHack/QtPass/pull/658">#658</a>.</li>
 <li>Added missing include path fixes and small reliability hardening in core code paths <a href="https://github.com/IJHack/QtPass/pull/690">#690</a>, <a href="https://github.com/IJHack/QtPass/pull/716">#716</a>.</li>
 </ul>
-<h2>Release, CI and Maintenance</h2>
+<h2>Release, CI and Maintenance </h2>
 <ul>
 <li>Added/updated PublicCode and CI workflows, including release-time validation and action upgrades <a href="https://github.com/IJHack/QtPass/pull/701">#701</a>, <a href="https://github.com/IJHack/QtPass/pull/709">#709</a>, <a href="https://github.com/IJHack/QtPass/pull/710">#710</a>, <a href="https://github.com/IJHack/QtPass/pull/711">#711</a>, <a href="https://github.com/IJHack/QtPass/pull/712">#712</a>.</li>
 <li>Completed the AppVeyor/Inno Setup modernization and packaging updates <a href="https://github.com/IJHack/QtPass/pull/722">#722</a>.</li>
 <li>Updated readme status badges and branch links to current workflow targets <a href="https://github.com/IJHack/QtPass/pull/724">#724</a>.</li>
 </ul>
-<h2>Localization</h2>
+<h2>Localization </h2>
 <ul>
 <li>Synchronised a large set of translation updates through Weblate and translation automation to improve language coverage and keep localization current <a href="https://github.com/IJHack/QtPass/pull/659">#659</a>, <a href="https://github.com/IJHack/QtPass/pull/664">#664</a>, <a href="https://github.com/IJHack/QtPass/pull/666">#666</a>, <a href="https://github.com/IJHack/QtPass/pull/669">#669</a>, <a href="https://github.com/IJHack/QtPass/pull/670">#670</a>, <a href="https://github.com/IJHack/QtPass/pull/673">#673</a>, <a href="https://github.com/IJHack/QtPass/pull/676">#676</a>, <a href="https://github.com/IJHack/QtPass/pull/685">#685</a>, <a href="https://github.com/IJHack/QtPass/pull/689">#689</a>, <a href="https://github.com/IJHack/QtPass/pull/691">#691</a>, <a href="https://github.com/IJHack/QtPass/pull/699">#699</a>, <a href="https://github.com/IJHack/QtPass/pull/702">#702</a>, <a href="https://github.com/IJHack/QtPass/pull/703">#703</a>, <a href="https://github.com/IJHack/QtPass/pull/707">#707</a>, <a href="https://github.com/IJHack/QtPass/pull/713">#713</a>, <a href="https://github.com/IJHack/QtPass/pull/723">#723</a>.</li>
 </ul>
