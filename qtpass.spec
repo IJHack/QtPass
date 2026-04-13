@@ -71,5 +71,5 @@ fi
 - Added desktop/icon resources
 - Added required build deps for a clean build
 
-* Tue Dec 01 2015 serstring=Bram Vandoren <bram.vandoren@ster.kuleuven.be> - 1.0.5-1
+* Tue Dec 01 2015 Bram Vandoren <bram.vandoren@ster.kuleuven.be> - 1.0.5-1
 - Initial RPM spec
