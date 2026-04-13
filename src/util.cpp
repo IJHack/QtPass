@@ -280,37 +280,17 @@ auto Util::isValidKeyId(const QString &keyId) -> bool {
   if (keyId.isEmpty()) {
     return false;
   }
+
   QString normalized = keyId;
-
-  if (normalized.startsWith("0x") || normalized.startsWith("0X")) {
-    normalized = normalized.mid(2);
-  }
-
   if (normalized.startsWith('<') && normalized.endsWith('>')) {
     normalized = normalized.mid(1, normalized.length() - 2);
   }
+  normalized.remove(QRegularExpression("^0[xX]"));
 
-  if (normalized.startsWith('@') || normalized.startsWith('/') ||
-      normalized.startsWith('#') || normalized.startsWith('&')) {
+  if (QRegularExpression("^[@/#&]").match(normalized).hasMatch() ||
+      normalized.contains('@')) {
     return true;
   }
 
-  if (normalized.contains('@')) {
-    return true;
-  }
-
-  const int len = normalized.size();
-  if (len < 8 || len > 40) {
-    return false;
-  }
-
-  for (QChar c : normalized) {
-    const char lc = c.toLatin1();
-    if ((lc >= '0' && lc <= '9') || (lc >= 'A' && lc <= 'F') ||
-        (lc >= 'a' && lc <= 'f')) {
-      continue;
-    }
-    return false;
-  }
-  return true;
+  return QRegularExpression("^[0-9A-Fa-f]{8,40}$").match(normalized).hasMatch();
 }
