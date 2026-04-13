@@ -75,8 +75,8 @@ jobs:
       - name: Extract version
         if: steps.need_docs.outputs.run_docs == 'true'
         run: |
-          VERSION=$(grep '^VERSION *=' qtpass.pri | cut -d'=' -f2 | tr -d ' ')
-          echo "QTPASS_VERSION=$VERSION" >> $GITHUB_ENV
+          VERSION=$(grep -E '^VERSION *=' qtpass.pri | cut -d'=' -f2 | tr -d ' ')
+          echo "QTPASS_VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "Extracted version: $VERSION"
 
       - name: Generate documentation

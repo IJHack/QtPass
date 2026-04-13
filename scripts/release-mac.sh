@@ -37,7 +37,10 @@ pandoc --standalone --from=gfm --to=rtf --output=README.rtf "$README_CLEAN" FAQ.
 	exit 1
 }
 
-echo "Generating API documentation..."
+echo "Extracting version..."
+VERSION=$(grep '^VERSION *=' qtpass.pri | cut -d'=' -f2 | tr -d ' ')
+export QTPASS_VERSION
+echo "Generating API documentation (v$VERSION)..."
 doxygen || {
 	echo "Error: doxygen failed." >&2
 	exit 1
