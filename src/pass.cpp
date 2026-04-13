@@ -556,7 +556,7 @@ auto Pass::getRecipientList(const QString &for_file) -> QStringList {
   while (!gpgId.atEnd()) {
     QString recipient(gpgId.readLine());
     recipient = recipient.split("#")[0].trimmed();
-    if (!recipient.isEmpty()) {
+    if (!recipient.isEmpty() && Util::isValidKeyId(recipient)) {
       recipients += recipient;
     }
   }

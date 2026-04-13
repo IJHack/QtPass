@@ -74,12 +74,21 @@ make || {
 }
 
 echo "Running macdeployqt..."
+if ! command -v macdeployqt &>/dev/null; then
+	echo "Error: macdeployqt is not installed or not in PATH." >&2
+	exit 1
+fi
 macdeployqt main/QtPass.app || {
 	echo "Error: macdeployqt failed." >&2
 	exit 1
 }
 
 echo "Creating DMG..."
+if ! command -v appdmg &>/dev/null; then
+	echo "Error: appdmg is not installed or not in PATH." >&2
+	exit 1
+fi
+require_readable_file "appdmg.json"
 appdmg appdmg.json main/QtPass.dmg || {
 	echo "Error: appdmg failed." >&2
 	exit 1
