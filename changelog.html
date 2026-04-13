@@ -136,7 +136,7 @@
         "operatingSystem": "Linux, BSD, OS X and Windows",
         "requirements": "pass or git and gpg2",
         "screenshot": "https://qtpass.org/images/qtpass.png",
-        "softwareVersion": "1.5.1",
+        "softwareVersion": "1.6.0",
         "applicationCategory": "Security, Utility",
         "offers": {
           "@type": "Offer",
@@ -155,7 +155,7 @@
     <div class="background"></div>
     <div class="wrapper">
       <header>
-        <h1>QtPass <small>1.5.1</small></h1>
+        <h1>QtPass <small>1.6.0</small></h1>
         <p>
           <a
             title="QtPass GUI for pass, the standard UNIX password manager"
@@ -207,6 +207,28 @@
         </div>
       </header>
       <section>
+        <h2>
+          <a id="v1.6.0" class="anchor" href="#v1.6.0" aria-hidden="true"
+            ><span class="octicon octicon-link"></span></a
+          >v1.6.0 Spring is in the air
+        </h2>
+
+        <h3>Highlights</h3>
+        <ul>
+          <li>Auto-detect Git in existing password-store</li>
+          <li>Use ed25519 for GPG key generation when available</li>
+          <li>Improved GPG key parsing with new gpgkeystate module</li>
+        </ul>
+
+        <h3>Bugfixes</h3>
+        <ul>
+          <li>Fixed path separator check in gpgconf resolution</li>
+          <li>Fixed .gpg-id path construction for cross-platform</li>
+          <li>Fixed re-encryption security issues</li>
+          <li>Fixed GPG key generation timeout handling</li>
+          <li>Fixed clipboard history password exclusion</li>
+        </ul>
+
         <h2>
           <a id="v1.5.1" class="anchor" href="#v1.5.1" aria-hidden="true"
             ><span class="octicon octicon-link"></span></a
