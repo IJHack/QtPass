@@ -1,8 +1,69 @@
 # Changelog
 
+## [1.6.0](https://github.com/IJHack/QtPass/tree/v1.6.0) (2026-04-13)
+
+### Highlights
+
+- Auto-detect git in existing password-store [#804](https://github.com/IJHack/QtPass/pull/804)
+- Use ed25519 for GPG key generation when available [#790](https://github.com/IJHack/QtPass/pull/790)
+- Improved GPG key parsing with new `gpgkeystate` module
+
+### New Features
+
+- Added auto-detect git in existing password-store
+- Use ed25519 (ECC) for GPG key generation when GPG supports it
+- Added compile_commands.json generation script for IDE tooling
+
+### Improvements
+
+- Improved GPG key parsing with new `gpgkeystate` module [#979](https://github.com/IJHack/QtPass/pull/979)
+- Improved WSL path handling for gpgconf resolution
+- Re-encryption security improvements [#815](https://github.com/IJHack/QtPass/issues/815)
+- Kill stale GPG agents before key generation [#815](https://github.com/IJHack/QtPass/issues/815)
+- Consolidated release scripts into `scripts/` folder
+- UsersDialog performance optimizations [#977](https://github.com/IJHack/QtPass/pull/977)
+
+### Bug Fixes
+
+- Fixed path separator check in gpgconf resolution
+- Fixed .gpg-id path construction for cross-platform [#780](https://github.com/IJHack/QtPass/issues/780)
+- Fixed re-encryption security issues
+- Fixed GPG key generation timeout handling [#815](https://github.com/IJHack/QtPass/issues/815)
+- Fixed clipboard history password exclusion [#970](https://github.com/IJHack/QtPass/pull/970)
+- Fixed transparent context menu in dark mode [#967](https://github.com/IJHack/QtPass/pull/967)
+- Fixed window positioning with window manager [#947](https://github.com/IJHack/QtPass/pull/947)
+- Fixed theme colors for button icons [#949](https://github.com/IJHack/QtPass/pull/949)
+- Fixed hardcoded black text in dark mode [#946](https://github.com/IJHack/QtPass/pull/946)
+
+### Testing
+
+- Added `gpgkeystate` test suite (8 test suites total) [#979](https://github.com/IJHack/QtPass/pull/979)
+- Added GPG colon output fixtures
+- Improved test assertions and coverage [#978](https://github.com/IJHack/QtPass/pull/978), [#981](https://github.com/IJHack/QtPass/pull/981), [#982](https://github.com/IJHack/QtPass/pull/982)
+
+### Documentation & Maintenance
+
+- Added AGENTS.md for AI agent guidance
+- Added security policy (SECURITY.md)
+- Extensive doxygen documentation improvements
+- CI/CD improvements and optimizations
+
+### Localization
+
+- Updated translations via Weblate
+
+### Release, CI and Maintenance
+
+- Consolidated release scripts into `scripts/` folder
+- Added compile_commands.json generation script
+- Extensive code quality improvements via AI-assisted review
+- CI/CD workflow optimizations
+
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.5.1...v1.6.0)
+
 ## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
 
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.5.1...HEAD)
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.6.0...HEAD)
 
 ## [1.5.1](https://github.com/IJHack/QtPass/tree/v1.5.1) (2026-03-22)
 
