@@ -21,11 +21,12 @@ echo "Version: $VERSION"
 
 require_readable_file "Doxyfile"
 
-# Enable LaTeX and PDF output, and set the version (portable sed)
-sed -i '' -e "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" \
+# Enable LaTeX and PDF output, and set the version (portable sed with temp file)
+TMPFILE=$(mktemp)
+sed -e "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" \
 	-e "s/^GENERATE_LATEX.*=.*/GENERATE_LATEX         = YES/" \
 	-e "s/^GENERATE_PDFLATEX.*=.*/GENERATE_PDFLATEX     = YES/" \
-	Doxyfile
+	Doxyfile >"$TMPFILE" && mv "$TMPFILE" Doxyfile
 
 echo "Generating LaTeX documentation..."
 doxygen || {

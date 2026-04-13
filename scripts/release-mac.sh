@@ -45,8 +45,10 @@ if [[ -z "${VERSION:-}" ]]; then
 	exit 1
 fi
 require_readable_file "Doxyfile"
-# Doxygen doesn't expand $ENV{} in config, so substitute directly (portable sed)
-sed -i '' -e "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" Doxyfile
+# Doxygen doesn't expand $ENV{} in config, so substitute directly
+# Use temp file for portable sed across GNU/BSD sed
+TMPFILE=$(mktemp)
+sed "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" Doxyfile >"$TMPFILE" && mv "$TMPFILE" Doxyfile
 echo "Generating API documentation (v$VERSION)..."
 doxygen || {
 	echo "Error: doxygen failed." >&2

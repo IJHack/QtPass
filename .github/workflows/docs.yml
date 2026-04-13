@@ -82,8 +82,10 @@ jobs:
           fi
           echo "QTPASS_VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "Extracted version: $VERSION"
-          # Doxygen doesn't expand $ENV{} in config, so substitute directly (portable sed)
-          sed -i '' -e "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" Doxyfile
+          # Doxygen doesn't expand $ENV{} in config, so substitute directly
+          # Use temp file for portable sed across GNU/BSD sed
+          TMPFILE=$(mktemp)
+          sed "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" Doxyfile > "$TMPFILE" && mv "$TMPFILE" Doxyfile
           echo "Updated Doxyfile with version: $VERSION"
 
       - name: Generate documentation
