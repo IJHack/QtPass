@@ -2587,8 +2587,6 @@ DA:1291,0
 DA:1292,0
 DA:1329,0
 DA:1330,0
-DA:1357,0
-DA:1365,0
 DA:1373,0
 DA:1377,0
 DA:1425,0
@@ -2615,7 +2613,7 @@ DA:1567,0
 DA:1582,0
 DA:1583,0
 DA:1597,0
-LF:101
+LF:99
 LH:0
 end_of_record
 TN:
@@ -9980,7 +9978,7 @@ FN:233,249,_ZN4Util6getDirERK11QModelIndexbRK16QFileSystemModelRK10StoreModel
 FN:251,254,_ZN4Util11endsWithGpgEv
 FN:268,272,_ZN4Util13protocolRegexEv
 FN:274,277,_ZN4Util13newLinesRegexEv
-FN:279,316,_ZN4Util12isValidKeyIdERK7QString
+FN:279,296,_ZN4Util12isValidKeyIdERK7QString
 FN:41,68,_ZN4Util21initialiseEnvironmentEv
 FN:77,92,_ZN4Util17findPasswordStoreEv
 FN:94,101,_ZN4Util19normalizeFolderPathERK7QString
@@ -10066,16 +10064,11 @@ DA:279,0
 DA:280,0
 DA:285,0
 DA:286,0
-DA:289,0
+DA:288,0
 DA:290,0
-DA:293,0
-DA:294,0
+DA:291,0
 DA:295,0
-DA:298,0
-DA:303,0
-DA:307,0
-DA:309,0
-LF:79
+LF:74
 LH:0
 end_of_record
 TN:

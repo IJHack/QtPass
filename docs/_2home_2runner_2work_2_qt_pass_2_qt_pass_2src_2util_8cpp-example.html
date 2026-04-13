@@ -277,39 +277,19 @@ On Windows, appends common WinGPG and GnuPG installation paths if available.</dd
 <div class="line">  <span class="keywordflow">if</span> (keyId.isEmpty()) {</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">  }</div>
+<div class="line"> </div>
 <div class="line">  QString normalized = keyId;</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">if</span> (normalized.startsWith(<span class="stringliteral">&quot;0x&quot;</span>) || normalized.startsWith(<span class="stringliteral">&quot;0X&quot;</span>)) {</div>
-<div class="line">    normalized = normalized.mid(2);</div>
-<div class="line">  }</div>
-<div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> (normalized.startsWith(<span class="charliteral">&#39;&lt;&#39;</span>) &amp;&amp; normalized.endsWith(<span class="charliteral">&#39;&gt;&#39;</span>)) {</div>
 <div class="line">    normalized = normalized.mid(1, normalized.length() - 2);</div>
 <div class="line">  }</div>
+<div class="line">  normalized.remove(QRegularExpression(<span class="stringliteral">&quot;^0[xX]&quot;</span>));</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordflow">if</span> (normalized.startsWith(<span class="charliteral">&#39;@&#39;</span>) || normalized.startsWith(<span class="charliteral">&#39;/&#39;</span>) ||</div>
-<div class="line">      normalized.startsWith(<span class="charliteral">&#39;#&#39;</span>) || normalized.startsWith(<span class="charliteral">&#39;&amp;&#39;</span>)) {</div>
+<div class="line">  <span class="keywordflow">if</span> (QRegularExpression(<span class="stringliteral">&quot;^[@/#&amp;]&quot;</span>).match(normalized).hasMatch() ||</div>
+<div class="line">      normalized.contains(<span class="charliteral">&#39;@&#39;</span>)) {</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordflow">if</span> (normalized.contains(<span class="charliteral">&#39;@&#39;</span>)) {</div>
-<div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line">  <span class="keyword">const</span> <span class="keywordtype">int</span> len = normalized.size();</div>
-<div class="line">  <span class="keywordflow">if</span> (len &lt; 8 || len &gt; 40) {</div>
-<div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">for</span> (QChar c : normalized) {</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> lc = c.toLatin1();</div>
-<div class="line">    <span class="keywordflow">if</span> ((lc &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; lc &lt;= <span class="charliteral">&#39;9&#39;</span>) || (lc &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; lc &lt;= <span class="charliteral">&#39;F&#39;</span>) ||</div>
-<div class="line">        (lc &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; lc &lt;= <span class="charliteral">&#39;f&#39;</span>)) {</div>
-<div class="line">      <span class="keywordflow">continue</span>;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line">  }</div>
-<div class="line">  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">  <span class="keywordflow">return</span> QRegularExpression(<span class="stringliteral">&quot;^[0-9A-Fa-f]{8,40}$&quot;</span>).match(normalized).hasMatch();</div>
 <div class="line">}</div>
 <div class="ttc" id="aclass_executor_html_a2673768d875e9207a6a178dd1a489828"><div class="ttname"><a href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a></div><div class="ttdeci">static auto executeBlocking(QString app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</div><div class="ttdoc">Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00223">executor.cpp:223</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html"><div class="ttname"><a href="class_qt_pass_settings.html">QtPassSettings</a></div><div class="ttdoc">Singleton settings manager implementation.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8h_source.html#l00035">qtpasssettings.h:35</a></div></div>

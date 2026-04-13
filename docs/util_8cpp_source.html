@@ -297,40 +297,20 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <span class="keywordflow">if</span> (keyId.isEmpty()) {</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  }</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  QString normalized = keyId;</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keywordflow">if</span> (normalized.startsWith(<span class="stringliteral">&quot;0x&quot;</span>) || normalized.startsWith(<span class="stringliteral">&quot;0X&quot;</span>)) {</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    normalized = normalized.mid(2);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  QString normalized = keyId;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keywordflow">if</span> (normalized.startsWith(<span class="charliteral">&#39;&lt;&#39;</span>) &amp;&amp; normalized.endsWith(<span class="charliteral">&#39;&gt;&#39;</span>)) {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    normalized = normalized.mid(1, normalized.length() - 2);</div>
 <div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  }</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keywordflow">if</span> (normalized.startsWith(<span class="charliteral">&#39;&lt;&#39;</span>) &amp;&amp; normalized.endsWith(<span class="charliteral">&#39;&gt;&#39;</span>)) {</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    normalized = normalized.mid(1, normalized.length() - 2);</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  }</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  <span class="keywordflow">if</span> (normalized.startsWith(<span class="charliteral">&#39;@&#39;</span>) || normalized.startsWith(<span class="charliteral">&#39;/&#39;</span>) ||</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>      normalized.startsWith(<span class="charliteral">&#39;#&#39;</span>) || normalized.startsWith(<span class="charliteral">&#39;&amp;&#39;</span>)) {</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  }</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  <span class="keywordflow">if</span> (normalized.contains(<span class="charliteral">&#39;@&#39;</span>)) {</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  }</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <span class="keyword">const</span> <span class="keywordtype">int</span> len = normalized.size();</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>  <span class="keywordflow">if</span> (len &lt; 8 || len &gt; 40) {</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  }</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="keywordflow">for</span> (QChar c : normalized) {</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> lc = c.toLatin1();</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    <span class="keywordflow">if</span> ((lc &gt;= <span class="charliteral">&#39;0&#39;</span> &amp;&amp; lc &lt;= <span class="charliteral">&#39;9&#39;</span>) || (lc &gt;= <span class="charliteral">&#39;A&#39;</span> &amp;&amp; lc &lt;= <span class="charliteral">&#39;F&#39;</span>) ||</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        (lc &gt;= <span class="charliteral">&#39;a&#39;</span> &amp;&amp; lc &lt;= <span class="charliteral">&#39;f&#39;</span>)) {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>      <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    }</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>  }</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>}</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  normalized.remove(QRegularExpression(<span class="stringliteral">&quot;^0[xX]&quot;</span>));</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <span class="keywordflow">if</span> (QRegularExpression(<span class="stringliteral">&quot;^[@/#&amp;]&quot;</span>).match(normalized).hasMatch() ||</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>      normalized.contains(<span class="charliteral">&#39;@&#39;</span>)) {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <span class="keywordflow">return</span> QRegularExpression(<span class="stringliteral">&quot;^[0-9A-Fa-f]{8,40}$&quot;</span>).match(normalized).hasMatch();</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>}</div>
 </div>
 <div class="ttc" id="aclass_executor_html_a2673768d875e9207a6a178dd1a489828"><div class="ttname"><a href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a></div><div class="ttdeci">static auto executeBlocking(QString app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</div><div class="ttdoc">Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00223">executor.cpp:223</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a51d5b6ef611562d9247d5c482e6449a8"><div class="ttname"><a href="class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8">QtPassSettings::isUsePass</a></div><div class="ttdeci">static auto isUsePass(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get whether to use pass (true) or GPG (false).</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00292">qtpasssettings.cpp:292</a></div></div>
