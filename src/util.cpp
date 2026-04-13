@@ -282,7 +282,10 @@ auto Util::isValidKeyId(const QString &keyId) -> bool {
   }
 
   QString normalized = keyId;
-  normalized.remove(QRegularExpression("^0[xX]|<|>$"));
+  if (normalized.startsWith('<') && normalized.endsWith('>')) {
+    normalized = normalized.mid(1, normalized.length() - 2);
+  }
+  normalized.remove(QRegularExpression("^0[xX]"));
 
   if (QRegularExpression("^[@/#&]").match(normalized).hasMatch() ||
       normalized.contains('@')) {
