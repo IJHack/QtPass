@@ -16,7 +16,7 @@ metadata:
 
 Update version in all build files:
 
-- `qtpass.pri` - `VERSION = 1.6.0` (note: .pri not .pro, unquoted number)
+- `qtpass.pri` - `VERSION = X.Y.Z` (note: .pri not .pro, unquoted number)
 - `qtpass.spec` - `Version:`
 - `qtpass.iss` - `AppVerName=`
 - `Doxyfile` - `PROJECT_NUMBER`
