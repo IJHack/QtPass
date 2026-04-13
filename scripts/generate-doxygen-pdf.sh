@@ -25,7 +25,7 @@ require_readable_file "Doxyfile"
 TMPFILE=$(mktemp)
 sed -e "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" \
 	-e "s/^GENERATE_LATEX.*=.*/GENERATE_LATEX         = YES/" \
-	-e "s/^GENERATE_PDFLATEX.*=.*/GENERATE_PDFLATEX     = YES/" \
+	-e "s/^USE_PDFLATEX.*=.*/USE_PDFLATEX           = YES/" \
 	Doxyfile >"$TMPFILE" && mv "$TMPFILE" Doxyfile
 
 echo "Generating LaTeX documentation..."
@@ -65,11 +65,7 @@ if [[ -z "$PDF_FILE" ]]; then
 	exit 1
 fi
 
-# Determine output directory (same level as latex folder)
-if [[ -d "docs" ]]; then
-	OUTPUT_DIR="docs"
-else
-	OUTPUT_DIR="."
-fi
+# Derive output directory from PDF_FILE location
+OUTPUT_DIR=$(dirname "$PDF_FILE")
 cp "$PDF_FILE" "$OUTPUT_DIR/QtPass-$VERSION.pdf"
 echo "PDF generated: $OUTPUT_DIR/QtPass-$VERSION.pdf"
