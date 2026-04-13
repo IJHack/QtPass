@@ -4,13 +4,13 @@
 
 ### Highlights
 
-- Auto-detect git in existing password-store [#804](https://github.com/IJHack/QtPass/pull/804)
+- Auto-detect Git in existing password-store [#804](https://github.com/IJHack/QtPass/pull/804)
 - Use ed25519 for GPG key generation when available [#790](https://github.com/IJHack/QtPass/pull/790)
 - Improved GPG key parsing with new `gpgkeystate` module
 
 ### New Features
 
-- Added auto-detect git in existing password-store
+- Added auto-detect Git in existing password-store
 - Use ed25519 (ECC) for GPG key generation when GPG supports it
 - Added compile_commands.json generation script for IDE tooling
 
@@ -23,7 +23,7 @@
 - Consolidated release scripts into `scripts/` folder
 - UsersDialog performance optimizations [#977](https://github.com/IJHack/QtPass/pull/977)
 
-### Bug Fixes
+### Bugfixes
 
 - Fixed path separator check in gpgconf resolution
 - Fixed .gpg-id path construction for cross-platform [#780](https://github.com/IJHack/QtPass/issues/780)
@@ -78,7 +78,7 @@
 
 ## [1.5.0](https://github.com/IJHack/QtPass/tree/v1.5.0) (2026-03-21)
 
-### Highlights
+### Highlights <!-- markdownlint-disable-line MD024 -->
 
 - `1.5.0` release metadata and packaging preparation across the desktop app, installer, and CI configuration.
 - Windows release pipeline reliability improvements for AppVeyor and Inno Setup packaging.
@@ -91,13 +91,13 @@
 - Removed a regression where gpg_id comments could be altered [#658](https://github.com/IJHack/QtPass/pull/658).
 - Added missing include path fixes and small reliability hardening in core code paths [#690](https://github.com/IJHack/QtPass/pull/690), [#716](https://github.com/IJHack/QtPass/pull/716).
 
-### Release, CI and Maintenance
+### Release, CI and Maintenance <!-- markdownlint-disable-line MD024 -->
 
 - Added/updated PublicCode and CI workflows, including release-time validation and action upgrades [#701](https://github.com/IJHack/QtPass/pull/701), [#709](https://github.com/IJHack/QtPass/pull/709), [#710](https://github.com/IJHack/QtPass/pull/710), [#711](https://github.com/IJHack/QtPass/pull/711), [#712](https://github.com/IJHack/QtPass/pull/712).
 - Completed the AppVeyor/Inno Setup modernization and packaging updates [#722](https://github.com/IJHack/QtPass/pull/722).
 - Updated readme status badges and branch links to current workflow targets [#724](https://github.com/IJHack/QtPass/pull/724).
 
-### Localization
+### Localization <!-- markdownlint-disable-line MD024 -->
 
 - Synchronised a large set of translation updates through Weblate and translation automation to improve language coverage and keep localization current [#659](https://github.com/IJHack/QtPass/pull/659), [#664](https://github.com/IJHack/QtPass/pull/664), [#666](https://github.com/IJHack/QtPass/pull/666), [#669](https://github.com/IJHack/QtPass/pull/669), [#670](https://github.com/IJHack/QtPass/pull/670), [#673](https://github.com/IJHack/QtPass/pull/673), [#676](https://github.com/IJHack/QtPass/pull/676), [#685](https://github.com/IJHack/QtPass/pull/685), [#689](https://github.com/IJHack/QtPass/pull/689), [#691](https://github.com/IJHack/QtPass/pull/691), [#699](https://github.com/IJHack/QtPass/pull/699), [#702](https://github.com/IJHack/QtPass/pull/702), [#703](https://github.com/IJHack/QtPass/pull/703), [#707](https://github.com/IJHack/QtPass/pull/707), [#713](https://github.com/IJHack/QtPass/pull/713), [#723](https://github.com/IJHack/QtPass/pull/723). <!-- markdownlint-disable-line MD013 -->
 
