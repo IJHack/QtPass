@@ -155,12 +155,12 @@ git checkout -b release/vX.Y.Z
 git add -A
 git commit -m "Release vX.Y.Z"
 
-# Push branch
-git push origin release/vX.Y.Z
-
-# Update with latest main before PR
+# Update with latest main before pushing
 git fetch upstream
 git rebase upstream/main
+
+# Push branch (force-with-lease since we rebased)
+git push origin release/vX.Y.Z --force-with-lease
 
 # Create PR
 gh pr create --base main --head release/vX.Y.Z --title "Release vX.Y.Z"

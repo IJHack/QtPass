@@ -76,6 +76,10 @@ jobs:
         if: steps.need_docs.outputs.run_docs == 'true'
         run: |
           VERSION=$(grep -E '^VERSION *=' qtpass.pri | cut -d'=' -f2 | tr -d ' ')
+          if [ -z "$VERSION" ]; then
+            echo "Error: Failed to extract VERSION from qtpass.pri" >&2
+            exit 1
+          fi
           echo "QTPASS_VERSION=$VERSION" >> "$GITHUB_ENV"
           echo "Extracted version: $VERSION"
 
