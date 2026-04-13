@@ -1,6 +1,47 @@
-@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,900italic,300,700,900);
 :root {
   color-scheme: light dark;
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url(../fonts/lato-latin-300-normal.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/lato-latin-400-normal.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 400;
+  src: url(../fonts/lato-latin-400-italic.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/lato-latin-700-normal.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 700;
+  src: url(../fonts/lato-latin-700-italic.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 900;
+  src: url(../fonts/lato-latin-900-normal.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: 900;
+  src: url(../fonts/lato-latin-900-italic.woff2) format('woff2');
 }
 body{padding:50px;font:21px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;color:#222;font-weight:300;}
 h1, h2, h3, h4, h5, h6{color:#222;margin:0 0 20px;}
