@@ -873,6 +873,7 @@ void tst_util::getRecipientListBasic() {
   file.write("ABCDEF12\n34567890\n");
   file.close();
 
+  PassStoreGuard guard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(passStore);
   QStringList recipients = Pass::getRecipientList(passStore);
   QCOMPARE(recipients.size(), 2);
@@ -1006,6 +1007,7 @@ void tst_util::getGpgIdPathBasic() {
   file.write("ABCDEF12\n");
   file.close();
 
+  PassStoreGuard guard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(passStore);
   QString path = QDir::cleanPath(Pass::getGpgIdPath(passStore));
   QString expected = QDir::cleanPath(gpgIdFile);
@@ -1025,6 +1027,7 @@ void tst_util::getGpgIdPathSubfolder() {
   file.write("ABCDEF12\n");
   file.close();
 
+  PassStoreGuard guard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(passStore);
   QString path = Pass::getGpgIdPath(subfolder + "/password.gpg");
   QVERIFY2(path == gpgIdFile,
@@ -1035,6 +1038,7 @@ void tst_util::getGpgIdPathNotFound() {
   QTemporaryDir tempDir;
   QString passStore = tempDir.path();
 
+  PassStoreGuard guard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(passStore);
   QString path =
       QDir::cleanPath(Pass::getGpgIdPath(passStore + "/nonexistent"));

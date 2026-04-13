@@ -151,10 +151,8 @@ auto Util::findBinaryInPath(QString binary) -> QString {
   }
 #ifdef Q_OS_WIN
   if (ret.isEmpty()) {
-    // Validate binary name before attempting WSL fallback: require a non-empty,
-    // whitespace-free program name to avoid confusing WSL invocations.
-    const bool hasWhitespace =
-        binary.contains(QRegularExpression(QStringLiteral("\\s")));
+    static const QRegularExpression whitespaceRegex(QStringLiteral("\\s"));
+    const bool hasWhitespace = binary.contains(whitespaceRegex);
     if (!binary.isEmpty() && !hasWhitespace) {
       QString wslCommand = QStringLiteral("wsl ") + binary;
 #ifdef QT_DEBUG
@@ -277,6 +275,10 @@ auto Util::newLinesRegex() -> const QRegularExpression & {
 }
 
 auto Util::isValidKeyId(const QString &keyId) -> bool {
+  static const QRegularExpression hexPrefixRegex{"^0[xX]"};
+  static const QRegularExpression specialPrefixRegex{"^[@/#&]"};
+  static const QRegularExpression hexKeyIdRegex{"^[0-9A-Fa-f]{8,40}$"};
+
   if (keyId.isEmpty()) {
     return false;
   }
@@ -285,12 +287,12 @@ auto Util::isValidKeyId(const QString &keyId) -> bool {
   if (normalized.startsWith('<') && normalized.endsWith('>')) {
     normalized = normalized.mid(1, normalized.length() - 2);
   }
-  normalized.remove(QRegularExpression("^0[xX]"));
+  normalized.remove(hexPrefixRegex);
 
-  if (QRegularExpression("^[@/#&]").match(normalized).hasMatch() ||
+  if (specialPrefixRegex.match(normalized).hasMatch() ||
       normalized.contains('@')) {
     return true;
   }
 
-  return QRegularExpression("^[0-9A-Fa-f]{8,40}$").match(normalized).hasMatch();
+  return hexKeyIdRegex.match(normalized).hasMatch();
 }
