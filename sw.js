@@ -65,6 +65,7 @@ const PRECACHE_URLS = [
   "/fonts/lato-latin-900-italic.woff2",
   "/fonts/lato-latin-900-normal.woff2",
   "/manifest.json",
+  "/favicon.ico",
 ];
 
 self.addEventListener("install", (event) => {
