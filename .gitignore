@@ -1,4 +1,5 @@
 node_modules
+.opencode/
 .idea
 .aider.chat.history.md
 .aider.input.history
