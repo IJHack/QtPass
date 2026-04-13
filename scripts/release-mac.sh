@@ -39,7 +39,6 @@ pandoc --standalone --from=gfm --to=rtf --output=README.rtf "$README_CLEAN" FAQ.
 
 echo "Extracting version..."
 require_readable_file "qtpass.pri"
-echo "Extracting version..."
 VERSION=$(awk -F= '/^[[:space:]]*VERSION[[:space:]]*=/ { gsub(/[[:space:]]/, "", $2); print $2; exit }' qtpass.pri)
 if [[ -z "${VERSION:-}" ]]; then
 	echo "Error: Failed to extract VERSION from qtpass.pri" >&2
