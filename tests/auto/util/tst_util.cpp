@@ -930,6 +930,8 @@ void tst_util::getRecipientListInvalidKeyId() {
   QStringList recipients = Pass::getRecipientList(passStore);
   QVERIFY(!recipients.contains("invalid"));
   QVERIFY(recipients.contains("ABCDEF12"));
+  QVERIFY(recipients.contains("0xABCDEF123456789012"));
+  QVERIFY(recipients.contains("user@domain.org"));
 }
 
 void tst_util::isValidKeyIdBasic() {

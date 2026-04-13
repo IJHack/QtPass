@@ -81,11 +81,11 @@ public:
   static auto newLinesRegex() -> const QRegularExpression &;
   /**
    * @brief Check if a string looks like a valid GPG key ID.
-   * Validates a GPG key ID after normalization:
-   * - Strips optional 0x/0X prefix
-   * - Strips surrounding angle brackets <...>
-   * - Strips leading @, /, #, or & prefix
-   * - Validates remaining string is 8-40 hex characters (0-9, A-F, a-f)
+   * Accepts:
+   * - Key IDs: 8-40 hex characters (0-9, A-F, a-f), optional 0x prefix
+   * - Emails: any string containing @ (e.g., user@domain.org,
+   * <user@domain.org>)
+   * - Special prefixes: leading @, /, #, or & (any content after prefix)
    * @param keyId The string to validate.
    * @return true if the key ID format is valid, false otherwise.
    */
