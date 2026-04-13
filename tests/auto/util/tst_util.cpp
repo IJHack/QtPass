@@ -529,15 +529,32 @@ void tst_util::generateRandomPassword() {
   QString result = pass.generatePassword(10, charset);
 
   QCOMPARE(result.length(), 10);
+  for (const QChar &ch : result) {
+    QVERIFY2(
+        charset.contains(ch),
+        "Generated password contains character outside the specified charset");
+  }
 
   result = pass.generatePassword(100, "abcd");
+  QString charset2 = "abcd";
   QCOMPARE(result.length(), 100);
+  for (const QChar &ch : result) {
+    QVERIFY2(
+        charset2.contains(ch),
+        "Generated password contains character outside the specified charset");
+  }
 
   result = pass.generatePassword(0, "");
   QVERIFY(result.isEmpty());
 
   result = pass.generatePassword(50, "ABC");
+  QString charset3 = "ABC";
   QCOMPARE(result.length(), 50);
+  for (const QChar &ch : result) {
+    QVERIFY2(
+        charset3.contains(ch),
+        "Generated password contains character outside the specified charset");
+  }
 }
 
 void tst_util::boundedRandom() {
@@ -586,9 +603,31 @@ void tst_util::configIsValid() {
 
   // No .gpg-id in this store => config must be invalid.
   QtPassSettings::setPassStore(tempDir.path());
-  const bool isValid = Util::configIsValid();
-
+  bool isValid = Util::configIsValid();
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id is missing");
+
+  // Create .gpg-id, then force invalid executable configuration.
+  QFile gpgIdFile(tempDir.path() + QDir::separator() +
+                  QStringLiteral(".gpg-id"));
+  QVERIFY2(gpgIdFile.open(QIODevice::WriteOnly | QIODevice::Truncate),
+           "Should be able to create .gpg-id");
+  gpgIdFile.write("test@example.com\n");
+  gpgIdFile.close();
+
+  const QString originalGitExecutable = QtPassSettings::getGitExecutable();
+  const QString originalGpgExecutable = QtPassSettings::getGpgExecutable();
+  QtPassSettings::setGitExecutable(QString());
+  isValid = Util::configIsValid();
+  QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but git "
+                     "executable is missing");
+  QtPassSettings::setGitExecutable(originalGitExecutable);
+  QtPassSettings::setGpgExecutable(
+      QStringLiteral("definitely_nonexistent_gpg_binary_12345"));
+  isValid = Util::configIsValid();
+  QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
+                     "executable is invalid");
+  QtPassSettings::setGitExecutable(originalGitExecutable);
+  QtPassSettings::setGpgExecutable(originalGpgExecutable);
 }
 
 void tst_util::getDirBasic() {
