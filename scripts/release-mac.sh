@@ -39,13 +39,18 @@ pandoc --standalone --from=gfm --to=rtf --output=README.rtf "$README_CLEAN" FAQ.
 
 echo "Extracting version..."
 require_readable_file "qtpass.pri"
-echo "Extracting version..."
 VERSION=$(awk -F= '/^[[:space:]]*VERSION[[:space:]]*=/ { gsub(/[[:space:]]/, "", $2); print $2; exit }' qtpass.pri)
 if [[ -z "${VERSION:-}" ]]; then
 	echo "Error: Failed to extract VERSION from qtpass.pri" >&2
 	exit 1
 fi
+# Exported for doxygen: Doxyfile uses PROJECT_NUMBER = $ENV{QTPASS_VERSION}.
 export QTPASS_VERSION="$VERSION"
+require_readable_file "Doxyfile"
+if ! grep -Eq "^PROJECT_NUMBER\\s*=\\s*\\$ENV\\{QTPASS_VERSION\\}" Doxyfile; then
+	echo "Error: Doxyfile PROJECT_NUMBER is not set to \$ENV{QTPASS_VERSION}" >&2
+	exit 1
+fi
 echo "Generating API documentation (v$VERSION)..."
 doxygen || {
 	echo "Error: doxygen failed." >&2
