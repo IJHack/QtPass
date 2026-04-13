@@ -5,27 +5,33 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
+        <location filename="../src/ui_configdialog.h" line="871"/>
         <source>Configuration</source>
         <translation>设置</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
+        <location filename="../src/ui_configdialog.h" line="915"/>
         <source>Settings</source>
         <translation>选项</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
+        <location filename="../src/ui_configdialog.h" line="872"/>
         <source>Clipboard behaviour:</source>
         <translation>剪贴板选项：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
+        <location filename="../src/ui_configdialog.h" line="874"/>
         <source>Autoclear after:</source>
         <translation>清除剪贴板:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
+        <location filename="../src/ui_configdialog.h" line="875"/>
+        <location filename="../src/ui_configdialog.h" line="880"/>
         <source>Seconds</source>
         <translation>秒</translation>
     </message>
@@ -35,111 +41,133 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
+        <location filename="../src/ui_configdialog.h" line="877"/>
         <source>Hide content</source>
         <translation>隐藏内容</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
+        <location filename="../src/ui_configdialog.h" line="878"/>
         <source>Hide password</source>
         <translation>隐藏密码</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
+        <location filename="../src/ui_configdialog.h" line="879"/>
         <source>Autoclear panel after:</source>
         <translation>自动隐藏密码：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
+        <location filename="../src/ui_configdialog.h" line="881"/>
         <source>Use a monospace font</source>
         <translation>使用等宽字体</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
+        <location filename="../src/ui_configdialog.h" line="882"/>
         <source>Display the files content as-is</source>
         <translation>按原样显示文件内容</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
+        <location filename="../src/ui_configdialog.h" line="883"/>
         <source>No line wrapping</source>
         <translation>不换行</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
+        <location filename="../src/ui_configdialog.h" line="884"/>
         <source>Password Generation:</source>
         <translation>密码生成选项：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="282"/>
+        <location filename="../src/ui_configdialog.h" line="885"/>
         <source>Password Length:</source>
         <translation>密码长度：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="316"/>
+        <location filename="../src/ui_configdialog.h" line="886"/>
         <source>Characters</source>
         <translation>位</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="344"/>
+        <location filename="../src/ui_configdialog.h" line="887"/>
         <source>Use characters:</source>
         <translation>所用字符：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
+        <location filename="../src/ui_configdialog.h" line="894"/>
         <source>Select character set for password generation</source>
         <translation>选择密码所用的的字符集</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="366"/>
+        <location filename="../src/ui_configdialog.h" line="888"/>
         <source>All Characters</source>
         <translation>所有字符</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="371"/>
+        <location filename="../src/ui_configdialog.h" line="889"/>
         <source>Alphabetical</source>
         <translation>英文字母</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="376"/>
+        <location filename="../src/ui_configdialog.h" line="890"/>
         <source>Alphanumerical</source>
         <translation>字母和数字</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="381"/>
+        <location filename="../src/ui_configdialog.h" line="891"/>
         <source>Custom</source>
         <translation>自定义</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
+        <location filename="../src/ui_configdialog.h" line="896"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
+        <location filename="../src/ui_configdialog.h" line="899"/>
         <source>Include special symbols</source>
         <translation>包括特殊符号</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
+        <location filename="../src/ui_configdialog.h" line="923"/>
         <source>Generate</source>
         <translation>生成</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
+        <location filename="../src/ui_configdialog.h" line="925"/>
         <source>Generate GPG key pair</source>
         <translation>生成 GPG 密钥对</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
+        <location filename="../src/ui_configdialog.h" line="941"/>
         <source>Signing Key</source>
         <translation>签名密钥</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
+        <location filename="../src/ui_configdialog.h" line="943"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>可选：用 GPG 密钥签署 .gpg-id 文件用于验证完整性。除非需要保护用户列表免于篡改否则请留空。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
+        <location filename="../src/ui_configdialog.h" line="947"/>
         <source>Current path</source>
         <translation>当前路径</translation>
     </message>
@@ -149,6 +177,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
+        <location filename="../src/ui_configdialog.h" line="898"/>
         <source>Exclude capital letters</source>
         <translation>不包含大写字母</translation>
     </message>
@@ -158,16 +187,19 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
+        <location filename="../src/ui_configdialog.h" line="900"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>生成好记的密码（不安全）</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
+        <location filename="../src/ui_configdialog.h" line="901"/>
         <source>Exclude numbers</source>
         <translation>不包含数字</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="486"/>
+        <location filename="../src/ui_configdialog.h" line="902"/>
         <source>Git:</source>
         <translation>Git选项：</translation>
     </message>
@@ -177,51 +209,61 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="512"/>
+        <location filename="../src/ui_configdialog.h" line="904"/>
         <source>Automatically add .gpg-id files</source>
         <translation>自动添加 gpg-id 文件</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
+        <location filename="../src/ui_configdialog.h" line="905"/>
         <source>Automatically push</source>
         <translation>自动上传</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
+        <location filename="../src/ui_configdialog.h" line="906"/>
         <source>Automatically pull</source>
         <translation>自动更新合并</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="603"/>
+        <location filename="../src/ui_configdialog.h" line="910"/>
         <source>System:</source>
         <translation>系统选项：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="615"/>
+        <location filename="../src/ui_configdialog.h" line="911"/>
         <source>Use TrayIcon</source>
         <translation>显示托盘图标</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="622"/>
+        <location filename="../src/ui_configdialog.h" line="912"/>
         <source>Start minimized</source>
         <translation>启动后隐藏窗口</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
+        <location filename="../src/ui_configdialog.h" line="913"/>
         <source>Hide on close</source>
         <translation>关闭窗口后台运行</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/ui_configdialog.h" line="914"/>
         <source>Always on top</source>
         <translation>始终在前</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="661"/>
+        <location filename="../src/ui_configdialog.h" line="935"/>
         <source>Programs</source>
         <translation>程序</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="679"/>
+        <location filename="../src/ui_configdialog.h" line="916"/>
         <source>Select password storage program:</source>
         <translation>选择管理密码的程序：</translation>
     </message>
@@ -231,11 +273,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
+        <location filename="../src/ui_configdialog.h" line="918"/>
         <source>&amp;Use pass</source>
         <translation>使用 pass (&amp;U)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
+        <location filename="../src/ui_configdialog.h" line="919"/>
         <source>Native</source>
         <translation>命令路径</translation>
     </message>
@@ -257,11 +301,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="795"/>
+        <location filename="../src/ui_configdialog.h" line="930"/>
         <source>Pass</source>
         <translation>Pass 路径</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="806"/>
+        <location filename="../src/ui_configdialog.h" line="931"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -271,26 +317,31 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="879"/>
+        <location filename="../src/ui_configdialog.h" line="949"/>
         <source>Profiles</source>
         <translation>配置文件</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="928"/>
+        <location filename="../src/ui_configdialog.h" line="937"/>
         <source>Name</source>
         <translation>用户名</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="933"/>
+        <location filename="../src/ui_configdialog.h" line="939"/>
         <source>Path</source>
         <translation>密码库路径</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
+        <location filename="../src/ui_configdialog.h" line="945"/>
         <source>Add</source>
         <translation>添加</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="966"/>
+        <location filename="../src/ui_configdialog.h" line="946"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
@@ -300,6 +351,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1001"/>
+        <location filename="../src/ui_configdialog.h" line="959"/>
         <source>Template</source>
         <translation>模板</translation>
     </message>
@@ -309,16 +361,19 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1031"/>
+        <location filename="../src/ui_configdialog.h" line="951"/>
         <source>Use template</source>
         <translation>使用模板</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
+        <location filename="../src/ui_configdialog.h" line="953"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>只要是密码文件中一个词或几个字加一个英文冒号的格式，都看作模版显示在密码框上，而不仅仅只显示下面列出的项目</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
+        <location filename="../src/ui_configdialog.h" line="955"/>
         <source>Show all fields templated</source>
         <translation>显示所有模板项</translation>
     </message>
@@ -332,6 +387,7 @@ email</source>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
+        <location filename="../src/ui_configdialog.h" line="960"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; 版本 </translation>
     </message>
@@ -408,16 +464,19 @@ email</source>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
+        <location filename="../src/ui_configdialog.h" line="873"/>
         <source>Use primary selection</source>
         <translation>使用主选择</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
+        <location filename="../src/ui_configdialog.h" line="876"/>
         <source>Content panel behaviour:</source>
         <translation>内容面板行为：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="558"/>
+        <location filename="../src/ui_configdialog.h" line="907"/>
         <source>Extensions:</source>
         <translation>扩展：</translation>
     </message>
@@ -431,11 +490,13 @@ email</source>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
+        <location filename="../src/ui_configdialog.h" line="933"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="856"/>
+        <location filename="../src/ui_configdialog.h" line="934"/>
         <source>Autodetect</source>
         <translation>自动检测</translation>
     </message>
@@ -466,31 +527,37 @@ email</source>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
+        <location filename="../src/ui_configdialog.h" line="897"/>
         <source>Use PWGen</source>
         <translation>使用 PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
+        <location filename="../src/ui_configdialog.h" line="903"/>
         <source>Use Git</source>
         <translation>使用 Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="567"/>
+        <location filename="../src/ui_configdialog.h" line="908"/>
         <source>Use QRencode</source>
         <translation>使用 QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="581"/>
+        <location filename="../src/ui_configdialog.h" line="909"/>
         <source>Use pass-otp extension</source>
         <translation>使用pass-otp扩展</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
+        <location filename="../src/ui_configdialog.h" line="917"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>本地Git/GPG（&amp;V）</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
+        <location filename="../src/ui_configdialog.h" line="920"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
@@ -500,26 +567,35 @@ email</source>
         <location filename="../src/configdialog.ui" line="785"/>
         <location filename="../src/configdialog.ui" line="816"/>
         <location filename="../src/configdialog.ui" line="988"/>
+        <location filename="../src/ui_configdialog.h" line="921"/>
+        <location filename="../src/ui_configdialog.h" line="922"/>
+        <location filename="../src/ui_configdialog.h" line="929"/>
+        <location filename="../src/ui_configdialog.h" line="932"/>
+        <location filename="../src/ui_configdialog.h" line="948"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="765"/>
+        <location filename="../src/ui_configdialog.h" line="927"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
+        <location filename="../src/ui_configdialog.h" line="928"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
+        <location filename="../src/ui_configdialog.h" line="950"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>模板在“密码生成”对话框和“密码”视图中添加额外字段。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
+        <location filename="../src/ui_configdialog.h" line="956"/>
         <source>login
 URL
 e-mail</source>
@@ -673,46 +749,55 @@ You will not be able to decrypt any newly added passwords!</source>
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
+        <location filename="../src/ui_keygendialog.h" line="230"/>
         <source>Generate GnuPG keypair</source>
         <translation>生成 GnuPG 密钥</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
+        <location filename="../src/ui_keygendialog.h" line="231"/>
         <source>Generate a new key pair</source>
         <translation>创建新的密钥对</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
+        <location filename="../src/ui_keygendialog.h" line="234"/>
         <source>Passphrase</source>
         <translation>口令</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
+        <location filename="../src/ui_keygendialog.h" line="232"/>
         <source>Email</source>
         <translation>邮箱</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
+        <location filename="../src/ui_keygendialog.h" line="233"/>
         <source>Name</source>
         <translation>姓名</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
+        <location filename="../src/ui_keygendialog.h" line="235"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;密码短语的长度没有限制，应该仔细选择。从安全性的角度来看，解锁私钥的密码短语是 GnuPG（以及其他公钥加密系统）中最薄弱的一点，因为如果其他人获得您的私钥，它是您唯一的保护。&lt;br/&gt;理想情况下，密码短语不应使用字典中的单词，而应混合字母字符大小写以及使用非字母字符 。&lt;br/&gt; 良好的密码短语对于安全使用 GnuPG 至关重要。&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
+        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Repeat pass</source>
         <translation>重复密码</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
+        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>Expert</source>
         <translation>专家模式</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
+        <location filename="../src/ui_keygendialog.h" line="238"/>
         <source>Template contents will be set based on GPG version.</source>
         <translation>将根据 GPG 版本设置模板内容。</translation>
     </message>
@@ -782,6 +867,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
+        <location filename="../src/ui_keygendialog.h" line="239"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>高级选项请查看 &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG用户手册&lt;/a&gt;</translation>
     </message>
@@ -815,6 +901,7 @@ Expire-Date: 0
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
+        <location filename="../src/ui_mainwindow.h" line="271"/>
         <source>QtPass</source>
         <translation>QtPass 密码库管理器</translation>
     </message>
@@ -826,6 +913,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
         <location filename="../src/mainwindow.cpp" line="1041"/>
+        <location filename="../src/ui_mainwindow.h" line="283"/>
+        <location filename="../src/ui_mainwindow.h" line="285"/>
         <source>Edit</source>
         <translation>编辑</translation>
     </message>
@@ -833,6 +922,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
         <location filename="../src/mainwindow.cpp" line="1055"/>
+        <location filename="../src/ui_mainwindow.h" line="287"/>
+        <location filename="../src/ui_mainwindow.h" line="289"/>
         <source>Delete</source>
         <translation>删除</translation>
     </message>
@@ -842,6 +933,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="359"/>
+        <location filename="../src/ui_mainwindow.h" line="298"/>
         <source>Push</source>
         <translation>上传</translation>
     </message>
@@ -851,47 +943,56 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="367"/>
+        <location filename="../src/ui_mainwindow.h" line="302"/>
         <source>Update</source>
         <translation>更新</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="378"/>
+        <location filename="../src/ui_mainwindow.h" line="308"/>
         <source>Manage who can read password in folder</source>
         <translation>选择用哪个密钥来解密保存在密码库中的密码</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
         <location filename="../src/mainwindow.cpp" line="1035"/>
+        <location filename="../src/ui_mainwindow.h" line="306"/>
         <source>Users</source>
         <translation>用户</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="362"/>
+        <location filename="../src/ui_mainwindow.h" line="300"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="370"/>
+        <location filename="../src/ui_mainwindow.h" line="304"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="386"/>
+        <location filename="../src/ui_mainwindow.h" line="312"/>
         <source>Configuration</source>
         <translation>设置</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="383"/>
+        <location filename="../src/ui_mainwindow.h" line="310"/>
         <source>Config</source>
         <translation>设置</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="197"/>
+        <location filename="../src/ui_mainwindow.h" line="317"/>
         <source>Welcome to QtPass</source>
         <translation>欢迎使用 QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
+        <location filename="../src/ui_mainwindow.h" line="316"/>
         <source>Search Password</source>
         <translation>搜索密码库</translation>
     </message>
@@ -1066,6 +1167,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
         <location filename="../src/mainwindow.cpp" line="1033"/>
+        <location filename="../src/ui_mainwindow.h" line="279"/>
+        <location filename="../src/ui_mainwindow.h" line="281"/>
         <source>Add folder</source>
         <translation>新文件夹</translation>
     </message>
@@ -1073,6 +1176,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
         <location filename="../src/mainwindow.cpp" line="1034"/>
+        <location filename="../src/ui_mainwindow.h" line="272"/>
+        <location filename="../src/ui_mainwindow.h" line="274"/>
         <source>Add password</source>
         <translation>添加密码</translation>
     </message>
@@ -1089,26 +1194,31 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
+        <location filename="../src/ui_mainwindow.h" line="314"/>
         <source>Select profile</source>
         <translation>选择配置文件</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="319"/>
+        <location filename="../src/ui_mainwindow.h" line="277"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="348"/>
+        <location filename="../src/ui_mainwindow.h" line="291"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="351"/>
+        <location filename="../src/ui_mainwindow.h" line="293"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>生成OTP并复制到剪贴板</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
+        <location filename="../src/ui_mainwindow.h" line="296"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
@@ -1191,6 +1301,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
+        <location filename="../src/ui_mainwindow.h" line="318"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1219,46 +1330,56 @@ Expire-Date: 0
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
+        <location filename="../src/ui_passworddialog.h" line="174"/>
+        <location filename="../src/ui_passworddialog.h" line="176"/>
         <source>Password</source>
         <translation>密码</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
+        <location filename="../src/ui_passworddialog.h" line="177"/>
         <source>Generate</source>
         <translation>生成</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
+        <location filename="../src/ui_passworddialog.h" line="178"/>
         <source>Show password</source>
         <translation>显示密码</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
+        <location filename="../src/ui_passworddialog.h" line="179"/>
         <source>Character Set:</source>
         <translation>字符集：</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
+        <location filename="../src/ui_passworddialog.h" line="180"/>
         <source>All Characters</source>
         <translation>所有字符</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
+        <location filename="../src/ui_passworddialog.h" line="181"/>
         <source>Alphabetical</source>
         <translation>英文字母</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
+        <location filename="../src/ui_passworddialog.h" line="182"/>
         <source>Alphanumerical</source>
         <translation>字母和数字</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
+        <location filename="../src/ui_passworddialog.h" line="183"/>
         <source>Custom</source>
         <translation>自定义</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
+        <location filename="../src/ui_passworddialog.h" line="185"/>
         <source>Length:</source>
         <translation>长度：</translation>
     </message>
@@ -1416,11 +1537,13 @@ Expire-Date: 0
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
+        <location filename="../src/ui_usersdialog.h" line="102"/>
         <source>Read access users</source>
         <translation>选择用户</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
+        <location filename="../src/ui_usersdialog.h" line="103"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1444,6 +1567,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
+        <location filename="../src/ui_usersdialog.h" line="108"/>
         <source>Search for users</source>
         <translation>搜索用户</translation>
     </message>
@@ -1463,6 +1587,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
+        <location filename="../src/ui_usersdialog.h" line="109"/>
         <source>Show unusable keys</source>
         <translation>显示不可用密钥</translation>
     </message>
