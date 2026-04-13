@@ -292,7 +292,11 @@ auto Util::isValidKeyId(const QString &keyId) -> bool {
 
   if (normalized.startsWith('@') || normalized.startsWith('/') ||
       normalized.startsWith('#') || normalized.startsWith('&')) {
-    normalized = normalized.mid(1);
+    return true;
+  }
+
+  if (normalized.contains('@')) {
+    return true;
   }
 
   const int len = normalized.size();
@@ -304,10 +308,6 @@ auto Util::isValidKeyId(const QString &keyId) -> bool {
     const char lc = c.toLatin1();
     if ((lc >= '0' && lc <= '9') || (lc >= 'A' && lc <= 'F') ||
         (lc >= 'a' && lc <= 'f')) {
-      continue;
-    }
-    if ((lc >= 'a' && lc <= 'z') || (lc >= 'A' && lc <= 'Z') || lc == '@' ||
-        lc == '.' || lc == '-' || lc == '_') {
       continue;
     }
     return false;

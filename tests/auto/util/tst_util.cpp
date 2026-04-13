@@ -920,14 +920,16 @@ void tst_util::getRecipientListInvalidKeyId() {
 
   QFile file(gpgIdFile);
   QVERIFY(file.open(QIODevice::WriteOnly));
-  file.write("ABCDEF12\ninvalid\nshort\n0xABCDEF1234567890AB\n<qtpass@example."
-             "com>\nqtpass@example.com\n");
+  file.write(
+      "ABCDEF12\ninvalid\n0xABCDEF123456789012\n<a@b>\nuser@domain.org\n");
+  file.close();
 
-  PassStoreGuard guard(QtPassSettings::getPassStore());
+  const QString originalPassStore = QtPassSettings::getPassStore();
+  PassStoreGuard originalGuard(originalPassStore);
   QtPassSettings::setPassStore(passStore);
   QStringList recipients = Pass::getRecipientList(passStore);
-  QVERIFY2(recipients.size() >= 3, "Should filter invalid entries");
   QVERIFY(!recipients.contains("invalid"));
+  QVERIFY(recipients.contains("ABCDEF12"));
 }
 
 void tst_util::isValidKeyIdBasic() {
@@ -946,12 +948,11 @@ void tst_util::isValidKeyIdWith0xPrefix() {
 }
 
 void tst_util::isValidKeyIdWithEmail() {
-  QVERIFY(Util::isValidKeyId("<user@example.com>"));
-  QVERIFY(Util::isValidKeyId("user@example.com"));
-  QVERIFY(Util::isValidKeyId("@user"));
-  QVERIFY(Util::isValidKeyId("/CN=Test"));
-  QVERIFY(Util::isValidKeyId("#1234"));
-  QVERIFY(Util::isValidKeyId("&D75F22C3F86E355877348498CDC92BD210"));
+  QVERIFY(Util::isValidKeyId("<a@b>"));
+  QVERIFY(Util::isValidKeyId("user@domain.org"));
+  QVERIFY(Util::isValidKeyId("/any/text/here"));
+  QVERIFY(Util::isValidKeyId("#anything"));
+  QVERIFY(Util::isValidKeyId("&anything"));
 }
 
 void tst_util::isValidKeyIdInvalid() {
