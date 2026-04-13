@@ -614,20 +614,22 @@ void tst_util::configIsValid() {
   gpgIdFile.write("test@example.com\n");
   gpgIdFile.close();
 
-  const QString originalGitExecutable = QtPassSettings::getGitExecutable();
-  const QString originalGpgExecutable = QtPassSettings::getGpgExecutable();
-  QtPassSettings::setGitExecutable(QString());
+  QString originalGpgExecutable = QtPassSettings::getGpgExecutable();
+  struct GpgRollback {
+    QString value;
+    ~GpgRollback() { QtPassSettings::setGpgExecutable(value); }
+  } gpgRollback{originalGpgExecutable};
+
+  QtPassSettings::setGpgExecutable(QString());
   isValid = Util::configIsValid();
-  QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but git "
+  QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
                      "executable is missing");
-  QtPassSettings::setGitExecutable(originalGitExecutable);
+
   QtPassSettings::setGpgExecutable(
       QStringLiteral("definitely_nonexistent_gpg_binary_12345"));
   isValid = Util::configIsValid();
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
                      "executable is invalid");
-  QtPassSettings::setGitExecutable(originalGitExecutable);
-  QtPassSettings::setGpgExecutable(originalGpgExecutable);
 }
 
 void tst_util::getDirBasic() {
