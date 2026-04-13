@@ -21,11 +21,10 @@ echo "Version: $VERSION"
 
 require_readable_file "Doxyfile"
 
-# Enable LaTeX and PDF output, and set the version
-sed -i \
-	-e "s/PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" \
-	-e "s/GENERATE_LATEX.*=.*/GENERATE_LATEX         = YES/" \
-	-e "s/GENERATE_PDFLATEX.*=.*/GENERATE_PDFLATEX     = YES/" \
+# Enable LaTeX and PDF output, and set the version (portable sed)
+sed -i '' -e "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" \
+	-e "s/^GENERATE_LATEX.*=.*/GENERATE_LATEX         = YES/" \
+	-e "s/^GENERATE_PDFLATEX.*=.*/GENERATE_PDFLATEX     = YES/" \
 	Doxyfile
 
 echo "Generating LaTeX documentation..."
