@@ -1,7 +1,7 @@
 # QtPass - GUI for pass
 # SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 
-VERSION    = 1.5.1
+VERSION    = 1.6.0
 
 CONFIG(coverage) {
 	QMAKE_LFLAGS += --coverage
