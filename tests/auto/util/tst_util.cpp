@@ -97,6 +97,11 @@ private Q_SLOTS:
   void getRecipientListBasic();
   void getRecipientListEmpty();
   void getRecipientListWithComments();
+  void getRecipientListInvalidKeyId();
+  void isValidKeyIdBasic();
+  void isValidKeyIdWith0xPrefix();
+  void isValidKeyIdWithEmail();
+  void isValidKeyIdInvalid();
   void getRecipientStringCount();
   void getGpgIdPathBasic();
   void getGpgIdPathSubfolder();
@@ -905,6 +910,57 @@ void tst_util::getRecipientListWithComments() {
   QStringList recipients = Pass::getRecipientList(passStore);
   QCOMPARE(recipients.size(), 2);
   QVERIFY(!recipients.contains("# comment"));
+  QVERIFY(!recipients.contains("comment"));
+}
+
+void tst_util::getRecipientListInvalidKeyId() {
+  QTemporaryDir tempDir;
+  QString passStore = tempDir.path();
+  QString gpgIdFile = passStore + "/.gpg-id";
+
+  QFile file(gpgIdFile);
+  QVERIFY(file.open(QIODevice::WriteOnly));
+  file.write(
+      "ABCDEF12\ninvalid\n0xABCDEF123456789012\n<a@b>\nuser@domain.org\n");
+  file.close();
+
+  const QString originalPassStore = QtPassSettings::getPassStore();
+  PassStoreGuard originalGuard(originalPassStore);
+  QtPassSettings::setPassStore(passStore);
+  QStringList recipients = Pass::getRecipientList(passStore);
+  QVERIFY(!recipients.contains("invalid"));
+  QVERIFY(recipients.contains("ABCDEF12"));
+}
+
+void tst_util::isValidKeyIdBasic() {
+  QVERIFY(Util::isValidKeyId("ABCDEF12"));
+  QVERIFY(Util::isValidKeyId("abcdef12"));
+  QVERIFY(Util::isValidKeyId("0123456789ABCDEF"));
+  QVERIFY(Util::isValidKeyId("0123456789abcdef"));
+}
+
+void tst_util::isValidKeyIdWith0xPrefix() {
+  QVERIFY(Util::isValidKeyId("0xABCDEF12"));
+  QVERIFY(Util::isValidKeyId("0XABCDEF12"));
+  QVERIFY(Util::isValidKeyId("0xabcdef12"));
+  QVERIFY(Util::isValidKeyId("0Xabcdef12"));
+  QVERIFY(Util::isValidKeyId("0x0123456789ABCDEF"));
+}
+
+void tst_util::isValidKeyIdWithEmail() {
+  QVERIFY(Util::isValidKeyId("<a@b>"));
+  QVERIFY(Util::isValidKeyId("user@domain.org"));
+  QVERIFY(Util::isValidKeyId("/any/text/here"));
+  QVERIFY(Util::isValidKeyId("#anything"));
+  QVERIFY(Util::isValidKeyId("&anything"));
+}
+
+void tst_util::isValidKeyIdInvalid() {
+  QVERIFY(!Util::isValidKeyId(""));
+  QVERIFY(!Util::isValidKeyId("short"));
+  QVERIFY(!Util::isValidKeyId(QString(41, 'a')));
+  QVERIFY(!Util::isValidKeyId("invalidchars!"));
+  QVERIFY(!Util::isValidKeyId("space in key"));
 }
 
 void tst_util::getRecipientStringCount() {
