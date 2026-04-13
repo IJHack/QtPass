@@ -16,7 +16,7 @@ metadata:
 
 Update version in all build files:
 
-- `qtpass.pri` - `VERSION = "x.y.z"` (note: .pri not .pro)
+- `qtpass.pri` - `VERSION = X.Y.Z` (note: .pri not .pro, unquoted number)
 - `qtpass.spec` - `Version:`
 - `qtpass.iss` - `AppVerName=`
 - `Doxyfile` - `PROJECT_NUMBER`
@@ -30,8 +30,8 @@ Update version in all build files:
 **NOTE:** `qtpass.appdata.xml` and `appdmg.json` don't have version fields to update.
 
 ```bash
-# Find version strings
-grep -rn "1\.5" qtpass.pri qtpass.spec qtpass.iss Doxyfile
+# Find version strings (replace X.Y with actual version)
+grep -rn "X\.Y" qtpass.pri qtpass.spec qtpass.iss Doxyfile
 ```
 
 ### 2. Changelog
@@ -104,7 +104,7 @@ git checkout gh-pages
 # Update changelog.1.4.html, old.html (version only)
 
 git add -A
-git commit -m "Release v1.6.0"
+git commit -m "Release vX.Y.Z"
 git push origin gh-pages
 ```
 
@@ -145,13 +145,25 @@ act push -W .github/workflows/linter.yml -j build
 
 ## Protected Main Branch
 
-`main` is protected - cannot push directly. Must create PR:
+`main` is protected - cannot push directly. Must create PR from a release branch:
 
 ```bash
+# Create release branch
+git checkout -b release/vX.Y.Z
+
 # Make changes, commit
-git push origin main
-# Error: protected branch - create PR instead
-gh pr create --base main --head main --title "Release v1.6.0"
+git add -A
+git commit -m "Release vX.Y.Z"
+
+# Update with latest main before pushing
+git fetch upstream
+git rebase upstream/main
+
+# Push branch (force-with-lease since we rebased)
+git push origin release/vX.Y.Z --force-with-lease
+
+# Create PR
+gh pr create --base main --head release/vX.Y.Z --title "Release vX.Y.Z"
 ```
 
 ## Script Best Practices
