@@ -33,10 +33,14 @@ doxygen || {
 	exit 1
 }
 
-# Find the generated makefile
-LATEX_MAKEFILE=$(find docs/latex -name "Makefile" -type f | head -n1)
+# Find the generated makefile (Doxygen uses ./latex/ by default)
+LATEX_MAKEFILE=$(find latex -name "Makefile" -type f 2>/dev/null | head -n1)
 if [[ -z "$LATEX_MAKEFILE" ]]; then
-	echo "Error: Could not find LaTeX Makefile in docs/latex" >&2
+	# Try docs/latex as fallback if OUTPUT_DIRECTORY was set to docs
+	LATEX_MAKEFILE=$(find docs/latex -name "Makefile" -type f 2>/dev/null | head -n1)
+fi
+if [[ -z "$LATEX_MAKEFILE" ]]; then
+	echo "Error: Could not find LaTeX Makefile (tried latex/ and docs/latex)" >&2
 	exit 1
 fi
 
@@ -50,12 +54,21 @@ make pdf || {
 }
 cd - >/dev/null
 
-PDF_FILE=$(find "$LATEX_DIR" -name "refman.pdf" -type f | head -n1)
+# Find the generated PDF and copy to accessible location
+PDF_FILE=$(find latex -name "refman.pdf" -type f 2>/dev/null | head -n1)
 if [[ -z "$PDF_FILE" ]]; then
-	echo "Error: Could not find generated PDF" >&2
+	PDF_FILE=$(find docs/latex -name "refman.pdf" -type f 2>/dev/null | head -n1)
+fi
+if [[ -z "$PDF_FILE" ]]; then
+	echo "Error: Could not find generated PDF (tried latex/ and docs/latex)" >&2
 	exit 1
 fi
 
-# Copy to more accessible location
-cp "$PDF_FILE" "docs/QtPass-$VERSION.pdf"
-echo "PDF generated: docs/QtPass-$VERSION.pdf"
+# Determine output directory (same level as latex folder)
+if [[ -d "docs" ]]; then
+	OUTPUT_DIR="docs"
+else
+	OUTPUT_DIR="."
+fi
+cp "$PDF_FILE" "$OUTPUT_DIR/QtPass-$VERSION.pdf"
+echo "PDF generated: $OUTPUT_DIR/QtPass-$VERSION.pdf"
