@@ -1,0 +1,5 @@
+<map id="Pass::getRecipientList" name="Pass::getRecipientList">
+<area shape="rect" id="Node000001" title="Get list of recipients for a password file." alt="" coords="5,5,169,31"/>
+<area shape="rect" id="Node000002" href="$class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5" title="Check if a string looks like a valid GPG key ID. Validates a GPG key ID after normalization:" alt="" coords="217,5,349,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,15,204,15,204,21,170,21"/>
+</map>

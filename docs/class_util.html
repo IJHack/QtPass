@@ -22,7 +22,7 @@
  <tr id="projectrow">
   <td id="projectlogo"><img alt="Logo" src="doc-icon.png"/></td>
   <td id="projectalign">
-   <div id="projectname">QtPass<span id="projectnumber">&#160;1.5.1</span>
+   <div id="projectname">QtPass<span id="projectnumber">&#160;$ENV{QTPASS_VERSION}</span>
    </div>
    <div id="projectbrief">Multi-platform GUI for pass, the standard unix password manager.</div>
   </td>
@@ -109,6 +109,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aced819d4368806d046f0dc24a91843f7" id="r_aced819d4368806d046f0dc24a91843f7"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#aced819d4368806d046f0dc24a91843f7">newLinesRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
 <tr class="memdesc:aced819d4368806d046f0dc24a91843f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match newline characters.  <br /></td></tr>
 <tr class="separator:aced819d4368806d046f0dc24a91843f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba7296e41ef990d5d945d5ed8cd99bd5" id="r_aba7296e41ef990d5d945d5ed8cd99bd5"><td class="memItemLeft" align="right" valign="top">static auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5">isValidKeyId</a> (const QString &amp;keyId) -&gt; bool</td></tr>
+<tr class="memdesc:aba7296e41ef990d5d945d5ed8cd99bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a string looks like a valid GPG key ID. Validates a GPG key ID after normalization:  <br /></td></tr>
+<tr class="separator:aba7296e41ef990d5d945d5ed8cd99bd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Static utility functions implementation. </p>
@@ -383,6 +386,58 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
 
 </div>
 </div>
+<a id="aba7296e41ef990d5d945d5ed8cd99bd5" name="aba7296e41ef990d5d945d5ed8cd99bd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba7296e41ef990d5d945d5ed8cd99bd5">&#9670;&#160;</a></span>isValidKeyId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::isValidKeyId </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;&#160;</td>
+          <td class="paramname"><em>keyId</em></td><td>)</td>
+          <td> -&gt; bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if a string looks like a valid GPG key ID. Validates a GPG key ID after normalization: </p>
+<ul>
+<li>Strips optional 0x/0X prefix</li>
+<li>Strips surrounding angle brackets &lt;...&gt;</li>
+<li>Strips leading @, /, #, or &amp; prefix</li>
+<li>Validates remaining string is 8-40 hex characters (0-9, A-F, a-f) <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keyId</td><td>The string to validate. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the key ID format is valid, false otherwise. </dd></dl>
+</li>
+</ul>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a63">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a15">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00279">279</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="class_util_aba7296e41ef990d5d945d5ed8cd99bd5_icgraph.svg" width="582" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="aced819d4368806d046f0dc24a91843f7" name="aced819d4368806d046f0dc24a91843f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aced819d4368806d046f0dc24a91843f7">&#9670;&#160;</a></span>newLinesRegex()</h2>
 
@@ -412,11 +467,11 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00274">274</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_util_aced819d4368806d046f0dc24a91843f7_icgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -458,11 +513,11 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00094">94</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-11" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-11-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="class_util_acfa7240a7682876cf78d5a44bbbb81de_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
