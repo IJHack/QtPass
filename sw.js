@@ -57,6 +57,13 @@ const PRECACHE_URLS = [
   "/images/favicon-16x16.png",
   "/images/macos.png",
   "/images/sprite_download.png",
+  "/fonts/lato-latin-300-normal.woff2",
+  "/fonts/lato-latin-400-italic.woff2",
+  "/fonts/lato-latin-400-normal.woff2",
+  "/fonts/lato-latin-700-italic.woff2",
+  "/fonts/lato-latin-700-normal.woff2",
+  "/fonts/lato-latin-900-italic.woff2",
+  "/fonts/lato-latin-900-normal.woff2",
   "/manifest.json",
 ];
 
