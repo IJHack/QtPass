@@ -86,4 +86,3 @@ echo "PDF generated: $OUTPUT_DIR/QtPass-$VERSION.pdf"
 
 trap - EXIT
 rm -f "$DOXYFILE_BACKUP" "$TMPFILE"
-
