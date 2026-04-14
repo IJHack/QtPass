@@ -458,19 +458,20 @@ void tst_util::passwordConfigurationCharacters() {
 }
 
 void tst_util::simpleTransactionBasic() {
-  simpleTransaction trans;
-  trans.transactionAdd(Enums::PASS_INSERT);
-  Enums::PROCESS result = trans.transactionIsOver(Enums::PASS_INSERT);
+  simpleTransaction transaction;
+  transaction.transactionAdd(Enums::PASS_INSERT);
+  Enums::PROCESS result = transaction.transactionIsOver(Enums::PASS_INSERT);
   QCOMPARE(result, Enums::PASS_INSERT);
 }
 
 void tst_util::simpleTransactionNested() {
-  simpleTransaction trans;
-  trans.transactionAdd(Enums::PASS_INSERT);
-  trans.transactionAdd(Enums::GIT_PUSH);
-  Enums::PROCESS passInsertResult = trans.transactionIsOver(Enums::PASS_INSERT);
+  simpleTransaction transaction;
+  transaction.transactionAdd(Enums::PASS_INSERT);
+  transaction.transactionAdd(Enums::GIT_PUSH);
+  Enums::PROCESS passInsertResult =
+      transaction.transactionIsOver(Enums::PASS_INSERT);
   QCOMPARE(passInsertResult, Enums::PASS_INSERT);
-  Enums::PROCESS gitPushResult = trans.transactionIsOver(Enums::GIT_PUSH);
+  Enums::PROCESS gitPushResult = transaction.transactionIsOver(Enums::GIT_PUSH);
   QCOMPARE(gitPushResult, Enums::GIT_PUSH);
 }
 
@@ -596,19 +597,20 @@ void tst_util::getDirBasic() {
   QVERIFY2(tempDir.isValid(),
            "Temporary directory should be created successfully");
 
-  QFileSystemModel fsm;
-  fsm.setRootPath(tempDir.path());
-  StoreModel sm;
-  sm.setModelAndStore(&fsm, tempDir.path());
-  QVERIFY(sm.sourceModel() != nullptr);
-  QVERIFY2(sm.getStore() == tempDir.path(),
+  QFileSystemModel fileSystemModel;
+  fileSystemModel.setRootPath(tempDir.path());
+  StoreModel storeModel;
+  storeModel.setModelAndStore(&fileSystemModel, tempDir.path());
+  QVERIFY(storeModel.sourceModel() != nullptr);
+  QVERIFY2(storeModel.getStore() == tempDir.path(),
            "Store path should match the set value");
-  QModelIndex rootIndex = fsm.index(tempDir.path());
+  QModelIndex rootIndex = fileSystemModel.index(tempDir.path());
   QVERIFY2(rootIndex.isValid(), "Filesystem model root index should be valid");
   const QString originalStore = QtPassSettings::getPassStore();
   QtPassSettings::setPassStore(tempDir.path());
 
-  QString result = Util::getDir(QModelIndex(), false, fsm, sm);
+  QString result =
+      Util::getDir(QModelIndex(), false, fileSystemModel, storeModel);
   QString expectedDir = QDir(tempDir.path()).absolutePath();
   if (!expectedDir.endsWith(QDir::separator())) {
     expectedDir += QDir::separator();
@@ -641,21 +643,22 @@ void tst_util::getDirWithIndex() {
   PassStoreGuard passStoreGuard(originalPassStore);
   QtPassSettings::setPassStore(dirPath);
 
-  QFileSystemModel fsm;
-  fsm.setRootPath(dirPath);
+  QFileSystemModel fileSystemModel;
+  fileSystemModel.setRootPath(dirPath);
 
-  StoreModel sm;
-  sm.setModelAndStore(&fsm, dirPath);
-  QVERIFY2(sm.getStore() == dirPath, "Store path should match the set value");
+  StoreModel storeModel;
+  storeModel.setModelAndStore(&fileSystemModel, dirPath);
+  QVERIFY2(storeModel.getStore() == dirPath,
+           "Store path should match the set value");
 
-  QModelIndex sourceIndex = fsm.index(filePath);
+  QModelIndex sourceIndex = fileSystemModel.index(filePath);
   QVERIFY2(sourceIndex.isValid(),
            "Source index should be valid for the test file");
-  QModelIndex fileIndex = sm.mapFromSource(sourceIndex);
+  QModelIndex fileIndex = storeModel.mapFromSource(sourceIndex);
   QVERIFY2(fileIndex.isValid(),
            "Proxy index should be valid for the test file");
 
-  QString result = Util::getDir(fileIndex, false, fsm, sm);
+  QString result = Util::getDir(fileIndex, false, fileSystemModel, storeModel);
   QVERIFY2(!result.isEmpty(),
            "getDir should return a non-empty directory for a valid index");
   QVERIFY(result.endsWith(QDir::separator()));
@@ -670,7 +673,8 @@ void tst_util::getDirWithIndex() {
           QStringLiteral("Expected '%1', got '%2'").arg(expectedPath, result)));
 
   QModelIndex invalidIndex;
-  QString invalidResult = Util::getDir(invalidIndex, false, fsm, sm);
+  QString invalidResult =
+      Util::getDir(invalidIndex, false, fileSystemModel, storeModel);
   QString expectedForInvalid = dirPath;
   if (!expectedForInvalid.endsWith(QDir::separator())) {
     expectedForInvalid += QDir::separator();
