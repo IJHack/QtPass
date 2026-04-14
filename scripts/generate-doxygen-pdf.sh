@@ -22,13 +22,14 @@ echo "Version: $VERSION"
 require_readable_file "Doxyfile"
 
 # Enable LaTeX and PDF output, and set the version (portable sed with temp file)
+DOXYFILE="$(pwd)/Doxyfile"
 DOXYFILE_BACKUP=$(mktemp)
 TMPFILE=$(mktemp)
 cp Doxyfile "$DOXYFILE_BACKUP"
 restore_doxyfile_on_error() {
 	local status=$?
 	if [[ $status -ne 0 ]]; then
-		mv "$DOXYFILE_BACKUP" Doxyfile
+		mv "$DOXYFILE_BACKUP" "$DOXYFILE"
 	else
 		rm -f "$DOXYFILE_BACKUP"
 	fi
