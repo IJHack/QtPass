@@ -75,7 +75,6 @@ jobs:
           curl -fsL https://doxygen.org/files/1.16.1/Doxygen-1.16.1.linux.x86_64.tar.gz -o doxygen.tar.gz
           tar -xzf doxygen.tar.gz
           sudo cp -r doxygen-1.16.1/bin/* /usr/local/bin/
-          sudo cp -r doxygen-1.16.1/lib/* /usr/local/lib/
           rm -rf doxygen.tar.gz doxygen-1.16.1
           # Install graphviz via apt
           sudo apt-get update && sudo apt-get install -y graphviz
