@@ -44,13 +44,11 @@ if [[ -z "${VERSION:-}" ]]; then
 	echo "Error: Failed to extract VERSION from qtpass.pri" >&2
 	exit 1
 fi
-# Exported for doxygen: Doxyfile uses PROJECT_NUMBER = $ENV{QTPASS_VERSION}.
-export QTPASS_VERSION="$VERSION"
 require_readable_file "Doxyfile"
-if ! grep -Eq "^PROJECT_NUMBER\\s*=\\s*\\$ENV\\{QTPASS_VERSION\\}" Doxyfile; then
-	echo "Error: Doxyfile PROJECT_NUMBER is not set to \$ENV{QTPASS_VERSION}" >&2
-	exit 1
-fi
+# Doxygen doesn't expand $ENV{} in config, so substitute directly
+# Use temp file for portable sed across GNU/BSD sed
+TMPFILE=$(mktemp)
+sed "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" Doxyfile >"$TMPFILE" && mv "$TMPFILE" Doxyfile
 echo "Generating API documentation (v$VERSION)..."
 doxygen || {
 	echo "Error: doxygen failed." >&2

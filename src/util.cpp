@@ -151,10 +151,8 @@ auto Util::findBinaryInPath(QString binary) -> QString {
   }
 #ifdef Q_OS_WIN
   if (ret.isEmpty()) {
-    // Validate binary name before attempting WSL fallback: require a non-empty,
-    // whitespace-free program name to avoid confusing WSL invocations.
-    const bool hasWhitespace =
-        binary.contains(QRegularExpression(QStringLiteral("\\s")));
+    static const QRegularExpression whitespaceRegex(QStringLiteral("\\s"));
+    const bool hasWhitespace = binary.contains(whitespaceRegex);
     if (!binary.isEmpty() && !hasWhitespace) {
       QString wslCommand = QStringLiteral("wsl ") + binary;
 #ifdef QT_DEBUG
@@ -277,40 +275,24 @@ auto Util::newLinesRegex() -> const QRegularExpression & {
 }
 
 auto Util::isValidKeyId(const QString &keyId) -> bool {
+  static const QRegularExpression hexPrefixRegex{"^0[xX]"};
+  static const QRegularExpression specialPrefixRegex{"^[@/#&]"};
+  static const QRegularExpression hexKeyIdRegex{"^[0-9A-Fa-f]{8,40}$"};
+
   if (keyId.isEmpty()) {
     return false;
   }
+
   QString normalized = keyId;
-
-  if (normalized.startsWith("0x") || normalized.startsWith("0X")) {
-    normalized = normalized.mid(2);
-  }
-
   if (normalized.startsWith('<') && normalized.endsWith('>')) {
     normalized = normalized.mid(1, normalized.length() - 2);
   }
+  normalized.remove(hexPrefixRegex);
 
-  if (normalized.startsWith('@') || normalized.startsWith('/') ||
-      normalized.startsWith('#') || normalized.startsWith('&')) {
+  if (specialPrefixRegex.match(normalized).hasMatch() ||
+      normalized.contains('@')) {
     return true;
   }
 
-  if (normalized.contains('@')) {
-    return true;
-  }
-
-  const int len = normalized.size();
-  if (len < 8 || len > 40) {
-    return false;
-  }
-
-  for (QChar c : normalized) {
-    const char lc = c.toLatin1();
-    if ((lc >= '0' && lc <= '9') || (lc >= 'A' && lc <= 'F') ||
-        (lc >= 'a' && lc <= 'f')) {
-      continue;
-    }
-    return false;
-  }
-  return true;
+  return hexKeyIdRegex.match(normalized).hasMatch();
 }

@@ -529,15 +529,32 @@ void tst_util::generateRandomPassword() {
   QString result = pass.generatePassword(10, charset);
 
   QCOMPARE(result.length(), 10);
+  for (const QChar &ch : result) {
+    QVERIFY2(
+        charset.contains(ch),
+        "Generated password contains character outside the specified charset");
+  }
 
   result = pass.generatePassword(100, "abcd");
+  QString charset2 = "abcd";
   QCOMPARE(result.length(), 100);
+  for (const QChar &ch : result) {
+    QVERIFY2(
+        charset2.contains(ch),
+        "Generated password contains character outside the specified charset");
+  }
 
   result = pass.generatePassword(0, "");
   QVERIFY(result.isEmpty());
 
   result = pass.generatePassword(50, "ABC");
+  QString charset3 = "ABC";
   QCOMPARE(result.length(), 50);
+  for (const QChar &ch : result) {
+    QVERIFY2(
+        charset3.contains(ch),
+        "Generated password contains character outside the specified charset");
+  }
 }
 
 void tst_util::boundedRandom() {
@@ -586,9 +603,33 @@ void tst_util::configIsValid() {
 
   // No .gpg-id in this store => config must be invalid.
   QtPassSettings::setPassStore(tempDir.path());
-  const bool isValid = Util::configIsValid();
-
+  bool isValid = Util::configIsValid();
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id is missing");
+
+  // Create .gpg-id, then force invalid executable configuration.
+  QFile gpgIdFile(tempDir.path() + QDir::separator() +
+                  QStringLiteral(".gpg-id"));
+  QVERIFY2(gpgIdFile.open(QIODevice::WriteOnly | QIODevice::Truncate),
+           "Should be able to create .gpg-id");
+  gpgIdFile.write("test@example.com\n");
+  gpgIdFile.close();
+
+  QString originalGpgExecutable = QtPassSettings::getGpgExecutable();
+  struct GpgRollback {
+    QString value;
+    ~GpgRollback() { QtPassSettings::setGpgExecutable(value); }
+  } gpgRollback{originalGpgExecutable};
+
+  QtPassSettings::setGpgExecutable(QString());
+  isValid = Util::configIsValid();
+  QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
+                     "executable is missing");
+
+  QtPassSettings::setGpgExecutable(
+      QStringLiteral("definitely_nonexistent_gpg_binary_12345"));
+  isValid = Util::configIsValid();
+  QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
+                     "executable is invalid");
 }
 
 void tst_util::getDirBasic() {
@@ -873,6 +914,7 @@ void tst_util::getRecipientListBasic() {
   file.write("ABCDEF12\n34567890\n");
   file.close();
 
+  PassStoreGuard guard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(passStore);
   QStringList recipients = Pass::getRecipientList(passStore);
   QCOMPARE(recipients.size(), 2);
@@ -1008,6 +1050,7 @@ void tst_util::getGpgIdPathBasic() {
   file.write("ABCDEF12\n");
   file.close();
 
+  PassStoreGuard guard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(passStore);
   QString path = QDir::cleanPath(Pass::getGpgIdPath(passStore));
   QString expected = QDir::cleanPath(gpgIdFile);
@@ -1027,6 +1070,7 @@ void tst_util::getGpgIdPathSubfolder() {
   file.write("ABCDEF12\n");
   file.close();
 
+  PassStoreGuard guard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(passStore);
   QString path = Pass::getGpgIdPath(subfolder + "/password.gpg");
   QVERIFY2(path == gpgIdFile,
@@ -1037,6 +1081,7 @@ void tst_util::getGpgIdPathNotFound() {
   QTemporaryDir tempDir;
   QString passStore = tempDir.path();
 
+  PassStoreGuard guard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(passStore);
   QString path =
       QDir::cleanPath(Pass::getGpgIdPath(passStore + "/nonexistent"));
