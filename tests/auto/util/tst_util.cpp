@@ -537,11 +537,10 @@ void tst_util::generateRandomPassword() {
   }
 
   result = pass.generatePassword(100, "abcd");
-  QString charset2 = "abcd";
   QCOMPARE(result.length(), 100);
   for (const QChar &ch : result) {
     QVERIFY2(
-        charset2.contains(ch),
+        QStringLiteral("abcd").contains(ch),
         "Generated password contains character outside the specified charset");
   }
 
@@ -549,11 +548,10 @@ void tst_util::generateRandomPassword() {
   QVERIFY(result.isEmpty());
 
   result = pass.generatePassword(50, "ABC");
-  QString charset3 = "ABC";
   QCOMPARE(result.length(), 50);
   for (const QChar &ch : result) {
     QVERIFY2(
-        charset3.contains(ch),
+        QStringLiteral("ABC").contains(ch),
         "Generated password contains character outside the specified charset");
   }
 }
