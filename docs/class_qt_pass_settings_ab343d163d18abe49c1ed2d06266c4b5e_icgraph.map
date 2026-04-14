@@ -1,7 +1,9 @@
 <map id="QtPassSettings::isDialogMaximized" name="QtPassSettings::isDialogMaximized">
-<area shape="rect" id="Node000001" title="Get dialog maximized state." alt="" coords="264,23,444,63"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="13,5,209,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,35,209,31,209,26,250,30"/>
-<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#a565b5698b7bb40720476d61b8b1b8548" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="5,55,216,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,56,216,60,216,54,250,51"/>
+<area shape="rect" id="Node000001" title="Get dialog maximized state." alt="" coords="264,59,444,99"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="13,29,209,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,66,193,57,194,52,251,61"/>
+<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#a565b5698b7bb40720476d61b8b1b8548" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="5,103,216,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="251,97,197,105,197,100,250,92"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="154,20,151,15,144,12,111,8,85,10,71,15,68,20,75,27,71,31,63,21,67,11,84,5,111,3,145,7,155,11,158,17"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="154,93,151,89,144,85,111,81,85,83,71,88,68,94,75,101,71,104,63,94,67,84,84,78,111,76,145,80,155,85,158,90"/>
 </map>

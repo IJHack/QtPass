@@ -1,13 +1,10 @@
 <map id="QtPassSettings::isUseAutoclear" name="QtPassSettings::isUseAutoclear">
-<area shape="rect" id="Node000001" title="Get whether to use autoclear for clipboard." alt="" coords="804,31,1029,56"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="554,5,750,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="790,34,750,30,750,25,791,29"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="548,55,756,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="791,57,757,61,756,55,790,52"/>
-<area shape="rect" id="Node000004" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="283,29,500,55"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="534,59,500,55,500,50,535,53"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="306,79,477,104"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="535,81,477,86,477,81,534,75"/>
-<area shape="rect" id="Node000006" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,79,235,104"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="292,94,235,94,235,89,292,89"/>
+<area shape="rect" id="Node000001" title="Get whether to use autoclear for clipboard." alt="" coords="480,55,705,80"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="230,29,426,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="466,58,426,54,426,49,467,53"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="224,79,432,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="467,81,433,85,432,79,466,76"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="371,20,359,11,328,8,303,10,289,15,286,20,293,27,289,31,281,21,285,11,301,5,328,3,361,7,374,16"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="5,79,176,104"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="210,94,176,94,176,89,210,89"/>
 </map>

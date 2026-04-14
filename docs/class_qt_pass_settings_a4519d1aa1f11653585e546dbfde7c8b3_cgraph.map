@@ -1,0 +1,8 @@
+<map id="QtPassSettings::isUseGit" name="QtPassSettings::isUseGit">
+<area shape="rect" id="Node000001" title="Check whether Git integration is enabled." alt="" coords="5,5,188,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="495,5,697,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="189,15,481,15,481,21,189,21"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="236,31,447,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,25,223,28,222,34,188,30"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="447,30,481,27,481,32,447,35"/>
+</map>

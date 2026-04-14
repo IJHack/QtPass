@@ -2,18 +2,27 @@
 <area shape="rect" id="Node000001" title=" " alt="" coords="5,183,216,208"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#af927e98c41ba80029ce3267a7dcc4ca1" title="Get saved window geometry." alt="" coords="276,5,489,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,181,173,113,215,73,263,40,277,33,280,38,265,44,218,77,177,116,123,184"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#acad75f76a1c9128bd15d5679a8cd78d9" title="Get saved window position." alt="" coords="297,55,468,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,180,182,135,221,110,263,89,284,81,286,86,265,94,224,115,185,140,128,185"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#afeada475d9f9777f06b9f624026dde18" title="Get saved window state." alt="" coords="276,104,489,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="143,180,198,159,263,138,297,130,298,135,265,143,200,164,145,185"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2eda707ef417b1198898c6b162ebc142" title="Get saved window size." alt="" coords="295,153,470,179"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="216,181,281,174,281,180,216,187"/>
-<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#abd7d9098856e8f0d8f081fdb0e515fed" title="Check whether main window should stay always on top." alt="" coords="290,203,475,243"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="216,204,277,210,276,215,216,209"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a974f845c0549b4789546c1a5a1e70102" title="Get maximized state." alt="" coords="277,268,488,293"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="141,206,198,229,265,253,301,262,299,268,263,258,196,234,139,210"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a0e4eacd30635c23c8a08cd5725a68aed" title="Check whether application should start minimized." alt="" coords="264,317,501,343"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="127,206,184,253,223,280,265,302,289,311,287,316,263,307,221,284,181,258,124,210"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" title="Check whether tray icon support is enabled." alt="" coords="274,367,491,392"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="122,207,144,237,176,277,218,318,265,352,283,360,280,365,263,356,214,322,172,280,140,240,118,210"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#acad75f76a1c9128bd15d5679a8cd78d9" title="Get saved window position." alt="" coords="297,55,468,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="125,180,182,135,221,110,263,89,284,81,286,86,265,94,224,115,185,140,128,185"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#afeada475d9f9777f06b9f624026dde18" title="Get saved window state." alt="" coords="276,104,489,129"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="143,180,198,159,263,138,297,130,298,135,265,143,200,164,145,185"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a2eda707ef417b1198898c6b162ebc142" title="Get saved window size." alt="" coords="295,153,470,179"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="216,181,281,174,281,180,216,187"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#abd7d9098856e8f0d8f081fdb0e515fed" title="Check whether main window should stay always on top." alt="" coords="290,203,475,243"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="216,204,277,210,276,215,216,209"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a974f845c0549b4789546c1a5a1e70102" title="Get maximized state." alt="" coords="277,268,488,293"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="141,206,198,229,265,253,301,262,299,268,263,258,196,234,139,210"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a0e4eacd30635c23c8a08cd5725a68aed" title="Check whether application should start minimized." alt="" coords="264,317,501,343"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="127,206,184,253,223,280,265,302,289,311,287,316,263,307,221,284,181,258,124,210"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" title="Check whether tray icon support is enabled." alt="" coords="274,367,491,392"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="122,207,144,237,176,277,218,318,265,352,283,360,280,365,263,356,214,322,172,280,140,240,118,210"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="549,183,752,208"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="476,28,503,40,545,69,582,104,635,170,631,173,578,108,541,73,500,44,474,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="469,78,502,89,538,107,572,129,627,171,623,176,569,133,536,112,500,94,467,83"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="456,127,502,138,607,175,606,180,501,143,455,132"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="470,173,536,180,535,185,470,178"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="475,211,535,205,536,210,476,216"/>
+<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="452,265,501,253,558,232,609,211,611,216,560,237,502,258,453,270"/>
+<area shape="poly" id="edge14_Node000009_Node000003" title=" " alt="" coords="464,315,500,302,536,283,570,260,624,215,628,219,573,264,539,288,502,307,466,320"/>
+<area shape="poly" id="edge16_Node000010_Node000003" title=" " alt="" coords="471,364,500,352,542,322,579,286,632,218,636,221,583,289,545,326,503,356,473,369"/>
 </map>

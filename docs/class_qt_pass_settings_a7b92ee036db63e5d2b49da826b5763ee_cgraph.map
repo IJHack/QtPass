@@ -1,0 +1,5 @@
+<map id="QtPassSettings::getPassSigningKey" name="QtPassSettings::getPassSigningKey">
+<area shape="rect" id="Node000001" title="Get GPG signing key for pass." alt="" coords="5,5,255,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="303,5,505,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="255,15,289,15,289,21,255,21"/>
+</map>

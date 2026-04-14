@@ -2,4 +2,6 @@
 <area shape="rect" id="Node000001" title="Get .gpg&#45;id file path for a password file." alt="" coords="5,5,152,31"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="200,5,411,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,15,186,15,186,21,152,21"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="459,5,661,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="411,15,445,15,445,21,411,21"/>
 </map>

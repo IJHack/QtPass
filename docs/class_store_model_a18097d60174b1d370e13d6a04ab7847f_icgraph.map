@@ -1,0 +1,8 @@
+<map id="StoreModel::data" name="StoreModel::data">
+<area shape="rect" id="Node000001" title="Get display data for index." alt="" coords="529,31,663,56"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#accf361cc9145306e3063f7b0be939476" title="Check if drop is possible." alt="" coords="255,5,481,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="515,37,481,33,482,28,516,32"/>
+<area shape="rect" id="Node000003" href="$class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e" title="Handle dropped MIME data." alt="" coords="5,31,207,56"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="515,46,207,46,207,41,515,41"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="241,33,207,36,206,31,241,28"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="QtPassSettings::isAvoidCapitals" name="QtPassSettings::isAvoidCapitals">
+<area shape="rect" id="Node000001" title="Check whether uppercase characters should be avoided." alt="" coords="5,5,232,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="280,5,483,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,15,266,15,266,21,232,21"/>
+</map>

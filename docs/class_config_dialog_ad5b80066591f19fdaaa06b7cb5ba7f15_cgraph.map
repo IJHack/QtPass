@@ -6,10 +6,15 @@
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="292,102,335,70,391,40,414,32,415,37,393,44,337,75,295,106"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="393,55,639,80"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="334,101,391,89,434,80,435,85,393,94,335,106"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" title="Get pass executable path." alt="" coords="392,104,640,129"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="345,114,378,114,378,119,345,119"/>
-<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="411,153,621,179"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="339,127,393,138,440,148,439,153,391,143,338,132"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title="Get whether to use pass (true) or GPG (false)." alt="" coords="420,203,612,228"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="295,127,338,158,393,188,419,196,417,202,391,192,335,162,292,132"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" title="Get pass executable path." alt="" coords="392,104,640,129"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="345,114,378,114,378,119,345,119"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="411,153,621,179"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="339,127,393,138,440,148,439,153,391,143,338,132"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title="Get whether to use pass (true) or GPG (false)." alt="" coords="420,203,612,228"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="295,127,338,158,393,188,419,196,417,202,391,192,335,162,292,132"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="688,129,891,155"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="592,77,641,89,743,122,741,127,639,94,590,83"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="641,126,675,129,674,134,640,131"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="621,154,674,149,675,155,622,159"/>
+<area shape="poly" id="edge10_Node000008_Node000005" title=" " alt="" coords="585,200,639,187,739,157,740,162,641,193,586,205"/>
 </map>

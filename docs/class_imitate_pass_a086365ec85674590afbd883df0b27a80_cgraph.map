@@ -1,9 +1,19 @@
 <map id="ImitatePass::createBackupCommit" name="ImitatePass::createBackupCommit">
-<area shape="rect" id="Node000001" title="Create git backup commit before re&#45;encryption." alt="" coords="5,47,200,87"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="271,5,464,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,47,285,31,286,36,201,52"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title="Get git executable path." alt="" coords="248,55,487,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,65,234,65,234,70,200,70"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title="Check whether Git integration is enabled." alt="" coords="276,104,459,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="201,83,286,99,285,104,200,88"/>
+<area shape="rect" id="Node000001" title="Create git backup commit before re&#45;encryption." alt="" coords="5,98,200,138"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a0eafb54675479378ec98307f0e4fff65" title="Emit critical error." alt="" coords="293,5,396,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,96,187,67,247,40,279,29,281,34,249,44,189,72,138,100"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="248,55,441,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,95,269,80,270,85,199,101"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title="Get git executable path." alt="" coords="489,105,728,131"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="200,115,475,115,475,121,200,121"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3" title="Check whether Git integration is enabled." alt="" coords="253,156,436,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="199,135,270,151,269,156,198,141"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a404664f7d589a307c9223c373b2622c3" title="Emit status message." alt="" coords="281,205,408,231"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="139,136,190,164,249,190,275,199,273,204,247,195,188,168,137,141"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="776,156,979,181"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="677,128,797,151,796,156,676,133"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="437,166,762,166,762,171,437,171"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="503,207,714,232"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="412,179,529,201,528,207,411,184"/>
+<area shape="poly" id="edge8_Node000007_Node000005" title=" " alt="" coords="676,204,796,181,797,187,677,209"/>
 </map>

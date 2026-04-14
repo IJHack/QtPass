@@ -1,19 +1,33 @@
 <map id="Pass::generatePassword" name="Pass::generatePassword">
-<area shape="rect" id="Node000001" title="Generate random password." alt="" coords="5,209,184,235"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="252,5,445,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,208,117,174,145,128,183,81,206,59,231,41,245,33,247,38,233,46,209,64,187,85,150,132,122,177,104,210"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a3503e8d11b7e24b35a34801f755ba80a" title="Get complete password generation configuration." alt="" coords="244,55,453,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,207,156,158,192,129,231,105,246,98,248,103,233,110,195,134,160,162,109,211"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" title="Get pwgen executable path." alt="" coords="253,119,444,159"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="127,207,231,169,258,161,259,166,233,174,129,212"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a694bfde7cafcdd174b706945ba264639" title="Check whether uppercase characters should be avoided." alt="" coords="235,184,462,209"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="184,210,221,207,222,212,185,216"/>
-<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#ac00931edbba70ed05bb304df05919b9d" title="Check whether numeric characters should be avoided." alt="" coords="232,233,465,259"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="185,228,219,231,218,236,184,233"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a901005f778f15b9ee833f2ab08573917" title="Check whether less random password generation is enabled." alt="" coords="238,283,459,308"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="129,232,233,267,270,277,269,282,231,273,128,237"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#abba786920f2fb3afbdc04fe43f8144e2" title="Check whether pwgen support is enabled." alt="" coords="245,332,452,357"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="112,233,163,275,197,298,233,317,257,326,255,331,231,322,194,302,160,279,108,237"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a814fdd902d1ed560225331a93d9d3ccd" title="Check whether symbol characters are enabled." alt="" coords="239,381,458,407"/>
-<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="106,233,154,298,191,335,233,366,250,374,247,379,231,371,187,339,150,302,102,237"/>
+<area shape="rect" id="Node000001" title="Generate random password." alt="" coords="5,255,184,280"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a0eafb54675479378ec98307f0e4fff65" title="Emit critical error." alt="" coords="297,5,400,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,254,112,212,138,153,178,92,202,64,231,40,256,27,283,19,284,24,258,32,233,44,206,68,182,95,143,156,117,214,102,255"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="252,55,445,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="99,253,117,220,145,175,184,128,231,89,242,83,244,88,233,94,187,132,150,178,122,223,104,256"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#aff660edce34d33f5a2adfa8c130470f0" title="Generate random password from charset." alt="" coords="233,104,465,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="104,253,154,197,190,166,231,140,250,131,252,136,233,144,193,170,158,201,108,256"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a3503e8d11b7e24b35a34801f755ba80a" title="Get complete password generation configuration." alt="" coords="244,154,453,194"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="120,252,171,228,231,204,255,195,257,201,233,208,173,233,122,257"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f" title="Get pwgen executable path." alt="" coords="253,218,444,258"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="184,254,240,248,240,253,185,260"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a694bfde7cafcdd174b706945ba264639" title="Check whether uppercase characters should be avoided." alt="" coords="235,283,462,308"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="185,275,222,279,221,284,184,280"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#ac00931edbba70ed05bb304df05919b9d" title="Check whether numeric characters should be avoided." alt="" coords="232,332,465,357"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="127,278,233,317,269,326,267,331,231,322,125,283"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a901005f778f15b9ee833f2ab08573917" title="Check whether less random password generation is enabled." alt="" coords="238,381,459,407"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="111,278,162,322,196,346,233,366,256,375,254,380,231,371,193,350,159,326,107,282"/>
+<area shape="rect" id="Node000012" href="$class_qt_pass_settings.html#abba786920f2fb3afbdc04fe43f8144e2" title="Check whether pwgen support is enabled." alt="" coords="245,431,452,456"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="106,279,154,345,190,384,233,416,249,424,247,428,231,420,187,388,150,349,101,282"/>
+<area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#a814fdd902d1ed560225331a93d9d3ccd" title="Check whether symbol characters are enabled." alt="" coords="239,480,458,505"/>
+<area shape="poly" id="edge17_Node000001_Node000013" title=" " alt="" coords="103,279,119,317,146,368,185,422,208,446,234,466,243,472,240,477,230,471,204,450,180,425,142,371,114,319,98,281"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b" title="Generate random number in range." alt="" coords="530,104,699,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="465,114,516,114,516,119,465,119"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="513,332,716,357"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="440,192,467,204,506,230,542,261,597,319,593,323,539,265,503,235,464,208,438,196"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="431,255,466,268,528,295,581,323,578,328,526,300,464,272,429,261"/>
+<area shape="poly" id="edge10_Node000009_Node000007" title=" " alt="" coords="418,305,533,327,532,332,417,311"/>
+<area shape="poly" id="edge12_Node000010_Node000007" title=" " alt="" coords="466,342,500,342,500,347,466,347"/>
+<area shape="poly" id="edge14_Node000011_Node000007" title=" " alt="" coords="417,379,532,357,533,363,418,384"/>
+<area shape="poly" id="edge16_Node000012_Node000007" title=" " alt="" coords="420,428,464,415,526,389,579,362,581,367,528,394,466,421,422,433"/>
+<area shape="poly" id="edge18_Node000013_Node000007" title=" " alt="" coords="434,477,464,466,502,444,537,417,591,366,595,370,540,421,505,448,466,471,436,482"/>
 </map>

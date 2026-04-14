@@ -1,7 +1,8 @@
 <map id="QtPassSettings::isAlwaysOnTop" name="QtPassSettings::isAlwaysOnTop">
-<area shape="rect" id="Node000001" title="Check whether main window should stay always on top." alt="" coords="264,23,449,63"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="13,5,209,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,35,209,31,209,25,250,30"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title=" " alt="" coords="5,55,216,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="250,56,216,60,216,54,250,51"/>
+<area shape="rect" id="Node000001" title="Check whether main window should stay always on top." alt="" coords="264,47,449,87"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="13,29,209,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,59,209,55,209,49,250,54"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title=" " alt="" coords="5,79,216,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="250,80,216,84,216,78,250,75"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="154,20,152,15,144,12,111,8,84,10,70,15,68,20,75,27,71,31,62,21,67,11,83,5,111,3,145,7,155,11,159,17"/>
 </map>

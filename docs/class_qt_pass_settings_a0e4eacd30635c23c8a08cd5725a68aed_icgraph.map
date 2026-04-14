@@ -1,7 +1,8 @@
 <map id="QtPassSettings::isStartMinimized" name="QtPassSettings::isStartMinimized">
-<area shape="rect" id="Node000001" title="Check whether application should start minimized." alt="" coords="264,31,501,56"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="13,5,209,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,34,209,30,209,24,251,28"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title=" " alt="" coords="5,55,216,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,58,217,61,216,55,250,52"/>
+<area shape="rect" id="Node000001" title="Check whether application should start minimized." alt="" coords="264,55,501,80"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="13,29,209,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,58,209,54,209,48,251,52"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5" title=" " alt="" coords="5,79,216,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="251,82,217,85,216,79,250,76"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="159,20,156,16,148,12,111,8,82,10,66,15,63,20,71,27,67,31,58,21,63,11,81,5,111,3,149,7,160,12,163,18"/>
 </map>

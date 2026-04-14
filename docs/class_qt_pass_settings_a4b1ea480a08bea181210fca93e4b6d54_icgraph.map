@@ -1,9 +1,10 @@
 <map id="QtPassSettings::isTemplateAllFields" name="QtPassSettings::isTemplateAllFields">
-<area shape="rect" id="Node000001" title="Check whether template applies to all fields." alt="" coords="283,47,481,87"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="22,5,218,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,49,188,33,189,28,270,44"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,55,235,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="269,70,235,70,235,65,269,65"/>
-<area shape="rect" id="Node000004" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="23,105,217,145"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="277,93,213,107,211,102,276,88"/>
+<area shape="rect" id="Node000001" title="Check whether template applies to all fields." alt="" coords="283,71,481,111"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="22,29,218,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,73,188,57,189,52,270,68"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,79,235,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="269,94,235,94,235,89,269,89"/>
+<area shape="rect" id="Node000004" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="23,129,217,169"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="277,117,213,131,211,126,276,112"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="167,20,164,16,156,12,120,8,92,10,77,15,74,20,82,27,78,31,69,21,73,11,91,5,120,3,157,7,168,12,171,18"/>
 </map>

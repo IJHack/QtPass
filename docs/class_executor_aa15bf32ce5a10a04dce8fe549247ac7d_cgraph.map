@@ -1,5 +1,6 @@
 <map id="Executor::Executor" name="Executor::Executor">
-<area shape="rect" id="Node000001" title="Executor::Executor executes external applications." alt="" coords="5,5,148,31"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#acfcfc18b0b973791530302eb8179e038" title="starting signal that is emited when process starts" alt="" coords="196,5,332,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,15,182,15,182,21,148,21"/>
+<area shape="rect" id="Node000001" title="Executor::Executor executes external applications." alt="" coords="5,29,148,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="46,31,39,21,43,11,55,5,77,3,102,6,113,15,110,19,100,11,77,8,57,10,47,15,44,20,50,28"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#acfcfc18b0b973791530302eb8179e038" title="starting signal that is emited when process starts" alt="" coords="196,29,332,55"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="148,39,182,39,182,45,148,45"/>
 </map>

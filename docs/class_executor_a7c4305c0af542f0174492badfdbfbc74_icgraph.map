@@ -1,10 +1,8 @@
 <map id="Executor::execute" name="Executor::execute">
-<area shape="rect" id="Node000001" title="Executor::execute execute an app." alt="" coords="219,55,356,80"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="322,45,312,36,287,33,266,35,255,40,253,46,259,53,255,56,248,46,251,36,265,30,287,28,314,32,326,40"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#aedd0216127ab9915112df45d9eaaccfe" title="Executor::execute an app, takes input and presents it as stdin." alt="" coords="19,5,157,31"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="222,54,140,33,141,28,223,49"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a490166ea519a8047e207da8d67f3c0d2" title="Executor::execute executes an app from a workDir." alt="" coords="19,55,157,80"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="205,70,157,70,157,65,205,65"/>
-<area shape="rect" id="Node000004" href="$class_pass.html#a924b4cd54e4b5e24fa42661b7eccec07" title="Execute wrapper with input." alt="" coords="5,104,171,129"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="223,86,141,107,140,101,222,81"/>
+<area shape="rect" id="Node000001" title="Executor::execute execute an app." alt="" coords="191,31,328,56"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="292,20,283,12,259,9,240,11,230,16,228,22,233,29,229,32,222,22,226,13,238,6,259,4,285,8,295,16"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#aedd0216127ab9915112df45d9eaaccfe" title="Executor::execute an app, takes input and presents it as stdin." alt="" coords="5,5,143,31"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="177,35,143,30,144,25,178,29"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a490166ea519a8047e207da8d67f3c0d2" title="Executor::execute executes an app from a workDir." alt="" coords="5,55,143,80"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="178,57,144,61,143,56,177,51"/>
 </map>

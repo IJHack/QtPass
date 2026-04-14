@@ -1,8 +1,5 @@
 <map id="QtPass::setClipboardTimer" name="QtPass::setClipboardTimer">
-<area shape="rect" id="Node000001" title="Sets the clipboard clear timer based on autoclear settings." alt="" coords="205,55,400,80"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="5,29,157,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,57,157,53,158,48,192,52"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" title="Constructs a QtPass instance." alt="" coords="22,79,141,104"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="192,82,141,88,141,82,191,77"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="121,20,110,11,81,8,58,10,45,15,43,20,49,28,45,31,37,21,41,11,56,5,81,3,112,6,124,15"/>
+<area shape="rect" id="Node000001" title="Sets the clipboard clear timer based on autoclear settings." alt="" coords="172,5,367,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" title="Constructs a QtPass instance." alt="" coords="5,5,124,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,21,124,21,124,15,158,15"/>
 </map>

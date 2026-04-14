@@ -1,12 +1,14 @@
 <map id="ImitatePass::executeGpg" name="ImitatePass::executeGpg">
-<area shape="rect" id="Node000001" title="Execute GPG command." alt="" coords="5,84,188,109"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="Execute command wrapper." alt="" coords="253,59,465,84"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,85,239,80,239,86,189,90"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="236,108,481,133"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="189,102,223,106,222,111,188,108"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="529,29,695,55"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="465,56,515,50,516,56,465,62"/>
-<area shape="rect" id="Node000004" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="538,79,686,119"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="465,80,524,87,524,92,465,86"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="571,31,562,21,567,11,584,5,612,3,648,7,658,11,662,17,657,20,654,15,646,12,612,8,585,10,570,15,567,20,575,27"/>
+<area shape="rect" id="Node000001" title="Execute GPG command." alt="" coords="5,116,188,141"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="Execute command wrapper." alt="" coords="253,87,465,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,116,239,110,239,115,189,121"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="236,140,481,165"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="189,134,223,138,222,143,188,140"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="548,29,713,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="419,84,556,55,557,60,420,89"/>
+<area shape="rect" id="Node000004" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="557,79,705,119"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="465,97,543,97,543,102,465,102"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="587,31,577,21,582,11,600,5,631,3,670,7,680,12,684,18,679,20,677,16,668,12,631,8,601,10,586,15,583,20,591,27"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="529,144,732,169"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="482,152,516,152,516,158,482,157"/>
 </map>

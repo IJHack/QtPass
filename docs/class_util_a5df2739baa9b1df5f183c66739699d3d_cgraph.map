@@ -2,4 +2,6 @@
 <area shape="rect" id="Node000001" title="Get the selected folder path, either relative to the configured pass store or absolute." alt="" coords="5,5,99,31"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="147,5,357,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,15,133,15,133,21,99,21"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="405,5,608,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="358,15,391,15,391,21,358,21"/>
 </map>

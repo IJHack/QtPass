@@ -1,7 +1,9 @@
 <map id="QtPassSettings::getDialogGeometry" name="QtPassSettings::getDialogGeometry">
-<area shape="rect" id="Node000001" title="Get saved dialog geometry." alt="" coords="264,23,455,63"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="13,5,209,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,35,209,31,209,25,251,30"/>
-<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#a565b5698b7bb40720476d61b8b1b8548" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="5,55,216,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,56,217,60,216,55,250,51"/>
+<area shape="rect" id="Node000001" title="Get saved dialog geometry." alt="" coords="264,59,455,99"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="13,29,209,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="250,66,195,57,196,52,251,60"/>
+<area shape="rect" id="Node000003" href="$class_keygen_dialog.html#a565b5698b7bb40720476d61b8b1b8548" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="5,103,216,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="251,98,199,105,198,100,250,92"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="155,20,152,15,144,12,111,8,84,10,70,15,67,20,74,27,70,31,62,21,66,11,83,5,111,3,146,7,156,11,159,17"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="155,93,152,89,144,85,111,81,84,83,70,88,67,94,74,101,70,104,62,94,66,84,83,78,111,76,146,80,156,85,159,90"/>
 </map>

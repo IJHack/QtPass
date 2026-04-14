@@ -1,5 +1,13 @@
 <map id="UsersDialog::accept" name="UsersDialog::accept">
-<area shape="rect" id="Node000001" title="Handle dialog acceptance." alt="" coords="5,5,157,31"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="205,5,383,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,15,191,15,191,21,158,21"/>
+<area shape="rect" id="Node000001" title="Handle dialog acceptance." alt="" coords="5,55,157,80"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="205,55,383,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,65,191,65,191,70,158,70"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528" title="Get imitate pass backend instance." alt="" coords="431,5,655,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="358,52,464,31,465,36,359,57"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a8f8fb086b283ad2089e64b37d4950d5e" title="Get real pass backend instance." alt="" coords="439,55,646,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="383,65,425,65,425,70,383,70"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title="Get whether to use pass (true) or GPG (false)." alt="" coords="447,104,639,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="359,77,465,99,464,104,358,83"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="703,104,905,129"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="639,114,689,114,689,119,639,119"/>
 </map>

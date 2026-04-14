@@ -1,5 +1,6 @@
 <map id="ConfigDialog::setPwgenPath" name="ConfigDialog::setPwgenPath">
-<area shape="rect" id="Node000001" title="ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf..." alt="" coords="249,5,453,31"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,201,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,21,202,21,202,15,236,15"/>
+<area shape="rect" id="Node000001" title="ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf..." alt="" coords="249,29,453,55"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,29,201,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,45,202,45,202,39,236,39"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="148,20,145,15,137,12,103,8,77,10,63,15,60,20,67,27,63,31,54,21,59,11,76,5,103,3,138,7,148,11,152,17"/>
 </map>

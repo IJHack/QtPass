@@ -1,11 +1,7 @@
 <map id="buildClipboardMimeData" name="buildClipboardMimeData">
-<area shape="rect" id="Node000001" title="Build clipboard MIME data with platform&#45;specific security hints." alt="" coords="804,31,988,56"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="548,31,756,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="790,46,756,46,756,41,790,41"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="283,5,500,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="534,35,500,31,500,26,535,29"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="306,55,477,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="535,57,477,62,477,57,534,51"/>
-<area shape="rect" id="Node000005" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,55,235,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="292,70,235,70,235,65,292,65"/>
+<area shape="rect" id="Node000001" title="Build clipboard MIME data with platform&#45;specific security hints." alt="" coords="480,5,664,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="224,5,432,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="466,21,432,21,432,15,466,15"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="5,5,176,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="210,21,176,21,176,15,210,15"/>
 </map>

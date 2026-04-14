@@ -7,10 +7,10 @@ var searchData=
   ['todo_20list_4',['Todo List',['../todo.html',1,'']]],
   ['transactionadd_5',['transactionAdd',['../classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326',1,'simpleTransaction']]],
   ['transactionend_6',['transactionEnd',['../classsimple_transaction.html#a76e9280b4cc192ff420520fefa557c63',1,'simpleTransaction']]],
-  ['transactionhelper_7',['transactionhelper',['../class_imitate_pass_1_1transaction_helper.html',1,'ImitatePass::transactionHelper'],['../class_imitate_pass_1_1transaction_helper.html#ab37f5a0aff46fb0aa7ae9cc9cc17f38e',1,'ImitatePass::transactionHelper::transactionHelper()']]],
+  ['transactionhelper_7',['transactionHelper',['../class_imitate_pass_1_1transaction_helper.html',1,'ImitatePass::transactionHelper'],['../class_imitate_pass_1_1transaction_helper.html#ab37f5a0aff46fb0aa7ae9cc9cc17f38e',1,'ImitatePass::transactionHelper::transactionHelper()']]],
   ['transactionisover_8',['transactionIsOver',['../classsimple_transaction.html#a3914acc39e65586cd6671aff1ac3afe9',1,'simpleTransaction']]],
   ['transactionstart_9',['transactionStart',['../classsimple_transaction.html#aafd98f73dfc5352f307115cabc2a5ed4',1,'simpleTransaction']]],
-  ['trayicon_10',['trayicon',['../class_tray_icon.html',1,'TrayIcon'],['../class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5',1,'TrayIcon::TrayIcon()']]],
+  ['trayicon_10',['TrayIcon',['../class_tray_icon.html',1,'TrayIcon'],['../class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5',1,'TrayIcon::TrayIcon()']]],
   ['trayicon_2ecpp_11',['trayicon.cpp',['../trayicon_8cpp.html',1,'']]],
   ['trayicon_2eh_12',['trayicon.h',['../trayicon_8h.html',1,'']]],
   ['tst_5fexecutor_13',['tst_executor',['../classtst__executor.html',1,'']]],
@@ -29,6 +29,6 @@ var searchData=
   ['tst_5fstoremodel_2ecpp_26',['tst_storemodel.cpp',['../tst__storemodel_8cpp.html',1,'']]],
   ['tst_5fui_27',['tst_ui',['../classtst__ui.html',1,'']]],
   ['tst_5fui_2ecpp_28',['tst_ui.cpp',['../tst__ui_8cpp.html',1,'']]],
-  ['tst_5futil_29',['tst_util',['../classtst__util.html',1,'tst_util'],['../class_imitate_pass.html#a18cf3033eb76990c7a2e294ef0c13ebb',1,'ImitatePass::tst_util'],['../classtst__util.html#a3c9db354c2f1e43b730113080ae8af9e',1,'tst_util::tst_util()']]],
+  ['tst_5futil_29',['tst_util',['../classtst__util.html',1,'tst_util'],['../class_imitate_pass.html#a18cf3033eb76990c7a2e294ef0c13ebb',1,'ImitatePass::tst_util()'],['../classtst__util.html#a3c9db354c2f1e43b730113080ae8af9e',1,'tst_util::tst_util()']]],
   ['tst_5futil_2ecpp_30',['tst_util.cpp',['../tst__util_8cpp.html',1,'']]]
 ];

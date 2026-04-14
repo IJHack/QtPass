@@ -1,0 +1,5 @@
+<map id="QtPassSettings::isUseOtp" name="QtPassSettings::isUseOtp">
+<area shape="rect" id="Node000001" title="Check whether OTP support is enabled." alt="" coords="5,5,192,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="240,5,443,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,15,226,15,226,21,192,21"/>
+</map>

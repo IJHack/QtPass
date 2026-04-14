@@ -4,4 +4,6 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,31,261,26,262,31,202,37"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="249,55,495,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,49,236,52,235,58,201,55"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="543,55,745,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="495,65,529,65,529,70,495,70"/>
 </map>

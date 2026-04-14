@@ -7,7 +7,8 @@
 <svg width="88pt" height="117pt"
  viewBox="0.00 0.00 88.00 117.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
-<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" onload="init(evt)">
+<svg id="main" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve">
+
 <style type="text/css"><![CDATA[
 .node, .edge {opacity: 0.7;}
 .node.selected, .edge.selected {opacity: 1;}

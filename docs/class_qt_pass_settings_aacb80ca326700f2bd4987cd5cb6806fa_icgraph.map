@@ -1,20 +1,18 @@
 <map id="QtPassSettings::isUseWebDav" name="QtPassSettings::isUseWebDav">
-<area shape="rect" id="Node000001" title="Check whether WebDAV integration is enabled." alt="" coords="716,107,933,132"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="505,5,600,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="785,103,667,53,600,32,601,27,669,47,787,98"/>
-<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,81,138,107"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="747,107,668,97,519,89,371,87,138,93,138,88,371,82,519,84,668,91,747,102"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="481,107,624,132"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="702,122,624,122,624,117,702,117"/>
-<area shape="rect" id="Node000006" href="$class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c" title="Re&#45;encrypt single file with new recipients." alt="" coords="437,156,668,181"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="741,137,624,159,623,153,740,132"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!" alt="" coords="488,205,617,231"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="790,141,734,170,669,197,618,210,617,205,667,191,732,165,788,136"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="192,5,389,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="492,21,390,21,390,15,492,15"/>
-<area shape="rect" id="Node000007" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="193,131,389,156"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="424,159,388,155,389,150,424,154"/>
-<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="221,130,131,109,132,104,222,125"/>
-<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,131,144,156"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="179,146,144,146,144,141,179,141"/>
+<area shape="rect" id="Node000001" title="Check whether WebDAV integration is enabled." alt="" coords="715,88,932,114"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,39,138,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="790,83,734,53,700,39,666,29,593,16,518,10,443,8,370,11,237,25,136,41,135,36,236,19,370,6,443,3,519,4,594,11,667,24,702,34,736,48,793,79"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="504,39,599,64"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="739,88,598,63,599,57,740,83"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="480,88,623,114"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="701,104,623,104,623,98,701,98"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c" title="Re&#45;encrypt single file with new recipients." alt="" coords="436,138,667,163"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="740,119,623,140,622,135,739,113"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass.html#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!" alt="" coords="487,187,616,212"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="789,123,733,151,668,178,617,192,615,186,666,173,731,146,787,118"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="192,88,388,114"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="469,138,358,116,359,111,470,132"/>
+<area shape="poly" id="edge7_Node000006_Node000002" title=" " alt="" coords="220,88,130,67,132,62,222,83"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,88,144,114"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="178,104,144,104,144,98,178,98"/>
 </map>

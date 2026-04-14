@@ -1,13 +1,20 @@
 <map id="MainWindow::keyPressEvent" name="MainWindow::keyPressEvent">
-<area shape="rect" id="Node000001" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,55,213,80"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="261,47,456,87"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,65,247,65,247,70,213,70"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" title="Clears the stored clipped text." alt="" coords="504,5,687,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="455,45,520,31,521,36,456,50"/>
-<area shape="rect" id="Node000004" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Get the selected folder path, either relative to the configured pass store or absolute." alt="" coords="549,55,642,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="456,65,535,65,535,70,456,70"/>
-<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="507,104,684,129"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="456,85,521,99,520,104,455,90"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="735,55,945,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="642,65,721,65,721,70,642,70"/>
+<area shape="rect" id="Node000001" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,56,213,81"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="261,49,456,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,66,247,66,247,71,213,71"/>
+<area shape="rect" id="Node000003" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Get the selected folder path, either relative to the configured pass store or absolute." alt="" coords="546,19,639,44"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,51,531,38,532,44,457,56"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="504,80,681,105"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="456,76,490,80,490,85,456,81"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="736,5,947,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="640,26,722,22,723,27,640,32"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1001,80,1204,105"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="908,28,954,39,1056,73,1054,78,953,45,907,33"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528" title="Get imitate pass backend instance." alt="" coords="729,55,953,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="681,81,715,77,716,83,682,86"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a8f8fb086b283ad2089e64b37d4950d5e" title="Get real pass backend instance." alt="" coords="738,104,945,129"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="682,99,724,103,724,108,681,104"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title="Get whether to use pass (true) or GPG (false)." alt="" coords="745,153,937,179"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="627,103,730,138,766,148,765,153,729,143,626,108"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="902,151,953,138,1051,107,1053,112,954,143,903,156"/>
 </map>

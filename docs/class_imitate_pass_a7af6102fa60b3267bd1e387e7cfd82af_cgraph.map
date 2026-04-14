@@ -1,7 +1,26 @@
 <map id="ImitatePass::verifyGpgIdForDir" name="ImitatePass::verifyGpgIdForDir">
-<area shape="rect" id="Node000001" title="Verify .gpg&#45;id file for a directory." alt="" coords="5,5,187,45"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Get .gpg&#45;id file path for a password file." alt="" coords="235,13,381,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,23,221,23,221,28,187,28"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="429,13,640,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="381,23,416,23,416,28,381,28"/>
+<area shape="rect" id="Node000001" title="Verify .gpg&#45;id file for a directory." alt="" coords="5,74,187,114"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a0eafb54675479378ec98307f0e4fff65" title="Emit critical error." alt="" coords="265,5,368,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,71,265,33,266,38,156,76"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a7bab4c97e4a327cc34060a67c09959bf" title="Get .gpg&#45;id file path for a password file." alt="" coords="475,59,622,84"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,87,461,73,461,78,187,92"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a693825d2ad62813cf103860ef6211370" title="Get list of recipients for a password file." alt="" coords="235,107,399,132"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="188,102,221,106,221,111,187,107"/>
+<area shape="rect" id="Node000008" href="$class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" title="Verify .gpg&#45;id file exists and is valid." alt="" coords="447,157,651,183"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="143,112,187,128,235,142,336,158,433,166,432,171,335,163,234,147,186,133,141,117"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="718,59,929,84"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="622,69,704,69,704,74,622,74"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="996,157,1199,183"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="908,82,949,93,1012,119,1065,148,1062,153,1009,124,947,98,906,87"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="378,104,473,84,474,89,379,109"/>
+<area shape="rect" id="Node000007" href="$class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5" title="Check if a string looks like a valid GPG key ID. Accepts:" alt="" coords="483,108,615,133"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="399,117,469,118,469,123,399,122"/>
+<area shape="rect" id="Node000009" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="727,108,920,133"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="620,155,738,133,739,138,621,160"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="701,157,946,183"/>
+<area shape="poly" id="edge10_Node000008_Node000010" title=" " alt="" coords="651,167,687,167,687,173,651,173"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" title="Get GPG signing key for pass." alt="" coords="699,207,948,232"/>
+<area shape="poly" id="edge12_Node000008_Node000011" title=" " alt="" coords="621,180,739,202,738,207,620,185"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="946,167,982,167,982,173,946,173"/>
+<area shape="poly" id="edge13_Node000011_Node000005" title=" " alt="" coords="894,204,1012,183,1013,188,895,209"/>
 </map>

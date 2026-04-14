@@ -1,13 +1,14 @@
 <map id="QtPassSettings::getAutoclearPanelSeconds" name="QtPassSettings::getAutoclearPanelSeconds">
-<area shape="rect" id="Node000001" title="Get panel autoclear delay in seconds." alt="" coords="495,97,705,137"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="273,29,425,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="528,95,446,69,404,57,405,52,447,63,530,90"/>
-<area shape="rect" id="Node000003" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="251,79,447,104"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="481,107,447,104,447,99,481,102"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="301,128,396,153"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="482,131,396,139,396,134,481,125"/>
-<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,153,203,179"/>
-<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="537,144,493,157,447,167,384,175,320,178,203,176,203,171,320,172,384,169,446,162,492,152,535,139"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="392,20,389,15,382,12,349,8,323,10,309,15,306,20,313,27,309,31,301,21,305,11,322,5,349,3,383,7,393,11,396,17"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="288,150,203,158,203,153,288,144"/>
+<area shape="rect" id="Node000001" title="Get panel autoclear delay in seconds." alt="" coords="251,121,461,161"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="28,29,180,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,117,256,92,202,69,165,57,166,52,204,63,259,87,309,112"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="6,103,202,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="237,131,202,128,202,123,237,126"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="57,152,151,177"/>
+<area shape="poly" id="edge5_Node000001_Node000004" title=" " alt="" coords="237,155,152,163,151,158,237,149"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,225,203,251"/>
+<area shape="poly" id="edge6_Node000001_Node000005" title=" " alt="" coords="291,168,139,228,137,223,289,163"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="149,20,146,15,138,12,104,8,77,10,63,15,60,20,67,27,63,31,55,21,59,11,76,5,104,3,139,7,149,11,153,17"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="149,93,146,89,138,85,104,81,77,83,63,88,60,94,67,101,63,104,55,94,59,84,76,78,104,76,139,80,149,85,153,90"/>
+<area shape="poly" id="edge7_Node000005_Node000005" title=" " alt="" coords="149,216,146,211,138,208,104,204,77,206,63,211,60,216,67,223,63,227,55,217,59,207,76,201,104,199,139,203,149,207,153,213"/>
 </map>

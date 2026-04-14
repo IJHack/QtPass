@@ -1,9 +1,10 @@
 <map id="Pass::updateEnv" name="Pass::updateEnv">
-<area shape="rect" id="Node000001" title="Update environment for subprocesses." alt="" coords="5,55,133,80"/>
+<area shape="rect" id="Node000001" title="Update environment for subprocesses." alt="" coords="5,31,133,56"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" title="Get GPG signing key for pass." alt="" coords="181,5,431,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,52,181,39,223,31,224,36,182,45,125,57"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="201,55,411,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,65,187,65,187,70,133,70"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes." alt="" coords="211,104,401,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="129,77,182,89,229,99,228,104,181,94,128,83"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,34,174,29,174,35,134,39"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="201,55,411,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,47,187,53,187,58,133,52"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="479,31,681,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="431,27,465,30,465,35,430,32"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="411,55,465,51,465,56,412,61"/>
 </map>

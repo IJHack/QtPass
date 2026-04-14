@@ -1,24 +1,5 @@
 <map id="MainWindow::showStatusMessage" name="MainWindow::showStatusMessage">
-<area shape="rect" id="Node000001" title="Displays message in status bar." alt="" coords="804,165,1051,191"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="568,67,736,92"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="877,163,688,95,690,90,879,158"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="548,191,756,216"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="790,193,756,196,756,191,790,188"/>
-<area shape="rect" id="Node000008" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="283,153,500,179"/>
-<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="790,178,500,171,500,166,790,172"/>
-<area shape="rect" id="Node000011" href="$class_qt_pass.html#aef5aaf0605c7681967995ede486590ef" title="displays the text as qrcode" alt="" coords="551,240,753,265"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="873,197,757,231,711,243,710,237,755,226,872,192"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" title="MainWindow::closeEvent hide or quit." alt="" coords="299,5,483,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="587,66,499,45,450,33,451,28,501,39,588,61"/>
-<area shape="rect" id="Node000004" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="307,55,475,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="554,78,475,74,475,69,555,72"/>
-<area shape="rect" id="Node000006" href="$class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad" title="Constructs a QtPass instance." alt="" coords="332,104,451,129"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="555,96,451,111,450,106,554,91"/>
-<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="21,55,219,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="294,70,219,70,219,65,294,65"/>
-<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="549,191,480,181,481,176,550,186"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="306,203,477,228"/>
-<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="535,211,477,214,477,209,534,206"/>
-<area shape="rect" id="Node000010" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,203,235,228"/>
-<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="292,218,235,218,235,213,292,213"/>
+<area shape="rect" id="Node000001" title="Displays message in status bar." alt="" coords="271,5,517,31"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="5,5,223,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="257,21,223,21,223,15,257,15"/>
 </map>

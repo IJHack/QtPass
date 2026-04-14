@@ -1,0 +1,5 @@
+<map id="QtPassSettings::isUsePwgen" name="QtPassSettings::isUsePwgen">
+<area shape="rect" id="Node000001" title="Check whether pwgen support is enabled." alt="" coords="5,5,212,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="260,5,463,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,15,246,15,246,21,212,21"/>
+</map>

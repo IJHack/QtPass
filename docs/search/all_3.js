@@ -5,7 +5,7 @@ var searchData=
   ['debughelper_2eh_2',['debughelper.h',['../debughelper_8h.html',1,'']]],
   ['dependencies_3',['Dependencies',['../index.html#dependencies',1,'']]],
   ['deselect_4',['deselect',['../class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e',1,'MainWindow']]],
-  ['deselectabletreeview_5',['deselectabletreeview',['../class_deselectable_tree_view.html',1,'DeselectableTreeView'],['../class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26',1,'DeselectableTreeView::DeselectableTreeView()']]],
+  ['deselectabletreeview_5',['DeselectableTreeView',['../class_deselectable_tree_view.html',1,'DeselectableTreeView'],['../class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26',1,'DeselectableTreeView::DeselectableTreeView()']]],
   ['deselectabletreeview_2eh_6',['deselectabletreeview.h',['../deselectabletreeview_8h.html',1,'']]],
   ['dialoggeometry_7',['dialogGeometry',['../class_settings_constants.html#a23e4bf464696a794718cb8aa837e3035',1,'SettingsConstants']]],
   ['dialogmaximized_8',['dialogMaximized',['../class_settings_constants.html#ab15246c28469532b0983b0a1f34204e8',1,'SettingsConstants']]],

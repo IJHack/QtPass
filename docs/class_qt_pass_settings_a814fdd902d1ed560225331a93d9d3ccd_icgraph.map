@@ -1,7 +1,8 @@
 <map id="QtPassSettings::isUseSymbols" name="QtPassSettings::isUseSymbols">
-<area shape="rect" id="Node000001" title="Check whether symbol characters are enabled." alt="" coords="249,31,468,56"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,201,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,34,201,30,202,25,236,28"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="14,55,193,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,58,193,62,193,56,235,52"/>
+<area shape="rect" id="Node000001" title="Check whether symbol characters are enabled." alt="" coords="249,55,468,80"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,29,201,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,58,201,54,202,49,236,52"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="14,79,193,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="236,82,193,86,193,80,235,76"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="149,20,146,15,138,12,103,8,76,10,62,15,59,20,66,27,62,31,53,21,58,11,75,5,103,3,139,7,149,11,153,17"/>
 </map>

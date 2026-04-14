@@ -1,15 +1,17 @@
 <map id="Util::newLinesRegex" name="Util::newLinesRegex">
-<area shape="rect" id="Node000001" title="Returns a regex to match newline characters." alt="" coords="699,55,853,80"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title="Read recipients from file." alt="" coords="436,29,651,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="684,60,651,56,651,51,685,55"/>
-<area shape="rect" id="Node000006" href="$gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8" title="Parse GPG –with&#45;colons output into a list of UserInfo." alt="" coords="461,79,626,104"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="685,79,626,85,626,80,684,74"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="192,29,388,55"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,45,388,45,388,39,422,39"/>
+<area shape="rect" id="Node000001" title="Returns a regex to match newline characters." alt="" coords="699,80,853,105"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title="Read recipients from file." alt="" coords="436,55,651,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="684,85,651,82,651,76,685,80"/>
+<area shape="rect" id="Node000006" href="$gpgkeystate_8cpp.html#a12e5b0425a769a2aa80c91f3f5e1ddc8" title="Parse GPG –with&#45;colons output into a list of UserInfo." alt="" coords="461,104,626,129"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="685,105,626,111,626,106,684,99"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="192,55,388,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="422,70,388,70,388,65,422,65"/>
 <area shape="rect" id="Node000004" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,5,144,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="178,32,144,28,145,23,178,27"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="220,54,130,33,132,28,222,49"/>
 <area shape="rect" id="Node000005" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,55,138,80"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="179,58,138,63,138,57,178,52"/>
-<area shape="rect" id="Node000007" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="235,79,345,104"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="447,94,345,94,345,89,447,89"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="178,70,138,70,138,65,178,65"/>
+<area shape="rect" id="Node000007" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="235,104,345,129"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="447,119,345,119,345,114,447,114"/>
+<area shape="rect" id="Node000008" href="$class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6" title="List GPG keys." alt="" coords="19,104,130,129"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="221,119,130,119,130,114,221,114"/>
 </map>

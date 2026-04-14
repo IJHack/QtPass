@@ -1,7 +1,8 @@
 <map id="QtPassSettings::isAvoidNumbers" name="QtPassSettings::isAvoidNumbers">
-<area shape="rect" id="Node000001" title="Check whether numeric characters should be avoided." alt="" coords="249,31,483,56"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,201,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,33,201,30,202,25,236,28"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="14,55,193,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,58,193,62,193,57,236,53"/>
+<area shape="rect" id="Node000001" title="Check whether numeric characters should be avoided." alt="" coords="249,55,483,80"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,29,201,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,57,201,54,202,49,236,52"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="14,79,193,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="236,82,193,86,193,81,236,77"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="150,20,147,16,139,12,103,8,75,10,60,15,57,20,65,27,61,31,52,21,57,11,74,5,103,3,141,7,151,12,155,18"/>
 </map>

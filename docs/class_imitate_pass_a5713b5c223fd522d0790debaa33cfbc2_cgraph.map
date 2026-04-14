@@ -4,4 +4,6 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="169,32,226,27,226,32,170,38"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title="Get git executable path." alt="" coords="217,55,456,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,49,204,52,204,57,169,54"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="504,55,707,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="456,65,490,65,490,70,456,70"/>
 </map>

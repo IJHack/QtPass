@@ -6,7 +6,9 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,105,258,98,259,103,184,111"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="232,128,477,153"/>
 <area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="184,122,218,125,218,131,184,128"/>
-<area shape="rect" id="Node000005" href="$class_pass.html#a6a9aa8dc4ff288ce256351b671533a84" title="Resolve the gpgconf command to kill agents." alt="" coords="241,177,469,203"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="129,127,233,162,272,172,271,177,231,167,127,132"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a6a9aa8dc4ff288ce256351b671533a84" title="Resolve the gpgconf command to kill agents." alt="" coords="241,177,469,203"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="129,127,233,162,272,172,271,177,231,167,127,132"/>
 <area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="313,80,304,70,308,60,326,54,355,52,391,56,401,61,405,66,401,69,398,65,390,61,355,57,327,59,312,64,309,70,317,77"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="525,128,728,153"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="478,138,512,138,512,143,478,143"/>
 </map>

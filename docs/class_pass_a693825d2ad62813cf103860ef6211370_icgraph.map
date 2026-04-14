@@ -1,7 +1,15 @@
 <map id="Pass::getRecipientList" name="Pass::getRecipientList">
-<area shape="rect" id="Node000001" title="Get list of recipients for a password file." alt="" coords="232,31,396,56"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#ae1f31c62b7117b99882625dbef654533" title="Get recipients as string." alt="" coords="5,5,184,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,35,184,31,184,26,219,30"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="23,55,166,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="219,56,166,62,166,57,218,51"/>
+<area shape="rect" id="Node000001" title="Get list of recipients for a password file." alt="" coords="665,55,829,80"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ae1f31c62b7117b99882625dbef654533" title="Get recipients as string." alt="" coords="437,5,616,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="676,54,584,33,585,28,677,49"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="455,55,598,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="651,70,598,70,598,65,651,65"/>
+<area shape="rect" id="Node000004" href="$class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" title="Verify .gpg&#45;id file for a directory." alt="" coords="436,105,617,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="685,86,605,107,603,102,684,81"/>
+<area shape="rect" id="Node000005" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="192,112,388,137"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="422,127,388,127,388,122,422,122"/>
+<area shape="rect" id="Node000006" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,87,144,112"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="178,114,144,110,145,105,178,109"/>
+<area shape="rect" id="Node000007" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,136,138,161"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="178,140,138,144,138,139,178,135"/>
 </map>

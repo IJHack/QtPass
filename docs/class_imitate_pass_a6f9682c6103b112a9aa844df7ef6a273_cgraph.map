@@ -1,12 +1,14 @@
 <map id="ImitatePass::executeGit" name="ImitatePass::executeGit">
-<area shape="rect" id="Node000001" title="Execute git command." alt="" coords="5,84,181,109"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="Execute command wrapper." alt="" coords="243,59,455,84"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,85,229,81,229,86,182,91"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title="Get git executable path." alt="" coords="229,108,468,133"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="182,102,216,105,215,111,181,108"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="516,29,681,55"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="455,56,502,51,503,56,455,62"/>
-<area shape="rect" id="Node000004" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="525,79,673,119"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="455,81,511,87,511,92,455,86"/>
-<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="558,31,550,21,554,11,571,5,599,3,634,7,644,11,647,17,643,20,640,15,632,12,599,8,572,10,558,15,555,20,562,27"/>
+<area shape="rect" id="Node000001" title="Execute git command." alt="" coords="5,116,181,141"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe" title="Execute command wrapper." alt="" coords="243,87,455,112"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,116,229,110,229,116,182,121"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title="Get git executable path." alt="" coords="229,140,468,165"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="182,134,216,137,215,143,181,140"/>
+<area shape="rect" id="Node000003" href="$class_pass.html#a66f59138ffe856fd421410d9af9ddc62" title="Execute external wrapper command." alt="" coords="535,29,700,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,84,543,55,544,60,410,89"/>
+<area shape="rect" id="Node000004" href="$classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326" title="transactionAdd If called after call to transactionStart() and before transactionEnd(),..." alt="" coords="543,79,691,119"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="455,97,530,97,530,102,455,102"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="574,31,565,21,570,11,588,5,617,3,656,7,666,12,670,18,665,20,662,16,654,12,617,8,589,10,573,15,570,20,578,27"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="516,144,719,169"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="468,152,502,152,502,158,468,157"/>
 </map>

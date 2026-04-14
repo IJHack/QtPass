@@ -1,15 +1,19 @@
 <map id="QtPass::setClippedText" name="QtPass::setClippedText">
-<area shape="rect" id="Node000001" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="5,105,176,131"/>
+<area shape="rect" id="Node000001" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="5,109,176,135"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass.html#acba134fb5281aedee11899a03976aa95" title="MainWindow::copyTextToClipboard copies text to your clipboard." alt="" coords="241,80,449,105"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,107,227,102,227,107,176,112"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056" title="Get clipboard type as enum." alt="" coords="224,129,465,155"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="176,123,210,127,210,132,176,129"/>
-<area shape="rect" id="Node000003" href="$qtpass_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99" title="Build clipboard MIME data with platform&#45;specific security hints." alt="" coords="545,5,729,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="383,77,513,39,550,31,552,36,514,45,385,82"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" title="Get whether to use autoclear for clipboard." alt="" coords="524,55,749,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="449,81,510,76,510,81,449,86"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" title="Get whether to use selection (X11) for clipboard." alt="" coords="525,104,748,129"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="449,99,512,104,511,109,449,104"/>
-<area shape="rect" id="Node000006" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="513,153,760,179"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="425,103,466,114,491,126,514,138,547,148,545,153,512,143,488,131,464,119,424,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,110,227,104,227,109,176,115"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056" title="Get clipboard type as enum." alt="" coords="224,133,465,159"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="176,127,210,131,210,136,176,133"/>
+<area shape="rect" id="Node000003" href="$qtpass_8cpp.html#ad02159f3c84f6ec8d7535395bdb55d99" title="Build clipboard MIME data with platform&#45;specific security hints." alt="" coords="534,5,718,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,77,513,39,548,31,549,36,514,45,385,83"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b" title="Get whether to use autoclear for clipboard." alt="" coords="513,55,739,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="449,81,499,76,500,81,449,86"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442" title="Get whether to use selection (X11) for clipboard." alt="" coords="515,104,737,129"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="449,99,502,103,501,109,449,104"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="787,104,989,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="695,77,807,99,806,104,694,83"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="738,114,773,114,773,119,738,119"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#af667580efb0077ef2f34c6916c78a6ea" title="Get clipboard type preference." alt="" coords="521,154,731,194"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="466,155,507,160,507,165,465,161"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="717,151,816,130,817,135,719,157"/>
 </map>

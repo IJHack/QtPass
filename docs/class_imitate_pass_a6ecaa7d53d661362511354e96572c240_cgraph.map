@@ -4,6 +4,9 @@
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,52,297,31,298,36,179,57"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="259,55,505,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,65,246,65,246,70,210,70"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" title="Get GPG signing key for pass." alt="" coords="257,104,507,129"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="179,77,298,99,297,104,178,83"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" title="Get GPG signing key for pass." alt="" coords="257,104,507,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="179,77,298,99,297,104,178,83"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="555,80,757,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="505,76,541,79,541,85,504,81"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="506,103,541,100,541,105,507,108"/>
 </map>

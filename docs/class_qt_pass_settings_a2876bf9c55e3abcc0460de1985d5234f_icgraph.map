@@ -1,7 +1,9 @@
 <map id="QtPassSettings::isNoLineWrapping" name="QtPassSettings::isNoLineWrapping">
-<area shape="rect" id="Node000001" title="Get whether to disable line wrapping." alt="" coords="251,23,433,63"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="6,5,202,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,35,202,31,202,26,237,30"/>
-<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,55,203,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,57,203,60,203,55,236,51"/>
+<area shape="rect" id="Node000001" title="Get whether to disable line wrapping." alt="" coords="251,59,433,99"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="6,29,202,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,65,185,57,186,52,237,60"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,103,203,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="237,98,189,105,188,100,236,93"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="147,20,135,11,104,8,79,10,65,15,62,20,69,27,65,31,57,21,61,11,77,5,104,3,137,7,150,16"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="147,94,135,85,104,81,79,83,65,88,62,94,69,101,65,104,57,94,61,84,77,78,104,76,137,80,150,89"/>
 </map>

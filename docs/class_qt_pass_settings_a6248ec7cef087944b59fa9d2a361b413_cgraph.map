@@ -1,0 +1,5 @@
+<map id="QtPassSettings::isUseTrayIcon" name="QtPassSettings::isUseTrayIcon">
+<area shape="rect" id="Node000001" title="Check whether tray icon support is enabled." alt="" coords="5,5,223,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="271,5,473,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,15,257,15,257,21,223,21"/>
+</map>

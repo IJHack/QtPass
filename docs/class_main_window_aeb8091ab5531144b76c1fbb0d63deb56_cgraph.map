@@ -1,36 +1,39 @@
 <map id="MainWindow::config" name="MainWindow::config">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,344,157,369"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="44,346,35,336,40,326,55,320,81,317,114,321,126,331,123,335,112,326,81,323,56,325,43,330,41,335,48,342"/>
-<area shape="rect" id="Node000002" href="$class_util.html#afe6db9149dff37feded5abf38870cda8" title="Verify that the required configuration is complete." alt="" coords="247,103,381,128"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="84,343,98,304,122,251,157,194,179,168,204,145,233,129,235,134,207,149,183,172,161,197,127,253,103,306,89,344"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" title="Get pass executable path." alt="" coords="471,153,719,179"/>
-<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="86,342,102,312,128,273,162,234,204,202,265,177,330,161,395,154,457,152,457,157,396,159,331,166,267,182,207,207,166,238,132,276,107,315,91,345"/>
-<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="489,204,700,229"/>
-<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="90,342,134,290,167,262,204,240,272,217,342,205,412,201,476,202,476,207,412,206,343,211,273,223,206,244,170,266,138,294,94,345"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" title="Get panel autoclear delay in seconds." alt="" coords="209,254,419,294"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="110,341,204,303,227,296,229,301,206,309,112,346"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="225,319,403,344"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="157,346,211,340,212,345,158,351"/>
-<area shape="rect" id="Node000010" href="$class_qt_pass.html#a2ac40a69378a7085bebc633984ae6a57" title=" " alt="" coords="239,368,389,393"/>
-<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="158,362,225,369,224,374,157,367"/>
-<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" title="Check whether tray icon support is enabled." alt="" coords="205,417,423,443"/>
-<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="113,367,206,402,240,411,238,417,205,407,111,372"/>
-<area shape="rect" id="Node000012" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title="Sets the clipboard clear timer based on autoclear settings." alt="" coords="217,467,411,492"/>
-<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="97,368,143,409,173,432,207,452,227,460,225,465,204,456,170,437,139,413,93,372"/>
-<area shape="rect" id="Node000014" href="$class_qt_pass.html#a5b63b7418723b400f0db2afa450f1199" title=" " alt="" coords="234,516,394,541"/>
-<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="92,368,134,433,168,470,207,501,222,509,220,514,204,506,164,474,130,436,87,371"/>
-<area shape="rect" id="Node000015" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title="Save use pass setting." alt="" coords="213,565,415,591"/>
-<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="89,369,103,406,127,456,162,508,183,532,207,552,216,557,213,562,204,556,179,536,158,511,123,458,98,408,84,371"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="498,5,691,31"/>
-<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="337,100,396,70,470,39,499,31,500,36,472,45,398,75,339,105"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="472,55,717,80"/>
-<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="381,101,506,80,507,85,382,107"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="382,125,511,148,510,153,381,130"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="339,126,398,157,472,187,509,198,507,203,470,193,396,161,337,131"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title="Get whether to use pass (true) or GPG (false)." alt="" coords="499,104,691,129"/>
-<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="382,113,484,113,484,119,382,118"/>
-<area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" title="Get autoclear delay in seconds." alt="" coords="489,459,700,499"/>
-<area shape="poly" id="edge15_Node000012_Node000013" title=" " alt="" coords="411,477,475,477,475,482,411,482"/>
-<area shape="rect" id="Node000016" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="493,565,696,591"/>
-<area shape="poly" id="edge18_Node000015_Node000016" title=" " alt="" coords="415,575,479,575,479,581,415,581"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,170,157,195"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="44,172,35,162,40,152,55,146,81,143,114,147,126,157,123,161,112,152,81,149,56,151,43,156,41,161,48,168"/>
+<area shape="rect" id="Node000002" href="$class_util.html#afe6db9149dff37feded5abf38870cda8" title="Verify that the required configuration is complete." alt="" coords="247,241,381,266"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="125,193,259,234,258,239,124,198"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db" title="Get pass executable path." alt="" coords="471,165,719,190"/>
+<area shape="poly" id="edge18_Node000001_Node000006" title=" " alt="" coords="157,179,457,176,457,181,157,185"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="489,313,700,338"/>
+<area shape="poly" id="edge19_Node000001_Node000007" title=" " alt="" coords="96,194,142,236,173,258,206,276,273,298,343,313,412,321,476,325,475,330,412,326,343,318,272,304,204,281,170,263,138,240,93,198"/>
+<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" title="Get panel autoclear delay in seconds." alt="" coords="209,5,419,45"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="90,168,134,114,167,82,204,55,216,49,218,53,207,60,170,86,138,117,94,172"/>
+<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="225,377,403,402"/>
+<area shape="poly" id="edge14_Node000001_Node000010" title=" " alt="" coords="93,194,137,257,170,296,207,331,237,352,269,368,266,373,234,356,204,335,166,300,133,261,88,197"/>
+<area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413" title="Check whether tray icon support is enabled." alt="" coords="205,70,423,95"/>
+<area shape="poly" id="edge20_Node000001_Node000013" title=" " alt="" coords="98,168,144,136,204,104,226,97,228,102,206,109,147,140,101,172"/>
+<area shape="rect" id="Node000014" href="$class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2" title="Save use pass setting." alt="" coords="213,119,415,145"/>
+<area shape="poly" id="edge22_Node000001_Node000014" title=" " alt="" coords="140,167,241,145,243,150,141,172"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="498,214,691,239"/>
+<area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="381,244,484,235,484,240,382,250"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="472,263,717,289"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="382,256,458,262,458,268,381,261"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="349,238,470,199,506,190,507,195,471,204,350,243"/>
+<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="353,264,471,299,509,307,508,313,470,304,352,269"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title="Get whether to use pass (true) or GPG (false)." alt="" coords="499,362,691,387"/>
+<area shape="poly" id="edge10_Node000002_Node000008" title=" " alt="" coords="333,264,392,306,431,329,472,348,495,356,493,361,470,353,428,334,389,310,330,268"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="767,165,969,190"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="677,261,718,249,780,223,833,195,836,199,782,228,720,255,679,266"/>
+<area shape="poly" id="edge7_Node000006_Node000005" title=" " alt="" coords="719,175,753,175,753,180,719,180"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="687,310,718,299,755,277,790,250,844,199,848,202,794,254,758,281,720,304,689,315"/>
+<area shape="poly" id="edge11_Node000008_Node000005" title=" " alt="" coords="690,360,717,348,761,315,799,276,829,235,851,201,855,204,833,238,803,279,765,319,720,353,692,365"/>
+<area shape="poly" id="edge13_Node000009_Node000005" title=" " alt="" coords="420,29,564,48,643,65,720,88,786,120,840,154,837,159,783,124,718,93,642,70,563,53,419,34"/>
+<area shape="poly" id="edge17_Node000010_Node000008" title=" " alt="" coords="403,382,485,378,485,383,403,387"/>
+<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528" title="Get imitate pass backend instance." alt="" coords="483,411,707,437"/>
+<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="403,398,479,407,478,412,403,403"/>
+<area shape="rect" id="Node000012" href="$class_qt_pass_settings.html#a8f8fb086b283ad2089e64b37d4950d5e" title="Get real pass backend instance." alt="" coords="491,461,698,486"/>
+<area shape="poly" id="edge16_Node000010_Node000012" title=" " alt="" coords="345,400,403,423,471,447,504,455,503,460,470,452,401,428,343,405"/>
+<area shape="poly" id="edge21_Node000013_Node000005" title=" " alt="" coords="423,85,565,97,643,108,719,123,775,139,825,157,823,162,773,144,718,128,642,113,564,103,423,90"/>
+<area shape="poly" id="edge23_Node000014_Node000005" title=" " alt="" coords="415,131,559,137,719,149,789,160,788,165,718,155,559,142,415,136"/>
 </map>

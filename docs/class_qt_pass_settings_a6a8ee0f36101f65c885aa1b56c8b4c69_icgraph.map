@@ -1,7 +1,8 @@
 <map id="QtPassSettings::isAddGPGId" name="QtPassSettings::isAddGPGId">
-<area shape="rect" id="Node000001" title="Get whether to auto&#45;add GPG ID when receiving files." alt="" coords="249,31,452,56"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,5,201,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,34,201,31,202,25,236,29"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="40,55,167,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,57,167,64,167,59,235,52"/>
+<area shape="rect" id="Node000001" title="Get whether to auto&#45;add GPG ID when receiving files." alt="" coords="249,55,452,80"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,29,201,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,58,201,55,202,49,236,53"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="40,79,167,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="236,81,167,88,167,83,235,76"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="147,20,144,15,137,12,103,8,77,10,63,15,60,20,67,27,64,31,55,21,59,11,76,5,103,3,138,7,148,11,152,17"/>
 </map>

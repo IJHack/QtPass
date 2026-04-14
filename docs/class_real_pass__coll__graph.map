@@ -1,10 +1,10 @@
 <map id="RealPass" name="RealPass">
-<area shape="rect" id="Node000001" title="Implementation of Pass that wraps the &#39;pass&#39; command&#45;line tool." alt="" coords="8,243,88,268"/>
-<area shape="rect" id="Node000002" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="23,168,73,193"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,208,51,242,45,242,45,208"/>
+<area shape="rect" id="Node000001" title="Implementation of Pass that wraps the &#39;pass&#39; command&#45;line tool." alt="" coords="8,251,88,276"/>
+<area shape="rect" id="Node000002" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="23,176,73,201"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="51,216,51,250,45,250,45,216"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,5,80,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="46,44,50,168,45,168,41,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="46,45,50,176,45,176,41,45"/>
 <area shape="rect" id="Node000004" href="$class_executor.html" title="id Identifier provided by the caller for this queued request." alt="" coords="65,80,143,105"/>
 <area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="64,40,96,78,92,81,59,43"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="91,118,58,169,54,166,87,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="92,118,57,177,53,174,88,116"/>
 </map>

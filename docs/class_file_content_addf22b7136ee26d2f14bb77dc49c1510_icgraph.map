@@ -1,13 +1,15 @@
 <map id="FileContent::parse" name="FileContent::parse">
-<area shape="rect" id="Node000001" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="756,31,896,56"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="479,5,708,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="742,37,708,33,709,28,742,32"/>
-<area shape="rect" id="Node000003" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Sets content in the password field in the interface." alt="" coords="486,55,701,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="742,55,701,59,701,54,742,49"/>
-<area shape="rect" id="Node000004" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title="Sets the password from pass show output." alt="" coords="248,55,431,80"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="472,70,431,70,431,65,472,65"/>
-<area shape="rect" id="Node000005" href="$class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="5,15,200,55"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="234,56,200,51,201,46,235,51"/>
-<area shape="rect" id="Node000006" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="5,79,200,119"/>
-<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="235,84,201,89,200,84,234,79"/>
+<area shape="rect" id="Node000001" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas..." alt="" coords="999,42,1139,67"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="721,17,951,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="984,48,951,45,951,39,985,43"/>
+<area shape="rect" id="Node000003" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Sets content in the password field in the interface." alt="" coords="729,66,943,91"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="985,66,944,70,943,65,984,61"/>
+<area shape="rect" id="Node000004" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title="Sets the password from pass show output." alt="" coords="491,66,673,91"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="715,81,674,81,674,76,715,76"/>
+<area shape="rect" id="Node000005" href="$class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="248,29,443,69"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="477,68,443,64,443,59,478,63"/>
+<area shape="rect" id="Node000006" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="5,59,200,99"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="477,84,443,84,248,84,200,83,200,78,248,79,443,79,477,78"/>
+<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="385,18,371,11,345,8,323,10,309,15,304,21,307,28,302,30,299,20,306,10,322,5,345,3,373,6,388,13"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="235,65,201,70,200,64,234,60"/>
 </map>

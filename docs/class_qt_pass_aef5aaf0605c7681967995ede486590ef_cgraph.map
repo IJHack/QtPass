@@ -1,9 +1,9 @@
 <map id="QtPass::showTextAsQRCode" name="QtPass::showTextAsQRCode">
-<area shape="rect" id="Node000001" title="displays the text as qrcode" alt="" coords="5,63,208,88"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d" title="QtPass::createQRCodePopup creates a popup dialog with the given QR code image. This is extracted for ..." alt="" coords="276,5,483,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="166,60,255,41,302,31,303,36,257,46,167,65"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a822fd7d3ac81333a825e26a673e986df" title="Get qrencode executable path." alt="" coords="274,55,485,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,73,260,73,260,78,208,78"/>
-<area shape="rect" id="Node000004" href="$class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf" title="Displays message in status bar." alt="" coords="256,120,503,145"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,85,257,105,303,114,302,120,255,110,166,91"/>
+<area shape="rect" id="Node000001" title="displays the text as qrcode" alt="" coords="5,35,208,60"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass.html#abd2dacf3e88b411ef39ec78f49bbdd2d" title="QtPass::createQRCodePopup creates a popup dialog with the given QR code image. This is extracted for ..." alt="" coords="258,5,465,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,33,244,29,245,34,209,38"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a822fd7d3ac81333a825e26a673e986df" title="Get qrencode executable path." alt="" coords="256,55,467,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,56,243,60,242,65,208,61"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="515,63,717,88"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="467,73,501,73,501,78,467,78"/>
 </map>

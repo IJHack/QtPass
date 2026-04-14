@@ -1,0 +1,5 @@
+<map id="QtPassSettings::isUsePass" name="QtPassSettings::isUsePass">
+<area shape="rect" id="Node000001" title="Get whether to use pass (true) or GPG (false)." alt="" coords="5,5,197,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="245,5,448,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,15,232,15,232,21,198,21"/>
+</map>

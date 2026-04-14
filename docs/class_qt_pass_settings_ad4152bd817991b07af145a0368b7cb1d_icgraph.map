@@ -1,7 +1,8 @@
 <map id="QtPassSettings::isHideOnClose" name="QtPassSettings::isHideOnClose">
-<area shape="rect" id="Node000001" title="Check whether closing the window hides the application." alt="" coords="249,23,436,63"/>
+<area shape="rect" id="Node000001" title="Check whether closing the window hides the application." alt="" coords="249,35,436,75"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f" title="MainWindow::closeEvent hide or quit." alt="" coords="11,5,195,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,35,195,30,196,25,236,29"/>
-<area shape="rect" id="Node000003" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,55,201,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,57,202,60,201,55,236,51"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="235,41,185,33,185,28,236,36"/>
+<area shape="rect" id="Node000003" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,79,201,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="236,74,189,81,188,76,235,69"/>
+<area shape="poly" id="edge3_Node000003_Node000003" title=" " alt="" coords="146,70,135,61,103,57,78,59,64,64,62,70,69,77,65,80,56,70,61,60,77,54,103,52,137,56,149,65"/>
 </map>

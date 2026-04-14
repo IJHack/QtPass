@@ -1,5 +1,10 @@
 <map id="QtPassSettings::getClipBoardTypeRaw" name="QtPassSettings::getClipBoardTypeRaw">
-<area shape="rect" id="Node000001" title="Get clipboard type preference." alt="" coords="249,5,460,45"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,13,201,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,28,202,28,202,23,236,23"/>
+<area shape="rect" id="Node000001" title="Get clipboard type preference." alt="" coords="513,47,724,87"/>
+<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="247,29,443,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="499,59,442,54,443,48,500,54"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056" title="Get clipboard type as enum." alt="" coords="224,79,465,104"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="500,80,466,83,465,78,499,75"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="390,20,387,15,379,12,345,8,317,10,303,15,300,20,308,27,304,31,295,21,299,11,316,5,345,3,380,7,391,11,394,17"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass.html#a74adba9dd6915c9db50762279b62be89" title="Sets the text to be stored in clipboard and handles clipboard operations." alt="" coords="5,79,176,104"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="210,94,176,94,176,89,210,89"/>
 </map>

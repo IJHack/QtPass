@@ -1,11 +1,18 @@
 <map id="MainWindow::on_treeView_clicked" name="MainWindow::on_treeView_clicked">
-<area shape="rect" id="Node000001" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="5,47,200,87"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#a00f9914078839b980f3d66ddbed61cab" title="Clears the stored clipped text." alt="" coords="248,5,431,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="199,45,264,31,265,36,200,50"/>
-<area shape="rect" id="Node000003" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Get the selected folder path, either relative to the configured pass store or absolute." alt="" coords="293,55,386,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,65,279,65,279,70,200,70"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="251,104,428,129"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="200,85,265,99,264,104,199,90"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="479,55,689,80"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="386,65,465,65,465,70,386,70"/>
+<area shape="rect" id="Node000001" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="5,49,200,89"/>
+<area shape="rect" id="Node000002" href="$class_util.html#a5df2739baa9b1df5f183c66739699d3d" title="Get the selected folder path, either relative to the configured pass store or absolute." alt="" coords="290,19,383,44"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,51,275,38,276,44,201,56"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="248,80,425,105"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="200,76,234,80,234,85,200,81"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="480,5,691,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,26,466,22,467,27,384,32"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="745,80,948,105"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="652,28,698,39,800,73,798,78,697,45,651,33"/>
+<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528" title="Get imitate pass backend instance." alt="" coords="473,55,697,80"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="425,81,459,77,460,83,426,86"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a8f8fb086b283ad2089e64b37d4950d5e" title="Get real pass backend instance." alt="" coords="482,104,689,129"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="426,99,468,103,468,108,425,104"/>
+<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title="Get whether to use pass (true) or GPG (false)." alt="" coords="489,153,681,179"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="371,103,474,138,510,148,509,153,473,143,370,108"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="646,151,697,138,795,107,797,112,698,143,647,156"/>
 </map>

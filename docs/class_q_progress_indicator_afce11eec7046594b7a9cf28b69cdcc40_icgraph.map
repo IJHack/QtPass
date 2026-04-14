@@ -1,7 +1,8 @@
 <map id="QProgressIndicator::color" name="QProgressIndicator::color">
 <area shape="rect" id="Node000001" title="Returns the color of the component." alt="" coords="199,37,344,77"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="304,25,292,19,271,16,253,18,242,23,238,29,240,36,235,38,233,28,239,19,252,13,271,11,294,14,306,21"/>
 <area shape="rect" id="Node000002" href="$class_q_progress_indicator.html#a38d3e8644a4e74d892b42270c9b6ae8f" title="QProgressIndicator::paintEvent draw the spinner." alt="" coords="5,5,151,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,46,151,40,152,35,186,40"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="185,46,151,40,152,35,186,40"/>
 <area shape="rect" id="Node000003" href="$class_q_progress_indicator.html#a62161c81afb5ce019e9a7a55c69e3654" title="Sets the color of the components to the given color." alt="" coords="5,69,151,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,74,152,80,151,75,185,69"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="186,74,152,80,151,75,185,69"/>
 </map>

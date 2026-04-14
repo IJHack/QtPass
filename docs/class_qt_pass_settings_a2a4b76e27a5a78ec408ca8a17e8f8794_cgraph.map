@@ -1,0 +1,5 @@
+<map id="QtPassSettings::getWebDavUser" name="QtPassSettings::getWebDavUser">
+<area shape="rect" id="Node000001" title="Get WebDAV username." alt="" coords="5,5,237,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="285,5,488,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,15,272,15,272,21,237,21"/>
+</map>
