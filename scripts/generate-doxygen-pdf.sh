@@ -29,7 +29,8 @@ cp Doxyfile "$DOXYFILE_BACKUP"
 restore_doxyfile_on_error() {
 	local status=$?
 	if [[ $status -ne 0 ]]; then
-		mv "$DOXYFILE_BACKUP" "$DOXYFILE"
+  cp "$DOXYFILE_BACKUP" "$DOXYFILE"
+  rm -f "$DOXYFILE_BACKUP"
 	else
 		rm -f "$DOXYFILE_BACKUP"
 	fi
