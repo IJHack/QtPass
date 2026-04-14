@@ -22,7 +22,19 @@ echo "Version: $VERSION"
 require_readable_file "Doxyfile"
 
 # Enable LaTeX and PDF output, and set the version (portable sed with temp file)
+DOXYFILE_BACKUP=$(mktemp)
 TMPFILE=$(mktemp)
+cp Doxyfile "$DOXYFILE_BACKUP"
+restore_doxyfile_on_error() {
+	local status=$?
+	if [[ $status -ne 0 ]]; then
+		mv "$DOXYFILE_BACKUP" Doxyfile
+	else
+		rm -f "$DOXYFILE_BACKUP"
+	fi
+	rm -f "$TMPFILE"
+}
+trap restore_doxyfile_on_error EXIT
 sed -e "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" \
 	-e "s/^GENERATE_LATEX.*=.*/GENERATE_LATEX         = YES/" \
 	-e "s/^USE_PDFLATEX.*=.*/USE_PDFLATEX           = YES/" \
@@ -69,3 +81,6 @@ fi
 OUTPUT_DIR=$(dirname "$PDF_FILE")
 cp "$PDF_FILE" "$OUTPUT_DIR/QtPass-$VERSION.pdf"
 echo "PDF generated: $OUTPUT_DIR/QtPass-$VERSION.pdf"
+
+rm -f "$DOXYFILE_BACKUP" "$TMPFILE"
+trap - EXIT
