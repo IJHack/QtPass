@@ -1118,7 +1118,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Volver cifrar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -1163,12 +1163,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>O directorio non existe: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Volver cifrar os contrasinais</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1179,7 +1179,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Volver cifrar todos os contrasinais en %1?
+
+Isto volverá cifrar TODOS os ficheiros de contrasinais deste cartafol usando os destinatarios actuais definidos en .gpg-id.
+
+Isto pode reescribir moitos ficheiros e non se pode desfacer facilmente.
+
+Continuar?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
