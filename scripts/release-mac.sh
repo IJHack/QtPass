@@ -53,7 +53,6 @@ if [[ -z "${VERSION:-}" ]]; then
 	echo "Error: Failed to extract VERSION from qtpass.pri" >&2
 	exit 1
 fi
-ESCAPED_VERSION=$(printf '%s' "$VERSION" | sed -e 's/[\\&|]/\\&/g')
 require_readable_file "$DOXYFILE_PATH"
 # Doxygen doesn't expand $ENV{} in config, so substitute directly
 # Use temp file for portable sed across GNU/BSD sed
@@ -76,7 +75,7 @@ if ! grep -qE '^PROJECT_NUMBER.*=.*' "$DOXYFILE_PATH"; then
 	echo "Error: PROJECT_NUMBER entry not found in $DOXYFILE_PATH." >&2
 	exit 1
 fi
-if ! sed "s|^PROJECT_NUMBER.*=.*|PROJECT_NUMBER         = $ESCAPED_VERSION|" "$DOXYFILE_PATH" >"$TMPFILE"; then
+if ! sed "s|^PROJECT_NUMBER.*=.*|PROJECT_NUMBER         = $VERSION|" "$DOXYFILE_PATH" >"$TMPFILE"; then
 	echo "Error: Failed to update PROJECT_NUMBER in $DOXYFILE_PATH." >&2
 	exit 1
 fi
