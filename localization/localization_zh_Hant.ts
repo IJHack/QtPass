@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished">剪贴板行为:</translation>
+        <translation type="unfinished">剪貼簿行為:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished">自动清除后:</translation>
+        <translation type="unfinished">自動清除後:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished">自动清除面板后:</translation>
+        <translation type="unfinished">自動清除面板後:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
@@ -136,12 +136,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">生成GPG密钥对</translation>
+        <translation type="unfinished">產生GPG金鑰對</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished">签名密钥</translation>
+        <translation type="unfinished">簽名金鑰</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
@@ -367,7 +367,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="123"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished">按需复制到剪贴板</translation>
+        <translation type="unfinished">按需複製到剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="204"/>
@@ -565,13 +565,13 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished">没有可用的签名密钥！</translation>
+        <translation type="unfinished">沒有可用的簽名金鑰！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">没有任何秘密签名密钥可用。您将无法更改用户列表！</translation>
+        <translation type="unfinished">沒有任何秘密簽名金鑰可用。您將無法更改用戶列表！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -668,12 +668,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished">生成 GnuPG 密钥对</translation>
+        <translation type="unfinished">產生 GnuPG 金鑰對</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished">生成新的密钥对</translation>
+        <translation type="unfinished">產生新的金鑰對</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
@@ -1108,17 +1108,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">一次性密码已复制到剪贴板</translation>
+        <translation type="unfinished">一次性密碼已複製到剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">此密码条目中未找到一次性密码</translation>
+        <translation type="unfinished">此密碼條目中未找到一次性密碼</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">未为生成一次性密码选择密码</translation>
+        <translation type="unfinished">未為產生一次性密碼選擇密碼</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
@@ -1211,7 +1211,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="145"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished">在配置中未设置可供选择的字符，因此无法生成密码！</translation>
+        <translation type="unfinished">在配置中未設置可供選擇的字元，因此無法產生密碼！</translation>
     </message>
 </context>
 <context>
@@ -1343,12 +1343,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished">GPG密钥对生成失败</translation>
+        <translation type="unfinished">GPG金鑰對產生失敗</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished">GPG密钥对生成成功</translation>
+        <translation type="unfinished">GPG金鑰對產生成功</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
