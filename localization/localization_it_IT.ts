@@ -622,12 +622,12 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">Impossibile esaminare lo stato Git. La rifirma è stata annullata.</translation>
+        <translation type="unfinished">Impossibile esaminare lo stato Git. La ricifratura è stata annullata.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">La rifirma è stata annullata perché non è stato possibile creare un backup Git.</translation>
+        <translation type="unfinished">La ricifratura è stata annullata perché non è stato possibile creare un backup Git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -653,17 +653,17 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">Impossibile rifirmare %1</translation>
+        <translation type="unfinished">Impossibile ricifrare %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">Rifirma completata: %1 riuscita, %2 fallita</translation>
+        <translation type="unfinished">Ricifratura completata: %1 riuscita, %2 fallita</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">Rifirma completata: %1 file rifirmati</translation>
+        <translation type="unfinished">Ricifratura completata: %1 file ricifrati</translation>
     </message>
 </context>
 <context>
@@ -1196,7 +1196,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nessuna password selezionata per la generazione OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>

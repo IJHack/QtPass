@@ -21,7 +21,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
         <source>Use primary selection</source>
-        <translation type="unfinished">使用主选择</translation>
+        <translation type="unfinished">使用主選取</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished">内容面板行为:</translation>
+        <translation type="unfinished">內容面板行為:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">使用等宽字体</translation>
+        <translation type="unfinished">使用等寬字體</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -1498,7 +1498,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[部分] </translation>
     </message>
 </context>
 </TS>
