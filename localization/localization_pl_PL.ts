@@ -975,7 +975,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaszyfruj ponownie</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -1020,12 +1020,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalog nie istnieje: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponowne szyfrowanie haseł</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1036,7 +1036,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaszyfrować ponownie wszystkie hasła w&#xa0;%1?
+
+Spowoduje to ponowne zaszyfrowanie WSZYSTKICH plików haseł w&#xa0;tym folderze, używając bieżących odbiorców zdefiniowanych w&#xa0;pliku .gpg-id.
+
+Może to spowodować nadpisanie wielu plików i&#xa0;nie można tego łatwo cofnąć.
+
+Kontynuować?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
