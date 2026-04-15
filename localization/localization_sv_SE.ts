@@ -1087,7 +1087,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptera om</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -1132,12 +1132,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalogen finns inte: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptera lösenord på nytt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1148,7 +1148,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vill du omkryptera alla lösenord i %1?
+
+Detta kommer att omkryptera ALLA lösenordsfiler i den här mappen med de aktuella mottagarna som definierats i .gpg-id.
+
+Detta kan skriva om många filer och kan inte enkelt ångras.
+
+Fortsätta?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
