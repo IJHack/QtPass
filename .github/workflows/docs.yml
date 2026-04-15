@@ -104,7 +104,11 @@ jobs:
             rm -f "$TMPFILE"
             exit 1
           fi
-          mv "$TMPFILE" Doxyfile
+          if ! mv "$TMPFILE" Doxyfile; then
+            echo "Error: Failed to replace Doxyfile with updated content." >&2
+            rm -f "$TMPFILE"
+            exit 1
+          fi
           echo "Updated Doxyfile with version: $VERSION"
 
       - name: Generate documentation
