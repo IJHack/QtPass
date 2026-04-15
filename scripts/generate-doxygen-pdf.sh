@@ -19,14 +19,29 @@ if [[ -z "${VERSION:-}" ]]; then
 fi
 echo "Version: $VERSION"
 
+# Escape VERSION for sed to avoid injection
+ESCAPED_VERSION=$(printf '%s' "$VERSION" | sed -e 's/[\\&|]/\\&/g')
+
 require_readable_file "Doxyfile"
 
 # Enable LaTeX and PDF output, and set the version (portable sed with temp file)
 DOXYFILE="$(pwd)/Doxyfile"
-DOXYFILE_BACKUP=$(mktemp)
-TMPFILE=$(mktemp)
+if ! DOXYFILE_BACKUP=$(mktemp); then
+	echo "Error: Failed to create temporary backup file." >&2
+	exit 1
+fi
+if ! TMPFILE=$(mktemp); then
+	echo "Error: Failed to create temporary working file." >&2
+	rm -f "${DOXYFILE_BACKUP:-}"
+	exit 1
+fi
+if [[ -z "${DOXYFILE_BACKUP:-}" || -z "${TMPFILE:-}" ]]; then
+	echo "Error: Temporary file path is empty." >&2
+	rm -f "${DOXYFILE_BACKUP:-}" "${TMPFILE:-}"
+	exit 1
+fi
 cp Doxyfile "$DOXYFILE_BACKUP"
-restore_doxyfile_on_error() {
+cleanup_doxyfile_on_exit() {
 	local status=$?
 	if [[ $status -ne 0 ]]; then
 		cp "$DOXYFILE_BACKUP" "$DOXYFILE"
@@ -36,8 +51,8 @@ restore_doxyfile_on_error() {
 	fi
 	rm -f "$TMPFILE"
 }
-trap restore_doxyfile_on_error EXIT
-sed -e "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" \
+trap cleanup_doxyfile_on_exit EXIT
+sed -e "s|^PROJECT_NUMBER.*=.*|PROJECT_NUMBER         = $ESCAPED_VERSION|" \
 	-e "s/^GENERATE_LATEX.*=.*/GENERATE_LATEX         = YES/" \
 	-e "s/^USE_PDFLATEX.*=.*/USE_PDFLATEX           = YES/" \
 	Doxyfile >"$TMPFILE" && mv "$TMPFILE" Doxyfile
@@ -48,12 +63,17 @@ doxygen || {
 	exit 1
 }
 
+# Search paths for generated LaTeX artifacts (primary + fallback)
+LATEX_SEARCH_DIRS=("latex" "docs/latex")
+
 # Find the generated makefile (Doxygen uses ./latex/ by default)
-LATEX_MAKEFILE=$(find latex -name "Makefile" -type f 2>/dev/null | head -n1)
-if [[ -z "$LATEX_MAKEFILE" ]]; then
-	# Try docs/latex as fallback if OUTPUT_DIRECTORY was set to docs
-	LATEX_MAKEFILE=$(find docs/latex -name "Makefile" -type f 2>/dev/null | head -n1)
-fi
+LATEX_MAKEFILE=""
+for dir in "${LATEX_SEARCH_DIRS[@]}"; do
+	LATEX_MAKEFILE=$(find "$dir" -name "Makefile" -type f 2>/dev/null | head -n1)
+	if [[ -n "$LATEX_MAKEFILE" ]]; then
+		break
+	fi
+done
 if [[ -z "$LATEX_MAKEFILE" ]]; then
 	echo "Error: Could not find LaTeX Makefile (tried latex/ and docs/latex)" >&2
 	exit 1
@@ -70,9 +90,16 @@ make pdf || {
 cd - >/dev/null
 
 # Find the generated PDF and copy to accessible location
-PDF_FILE=$(find latex -name "refman.pdf" -type f 2>/dev/null | head -n1)
+# Check the actual build directory first
+PDF_FILE=$(find "$LATEX_DIR" -name "refman.pdf" -type f 2>/dev/null | head -n1)
 if [[ -z "$PDF_FILE" ]]; then
-	PDF_FILE=$(find docs/latex -name "refman.pdf" -type f 2>/dev/null | head -n1)
+	# Fall back to search paths
+	for dir in "${LATEX_SEARCH_DIRS[@]}"; do
+		PDF_FILE=$(find "$dir" -name "refman.pdf" -type f 2>/dev/null | head -n1)
+		if [[ -n "$PDF_FILE" ]]; then
+			break
+		fi
+	done
 fi
 if [[ -z "$PDF_FILE" ]]; then
 	echo "Error: Could not find generated PDF (tried latex/ and docs/latex)" >&2
