@@ -601,7 +601,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">Rifirma fallita</translation>
+        <translation type="unfinished">Ricifratura fallita</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
