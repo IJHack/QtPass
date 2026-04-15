@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<TS version="2.1" language="zh_Hant">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -66,12 +66,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished">显示文件内容原样</translation>
+        <translation type="unfinished">顯示檔案內容原樣</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished">不换行</translation>
+        <translation type="unfinished">不換行</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
