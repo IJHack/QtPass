@@ -1483,7 +1483,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="305"/>
         <source>expires</source>
-        <translation>[无效] </translation>
+        <translation>過期於</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
