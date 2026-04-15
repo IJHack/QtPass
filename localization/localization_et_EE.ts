@@ -1200,7 +1200,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Krüpti uuesti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
@@ -1238,12 +1238,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kausta pole olemas: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Krüpti salasõnad uuesti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
