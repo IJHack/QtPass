@@ -3,9 +3,17 @@
 set -euo pipefail
 
 README_CLEAN="README.clean"
+DOXYFILE_PATH="Doxyfile"
+DOXYFILE_BACKUP=""
 
 cleanup() {
+	local exit_code=$?
 	rm -f "$README_CLEAN"
+	if [[ $exit_code -ne 0 && -n "${DOXYFILE_BACKUP:-}" && -f "$DOXYFILE_BACKUP" ]]; then
+		mv -f "$DOXYFILE_BACKUP" "$DOXYFILE_PATH"
+	else
+		rm -f "${DOXYFILE_BACKUP:-}"
+	fi
 }
 
 trap cleanup EXIT
@@ -44,11 +52,13 @@ if [[ -z "${VERSION:-}" ]]; then
 	echo "Error: Failed to extract VERSION from qtpass.pri" >&2
 	exit 1
 fi
-require_readable_file "Doxyfile"
+require_readable_file "$DOXYFILE_PATH"
 # Doxygen doesn't expand $ENV{} in config, so substitute directly
 # Use temp file for portable sed across GNU/BSD sed
 TMPFILE=$(mktemp)
-sed "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" Doxyfile >"$TMPFILE" && mv "$TMPFILE" Doxyfile
+DOXYFILE_BACKUP=$(mktemp)
+cp "$DOXYFILE_PATH" "$DOXYFILE_BACKUP"
+sed "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" "$DOXYFILE_PATH" >"$TMPFILE" && mv "$TMPFILE" "$DOXYFILE_PATH"
 echo "Generating API documentation (v$VERSION)..."
 doxygen || {
 	echo "Error: doxygen failed." >&2

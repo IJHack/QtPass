@@ -458,19 +458,20 @@ void tst_util::passwordConfigurationCharacters() {
 }
 
 void tst_util::simpleTransactionBasic() {
-  simpleTransaction trans;
-  trans.transactionAdd(Enums::PASS_INSERT);
-  Enums::PROCESS result = trans.transactionIsOver(Enums::PASS_INSERT);
+  simpleTransaction transaction;
+  transaction.transactionAdd(Enums::PASS_INSERT);
+  Enums::PROCESS result = transaction.transactionIsOver(Enums::PASS_INSERT);
   QCOMPARE(result, Enums::PASS_INSERT);
 }
 
 void tst_util::simpleTransactionNested() {
-  simpleTransaction trans;
-  trans.transactionAdd(Enums::PASS_INSERT);
-  trans.transactionAdd(Enums::GIT_PUSH);
-  Enums::PROCESS passInsertResult = trans.transactionIsOver(Enums::PASS_INSERT);
+  simpleTransaction transaction;
+  transaction.transactionAdd(Enums::PASS_INSERT);
+  transaction.transactionAdd(Enums::GIT_PUSH);
+  Enums::PROCESS passInsertResult =
+      transaction.transactionIsOver(Enums::PASS_INSERT);
   QCOMPARE(passInsertResult, Enums::PASS_INSERT);
-  Enums::PROCESS gitPushResult = trans.transactionIsOver(Enums::GIT_PUSH);
+  Enums::PROCESS gitPushResult = transaction.transactionIsOver(Enums::GIT_PUSH);
   QCOMPARE(gitPushResult, Enums::GIT_PUSH);
 }
 
@@ -536,11 +537,10 @@ void tst_util::generateRandomPassword() {
   }
 
   result = pass.generatePassword(100, "abcd");
-  QString charset2 = "abcd";
   QCOMPARE(result.length(), 100);
   for (const QChar &ch : result) {
     QVERIFY2(
-        charset2.contains(ch),
+        QStringLiteral("abcd").contains(ch),
         "Generated password contains character outside the specified charset");
   }
 
@@ -548,11 +548,10 @@ void tst_util::generateRandomPassword() {
   QVERIFY(result.isEmpty());
 
   result = pass.generatePassword(50, "ABC");
-  QString charset3 = "ABC";
   QCOMPARE(result.length(), 50);
   for (const QChar &ch : result) {
     QVERIFY2(
-        charset3.contains(ch),
+        QStringLiteral("ABC").contains(ch),
         "Generated password contains character outside the specified charset");
   }
 }
@@ -637,19 +636,20 @@ void tst_util::getDirBasic() {
   QVERIFY2(tempDir.isValid(),
            "Temporary directory should be created successfully");
 
-  QFileSystemModel fsm;
-  fsm.setRootPath(tempDir.path());
-  StoreModel sm;
-  sm.setModelAndStore(&fsm, tempDir.path());
-  QVERIFY(sm.sourceModel() != nullptr);
-  QVERIFY2(sm.getStore() == tempDir.path(),
+  QFileSystemModel fileSystemModel;
+  fileSystemModel.setRootPath(tempDir.path());
+  StoreModel storeModel;
+  storeModel.setModelAndStore(&fileSystemModel, tempDir.path());
+  QVERIFY(storeModel.sourceModel() != nullptr);
+  QVERIFY2(storeModel.getStore() == tempDir.path(),
            "Store path should match the set value");
-  QModelIndex rootIndex = fsm.index(tempDir.path());
+  QModelIndex rootIndex = fileSystemModel.index(tempDir.path());
   QVERIFY2(rootIndex.isValid(), "Filesystem model root index should be valid");
   const QString originalStore = QtPassSettings::getPassStore();
   QtPassSettings::setPassStore(tempDir.path());
 
-  QString result = Util::getDir(QModelIndex(), false, fsm, sm);
+  QString result =
+      Util::getDir(QModelIndex(), false, fileSystemModel, storeModel);
   QString expectedDir = QDir(tempDir.path()).absolutePath();
   if (!expectedDir.endsWith(QDir::separator())) {
     expectedDir += QDir::separator();
@@ -682,21 +682,22 @@ void tst_util::getDirWithIndex() {
   PassStoreGuard passStoreGuard(originalPassStore);
   QtPassSettings::setPassStore(dirPath);
 
-  QFileSystemModel fsm;
-  fsm.setRootPath(dirPath);
+  QFileSystemModel fileSystemModel;
+  fileSystemModel.setRootPath(dirPath);
 
-  StoreModel sm;
-  sm.setModelAndStore(&fsm, dirPath);
-  QVERIFY2(sm.getStore() == dirPath, "Store path should match the set value");
+  StoreModel storeModel;
+  storeModel.setModelAndStore(&fileSystemModel, dirPath);
+  QVERIFY2(storeModel.getStore() == dirPath,
+           "Store path should match the set value");
 
-  QModelIndex sourceIndex = fsm.index(filePath);
+  QModelIndex sourceIndex = fileSystemModel.index(filePath);
   QVERIFY2(sourceIndex.isValid(),
            "Source index should be valid for the test file");
-  QModelIndex fileIndex = sm.mapFromSource(sourceIndex);
+  QModelIndex fileIndex = storeModel.mapFromSource(sourceIndex);
   QVERIFY2(fileIndex.isValid(),
            "Proxy index should be valid for the test file");
 
-  QString result = Util::getDir(fileIndex, false, fsm, sm);
+  QString result = Util::getDir(fileIndex, false, fileSystemModel, storeModel);
   QVERIFY2(!result.isEmpty(),
            "getDir should return a non-empty directory for a valid index");
   QVERIFY(result.endsWith(QDir::separator()));
@@ -711,7 +712,8 @@ void tst_util::getDirWithIndex() {
           QStringLiteral("Expected '%1', got '%2'").arg(expectedPath, result)));
 
   QModelIndex invalidIndex;
-  QString invalidResult = Util::getDir(invalidIndex, false, fsm, sm);
+  QString invalidResult =
+      Util::getDir(invalidIndex, false, fileSystemModel, storeModel);
   QString expectedForInvalid = dirPath;
   if (!expectedForInvalid.endsWith(QDir::separator())) {
     expectedForInvalid += QDir::separator();
@@ -962,8 +964,8 @@ void tst_util::getRecipientListInvalidKeyId() {
 
   QFile file(gpgIdFile);
   QVERIFY(file.open(QIODevice::WriteOnly));
-  file.write(
-      "ABCDEF12\ninvalid\n0xABCDEF123456789012\n<a@b>\nuser@domain.org\n");
+  file.write("ABCDEF12\ninvalid\n0xABCDEF123456789012\n<a@b>\nuser@qtpass@"
+             "example.org\n");
   file.close();
 
   const QString originalPassStore = QtPassSettings::getPassStore();
@@ -973,7 +975,7 @@ void tst_util::getRecipientListInvalidKeyId() {
   QVERIFY(!recipients.contains("invalid"));
   QVERIFY(recipients.contains("ABCDEF12"));
   QVERIFY(recipients.contains("0xABCDEF123456789012"));
-  QVERIFY(recipients.contains("user@domain.org"));
+  QVERIFY(recipients.contains("user@qtpass@example.org"));
 }
 
 void tst_util::isValidKeyIdBasic() {
@@ -993,7 +995,7 @@ void tst_util::isValidKeyIdWith0xPrefix() {
 
 void tst_util::isValidKeyIdWithEmail() {
   QVERIFY(Util::isValidKeyId("<a@b>"));
-  QVERIFY(Util::isValidKeyId("user@domain.org"));
+  QVERIFY(Util::isValidKeyId("user@qtpass@example.org"));
   QVERIFY(Util::isValidKeyId("/any/text/here"));
   QVERIFY(Util::isValidKeyId("#anything"));
   QVERIFY(Util::isValidKeyId("&anything"));
