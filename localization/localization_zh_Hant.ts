@@ -1493,7 +1493,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[部分]</translation>
+        <translation type="unfinished">[已過期] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
