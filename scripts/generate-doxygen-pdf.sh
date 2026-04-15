@@ -83,7 +83,3 @@ fi
 OUTPUT_DIR=$(dirname "$PDF_FILE")
 cp "$PDF_FILE" "$OUTPUT_DIR/QtPass-$VERSION.pdf"
 echo "PDF generated: $OUTPUT_DIR/QtPass-$VERSION.pdf"
-
-cp "$DOXYFILE_BACKUP" "$DOXYFILE"
-trap - EXIT
-rm -f "$DOXYFILE_BACKUP" "$TMPFILE"
