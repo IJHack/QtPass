@@ -53,7 +53,7 @@ if [[ -z "${VERSION:-}" ]]; then
 	echo "Error: Failed to extract VERSION from qtpass.pri" >&2
 	exit 1
 fi
-ESCAPED_VERSION=$(printf '%s' "$VERSION" | sed -e 's/[\\&|]/\\&/g')
+ESCAPED_VERSION=$(printf '%s' "$VERSION" | sed -e 's/[\/\\&|]/\\&/g')
 require_readable_file "$DOXYFILE_PATH"
 # Doxygen doesn't expand $ENV{} in config, so substitute directly
 # Use temp file for portable sed across GNU/BSD sed
