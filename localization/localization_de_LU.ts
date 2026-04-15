@@ -89,12 +89,12 @@
         <location filename="../src/configdialog.ui" line="270"/>
         <source>Password Generation:</source>
         <translatorcomment>Erzeugung würde auch funktionieren</translatorcomment>
-        <translation>Schriftart monospaciert verwenden</translation>
+        <translation>Passworterzeugung:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="282"/>
         <source>Password Length:</source>
-        <translation>Dateiinhalt unverändert anzeigen</translation>
+        <translation>Passwortlänge:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="344"/>
@@ -210,7 +210,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="316"/>
         <source>Characters</source>
-        <translation>Keine Zeilenüberschneidung</translation>
+        <translation>Zeichen</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -290,12 +290,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1031"/>
         <source>Use template</source>
-        <translation>Fehler</translation>
+        <translation>Vorlage verwenden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Konnte Passwortspeicher an %1 nicht erstellen</translation>
+        <translation>Alle Zeilen, die mit einem Wort gefolgt von einem Doppelpunkt beginnen, als Felder in Passwortfeldern anzeigen, nicht nur die aufgelisteten</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
@@ -464,7 +464,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>GPG-Schlüsselpaar generieren</translation>
+        <translation>Native Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -498,7 +498,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <source>PWGen</source>
-        <translation>Optionales: GPG-Schlüssel zur Signatur von .gpg-id-Dateien für die Integritätserhebung. Lassen Sie leer, es sei denn, Sie müssen das Benutzerverzeichnis vor Veränderungen schützen.</translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -940,7 +940,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
         <location filename="../src/mainwindow.ui" line="316"/>
         <location filename="../src/mainwindow.cpp" line="1034"/>
         <source>Add password</source>
-        <translation>Für den Erstellung von OTPToken wurde kein Passwort ausgewählt</translation>
+        <translation>Passwort hinzufügen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="199"/>
@@ -1454,12 +1454,12 @@ Die roten Einträge sind ungültig / abgelaufen und für Entschlüsselung nicht 
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[UNGUÜLTIG] </translation>
+        <translation type="unfinished">[UNGÜLTIG] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[VERAUSSCHEIT] </translation>
+        <translation type="unfinished">[ABGELAUFEN] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
