@@ -72,12 +72,20 @@ if [[ -z "${TMPFILE:-}" || -z "${DOXYFILE_BACKUP:-}" ]]; then
 	exit 1
 fi
 cp "$DOXYFILE_PATH" "$DOXYFILE_BACKUP"
+if ! grep -qE '^PROJECT_NUMBER.*=.*' "$DOXYFILE_PATH"; then
+	echo "Error: PROJECT_NUMBER entry not found in $DOXYFILE_PATH." >&2
+	exit 1
+fi
 if ! sed "s|^PROJECT_NUMBER.*=.*|PROJECT_NUMBER         = $ESCAPED_VERSION|" "$DOXYFILE_PATH" >"$TMPFILE"; then
 	echo "Error: Failed to update PROJECT_NUMBER in $DOXYFILE_PATH." >&2
 	exit 1
 fi
 if [[ ! -s "$TMPFILE" ]]; then
 	echo "Error: Generated temporary Doxyfile is empty." >&2
+	exit 1
+fi
+if ! grep -qF "PROJECT_NUMBER         = $ESCAPED_VERSION" "$TMPFILE"; then
+	echo "Error: PROJECT_NUMBER was not updated in $DOXYFILE_PATH." >&2
 	exit 1
 fi
 if ! mv "$TMPFILE" "$DOXYFILE_PATH"; then
