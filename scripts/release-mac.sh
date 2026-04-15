@@ -72,7 +72,18 @@ if [[ -z "${TMPFILE:-}" || -z "${DOXYFILE_BACKUP:-}" ]]; then
 	exit 1
 fi
 cp "$DOXYFILE_PATH" "$DOXYFILE_BACKUP"
-sed "s|^PROJECT_NUMBER.*=.*|PROJECT_NUMBER         = $ESCAPED_VERSION|" "$DOXYFILE_PATH" >"$TMPFILE" && mv "$TMPFILE" "$DOXYFILE_PATH"
+if ! sed "s|^PROJECT_NUMBER.*=.*|PROJECT_NUMBER         = $ESCAPED_VERSION|" "$DOXYFILE_PATH" >"$TMPFILE"; then
+	echo "Error: Failed to update PROJECT_NUMBER in $DOXYFILE_PATH." >&2
+	exit 1
+fi
+if [[ ! -s "$TMPFILE" ]]; then
+	echo "Error: Generated temporary Doxyfile is empty." >&2
+	exit 1
+fi
+if ! mv "$TMPFILE" "$DOXYFILE_PATH"; then
+	echo "Error: Failed to replace $DOXYFILE_PATH with updated content." >&2
+	exit 1
+fi
 echo "Generating API documentation (v$VERSION)..."
 doxygen || {
 	echo "Error: doxygen failed." >&2
