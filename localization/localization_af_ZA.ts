@@ -1168,7 +1168,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Herenkripteer</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
@@ -1206,12 +1206,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Gids bestaan nie: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Herenkripteer wagwoorde</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1222,7 +1222,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Herenkripteer alle wagwoorde in %1?
+
+Dit sal ALLE wagwoordlêers in hierdie vouer herenkripteer met behulp van die huidige ontvangers wat in .gpg-id gedefinieer is.
+
+Dit kan baie lêers herskryf en kan nie maklik ongedaan gemaak word nie.
+
+Gaan voort?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>

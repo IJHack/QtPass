@@ -1168,7 +1168,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Krypter igen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
@@ -1206,12 +1206,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappen findes ikke: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Krypter adgangskoder igen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1222,7 +1222,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vil du genkryptere alle adgangskoder i %1?
+
+Dette vil genkryptere ALLE adgangskodefiler i denne mappe ved hjælp af de nuværende modtagere, der er defineret i .gpg-id.
+
+Dette kan omskrive mange filer og kan ikke nemt fortrydes.
+
+Fortsætte?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>

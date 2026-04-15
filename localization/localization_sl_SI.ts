@@ -542,7 +542,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="127"/>
         <location filename="../src/imitatepass.cpp" line="575"/>
         <source>Can not edit</source>
-        <translation type="unfinished">Can not edit</translation>
+        <translation>Ni mogoče urejati</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="128"/>
@@ -1032,7 +1032,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Are you sure you want to delete %1? {1%2??}</translation>
+        <translation>Ali ste prepričani, da želite izbrisati %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>
@@ -1271,13 +1271,13 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">Generating GPG key pair</translation>
+        <translation>Ustvarjanje para ključev GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="222"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to connect WebDAV:
+        <translation>Povezava z WebDAV ni uspela:
 </translation>
     </message>
     <message>
@@ -1288,20 +1288,20 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">Enter password to connect to WebDAV:</translation>
+        <translation>Vnesite geslo za povezavo z WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="257"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">fusedav exited unexpectedly
+        <translation>Fusedav se je nepričakovano zaprl
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to start fusedav to connect WebDAV:
+        <translation>Zagon programa fusedav za povezavo z WebDAV ni uspel:
 </translation>
     </message>
     <message>
@@ -1347,12 +1347,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished">Clipboard cleared</translation>
+        <translation>Odložišče je počiščeno</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="466"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished">Clipboard not cleared</translation>
+        <translation>Odložišče ni bilo počiščeno</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="511"/>
@@ -1467,7 +1467,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="148"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Key not found in keyring</translation>
+        <translation>Ključa ni bilo mogoče najti v obesku za ključe</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="301"/>

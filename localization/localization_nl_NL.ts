@@ -1211,7 +1211,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Herversleutelen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
@@ -1249,12 +1249,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>De map %1 bestaat niet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Wachtwoorden herversleutelen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1265,7 +1265,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle wachtwoorden in %1 opnieuw versleutelen?
+
+Hiermee worden ALLE wachtwoordbestanden in deze map opnieuw versleuteld met de huidige ontvangers die zijn gedefinieerd in .gpg-id.
+
+Dit kan leiden tot het overschrijven van veel bestanden en kan niet zomaar ongedaan worden gemaakt.
+
+Doorgaan?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>

@@ -1200,7 +1200,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Krüpti uuesti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
@@ -1238,12 +1238,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kausta pole olemas: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Krüpti salasõnad uuesti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1254,7 +1254,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas krüpteerida kõik paroolid kaustas %1 uuesti?
+
+See krüpteerib KÕIK selles kaustas olevad paroolifailid uuesti, kasutades .gpg-id-s määratletud praeguseid adressaate.
+
+See võib palju faile ümber kirjutada ja seda ei saa kergesti tagasi võtta.
+
+Jätkata?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>

@@ -1200,7 +1200,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponovno šifriraj</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
@@ -1238,12 +1238,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Direktorij ne postoji: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponovno šifriranje lozinki</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1254,7 +1254,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ponovno šifrirati sve lozinke u %1?
+
+Ovim će se ponovno šifrirati SVE datoteke lozinki u ovoj mapi koristeći trenutne primatelje definirane u .gpg-id.
+
+Ovo može prepisati mnoge datoteke i ne može se lako poništiti.
+
+Nastaviti?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
