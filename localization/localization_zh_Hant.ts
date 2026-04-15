@@ -733,7 +733,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>此操作可能需要几分钟。&lt;br&gt;我们需要生成大量的随机字节。在素数生成期间执行其他操作（键入键盘、移动鼠标、使用磁盘）是个好主意；这将使随机数生成器有机会获得足够的熵。</translation>
+        <translation>您輸入的電子郵件地址不是有效的電子郵件地址。</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
