@@ -1254,7 +1254,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Kas krüpteerida kõik paroolid kaustas %1 uuesti?
+
+See krüpteerib KÕIK selles kaustas olevad paroolifailid uuesti, kasutades .gpg-id-s määratletud praeguseid adressaate.
+
+See võib palju faile ümber kirjutada ja seda ei saa kergesti tagasi võtta.
+
+Jätkata?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
