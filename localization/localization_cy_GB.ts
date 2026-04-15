@@ -982,7 +982,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Ail-amgryptio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -1027,12 +1027,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nid yw&apos;r cyfeiriadur yn bodoli: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Ail-amgryptio cyfrineiriau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1043,7 +1043,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ail-amgryptio pob cyfrinair yn %1?
+
+Bydd hyn yn ail-amgryptio POB ffeil cyfrinair yn y ffolder hon gan ddefnyddio&apos;r derbynwyr cyfredol a ddiffinnir yn .gpg-id.
+
+Efallai y bydd hyn yn ailysgrifennu llawer o ffeiliau ac ni ellir ei ddadwneud yn hawdd.
+
+Parhau?</translation>
     </message>
 </context>
 <context>
