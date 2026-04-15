@@ -57,17 +57,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Përdorni një font monospace</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Shfaq përmbajtjen e skedarëve siç është</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Pa mbështjellje rreshtash</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -221,12 +221,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Gjenero</translation>
+        <translation>Gjenero</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjeneroni çiftin e çelësave GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="795"/>
@@ -266,12 +266,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Çelësi i Nënshkrimit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opsionale: Çelësi GPG për të nënshkruar skedarët .gpg-id për verifikimin e integritetit. Lëreni bosh përveçse nëse keni nevojë të mbroni listën e përdoruesve nga ndërhyrjet.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
@@ -316,12 +316,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="91"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>Pass OTP extension  duhet të instalohet</translation>
+        <translation>Pass OTP extension duhet të instalohet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="96"/>
         <source>qrencode needs to be installed</source>
-        <translation>qrencode  duhet të instalohet</translation>
+        <translation>qrencode duhet të instalohet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="121"/>
@@ -342,7 +342,7 @@
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>Kjo fushë është e detyrueshme</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -372,7 +372,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. Instaloni &lt;strong&gt; gpg &lt;/strong&gt; duke përdorur menaxherin tuaj të preferuar të paketave (package manager)  &lt;br&gt; ose &lt;a href = &quot;https://www.gnupg.org/download/#sec-1- 2 &quot;&gt; shkarkoni &lt;/a&gt; nga GnuPG.org</translation>
+        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. Instaloni &lt;strong&gt; gpg &lt;/strong&gt; duke përdorur menaxherin tuaj të preferuar të paketave (package manager) &lt;br&gt; ose &lt;a href = &quot;https://www.gnupg.org/download/#sec-1- 2 &quot;&gt; shkarkoni &lt;/a&gt; nga GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="783"/>
@@ -387,12 +387,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Gabim</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dështoi në krijimin e ruajtjes së fjalëkalimeve në: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -475,14 +475,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrolloni nënshkrimin e skedarit .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nënshkrimi për %1 është i pavlefshëm.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -494,28 +494,29 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="128"/>
         <location filename="../src/imitatepass.cpp" line="576"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Nuk mund të lexohet çelësi i enkriptimit për t’u përdorur, skedari .gpg-id   mungon ose i pavlefshëm.</translation>
+        <translation>Nuk mund të lexohet çelësi i enkriptimit për t’u përdorur, skedari .gpg-id mungon ose i pavlefshëm.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>Nënshkrimi i GPG dështoi!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dështoi në nënshkrimin e %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Pa çelës nënshkrimi!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Asnjë nga çelësat sekretë të nënshkrimit nuk është i disponueshëm.
+Nuk do të jeni në gjendje të ndryshoni listën e përdoruesve!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -543,38 +544,38 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ri-enkriptimi dështoi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zëvendësimi i %1 dështoi. Origjinali është rikthyer.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>Krijimi i një kopje rezervë të kryer</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryerja e kopjes rezervë dështoi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuk mund të inspektohej statusi i git. Ri-enkriptimi u ndërpre.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ri-enkriptimi u ndërpre sepse nuk mund të krijohej një kopje rezervë git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Ri-kriptimi nga dosja  %1</translation>
+        <translation>Ri-kriptimi nga dosja %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="709"/>
@@ -585,27 +586,27 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Verifikimi i ID-së së GPG dështoi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuk mund të verifikohej .gpg-id për direktorinë.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dështoi në rikriptimin e %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ri-enkriptimi përfundoi: %1 pati sukses, %2 dështoi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>Ri-enkriptimi përfundoi: %1 skedarë u rienkriptuan</translation>
     </message>
 </context>
 <context>
@@ -638,21 +639,12 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;
-&lt;head&gt;&lt;head/&gt;
-&lt;body&gt;
-&lt;p&gt;Nuk ka kufi për gjatësinë e një frazë, dhe duhet të zgjidhet me kujdes. Nga këndvështrimi i sigurisë, fraza e fjalës për të zhbllokuar çelësin privat është një nga pikat më të dobëta në GnuPG (dhe sistemet e tjera të kriptimit me çelës publik gjithashtu) pasi që është mbrojtja e vetme që keni nëse një individ tjetër merr çelësin tuaj privat.
- &lt;br/&gt; 
-Në mënyrë ideale, fraza e fjalës nuk duhet të përdorë fjalë nga një fjalor dhe duhet të përzihet rasti i karaktereve alfabetike, si dhe të përdorë karaktere jo alfabetike. 
-&lt;br/&gt; Një frazë e mirë është e rëndësishme për përdorimin e sigurt të GnuPG.
-&lt;/p&gt;
- &lt;/ body&gt; 
-&lt;/ html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nuk ka kufizim në gjatësinë e një fjalëkalimi dhe duhet të zgjidhet me kujdes. Nga perspektiva e sigurisë, fjalëkalimi për të zhbllokuar çelësin privat është një nga pikat më të dobëta në GnuPG (dhe gjithashtu në sisteme të tjera të enkriptimit me çelës publik) pasi është mbrojtja e vetme që keni nëse një individ tjetër merr çelësin tuaj privat. &lt;br/&gt;Idealisht, fjalëkalimi nuk duhet të përdorë fjalë nga një fjalor dhe duhet të përziejë shkronjat e vogla dhe të vogla të karaktereve alfabetike, si dhe të përdorë karaktere jo-alfabetike.&lt;br/&gt;Një fjalëkalim i mirë është thelbësor për përdorimin e sigurt të GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Kalimi i përsëritur</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -662,7 +654,7 @@ Në mënyrë ideale, fraza e fjalës nuk duhet të përdorë fjalë nga një fja
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Përmbajtja e shabllonit do të vendoset bazuar në versionin GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -790,7 +782,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="351"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Gjenero  OTP dhe kopjo në klipboard</translation>
+        <translation>Gjenero OTP dhe kopjo në klipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
@@ -819,7 +811,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="367"/>
         <source>Update</source>
-        <translation>Modifiko</translation>
+        <translation>Përditëso</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -849,7 +841,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="199"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Mirësevini në  QtPass %1</translation>
+        <translation>Mirësevini në QtPass %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="332"/>
@@ -860,7 +852,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="453"/>
         <source>Content hidden</source>
-        <translation>Përmbajtja  e fshehur</translation>
+        <translation>Përmbajtja e fshehur</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="457"/>
@@ -876,17 +868,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kodi OTP u kopjua në kujtesën e përkohshme</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuk u gjet asnjë kod OTP në këtë hyrje fjalëkalimi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="516"/>
         <source>Password and Content hidden</source>
-        <translation>Fjalëkalimi dhe përmbajtja  të fshehura</translation>
+        <translation>Fjalëkalimi dhe përmbajtja të fshehura</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="594"/>
@@ -914,8 +906,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> dhe gjithë përmbajtjen? &lt;br&gt; 
-&lt;strong&gt; Vëmendje: ka skedarë të papritur në dosjen e dhënë, kontrolloni ato përpara se të vazhdoni. &lt;/ strong&gt;</translation>
+        <translation> dhe gjithë përmbajtjen? &lt;br&gt;&lt;strong&gt; Vëmendje: ka skedarë të papritur në dosjen e dhënë, kontrolloni ato përpara se të vazhdoni. &lt;/ strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>
@@ -935,12 +926,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuk është zgjedhur fjalëkalim për gjenerimin e OTP-së</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
-        <translation>Profili ndryshoi në  %1</translation>
+        <translation>Profili ndryshoi në %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -960,7 +951,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Rikripto</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -974,17 +965,17 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Gabim</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dështoi në krijimin e dosjes: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dështoi në krijimin e skedarit .gpg-id në: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1005,12 +996,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Drejtoria nuk ekziston: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Rikripto fjalëkalimet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1021,7 +1012,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Të rienkriptohen të gjitha fjalëkalimet në %1?
+
+Kjo do të rienkriptojë TË GJITHA skedarët e fjalëkalimeve në këtë dosje duke përdorur marrësit aktualë të përcaktuar në .gpg-id.
+
+Kjo mund të rishkruajë shumë skedarë dhe nuk mund të anulohet lehtë.
+
+Të vazhdohet?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -1112,7 +1109,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Duke gjeneruar  çiftin e kyçave  të GPG-së</translation>
+        <translation>Duke gjeneruar çiftin e kyçave të GPG-së</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="222"/>
@@ -1142,7 +1139,7 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Dështoi  fillimi i fusedav për të lidhur WebDAV:
+        <translation>Dështoi fillimi i fusedav për të lidhur WebDAV:
 </translation>
     </message>
     <message>
@@ -1178,12 +1175,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjenerimi i çiftit të çelësave GPG dështoi</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>Çifti i çelësave GPG u gjenerua me sukses</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1261,7 +1258,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zgjidhni cilët përdorues duhet të jenë në gjendje të deshifrojnë fjalëkalimet e ruajtura në këtë dosje.
+Shënim: Skedarët ekzistues nuk do të modifikohen dhe do të ruajnë lejet e vjetra derisa t&apos;i modifikoni.
+Hyrjet blu kanë një çelës sekret në dispozicion, zgjidhni një prej tyre për të qenë në gjendje të deshifrojnë.
+Hyrjet e zeza kanë një çelës enkriptimi në dispozicion dhe është i besueshëm, zgjidhni një prej tyre për të lejuar persona të tjerë ta deshifrojnë.
+Hyrjet e kuqe nuk janë të vlefshme, nuk do të jeni në gjendje të enkriptoni me to.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1300,7 +1301,7 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
     <message>
         <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Keylist missing</source>
-        <translation>Lista kryesore  mungon</translation>
+        <translation>Lista kryesore mungon</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="72"/>
@@ -1325,17 +1326,17 @@ Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apo
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[I PAVLEFSHËM] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[SKADUAR] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[PJESËRISHT] </translation>
     </message>
 </context>
 </TS>
