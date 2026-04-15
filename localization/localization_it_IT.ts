@@ -1211,7 +1211,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished">Errore</translation>
+        <translation type="unfinished">Ricifra</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
