@@ -493,7 +493,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="765"/>
         <source>GPG</source>
-        <translation>Signierungs-Schlüssel</translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
