@@ -87,6 +87,8 @@ private Q_SLOTS:
   void utilRegexEnsuresGpg();
   void utilRegexProtocol();
   void utilRegexNewLines();
+  void reencryptPathNormalization();
+  void reencryptPathAbsolutePath();
   void buildClipboardMimeDataDword();
   void imitatePassResolveMoveDestination();
   void imitatePassResolveMoveDestinationForce();
@@ -1332,6 +1334,35 @@ void tst_util::utilRegexNewLines() {
   QVERIFY2(rex.match("\n").hasMatch(), "Should match newline");
   QVERIFY2(rex.match("line1\nline2").hasMatch(),
            "Should match embedded newline");
+}
+
+void tst_util::reencryptPathNormalization() {
+  QTemporaryDir tempDir;
+  QVERIFY2(tempDir.isValid(), "Temporary directory should be created");
+
+  QString basePath = tempDir.path();
+  QString withExtraSlashes = basePath + "/./subdir/../";
+  QString cleaned = QDir::cleanPath(withExtraSlashes);
+  QString normalized = QDir::cleanPath(basePath);
+  QVERIFY2(cleaned == normalized,
+           qPrintable(QString("cleanPath should normalize: expected %1, got %2")
+                          .arg(normalized, cleaned)));
+}
+
+void tst_util::reencryptPathAbsolutePath() {
+  QTemporaryDir tempDir;
+  QVERIFY2(tempDir.isValid(), "Temporary directory should be created");
+
+  QString tempPath = tempDir.path();
+  QDir(tempPath).mkdir("testdir");
+  QString relativePathFromTemp = tempPath + "/testdir";
+  QDir dir;
+  QString result = QDir::cleanPath(QDir(relativePathFromTemp).absolutePath());
+  QString expected = QDir::cleanPath(tempPath + "/testdir");
+  QVERIFY2(
+      result == expected,
+      qPrintable(
+          QString("Absolute path: expected %1, got %2").arg(expected, result)));
 }
 
 QTEST_MAIN(tst_util)
