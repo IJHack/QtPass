@@ -1054,6 +1054,13 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     }
     QAction *deleteItem = contextMenu.addAction(tr("Delete"));
     connect(deleteItem, &QAction::triggered, this, &MainWindow::onDelete);
+    if (fileOrFolder.isDir()) {
+      QString dirPath = QDir::cleanPath(
+          Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel));
+      QAction *reencrypt = contextMenu.addAction(tr("Re-encrypt"));
+      connect(reencrypt, &QAction::triggered, this,
+              [this, dirPath]() { reencryptPath(dirPath); });
+    }
   }
   contextMenu.exec(globalPos);
 }
@@ -1310,6 +1317,39 @@ void MainWindow::addToGridLayout(int position, const QString &field,
  */
 void MainWindow::showStatusMessage(const QString &msg, int timeout) {
   ui->statusBar->showMessage(msg, timeout);
+}
+
+/**
+ * @brief MainWindow::reencryptPath re-encrypt all passwords in a directory
+ * @param dir Directory path to re-encrypt
+ */
+void MainWindow::reencryptPath(QString dir) {
+  QDir checkDir(dir);
+  if (!checkDir.exists()) {
+    QMessageBox::critical(this, tr("Error"),
+                          tr("Directory does not exist: %1").arg(dir));
+    return;
+  }
+
+  int ret = QMessageBox::question(
+      this, tr("Re-encrypt passwords"),
+      tr("Re-encrypt all passwords in %1?\n\n"
+         "This will re-encrypt ALL password files in this folder "
+         "using the current recipients defined in .gpg-id.\n\n"
+         "This may rewrite many files and cannot be undone easily.\n\n"
+         "Continue?")
+          .arg(QDir(dir).dirName()),
+      QMessageBox::Yes | QMessageBox::No);
+
+  if (ret != QMessageBox::Yes)
+    return;
+
+  // Prevent double execution - use same method as startReencryptPath
+  setUiElementsEnabled(false);
+  ui->treeView->setDisabled(true);
+
+  QtPassSettings::getImitatePass()->reencryptPath(
+      QDir::cleanPath(QDir(dir).absolutePath()));
 }
 
 /**
