@@ -1254,7 +1254,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">Ricifra tutte le password in %1? Questo ricifrerà TUTTE i file delle password in questa cartella utilizzando i destinatari attualmente definiti in .gpg-id. Potrebbe riscrivere molti file e non è facilmente revertibile. Continuare?</translation>
+        <translation type="unfinished">Ricifra le password</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
