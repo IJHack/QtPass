@@ -556,6 +556,27 @@ void tst_util::generateRandomPassword() {
         QStringLiteral("ABC").contains(ch),
         "Generated password contains character outside the specified charset");
   }
+
+  const QString randomCharset = QStringLiteral("abcd");
+  const QString first = pass.generatePassword(32, randomCharset);
+  QCOMPARE(first.length(), 32);
+  bool foundDifferent = false;
+  for (int i = 0; i < 20; ++i) {
+    const QString candidate = pass.generatePassword(32, randomCharset);
+    QCOMPARE(candidate.length(), 32);
+    for (const QChar &ch : candidate) {
+      QVERIFY2(randomCharset.contains(ch),
+               "Generated password contains character outside the specified "
+               "charset");
+    }
+    if (candidate != first) {
+      foundDifferent = true;
+      break;
+    }
+  }
+  QVERIFY2(
+      foundDifferent,
+      "Multiple generated passwords were identical; randomness may be broken");
 }
 
 void tst_util::boundedRandom() {
@@ -574,6 +595,19 @@ void tst_util::boundedRandom() {
   for (int i = 0; i < 10; ++i) {
     QVERIFY2(counts[i] > 0, "Each digit should appear at least once");
   }
+
+  const double expected = static_cast<double>(iterations) / 10.0;
+  double chi2 = 0.0;
+  for (int i = 0; i < 10; ++i) {
+    const double count = static_cast<double>(counts[i]);
+    chi2 += (count - expected) * (count - expected) / expected;
+  }
+  const double chi2Critical = 25.0;
+  QVERIFY2(chi2 < chi2Critical,
+           qPrintable(
+               QStringLiteral("Chi-square %1 exceeds critical value %2 (df=9)")
+                   .arg(chi2)
+                   .arg(chi2Critical)));
 }
 
 void tst_util::findBinaryInPath() {
