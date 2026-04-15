@@ -5,10 +5,11 @@ set -euo pipefail
 README_CLEAN="README.clean"
 DOXYFILE_PATH="Doxyfile"
 DOXYFILE_BACKUP=""
+TMPFILE=""
 
 cleanup() {
 	local exit_code=$?
-	rm -f "$README_CLEAN"
+	rm -f "$README_CLEAN" "${TMPFILE:-}"
 	if [[ $exit_code -ne 0 && -n "${DOXYFILE_BACKUP:-}" && -f "$DOXYFILE_BACKUP" ]]; then
 		mv -f "$DOXYFILE_BACKUP" "$DOXYFILE_PATH"
 	else
@@ -52,13 +53,26 @@ if [[ -z "${VERSION:-}" ]]; then
 	echo "Error: Failed to extract VERSION from qtpass.pri" >&2
 	exit 1
 fi
+ESCAPED_VERSION=$(printf '%s' "$VERSION" | sed -e 's/[\\&|]/\\&/g')
 require_readable_file "$DOXYFILE_PATH"
 # Doxygen doesn't expand $ENV{} in config, so substitute directly
 # Use temp file for portable sed across GNU/BSD sed
-TMPFILE=$(mktemp)
-DOXYFILE_BACKUP=$(mktemp)
+if ! TMPFILE=$(mktemp); then
+	echo "Error: Failed to create temporary working file." >&2
+	exit 1
+fi
+if ! DOXYFILE_BACKUP=$(mktemp); then
+	echo "Error: Failed to create temporary backup file." >&2
+	rm -f "${TMPFILE:-}"
+	exit 1
+fi
+if [[ -z "${TMPFILE:-}" || -z "${DOXYFILE_BACKUP:-}" ]]; then
+	echo "Error: Temporary file path is empty." >&2
+	rm -f "${TMPFILE:-}" "${DOXYFILE_BACKUP:-}"
+	exit 1
+fi
 cp "$DOXYFILE_PATH" "$DOXYFILE_BACKUP"
-sed "s/^PROJECT_NUMBER.*=.*/PROJECT_NUMBER         = $VERSION/" "$DOXYFILE_PATH" >"$TMPFILE" && mv "$TMPFILE" "$DOXYFILE_PATH"
+sed "s|^PROJECT_NUMBER.*=.*|PROJECT_NUMBER         = $ESCAPED_VERSION|" "$DOXYFILE_PATH" >"$TMPFILE" && mv "$TMPFILE" "$DOXYFILE_PATH"
 echo "Generating API documentation (v$VERSION)..."
 doxygen || {
 	echo "Error: doxygen failed." >&2
