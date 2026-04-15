@@ -1191,7 +1191,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Nessuna password selezionata per la generazione OTP</translation>
+        <translation type="unfinished">Nessun codice OTP trovato in questa voce password</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
