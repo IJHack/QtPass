@@ -1127,7 +1127,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Erneut verschlüsseln</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
@@ -1165,12 +1165,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Verzeichnis existiert nicht: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwörter neu verschlüsseln</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1181,7 +1181,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle Passwörter in %1 neu verschlüsseln?
+
+Dadurch werden ALLE Passwortdateien in diesem Ordner mit den in der Datei .gpg-id definierten Empfängern neu verschlüsselt.
+
+Dies kann dazu führen, dass viele Dateien überschrieben werden und lässt sich nicht ohne Weiteres rückgängig machen.
+
+Fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
