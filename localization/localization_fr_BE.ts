@@ -232,7 +232,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="933"/>
         <source>Path</source>
-        <translation>Ce champ est obligatoire</translation>
+        <translation>Chemin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
@@ -265,12 +265,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Erreur</translation>
+        <translation>Afficher toutes les lignes commençant par un mot suivi de deux-points comme champs de mot de passe, pas seulement celles listées</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation>Impossible de créer le stockage des mots de passe à l&apos;emplacement : %1</translation>
+        <translation>Afficher tous les champs du modèle</translation>
     </message>
     <message>
         <source>login
