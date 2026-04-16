@@ -830,7 +830,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="319"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Ctrl+Н</translation>
+        <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="348"/>
@@ -845,7 +845,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Ctrl+Г</translation>
+        <translation type="unfinished">Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="362"/>
@@ -1222,7 +1222,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">Ово ће повторно енкриптирати СВЕ лозинке у овој папци користећи текуће примаоце дефинисане у .gpg-id. Ово може да препише многе фајлове и неможе се вратити назад лако.</translation>
+        <translation type="unfinished">Ово ће повторно енкриптирати СВЕ лозинке у %1 користећи текуће примаоце дефинисане у .gpg-id. Ово може да препише многе фајлове и неможе се вратити назад лако.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
