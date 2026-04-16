@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">可选：用于完整性验证的GPG密钥，以签署.gpg-id文件。除非需要保护用户列表免受篡改，请留空。</translation>
+        <translation type="unfinished">可選：用於完整性驗證的GPG金鑰，以簽署.gpg-id文件。除非需要保護用戶列表免受篡改，請留空。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -217,7 +217,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="615"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished">使用托盘图标</translation>
+        <translation type="unfinished">使用托盤圖標</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="622"/>
