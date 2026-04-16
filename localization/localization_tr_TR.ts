@@ -554,13 +554,13 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished">Yedekleme komitesi oluşturuluyor</translation>
+        <translation type="unfinished">Yedek commit oluşturuluyor</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished">Yedekleme komitesi başarısız oldu</translation>
+        <translation type="unfinished">Yedek commit başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
@@ -1018,7 +1018,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">%1 dizinine .gpg-id dosyası oluşturulamadı: %1</translation>
+        <translation type="unfinished">%1 dizinine .gpg-id dosyası oluşturulamadı</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1338,12 +1338,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[GÜVENLİKLİ DEĞIL]</translation>
+        <translation type="unfinished">[SÜRESİ DOLMUŞ]</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[PARÇALANMIŞ]</translation>
+        <translation type="unfinished">[KISMİ]</translation>
     </message>
 </context>
 </TS>
