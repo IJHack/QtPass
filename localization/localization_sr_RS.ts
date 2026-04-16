@@ -383,7 +383,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="615"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished">Nijedan profil za brisanje nije selektован</translation>
+        <translation type="unfinished">Nijedan profil za brisanje nije selektovan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="715"/>
