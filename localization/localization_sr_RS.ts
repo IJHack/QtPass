@@ -393,7 +393,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Прикључите се на систему.&lt;br&gt;Инсталирати &lt;strong&gt;gpg&lt;/strong&gt; користећи ваш префериран пакетски менаджер&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; преузeti &lt;/a&gt; го са GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="783"/>
@@ -428,22 +428,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;www.passwordstore.org&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="856"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Аутодетектуиши</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="66"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Системски трејл је недоступан</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="91"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Проширjenje за пролазне одговорне токене (OTP) захтева инсталацију</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="96"/>
@@ -1230,7 +1230,7 @@ Continue?</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;QtPass je GUI za &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardni unix password manager.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Obrazac za prijavu svih &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; koje možete imati sa ovim softverom.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Izvorni kod&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
