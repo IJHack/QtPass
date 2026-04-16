@@ -703,7 +703,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished">Repétez le mot.</translation>
+        <translation type="unfinished">Répéter le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
