@@ -650,7 +650,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">Vous ne pouvez pas vérifier l&apos;ID de GPG pour un dossier.</translation>
+        <translation type="unfinished">Impossible de vérifier le fichier .gpg-id du répertoire.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>

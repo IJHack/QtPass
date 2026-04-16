@@ -501,22 +501,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <source>PWGen</source>
-        <translation>Clé de signature</translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Clé de signature</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Optionnel : clé GPG pour signer les fichiers .gpg-id afin de vérifier l'intégrité. Laissez ce champ vide sauf si vous avez besoin de protéger la liste des utilisateurs contre les modifications.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Optionnel : clé GPG pour signer les fichiers .gpg-id afin de vérifier l&apos;intégrité. Laissez ce champ vide sauf si vous avez besoin de protéger la liste des utilisateurs contre les modifications.</translation>
+        <translation>Les templates ajoutent des champs supplémentaires dans le dialogue de génération de mot de passe et dans la vue du mot de passe.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>

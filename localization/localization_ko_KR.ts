@@ -599,33 +599,17 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">복호화 실패</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="640"/>
-        <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">%1을 교체할 수 없습니다. 원본이 복원되었습니다.</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="669"/>
-        <source>Creating backup commit</source>
-        <translation type="unfinished">백업 커밋 생성</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="675"/>
-        <location filename="../src/imitatepass.cpp" line="683"/>
-        <source>Backup commit failed</source>
-        <translation type="unfinished">백업 커밋 실패</translation>
+<translation type="unfinished">재암호화 실패</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">Git 상태를 확인할 수 없습니다. 복호화가 중단되었습니다.</translation>
+        <translation type="unfinished">Git 상태를 확인할 수 없습니다. 재암호화가 중단되었습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">Git 백업이 생성되지 않아 복호화가 중단되었습니다.</translation>
+        <translation type="unfinished">Git 백업이 생성되지 않아 재암호화가 중단되었습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
