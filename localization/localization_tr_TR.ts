@@ -260,7 +260,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG anahtar çifti oluştur</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="765"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Seçeneğelidir: bütünlük doğrulaması için .gpg-id dosyalarını imzalamak üzere bir GPG anahtarına ihtiyacınız olursa bu alan boş bırakın.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
@@ -405,7 +405,7 @@ e-posta</translation>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bu alan gereklidir</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -499,12 +499,12 @@ e-posta</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG imzalama başarısız oldu!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 imzalamak başarısız oldu.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -544,33 +544,33 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yeniden şifreleme başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 yerine koyma başarısız oldu. Orijinal geri yüklendi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yedekleme komitesi oluşturuluyor</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yedekleme komitesi başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git durumu kontrol edilemedi. Yeniden şifreleme iptal edildi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yeniden şifreleme iptal edildi çünkü bir git yedek oluşturulamadı.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -586,27 +586,27 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG kimlik doğrulaması başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dizin için .gpg-id doğrulanamadı.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 yeniden şifrelemek başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yeniden şifreleme tamamlandı: %1 başarılı, %2 başarısız</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yeniden şifreleme tamamlandı: %1 dosya yeniden şifrelendi</translation>
     </message>
 </context>
 <context>
@@ -654,7 +654,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG sürümüne göre şablon içerikleri ayarlanacaktır.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -911,12 +911,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP kodu panoya kopyalandı</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bu parola girişinde bir OTP kodu bulunamadı</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="516"/>
@@ -969,7 +969,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP oluşturulması için hiçbir parola seçilmedi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
@@ -994,7 +994,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Yeniden şifrele</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -1018,7 +1018,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 dizinine .gpg-id dosyası oluşturulamadı: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1039,12 +1039,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 dizini mevcut değil: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Parolaları yeniden şifrele</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1055,7 +1055,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1&apos;deki tüm parolaları yeniden şifreliyormusunuz? Bu, bu klasördeki tüm parola dosyalarını (bu klasöre tanımlanan mevcut alıcılar kullanılarak) yeniden şifrelemeyi sağlayacak. Bu, birçok dosyanın yazılmasına neden olabilir ve kolay olarak geri alınamaz. Devam etmek istiyor musunuz??</translation>
     </message>
 </context>
 <context>
@@ -1293,7 +1293,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bu klasörde saklanan parolaları çözebilecek kullanıcıları seçin. Not: Mevcut dosyalar değiştirilmeyecektir ve düzenlersiniz kadar eski izinler korunacaktır. Mavi girdiler bir gizli anahtar mevcuttur, bunlardan birini seçerek parolayı çözebilirsiniz. Siyah girdiler bir şifreleme anahtarı mevcut ve güvenilir olup, bunlardan birini seçerek diğerlerine izin verebilirsiniz. Kırmızı girdiler geçerli değildir, bularına şifrelemeye izin veremezsiniz.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
@@ -1333,17 +1333,17 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[GEÇERSİZ]</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[GÜVENLİKLİ DEĞIL]</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[PARÇALANMIŞ]</translation>
     </message>
 </context>
 </TS>
