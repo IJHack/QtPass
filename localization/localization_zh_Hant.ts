@@ -531,14 +531,14 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished">检查.gpgid文件签名！</translation>
+        <translation type="unfinished">檢查.gpgid檔案簽名！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished">%1的签名无效。</translation>
+        <translation type="unfinished">%1的簽名無效。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -555,7 +555,7 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished">GPG签名失败！</translation>
+        <translation type="unfinished">GPG簽名失敗！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
@@ -598,7 +598,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">重新加密失败</translation>
+        <translation type="unfinished">重新加密失敗</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
@@ -655,12 +655,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">重新加密完成：%1成功，%2失败</translation>
+        <translation type="unfinished">重新加密完成：%1成功，%2失敗</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">重新加密完成：%1个文件已重新加密</translation>
+        <translation type="unfinished">重新加密完成：%1個檔案已重新加密</translation>
     </message>
 </context>
 <context>
@@ -1464,7 +1464,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     </message>
     <message>
         <source>Unable to get list of available gpg keys</source>
-        <translation type="vanished">密钥列表缺失</translation>
+        <translation type="vanished">金鑰列表缺失</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="71"/>
