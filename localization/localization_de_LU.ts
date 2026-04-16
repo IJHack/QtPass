@@ -1006,7 +1006,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
-        <translation>Kein OTP-Schlüssel in diesem Passwort gefunden</translation>
+        <translation>Profil geändert zu %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
@@ -1054,7 +1054,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Wieder-verschlüsseln</translation>
+        <translation>Kein OTP-Code in diesem Passworteintrag gefunden</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1069,7 +1069,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">Fehler</translation>
+        <translation>Kein Passwort für OTP-Generierung ausgewählt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -1079,12 +1079,12 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation>Verzeichnis konnte nicht erstellt werden: %1</translation>
+        <translation>Ordner umbenennen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>Rename password</source>
-        <translation>.gpg-id-Datei konnte im Verzeichnis %1 nicht erstellt werden</translation>
+        <translation>Passwort umbenennen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
@@ -1101,23 +1101,23 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordner konnte nicht erstellt werden: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Verzeichnis existiert nicht: %1</translation>
+        <translation>Fehler beim Erstellen der .gpg-id-Datei in: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation>Passwörter wieder-verschlüsseln</translation>
+        <translation>Datei umbenennen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Rename Folder To: </source>
-        <translation>Passwörter im Verzeichnis %1 wieder-verschlüsseln? Dies wird alle Passwortdateien in diesem Ordner mit den aktuellen Empfängern aus der .gpg-id-Datei neu verschlüsseln. Dies kann viele Dateien überschreiben und ist nicht rückgängig zu machen. Fortsetzen?</translation>
+        <translation>Ordner umbenennen in: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1179"/>
