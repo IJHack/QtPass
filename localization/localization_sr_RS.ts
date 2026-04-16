@@ -352,7 +352,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished">&lt;a href="https://QtPass.org/"&gt;QtPass&lt;/a&gt; верзија </translation>
+        <translation type="unfinished">&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; верзија </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="121"/>
