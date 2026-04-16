@@ -1200,12 +1200,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG anahtar çifti oluşturulması başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG anahtar çifti başarıyla oluşturuldu</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
