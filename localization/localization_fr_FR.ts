@@ -1027,7 +1027,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
-        <translation>Aucun code OTP trouvé pour cette entrée de mot de passe</translation>
+        <translation>Profil changé en %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
@@ -1041,7 +1041,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="316"/>
         <location filename="../src/mainwindow.cpp" line="1034"/>
         <source>Add password</source>
-        <translation>_auc_un_mot_de_passe_sélectionné_pour_la_génération_du_CODE_OTP_</translation>
+        <translation>Ajouter un mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -1087,12 +1087,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Code OTP copié dans le presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Ré-encrypter</translation>
+        <translation type="unfinished">Aucun code OTP trouvé dans cette entrée de mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1117,12 +1117,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation>Échec de la création du dossier&#xa0;: %1</translation>
+        <translation>Renommer le dossier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>Rename password</source>
-        <translation>Échec de la création du fichier .gpg-id dans : %1</translation>
+        <translation>Renommer le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>

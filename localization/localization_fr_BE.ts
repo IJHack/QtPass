@@ -1027,7 +1027,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
-        <translation>Pas de code OTP trouvé pour cette entrée de mot de passe</translation>
+        <translation>Profil changé en %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
@@ -1041,7 +1041,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="316"/>
         <location filename="../src/mainwindow.cpp" line="1034"/>
         <source>Add password</source>
-        <translation>Aucun mot de passe sélectionné pour la génération du code OTP</translation>
+        <translation>Ajouter un mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -1087,12 +1087,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Code OTP copié dans le presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Ré-chiffrement</translation>
+        <translation type="unfinished">Aucun code OTP trouvé dans cette entrée de mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1492,17 +1492,17 @@ Les entrées en rouge ne sont pas marquées comme étant de confiance dans GnuPG
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[INVALIDE]</translation>
+        <translation type="unfinished">[INVALIDE] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[EXPIRÉ]</translation>
+        <translation type="unfinished">[EXPIRÉ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[PARTIEL]</translation>
+        <translation type="unfinished">[PARTIEL] </translation>
     </message>
 </context>
 </TS>
