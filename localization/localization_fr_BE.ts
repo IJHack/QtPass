@@ -46,12 +46,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Afficher le contenu des fichiers tel quel</translation>
+        <translation>Afficher le contenu des fichiers tels qu&apos;ils sont</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">Pas de réglage des sauts de ligne</translation>
+        <translation type="unfinished">Pas de retour à la ligne</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -232,7 +232,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="933"/>
         <source>Path</source>
-        <translation>Ce champ est requis</translation>
+        <translation>Ce champ est obligatoire</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
@@ -270,7 +270,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation>Échec de la création du magasin de mots de passe à : %1</translation>
+        <translation>Impossible de créer le stockage des mots de passe à l&apos;emplacement : %1</translation>
     </message>
     <message>
         <source>login
@@ -472,7 +472,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
         <source>Git</source>
-        <translation>Générer la paire de clés GPG</translation>
+        <translation>Générer une paire de clefs GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="735"/>
@@ -501,7 +501,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <source>PWGen</source>
-        <translation>Clé de Signature</translation>
+        <translation>Clé de signature</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -516,7 +516,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Clé GPG facultative pour signer les fichiers .gpg-id afin de vérifier l&apos;intégrité. Laissez vide à moins que vous ne souhaitiez protéger la liste des utilisateurs contre la manipulation.</translation>
+        <translation>Clé GPG optionnelle pour signer les fichiers .gpg-id pour la vérification d&apos;intégrité. Laissez vide sauf si vous avez besoin de protéger la liste des utilisateurs contre l&apos;usurpation.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
@@ -1022,7 +1022,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Generating GPG key pair</source>
-        <translation type="vanished">Code OTP copié dans le presse-papiers</translation>
+        <translation type="vanished">Code OTP copié dans le presse-papier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
@@ -1092,7 +1092,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Ré-encrypter</translation>
+        <translation type="unfinished">Ré-chiffrement</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1117,7 +1117,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation>Échec de la création du dossier : %1</translation>
+        <translation>Impossible de créer le dossier : %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
@@ -1144,13 +1144,13 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Le répertoire spécifié ne existe pas : %1</translation>
+        <translation type="unfinished">Le répertoire n&apos;existe pas : %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation>Ré-encrypter les mots de passe</translation>
+        <translation>Ré-chiffrement des mots de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>

@@ -270,7 +270,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation>Échec de la création du password-store à : %1</translation>
+        <translation>Échec de la création du stock de mots de passe à : %1</translation>
     </message>
     <message>
         <source>login
@@ -516,7 +516,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Facultatif&#xa0;: Clé GPG pour signer les fichiers .gpg-id afin de vérifier l&apos;intégrité. Laissez ce champ vide sauf si vous avez besoin de protéger la liste des utilisateurs contre les modifications.</translation>
+        <translation>Optionnel : clé GPG pour signer les fichiers .gpg-id afin de vérifier l&apos;intégrité. Laissez ce champ vide sauf si vous avez besoin de protéger la liste des utilisateurs contre les modifications.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
@@ -1022,7 +1022,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Generating GPG key pair</source>
-        <translation type="vanished">Code OTP copié dans le presse-papiers</translation>
+        <translation type="vanished">Code OTP copié dans le presse-papier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
@@ -1117,7 +1117,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation>Échec de la création du dossier : %1</translation>
+        <translation>Échec de la création du dossier&#xa0;: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
@@ -1144,7 +1144,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Le répertoire n&apos;existe pas : %1</translation>
+        <translation type="unfinished">Le répertoire n&apos;existe pas&#xa0;: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>

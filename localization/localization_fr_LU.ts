@@ -46,12 +46,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Afficher le contenu des fichiers tel quel</translation>
+        <translation>Afficher le contenu des fichiers tels quels</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">Pas de réglage de la mise en page par lignes</translation>
+        <translation type="unfinished">Pas de passage à la ligne</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -270,7 +270,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation>Échec de la création du magasin mots de passe à l&apos;emplacement : %1</translation>
+        <translation>Impossible de créer le magasin de mot de passe à : %1</translation>
     </message>
     <message>
         <source>login
@@ -472,7 +472,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
         <source>Git</source>
-        <translation>Générer le couple de clés GPG</translation>
+        <translation>Générer une paire de clés GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="735"/>
@@ -516,7 +516,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Clé optionnelle GPG pour signer les fichiers .gpg-id afin de vérifier l&apos;intégrité. Laissez vide à moins que vous ne souhaitiez protéger la liste des utilisateurs contre toute manipulation.</translation>
+        <translation>Optionnel : Clé GPG pour signer les fichiers .gpg-id pour vérification d&apos;intégrité. Laissez vide sauf si vous devez protéger la liste des utilisateurs contre le vol.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
@@ -1022,7 +1022,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Generating GPG key pair</source>
-        <translation type="vanished">Code OTP copié dans le presse-papiers</translation>
+        <translation type="vanished">Code OTP copié dans le presse-papier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
@@ -1092,7 +1092,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Ré-encrypter</translation>
+        <translation type="unfinished">Récrypter</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1117,7 +1117,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation>Échec de la création du dossier : %1</translation>
+        <translation>Impossible de créer le dossier : %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
@@ -1144,13 +1144,13 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Le répertoire spécifié : %1 n&apos;existe pas</translation>
+        <translation type="unfinished">Le répertoire n&apos;existe pas : %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation>Ré-encrypter les mots de passe</translation>
+        <translation>Récrypter les mots de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
