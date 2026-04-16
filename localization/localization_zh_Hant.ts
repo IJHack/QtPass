@@ -1187,7 +1187,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">是否重新加密 %1 中的所有密碼？這將使用當前定義在 .gpg-id 檔案中的收件人重新加密此文件夾中所有密碼檔案。這可能會重寫許多檔案，並且無法輕鬆撤銷。繼續？</translation>
+        <translation type="unfinished">是否重新加密 %1 中的所有密碼？
+
+這將使用當前定義在 .gpg-id 檔案中的收件人重新加密此文件夾中所有密碼檔案。
+
+這可能會重寫許多檔案，並且無法輕鬆撤銷。
+
+繼續？</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
