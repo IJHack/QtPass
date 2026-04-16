@@ -575,7 +575,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"> aucune des clés de signature privées n&apos;est disponible. Vous ne pourrez pas modifier la liste des utilisateurs !</translation>
+        <translation type="unfinished">Aucune des clés de signature privées n&apos;est disponible. Vous ne pourrez pas modifier la liste des utilisateurs !</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -703,7 +703,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished">Répéter le passe</translation>
+        <translation type="unfinished">Répéter le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
