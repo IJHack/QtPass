@@ -334,7 +334,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished">显示所有以单词后跟冒号开头的行作为密码字段中的字段，而不仅仅是列出的那些</translation>
+        <translation type="unfinished">顯示所有以單詞後跟冒號開頭的行作為密碼字段中的字段，而不僅僅是列出的那些</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
@@ -560,7 +560,7 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished">无法为%1签名。</translation>
+        <translation type="unfinished">無法為%1簽名。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -581,18 +581,18 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="238"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished">无法打开.gpg-id进行写入。</translation>
+        <translation type="unfinished">無法打開.gpg-id進行寫入。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="251"/>
         <source>Check selected users!</source>
-        <translation type="unfinished">检查所选用户！</translation>
+        <translation type="unfinished">檢查所選用戶！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="252"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished">所选密钥中没有可用的秘密密钥。您将无法解密任何新添加的密码！</translation>
+        <translation type="unfinished">所選密鑰中沒有可用的秘密密鑰。您將無法解密任何新添加的密碼！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="639"/>
@@ -603,33 +603,33 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">无法替换%1。原始文件已恢复。</translation>
+        <translation type="unfinished">無法替換%1。原始檔案已恢復。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished">创建备份提交</translation>
+        <translation type="unfinished">創建備份提交</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished">备份提交失败</translation>
+        <translation type="unfinished">備份提交失敗</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">无法检查git状态。重新加密被中止。</translation>
+        <translation type="unfinished">無法檢查git狀態。重新加密被中止。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">由于无法创建git备份，重新加密被中止。</translation>
+        <translation type="unfinished">由於無法創建git備份，重新加密被中止。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished">从文件夹%1重新加密</translation>
+        <translation type="unfinished">從文件夾%1重新加密</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="709"/>
@@ -640,17 +640,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished">GPG ID验证失败</translation>
+        <translation type="unfinished">GPG ID驗證失敗</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">无法验证目录的.gpg-id。</translation>
+        <translation type="unfinished">無法驗證目錄的.gpg-id。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">无法重新加密%1</translation>
+        <translation type="unfinished">無法重新加密%1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
@@ -965,7 +965,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="494"/>
         <source>OTP Code</source>
-        <translation type="unfinished">一次性密码</translation>
+        <translation type="unfinished">一次性密碼</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -1019,17 +1019,17 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="699"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">新密码文件：（将放置在 %1）</translation>
+        <translation type="unfinished">新密碼檔案：（將放置在 %1）</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
         <source> and the whole content?</source>
-        <translation type="unfinished">以及整个内容？</translation>
+        <translation type="unfinished">以及整個內容？</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished">以及整个内容？&lt;br&gt;&lt;strong&gt;注意：给定文件夹中存在意外文件，请在继续前检查它们。&lt;/strong&gt;</translation>
+        <translation type="unfinished">以及整個內容？&lt;br&gt;&lt;strong&gt;注意：給定文件夾中存在意外檔案，請在繼續前檢查它們。&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
@@ -1140,17 +1140,17 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished">错误</translation>
+        <translation type="unfinished">錯誤</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">无法创建文件夹：%1</translation>
+        <translation type="unfinished">無法創建文件夾：%1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">无法在：%1 创建 .gpg-id 文件</translation>
+        <translation type="unfinished">無法在：%1 創建 .gpg-id 檔案</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1171,12 +1171,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished">目录不存在：%1</translation>
+        <translation type="unfinished">目錄不存在：%1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">重新加密密码</translation>
+        <translation type="unfinished">重新加密密碼</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1187,7 +1187,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">是否重新加密 %1 中的所有密码？这将使用当前定义在 .gpg-id 文件中的收件人重新加密此文件夹中所有密码文件。这可能会重写许多文件，并且无法轻松撤销。继续？</translation>
+        <translation type="unfinished">是否重新加密 %1 中的所有密碼？這將使用當前定義在 .gpg-id 檔案中的收件人重新加密此文件夾中所有密碼檔案。這可能會重寫許多檔案，並且無法輕鬆撤銷。繼續？</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -1417,7 +1417,7 @@ Continue?</source>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation type="unfinished">具有读取访问权限的用户</translation>
+        <translation type="unfinished">具有讀取訪問權限的用戶</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1426,7 +1426,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">请选择可以解密此文件夹中存储的密码的用户。注意：现有文件不会被修改，并且在您编辑它们之前保留旧权限。蓝色条目具有可用的秘密密钥，请选择其中一个以进行解密。黑色条目具有可信赖的加密密钥，可以选择其中之一让其他人进行解密。红色条目无效，无法对其进行加密。</translation>
+        <translation type="unfinished">請選擇可以解密此文件夾中存儲的密碼的用戶。注意：現有檔案不會被修改，並且在您編輯它們之前保留舊權限。藍色條目具有可用的秘密密鑰，請選擇其中一個以進行解密。黑色條目具有可信賴的加密密鑰，可以選擇其中之一讓其他人進行解密。紅色條目無效，無法對其進行加密。</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
