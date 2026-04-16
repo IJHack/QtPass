@@ -198,7 +198,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically pull</source>
-        <translation type="unfinished">自動</translation>
+        <translation type="unfinished">自動拉取</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="558"/>
@@ -1394,12 +1394,12 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished">最小化</translation>
+        <translation type="unfinished">最小化(&amp;N)</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished">最大化</translation>
+        <translation type="unfinished">最大化(&amp;X)</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
