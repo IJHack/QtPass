@@ -1107,7 +1107,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">Aucun mot de passe sélectionné pour la génération d'OTP</translation>
+        <translation type="unfinished">Aucun mot de passe sélectionné pour la génération d&apos;OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>

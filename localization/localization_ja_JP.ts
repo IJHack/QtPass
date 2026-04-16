@@ -61,17 +61,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">等幅フォントを使用</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ファイルの内容をそのまま表示</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">行は折り返さない</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -136,17 +136,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG キーペアを作成</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">署名キー</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">オプション：整合性確認のために .gpg-id ファイルを署名するための GPG キー。ユーザー一覧を改ざんから保護するために空にしないでください。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -373,7 +373,7 @@ url
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">このフィールドは必須です</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -409,12 +409,12 @@ url
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">エラー</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">パスワードストアの作成に失敗しました：%1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -532,14 +532,14 @@ URL
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">．gpgidファイルの署名を確認してください！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1の署名は無効です。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -556,23 +556,24 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG署名に失敗しました！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1の署名に失敗しました。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">署名キーが見つかりません！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">秘密鍵は利用できません。
+ユーザー一覧を変更することができません！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -600,33 +601,33 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">再暗号化に失敗しました</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1の置換に失敗しました。元の状態が復元されました。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">バックアップコミットを作成中</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">バックアップコミットに失敗しました</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">gitのステータスを確認できませんでした。再暗号化が中断されました。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">gitバックアップを作成できなかったため、再暗号化が中断されました。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -642,27 +643,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG IDの検証に失敗しました</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ディレクトリの.gpg-idを検証できませんでした</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 の再暗号化に失敗しました</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 件成功、%2 件失敗で再暗号化が完了しました</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ファイルの再暗号化が完了しました</translation>
     </message>
 </context>
 <context>
@@ -700,7 +701,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">パスを繰り返す</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -710,7 +711,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPGバージョンによってテンプレートの内容が設定されます。</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1142,17 +1143,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTPコードがクリップボードにコピーされました</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">このパスワード入力にはOTPコードが見つかりません</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP生成用のパスワードが選択されていません</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
@@ -1167,24 +1168,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">再暗号化</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">エラー</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1を作成できませんでした</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">指定された場所：%1に.gpg-idファイルを作成できませんでした</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1205,12 +1206,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1ディレクトリが存在しません</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">パスワードを再暗号化する</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1221,7 +1222,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1内のすべてのパスワードを再暗号化しますか？ これは、.gpg-idに定義されている現在の受取人を使用して、このフォルダ内のすべてのパスワードファイルを再暗号化します。これにより多くのファイルが上書きされる可能性があり、取り消すのは容易ではありません。続行しますか？</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -1376,12 +1377,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG キー ペア の生成に失敗しました</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG キー ペア の生成が成功しました</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1459,7 +1460,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">このフォルダで保存されているパスワードを復号できるユーザーを選択してください。既存のファイルは変更されず、編集するまで古い権限が保持されます。青色の項目には秘密鍵があり、これらのいずれかを選択して復号できるようにします。黒色の項目には信頼された暗号化キーがあり、他の人が復号できるように選択できます。赤色の項目は無効で、これらに暗号化することはできません。</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1532,17 +1533,17 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[無効]</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[有効期限切れ]</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[部分的]</translation>
     </message>
 </context>
 </TS>

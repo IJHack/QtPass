@@ -575,7 +575,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">Aucune des clés de signature secrètes n'est disponible. Vous ne pourrez pas modifier la liste des utilisateurs !</translation>
+        <translation type="unfinished">Aucune des clés de signature secrètes n&apos;est disponible. Vous ne pourrez pas modifier la liste des utilisateurs !</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -608,7 +608,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">Échec du remplacement de %1. L'original a été restauré.</translation>
+        <translation type="unfinished">Échec du remplacement de %1. L&apos;original a été restauré.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
@@ -624,12 +624,12 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">Impossible d'inspecter l'état git. Le réchiffrement a été annulé.</translation>
+        <translation type="unfinished">Impossible d&apos;inspecter l&apos;état git. Le réchiffrement a été annulé.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">Le réchiffrement a été annulé car un commit de sauvegarde git n'a pas pu être créé.</translation>
+        <translation type="unfinished">Le réchiffrement a été annulé car un commit de sauvegarde git n&apos;a pas pu être créé.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -1107,7 +1107,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">Aucun mot de passe sélectionné pour la génération d'OTP</translation>
+        <translation type="unfinished">Aucun mot de passe sélectionné pour la génération d&apos;OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
