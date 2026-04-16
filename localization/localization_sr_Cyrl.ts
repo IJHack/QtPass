@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sr_RS" locale="sr_Cyrl">
+<TS version="2.1" language="sr_RS">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -483,7 +483,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished">Нативни Git/GPG</translation>
+        <translation type="unfinished">Направите Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
