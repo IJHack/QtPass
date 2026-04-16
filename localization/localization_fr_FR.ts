@@ -1107,7 +1107,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">Erreur</translation>
+        <translation type="unfinished">Aucun mot de passe sélectionné pour la génération d'OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -1144,18 +1144,18 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Le répertoire n&apos;existe pas&#xa0;: %1</translation>
+        <translation type="unfinished">Échec de la création du fichier .gpg-id dans : %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation>Ré-encrypter les mots de passe</translation>
+        <translation>Renommer le fichier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Rename Folder To: </source>
-        <translation>Ré-encrypter tous les mots de passe dans %1 ? Cela ré-encryptera TOUTES les fichiers de mot de passe dans ce dossier en utilisant les destinataires actuels définis dans le fichier .gpg-id. Cela peut réécrire de nombreux fichiers et ne peut pas être annulé facilement. Continuer ?</translation>
+        <translation>Renommer le dossier en : </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1179"/>

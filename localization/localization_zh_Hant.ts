@@ -378,7 +378,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
         <source>No profile selected</source>
-        <translation type="unfinished">未选择配置文件</translation>
+        <translation type="unfinished">未選擇配置檔案</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="615"/>
@@ -629,7 +629,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished">從文件夾%1重新加密</translation>
+        <translation type="unfinished">從資料夾%1重新加密</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="709"/>
@@ -693,12 +693,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">口令没有长度限制，应谨慎选择。从安全角度来看，在另一方获取您的私钥的情况下，用于解锁私钥的口令是 GnuPG（以及其他公钥加密系统）中最薄弱的一环，因为它是您唯一的保护手段。&lt;br/&gt;理想情况下，口令不应使用字典中的单词，并且应该混合字母字符的大写和小写以及非字母字符。&lt;br/&gt;一个好的口令对于安全地使用 GnuPG 至关重要。</translation>
+        <translation type="unfinished">口令沒有長度限制，應謹慎選擇。從安全角度來看，在另一方獲取您的私鑰的情況下，用於解開私鑰的口令是 GnuPG（以及其他公鑰加密系統）中最薄弱的一環，因為它是您唯一的保護手段。&lt;br/&gt;理想情況下，口令不應使用字典中的單詞，並且應該混合字母字元的大寫和小寫以及非字母字元。&lt;br/&gt;一個好的口令對於安全地使用 GnuPG 至關重要。</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished">重复口令</translation>
+        <translation type="unfinished">重複口令</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -1382,7 +1382,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished">用 %2 覆盖 %1？</translation>
+        <translation type="unfinished">用 %2 覆蓋 %1？</translation>
     </message>
 </context>
 <context>
