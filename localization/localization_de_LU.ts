@@ -89,12 +89,12 @@
         <location filename="../src/configdialog.ui" line="270"/>
         <source>Password Generation:</source>
         <translatorcomment>Erzeugung würde auch funktionieren</translatorcomment>
-        <translation>Passworterzeugung:</translation>
+        <translation>Monospaced Schriftart verwenden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="282"/>
         <source>Password Length:</source>
-        <translation>Passwortlänge:</translation>
+        <translation>Dateiinhalt unverändert anzeigen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="344"/>
@@ -210,7 +210,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="316"/>
         <source>Characters</source>
-        <translation>Zeichen</translation>
+        <translation>Keine Zeilenumbrüche</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -290,12 +290,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1031"/>
         <source>Use template</source>
-        <translation>Vorlage verwenden</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Alle Zeilen, die mit einem Wort gefolgt von einem Doppelpunkt beginnen, als Felder in Passwortfeldern anzeigen, nicht nur die aufgelisteten</translation>
+        <translation>Passwort-Speicher konnte nicht unter: %1 erstellt werden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
@@ -464,7 +464,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Native Git/GPG</translation>
+        <translation>GPG-Schlüsselpaar generieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -493,12 +493,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="765"/>
         <source>GPG</source>
-        <translation>GPG</translation>
+        <translation>&apos;Unterschriftsschlüssel&apos;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <source>PWGen</source>
-        <translation>PWGen</translation>
+        <translation>&apos;Optional: GPG-Schlüssel zum Signieren von .gpg-id-Dateien für Integritätsprüfung. Lassen Sie leer, es sei denn, Sie müssen die Benutzerliste vor Manipulation schützen müssen.&apos;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -1001,7 +1001,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     </message>
     <message>
         <source>Generating GPG key pair</source>
-        <translation type="vanished">OTPschlüssel wurde in die Zwischenablage kopiert</translation>
+        <translation type="vanished">Der OTP-Code wurde in die Zwischenablage kopiert</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
@@ -1054,7 +1054,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Kein OTP-Code in diesem Passworteintrag gefunden</translation>
+        <translation>Erneut verschlüsseln</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1069,7 +1069,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation>Kein Passwort für OTP-Generierung ausgewählt</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -1106,18 +1106,18 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Fehler beim Erstellen der .gpg-id-Datei in: %1</translation>
+        <translation>Das Verzeichnis existiert nicht: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation>Datei umbenennen</translation>
+        <translation>Passwörter erneut verschlüsseln</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Rename Folder To: </source>
-        <translation>Ordner umbenennen in: </translation>
+        <translation>Alle Passwortdateien in diesem Ordner erneut mit den aktuellen Empfängern (definiert in .gpg-id) verschlüsseln. Dies kann viele Dateien überschreiben und kann nicht rückgängig gemacht werden. Fortfahren?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1179"/>
