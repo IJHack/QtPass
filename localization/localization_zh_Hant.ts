@@ -816,12 +816,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="362"/>
         <source>Git push</source>
-        <translation type="unfinished">提交 Git 代码</translation>
+        <translation type="unfinished">推送 Git 變更</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="370"/>
         <source>Git pull</source>
-        <translation type="unfinished">拉取 Git 代码</translation>
+        <translation type="unfinished">從 Git 拉取</translation>
     </message>
     <message>
         <source>git pull</source>
