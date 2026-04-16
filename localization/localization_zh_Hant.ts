@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh">
+<TS version="2.1" language="zh_Hant">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -463,7 +463,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
         <source>Use PWGen</source>
-        <translation type="unfinished">使用</translation>
+        <translation type="unfinished">使用 PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
