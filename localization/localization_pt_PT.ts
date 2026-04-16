@@ -52,17 +52,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Use uma monospace fonte</translation>
+        <translation>Limpar painel automaticamente depois de:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">Exibir o conteúdo dos arquivos como está</translation>
+        <translation type="unfinished">Usar uma fonte monoespaçada</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished">Sem quebra de linha</translation>
+        <translation type="unfinished">Exibir o conteúdo dos ficheiros tal como estão</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
@@ -117,7 +117,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
         <source>Include special symbols</source>
-        <translation>Gerar par de chaves GPG</translation>
+        <translation>Incluir símbolos especiais</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
@@ -338,12 +338,12 @@
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished">Erro</translation>
+        <translation type="unfinished">Este campo é obrigatório</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
         <source>No profile selected</source>
-        <translation>Falha ao criar armazenamento de senha em: %1</translation>
+        <translation>Nenhum perfil selecionado</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="615"/>
@@ -1474,17 +1474,17 @@ Os elementos a vermelho não são válidos. Não será possível desencriptar ut
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[INVÁLIDO]</translation>
+        <translation type="unfinished">[INVÁLIDO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[EXPIRADO]</translation>
+        <translation type="unfinished">[EXPIRADO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[PARCIAL]</translation>
+        <translation type="unfinished">[PARCIAL] </translation>
     </message>
 </context>
 </TS>

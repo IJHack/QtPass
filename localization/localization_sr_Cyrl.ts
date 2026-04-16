@@ -1416,32 +1416,32 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&Покажи</translation>
+        <translation>&amp;Покажи</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation>&Скриј</translation>
+        <translation>&amp;Скриј</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>Ми&нимизирај</translation>
+        <translation>Ми&amp;нимизирај</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>Ма&ксимизирај</translation>
+        <translation>Ма&amp;ксимизирај</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&Врати</translation>
+        <translation>&amp;Врати</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation>&Напусти</translation>
+        <translation>&amp;Напусти</translation>
     </message>
 </context>
 <context>
