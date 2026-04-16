@@ -472,7 +472,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
         <source>Git</source>
-        <translation>Générer un couple de clés GPG</translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="735"/>

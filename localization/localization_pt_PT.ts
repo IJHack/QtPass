@@ -1089,7 +1089,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">Falha ao criar pasta: %1</translation>
+        <translation type="unfinished">Nenhuma palavra-passe selecionada para geração de OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -1099,7 +1099,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation>Falha ao criar arquivo .gpg-id em: %1</translation>
+        <translation>Renomear pasta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
@@ -1126,13 +1126,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Recriptografar senhas</translation>
+        <translation type="unfinished">Falha ao criar arquivo .gpg-id em: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation>Isso recriptografará TODOS os arquivos de senha nesta pasta usando os destinatários atuais definidos em .gpg-id.</translation>
+        <translation>Renomear arquivo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>

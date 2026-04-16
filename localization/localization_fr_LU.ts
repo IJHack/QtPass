@@ -472,7 +472,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
         <source>Git</source>
-        <translation>Générer une paire de clés GPG</translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="735"/>
@@ -501,7 +501,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <source>PWGen</source>
-        <translation>Clé de signature</translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -516,7 +516,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Optionnel : Clé GPG pour signer les fichiers .gpg-id pour vérification d&apos;intégrité. Laissez vide sauf si vous devez protéger la liste des utilisateurs contre le vol.</translation>
+        <translation>Les templates ajoutent des champs supplémentaires dans le dialogue de génération de mot de passe et dans la vue du mot de passe.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
@@ -1027,7 +1027,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
-        <translation>Aucune code d&apos;OTP trouvé dans cette entrée de mot de passe</translation>
+        <translation>Profil changé en %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
@@ -1092,7 +1092,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Récrypter</translation>
+        <translation type="unfinished">Aucun code OTP trouvé dans cette entrée de mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1117,12 +1117,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation>Impossible de créer le dossier : %1</translation>
+        <translation>Renommer le dossier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>Rename password</source>
-        <translation>}</translation>
+        <translation>Renommer le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
