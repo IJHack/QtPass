@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sr_RS">
+<TS version="2.1" language="sr_RS" locale="sr_Cyrl">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">АБВГДХИЈКЛМНОПРСТУВЗабвгдхијклмнопрстувз 0123456789</translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
@@ -1069,7 +1069,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Јас сам сигуран да желим да избришем %1%2?</translation>
+        <translation>Да ли сте сигурни да желите да избришете %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>

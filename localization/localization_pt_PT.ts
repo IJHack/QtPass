@@ -57,12 +57,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">Usar uma fonte monoespaçada</translation>
+        <translation>Usar uma fonte monoespaçada</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished">Exibir o conteúdo dos ficheiros tal como estão</translation>
+        <translation>Exibir o conteúdo dos ficheiros tal como estão</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
@@ -338,7 +338,7 @@
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished">Este campo é obrigatório</translation>
+        <translation>Este campo é obrigatório</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -679,7 +679,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished">Repita a senha</translation>
+        <translation>Repita a palavra-passe</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -689,7 +689,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished">O conteúdo do modelo será definido com base na versão do GPG.</translation>
+        <translation>O conteúdo do modelo será definido com base na versão do GPG.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
@@ -1319,12 +1319,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished">Falha na geração do par de chaves GPG</translation>
+        <translation>Falha na geração do par de chaves GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished">Par de chaves GPG gerado com sucesso</translation>
+        <translation>Par de chaves GPG gerado com sucesso</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1402,7 +1402,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Selecione quais usuários devem ser capazes de descriptografar senhas armazenadas nesta pasta. Nota: Arquivos existentes não serão modificados e manterão as permissões antigas até você editá-los. Entradas azuis têm uma chave secreta disponível, selecione uma dessas para poder descriptografar. Entradas pretas têm uma chave de criptografia disponível e é confiável, selecione uma dessas para permitir que outras pessoas descriptografem. Entradas vermelhas não são válidas, você não poderá criptografar para essas.</translation>
+        <translation>Selecione quais usuários devem ser capazes de descriptografar senhas armazenadas nesta pasta. Nota: Arquivos existentes não serão modificados e manterão as permissões antigas até você editá-los. Entradas azuis têm uma chave secreta disponível, selecione uma dessas para poder descriptografar. Entradas pretas têm uma chave de criptografia disponível e é confiável, selecione uma dessas para permitir que outras pessoas descriptografem. Entradas vermelhas não são válidas, você não poderá criptografar para essas.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1474,17 +1474,17 @@ Os elementos a vermelho não são válidos. Não será possível desencriptar ut
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[INVÁLIDO] </translation>
+        <translation>[INVÁLIDO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[EXPIRADO] </translation>
+        <translation>[EXPIRADO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[PARCIAL] </translation>
+        <translation>[PARCIAL] </translation>
     </message>
 </context>
 </TS>
