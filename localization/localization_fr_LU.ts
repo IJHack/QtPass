@@ -41,27 +41,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation>Utiliser une police de caractères monospaced</translation>
+        <translation>Masquer le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Afficher le contenu des fichiers tels quels</translation>
+        <translation>Effacer automatiquement le panneau après :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">Pas de passage à la ligne</translation>
+        <translation>Utiliser une police monospaced</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher le contenu des fichiers tels quels</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Pas de passage à la ligne</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -1492,17 +1492,17 @@ Les entrées en rouge ne sont pas marquées comme étant de confiance dans GnuPG
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[INVALIDE]</translation>
+        <translation>[INVALIDE] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[AVEC DEJET]</translation>
+        <translation>[EXPIRÉ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[PARTICULAIRE]</translation>
+        <translation>[PARTIEL] </translation>
     </message>
 </context>
 </TS>

@@ -41,27 +41,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation>Utiliser une police monospacée</translation>
+        <translation>Masquer le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Afficher le contenu des fichiers tel quel</translation>
+        <translation>Effacer automatiquement le panneau après :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">Aucun emballage de ligne</translation>
+        <translation>Utiliser une police monospacée</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher le contenu des fichiers tel quel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucune rupture de ligne</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
