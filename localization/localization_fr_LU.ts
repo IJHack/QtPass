@@ -660,12 +660,12 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">Vous avez réussi à ré-encrypter les fichiers suivants : %1 succeeded, %2 failed.</translation>
+        <translation type="unfinished">Ré-encryption terminée : %1 réussites, %2 échecs.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">Vous avez réussi à ré-encrypter tous les fichiers suivants : %1 files re-encrypted.</translation>
+        <translation type="unfinished">Ré-encryption terminée : %1 fichiers ré-encryptés.</translation>
     </message>
 </context>
 <context>
