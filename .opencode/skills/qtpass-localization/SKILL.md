@@ -249,6 +249,8 @@ git commit -m "Resolve merge conflict - use theirs for translations"
 
 ## Fixing Translation Issues in PRs
 
+> **Note:** Editing `localization/**/*.ts` files is only allowed under the maintainer-approved, narrowly-scoped emergency-fix exception described above. Such edits must be approved and justified in the PR description, followed by running `qmake6`. Use Weblate for normal translations.
+
 When static analysis flags translation issues (e.g., filename preservation):
 
 ```bash
