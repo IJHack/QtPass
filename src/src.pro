@@ -69,9 +69,9 @@ SOURCES   += mainwindow.cpp \
              qpushbuttonshowpassword.cpp \
              qtpasssettings.cpp \
              settingsconstants.cpp \
-              pass.cpp \
-              gpgkeystate.cpp \
-              realpass.cpp \
+             pass.cpp \
+             gpgkeystate.cpp \
+             realpass.cpp \
              imitatepass.cpp \
              executor.cpp \
              simpletransaction.cpp \
