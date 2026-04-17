@@ -135,6 +135,13 @@ public:
    * @param charset Character set to use.
    * @return Generated password.
    */
+  /**
+   * @brief Search password content for a pattern.
+   * @param pattern Search pattern (regular expression).
+   * @param caseInsensitive true for case-insensitive search.
+   */
+  virtual void Grep(QString pattern, bool caseInsensitive = false) = 0;
+
   virtual auto generatePassword(unsigned int length, const QString &charset)
       -> QString;
 
@@ -330,6 +337,10 @@ signals:
    * @brief Emitted when GPG key generation finishes.
    */
   void finishedGenerateGPGKeys(const QString &, const QString &);
+  /**
+   * @brief Emitted when grep finishes with matching results.
+   */
+  void finishedGrep(const QList<QPair<QString, QStringList>> &results);
 };
 
 /**

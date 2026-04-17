@@ -24,24 +24,25 @@ enum clipBoardType {
  * @brief Identifies different subprocess operations used in QtPass.
  */
 enum PROCESS {
-  GIT_INIT = 0,     /**< Initialize Git repository */
-  GIT_ADD,          /**< Git add command */
-  GIT_COMMIT,       /**< Git commit */
-  GIT_RM,           /**< Git remove */
-  GIT_PULL,         /**< Git pull */
-  GIT_PUSH,         /**< Git push */
-  PASS_SHOW,        /**< Pass show - decrypt password file */
-  PASS_INSERT,      /**< Pass insert - create/update password */
-  PASS_REMOVE,      /**< Pass remove - delete password */
-  PASS_INIT,        /**< Pass init - initialize store */
-  GPG_GENKEYS,      /**< GPG key generation */
-  PASS_MOVE,        /**< Move password file */
-  PASS_COPY,        /**< Copy password file */
-  GIT_MOVE,         /**< Git move/rename */
-  GIT_COPY,         /**< Git copy */
-  PROCESS_COUNT,    /**< Total number of process types */
-  INVALID,          /**< Invalid/unknown process */
-  PASS_OTP_GENERATE /**< Generate OTP code */
+  GIT_INIT = 0,      /**< Initialize Git repository */
+  GIT_ADD,           /**< Git add command */
+  GIT_COMMIT,        /**< Git commit */
+  GIT_RM,            /**< Git remove */
+  GIT_PULL,          /**< Git pull */
+  GIT_PUSH,          /**< Git push */
+  PASS_SHOW,         /**< Pass show - decrypt password file */
+  PASS_INSERT,       /**< Pass insert - create/update password */
+  PASS_REMOVE,       /**< Pass remove - delete password */
+  PASS_INIT,         /**< Pass init - initialize store */
+  GPG_GENKEYS,       /**< GPG key generation */
+  PASS_MOVE,         /**< Move password file */
+  PASS_COPY,         /**< Copy password file */
+  GIT_MOVE,          /**< Git move/rename */
+  GIT_COPY,          /**< Git copy */
+  PROCESS_COUNT,     /**< Total number of process types */
+  INVALID,           /**< Invalid/unknown process */
+  PASS_OTP_GENERATE, /**< Generate OTP code */
+  PASS_GREP          /**< Search inside password content */
 };
 
 } // namespace Enums

@@ -22,6 +22,7 @@ using Enums::GIT_PULL;
 using Enums::GIT_PUSH;
 using Enums::GPG_GENKEYS;
 using Enums::PASS_COPY;
+using Enums::PASS_GREP;
 using Enums::PASS_INIT;
 using Enums::PASS_INSERT;
 using Enums::PASS_MOVE;
@@ -493,6 +494,41 @@ auto gpgErrorMessage(const QString &err) -> QString {
 }
 
 /**
+ * @brief Parses 'pass grep' raw output into (entry, matches) pairs.
+ *
+ * pass grep emits ANSI blue color (\x1B[94m) at the start of each entry
+ * header line. This is checked before stripping ANSI so headers are detected
+ * reliably regardless of locale.
+ */
+static auto parseGrepOutput(const QString &rawOut)
+    -> QList<QPair<QString, QStringList>> {
+  static const QRegularExpression ansi(
+      QStringLiteral(R"(\x1B\[[0-9;]*[a-zA-Z])"));
+  QList<QPair<QString, QStringList>> results;
+  QString currentEntry;
+  QStringList currentMatches;
+  for (const QString &rawLine : rawOut.split('\n')) {
+    bool isHeader = rawLine.contains(QStringLiteral("\x1B[94m"));
+    QString line = rawLine;
+    line.remove('\r');
+    line.remove(ansi);
+    line = line.trimmed();
+    if (isHeader) {
+      if (!currentEntry.isEmpty() && !currentMatches.isEmpty())
+        results.append({currentEntry, currentMatches});
+      currentEntry = line.endsWith(':') ? line.chopped(1) : line;
+      currentMatches.clear();
+    } else if (!currentEntry.isEmpty()) {
+      if (!line.isEmpty())
+        currentMatches << line;
+    }
+  }
+  if (!currentEntry.isEmpty() && !currentMatches.isEmpty())
+    results.append({currentEntry, currentMatches});
+  return results;
+}
+
+/**
  * @brief Pass::processFinished reemits specific signal based on what process
  * has finished
  * @param id    id of Pass process that was scheduled and finished
@@ -560,6 +596,9 @@ void Pass::finished(int id, int exitCode, const QString &out,
     break;
   case GPG_GENKEYS:
     emit finishedGenerateGPGKeys(out, err);
+    break;
+  case PASS_GREP:
+    emit finishedGrep(parseGrepOutput(out));
     break;
   default:
 #ifdef QT_DEBUG

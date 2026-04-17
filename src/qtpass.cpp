@@ -188,6 +188,7 @@ void QtPass::connectPassSignalHandlers(Pass *pass) {
   connect(pass, &Pass::finishedCopy, this, &QtPass::passStoreChanged);
   connect(pass, &Pass::finishedGenerateGPGKeys, this,
           &QtPass::onKeyGenerationComplete);
+  connect(pass, &Pass::finishedGrep, m_mainWindow, &MainWindow::onGrepFinished);
 }
 
 /**

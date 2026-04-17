@@ -260,6 +260,12 @@ public:
    */
   void Copy(const QString src, const QString dest,
             const bool force = false) override;
+  /**
+   * @brief Search all password content by GPG-decrypting each .gpg file.
+   * @param pattern Search pattern (regular expression).
+   * @param caseInsensitive true for case-insensitive search.
+   */
+  void Grep(QString pattern, bool caseInsensitive = false) override;
 };
 
 #endif // SRC_IMITATEPASS_H_
