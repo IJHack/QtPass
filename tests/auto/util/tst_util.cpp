@@ -114,6 +114,9 @@ private Q_SLOTS:
   void findBinaryInPathConsistency();
   void findBinaryInPathResultContainsBinaryName();
   void findBinaryInPathTempExecutableInTempDir();
+  void findBinaryInPathWithConstQStringRef();
+  void findBinaryInPathEmptyString();
+  void findBinaryInPathStringLiteral();
 };
 
 /**
@@ -1397,6 +1400,51 @@ void tst_util::reencryptPathAbsolutePath() {
       result == expected,
       qPrintable(
           QString("Absolute path: expected %1, got %2").arg(expected, result)));
+}
+
+// Tests targeting the const-ref refactor of findBinaryInPath.
+// The PR changed the signature from findBinaryInPath(QString) to
+// findBinaryInPath(const QString &). These tests verify that callers using
+// const-qualified variables continue to work correctly.
+
+void tst_util::findBinaryInPathWithConstQStringRef() {
+  // Pass a const-qualified variable to verify the const-ref signature compiles
+  // and executes correctly.
+#ifdef Q_OS_WIN
+  const QString binaryName = QStringLiteral("cmd.exe");
+#else
+  const QString binaryName = QStringLiteral("sh");
+#endif
+  const QString result = Util::findBinaryInPath(binaryName);
+  QVERIFY2(!result.isEmpty(),
+           "findBinaryInPath should find shell with const QString& arg");
+  QVERIFY2(result.contains(binaryName),
+           "Result should contain the binary name");
+  QVERIFY2(QFileInfo(result).isAbsolute(),
+           "Returned path should be absolute");
+}
+
+void tst_util::findBinaryInPathEmptyString() {
+  // Boundary case: passing an empty string should return an empty result
+  // without crashing. This exercises the loop guard when 'binary' is empty.
+  const QString result = Util::findBinaryInPath(QString());
+  QVERIFY2(result.isEmpty(),
+           "findBinaryInPath(\"\") should return empty QString");
+}
+
+void tst_util::findBinaryInPathStringLiteral() {
+  // Passing a string literal directly (temporary, binds to const ref) must
+  // work identically to passing a named variable.
+#ifndef Q_OS_WIN
+  const QString resultDirect = Util::findBinaryInPath("sh");
+  const QString binaryName = QStringLiteral("sh");
+  const QString resultNamed = Util::findBinaryInPath(binaryName);
+  QVERIFY2(!resultDirect.isEmpty(),
+           "findBinaryInPath with string literal should succeed");
+  QCOMPARE(resultDirect, resultNamed);
+#else
+  QSKIP("Unix-only test");
+#endif
 }
 
 QTEST_MAIN(tst_util)
