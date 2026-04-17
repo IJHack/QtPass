@@ -27,7 +27,7 @@ public:
    * @return QString Absolute path to the executable if found, empty QString
    * otherwise.
    */
-  static auto findBinaryInPath(QString binary) -> QString;
+  static auto findBinaryInPath(const QString &binary) -> QString;
   /**
    * @brief Locate the password store directory.
    * @return QString Path to the password store, always ends with native

@@ -127,7 +127,7 @@ auto parseGpgColonOutput(const QString &output, bool secret)
       continue;
     }
 
-    const QString record_type = props[0];
+    const QString &record_type = props[0];
     const GpgRecordType type = classifyRecord(record_type);
 
     switch (type) {

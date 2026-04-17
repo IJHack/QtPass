@@ -151,7 +151,7 @@ private:
   void initTrayIcon();
   void destroyTrayIcon();
   void clearTemplateWidgets();
-  void reencryptPath(QString dir);
+  void reencryptPath(const QString &dir);
   void addToGridLayout(int position, const QString &field,
                        const QString &value);
 

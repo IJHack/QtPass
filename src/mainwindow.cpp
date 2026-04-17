@@ -1323,7 +1323,7 @@ void MainWindow::showStatusMessage(const QString &msg, int timeout) {
  * @brief MainWindow::reencryptPath re-encrypt all passwords in a directory
  * @param dir Directory path to re-encrypt
  */
-void MainWindow::reencryptPath(QString dir) {
+void MainWindow::reencryptPath(const QString &dir) {
   QDir checkDir(dir);
   if (!checkDir.exists()) {
     QMessageBox::critical(this, tr("Error"),

@@ -140,16 +140,16 @@ public:
                const QStringList &args, QString input = QString(),
                bool readStdout = false, bool readStderr = true);
 
-  static auto executeBlocking(QString app, const QStringList &args,
+  static auto executeBlocking(const QString &app, const QStringList &args,
                               const QString &input = QString(),
                               QString *process_out = nullptr,
                               QString *process_err = nullptr) -> int;
 
-  static auto executeBlocking(QString app, const QStringList &args,
+  static auto executeBlocking(const QString &app, const QStringList &args,
                               QString *process_out,
                               QString *process_err = nullptr) -> int;
 
-  static auto executeBlocking(const QStringList &env, QString app,
+  static auto executeBlocking(const QStringList &env, const QString &app,
                               const QStringList &args,
                               QString *process_out = nullptr,
                               QString *process_err = nullptr) -> int;
