@@ -650,7 +650,7 @@ Você não será capaz de descriptografar qualquer senha recém-adicionada!</tra
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Gerar GnuPG keypair</translation>
+        <translation>Gerar par de chaves GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
@@ -1071,7 +1071,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation>Código OTP copiado para à área de transferência</translation>
+        <translation>Código OTP copiado para a área de transferência</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
