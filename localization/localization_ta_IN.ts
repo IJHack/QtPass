@@ -555,12 +555,12 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation>GPG குறியாக்கல் தவறவை!</translation>
+        <translation>GPG கையொப்பமிடல் தோல்வியடைந்தது!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation>%1 குறியாக்கல் முடிவு செய்யப்படவில்லை.</translation>
+        <translation>%1-க்கு கையொப்பமிட முடியவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -1200,7 +1200,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation>பிரதம உருவாக்கு</translation>
+        <translation>மீண்டும் மறைகுறியாக்கு</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
