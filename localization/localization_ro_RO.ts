@@ -571,7 +571,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Nicio dintre cheile de semnare secrete nu este disponibilă.
+        <translation>Niciuna dintre cheile de semnare secrete nu este disponibilă.
 Nu veți putea schimba lista utilizatorilor!</translation>
     </message>
     <message>
