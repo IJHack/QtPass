@@ -1,0 +1,9 @@
+<map id="gpgErrorMessage" name="gpgErrorMessage">
+<area shape="rect" id="Node000001" title="Maps GPG stderr (which may include –status&#45;fd 2 tokens) to a translated user&#45;friendly encryption erro..." alt="" coords="369,31,504,56"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="211,31,321,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="355,46,321,46,321,41,355,41"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="5,5,163,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="197,36,163,32,164,26,198,31"/>
+<area shape="rect" id="Node000004" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance." alt="" coords="40,55,128,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="197,55,128,64,128,59,197,50"/>
+</map>

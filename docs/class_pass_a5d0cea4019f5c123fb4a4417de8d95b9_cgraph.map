@@ -1,33 +1,35 @@
 <map id="Pass::Pass" name="Pass::Pass">
-<area shape="rect" id="Node000001" title="Construct a Pass instance." alt="" coords="5,327,93,352"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="193,277,304,303"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,324,141,311,179,302,181,307,142,317,94,329"/>
-<area shape="rect" id="Node000015" href="$class_executor.html#acfcfc18b0b973791530302eb8179e038" title="starting signal that is emited when process starts" alt="" coords="181,327,317,352"/>
-<area shape="poly" id="edge14_Node000001_Node000015" title=" " alt="" coords="93,337,167,337,167,342,93,342"/>
-<area shape="rect" id="Node000016" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted before executing a command." alt="" coords="141,376,356,401"/>
-<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="94,348,142,361,180,370,179,375,141,366,93,353"/>
+<area shape="rect" id="Node000001" title="Construct a Pass instance." alt="" coords="5,351,93,376"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="193,301,304,327"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,348,141,335,179,326,181,331,142,341,94,353"/>
+<area shape="rect" id="Node000016" href="$class_executor.html#acfcfc18b0b973791530302eb8179e038" title="starting signal that is emited when process starts" alt="" coords="181,351,317,376"/>
+<area shape="poly" id="edge15_Node000001_Node000016" title=" " alt="" coords="93,361,167,361,167,366,93,366"/>
+<area shape="rect" id="Node000017" href="$class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6" title="Emitted before executing a command." alt="" coords="141,400,356,425"/>
+<area shape="poly" id="edge16_Node000001_Node000017" title=" " alt="" coords="94,372,142,385,180,394,179,399,141,390,93,377"/>
 <area shape="rect" id="Node000003" href="$class_pass.html#a22febea5d24676854f3dad24260df4d5" title="Emitted when copy finishes." alt="" coords="447,5,590,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="251,276,268,231,298,166,343,98,371,66,403,40,433,25,435,30,405,44,374,70,347,101,303,169,273,233,256,278"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="251,300,266,251,295,180,315,142,340,104,369,69,403,40,433,25,435,30,405,44,373,73,344,107,320,144,300,182,271,253,256,302"/>
 <area shape="rect" id="Node000004" href="$class_pass.html#aeb0213d032e070ad788398328c0a080c" title="Emitted when GPG key generation finishes." alt="" coords="404,55,633,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="253,276,273,239,305,188,349,134,374,110,403,89,414,83,416,88,405,94,378,114,353,138,310,191,278,241,258,279"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="253,300,271,258,302,201,346,140,373,113,403,89,413,83,415,88,405,94,376,116,350,143,307,204,276,261,257,302"/>
 <area shape="rect" id="Node000005" href="$class_pass.html#a52541582298af5b2707447e3a57f85bf" title="Emitted when Git init finishes." alt="" coords="443,104,594,129"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="257,275,313,209,355,171,403,138,429,127,431,132,405,143,358,175,317,213,261,279"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="255,300,276,267,309,222,352,177,403,138,429,127,431,132,405,143,356,181,313,226,281,270,260,302"/>
 <area shape="rect" id="Node000006" href="$class_pass.html#ab6d3acbdce8a5bc579bef175c85382df" title="Emitted when Git pull finishes." alt="" coords="442,153,595,179"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="264,275,323,232,362,208,403,188,428,179,429,184,405,192,364,213,326,236,267,279"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="260,299,318,245,358,214,403,188,428,178,429,183,405,192,361,218,321,249,264,303"/>
 <area shape="rect" id="Node000007" href="$class_pass.html#ab892bcacdbe3081f677e456a3a8ac328" title="Emitted when Git push finishes." alt="" coords="439,203,599,228"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="284,275,403,237,437,228,438,234,405,242,286,280"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="271,299,330,268,403,237,430,229,431,234,405,242,332,273,273,303"/>
 <area shape="rect" id="Node000008" href="$class_pass.html#a7a4c2bbb80372455e0d406fbc940e219" title="Emitted when init finishes." alt="" coords="453,252,584,277"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="304,282,439,269,439,275,304,288"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="304,301,439,276,440,282,305,307"/>
 <area shape="rect" id="Node000009" href="$class_pass.html#a71d8c179a7875dd2983de2aabff0a8cb" title="Emitted when insert finishes." alt="" coords="445,301,592,327"/>
-<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="304,292,432,304,432,309,304,298"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="304,311,431,311,431,317,304,317"/>
 <area shape="rect" id="Node000010" href="$class_pass.html#a3ca180cb5769aa87186474f7eda9e2a5" title="Emitted when move finishes." alt="" coords="445,351,592,376"/>
-<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="305,297,357,312,381,324,405,336,435,345,434,350,403,340,379,328,355,316,303,302"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="305,321,436,346,435,351,304,327"/>
 <area shape="rect" id="Node000011" href="$class_pass.html#a8ca44f13c68a03c1e91fbbfee37388ed" title="Emitted when OTP generation finishes." alt="" coords="422,400,615,425"/>
-<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="305,292,332,299,358,312,375,330,382,350,390,368,406,385,418,392,415,397,402,389,385,371,378,352,370,333,354,316,330,304,304,297"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="305,318,332,325,357,336,373,348,382,361,391,374,405,385,423,393,420,398,403,390,387,377,378,364,369,352,355,340,330,330,304,323"/>
 <area shape="rect" id="Node000012" href="$class_pass.html#a263cc9ceb5269427237ea43267667197" title="Emitted when remove finishes." alt="" coords="437,449,601,475"/>
-<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="305,290,333,297,358,312,371,327,379,343,383,375,387,406,393,421,406,435,425,447,423,452,402,439,389,423,381,408,377,376,373,345,367,330,354,316,331,302,303,295"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="305,314,332,322,358,336,370,348,377,361,383,387,388,412,395,423,406,435,425,446,422,451,402,439,390,427,383,414,377,388,372,363,365,351,354,340,330,327,303,319"/>
 <area shape="rect" id="Node000013" href="$class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba" title="Emitted when show finishes." alt="" coords="446,499,591,524"/>
-<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="305,289,333,296,358,312,375,334,382,356,383,400,383,443,390,464,406,484,434,501,432,506,402,488,385,466,378,444,377,400,377,357,370,336,354,316,331,301,304,294"/>
-<area shape="rect" id="Node000014" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit." alt="" coords="436,548,601,573"/>
-<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="305,288,333,296,358,312,378,340,386,368,386,397,383,425,379,453,379,480,387,507,406,533,425,547,422,551,402,537,382,509,374,481,374,453,377,424,381,396,381,369,373,342,354,316,331,301,304,293"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="305,313,333,321,358,336,373,354,380,374,383,412,385,449,392,467,406,484,434,500,431,505,402,488,387,470,380,450,377,412,375,375,368,357,354,340,331,326,303,318"/>
+<area shape="rect" id="Node000014" href="$pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc" title="Maps GPG stderr (which may include –status&#45;fd 2 tokens) to a translated user&#45;friendly encryption erro..." alt="" coords="451,548,586,573"/>
+<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="305,312,333,320,358,336,376,361,384,386,385,412,383,437,380,462,381,486,388,510,406,533,421,545,439,552,437,557,419,549,402,537,384,513,376,487,375,462,377,436,380,412,379,387,372,363,354,340,331,325,303,318"/>
+<area shape="rect" id="Node000015" href="$class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f" title="Emitted on process error exit." alt="" coords="436,597,601,623"/>
+<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="305,312,333,320,358,336,380,367,388,399,387,430,383,462,378,493,377,523,385,553,406,583,425,596,422,601,402,587,380,555,372,524,372,492,377,461,382,430,383,399,375,369,354,340,331,325,304,317"/>
 </map>
