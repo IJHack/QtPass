@@ -511,7 +511,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">Optionnel : clé GPG pour signer les fichiers .gpg-id afin de vérifier l'intégrité. Laissez ce champ vide sauf si vous avez besoin de protéger la liste des utilisateurs contre les modifications.</translation>
+        <translation type="unfinished">Optionnel : clé GPG pour signer les fichiers .gpg-id afin de vérifier l&apos;intégrité. Laissez ce champ vide sauf si vous avez besoin de protéger la liste des utilisateurs contre les modifications.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>

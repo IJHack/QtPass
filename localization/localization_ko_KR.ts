@@ -599,7 +599,23 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-<translation type="unfinished">재암호화 실패</translation>
+        <translation type="unfinished">재암호화 실패</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="640"/>
+        <source>Failed to replace %1. Original has been restored.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="669"/>
+        <source>Creating backup commit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="675"/>
+        <location filename="../src/imitatepass.cpp" line="683"/>
+        <source>Backup commit failed</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>

@@ -42,7 +42,7 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_hr_HR.ts \
                     ../localization/localization_af_ZA.ts \
                     ../localization/localization_ro_RO.ts \
-                    ../localization/localization_sl_SI.ts \
+                    ../localization/localization_si_LK.ts \
                     ../localization/localization_sr_RS.ts \
                     ../localization/localization_sr_Cyrl.ts \
                     ../localization/localization_ja_JP.ts \
