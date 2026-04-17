@@ -11,7 +11,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
-        <translation>Podešav</translation>
+        <translation>Postavke</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
@@ -357,12 +357,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="121"/>
         <source>No Clipboard</source>
-        <translation>Nema klipba</translation>
+        <translation>Nema međuspremnika</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="122"/>
         <source>Always copy to clipboard</source>
-        <translation>Vedro kopirati u klipbu</translation>
+        <translation>Uvijek kopiraj u međuspremnik</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="123"/>
@@ -398,12 +398,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="783"/>
         <source>Create password-store?</source>
-        <translation>Da li želite da kreirate loštinarski skladiste?</translation>
+        <translation>Napraviti pohranu lozinki?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="784"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Želite li da kreirate loštinarsko skladiste na %1?</translation>
+        <translation>Želite li stvoriti pohranu lozinki na %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
@@ -555,12 +555,12 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation>Pristup GPG značenju nije uspešan!</translation>
+        <translation>GPG potpisivanje nije uspjelo!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation>Neuspešno je potpisano %1.</translation>
+        <translation>Nije uspjelo potpisivanje %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
