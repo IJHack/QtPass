@@ -700,7 +700,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Повторете паса</translation>
+        <translation>Повторете pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -1408,7 +1408,7 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>Ма&amp;ксимизирай</translation>
+        <translation>Ма&amp;ксимизиране</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
