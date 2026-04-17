@@ -344,7 +344,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Failed to create password-store at&#xa0;: %1</translation>
+        <translation>Échec de la création du magasin de mots de passe à l&apos;emplacement&#xa0;: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -511,7 +511,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Facultatif&#xa0;: clé GPG pour signer des fichiers .gpg-id pour vérification de l&apos;intégrité. Laisser vide à moins que vous n&apos;ayez besoin de protéger la liste d&apos;utilisateurs contre l&apos;amortissement.</translation>
+        <translation>Facultatif&#xa0;: clé GPG pour signer les fichiers .gpg-id afin de vérifier leur intégrité. Laisser vide sauf si vous devez protéger la liste des utilisateurs contre la falsification.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -1088,7 +1088,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation>Code OTP copié sur presse</translation>
+        <translation>Code OTP copié dans le presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
