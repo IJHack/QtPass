@@ -44,6 +44,14 @@ private:
   };
 
   // Thin subclass that exposes protected members needed by env tests.
+  // NOTE: environment() calls updateEnv(), which adds PASSWORD_STORE_* entries
+  // to the internal env list and forwards it to exec via setEnvironment().
+  // Because Pass::setEnvVar removes all matching entries before appending,
+  // repeated calls to environment() are idempotent for PASSWORD_STORE_* vars.
+  // Tests that call callSetEnvVar() directly work on the same env list, so
+  // any subsequent environment() call will re-run updateEnv() and may
+  // overwrite those entries — use callSetEnvVar() and environment() in the
+  // same test only when the keys don't overlap with PASSWORD_STORE_*.
   class TestPass : public ImitatePass {
   public:
     void callSetEnvVar(const QString &key, const QString &value) {
@@ -1567,16 +1575,20 @@ void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
 
 void tst_util::updateEnvWslenvContainsRequiredVars() {
   TestPass pass;
-  QStringList env = pass.environment();
-  QStringList wslenvEntries = env.filter(QStringLiteral("WSLENV="));
-  QVERIFY2(wslenvEntries.size() == 1, "Exactly one WSLENV entry expected");
+  const QStringList env = pass.environment();
+  // Use startsWith to avoid substring false-positives (e.g. MY_WSLENV=).
+  const QStringList wslenvEntries =
+      env.filter(QRegularExpression(QStringLiteral("^WSLENV=")));
+  QVERIFY2(!wslenvEntries.isEmpty(),
+           "At least one WSLENV entry expected after Pass construction");
+  // Verify Pass::Pass() merged all required keys with correct WSL flags.
   const QString wslenv = wslenvEntries.first();
-  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_DIR")),
-           "WSLENV should include PASSWORD_STORE_DIR");
-  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH")),
-           "WSLENV should include PASSWORD_STORE_GENERATED_LENGTH");
-  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET")),
-           "WSLENV should include PASSWORD_STORE_CHARACTER_SET");
+  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_DIR/p")),
+           "WSLENV should include PASSWORD_STORE_DIR/p");
+  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w")),
+           "WSLENV should include PASSWORD_STORE_GENERATED_LENGTH/w");
+  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")),
+           "WSLENV should include PASSWORD_STORE_CHARACTER_SET/w");
 }
 
 QTEST_MAIN(tst_util)
