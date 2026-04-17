@@ -43,7 +43,26 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
   //        SIGNAL(error(QProcess::ProcessError)));
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
-  env.append("WSLENV=PASSWORD_STORE_DIR/p");
+  // Merge our vars into WSLENV rather than blindly appending a duplicate entry
+  const QStringList wslenvVars = {
+      QStringLiteral("PASSWORD_STORE_DIR/p"),
+      QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w"),
+      QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")};
+  const QString wslenvPrefix = QStringLiteral("WSLENV=");
+  auto it = std::find_if(env.begin(), env.end(), [&](const QString &s) {
+    return s.startsWith(wslenvPrefix);
+  });
+  if (it == env.end()) {
+    env.append(wslenvPrefix + wslenvVars.join(':'));
+  } else {
+    QStringList parts =
+        it->mid(wslenvPrefix.size()).split(':', Qt::SkipEmptyParts);
+    for (const QString &v : wslenvVars) {
+      if (!parts.contains(v))
+        parts.append(v);
+    }
+    *it = wslenvPrefix + parts.join(':');
+  }
 }
 
 /**
@@ -479,36 +498,35 @@ void Pass::finished(int id, int exitCode, const QString &out,
  * @brief Pass::updateEnv update the execution environment (used when
  * switching profiles)
  */
+// key must include the trailing '=' (e.g. "FOO="); env.filter() does substring
+// matching so the '=' anchors the lookup to avoid collisions with longer names.
+void Pass::setEnvVar(const QString &key, const QString &value) {
+  Q_ASSERT(key.endsWith('='));
+  const QStringList existing = env.filter(key);
+  for (const QString &entry : std::as_const(existing))
+    env.removeAll(entry);
+  if (!value.isEmpty())
+    env.append(key + value);
+}
+
 void Pass::updateEnv() {
-  // put PASSWORD_STORE_SIGNING_KEY in env
-  QStringList envSigningKey = env.filter("PASSWORD_STORE_SIGNING_KEY=");
-  QString currentSigningKey = QtPassSettings::getPassSigningKey();
-  if (envSigningKey.isEmpty()) {
-    if (!currentSigningKey.isEmpty()) {
-      // dbg()<< "Added
-      // PASSWORD_STORE_SIGNING_KEY with" + currentSigningKey;
-      env.append("PASSWORD_STORE_SIGNING_KEY=" + currentSigningKey);
-    }
-  } else {
-    if (currentSigningKey.isEmpty()) {
-      env.removeAll(envSigningKey.first());
-    } else {
-      // dbg()<< "Update
-      // PASSWORD_STORE_SIGNING_KEY with " + currentSigningKey;
-      env.replaceInStrings(envSigningKey.first(),
-                           "PASSWORD_STORE_SIGNING_KEY=" + currentSigningKey);
-    }
-  }
-  // put PASSWORD_STORE_DIR in env
-  QStringList store = env.filter("PASSWORD_STORE_DIR=");
-  if (store.isEmpty()) {
-    env.append("PASSWORD_STORE_DIR=" + QtPassSettings::getPassStore());
-  } else {
-    // dbg()<< "Update
-    // PASSWORD_STORE_DIR with " + passStore;
-    env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
-                                            QtPassSettings::getPassStore());
-  }
+  setEnvVar(QStringLiteral("PASSWORD_STORE_SIGNING_KEY="),
+            QtPassSettings::getPassSigningKey());
+  setEnvVar(QStringLiteral("PASSWORD_STORE_DIR="),
+            QtPassSettings::getPassStore());
+
+  PasswordConfiguration passConfig = QtPassSettings::getPasswordConfiguration();
+  setEnvVar(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH="),
+            QString::number(passConfig.length));
+
+  int sel = passConfig.selected;
+  if (sel < 0 || sel >= PasswordConfiguration::CHARSETS_COUNT)
+    sel = PasswordConfiguration::ALLCHARS;
+  QString charset = passConfig.Characters[sel];
+  if (charset.isEmpty())
+    charset = passConfig.Characters[PasswordConfiguration::ALLCHARS];
+  setEnvVar(QStringLiteral("PASSWORD_STORE_CHARACTER_SET="), charset);
+
   exec.setEnvironment(env);
 }
 

@@ -356,6 +356,23 @@ void ConfigDialog::setGroupBoxState() {
   bool state = ui->radioButtonPass->isChecked();
   ui->groupBoxNative->setEnabled(!state);
   ui->groupBoxPass->setEnabled(state);
+  if (state) {
+    // pass mode: disable all password generation controls
+    ui->spinBoxPasswordLength->setEnabled(false);
+    ui->checkBoxUsePwgen->setEnabled(false);
+    ui->checkBoxAvoidCapitals->setEnabled(false);
+    ui->checkBoxUseSymbols->setEnabled(false);
+    ui->checkBoxLessRandom->setEnabled(false);
+    ui->checkBoxAvoidNumbers->setEnabled(false);
+    ui->labelPasswordChars->setEnabled(false);
+    ui->passwordCharTemplateSelector->setEnabled(false);
+    ui->lineEditPasswordChars->setEnabled(false);
+  } else {
+    // native mode: restore pwgen/charset state from existing handlers
+    ui->spinBoxPasswordLength->setEnabled(true);
+    ui->checkBoxUsePwgen->setEnabled(!ui->pwgenPath->text().isEmpty());
+    on_checkBoxUsePwgen_clicked();
+  }
 }
 
 /**
@@ -950,6 +967,8 @@ void ConfigDialog::setPwgenPath(const QString &pwgen) {
  * options in the interface.
  */
 void ConfigDialog::on_checkBoxUsePwgen_clicked() {
+  if (ui->radioButtonPass->isChecked())
+    return;
   bool usePwgen = ui->checkBoxUsePwgen->isChecked();
   ui->checkBoxAvoidCapitals->setEnabled(usePwgen);
   ui->checkBoxAvoidNumbers->setEnabled(usePwgen);

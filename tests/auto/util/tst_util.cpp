@@ -43,6 +43,36 @@ private:
     ~PassStoreGuard() { QtPassSettings::setPassStore(original); }
   };
 
+  // Thin subclass that exposes protected members needed by env tests.
+  // NOTE: environment() calls updateEnv(), which adds PASSWORD_STORE_* entries
+  // to the internal env list and forwards it to exec via setEnvironment().
+  // Because Pass::setEnvVar removes all matching entries before appending,
+  // repeated calls to environment() are idempotent for PASSWORD_STORE_* vars.
+  // Tests that call callSetEnvVar() directly work on the same env list, so
+  // any subsequent environment() call will re-run updateEnv() and may
+  // overwrite those entries — use callSetEnvVar() and environment() in the
+  // same test only when the keys don't overlap with PASSWORD_STORE_*.
+  class TestPass : public ImitatePass {
+  public:
+    void callSetEnvVar(const QString &key, const QString &value) {
+      setEnvVar(key, value);
+    }
+    QStringList environment() {
+      updateEnv();
+      return exec.environment();
+    }
+  };
+
+  template <typename T, void (*Setter)(const T &)> struct SettingGuard {
+    T original;
+    SettingGuard(T orig, const T &newVal) : original(std::move(orig)) {
+      Setter(newVal);
+    }
+    ~SettingGuard() { Setter(original); }
+    SettingGuard(const SettingGuard &) = delete;
+    SettingGuard &operator=(const SettingGuard &) = delete;
+  };
+
 private Q_SLOTS:
   void cleanupTestCase();
   void normalizeFolderPath();
@@ -117,6 +147,13 @@ private Q_SLOTS:
   void findBinaryInPathWithConstQStringRef();
   void findBinaryInPathEmptyString();
   void findBinaryInPathStringLiteral();
+  void setEnvVarAdds();
+  void setEnvVarUpdates();
+  void setEnvVarRemoves();
+  void setEnvVarNoopOnMissingRemove();
+  void updateEnvSetsExpectedVars();
+  void updateEnvEmptyCustomCharsetFallsBackToAllChars();
+  void updateEnvWslenvContainsRequiredVars();
 };
 
 /**
@@ -530,6 +567,9 @@ void tst_util::createGpgIdFileEmptyKeys() {
 }
 
 void tst_util::generateRandomPassword() {
+  SettingGuard<bool, QtPassSettings::setUsePwgen> pwgenGuard{
+      QtPassSettings::isUsePwgen(), false};
+
   ImitatePass pass;
   QString charset = "abcdefghijklmnopqrstuvwxyz";
   QString result = pass.generatePassword(10, charset);
@@ -583,6 +623,9 @@ void tst_util::generateRandomPassword() {
 }
 
 void tst_util::boundedRandom() {
+  SettingGuard<bool, QtPassSettings::setUsePwgen> pwgenGuard{
+      QtPassSettings::isUsePwgen(), false};
+
   ImitatePass pass;
 
   QVector<quint32> counts(10, 0);
@@ -639,6 +682,9 @@ void tst_util::configIsValid() {
 
   PassStoreGuard guard(QtPassSettings::getPassStore());
 
+  SettingGuard<bool, QtPassSettings::setUsePass> usePassGuard{
+      QtPassSettings::isUsePass(), false};
+
   // No .gpg-id in this store => config must be invalid.
   QtPassSettings::setPassStore(tempDir.path());
   bool isValid = Util::configIsValid();
@@ -652,13 +698,9 @@ void tst_util::configIsValid() {
   gpgIdFile.write("test@example.com\n");
   gpgIdFile.close();
 
-  QString originalGpgExecutable = QtPassSettings::getGpgExecutable();
-  struct GpgRollback {
-    QString value;
-    ~GpgRollback() { QtPassSettings::setGpgExecutable(value); }
-  } gpgRollback{originalGpgExecutable};
+  SettingGuard<QString, QtPassSettings::setGpgExecutable> gpgGuard{
+      QtPassSettings::getGpgExecutable(), QString()};
 
-  QtPassSettings::setGpgExecutable(QString());
   isValid = Util::configIsValid();
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
                      "executable is missing");
@@ -1444,6 +1486,109 @@ void tst_util::findBinaryInPathStringLiteral() {
 #else
   QSKIP("Unix-only test");
 #endif
+}
+
+void tst_util::setEnvVarAdds() {
+  TestPass pass;
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("hello"));
+  QStringList env = pass.environment();
+  QVERIFY2(env.contains(QStringLiteral("TEST_KEY=hello")),
+           "setEnvVar should append key=value when absent");
+}
+
+void tst_util::setEnvVarUpdates() {
+  TestPass pass;
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("first"));
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("second"));
+  QStringList env = pass.environment();
+  QVERIFY2(env.contains(QStringLiteral("TEST_KEY=second")),
+           "setEnvVar should update existing entry");
+  QVERIFY2(!env.contains(QStringLiteral("TEST_KEY=first")),
+           "setEnvVar should remove old value");
+  QCOMPARE(env.filter(QStringLiteral("TEST_KEY=")).size(), 1);
+}
+
+void tst_util::setEnvVarRemoves() {
+  TestPass pass;
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("value"));
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QString());
+  QStringList env = pass.environment();
+  QVERIFY2(env.filter(QStringLiteral("TEST_KEY=")).isEmpty(),
+           "setEnvVar with empty value should remove the entry");
+}
+
+void tst_util::setEnvVarNoopOnMissingRemove() {
+  TestPass pass;
+  QStringList before = pass.environment();
+  pass.callSetEnvVar(QStringLiteral("NONEXISTENT_KEY="), QString());
+  QStringList after = pass.environment();
+  QCOMPARE(before, after);
+}
+
+void tst_util::updateEnvSetsExpectedVars() {
+  TestPass pass;
+  QTemporaryDir tmpDir;
+  QVERIFY(tmpDir.isValid());
+  PassStoreGuard storeGuard(QtPassSettings::getPassStore());
+  QtPassSettings::setPassStore(tmpDir.path());
+
+  QStringList env = pass.environment();
+  QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_DIR=")).size() == 1,
+           "updateEnv should set PASSWORD_STORE_DIR");
+  QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_DIR="))
+               .first()
+               .contains(tmpDir.path()),
+           "updateEnv should set PASSWORD_STORE_DIR to configured store path");
+  QVERIFY2(
+      env.filter(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH=")).size() ==
+          1,
+      "updateEnv should set PASSWORD_STORE_GENERATED_LENGTH");
+  QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_CHARACTER_SET=")).size() ==
+               1,
+           "updateEnv should set PASSWORD_STORE_CHARACTER_SET");
+}
+
+void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
+  TestPass pass;
+  PasswordConfiguration original = QtPassSettings::getPasswordConfiguration();
+  struct ConfigRollback {
+    PasswordConfiguration value;
+    ~ConfigRollback() { QtPassSettings::setPasswordConfiguration(value); }
+  } rollback{original};
+
+  PasswordConfiguration config = original;
+  config.selected = PasswordConfiguration::CUSTOM;
+  config.Characters[PasswordConfiguration::CUSTOM] = QString();
+  QtPassSettings::setPasswordConfiguration(config);
+
+  QStringList env = pass.environment();
+  QStringList charsetEntries =
+      env.filter(QStringLiteral("PASSWORD_STORE_CHARACTER_SET="));
+  QVERIFY2(
+      charsetEntries.size() == 1,
+      "PASSWORD_STORE_CHARACTER_SET should be set even when CUSTOM is empty");
+  QString val = charsetEntries.first().mid(
+      QStringLiteral("PASSWORD_STORE_CHARACTER_SET=").size());
+  QVERIFY2(!val.isEmpty(),
+           "charset should fall back to ALLCHARS, not be empty");
+}
+
+void tst_util::updateEnvWslenvContainsRequiredVars() {
+  TestPass pass;
+  const QStringList env = pass.environment();
+  // Use startsWith to avoid substring false-positives (e.g. MY_WSLENV=).
+  const QStringList wslenvEntries =
+      env.filter(QRegularExpression(QStringLiteral("^WSLENV=")));
+  QVERIFY2(!wslenvEntries.isEmpty(),
+           "At least one WSLENV entry expected after Pass construction");
+  // Verify Pass::Pass() merged all required keys with correct WSL flags.
+  const QString wslenv = wslenvEntries.first();
+  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_DIR/p")),
+           "WSLENV should include PASSWORD_STORE_DIR/p");
+  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w")),
+           "WSLENV should include PASSWORD_STORE_GENERATED_LENGTH/w");
+  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")),
+           "WSLENV should include PASSWORD_STORE_CHARACTER_SET/w");
 }
 
 QTEST_MAIN(tst_util)
