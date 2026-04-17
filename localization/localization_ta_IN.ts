@@ -1579,7 +1579,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation>[அலியான] </translation>
+        <translation>[பகுதி] </translation>
     </message>
 </context>
 </TS>
