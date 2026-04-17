@@ -43,6 +43,16 @@ private:
     ~PassStoreGuard() { QtPassSettings::setPassStore(original); }
   };
 
+  template <typename T, void (*Setter)(const T &)> struct SettingGuard {
+    T original;
+    SettingGuard(T orig, const T &newVal) : original(std::move(orig)) {
+      Setter(newVal);
+    }
+    ~SettingGuard() { Setter(original); }
+    SettingGuard(const SettingGuard &) = delete;
+    SettingGuard &operator=(const SettingGuard &) = delete;
+  };
+
 private Q_SLOTS:
   void cleanupTestCase();
   void normalizeFolderPath();
@@ -530,12 +540,8 @@ void tst_util::createGpgIdFileEmptyKeys() {
 }
 
 void tst_util::generateRandomPassword() {
-  bool origUsePwgen = QtPassSettings::isUsePwgen();
-  QtPassSettings::setUsePwgen(false);
-  struct PwgenRollback {
-    bool value;
-    ~PwgenRollback() { QtPassSettings::setUsePwgen(value); }
-  } pwgenRollback{origUsePwgen};
+  SettingGuard<bool, QtPassSettings::setUsePwgen> pwgenGuard{
+      QtPassSettings::isUsePwgen(), false};
 
   ImitatePass pass;
   QString charset = "abcdefghijklmnopqrstuvwxyz";
@@ -590,12 +596,8 @@ void tst_util::generateRandomPassword() {
 }
 
 void tst_util::boundedRandom() {
-  bool origUsePwgen = QtPassSettings::isUsePwgen();
-  QtPassSettings::setUsePwgen(false);
-  struct PwgenRollback {
-    bool value;
-    ~PwgenRollback() { QtPassSettings::setUsePwgen(value); }
-  } pwgenRollback{origUsePwgen};
+  SettingGuard<bool, QtPassSettings::setUsePwgen> pwgenGuard{
+      QtPassSettings::isUsePwgen(), false};
 
   ImitatePass pass;
 
@@ -653,12 +655,8 @@ void tst_util::configIsValid() {
 
   PassStoreGuard guard(QtPassSettings::getPassStore());
 
-  bool origUsePass = QtPassSettings::isUsePass();
-  QtPassSettings::setUsePass(false);
-  struct UsePassRollback {
-    bool value;
-    ~UsePassRollback() { QtPassSettings::setUsePass(value); }
-  } usePassRollback{origUsePass};
+  SettingGuard<bool, QtPassSettings::setUsePass> usePassGuard{
+      QtPassSettings::isUsePass(), false};
 
   // No .gpg-id in this store => config must be invalid.
   QtPassSettings::setPassStore(tempDir.path());
@@ -673,13 +671,9 @@ void tst_util::configIsValid() {
   gpgIdFile.write("test@example.com\n");
   gpgIdFile.close();
 
-  QString originalGpgExecutable = QtPassSettings::getGpgExecutable();
-  struct GpgRollback {
-    QString value;
-    ~GpgRollback() { QtPassSettings::setGpgExecutable(value); }
-  } gpgRollback{originalGpgExecutable};
+  SettingGuard<QString, QtPassSettings::setGpgExecutable> gpgGuard{
+      QtPassSettings::getGpgExecutable(), QString()};
 
-  QtPassSettings::setGpgExecutable(QString());
   isValid = Util::configIsValid();
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
                      "executable is missing");
