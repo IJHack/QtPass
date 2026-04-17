@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Configuratie</translation>
+        <translation>Instellingen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
