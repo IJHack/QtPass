@@ -999,7 +999,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="494"/>
         <source>OTP Code</source>
-        <translation>Koda OTP</translation>
+        <translation>OTP kôd</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -1054,7 +1054,7 @@ p, li { white-space: pre-wrap; }
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nova lozinska datoteka:
-(Bude postavljen u %1)</translation>
+(Biće postavljena u %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1134,7 +1134,7 @@ p, li { white-space: pre-wrap; }
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nova mapa:
-(Iako će biti postavljena u %1 )</translation>
+(Biće postavljena u %1 )</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -1143,7 +1143,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation>Koda OTP kopirana u međuspremnik</translation>
+        <translation>OTP kôd kopiran u međuspremnik</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
@@ -1158,7 +1158,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation>Promeni ime mapе</translation>
+        <translation>Preimenuj fasciklu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
@@ -1412,7 +1412,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
-        <translation>suvrino prepisati?</translation>
+        <translation>nasilno prepisati?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="295"/>
