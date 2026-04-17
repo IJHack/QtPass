@@ -98,6 +98,11 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
   store = std::move(passStore);
 }
 
+void StoreModel::setStore(const QString &passStore) {
+  store = passStore;
+  invalidateFilter();
+}
+
 /**
  * @brief StoreModel::data don't show the .gpg at the end of a file.
  * @param index
