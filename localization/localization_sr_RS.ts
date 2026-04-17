@@ -367,7 +367,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="123"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Kopirati u klipbu po potrebi</translation>
+        <translation>Kopirati u međuspremnik po potrebi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="204"/>
@@ -413,7 +413,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Neuspešno je kreirano loštinarsko skladiste na: %1</translation>
+        <translation>Nije uspelo kreiranje skladišta lozinki na: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
