@@ -591,7 +591,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Seri için .gpg-id&apos;i doğrulamayabilir.</translation>
+        <translation>Dizin için .gpg-id doğrulanamadı.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
@@ -911,7 +911,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation>OTP kodu panboard&apos;a kopyalandı</translation>
+        <translation>OTP kodu pano&apos;a kopyalandı</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
@@ -1044,7 +1044,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation>Şifre şifre şifreleri</translation>
+        <translation>Parolaları yeniden şifrele</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
