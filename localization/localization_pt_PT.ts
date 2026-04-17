@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>Exibir o conteúdo dos ficheiros tal como estão</translation>
+        <translation>Sem embrulho de linha</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
@@ -122,12 +122,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Chave de assinatura</translation>
+        <translation type="unfinished">Chave de Assinatura</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">Opcional: chave GPG para assinar arquivos .gpg-id para verificação de integridade. Deixe em branco a menos que você precise proteger a lista de usuários de manipulação</translation>
+        <translation type="unfinished">Opcional: Chave GPG para assinar os ficheiros .gpg-id para verificar a integridade. Deixe em branco a menos que precise proteger a lista de utilizadores contra alterações.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -338,12 +338,12 @@
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation>Este campo é obrigatório</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
         <source>No profile selected</source>
-        <translation>Nenhum perfil selecionado</translation>
+        <translation>Falha ao criar o armazenamento de palavras-passe em: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="615"/>
@@ -1069,7 +1069,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">Recriptografar</translation>
+        <translation type="unfinished">Re-criptar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
@@ -1121,18 +1121,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">O diretório não existe: %1</translation>
+        <translation type="unfinished">Diretório não existe: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Falha ao criar arquivo .gpg-id em: %1</translation>
+        <translation type="unfinished">Re-criptar as palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation>Renomear arquivo</translation>
+        <translation>Re-criptar todas as palavras-passe em %1? Isto irá re-criptar TODOS os ficheiros de palavra-passe neste diretório usando os destinatários actuais definidos no .gpg-id. Pode reescrever muitos ficheiros e não pode ser desfeito facilmente. Continuar?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>

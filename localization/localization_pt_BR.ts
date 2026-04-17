@@ -62,7 +62,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>Exibir o conteúdo dos ficheiros tal como estão</translation>
+        <translation>Sem embrulho de linha</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">Opcional: chave GPG para assinar arquivos .gpg-id para verificação de integridade. Deixe em branco a menos que você precise proteger a lista de usuários de manipulação</translation>
+        <translation type="unfinished">Opcional: Chave GPG para assinar arquivos .gpg-id para verificação da integridade. Deixe em branco a menos que você precise proteger a lista de usuários contra alterações.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -338,12 +338,12 @@
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation>Este campo é obrigatório</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
         <source>No profile selected</source>
-        <translation>Nenhum perfil selecionado</translation>
+        <translation>Falha ao criar repositório de senhas em: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="615"/>
@@ -1069,7 +1069,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">Recriptografar</translation>
+        <translation type="unfinished">Re-criptografar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
@@ -1121,18 +1121,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">O diretório não existe: %1</translation>
+        <translation type="unfinished">Diretório não existe: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Falha ao criar arquivo .gpg-id em: %1</translation>
+        <translation type="unfinished">Re-criptografar senhas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation>Renomear arquivo</translation>
+        <translation>Re-criptografar todas as senhas em %1? Isto re-criptografará TODOS os arquivos de senha neste diretório usando os destinatários atuais definidos no .gpg-id. Isso pode reescrever muitos arquivos e não pode ser desfeito facilmente. Continuar?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
