@@ -496,7 +496,10 @@ void Pass::finished(int id, int exitCode, const QString &out,
  * @brief Pass::updateEnv update the execution environment (used when
  * switching profiles)
  */
+// key must include the trailing '=' (e.g. "FOO="); env.filter() does substring
+// matching so the '=' anchors the lookup to avoid collisions with longer names.
 void Pass::setEnvVar(const QString &key, const QString &value) {
+  Q_ASSERT(key.endsWith('='));
   QStringList existing = env.filter(key);
   if (value.isEmpty()) {
     for (const QString &entry : existing)
@@ -521,8 +524,10 @@ void Pass::updateEnv() {
   int sel = passConfig.selected;
   if (sel < 0 || sel >= PasswordConfiguration::CHARSETS_COUNT)
     sel = PasswordConfiguration::ALLCHARS;
-  setEnvVar(QStringLiteral("PASSWORD_STORE_CHARACTER_SET="),
-            passConfig.Characters[sel]);
+  QString charset = passConfig.Characters[sel];
+  if (charset.isEmpty())
+    charset = passConfig.Characters[PasswordConfiguration::ALLCHARS];
+  setEnvVar(QStringLiteral("PASSWORD_STORE_CHARACTER_SET="), charset);
 
   exec.setEnvironment(env);
 }
