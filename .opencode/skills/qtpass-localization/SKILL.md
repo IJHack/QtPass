@@ -241,14 +241,11 @@ git commit -m "Resolve merge conflict - use theirs for translations"
 
 ### Weblate vs Local Editing
 
-QtPass uses Weblate for translations. For normal translation work, let Weblate handle it. However, direct .ts file edits are appropriate when:
+**Applies to:** `localization/**/*.ts`
 
-- Fixing specific issues flagged in PR review comments (grammar, typos, encoding errors)
-- Fixing double-encoded entities (e.g., `&amp;amp;` → `&amp;`)
-- Fixing regressions from previous commits
-- Running `qmake6` to update source references
+**Do not manually edit .ts files** - use Weblate for translations. Run `qmake6` after source changes.
 
-For new translations or large changes, use Weblate.
+**Exception:** Only maintainer-approved, narrowly-scoped emergency fixes (e.g., urgent encoding regressions or review-requested typo fixes) may be edited directly. Record justification in the PR description.
 
 ## Fixing Translation Issues in PRs
 
