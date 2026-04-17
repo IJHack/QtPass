@@ -376,52 +376,52 @@ email</translation>
         <translation>此字段是必需的</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="614"/>
+        <location filename="../src/configdialog.cpp" line="631"/>
         <source>No profile selected</source>
         <translation>未選擇任何個人資料</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="615"/>
+        <location filename="../src/configdialog.cpp" line="632"/>
         <source>No profile selected to delete</source>
         <translation>未选择要删除的配置文件</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="715"/>
+        <location filename="../src/configdialog.cpp" line="732"/>
         <source>GnuPG not found</source>
         <translation>無法找到GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
+        <location filename="../src/configdialog.cpp" line="746"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>請在您的系統上安裝 GnuPG。 &lt;br&gt;使用您喜歡的軟體包管理器安裝&lt;strong&gt;gpg&lt;/strong&gt;，&lt;br&gt;或&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;從 GnuPG.org 下載&lt;/a&gt;。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="783"/>
+        <location filename="../src/configdialog.cpp" line="800"/>
         <source>Create password-store?</source>
         <translation>新增密碼儲存庫？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="784"/>
+        <location filename="../src/configdialog.cpp" line="801"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>請問您想新增密碼儲存擋在 %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="789"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>Error</source>
         <translation>錯誤</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="790"/>
+        <location filename="../src/configdialog.cpp" line="807"/>
         <source>Failed to create password-store at: %1</source>
         <translation>在：%1 处创建密码存储失败</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="821"/>
+        <location filename="../src/configdialog.cpp" line="838"/>
         <source>Password store not initialised</source>
         <translation>密码存储未初始化</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="822"/>
+        <location filename="../src/configdialog.cpp" line="839"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>该文件夹%1似乎不是一个密码存储或尚未初始化。</translation>
     </message>
@@ -451,12 +451,12 @@ email</translation>
         <translation>qrencode 需要被安裝</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="718"/>
+        <location filename="../src/configdialog.cpp" line="735"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>請安裝GnuPG到您的系統&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt;從 Microsoft Store 取得。&lt;br&gt;如已安裝，請確認 您已開啟它，之後&lt;br&gt;在下一個對話框點擊&quot;自動偵測&quot;。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="723"/>
+        <location filename="../src/configdialog.cpp" line="740"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>請安裝GnuPG 到您的系統.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; 從 Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;下載&lt;/a&gt; 從 GnuPG.org</translation>
     </message>
@@ -1213,12 +1213,12 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="144"/>
+        <location filename="../src/pass.cpp" line="163"/>
         <source>No characters chosen</source>
         <translation>無字元被選取</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="145"/>
+        <location filename="../src/pass.cpp" line="164"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>在配置中未設置可供選擇的字元，因此無法產生密碼！</translation>
     </message>

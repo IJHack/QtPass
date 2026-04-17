@@ -376,52 +376,52 @@ email</translation>
         <translation>Hierdie veld is verpligtend</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="614"/>
+        <location filename="../src/configdialog.cpp" line="631"/>
         <source>No profile selected</source>
         <translation>Geen profiel geselekteer nie</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="615"/>
+        <location filename="../src/configdialog.cpp" line="632"/>
         <source>No profile selected to delete</source>
         <translation>Geen profiel geselekteer om te verwyder nie</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="715"/>
+        <location filename="../src/configdialog.cpp" line="732"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nie gevind nie</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
+        <location filename="../src/configdialog.cpp" line="746"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Asseblief installeer GnuPG op u stelsel. &lt;br&gt; Installeer &lt;strong&gt; gpg &lt;/strong&gt; met u gunsteling pakketbestuurder. Of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1- 2&quot;&gt; laai dit &lt;/a&gt; af van GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="783"/>
+        <location filename="../src/configdialog.cpp" line="800"/>
         <source>Create password-store?</source>
         <translation>Skep wagwoordberging?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="784"/>
+        <location filename="../src/configdialog.cpp" line="801"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Wil u &apos;n wagwoordberging skep by %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="789"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="790"/>
+        <location filename="../src/configdialog.cpp" line="807"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Kon nie wagwoordstoor skep by: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="821"/>
+        <location filename="../src/configdialog.cpp" line="838"/>
         <source>Password store not initialised</source>
         <translation>Wagwoordberging nie geïnisialiseer nie</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="822"/>
+        <location filename="../src/configdialog.cpp" line="839"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Dit lyk nie asof die gids %1 &apos;n wagwoordberging is nie, of dat dit nog nie geïnisialiseer is nie.</translation>
     </message>
@@ -451,12 +451,12 @@ email</translation>
         <translation>qrencode moet geïnstalleer word</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="718"/>
+        <location filename="../src/configdialog.cpp" line="735"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Installeer asseblief GnuPG op jou stelsel. &lt;br&gt; installeer &lt;strong&gt; Ubuntu &lt;/strong&gt; van die Microsoft-Winkel om dit te kry. &lt;br&gt; as jy dit reeds gedoen het, maak seker dat jy dit eers begin en &lt;br&gt; Klik &quot;Outobespeur&quot; in die volgende dialoog.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="723"/>
+        <location filename="../src/configdialog.cpp" line="740"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Installeer GnuPG op u stelsel. &lt;br&gt; Installeer &lt;strong&gt; Ubuntu &lt;/strong&gt; van die Microsoft Store &lt;br&gt; of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; laai dit af &lt;/a&gt; van GnuPG.org</translation>
     </message>
@@ -1245,12 +1245,12 @@ Gaan voort?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="144"/>
+        <location filename="../src/pass.cpp" line="163"/>
         <source>No characters chosen</source>
         <translation>Geen karakters gekies nie</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="145"/>
+        <location filename="../src/pass.cpp" line="164"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Kan nie wagwoord genereer nie, daar is geen karakters om van te kies wat in die konfigurasie gestel is nie!</translation>
     </message>

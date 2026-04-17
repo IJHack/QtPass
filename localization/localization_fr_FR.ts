@@ -307,52 +307,52 @@ email</translation>
         <translation>Ce champ est obligatoire</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="614"/>
+        <location filename="../src/configdialog.cpp" line="631"/>
         <source>No profile selected</source>
         <translation>Pas de profil sélectionné</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="615"/>
+        <location filename="../src/configdialog.cpp" line="632"/>
         <source>No profile selected to delete</source>
         <translation>Pas de profil sélectionné à supprimer</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="715"/>
+        <location filename="../src/configdialog.cpp" line="732"/>
         <source>GnuPG not found</source>
         <translation>GnuPG n&apos;as pas été trouvé</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
+        <location filename="../src/configdialog.cpp" line="746"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Merci d&apos;installer GnuPG sur votre système&lt;br&gt;Installez &lt;strong&gt;gpg&lt;/strong&gt; en utilisant votre gestionnaire de paquet préféré&lt;br&gt;ou &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;téléchargez&lt;/a&gt; le depuis GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="783"/>
+        <location filename="../src/configdialog.cpp" line="800"/>
         <source>Create password-store?</source>
         <translation>Créer le magasin de mots de passe ?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="784"/>
+        <location filename="../src/configdialog.cpp" line="801"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Voulez-vous créer un magasin de mots de passe dans %1 ?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="789"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>Error</source>
         <translation>Erreur</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="790"/>
+        <location filename="../src/configdialog.cpp" line="807"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Échec de la création du magasin de mots de passe à l&apos;emplacement&#xa0;: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="821"/>
+        <location filename="../src/configdialog.cpp" line="838"/>
         <source>Password store not initialised</source>
         <translation>Magasin de mots de passe pas encore initialisé</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="822"/>
+        <location filename="../src/configdialog.cpp" line="839"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Le dossier %1 ne semble pas être un magasin de mots de passe ou n&apos;as pas encore été initialisé.</translation>
     </message>
@@ -430,12 +430,12 @@ email</translation>
         <translation>qrencode doit être installé</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="718"/>
+        <location filename="../src/configdialog.cpp" line="735"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>S&apos;il vous plaît installer GnuPG sur votre système. &lt;br&gt;Installez &lt;strong&gt;Ubuntu&lt;/strong&gt; du Microsoft Store pour l&apos;obtenir. &lt;br&gt;Si vous l&apos;avez déjà fait, assurez-vous de l&apos;avoir commencé une fois et&lt;br&gt;cliquez sur &quot;Autodetect&quot; dans le dialogue suivant.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="723"/>
+        <location filename="../src/configdialog.cpp" line="740"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>S&apos;il vous plaît installer GnuPG sur votre système. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; du Microsoft Store&lt;br&gt;ou &apos;a href&apos;&quot;https://www.gnupg.org/download/#sec-1-2&quot; &apos;download&lt;/a&gt; il from GnuPG.org</translation>
     </message>
@@ -1205,12 +1205,12 @@ Continuer&#x202f;?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="144"/>
+        <location filename="../src/pass.cpp" line="163"/>
         <source>No characters chosen</source>
         <translation>Pas de caractères choisis</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="145"/>
+        <location filename="../src/pass.cpp" line="164"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Impossible de générer un mot de passe, il n&apos;y a pas de caractères utilisables définis dans la configuration !</translation>
     </message>

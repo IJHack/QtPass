@@ -341,62 +341,62 @@
         <translation>To pole jest wymagane</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="614"/>
+        <location filename="../src/configdialog.cpp" line="631"/>
         <source>No profile selected</source>
         <translation>Nie wybrano profilu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="615"/>
+        <location filename="../src/configdialog.cpp" line="632"/>
         <source>No profile selected to delete</source>
         <translation>Nie wybrano profilu do usunięcia</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="715"/>
+        <location filename="../src/configdialog.cpp" line="732"/>
         <source>GnuPG not found</source>
         <translation>Nie znaleziono GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="718"/>
+        <location filename="../src/configdialog.cpp" line="735"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;Ubuntu&lt;/strong&gt; z Microsoft Store.&lt;br&gt;Jeśli już to zrobiłeś, upewnij się, że uruchomiłeś system raz i&lt;br&gt;kliknij „Automatycznie wykryj” w następnym oknie dialogowym.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="723"/>
+        <location filename="../src/configdialog.cpp" line="740"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;Ubuntu&lt;/strong&gt; z Microsoft Store&lt;br&gt;lub &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;zainstaluj&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
+        <location filename="../src/configdialog.cpp" line="746"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;gpg&lt;/strong&gt; używając twojego ulubionego menedżera proramów&lt;br&gt;lub &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;zainstaluj&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="783"/>
+        <location filename="../src/configdialog.cpp" line="800"/>
         <source>Create password-store?</source>
         <translation>Stworzyć magazyn haseł?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="784"/>
+        <location filename="../src/configdialog.cpp" line="801"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Czy chciałbyś stworzyć magazyn haseł w %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="789"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="790"/>
+        <location filename="../src/configdialog.cpp" line="807"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Nie udało się utworzyć magazynu haseł w: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="821"/>
+        <location filename="../src/configdialog.cpp" line="838"/>
         <source>Password store not initialised</source>
         <translation>Magazyn haseł nie został zainicjowany</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="822"/>
+        <location filename="../src/configdialog.cpp" line="839"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Folder %1 nie posiada magazynu haseł lub jeszcze nie jest zainicjowany.</translation>
     </message>
@@ -1059,12 +1059,12 @@ Kontynuować?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="144"/>
+        <location filename="../src/pass.cpp" line="163"/>
         <source>No characters chosen</source>
         <translation>Brak wybranych znaków</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="145"/>
+        <location filename="../src/pass.cpp" line="164"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Nie można wygenerować hasła, nie zostały wybrane żadne zestawy znaki w konfiguracji!</translation>
     </message>
