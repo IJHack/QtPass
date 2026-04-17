@@ -511,7 +511,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Facultatif&#xa0;: clé GPG pour signer des fichiers .gpg-id pour vérification de l&apos;intégrité. Laisser vide à moins que vous n&apos;ayez besoin de protéger la liste d&apos;utilisateurs contre l&apos;amortissement.</translation>
+        <translation>Facultatif&#xa0;: clé GPG pour signer des fichiers .gpg-id pour vérification de l&apos;intégrité. Laisser vide à moins que vous n&apos;ayez besoin de protéger la liste d&apos;utilisateurs contre manipulation.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -1344,12 +1344,12 @@ Continuer&#x202f;?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation>GPG clé paire génération échouée</translation>
+        <translation>Échec de la génération de la paire de clés GPG échouée</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation>GPG clé paire générée avec succès</translation>
+        <translation>Paire de clés GPG générée avec succès</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
