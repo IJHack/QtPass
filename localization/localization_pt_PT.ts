@@ -67,7 +67,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>Sem envoltório de linha</translation>
+        <translation>Sem quebra de linha</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -378,7 +378,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Falhado para criar password-store em: %1</translation>
+        <translation>Falha ao criar a password-store em: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -580,12 +580,12 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation>Falha na recriptografia</translation>
+        <translation>Falha na reencriptação</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Falhado para substituir %1. Original foi restaurado.</translation>
+        <translation>Falha ao substituir %1. O original foi restaurado.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
@@ -601,12 +601,12 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Não podia inspecionar o status git. Re-encriptação foi abortada.</translation>
+        <translation>Não foi possível inspecionar o estado do git. A reencriptação foi abortada.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>A recriptografia foi abortado porque um backup git não poderia ser criado.</translation>
+        <translation>A reencriptação foi abortada porque não foi possível criar uma cópia de segurança git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -632,7 +632,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Falha ao recriptografar %1</translation>
+        <translation>Falha ao reencriptar %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
@@ -1071,7 +1071,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation>Código OTP copiado para área de transferência</translation>
+        <translation>Código OTP copiado para a área de transferência</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
@@ -1111,7 +1111,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation>Recriptografar</translation>
+        <translation>Reencriptar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
@@ -1123,18 +1123,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation>Falhado para criar pasta: %1</translation>
+        <translation>Falha ao criar a pasta: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Falhado para criar arquivo .gpg-id em: %1</translation>
+        <translation>Falha ao criar o ficheiro .gpg-id em: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation>Renomear arquivo</translation>
+        <translation>Renomear ficheiro</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1165,7 +1165,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Recriptografar todas as senhas em %1?
+        <translation>Reencriptar todas as senhas em %1?
 
 Isso irá criptografar todos os arquivos de senha nesta pasta usando os destinatários atuais definidos em .gpg-id.
 
