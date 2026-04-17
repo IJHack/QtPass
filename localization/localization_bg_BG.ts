@@ -116,7 +116,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="381"/>
         <source>Custom</source>
-        <translation>Персонализиран</translation>
+        <translation>Само избрани типове</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>По избор: GPG ключ за подписване на .gpg-id файлове за проверка на целостта. Оставете празно, освен ако не е необходимо да защитите потребителския списък от неправилно използване.</translation>
+        <translation>По избор: GPG ключ за подписване на .gpg-id файлове за проверка на целостта. Оставете празно, освен ако не е необходимо да защитите потребителския списък от подправяне.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -251,12 +251,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;Използване на пропуск</translation>
+        <translation>&amp;Използване на pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
         <source>Native</source>
-        <translation>Вграден</translation>
+        <translation>Системен</translation>
     </message>
     <message>
         <source>git</source>
