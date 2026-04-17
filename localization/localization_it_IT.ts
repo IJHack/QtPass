@@ -434,7 +434,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="822"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished">La cartella %1 non sembra essere un archivio password, oppure non è inizializzata correttamente.</translation>
+        <translation>La cartella %1 non sembra essere un archivio password, oppure non è inizializzata correttamente.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
@@ -1504,7 +1504,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Seleziona quali utenti dovrebbero essere in grado di decriptare le password memorizzate in questa cartella. Nota: i file esistenti non verranno modificati e mantiengono gli stessi permessi fino a quando non li editorai. I campi blu hanno una chiave segreta disponibile, seleziona uno di questi per essere in grado di decriptare. I campi neri hanno una chiave di crittografia disponibile e fidata, seleziona uno di questi per consentire ad altri utenti di decriptare. I campi rossi non sono validi, non potrai criptare con queste.</translation>
+        <translation>Seleziona quali utenti dovrebbero essere in grado di decriptare le password memorizzate in questa cartella.
+Nota: i file esistenti non verranno modificati e mantiengono gli stessi permessi fino a quando non li editorai.
+I campi blu hanno una chiave segreta disponibile, seleziona uno di questi per essere in grado di decriptare.
+I campi neri hanno una chiave di crittografia disponibile e fidata, seleziona uno di questi per consentire ad altri utenti di decriptare.
+I campi rossi non sono validi, non potrai criptare con queste.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
