@@ -622,9 +622,12 @@ void ConfigDialog::initializeNewProfiles(
     const QHash<QString, QHash<QString, QString>> &existingProfiles) {
   QHash<QString, QHash<QString, QString>> newProfiles = getProfiles();
 
-  for (auto it = newProfiles.begin(); it != newProfiles.end(); ++it) {
-    const QString &name = it.key();
-    const QString &path = it.value().value("path");
+  // Collect keys and sort for deterministic iteration
+  QStringList keys = newProfiles.keys();
+  keys.sort();
+
+  for (const QString &name : keys) {
+    const QString &path = newProfiles.value(name).value("path");
 
     // Skip if already existed before (check by name and path)
     if (existingProfiles.contains(name) &&
@@ -633,24 +636,29 @@ void ConfigDialog::initializeNewProfiles(
     }
 
     // This is a new profile - check if needs initialization
+    // needsInit returns false for non-existent directories
     if (!ProfileInit::needsInit(path)) {
       continue;
     }
+
+    // Temporarily switch the active store so pass/git init operate on
+    // the new profile's directory rather than the currently-saved one.
+    const QString prevStore = QtPassSettings::getPassStore();
+    QtPassSettings::setPassStore(path);
 
     // Show user selection dialog for GPG recipients
     // UsersDialog will run pass init when accepted
     UsersDialog usersDialog(path, this);
     usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
-    if (usersDialog.exec() != QDialog::Accepted) {
-      continue;
+    const int result = usersDialog.exec();
+
+    if (result == QDialog::Accepted && ui->checkBoxUseGit->isChecked()) {
+      QtPassSettings::getPass()->GitInit();
     }
 
-    // Initialize git if enabled (UsersDialog already handled pass init)
-    if (ui->checkBoxUseGit->isChecked()) {
-      QString prevStore = QtPassSettings::getPassStore();
-      QtPassSettings::setPassStore(path);
-      QtPassSettings::getPass()->GitInit();
-      QtPassSettings::setPassStore(prevStore);
+    QtPassSettings::setPassStore(prevStore);
+    if (result != QDialog::Accepted) {
+      continue;
     }
   }
 }

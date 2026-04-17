@@ -4,45 +4,25 @@
 #define SRC_PROFILEINIT_H_
 
 #include <QString>
-#include <QStringList>
 
 /**
  * @file profileinit.h
  * @brief Profile initialization utilities.
  *
- * Handles initialization of new password store profiles:
- * - Creates .gpg-id file (pass initialization)
- * - Initializes git repository if enabled
+ * Handles checking if new password store profiles need initialization.
  */
 
 /**
- * @brief Initialize a new profile's password store.
- *
- * Checks if the path is new, and if so, optionally initializes
- * pass (.gpg-id) and git repository.
+ * @brief Utility class for profile initialization operations.
  */
 class ProfileInit {
 public:
   /**
-   * @brief Check if a profile path is new (doesn't have .gpg-id yet).
+   * @brief Check if a profile path needs initialization.
    * @param path The profile path to check.
-   * @return true if the path needs initialization.
+   * @return true if the path exists but has no .gpg-id file.
    */
   static auto needsInit(const QString &path) -> bool;
-
-  /**
-   * @brief Initialize a new profile's password store.
-   *
-   * Creates .gpg-id file with the given recipients, and optionally
-   * initializes git repository.
-   *
-   * @param path The profile path to initialize.
-   * @param recipients List of GPG key IDs to encrypt for.
-   * @param useGit Whether to also initialize git.
-   * @return true if initialization was successful.
-   */
-  static auto init(const QString &path, const QStringList &recipients,
-                   bool useGit) -> bool;
 
 private:
   ProfileInit() = default;
