@@ -656,10 +656,8 @@ void ConfigDialog::initializeNewProfiles(
       QtPassSettings::getPass()->GitInit();
     }
 
+    // Restore previous store setting
     QtPassSettings::setPassStore(prevStore);
-    if (result != QDialog::Accepted) {
-      continue;
-    }
   }
 }
 
