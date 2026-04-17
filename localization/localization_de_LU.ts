@@ -463,7 +463,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Lokales Git/GPG</translation>
+        <translation>&amp;Lokales Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
