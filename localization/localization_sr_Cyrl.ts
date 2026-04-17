@@ -840,7 +840,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="351"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Генерише ОТП и копира у одељак за пресецање</translation>
+        <translation>Генерише ОТП и копира у одељак за međuspremnik</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
@@ -1384,12 +1384,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation>Генерација парола ГПГ неуспела</translation>
+        <translation>Генерисање ГПГ пара кључева није успело</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation>Успешно генерисана пара ГПГ</translation>
+        <translation>ГПГ пар кључева је успешно генерисан</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
