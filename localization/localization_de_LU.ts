@@ -700,7 +700,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Wiederholpass</translation>
+        <translation>Pass wiederholen</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
