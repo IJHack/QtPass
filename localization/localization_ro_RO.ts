@@ -1221,7 +1221,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">Re-criptează toate parolele din %1? Acest lucru va re-cripta TOATE fișierele cu parole din acest folder folosind destinatarii actuale definiti în .gpg-id. Poate să scrie mai multe fișiere și nu poate fi anulat ușor. Continua?</translation>
+        <translation>Re-criptează toate parolele din %1?
+
+Acest lucru va re-cripta TOATE fișierele cu parole din acest folder folosind destinatarii actuali definiți în .gpg-id.
+
+Acest proces poate rescrie multe fișiere și nu poate fi anulat ușor.
+
+Continuați?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
