@@ -530,6 +530,13 @@ void tst_util::createGpgIdFileEmptyKeys() {
 }
 
 void tst_util::generateRandomPassword() {
+  bool origUsePwgen = QtPassSettings::isUsePwgen();
+  QtPassSettings::setUsePwgen(false);
+  struct PwgenRollback {
+    bool value;
+    ~PwgenRollback() { QtPassSettings::setUsePwgen(value); }
+  } pwgenRollback{origUsePwgen};
+
   ImitatePass pass;
   QString charset = "abcdefghijklmnopqrstuvwxyz";
   QString result = pass.generatePassword(10, charset);
@@ -583,6 +590,13 @@ void tst_util::generateRandomPassword() {
 }
 
 void tst_util::boundedRandom() {
+  bool origUsePwgen = QtPassSettings::isUsePwgen();
+  QtPassSettings::setUsePwgen(false);
+  struct PwgenRollback {
+    bool value;
+    ~PwgenRollback() { QtPassSettings::setUsePwgen(value); }
+  } pwgenRollback{origUsePwgen};
+
   ImitatePass pass;
 
   QVector<quint32> counts(10, 0);
@@ -638,6 +652,13 @@ void tst_util::configIsValid() {
   QVERIFY2(tempDir.isValid(), "Temporary directory should be created");
 
   PassStoreGuard guard(QtPassSettings::getPassStore());
+
+  bool origUsePass = QtPassSettings::isUsePass();
+  QtPassSettings::setUsePass(false);
+  struct UsePassRollback {
+    bool value;
+    ~UsePassRollback() { QtPassSettings::setUsePass(value); }
+  } usePassRollback{origUsePass};
 
   // No .gpg-id in this store => config must be invalid.
   QtPassSettings::setPassStore(tempDir.path());
