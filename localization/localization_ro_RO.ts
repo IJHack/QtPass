@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Folosește o fontură mono-spaciată</translation>
+        <translation>Folosește un font monospațiat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
