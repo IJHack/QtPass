@@ -71,7 +71,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>Fără înfăşurare a liniilor</translation>
+        <translation>Fără înfășurare a liniilor</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -531,7 +531,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Verifică semnatura fișierului .gpgid!</translation>
+        <translation>Verifică semnătura fișierului .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
@@ -657,7 +657,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Re-criptare finalizată: %1 reuşite, %2 eşuate</translation>
+        <translation>Re-criptare finalizată: %1 reușite, %2 eșuate</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
@@ -1553,7 +1553,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation>[PARTIAL] </translation>
+        <translation>[PARȚIAL] </translation>
     </message>
 </context>
 </TS>
