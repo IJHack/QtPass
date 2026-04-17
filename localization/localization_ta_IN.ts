@@ -642,7 +642,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation>GPG உருப்பாய் சரியானவையால் போர்டம் மாற்றம் தேவையாக விளக்கப்படவில்லை</translation>
+        <translation>GPG ID சரிபார்ப்பு தோல்வியடைந்தது</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
