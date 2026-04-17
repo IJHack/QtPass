@@ -75,6 +75,7 @@ private slots:
   void on_checkBoxAutoclearPanel_clicked();
   void on_addButton_clicked();
   void on_deleteButton_clicked();
+  void on_profileTable_cellDoubleClicked(int row, int column);
   void on_checkBoxUseTrayIcon_clicked();
   void on_checkBoxUseGit_clicked();
   void on_checkBoxUsePwgen_clicked();
@@ -105,6 +106,8 @@ private:
   auto checkSecretKeys() -> bool;
   auto checkPasswordStore() -> bool;
   void handleGpgIdFile();
+  void initializeNewProfiles(
+      const QHash<QString, QHash<QString, QString>> &existingProfiles);
 
   MainWindow *mainWindow;
 };
