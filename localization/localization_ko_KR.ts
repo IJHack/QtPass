@@ -373,7 +373,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished">이 필드는 필수 항목입니다.</translation>
+        <translation>이 필드는 필수 항목입니다</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -571,7 +571,8 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">비밀 서명 키가 사용할 수 없습니다. 사용자 목록을 변경할 수 없습니다!</translation>
+        <translation>비밀 서명 키가 사용할 수 없습니다.
+사용자 목록을 변경할 수 없습니다!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -1221,10 +1222,12 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">%1에 있는 모든 비밀번호를 재암호화하시겠습니까?
+        <translation>%1에 있는 모든 비밀번호를 재암호화하시겠습니까?
+
 이 작업은 현재 .gpg-id에서 정의된 수신자들을 사용하여 이 폴더 내의 모든 비밀번호 파일을 재암호화합니다.
 
 많은 파일이 덮어쓰일 수 있으며, 쉽게 되돌릴 수 없습니다.
+
 계속하시겠습니까?</translation>
     </message>
     <message>
@@ -1536,17 +1539,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[무효]</translation>
+        <translation>[무효] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[만료됨]</translation>
+        <translation>[만료됨] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[부분적]</translation>
+        <translation>[부분적] </translation>
     </message>
 </context>
 </TS>
