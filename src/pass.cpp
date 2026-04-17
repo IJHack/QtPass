@@ -53,12 +53,13 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
     env.append(QStringLiteral("WSLENV=") + wslenvVars.join(':'));
   } else {
     QString current = existing.first();
-    QString val = current.mid(7); // skip "WSLENV="
+    QStringList parts =
+        current.mid(7).split(':', Qt::SkipEmptyParts); // skip "WSLENV="
     for (const QString &v : wslenvVars) {
-      if (!val.contains(v))
-        val += ':' + v;
+      if (!parts.contains(v))
+        parts.append(v);
     }
-    env.replaceInStrings(current, QStringLiteral("WSLENV=") + val);
+    env.replaceInStrings(current, QStringLiteral("WSLENV=") + parts.join(':'));
   }
 }
 
