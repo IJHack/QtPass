@@ -1269,7 +1269,7 @@ Continue?</source>
 
 Questa opzione crittograferà nuovamente TUTTI i file delle password in questa cartella utilizzando i contenitori correnti definiti in .gpg-id.
 
-Questa operazione può sovrascrivere diverse cartelle e può essere facilmente interrotta.
+Questa operazione può riscrivere molti file e non può essere annullata facilmente.
 
 Continuare?</translation>
     </message>
