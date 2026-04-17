@@ -71,7 +71,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>Sense encaixar línia</translation>
+        <translation>Sense ajust de línia</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -616,7 +616,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation>Ha fallat la commit de la còpia de seguretat</translation>
+        <translation>Ha fallat el commit de la còpia de seguretat</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
@@ -657,7 +657,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Re-criptació completada: %1 va aconseguir, %2 va fallar</translation>
+        <translation>Re-criptació completada: %1 correctes, %2 han fallat</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
@@ -700,7 +700,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Repetir la pass</translation>
+        <translation>Repetiu la contrasenya</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -1548,7 +1548,7 @@ Les entrades vermelles no són vàlides, no podreu xifrar.</translation>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation>[CADUT] </translation>
+        <translation>[CADUCAT] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
