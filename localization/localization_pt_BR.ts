@@ -1123,7 +1123,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation>Falhado para criar pasta: %</translation>
+        <translation>Falhado para criar pasta: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
