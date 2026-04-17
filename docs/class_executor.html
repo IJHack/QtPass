@@ -122,6 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:affda40d546db75d35f38db1ec1414bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app.">Executor::execute</a> executes an app from a workDir, takes input and presents it as stdin.  <br /></td></tr>
 <tr class="memitem:abbe0bc7b3fd09d84f2f04ddcc0bc095f" id="r_abbe0bc7b3fd09d84f2f04ddcc0bc095f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abbe0bc7b3fd09d84f2f04ddcc0bc095f">setEnvironment</a> (const QStringList &amp;env)</td></tr>
 <tr class="memdesc:abbe0bc7b3fd09d84f2f04ddcc0bc095f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes.">Executor::setEnvironment</a> set environment variables for executor processes.  <br /></td></tr>
+<tr class="memitem:a6f315e4938ca57158737cd4006458e74" id="r_a6f315e4938ca57158737cd4006458e74"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6f315e4938ca57158737cd4006458e74">environment</a> () const -&gt; QStringList</td></tr>
+<tr class="memdesc:a6f315e4938ca57158737cd4006458e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the environment passed to child processes.  <br /></td></tr>
 <tr class="memitem:aee160ee2ec954bdb58a3a38555536090" id="r_aee160ee2ec954bdb58a3a38555536090"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aee160ee2ec954bdb58a3a38555536090">cancelNext</a> () -&gt; int</td></tr>
 <tr class="memdesc:aee160ee2ec954bdb58a3a38555536090"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running.">Executor::cancelNext</a> cancels execution of first process in queue if it's not already running.  <br /></td></tr>
 </table><table class="memberdecls">
@@ -237,7 +239,29 @@ Static Public Member Functions</h2></td></tr>
 <p><a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running.">Executor::cancelNext</a> cancels execution of first process in queue if it's not already running. </p>
 <dl class="section return"><dt>Returns</dt><dd>id of the cancelled process or -1 on error </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00330">330</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00334">334</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a6f315e4938ca57158737cd4006458e74" name="a6f315e4938ca57158737cd4006458e74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f315e4938ca57158737cd4006458e74">&#9670;&#160;</a></span>environment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Executor::environment </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const -&gt; QStringList</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the environment passed to child processes. </p>
+<dl class="section return"><dt>Returns</dt><dd>Environment as a list of "KEY=value" strings. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00324">324</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 
 </div>
 </div>

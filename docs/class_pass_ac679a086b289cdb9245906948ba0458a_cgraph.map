@@ -1,10 +1,15 @@
 <map id="Pass::updateEnv" name="Pass::updateEnv">
-<area shape="rect" id="Node000001" title="Update environment for subprocesses." alt="" coords="5,31,133,56"/>
+<area shape="rect" id="Node000001" title="Update environment for subprocesses." alt="" coords="5,84,133,109"/>
 <area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee" title="Get GPG signing key for pass." alt="" coords="181,5,431,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,34,174,29,174,35,134,39"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,82,131,60,180,39,209,31,210,36,182,45,134,65,93,86"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="201,55,411,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,47,187,53,187,58,133,52"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="479,31,681,56"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="431,27,465,30,465,35,430,32"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="411,55,465,51,465,56,412,61"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="133,86,190,79,190,84,134,91"/>
+<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a3503e8d11b7e24b35a34801f755ba80a" title="Get complete password generation configuration." alt="" coords="201,105,411,145"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="134,102,188,108,187,113,133,107"/>
+<area shape="rect" id="Node000006" href="$class_pass.html#a4ecc5514ea969ceb06f439698bf6aa9a" title="Set or remove an environment variable." alt="" coords="244,169,368,195"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="91,107,132,131,182,154,231,168,229,173,180,159,130,136,88,112"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="479,55,681,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="378,28,495,49,494,55,377,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="411,65,465,65,465,70,411,70"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="402,102,505,80,506,85,403,107"/>
 </map>

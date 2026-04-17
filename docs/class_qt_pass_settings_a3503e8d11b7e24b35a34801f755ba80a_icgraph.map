@@ -1,10 +1,12 @@
 <map id="QtPassSettings::getPasswordConfiguration" name="QtPassSettings::getPasswordConfiguration">
-<area shape="rect" id="Node000001" title="Get complete password generation configuration." alt="" coords="249,71,459,111"/>
+<area shape="rect" id="Node000001" title="Get complete password generation configuration." alt="" coords="249,101,459,141"/>
 <area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,29,201,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="238,71,168,57,169,52,239,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="288,98,201,69,159,57,161,52,202,63,289,93"/>
 <area shape="rect" id="Node000003" href="$class_pass.html#a35b3cba623a22f41173670ec34ebb67c" title="Generate random password." alt="" coords="14,79,193,104"/>
-<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="236,94,193,94,193,89,236,89"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="236,110,193,104,193,99,236,104"/>
 <area shape="rect" id="Node000004" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="6,129,201,169"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="253,117,192,131,191,126,252,112"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="236,136,201,140,200,135,236,131"/>
+<area shape="rect" id="Node000005" href="$class_pass.html#ac679a086b289cdb9245906948ba0458a" title="Update environment for subprocesses." alt="" coords="39,193,167,219"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="294,149,202,183,159,196,157,191,200,178,293,144"/>
 <area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="148,20,145,15,137,12,103,8,76,10,62,15,59,20,67,27,63,31,54,21,58,11,75,5,103,3,139,7,149,11,153,17"/>
 </map>
