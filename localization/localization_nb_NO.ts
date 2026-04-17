@@ -644,7 +644,7 @@ Du vil ikke kunne dekryptere noen nylig tillagte passord!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Gjenta pass</translation>
+        <translation>Gjenta passord</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
