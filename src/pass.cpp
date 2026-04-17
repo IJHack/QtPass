@@ -48,18 +48,20 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
       QStringLiteral("PASSWORD_STORE_DIR/p"),
       QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w"),
       QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")};
-  QStringList existing = env.filter(QStringLiteral("WSLENV="));
-  if (existing.isEmpty()) {
-    env.append(QStringLiteral("WSLENV=") + wslenvVars.join(':'));
+  const QString wslenvPrefix = QStringLiteral("WSLENV=");
+  auto it = std::find_if(env.begin(), env.end(), [&](const QString &s) {
+    return s.startsWith(wslenvPrefix);
+  });
+  if (it == env.end()) {
+    env.append(wslenvPrefix + wslenvVars.join(':'));
   } else {
-    QString current = existing.first();
     QStringList parts =
-        current.mid(7).split(':', Qt::SkipEmptyParts); // skip "WSLENV="
+        it->mid(wslenvPrefix.size()).split(':', Qt::SkipEmptyParts);
     for (const QString &v : wslenvVars) {
       if (!parts.contains(v))
         parts.append(v);
     }
-    env.replaceInStrings(current, QStringLiteral("WSLENV=") + parts.join(':'));
+    *it = wslenvPrefix + parts.join(':');
   }
 }
 

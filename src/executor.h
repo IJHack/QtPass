@@ -155,6 +155,10 @@ public:
                               QString *process_err = nullptr) -> int;
 
   void setEnvironment(const QStringList &env);
+  /**
+   * @brief Return the environment passed to child processes.
+   * @return Environment as a list of "KEY=value" strings.
+   */
   auto environment() const -> QStringList;
 
   auto cancelNext() -> int;
