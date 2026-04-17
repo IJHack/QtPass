@@ -238,7 +238,6 @@ Instead, identify and resolve conflicted files explicitly:
 # Use theirs strategy for conflicted .ts files (they're XML, prefer incoming)
 # 1) List conflicted translation files and review them:
 #    This returns full paths like: localization/localization_de.ts
-#    This returns full paths like: localization/localization_de.ts
 git diff --name-only --diff-filter=U -- localization/*.ts
 
 # 2) Resolve each intended file explicitly (repeat as needed):
