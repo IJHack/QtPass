@@ -647,7 +647,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>No s&apos;ha pogut verificar l&apos;identificador de fitxer .gpg per al directori.</translation>
+        <translation>No s&apos;ha pogut verificar l&apos;identificador de fitxer .gpg-id per al directori.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
