@@ -233,7 +233,7 @@ $(function() {
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>}</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span></div>
 <div class="foldopen" id="foldopen00223" data-start="{" data-end="}">
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="class_executor.html#a2673768d875e9207a6a178dd1a489828">  223</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a>(QString app, <span class="keyword">const</span> QStringList &amp;args,</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">  223</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a>(<span class="keyword">const</span> QString &amp;app, <span class="keyword">const</span> QStringList &amp;args,</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>                               <span class="keyword">const</span> QString &amp;input, QString *process_out,</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>                               QString *process_err) -&gt; <span class="keywordtype">int</span> {</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  QProcess internal;</div>
@@ -272,92 +272,91 @@ $(function() {
 </div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span></div>
 <div class="foldopen" id="foldopen00268" data-start="{" data-end="}">
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="class_executor.html#ae7d1bf72e67a3e7217747e8944bf8786">  268</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a>(QString app, <span class="keyword">const</span> QStringList &amp;args,</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno"><a class="line" href="class_executor.html#a9c01e6e31745874177b21982ce2cd4d1">  268</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a>(<span class="keyword">const</span> QString &amp;app, <span class="keyword">const</span> QStringList &amp;args,</div>
 <div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                               QString *process_out, QString *process_err)</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_executor.html#a2673768d875e9207a6a178dd1a489828">executeBlocking</a>(std::move(app), args, QString(), process_out,</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>                         process_err);</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>}</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">executeBlocking</a>(app, args, QString(), process_out, process_err);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>}</div>
 </div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span></div>
-<div class="foldopen" id="foldopen00284" data-start="{" data-end="}">
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno"><a class="line" href="class_executor.html#a3eeaed5ce0f28a02fba08d9054213e0f">  284</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a>(<span class="keyword">const</span> QStringList &amp;env, QString app,</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                               <span class="keyword">const</span> QStringList &amp;args, QString *process_out,</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>                               QString *process_err) -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  QProcess process;</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  QProcessEnvironment penv;</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;var : env) {</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="keywordtype">int</span> idx = var.indexOf(<span class="charliteral">&#39;=&#39;</span>);</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordflow">if</span> (idx &gt; 0) {</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      penv.insert(var.left(idx), var.mid(idx + 1));</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    }</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  }</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  process.setProcessEnvironment(penv);</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  startProcessBlocking(process, app, args);</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  <span class="keywordflow">if</span> (!process.waitForStarted(-1)) {</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#ifdef QT_DEBUG</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; <span class="stringliteral">&quot;Process failed to start:&quot;</span> &lt;&lt; app;</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  }</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>  process.waitForFinished(-1);</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  <span class="keywordflow">if</span> (process.exitStatus() != QProcess::NormalExit) {</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  }</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="keywordflow">if</span> (process_out) {</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    *process_out = decodeAssumingUtf8(process.readAllStandardOutput());</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  }</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  <span class="keywordflow">if</span> (process_err) {</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    *process_err = decodeAssumingUtf8(process.readAllStandardError());</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  }</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  <span class="keywordflow">return</span> process.exitCode();</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>}</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span></div>
+<div class="foldopen" id="foldopen00283" data-start="{" data-end="}">
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno"><a class="line" href="class_executor.html#a357bff28ec9487a4d36187b5e85ee8a3">  283</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a>(<span class="keyword">const</span> QStringList &amp;env, <span class="keyword">const</span> QString &amp;app,</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>                               <span class="keyword">const</span> QStringList &amp;args, QString *process_out,</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>                               QString *process_err) -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  QProcess process;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  QProcessEnvironment penv;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;var : env) {</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    <span class="keywordtype">int</span> idx = var.indexOf(<span class="charliteral">&#39;=&#39;</span>);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="keywordflow">if</span> (idx &gt; 0) {</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>      penv.insert(var.left(idx), var.mid(idx + 1));</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    }</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  process.setProcessEnvironment(penv);</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  startProcessBlocking(process, app, args);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="keywordflow">if</span> (!process.waitForStarted(-1)) {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#ifdef QT_DEBUG</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; <span class="stringliteral">&quot;Process failed to start:&quot;</span> &lt;&lt; app;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  }</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  process.waitForFinished(-1);</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>  <span class="keywordflow">if</span> (process.exitStatus() != QProcess::NormalExit) {</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  }</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  <span class="keywordflow">if</span> (process_out) {</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    *process_out = decodeAssumingUtf8(process.readAllStandardOutput());</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  }</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  <span class="keywordflow">if</span> (process_err) {</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    *process_err = decodeAssumingUtf8(process.readAllStandardError());</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  }</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  <span class="keywordflow">return</span> process.exitCode();</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>}</div>
 </div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span></div>
-<div class="foldopen" id="foldopen00321" data-start="{" data-end="}">
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f">  321</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f">Executor::setEnvironment</a>(<span class="keyword">const</span> QStringList &amp;env) {</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  m_process.setEnvironment(env);</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>}</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span></div>
+<div class="foldopen" id="foldopen00320" data-start="{" data-end="}">
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f">  320</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f">Executor::setEnvironment</a>(<span class="keyword">const</span> QStringList &amp;env) {</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>  m_process.setEnvironment(env);</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>}</div>
 </div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span></div>
-<div class="foldopen" id="foldopen00331" data-start="{" data-end="}">
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="class_executor.html#aee160ee2ec954bdb58a3a38555536090">  331</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_executor.html#aee160ee2ec954bdb58a3a38555536090">Executor::cancelNext</a>() -&gt; <span class="keywordtype">int</span> {</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  <span class="keywordflow">if</span> (running || m_execQueue.isEmpty()) {</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    <span class="keywordflow">return</span> -1; <span class="comment">// Return -1 to indicate no process was cancelled</span></div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>               <span class="comment">// (queue empty or currently executing).</span></div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  }</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  <span class="keywordflow">return</span> m_execQueue.dequeue().id;</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>}</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span></div>
+<div class="foldopen" id="foldopen00330" data-start="{" data-end="}">
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno"><a class="line" href="class_executor.html#aee160ee2ec954bdb58a3a38555536090">  330</a></span><span class="keyword">auto</span> <a class="code hl_function" href="class_executor.html#aee160ee2ec954bdb58a3a38555536090">Executor::cancelNext</a>() -&gt; <span class="keywordtype">int</span> {</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keywordflow">if</span> (running || m_execQueue.isEmpty()) {</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    <span class="keywordflow">return</span> -1; <span class="comment">// Return -1 to indicate no process was cancelled</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>               <span class="comment">// (queue empty or currently executing).</span></div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  }</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="keywordflow">return</span> m_execQueue.dequeue().id;</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>}</div>
 </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span></div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span><span class="keywordtype">void</span> Executor::finished(<span class="keywordtype">int</span> exitCode, QProcess::ExitStatus exitStatus) {</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  execQueueItem i = m_execQueue.dequeue();</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  running = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  <span class="keywordflow">if</span> (exitStatus == QProcess::NormalExit) {</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    QString output;</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    QString err;</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    <span class="keywordflow">if</span> (i.readStdout) {</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>      output = decodeAssumingUtf8(m_process.readAllStandardOutput());</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    }</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="keywordflow">if</span> (i.readStderr || exitCode != 0) {</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>      err = decodeAssumingUtf8(m_process.readAllStandardError());</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>      <span class="keywordflow">if</span> (exitCode != 0) {</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="preprocessor">#ifdef QT_DEBUG</span></div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        <a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; exitCode &lt;&lt; err;</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>      }</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    }</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    emit finished(i.id, exitCode, output, err);</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  }</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <span class="comment">//  else: emit crashed with ID, which may give a chance to recover ?</span></div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  executeNext();</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>}</div>
-<div class="ttc" id="aclass_executor_html_a2673768d875e9207a6a178dd1a489828"><div class="ttname"><a href="class_executor.html#a2673768d875e9207a6a178dd1a489828">Executor::executeBlocking</a></div><div class="ttdeci">static auto executeBlocking(QString app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</div><div class="ttdoc">Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.</div><div class="ttdef"><b>Definition</b> <a href="#l00223">executor.cpp:223</a></div></div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span></div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span><span class="keywordtype">void</span> Executor::finished(<span class="keywordtype">int</span> exitCode, QProcess::ExitStatus exitStatus) {</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  execQueueItem i = m_execQueue.dequeue();</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  running = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  <span class="keywordflow">if</span> (exitStatus == QProcess::NormalExit) {</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    QString output;</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    QString err;</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    <span class="keywordflow">if</span> (i.readStdout) {</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>      output = decodeAssumingUtf8(m_process.readAllStandardOutput());</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    }</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    <span class="keywordflow">if</span> (i.readStderr || exitCode != 0) {</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>      err = decodeAssumingUtf8(m_process.readAllStandardError());</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>      <span class="keywordflow">if</span> (exitCode != 0) {</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span><span class="preprocessor">#ifdef QT_DEBUG</span></div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; exitCode &lt;&lt; err;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>      }</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    }</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    emit finished(i.id, exitCode, output, err);</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  }</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  <span class="comment">//  else: emit crashed with ID, which may give a chance to recover ?</span></div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  executeNext();</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>}</div>
+<div class="ttc" id="aclass_executor_html_a4e210af42a76029683ded3210cf7bce2"><div class="ttname"><a href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a></div><div class="ttdeci">static auto executeBlocking(const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</div><div class="ttdoc">Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.</div><div class="ttdef"><b>Definition</b> <a href="#l00223">executor.cpp:223</a></div></div>
 <div class="ttc" id="aclass_executor_html_a7c4305c0af542f0174492badfdbfbc74"><div class="ttname"><a href="class_executor.html#a7c4305c0af542f0174492badfdbfbc74">Executor::execute</a></div><div class="ttdeci">void execute(int id, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</div><div class="ttdoc">Executor::execute execute an app.</div><div class="ttdef"><b>Definition</b> <a href="#l00111">executor.cpp:111</a></div></div>
 <div class="ttc" id="aclass_executor_html_aa15bf32ce5a10a04dce8fe549247ac7d"><div class="ttname"><a href="class_executor.html#aa15bf32ce5a10a04dce8fe549247ac7d">Executor::Executor</a></div><div class="ttdeci">Executor(QObject *parent=nullptr)</div><div class="ttdoc">Executor::Executor executes external applications.</div><div class="ttdef"><b>Definition</b> <a href="#l00022">executor.cpp:22</a></div></div>
-<div class="ttc" id="aclass_executor_html_abbe0bc7b3fd09d84f2f04ddcc0bc095f"><div class="ttname"><a href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f">Executor::setEnvironment</a></div><div class="ttdeci">void setEnvironment(const QStringList &amp;env)</div><div class="ttdoc">Executor::setEnvironment set environment variables for executor processes.</div><div class="ttdef"><b>Definition</b> <a href="#l00321">executor.cpp:321</a></div></div>
+<div class="ttc" id="aclass_executor_html_abbe0bc7b3fd09d84f2f04ddcc0bc095f"><div class="ttname"><a href="class_executor.html#abbe0bc7b3fd09d84f2f04ddcc0bc095f">Executor::setEnvironment</a></div><div class="ttdeci">void setEnvironment(const QStringList &amp;env)</div><div class="ttdoc">Executor::setEnvironment set environment variables for executor processes.</div><div class="ttdef"><b>Definition</b> <a href="#l00320">executor.cpp:320</a></div></div>
 <div class="ttc" id="aclass_executor_html_acfcfc18b0b973791530302eb8179e038"><div class="ttname"><a href="class_executor.html#acfcfc18b0b973791530302eb8179e038">Executor::starting</a></div><div class="ttdeci">void starting()</div><div class="ttdoc">starting signal that is emited when process starts</div></div>
-<div class="ttc" id="aclass_executor_html_aee160ee2ec954bdb58a3a38555536090"><div class="ttname"><a href="class_executor.html#aee160ee2ec954bdb58a3a38555536090">Executor::cancelNext</a></div><div class="ttdeci">auto cancelNext() -&gt; int</div><div class="ttdoc">Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running.</div><div class="ttdef"><b>Definition</b> <a href="#l00331">executor.cpp:331</a></div></div>
+<div class="ttc" id="aclass_executor_html_aee160ee2ec954bdb58a3a38555536090"><div class="ttname"><a href="class_executor.html#aee160ee2ec954bdb58a3a38555536090">Executor::cancelNext</a></div><div class="ttdeci">auto cancelNext() -&gt; int</div><div class="ttdoc">Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running.</div><div class="ttdef"><b>Definition</b> <a href="#l00330">executor.cpp:330</a></div></div>
 <div class="ttc" id="adebughelper_8h_html"><div class="ttname"><a href="debughelper_8h.html">debughelper.h</a></div><div class="ttdoc">Debug utilities for QtPass.</div></div>
 <div class="ttc" id="adebughelper_8h_html_a1b089898deebf895757ee5e095615ec7"><div class="ttname"><a href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a></div><div class="ttdeci">#define dbg()</div><div class="ttdoc">Simple debug macro that includes file and line number.</div><div class="ttdef"><b>Definition</b> <a href="debughelper_8h_source.html#l00021">debughelper.h:21</a></div></div>
 <div class="ttc" id="aexecutor_8h_html"><div class="ttname"><a href="executor_8h.html">executor.h</a></div></div>

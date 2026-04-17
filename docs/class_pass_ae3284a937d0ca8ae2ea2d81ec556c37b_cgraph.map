@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Get default key template for new GPG keys." alt="" coords="5,31,217,56"/>
 <area shape="rect" id="Node000002" href="$class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Check if GPG supports Ed25519 encryption." alt="" coords="265,31,461,56"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,41,251,41,251,46,218,46"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="535,5,729,31"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="535,5,729,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="461,31,521,26,522,31,462,37"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="509,55,755,80"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="462,49,496,52,495,58,461,55"/>

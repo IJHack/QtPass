@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Sign .gpg&#45;id file with signing keys." alt="" coords="5,81,200,107"/>
 <area shape="rect" id="Node000002" href="$class_pass.html#a0eafb54675479378ec98307f0e4fff65" title="Emit critical error." alt="" coords="299,5,401,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,79,294,32,296,37,146,84"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="528,57,721,83"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="528,57,721,83"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="200,87,514,72,515,78,201,92"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="502,156,747,181"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,104,186,125,249,142,371,159,488,166,488,172,370,165,247,147,185,130,132,109"/>

@@ -682,11 +682,11 @@ $(function() {
 <div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
 <div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>  QString result = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(binaryName);</div>
 <div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>  QVERIFY2(!result.isEmpty(), <span class="stringliteral">&quot;Should find a standard shell in PATH&quot;</span>);</div>
 <div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>  QVERIFY(result.contains(binaryName));</div>
 <div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span> </div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>  result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(<span class="stringliteral">&quot;nonexistentbinary12345&quot;</span>);</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>  result = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(<span class="stringliteral">&quot;nonexistentbinary12345&quot;</span>);</div>
 <div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>  QVERIFY(result.isEmpty());</div>
 <div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>}</div>
 <div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span> </div>
@@ -827,7 +827,7 @@ $(function() {
 <div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>}</div>
 <div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span> </div>
 <div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="keywordtype">void</span> tst_util::findBinaryInPathNotFound() {</div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(<span class="stringliteral">&quot;this-binary-does-not-exist-12345&quot;</span>);</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>  QString result = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(<span class="stringliteral">&quot;this-binary-does-not-exist-12345&quot;</span>);</div>
 <div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>  QVERIFY(result.isEmpty());</div>
 <div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>}</div>
 <div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span> </div>
@@ -1204,7 +1204,7 @@ $(function() {
 <div class="line"><a id="l01138" name="l01138"></a><span class="lineno"> 1138</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l01139" name="l01139"></a><span class="lineno"> 1139</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
 <div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span>  QString result = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(binaryName);</div>
 <div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span>  QVERIFY2(!result.isEmpty(), <span class="stringliteral">&quot;Should find a standard shell&quot;</span>);</div>
 <div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span>  QFileInfo fi(result);</div>
 <div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span>  QVERIFY2(</div>
@@ -1221,7 +1221,7 @@ $(function() {
 <div class="line"><a id="l01155" name="l01155"></a><span class="lineno"> 1155</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l01156" name="l01156"></a><span class="lineno"> 1156</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
 <div class="line"><a id="l01157" name="l01157"></a><span class="lineno"> 1157</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l01158" name="l01158"></a><span class="lineno"> 1158</span>  QString result = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(binaryName);</div>
 <div class="line"><a id="l01159" name="l01159"></a><span class="lineno"> 1159</span>  QVERIFY2(!result.isEmpty(), <span class="stringliteral">&quot;Should find a standard shell&quot;</span>);</div>
 <div class="line"><a id="l01160" name="l01160"></a><span class="lineno"> 1160</span>  QFileInfo fi(result);</div>
 <div class="line"><a id="l01161" name="l01161"></a><span class="lineno"> 1161</span>  QVERIFY2(</div>
@@ -1236,7 +1236,7 @@ $(function() {
 <div class="line"><a id="l01170" name="l01170"></a><span class="lineno"> 1170</span>  <span class="keyword">const</span> QStringList binaries = {QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>), QStringLiteral(<span class="stringliteral">&quot;ls&quot;</span>),</div>
 <div class="line"><a id="l01171" name="l01171"></a><span class="lineno"> 1171</span>                                QStringLiteral(<span class="stringliteral">&quot;cat&quot;</span>)};</div>
 <div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;bin : binaries) {</div>
-<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>    QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(bin);</div>
+<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span>    QString result = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(bin);</div>
 <div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span>    QVERIFY2(!result.isEmpty(),</div>
 <div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span>             qPrintable(QStringLiteral(<span class="stringliteral">&quot;Should find &#39;%1&#39; in PATH&quot;</span>).arg(bin)));</div>
 <div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span>    QVERIFY2(result.contains(bin),</div>
@@ -1260,8 +1260,8 @@ $(function() {
 <div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
 <div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>  QString first = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
-<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>  QString second = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>  QString first = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>  QString second = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(binaryName);</div>
 <div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>  QVERIFY2(!first.isEmpty(), <span class="stringliteral">&quot;First call should find the binary&quot;</span>);</div>
 <div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>  QCOMPARE(first, second);</div>
 <div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>}</div>
@@ -1274,7 +1274,7 @@ $(function() {
 <div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span><span class="preprocessor">#else</span></div>
 <div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>  <span class="keyword">const</span> QString binaryName = QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>);</div>
 <div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(binaryName);</div>
+<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>  QString result = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(binaryName);</div>
 <div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>  QVERIFY2(!result.isEmpty(), <span class="stringliteral">&quot;Should find the binary&quot;</span>);</div>
 <div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>  QVERIFY2(</div>
 <div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>      result.endsWith(binaryName) ||</div>
@@ -1291,7 +1291,7 @@ $(function() {
 <div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>  <span class="comment">// directory is not allowed. An alternative approach (QTemporaryDir + PATH</span></div>
 <div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>  <span class="comment">// manipulation) doesn&#39;t work because Util::_env is cached on first use.</span></div>
 <div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span><span class="preprocessor">#ifndef Q_OS_WIN</span></div>
-<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>  QString shPath = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>));</div>
+<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>  QString shPath = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(QStringLiteral(<span class="stringliteral">&quot;sh&quot;</span>));</div>
 <div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>  <span class="keywordflow">if</span> (shPath.isEmpty()) {</div>
 <div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>    QSKIP(<span class="stringliteral">&quot;Cannot find &#39;sh&#39; to determine a writable PATH directory&quot;</span>);</div>
 <div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>  }</div>
@@ -1311,7 +1311,7 @@ $(function() {
 <div class="line"><a id="l01245" name="l01245"></a><span class="lineno"> 1245</span>  exec.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner |</div>
 <div class="line"><a id="l01246" name="l01246"></a><span class="lineno"> 1246</span>                      QFileDevice::ExeOwner);</div>
 <div class="line"><a id="l01247" name="l01247"></a><span class="lineno"> 1247</span> </div>
-<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>  QString result = <a class="code hl_function" href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a>(uniqueName);</div>
+<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>  QString result = <a class="code hl_function" href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a>(uniqueName);</div>
 <div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span> </div>
 <div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>  <span class="comment">// Remove file before assertions so it is always cleaned up.</span></div>
 <div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>  <span class="keyword">const</span> <span class="keywordtype">bool</span> removed = QFile::remove(uniquePath);</div>
@@ -1495,7 +1495,7 @@ $(function() {
 <div class="ttc" id="aclass_util_html_aba7296e41ef990d5d945d5ed8cd99bd5"><div class="ttname"><a href="class_util.html#aba7296e41ef990d5d945d5ed8cd99bd5">Util::isValidKeyId</a></div><div class="ttdeci">static auto isValidKeyId(const QString &amp;keyId) -&gt; bool</div><div class="ttdoc">Check if a string looks like a valid GPG key ID. Accepts:</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00277">util.cpp:277</a></div></div>
 <div class="ttc" id="aclass_util_html_aced819d4368806d046f0dc24a91843f7"><div class="ttname"><a href="class_util.html#aced819d4368806d046f0dc24a91843f7">Util::newLinesRegex</a></div><div class="ttdeci">static auto newLinesRegex() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match newline characters.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00272">util.cpp:272</a></div></div>
 <div class="ttc" id="aclass_util_html_acfa7240a7682876cf78d5a44bbbb81de"><div class="ttname"><a href="class_util.html#acfa7240a7682876cf78d5a44bbbb81de">Util::normalizeFolderPath</a></div><div class="ttdeci">static auto normalizeFolderPath(const QString &amp;path) -&gt; QString</div><div class="ttdoc">Ensure a folder path always ends with the native directory separator.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00094">util.cpp:94</a></div></div>
-<div class="ttc" id="aclass_util_html_adbd6573f3b8c9bde13ca0a9aa683a3be"><div class="ttname"><a href="class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be">Util::findBinaryInPath</a></div><div class="ttdeci">static auto findBinaryInPath(QString binary) -&gt; QString</div><div class="ttdoc">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00120">util.cpp:120</a></div></div>
+<div class="ttc" id="aclass_util_html_aee9122a528c60168a0c105bfbed062d5"><div class="ttname"><a href="class_util.html#aee9122a528c60168a0c105bfbed062d5">Util::findBinaryInPath</a></div><div class="ttdeci">static auto findBinaryInPath(const QString &amp;binary) -&gt; QString</div><div class="ttdoc">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00120">util.cpp:120</a></div></div>
 <div class="ttc" id="aclass_util_html_afe6db9149dff37feded5abf38870cda8"><div class="ttname"><a href="class_util.html#afe6db9149dff37feded5abf38870cda8">Util::configIsValid</a></div><div class="ttdeci">static auto configIsValid() -&gt; bool</div><div class="ttdoc">Verify that the required configuration is complete.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00188">util.cpp:188</a></div></div>
 <div class="ttc" id="aclasssimple_transaction_html_a3914acc39e65586cd6671aff1ac3afe9"><div class="ttname"><a href="classsimple_transaction.html#a3914acc39e65586cd6671aff1ac3afe9">simpleTransaction::transactionIsOver</a></div><div class="ttdeci">auto transactionIsOver(Enums::PROCESS) -&gt; Enums::PROCESS</div><div class="ttdoc">transactionIsOver checks wheather currently finished process is last in current transaction</div><div class="ttdef"><b>Definition</b> <a href="simpletransaction_8cpp_source.html#l00065">simpletransaction.cpp:65</a></div></div>
 <div class="ttc" id="aclasssimple_transaction_html_a974db4056edcb408e96cf9bc2a6e4326"><div class="ttname"><a href="classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326">simpleTransaction::transactionAdd</a></div><div class="ttdeci">void transactionAdd(Enums::PROCESS)</div><div class="ttdoc">transactionAdd If called after call to transactionStart() and before transactionEnd(),...</div><div class="ttdef"><b>Definition</b> <a href="simpletransaction_8cpp_source.html#l00030">simpletransaction.cpp:30</a></div></div>

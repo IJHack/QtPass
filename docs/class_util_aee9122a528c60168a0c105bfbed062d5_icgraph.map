@@ -1,0 +1,7 @@
+<map id="Util::findBinaryInPath" name="Util::findBinaryInPath">
+<area shape="rect" id="Node000001" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="423,5,581,31"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="148,5,375,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="409,21,375,21,375,15,409,15"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="5,5,100,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="134,21,100,21,100,15,134,15"/>
+</map>

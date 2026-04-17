@@ -22,7 +22,7 @@
 <area shape="poly" id="edge73_Node000001_Node000037" title=" " alt="" coords="74,653,85,734,107,855,122,917,140,973,160,1019,182,1048,214,1070,250,1085,288,1096,328,1101,405,1102,473,1094,474,1100,406,1108,327,1107,287,1101,248,1091,212,1074,178,1052,155,1021,135,975,117,918,102,856,80,735,69,654"/>
 <area shape="rect" id="Node000038" href="$class_imitate_pass.html#ae65aff95459cee83b5b999f5a83fcac1" title="Write recipients to .gpg&#45;id file." alt="" coords="180,885,380,910"/>
 <area shape="poly" id="edge78_Node000001_Node000038" title=" " alt="" coords="82,652,182,781,260,873,256,876,178,785,77,655"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="1005,936,1199,961"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="1005,936,1199,961"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="909,1135,928,1124,939,1112,946,1101,953,1077,959,1051,975,1023,1015,989,1056,965,1059,969,1018,994,979,1026,964,1053,958,1078,951,1103,943,1116,931,1128,912,1139"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="979,1036,1225,1061"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="888,1134,928,1123,1001,1095,1063,1065,1065,1070,1003,1100,930,1128,889,1140"/>

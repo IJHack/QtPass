@@ -105,7 +105,7 @@
 <area shape="poly" id="edge105_Node000001_Node000054" title=" " alt="" coords="108,1407,120,1670,148,2125,168,2364,192,2577,220,2741,235,2797,252,2831,269,2848,291,2860,288,2865,266,2852,247,2834,230,2799,215,2743,187,2578,163,2364,143,2126,115,1670,103,1407"/>
 <area shape="rect" id="Node000055" href="$class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567" title="ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc..." alt="" coords="273,2917,463,2942"/>
 <area shape="poly" id="edge107_Node000001_Node000055" title=" " alt="" coords="108,1407,117,1683,141,2164,160,2416,185,2641,199,2735,215,2813,233,2870,251,2904,262,2913,259,2917,247,2907,228,2872,210,2814,194,2736,180,2642,155,2417,136,2165,111,1684,102,1407"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="562,273,755,298"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="562,273,755,298"/>
 <area shape="poly" id="edge3_Node000002_Node000003" title=" " alt="" coords="435,285,548,284,548,289,435,291"/>
 <area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="392,273,455,242,534,210,568,200,570,205,536,215,457,247,394,278"/>
 <area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="435,274,573,249,574,254,436,279"/>

@@ -1,6 +1,6 @@
 <map id="Pass::gpgSupportsEd25519" name="Pass::gpgSupportsEd25519">
 <area shape="rect" id="Node000001" title="Check if GPG supports Ed25519 encryption." alt="" coords="5,31,201,56"/>
-<area shape="rect" id="Node000002" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="275,5,469,31"/>
+<area shape="rect" id="Node000002" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="275,5,469,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,31,261,26,262,31,202,37"/>
 <area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="249,55,495,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,49,236,52,235,58,201,55"/>

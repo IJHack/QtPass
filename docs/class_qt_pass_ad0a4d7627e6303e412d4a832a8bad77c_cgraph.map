@@ -32,7 +32,7 @@
 <area shape="poly" id="edge50_Node000001_Node000028" title=" " alt="" coords="57,815,61,864,74,935,85,974,101,1012,123,1046,150,1076,157,1082,154,1086,146,1080,118,1050,97,1014,80,976,68,937,55,865,52,815"/>
 <area shape="rect" id="Node000029" href="$class_qt_pass_settings.html#a8cd81cd735281c71eab54091bde73081" title="Save application version." alt="" coords="169,1140,364,1166"/>
 <area shape="poly" id="edge52_Node000001_Node000029" title=" " alt="" coords="56,815,57,872,68,956,79,1002,96,1048,119,1090,150,1126,159,1133,156,1137,146,1130,115,1093,91,1050,74,1004,62,957,52,873,51,815"/>
-<area shape="rect" id="Node000003" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="734,151,927,176"/>
+<area shape="rect" id="Node000003" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="734,151,927,176"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="281,117,344,71,386,47,433,29,502,11,558,3,615,8,682,29,724,51,760,80,791,111,814,138,810,141,787,114,757,84,721,56,680,34,614,14,559,9,503,16,434,34,389,52,347,76,284,121"/>
 <area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="435,143,680,168"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="334,135,421,142,421,147,334,140"/>
@@ -56,7 +56,7 @@
 <area shape="poly" id="edge29_Node000016_Node000004" title=" " alt="" coords="269,446,286,395,318,321,340,282,366,243,396,208,432,178,441,172,443,177,435,182,400,211,370,246,344,285,322,324,291,397,274,447"/>
 <area shape="poly" id="edge30_Node000016_Node000006" title=" " alt="" coords="271,446,291,403,325,343,372,281,400,252,432,228,445,221,448,225,435,233,404,256,376,284,329,346,295,405,276,448"/>
 <area shape="poly" id="edge31_Node000016_Node000014" title=" " alt="" coords="283,471,347,530,435,604,515,661,512,665,432,609,344,534,279,474"/>
-<area shape="rect" id="Node000017" href="$class_util.html#adbd6573f3b8c9bde13ca0a9aa683a3be" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="478,307,637,332"/>
+<area shape="rect" id="Node000017" href="$class_util.html#aee9122a528c60168a0c105bfbed062d5" title="Locate an executable by searching the process PATH and (on Windows) falling back to WSL." alt="" coords="478,307,637,332"/>
 <area shape="poly" id="edge25_Node000016_Node000017" title=" " alt="" coords="281,445,343,395,386,366,432,343,464,332,466,337,434,348,389,371,346,399,284,449"/>
 <area shape="rect" id="Node000018" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title="Get git executable path." alt="" coords="438,422,677,447"/>
 <area shape="poly" id="edge27_Node000016_Node000018" title=" " alt="" coords="380,447,424,443,425,449,380,453"/>

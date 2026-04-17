@@ -25,7 +25,7 @@
 <area shape="rect" id="Node000026" href="$class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" title="Verify .gpg&#45;id file for a directory." alt="" coords="274,650,455,690"/>
 <area shape="poly" id="edge45_Node000001_Node000026" title=" " alt="" coords="112,359,129,403,159,465,200,535,251,599,278,622,308,641,306,646,275,626,247,603,196,538,155,468,125,405,107,361"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="740,357,864,331,865,337,742,362"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#a2673768d875e9207a6a178dd1a489828" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="833,559,1026,584"/>
+<area shape="rect" id="Node000004" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="833,559,1026,584"/>
 <area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="676,397,899,549,896,553,673,402"/>
 <area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82" title="Get git executable path." alt="" coords="810,357,1049,383"/>
 <area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="741,374,796,372,796,377,741,379"/>
