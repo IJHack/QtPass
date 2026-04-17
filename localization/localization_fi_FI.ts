@@ -616,7 +616,7 @@ Et voi purkaa salausta uusista lisätyistä salasanoista!</translation>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation>Varmuuskopion commitin epäonnistui</translation>
+        <translation>Varmuuskopion commit epäonnistui</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
@@ -1471,7 +1471,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
 Huomautus: Olemassa olevia tiedostoja ei muuteta, ja vanhat käyttöoikeudet säilyvät, kunnes muokkaat niitä.
 Sinisillä merkinnöillä on salainen avain käytettävissä. Valitse yksi näistä, jotta voit purkaa salauksen.
 Mustalla merkinnöillä on salausavain käytettävissä ja se on luotettu. Valitse yksi näistä, jotta muut voivat purkaa salauksen.
-Punaiset merkinnät eivät ole kelvollisia, etkä voi salata niitä niihin.</translation>
+Punaiset merkinnät eivät ole kelvollisia, etkä voi salata niihin.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1543,7 +1543,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation>[VIRVALLINEN] </translation>
+        <translation>[EPÄKELPO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
