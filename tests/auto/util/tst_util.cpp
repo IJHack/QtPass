@@ -1420,8 +1420,7 @@ void tst_util::findBinaryInPathWithConstQStringRef() {
            "findBinaryInPath should find shell with const QString& arg");
   QVERIFY2(result.contains(binaryName),
            "Result should contain the binary name");
-  QVERIFY2(QFileInfo(result).isAbsolute(),
-           "Returned path should be absolute");
+  QVERIFY2(QFileInfo(result).isAbsolute(), "Returned path should be absolute");
 }
 
 void tst_util::findBinaryInPathEmptyString() {

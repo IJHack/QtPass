@@ -381,8 +381,7 @@ void tst_gpgkeystate::parseGpgColonOutputAllPublicRecordTypes() {
            "sub/ssb records should not create additional UserInfo entries");
   QVERIFY2(result.first().key_id == QStringLiteral("MAINKEY001"),
            "key_id should reflect the pub record");
-  QVERIFY2(!result.first().name.isEmpty(),
-           "UID name should be populated");
+  QVERIFY2(!result.first().name.isEmpty(), "UID name should be populated");
 }
 
 QTEST_MAIN(tst_gpgkeystate)
