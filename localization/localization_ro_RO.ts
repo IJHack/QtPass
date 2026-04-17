@@ -61,17 +61,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Folosește un font monospațiat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>Afișează conținutul fișierelor așa cum este</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>Fără înfășurare a liniilor</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation>generează</translation>
+        <translation type="unfinished">generează</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
@@ -141,12 +141,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation>Cheie de semnare</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Opțional: cheie GPG pentru a semna fișierele .gpg-id pentru verificarea integrității. Lăsați gol dacă nu aveți nevoie să protejați lista utilizatorilor împotriva modificărilor.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -373,7 +373,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation>Acest câmp este necesar</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -408,12 +408,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Eșec la crearea depozitului de parole la: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -531,14 +531,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Verifică semnătura fișierului .gpgid!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>Semnatura pentru %1 este invalidă.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -555,24 +555,23 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation>Eșec la semnarea GPG!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation>Eșec la semnarea %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation>Nu există o cheie de semnare!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Niciuna dintre cheile de semnare secrete nu este disponibilă.
-Nu veți putea schimba lista utilizatorilor!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -600,33 +599,33 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation>Re-criptarea a eșuat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Eșec la înlocuirea %1. Originalul a fost restaurat.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation>Creare commit de rezervă</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation>Eșec la commit-ul de rezervă</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Nu s-a putut examina starea git. Re-criptarea a fost întreruptă.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>Re-criptarea a fost întreruptă deoarece nu s-a putut crea copia de siguranță git.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -642,27 +641,27 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation>Verificarea GPG ID a eșuat</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Nu s-a putut verifica .gpg-id pentru director.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Eșec la re-criptarea %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Re-criptare finalizată: %1 reușite, %2 eșuate</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Re-criptare finalizată: %1 fișiere re-criptate</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -700,7 +699,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Repetă parola</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -710,7 +709,7 @@ Nu veți putea decripta nicio parolă nou adăugată!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Conținutul șablonului va fi stabilit în funcție de versiunea GPG.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1143,17 +1142,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation>Codul OTP a fost copiat în clipboard</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Nu s-a găsit cod OTP în această intrare de parolă</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation>Nu s-a selectat nicio parolă pentru generarea OTP</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
@@ -1168,24 +1167,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation>Re-criptează</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation>Eroare</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation>Eșec la crearea dosarului: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Eșec la crearea fișierului .gpg-id în: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1206,12 +1205,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation>Directorul nu există: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation>Re-criptează parolele</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1384,12 +1383,12 @@ Continuați?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation>Eșec la generarea perechii de chei GPG</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation>Perechea de chei GPG a fost generată cu succes</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1467,11 +1466,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Selectați utilizatorii care ar trebui să poată decripta parolele stocate în acest dosar.
-Notă: Fișierele existente nu vor fi modificate și vor păstra permisiunile vechi până când le editați.
-Intrările albastre au o cheie secretă disponibilă, selectați una dintre acestea pentru a putea decripta.
-Intrările negre au o cheie de criptare disponibilă și de încredere, selectați una dintre acestea pentru a permite altor persoane să decripteze.
-Intrările roșii nu sunt valide, nu veți putea cripta către acestea.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1543,17 +1538,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation>[INVALID] </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation>[EXPIRAT] </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation>[PARȚIAL] </translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
