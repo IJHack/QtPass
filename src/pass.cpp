@@ -449,12 +449,13 @@ auto Pass::listKeys(const QString &keystring, bool secret) -> QList<UserInfo> {
  */
 auto gpgErrorMessage(const QString &err) -> QString {
   // Machine-readable status tokens added by --status-fd 2
-  if (err.contains(QStringLiteral("[GNUPG:] KEY_EXPIRED")))
+  if (err.contains(QStringLiteral("[GNUPG:] KEYEXPIRED")) ||
+      err.contains(QStringLiteral("[GNUPG:] INV_RECP 5 ")))
     return QCoreApplication::translate("Pass",
                                        "Encryption failed: GPG key has expired."
                                        " Please renew or replace it.");
-  if (err.contains(QStringLiteral("[GNUPG:] KEY_REVOKED")) ||
-      err.contains(QStringLiteral("[GNUPG:] REVKEYSIG")))
+  if (err.contains(QStringLiteral("[GNUPG:] KEYREVOKED")) ||
+      err.contains(QStringLiteral("[GNUPG:] INV_RECP 4 ")))
     return QCoreApplication::translate(
         "Pass", "Encryption failed: GPG key has been revoked.");
   if (err.contains(QStringLiteral("[GNUPG:] NO_PUBKEY")) ||

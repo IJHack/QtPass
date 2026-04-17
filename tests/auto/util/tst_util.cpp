@@ -1605,20 +1605,20 @@ void tst_util::updateEnvWslenvContainsRequiredVars() {
 // --- gpgErrorMessage tests ---
 
 void tst_util::gpgErrorMessageKeyExpiredStatusToken() {
-  QString err = "[GNUPG:] KEY_EXPIRED 1234567890\n"
+  QString err = "[GNUPG:] KEYEXPIRED 1234567890\n"
                 "gpg: key DEADBEEF: key has expired\n"
                 "gpg: [stdin]: encryption failed: Unusable public key";
   QString msg = gpgErrorMessage(err);
-  QVERIFY2(!msg.isEmpty(), "Should recognise KEY_EXPIRED status token");
+  QVERIFY2(!msg.isEmpty(), "Should recognise KEYEXPIRED status token");
   QVERIFY2(msg.contains("expired", Qt::CaseInsensitive),
            qPrintable("Expected 'expired' in: " + msg));
 }
 
 void tst_util::gpgErrorMessageKeyRevokedStatusToken() {
-  QString err = "[GNUPG:] KEY_REVOKED\n"
+  QString err = "[GNUPG:] KEYREVOKED\n"
                 "gpg: [stdin]: encryption failed: Unusable public key";
   QString msg = gpgErrorMessage(err);
-  QVERIFY2(!msg.isEmpty(), "Should recognise KEY_REVOKED status token");
+  QVERIFY2(!msg.isEmpty(), "Should recognise KEYREVOKED status token");
   QVERIFY2(msg.contains("revoked", Qt::CaseInsensitive),
            qPrintable("Expected 'revoked' in: " + msg));
 }
@@ -1634,13 +1634,30 @@ void tst_util::gpgErrorMessageNoPubkeyStatusToken() {
 }
 
 void tst_util::gpgErrorMessageInvRecpStatusToken() {
-  QString err = "[GNUPG:] INV_RECP 10 DEADBEEF\n"
-                "gpg: [stdin]: encryption failed: Unusable public key";
-  QString msg = gpgErrorMessage(err);
-  QVERIFY2(!msg.isEmpty(), "Should recognise INV_RECP status token");
-  QVERIFY2(msg.contains("not found", Qt::CaseInsensitive) ||
-               msg.contains("invalid", Qt::CaseInsensitive),
-           qPrintable("Expected 'not found' or 'invalid' in: " + msg));
+  // reason code 5 = expired
+  QString errExpired = "[GNUPG:] INV_RECP 5 DEADBEEF\n"
+                       "gpg: [stdin]: encryption failed: Unusable public key";
+  QString msgExpired = gpgErrorMessage(errExpired);
+  QVERIFY2(!msgExpired.isEmpty(), "Should recognise INV_RECP 5 (expired)");
+  QVERIFY2(msgExpired.contains("expired", Qt::CaseInsensitive),
+           qPrintable("Expected 'expired' for INV_RECP 5: " + msgExpired));
+
+  // reason code 4 = revoked
+  QString errRevoked = "[GNUPG:] INV_RECP 4 DEADBEEF\n"
+                       "gpg: [stdin]: encryption failed: Unusable public key";
+  QString msgRevoked = gpgErrorMessage(errRevoked);
+  QVERIFY2(!msgRevoked.isEmpty(), "Should recognise INV_RECP 4 (revoked)");
+  QVERIFY2(msgRevoked.contains("revoked", Qt::CaseInsensitive),
+           qPrintable("Expected 'revoked' for INV_RECP 4: " + msgRevoked));
+
+  // generic reason code
+  QString errGeneric = "[GNUPG:] INV_RECP 10 DEADBEEF\n"
+                       "gpg: [stdin]: encryption failed: Unusable public key";
+  QString msgGeneric = gpgErrorMessage(errGeneric);
+  QVERIFY2(!msgGeneric.isEmpty(), "Should recognise INV_RECP status token");
+  QVERIFY2(msgGeneric.contains("not found", Qt::CaseInsensitive) ||
+               msgGeneric.contains("invalid", Qt::CaseInsensitive),
+           qPrintable("Expected 'not found' or 'invalid' in: " + msgGeneric));
 }
 
 void tst_util::gpgErrorMessageFailureStatusToken() {
@@ -1696,13 +1713,13 @@ void tst_util::gpgErrorMessageUnknownReturnsEmpty() {
 }
 
 void tst_util::gpgErrorMessageStatusTokenTakesPriorityOverFallback() {
-  // KEY_EXPIRED token present alongside a generic "encryption failed" line —
+  // KEYEXPIRED token present alongside a generic "encryption failed" line —
   // the specific expired message should be returned, not the generic fallback.
-  QString err = "[GNUPG:] KEY_EXPIRED 1234567890\n"
+  QString err = "[GNUPG:] KEYEXPIRED 1234567890\n"
                 "gpg: [stdin]: encryption failed: Unusable public key";
   QString msg = gpgErrorMessage(err);
   QVERIFY2(msg.contains("expired", Qt::CaseInsensitive),
-           "KEY_EXPIRED token should take priority and mention 'expired'");
+           "KEYEXPIRED token should take priority and mention 'expired'");
 }
 
 QTEST_MAIN(tst_util)
