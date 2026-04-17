@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation>Generovat</translation>
+        <translation>Generovať</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation>Generovať GPG kľúč pár</translation>
+        <translation>Generovať pár GPG kľúčov</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Volitelné: Kľúč GPG na podpísanie súborov .gpg-id pre overenie celosťi. Toto pole ponechte prázdne, ak nemáte potrebu chrániť zoznam používateľov pred modyfikáciou.</translation>
+        <translation>Voliteľné: Kľúč GPG na podpísanie súborov .gpg-id pre overenie integrity. Toto pole ponechajte prázdne, ak nepotrebujete chrániť zoznam používateľov pred modifikáciou.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -560,7 +560,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation>Obdarilo sa podpísať %1.</translation>
+        <translation>Nepodarilo sa podpísať %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -610,7 +610,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation>Vytváranie záložnej komitovania</translation>
+        <translation>Vytváranie zálohového commitu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
@@ -657,7 +657,7 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Re-šifrovanie dokončené: %1 usporiovalo, %2 zlyhali</translation>
+        <translation>Prešifrovanie dokončené: %1 úspešných, %2 zlyhalo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
@@ -1180,12 +1180,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Žiadny kód OTP nájdený v tomto vstupe heslo</translation>
+        <translation>V tomto hesle sa nenašiel žiadny kód OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation>Žiadne heslo vybrané pre OTP generáciu</translation>
+        <translation>Nie je vybrané žiadne heslo na generovanie OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
@@ -1421,7 +1421,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation>Generovanie páru GPG kľúčov uspělo</translation>
+        <translation>Generovanie páru GPG kľúčov bolo úspešné</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
