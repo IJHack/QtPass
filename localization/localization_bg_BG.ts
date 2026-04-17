@@ -593,7 +593,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="252"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Нито един от избраните ключове няма наличен секретен ключ.
+        <translation>Нито един от избраните ключове не разполага с таен ключ.
 Няма да можете да дешифрирате новодобавени пароли!</translation>
     </message>
     <message>
