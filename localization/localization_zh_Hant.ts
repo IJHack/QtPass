@@ -383,7 +383,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="615"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">未选择要删除的配置文件</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="715"/>
@@ -413,17 +413,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">在：%1 处创建密码存储失败</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">密码存储未初始化</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="822"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">该文件夹%1似乎不是一个密码存储或尚未初始化。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
@@ -438,12 +438,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="66"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">系统托盘不可用</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="91"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">需要安装 Pass OTP 扩展</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="96"/>
@@ -478,12 +478,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="581"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">使用 pass-otp 扩展</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">原生 Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -507,12 +507,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">生成密码</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">模板添加额外字段，用于密码生成对话框和密码视图。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>

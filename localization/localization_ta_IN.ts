@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG சூழ்நிலைகள் உருவாக்கு</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">விதிமுறையின் சரி பார்க்கவும் காகத்து: .gpg-id இலக்குகளை உறவு வசதியான வழிமுறையில் எண்ணுவதற்கான GPG சூழ்நிலை. இதை தவறவிடுவதாக இல்லை என்றால் இதை வارிசையாக இருப்படுத்தவும்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -373,7 +373,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்த குறி உள்ளடக்கப்பட வேண்டும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -408,12 +408,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">விதிமுறையில் தவறல்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தரவு அளவுக்கான உணவு வடிவம் உருவாக்குவதில் தோல்வி: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -555,12 +555,12 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG குறியாக்கல் தவறவை!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 குறியாக்கல் முடிவு செய்யப்படவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -600,33 +600,33 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இரண்டாம் தனிப்பட்ட உள்ளடக்கல் தவறவு</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 மூலத்திற்கு மாற்றம் செய்யப்படவில்லை. முன்னோக்கி உள்ளது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வர்த்தக விடுதலை உருவாக்குக</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">வர்த்தக விடுதலை முடிவு செய்யப்படவில்லை</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கிட் அட்டவணையின் சுவார்ச்சி மாற்றம் செய்யப்படவில்லை. குறியாக்கல் தனிப்ரச்சிணை எதிர்த்து முடிவுகள் இழந்தது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">கிட் உருவாக்கல் உண்டையால் குறியாக்கல் தனிப்ரச்சிணை எதிர்த்து முடிவுகள் இழந்தது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -642,27 +642,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG உருப்பாய் சரியானவையால் போர்டம் மாற்றம் தேவையாக விளக்கப்படவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">துறைக்கு .gpg-id மாற்றம் தேவையாக விளக்கப்படவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 உருவாக்கல் மாற்றம் தேவையாக விளக்கப்படவில்லை</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ரூக்கு உருவாக்கல் மாற்றம் சரணி வழங்கப்பட்டது: %1 தேவையானவை, %2 முடிவுகள்</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இரண்டாம் குறியாக்கல் முடிவுபட்டது: %1 பயன்பாடுகள் இரண்டாம் குறியாக்கல் செய்யப்பட்டன</translation>
     </message>
 </context>
 <context>
@@ -710,7 +710,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG வேர்ஷன் பாதியாக தமத்துவ உள்விதங்கள் அமையும்.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1175,17 +1175,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP சொல்லுக்கு பதிவு தரவச்சு நகரப்பட்டது</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்த உருவான கடவுச்சொல்லில் OTP சொல்லுக்கு இயல்பாக அமைவது விடவில்லை</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP உருவாக்கப்படுத்துவதற்கு இயல்பாக அமைந்த கடவுச்சொல் என்ன இல்லை</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
@@ -1200,24 +1200,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பிரதம உருவாக்கு</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">விதிமுறையில்லாத சோதனை</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 பண்டலை உருவாக்கும் விதிமுறை இயல்லாதது</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 உள்ள முனையில் .gpg-id கடவுச்சொல் பயாக வர வேண்டியது: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1238,12 +1238,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 உள்ள முனையில் இல்லை: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">பட்டாம் கடவுச்சொற்களை பரவலாக எழுதுதல்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1254,7 +1254,11 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 உள்ள முனையில் அனைத்து பட்டாம் கடவுச்சொற்களை பரவலாக எழுதுதல்?
+
+இது .gpg-id உள்ள முனையில் அறிவியல் தரவர்த்திகள் ஆகியவற்றை பரவலாக எழுதும் மற்றும் இதனை முடி செய்வது அவசரமாக இல்லை.
+
+தொடர்கள்?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -1410,12 +1414,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG சூத்திரங்கள் உருவாக்கல் வேற்றுமடங்கு</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG சூத்திரங்கள் உருவாக்கப்பட்டது</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1493,7 +1497,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">இந்த முடிவுகளில் கடவுச்சொற்களை உருண்டி போய்யத் தவறவே உருவாக்கப்படாமல், அவற்றில் முன்னோடிகள் வழங்கப்படவில்லை. தவறான செயல்கள் உண்டாகி இருந்தால், அவற்றில் எதுவும் உருண்டி போய்ய முடியாது. காவல் வகையான செயல்களில் தங்கள் கடவுச்சொற்களை உருண்டி போய்ய முடியும். வீட்டு வகையான செயல்களில் தங்கள் கடவுச்சொற்களை உருண்டி போய்ய முடியும். வீட்டு வகையான செயல்களில் தங்கள் கடவுச்சொற்களை உருண்டி போய்ய முடியும். வீட்டு வகையான செயல்களில் தங்கள் கடவுச்சொற்களை உருண்டி போய்ய முடியும்.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1565,17 +1569,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[தவறான]</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[பயன்பாட்டு அளவுக்கு வழங்கப்பட்ட]</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[அலியான]</translation>
     </message>
 </context>
 </TS>
