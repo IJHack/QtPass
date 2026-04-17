@@ -535,7 +535,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished">Vérifiez la signature de fichier .gpgid!</translation>
+        <translation>Vérifiez la signature de fichier .gpgid&#x202f;!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
@@ -575,7 +575,8 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">Aucune des clés de signature secrètes n&apos;est disponible. Vous ne pourrez pas modifier la liste des utilisateurs !</translation>
+        <translation>Aucune des clés de signature secrètes n&apos;est disponible.
+Vous ne pourrez pas modifier la liste des utilisateurs&#x202f;!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -655,17 +656,17 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">Vous n&apos;a pas réussi à ré-encrypter %1.</translation>
+        <translation>Vous n&apos;a pas réussi à ré-encrypter %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">Ré-encryption terminée : %1 réussites, %2 échecs.</translation>
+        <translation>Ré-encryption terminée&#xa0;: %1 réussites, %2 échecs</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">Ré-encryption terminée : %1 fichiers ré-encryptés.</translation>
+        <translation>Ré-encryption terminée&#xa0;: %1 fichiers ré-encryptés</translation>
     </message>
 </context>
 <context>
@@ -1420,7 +1421,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Sélectionnez les utilisateurs qui pourront déchiffrer les mots de passe stockés dans ce dossier. Note : Les fichiers existants ne seront pas modifiés et conserveront leurs anciennes permissions jusqu&apos;à ce que vous les éditées. Les entrées bleues ont une clé secrète disponible, sélectionnez-en une pour pouvoir déchiffrer. Les entrées noires ont une clé de chiffrement disponible et elle est considérée comme fiable ; sélectionnez-en une pour permettre à d&apos;autres personnes de déchiffrer. Les entrées rouges ne sont pas valides, vous ne pourrez pas chiffrer avec ces dernières.</translation>
+        <translation>Sélectionnez les utilisateurs qui pourront déchiffrer les mots de passe stockés dans ce dossier.
+Note&#xa0;: Les fichiers existants ne seront pas modifiés et conserveront leurs anciennes permissions jusqu&apos;à ce que vous les éditées.
+Les entrées bleues ont une clé secrète disponible, sélectionnez-en une pour pouvoir déchiffrer. 
+Les entrées noires ont une clé de chiffrement disponible et elle est considérée comme fiable&#x202f;; sélectionnez-en une pour permettre à d&apos;autres personnes de déchiffrer.
+Les entrées rouges ne sont pas valides, vous ne pourrez pas chiffrer avec ces dernières.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
