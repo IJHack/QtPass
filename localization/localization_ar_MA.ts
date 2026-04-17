@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>إعدادات</translation>
+        <translation>ضبط</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
@@ -77,7 +77,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished"></translation>
+        <translation>مجموعة من الشخصيات المختارة لتوليد كلمة السر</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="366"/>
@@ -87,17 +87,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="371"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>ألفا بيتسي</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="376"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>ألفا</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="381"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>العرف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
@@ -122,22 +122,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>استعملوا شعار الفضاء الأحادي</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>عرض محتوى الملفات</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>لا غلاف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>يولد بسهولة للتذكير ولكن أقل أمنا كلمة السر</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
@@ -167,12 +167,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="558"/>
         <source>Extensions:</source>
-        <translation type="unfinished"></translation>
+        <translation>التمديدات:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="603"/>
         <source>System:</source>
-        <translation type="unfinished"></translation>
+        <translation>النظام:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="615"/>
@@ -182,32 +182,32 @@
     <message>
         <location filename="../src/configdialog.ui" line="622"/>
         <source>Start minimized</source>
-        <translation type="unfinished"></translation>
+        <translation>البدء بالتقليل إلى أدنى حد</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
         <source>Hide on close</source>
-        <translation type="unfinished"></translation>
+        <translation>اختبيء عن قرب</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Always on top</source>
-        <translation type="unfinished"></translation>
+        <translation>دائما على القمة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="661"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>البرامج</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="679"/>
         <source>Select password storage program:</source>
-        <translation type="unfinished"></translation>
+        <translation>برنامج تخزين كلمة السر المختارة:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot; مرور الاستخدام</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
@@ -217,27 +217,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>الجيل</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>زوج مفاتيح GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="795"/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation>المرور</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="806"/>
         <source>pass</source>
-        <translation type="unfinished"></translation>
+        <translation>المرور</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="856"/>
@@ -247,98 +247,98 @@
     <message>
         <location filename="../src/configdialog.ui" line="879"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>الملامح</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="928"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>إسم</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="933"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>مسار</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>مفتاح التوقيع</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>اختياري: مفتاح GPG للتوقيع على ملفات (gpg-id) للتحقق من السلامة. إتركْ فارغاً مالم تَحتاجُ إلى حِماية قائمة المستعملِ مِنْ التلاعب.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
         <source>Add</source>
-        <translation type="unfinished"></translation>
+        <translation>مضافا إليها</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="966"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1001"/>
         <source>Template</source>
-        <translation type="unfinished"></translation>
+        <translation>النموذج</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1031"/>
         <source>Use template</source>
-        <translation type="unfinished"></translation>
+        <translation>نموذج الاستخدام</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished"></translation>
+        <translation>اظهروا كل الخطوط بدءاً بكلمة يتبعها العقيد كميادين في حقول كلمة السر ليس فقط تلك المدرجة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation type="unfinished"></translation>
+        <translation>تظهر جميع الحقول</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="66"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation>صينية النظام غير متاحة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="91"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>يلزم تركيب نظام &quot; إمداد &quot; بالمرور</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="96"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished"></translation>
+        <translation>يجب تركيب الفرنكود</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="121"/>
         <source>No Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>لا مشبك</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="122"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>دائماً ما ينسخون لوح المشبك</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="123"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>نسخة محررة على لوحة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>هذا المجال مطلوب</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="631"/>
@@ -353,52 +353,52 @@
     <message>
         <location filename="../src/configdialog.cpp" line="732"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished"></translation>
+        <translation>GnuPG لم يعثر عليه</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="735"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>من فضلك ضع (جينو بجي) على نظامك، وتأكد من أنك بدأته مرة واحدة، و &quot;أوتودكت&quot; في الهاتف التالي.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="740"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">يرجى تركيب GnuPG على نظامكم. It from GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="746"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">يرجى تركيب GnuPG على نظامكم. It from GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="800"/>
         <source>Create password-store?</source>
-        <translation type="unfinished"></translation>
+        <translation>إنشاء مخزن كلمة سر؟?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="801"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>هل تريد أن تخلق مخزن كلمة سر بنسبة %1؟?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="806"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="807"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>عدم إنشاء مخزن لكلمات السر: ٪1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="838"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished"></translation>
+        <translation>مخزن كلمة السر غير مبدئي</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="839"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished"></translation>
+        <translation>المطوّر %1 لا يبدو أنه مخزن كلمة سر أو أنه لم يبدئي بعد.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
@@ -908,30 +908,31 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>مجلد جديد:
+(سيتم وضعه في %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>خطأ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>لم يخلق الملف: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>لم يُنشأ ملف (gpg-id) في: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف الاسم</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -946,12 +947,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>الدليل غير موجود: ٪</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>كلمات السر المُبَتة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -962,7 +963,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>إعادة تشفير جميع كلمات المرور في %1؟
+
+سيؤدي هذا إلى إعادة تشفير جميع ملفات كلمات المرور في هذا المجلد باستخدام المستلمين الحاليين المحددين في ملف .gpg-id.
+
+قد يؤدي هذا إلى استبدال العديد من الملفات، ولا يمكن التراجع عنه بسهولة.
+
+هل تريد المتابعة؟</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -978,12 +985,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="163"/>
         <source>No characters chosen</source>
-        <translation type="unfinished"></translation>
+        <translation>لا أحد يختار</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="164"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished"></translation>
+        <translation>لا يمكن توليد كلمة سر، لا يوجد شخصيات للاختيار من موقع في التشكيلة!</translation>
     </message>
 </context>
 <context>
@@ -992,22 +999,22 @@ Continue?</source>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>كلمة السر</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>الجيل</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation type="unfinished"></translation>
+        <translation>كلمة المرور</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation type="unfinished"></translation>
+        <translation>الرمز:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
@@ -1017,17 +1024,17 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation type="unfinished"></translation>
+        <translation>ألفا بيتسي</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished"></translation>
+        <translation>ألفا</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>العرف</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
@@ -1072,13 +1079,15 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="257"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished"></translation>
+        <translation>مخرج غير متوقع
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>فشل في البدأ بـ (فوسيداف) لربط (ويب دي في)
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="274"/>
@@ -1123,17 +1132,17 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>لوحة الشفاه</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="466"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>لوحة الشفاه</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="511"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>مركب على لوح مشبك</translation>
     </message>
 </context>
 <context>
@@ -1141,12 +1150,12 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>تخطي القوة؟?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation>حرف ٪ واحد مع ٪2؟?</translation>
     </message>
 </context>
 <context>
@@ -1154,12 +1163,12 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot; شو</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot; هايدي</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
@@ -1187,7 +1196,7 @@ Continue?</source>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation type="unfinished"></translation>
+        <translation>مستعملو الوصول إلى القراءة</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1196,42 +1205,46 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>إختار أي مستعمل يجب أن يكون قادراً على فك شفرة كلمات السر المخزنة في هذا الملف
+ملاحظة: الملفات الموجودة لن يتم تعديلها، والاحتفاظ بالتصاريح القديمة حتى تحررها.
+القيد الأزرق لديه مفتاح سري متاح، اختيار واحد من هذه لتكون قادرة على فك التشفير.
+الدخان الأسود لديه مفتاح التشفير وهو موثوق به، اختيار واحد من هذه للسماح للناس الآخرين بالفك شفرة.
+القيود الحمراء ليست صحيحة، لن تتمكن من التشفير إلى هذه.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation type="unfinished"></translation>
+        <translation>البحث عن المستخدمين</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation type="unfinished"></translation>
+        <translation>تظهر مفاتيح غير مستعملة</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation>قائمة مفاتيح مفقودة</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation>لا يمكن جلب قائمة مفاتيح GPG المتاحة</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="148"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished"></translation>
+        <translation>مفتاح لم يعثر عليه</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="301"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>أنشئت</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="305"/>
         <source>expires</source>
-        <translation type="unfinished"></translation>
+        <translation>تنتهي مدة العضوية</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
@@ -1241,7 +1254,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[يصدر] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
