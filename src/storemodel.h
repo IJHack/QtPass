@@ -65,6 +65,13 @@ public:
   void setModelAndStore(QFileSystemModel *sourceModel, QString passStore);
 
   /**
+   * @brief Update the store path used for filtering without changing the source
+   * model.
+   * @param passStore New root path of password store.
+   */
+  void setStore(const QString &passStore);
+
+  /**
    * @brief Get display data for index.
    * @param index Model index.
    * @param role Data role (e.g., Qt::DisplayRole).

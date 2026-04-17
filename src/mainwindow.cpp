@@ -905,9 +905,10 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
 
   QtPassSettings::getPass()->updateEnv();
 
-  ui->treeView->selectionModel()->clear();
+  proxyModel.setStore(QtPassSettings::getPassStore());
   ui->treeView->setRootIndex(proxyModel.mapFromSource(
       model.setRootPath(QtPassSettings::getPassStore())));
+  ui->treeView->setCurrentIndex(QModelIndex());
 
   ui->actionEdit->setEnabled(false);
   ui->actionDelete->setEnabled(false);
