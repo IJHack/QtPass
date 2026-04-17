@@ -267,6 +267,8 @@ void ConfigDialog::on_accepted() {
                                  ui->checkBoxHideOnClose->isChecked());
   QtPassSettings::setStartMinimized(ui->checkBoxStartMinimized->isEnabled() &&
                                     ui->checkBoxStartMinimized->isChecked());
+  QHash<QString, QHash<QString, QString>> existingProfiles =
+      QtPassSettings::getProfiles();
   QtPassSettings::setProfiles(getProfiles());
   QtPassSettings::setUseGit(ui->checkBoxUseGit->isChecked());
   QtPassSettings::setUseOtp(ui->checkBoxUseOtp->isChecked());
@@ -287,13 +289,6 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setAlwaysOnTop(ui->checkBoxAlwaysOnTop->isChecked());
 
   QtPassSettings::setVersion(VERSION);
-
-  // Capture existing profiles BEFORE updating settings
-  QHash<QString, QHash<QString, QString>> existingProfiles =
-      QtPassSettings::getProfiles();
-
-  // Now update to the new profiles from UI
-  QtPassSettings::setProfiles(getProfiles());
 
   // Initialize new profiles that need pass/git initialization
   initializeNewProfiles(existingProfiles);
