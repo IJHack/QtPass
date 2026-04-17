@@ -418,7 +418,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Lozinkovu bazu nije inicijализовано</translation>
+        <translation type="unfinished">Lozinkova baza nije inicijalizovana</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="822"/>
@@ -747,7 +747,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished">&gt;ovde&lt;/a&gt;</translation>
+        <translation type="unfinished">Za napredne opcije pogledajte &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG priručnik&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
