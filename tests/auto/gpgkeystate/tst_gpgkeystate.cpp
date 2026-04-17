@@ -24,6 +24,10 @@ private Q_SLOTS:
   void handlePubSecEmptyFields();
   void handlePubSecShortList();
   void handleFprEdgeCases();
+  void classifyRecordWithConstQString();
+  void parseGpgColonOutputWithGrpRecord();
+  void parseGpgColonOutputUnknownRecordTypes();
+  void parseGpgColonOutputAllPublicRecordTypes();
 };
 
 void tst_gpgkeystate::parseMultiKeyPublic() {
@@ -290,6 +294,94 @@ void tst_gpgkeystate::handleFprEdgeCases() {
   handleFprRecord(matchingProps, user);
   QVERIFY2(user.key_id == "full fingerprint id456",
            "fpr ending with key_id should update to full fingerprint");
+}
+
+// Tests targeting the const-ref refactor in gpgkeystate.cpp.
+// The PR changed `const QString record_type = props[0]` to
+// `const QString &record_type = props[0]` inside parseGpgColonOutput.
+// These tests verify that classifyRecord and parseGpgColonOutput correctly
+// handle all record types with the const-ref binding in place.
+
+void tst_gpgkeystate::classifyRecordWithConstQString() {
+  // Verify classifyRecord is callable with a const QString& and returns the
+  // correct GpgRecordType for each recognised tag.
+  const QString pubTag = QStringLiteral("pub");
+  QCOMPARE(classifyRecord(pubTag), GpgRecordType::Pub);
+
+  const QString secTag = QStringLiteral("sec");
+  QCOMPARE(classifyRecord(secTag), GpgRecordType::Sec);
+
+  const QString uidTag = QStringLiteral("uid");
+  QCOMPARE(classifyRecord(uidTag), GpgRecordType::Uid);
+
+  const QString fprTag = QStringLiteral("fpr");
+  QCOMPARE(classifyRecord(fprTag), GpgRecordType::Fpr);
+
+  const QString subTag = QStringLiteral("sub");
+  QCOMPARE(classifyRecord(subTag), GpgRecordType::Sub);
+
+  const QString ssbTag = QStringLiteral("ssb");
+  QCOMPARE(classifyRecord(ssbTag), GpgRecordType::Ssb);
+
+  const QString grpTag = QStringLiteral("grp");
+  QCOMPARE(classifyRecord(grpTag), GpgRecordType::Grp);
+
+  const QString unknownTag = QStringLiteral("tru");
+  QCOMPARE(classifyRecord(unknownTag), GpgRecordType::Unknown);
+}
+
+void tst_gpgkeystate::parseGpgColonOutputWithGrpRecord() {
+  // A 'grp' record appears in real GPG output but is not a key/uid carrier.
+  // After the const-ref change, parseGpgColonOutput should still skip grp
+  // lines without crashing and return only the real key.
+  const QString input =
+      QStringLiteral("pub:u:4096:1:AAABBBCCC:1774947438:::u::::\n"
+                     "grp:::::::::GROUPKEYID:\n"
+                     "uid:u::::1774947438::HASH::Alice <alice@test.org>::::\n");
+
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QVERIFY2(result.size() == 1,
+           "grp record should be ignored; only one key expected");
+  QVERIFY2(result.first().key_id == QStringLiteral("AAABBBCCC"),
+           "key_id should be parsed correctly alongside grp record");
+}
+
+void tst_gpgkeystate::parseGpgColonOutputUnknownRecordTypes() {
+  // Lines with unrecognised record types ('tru', 'rvk', 'spk', etc.) must
+  // be silently skipped. The const-ref binding of record_type should not
+  // introduce dangling-reference problems for these paths.
+  const QString input =
+      QStringLiteral("tru::1:9999999999:0:3:1:5\n"
+                     "pub:f:4096:1:DEADBEEF01:1774947438:::f::::\n"
+                     "rvk:::::::::REVOKER_FINGERPRINT:\n"
+                     "fpr:::::::::DEADBEEF01FINGERPRINT:\n"
+                     "uid:f::::1774947438::H::Bob <bob@test.org>::::\n");
+
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QVERIFY2(result.size() == 1,
+           "tru/rvk records should be ignored; one key expected");
+  QVERIFY2(result.first().key_id == QStringLiteral("DEADBEEF01"),
+           "key_id should be parsed despite surrounding unknown records");
+}
+
+void tst_gpgkeystate::parseGpgColonOutputAllPublicRecordTypes() {
+  // Exercise sub and ssb record types together with pub/uid/fpr to confirm
+  // the const-ref record_type variable classifies them all correctly within
+  // the parse loop.
+  const QString input =
+      QStringLiteral("pub:u:4096:1:MAINKEY001:1774947438:::u::::\n"
+                     "fpr:::::::::MAINKEY001FINGERPRINT:\n"
+                     "uid:u::::1774947438::HASH::Carol <carol@test.org>::::\n"
+                     "sub:u:4096:1:SUBKEY001:1774947438::::::esa:::\n"
+                     "ssb:u:4096:1:SUBKEY002:1774947438::::::esa:::\n");
+
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  // sub and ssb records extend the current key; they do not create new entries.
+  QVERIFY2(result.size() == 1,
+           "sub/ssb records should not create additional UserInfo entries");
+  QVERIFY2(result.first().key_id == QStringLiteral("MAINKEY001"),
+           "key_id should reflect the pub record");
+  QVERIFY2(!result.first().name.isEmpty(), "UID name should be populated");
 }
 
 QTEST_MAIN(tst_gpgkeystate)
