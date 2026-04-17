@@ -511,7 +511,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Facultatif&#xa0;: clé GPG pour signer des fichiers .gpg-id pour vérification de l&apos;intégrité. Laisser vide à moins que vous n&apos;ayez besoin de protéger la liste d&apos;utilisateurs contre l&apos;amortissement.</translation>
+        <translation>Facultatif&#xa0;: clé GPG pour signer les fichiers .gpg-id afin de vérifier leur intégrité. Laisser vide sauf si vous devez protéger la liste des utilisateurs contre la falsification.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -1186,7 +1186,7 @@ Continue?</source>
 
 Cela re-encryptera tous les fichiers de mot de passe dans ce dossier en utilisant les destinataires actuels définis dans .gpg-id.
 
-Cela peut réécrire de nombreux fichiers et ne peut pas être défaire facilement.
+Ça peut écraser plusieurs fichiers et ne peut pas être facilement réparé.
 
 Continuez&#x202f;?</translation>
     </message>
