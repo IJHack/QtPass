@@ -1267,7 +1267,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Generar par de claves GPG</translation>
+        <translation>Generando par de claves GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="222"/>

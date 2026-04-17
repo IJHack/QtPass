@@ -16,17 +16,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished">剪貼簿行為:</translation>
+        <translation>剪貼簿行為:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
         <source>Use primary selection</source>
-        <translation type="unfinished">使用主選取</translation>
+        <translation>使用主選取</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished">自動清除後:</translation>
+        <translation>自動清除後:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished">內容面板行為:</translation>
+        <translation>內容面板行為:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
@@ -56,22 +56,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished">自動清除面板後:</translation>
+        <translation>自動清除面板後:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">使用等寬字體</translation>
+        <translation>使用等寬字體</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished">顯示檔案內容原樣</translation>
+        <translation>顯示檔案內容原樣</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished">不換行</translation>
+        <translation>不換行</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -131,22 +131,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">產生</translation>
+        <translation>產生</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">產生GPG金鑰對</translation>
+        <translation>產生GPG金鑰對</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished">簽名金鑰</translation>
+        <translation>簽名金鑰</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">可選：用於完整性驗證的GPG金鑰，以簽署.gpg-id文件。除非需要保護用戶列表免受篡改，請留空。</translation>
+        <translation>可選：用於完整性驗證的GPG金鑰，以簽署.gpg-id文件。除非需要保護用戶列表免受篡改，請留空。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -198,7 +198,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically pull</source>
-        <translation type="unfinished">自動拉取</translation>
+        <translation>自動拉取</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="558"/>
@@ -217,7 +217,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="615"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished">使用托盤圖標</translation>
+        <translation>使用托盤圖標</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="622"/>
@@ -251,12 +251,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished">&amp;使用pass</translation>
+        <translation>&amp;使用pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
         <source>Native</source>
-        <translation type="unfinished">本地</translation>
+        <translation>本地</translation>
     </message>
     <message>
         <source>git</source>
@@ -277,12 +277,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="795"/>
         <source>Pass</source>
-        <translation type="unfinished">pass</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="806"/>
         <source>pass</source>
-        <translation type="unfinished">pass</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -334,12 +334,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished">顯示所有以單詞後跟冒號開頭的行作為密碼字段中的字段，而不僅僅是列出的那些</translation>
+        <translation>顯示所有以單詞後跟冒號開頭的行作為密碼字段中的字段，而不僅僅是列出的那些</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation type="unfinished">顯示所有範本</translation>
+        <translation>顯示所有範本</translation>
     </message>
     <message>
         <source>login
@@ -367,23 +367,23 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="123"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished">按需複製到剪貼簿</translation>
+        <translation>按需複製到剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished">此字段是必需的</translation>
+        <translation>此字段是必需的</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
         <source>No profile selected</source>
-        <translation type="unfinished">未選擇配置檔案</translation>
+        <translation>未選擇任何個人資料</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="615"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished">未选择要删除的配置文件</translation>
+        <translation>未选择要删除的配置文件</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="715"/>
@@ -393,7 +393,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>請在您的系統上安裝 GnuPG。 &lt;br&gt;使用您喜歡的軟體包管理器安裝&lt;strong&gt;gpg&lt;/strong&gt;，&lt;br&gt;或&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;從 GnuPG.org 下載&lt;/a&gt;。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="783"/>
@@ -408,22 +408,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished">錯誤</translation>
+        <translation>錯誤</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">在：%1 处创建密码存储失败</translation>
+        <translation>在：%1 处创建密码存储失败</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">密码存储未初始化</translation>
+        <translation>密码存储未初始化</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="822"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished">该文件夹%1似乎不是一个密码存储或尚未初始化。</translation>
+        <translation>该文件夹%1似乎不是一个密码存储或尚未初始化。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
@@ -438,12 +438,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="66"/>
         <source>System tray is not available</source>
-        <translation type="unfinished">系统托盘不可用</translation>
+        <translation>系统托盘不可用</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="91"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished">需要安装 Pass OTP 扩展</translation>
+        <translation>需要安装 Pass OTP 扩展</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="96"/>
@@ -463,7 +463,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
         <source>Use PWGen</source>
-        <translation type="unfinished">使用 PWGen</translation>
+        <translation>使用 PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
@@ -478,12 +478,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="581"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished">使用 pass-otp 扩展</translation>
+        <translation>使用 pass-otp 扩展</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished">原生 Git/GPG</translation>
+        <translation>原生 Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -507,12 +507,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <source>PWGen</source>
-        <translation type="unfinished">生成密码</translation>
+        <translation>生成密码</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished">模板添加额外字段，用于密码生成对话框和密码视图。</translation>
+        <translation>模板添加额外字段，用于密码生成对话框和密码视图。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
@@ -531,14 +531,14 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished">檢查.gpgid檔案簽名！</translation>
+        <translation>檢查.gpgid檔案簽名！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished">%1的簽名無效。</translation>
+        <translation>%1的簽名無效。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -555,23 +555,24 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished">GPG簽名失敗！</translation>
+        <translation>GPG簽名失敗！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished">無法為%1簽名。</translation>
+        <translation>無法為%1簽名。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished">沒有可用的簽名金鑰！</translation>
+        <translation>沒有可用的簽名金鑰！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">沒有任何秘密簽名金鑰可用。您將無法更改用戶列表！</translation>
+        <translation>所有密鑰均不可用。
+您將無法更改使用者清單！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -581,55 +582,56 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="238"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished">無法打開.gpg-id進行寫入。</translation>
+        <translation>無法打開.gpg-id進行寫入。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="251"/>
         <source>Check selected users!</source>
-        <translation type="unfinished">檢查所選用戶！</translation>
+        <translation>檢查所選用戶！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="252"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished">所選密鑰中沒有可用的秘密密鑰。您將無法解密任何新添加的密碼！</translation>
+        <translation>所選密鑰均無私有私鑰。
+您將無法解密任何新新增的密碼！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">重新加密失敗</translation>
+        <translation>重新加密失敗</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">無法替換%1。原始檔案已恢復。</translation>
+        <translation>無法替換%1。原始檔案已恢復。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished">創建備份提交</translation>
+        <translation>創建備份提交</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished">備份提交失敗</translation>
+        <translation>備份提交失敗</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">無法檢查git狀態。重新加密被中止。</translation>
+        <translation>無法檢查git狀態。重新加密被中止。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">由於無法創建git備份，重新加密被中止。</translation>
+        <translation>由於無法創建git備份，重新加密被中止。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished">從資料夾%1重新加密</translation>
+        <translation>從資料夾%1重新加密</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="709"/>
@@ -640,27 +642,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished">GPG ID驗證失敗</translation>
+        <translation>GPG ID驗證失敗</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">無法驗證目錄的.gpg-id。</translation>
+        <translation>無法驗證目錄的.gpg-id。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">無法重新加密%1</translation>
+        <translation>無法重新加密%1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">重新加密完成：%1成功，%2失敗</translation>
+        <translation>重新加密完成：%1成功，%2失敗</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">重新加密完成：%1個檔案已重新加密</translation>
+        <translation>重新加密完成：%1個檔案已重新加密</translation>
     </message>
 </context>
 <context>
@@ -668,17 +670,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished">產生 GnuPG 金鑰對</translation>
+        <translation>產生 GnuPG 金鑰對</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished">產生新的金鑰對</translation>
+        <translation>產生新的金鑰對</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation type="unfinished">口令</translation>
+        <translation>口令</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -693,12 +695,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">口令沒有長度限制，應謹慎選擇。從安全角度來看，在另一方獲取您的私鑰的情況下，用於解開私鑰的口令是 GnuPG（以及其他公鑰加密系統）中最薄弱的一環，因為它是您唯一的保護手段。&lt;br/&gt;理想情況下，口令不應使用字典中的單詞，並且應該混合字母字元的大寫和小寫以及非字母字元。&lt;br/&gt;一個好的口令對於安全地使用 GnuPG 至關重要。</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;密碼短語的長度沒有限制，但必須謹慎選擇。從安全角度來看，用於解鎖私鑰的密碼短語是 GnuPG（以及其他公鑰加密系統）中最薄弱的環節之一，因為一旦私鑰被他人獲取，它就是你唯一的保護措施。 &lt;br/&gt;理想情況下，密碼短語不應使用字典中的單詞，並且應混合大小寫字母以及非字母字元。 &lt;br/&gt;一個好的密碼短語對於安全使用 GnuPG 至關重要。 &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished">重複口令</translation>
+        <translation>重複口令</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -708,7 +710,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished">模板内容将根据 GPG 版本设置。</translation>
+        <translation>模板内容将根据 GPG 版本设置。</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
@@ -723,7 +725,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>名稱必須只少5個字元長</translation>
+        <translation>名稱長度至少為 5 個字元。</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
@@ -738,7 +740,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>此操作可能需要幾分鐘。 &lt;br /&gt;我們需要產生大量的隨機位元組。在生成素數期間，最好執行一些其他操作（例如在鍵盤上輸入文字、移動滑鼠、使用磁碟）；這能讓隨機數產生器有更大的機會獲得足夠的熵。</translation>
     </message>
 </context>
 <context>
@@ -773,7 +775,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="359"/>
         <source>Push</source>
-        <translation type="unfinished">推送</translation>
+        <translation>推送</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -816,12 +818,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="362"/>
         <source>Git push</source>
-        <translation type="unfinished">推送 Git 變更</translation>
+        <translation>推送 Git 變更</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="370"/>
         <source>Git pull</source>
-        <translation type="unfinished">從 Git 拉取</translation>
+        <translation>從 Git 拉取</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -965,7 +967,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="494"/>
         <source>OTP Code</source>
-        <translation type="unfinished">一次性密碼</translation>
+        <translation>一次性密碼</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -1019,17 +1021,18 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="699"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">新密碼檔案：（將放置在 %1）</translation>
+        <translation>新密碼檔：
+（將放置在 %1 目錄下）</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
         <source> and the whole content?</source>
-        <translation type="unfinished">以及整個內容？</translation>
+        <translation> 以及整個內容？</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished">以及整個內容？&lt;br&gt;&lt;strong&gt;注意：給定文件夾中存在意外檔案，請在繼續前檢查它們。&lt;/strong&gt;</translation>
+        <translation> 以及整個內容？&lt;br&gt;&lt;strong&gt;注意：給定文件夾中存在意外檔案，請在繼續前檢查它們。&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
@@ -1073,7 +1076,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished">配置文件已更改为 %1</translation>
+        <translation>配置文件已更改为 %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -1108,17 +1111,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">一次性密碼已複製到剪貼簿</translation>
+        <translation>一次性密碼已複製到剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">此密碼條目中未找到一次性密碼</translation>
+        <translation>此密碼條目中未找到一次性密碼</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">未為產生一次性密碼選擇密碼</translation>
+        <translation>未為產生一次性密碼選擇密碼</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
@@ -1133,24 +1136,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished">重新加密</translation>
+        <translation>重新加密</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished">錯誤</translation>
+        <translation>錯誤</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">無法創建文件夾：%1</translation>
+        <translation>無法創建文件夾：%1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">無法在：%1 創建 .gpg-id 檔案</translation>
+        <translation>無法在：%1 創建 .gpg-id 檔案</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1171,12 +1174,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished">目錄不存在：%1</translation>
+        <translation>目錄不存在：%1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">重新加密密碼</translation>
+        <translation>重新加密密碼</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1187,7 +1190,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">是否重新加密 %1 中的所有密碼？
+        <translation>是否重新加密 %1 中的所有密碼？
 
 這將使用當前定義在 .gpg-id 檔案中的收件人重新加密此文件夾中所有密碼檔案。
 
@@ -1201,7 +1204,7 @@ Continue?</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass 是個圖像介面&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;，標準的unix系統密碼管理程式。&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass 是個圖像介面&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;，標準的unix系統密碼管理程式。&lt;/p&gt;
 &lt;p&gt;請回報任何 &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;問題&lt;/a&gt; 當你在使用這個軟體時。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;說明書&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;S程式碼&lt;/a&gt;&lt;/p&gt;</translation>
@@ -1217,7 +1220,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="145"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished">在配置中未設置可供選擇的字元，因此無法產生密碼！</translation>
+        <translation>在配置中未設置可供選擇的字元，因此無法產生密碼！</translation>
     </message>
 </context>
 <context>
@@ -1275,7 +1278,7 @@ Continue?</source>
         <location filename="../main/main.cpp" line="137"/>
         <location filename="../main/main.cpp" line="141"/>
         <source>LTR</source>
-        <translation type="unfinished">LTR</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -1283,7 +1286,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">產生GPG</translation>
+        <translation>產生GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="222"/>
@@ -1306,14 +1309,14 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="257"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">fusedav exited unexpectedly
+        <translation>fusedav意外退出
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to start fusedav to connect WebDAV:
+        <translation>啟動 fusedav 連線 WebDAV 失敗：
 </translation>
     </message>
     <message>
@@ -1329,7 +1332,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="280"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished">QProcess::Timedout</translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="283"/>
@@ -1344,17 +1347,17 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished">QProcess::UnknownError</translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished">GPG金鑰對產生失敗</translation>
+        <translation>GPG金鑰對產生失敗</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished">GPG金鑰對產生成功</translation>
+        <translation>GPG金鑰對產生成功</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1377,12 +1380,12 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
-        <translation type="unfinished">強制</translation>
+        <translation>強制覆蓋？</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished">用 %2 覆蓋 %1？</translation>
+        <translation>用 %2 覆蓋 %1？</translation>
     </message>
 </context>
 <context>
@@ -1400,12 +1403,12 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished">最小化(&amp;N)</translation>
+        <translation>最小化(&amp;N)</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished">最大化(&amp;X)</translation>
+        <translation>最大化(&amp;X)</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
@@ -1423,7 +1426,7 @@ Continue?</source>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation type="unfinished">具有讀取訪問權限的用戶</translation>
+        <translation>具有讀取訪問權限的用戶</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1432,7 +1435,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">請選擇可以解密此文件夾中存儲的密碼的用戶。注意：現有檔案不會被修改，並且在您編輯它們之前保留舊權限。藍色條目具有可用的秘密密鑰，請選擇其中一個以進行解密。黑色條目具有可信賴的加密密鑰，可以選擇其中之一讓其他人進行解密。紅色條目無效，無法對其進行加密。</translation>
+        <translation>選擇哪些使用者可以解密儲存在此資料夾中的密碼。
+注意：現有文件不會被修改，並且會保留原有權限，直到您對其進行編輯。
+藍色條目包含可用的金鑰，選擇其中一個即可解密。
+黑色條目包含可用的加密金鑰，並且該金鑰已被信任，選擇其中一個即可允許其他人解密。
+紅色條目無效，您將無法使用它們進行加密。</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
@@ -1456,7 +1463,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示不可用的按鍵</translation>
     </message>
     <message>
         <source>Can not get key list</source>
@@ -1469,17 +1476,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Keylist missing</source>
-        <translation type="unfinished">密鑰列表缺失</translation>
+        <translation>密鑰列表缺失</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished">無法取得可用的 GPG 密鑰列表</translation>
+        <translation>無法取得可用的 GPG 密鑰列表</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="148"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Key not found in keyring</translation>
+        <translation>鑰匙圈中找不到鑰匙</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="301"/>
@@ -1494,17 +1501,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[無效] </translation>
+        <translation>[無效] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[已過期] </translation>
+        <translation>[已過期] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[部分] </translation>
+        <translation>[部分] </translation>
     </message>
 </context>
 </TS>

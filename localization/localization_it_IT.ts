@@ -424,7 +424,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Non è riuscito a creare password-store a: %1</translation>
+        <translation>Impossibile creare l&apos;archivio password in: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -1228,7 +1228,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Non è riuscito a creare file .gpg-id in: %1</translation>
+        <translation>Impossibile creare il file .gpg-id in: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1586,7 +1586,7 @@ Le righe rosse non sono valide, non saranno utilizzabili per cifrare.</translati
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation>[INVALIDO] </translation>
+        <translation>[NON VALIDO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>

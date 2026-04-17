@@ -131,22 +131,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">생성</translation>
+        <translation>생성</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">GPG 키 쌍 생성</translation>
+        <translation>GPG 키 쌍 생성</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished">서명 키</translation>
+        <translation>서명 키</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">필요한 경우 외에는 공백으로 두고, .gpg-id 파일의Integrity 검증을 위해 서명하는 GPG 키를 입력하세요.</translation>
+        <translation>필요한 경우 외에는 공백으로 두고, .gpg-id 파일의Integrity 검증을 위해 서명하는 GPG 키를 입력하세요.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -339,7 +339,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation type="unfinished">템플릿이 적용된 모든 필드 표시</translation>
+        <translation>템플릿이 적용된 모든 필드 표시</translation>
     </message>
     <message>
         <source>login
@@ -367,7 +367,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="123"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished">필요할 때 클립보드로 복사</translation>
+        <translation>필요할 때 클립보드로 복사</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="204"/>
@@ -393,27 +393,27 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">시스템에 GnuPG를 설치하세요. &lt;br&gt;패키지 관리자를 사용하여 &lt;strong&gt;gpg&lt;/strong&gt;를 설치하거나&lt;br&gt;GnuPG.org에서 &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;다운로드&lt;/a&gt;하세요.</translation>
+        <translation>시스템에 GnuPG를 설치하세요. &lt;br&gt;패키지 관리자를 사용하여 &lt;strong&gt;gpg&lt;/strong&gt;를 설치하거나&lt;br&gt;GnuPG.org에서 &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;다운로드&lt;/a&gt;하세요</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="783"/>
         <source>Create password-store?</source>
-        <translation type="unfinished">비밀번호 저장소를 생성하시겠습니까?</translation>
+        <translation>비밀번호 저장소를 생성하시겠습니까?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="784"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation type="unfinished">%1에 비밀번호 저장소를 생성하시겠습니까?</translation>
+        <translation>%1에 비밀번호 저장소를 생성하시겠습니까?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished">오류</translation>
+        <translation>오류</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">%1 위치에서 비밀번호 저장소 생성에 실패했습니다.</translation>
+        <translation>%1 위치에서 비밀번호 저장소 생성에 실패했습니다</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -423,22 +423,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="822"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>%1 폴더가 비밀번호 저장소가 아니거나 초기화되지 않았습니다</translation>
+        <translation>%1 폴더가 비밀번호 저장소가 아니거나 초기화되지 않았습니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="856"/>
         <source>Autodetect</source>
-        <translation type="unfinished">자동감지</translation>
+        <translation>자동감지</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="66"/>
         <source>System tray is not available</source>
-        <translation type="unfinished">시스템 트레이를 사용할 수 없습니다</translation>
+        <translation>시스템 트레이를 사용할 수 없습니다</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="91"/>
@@ -531,41 +531,41 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished">.gpgid 파일 서명을 확인하세요!</translation>
+        <translation>.gpgid 파일 서명을 확인하세요!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished">%1의 서명이 유효하지 않습니다.</translation>
+        <translation>%1의 서명이 유효하지 않습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
         <location filename="../src/imitatepass.cpp" line="575"/>
         <source>Can not edit</source>
-        <translation type="unfinished">편집할 수 없습니다</translation>
+        <translation>편집할 수 없습니다</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="128"/>
         <location filename="../src/imitatepass.cpp" line="576"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished">암호화키를 읽을 수 없습니다. .gpg-id 파일이 없거나 잘못되었습니다.</translation>
+        <translation>암호화키를 읽을 수 없습니다. .gpg-id 파일이 없거나 잘못되었습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished">GPG 서명에 실패했습니다!</translation>
+        <translation>GPG 서명에 실패했습니다!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished">%1 서명에 실패했습니다.</translation>
+        <translation>%1 서명에 실패했습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished">서명 키가 없습니다!</translation>
+        <translation>서명 키가 없습니다!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
@@ -577,17 +577,17 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
         <source>Cannot update</source>
-        <translation type="unfinished">업데이트할 수 없습니다</translation>
+        <translation>업데이트할 수 없습니다</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="238"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished">쓰기 위해 .gpg-id 를 열수 없습니다</translation>
+        <translation>쓰기 위해 .gpg-id 를 열수 없습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="251"/>
         <source>Check selected users!</source>
-        <translation type="unfinished">선택된 사용자를 확인하세요!</translation>
+        <translation>선택된 사용자를 확인하세요!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="252"/>
@@ -600,54 +600,54 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">재암호화 실패</translation>
+        <translation>재암호화 실패</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1을 교체하는 데 실패했습니다. 원본이 복원되었습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>백업 커밋을 생성합니다</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>백업 커밋 실패</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">Git 상태를 확인할 수 없습니다. 재암호화가 중단되었습니다.</translation>
+        <translation>Git 상태를 확인할 수 없습니다. 재암호화가 중단되었습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">Git 백업이 생성되지 않아 재암호화가 중단되었습니다.</translation>
+        <translation>Git 백업이 생성되지 않아 재암호화가 중단되었습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished">%1 폴더에서 다시 암호화</translation>
+        <translation>%1 폴더에서 다시 암호화</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="709"/>
         <location filename="../src/imitatepass.cpp" line="764"/>
         <source>Updating password-store</source>
-        <translation type="unfinished">비밀번호 저장소 업데이트</translation>
+        <translation>비밀번호 저장소 업데이트</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished">GPG ID 인증 실패</translation>
+        <translation>GPG ID 인증 실패</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">디렉토리의 .gpg-id를 인증할 수 없습니다.</translation>
+        <translation>디렉토리의 .gpg-id를 인증할 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
@@ -670,27 +670,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished">GnuPG 키쌍 생성</translation>
+        <translation>GnuPG 키쌍 생성</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished">새로운 키 쌍 생성</translation>
+        <translation>새로운 키 쌍 생성</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation type="unfinished">암호문</translation>
+        <translation>암호문</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation type="unfinished">이메일</translation>
+        <translation>이메일</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
-        <translation type="unfinished">이름</translation>
+        <translation>이름</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
@@ -700,17 +700,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished">반복 패스</translation>
+        <translation>반복 패스</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation type="unfinished">전문가</translation>
+        <translation>전문가</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished">GPG 버전에 따라 템플릿 내용이 설정됩니다.</translation>
+        <translation>GPG 버전에 따라 템플릿 내용이 설정됩니다.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -752,7 +752,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
-        <translation type="unfinished">잘못된 이름</translation>
+        <translation>잘못된 이름</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
@@ -762,12 +762,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation type="unfinished">올바르지 않은 이메일</translation>
+        <translation>올바르지 않은 이메일</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished">입력한 이메일 주소가 올바른 이메일 주소가 아닙니다.</translation>
+        <translation>입력한 이메일 주소가 올바른 이메일 주소가 아닙니다.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
@@ -791,14 +791,14 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="335"/>
         <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>Edit</source>
-        <translation type="unfinished">편집</translation>
+        <translation>편집</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
         <location filename="../src/mainwindow.cpp" line="1055"/>
         <source>Delete</source>
-        <translation type="unfinished">삭제</translation>
+        <translation>삭제</translation>
     </message>
     <message>
         <source>git push</source>
@@ -807,7 +807,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="359"/>
         <source>Push</source>
-        <translation type="unfinished">올리기(Push)</translation>
+        <translation>올리기(Push)</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -864,7 +864,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="367"/>
         <source>Update</source>
-        <translation type="unfinished">갱신</translation>
+        <translation>갱신</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -880,13 +880,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="378"/>
         <source>Manage who can read password in folder</source>
-        <translation type="unfinished">폴더에서 비밀번호를 읽을 수 있는 사용자 관리</translation>
+        <translation>폴더에서 비밀번호를 읽을 수 있는 사용자 관리</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
         <location filename="../src/mainwindow.cpp" line="1035"/>
         <source>Users</source>
-        <translation type="unfinished">사용자</translation>
+        <translation>사용자</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -907,12 +907,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="383"/>
         <source>Config</source>
-        <translation type="unfinished">구성</translation>
+        <translation>구성</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation type="unfinished">프로필 선택</translation>
+        <translation>프로필 선택</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="197"/>
@@ -922,7 +922,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
         <source>Search Password</source>
-        <translation type="unfinished">비밀번호 검색</translation>
+        <translation>비밀번호 검색</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -931,7 +931,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="199"/>
         <source>Welcome to QtPass %1</source>
-        <translation type="unfinished">QtPass에 오신 것을 환영합니다 %1</translation>
+        <translation>QtPass에 오신 것을 환영합니다 %1</translation>
     </message>
     <message>
         <source>Add Password</source>
@@ -971,7 +971,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="332"/>
         <location filename="../src/mainwindow.cpp" line="345"/>
         <source>Updating password-store</source>
-        <translation type="unfinished">비밀번호 저장소 업데이트</translation>
+        <translation>비밀번호 저장소 업데이트</translation>
     </message>
     <message>
         <source>Can not edit</source>
@@ -988,18 +988,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="453"/>
         <source>Content hidden</source>
-        <translation type="unfinished">숨겨진 콘텐츠</translation>
+        <translation>숨겨진 콘텐츠</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="457"/>
         <location filename="../src/mainwindow.cpp" line="1274"/>
         <source>Password</source>
-        <translation type="unfinished">비밀번호</translation>
+        <translation>비밀번호</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="494"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP 코드</translation>
+        <translation>OTP 코드</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -1041,40 +1041,40 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="594"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished">찾는 곳: %1</translation>
+        <translation>찾는 곳: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="698"/>
         <location filename="../src/mainwindow.cpp" line="1100"/>
         <source>New file</source>
-        <translation type="unfinished">새로운 파일</translation>
+        <translation>새로운 파일</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="699"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">새 암호 파일입니다: 
+        <translation>새 암호 파일입니다: 
 (%1 에 저장됨)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"> 그리고 전체 콘텐츠?</translation>
+        <translation> 그리고 전체 콘텐츠?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"> 전체 콘텐츠를 확인하시겠습니까? &lt;br&gt;&lt;strong&gt;주의: 지정된 폴더에 예기치 않은 파일이 있으니 계속하기 전에 확인하시기 바랍니다.&lt;/strong&gt;</translation>
+        <translation> 전체 콘텐츠를 확인하시겠습니까? &lt;br&gt;&lt;strong&gt;주의: 지정된 폴더에 예기치 않은 파일이 있으니 계속하기 전에 확인하시기 바랍니다.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">정말 %1%2을(를) 삭제하시겠습니까?</translation>
+        <translation>정말 %1%2을(를) 삭제하시겠습니까?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>
         <source>Delete password?</source>
-        <translation type="unfinished">비밀번호를 삭제하시겠습니까?</translation>
+        <translation>비밀번호를 삭제하시겠습니까?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -1083,7 +1083,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>
         <source>Delete folder?</source>
-        <translation type="unfinished">폴더를 삭제하시겠습니까?</translation>
+        <translation>폴더를 삭제하시겠습니까?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -1108,26 +1108,26 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished">프로필이 %1로 변경되었습니다</translation>
+        <translation>프로필이 %1로 변경되었습니다</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished">파일 관리자로 폴더 열기</translation>
+        <translation>파일 관리자로 폴더 열기</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Add folder</source>
-        <translation type="unfinished">폴더 추가</translation>
+        <translation>폴더 추가</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
         <location filename="../src/mainwindow.cpp" line="1034"/>
         <source>Add password</source>
-        <translation type="unfinished">비밀번호 추가</translation>
+        <translation>비밀번호 추가</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -1143,65 +1143,65 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">OTP 코드가 클립보드에 복사되었습니다.</translation>
+        <translation>OTP 코드가 클립보드에 복사되었습니다</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">이 비밀번호 항목에서 OTP 코드를 찾을 수 없습니다.</translation>
+        <translation>이 비밀번호 항목에서 OTP 코드를 찾을 수 없습니다</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">OTP 생성에 선택된 비밀번호가 없습니다.</translation>
+        <translation>OTP 생성에 선택된 비밀번호가 없습니다</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation type="unfinished">폴더 이름 바꾸기</translation>
+        <translation>폴더 이름 바꾸기</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>Rename password</source>
-        <translation type="unfinished">비밀번호 이름 바꾸기</translation>
+        <translation>비밀번호 이름 바꾸기</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished">다시 암호화</translation>
+        <translation>다시 암호화</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished">오류</translation>
+        <translation>오류</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">폴더를 만들 수 실패하였습니다: %1</translation>
+        <translation>폴더를 만들 수 실패하였습니다: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">%1에 .gpg-id 파일을 만들 수 없습니다.</translation>
+        <translation>%1에 .gpg-id 파일을 만들 수 없습니다</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation type="unfinished">파일 이름 바꾸기</translation>
+        <translation>파일 이름 바꾸기</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished">폴더 이름을 다음으로 바꿉니다: </translation>
+        <translation>폴더 이름을 다음으로 바꿉니다: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename File To: </source>
-        <translation type="unfinished">파일 이름 바꾸기: </translation>
+        <translation>파일 이름 바꾸기: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
@@ -1211,7 +1211,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">비밀번호 재암호화</translation>
+        <translation>비밀번호 재암호화</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1247,12 +1247,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="144"/>
         <source>No characters chosen</source>
-        <translation type="unfinished">선택한 문자 없음</translation>
+        <translation>선택한 문자 없음</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="145"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>비밀번호를 생성할 수 없습니다. 환경 구성에서 선택한 문자 집합에서 사용할 수 있는 문자가 없습니다.</translation>
+        <translation>비밀번호를 생성할 수 없습니다. 환경 구성에서 선택한 문자 집합에서 사용할 수 있는 문자가 없습니다!</translation>
     </message>
 </context>
 <context>
@@ -1261,12 +1261,12 @@ Continue?</source>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation type="unfinished">비밀번호</translation>
+        <translation>비밀번호</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation type="unfinished">생성</translation>
+        <translation>생성</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
@@ -1276,17 +1276,17 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation type="unfinished">문자 집합:</translation>
+        <translation>문자 집합:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation type="unfinished">모든 문자</translation>
+        <translation>모든 문자</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation type="unfinished">알파벳</translation>
+        <translation>알파벳</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
@@ -1296,12 +1296,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation type="unfinished">사용자 정의</translation>
+        <translation>사용자 정의</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation type="unfinished">길이:</translation>
+        <translation>길이:</translation>
     </message>
 </context>
 <context>
@@ -1310,7 +1310,7 @@ Continue?</source>
         <location filename="../main/main.cpp" line="137"/>
         <location filename="../main/main.cpp" line="141"/>
         <source>LTR</source>
-        <translation type="unfinished">좌→우</translation>
+        <translation>좌→우</translation>
     </message>
 </context>
 <context>
@@ -1318,7 +1318,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">GPG 키 쌍 생성</translation>
+        <translation>GPG 키 쌍 생성</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="222"/>
@@ -1330,25 +1330,25 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="239"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished">QtPass WebDAV 비밀번호</translation>
+        <translation>QtPass WebDAV 비밀번호</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">WebDAV에 연결하기 위한 비밀번호 입력:</translation>
+        <translation>WebDAV에 연결하기 위한 비밀번호 입력:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="257"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">fusedav가 예기치 않게 종료되었습니다.
+        <translation>fusedav가 예기치 않게 종료되었습니다.
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">WebDAV를 연결하기 위해 fusedav를 시작하지 못했습니다:
+        <translation>WebDAV를 연결하기 위해 fusedav를 시작하지 못했습니다:
 </translation>
     </message>
     <message>
@@ -1384,27 +1384,27 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished">GPG 키 쌍 생성에 실패했습니다.</translation>
+        <translation>GPG 키 쌍 생성에 실패했습니다</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished">GPG 키 쌍이 성공적으로 생성되었습니다.</translation>
+        <translation>GPG 키 쌍이 성공적으로 생성되었습니다</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished">클립보드 지워짐</translation>
+        <translation>클립보드 지워짐</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="466"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished">클립보드가 지워지지 않음</translation>
+        <translation>클립보드가 지워지지 않음</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="511"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">클립보드에 복사됨</translation>
+        <translation>클립보드에 복사됨</translation>
     </message>
 </context>
 <context>
@@ -1412,12 +1412,12 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
-        <translation type="unfinished">강제로 덮어쓰시겠습니까?</translation>
+        <translation>강제로 덮어쓰시겠습니까?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished">%1을(를) %2(으)로 덮어쓰시겠습니까?</translation>
+        <translation>%1을(를) %2(으)로 덮어쓰시겠습니까?</translation>
     </message>
 </context>
 <context>
@@ -1430,22 +1430,22 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished">숨기기(&amp;H)</translation>
+        <translation>숨기기(&amp;H)</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished">최소화(&amp;N)</translation>
+        <translation>최소화(&amp;N)</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished">최대화(&amp;X)</translation>
+        <translation>최대화(&amp;X)</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished">복원(&amp;R)</translation>
+        <translation>복원(&amp;R)</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
@@ -1458,7 +1458,7 @@ Continue?</source>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation type="unfinished">읽기 권한 사용자</translation>
+        <translation>읽기 권한 사용자</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1467,7 +1467,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">이 폴더에 저장된 비밀번호를 해독할 수 있는 사용자를 선택하세요. 주의: 이미 존재하는 파일은 변경되지 않고 기존 권한을 유지하며 수정하기 전까지는 그대로 유지됩니다. 파란색 항목에는 비밀 키가 있어, 이 중 하나를 선택하여 해독할 수 있게 하세요. 검은색 항목에는 신뢰된 암호화 키가 있어, 이 중 하나를 선택하여 다른 사람도 해독할 수 있게 하세요. 빨간색 항목은 유효하지 않으며 이러한 항목으로는 암호화할 수 없습니다.</translation>
+        <translation>이 폴더에 저장된 암호를 해독할 수 있는 사용자를 선택하세요.
+참고: 기존 파일은 수정되지 않으며, 편집하기 전까지 이전 권한이 유지됩니다.
+파란색 항목에는 암호 해독에 사용할 수 있는 비밀 키가 있습니다. 이 중 하나를 선택하여 암호를 해독할 수 있도록 허용하세요.
+검은색 항목에는 암호화 키가 있으며, 이 키가 신뢰할 수 있는 것으로 간주됩니다. 이 중 하나를 선택하여 다른 사용자가 암호를 해독할 수 있도록 허용하세요.
+빨간색 항목은 유효하지 않으므로, 해당 파일로는 암호화할 수 없습니다.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1482,7 +1486,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation type="unfinished">사용자 검색</translation>
+        <translation>사용자 검색</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1501,7 +1505,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation type="unfinished">사용할 수 없는 키 표시</translation>
+        <translation>사용할 수 없는 키 표시</translation>
     </message>
     <message>
         <source>Can not get key list</source>
@@ -1514,27 +1518,27 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Keylist missing</source>
-        <translation type="unfinished">키 목록 누락</translation>
+        <translation>키 목록 누락</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished">사용 가능한 GPG 키 목록을 가져올 수 없습니다.</translation>
+        <translation>사용 가능한 GPG 키 목록을 가져올 수 없습니다</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="148"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">키링에서 키를 찾을 수 없음</translation>
+        <translation>키링에서 키를 찾을 수 없음</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="301"/>
         <source>created</source>
-        <translation type="unfinished">생성</translation>
+        <translation>생성</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="305"/>
         <source>expires</source>
-        <translation type="unfinished">만료</translation>
+        <translation>만료</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
