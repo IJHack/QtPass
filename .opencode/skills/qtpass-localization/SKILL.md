@@ -245,11 +245,11 @@ git commit -m "Resolve merge conflict - use theirs for translations"
 
 **Do not manually edit .ts files** - use Weblate for translations. Run `qmake6` after source changes.
 
-**Exception:** Only maintainer-approved, narrowly-scoped emergency fixes (e.g., urgent encoding regressions or review-requested typo fixes) may be edited directly. Record justification in the PR description.
+**Exception:** Only maintainer-approved, narrowly-scoped emergency fixes (e.g., urgent encoding regressions or review-requested typo fixes) may be edited directly. Approval must be obtained **before** editing. Record a short justification in the PR description (and optionally repeat in the commit message for traceability).
 
 ## Fixing Translation Issues in PRs
 
-> **Note:** Editing `localization/**/*.ts` files is only allowed under the maintainer-approved, narrowly-scoped emergency-fix exception described above. Such edits must be approved and justified in the PR description, followed by running `qmake6`. Use Weblate for normal translations.
+> **Note:** Editing `localization/**/*.ts` files is only allowed under the maintainer-approved, narrowly-scoped emergency-fix exception. Obtain approval **before** editing. Justify in the PR description, then run `qmake6`. Use Weblate for normal translations.
 
 When static analysis flags translation issues (e.g., filename preservation):
 
