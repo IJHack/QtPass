@@ -483,7 +483,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Напра&amp;вите Гит/ГПГ</translation>
+        <translation>Из&amp;ворни Гит/ГПГ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -616,17 +616,17 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation>Погрешна је врата за резервно копирање</translation>
+        <translation>Резервна копија није успела</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Немогуће је прегледати статус git. Преновација је прекинута.</translation>
+        <translation>Није могуће проверити статус git-а. Поновно шифровање је прекинуто.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>Преновација је прекинута јер није могуће створити резервно копирање git.</translation>
+        <translation>Поновно шифровање је прекинуто јер није било могуће креирати резервну копију git-а.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
