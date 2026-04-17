@@ -571,7 +571,8 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">Keiner der geheimen Signaturschlüssel ist verfügbar. Sie können die Benutzerverzeichnis nicht ändern.</translation>
+        <translation>Keiner der geheimen Signaturschlüssel ist verfügbar.
+Sie können die Benutzerverzeichnis nicht ändern!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -1381,7 +1382,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Wählen Sie die Benutzer aus, die die gespeicherten Passwörter in diesem Ordner entschlüsseln können. Beachten Sie: Bestehende Dateien werden nicht geändert und behalten ihre alten Berechtigungen bei, bis Sie sie bearbeiten. Blaue Einträge haben einen verfügbaren Geheimschlüssel, wählen Sie eines dieser Einträge aus, um entschlüsseln zu können. Schwarze Einträge haben einen vertrauenswürdigen Verschlüsselungsschlüssel verfügbar und können von anderen verwendet werden, wählen Sie eines dieser Einträge aus. Rotfarbige Einträge sind ungültig, Sie können diese nicht verschlüsseln.</translation>
+        <translation>Wählen Sie die Benutzer aus, die die gespeicherten Passwörter in diesem Ordner entschlüsseln können. 
+Beachten Sie: Bestehende Dateien werden nicht geändert und behalten ihre alten Berechtigungen bei, bis Sie sie bearbeiten.
+Blaue Einträge haben einen verfügbaren Geheimschlüssel, wählen Sie eines dieser Einträge aus, um entschlüsseln zu können.
+Schwarze Einträge haben einen vertrauenswürdigen Verschlüsselungsschlüssel verfügbar und können von anderen verwendet werden, wählen Sie eines dieser Einträge aus.
+Rotfarbige Einträge sind ungültig, Sie können diese nicht verschlüsseln.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.

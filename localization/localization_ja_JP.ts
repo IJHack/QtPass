@@ -1059,12 +1059,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
         <source> and the whole content?</source>
-        <translation> と全てのコンテンツ</translation>
+        <translation> と全てのコンテンツ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation>とコンテンツ全体？&lt;br&gt;&lt;strong&gt;注意：指定されたフォルダーに予期しないファイルがあります。続行する前にそれらを確認してください。&lt;/strong&gt;</translation>
+        <translation> とコンテンツ全体？&lt;br&gt;&lt;strong&gt;注意：指定されたフォルダーに予期しないファイルがあります。続行する前にそれらを確認してください。&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
@@ -1196,12 +1196,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Rename Folder To: </source>
-        <translation>フォルダ名を変更:</translation>
+        <translation>フォルダ名を変更: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename File To: </source>
-        <translation>ファイル名を変更:</translation>
+        <translation>ファイル名を変更: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>

@@ -516,7 +516,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Clé GPG optionnelle pour signer les fichiers .gpg-id pour la vérification d&apos;intégrité. Laissez vide sauf si vous avez besoin de protéger la liste des utilisateurs contre l&apos;usurpation.</translation>
+        <translation>Les modèles ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mot de passe et dans l&apos;affichage du mot de passe.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
@@ -559,7 +559,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished">Échec de la signature GPG!</translation>
+        <translation>Échec de la signature GPG&#x202f;!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
@@ -569,13 +569,14 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished">Aucune clé de signature!</translation>
+        <translation>Aucune clé de signature&#x202f;!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">Aucune des clés secrètes de signature n&apos;est disponible. Vous ne pourrez pas modifier la liste des utilisateurs!</translation>
+        <translation>Aucune des clés secrètes de signature n&apos;est disponible.
+Vous ne pourrez pas modifier la liste des utilisateurs&#x202f;!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -650,7 +651,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">Impossible de vérifier l&apos;ID .gpg-id pour le répertoire.</translation>
+        <translation>Impossible de vérifier .gpg-id pour le répertoire.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
@@ -1155,12 +1156,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Rename Folder To: </source>
-        <translation>Cela ré-chiffre toutes les fichiers de mot de passe dans ce dossier à l&apos;aide des destinataires actuels définis dans .gpg-id. Cela peut écrire sur plusieurs fichiers et ne peut pas être annulé facilement.</translation>
+        <translation>Renommer le dossier en: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename File To: </source>
-        <translation>Renommer le fichier en : </translation>
+        <translation>Renommer le fichier en&#xa0;: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
@@ -1420,7 +1421,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Sélectionnez les utilisateurs qui doivent pouvoir déchiffrer les mots de passe stockés dans ce dossier. Notez que les fichiers existants ne seront pas modifiés et conserveront les anciennes permissions jusqu&apos;à ce que vous les éditez. Les entrées bleues ont une clé secrète disponible, sélectionnez-en une pour pouvoir déchiffrer. Les entrées noires ont une clé de chiffrement disponible et elle est de confiance, sélectionnez-en une pour permettre à d&apos;autres personnes de déchiffrer. Les entrées rouges ne sont pas valides, vous ne serez pas en mesure de chiffrement à destination de ces.</translation>
+        <translation>Sélectionnez les utilisateurs autorisés à déchiffrer les mots de passe stockés dans ce dossier.
+Remarque&#xa0;: les fichiers existants ne seront pas modifiés et conserveront leurs anciennes permissions jusqu’à ce que vous les modifiiez.
+Les entrées bleues possèdent une clé secrète&#x202f;; sélectionnez-en une pour pouvoir les déchiffrer.
+Les entrées noires possèdent une clé de chiffrement fiable&#x202f;; sélectionnez-en une pour autoriser d’autres personnes à les déchiffrer.
+Les entrées rouges ne sont pas valides&#x202f;; vous ne pourrez pas chiffrer avec ces entrées.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.

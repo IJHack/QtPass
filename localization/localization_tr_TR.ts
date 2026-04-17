@@ -1055,7 +1055,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">%1&apos;deki tüm parolaları yeniden şifreliyormusunuz? Bu, bu klasördeki tüm parola dosyalarını (bu klasöre tanımlanan mevcut alıcılar kullanılarak) yeniden şifrelemeyi sağlayacak. Bu, birçok dosyanın yazılmasına neden olabilir ve kolay olarak geri alınamaz. Devam etmek istiyor musunuz??</translation>
+        <translation>%1 klasöründeki tüm şifreleri yeniden şifrele?
+
+Bu işlem, .gpg-id dosyasında tanımlanan mevcut alıcıları kullanarak bu klasördeki TÜM şifre dosyalarını yeniden şifreleyecektir.
+
+Bu işlem birçok dosyayı yeniden yazabilir ve kolayca geri alınamaz.
+
+Devam edilsin mi?</translation>
     </message>
 </context>
 <context>
@@ -1293,7 +1299,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Bu klasörde saklanan parolaları çözebilecek kullanıcıları seçin. Not: Mevcut dosyalar değiştirilmeyecektir ve düzenlersiniz kadar eski izinler korunacaktır. Mavi girdiler bir gizli anahtar mevcuttur, bunlardan birini seçerek parolayı çözebilirsiniz. Siyah girdiler bir şifreleme anahtarı mevcut ve güvenilir olup, bunlardan birini seçerek diğerlerine izin verebilirsiniz. Kırmızı girdiler geçerli değildir, bularına şifrelemeye izin veremezsiniz.</translation>
+        <translation>Bu klasörde saklanan parolaları çözebilecek kullanıcıları seçin.
+Not: Mevcut dosyalar değiştirilmeyecektir ve düzenlersiniz kadar eski izinler korunacaktır.
+Mavi girdiler bir gizli anahtar mevcuttur, bunlardan birini seçerek parolayı çözebilirsiniz.
+Siyah girdiler bir şifreleme anahtarı mevcut ve güvenilir olup, bunlardan birini seçerek diğerlerine izin verebilirsiniz.
+Kırmızı girdiler geçerli değildir, bularına şifrelemeye izin veremezsiniz.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
@@ -1333,17 +1343,17 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[GEÇERSİZ]</translation>
+        <translation>[GEÇERSİZ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[SÜRESİ DOLMUŞ]</translation>
+        <translation>[SÜRESİ DOLMUŞ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[KISMİ]</translation>
+        <translation>[KISMİ] </translation>
     </message>
 </context>
 </TS>

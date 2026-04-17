@@ -575,7 +575,8 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">Aucune des clés de signature privées n&apos;est disponible. Vous ne pourrez pas modifier la liste des utilisateurs !</translation>
+        <translation>Aucune des clés de signature privées n&apos;est disponible.
+Vous ne pourrez pas modifier la liste des utilisateurs&#x202f;!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -1420,7 +1421,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Sélectionnez les utilisateurs qui doivent pouvoir déchiffrer les mots de passe stockés dans ce dossier. Note : Les fichiers existants ne seront pas modifiés et conserveront leurs anciennes permissions jusqu&apos;à ce que vous les éditez. Les entrées en bleu ont une clé secrète disponible, sélectionnez-en une pour pouvoir déchiffrer. Les entrées en noir ont une clé de chiffrement disponible et celle-ci est fiable, sélectionnez-en une pour permettre à d&apos;autres personnes de déchiffrer. Les entrées en rouge ne sont pas valides, vous ne pourrez pas chiffrer vers celles-ci.</translation>
+        <translation>Sélectionnez les utilisateurs qui doivent pouvoir déchiffrer les mots de passe stockés dans ce dossier.
+Note&#xa0;: Les fichiers existants ne seront pas modifiés et conserveront leurs anciennes permissions jusqu&apos;à ce que vous les éditez.
+Les entrées en bleu ont une clé secrète disponible, sélectionnez-en une pour pouvoir déchiffrer.
+Les entrées en noir ont une clé de chiffrement disponible et celle-ci est fiable, sélectionnez-en une pour permettre à d&apos;autres personnes de déchiffrer.
+Les entrées en rouge ne sont pas valides, vous ne pourrez pas chiffrer vers celles-ci.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
