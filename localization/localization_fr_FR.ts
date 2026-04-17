@@ -646,7 +646,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation>Vérification de l &apos; identité GPG</translation>
+        <translation>La vérification de l’ID GPG a échoué</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
