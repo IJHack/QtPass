@@ -154,7 +154,7 @@ QtPass uses system locale. To test:
 
 ```bash
 # Linux
-LANG=nl_NL ./qtpass
+LANG=nl_NL.UTF-8 ./qtpass
 
 # Or set in QtPass settings
 ```
@@ -233,9 +233,16 @@ When source strings change, translations are marked "unfinished" but may still a
 When merging translation PRs that conflict:
 
 ```bash
-# Use theirs strategy for .ts files (they're XML, prefer incoming)
-git checkout --theirs localization/localization_*.ts
-git add localization/
+# Use theirs strategy for conflicted .ts files (they're XML, prefer incoming)
+# 1) List conflicted translation files and review them:
+git diff --name-only --diff-filter=U -- localization/*.ts
+
+# 2) Resolve each intended file explicitly (repeat as needed):
+git checkout --theirs localization/localization_de.ts
+git checkout --theirs localization/localization_fr.ts
+
+# 3) Stage and commit:
+git add localization/localization_de.ts localization/localization_fr.ts
 git commit -m "Resolve merge conflict - use theirs for translations"
 ```
 
