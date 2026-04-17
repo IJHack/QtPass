@@ -329,7 +329,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Vypnuto vytvořit heslo v: %1</translation>
+        <translation>Nepodařilo se vytvořit úložiště hesel v: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -404,7 +404,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation>Generovat GPG klíč pár</translation>
+        <translation>Generování páru GPG klíčů</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
@@ -503,7 +503,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Volitelné: GPG klíč pro přihlášení .gpg-id souborů pro ověření integrity. Vynechávejte prázdné, pokud potřebujete chránit seznam uživatelů před použitím.</translation>
+        <translation>Volitelné: GPG klíč pro podepisování souborů .gpg-id za účelem ověření integrity. Ponechte prázdné, pokud nepotřebujete chránit seznam uživatelů před neoprávněnou úpravou.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -527,7 +527,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Zkontrolujte .gpgid soubor podpis!</translation>
+        <translation>Zkontrolujte podpis souboru .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
@@ -556,7 +556,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation>Zločinil se zaregistrovat %1.</translation>
+        <translation>Nepodařilo se podepsat %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -601,7 +601,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Neúspěšné nahradit %1. Původní byla obnovena.</translation>
+        <translation>Nepodařilo se nahradit %1. Původní verze byla obnovena.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
@@ -696,7 +696,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Opakujte průchod</translation>
+        <translation>Zopakujte heslo</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -1085,7 +1085,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Žádný kód OTP nalezený v tomto hesla</translation>
+        <translation>V tomto záznamu hesla nebyl nalezen žádný kód OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1100,7 +1100,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation>Žádné heslo pro generování OTP</translation>
+        <translation>Není vybráno žádné heslo pro generování OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
