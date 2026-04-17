@@ -137,7 +137,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation>Generare coppia di tasti GPG</translation>
+        <translation>Genera una coppia di chiavi GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
