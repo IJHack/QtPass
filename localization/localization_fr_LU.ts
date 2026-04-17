@@ -656,7 +656,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Vous n&apos;a pas réussi à ré-encrypter %1</translation>
+        <translation>Vous n'avez pas réussi à ré-encrypter %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
@@ -1422,7 +1422,7 @@ Blue entries have a secret key available, select one of these to be able to decr
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Sélectionnez les utilisateurs qui pourront déchiffrer les mots de passe stockés dans ce dossier.
-Note&#xa0;: Les fichiers existants ne seront pas modifiés et conserveront leurs anciennes permissions jusqu&apos;à ce que vous les éditées.
+Note&#xa0;: Les fichiers existants ne seront pas modifiés et conserveront leurs anciennes permissions jusqu&apos;à ce que vous les éditiez.
 Les entrées bleues ont une clé secrète disponible, sélectionnez-en une pour pouvoir déchiffrer. 
 Les entrées noires ont une clé de chiffrement disponible et elle est considérée comme fiable&#x202f;; sélectionnez-en une pour permettre à d&apos;autres personnes de déchiffrer.
 Les entrées rouges ne sont pas valides, vous ne pourrez pas chiffrer avec ces dernières.</translation>

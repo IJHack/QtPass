@@ -572,7 +572,7 @@ e-mail</translation>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Keiner der geheimen Signaturschlüssel ist verfügbar.
-Sie können die Benutzerverzeichnis nicht ändern!</translation>
+Sie können die Benutzerliste nicht ändern!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>

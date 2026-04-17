@@ -1422,7 +1422,7 @@ Blue entries have a secret key available, select one of these to be able to decr
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Sélectionnez les utilisateurs qui doivent pouvoir déchiffrer les mots de passe stockés dans ce dossier.
-Note&#xa0;: Les fichiers existants ne seront pas modifiés et conserveront leurs anciennes permissions jusqu&apos;à ce que vous les éditez.
+Note&#xa0;: Les fichiers existants ne seront pas modifiés et conserveront leurs anciennes permissions jusqu&apos;à ce que vous les éditiez.
 Les entrées en bleu ont une clé secrète disponible, sélectionnez-en une pour pouvoir déchiffrer.
 Les entrées en noir ont une clé de chiffrement disponible et celle-ci est fiable, sélectionnez-en une pour permettre à d&apos;autres personnes de déchiffrer.
 Les entrées en rouge ne sont pas valides, vous ne pourrez pas chiffrer vers celles-ci.</translation>
