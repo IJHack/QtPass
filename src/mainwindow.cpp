@@ -301,9 +301,11 @@ void MainWindow::config() {
       applyWindowFlagsSettings();
 
       updateProfileBox();
-      proxyModel.setStore(QtPassSettings::getPassStore());
-      ui->treeView->setRootIndex(proxyModel.mapFromSource(
-          model.setRootPath(QtPassSettings::getPassStore())));
+      const QString passStore = QtPassSettings::getPassStore();
+      proxyModel.setStore(passStore);
+      ui->treeView->setRootIndex(
+          proxyModel.mapFromSource(model.setRootPath(passStore)));
+      deselect();
       ui->treeView->setCurrentIndex(QModelIndex());
 
       if (m_qtPass->isFreshStart() && !Util::configIsValid()) {
@@ -911,10 +913,8 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
   proxyModel.setStore(passStore);
   ui->treeView->setRootIndex(
       proxyModel.mapFromSource(model.setRootPath(passStore)));
+  deselect();
   ui->treeView->setCurrentIndex(QModelIndex());
-
-  ui->actionEdit->setEnabled(false);
-  ui->actionDelete->setEnabled(false);
 }
 
 /**
