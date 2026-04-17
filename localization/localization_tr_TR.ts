@@ -255,12 +255,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Oluştur</translation>
+        <translation>Oluşturmak</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">GPG anahtar çifti oluştur</translation>
+        <translation>Oluşturmak GPG anahtar çifti</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="765"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">Seçeneğelidir: bütünlük doğrulaması için .gpg-id dosyalarını imzalamak üzere bir GPG anahtarına ihtiyacınız olursa bu alan boş bırakın.</translation>
+        <translation>Seçmeli: GPG, dürüstlük doğrulama için .gpg-id dosyaları imzalamak için anahtar. Kullanıcı listesini tampering&apos;den korumanız gerektiğinde boş bırakın.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
@@ -405,7 +405,7 @@ e-posta</translation>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished">Bu alan gereklidir</translation>
+        <translation>Bu alan gereklidir</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -499,12 +499,12 @@ e-posta</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished">GPG imzalama başarısız oldu!</translation>
+        <translation>GPG imzası başarısız oldu!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished">%1 imzalamak başarısız oldu.</translation>
+        <translation>%1&apos;i imzalamayı başaramadı.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -544,33 +544,33 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">Yeniden şifreleme başarısız oldu</translation>
+        <translation>Şifreleme başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">%1 yerine koyma başarısız oldu. Orijinal geri yüklendi.</translation>
+        <translation>Yerini değiştirmek için başarısız oldu %1. Orijinal restore edilmiştir.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished">Yedek commit oluşturuluyor</translation>
+        <translation>Yedek commit oluşturuluyor</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished">Yedek commit başarısız oldu</translation>
+        <translation>Yedek commit başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">Git durumu kontrol edilemedi. Yeniden şifreleme iptal edildi.</translation>
+        <translation>Git durumu kontrol edilemedi. Yeniden şifreleme iptal edildi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">Yeniden şifreleme iptal edildi çünkü bir git yedek oluşturulamadı.</translation>
+        <translation>Yeniden şifreleme iptal edildi çünkü bir git yedek oluşturulamadı.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -586,27 +586,27 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished">GPG kimlik doğrulaması başarısız oldu</translation>
+        <translation>GPG ID doğrulama başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">Dizin için .gpg-id doğrulanamadı.</translation>
+        <translation>Dizin için .gpg-id doğrulanamadı.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">%1 yeniden şifrelemek başarısız oldu</translation>
+        <translation>Şifreyi yeniden tanımlamak için başarısız oldu %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">Yeniden şifreleme tamamlandı: %1 başarılı, %2 başarısız</translation>
+        <translation>Şifreleme tamamlandı: %1 başarılı oldu, %2 başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">Yeniden şifreleme tamamlandı: %1 dosya yeniden şifrelendi</translation>
+        <translation>Şifreleme tamamlandı: %1 dosyaları yeniden şifrelendi</translation>
     </message>
 </context>
 <context>
@@ -654,7 +654,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished">GPG sürümüne göre şablon içerikleri ayarlanacaktır.</translation>
+        <translation>Şablon içeriği GPG versiyonuna göre belirlenecektir.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -911,12 +911,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">OTP kodu panoya kopyalandı</translation>
+        <translation>OTP kodu pano&apos;a kopyalandı</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Bu parola girişinde bir OTP kodu bulunamadı</translation>
+        <translation>Bu parola girişinde OTP kodu bulunamadı</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="516"/>
@@ -969,7 +969,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">OTP oluşturulması için hiçbir parola seçilmedi</translation>
+        <translation>OTP oluşturma için parola seçilmedi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
@@ -994,7 +994,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished">Yeniden şifrele</translation>
+        <translation>Yeniden şifre</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -1018,7 +1018,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">%1 dizinine .gpg-id dosyası oluşturulamadı</translation>
+        <translation>.gpg-id dosyası oluşturmak için başarısız oldu: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1039,12 +1039,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished">%1 dizini mevcut değil: %1</translation>
+        <translation>Dizin mevcut değil: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">Parolaları yeniden şifrele</translation>
+        <translation>Parolaları yeniden şifrele</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1206,12 +1206,12 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished">GPG anahtar çifti oluşturulması başarısız oldu</translation>
+        <translation>GPG anahtar çift nesli başarısız oldu</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished">GPG anahtar çifti başarıyla oluşturuldu</translation>
+        <translation>GPG anahtar çifti başarıyla oluşturuldu</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>

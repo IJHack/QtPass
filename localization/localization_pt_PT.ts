@@ -67,7 +67,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Sem quebra de linha</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -122,22 +122,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Chave de Assinatura</translation>
+        <translation>Gerar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">Opcional: Chave GPG para assinar os ficheiros .gpg-id para verificar a integridade. Deixe em branco a menos que precise proteger a lista de utilizadores contra alterações.</translation>
+        <translation>Gerar par de chaves GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Chave de Assinatura</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opcional: Chave GPG para assinar arquivos .gpg-id para verificação de integridade. Deixe vazio a menos que você precise proteger a lista de usuários de adulteração.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -338,7 +338,7 @@
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation>Erro</translation>
+        <translation>Este campo é obrigatório</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -373,12 +373,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Falha ao criar a password-store em: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -518,7 +518,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished">&apos;Assinatura de %1 é inválida.&apos;</translation>
+        <translation>Assinatura para %1 é inválida.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -580,33 +580,33 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">&apos;Falha na recriptografia&apos;</translation>
+        <translation>Falha na reencriptação</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">&apos;Falha ao substituir %1. O original foi restaurado.&apos;</translation>
+        <translation>Falha ao substituir %1. O original foi restaurado.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished">&apos;Criando commit de backup&apos;</translation>
+        <translation>Criando commit de backup</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished">&apos;Falha no commit de backup&apos;</translation>
+        <translation>Commit de backup falhou</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">&apos;Não foi possível inspecionar o status do git. A recriptografia foi abortada.&apos;</translation>
+        <translation>Não foi possível inspecionar o estado do git. A reencriptação foi abortada.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">&apos;A recriptografia foi abortada porque não foi possível criar um backup do git.&apos;</translation>
+        <translation>A reencriptação foi abortada porque não foi possível criar uma cópia de segurança git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -622,7 +622,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished">&apos;Falha na verificação do ID GPG&apos;</translation>
+        <translation>Falha na verificação do ID GPG</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
@@ -632,7 +632,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Falha ao recriptografar %1</translation>
+        <translation>Falha ao reencriptar %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
@@ -655,7 +655,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Gerar um par de chaves GnuPG</translation>
+        <translation>Gerar um novo par de chaves</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
@@ -1013,7 +1013,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="327"/>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Add folder</source>
-        <translation>Nenhuma senha selecionada para geração de OTP</translation>
+        <translation>Adicionar pasta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
@@ -1026,7 +1026,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Nova pasta: (Será posta em %1 )</translation>
+        <translation>Nova pasta:
+(Será posta em %1 )</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -1070,12 +1071,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">Re-criptar</translation>
+        <translation>Código OTP copiado para a área de transferência</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">Erro</translation>
+        <translation>Nenhum código OTP encontrado nesta entrada de senha</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1090,7 +1091,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">Nenhuma palavra-passe selecionada para geração de OTP</translation>
+        <translation>Nenhuma senha selecionada para geração OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -1110,30 +1111,30 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Reencriptar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">Diretório não existe: %1</translation>
+        <translation>Falha ao criar a pasta: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Re-criptar as palavras-passe</translation>
+        <translation>Falha ao criar o ficheiro .gpg-id em: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation>Re-criptar todas as palavras-passe em %1? Isto irá re-criptar TODOS os ficheiros de palavra-passe neste diretório usando os destinatários actuais definidos no .gpg-id. Pode reescrever muitos ficheiros e não pode ser desfeito facilmente. Continuar?</translation>
+        <translation>Renomear ficheiro</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1148,12 +1149,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>O diretório não existe: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Re-encriptar senhas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1164,7 +1165,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Reencriptar todas as senhas em %1?
+
+Isso irá criptografar todos os arquivos de senha nesta pasta usando os destinatários atuais definidos em .gpg-id.
+
+Isso pode reescrever muitos arquivos e não pode ser desfeito facilmente.
+
+Continua?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>

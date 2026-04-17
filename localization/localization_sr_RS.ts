@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished">Ponašanje u međuspremu:</translation>
+        <translation>Ponašanje u međuspremu:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished">Ponašanje panela sa sadržajem:</translation>
+        <translation>Ponašanje panela sa sadržajem:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
@@ -334,12 +334,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished">Prikaži sve linije počevši od reke sa zarezom kao polja u poljima za lozinke, ne samo one navedene.</translation>
+        <translation>Prikaži sve linije počevši od reke sa zarezom kao polja u poljima za lozinke, ne samo one navedene</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation type="unfinished">Prikaži sva polja šablonisana.</translation>
+        <translation>Prikaži sva polja šablonisana</translation>
     </message>
     <message>
         <source>login
@@ -428,7 +428,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;www.passwordstore.org&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="856"/>
@@ -448,12 +448,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="96"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished">Potrebno je instalirati qrencode.</translation>
+        <translation>Potrebno je instalirati qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="718"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">:</translation>
+        <translation>Instalirajte GnuPG na svoj sustav.&lt;br&gt;Instalirajte &lt;strong&gt;Ubuntu&lt;/strong&gt; iz Microsoft Storea da biste ga preuzeli.&lt;br&gt;Ako ste to već učinili, provjerite jeste li ga jednom pokrenuli i&lt;br&gt;kliknite &quot;Automatsko otkrivanje&quot; u sljedećem dijalogu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="723"/>
@@ -600,7 +600,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">Neuspešno je ponovo šifriranje.</translation>
+        <translation>Neuspešno je ponovo šifriranje</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
@@ -610,7 +610,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished">Kreiranje sačuvanog komiteta.</translation>
+        <translation>Kreiranje sačuvanog komiteta</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
@@ -642,7 +642,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished">Verifikacija GPG ID-a nije uspešna.</translation>
+        <translation>Verifikacija GPG ID-a nije uspešna</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
@@ -762,7 +762,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation type="unfinished">Neispravan e-mail.</translation>
+        <translation>Neispravan e-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
@@ -1211,7 +1211,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">Ponovo šifrirati lozinke?</translation>
+        <translation>Ponovo šifrirati lozinke</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1335,20 +1335,20 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">Enter password to connect to WebDAV:</translation>
+        <translation>Unesite lozinku za povezivanje s WebDAV-om:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="257"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">fusedav exited unexpectedly
+        <translation>fusedav je neočekivano izašao
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to start fusedav to connect WebDAV:
+        <translation>Nije uspjelo pokretanje fusedava za povezivanje s WebDAV-om:
 </translation>
     </message>
     <message>
@@ -1394,12 +1394,12 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished">Clipboard cleared</translation>
+        <translation>Međuspremnik je izbrisan</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="466"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished">Clipboard not cleared</translation>
+        <translation>Međuspremnik nije izbrisan</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="511"/>
@@ -1518,7 +1518,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="148"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Key not found in keyring</translation>
+        <translation>Ključ nije pronađen u privjesku za ključeve</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="301"/>
