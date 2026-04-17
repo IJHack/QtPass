@@ -1181,12 +1181,12 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Copied to clipboard</source>
-        <translation type="vanished">Codice OTP copiato nella clipboard</translation>
+        <translation type="vanished">Copiato negli appunti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">Codice OTP copiato nella clipboard</translation>
+        <translation type="unfinished">Codice OTP copiato negli appunti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
