@@ -1088,7 +1088,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation>Code OTP copié sur presse</translation>
+        <translation>Code OTP copié sur presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
@@ -1166,7 +1166,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation>Annuaire n&apos;existe pas&#xa0;: %1</translation>
+        <translation>Répertoire n&apos;existe pas&#xa0;: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
