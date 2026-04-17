@@ -1574,7 +1574,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation>[பயன்பாட்டு அளவுக்கு வழங்கப்பட்ட] </translation>
+        <translation>[காலாவதியான] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
