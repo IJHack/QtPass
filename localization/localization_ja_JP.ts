@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>オプション：.gpg-id ファイルの整合性検証のために署名する GPG キー。ユーザーリストの改ざん防止が必要でない限り、空欄のままにしてください。.</translation>
+        <translation>オプション：.gpg-id ファイルの整合性検証のために署名する GPG キー。ユーザーリストの改ざん防止が必要でない限り、空欄のままにしてください。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -594,7 +594,7 @@ You will not be able to change the user list!</source>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>選択されたキーにはいずれも秘密鍵がありません。
-新しく追加されたパスワードを復号化することはできません。!</translation>
+そのため、新しく追加されたパスワードを復号化することはできません。</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="639"/>
