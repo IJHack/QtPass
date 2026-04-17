@@ -1217,7 +1217,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Obdarené vytvoriť .gpg-id súbor v: %1</translation>
+        <translation>Nepodarilo sa vytvoriť .gpg-id súbor v: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1243,7 +1243,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation>Šifrovacie heslo</translation>
+        <translation>Znovu zašifrovať heslá</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1499,11 +1499,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Vyberte, ktorí používatelia by mali byť schopní šifrovať heslá uložené v tomto priečinku.
-Poznámka: Existujúce súbory nebudú upravovať a uchovávať staré povolenia, kým ich editujete.
-Modré záznamy majú tajný kľúč k dispozícii, vyberte jednu z nich, aby ste mohli cryptť.
-Čierne záznamy majú k dispozícii šifrovací kľúč a je dôveryhodný, vyberte jednu z nich, aby ostatní ľudia crypt.
-Červené záznamy nie sú platné, nebudete môcť šifrovať tieto.</translation>
+        <translation>Vyberte, ktorí používatelia by mali byť schopní dešifrovať heslá uložené v tomto priečinku.
+Poznámka: Existujúce súbory nebudú upravené a zachovajú si staré oprávnenia, kým ich neupravíte.
+Modré položky majú dostupný tajný kľúč, vyberte jednu z nich, aby ste mohli dešifrovať.
+Čierne položky majú dostupný šifrovací kľúč a sú dôveryhodné, vyberte jednu z nich, aby mohli dešifrovať aj ostatní.
+Červené položky nie sú platné, nebudete môcť na ne šifrovať.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1580,7 +1580,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation>[VYDIERAJÚCE] </translation>
+        <translation>[EXPIROVANÉ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
