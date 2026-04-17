@@ -642,7 +642,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation>GPG ID சரிபார்ப்பு தோல்வியடைந்தது</translation>
+        <translation>GPG உருப்பாய் சரியானவையால் போர்டம் மாற்றம் தேவையாக விளக்கப்படவில்லை</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
@@ -1574,12 +1574,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation>[காலாவதியான] </translation>
+        <translation>[பயன்பாட்டு அளவுக்கு வழங்கப்பட்ட] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation>[பகுதி] </translation>
+        <translation>[அலியான] </translation>
     </message>
 </context>
 </TS>
