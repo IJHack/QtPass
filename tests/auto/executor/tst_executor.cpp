@@ -102,8 +102,7 @@ void tst_executor::executeBlockingWithEnv() {
   // Basic: custom env, echo succeeds, output captured.
   QStringList env = {"MY_VAR=hello_env"};
   QString output;
-  int result = Executor::executeBlocking(env, "sh",
-                                         {"-c", "echo ok"}, &output);
+  int result = Executor::executeBlocking(env, "sh", {"-c", "echo ok"}, &output);
   QVERIFY2(result == 0, "sh with custom env should exit 0");
   QVERIFY2(output.contains("ok"), "output should contain 'ok'");
 }
@@ -150,8 +149,7 @@ void tst_executor::executeBlockingConstQStringRef() {
   const QString app = QStringLiteral("echo");
   const QStringList args = {QStringLiteral("const-ref-ok")};
   QString output;
-  const int result =
-      Executor::executeBlocking(app, args, QString(), &output);
+  const int result = Executor::executeBlocking(app, args, QString(), &output);
   QVERIFY2(result == 0, "const QString& app should be accepted");
   QVERIFY2(output.contains("const-ref-ok"),
            "output should contain 'const-ref-ok'");
@@ -170,8 +168,8 @@ void tst_executor::executeBlockingWithEnvNotFound() {
   // The env-based overload should also fail gracefully for a missing binary.
   QStringList env = {"MY_VAR=irrelevant"};
   QString output;
-  int result = Executor::executeBlocking(env, "nonexistent_command_env_xyz",
-                                         {}, &output);
+  int result = Executor::executeBlocking(env, "nonexistent_command_env_xyz", {},
+                                         &output);
   QVERIFY2(result != 0,
            "env-overload with nonexistent command should return non-zero");
 }
