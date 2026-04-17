@@ -334,7 +334,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished">Покажи све редове који почињу са речју праћеном двотачком као поља у паролским пољима, не само оне наведене.</translation>
+        <translation>Покажи све редове који почињу са речју праћеном двотачком као поља у паролским пољима, не само оне наведене</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
@@ -1059,12 +1059,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
         <source> and the whole content?</source>
-        <translation type="unfinished">и цело садржаје?</translation>
+        <translation> и цело садржаје?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"> и цело садржаје? &lt;br&gt;&lt;strong&gt;Упозорење: постоје неочекивани фајлови у датотеци коју сте дали, проверите их пре наставка.&lt;/strong&gt;</translation>
+        <translation> и цело садржаје? &lt;br&gt;&lt;strong&gt;Упозорење: постоје неочекивани фајлови у датотеци коју сте дали, проверите их пре наставка.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
@@ -1196,12 +1196,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished">Преименујте папку као:</translation>
+        <translation>Преименујте папку као: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename File To: </source>
-        <translation type="unfinished">Преименујте фајл као:</translation>
+        <translation>Преименујте фајл као: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
@@ -1236,7 +1236,10 @@ Continue?</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass је GUI за &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандардног менеџера лозинки унутар Unix-а.&lt;/p&gt;&lt;p&gt;Молимо, известите било које &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;проблеме&lt;/a&gt; са овим софтвером.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Документација&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Изворни код&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;QtPass је графички кориснички интерфејс за &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандардни менаџер лозинки за Unix.&lt;/p&gt;
+&lt;p&gt;Молимо вас да пријавите све &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;проблеме&lt;/a&gt; које имате са овим софтвером.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Документација&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Изворни код&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1315,68 +1318,68 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">Generating GPG key pair</translation>
+        <translation>Генерисање GPG пара кључева</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="222"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to connect WebDAV:
+        <translation>Повезивање са WebDAV-ом није успело:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="239"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished">QtPass WebDAV password</translation>
+        <translation>Лозинка за QtPass WebDAV</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">Enter password to connect to WebDAV:</translation>
+        <translation>Унесите лозинку за повезивање са WebDAV-ом:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="257"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">fusedav exited unexpectedly
+        <translation>Фуседав је неочекивано изашао
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="261"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to start fusedav to connect WebDAV:
+        <translation>Покретање fusedav-а за повезивање са WebDAV-ом није успело:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished">QProcess::FailedToStart</translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished">QProcess::Crashed</translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="280"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished">QProcess::Timedout</translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="283"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished">QProcess::ReadError</translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="286"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished">QProcess::WriteError</translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished">QProcess::UnknownError</translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
@@ -1464,7 +1467,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Избери кориснике који могу да декриптују лозинке чуване у овом папку. Напомена: Постојећи фајлови ће се не променити, а старе дозволе ће бити задржане док их не уредиш. Плаве улазе имају доступну тајну кључ, избери један од ових да би могао да декриптује. Црне улазе имају доступни шифровани кључ и је поуздан, избери један од ових да би други људи могли да декриптују. Црвене улазе нису валидне, нећете бити у стању да криптујете на њих.</translation>
+        <translation>Избери кориснике који могу да декриптују лозинке чуване у овом папку.
+Напомена: Постојећи фајлови ће се не променити, а старе дозволе ће бити задржане док их не уредиш.
+Плаве улазе имају доступну тајну кључ, избери један од ових да би могао да декриптује.
+Црне улазе имају доступни шифровани кључ и је поуздан, избери један од ових да би други људи могли да декриптују.
+Црвене улазе нису валидне, нећете бити у стању да криптујете на њих.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
