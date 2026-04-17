@@ -277,12 +277,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="795"/>
         <source>Pass</source>
-        <translation>Lozinka</translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="806"/>
         <source>pass</source>
-        <translation>lozinka</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -1296,7 +1296,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation>Običaj</translation>
+        <translation>Ručno upisivanje</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
