@@ -616,7 +616,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished">Sačuvanje komiteta nije uspelo.</translation>
+        <translation>Sačuvanje komiteta nije uspelo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
@@ -652,17 +652,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">Neuspešno je ponovo šifriranje %1.</translation>
+        <translation>Neuspešno je ponovo šifriranje %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">Ponovo šifriranje je završeno: %1 uspešno, %2 neuspešno.</translation>
+        <translation>Ponovo šifriranje je završeno: %1 uspešno, %2 neuspešno</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">Ponovo šifriranje je završeno: %1 datoteka ponovo šifrirana.</translation>
+        <translation>Ponovo šifriranje je završeno: %1 datoteka ponovo šifrirana</translation>
     </message>
 </context>
 <context>
@@ -1059,17 +1059,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
         <source> and the whole content?</source>
-        <translation type="unfinished">i cijeli sadržaj?</translation>
+        <translation> i cijeli sadržaj?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished">I i cijeli sadržaj? &lt;br&gt;&lt;strong&gt;Pozor: u datoj mapi postoje neprocjenjene datoteke, provjerite ih prije nastavka.&lt;/strong&gt;</translation>
+        <translation> I i cijeli sadržaj? &lt;br&gt;&lt;strong&gt;Pozor: u datoj mapi postoje neprocjenjene datoteke, provjerite ih prije nastavka.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Are you sure you want to delete %1? {1%2??}</translation>
+        <translation>Jeste li sigurni da želite izbrisati %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>
@@ -1222,7 +1222,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">Ponovo šifrirati sve lozinke u %1? Ovo će ponovo šifrirati SVE lozinka u ovom folderu koristeći trenutne primatelje definisane u .gpg-id. To može pisati mnoge datoteke i nije lako otkazivo. Nastaviti?</translation>
+        <translation>Ponovno šifrirati sve lozinke u %1?
+
+Ovim će se ponovno šifrirati SVE datoteke lozinki u ovoj mapi koristeći trenutne primatelje definirane u .gpg-id.
+
+Ovo može prepisati mnoge datoteke i ne može se lako poništiti.
+
+Nastaviti?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -1230,7 +1236,10 @@ Continue?</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass je GUI za &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardni unix password manager.&lt;/p&gt;&lt;p&gt;Obrazac za prijavu svih &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; koje možete imati sa ovim softverom.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Izvorni kod&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;QtPass je GUI za &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardni unix password manager.&lt;/p&gt;
+&lt;p&gt;Obrazac za prijavu svih &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; koje možete imati sa ovim softverom.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Izvorni kod&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1309,13 +1318,13 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">Generating GPG key pair</translation>
+        <translation>Generiranje GPG para ključeva</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="222"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Failed to connect WebDAV:
+        <translation>Povezivanje s WebDAV-om nije uspjelo:
 </translation>
     </message>
     <message>
@@ -1458,7 +1467,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Odaberite korisnike koji bi trebalo imati pravo da dešifruju lozinke u ovom folderu. Napomena: postojeće datoteke neće biti menjane i ostavljaju se sa starim dozvolicama sve dok ih ne uređujete. Plavi podaci imaju dostupnu tajnu ključ, odaberite jedan od njih da biste mogli dešifrovati. Crni podaci imaju dostupnu šifrirajuću ključ i ta ključ je uverljiv, odaberite jedan od njih da biste omogućili drugim ljudima da dešifruju. Crveni podaci nisu važeći, neće biti moguće šifrovati na njih.</translation>
+        <translation>Odaberite korisnike koji bi trebalo imati pravo da dešifruju lozinke u ovom folderu.
+Napomena: postojeće datoteke neće biti menjane i ostavljaju se sa starim dozvolicama sve dok ih ne uređujete.
+Plavi podaci imaju dostupnu tajnu ključ, odaberite jedan od njih da biste mogli dešifrovati.
+Crni podaci imaju dostupnu šifrirajuću ključ i ta ključ je uverljiv, odaberite jedan od njih da biste omogućili drugim ljudima da dešifruju.
+Crveni podaci nisu važeći, neće biti moguće šifrovati na njih.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
@@ -1520,17 +1533,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[NEVAZILO]</translation>
+        <translation>[NEVAZILO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[ISTKAO]</translation>
+        <translation>[ISTKAO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[DELOVAN]</translation>
+        <translation>[DELOVAN] </translation>
     </message>
 </context>
 </TS>
