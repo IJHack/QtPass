@@ -509,7 +509,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation>Κανένα σημείο υπογραφής!</translation>
+        <translation>Κανένα κλειδί υπογραφής!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
@@ -549,7 +549,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Επιθυμήθηκε να αντικαταστήσει 1 %1. Original έχει αποκατασταθεί.</translation>
+        <translation>Αποτυχία αντικατάστασης του %1. Το πρωτότυπο έχει αποκατασταθεί.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
@@ -596,7 +596,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Επιθυμήθηκε να αποκρυπτογραφήσει το ποσοστό 11</translation>
+        <translation>Αποτυχία επανακρυπτογράφησης του %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
@@ -961,7 +961,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>New Folder:
+        <translation>Νέος φάκελος:
 (Θα τοποθετηθεί στο %1)</translation>
     </message>
     <message>
@@ -974,12 +974,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation>Αποτυχία δημιουργία φακέλου: %1</translation>
+        <translation>Αποτυχία δημιουργίας φακέλου: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Επιθυμήθηκε να δημιουργήσει αρχείο .gpg-id στο: %1</translation>
+        <translation>Αποτυχία δημιουργίας αρχείου .gpg-id στο: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -990,12 +990,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Rename Folder To: </source>
-        <translation>Rename Folder Για: </translation>
+        <translation>Μετονομασία φακέλου σε: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename File To: </source>
-        <translation>Rename File Για: </translation>
+        <translation>Μετονομασία αρχείου σε: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
@@ -1219,17 +1219,17 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&amp;Επίδειξη</translation>
+        <translation>&amp;Εμφάνιση</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation>&amp;Κρύβω</translation>
+        <translation>&amp;Απόκρυψη</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>Ελαττώ&amp;νω</translation>
+        <translation>Ελαχιστο&amp;ποίηση</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
@@ -1239,12 +1239,12 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>Ε&amp;παναφέρω</translation>
+        <translation>Ε&amp;παναφορά</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation>Εγκαταλείπ&amp;ω</translation>
+        <translation>Έ&amp;ξοδος</translation>
     </message>
 </context>
 <context>
