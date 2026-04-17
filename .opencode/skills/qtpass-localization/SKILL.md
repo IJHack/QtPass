@@ -22,7 +22,7 @@ Qt uses Qt Linguist (`.ts` files) for translations.
 ls localization/localization_*.ts
 ```
 
-Currently includes: af_ZA, ar_MA, bg_BG, ca_ES, cs_CZ, cy_GB, da_DK, de_DE, de_LU, el_GR, en_GB, en_US, es_ES, et_EE, fi_FI, fr_BE, fr_FR, fr_LU, gl_ES, he_IL, hr_HR, hu_HU, it_IT, ja_JP, ko_KR, lb_LU, nb_NO, nl_BE, nl_NL, pl_PL, pt_PT, ro_RO, ru_RU, sk_SK, sl_SI, sq_AL, sr_RS, sv_SE, ta, tr_TR, uk_UA, zh_CN, zh_Hant
+Currently includes: af_ZA, ar_MA, bg_BG, ca_ES, cs_CZ, cy_GB, da_DK, de_DE, de_LU, el_GR, en_GB, en_US, es_ES, et_EE, fi_FI, fr_BE, fr_FR, fr_LU, gl_ES, he_IL, hr_HR, hu_HU, it_IT, ja_JP, ko_KR, lb_LU, nb_NO, nl_BE, nl_NL, pl_PL, pt_BR, pt_PT, ro_RO, ru_RU, si_LK, sk_SK, sq_AL, sr_Cyrl, sr_RS, sv_SE, ta_IN, tr_TR, uk_UA, zh_CN, zh_Hant
 
 ## Updating Translations
 
@@ -241,9 +241,15 @@ git commit -m "Resolve merge conflict - use theirs for translations"
 
 ### Weblate vs Local Editing
 
-QtPass uses Weblate for translations. Don't manually edit `.ts` files for translations - let Weblate handle it. Only run `qmake6` locally to update source references.
+**Applies to:** `localization/**/*.ts`
+
+**Do not manually edit .ts files** - use Weblate for translations. Run `qmake6` after source changes.
+
+**Exception:** Only maintainer-approved, narrowly-scoped emergency fixes (e.g., urgent encoding regressions or review-requested typo fixes) may be edited directly. Approval must be obtained **before** editing. Record a short justification in the PR description (and optionally repeat in the commit message for traceability).
 
 ## Fixing Translation Issues in PRs
+
+> **Note:** Editing `localization/**/*.ts` files is only allowed under the maintainer-approved, narrowly-scoped emergency-fix exception. Obtain approval **before** editing. Justify in the PR description, then run `qmake6`. Use Weblate for normal translations.
 
 When static analysis flags translation issues (e.g., filename preservation):
 
