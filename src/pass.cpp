@@ -512,7 +512,8 @@ void Pass::finished(int id, int exitCode, const QString &out,
         // Strip machine-readable [GNUPG:] status lines before showing raw
         // output; they are only useful for detection, not for display.
         QStringList humanLines;
-        for (const QString &line : err.split('\n')) {
+        for (QString line : err.split('\n')) {
+          line.remove('\r');
           if (!line.startsWith(QLatin1String("[GNUPG:]")))
             humanLines.append(line);
         }
