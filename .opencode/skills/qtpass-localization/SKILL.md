@@ -238,12 +238,12 @@ Instead, identify and resolve conflicted files explicitly:
 # 1) List conflicted translation files and review them:
 git diff --name-only --diff-filter=U -- localization/*.ts
 
-# 2) Resolve each intended file explicitly (repeat as needed):
-git checkout --theirs localization/localization_de.ts
-git checkout --theirs localization/localization_fr.ts
+# 2) Resolve each intended file explicitly (replace <path> with actual filenames from Step 1):
+git checkout --theirs localization/<path1>
+git checkout --theirs localization/<path2>
 
 # 3) Stage and commit:
-git add localization/localization_de.ts localization/localization_fr.ts
+git add localization/<path1> localization/<path2>
 git commit -m "Resolve merge conflict - use theirs for translations"
 ```
 
