@@ -289,7 +289,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation>Toto pole je povinné</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -324,12 +324,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vypnuto vytvořit heslo v: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -354,17 +354,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Použít neproporcionální písmo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobrazit obsah souborů tak, jak je</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Nezalamovat řádky</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
@@ -399,12 +399,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Generovat</translation>
+        <translation>Generovat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>Generovat GPG klíč pár</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
@@ -498,12 +498,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpisový klíč</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation>Volitelné: GPG klíč pro přihlášení .gpg-id souborů pro ověření integrity. Vynechávejte prázdné, pokud potřebujete chránit seznam uživatelů před použitím.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
@@ -527,14 +527,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>Zkontrolujte .gpgid soubor podpis!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Podpis %1 je neplatný.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -551,23 +551,24 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG podpis selhal!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zločinil se zaregistrovat %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádný podpisový klíč!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádný z tajných podpisových klíčů není k dispozici.
+Seznam uživatelů nebudete moci změnit!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -595,33 +596,33 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Opětovné šifrování selhalo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>Neúspěšné nahradit %1. Původní byla obnovena.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvoření záložního commitu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Zálohování commitu se nezdařilo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze zkontrolovat stav gitu. Opětovné šifrování bylo přerušeno.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>Opětovné šifrování bylo přerušeno, protože se nepodařilo vytvořit zálohu gitu.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -637,27 +638,27 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Ověření GPG ID se nezdařilo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se ověřit .gpg-id pro adresář.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se znovu zašifrovat %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Opětovné šifrování dokončeno: %1 úspěšné, %2 selhalo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>Opětovné šifrování dokončeno: %1 souborů znovu zašifrováno</translation>
     </message>
 </context>
 <context>
@@ -695,7 +696,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>Opakujte průchod</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -705,7 +706,7 @@ Nebudete moci dešifrovat žádná nově přidaná hesla!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Obsah šablony bude nastaven na základě verze GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1079,12 +1080,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kód OTP zkopírován do schránky</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádný kód OTP nalezený v tomto hesla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1099,7 +1100,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>Žádné heslo pro generování OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -1119,24 +1120,24 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>Znovu zašifrovat</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Chyba</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se vytvořit složku: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodařilo se vytvořit soubor .gpg-id v: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1157,12 +1158,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresář neexistuje: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Znovu zašifrovat hesla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1173,7 +1174,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation>Znovu zašifrovat všechna hesla v %1?
+
+Tato akce znovu zašifruje VŠECHNY soubory s hesly v této složce s použitím aktuálních příjemců definovaných v .gpg-id.
+
+Tato akce může přepsat mnoho souborů a nelze ji snadno vrátit zpět.
+
+Pokračovat?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -1329,12 +1336,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Generování páru klíčů GPG selhalo</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>Pár klíčů GPG byl úspěšně vygenerován</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1412,7 +1419,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte, kteří uživatelé by měli mít možnost dešifrovat hesla uložená v této složce.
+Poznámka: Existující soubory nebudou změněny a zachovají si stará oprávnění, dokud je neupravíte.
+Modré položky mají k dispozici tajný klíč. Vyberte jeden z nich, chcete-li hesla dešifrovat.
+Černé položky mají k dispozici šifrovací klíč, který je důvěryhodný. Vyberte jeden z nich, chcete-li povolit dešifrování i ostatním.
+Červené položky nejsou platné, nebudete je moci šifrovat.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1484,17 +1495,17 @@ Modře označené záznamy poskytují tajný klíč, vyberte jeden z nich, kter�
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[NEPLATNÝ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation>[PLATNOST VYPRŠELA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[ČÁSTEČNÝ] </translation>
     </message>
 </context>
 </TS>
