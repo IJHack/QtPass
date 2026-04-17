@@ -154,7 +154,7 @@ QtPass uses system locale. To test:
 
 ```bash
 # Linux
-LANG=nl_NL ./qtpass
+LANG=nl_NL.UTF-8 ./qtpass
 
 # Or set in QtPass settings
 ```
@@ -235,15 +235,16 @@ When merging translation PRs that conflict, **avoid using wildcards** - `git che
 Instead, identify and resolve conflicted files explicitly:
 
 ```bash
+# Use theirs strategy for conflicted .ts files (they're XML, prefer incoming)
 # 1) List conflicted translation files and review them:
 git diff --name-only --diff-filter=U -- localization/*.ts
 
-# 2) Resolve each intended file explicitly (replace <path> with actual filenames from Step 1):
-git checkout --theirs localization/<path1>
-git checkout --theirs localization/<path2>
+# 2) Resolve each intended file explicitly (repeat as needed):
+git checkout --theirs localization/localization_de.ts
+git checkout --theirs localization/localization_fr.ts
 
 # 3) Stage and commit:
-git add localization/<path1> localization/<path2>
+git add localization/localization_de.ts localization/localization_fr.ts
 git commit -m "Resolve merge conflict - use theirs for translations"
 ```
 
