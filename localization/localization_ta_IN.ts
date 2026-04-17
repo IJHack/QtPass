@@ -1499,11 +1499,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>இந்த முடிவுகளில் கடவுச்சொற்களை உருண்டி போய்யத் தவறவே உருவாக்கப்படாமல், அவற்றில் முன்னோடிகள் வழங்கப்படவில்லை.
-தவறான செயல்கள் உண்டாகி இருந்தால், அவற்றில் எதுவும் உருண்டி போய்ய முடியாது. காவல் வகையான செயல்களில் தங்கள் கடவுச்சொற்களை உருண்டி போய்ய முடியும்.
-வீட்டு வகையான செயல்களில் தங்கள் கடவுச்சொற்களை உருண்டி போய்ய முடியும்.
-வீட்டு வகையான செயல்களில் தங்கள் கடவுச்சொற்களை உருண்டி போய்ய முடியும்.
-வீட்டு வகையான செயல்களில் தங்கள் கடவுச்சொற்களை உருண்டி போய்ய முடியும்.</translation>
+        <translation>இந்த கோப்புறையில் சேமிக்கப்பட்ட கடவுச்சொற்களை மறைகுறியாக்க எந்த பயனர்கள் முடியும் என்பதைத் தேர்ந்தெடுக்கவும்.
+குறிப்பு: உள்ள கோப்புகள் மாற்றப்படாது; நீங்கள் திருத்தும் வரை பழைய அனுமதிகள் நீடிக்கும்.
+நீல உள்ளீடுகளில் ரகசிய விசை உள்ளது; அவற்றில் ஒன்றைத் தேர்ந்தெடுத்தால் மறைகுறியாக்க முடியும்.
+கருப்பு உள்ளீடுகளில் நம்பகமான குறியாக்க விசை உள்ளது; அவற்றைத் தேர்ந்தெடுத்தால் பிறரும் மறைகுறியாக்க முடியும்.
+சிவப்பு உள்ளீடுகள் செல்லாது; அவற்றுக்கு குறியாக்க முடியாது.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
