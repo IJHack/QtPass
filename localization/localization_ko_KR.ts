@@ -652,17 +652,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">%1을 재암호화하지 못했습니다.</translation>
+        <translation>재 암호화 %1에 실패</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">재암호화 완료: %1개 성공, %2개 실패</translation>
+        <translation>재 암호화 완료: %1 성공, %2 실패</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">재암호화 완료: %1개 파일 재암호화</translation>
+        <translation>재 암호화 완료 : %1 파일 재 암호화</translation>
     </message>
 </context>
 <context>
@@ -1206,7 +1206,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished">%1 디렉터리가 존재하지 않습니다.</translation>
+        <translation>디렉토리는 존재하지 않습니다. %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
