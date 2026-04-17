@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation>comportamentul clips-ului:</translation>
+        <translation>comportamentul clipboard-ului:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Stergerea automată a panoului după:</translation>
+        <translation>Ștergerea automată a panoului după:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="966"/>
         <source>Delete</source>
-        <translation>sterge</translation>
+        <translation>șterge</translation>
     </message>
     <message>
         <source>Current password-store</source>
@@ -357,17 +357,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="121"/>
         <source>No Clipboard</source>
-        <translation>fără clips</translation>
+        <translation>fără clipboard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="122"/>
         <source>Always copy to clipboard</source>
-        <translation>copiați întotdeauna în clips</translation>
+        <translation>copiați întotdeauna în clipboard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="123"/>
         <source>On-demand copy to clipboard</source>
-        <translation>copiere la cerere în clips</translation>
+        <translation>copiere la cerere în clipboard</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="204"/>
@@ -483,7 +483,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Git/GPG nati&amp;amp;v</translation>
+        <translation>Git/GPG nati&amp;v</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -840,7 +840,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="351"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>generați OTP și copiați în clips</translation>
+        <translation>generați OTP și copiați în clipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
@@ -1394,17 +1394,17 @@ Continuați?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
         <source>Clipboard cleared</source>
-        <translation>clips sters</translation>
+        <translation>clipboard șters</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="466"/>
         <source>Clipboard not cleared</source>
-        <translation>clips intact</translation>
+        <translation>clipboard intact</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="511"/>
         <source>Copied to clipboard</source>
-        <translation>copiat in clips</translation>
+        <translation>copiat în clipboard</translation>
     </message>
 </context>
 <context>
