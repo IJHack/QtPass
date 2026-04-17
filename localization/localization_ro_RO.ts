@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation>Generează o pereche de chei GPG</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -1221,13 +1221,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Re-criptează toate parolele din %1?
-
-Acest lucru va re-cripta TOATE fișierele cu parole din acest folder folosind destinatarii actuali definiți în .gpg-id.
-
-Acest proces poate rescrie multe fișiere și nu poate fi anulat ușor.
-
-Continuați?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
