@@ -1,6 +1,9 @@
 <map id="MainWindow::deselect" name="MainWindow::deselect">
-<area shape="rect" id="Node000001" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="251,29,419,55"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,29,203,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="237,45,203,45,203,39,237,39"/>
+<area shape="rect" id="Node000001" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="251,67,419,92"/>
+<area shape="rect" id="Node000002" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="28,29,180,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,67,180,57,181,52,243,62"/>
+<area shape="rect" id="Node000003" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,103,203,128"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="240,97,186,105,185,100,239,92"/>
 <area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="145,20,134,11,104,8,79,10,66,15,64,20,71,27,67,31,59,21,63,11,78,5,104,3,136,7,149,16"/>
+<area shape="poly" id="edge4_Node000003_Node000003" title=" " alt="" coords="145,94,134,85,104,81,79,83,66,88,64,94,71,101,67,104,59,94,63,84,78,78,104,76,136,80,149,89"/>
 </map>
