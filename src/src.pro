@@ -77,7 +77,8 @@ SOURCES   += mainwindow.cpp \
              executor.cpp \
              simpletransaction.cpp \
              filecontent.cpp \
-             qtpass.cpp
+             qtpass.cpp \
+             profileinit.cpp
 
 HEADERS   += mainwindow.h \
              configdialog.h \
@@ -105,7 +106,8 @@ HEADERS   += mainwindow.h \
              filecontent.h \
              passwordconfiguration.h \
              userinfo.h \
-             qtpass.h
+             qtpass.h \
+             profileinit.h
 
 FORMS     += mainwindow.ui \
              configdialog.ui \

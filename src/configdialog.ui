@@ -923,16 +923,22 @@
          <property name="sortingEnabled">
           <bool>true</bool>
          </property>
-         <column>
-          <property name="text">
-           <string>Name</string>
-          </property>
-         </column>
-         <column>
-          <property name="text">
-           <string>Path</string>
-          </property>
-         </column>
+<column>
+           <property name="text">
+            <string>Name</string>
+           </property>
+           <property name="toolTip">
+            <string>Profile name, used to identify this configuration profile</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Path</string>
+           </property>
+           <property name="toolTip">
+            <string>Path to the password store directory</string>
+           </property>
+          </column>
          <column>
           <property name="text">
            <string>Signing Key</string>

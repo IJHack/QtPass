@@ -3,8 +3,10 @@
 #include "configdialog.h"
 #include "keygendialog.h"
 #include "mainwindow.h"
+#include "profileinit.h"
 #include "qtpasssettings.h"
 #include "ui_configdialog.h"
+#include "usersdialog.h"
 #include "util.h"
 #include <QClipboard>
 #include <QDir>
@@ -265,6 +267,8 @@ void ConfigDialog::on_accepted() {
                                  ui->checkBoxHideOnClose->isChecked());
   QtPassSettings::setStartMinimized(ui->checkBoxStartMinimized->isEnabled() &&
                                     ui->checkBoxStartMinimized->isChecked());
+  QHash<QString, QHash<QString, QString>> existingProfiles =
+      QtPassSettings::getProfiles();
   QtPassSettings::setProfiles(getProfiles());
   QtPassSettings::setUseGit(ui->checkBoxUseGit->isChecked());
   QtPassSettings::setUseOtp(ui->checkBoxUseOtp->isChecked());
@@ -285,6 +289,9 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setAlwaysOnTop(ui->checkBoxAlwaysOnTop->isChecked());
 
   QtPassSettings::setVersion(VERSION);
+
+  // Initialize new profiles that need pass/git initialization
+  initializeNewProfiles(existingProfiles);
 }
 
 /**
@@ -607,18 +614,82 @@ auto ConfigDialog::getProfiles() -> QHash<QString, QHash<QString, QString>> {
 }
 
 /**
+ * @brief Initialize new profiles that need pass/git initialization.
+ * @param existingProfiles The profiles that existed before the dialog was
+ * opened.
+ */
+void ConfigDialog::initializeNewProfiles(
+    const QHash<QString, QHash<QString, QString>> &existingProfiles) {
+  QHash<QString, QHash<QString, QString>> newProfiles = getProfiles();
+
+  // Collect keys and sort for deterministic iteration
+  QStringList keys = newProfiles.keys();
+  keys.sort();
+
+  for (const QString &name : keys) {
+    const QString &path = newProfiles.value(name).value("path");
+
+    // Skip if already existed before (check by name and path)
+    if (existingProfiles.contains(name) &&
+        existingProfiles.value(name).value("path") == path) {
+      continue;
+    }
+
+    // This is a new profile - check if needs initialization
+    // needsInit returns false for non-existent directories
+    if (!ProfileInit::needsInit(path)) {
+      continue;
+    }
+
+    // Temporarily switch the active store so pass/git init operate on
+    // the new profile's directory rather than the currently-saved one.
+    const QString prevStore = QtPassSettings::getPassStore();
+    QtPassSettings::setPassStore(path);
+
+    // Show user selection dialog for GPG recipients
+    // UsersDialog will run pass init when accepted
+    UsersDialog usersDialog(path, this);
+    usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
+    const int result = usersDialog.exec();
+
+    if (result == QDialog::Accepted && ui->checkBoxUseGit->isChecked()) {
+      QtPassSettings::getPass()->GitInit();
+    }
+
+    // Restore previous store setting
+    QtPassSettings::setPassStore(prevStore);
+  }
+}
+
+/**
  * @brief ConfigDialog::on_addButton_clicked add a profile row.
  */
 void ConfigDialog::on_addButton_clicked() {
   int n = ui->profileTable->rowCount();
   ui->profileTable->insertRow(n);
-  ui->profileTable->setItem(n, 0, new QTableWidgetItem());
+  ui->profileTable->setItem(n, 0, new QTableWidgetItem(tr("New Profile")));
   ui->profileTable->setItem(n, 1, new QTableWidgetItem(ui->storePath->text()));
   ui->profileTable->setItem(n, 2, new QTableWidgetItem());
   ui->profileTable->selectRow(n);
   ui->deleteButton->setEnabled(true);
 
+  ui->profileTable->editItem(ui->profileTable->item(n, 0));
+  ui->profileTable->item(n, 0)->setSelected(true);
+
   validate();
+}
+
+/**
+ * @brief ConfigDialog::on_profileTable_cellDoubleClicked open folder browser
+ * for path column (column 1).
+ */
+void ConfigDialog::on_profileTable_cellDoubleClicked(int row, int column) {
+  if (column == 1) {
+    QString dir = selectFolder();
+    if (!dir.isEmpty()) {
+      ui->profileTable->item(row, 1)->setText(dir);
+    }
+  }
 }
 
 /**
