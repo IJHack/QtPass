@@ -78,7 +78,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>Zeig die Dateien begnügen da-sind</translation>
+        <translation>Dateiinhalt unverändert anzeigen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
@@ -339,7 +339,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>#Verkracht zu schaffen Passwort-Vorrat an: %1</translation>
+        <translation>Passwort-Speicher unter konnte nicht erstellt werden: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -482,7 +482,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation>Generier</translation>
+        <translation>Generieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
@@ -531,7 +531,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Prüfe die Signatur des .gpgid-Dateien!</translation>
+        <translation>Prüfe die Signatur der .gpgid-Dateien!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
@@ -1132,7 +1132,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation>Passworte wiederverschlüsselen</translation>
+        <translation>Passworte wiederverschlüsseln</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
