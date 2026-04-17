@@ -1519,15 +1519,17 @@ void tst_util::setEnvVarNoopOnMissingRemove() {
 
 void tst_util::updateEnvSetsExpectedVars() {
   TestPass pass;
+  QTemporaryDir tmpDir;
+  QVERIFY(tmpDir.isValid());
   PassStoreGuard storeGuard(QtPassSettings::getPassStore());
-  QtPassSettings::setPassStore(QStringLiteral("/tmp/test-store"));
+  QtPassSettings::setPassStore(tmpDir.path());
 
   QStringList env = pass.environment();
   QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_DIR=")).size() == 1,
            "updateEnv should set PASSWORD_STORE_DIR");
   QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_DIR="))
                .first()
-               .contains(QStringLiteral("test-store")),
+               .contains(tmpDir.path()),
            "updateEnv should set PASSWORD_STORE_DIR to configured store path");
   QVERIFY2(
       env.filter(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH=")).size() ==
@@ -1540,14 +1542,15 @@ void tst_util::updateEnvSetsExpectedVars() {
 
 void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
   TestPass pass;
-  PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
-  config.selected = PasswordConfiguration::CUSTOM;
-  config.Characters[PasswordConfiguration::CUSTOM] = QString();
-  QtPassSettings::setPasswordConfiguration(config);
+  PasswordConfiguration original = QtPassSettings::getPasswordConfiguration();
   struct ConfigRollback {
     PasswordConfiguration value;
     ~ConfigRollback() { QtPassSettings::setPasswordConfiguration(value); }
-  } rollback{QtPassSettings::getPasswordConfiguration()};
+  } rollback{original};
+
+  PasswordConfiguration config = original;
+  config.selected = PasswordConfiguration::CUSTOM;
+  config.Characters[PasswordConfiguration::CUSTOM] = QString();
   QtPassSettings::setPasswordConfiguration(config);
 
   QStringList env = pass.environment();
