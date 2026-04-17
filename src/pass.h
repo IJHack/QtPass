@@ -220,6 +220,12 @@ protected:
    * @return Random number.
    */
   auto boundedRandom(quint32 bound) -> quint32;
+  /**
+   * @brief Set or remove an environment variable.
+   * @param key Variable name including trailing '='.
+   * @param value New value; empty string removes the variable.
+   */
+  void setEnvVar(const QString &key, const QString &value);
 
   /**
    * @brief Execute wrapper with input.
