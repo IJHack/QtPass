@@ -117,7 +117,7 @@ auto Util::normalizeFolderPath(const QString &path) -> QString {
  * @return QString - The absolute path to the binary, or an empty string if not
  * found.
  */
-auto Util::findBinaryInPath(QString binary) -> QString {
+auto Util::findBinaryInPath(const QString &binary) -> QString {
   initialiseEnvironment();
 
   QString ret;

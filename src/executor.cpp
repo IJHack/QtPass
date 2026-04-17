@@ -220,7 +220,7 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
  * Note: Returning error code instead of throwing to maintain compatibility
  * with the existing error handling pattern used throughout QtPass.
  */
-auto Executor::executeBlocking(QString app, const QStringList &args,
+auto Executor::executeBlocking(const QString &app, const QStringList &args,
                                const QString &input, QString *process_out,
                                QString *process_err) -> int {
   QProcess internal;
@@ -265,11 +265,10 @@ auto Executor::executeBlocking(QString app, const QStringList &args,
  * @param process_err
  * @return
  */
-auto Executor::executeBlocking(QString app, const QStringList &args,
+auto Executor::executeBlocking(const QString &app, const QStringList &args,
                                QString *process_out, QString *process_err)
     -> int {
-  return executeBlocking(std::move(app), args, QString(), process_out,
-                         process_err);
+  return executeBlocking(app, args, QString(), process_out, process_err);
 }
 
 /**
@@ -281,7 +280,7 @@ auto Executor::executeBlocking(QString app, const QStringList &args,
  * @param process_err Standard error
  * @return Exit code
  */
-auto Executor::executeBlocking(const QStringList &env, QString app,
+auto Executor::executeBlocking(const QStringList &env, const QString &app,
                                const QStringList &args, QString *process_out,
                                QString *process_err) -> int {
   QProcess process;
