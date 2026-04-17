@@ -129,7 +129,8 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
                      "file missing or invalid."));
     return;
   }
-  QStringList args = {"--batch", "-eq", "--output", pgpg(file)};
+  QStringList args = {"--batch", "--status-fd", "2",
+                      "-eq",     "--output",    pgpg(file)};
   for (auto &r : recipients) {
     args.append("-r");
     args.append(r);
