@@ -94,9 +94,9 @@ HEADERS   += mainwindow.h \
              qtpasssettings.h \
              enums.h \
              settingsconstants.h \
-              pass.h \
-              gpgkeystate.h \
-              realpass.h \
+             pass.h \
+             gpgkeystate.h \
+             realpass.h \
              imitatepass.h \
              debughelper.h \
              executor.h \
