@@ -356,6 +356,17 @@ void ConfigDialog::setGroupBoxState() {
   bool state = ui->radioButtonPass->isChecked();
   ui->groupBoxNative->setEnabled(!state);
   ui->groupBoxPass->setEnabled(state);
+  // password generation controls are pass-managed when using pass binary
+  bool enablePwgen = !state;
+  ui->spinBoxPasswordLength->setEnabled(enablePwgen);
+  ui->labelPasswordChars->setEnabled(enablePwgen);
+  ui->passwordCharTemplateSelector->setEnabled(enablePwgen);
+  ui->lineEditPasswordChars->setEnabled(enablePwgen);
+  ui->checkBoxUsePwgen->setEnabled(enablePwgen);
+  ui->checkBoxAvoidCapitals->setEnabled(enablePwgen);
+  ui->checkBoxUseSymbols->setEnabled(enablePwgen);
+  ui->checkBoxLessRandom->setEnabled(enablePwgen);
+  ui->checkBoxAvoidNumbers->setEnabled(enablePwgen);
 }
 
 /**

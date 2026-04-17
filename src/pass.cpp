@@ -509,6 +509,28 @@ void Pass::updateEnv() {
     env.replaceInStrings(store.first(), "PASSWORD_STORE_DIR=" +
                                             QtPassSettings::getPassStore());
   }
+  // put PASSWORD_STORE_GENERATED_LENGTH in env
+  PasswordConfiguration passConfig = QtPassSettings::getPasswordConfiguration();
+  QString lenKey = QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH=");
+  QString lenVal = lenKey + QString::number(passConfig.length);
+  QStringList envLen = env.filter(lenKey);
+  if (envLen.isEmpty()) {
+    env.append(lenVal);
+  } else {
+    env.replaceInStrings(envLen.first(), lenVal);
+  }
+  // put PASSWORD_STORE_CHARACTER_SET in env
+  QString charset = passConfig.Characters[passConfig.selected];
+  if (!charset.isEmpty()) {
+    QString charKey = QStringLiteral("PASSWORD_STORE_CHARACTER_SET=");
+    QString charVal = charKey + charset;
+    QStringList envChar = env.filter(charKey);
+    if (envChar.isEmpty()) {
+      env.append(charVal);
+    } else {
+      env.replaceInStrings(envChar.first(), charVal);
+    }
+  }
   exec.setEnvironment(env);
 }
 
