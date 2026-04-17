@@ -154,6 +154,17 @@ private Q_SLOTS:
   void updateEnvSetsExpectedVars();
   void updateEnvEmptyCustomCharsetFallsBackToAllChars();
   void updateEnvWslenvContainsRequiredVars();
+  void gpgErrorMessageKeyExpiredStatusToken();
+  void gpgErrorMessageKeyRevokedStatusToken();
+  void gpgErrorMessageNoPubkeyStatusToken();
+  void gpgErrorMessageInvRecpStatusToken();
+  void gpgErrorMessageFailureStatusToken();
+  void gpgErrorMessageKeyExpiredFallback();
+  void gpgErrorMessageRevokedFallback();
+  void gpgErrorMessageNoPubkeyFallback();
+  void gpgErrorMessageEncryptionFailedFallback();
+  void gpgErrorMessageUnknownReturnsEmpty();
+  void gpgErrorMessageStatusTokenTakesPriorityOverFallback();
 };
 
 /**
@@ -1589,6 +1600,109 @@ void tst_util::updateEnvWslenvContainsRequiredVars() {
            "WSLENV should include PASSWORD_STORE_GENERATED_LENGTH/w");
   QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")),
            "WSLENV should include PASSWORD_STORE_CHARACTER_SET/w");
+}
+
+// --- gpgErrorMessage tests ---
+
+void tst_util::gpgErrorMessageKeyExpiredStatusToken() {
+  QString err = "[GNUPG:] KEY_EXPIRED 1234567890\n"
+                "gpg: key DEADBEEF: key has expired\n"
+                "gpg: [stdin]: encryption failed: Unusable public key";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(!msg.isEmpty(), "Should recognise KEY_EXPIRED status token");
+  QVERIFY2(msg.contains("expired", Qt::CaseInsensitive),
+           qPrintable("Expected 'expired' in: " + msg));
+}
+
+void tst_util::gpgErrorMessageKeyRevokedStatusToken() {
+  QString err = "[GNUPG:] KEY_REVOKED\n"
+                "gpg: [stdin]: encryption failed: Unusable public key";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(!msg.isEmpty(), "Should recognise KEY_REVOKED status token");
+  QVERIFY2(msg.contains("revoked", Qt::CaseInsensitive),
+           qPrintable("Expected 'revoked' in: " + msg));
+}
+
+void tst_util::gpgErrorMessageNoPubkeyStatusToken() {
+  QString err = "[GNUPG:] NO_PUBKEY DEADBEEFDEADBEEF\n"
+                "gpg: DEADBEEF: skipped: No public key";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(!msg.isEmpty(), "Should recognise NO_PUBKEY status token");
+  QVERIFY2(msg.contains("not found", Qt::CaseInsensitive) ||
+               msg.contains("invalid", Qt::CaseInsensitive),
+           qPrintable("Expected 'not found' or 'invalid' in: " + msg));
+}
+
+void tst_util::gpgErrorMessageInvRecpStatusToken() {
+  QString err = "[GNUPG:] INV_RECP 10 DEADBEEF\n"
+                "gpg: [stdin]: encryption failed: Unusable public key";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(!msg.isEmpty(), "Should recognise INV_RECP status token");
+  QVERIFY2(msg.contains("not found", Qt::CaseInsensitive) ||
+               msg.contains("invalid", Qt::CaseInsensitive),
+           qPrintable("Expected 'not found' or 'invalid' in: " + msg));
+}
+
+void tst_util::gpgErrorMessageFailureStatusToken() {
+  QString err = "[GNUPG:] FAILURE encrypt 67108949";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(!msg.isEmpty(), "Should recognise FAILURE status token");
+  QVERIFY2(msg.contains("failed", Qt::CaseInsensitive),
+           qPrintable("Expected 'failed' in: " + msg));
+}
+
+void tst_util::gpgErrorMessageKeyExpiredFallback() {
+  QString err = "gpg: key DEADBEEF: key has expired\n"
+                "gpg: [stdin]: encryption failed: Unusable public key";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(!msg.isEmpty(), "Should recognise 'key has expired' fallback");
+  QVERIFY2(msg.contains("expired", Qt::CaseInsensitive),
+           qPrintable("Expected 'expired' in: " + msg));
+}
+
+void tst_util::gpgErrorMessageRevokedFallback() {
+  QString err = "gpg: key DEADBEEF: key has been revoked\n"
+                "gpg: [stdin]: encryption failed: Unusable public key";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(!msg.isEmpty(), "Should recognise 'key has been revoked' fallback");
+  QVERIFY2(msg.contains("revoked", Qt::CaseInsensitive),
+           qPrintable("Expected 'revoked' in: " + msg));
+}
+
+void tst_util::gpgErrorMessageNoPubkeyFallback() {
+  QString err = "gpg: DEADBEEF: skipped: No public key\n"
+                "gpg: [stdin]: encryption failed: No public key";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(!msg.isEmpty(), "Should recognise 'No public key' fallback");
+  QVERIFY2(msg.contains("not found", Qt::CaseInsensitive) ||
+               msg.contains("invalid", Qt::CaseInsensitive),
+           qPrintable("Expected 'not found' or 'invalid' in: " + msg));
+}
+
+void tst_util::gpgErrorMessageEncryptionFailedFallback() {
+  QString err = "gpg: [stdin]: encryption failed: Unusable public key";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(!msg.isEmpty(),
+           "Should recognise generic 'encryption failed' fallback");
+  QVERIFY2(msg.contains("failed", Qt::CaseInsensitive),
+           qPrintable("Expected 'failed' in: " + msg));
+}
+
+void tst_util::gpgErrorMessageUnknownReturnsEmpty() {
+  QString err = "some unrelated process error output";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(msg.isEmpty(),
+           "Should return empty string for unrecognised GPG output");
+}
+
+void tst_util::gpgErrorMessageStatusTokenTakesPriorityOverFallback() {
+  // KEY_EXPIRED token present alongside a generic "encryption failed" line —
+  // the specific expired message should be returned, not the generic fallback.
+  QString err = "[GNUPG:] KEY_EXPIRED 1234567890\n"
+                "gpg: [stdin]: encryption failed: Unusable public key";
+  QString msg = gpgErrorMessage(err);
+  QVERIFY2(msg.contains("expired", Qt::CaseInsensitive),
+           "KEY_EXPIRED token should take priority and mention 'expired'");
 }
 
 QTEST_MAIN(tst_util)

@@ -5,6 +5,7 @@
 #include "helpers.h"
 #include "qtpasssettings.h"
 #include "util.h"
+#include <QCoreApplication>
 #include <QDir>
 #include <QFileInfo>
 #include <QProcess>
@@ -436,6 +437,61 @@ auto Pass::listKeys(const QString &keystring, bool secret) -> QList<UserInfo> {
 }
 
 /**
+ * @brief Maps GPG stderr (which may include --status-fd 2 tokens) to a
+ * user-friendly encryption error string.
+ *
+ * Checked in order: machine-readable [GNUPG:] status tokens first (locale-
+ * independent), then case-insensitive substring fallbacks for GPG builds that
+ * don't emit status tokens.
+ *
+ * @param err Raw stderr from GPG
+ * @return Translated human-readable error, or empty string if not recognised
+ */
+auto gpgErrorMessage(const QString &err) -> QString {
+  // Machine-readable status tokens added by --status-fd 2
+  if (err.contains(QStringLiteral("[GNUPG:] KEY_EXPIRED")))
+    return QCoreApplication::translate("Pass",
+                                       "Encryption failed: GPG key has expired."
+                                       " Please renew or replace it.");
+  if (err.contains(QStringLiteral("[GNUPG:] KEY_REVOKED")) ||
+      err.contains(QStringLiteral("[GNUPG:] REVKEYSIG")))
+    return QCoreApplication::translate(
+        "Pass", "Encryption failed: GPG key has been revoked.");
+  if (err.contains(QStringLiteral("[GNUPG:] NO_PUBKEY")) ||
+      err.contains(QStringLiteral("[GNUPG:] INV_RECP")))
+    return QCoreApplication::translate(
+        "Pass", "Encryption failed: recipient GPG key not found or invalid."
+                " Check that the key ID in .gpg-id is correct and imported.");
+  if (err.contains(QStringLiteral("[GNUPG:] FAILURE")))
+    return QCoreApplication::translate(
+        "Pass", "Encryption failed. Check that your GPG key is valid.");
+
+  // Locale-dependent fallbacks for GPG versions / configurations that don't
+  // emit status tokens
+  const QString lower = err.toLower();
+  if (lower.contains(QLatin1String("key has expired")) ||
+      lower.contains(QLatin1String("key expired")))
+    return QCoreApplication::translate("Pass",
+                                       "Encryption failed: GPG key has expired."
+                                       " Please renew or replace it.");
+  if (lower.contains(QLatin1String("key has been revoked")) ||
+      lower.contains(QLatin1String("revoked")))
+    return QCoreApplication::translate(
+        "Pass", "Encryption failed: GPG key has been revoked.");
+  if (lower.contains(QLatin1String("no public key")) ||
+      lower.contains(QLatin1String("unusable public key")) ||
+      lower.contains(QLatin1String("no secret key")))
+    return QCoreApplication::translate(
+        "Pass", "Encryption failed: recipient GPG key not found or invalid."
+                " Check that the key ID in .gpg-id is correct and imported.");
+  if (lower.contains(QLatin1String("encryption failed")))
+    return QCoreApplication::translate(
+        "Pass", "Encryption failed. Check that your GPG key is valid.");
+
+  return {};
+}
+
+/**
  * @brief Pass::processFinished reemits specific signal based on what process
  * has finished
  * @param id    id of Pass process that was scheduled and finished
@@ -449,6 +505,23 @@ void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
   auto pid = static_cast<PROCESS>(id);
   if (exitCode != 0) {
+    if (pid == PASS_INSERT) {
+      const QString friendly = gpgErrorMessage(err);
+      if (!friendly.isEmpty()) {
+        // Strip machine-readable [GNUPG:] status lines before showing raw
+        // output; they are only useful for detection, not for display.
+        QStringList humanLines;
+        for (const QString &line : err.split('\n')) {
+          if (!line.startsWith(QLatin1String("[GNUPG:]")))
+            humanLines.append(line);
+        }
+        const QString humanErr = humanLines.join('\n').trimmed();
+        emit processErrorExit(exitCode, humanErr.isEmpty()
+                                            ? friendly
+                                            : friendly + "\n\n" + humanErr);
+        return;
+      }
+    }
     emit processErrorExit(exitCode, err);
     return;
   }

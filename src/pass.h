@@ -332,4 +332,18 @@ signals:
   void finishedGenerateGPGKeys(const QString &, const QString &);
 };
 
+/**
+ * @brief Maps GPG stderr (which may include --status-fd 2 tokens) to a
+ * translated user-friendly encryption error string.
+ *
+ * Checks machine-readable [GNUPG:] status tokens first (locale-independent),
+ * then falls back to case-insensitive substring matching for GPG builds that
+ * do not emit status tokens. Returns an empty string when no known pattern
+ * matches.
+ *
+ * Declared here so it can be exercised by unit tests without linking the full
+ * Pass object.
+ */
+QString gpgErrorMessage(const QString &err);
+
 #endif // SRC_PASS_H_
