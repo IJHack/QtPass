@@ -483,7 +483,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished">Prirodni Git/GPG</translation>
+        <translation type="unfinished">Nativni Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -1431,7 +1431,7 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished">&amp;Napredno maximiziraj</translation>
+        <translation type="unfinished">&amp;Maksimizuj</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
