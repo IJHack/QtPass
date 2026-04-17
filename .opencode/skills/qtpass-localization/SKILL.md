@@ -154,7 +154,7 @@ QtPass uses system locale. To test:
 
 ```bash
 # Linux
-LANG=nl_NL ./qtpass
+LANG=nl_NL.UTF-8 ./qtpass
 
 # Or set in QtPass settings
 ```
