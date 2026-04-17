@@ -136,17 +136,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG 키 쌍 생성</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">서명 키</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">필요한 경우 외에는 공백으로 두고, .gpg-id 파일의Integrity 검증을 위해 서명하는 GPG 키를 입력하세요.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -373,7 +373,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">이 필드는 필수 항목입니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
@@ -408,12 +408,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">오류</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 위치에서 비밀번호 저장소 생성에 실패했습니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
@@ -531,14 +531,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">.gpgid 파일 서명을 확인하세요!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1의 서명이 유효하지 않습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -555,23 +555,23 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG 서명에 실패했습니다!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 서명에 실패했습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">서명 키가 없습니다!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">비밀 서명 키가 사용할 수 없습니다. 사용자 목록을 변경할 수 없습니다!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -599,33 +599,17 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="640"/>
-        <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="669"/>
-        <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="675"/>
-        <location filename="../src/imitatepass.cpp" line="683"/>
-        <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+<translation type="unfinished">재암호화 실패</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git 상태를 확인할 수 없습니다. 재암호화가 중단되었습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git 백업이 생성되지 않아 재암호화가 중단되었습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -641,27 +625,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG ID 인증 실패</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">디렉토리의 .gpg-id를 인증할 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1을 재암호화하지 못했습니다.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">재암호화 완료: %1개 성공, %2개 실패</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">재암호화 완료: %1개 파일 재암호화</translation>
     </message>
 </context>
 <context>
@@ -699,7 +683,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">반복 패스</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -709,7 +693,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG 버전에 따라 템플릿 내용이 설정됩니다.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1142,17 +1126,17 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP 코드가 클립보드에 복사되었습니다.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">이 비밀번호 항목에서 OTP 코드를 찾을 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">OTP 생성에 선택된 비밀번호가 없습니다.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
@@ -1167,24 +1151,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">다시 암호화</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">오류</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">폴더를 만들 수 실패하였습니다: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1에 .gpg-id 파일을 만들 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1205,12 +1189,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 디렉터리가 존재하지 않습니다.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">비밀번호 재암호화</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1221,7 +1205,11 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1에 있는 모든 비밀번호를 재암호화하시겠습니까?
+이 작업은 현재 .gpg-id에서 정의된 수신자들을 사용하여 이 폴더 내의 모든 비밀번호 파일을 재암호화합니다.
+
+많은 파일이 덮어쓰일 수 있으며, 쉽게 되돌릴 수 없습니다.
+계속하시겠습니까?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -1377,12 +1365,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG 키 쌍 생성에 실패했습니다.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG 키 쌍이 성공적으로 생성되었습니다.</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1460,7 +1448,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">이 폴더에 저장된 비밀번호를 해독할 수 있는 사용자를 선택하세요. 주의: 이미 존재하는 파일은 변경되지 않고 기존 권한을 유지하며 수정하기 전까지는 그대로 유지됩니다. 파란색 항목에는 비밀 키가 있어, 이 중 하나를 선택하여 해독할 수 있게 하세요. 검은색 항목에는 신뢰된 암호화 키가 있어, 이 중 하나를 선택하여 다른 사람도 해독할 수 있게 하세요. 빨간색 항목은 유효하지 않으며 이러한 항목으로는 암호화할 수 없습니다.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1532,17 +1520,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[무효]</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[만료됨]</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[부분적]</translation>
     </message>
 </context>
 </TS>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="sr_RS">
+<TS version="2.1" language="sr_Cyrl">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished">Ponašanje u međuspremu:</translation>
+        <translation type="unfinished">Начин рада клипборда:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished">Ponašanje panela sa sadržajem:</translation>
+        <translation type="unfinished">Начин рада панела садржаја:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished">Automatsko brisanje panela nakon:</translation>
+        <translation type="unfinished">Аутоочиштење панела након:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
@@ -121,7 +121,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
         <source>Generate</source>
-        <translation type="unfinished">Generiši</translation>
+        <translation type="unfinished">Генерирај</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="758"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">Generiši par ključeva GPG</translation>
+        <translation type="unfinished">Генерирај пар кључева GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">Neprekidano: GPG ključ za potpisanje fajlova .gpg-id za verifikaciju integriteta. Ostavite prazno ukoliko nemate potrebu da oštećenje liste korisnika zaštiti.</translation>
+        <translation type="unfinished">Опциона: Кључ GPG за потписување фајлова са проширењем .gpg-id за вредновање интегритета. Оставе празно осим ако потребно заштитите листу корисника од манипулације.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -256,7 +256,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
         <source>Native</source>
-        <translation type="unfinished">Nativni</translation>
+        <translation type="unfinished">Натив</translation>
     </message>
     <message>
         <source>git</source>
@@ -277,12 +277,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="795"/>
         <source>Pass</source>
-        <translation type="unfinished">Lozinka</translation>
+        <translation type="unfinished">Парол</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="806"/>
         <source>pass</source>
-        <translation type="unfinished">lozinka</translation>
+        <translation type="unfinished">парол</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -291,7 +291,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="879"/>
         <source>Profiles</source>
-        <translation type="unfinished">Profilovi</translation>
+        <translation type="unfinished">Профили</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="928"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="933"/>
         <source>Path</source>
-        <translation type="unfinished">Putanja</translation>
+        <translation type="unfinished">Пут</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="951"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="966"/>
         <source>Delete</source>
-        <translation type="unfinished">Obriši</translation>
+        <translation type="unfinished">Избриши</translation>
     </message>
     <message>
         <source>Current password-store</source>
@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1001"/>
         <source>Template</source>
-        <translation type="unfinished">Šablon</translation>
+        <translation type="unfinished">Шаблон</translation>
     </message>
     <message>
         <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
@@ -329,17 +329,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="1031"/>
         <source>Use template</source>
-        <translation type="unfinished">Koristi šablon</translation>
+        <translation type="unfinished">Користе шаблон</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished">Prikaži sve linije počevši od reke sa zarezom kao polja u poljima za lozinke, ne samo one navedene.</translation>
+        <translation type="unfinished">Покажи све редове који почињу са речју праћеном двотачком као поља у паролским пољима, не само оне наведене.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation type="unfinished">Prikaži sva polja šablonisana.</translation>
+        <translation type="unfinished">Покажи све шаблонизована поља</translation>
     </message>
     <message>
         <source>login
@@ -357,138 +357,138 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="121"/>
         <source>No Clipboard</source>
-        <translation type="unfinished">Nema klipba</translation>
+        <translation type="unfinished">Нема клипборда</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="122"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished">Vedro kopirati u klipbu</translation>
+        <translation type="unfinished">Увек копирај у клипборд</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="123"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished">Kopirati u klipbu po potrebi</translation>
+        <translation type="unfinished">На захтев копирање у буфер обрти</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="204"/>
         <location filename="../src/configdialog.cpp" line="220"/>
         <source>This field is required</source>
-        <translation type="unfinished">Ovo polje je obavezno</translation>
+        <translation type="unfinished">Ово поље је обавезно</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="614"/>
         <source>No profile selected</source>
-        <translation type="unfinished">Nijedan profil nije selektovan</translation>
+        <translation type="unfinished">Није изабран профил</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="615"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished">Nijedan profil za brisanje nije selektovan</translation>
+        <translation type="unfinished">Нема изабраног профила за брисање</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="715"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished">GnuPG nije pronađen</translation>
+        <translation type="unfinished">GnuPG није пронађен</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">Прикључите се на систему.&lt;br&gt;Инсталирати &lt;strong&gt;gpg&lt;/strong&gt; користећи ваш префериран пакетски менаджер&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; преузeti &lt;/a&gt; го са GnuPG.org</translation>
+        <translation type="unfinished">Молимо, поставете GnuPG на вашу рачунарску опрему.&lt;br&gt;Установите &lt;strong&gt;gpg&lt;/strong&gt; користећи свој избор пакета за управљање пакетима&lt;br&gt;или преузми га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="783"/>
         <source>Create password-store?</source>
-        <translation type="unfinished">Da li želite da kreirate loštinarski skladiste?</translation>
+        <translation type="unfinished">Желите ли да створите паролски архив?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="784"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation type="unfinished">Želite li da kreirate loštinarsko skladiste na %1?</translation>
+        <translation type="unfinished">Желите ли да створите паролски архив у %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="789"/>
         <source>Error</source>
-        <translation type="unfinished">Greška</translation>
+        <translation type="unfinished">Грешка</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="790"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">Neuspešno je kreirano loštinarsko skladiste na: %1</translation>
+        <translation type="unfinished">Није успело да се створи паролски архив на: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="821"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">Lozinkova baza nije inicijalizovana</translation>
+        <translation type="unfinished">Паролски архив није почео са радом</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="822"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished">Mapa %1 ne izgledа као lozinkova baza ili još није иницијализована.</translation>
+        <translation type="unfinished">Фајл %1 не изгледа као паролски архив или још увек није почео да ради.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="825"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;www.passwordstore.org&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="856"/>
         <source>Autodetect</source>
-        <translation type="unfinished">Аутодетектуиши</translation>
+        <translation type="unfinished">Аутодетекција</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="66"/>
         <source>System tray is not available</source>
-        <translation type="unfinished">Системски трејл је недоступан</translation>
+        <translation type="unfinished">Системски трај је недоступан</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="91"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation type="unfinished">Проширjenje за пролазне одговорне токене (OTP) захтева инсталацију</translation>
+        <translation type="unfinished">Потребно је инсталирати продужетак Pass OTP</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="96"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished">Potrebno je instalirati qrencode.</translation>
+        <translation type="unfinished">Треба да се уставе qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="718"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">:</translation>
+        <translation type="unfinished">Молимо, поставете GnuPG на вашу рачунарску опрему.&lt;br&gt;Установите &lt;strong&gt;Ubuntu&lt;/strong&gt; са Microsoft Store да бисте га добили.&lt;br&gt;Ако сте већ то урадили, уверете се да сте га једном покренули и кликните &quot;Аутодетекција&quot; у следећем дијалогу.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="723"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">Молимо инсталирајте GnuPG на вашем систему.&lt;br&gt;Инсталирајте &lt;strong&gt;Ubuntu&lt;/strong&gt; из Microsoft Store-а&lt;br&gt;или &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;преузмите&lt;/a&gt; са GnuPG.org</translation>
+        <translation type="unfinished">Молимо, поставете GnuPG на вашу рачунарску опрему.&lt;br&gt;Установите &lt;strong&gt;Ubuntu&lt;/strong&gt; са Microsoft Store или преузми га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
         <source>Use PWGen</source>
-        <translation type="unfinished">Koristite PWGen</translation>
+        <translation type="unfinished">Користите PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
         <source>Use Git</source>
-        <translation type="unfinished">Koristite Git</translation>
+        <translation type="unfinished">Користејте Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="567"/>
         <source>Use QRencode</source>
-        <translation type="unfinished">Koristite QRencode</translation>
+        <translation type="unfinished">Користејте QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="581"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished">Koristiti ekstenziju pass-otp</translation>
+        <translation type="unfinished">Користејте продужетак pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished">Nativni Git/GPG</translation>
+        <translation type="unfinished">Напра&amp;вите Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
         <source>Git</source>
-        <translation type="unfinished">Git</translation>
+        <translation type="unfinished">Гит</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="735"/>
@@ -555,12 +555,12 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished">Pristup GPG značenju nije uspešan!</translation>
+        <translation type="unfinished">ГПГ потписивање није успело!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished">Neuspešno je potpisano %1.</translation>
+        <translation type="unfinished">Неуспело потписивање %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -600,33 +600,33 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">Neuspešno je ponovo šifriranje.</translation>
+        <translation type="unfinished">Поновно енкриптирање неуспело</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">Neuspešno je zamenjeno %1. Originalno je vratljeno.</translation>
+        <translation type="unfinished">Неуспело заменити %1. Оригинал је враћен.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished">Kreiranje sačuvanog komiteta.</translation>
+        <translation type="unfinished">Стварање резервног комита</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished">Sačuvanje komiteta nije uspelo.</translation>
+        <translation type="unfinished">Погрешна је врата за резервно копирање</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">Ne mogu da proverim stanje Git-a. Ponovo šifriranje je prekinuto.</translation>
+        <translation type="unfinished">Немогуће је прегледати статус git. Преновација је прекинута.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">Ponovo šifriranje je prekinuto jer se sačuvanje Git-a nije moglo kreirati.</translation>
+        <translation type="unfinished">Преновација је прекинута јер није могуће створити резервно копирање git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -642,27 +642,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished">Verifikacija GPG ID-a nije uspešna.</translation>
+        <translation type="unfinished">Неуспела је верификација GPG ID-а</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">Ne mogu da verificiram .gpg-id za direktorijum.</translation>
+        <translation type="unfinished">Немогуће је верификовати .gpg-id за директорију.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">Neuspešno je ponovo šifriranje %1.</translation>
+        <translation type="unfinished">Неуспело поновно енкриптирање %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">Ponovo šifriranje je završeno: %1 uspešno, %2 neuspešno.</translation>
+        <translation type="unfinished">Поновно енкриптирање је завршено: %1 успешно, %2 неуспело</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">Ponovo šifriranje je završeno: %1 datoteka ponovo šifrirana.</translation>
+        <translation type="unfinished">Повторна преновација: %1 фајлова је реновирано</translation>
     </message>
 </context>
 <context>
@@ -695,22 +695,22 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nema ograničenja na dužinu lozinke i treba je da se izbere oprezno. Iz perspektive sigurnosti, lozinka za otvaranje privatne ključevine je jedna od najslabijih točaka u GnuPG (i drugim sistemima javnog ključa) jer je jedini način zaštite ako drugi ljudi dobiju vašu privatnu ključevinu. &lt;br/&gt;Idejno, lozinka ne bi trebalo da koristi reči iz rječnika i treba joj kombinirati velika i mala slova kao i nealifabetske znakove.&lt;br/&gt;Dobara lozinka je ključ za sigurno korišćenje GnuPG-a.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Нема ограничења дужине шифрене фразе, а треба је пажљivo изабрана. Са перспективе безбедности, шифрени кључ за откључавање приватног кључа је једно од слабих тачака у GnuPG (и другим системима јавне криптографије) јер је то једино заштита ако неки други појединац добије ваш приватни кључ. &lt;br/&gt;Идеална шифрена фраза не треба да користи речи из рјечника и треба да меша слова велика и мала, те да користи и не-абецедне карактере.&lt;br/&gt;Добра шифрена фраза је кључна за сигурно коришћење GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished">Ponovo unesite lozinku</translation>
+        <translation type="unfinished">Повторити парол</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation type="unfinished">Eksperat</translation>
+        <translation type="unfinished">Експерт</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished">Sadržaj šablona će biti postavljen prema verziji GPG-a.</translation>
+        <translation type="unfinished">Сadržaj шаблона će se postaviti na temelju верзије GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -747,32 +747,32 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished">Za napredne opcije pogledajte &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG priručnik&lt;/a&gt;</translation>
+        <translation type="unfinished">За експертске опције погледајте &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;руководство GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Nevažeći naziv</translation>
+        <translation type="unfinished">Неважеће име</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished">Ime mora da sadrži barem 5 karaktera.</translation>
+        <translation type="unfinished">Име мора да буде најмање 5 карактера дуго.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation type="unfinished">Neispravan e-mail.</translation>
+        <translation type="unfinished">Неважећа е-пошта</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished">Uneseni e-mail adresa nije važeći e-mail adresa.</translation>
+        <translation type="unfinished">Е-пошта коју сте унели није валидна адреса.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished">Ova operacija može da traje nekoliko minuta.&lt;br /&gt;Potrebno je generisati veliki broj slučajnih bajtova. Takođe je dobro da izvršite neku drugu akciju (tipajte na tastaturi, pomičite mišem, koristite diske) tokom generisanja prostih brojeva; to omogućava generatore slučajnih brojeva bolju priliku da dobije dovoljno entropije.</translation>
+        <translation type="unfinished">Ова операција може да траје неколико минута.&lt;br /&gt;Треба да генеришемо много случајних бајтова. То је добро идеја да извршите неку другу радњу (типирање на тастатуру, покретање миша, коришћење дискова) током генерисања просте бројеве; ово пружа генератору случајних бројева бољу шансу да добије довољно ентропије.</translation>
     </message>
 </context>
 <context>
@@ -780,7 +780,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation type="unfinished">QtPass</translation>
+        <translation type="unfinished">КтПас</translation>
     </message>
     <message>
         <source>Add</source>
@@ -791,14 +791,14 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="335"/>
         <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>Edit</source>
-        <translation type="unfinished">Uredi</translation>
+        <translation type="unfinished">Уређивање</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
         <location filename="../src/mainwindow.cpp" line="1055"/>
         <source>Delete</source>
-        <translation type="unfinished">Obriši</translation>
+        <translation type="unfinished">Избриши</translation>
     </message>
     <message>
         <source>git push</source>
@@ -807,7 +807,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="359"/>
         <source>Push</source>
-        <translation type="unfinished">Pusni</translation>
+        <translation type="unfinished">Пошаљи</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -835,12 +835,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="348"/>
         <source>OTP</source>
-        <translation type="unfinished">OTP</translation>
+        <translation type="unfinished">ОТП</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="351"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished">Generiraj OTP i kopiraj u međuspremnik</translation>
+        <translation type="unfinished">Генерише ОТП и копира у одељак за пресецање</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
@@ -850,12 +850,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="362"/>
         <source>Git push</source>
-        <translation type="unfinished">Git pusni</translation>
+        <translation type="unfinished">Гит пошаљи</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="370"/>
         <source>Git pull</source>
-        <translation type="unfinished">Git uzmi</translation>
+        <translation type="unfinished">Гит извуче</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -864,7 +864,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="367"/>
         <source>Update</source>
-        <translation type="unfinished">Ažuriraj</translation>
+        <translation type="unfinished">Ажурирај</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -880,13 +880,13 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="378"/>
         <source>Manage who can read password in folder</source>
-        <translation type="unfinished">Upravljaj osobama koje mogu da čitaju lozinku u mapi</translation>
+        <translation type="unfinished">Управљање корисницима који могу да читају лозинке у папки</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
         <location filename="../src/mainwindow.cpp" line="1035"/>
         <source>Users</source>
-        <translation type="unfinished">Korisnici</translation>
+        <translation type="unfinished">Корисници</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -907,22 +907,22 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="383"/>
         <source>Config</source>
-        <translation type="unfinished">Konfiguracija</translation>
+        <translation type="unfinished">Конфигурација</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation type="unfinished">Izaberite profil</translation>
+        <translation type="unfinished">Изабери профил</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="197"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished">Dobrodošli na QtPass</translation>
+        <translation type="unfinished">Добродошли у КтПас</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
         <source>Search Password</source>
-        <translation type="unfinished">Pretraži lozinku</translation>
+        <translation type="unfinished">Тражи лозинку</translation>
     </message>
     <message>
         <source>qtpass</source>
@@ -931,7 +931,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="199"/>
         <source>Welcome to QtPass %1</source>
-        <translation type="unfinished">Dobrodošli na QtPass %1</translation>
+        <translation type="unfinished">Добродошли у КтПас %1</translation>
     </message>
     <message>
         <source>Add Password</source>
@@ -988,18 +988,18 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="453"/>
         <source>Content hidden</source>
-        <translation type="unfinished">Sadržaj sakriven</translation>
+        <translation type="unfinished">Сadržaj скривен</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="457"/>
         <location filename="../src/mainwindow.cpp" line="1274"/>
         <source>Password</source>
-        <translation type="unfinished">Lozinka</translation>
+        <translation type="unfinished">Лозинка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="494"/>
         <source>OTP Code</source>
-        <translation type="unfinished">Koda OTP</translation>
+        <translation type="unfinished">ОТП код</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -1012,7 +1012,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="516"/>
         <source>Password and Content hidden</source>
-        <translation type="unfinished">Lozinka i sadržaj su sakriveni</translation>
+        <translation type="unfinished">Сифратекст скривен</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -1041,40 +1041,40 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="594"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished">Traži se: %1</translation>
+        <translation type="unfinished">Tražim: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="698"/>
         <location filename="../src/mainwindow.cpp" line="1100"/>
         <source>New file</source>
-        <translation type="unfinished">Novi fajl</translation>
+        <translation type="unfinished">Нова датотека</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="699"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">Nova lozinska datoteka:
-(Bude postavljen u %1)</translation>
+        <translation type="unfinished">Нови паролски фајл: 
+(Умештан ће се у %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
         <source> and the whole content?</source>
-        <translation type="unfinished">i cijeli sadržaj?</translation>
+        <translation type="unfinished">и цело садржаје?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished">I i cijeli sadržaj? &lt;br&gt;&lt;strong&gt;Pozor: u datoj mapi postoje neprocjenjene datoteke, provjerite ih prije nastavka.&lt;/strong&gt;</translation>
+        <translation type="unfinished"> и цело садржаје? &lt;br&gt;&lt;strong&gt;Упозорење: постоје неочекивани фајлови у датотеци коју сте дали, проверите их пре наставка.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished">Are you sure you want to delete %1? {1%2??}</translation>
+        <translation>Да ли сте сигурни да желите да избришете %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>
         <source>Delete password?</source>
-        <translation type="unfinished">Obriši lozinku?</translation>
+        <translation type="unfinished">Желиште да избришете парол?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -1083,7 +1083,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>
         <source>Delete folder?</source>
-        <translation type="unfinished">Obriši mapu?</translation>
+        <translation type="unfinished">Желиште да избришете директорију?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -1108,33 +1108,33 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished">Profil promenjen na %1</translation>
+        <translation type="unfinished">Профил је промењен на %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished">Otvaranje mape pomoću upravljača datoteka</translation>
+        <translation type="unfinished">Отвори директорију са фајл менаџером</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Add folder</source>
-        <translation type="unfinished">Dodaj mapu</translation>
+        <translation type="unfinished">Додај директорију</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
         <location filename="../src/mainwindow.cpp" line="1034"/>
         <source>Add password</source>
-        <translation type="unfinished">Dodaj lozinku</translation>
+        <translation type="unfinished">Додај парол</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">Nova mapa:
-(Iako će biti postavljena u %1 )</translation>
+        <translation type="unfinished">Нова директорија: 
+(Умештан ће се у %1 )</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -1143,75 +1143,75 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">Koda OTP kopirana u međuspremnik</translation>
+        <translation type="unfinished">ОТП код је копиран на одељак за пресецање</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">U ovoj lozinci ne postoji kod OTP-a</translation>
+        <translation type="unfinished">Није пронађен ОТП код у овом паролном приступу</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">Niste selektovali lozinku za generisanje OTP-koda</translation>
+        <translation type="unfinished">Неодабран парол за генерацију ОТП кода</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation type="unfinished">Promeni ime mapе</translation>
+        <translation type="unfinished">Реимејни директорију</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>Rename password</source>
-        <translation type="unfinished">Preimenovati lozinku</translation>
+        <translation type="unfinished">Реимејни парол</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished">Ponovo šifrirajte</translation>
+        <translation type="unfinished">Повторно енкриптирање</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1111"/>
         <location filename="../src/mainwindow.cpp" line="1120"/>
         <location filename="../src/mainwindow.cpp" line="1329"/>
         <source>Error</source>
-        <translation type="unfinished">Greška</translation>
+        <translation type="unfinished">Грешка</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1112"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">Neuspešno kreiranje mapa: %1</translation>
+        <translation type="unfinished">Неуспело креирање папке: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Neuspešno kreiranje fajla .gpg-id u: %1</translation>
+        <translation type="unfinished">Неуспело креирање фајла .gpg-id у: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename file</source>
-        <translation type="unfinished">Preimenovati datoteku</translation>
+        <translation type="unfinished">Преименовати фајл</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished">Preimenovati folder na: </translation>
+        <translation type="unfinished">Преименујте папку као:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename File To: </source>
-        <translation type="unfinished">Preimenovati datoteku na: </translation>
+        <translation type="unfinished">Преименујте фајл као:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished">Direktorij ne postoji: %1</translation>
+        <translation type="unfinished">Директорија не постоји: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">Ponovo šifrirati lozinke?</translation>
+        <translation type="unfinished">Повторно енкриптирање лозинки</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1336"/>
@@ -1222,7 +1222,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">Ponovo šifrirati sve lozinke u %1? Ovo će ponovo šifrirati SVE lozinka u ovom folderu koristeći trenutne primatelje definisane u .gpg-id. To može pisati mnoge datoteke i nije lako otkazivo. Nastaviti?</translation>
+        <translation type="unfinished">Повторно енкриптирање свих лозинки у %1?
+
+Ово ће повторно енкриптирати СВЕ фајлове са лозинкама у овом фолдеру користећи текуће примаоце дефинисане у .gpg-id.
+
+Ово може да препише многе фајлове и неможе се лако вратити назад.
+
+Наставити?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
@@ -1230,7 +1236,7 @@ Continue?</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass je GUI za &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardni unix password manager.&lt;/p&gt;&lt;p&gt;Obrazac za prijavu svih &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; koje možete imati sa ovim softverom.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Izvorni kod&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;QtPass је GUI за &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, стандардног менеџера лозинки унутар Unix-а.&lt;/p&gt;&lt;p&gt;Молимо, известите било које &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;проблеме&lt;/a&gt; са овим софтвером.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Документација&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Изворни код&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1238,12 +1244,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="144"/>
         <source>No characters chosen</source>
-        <translation type="unfinished">Nijedan karakter nije izabran</translation>
+        <translation type="unfinished">Не изабрани карактери</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="145"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished">Ne mogu da generišem lozinku, nema karaktera za izbor u konfiguraciji!</translation>
+        <translation type="unfinished">Не могу да генеришу лозинку, јер нису изабрани карактери из конфигурације!</translation>
     </message>
 </context>
 <context>
@@ -1252,22 +1258,22 @@ Continue?</source>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation type="unfinished">Lozinka</translation>
+        <translation type="unfinished">Лозинка</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation type="unfinished">Generiši</translation>
+        <translation type="unfinished">Генерирај</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation type="unfinished">Prikaži lozinku</translation>
+        <translation type="unfinished">Пrikaži лозинку</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation type="unfinished">Skupina znakova:</translation>
+        <translation type="unfinished">Карakter сет:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
@@ -1292,7 +1298,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation type="unfinished">Dužina:</translation>
+        <translation type="unfinished">Дужина:</translation>
     </message>
 </context>
 <context>
@@ -1301,7 +1307,7 @@ Continue?</source>
         <location filename="../main/main.cpp" line="137"/>
         <location filename="../main/main.cpp" line="141"/>
         <source>LTR</source>
-        <translation type="unfinished">LTR</translation>
+        <translation type="unfinished">ЛТР</translation>
     </message>
 </context>
 <context>
@@ -1375,12 +1381,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished">Generisanje par GPG ključeva nije uspešno</translation>
+        <translation type="unfinished">Генерација парола GPG неуспела</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished">Par GPG ključeva je uspešno generisan</translation>
+        <translation type="unfinished">Успешно генерисана пара GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1403,12 +1409,12 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
-        <translation type="unfinished">suvrino prepisati?</translation>
+        <translation type="unfinished">принудно преписивање?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished">prepisati %1 sa %2?</translation>
+        <translation type="unfinished">преписати %1 са %2?</translation>
     </message>
 </context>
 <context>
@@ -1416,32 +1422,32 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation type="unfinished">&amp;Prikaži</translation>
+        <translation>&amp;Покажи</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished">&amp;Sakrij</translation>
+        <translation>&amp;Скриј</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished">&amp;Minimaliziraj</translation>
+        <translation>Ми&amp;нимизирај</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished">&amp;Maksimizuj</translation>
+        <translation>Ма&amp;ксимизирај</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished">&amp;Vrati</translation>
+        <translation>&amp;Врати</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">I&amp;zlaz</translation>
+        <translation>&amp;Напусти</translation>
     </message>
 </context>
 <context>
@@ -1449,7 +1455,7 @@ Continue?</source>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation type="unfinished">Korisnici sa pravilima za čitanje</translation>
+        <translation type="unfinished">Корисници са правом на читање</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1458,12 +1464,12 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Odaberite korisnike koji bi trebalo imati pravo da dešifruju lozinke u ovom folderu. Napomena: postojeće datoteke neće biti menjane i ostavljaju se sa starim dozvolicama sve dok ih ne uređujete. Plavi podaci imaju dostupnu tajnu ključ, odaberite jedan od njih da biste mogli dešifrovati. Crni podaci imaju dostupnu šifrirajuću ključ i ta ključ je uverljiv, odaberite jedan od njih da biste omogućili drugim ljudima da dešifruju. Crveni podaci nisu važeći, neće biti moguće šifrovati na njih.</translation>
+        <translation type="unfinished">Избери кориснике који могу да декриптују лозинке чуване у овом папку. Напомена: Постојећи фајлови ће се не променити, а старе дозволе ће бити задржане док их не уредиш. Плаве улазе имају доступну тајну кључ, избери један од ових да би могао да декриптује. Црне улазе имају доступни шифровани кључ и је поуздан, избери један од ових да би други људи могли да декриптују. Црвене улазе нису валидне, нећете бити у стању да криптујете на њих.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation type="unfinished">Pretraživanje korisnika</translation>
+        <translation type="unfinished">Претрага корисника</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1482,7 +1488,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation type="unfinished">Prikaži nepotrebnosti ključeve</translation>
+        <translation type="unfinished">Покажи неисправне кључеве</translation>
     </message>
     <message>
         <source>Can not get key list</source>
@@ -1495,12 +1501,12 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="71"/>
         <source>Keylist missing</source>
-        <translation type="unfinished">Lista ključeva nedostaje</translation>
+        <translation type="unfinished">Недостаје листа доступних GPG кључева</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="72"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished">Ne mogu da dobijem listu dostupnih GPG ključeva</translation>
+        <translation type="unfinished">Није могуће да се дохвати листа доступних GPG кључева</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="148"/>
@@ -1510,27 +1516,27 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="301"/>
         <source>created</source>
-        <translation type="unfinished">stvoreno</translation>
+        <translation type="unfinished">креиран</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="305"/>
         <source>expires</source>
-        <translation type="unfinished">istekne</translation>
+        <translation type="unfinished">истека</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[NEVAZILO]</translation>
+        <translation type="unfinished">[НЕВАЛИДНО] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[ISTKAO]</translation>
+        <translation type="unfinished">[ИСТЕКЛО] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[DELOVAN]</translation>
+        <translation type="unfinished">[ДЕЛОВНО] </translation>
     </message>
 </context>
 </TS>

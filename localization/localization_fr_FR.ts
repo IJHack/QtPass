@@ -41,27 +41,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation>Cacher le mot de passe</translation>
+        <translation>Masquer le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Cacher le contenu après :</translation>
+        <translation>Effacer automatiquement le panneau après :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser une police monospacée</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher le contenu des fichiers tel quel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucune rupture de ligne</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
@@ -265,12 +265,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="1038"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Montrer toutes les lignes qui commencent par un mot suivi de deux points en tant que champs dans les champs de mots de passe, pas uniquement ceux listés</translation>
+        <translation>Afficher toutes les lignes commençant par un mot suivi de deux-points comme champs de mot de passe, pas seulement celles listées</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation>Afficher tous les champs avec un template</translation>
+        <translation>Afficher tous les champs du modèle</translation>
     </message>
     <message>
         <source>login
@@ -506,17 +506,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="938"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Clé de signature</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="941"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Optionnel : clé GPG pour signer les fichiers .gpg-id afin de vérifier l'intégrité. Laissez ce champ vide sauf si vous avez besoin de protéger la liste des utilisateurs contre les modifications.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Les templates ajoutent des champs supplémentaires dans la boîte de dialogue de génération de mdp et dans le panel de visualisation.</translation>
+        <translation>Les templates ajoutent des champs supplémentaires dans le dialogue de génération de mot de passe et dans la vue du mot de passe.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
@@ -535,14 +535,14 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Vérifiez la signature du fichier .gpgid !</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La signature pour %1 est invalide.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -559,23 +559,23 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Échec de la signature GPG !</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Échec de la signature de %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aucune clé de signature !</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aucune des clés de signature privées n&apos;est disponible. Vous ne pourrez pas modifier la liste des utilisateurs !</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
@@ -603,33 +603,33 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La ré-encryption a échoué</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Échec de la remplacement de %1. L&apos;original a été restauré.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Création du commit de sauvegarde</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Échec de la création du commit de sauvegarde.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Impossible d&apos;examiner l&apos;état git. La ré-encryption a été interrompue.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La ré-encryption a été interrompue car un commit de sauvegarde git ne pouvait pas être créé.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
@@ -645,27 +645,27 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La vérification de l’ID GPG a échoué</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Impossible de vérifier le fichier .gpg-id pour ce répertoire.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Échec du ré-encryption de %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ré-encryption terminée : %1 réussies, %2 échouées</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ré-encryption terminée : %1 fichiers ré-encryptés</translation>
     </message>
 </context>
 <context>
@@ -703,7 +703,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Répéter le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -713,7 +713,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Le contenu du gabarit sera défini en fonction de la version GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1022,12 +1022,12 @@ Expire-Date: 0
     </message>
     <message>
         <source>Generating GPG key pair</source>
-        <translation type="vanished">Génération d&apos;une paire de clés GPG</translation>
+        <translation type="vanished">Code OTP copié dans le presse-papier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
-        <translation>Profil changé vers %1</translation>
+        <translation>Profil changé en %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
@@ -1087,12 +1087,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Code OTP copié dans le presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aucun code OTP trouvé dans cette entrée de mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -1107,7 +1107,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aucun mot de passe sélectionné pour la génération d&apos;OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -1144,7 +1144,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1121"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Échec de la création du fichier .gpg-id dans : %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
@@ -1337,12 +1337,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La génération de la paire de clés GPG a échoué</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La paire de clés GPG a été générée avec succès</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1420,7 +1420,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sélectionnez les utilisateurs qui doivent pouvoir déchiffrer les mots de passe stockés dans ce dossier. Note : Les fichiers existants ne seront pas modifiés et conserveront leurs anciennes permissions jusqu&apos;à ce que vous les éditez. Les entrées en bleu ont une clé secrète disponible, sélectionnez-en une pour pouvoir déchiffrer. Les entrées en noir ont une clé de chiffrement disponible et celle-ci est fiable, sélectionnez-en une pour permettre à d&apos;autres personnes de déchiffrer. Les entrées en rouge ne sont pas valides, vous ne pourrez pas chiffrer vers celles-ci.</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1492,17 +1492,17 @@ Les entrées en rouge ne sont pas marquées comme étant de confiance dans GnuPG
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[INVALIDE] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[EXPIRÉ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">[PARTIEL] </translation>
     </message>
 </context>
 </TS>
