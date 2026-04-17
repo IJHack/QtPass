@@ -155,6 +155,7 @@ public:
                               QString *process_err = nullptr) -> int;
 
   void setEnvironment(const QStringList &env);
+  auto environment() const -> QStringList;
 
   auto cancelNext() -> int;
 private slots:

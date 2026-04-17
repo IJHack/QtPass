@@ -43,6 +43,18 @@ private:
     ~PassStoreGuard() { QtPassSettings::setPassStore(original); }
   };
 
+  // Thin subclass that exposes protected members needed by env tests.
+  class TestPass : public ImitatePass {
+  public:
+    void callSetEnvVar(const QString &key, const QString &value) {
+      setEnvVar(key, value);
+    }
+    QStringList environment() {
+      updateEnv();
+      return exec.environment();
+    }
+  };
+
   template <typename T, void (*Setter)(const T &)> struct SettingGuard {
     T original;
     SettingGuard(T orig, const T &newVal) : original(std::move(orig)) {
@@ -127,6 +139,13 @@ private Q_SLOTS:
   void findBinaryInPathWithConstQStringRef();
   void findBinaryInPathEmptyString();
   void findBinaryInPathStringLiteral();
+  void setEnvVarAdds();
+  void setEnvVarUpdates();
+  void setEnvVarRemoves();
+  void setEnvVarNoopOnMissingRemove();
+  void updateEnvSetsExpectedVars();
+  void updateEnvEmptyCustomCharsetFallsBackToAllChars();
+  void updateEnvWslenvContainsRequiredVars();
 };
 
 /**
@@ -1459,6 +1478,102 @@ void tst_util::findBinaryInPathStringLiteral() {
 #else
   QSKIP("Unix-only test");
 #endif
+}
+
+void tst_util::setEnvVarAdds() {
+  TestPass pass;
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("hello"));
+  QStringList env = pass.environment();
+  QVERIFY2(env.contains(QStringLiteral("TEST_KEY=hello")),
+           "setEnvVar should append key=value when absent");
+}
+
+void tst_util::setEnvVarUpdates() {
+  TestPass pass;
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("first"));
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("second"));
+  QStringList env = pass.environment();
+  QVERIFY2(env.contains(QStringLiteral("TEST_KEY=second")),
+           "setEnvVar should update existing entry");
+  QVERIFY2(!env.contains(QStringLiteral("TEST_KEY=first")),
+           "setEnvVar should remove old value");
+  QCOMPARE(env.filter(QStringLiteral("TEST_KEY=")).size(), 1);
+}
+
+void tst_util::setEnvVarRemoves() {
+  TestPass pass;
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("value"));
+  pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QString());
+  QStringList env = pass.environment();
+  QVERIFY2(env.filter(QStringLiteral("TEST_KEY=")).isEmpty(),
+           "setEnvVar with empty value should remove the entry");
+}
+
+void tst_util::setEnvVarNoopOnMissingRemove() {
+  TestPass pass;
+  QStringList before = pass.environment();
+  pass.callSetEnvVar(QStringLiteral("NONEXISTENT_KEY="), QString());
+  QStringList after = pass.environment();
+  QCOMPARE(before, after);
+}
+
+void tst_util::updateEnvSetsExpectedVars() {
+  TestPass pass;
+  PassStoreGuard storeGuard(QtPassSettings::getPassStore());
+  QtPassSettings::setPassStore(QStringLiteral("/tmp/test-store"));
+
+  QStringList env = pass.environment();
+  QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_DIR=")).size() == 1,
+           "updateEnv should set PASSWORD_STORE_DIR");
+  QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_DIR="))
+               .first()
+               .contains(QStringLiteral("test-store")),
+           "updateEnv should set PASSWORD_STORE_DIR to configured store path");
+  QVERIFY2(
+      env.filter(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH=")).size() ==
+          1,
+      "updateEnv should set PASSWORD_STORE_GENERATED_LENGTH");
+  QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_CHARACTER_SET=")).size() ==
+               1,
+           "updateEnv should set PASSWORD_STORE_CHARACTER_SET");
+}
+
+void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
+  TestPass pass;
+  PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
+  config.selected = PasswordConfiguration::CUSTOM;
+  config.Characters[PasswordConfiguration::CUSTOM] = QString();
+  QtPassSettings::setPasswordConfiguration(config);
+  struct ConfigRollback {
+    PasswordConfiguration value;
+    ~ConfigRollback() { QtPassSettings::setPasswordConfiguration(value); }
+  } rollback{QtPassSettings::getPasswordConfiguration()};
+  QtPassSettings::setPasswordConfiguration(config);
+
+  QStringList env = pass.environment();
+  QStringList charsetEntries =
+      env.filter(QStringLiteral("PASSWORD_STORE_CHARACTER_SET="));
+  QVERIFY2(
+      charsetEntries.size() == 1,
+      "PASSWORD_STORE_CHARACTER_SET should be set even when CUSTOM is empty");
+  QString val = charsetEntries.first().mid(
+      QStringLiteral("PASSWORD_STORE_CHARACTER_SET=").size());
+  QVERIFY2(!val.isEmpty(),
+           "charset should fall back to ALLCHARS, not be empty");
+}
+
+void tst_util::updateEnvWslenvContainsRequiredVars() {
+  TestPass pass;
+  QStringList env = pass.environment();
+  QStringList wslenvEntries = env.filter(QStringLiteral("WSLENV="));
+  QVERIFY2(wslenvEntries.size() == 1, "Exactly one WSLENV entry expected");
+  const QString wslenv = wslenvEntries.first();
+  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_DIR")),
+           "WSLENV should include PASSWORD_STORE_DIR");
+  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH")),
+           "WSLENV should include PASSWORD_STORE_GENERATED_LENGTH");
+  QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET")),
+           "WSLENV should include PASSWORD_STORE_CHARACTER_SET");
 }
 
 QTEST_MAIN(tst_util)

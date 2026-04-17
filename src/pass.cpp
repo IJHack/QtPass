@@ -500,15 +500,11 @@ void Pass::finished(int id, int exitCode, const QString &out,
 // matching so the '=' anchors the lookup to avoid collisions with longer names.
 void Pass::setEnvVar(const QString &key, const QString &value) {
   Q_ASSERT(key.endsWith('='));
-  QStringList existing = env.filter(key);
-  if (value.isEmpty()) {
-    for (const QString &entry : existing)
-      env.removeAll(entry);
-  } else if (existing.isEmpty()) {
+  const QStringList existing = env.filter(key);
+  for (const QString &entry : std::as_const(existing))
+    env.removeAll(entry);
+  if (!value.isEmpty())
     env.append(key + value);
-  } else {
-    env.replaceInStrings(existing.first(), key + value);
-  }
 }
 
 void Pass::updateEnv() {

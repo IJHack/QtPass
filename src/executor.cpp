@@ -321,6 +321,10 @@ void Executor::setEnvironment(const QStringList &env) {
   m_process.setEnvironment(env);
 }
 
+auto Executor::environment() const -> QStringList {
+  return m_process.environment();
+}
+
 /**
  * @brief Executor::cancelNext  cancels execution of first process in queue
  *                              if it's not already running
