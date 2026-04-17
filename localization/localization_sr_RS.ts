@@ -1230,7 +1230,7 @@ Continue?</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass je GUI za &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardni unix password manager.&lt;/a&gt;&lt;/p&gt;&lt;p&gt;Obrazac za prijavu svih &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; koje možete imati sa ovim softverom.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Izvorni kod&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;QtPass je GUI za &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardni unix password manager.&lt;/p&gt;&lt;p&gt;Obrazac za prijavu svih &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; koje možete imati sa ovim softverom.&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Izvorni kod&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>

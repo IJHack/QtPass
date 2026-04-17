@@ -1222,7 +1222,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">Ово ће повторно енкриптирати СВЕ лозинке у %1 користећи текуће примаоце дефинисане у .gpg-id. Ово може да препише многе фајлове и неможе се вратити назад лако.</translation>
+        <translation type="unfinished">Повторно енкриптирање свих лозинки у %1?
+
+Ово ће повторно енкриптирати СВЕ фајлове са лозинкама у овом фолдеру користећи текуће примаоце дефинисане у .gpg-id.
+
+Ово може да препише многе фајлове и неможе се лако вратити назад.
+
+Наставити?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="256"/>
