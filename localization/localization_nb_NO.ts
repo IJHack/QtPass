@@ -301,7 +301,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1041"/>
         <source>Show all fields templated</source>
-        <translation>Vis alle felter malvist</translation>
+        <translation>Vis maler i alle felt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
@@ -475,7 +475,7 @@ e-post</translation>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Sjekk signaturen til .gpid-filen!</translation>
+        <translation>Sjekk signaturen til .gpgid-filen!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
