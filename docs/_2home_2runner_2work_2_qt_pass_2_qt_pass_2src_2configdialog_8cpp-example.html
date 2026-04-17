@@ -91,8 +91,10 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="configdialog_8h.html">configdialog.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="keygendialog_8h.html">keygendialog.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="mainwindow_8h.html">mainwindow.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="profileinit_8h.html">profileinit.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="qtpasssettings_8h.html">qtpasssettings.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;ui_configdialog.h&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="usersdialog_8h.html">usersdialog.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;QClipboard&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;QDir&gt;</span></div>
@@ -312,6 +314,8 @@ $(function() {
 <div class="line">                                 ui-&gt;checkBoxHideOnClose-&gt;isChecked());</div>
 <div class="line">  <a id="a66" name="a66"></a><a class="code hl_function" href="class_qt_pass_settings.html#a07c79f8dba7614bd47dbb314af9fd671">QtPassSettings::setStartMinimized</a>(ui-&gt;checkBoxStartMinimized-&gt;isEnabled() &amp;&amp;</div>
 <div class="line">                                    ui-&gt;checkBoxStartMinimized-&gt;isChecked());</div>
+<div class="line">  QHash&lt;QString, QHash&lt;QString, QString&gt;&gt; existingProfiles =</div>
+<div class="line">      <a class="code hl_function" href="class_qt_pass_settings.html#add3fe08db67b209231af21cf7b8f705d">QtPassSettings::getProfiles</a>();</div>
 <div class="line">  <a id="a67" name="a67"></a><a class="code hl_function" href="class_qt_pass_settings.html#a4635ee8c60b928d8798df35a5ba79df1">QtPassSettings::setProfiles</a>(<a id="a68" name="a68"></a><a class="code hl_function" href="class_config_dialog.html#a0ae43a6dc241ebbf619f61171fbbd123">getProfiles</a>());</div>
 <div class="line">  <a id="a69" name="a69"></a><a class="code hl_function" href="class_qt_pass_settings.html#afc9621d9abe43370e41e01bc9f9cb51f">QtPassSettings::setUseGit</a>(ui-&gt;checkBoxUseGit-&gt;isChecked());</div>
 <div class="line">  <a id="a70" name="a70"></a><a class="code hl_function" href="class_qt_pass_settings.html#a45626883c75241e6b30979176a910913">QtPassSettings::setUseOtp</a>(ui-&gt;checkBoxUseOtp-&gt;isChecked());</div>
@@ -332,6 +336,9 @@ $(function() {
 <div class="line">  <a id="a85" name="a85"></a><a class="code hl_function" href="class_qt_pass_settings.html#a90501b44c9281579f49e0a56f9ca8cef">QtPassSettings::setAlwaysOnTop</a>(ui-&gt;checkBoxAlwaysOnTop-&gt;isChecked());</div>
 <div class="line"> </div>
 <div class="line">  <a id="a86" name="a86"></a><a class="code hl_function" href="class_qt_pass_settings.html#a8cd81cd735281c71eab54091bde73081">QtPassSettings::setVersion</a>(VERSION);</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Initialize new profiles that need pass/git initialization</span></div>
+<div class="line">  initializeNewProfiles(existingProfiles);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> ConfigDialog::on_autodetectButton_clicked() {</div>
@@ -556,16 +563,71 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> profiles;</div>
 <div class="line">}</div>
 <div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> ConfigDialog::initializeNewProfiles(</div>
+<div class="line">    <span class="keyword">const</span> QHash&lt;QString, QHash&lt;QString, QString&gt;&gt; &amp;existingProfiles) {</div>
+<div class="line">  QHash&lt;QString, QHash&lt;QString, QString&gt;&gt; newProfiles = <a class="code hl_function" href="class_config_dialog.html#a0ae43a6dc241ebbf619f61171fbbd123">getProfiles</a>();</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Collect keys and sort for deterministic iteration</span></div>
+<div class="line">  QStringList keys = newProfiles.keys();</div>
+<div class="line">  keys.sort();</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;name : keys) {</div>
+<div class="line">    <span class="keyword">const</span> QString &amp;path = newProfiles.value(name).value(<span class="stringliteral">&quot;path&quot;</span>);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Skip if already existed before (check by name and path)</span></div>
+<div class="line">    <span class="keywordflow">if</span> (existingProfiles.contains(name) &amp;&amp;</div>
+<div class="line">        existingProfiles.value(name).value(<span class="stringliteral">&quot;path&quot;</span>) == path) {</div>
+<div class="line">      <span class="keywordflow">continue</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// This is a new profile - check if needs initialization</span></div>
+<div class="line">    <span class="comment">// needsInit returns false for non-existent directories</span></div>
+<div class="line">    <span class="keywordflow">if</span> (!<a id="a95" name="a95"></a><a class="code hl_function" href="class_profile_init.html#a1d8b28d9c505d6419193cade236a8865">ProfileInit::needsInit</a>(path)) {</div>
+<div class="line">      <span class="keywordflow">continue</span>;</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Temporarily switch the active store so pass/git init operate on</span></div>
+<div class="line">    <span class="comment">// the new profile&#39;s directory rather than the currently-saved one.</span></div>
+<div class="line">    <span class="keyword">const</span> QString prevStore = <a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>();</div>
+<div class="line">    <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(path);</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Show user selection dialog for GPG recipients</span></div>
+<div class="line">    <span class="comment">// UsersDialog will run pass init when accepted</span></div>
+<div class="line">    UsersDialog usersDialog(path, <span class="keyword">this</span>);</div>
+<div class="line">    usersDialog.setWindowTitle(tr(<span class="stringliteral">&quot;Select recipients for %1&quot;</span>).arg(name));</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">int</span> result = usersDialog.exec();</div>
+<div class="line"> </div>
+<div class="line">    <span class="keywordflow">if</span> (result == QDialog::Accepted &amp;&amp; ui-&gt;checkBoxUseGit-&gt;isChecked()) {</div>
+<div class="line">      <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;GitInit();</div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line">    <span class="comment">// Restore previous store setting</span></div>
+<div class="line">    <a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(prevStore);</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> ConfigDialog::on_addButton_clicked() {</div>
 <div class="line">  <span class="keywordtype">int</span> n = ui-&gt;profileTable-&gt;rowCount();</div>
 <div class="line">  ui-&gt;profileTable-&gt;insertRow(n);</div>
-<div class="line">  ui-&gt;profileTable-&gt;setItem(n, 0, <span class="keyword">new</span> QTableWidgetItem());</div>
+<div class="line">  ui-&gt;profileTable-&gt;setItem(n, 0, <span class="keyword">new</span> QTableWidgetItem(tr(<span class="stringliteral">&quot;New Profile&quot;</span>)));</div>
 <div class="line">  ui-&gt;profileTable-&gt;setItem(n, 1, <span class="keyword">new</span> QTableWidgetItem(ui-&gt;storePath-&gt;text()));</div>
 <div class="line">  ui-&gt;profileTable-&gt;setItem(n, 2, <span class="keyword">new</span> QTableWidgetItem());</div>
 <div class="line">  ui-&gt;profileTable-&gt;selectRow(n);</div>
 <div class="line">  ui-&gt;deleteButton-&gt;setEnabled(<span class="keyword">true</span>);</div>
 <div class="line"> </div>
+<div class="line">  ui-&gt;profileTable-&gt;editItem(ui-&gt;profileTable-&gt;item(n, 0));</div>
+<div class="line">  ui-&gt;profileTable-&gt;item(n, 0)-&gt;setSelected(<span class="keyword">true</span>);</div>
+<div class="line"> </div>
 <div class="line">  validate();</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> ConfigDialog::on_profileTable_cellDoubleClicked(<span class="keywordtype">int</span> row, <span class="keywordtype">int</span> column) {</div>
+<div class="line">  <span class="keywordflow">if</span> (column == 1) {</div>
+<div class="line">    QString dir = selectFolder();</div>
+<div class="line">    <span class="keywordflow">if</span> (!dir.isEmpty()) {</div>
+<div class="line">      ui-&gt;profileTable-&gt;item(row, 1)-&gt;setText(dir);</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> ConfigDialog::on_deleteButton_clicked() {</div>
@@ -603,7 +665,7 @@ $(function() {
 <div class="line">  QProcess which;</div>
 <div class="line">  which.start(<span class="stringliteral">&quot;which&quot;</span>, QStringList() &lt;&lt; <span class="stringliteral">&quot;qrencode&quot;</span>);</div>
 <div class="line">  which.waitForFinished();</div>
-<div class="line">  <a id="a95" name="a95"></a><a class="code hl_function" href="class_qt_pass_settings.html#a9fc49a7028760e8df558db90a8502b8e">QtPassSettings::setQrencodeExecutable</a>(</div>
+<div class="line">  <a id="a96" name="a96"></a><a class="code hl_function" href="class_qt_pass_settings.html#a9fc49a7028760e8df558db90a8502b8e">QtPassSettings::setQrencodeExecutable</a>(</div>
 <div class="line">      which.readAllStandardOutput().trimmed());</div>
 <div class="line">  <span class="keywordflow">return</span> which.exitCode() == 0;</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
@@ -621,7 +683,7 @@ $(function() {
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a96" name="a96"></a><a class="code hl_function" href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15">ConfigDialog::wizard</a>() {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a97" name="a97"></a><a class="code hl_function" href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15">ConfigDialog::wizard</a>() {</div>
 <div class="line">  (void)<a class="code hl_function" href="class_util.html#afe6db9149dff37feded5abf38870cda8">Util::configIsValid</a>();</div>
 <div class="line">  on_autodetectButton_clicked();</div>
 <div class="line"> </div>
@@ -674,11 +736,11 @@ $(function() {
 <div class="line">  QStringList names = getSecretKeys();</div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#ifdef QT_DEBUG</span></div>
-<div class="line">  <a id="a97" name="a97"></a><a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; names;</div>
+<div class="line">  <a id="a98" name="a98"></a><a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; names;</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> ((gpg.startsWith(<span class="stringliteral">&quot;wsl &quot;</span>) || QFile(gpg).exists()) &amp;&amp; names.empty()) {</div>
-<div class="line">    <a id="_a98" name="_a98"></a><a class="code hl_class" href="class_keygen_dialog.html">KeygenDialog</a> d(<span class="keyword">this</span>);</div>
+<div class="line">    <a id="_a99" name="_a99"></a><a class="code hl_class" href="class_keygen_dialog.html">KeygenDialog</a> d(<span class="keyword">this</span>);</div>
 <div class="line">    <span class="keywordflow">return</span> d.exec();</div>
 <div class="line">  }</div>
 <div class="line">  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -739,7 +801,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a99" name="a99"></a><a class="code hl_function" href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567">ConfigDialog::useTrayIcon</a>(<span class="keywordtype">bool</span> useSystray) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a100" name="a100"></a><a class="code hl_function" href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567">ConfigDialog::useTrayIcon</a>(<span class="keywordtype">bool</span> useSystray) {</div>
 <div class="line">  <span class="keywordflow">if</span> (QSystemTrayIcon::isSystemTrayAvailable()) {</div>
 <div class="line">    ui-&gt;checkBoxUseTrayIcon-&gt;setChecked(useSystray);</div>
 <div class="line">    ui-&gt;checkBoxHideOnClose-&gt;setEnabled(useSystray);</div>
@@ -758,13 +820,13 @@ $(function() {
 <div class="line">  ui-&gt;checkBoxStartMinimized-&gt;setEnabled(state);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a100" name="a100"></a><a class="code hl_function" href="class_config_dialog.html#ad5f28221ebec0701bb56c43780a452b3">ConfigDialog::closeEvent</a>(QCloseEvent *event) {</div>
-<div class="line">  <a id="a101" name="a101"></a><a class="code hl_function" href="class_qt_pass_settings.html#ac1f692aef9f02af744bcce281ba627fe">QtPassSettings::setDialogGeometry</a>(<span class="stringliteral">&quot;configDialog&quot;</span>, saveGeometry());</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a101" name="a101"></a><a class="code hl_function" href="class_config_dialog.html#ad5f28221ebec0701bb56c43780a452b3">ConfigDialog::closeEvent</a>(QCloseEvent *event) {</div>
+<div class="line">  <a id="a102" name="a102"></a><a class="code hl_function" href="class_qt_pass_settings.html#ac1f692aef9f02af744bcce281ba627fe">QtPassSettings::setDialogGeometry</a>(<span class="stringliteral">&quot;configDialog&quot;</span>, saveGeometry());</div>
 <div class="line">  <span class="keywordflow">if</span> (!isMaximized()) {</div>
-<div class="line">    <a id="a102" name="a102"></a><a class="code hl_function" href="class_qt_pass_settings.html#a692d3221b60ab8c5ed5f51814a72fcb1">QtPassSettings::setDialogPos</a>(<span class="stringliteral">&quot;configDialog&quot;</span>, pos());</div>
-<div class="line">    <a id="a103" name="a103"></a><a class="code hl_function" href="class_qt_pass_settings.html#a980190de5a6dcba935573d00f3023804">QtPassSettings::setDialogSize</a>(<span class="stringliteral">&quot;configDialog&quot;</span>, size());</div>
+<div class="line">    <a id="a103" name="a103"></a><a class="code hl_function" href="class_qt_pass_settings.html#a692d3221b60ab8c5ed5f51814a72fcb1">QtPassSettings::setDialogPos</a>(<span class="stringliteral">&quot;configDialog&quot;</span>, pos());</div>
+<div class="line">    <a id="a104" name="a104"></a><a class="code hl_function" href="class_qt_pass_settings.html#a980190de5a6dcba935573d00f3023804">QtPassSettings::setDialogSize</a>(<span class="stringliteral">&quot;configDialog&quot;</span>, size());</div>
 <div class="line">  }</div>
-<div class="line">  <a id="a104" name="a104"></a><a class="code hl_function" href="class_qt_pass_settings.html#a9d645c896deab1261f2b5df359c3a252">QtPassSettings::setDialogMaximized</a>(<span class="stringliteral">&quot;configDialog&quot;</span>, isMaximized());</div>
+<div class="line">  <a id="a105" name="a105"></a><a class="code hl_function" href="class_qt_pass_settings.html#a9d645c896deab1261f2b5df359c3a252">QtPassSettings::setDialogMaximized</a>(<span class="stringliteral">&quot;configDialog&quot;</span>, isMaximized());</div>
 <div class="line">  <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -773,11 +835,11 @@ $(function() {
 <div class="line">  on_checkBoxUseGit_clicked();</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a105" name="a105"></a><a class="code hl_function" href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">ConfigDialog::useOtp</a>(<span class="keywordtype">bool</span> useOtp) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a106" name="a106"></a><a class="code hl_function" href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">ConfigDialog::useOtp</a>(<span class="keywordtype">bool</span> useOtp) {</div>
 <div class="line">  ui-&gt;checkBoxUseOtp-&gt;setChecked(<a class="code hl_function" href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">useOtp</a>);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a106" name="a106"></a><a class="code hl_function" href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">ConfigDialog::useQrencode</a>(<span class="keywordtype">bool</span> useQrencode) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a107" name="a107"></a><a class="code hl_function" href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">ConfigDialog::useQrencode</a>(<span class="keywordtype">bool</span> useQrencode) {</div>
 <div class="line">  ui-&gt;checkBoxUseQrencode-&gt;setChecked(<a class="code hl_function" href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">useQrencode</a>);</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -798,7 +860,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a107" name="a107"></a><a class="code hl_function" href="class_config_dialog.html#a87ab40396f3b1435975ff84baae9802c">ConfigDialog::setPwgenPath</a>(<span class="keyword">const</span> QString &amp;pwgen) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a108" name="a108"></a><a class="code hl_function" href="class_config_dialog.html#a87ab40396f3b1435975ff84baae9802c">ConfigDialog::setPwgenPath</a>(<span class="keyword">const</span> QString &amp;pwgen) {</div>
 <div class="line">  ui-&gt;pwgenPath-&gt;setText(pwgen);</div>
 <div class="line">  <span class="keywordflow">if</span> (pwgen.isEmpty()) {</div>
 <div class="line">    ui-&gt;checkBoxUsePwgen-&gt;setChecked(<span class="keyword">false</span>);</div>
@@ -810,7 +872,7 @@ $(function() {
 <div class="line"><span class="keywordtype">void</span> ConfigDialog::on_checkBoxUsePwgen_clicked() {</div>
 <div class="line">  <span class="keywordflow">if</span> (ui-&gt;radioButtonPass-&gt;isChecked())</div>
 <div class="line">    <span class="keywordflow">return</span>;</div>
-<div class="line">  <span class="keywordtype">bool</span> <a id="_a108" name="_a108"></a><a class="code hl_function" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">usePwgen</a> = ui-&gt;checkBoxUsePwgen-&gt;isChecked();</div>
+<div class="line">  <span class="keywordtype">bool</span> <a id="_a109" name="_a109"></a><a class="code hl_function" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">usePwgen</a> = ui-&gt;checkBoxUsePwgen-&gt;isChecked();</div>
 <div class="line">  ui-&gt;checkBoxAvoidCapitals-&gt;setEnabled(<a class="code hl_function" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">usePwgen</a>);</div>
 <div class="line">  ui-&gt;checkBoxAvoidNumbers-&gt;setEnabled(<a class="code hl_function" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">usePwgen</a>);</div>
 <div class="line">  ui-&gt;checkBoxLessRandom-&gt;setEnabled(<a class="code hl_function" href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">usePwgen</a>);</div>
@@ -828,20 +890,20 @@ $(function() {
 <div class="line">  on_checkBoxUsePwgen_clicked();</div>
 <div class="line">}</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span> <a id="a109" name="a109"></a><a class="code hl_function" href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">ConfigDialog::setPasswordConfiguration</a>(</div>
-<div class="line">    <span class="keyword">const</span> <a id="_a110" name="_a110"></a><a class="code hl_struct" href="struct_password_configuration.html">PasswordConfiguration</a> &amp;config) {</div>
-<div class="line">  ui-&gt;spinBoxPasswordLength-&gt;setValue(config.<a id="a111" name="a111"></a><a class="code hl_variable" href="struct_password_configuration.html#a1f0990ce1daaecb8852976eeb7df61bd">length</a>);</div>
-<div class="line">  ui-&gt;passwordCharTemplateSelector-&gt;setCurrentIndex(config.<a id="a112" name="a112"></a><a class="code hl_variable" href="struct_password_configuration.html#a28756e64706f58e8c48450b902ff5083">selected</a>);</div>
-<div class="line">  <span class="keywordflow">if</span> (config.<a class="code hl_variable" href="struct_password_configuration.html#a28756e64706f58e8c48450b902ff5083">selected</a> != <a id="a113" name="a113"></a><a class="code hl_enumvalue" href="struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173af35fc83c482c602e7e5039fad8e97f3a">PasswordConfiguration::CUSTOM</a>) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a110" name="a110"></a><a class="code hl_function" href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">ConfigDialog::setPasswordConfiguration</a>(</div>
+<div class="line">    <span class="keyword">const</span> <a id="_a111" name="_a111"></a><a class="code hl_struct" href="struct_password_configuration.html">PasswordConfiguration</a> &amp;config) {</div>
+<div class="line">  ui-&gt;spinBoxPasswordLength-&gt;setValue(config.<a id="a112" name="a112"></a><a class="code hl_variable" href="struct_password_configuration.html#a1f0990ce1daaecb8852976eeb7df61bd">length</a>);</div>
+<div class="line">  ui-&gt;passwordCharTemplateSelector-&gt;setCurrentIndex(config.<a id="a113" name="a113"></a><a class="code hl_variable" href="struct_password_configuration.html#a28756e64706f58e8c48450b902ff5083">selected</a>);</div>
+<div class="line">  <span class="keywordflow">if</span> (config.<a class="code hl_variable" href="struct_password_configuration.html#a28756e64706f58e8c48450b902ff5083">selected</a> != <a id="a114" name="a114"></a><a class="code hl_enumvalue" href="struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173af35fc83c482c602e7e5039fad8e97f3a">PasswordConfiguration::CUSTOM</a>) {</div>
 <div class="line">    ui-&gt;lineEditPasswordChars-&gt;setEnabled(<span class="keyword">false</span>);</div>
 <div class="line">  }</div>
-<div class="line">  ui-&gt;lineEditPasswordChars-&gt;setText(config.<a id="a114" name="a114"></a><a class="code hl_variable" href="struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0">Characters</a>[config.<a class="code hl_variable" href="struct_password_configuration.html#a28756e64706f58e8c48450b902ff5083">selected</a>]);</div>
+<div class="line">  ui-&gt;lineEditPasswordChars-&gt;setText(config.<a id="a115" name="a115"></a><a class="code hl_variable" href="struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0">Characters</a>[config.<a class="code hl_variable" href="struct_password_configuration.html#a28756e64706f58e8c48450b902ff5083">selected</a>]);</div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="class_config_dialog.html#a97c5f924a95b30f4d6a60df361c2b3ba">ConfigDialog::getPasswordConfiguration</a>() -&gt; <a class="code hl_struct" href="struct_password_configuration.html">PasswordConfiguration</a> {</div>
 <div class="line">  <a class="code hl_struct" href="struct_password_configuration.html">PasswordConfiguration</a> config;</div>
 <div class="line">  config.<a class="code hl_variable" href="struct_password_configuration.html#a1f0990ce1daaecb8852976eeb7df61bd">length</a> = ui-&gt;spinBoxPasswordLength-&gt;value();</div>
-<div class="line">  config.<a class="code hl_variable" href="struct_password_configuration.html#a28756e64706f58e8c48450b902ff5083">selected</a> = <span class="keyword">static_cast&lt;</span><a id="_a115" name="_a115"></a><a class="code hl_enumeration" href="struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173">PasswordConfiguration::characterSet</a><span class="keyword">&gt;</span>(</div>
+<div class="line">  config.<a class="code hl_variable" href="struct_password_configuration.html#a28756e64706f58e8c48450b902ff5083">selected</a> = <span class="keyword">static_cast&lt;</span><a id="_a116" name="_a116"></a><a class="code hl_enumeration" href="struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173">PasswordConfiguration::characterSet</a><span class="keyword">&gt;</span>(</div>
 <div class="line">      ui-&gt;passwordCharTemplateSelector-&gt;currentIndex());</div>
 <div class="line">  config.<a class="code hl_variable" href="struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0">Characters</a>[<a class="code hl_enumvalue" href="struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173af35fc83c482c602e7e5039fad8e97f3a">PasswordConfiguration::CUSTOM</a>] =</div>
 <div class="line">      ui-&gt;lineEditPasswordChars-&gt;text();</div>
@@ -868,31 +930,32 @@ $(function() {
 <div class="line">  validate(item);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a116" name="a116"></a><a class="code hl_function" href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">ConfigDialog::useTemplate</a>(<span class="keywordtype">bool</span> useTemplate) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a117" name="a117"></a><a class="code hl_function" href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">ConfigDialog::useTemplate</a>(<span class="keywordtype">bool</span> useTemplate) {</div>
 <div class="line">  ui-&gt;checkBoxUseTemplate-&gt;setChecked(<a class="code hl_function" href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">useTemplate</a>);</div>
 <div class="line">  on_checkBoxUseTemplate_clicked();</div>
 <div class="line">}</div>
 <div class="ttc" id="aclass_config_dialog_html"><div class="ttname"><a href="class_config_dialog.html">ConfigDialog</a></div><div class="ttdoc">The ConfigDialog handles the configuration interface.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8h_source.html#l00034">configdialog.h:34</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a003ec5de7c29ced34f045f0843d2e95b"><div class="ttname"><a href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">ConfigDialog::setPasswordConfiguration</a></div><div class="ttdeci">void setPasswordConfiguration(const PasswordConfiguration &amp;config)</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00997">configdialog.cpp:997</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a0ae43a6dc241ebbf619f61171fbbd123"><div class="ttname"><a href="class_config_dialog.html#a0ae43a6dc241ebbf619f61171fbbd123">ConfigDialog::getProfiles</a></div><div class="ttdeci">auto getProfiles() -&gt; QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</div><div class="ttdoc">ConfigDialog::getProfiles return profile list.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00587">configdialog.cpp:587</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a1b7b022b97d128fb1f749c9190f20b4a"><div class="ttname"><a href="class_config_dialog.html#a1b7b022b97d128fb1f749c9190f20b4a">ConfigDialog::~ConfigDialog</a></div><div class="ttdeci">~ConfigDialog() override</div><div class="ttdoc">ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,...</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00152">configdialog.cpp:152</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a2a395844557989cf343503e80b075ba0"><div class="ttname"><a href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">ConfigDialog::useOtp</a></div><div class="ttdeci">void useOtp(bool useOtp)</div><div class="ttdoc">ConfigDialog::useOtp set preference for using otp plugin.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00914">configdialog.cpp:914</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a4dcec976dc9117924ed9c230e9683c9f"><div class="ttname"><a href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f">ConfigDialog::useGit</a></div><div class="ttdeci">void useGit(bool useGit)</div><div class="ttdoc">ConfigDialog::useGit set preference for using git.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00905">configdialog.cpp:905</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a5439c3bc35c849fbef4c9248ee9042d0"><div class="ttname"><a href="class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0">ConfigDialog::useAutoclearPanel</a></div><div class="ttdeci">void useAutoclearPanel(bool useAutoclearPanel)</div><div class="ttdoc">ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00519">configdialog.cpp:519</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a56eaebf7e3e16da16fd6f1fdb44c9d91"><div class="ttname"><a href="class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91">ConfigDialog::useAutoclear</a></div><div class="ttdeci">void useAutoclear(bool useAutoclear)</div><div class="ttdoc">ConfigDialog::useAutoclear set the clipboard autoclear use from MainWindow.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00509">configdialog.cpp:509</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a6dbe2089e9c89952aac994d4a359c3f9"><div class="ttname"><a href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">ConfigDialog::useQrencode</a></div><div class="ttdeci">void useQrencode(bool useQrencode)</div><div class="ttdoc">ConfigDialog::useQrencode set preference for using qrencode plugin.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00922">configdialog.cpp:922</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a791fbb09740f62bff81c104ce61a0c1a"><div class="ttname"><a href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">ConfigDialog::useTemplate</a></div><div class="ttdeci">void useTemplate(bool useTemplate)</div><div class="ttdoc">ConfigDialog::useTemplate set preference for using templates.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l01051">configdialog.cpp:1051</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a815d6d8ddf1de9386427ddef691a02a1"><div class="ttname"><a href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1">ConfigDialog::ConfigDialog</a></div><div class="ttdeci">ConfigDialog(MainWindow *parent)</div><div class="ttdoc">ConfigDialog::ConfigDialog this sets up the configuration screen.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00029">configdialog.cpp:29</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a87ab40396f3b1435975ff84baae9802c"><div class="ttname"><a href="class_config_dialog.html#a87ab40396f3b1435975ff84baae9802c">ConfigDialog::setPwgenPath</a></div><div class="ttdeci">void setPwgenPath(const QString &amp;)</div><div class="ttdoc">ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf...</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00956">configdialog.cpp:956</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_a97c5f924a95b30f4d6a60df361c2b3ba"><div class="ttname"><a href="class_config_dialog.html#a97c5f924a95b30f4d6a60df361c2b3ba">ConfigDialog::getPasswordConfiguration</a></div><div class="ttdeci">auto getPasswordConfiguration() -&gt; PasswordConfiguration</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l01007">configdialog.cpp:1007</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_aac383b23ed9b34eb52918de2b10d9567"><div class="ttname"><a href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567">ConfigDialog::useTrayIcon</a></div><div class="ttdeci">void useTrayIcon(bool useSystray)</div><div class="ttdoc">ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc...</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00864">configdialog.cpp:864</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_ac3ebb263a2b69e39c81217a6d8630995"><div class="ttname"><a href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">ConfigDialog::usePwgen</a></div><div class="ttdeci">void usePwgen(bool usePwgen)</div><div class="ttdoc">ConfigDialog::usePwgen set preference for using pwgen (can be overruled by empty pwgenPath)....</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00989">configdialog.cpp:989</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_ad5b80066591f19fdaaa06b7cb5ba7f15"><div class="ttname"><a href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15">ConfigDialog::wizard</a></div><div class="ttdeci">void wizard()</div><div class="ttdoc">ConfigDialog::wizard first-time use wizard.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00700">configdialog.cpp:700</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_ad5f28221ebec0701bb56c43780a452b3"><div class="ttname"><a href="class_config_dialog.html#ad5f28221ebec0701bb56c43780a452b3">ConfigDialog::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">ConfigDialog::closeEvent close this window.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00891">configdialog.cpp:891</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_af93386c7b55bd8ae35fda6f096d46eb6"><div class="ttname"><a href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">ConfigDialog::useSelection</a></div><div class="ttdeci">void useSelection(bool useSelection)</div><div class="ttdoc">ConfigDialog::useSelection set the clipboard type use from MainWindow.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00499">configdialog.cpp:499</a></div></div>
-<div class="ttc" id="aclass_config_dialog_html_afc3507e2de1b459ee118b51ef672f868"><div class="ttname"><a href="class_config_dialog.html#afc3507e2de1b459ee118b51ef672f868">ConfigDialog::genKey</a></div><div class="ttdeci">void genKey(const QString &amp;, QDialog *)</div><div class="ttdoc">ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00547">configdialog.cpp:547</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a003ec5de7c29ced34f045f0843d2e95b"><div class="ttname"><a href="class_config_dialog.html#a003ec5de7c29ced34f045f0843d2e95b">ConfigDialog::setPasswordConfiguration</a></div><div class="ttdeci">void setPasswordConfiguration(const PasswordConfiguration &amp;config)</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l01068">configdialog.cpp:1068</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a0ae43a6dc241ebbf619f61171fbbd123"><div class="ttname"><a href="class_config_dialog.html#a0ae43a6dc241ebbf619f61171fbbd123">ConfigDialog::getProfiles</a></div><div class="ttdeci">auto getProfiles() -&gt; QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</div><div class="ttdoc">ConfigDialog::getProfiles return profile list.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00594">configdialog.cpp:594</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a1b7b022b97d128fb1f749c9190f20b4a"><div class="ttname"><a href="class_config_dialog.html#a1b7b022b97d128fb1f749c9190f20b4a">ConfigDialog::~ConfigDialog</a></div><div class="ttdeci">~ConfigDialog() override</div><div class="ttdoc">ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,...</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00154">configdialog.cpp:154</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a2a395844557989cf343503e80b075ba0"><div class="ttname"><a href="class_config_dialog.html#a2a395844557989cf343503e80b075ba0">ConfigDialog::useOtp</a></div><div class="ttdeci">void useOtp(bool useOtp)</div><div class="ttdoc">ConfigDialog::useOtp set preference for using otp plugin.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00985">configdialog.cpp:985</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a4dcec976dc9117924ed9c230e9683c9f"><div class="ttname"><a href="class_config_dialog.html#a4dcec976dc9117924ed9c230e9683c9f">ConfigDialog::useGit</a></div><div class="ttdeci">void useGit(bool useGit)</div><div class="ttdoc">ConfigDialog::useGit set preference for using git.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00976">configdialog.cpp:976</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a5439c3bc35c849fbef4c9248ee9042d0"><div class="ttname"><a href="class_config_dialog.html#a5439c3bc35c849fbef4c9248ee9042d0">ConfigDialog::useAutoclearPanel</a></div><div class="ttdeci">void useAutoclearPanel(bool useAutoclearPanel)</div><div class="ttdoc">ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00526">configdialog.cpp:526</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a56eaebf7e3e16da16fd6f1fdb44c9d91"><div class="ttname"><a href="class_config_dialog.html#a56eaebf7e3e16da16fd6f1fdb44c9d91">ConfigDialog::useAutoclear</a></div><div class="ttdeci">void useAutoclear(bool useAutoclear)</div><div class="ttdoc">ConfigDialog::useAutoclear set the clipboard autoclear use from MainWindow.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00516">configdialog.cpp:516</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a6dbe2089e9c89952aac994d4a359c3f9"><div class="ttname"><a href="class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9">ConfigDialog::useQrencode</a></div><div class="ttdeci">void useQrencode(bool useQrencode)</div><div class="ttdoc">ConfigDialog::useQrencode set preference for using qrencode plugin.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00993">configdialog.cpp:993</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a791fbb09740f62bff81c104ce61a0c1a"><div class="ttname"><a href="class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a">ConfigDialog::useTemplate</a></div><div class="ttdeci">void useTemplate(bool useTemplate)</div><div class="ttdoc">ConfigDialog::useTemplate set preference for using templates.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l01122">configdialog.cpp:1122</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a815d6d8ddf1de9386427ddef691a02a1"><div class="ttname"><a href="class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1">ConfigDialog::ConfigDialog</a></div><div class="ttdeci">ConfigDialog(MainWindow *parent)</div><div class="ttdoc">ConfigDialog::ConfigDialog this sets up the configuration screen.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00031">configdialog.cpp:31</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a87ab40396f3b1435975ff84baae9802c"><div class="ttname"><a href="class_config_dialog.html#a87ab40396f3b1435975ff84baae9802c">ConfigDialog::setPwgenPath</a></div><div class="ttdeci">void setPwgenPath(const QString &amp;)</div><div class="ttdoc">ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf...</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l01027">configdialog.cpp:1027</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_a97c5f924a95b30f4d6a60df361c2b3ba"><div class="ttname"><a href="class_config_dialog.html#a97c5f924a95b30f4d6a60df361c2b3ba">ConfigDialog::getPasswordConfiguration</a></div><div class="ttdeci">auto getPasswordConfiguration() -&gt; PasswordConfiguration</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l01078">configdialog.cpp:1078</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_aac383b23ed9b34eb52918de2b10d9567"><div class="ttname"><a href="class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567">ConfigDialog::useTrayIcon</a></div><div class="ttdeci">void useTrayIcon(bool useSystray)</div><div class="ttdoc">ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc...</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00935">configdialog.cpp:935</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_ac3ebb263a2b69e39c81217a6d8630995"><div class="ttname"><a href="class_config_dialog.html#ac3ebb263a2b69e39c81217a6d8630995">ConfigDialog::usePwgen</a></div><div class="ttdeci">void usePwgen(bool usePwgen)</div><div class="ttdoc">ConfigDialog::usePwgen set preference for using pwgen (can be overruled by empty pwgenPath)....</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l01060">configdialog.cpp:1060</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_ad5b80066591f19fdaaa06b7cb5ba7f15"><div class="ttname"><a href="class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15">ConfigDialog::wizard</a></div><div class="ttdeci">void wizard()</div><div class="ttdoc">ConfigDialog::wizard first-time use wizard.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00771">configdialog.cpp:771</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_ad5f28221ebec0701bb56c43780a452b3"><div class="ttname"><a href="class_config_dialog.html#ad5f28221ebec0701bb56c43780a452b3">ConfigDialog::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">ConfigDialog::closeEvent close this window.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00962">configdialog.cpp:962</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_af93386c7b55bd8ae35fda6f096d46eb6"><div class="ttname"><a href="class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6">ConfigDialog::useSelection</a></div><div class="ttdeci">void useSelection(bool useSelection)</div><div class="ttdoc">ConfigDialog::useSelection set the clipboard type use from MainWindow.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00506">configdialog.cpp:506</a></div></div>
+<div class="ttc" id="aclass_config_dialog_html_afc3507e2de1b459ee118b51ef672f868"><div class="ttname"><a href="class_config_dialog.html#afc3507e2de1b459ee118b51ef672f868">ConfigDialog::genKey</a></div><div class="ttdeci">void genKey(const QString &amp;, QDialog *)</div><div class="ttdoc">ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair.</div><div class="ttdef"><b>Definition</b> <a href="configdialog_8cpp_source.html#l00554">configdialog.cpp:554</a></div></div>
 <div class="ttc" id="aclass_keygen_dialog_html"><div class="ttname"><a href="class_keygen_dialog.html">KeygenDialog</a></div><div class="ttdoc">Handles GPG keypair generation.</div><div class="ttdef"><b>Definition</b> <a href="keygendialog_8h_source.html#l00074">keygendialog.h:74</a></div></div>
 <div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00051">mainwindow.h:51</a></div></div>
+<div class="ttc" id="aclass_profile_init_html_a1d8b28d9c505d6419193cade236a8865"><div class="ttname"><a href="class_profile_init.html#a1d8b28d9c505d6419193cade236a8865">ProfileInit::needsInit</a></div><div class="ttdeci">static auto needsInit(const QString &amp;path) -&gt; bool</div><div class="ttdoc">Check if a profile path needs initialization.</div><div class="ttdef"><b>Definition</b> <a href="profileinit_8cpp_source.html#l00018">profileinit.cpp:18</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a00123b42f05b026cf2697c02e0797442"><div class="ttname"><a href="class_qt_pass_settings.html#a00123b42f05b026cf2697c02e0797442">QtPassSettings::isUseSelection</a></div><div class="ttdeci">static auto isUseSelection(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get whether to use selection (X11) for clipboard.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00317">qtpasssettings.cpp:317</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a07c79f8dba7614bd47dbb314af9fd671"><div class="ttname"><a href="class_qt_pass_settings.html#a07c79f8dba7614bd47dbb314af9fd671">QtPassSettings::setStartMinimized</a></div><div class="ttdeci">static void setStartMinimized(const bool &amp;startMinimized)</div><div class="ttdoc">Save start-minimized flag.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00717">qtpasssettings.cpp:717</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a0a517b1977765eb6032f330482abb85b"><div class="ttname"><a href="class_qt_pass_settings.html#a0a517b1977765eb6032f330482abb85b">QtPassSettings::isUseAutoclear</a></div><div class="ttdeci">static auto isUseAutoclear(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get whether to use autoclear for clipboard.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00326">qtpasssettings.cpp:326</a></div></div>
@@ -986,6 +1049,7 @@ $(function() {
 <div class="ttc" id="akeygendialog_8h_html"><div class="ttname"><a href="keygendialog_8h.html">keygendialog.h</a></div></div>
 <div class="ttc" id="amainwindow_8h_html"><div class="ttname"><a href="mainwindow_8h.html">mainwindow.h</a></div></div>
 <div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition</b> <a href="configdialog_8h_source.html#l00011">configdialog.h:11</a></div></div>
+<div class="ttc" id="aprofileinit_8h_html"><div class="ttname"><a href="profileinit_8h.html">profileinit.h</a></div><div class="ttdoc">Profile initialization utilities.</div></div>
 <div class="ttc" id="aqtpasssettings_8h_html"><div class="ttname"><a href="qtpasssettings_8h.html">qtpasssettings.h</a></div></div>
 <div class="ttc" id="astruct_password_configuration_html"><div class="ttname"><a href="struct_password_configuration.html">PasswordConfiguration</a></div><div class="ttdoc">Holds the Password configuration settings.</div><div class="ttdef"><b>Definition</b> <a href="passwordconfiguration_8h_source.html#l00012">passwordconfiguration.h:12</a></div></div>
 <div class="ttc" id="astruct_password_configuration_html_a1f0990ce1daaecb8852976eeb7df61bd"><div class="ttname"><a href="struct_password_configuration.html#a1f0990ce1daaecb8852976eeb7df61bd">PasswordConfiguration::length</a></div><div class="ttdeci">int length</div><div class="ttdoc">Length of the password.</div><div class="ttdef"><b>Definition</b> <a href="passwordconfiguration_8h_source.html#l00026">passwordconfiguration.h:26</a></div></div>
@@ -995,6 +1059,7 @@ $(function() {
 <div class="ttc" id="astruct_password_configuration_html_a6d50fde9d48abd59aba5ec545b49bfd0"><div class="ttname"><a href="struct_password_configuration.html#a6d50fde9d48abd59aba5ec545b49bfd0">PasswordConfiguration::Characters</a></div><div class="ttdeci">QString Characters[CHARSETS_COUNT]</div><div class="ttdoc">The different character sets.</div><div class="ttdef"><b>Definition</b> <a href="passwordconfiguration_8h_source.html#l00030">passwordconfiguration.h:30</a></div></div>
 <div class="ttc" id="astruct_user_info_html"><div class="ttname"><a href="struct_user_info.html">UserInfo</a></div><div class="ttdoc">Stores key info lines including validity, creation date and more.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00013">userinfo.h:13</a></div></div>
 <div class="ttc" id="astruct_user_info_html_acf06e7727153cca2cd8b4a912517a2bb"><div class="ttname"><a href="struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb">UserInfo::name</a></div><div class="ttdeci">QString name</div><div class="ttdoc">UserInfo::name GPG user ID / full name.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00036">userinfo.h:36</a></div></div>
+<div class="ttc" id="ausersdialog_8h_html"><div class="ttname"><a href="usersdialog_8h.html">usersdialog.h</a></div></div>
 <div class="ttc" id="autil_8h_html"><div class="ttname"><a href="util_8h.html">util.h</a></div></div>
 </div><!-- fragment --> </div><!-- contents -->
 <!-- start footer part -->
