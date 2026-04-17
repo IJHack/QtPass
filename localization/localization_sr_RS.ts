@@ -1064,7 +1064,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> I cijeli sadržaj? &lt;br&gt;&lt;strong&gt;Pozor: u datoj mapi postoje neprocjenjene datoteke, provjerite ih prije nastavka.&lt;/strong&gt;</translation>
+        <translation> I i cijeli sadržaj? &lt;br&gt;&lt;strong&gt;Pozor: u datoj mapi postoje neprocjenjene datoteke, provjerite ih prije nastavka.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
@@ -1538,7 +1538,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
         <source>[EXPIRED] </source>
-        <translation>[ISTEKAO] </translation>
+        <translation>[ISTKAO] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
