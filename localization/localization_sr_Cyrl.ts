@@ -662,7 +662,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Повторна преновација: %1 фајлова је реновирано</translation>
+        <translation>Поновно енкриптирање је завршено: %1 фајлова поново енкриптирано</translation>
     </message>
 </context>
 <context>
@@ -700,7 +700,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Повторити парол</translation>
+        <translation>Поновите лозинку</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -710,7 +710,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Сadržaj шаблона će se postaviti na temelju верзије ГПГ.</translation>
+        <translation>Садржај шаблона će se postaviti na temelju верзије ГПГ.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -988,7 +988,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="453"/>
         <source>Content hidden</source>
-        <translation>Сadržaj скривен</translation>
+        <translation>Садржај скривен</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="457"/>
@@ -1012,7 +1012,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="516"/>
         <source>Password and Content hidden</source>
-        <translation>Сифратекст скривен</translation>
+        <translation>Лозинка и садржај скривени</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -1041,7 +1041,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="594"/>
         <source>Looking for: %1</source>
-        <translation>Tražim: %1</translation>
+        <translation>Тражим: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="698"/>
@@ -1271,12 +1271,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation>Пrikaži лозинку</translation>
+        <translation>Прикажи лозинку</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation>Карakter сет:</translation>
+        <translation>Скуп знакова:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
