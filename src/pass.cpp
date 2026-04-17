@@ -43,7 +43,8 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
   //        SIGNAL(error(QProcess::ProcessError)));
 
   connect(&exec, &Executor::starting, this, &Pass::startingExecuteWrapper);
-  env.append("WSLENV=PASSWORD_STORE_DIR/p");
+  env.append("WSLENV=PASSWORD_STORE_DIR/p:PASSWORD_STORE_GENERATED_LENGTH/"
+             "w:PASSWORD_STORE_CHARACTER_SET/w");
 }
 
 /**
@@ -519,12 +520,18 @@ void Pass::updateEnv() {
   } else {
     env.replaceInStrings(envLen.first(), lenVal);
   }
-  // put PASSWORD_STORE_CHARACTER_SET in env
-  QString charset = passConfig.Characters[passConfig.selected];
-  if (!charset.isEmpty()) {
-    QString charKey = QStringLiteral("PASSWORD_STORE_CHARACTER_SET=");
+  // put PASSWORD_STORE_CHARACTER_SET in env (clamp selected to valid range)
+  int sel = passConfig.selected;
+  if (sel < 0 || sel >= PasswordConfiguration::CHARSETS_COUNT)
+    sel = PasswordConfiguration::ALLCHARS;
+  QString charset = passConfig.Characters[sel];
+  QString charKey = QStringLiteral("PASSWORD_STORE_CHARACTER_SET=");
+  QStringList envChar = env.filter(charKey);
+  if (charset.isEmpty()) {
+    for (const QString &entry : envChar)
+      env.removeAll(entry);
+  } else {
     QString charVal = charKey + charset;
-    QStringList envChar = env.filter(charKey);
     if (envChar.isEmpty()) {
       env.append(charVal);
     } else {
