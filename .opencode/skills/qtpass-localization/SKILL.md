@@ -230,12 +230,20 @@ When source strings change, translations are marked "unfinished" but may still a
 
 ### Merging Translation Conflicts
 
-When merging translation PRs that conflict:
+When merging translation PRs that conflict, **avoid using wildcards** - `git checkout --theirs localization/*.ts` would discard ALL local changes in un-conflicted files.
+
+Instead, identify and resolve conflicted files explicitly:
 
 ```bash
-# Use theirs strategy for .ts files (they're XML, prefer incoming)
-git checkout --theirs localization/localization_*.ts
-git add localization/
+# 1) List conflicted translation files and review them:
+git diff --name-only --diff-filter=U -- localization/*.ts
+
+# 2) Resolve each intended file explicitly (repeat as needed):
+git checkout --theirs localization/localization_de.ts
+git checkout --theirs localization/localization_fr.ts
+
+# 3) Stage and commit:
+git add localization/localization_de.ts localization/localization_fr.ts
 git commit -m "Resolve merge conflict - use theirs for translations"
 ```
 
