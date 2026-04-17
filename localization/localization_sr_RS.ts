@@ -705,7 +705,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation>Eksperat</translation>
+        <translation>Ekspert</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
@@ -1495,7 +1495,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>Prikaži nepotrebnosti ključeve</translation>
+        <translation>Prikaži neupotrebljive ključeve</translation>
     </message>
     <message>
         <source>Can not get key list</source>
