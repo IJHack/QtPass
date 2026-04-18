@@ -1021,11 +1021,59 @@ void ImitatePass::executeWrapper(PROCESS id, const QString &app,
 }
 
 /**
+ * @brief Decrypt one .gpg file and return lines matching rx.
+ */
+auto ImitatePass::grepMatchFile(const QStringList &env, const QString &gpgExe,
+                                const QString &filePath,
+                                const QRegularExpression &rx) -> QStringList {
+  QString plaintext;
+  const int rc =
+      Executor::executeBlocking(env, gpgExe,
+                                {"-d", "--quiet", "--yes", "--no-encrypt-to",
+                                 "--batch", "--use-agent", pgpg(filePath)},
+                                &plaintext);
+  if (rc != 0 || plaintext.isEmpty())
+    return {};
+  QStringList matches;
+  for (const QString &line : plaintext.split('\n')) {
+    const QString t = line.trimmed();
+    if (!t.isEmpty() && t.contains(rx))
+      matches << t;
+  }
+  return matches;
+}
+
+/**
+ * @brief Walk the store, decrypt every .gpg file, collect matches.
+ */
+auto ImitatePass::grepScanStore(const QStringList &env, const QString &gpgExe,
+                                const QString &storeDir,
+                                const QRegularExpression &rx)
+    -> QList<QPair<QString, QStringList>> {
+  QList<QPair<QString, QStringList>> results;
+  QDirIterator it(storeDir, QStringList() << "*.gpg", QDir::Files,
+                  QDirIterator::Subdirectories);
+  while (it.hasNext()) {
+    if (QThread::currentThread()->isInterruptionRequested())
+      return {};
+    const QString filePath = it.next();
+    const QStringList matches = grepMatchFile(env, gpgExe, filePath, rx);
+    if (!matches.isEmpty()) {
+      QString entry = QDir(storeDir).relativeFilePath(filePath);
+      if (entry.endsWith(QLatin1String(".gpg")))
+        entry.chop(4);
+      results.append({entry, matches});
+    }
+  }
+  return results;
+}
+
+/**
  * @brief Search all password content by GPG-decrypting each .gpg file.
  *
- * Runs a background thread to avoid blocking the UI. Each .gpg file is
- * decrypted with executeBlocking and scanned for pattern matches.
- * Results are emitted on the main thread via QMetaObject::invokeMethod.
+ * Runs a background thread to avoid blocking the UI. Results are emitted on
+ * the main thread via QMetaObject::invokeMethod. A sequence counter discards
+ * results from superseded searches.
  */
 void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
   const int seq = ++m_grepSeq;
@@ -1047,7 +1095,7 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
   QThread *thread =
       QThread::create([self, seq, pattern, caseInsensitive, gpgExe, storeDir,
                        env, emitResults]() mutable {
-        QRegularExpression rx(
+        const QRegularExpression rx(
             pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption
                                      : QRegularExpression::PatternOptions{});
         if (!rx.isValid()) {
@@ -1055,38 +1103,8 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
             emitResults({});
           return;
         }
-
-        QList<QPair<QString, QStringList>> results;
-        QDirIterator it(storeDir, QStringList() << "*.gpg", QDir::Files,
-                        QDirIterator::Subdirectories);
-        while (it.hasNext()) {
-          if (QThread::currentThread()->isInterruptionRequested())
-            return;
-          const QString filePath = it.next();
-          QString plaintext;
-          const int rc = Executor::executeBlocking(
-              env, gpgExe,
-              {"-d", "--quiet", "--yes", "--no-encrypt-to", "--batch",
-               "--use-agent", pgpg(filePath)},
-              &plaintext);
-          if (rc != 0 || plaintext.isEmpty())
-            continue;
-          QStringList matches;
-          for (const QString &line : plaintext.split('\n')) {
-            const QString t = line.trimmed();
-            if (!t.isEmpty() && t.contains(rx))
-              matches << t;
-          }
-          if (!matches.isEmpty()) {
-            QString entry = QDir(storeDir).relativeFilePath(filePath);
-            if (entry.endsWith(QLatin1String(".gpg")))
-              entry.chop(4);
-            results.append({entry, matches});
-          }
-        }
-
         if (self)
-          emitResults(std::move(results));
+          emitResults(grepScanStore(env, gpgExe, storeDir, rx));
       });
 
   connect(thread, &QThread::finished, thread, &QObject::deleteLater);
