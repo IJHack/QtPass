@@ -81,7 +81,7 @@ auto QtPassSettings::getPasswordConfiguration() -> PasswordConfiguration {
   }
   config.selected = static_cast<PasswordConfiguration::characterSet>(
       getInstance()
-          ->value(SettingsConstants::passwordCharsselection, 0)
+          ->value(SettingsConstants::passwordCharsSelection, 0)
           .toInt());
   config.Characters[PasswordConfiguration::CUSTOM] =
       getInstance()
@@ -94,7 +94,7 @@ auto QtPassSettings::getPasswordConfiguration() -> PasswordConfiguration {
 void QtPassSettings::setPasswordConfiguration(
     const PasswordConfiguration &config) {
   getInstance()->setValue(SettingsConstants::passwordLength, config.length);
-  getInstance()->setValue(SettingsConstants::passwordCharsselection,
+  getInstance()->setValue(SettingsConstants::passwordCharsSelection,
                           config.selected);
   getInstance()->setValue(SettingsConstants::passwordChars,
                           config.Characters[PasswordConfiguration::CUSTOM]);
@@ -692,9 +692,9 @@ void QtPassSettings::setUseSymbols(const bool &useSymbols) {
 void QtPassSettings::setPasswordLength(const int &passwordLength) {
   getInstance()->setValue(SettingsConstants::passwordLength, passwordLength);
 }
-void QtPassSettings::setPasswordCharsselection(
+void QtPassSettings::setPasswordCharsSelection(
     const int &passwordCharsSelection) {
-  getInstance()->setValue(SettingsConstants::passwordCharsselection,
+  getInstance()->setValue(SettingsConstants::passwordCharsSelection,
                           passwordCharsSelection);
 }
 void QtPassSettings::setPasswordChars(const QString &passwordChars) {

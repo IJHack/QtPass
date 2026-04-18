@@ -55,7 +55,7 @@ public:
    * @param index Model index to check.
    * @return true if index should be visible.
    */
-  [[nodiscard]] auto showThis(const QModelIndex) const -> bool;
+  [[nodiscard]] auto showThis(const QModelIndex &index) const -> bool;
 
   /**
    * @brief Initialize model with source model and store path.

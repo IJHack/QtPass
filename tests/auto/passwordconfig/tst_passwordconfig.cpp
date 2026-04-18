@@ -21,7 +21,7 @@ private Q_SLOTS:
 void tst_passwordconfig::initTestCase() {
   // Reset any leftover test settings to ensure clean state
   QtPassSettings::setPasswordChars(QString());
-  QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
+  QtPassSettings::setPasswordCharsSelection(PasswordConfiguration::ALLCHARS);
 }
 
 void tst_passwordconfig::passwordConfigurationDefaults() {
@@ -36,19 +36,19 @@ void tst_passwordconfig::passwordConfigurationDefaults() {
 void tst_passwordconfig::passwordConfigurationSetters() {
   // Reset any previous test settings to ensure clean state
   QtPassSettings::setPasswordChars(QString());
-  QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
+  QtPassSettings::setPasswordCharsSelection(PasswordConfiguration::ALLCHARS);
 
   QtPassSettings::setPasswordLength(24);
-  QtPassSettings::setPasswordCharsselection(
+  QtPassSettings::setPasswordCharsSelection(
       PasswordConfiguration::ALPHANUMERIC);
-  QtPassSettings::setPasswordCharsselection(3);
+  QtPassSettings::setPasswordCharsSelection(3);
 
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QCOMPARE(config.length, 24);
   QCOMPARE(config.selected, 3);
 
   // Reset after test
-  QtPassSettings::setPasswordCharsselection(PasswordConfiguration::ALLCHARS);
+  QtPassSettings::setPasswordCharsSelection(PasswordConfiguration::ALLCHARS);
   QtPassSettings::setPasswordChars(QString());
 }
 

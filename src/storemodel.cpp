@@ -57,7 +57,7 @@ auto StoreModel::filterAcceptsRow(int sourceRow,
  * @param index
  * @return
  */
-auto StoreModel::showThis(const QModelIndex index) const -> bool {
+auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   bool retVal = false;
   if (fs == nullptr) {
     return retVal;
@@ -101,12 +101,10 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
 
 void StoreModel::setStore(const QString &passStore) {
   store = passStore;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
-  beginFilterChange();
-  endFilterChange();
-#else
+  QT_WARNING_PUSH
+  QT_WARNING_DISABLE_DEPRECATED
   invalidateFilter();
-#endif
+  QT_WARNING_POP
 }
 
 /**
@@ -218,16 +216,25 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   Q_UNUSED(row)
 #endif
 
-  QModelIndex useIndex =
-      this->index(parent.row(), parent.column(), parent.parent());
+  if (data == nullptr ||
+      !data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore")) {
+    return false;
+  }
+
   QByteArray encodedData =
       data->data("application/vnd+qtpass.dragAndDropInfoPasswordStore");
+  if (encodedData.isEmpty()) {
+    return false;
+  }
   QDataStream stream(&encodedData, QIODevice::ReadOnly);
   dragAndDropInfoPasswordStore info;
   stream >> info;
-  if (!data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore")) {
+  if (stream.status() != QDataStream::Ok) {
     return false;
   }
+
+  QModelIndex useIndex =
+      this->index(parent.row(), parent.column(), parent.parent());
 
   if (column > 0) {
     return false;
@@ -270,10 +277,15 @@ auto StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
   }
   QByteArray encodedData =
       data->data("application/vnd+qtpass.dragAndDropInfoPasswordStore");
-
+  if (encodedData.isEmpty()) {
+    return false;
+  }
   QDataStream stream(&encodedData, QIODevice::ReadOnly);
   dragAndDropInfoPasswordStore info;
   stream >> info;
+  if (stream.status() != QDataStream::Ok) {
+    return false;
+  }
   QModelIndex destIndex =
       this->index(parent.row(), parent.column(), parent.parent());
   QFileInfo destFileinfo = fs->fileInfo(mapToSource(destIndex));
