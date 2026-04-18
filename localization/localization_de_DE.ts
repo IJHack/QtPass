@@ -400,12 +400,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Empfänger für %1 auswählen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Neues Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="705"/>
@@ -474,12 +474,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhaltssuche aktivieren (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lassen Sie die Suche innerhalb der Passwortdatei Inhalte. Erfordert die Entschlüsselung jeder Datei und kann auf großen Geschäften langsam sein.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="702"/>
@@ -523,7 +523,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilname, verwendet, um dieses Konfigurationsprofil zu identifizieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
