@@ -662,6 +662,7 @@ void MainWindow::on_lineEdit_returnPressed() {
   if (m_grepMode) {
     const QString query = ui->lineEdit->text().trimmed();
     if (!query.isEmpty()) {
+      ui->grepResultsList->clear();
       QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
     } else {
       ui->grepResultsList->clear();
@@ -761,6 +762,7 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
     return;
   ui->treeView->setCurrentIndex(proxyIndex);
   on_treeView_clicked(proxyIndex);
+  ui->grepResultsList->clear();
   ui->grepResultsList->setVisible(false);
   ui->treeView->setVisible(true);
   ui->treeView->scrollTo(proxyIndex);

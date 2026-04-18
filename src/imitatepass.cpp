@@ -44,10 +44,14 @@ using Enums::PROCESS_COUNT;
 ImitatePass::ImitatePass() = default;
 
 ImitatePass::~ImitatePass() {
+  static constexpr int kGrepThreadTimeoutMs = 5000;
   for (QThread *t : m_grepThreads) {
     if (t && t->isRunning()) {
       t->requestInterruption();
-      t->wait();
+      t->wait(kGrepThreadTimeoutMs);
+      // If GPG is still blocking after the timeout, let the
+      // finished→deleteLater connection clean up the thread object once it
+      // eventually exits.
     }
   }
 }
@@ -1045,8 +1049,11 @@ auto ImitatePass::grepMatchFile(const QStringList &env, const QString &gpgExe,
     return {};
   QStringList matches;
   for (const QString &line : plaintext.split('\n')) {
-    const QString t = line.trimmed();
-    if (!t.isEmpty() && t.contains(rx))
+    QString candidate = line;
+    if (candidate.endsWith('\r'))
+      candidate.chop(1);
+    const QString t = candidate.trimmed();
+    if (!t.isEmpty() && candidate.contains(rx))
       matches << t;
   }
   return matches;
