@@ -24,7 +24,7 @@ var searchData=
   ['passstore_21',['passStore',['../class_settings_constants.html#ad1c1aedcb39fc6a23158821f0ed3adb9',1,'SettingsConstants']]],
   ['passtemplate_22',['passTemplate',['../class_settings_constants.html#a3ee585d593241adc734399f02267bbb0',1,'SettingsConstants']]],
   ['passwordchars_23',['passwordChars',['../class_settings_constants.html#adb65eb8bb0c422d09cee42ec08d3f346',1,'SettingsConstants']]],
-  ['passwordcharsselection_24',['passwordCharsselection',['../class_settings_constants.html#ae74cc0d8de6094157c45a2a1e6d9de94',1,'SettingsConstants']]],
+  ['passwordcharsselection_24',['passwordCharsSelection',['../class_settings_constants.html#aa47459c77b080d7de87628de266eaa1f',1,'SettingsConstants']]],
   ['passwordconfiguration_25',['PasswordConfiguration',['../struct_password_configuration.html',1,'PasswordConfiguration'],['../struct_password_configuration.html#ac5767646f5116892b972d32ae6bbf561',1,'PasswordConfiguration::PasswordConfiguration()']]],
   ['passwordconfiguration_2eh_26',['passwordconfiguration.h',['../passwordconfiguration_8h.html',1,'']]],
   ['passworddialog_27',['PasswordDialog',['../class_password_dialog.html',1,'PasswordDialog'],['../class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e',1,'PasswordDialog::PasswordDialog(PasswordConfiguration passConfig, QWidget *parent=nullptr)'],['../class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98',1,'PasswordDialog::PasswordDialog(QString file, const bool &amp;isNew, QWidget *parent=nullptr)']]],

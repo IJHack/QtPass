@@ -103,8 +103,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1d113aadab8e115cdd963f2246333664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a>.  <br /></td></tr>
 <tr class="memitem:a7467757a647b6cd9af462fd157e478a4" id="r_a7467757a647b6cd9af462fd157e478a4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7467757a647b6cd9af462fd157e478a4">filterAcceptsRow</a> (int, const QModelIndex &amp;) const -&gt; bool override</td></tr>
 <tr class="memdesc:a7467757a647b6cd9af462fd157e478a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter whether a row should be displayed.  <br /></td></tr>
-<tr class="memitem:aa804a7d11d5fefbd50d89cb41e9b7089" id="r_aa804a7d11d5fefbd50d89cb41e9b7089"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa804a7d11d5fefbd50d89cb41e9b7089">showThis</a> (const QModelIndex) const -&gt; bool</td></tr>
-<tr class="memdesc:aa804a7d11d5fefbd50d89cb41e9b7089"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a specific index should be shown.  <br /></td></tr>
+<tr class="memitem:a3f87cb8b3ca0d20117f37386e4701691" id="r_a3f87cb8b3ca0d20117f37386e4701691"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3f87cb8b3ca0d20117f37386e4701691">showThis</a> (const QModelIndex &amp;index) const -&gt; bool</td></tr>
+<tr class="memdesc:a3f87cb8b3ca0d20117f37386e4701691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a specific index should be shown.  <br /></td></tr>
 <tr class="memitem:af223e13120a72e556a394aae4a92ad0f" id="r_af223e13120a72e556a394aae4a92ad0f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af223e13120a72e556a394aae4a92ad0f">setModelAndStore</a> (QFileSystemModel *sourceModel, QString passStore)</td></tr>
 <tr class="memdesc:af223e13120a72e556a394aae4a92ad0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize model with source model and store path.  <br /></td></tr>
 <tr class="memitem:a8578051e478ac18e32bb50bc9cb82ee8" id="r_a8578051e478ac18e32bb50bc9cb82ee8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8578051e478ac18e32bb50bc9cb82ee8">setStore</a> (const QString &amp;passStore)</td></tr>
@@ -233,7 +233,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00211">211</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00209">209</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
@@ -295,7 +295,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00118">118</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00116">116</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
@@ -378,7 +378,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00261">261</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00268">268</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
@@ -416,7 +416,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Filter whether a row should be displayed. </p>
-<p><a class="el" href="#a7467757a647b6cd9af462fd157e478a4" title="Filter whether a row should be displayed.">StoreModel::filterAcceptsRow</a> should row be shown, wrapper for <a class="el" href="#aa804a7d11d5fefbd50d89cb41e9b7089" title="Check if a specific index should be shown.">StoreModel::showThis</a> method.</p>
+<p><a class="el" href="#a7467757a647b6cd9af462fd157e478a4" title="Filter whether a row should be displayed.">StoreModel::filterAcceptsRow</a> should row be shown, wrapper for <a class="el" href="#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown.">StoreModel::showThis</a> method.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">source_row</td><td>Row index in source model. </td></tr>
@@ -484,7 +484,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00156">156</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00154">154</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -564,7 +564,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00325">325</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00337">337</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -608,7 +608,7 @@ Public Member Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00180">180</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00178">178</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 <div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
@@ -653,7 +653,7 @@ Public Member Functions</h2></td></tr>
 <dd>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00169">169</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00167">167</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -719,8 +719,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa804a7d11d5fefbd50d89cb41e9b7089" name="aa804a7d11d5fefbd50d89cb41e9b7089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa804a7d11d5fefbd50d89cb41e9b7089">&#9670;&#160;</a></span>showThis()</h2>
+<a id="a3f87cb8b3ca0d20117f37386e4701691" name="a3f87cb8b3ca0d20117f37386e4701691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f87cb8b3ca0d20117f37386e4701691">&#9670;&#160;</a></span>showThis()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -731,7 +731,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">auto StoreModel::showThis </td>
           <td>(</td>
-          <td class="paramtype">const QModelIndex</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
+          <td class="paramtype">const QModelIndex &amp;</td>          <td class="paramname"><span class="paramname"><em>index</em></span></td><td>)</td>
           <td> const -&gt; bool</td>
         </tr>
       </table>
@@ -743,7 +743,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if a specific index should be shown. </p>
-<p><a class="el" href="#aa804a7d11d5fefbd50d89cb41e9b7089" title="Check if a specific index should be shown.">StoreModel::showThis</a> should a row be shown, based on our search criteria.</p>
+<p><a class="el" href="#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown.">StoreModel::showThis</a> should a row be shown, based on our search criteria.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td>Model index to check. </td></tr>
@@ -764,13 +764,13 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_aa804a7d11d5fefbd50d89cb41e9b7089_cgraph.svg" width="364" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a3f87cb8b3ca0d20117f37386e4701691_cgraph.svg" width="364" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_aa804a7d11d5fefbd50d89cb41e9b7089_icgraph.svg" width="438" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a3f87cb8b3ca0d20117f37386e4701691_icgraph.svg" width="438" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -804,7 +804,7 @@ Public Member Functions</h2></td></tr>
 <dd>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00147">147</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00145">145</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
@@ -837,7 +837,7 @@ Public Member Functions</h2></td></tr>
 <dd>
 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00139">139</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8cpp_source.html#l00137">137</a> of file <a class="el" href="storemodel_8cpp_source.html">storemodel.cpp</a>.</p>
 
 </div>
 </div>
