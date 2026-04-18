@@ -216,17 +216,25 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   Q_UNUSED(row)
 #endif
 
-  if (!data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore")) {
+  if (data == nullptr ||
+      !data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore")) {
+    return false;
+  }
+
+  QByteArray encodedData =
+      data->data("application/vnd+qtpass.dragAndDropInfoPasswordStore");
+  if (encodedData.isEmpty()) {
+    return false;
+  }
+  QDataStream stream(&encodedData, QIODevice::ReadOnly);
+  dragAndDropInfoPasswordStore info;
+  stream >> info;
+  if (stream.status() != QDataStream::Ok) {
     return false;
   }
 
   QModelIndex useIndex =
       this->index(parent.row(), parent.column(), parent.parent());
-  QByteArray encodedData =
-      data->data("application/vnd+qtpass.dragAndDropInfoPasswordStore");
-  QDataStream stream(&encodedData, QIODevice::ReadOnly);
-  dragAndDropInfoPasswordStore info;
-  stream >> info;
 
   if (column > 0) {
     return false;
@@ -269,10 +277,15 @@ auto StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
   }
   QByteArray encodedData =
       data->data("application/vnd+qtpass.dragAndDropInfoPasswordStore");
-
+  if (encodedData.isEmpty()) {
+    return false;
+  }
   QDataStream stream(&encodedData, QIODevice::ReadOnly);
   dragAndDropInfoPasswordStore info;
   stream >> info;
+  if (stream.status() != QDataStream::Ok) {
+    return false;
+  }
   QModelIndex destIndex =
       this->index(parent.row(), parent.column(), parent.parent());
   QFileInfo destFileinfo = fs->fileInfo(mapToSource(destIndex));
