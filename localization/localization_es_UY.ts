@@ -1308,7 +1308,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="455"/>
         <location filename="../src/pass.cpp" line="476"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>Cifrado fallido: la clave GPG ha caducado. Por favor, renuévela o reemplácela.</translation>
+        <translation>Error de cifrado: la clave GPG ha caducado. Por favor, renueve o reemplace la clave.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="460"/>
