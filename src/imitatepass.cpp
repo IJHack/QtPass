@@ -1123,6 +1123,11 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
 
   QThread *thread = QThread::create([self, seq, pattern, caseInsensitive,
                                      gpgExe, storeDir, env, emitResults]() {
+    if (pattern.trimmed().isEmpty()) {
+      if (self)
+        emitResults({});
+      return;
+    }
     const QRegularExpression rx(
         pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption
                                  : QRegularExpression::PatternOptions{});
