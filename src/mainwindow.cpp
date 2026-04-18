@@ -527,8 +527,9 @@ void MainWindow::clearPanel(bool notify) {
     delete item->widget();
     delete item;
   }
-  if (ui->grepResultsList->isVisible()) {
-    ui->grepResultsList->clear();
+  const bool grepWasVisible = ui->grepResultsList->isVisible();
+  ui->grepResultsList->clear();
+  if (grepWasVisible) {
     ui->grepResultsList->setVisible(false);
     ui->treeView->setVisible(true);
   }

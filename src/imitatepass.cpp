@@ -1046,7 +1046,7 @@ auto ImitatePass::grepMatchFile(const QStringList &env, const QString &gpgExe,
   QStringList matches;
   for (const QString &line : plaintext.split('\n')) {
     const QString t = line.trimmed();
-    if (!t.isEmpty() && line.contains(rx))
+    if (!t.isEmpty() && t.contains(rx))
       matches << t;
   }
   return matches;
