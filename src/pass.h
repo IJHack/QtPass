@@ -357,4 +357,12 @@ signals:
  */
 QString gpgErrorMessage(const QString &err);
 
+/**
+ * @brief Parses 'pass grep' raw output into (entry, matches) pairs.
+ *
+ * Declared here so it can be exercised by unit tests without linking the full
+ * Pass object.
+ */
+QList<QPair<QString, QStringList>> parseGrepOutput(const QString &rawOut);
+
 #endif // SRC_PASS_H_

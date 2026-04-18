@@ -500,7 +500,7 @@ auto gpgErrorMessage(const QString &err) -> QString {
  * header line. This is checked before stripping ANSI so headers are detected
  * reliably regardless of locale.
  */
-static auto parseGrepOutput(const QString &rawOut)
+auto parseGrepOutput(const QString &rawOut)
     -> QList<QPair<QString, QStringList>> {
   static const QRegularExpression ansi(
       QStringLiteral(R"(\x1B\[[0-9;]*[a-zA-Z])"));

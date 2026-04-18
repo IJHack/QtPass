@@ -6,6 +6,7 @@
 #include <QFileInfo>
 #include <QList>
 #include <QProcessEnvironment>
+#include <QSignalSpy>
 #include <QTemporaryDir>
 #include <QUuid>
 #include <QtTest>
@@ -21,6 +22,9 @@
 #include "../../../src/simpletransaction.h"
 #include "../../../src/userinfo.h"
 #include "../../../src/util.h"
+
+using GrepResults = QList<QPair<QString, QStringList>>;
+Q_DECLARE_METATYPE(GrepResults)
 
 /**
  * @brief The tst_util class is our first unit test
@@ -60,6 +64,14 @@ private:
     QStringList environment() {
       updateEnv();
       return exec.environment();
+    }
+    void callFinished(int id, int exitCode, const QString &out,
+                      const QString &err) {
+      finished(id, exitCode, out, err);
+    }
+    void callPassFinished(int id, int exitCode, const QString &out,
+                          const QString &err) {
+      Pass::finished(id, exitCode, out, err);
     }
   };
 
@@ -165,6 +177,25 @@ private Q_SLOTS:
   void gpgErrorMessageEncryptionFailedFallback();
   void gpgErrorMessageUnknownReturnsEmpty();
   void gpgErrorMessageStatusTokenTakesPriorityOverFallback();
+  // parseGrepOutput
+  void parseGrepOutputEmpty();
+  void parseGrepOutputSingleEntry();
+  void parseGrepOutputMultipleEntries();
+  void parseGrepOutputAnsiStripped();
+  void parseGrepOutputHeaderColonStripped();
+  void parseGrepOutputCrlfHandled();
+  void parseGrepOutputOrphanMatchesIgnored();
+  void parseGrepOutputEmptyMatchLinesIgnored();
+  void parseGrepOutputLastEntryIncluded();
+  // Pass::finished PASS_GREP exit-code handling
+  void passFinishedGrepNoMatchEmitsEmpty();
+  void passFinishedGrepErrorEmitsProcessError();
+  void passFinishedGrepSuccessEmitsResults();
+  // ImitatePass::Grep / helpers
+  void grepMatchFileFailedDecryptReturnsEmpty();
+  void grepScanStoreEmptyDirReturnsEmpty();
+  void grepImitatePassEmptyStoreEmitsEmpty();
+  void grepImitatePassInvalidRegexEmitsEmpty();
 };
 
 /**
@@ -180,9 +211,7 @@ tst_util::~tst_util() = default;
 /**
  * @brief tst_util::init unit test init method
  */
-void tst_util::init() {
-  // Intentionally left empty: no per-test setup required.
-}
+void tst_util::init() { qRegisterMetaType<GrepResults>("GrepResults"); }
 
 /**
  * @brief tst_util::cleanup unit test cleanup method
@@ -1720,6 +1749,180 @@ void tst_util::gpgErrorMessageStatusTokenTakesPriorityOverFallback() {
   QString msg = gpgErrorMessage(err);
   QVERIFY2(msg.contains("expired", Qt::CaseInsensitive),
            "KEYEXPIRED token should take priority and mention 'expired'");
+}
+
+// --- parseGrepOutput tests ---
+
+void tst_util::parseGrepOutputEmpty() {
+  auto results = parseGrepOutput(QString());
+  QVERIFY(results.isEmpty());
+}
+
+void tst_util::parseGrepOutputSingleEntry() {
+  // Simulate: header with ANSI blue, then one match line
+  const QString raw = QStringLiteral("\x1B[94mmy/entry\x1B[0m:\nsome match\n");
+  auto results = parseGrepOutput(raw);
+  QCOMPARE(results.size(), 1);
+  QCOMPARE(results[0].first, QStringLiteral("my/entry"));
+  QCOMPARE(results[0].second.size(), 1);
+  QCOMPARE(results[0].second[0], QStringLiteral("some match"));
+}
+
+void tst_util::parseGrepOutputMultipleEntries() {
+  const QString raw = QStringLiteral("\x1B[94mentry/a\x1B[0m:\nline1\nline2\n"
+                                     "\x1B[94mentry/b\x1B[0m:\nlineX\n");
+  auto results = parseGrepOutput(raw);
+  QCOMPARE(results.size(), 2);
+  QCOMPARE(results[0].first, QStringLiteral("entry/a"));
+  QCOMPARE(results[0].second.size(), 2);
+  QCOMPARE(results[1].first, QStringLiteral("entry/b"));
+  QCOMPARE(results[1].second.size(), 1);
+}
+
+void tst_util::parseGrepOutputAnsiStripped() {
+  // Match line itself contains ANSI colour (grep highlights the match)
+  const QString raw =
+      QStringLiteral("\x1B[94mfoo\x1B[0m:\n\x1B[1mhi\x1B[0m there\n");
+  auto results = parseGrepOutput(raw);
+  QCOMPARE(results.size(), 1);
+  QCOMPARE(results[0].second[0], QStringLiteral("hi there"));
+}
+
+void tst_util::parseGrepOutputHeaderColonStripped() {
+  const QString raw = QStringLiteral("\x1B[94msome/path:\x1B[0m\nvalue\n");
+  auto results = parseGrepOutput(raw);
+  QCOMPARE(results.size(), 1);
+  // Trailing colon must be removed from the entry name
+  QVERIFY2(
+      !results[0].first.endsWith(':'),
+      qPrintable("Entry should not end with ':', got: " + results[0].first));
+}
+
+void tst_util::parseGrepOutputCrlfHandled() {
+  const QString raw = QStringLiteral("\x1B[94mentry\x1B[0m:\r\nmatch line\r\n");
+  auto results = parseGrepOutput(raw);
+  QCOMPARE(results.size(), 1);
+  QVERIFY2(!results[0].second[0].contains('\r'),
+           "Match line must not contain CR");
+}
+
+void tst_util::parseGrepOutputOrphanMatchesIgnored() {
+  // Lines before any header should be silently dropped
+  const QString raw =
+      QStringLiteral("orphan line\n\x1B[94mentry\x1B[0m:\nreal match\n");
+  auto results = parseGrepOutput(raw);
+  QCOMPARE(results.size(), 1);
+  QCOMPARE(results[0].second.size(), 1);
+  QCOMPARE(results[0].second[0], QStringLiteral("real match"));
+}
+
+void tst_util::parseGrepOutputEmptyMatchLinesIgnored() {
+  const QString raw = QStringLiteral("\x1B[94mentry\x1B[0m:\n\n  \nmatch\n");
+  auto results = parseGrepOutput(raw);
+  QCOMPARE(results.size(), 1);
+  QCOMPARE(results[0].second.size(), 1);
+}
+
+void tst_util::parseGrepOutputLastEntryIncluded() {
+  // Ensure final entry is flushed even without a trailing newline
+  const QString raw = QStringLiteral("\x1B[94mfinal\x1B[0m:\nvalue");
+  auto results = parseGrepOutput(raw);
+  QCOMPARE(results.size(), 1);
+  QCOMPARE(results[0].first, QStringLiteral("final"));
+}
+
+// --- Pass::finished PASS_GREP exit-code tests ---
+
+void tst_util::passFinishedGrepNoMatchEmitsEmpty() {
+  TestPass pass;
+  QSignalSpy spy(&pass, &Pass::finishedGrep);
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  // exit code 1 = no matches (standard grep behaviour)
+  pass.callPassFinished(static_cast<int>(Enums::PASS_GREP), 1, QString(),
+                        QString());
+  QCOMPARE(spy.count(), 1);
+  QCOMPARE(errSpy.count(), 0);
+  const auto results = spy[0][0].value<GrepResults>();
+  QVERIFY(results.isEmpty());
+}
+
+void tst_util::passFinishedGrepErrorEmitsProcessError() {
+  TestPass pass;
+  QSignalSpy spy(&pass, &Pass::finishedGrep);
+  QSignalSpy errSpy(&pass, &Pass::processErrorExit);
+  // exit code 2 = real grep error
+  pass.callPassFinished(static_cast<int>(Enums::PASS_GREP), 2, QString(),
+                        QStringLiteral("some gpg error"));
+  QCOMPARE(errSpy.count(), 1);
+  QCOMPARE(spy.count(), 0);
+}
+
+void tst_util::passFinishedGrepSuccessEmitsResults() {
+  TestPass pass;
+  QSignalSpy spy(&pass, &Pass::finishedGrep);
+  // Simulate output from 'pass grep' with one matching entry
+  const QString out =
+      QStringLiteral("\x1B[94mwork/github\x1B[0m:\ntoken: abc123\n");
+  pass.callPassFinished(static_cast<int>(Enums::PASS_GREP), 0, out, QString());
+  QCOMPARE(spy.count(), 1);
+  const auto results = spy[0][0].value<GrepResults>();
+  QCOMPARE(results.size(), 1);
+  QCOMPARE(results[0].first, QStringLiteral("work/github"));
+}
+
+// --- ImitatePass helper / Grep tests ---
+
+void tst_util::grepMatchFileFailedDecryptReturnsEmpty() {
+  // grepMatchFile with a non-existent file: executeBlocking fails (rc != 0)
+  // so the result must be empty regardless of the regex
+  QRegularExpression rx(QStringLiteral(".*"));
+  const QStringList env;
+  const QStringList matches =
+      ImitatePass::grepMatchFile(env, QStringLiteral("/nonexistent/gpg"),
+                                 QStringLiteral("/no/such.gpg"), rx);
+  QVERIFY(matches.isEmpty());
+}
+
+void tst_util::grepScanStoreEmptyDirReturnsEmpty() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  QRegularExpression rx(QStringLiteral(".*"));
+  const QStringList env;
+  const auto results = ImitatePass::grepScanStore(
+      env, QStringLiteral("/nonexistent/gpg"), tmp.path(), rx);
+  QVERIFY(results.isEmpty());
+}
+
+void tst_util::grepImitatePassEmptyStoreEmitsEmpty() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  PassStoreGuard guard(QtPassSettings::getPassStore());
+  QtPassSettings::setPassStore(tmp.path());
+
+  TestPass pass;
+  QSignalSpy spy(&pass, &Pass::finishedGrep);
+  pass.Grep(QStringLiteral("anything"));
+  // Wait up to 3 s for the background thread to emit
+  QVERIFY(spy.wait(3000));
+  QCOMPARE(spy.count(), 1);
+  const auto results = spy[0][0].value<GrepResults>();
+  QVERIFY(results.isEmpty());
+}
+
+void tst_util::grepImitatePassInvalidRegexEmitsEmpty() {
+  QTemporaryDir tmp;
+  QVERIFY(tmp.isValid());
+  PassStoreGuard guard(QtPassSettings::getPassStore());
+  QtPassSettings::setPassStore(tmp.path());
+
+  TestPass pass;
+  QSignalSpy spy(&pass, &Pass::finishedGrep);
+  // An invalid regex (unmatched '[') must still emit an empty result
+  pass.Grep(QStringLiteral("[invalid"));
+  QVERIFY(spy.wait(3000));
+  QCOMPARE(spy.count(), 1);
+  const auto results = spy[0][0].value<GrepResults>();
+  QVERIFY(results.isEmpty());
 }
 
 QTEST_MAIN(tst_util)
