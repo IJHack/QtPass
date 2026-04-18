@@ -314,12 +314,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilita búsqueda de contenido (pase grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Permitir la búsqueda dentro del contenido del archivo de contraseña. Requiere descifrar cada archivo y puede ser lento en grandes tiendas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -1106,24 +1106,24 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscando…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Contenido de búsqueda (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encontraron coincidencias.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Encontrado %n partidoe en %1 entri.</numerusform>
+            <numerusform>Encontrado %n partidos en %1 entres.</numerusform>
         </translation>
     </message>
     <message>
