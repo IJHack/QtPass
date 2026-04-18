@@ -1183,10 +1183,10 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Nalezen %n výsledek v %1 záznamu.</numerusform>
+            <numerusform>Nalezeny %n výsledky v %1 záznamech.</numerusform>
+            <numerusform>Nalezeno %n výsledků v %1 záznamech.</numerusform>
         </translation>
     </message>
     <message>

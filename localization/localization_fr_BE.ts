@@ -1319,13 +1319,13 @@ Continuez&#x202f;?</translation>
         <location filename="../src/pass.cpp" line="455"/>
         <location filename="../src/pass.cpp" line="476"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Échec du chiffrement : la clé GPG a expiré. Veuillez la renouveler ou la remplacer.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="460"/>
         <location filename="../src/pass.cpp" line="481"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Échec du chiffrement : la clé GPG a été révoquée.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="464"/>

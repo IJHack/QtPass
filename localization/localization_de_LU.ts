@@ -1280,7 +1280,7 @@ Fortfahren?</translation>
         <location filename="../src/pass.cpp" line="455"/>
         <location filename="../src/pass.cpp" line="476"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verschlüsselung fehlgeschlagen: GPG-Schlüssel ist abgelaufen. Bitte erneuern oder ersetzen Sie ihn.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="460"/>
