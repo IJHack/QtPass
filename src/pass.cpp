@@ -508,11 +508,15 @@ auto parseGrepOutput(const QString &rawOut)
   QString currentEntry;
   QStringList currentMatches;
   for (const QString &rawLine : rawOut.split('\n')) {
-    bool isHeader = rawLine.startsWith(QStringLiteral("\x1B[94m"));
     QString line = rawLine;
     line.remove('\r');
     line.remove(ansi);
     line = line.trimmed();
+    // ANSI-colored header starts with the blue escape; plain-text fallback:
+    // a non-indented line ending with ':' (pass grep format without color)
+    bool isHeader = rawLine.startsWith(QStringLiteral("\x1B[94m")) ||
+                    (!rawLine.startsWith(' ') && !rawLine.startsWith('\t') &&
+                     line.endsWith(':') && !line.isEmpty());
     if (isHeader) {
       if (!currentEntry.isEmpty() && !currentMatches.isEmpty())
         results.append({currentEntry, currentMatches});

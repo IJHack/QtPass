@@ -188,6 +188,7 @@ private Q_SLOTS:
   void parseGrepOutputEmptyMatchLinesIgnored();
   void parseGrepOutputLastEntryIncluded();
   void parseGrepOutputEmbeddedBlueNotHeader();
+  void parseGrepOutputPlainTextHeaders();
   // Pass::finished PASS_GREP exit-code handling
   void passFinishedGrepNoMatchEmitsEmpty();
   void passFinishedGrepErrorEmitsProcessError();
@@ -202,7 +203,7 @@ private Q_SLOTS:
 /**
  * @brief tst_util::tst_util basic constructor
  */
-tst_util::tst_util() { qRegisterMetaType<GrepResults>("GrepResults"); }
+tst_util::tst_util() = default;
 
 /**
  * @brief tst_util::~tst_util basic destructor
@@ -1844,6 +1845,18 @@ void tst_util::parseGrepOutputEmbeddedBlueNotHeader() {
   QCOMPARE(results[0].first, QStringLiteral("entry/a"));
   QCOMPARE(results[0].second.size(), 2);
   QCOMPARE(results[0].second[1], QStringLiteral("contains blue highlight"));
+}
+
+void tst_util::parseGrepOutputPlainTextHeaders() {
+  // pass grep without ANSI colours (e.g. NO_COLOR or non-TTY output)
+  const QString raw =
+      QStringLiteral("entry/a:\n  match one\n  match two\nentry/b:\n  other\n");
+  auto results = parseGrepOutput(raw);
+  QCOMPARE(results.size(), 2);
+  QCOMPARE(results[0].first, QStringLiteral("entry/a"));
+  QCOMPARE(results[0].second.size(), 2);
+  QCOMPARE(results[1].first, QStringLiteral("entry/b"));
+  QCOMPARE(results[1].second.size(), 1);
 }
 
 // --- Pass::finished PASS_GREP exit-code tests ---

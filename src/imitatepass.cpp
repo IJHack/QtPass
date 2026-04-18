@@ -1044,7 +1044,7 @@ auto ImitatePass::grepMatchFile(const QStringList &env, const QString &gpgExe,
   QStringList matches;
   for (const QString &line : plaintext.split('\n')) {
     const QString t = line.trimmed();
-    if (!t.isEmpty() && t.contains(rx))
+    if (!t.isEmpty() && line.contains(rx))
       matches << t;
   }
   return matches;
@@ -1083,8 +1083,10 @@ auto ImitatePass::grepScanStore(const QStringList &env, const QString &gpgExe,
  * results from superseded searches.
  */
 void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
-  if (m_grepThread && m_grepThread->isRunning())
+  if (m_grepThread && m_grepThread->isRunning()) {
     m_grepThread->requestInterruption();
+    m_grepThread->wait();
+  }
 
   const int seq = ++m_grepSeq;
   const QString gpgExe = QtPassSettings::getGpgExecutable();
@@ -1119,10 +1121,10 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
   });
 
   m_grepThread = thread;
+  connect(thread, &QThread::finished, thread, &QObject::deleteLater);
   connect(thread, &QThread::finished, this, [this, thread]() {
     if (m_grepThread == thread)
       m_grepThread = nullptr;
-    thread->deleteLater();
   });
   thread->start();
 }

@@ -6,6 +6,9 @@
 #include "pass.h"
 #include "simpletransaction.h"
 
+class QRegularExpression;
+class QThread;
+
 /**
  * @class ImitatePass
  * @brief Implementation that imitates 'pass' when the real tool is unavailable.
