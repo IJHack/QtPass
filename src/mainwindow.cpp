@@ -660,7 +660,7 @@ void MainWindow::on_lineEdit_returnPressed() {
 #endif
 
   if (m_grepMode) {
-    const QString query = ui->lineEdit->text().trimmed();
+    const QString query = ui->lineEdit->text();
     if (!query.isEmpty()) {
       ui->grepResultsList->clear();
       QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
@@ -728,7 +728,8 @@ void MainWindow::onGrepFinished(
     entryItem->setData(0, Qt::UserRole, pair.first);
     for (const QString &line : pair.second) {
       QTreeWidgetItem *lineItem = new QTreeWidgetItem(entryItem);
-      lineItem->setText(0, hideContent ? QStringLiteral("***") : line);
+      lineItem->setText(0, hideContent ? "***" + tr("Content hidden") + "***"
+                                       : line);
       lineItem->setData(0, Qt::UserRole, pair.first);
       ++totalLines;
     }
@@ -762,7 +763,8 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
     return;
   ui->treeView->setCurrentIndex(proxyIndex);
   on_treeView_clicked(proxyIndex);
-  ui->grepResultsList->clear();
+  if (QtPassSettings::isHideContent() || QtPassSettings::isUseAutoclearPanel())
+    ui->grepResultsList->clear();
   ui->grepResultsList->setVisible(false);
   ui->treeView->setVisible(true);
   ui->treeView->scrollTo(proxyIndex);

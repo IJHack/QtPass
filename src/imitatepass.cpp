@@ -5,6 +5,7 @@
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QDirIterator>
+#include <QElapsedTimer>
 #include <QPointer>
 #include <QRegularExpression>
 #include <QThread>
@@ -45,13 +46,17 @@ ImitatePass::ImitatePass() = default;
 
 ImitatePass::~ImitatePass() {
   static constexpr int kGrepThreadTimeoutMs = 5000;
+  for (QThread *t : m_grepThreads)
+    if (t && t->isRunning())
+      t->requestInterruption();
+  QElapsedTimer elapsed;
+  elapsed.start();
   for (QThread *t : m_grepThreads) {
     if (t && t->isRunning()) {
-      t->requestInterruption();
-      t->wait(kGrepThreadTimeoutMs);
-      // If GPG is still blocking after the timeout, let the
-      // finished→deleteLater connection clean up the thread object once it
-      // eventually exits.
+      const int remaining =
+          kGrepThreadTimeoutMs - static_cast<int>(elapsed.elapsed());
+      if (remaining > 0)
+        t->wait(remaining);
     }
   }
 }
