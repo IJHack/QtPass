@@ -101,10 +101,11 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
 
 void StoreModel::setStore(const QString &passStore) {
   store = passStore;
-  QT_WARNING_PUSH
-  QT_WARNING_DISABLE_DEPRECATED
+#if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
+  QSortFilterProxyModel::invalidateFilter();
+#else
   invalidateFilter();
-  QT_WARNING_POP
+#endif
 }
 
 /**
