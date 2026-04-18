@@ -508,7 +508,7 @@ auto parseGrepOutput(const QString &rawOut)
   QString currentEntry;
   QStringList currentMatches;
   for (const QString &rawLine : rawOut.split('\n')) {
-    bool isHeader = rawLine.contains(QStringLiteral("\x1B[94m"));
+    bool isHeader = rawLine.startsWith(QStringLiteral("\x1B[94m"));
     QString line = rawLine;
     line.remove('\r');
     line.remove(ansi);

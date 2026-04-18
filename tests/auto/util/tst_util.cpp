@@ -187,6 +187,7 @@ private Q_SLOTS:
   void parseGrepOutputOrphanMatchesIgnored();
   void parseGrepOutputEmptyMatchLinesIgnored();
   void parseGrepOutputLastEntryIncluded();
+  void parseGrepOutputEmbeddedBlueNotHeader();
   // Pass::finished PASS_GREP exit-code handling
   void passFinishedGrepNoMatchEmitsEmpty();
   void passFinishedGrepErrorEmitsProcessError();
@@ -1829,6 +1830,20 @@ void tst_util::parseGrepOutputLastEntryIncluded() {
   auto results = parseGrepOutput(raw);
   QCOMPARE(results.size(), 1);
   QCOMPARE(results[0].first, QStringLiteral("final"));
+}
+
+void tst_util::parseGrepOutputEmbeddedBlueNotHeader() {
+  // Match line contains \x1B[94m mid-line (grep highlights the search term in
+  // blue); must not be mistaken for a header — previous matches must not be
+  // lost
+  const QString raw = QStringLiteral(
+      "\x1B[94mentry/a\x1B[0m:\nfirst match\ncontains \x1B[94mblue\x1B[0m "
+      "highlight\n\x1B[94mentry/b\x1B[0m:\nother\n");
+  auto results = parseGrepOutput(raw);
+  QCOMPARE(results.size(), 2);
+  QCOMPARE(results[0].first, QStringLiteral("entry/a"));
+  QCOMPARE(results[0].second.size(), 2);
+  QCOMPARE(results[0].second[1], QStringLiteral("contains blue highlight"));
 }
 
 // --- Pass::finished PASS_GREP exit-code tests ---
