@@ -46,12 +46,12 @@ ImitatePass::ImitatePass() = default;
 
 ImitatePass::~ImitatePass() {
   static constexpr int kGrepThreadTimeoutMs = 5000;
-  for (QThread *t : m_grepThreads)
+  for (QThread *t : std::as_const(m_grepThreads))
     if (t && t->isRunning())
       t->requestInterruption();
   QElapsedTimer elapsed;
   elapsed.start();
-  for (QThread *t : m_grepThreads) {
+  for (QThread *t : std::as_const(m_grepThreads)) {
     if (t && t->isRunning()) {
       const int remaining =
           kGrepThreadTimeoutMs - static_cast<int>(elapsed.elapsed());
@@ -1097,7 +1097,7 @@ auto ImitatePass::grepScanStore(const QStringList &env, const QString &gpgExe,
  * results from superseded searches.
  */
 void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
-  for (QThread *t : m_grepThreads)
+  for (QThread *t : std::as_const(m_grepThreads))
     if (t && t->isRunning())
       t->requestInterruption();
   // No wait() — blocking the UI thread while GPG decrypts would freeze the
