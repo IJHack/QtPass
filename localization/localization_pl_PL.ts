@@ -995,7 +995,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation>Wyszukaj zawrtość (wyrażenie regularne)</translation>
+        <translation>Wyszukaj zawartość (wyrażenie regularne)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
