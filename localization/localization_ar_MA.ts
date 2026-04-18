@@ -368,17 +368,17 @@
     <message>
         <location filename="../src/configdialog.cpp" line="746"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>يرجى تثبيت GnuPG على نظامك.&lt;br&gt;ثبّت &lt;strong&gt;Ubuntu&lt;/strong&gt; من متجر Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;نزّله&lt;/a&gt; من GnuPG.org</translation>
+        <translation>يرجى تثبيت برنامج GnuPG على نظامك.&lt;br&gt;ثَبَّتَ &lt;strong&gt;gpg&lt;/strong&gt; باستخدام مدير الحزم المفضل لديك&lt;br&gt;أو &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;تحميل&lt;/a&gt; تم الحصول عليه من موقع GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="800"/>
         <source>Create password-store?</source>
-        <translation>إنشاء مخزن كلمة سر؟?</translation>
+        <translation>إنشاء مخزن كلمة سر؟</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="801"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>هل تريد أن تخلق مخزن كلمة سر بنسبة %1؟?</translation>
+        <translation>هل تريد أن تخلق مخزن كلمة سر بنسبة %1؟</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="806"/>
@@ -852,27 +852,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation> والمحتوى كله؟</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> والمحتوى كله؟ ▪ ■ الاهتمام: هناك ملفات غير متوقعة في الملف المعين، التحقق منها قبل مواصلة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>
         <source>Delete folder?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذف الملف؟</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>
         <source>Delete password?</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذف كلمة السر؟</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>هل أنت متأكد من أنك تريد حذف %1%2؟?</translation>
+        <translation>هل أنت متأكد من أنك تريد حذف %1%2؟</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
@@ -1153,7 +1153,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
-        <translation>تخطي القوة؟?</translation>
+        <translation>تخطي القوة؟</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="295"/>
