@@ -398,7 +398,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
         <source>Select recipients for %1</source>
-        <translation>Select recepten voor %1</translation>
+        <translation>Selecteer ontvangers voor %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
@@ -1290,8 +1290,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation>
-            <numerusform>Vond % match in %1 entree.</numerusform>
-            <numerusform>Vond % matches in %1 entries.</numerusform>
+            <numerusform>%n overeenkomst gevonden in %1 item.</numerusform>
+            <numerusform>%n overeenkomsten gevonden in %1 items.</numerusform>
         </translation>
     </message>
     <message>
