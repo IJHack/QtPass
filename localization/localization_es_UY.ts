@@ -402,12 +402,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="931"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre del perfil, utilizado para identificar este perfil de configuración</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="939"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Camino al directorio de la tienda de contraseñas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="944"/>
@@ -496,12 +496,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="652"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona recipients para %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="670"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Perfil nuevo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="806"/>
@@ -1324,47 +1324,47 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/ui_mainwindow.h" line="354"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar contenido de contraseña (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/ui_mainwindow.h" line="356"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/ui_mainwindow.h" line="358"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Búsqueda de contenido alternar</translation>
     </message>
     <message>
         <location filename="../src/ui_mainwindow.h" line="361"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Activar/desactivar el modo de búsqueda de contenido para buscar dentro de los archivos de contraseñas</translation>
     </message>
     <message>
         <location filename="../src/ui_mainwindow.h" line="364"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Búsqueda que no distingue entre mayúsculas y minúsculas</translation>
     </message>
     <message>
         <location filename="../src/ui_mainwindow.h" line="366"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/ui_mainwindow.h" line="368"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Alternar búsqueda sin distinción entre mayúsculas y minúsculas</translation>
     </message>
     <message>
         <location filename="../src/ui_mainwindow.h" line="371"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Activar/desactivar la búsqueda de contenido que no distingue entre mayúsculas y minúsculas</translation>
     </message>
     <message>
         <location filename="../src/ui_mainwindow.h" line="374"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados</translation>
     </message>
 </context>
 <context>
@@ -1383,25 +1383,25 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="454"/>
         <location filename="../src/pass.cpp" line="475"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error de cifrado: la clave GPG ha caducado. Por favor, renueve o reemplace la clave.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="459"/>
         <location filename="../src/pass.cpp" line="480"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error de cifrado: la clave GPG ha sido revocada.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="463"/>
         <location filename="../src/pass.cpp" line="485"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Error de cifrado: no se encontró la clave GPG del destinatario o esta no es válida. Compruebe que el ID de la clave en .gpg-id sea correcto y se haya importado.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="467"/>
         <location filename="../src/pass.cpp" line="489"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>El cifrado falló. Compruebe que su clave GPG sea válida.</translation>
     </message>
 </context>
 <context>
