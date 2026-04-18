@@ -265,12 +265,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
         <source>Generate</source>
-        <translation>Oluşturmak</translation>
+        <translation>Oluştur</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="772"/>
         <source>Generate GPG key pair</source>
-        <translation>Oluşturmak GPG anahtar çifti</translation>
+        <translation>GPG anahtar çifti oluştur</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
@@ -579,7 +579,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Yerini değiştirmek için başarısız oldu %1. Orijinal restore edilmiştir.</translation>
+        <translation>Yerine %1 konulamadı. Orijinal geri yüklendi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
