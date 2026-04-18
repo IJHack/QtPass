@@ -172,12 +172,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Włącz wyszukiwanie zawartości (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zezwalaj na przeszukiwanie zawartości plików z hasłami. Wymaga odszyfrowania każdego pliku i może być powolne w przypadku dużych baz danych.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -267,7 +267,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa profilu służąca do identyfikacji tego profilu konfiguracji</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="950"/>
@@ -277,7 +277,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Ścieżka do katalogu przechowującego hasła</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -363,12 +363,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz odbiorców dla %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nowy profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="704"/>
@@ -803,47 +803,47 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyszukaj w zawartości hasła (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Przełącznik wyszukiwania zawartości</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Przełącz tryb wyszukiwania zawartości, aby wyszukiwać w plikach haseł</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyszukiwanie bez uwzględniania wielkości liter</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Przełącznik ignorowania wielkości liter</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Przełącz wyszukiwanie zawartości bez uwzględniania wielkości liter</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyniki</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -954,7 +954,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="461"/>
         <location filename="../src/mainwindow.cpp" line="760"/>
         <source>Content hidden</source>
-        <translation>Treść schowana</translation>
+        <translation>Zawartość ukryta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="465"/>
@@ -990,25 +990,25 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyszukiwanie…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyszukaj zawrtość (wyrażenie regularne)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie znaleziono wyników.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Znaleziono %n wynik we wpisach: %1.</numerusform>
+            <numerusform>Znaleziono %n wyniki we wpisach: %1.</numerusform>
+            <numerusform>Znaleziono %n wyników we wpisach: %1.</numerusform>
         </translation>
     </message>
     <message>
@@ -1174,25 +1174,25 @@ Kontynuować?</translation>
         <location filename="../src/pass.cpp" line="455"/>
         <location filename="../src/pass.cpp" line="476"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Szyfrowanie nie powiodło się: klucz GPG wygasł. Należy go odnowić lub wymienić.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="460"/>
         <location filename="../src/pass.cpp" line="481"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Szyfrowanie nie powiodło się: klucz GPG został unieważniony.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="464"/>
         <location filename="../src/pass.cpp" line="486"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Szyfrowanie nie powiodło się: klucz GPG odbiorcy nie został znaleziony lub jest nieprawidłowy. Sprawdź, czy identyfikator klucza w pliku .gpg-id jest poprawny i zaimportuj go.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="468"/>
         <location filename="../src/pass.cpp" line="490"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Szyfrowanie nie powiodło się. Sprawdź, czy klucz GPG jest prawidłowy.</translation>
     </message>
 </context>
 <context>
