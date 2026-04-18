@@ -314,12 +314,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Habilita búsqueda de contenido (pase grep)</translation>
+        <translation>Habilita búsqueda de contenido (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Deja buscar contenidos de lima de contraseña de interior. Requiere decrypting cada lima y puede ser lento en tiendas grandes.</translation>
+        <translation>Permite buscar dentro del contenido de los archivos de contraseñas. Requiere descifrar cada archivo y puede ser lento en almacenes grandes.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
