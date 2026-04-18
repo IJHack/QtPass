@@ -597,12 +597,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>استكمال إعادة التشفير: %1 نجحت، %2٢ فشل</translation>
+        <translation>استكمال إعادة التشفير: %1 نجحت، %2 فشل</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>استكمال إعادة التشفير: %1١ الملفات المعاد شفاؤها</translation>
+        <translation>استكمال إعادة التشفير: %1 الملفات المعاد شفاؤها</translation>
     </message>
 </context>
 <context>
@@ -1141,7 +1141,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
         <source>Clipboard cleared</source>
-        <translation>لوحة الشفاه</translation>
+        <translation>تم مسح الحافظة</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="466"/>
