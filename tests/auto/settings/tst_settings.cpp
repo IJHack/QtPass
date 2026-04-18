@@ -78,12 +78,12 @@ void tst_settings::cleanupTestCase() {
   // This ensures make check doesn't change user's live config
   if (m_isPortableMode && !m_settingsBackupPath.isEmpty()) {
     QString settingsFile = QtPassSettings::getInstance()->fileName();
-    QFile::remove(settingsFile);
     QVERIFY2(QFile::remove(settingsFile) || !QFile::exists(settingsFile),
              "Failed to remove current settings file before restore");
     QVERIFY2(QFile::copy(m_settingsBackupPath, settingsFile),
              "Failed to restore settings file from backup");
-    QFile::remove(m_settingsBackupPath);
+    QVERIFY2(QFile::remove(m_settingsBackupPath),
+             "Failed to remove temporary settings backup file");
   }
 }
 
