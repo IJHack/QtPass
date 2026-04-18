@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>In staat om te zoeken</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Staan zoeken in wachtwoord inhoud. Verzoeken om elk dossier te ontcijferen en kunnen traag zijn op grote winkels.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
@@ -151,12 +151,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilenaam identificatieprofiel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Path naar de wachtwoordwinkel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -398,12 +398,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecteer ontvangers voor %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieuw Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="704"/>
@@ -977,47 +977,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Doorzoek binnen het wachtwoord (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>🔎</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Content fouillering</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Toggle introductie om binnen het wachtwoord te zoeken</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Case-insensitieve zoektocht</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>aA</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Hoofdletterongevoelige schakelaar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Schakel de zoekopdracht voor inhoud die geen onderscheid maakt tussen hoofdletters en kleine letters in of uit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultaten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -1274,24 +1274,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoeken…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoek inhoud (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Geen overeenkomsten gevonden.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n overeenkomst gevonden in %1 item.</numerusform>
+            <numerusform>%n overeenkomsten gevonden in %1 items.</numerusform>
         </translation>
     </message>
     <message>
@@ -1402,25 +1402,25 @@ Doorgaan?</translation>
         <location filename="../src/pass.cpp" line="455"/>
         <location filename="../src/pass.cpp" line="476"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Encryptie faalde: GPG-sleutel is verlopen. Vernieuwen of vervangen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="460"/>
         <location filename="../src/pass.cpp" line="481"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Encryptie faalde: GPG sleutel is ingetrokken.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="464"/>
         <location filename="../src/pass.cpp" line="486"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Encryptie faalde, ontvanger GPG-sleutel niet gevonden of ongeldig. Controleer dat de sleutel ID in .gpg-id klopt en geïmporteerd is.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="468"/>
         <location filename="../src/pass.cpp" line="490"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Encryptie faalde. Controleer dat je GPG sleutel geldig is.</translation>
     </message>
 </context>
 <context>
