@@ -190,7 +190,7 @@ public:
   /**
    * @brief Destructor.
    */
-  ~ImitatePass() override = default;
+  ~ImitatePass() override;
 
   // Git operations
   /**

@@ -377,8 +377,13 @@ auto MainWindow::getFile(const QModelIndex &index, bool forPass) -> QString {
  * @param index
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index) {
-  if (!m_grepMode && !ui->lineEdit->text().isEmpty())
+  if (!m_grepMode && !ui->lineEdit->text().isEmpty()) {
+    searchTimer.stop();
+    ui->lineEdit->blockSignals(true);
     ui->lineEdit->clear();
+    ui->lineEdit->blockSignals(false);
+    proxyModel.setFilterRegularExpression(QRegularExpression());
+  }
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
   currentDir =
       Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);

@@ -43,6 +43,13 @@ using Enums::PROCESS_COUNT;
  */
 ImitatePass::ImitatePass() = default;
 
+ImitatePass::~ImitatePass() {
+  if (m_grepThread && m_grepThread->isRunning()) {
+    m_grepThread->requestInterruption();
+    m_grepThread->wait();
+  }
+}
+
 static auto pgit(const QString &path) -> QString {
   if (!QtPassSettings::getGitExecutable().startsWith("wsl ")) {
     return path;
