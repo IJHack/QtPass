@@ -9,6 +9,7 @@
 #include <QMessageBox>
 #include <QMimeData>
 #include <QRegularExpression>
+#include <QtGlobal>
 #include <utility>
 
 auto operator<<(
