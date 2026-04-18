@@ -1103,6 +1103,10 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
   // No wait() — blocking the UI thread while GPG decrypts would freeze the
   // interface. Stale results are discarded via the sequence counter.
 
+  // Advance the sequence before any early return so in-flight workers from the
+  // previous query fail the seq check and cannot publish stale results.
+  const int seq = ++m_grepSeq;
+
   // Use trimmed() rather than isEmpty(): a whitespace-only string is a valid
   // regex that matches every non-empty line, which is almost never intentional
   // and would decrypt the entire store.
@@ -1112,7 +1116,12 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
   // the contract of the threaded path.
   if (pattern.trimmed().isEmpty()) {
     QMetaObject::invokeMethod(
-        this, [this]() { emit finishedGrep({}); }, Qt::QueuedConnection);
+        this,
+        [this, seq]() {
+          if (m_grepSeq == seq)
+            emit finishedGrep({});
+        },
+        Qt::QueuedConnection);
     return;
   }
 
@@ -1121,11 +1130,14 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
                                : QRegularExpression::PatternOptions{});
   if (!rx.isValid()) {
     QMetaObject::invokeMethod(
-        this, [this]() { emit finishedGrep({}); }, Qt::QueuedConnection);
+        this,
+        [this, seq]() {
+          if (m_grepSeq == seq)
+            emit finishedGrep({});
+        },
+        Qt::QueuedConnection);
     return;
   }
-
-  const int seq = ++m_grepSeq;
   const QString gpgExe = QtPassSettings::getGpgExecutable();
   const QString storeDir = QtPassSettings::getPassStore();
   const QStringList env = exec.environment();
