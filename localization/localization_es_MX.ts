@@ -241,7 +241,7 @@
         <location filename="../src/configdialog.ui" line="224"/>
         <location filename="../src/ui_configdialog.h" line="881"/>
         <source>Use a monospace font</source>
-        <translation>Utilice un tipo de letra monoespaciado</translation>
+        <translation>Usa un tipo de letra monoespaciado</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -277,7 +277,7 @@
         <location filename="../src/configdialog.ui" line="362"/>
         <location filename="../src/ui_configdialog.h" line="894"/>
         <source>Select character set for password generation</source>
-        <translation>Seleccione un juego de caracteres para la generación de contraseñas</translation>
+        <translation>Selecciona un juego de caracteres para la generación de contraseñas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="366"/>
@@ -373,7 +373,7 @@
         <location filename="../src/configdialog.ui" line="679"/>
         <location filename="../src/ui_configdialog.h" line="916"/>
         <source>Select password storage program:</source>
-        <translation>Seleccione el programa de almacenamiento de contraseñas:</translation>
+        <translation>Selecciona el programa de almacenamiento de contraseñas:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
@@ -969,7 +969,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="760"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>¿Confirma que quiere eliminar %1%2?</translation>
+        <translation>¿Confirmas que quieres eliminar %1%2?</translation>
     </message>
     <message>
         <source>Failed to connect WebDAV:
@@ -1127,7 +1127,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="68"/>
         <location filename="../src/ui_mainwindow.h" line="350"/>
         <source>Select profile</source>
-        <translation>Seleccione un perfil</translation>
+        <translation>Selecciona un perfil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
@@ -1215,7 +1215,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="750"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> y todo el contenido? &lt;br&gt;&lt;strong&gt;Atención: hay archivos inesperados en la carpeta indicada. Revíselos antes de continuar.&lt;/strong&gt;</translation>
+        <translation> y todo el contenido? &lt;br&gt;&lt;strong&gt;Atención: hay archivos inesperados en la carpeta indicated. Revísalos antes de continuar.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="780"/>
