@@ -530,6 +530,9 @@ void MainWindow::clearPanel(bool notify) {
       ui->grepButton->blockSignals(true);
       ui->grepButton->setChecked(false);
       ui->grepButton->blockSignals(false);
+      ui->lineEdit->blockSignals(true);
+      ui->lineEdit->clear();
+      ui->lineEdit->blockSignals(false);
       ui->lineEdit->setPlaceholderText(tr("Search Password"));
     }
   }
@@ -662,6 +665,7 @@ void MainWindow::on_lineEdit_returnPressed() {
   if (m_grepMode) {
     const QString query = ui->lineEdit->text();
     if (!query.isEmpty()) {
+      m_grepCancelled = false;
       ui->grepResultsList->clear();
       ui->statusBar->showMessage(tr("Searching…"));
       if (!m_grepBusy) {
@@ -670,6 +674,11 @@ void MainWindow::on_lineEdit_returnPressed() {
       }
       QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
     } else {
+      m_grepCancelled = true;
+      if (m_grepBusy) {
+        m_grepBusy = false;
+        QApplication::restoreOverrideCursor();
+      }
       ui->grepResultsList->clear();
       ui->grepResultsList->setVisible(false);
       ui->treeView->setVisible(true);
@@ -720,6 +729,10 @@ void MainWindow::onGrepFinished(
   if (m_grepBusy) {
     m_grepBusy = false;
     QApplication::restoreOverrideCursor();
+  }
+  if (m_grepCancelled) {
+    m_grepCancelled = false;
+    return;
   }
   setUiElementsEnabled(true);
   if (!m_grepMode)
