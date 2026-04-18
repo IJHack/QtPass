@@ -1184,7 +1184,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation>
-            <numerusform>Nalezen %n výsledek v %1 záznamu.</numerusform>
+            <numerusform>Nalezen %n výsledek v %1 záznamech.</numerusform>
             <numerusform>Nalezeny %n výsledky v %1 záznamech.</numerusform>
             <numerusform>Nalezeno %n výsledků v %1 záznamech.</numerusform>
         </translation>
