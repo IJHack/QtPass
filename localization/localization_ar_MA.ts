@@ -82,22 +82,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="366"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>جميع الشخصيات</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="371"/>
         <source>Alphabetical</source>
-        <translation>ألفا بيتسي</translation>
+        <translation>أبجدي</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="376"/>
         <source>Alphanumerical</source>
-        <translation>ألفا</translation>
+        <translation>أحرف وأرقام</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="381"/>
         <source>Custom</source>
-        <translation>العرف</translation>
+        <translation>مخصص</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
@@ -107,7 +107,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
         <source>Include special symbols</source>
-        <translation type="unfinished"></translation>
+        <translation>تضمين الرموز الخاصة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
@@ -177,7 +177,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="615"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished"></translation>
+        <translation>استخدم أيقونة الدرج</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="622"/>
@@ -212,7 +212,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
         <source>Native</source>
-        <translation type="unfinished"></translation>
+        <translation>فطري</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="755"/>
@@ -242,7 +242,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="856"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation>الكشف التلقائي</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="879"/>
@@ -343,12 +343,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="631"/>
         <source>No profile selected</source>
-        <translation type="unfinished"></translation>
+        <translation>لم يتم تحديد أي ملف تعريف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="632"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished"></translation>
+        <translation>لم يتم تحديد أي ملف تعريف للحذف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="732"/>
@@ -403,22 +403,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
         <source>Use PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>استخدم PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
         <source>Use Git</source>
-        <translation type="unfinished"></translation>
+        <translation>استخدم Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="567"/>
         <source>Use QRencode</source>
-        <translation type="unfinished"></translation>
+        <translation>استخدم QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="581"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished"></translation>
+        <translation>استخدم امتداد pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
@@ -428,7 +428,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation>Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="735"/>
@@ -437,29 +437,31 @@
         <location filename="../src/configdialog.ui" line="816"/>
         <location filename="../src/configdialog.ui" line="988"/>
         <source>…</source>
-        <translation type="unfinished"></translation>
+        <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="765"/>
         <source>GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="778"/>
         <source>PWGen</source>
-        <translation type="unfinished"></translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1022"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished"></translation>
+        <translation>تضيف القوالب حقولاً إضافية في مربع حوار إنشاء كلمة المرور، وفي عرض كلمة المرور.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1053"/>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>login
+URL
+e-mail</translation>
     </message>
 </context>
 <context>
@@ -469,7 +471,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="296"/>
         <location filename="../src/imitatepass.cpp" line="482"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation>تحقق من توقيع ملف .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
@@ -482,18 +484,18 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="127"/>
         <location filename="../src/imitatepass.cpp" line="575"/>
         <source>Can not edit</source>
-        <translation type="unfinished"></translation>
+        <translation>لا يمكن تحريره</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="128"/>
         <location filename="../src/imitatepass.cpp" line="576"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>تعذر قراءة مفتاح التشفير المراد استخدامه، ملف .gpg-id مفقود أو غير صالح.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="291"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished"></translation>
+        <translation>فشل توقيع GPG!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
@@ -503,87 +505,89 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
         <source>No signing key!</source>
-        <translation type="unfinished"></translation>
+        <translation>لا يوجد مفتاح توقيع!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="360"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished"></translation>
+        <translation>لا تتوفر أي من مفاتيح التوقيع السرية.
+لن تتمكن من تغيير قائمة المستخدمين!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="237"/>
         <source>Cannot update</source>
-        <translation type="unfinished"></translation>
+        <translation>لا أستطيع التحديث</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="238"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished"></translation>
+        <translation>فشل فتح ملف .gpg-id للكتابة.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="251"/>
         <source>Check selected users!</source>
-        <translation type="unfinished"></translation>
+        <translation>تحقق من مستعملين مختارين!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="252"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished"></translation>
+        <translation>لا أحد من المفاتيح المختارة لديه مفتاح سري
+لن تكون قادراً على فك شفرة أي كلمة سر مضافة حديثاً!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="639"/>
         <location filename="../src/imitatepass.cpp" line="746"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished"></translation>
+        <translation>فشل إعادة التشفير</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="640"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation>فشل استبدال %1. تم استعادة الملف الأصلي.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="669"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished"></translation>
+        <translation>إنشاء احتياطي</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="675"/>
         <location filename="../src/imitatepass.cpp" line="683"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>المساندة فشلت</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="676"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished"></translation>
+        <translation>تعذر فحص حالة git. تم إيقاف إعادة التشفير.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="684"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished"></translation>
+        <translation>تم إيقاف عملية إعادة التشفير لأنه تعذر إنشاء نسخة احتياطية باستخدام git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished"></translation>
+        <translation>إعادة التشفير من المجلد %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="709"/>
         <location filename="../src/imitatepass.cpp" line="764"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>تحديث كلمة السر</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="734"/>
         <source>GPG ID verification failed</source>
-        <translation type="unfinished"></translation>
+        <translation>فشل التحقق من هوية GPG</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="735"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished"></translation>
+        <translation>تعذر التحقق من معرف .gpg-id للمجلد.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
@@ -606,47 +610,47 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished"></translation>
+        <translation>إنشاء زوج مفاتيح GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>قم بإنشاء زوج مفاتيح جديد</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>بريد إلكتروني</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>اسم</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation type="unfinished"></translation>
+        <translation>عبارة المرور</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;لا يوجد حد أقصى لطول عبارة المرور، ويجب اختيارها بعناية. من منظور أمني، تُعدّ عبارة المرور لفتح المفتاح الخاص إحدى نقاط الضعف في برنامج GnuPG (وأنظمة التشفير الأخرى ذات المفتاح العام أيضًا)، لأنها الحماية الوحيدة المتاحة لك في حال حصول شخص آخر على مفتاحك الخاص. &lt;br/&gt;من الناحية المثالية، يجب ألا تستخدم عبارة المرور كلمات من القاموس، ويجب أن تمزج بين حالة الأحرف الأبجدية بالإضافة إلى استخدام الأحرف غير الأبجدية.&lt;br/&gt;تُعد عبارة المرور الجيدة أمراً بالغ الأهمية للاستخدام الآمن لبرنامج GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished"></translation>
+        <translation>تمريرة متكررة</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation type="unfinished"></translation>
+        <translation>خبير</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished"></translation>
+        <translation>وستوضع محتويات نموذجية على أساس صيغة GPG.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
@@ -656,27 +660,27 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation>الاسم غير الرسمي</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation>يجب أن يكون الاسم على الأقل 5 شخصيات طويلة.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation type="unfinished"></translation>
+        <translation>بريد إلكتروني غير صالح</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished"></translation>
+        <translation>عنوان البريد الإلكتروني الذي كتبته ليس عنوان بريد إلكتروني صحيح.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>قد تستغرق هذه العملية بضع دقائق.&lt;br /&gt;نحتاج إلى توليد عدد كبير من البايتات العشوائية. من المستحسن القيام ببعض الأنشطة الأخرى (كالكتابة على لوحة المفاتيح، أو تحريك الفأرة، أو استخدام الأقراص) أثناء توليد الأعداد الأولية؛ فهذا يُعطي مولد الأرقام العشوائية فرصة أفضل لاكتساب مستوى كافٍ من العشوائية.</translation>
     </message>
 </context>
 <context>
@@ -684,111 +688,111 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation>نبذة مختارة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="115"/>
         <source>Search Password</source>
-        <translation type="unfinished"></translation>
+        <translation>كلمة مرور البحث</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="197"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation>مرحبا بكم في QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="313"/>
         <location filename="../src/mainwindow.ui" line="316"/>
         <location filename="../src/mainwindow.cpp" line="1034"/>
         <source>Add password</source>
-        <translation type="unfinished"></translation>
+        <translation>أضف كلمة المرور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="319"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="324"/>
         <location filename="../src/mainwindow.ui" line="327"/>
         <location filename="../src/mainwindow.cpp" line="1033"/>
         <source>Add folder</source>
-        <translation type="unfinished"></translation>
+        <translation>يضاف الملف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="332"/>
         <location filename="../src/mainwindow.ui" line="335"/>
         <location filename="../src/mainwindow.cpp" line="1041"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>يحرر</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="340"/>
         <location filename="../src/mainwindow.ui" line="343"/>
         <location filename="../src/mainwindow.cpp" line="1055"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>تحذف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="348"/>
         <source>OTP</source>
-        <translation type="unfinished"></translation>
+        <translation>كلمة المرور لمرة واحدة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="351"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>إنتاج مكتب المدعي العام ونسخة إلى لوح النسيج</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="354"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="359"/>
         <source>Push</source>
-        <translation type="unfinished"></translation>
+        <translation>إدفع</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="362"/>
         <source>Git push</source>
-        <translation type="unfinished"></translation>
+        <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="370"/>
         <source>Git pull</source>
-        <translation type="unfinished"></translation>
+        <translation>Git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="367"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>آخر</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="375"/>
         <location filename="../src/mainwindow.cpp" line="1035"/>
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>المستخدمون</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="378"/>
         <source>Manage who can read password in folder</source>
-        <translation type="unfinished"></translation>
+        <translation>من يستطيع قراءة كلمة السر في الملف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="383"/>
         <source>Config</source>
-        <translation type="unfinished"></translation>
+        <translation>التكوين</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="386"/>
         <source>Configuration</source>
-        <translation type="unfinished">إعدادات</translation>
+        <translation>إعدادات</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="199"/>
@@ -799,38 +803,38 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/mainwindow.cpp" line="332"/>
         <location filename="../src/mainwindow.cpp" line="345"/>
         <source>Updating password-store</source>
-        <translation type="unfinished"></translation>
+        <translation>تحديث كلمة السر</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="453"/>
         <source>Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>المحتوى المخبأ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="457"/>
         <location filename="../src/mainwindow.cpp" line="1274"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>كلمة السر</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="494"/>
         <source>OTP Code</source>
-        <translation type="unfinished"></translation>
+        <translation>رمز التحقق لمرة واحدة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="496"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>تم نسخ رمز التحقق لمرة واحدة إلى الحافظة</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="498"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished"></translation>
+        <translation>لم يتم العثور على رمز استخدام لمرة واحدة في إدخال كلمة المرور هذا</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="516"/>
         <source>Password and Content hidden</source>
-        <translation type="unfinished"></translation>
+        <translation>كلمة المرور والمحتوى مخفيان</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="594"/>
@@ -841,13 +845,14 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/mainwindow.cpp" line="698"/>
         <location filename="../src/mainwindow.cpp" line="1100"/>
         <source>New file</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف جديد</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="699"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف كلمات المرور الجديد:
+(سيتم وضعه في %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="736"/>
@@ -857,7 +862,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="746"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> والمحتوى كله؟ ▪ ■ الاهتمام: هناك ملفات غير متوقعة في الملف المعين، التحقق منها قبل مواصلة</translation>
+        <translation> والمحتوى بالكامل؟ &lt;br&gt;&lt;strong&gt;تنبيه: توجد ملفات غير متوقعة في المجلد المحدد، تحقق منها قبل المتابعة.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="755"/>
@@ -877,7 +882,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished"></translation>
+        <translation>لم يتم تحديد كلمة مرور لإنشاء رمز الاستخدام الفردي</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
@@ -887,22 +892,22 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
         <source>Open folder with file manager</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف مفتوح مع مدير ملف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1047"/>
         <source>Rename folder</source>
-        <translation type="unfinished"></translation>
+        <translation>إعادة تسمية المجلد</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1051"/>
         <source>Rename password</source>
-        <translation type="unfinished"></translation>
+        <translation>إعادة تسمية كلمة المرور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1060"/>
         <source>Re-encrypt</source>
-        <translation type="unfinished"></translation>
+        <translation>إعادة التشفير</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1101"/>
@@ -937,12 +942,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1143"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation>أعد تسمية المجلد إلى: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1179"/>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation>أعد تسمية الملف إلى: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
@@ -1022,7 +1027,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>جميع الشخصيات</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
@@ -1032,7 +1037,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation>ألفا</translation>
+        <translation>أحرف وأرقام</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
@@ -1042,7 +1047,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation type="unfinished"></translation>
+        <translation>طول:</translation>
     </message>
 </context>
 <context>
@@ -1060,23 +1065,24 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished"></translation>
+        <translation>إنشاء زوج مفاتيح GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="222"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished"></translation>
+        <translation>فشل الاتصال بـ WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="239"/>
         <source>QtPass WebDAV password</source>
-        <translation type="unfinished"></translation>
+        <translation>كلمة مرور QtPass WebDAV</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished"></translation>
+        <translation>أدخل كلمة المرور للاتصال بـ WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="257"/>
@@ -1095,42 +1101,42 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="274"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="277"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="280"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="283"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="286"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="289"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished"></translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="305"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished"></translation>
+        <translation>فشل إنشاء زوج مفاتيح GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="379"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished"></translation>
+        <translation>تم إنشاء زوج مفاتيح GPG بنجاح</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="464"/>
@@ -1153,12 +1159,12 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="294"/>
         <source>force overwrite?</source>
-        <translation>تخطي القوة؟</translation>
+        <translation>فرض الاستبدال؟</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
-        <translation>حرف %1 واحد مع %2؟</translation>
+        <translation>استبدال %1 بـ %2؟</translation>
     </message>
 </context>
 <context>
@@ -1252,7 +1258,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="328"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[غير صالح] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="331"/>
@@ -1262,7 +1268,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="335"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished"></translation>
+        <translation>[جزئي] </translation>
     </message>
 </context>
 </TS>
