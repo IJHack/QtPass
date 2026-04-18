@@ -64,7 +64,7 @@ void tst_settings::initTestCase() {
     QString settingsFile = QtPassSettings::getInstance()->fileName();
     m_settingsBackupPath = settingsFile + ".bak";
     QFile::remove(m_settingsBackupPath);
-    QFile::copy(settingsFile, m_settingsBackupPath);
+    QVERIFY(QFile::copy(settingsFile, m_settingsBackupPath));
   } else {
     m_settingsBackupPath.clear();
     // On non-portable mode, warn but continue (tests may modify registry)
@@ -79,7 +79,10 @@ void tst_settings::cleanupTestCase() {
   if (m_isPortableMode && !m_settingsBackupPath.isEmpty()) {
     QString settingsFile = QtPassSettings::getInstance()->fileName();
     QFile::remove(settingsFile);
-    QFile::copy(m_settingsBackupPath, settingsFile);
+    QVERIFY2(QFile::remove(settingsFile) || !QFile::exists(settingsFile),
+             "Failed to remove current settings file before restore");
+    QVERIFY2(QFile::copy(m_settingsBackupPath, settingsFile),
+             "Failed to restore settings file from backup");
     QFile::remove(m_settingsBackupPath);
   }
 }
@@ -482,7 +485,8 @@ void tst_settings::setAndGetMultipleProfiles() {
   QtPassSettings::setProfiles(profiles);
   QHash<QString, QHash<QString, QString>> readProfiles =
       QtPassSettings::getProfiles();
-  QVERIFY(readProfiles.size() >= 1);
+  QVERIFY(!readProfiles.isEmpty());
+  QVERIFY2(readProfiles.size() == 2, "Should have exactly 2 profiles");
   QVERIFY(readProfiles.contains("profile1"));
   QVERIFY(readProfiles.contains("profile2"));
   QVERIFY(readProfiles["profile1"].contains("path"));

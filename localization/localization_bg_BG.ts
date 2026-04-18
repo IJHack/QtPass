@@ -5,32 +5,39 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
+        <location filename="../src/ui_configdialog.h" line="871"/>
         <source>Configuration</source>
         <translation>Конфигурации</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
+        <location filename="../src/ui_configdialog.h" line="915"/>
         <source>Settings</source>
         <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
+        <location filename="../src/ui_configdialog.h" line="872"/>
         <source>Clipboard behaviour:</source>
         <translation>Поведение на буфера:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
+        <location filename="../src/ui_configdialog.h" line="873"/>
         <source>Use primary selection</source>
         <translation>Използвай основа селектиране</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
+        <location filename="../src/ui_configdialog.h" line="874"/>
         <source>Autoclear after:</source>
         <translation>Автоматично изчистване след:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
+        <location filename="../src/ui_configdialog.h" line="875"/>
+        <location filename="../src/ui_configdialog.h" line="880"/>
         <source>Seconds</source>
         <translation>Секунди</translation>
     </message>
@@ -40,91 +47,109 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
+        <location filename="../src/ui_configdialog.h" line="876"/>
         <source>Content panel behaviour:</source>
         <translation>Поведение на панела за съдържание:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
+        <location filename="../src/ui_configdialog.h" line="877"/>
         <source>Hide content</source>
         <translation>Скриване на съдържанието</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
+        <location filename="../src/ui_configdialog.h" line="878"/>
         <source>Hide password</source>
         <translation>Скриване на паролата</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
+        <location filename="../src/ui_configdialog.h" line="879"/>
         <source>Autoclear panel after:</source>
         <translation>Автоматично изчисти панела след:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
+        <location filename="../src/ui_configdialog.h" line="881"/>
         <source>Use a monospace font</source>
         <translation>Използване на равноширок шрифт</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
+        <location filename="../src/ui_configdialog.h" line="882"/>
         <source>Display the files content as-is</source>
         <translation>Показване на съдържанието на файловете такова, каквото е</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
+        <location filename="../src/ui_configdialog.h" line="883"/>
         <source>No line wrapping</source>
         <translation>Без пренасяне на редовете</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="270"/>
+        <location filename="../src/ui_configdialog.h" line="884"/>
         <source>Password Generation:</source>
         <translation>Генериране на парола:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="282"/>
+        <location filename="../src/ui_configdialog.h" line="885"/>
         <source>Password Length:</source>
         <translation>Дължина на паролата:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="316"/>
+        <location filename="../src/ui_configdialog.h" line="886"/>
         <source>Characters</source>
         <translation>Символи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="344"/>
+        <location filename="../src/ui_configdialog.h" line="887"/>
         <source>Use characters:</source>
         <translation>Използвай символи:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="362"/>
+        <location filename="../src/ui_configdialog.h" line="894"/>
         <source>Select character set for password generation</source>
         <translation>Избери набор от символи за генериране на парола</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="366"/>
+        <location filename="../src/ui_configdialog.h" line="888"/>
         <source>All Characters</source>
         <translation>Всички символи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="371"/>
+        <location filename="../src/ui_configdialog.h" line="889"/>
         <source>Alphabetical</source>
         <translation>Азбучно</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="376"/>
+        <location filename="../src/ui_configdialog.h" line="890"/>
         <source>Alphanumerical</source>
         <translation>Букви и цифри</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="381"/>
+        <location filename="../src/ui_configdialog.h" line="891"/>
         <source>Custom</source>
         <translation>Само избрани типове</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
+        <location filename="../src/ui_configdialog.h" line="896"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>АБВГДЕЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЮЯабвгдежзийклмнопрстуфхцчшщъьюя0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
+        <location filename="../src/ui_configdialog.h" line="899"/>
         <source>Include special symbols</source>
         <translation>Добавяне на специални символи</translation>
     </message>
@@ -140,11 +165,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
+        <location filename="../src/ui_configdialog.h" line="923"/>
         <source>Generate</source>
         <translation>Генериране</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="772"/>
+        <location filename="../src/ui_configdialog.h" line="925"/>
         <source>Generate GPG key pair</source>
         <translation>Генериране на двойка GPG ключове</translation>
     </message>
@@ -160,16 +187,19 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
+        <location filename="../src/ui_configdialog.h" line="941"/>
         <source>Signing Key</source>
         <translation>Ключ за подписи</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="961"/>
+        <location filename="../src/ui_configdialog.h" line="943"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>По избор: GPG ключ за подписване на .gpg-id файлове за проверка на целостта. Оставете празно, освен ако не е необходимо да защитите потребителския списък от подправяне.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1001"/>
+        <location filename="../src/ui_configdialog.h" line="947"/>
         <source>Current path</source>
         <translation>Текущ път</translation>
     </message>
@@ -179,6 +209,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
+        <location filename="../src/ui_configdialog.h" line="898"/>
         <source>Exclude capital letters</source>
         <translation>Без главни букви</translation>
     </message>
@@ -188,16 +219,19 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
+        <location filename="../src/ui_configdialog.h" line="900"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Създаване на лесни за помнене, но по-малко надеждни пароли</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
+        <location filename="../src/ui_configdialog.h" line="901"/>
         <source>Exclude numbers</source>
         <translation>Без цифри</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="486"/>
+        <location filename="../src/ui_configdialog.h" line="902"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
@@ -207,21 +241,25 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="512"/>
+        <location filename="../src/ui_configdialog.h" line="904"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Автоматично добавяне на .gpg-id файлове</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
+        <location filename="../src/ui_configdialog.h" line="905"/>
         <source>Automatically push</source>
         <translation>Автоматично синхронизиране към хранилище с git push</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
+        <location filename="../src/ui_configdialog.h" line="906"/>
         <source>Automatically pull</source>
         <translation>Автоматично синхронизиране от хранилище с git pull</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="558"/>
+        <location filename="../src/ui_configdialog.h" line="907"/>
         <source>Extensions:</source>
         <translation>Разширения:</translation>
     </message>
@@ -231,36 +269,43 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
+        <location filename="../src/ui_configdialog.h" line="910"/>
         <source>System:</source>
         <translation>Система:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="629"/>
+        <location filename="../src/ui_configdialog.h" line="911"/>
         <source>Use TrayIcon</source>
         <translation>Използвай TrayIcon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/ui_configdialog.h" line="912"/>
         <source>Start minimized</source>
         <translation>Стартирай минимизирано</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
+        <location filename="../src/ui_configdialog.h" line="913"/>
         <source>Hide on close</source>
         <translation>Скрий при затваряне</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
+        <location filename="../src/ui_configdialog.h" line="914"/>
         <source>Always on top</source>
         <translation>Винаги отгоре</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="675"/>
+        <location filename="../src/ui_configdialog.h" line="935"/>
         <source>Programs</source>
         <translation>Програми</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="693"/>
+        <location filename="../src/ui_configdialog.h" line="916"/>
         <source>Select password storage program:</source>
         <translation>Избери програма за съхранение на пароли:</translation>
     </message>
@@ -270,11 +315,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
+        <location filename="../src/ui_configdialog.h" line="918"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Използване на pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="733"/>
+        <location filename="../src/ui_configdialog.h" line="919"/>
         <source>Native</source>
         <translation>Системен</translation>
     </message>
@@ -296,11 +343,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="809"/>
+        <location filename="../src/ui_configdialog.h" line="930"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="820"/>
+        <location filename="../src/ui_configdialog.h" line="931"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -310,26 +359,31 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="893"/>
+        <location filename="../src/ui_configdialog.h" line="949"/>
         <source>Profiles</source>
         <translation>Профили</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="942"/>
+        <location filename="../src/ui_configdialog.h" line="937"/>
         <source>Name</source>
         <translation>Име</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="950"/>
+        <location filename="../src/ui_configdialog.h" line="939"/>
         <source>Path</source>
         <translation>Път</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="971"/>
+        <location filename="../src/ui_configdialog.h" line="945"/>
         <source>Add</source>
         <translation>Добавяне</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="986"/>
+        <location filename="../src/ui_configdialog.h" line="946"/>
         <source>Delete</source>
         <translation>Изтриване</translation>
     </message>
@@ -339,6 +393,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1021"/>
+        <location filename="../src/ui_configdialog.h" line="959"/>
         <source>Template</source>
         <translation>Шаблон</translation>
     </message>
@@ -348,16 +403,19 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1051"/>
+        <location filename="../src/ui_configdialog.h" line="951"/>
         <source>Use template</source>
         <translation>Използвай шаблон</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
+        <location filename="../src/ui_configdialog.h" line="953"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Показване на всички редове, започващи с дума, последвана от двоеточие, като полета в полетата за парола, не само изброените</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1061"/>
+        <location filename="../src/ui_configdialog.h" line="955"/>
         <source>Show all fields templated</source>
         <translation>Показване на всички полета с шаблон</translation>
     </message>
@@ -371,6 +429,7 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1088"/>
+        <location filename="../src/ui_configdialog.h" line="960"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; версия </translation>
     </message>
@@ -457,11 +516,13 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="839"/>
+        <location filename="../src/ui_configdialog.h" line="933"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="870"/>
+        <location filename="../src/ui_configdialog.h" line="934"/>
         <source>Autodetect</source>
         <translation>Автоматично откриване</translation>
     </message>
@@ -492,31 +553,37 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
+        <location filename="../src/ui_configdialog.h" line="897"/>
         <source>Use PWGen</source>
         <translation>Използвайте PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="498"/>
+        <location filename="../src/ui_configdialog.h" line="903"/>
         <source>Use Git</source>
         <translation>Използвайте Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="567"/>
+        <location filename="../src/ui_configdialog.h" line="908"/>
         <source>Use QRencode</source>
         <translation>Използвайте QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="581"/>
+        <location filename="../src/ui_configdialog.h" line="909"/>
         <source>Use pass-otp extension</source>
         <translation>Използвайте разширението pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="702"/>
+        <location filename="../src/ui_configdialog.h" line="917"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Нати&amp;вен Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="739"/>
+        <location filename="../src/ui_configdialog.h" line="920"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
@@ -526,26 +593,35 @@ email</translation>
         <location filename="../src/configdialog.ui" line="799"/>
         <location filename="../src/configdialog.ui" line="830"/>
         <location filename="../src/configdialog.ui" line="1008"/>
+        <location filename="../src/ui_configdialog.h" line="921"/>
+        <location filename="../src/ui_configdialog.h" line="922"/>
+        <location filename="../src/ui_configdialog.h" line="929"/>
+        <location filename="../src/ui_configdialog.h" line="932"/>
+        <location filename="../src/ui_configdialog.h" line="948"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
+        <location filename="../src/ui_configdialog.h" line="927"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="792"/>
+        <location filename="../src/ui_configdialog.h" line="928"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1042"/>
+        <location filename="../src/ui_configdialog.h" line="950"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Шаблоните добавят допълнителни полета в диалога за генериране на пароли и в изгледа на паролата.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1073"/>
+        <location filename="../src/ui_configdialog.h" line="956"/>
         <source>login
 URL
 e-mail</source>
@@ -699,51 +775,61 @@ You will not be able to decrypt any newly added passwords!</source>
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
+        <location filename="../src/ui_keygendialog.h" line="230"/>
         <source>Generate GnuPG keypair</source>
         <translation>Генериране на GnuPG ключове</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
+        <location filename="../src/ui_keygendialog.h" line="231"/>
         <source>Generate a new key pair</source>
         <translation>Генерирайте нова двойка ключове</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
+        <location filename="../src/ui_keygendialog.h" line="234"/>
         <source>Passphrase</source>
         <translation>Фраза за достъп</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
+        <location filename="../src/ui_keygendialog.h" line="232"/>
         <source>Email</source>
         <translation>Имейл</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
+        <location filename="../src/ui_keygendialog.h" line="233"/>
         <source>Name</source>
         <translation>Име</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
+        <location filename="../src/ui_keygendialog.h" line="235"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Няма ограничение за дължината на паролата и тя трябва да бъде внимателно избрана. От гледна точка на сигурността, паролата за отключване на личния ключ е една от най-слабите страни в GnuPG (и други системи за криптиране с публичен ключ), тъй като това е единствената защита, която имате, ако друг човек получи вашия личен ключ. &lt;br/&gt;В идеалния случай паролата не трябва да използва думи от речник и трябва да смесва главни и малки букви от азбучни символи, както и да използва неазбучни символи.&lt;br/&gt;Добрата парола е от решаващо значение за сигурното използване на GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
+        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Repeat pass</source>
         <translation>Повторете паролата</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
+        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>Expert</source>
         <translation>Експерт</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
+        <location filename="../src/ui_keygendialog.h" line="238"/>
         <source>Template contents will be set based on GPG version.</source>
         <translation>Съдържанието на шаблона ще бъде зададено въз основа на версията на GPG.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
+        <location filename="../src/ui_keygendialog.h" line="239"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>За експертни опции разгледайте &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; ръководството за GnuPG &lt;/a&gt;</translation>
     </message>
@@ -777,6 +863,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
+        <location filename="../src/ui_mainwindow.h" line="307"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
@@ -788,6 +875,8 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
         <location filename="../src/mainwindow.cpp" line="1199"/>
+        <location filename="../src/ui_mainwindow.h" line="319"/>
+        <location filename="../src/ui_mainwindow.h" line="321"/>
         <source>Edit</source>
         <translation>Редактиране</translation>
     </message>
@@ -795,6 +884,8 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
         <location filename="../src/mainwindow.cpp" line="1213"/>
+        <location filename="../src/ui_mainwindow.h" line="323"/>
+        <location filename="../src/ui_mainwindow.h" line="325"/>
         <source>Delete</source>
         <translation>Изтриване</translation>
     </message>
@@ -804,6 +895,7 @@ You will not be able to decrypt any newly added passwords!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
+        <location filename="../src/ui_mainwindow.h" line="334"/>
         <source>Push</source>
         <translation>Изпращане</translation>
     </message>
@@ -827,31 +919,37 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
+        <location filename="../src/ui_mainwindow.h" line="313"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
+        <location filename="../src/ui_mainwindow.h" line="327"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
+        <location filename="../src/ui_mainwindow.h" line="329"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Генерирайте OTP и копирайте във буфера</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
+        <location filename="../src/ui_mainwindow.h" line="332"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="428"/>
+        <location filename="../src/ui_mainwindow.h" line="336"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="436"/>
+        <location filename="../src/ui_mainwindow.h" line="340"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
@@ -861,6 +959,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="433"/>
+        <location filename="../src/ui_mainwindow.h" line="338"/>
         <source>Update</source>
         <translation>Актуализиране</translation>
     </message>
@@ -877,12 +976,14 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="444"/>
+        <location filename="../src/ui_mainwindow.h" line="344"/>
         <source>Manage who can read password in folder</source>
         <translation>Управление на това кой може да чете паролата в папката</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1193"/>
+        <location filename="../src/ui_mainwindow.h" line="342"/>
         <source>Users</source>
         <translation>Потребители</translation>
     </message>
@@ -899,66 +1000,79 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
+        <location filename="../src/ui_mainwindow.h" line="348"/>
         <source>Configuration</source>
         <translation>Конфигурация</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="449"/>
+        <location filename="../src/ui_mainwindow.h" line="346"/>
         <source>Config</source>
         <translation>Конфигуриране</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
+        <location filename="../src/ui_mainwindow.h" line="350"/>
         <source>Select profile</source>
         <translation>Изберете профил</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
+        <location filename="../src/ui_mainwindow.h" line="354"/>
         <source>Search inside password content (pass grep)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
+        <location filename="../src/ui_mainwindow.h" line="356"/>
         <source>⌕</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
+        <location filename="../src/ui_mainwindow.h" line="358"/>
         <source>Content search toggle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
+        <location filename="../src/ui_mainwindow.h" line="361"/>
         <source>Toggle content search mode to search inside password files</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
+        <location filename="../src/ui_mainwindow.h" line="364"/>
         <source>Case-insensitive search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
+        <location filename="../src/ui_mainwindow.h" line="366"/>
         <source>Aa</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
+        <location filename="../src/ui_mainwindow.h" line="368"/>
         <source>Case-insensitive toggle</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
+        <location filename="../src/ui_mainwindow.h" line="371"/>
         <source>Toggle case-insensitive content search</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
+        <location filename="../src/ui_mainwindow.h" line="374"/>
         <source>Results</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
+        <location filename="../src/ui_mainwindow.h" line="375"/>
         <source>Welcome to QtPass</source>
         <translation>Добре дошли в QtPass</translation>
     </message>
@@ -966,6 +1080,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="536"/>
         <location filename="../src/mainwindow.cpp" line="719"/>
+        <location filename="../src/ui_mainwindow.h" line="352"/>
         <source>Search Password</source>
         <translation>Търсене на парола</translation>
     </message>
@@ -1165,6 +1280,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="390"/>
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1191"/>
+        <location filename="../src/ui_mainwindow.h" line="315"/>
+        <location filename="../src/ui_mainwindow.h" line="317"/>
         <source>Add folder</source>
         <translation>Добавяне на папка</translation>
     </message>
@@ -1172,6 +1289,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1192"/>
+        <location filename="../src/ui_mainwindow.h" line="308"/>
+        <location filename="../src/ui_mainwindow.h" line="310"/>
         <source>Add password</source>
         <translation>Добавяне на парола</translation>
     </message>
@@ -1301,6 +1420,7 @@ Continue?</source>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
+        <location filename="../src/ui_mainwindow.h" line="376"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1353,46 +1473,56 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
+        <location filename="../src/ui_passworddialog.h" line="174"/>
+        <location filename="../src/ui_passworddialog.h" line="176"/>
         <source>Password</source>
         <translation>Парола</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
+        <location filename="../src/ui_passworddialog.h" line="177"/>
         <source>Generate</source>
         <translation>Генериране</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
+        <location filename="../src/ui_passworddialog.h" line="178"/>
         <source>Show password</source>
         <translation>Покажи парола</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
+        <location filename="../src/ui_passworddialog.h" line="179"/>
         <source>Character Set:</source>
         <translation>Набор от знаци:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
+        <location filename="../src/ui_passworddialog.h" line="180"/>
         <source>All Characters</source>
         <translation>Всички знаци</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
+        <location filename="../src/ui_passworddialog.h" line="181"/>
         <source>Alphabetical</source>
         <translation>Азбучно</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
+        <location filename="../src/ui_passworddialog.h" line="182"/>
         <source>Alphanumerical</source>
         <translation>Буквено-цифрово</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
+        <location filename="../src/ui_passworddialog.h" line="183"/>
         <source>Custom</source>
         <translation>Персонализиран</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
+        <location filename="../src/ui_passworddialog.h" line="185"/>
         <source>Length:</source>
         <translation>Дължина:</translation>
     </message>
@@ -1503,12 +1633,12 @@ Continue?</source>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="304"/>
+        <location filename="../src/storemodel.cpp" line="305"/>
         <source>force overwrite?</source>
         <translation>принудително презаписване?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="305"/>
+        <location filename="../src/storemodel.cpp" line="306"/>
         <source>overwrite %1 with %2?</source>
         <translation>да се презапише ли% 1 с% 2?</translation>
     </message>
@@ -1550,11 +1680,13 @@ Continue?</source>
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
+        <location filename="../src/ui_usersdialog.h" line="102"/>
         <source>Read access users</source>
         <translation>Потребители с достъп за четене</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
+        <location filename="../src/ui_usersdialog.h" line="103"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1578,6 +1710,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
+        <location filename="../src/ui_usersdialog.h" line="108"/>
         <source>Search for users</source>
         <translation>Търсене на потребители</translation>
     </message>
@@ -1597,6 +1730,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
+        <location filename="../src/ui_usersdialog.h" line="109"/>
         <source>Show unusable keys</source>
         <translation>Показване на неизползваемите ключове</translation>
     </message>
