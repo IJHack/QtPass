@@ -1290,7 +1290,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation>
-            <numerusform>Er is %n overeenkomsten gevonden in %1 vermelding.</numerusform>
+            <numerusform>Er is %n overeenkomst gevonden in %1 vermelding.</numerusform>
             <numerusform>Er zijn %n overeenkomsten gevonden in %1 vermeldingen.</numerusform>
         </translation>
     </message>
