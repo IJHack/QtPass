@@ -100,11 +100,17 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
 }
 
 void StoreModel::setStore(const QString &passStore) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+  beginFilterChange();
+  store = passStore;
+  endFilterChange();
+#else
   store = passStore;
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
   QSortFilterProxyModel::invalidateFilter();
 #else
   invalidateFilter();
+#endif
 #endif
 }
 
