@@ -561,6 +561,18 @@ public:
   static void setUseGit(const bool &useGit);
 
   /**
+   * @brief Check whether content search (pass grep) is enabled.
+   * @param defaultValue Value returned if not saved (defaults to false).
+   * @return True if grep search is enabled.
+   */
+  static auto isUseGrepSearch(const bool &defaultValue = false) -> bool;
+  /**
+   * @brief Save content search flag.
+   * @param useGrepSearch Whether to enable grep search.
+   */
+  static void setUseGrepSearch(const bool &useGrepSearch);
+
+  /**
    * @brief Check whether OTP support is enabled.
    * @param defaultValue Value returned if not saved.
    * @return True if OTP support is enabled.

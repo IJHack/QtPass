@@ -165,6 +165,7 @@ private:
 
   void updateGitButtonVisibility();
   void updateOtpButtonVisibility();
+  void updateGrepButtonVisibility();
   void enableGitButtons(const bool &);
 };
 

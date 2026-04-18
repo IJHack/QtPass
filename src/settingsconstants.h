@@ -53,6 +53,7 @@ public:
   static const QString profile;
   static const QString groupProfiles;
   static const QString useGit;
+  static const QString useGrepSearch;
   static const QString useOtp;
   static const QString useQrencode;
   static const QString qrencodeExecutable;

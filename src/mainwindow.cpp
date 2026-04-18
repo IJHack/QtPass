@@ -319,6 +319,7 @@ void MainWindow::config() {
 
       updateGitButtonVisibility();
       updateOtpButtonVisibility();
+      updateGrepButtonVisibility();
       if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
         initTrayIcon();
       } else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
@@ -731,6 +732,8 @@ void MainWindow::onGrepFinished(
                                  .arg(totalLines)
                                  .arg(results.size()),
                              3000);
+  if (QtPassSettings::isUseAutoclearPanel())
+    clearPanelTimer.start();
 }
 
 /**
@@ -1498,6 +1501,15 @@ void MainWindow::updateOtpButtonVisibility() {
     ui->actionOtp->setEnabled(false);
   } else {
     ui->actionOtp->setEnabled(true);
+  }
+}
+
+void MainWindow::updateGrepButtonVisibility() {
+  const bool enabled = QtPassSettings::isUseGrepSearch();
+  ui->grepButton->setVisible(enabled);
+  ui->grepCaseButton->setVisible(enabled);
+  if (!enabled && m_grepMode) {
+    ui->grepButton->setChecked(false);
   }
 }
 

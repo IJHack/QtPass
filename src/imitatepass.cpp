@@ -1083,10 +1083,10 @@ auto ImitatePass::grepScanStore(const QStringList &env, const QString &gpgExe,
  * results from superseded searches.
  */
 void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
-  if (m_grepThread && m_grepThread->isRunning()) {
+  if (m_grepThread && m_grepThread->isRunning())
     m_grepThread->requestInterruption();
-    m_grepThread->wait();
-  }
+  // No wait() here — blocking the UI thread while GPG decrypts would freeze
+  // the interface. Stale results are discarded via the sequence counter.
 
   const int seq = ++m_grepSeq;
   const QString gpgExe = QtPassSettings::getGpgExecutable();

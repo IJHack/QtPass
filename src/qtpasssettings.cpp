@@ -605,6 +605,16 @@ void QtPassSettings::setUseGit(const bool &useGit) {
   getInstance()->setValue(SettingsConstants::useGit, useGit);
 }
 
+auto QtPassSettings::isUseGrepSearch(const bool &defaultValue) -> bool {
+  return getInstance()
+      ->value(SettingsConstants::useGrepSearch, defaultValue)
+      .toBool();
+}
+
+void QtPassSettings::setUseGrepSearch(const bool &useGrepSearch) {
+  getInstance()->setValue(SettingsConstants::useGrepSearch, useGrepSearch);
+}
+
 auto QtPassSettings::isUseOtp(const bool &defaultValue) -> bool {
   return getInstance()->value(SettingsConstants::useOtp, defaultValue).toBool();
 }
