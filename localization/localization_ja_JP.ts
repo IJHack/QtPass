@@ -1533,12 +1533,12 @@ Continue?</source>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="304"/>
+        <location filename="../src/storemodel.cpp" line="318"/>
         <source>force overwrite?</source>
         <translation>強制的に上書きしますか？</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="305"/>
+        <location filename="../src/storemodel.cpp" line="319"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1 を %2 で上書きしますか？</translation>
     </message>
