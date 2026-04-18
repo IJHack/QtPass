@@ -18,6 +18,7 @@
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
+#include <QApplication>
 #include <QCloseEvent>
 #include <QDesktopServices>
 #include <QDialog>
@@ -663,6 +664,8 @@ void MainWindow::on_lineEdit_returnPressed() {
     const QString query = ui->lineEdit->text();
     if (!query.isEmpty()) {
       ui->grepResultsList->clear();
+      ui->statusBar->showMessage(tr("Searching…"));
+      QApplication::setOverrideCursor(Qt::WaitCursor);
       QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
     } else {
       ui->grepResultsList->clear();
@@ -710,6 +713,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
  */
 void MainWindow::onGrepFinished(
     const QList<QPair<QString, QStringList>> &results) {
+  QApplication::restoreOverrideCursor();
   setUiElementsEnabled(true);
   if (!m_grepMode)
     return;
