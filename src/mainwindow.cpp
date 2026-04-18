@@ -525,6 +525,13 @@ void MainWindow::clearPanel(bool notify) {
   if (grepWasVisible) {
     ui->grepResultsList->setVisible(false);
     ui->treeView->setVisible(true);
+    if (m_grepMode) {
+      m_grepMode = false;
+      ui->grepButton->blockSignals(true);
+      ui->grepButton->setChecked(false);
+      ui->grepButton->blockSignals(false);
+      ui->lineEdit->setPlaceholderText(tr("Search Password"));
+    }
   }
   if (notify) {
     QString output = "***" + tr("Password and Content hidden") + "***";
@@ -739,10 +746,10 @@ void MainWindow::onGrepFinished(
   ui->grepResultsList->expandAll();
   ui->treeView->setVisible(false);
   ui->grepResultsList->setVisible(true);
-  ui->statusBar->showMessage(tr("Found %1 match(es) in %2 entr(ies).")
-                                 .arg(totalLines)
-                                 .arg(results.size()),
-                             3000);
+  ui->statusBar->showMessage(
+      tr("Found %n match(es) in %1 entr(ies).", nullptr, totalLines)
+          .arg(results.size()),
+      3000);
   if (QtPassSettings::isUseAutoclearPanel())
     clearPanelTimer.start();
 }
