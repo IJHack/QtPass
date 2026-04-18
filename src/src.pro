@@ -17,6 +17,10 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_en_GB.ts \
                     ../localization/localization_en_US.ts \
                     ../localization/localization_es_ES.ts \
+                    ../localization/localization_es_MX.ts \
+                    ../localization/localization_es_EC.ts \
+                    ../localization/localization_es_AR.ts \
+                    ../localization/localization_es_UY.ts \
                     ../localization/localization_et_EE.ts \
                     ../localization/localization_fr_BE.ts \
                     ../localization/localization_fr_FR.ts \
