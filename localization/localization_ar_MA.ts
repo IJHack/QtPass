@@ -388,7 +388,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="807"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>عدم إنشاء مخزن لكلمات السر: ٪1</translation>
+        <translation>عدم إنشاء مخزن لكلمات السر: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="838"/>
@@ -476,7 +476,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished"></translation>
+        <translation>توقيع النسبة المئوية %1 غير صحيح.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="127"/>
@@ -498,7 +498,7 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="292"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation>عدم التوقيع على النسبة المئوية %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="359"/>
@@ -588,17 +588,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="747"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished"></translation>
+        <translation>الفشل في إعادة التشفير%1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="753"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished"></translation>
+        <translation>استكمال إعادة التشفير: %1 نجحت، %2٢ فشل</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="759"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished"></translation>
+        <translation>استكمال إعادة التشفير: %1١ الملفات المعاد شفاؤها</translation>
     </message>
 </context>
 <context>
@@ -793,7 +793,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="199"/>
         <source>Welcome to QtPass %1</source>
-        <translation type="unfinished"></translation>
+        <translation>مرحبا بكم في QtPass %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="332"/>
@@ -835,7 +835,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="594"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>البحث عن: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="698"/>
@@ -872,7 +872,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="756"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished"></translation>
+        <translation>هل أنت متأكد من أنك تريد حذف %1%2؟?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="776"/>
@@ -882,7 +882,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="904"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation>تغيرت الأرقام إلى النسبة المئوية%1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1032"/>
@@ -947,7 +947,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1330"/>
         <source>Directory does not exist: %1</source>
-        <translation>الدليل غير موجود: ٪</translation>
+        <translation>الدليل غير موجود: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1335"/>
@@ -1155,7 +1155,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="295"/>
         <source>overwrite %1 with %2?</source>
-        <translation>حرف ٪ واحد مع ٪2؟?</translation>
+        <translation>حرف %1 واحد مع %2؟</translation>
     </message>
 </context>
 <context>
