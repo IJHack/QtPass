@@ -1578,12 +1578,12 @@ Doorgaan?</translation>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="304"/>
+        <location filename="../src/storemodel.cpp" line="318"/>
         <source>force overwrite?</source>
         <translation>overschrijven afdwingen?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="305"/>
+        <location filename="../src/storemodel.cpp" line="319"/>
         <source>overwrite %1 with %2?</source>
         <translation>overschrijven van %1 met %2?</translation>
     </message>

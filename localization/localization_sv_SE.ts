@@ -1143,7 +1143,10 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation></translation>
+        <translation>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="857"/>
@@ -1458,12 +1461,12 @@ Fortsätta?</translation>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="304"/>
+        <location filename="../src/storemodel.cpp" line="318"/>
         <source>force overwrite?</source>
         <translation>tvinga skriv över?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="305"/>
+        <location filename="../src/storemodel.cpp" line="319"/>
         <source>overwrite %1 with %2?</source>
         <translation>skriva %1 över med %2?</translation>
     </message>

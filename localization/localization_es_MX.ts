@@ -1484,12 +1484,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="304"/>
+        <location filename="../src/storemodel.cpp" line="318"/>
         <source>force overwrite?</source>
         <translation>¿Quieres forzar la sobrescritura?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="305"/>
+        <location filename="../src/storemodel.cpp" line="319"/>
         <source>overwrite %1 with %2?</source>
         <translation>¿Quieres sobrescribir %1 con %2?</translation>
     </message>
