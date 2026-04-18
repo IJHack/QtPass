@@ -129,7 +129,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
         <source>Exclude capital letters</source>
-        <translation>Großbuchstaben Ausschließen</translation>
+        <translation>Großbuchstaben ausschließen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
@@ -613,7 +613,7 @@ Sie können die Benutzerliste nicht ändern!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Schreibzugrif auf .gpg-id fehlgeschlagen.</translation>
+        <translation>Schreibzugriff auf .gpg-id fehlgeschlagen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
@@ -731,7 +731,7 @@ Hiermit können keine neu hinzugefügefügten Kennwörter entschlüsselt werden!
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Repetier pass</translation>
+        <translation>Wiederhole Passphrase</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -1542,7 +1542,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>Benutzer mit Lese-Zugrif</translation>
+        <translation>Benutzer mit Lese-Zugriff</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
