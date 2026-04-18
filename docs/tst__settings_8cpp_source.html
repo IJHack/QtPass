@@ -162,12 +162,12 @@ $(function() {
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">// This ensures make check doesn&#39;t change user&#39;s live config</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">if</span> (m_isPortableMode &amp;&amp; !m_settingsBackupPath.isEmpty()) {</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    QString settingsFile = <a class="code hl_function" href="class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d">QtPassSettings::getInstance</a>()-&gt;fileName();</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    QFile::remove(settingsFile);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    QVERIFY2(QFile::remove(settingsFile) || !QFile::exists(settingsFile),</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>             <span class="stringliteral">&quot;Failed to remove current settings file before restore&quot;</span>);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    QVERIFY2(QFile::copy(m_settingsBackupPath, settingsFile),</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>             <span class="stringliteral">&quot;Failed to restore settings file from backup&quot;</span>);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    QFile::remove(m_settingsBackupPath);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    QVERIFY2(QFile::remove(settingsFile) || !QFile::exists(settingsFile),</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>             <span class="stringliteral">&quot;Failed to remove current settings file before restore&quot;</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    QVERIFY2(QFile::copy(m_settingsBackupPath, settingsFile),</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>             <span class="stringliteral">&quot;Failed to restore settings file from backup&quot;</span>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    QVERIFY2(QFile::remove(m_settingsBackupPath),</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>             <span class="stringliteral">&quot;Failed to remove temporary settings backup file&quot;</span>);</div>
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  }</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
