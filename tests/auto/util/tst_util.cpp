@@ -202,7 +202,7 @@ private Q_SLOTS:
 /**
  * @brief tst_util::tst_util basic constructor
  */
-tst_util::tst_util() = default;
+tst_util::tst_util() { qRegisterMetaType<GrepResults>("GrepResults"); }
 
 /**
  * @brief tst_util::~tst_util basic destructor
@@ -1880,10 +1880,16 @@ void tst_util::passFinishedGrepSuccessEmitsResults() {
   const QString out =
       QStringLiteral("\x1B[94mwork/github\x1B[0m:\ntoken: abc123\n");
   pass.callPassFinished(static_cast<int>(Enums::PASS_GREP), 0, out, QString());
-  // Note: Signal may not arrive correctly in all Qt versions due to metatype
-  // handling. This test verifies the code path compiles and executes.
-  // The actual signal emission is tested via integration tests.
-  QVERIFY(spy.count() >= 0); // Pass if no crash, actual value may vary
+  // Verify signal was emitted
+  QVERIFY2(spy.count() == 1, "finishedGrep should be emitted exactly once");
+  // Extract and validate results
+  const auto results = spy[0][0].value<GrepResults>();
+  QVERIFY2(results.size() == 1, "Should have one matching entry");
+  const auto &entry = results[0];
+  QVERIFY2(entry.first == "work/github", "Entry path should be 'work/github'");
+  QVERIFY2(entry.second.size() == 1, "Should have one matched line");
+  QVERIFY2(entry.second[0] == "token: abc123",
+           "Matched line should be 'token: abc123'");
 }
 
 // --- ImitatePass helper / Grep tests ---
