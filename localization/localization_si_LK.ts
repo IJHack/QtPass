@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>වින්‍යාසය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
@@ -32,7 +32,7 @@
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>තත්පර</translation>
     </message>
     <message>
         <source>Password Behaviour:</source>
@@ -86,7 +86,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="316"/>
         <source>Characters</source>
-        <translation type="unfinished"></translation>
+        <translation>අකුරු</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="344"/>
@@ -116,12 +116,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="381"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>අභිරුචි</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="419"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="453"/>
@@ -1398,12 +1398,12 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;නැවත ස්ථාපනය</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;ඉවත් වන්න</translation>
     </message>
 </context>
 <context>
@@ -1472,7 +1472,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="301"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>නිර්මාණය කර ඇත</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="305"/>
