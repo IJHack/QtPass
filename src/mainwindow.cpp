@@ -665,7 +665,10 @@ void MainWindow::on_lineEdit_returnPressed() {
     if (!query.isEmpty()) {
       ui->grepResultsList->clear();
       ui->statusBar->showMessage(tr("Searching…"));
-      QApplication::setOverrideCursor(Qt::WaitCursor);
+      if (!m_grepBusy) {
+        m_grepBusy = true;
+        QApplication::setOverrideCursor(Qt::WaitCursor);
+      }
       QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
     } else {
       ui->grepResultsList->clear();
@@ -713,7 +716,10 @@ void MainWindow::on_grepButton_toggled(bool checked) {
  */
 void MainWindow::onGrepFinished(
     const QList<QPair<QString, QStringList>> &results) {
-  QApplication::restoreOverrideCursor();
+  if (m_grepBusy) {
+    m_grepBusy = false;
+    QApplication::restoreOverrideCursor();
+  }
   setUiElementsEnabled(true);
   if (!m_grepMode)
     return;

@@ -135,6 +135,7 @@ private:
   QtPass *m_qtPass;
   QScopedPointer<Ui::MainWindow> ui;
   bool m_grepMode = false;
+  bool m_grepBusy = false;
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
