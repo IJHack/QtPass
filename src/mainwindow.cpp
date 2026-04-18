@@ -394,14 +394,6 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
     ui->actionEdit->setEnabled(false);
     ui->actionDelete->setEnabled(true);
   }
-  // Reset filter after index has been consumed to avoid stale proxy index
-  if (!m_grepMode && !ui->lineEdit->text().isEmpty()) {
-    searchTimer.stop();
-    ui->lineEdit->blockSignals(true);
-    ui->lineEdit->clear();
-    ui->lineEdit->blockSignals(false);
-    proxyModel.setFilterRegularExpression(QRegularExpression());
-  }
 }
 
 /**
