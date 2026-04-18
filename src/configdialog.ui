@@ -585,7 +585,7 @@
           </layout>
          </item>
          <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_15">
+          <layout class="QHBoxLayout" name="horizontalLayoutUseGrep">
            <item>
             <widget class="QCheckBox" name="checkBoxUseGrepSearch">
              <property name="text">

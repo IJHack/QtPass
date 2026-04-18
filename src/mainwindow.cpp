@@ -120,6 +120,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   initStatusBar();
 
   ui->lineEdit->setClearButtonEnabled(true);
+  updateGrepButtonVisibility();
 
   setUiElementsEnabled(true);
 
@@ -659,8 +660,13 @@ void MainWindow::on_lineEdit_returnPressed() {
 
   if (m_grepMode) {
     const QString query = ui->lineEdit->text().trimmed();
-    if (!query.isEmpty())
+    if (!query.isEmpty()) {
       QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
+    } else {
+      ui->grepResultsList->clear();
+      ui->grepResultsList->setVisible(false);
+      ui->treeView->setVisible(true);
+    }
     return;
   }
 

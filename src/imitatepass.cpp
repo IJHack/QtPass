@@ -44,9 +44,11 @@ using Enums::PROCESS_COUNT;
 ImitatePass::ImitatePass() = default;
 
 ImitatePass::~ImitatePass() {
-  if (m_grepThread && m_grepThread->isRunning()) {
-    m_grepThread->requestInterruption();
-    m_grepThread->wait();
+  for (QThread *t : m_grepThreads) {
+    if (t && t->isRunning()) {
+      t->requestInterruption();
+      t->wait();
+    }
   }
 }
 
@@ -1083,10 +1085,11 @@ auto ImitatePass::grepScanStore(const QStringList &env, const QString &gpgExe,
  * results from superseded searches.
  */
 void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
-  if (m_grepThread && m_grepThread->isRunning())
-    m_grepThread->requestInterruption();
-  // No wait() here — blocking the UI thread while GPG decrypts would freeze
-  // the interface. Stale results are discarded via the sequence counter.
+  for (QThread *t : m_grepThreads)
+    if (t && t->isRunning())
+      t->requestInterruption();
+  // No wait() — blocking the UI thread while GPG decrypts would freeze the
+  // interface. Stale results are discarded via the sequence counter.
 
   const int seq = ++m_grepSeq;
   const QString gpgExe = QtPassSettings::getGpgExecutable();
@@ -1120,11 +1123,9 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
       emitResults(grepScanStore(env, gpgExe, storeDir, rx));
   });
 
-  m_grepThread = thread;
+  m_grepThreads.append(thread);
   connect(thread, &QThread::finished, thread, &QObject::deleteLater);
-  connect(thread, &QThread::finished, this, [this, thread]() {
-    if (m_grepThread == thread)
-      m_grepThread = nullptr;
-  });
+  connect(thread, &QThread::finished, this,
+          [this, thread]() { m_grepThreads.removeOne(thread); });
   thread->start();
 }

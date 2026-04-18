@@ -277,7 +277,7 @@ public:
 
 private:
   int m_grepSeq = 0;
-  QThread *m_grepThread = nullptr;
+  QList<QThread *> m_grepThreads;
 
   static auto grepMatchFile(const QStringList &env, const QString &gpgExe,
                             const QString &filePath,

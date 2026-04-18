@@ -213,7 +213,11 @@ tst_util::~tst_util() = default;
 /**
  * @brief tst_util::init unit test init method
  */
-void tst_util::init() { qRegisterMetaType<GrepResults>("GrepResults"); }
+void tst_util::init() {
+  qRegisterMetaType<GrepResults>("GrepResults");
+  // Qt5 QSignalSpy looks up by the normalized signal type string, not the alias
+  qRegisterMetaType<GrepResults>("QList<QPair<QString,QStringList>>");
+}
 
 /**
  * @brief tst_util::cleanup unit test cleanup method
