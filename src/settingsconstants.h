@@ -64,7 +64,7 @@ public:
   static const QString lessRandom;
   static const QString useSymbols;
   static const QString passwordLength;
-  static const QString passwordCharsselection;
+  static const QString passwordCharsSelection;
   static const QString passwordChars;
   static const QString useTrayIcon;
   static const QString hideOnClose;

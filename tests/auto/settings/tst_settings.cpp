@@ -454,7 +454,7 @@ void tst_settings::setAndGetDialogMaximized() {
 }
 
 void tst_settings::setAndGetPasswordCharsSelection() {
-  QtPassSettings::setPasswordCharsselection(
+  QtPassSettings::setPasswordCharsSelection(
       PasswordConfiguration::ALPHABETICAL);
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QCOMPARE(config.selected, PasswordConfiguration::ALPHABETICAL);

@@ -57,7 +57,7 @@ auto StoreModel::filterAcceptsRow(int sourceRow,
  * @param index
  * @return
  */
-auto StoreModel::showThis(const QModelIndex index) const -> bool {
+auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   bool retVal = false;
   if (fs == nullptr) {
     return retVal;
@@ -218,6 +218,10 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   Q_UNUSED(row)
 #endif
 
+  if (!data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore")) {
+    return false;
+  }
+
   QModelIndex useIndex =
       this->index(parent.row(), parent.column(), parent.parent());
   QByteArray encodedData =
@@ -225,9 +229,6 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
   QDataStream stream(&encodedData, QIODevice::ReadOnly);
   dragAndDropInfoPasswordStore info;
   stream >> info;
-  if (!data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore")) {
-    return false;
-  }
 
   if (column > 0) {
     return false;

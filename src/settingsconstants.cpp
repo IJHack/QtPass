@@ -71,7 +71,7 @@ const QString SettingsConstants::avoidNumbers = "avoidNumbers";
 const QString SettingsConstants::lessRandom = "lessRandom";
 const QString SettingsConstants::useSymbols = "useSymbols";
 const QString SettingsConstants::passwordLength = "passwordLength";
-const QString SettingsConstants::passwordCharsselection =
+const QString SettingsConstants::passwordCharsSelection =
     "passwordCharsselection";
 const QString SettingsConstants::passwordChars = "passwordChars";
 const QString SettingsConstants::useTrayIcon = "useTrayIcon";

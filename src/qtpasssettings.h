@@ -695,7 +695,7 @@ public:
    * @brief Save password character selection mode.
    * @param passwordCharsSelection Password character selection mode.
    */
-  static void setPasswordCharsselection(const int &passwordCharsSelection);
+  static void setPasswordCharsSelection(const int &passwordCharsSelection);
   /**
    * @brief Save custom password characters.
    * @param passwordChars Custom characters used for password generation.
