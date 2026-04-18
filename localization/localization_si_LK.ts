@@ -46,7 +46,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide content</source>
-        <translation type="unfinished"></translation>
+        <translation>අන්තර්ගතය සඟවන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
