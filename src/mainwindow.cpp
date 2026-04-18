@@ -707,6 +707,11 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->grepResultsList->setVisible(false);
     // Keep treeView visible until results arrive
   } else {
+    if (m_grepBusy) {
+      m_grepBusy = false;
+      m_grepCancelled = true;
+      QApplication::restoreOverrideCursor();
+    }
     searchTimer.stop();
     ui->lineEdit->blockSignals(true);
     ui->lineEdit->clear();
