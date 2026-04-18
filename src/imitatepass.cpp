@@ -1103,6 +1103,28 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
   // No wait() — blocking the UI thread while GPG decrypts would freeze the
   // interface. Stale results are discarded via the sequence counter.
 
+  // Use trimmed() rather than isEmpty(): a whitespace-only string is a valid
+  // regex that matches every non-empty line, which is almost never intentional
+  // and would decrypt the entire store.
+  //
+  // Both early returns post finishedGrep via Qt::QueuedConnection so that the
+  // signal is always delivered asynchronously after Grep() returns, matching
+  // the contract of the threaded path.
+  if (pattern.trimmed().isEmpty()) {
+    QMetaObject::invokeMethod(
+        this, [this]() { emit finishedGrep({}); }, Qt::QueuedConnection);
+    return;
+  }
+
+  const QRegularExpression rx(
+      pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption
+                               : QRegularExpression::PatternOptions{});
+  if (!rx.isValid()) {
+    QMetaObject::invokeMethod(
+        this, [this]() { emit finishedGrep({}); }, Qt::QueuedConnection);
+    return;
+  }
+
   const int seq = ++m_grepSeq;
   const QString gpgExe = QtPassSettings::getGpgExecutable();
   const QString storeDir = QtPassSettings::getPassStore();
@@ -1121,23 +1143,8 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
         Qt::QueuedConnection);
   };
 
-  QThread *thread = QThread::create([self, seq, pattern, caseInsensitive,
-                                     gpgExe, storeDir, env, emitResults]() {
-    if (pattern.trimmed().isEmpty()) {
-      if (self)
-        emitResults({});
-      return;
-    }
-    const QRegularExpression rx(
-        pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption
-                                 : QRegularExpression::PatternOptions{});
-    if (!rx.isValid()) {
-      if (self)
-        emitResults({});
-      return;
-    }
-    if (self)
-      emitResults(grepScanStore(env, gpgExe, storeDir, rx));
+  QThread *thread = QThread::create([gpgExe, storeDir, env, rx, emitResults]() {
+    emitResults(grepScanStore(env, gpgExe, storeDir, rx));
   });
 
   m_grepThreads.append(thread);
