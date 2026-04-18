@@ -94,7 +94,7 @@ auto QtPassSettings::getPasswordConfiguration() -> PasswordConfiguration {
 void QtPassSettings::setPasswordConfiguration(
     const PasswordConfiguration &config) {
   getInstance()->setValue(SettingsConstants::passwordLength, config.length);
-  getInstance()->setValue(SettingsConstants::passwordCharsselection,
+  getInstance()->setValue(SettingsConstants::passwordCharsSelection,
                           config.selected);
   getInstance()->setValue(SettingsConstants::passwordChars,
                           config.Characters[PasswordConfiguration::CUSTOM]);

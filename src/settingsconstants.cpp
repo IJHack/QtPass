@@ -72,7 +72,7 @@ const QString SettingsConstants::lessRandom = "lessRandom";
 const QString SettingsConstants::useSymbols = "useSymbols";
 const QString SettingsConstants::passwordLength = "passwordLength";
 const QString SettingsConstants::passwordCharsSelection =
-    "passwordCharsselection";
+    "passwordCharsselection"; // stored key kept lowercase for backward compat
 const QString SettingsConstants::passwordChars = "passwordChars";
 const QString SettingsConstants::useTrayIcon = "useTrayIcon";
 const QString SettingsConstants::hideOnClose = "hideOnClose";
