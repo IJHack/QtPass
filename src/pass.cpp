@@ -545,10 +545,12 @@ void Pass::finished(int id, int exitCode, const QString &out,
     if (pid == PASS_GREP) {
       // exit code 1 means no matches (standard grep behaviour); treat as empty
       // result set rather than an error
-      if (exitCode == 1)
+      if (exitCode == 1) {
         emit finishedGrep({});
-      else
+      } else {
         emit processErrorExit(exitCode, err);
+        emit finishedGrep({});
+      }
       return;
     }
     if (pid == PASS_INSERT) {

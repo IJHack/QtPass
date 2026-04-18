@@ -127,7 +127,32 @@
              <string>Search inside password content (pass grep)</string>
             </property>
             <property name="text">
-             <string>*</string>
+             <string>⌕</string>
+            </property>
+            <property name="accessibleName">
+             <string>Content search toggle</string>
+            </property>
+            <property name="accessibleDescription">
+             <string>Toggle content search mode to search inside password files</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="grepCaseButton">
+            <property name="toolTip">
+             <string>Case-insensitive search</string>
+            </property>
+            <property name="text">
+             <string>Aa</string>
+            </property>
+            <property name="accessibleName">
+             <string>Case-insensitive toggle</string>
+            </property>
+            <property name="accessibleDescription">
+             <string>Toggle case-insensitive content search</string>
             </property>
             <property name="checkable">
              <bool>true</bool>
@@ -442,6 +467,7 @@
  <tabstops>
   <tabstop>lineEdit</tabstop>
   <tabstop>grepButton</tabstop>
+  <tabstop>grepCaseButton</tabstop>
   <tabstop>treeView</tabstop>
   <tabstop>grepResultsList</tabstop>
   <tabstop>textBrowser</tabstop>

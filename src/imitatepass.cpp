@@ -1076,6 +1076,9 @@ auto ImitatePass::grepScanStore(const QStringList &env, const QString &gpgExe,
  * results from superseded searches.
  */
 void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
+  if (m_grepThread && m_grepThread->isRunning())
+    m_grepThread->requestInterruption();
+
   const int seq = ++m_grepSeq;
   const QString gpgExe = QtPassSettings::getGpgExecutable();
   const QString storeDir = QtPassSettings::getPassStore();
@@ -1083,6 +1086,8 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
   QPointer<ImitatePass> self(this);
 
   auto emitResults = [self, seq](QList<QPair<QString, QStringList>> results) {
+    if (!self)
+      return;
     QMetaObject::invokeMethod(
         self,
         [self, seq, results = std::move(results)]() {
@@ -1092,21 +1097,25 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
         Qt::QueuedConnection);
   };
 
-  QThread *thread =
-      QThread::create([self, seq, pattern, caseInsensitive, gpgExe, storeDir,
-                       env, emitResults]() mutable {
-        const QRegularExpression rx(
-            pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption
-                                     : QRegularExpression::PatternOptions{});
-        if (!rx.isValid()) {
-          if (self)
-            emitResults({});
-          return;
-        }
-        if (self)
-          emitResults(grepScanStore(env, gpgExe, storeDir, rx));
-      });
+  QThread *thread = QThread::create([self, seq, pattern, caseInsensitive,
+                                     gpgExe, storeDir, env, emitResults]() {
+    const QRegularExpression rx(
+        pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption
+                                 : QRegularExpression::PatternOptions{});
+    if (!rx.isValid()) {
+      if (self)
+        emitResults({});
+      return;
+    }
+    if (self)
+      emitResults(grepScanStore(env, gpgExe, storeDir, rx));
+  });
 
-  connect(thread, &QThread::finished, thread, &QObject::deleteLater);
+  m_grepThread = thread;
+  connect(thread, &QThread::finished, this, [this, thread]() {
+    if (m_grepThread == thread)
+      m_grepThread = nullptr;
+    thread->deleteLater();
+  });
   thread->start();
 }

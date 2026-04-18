@@ -1854,7 +1854,8 @@ void tst_util::passFinishedGrepErrorEmitsProcessError() {
   pass.callPassFinished(static_cast<int>(Enums::PASS_GREP), 2, QString(),
                         QStringLiteral("some gpg error"));
   QCOMPARE(errSpy.count(), 1);
-  QCOMPARE(spy.count(), 0);
+  QCOMPARE(spy.count(), 1);
+  QVERIFY(spy[0][0].value<GrepResults>().isEmpty());
 }
 
 void tst_util::passFinishedGrepSuccessEmitsResults() {

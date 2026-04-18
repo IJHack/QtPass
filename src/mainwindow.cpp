@@ -646,7 +646,7 @@ void MainWindow::on_lineEdit_returnPressed() {
   if (m_grepMode) {
     const QString query = ui->lineEdit->text().trimmed();
     if (!query.isEmpty())
-      QtPassSettings::getPass()->Grep(query);
+      QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
     return;
   }
 
@@ -666,8 +666,8 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->lineEdit->clear();
     searchTimer.stop();
     proxyModel.setFilterRegularExpression(QRegularExpression());
-    ui->treeView->setVisible(false);
     ui->grepResultsList->setVisible(false);
+    // Keep treeView visible until results arrive
   } else {
     ui->lineEdit->setPlaceholderText(tr("Search Password"));
     ui->grepResultsList->clear();
