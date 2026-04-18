@@ -693,6 +693,8 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->lineEdit->clear();
     searchTimer.stop();
     proxyModel.setFilterRegularExpression(QRegularExpression());
+    ui->treeView->setRootIndex(proxyModel.mapFromSource(
+        model.setRootPath(QtPassSettings::getPassStore())));
     ui->grepResultsList->setVisible(false);
     // Keep treeView visible until results arrive
   } else {
