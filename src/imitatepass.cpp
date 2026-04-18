@@ -1028,57 +1028,66 @@ void ImitatePass::executeWrapper(PROCESS id, const QString &app,
  * Results are emitted on the main thread via QMetaObject::invokeMethod.
  */
 void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
+  const int seq = ++m_grepSeq;
   const QString gpgExe = QtPassSettings::getGpgExecutable();
   const QString storeDir = QtPassSettings::getPassStore();
   const QStringList env = exec.environment();
   QPointer<ImitatePass> self(this);
 
-  QThread *thread = QThread::create([self, pattern, caseInsensitive, gpgExe,
-                                     storeDir, env]() {
-    QRegularExpression rx(
-        pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption
-                                 : QRegularExpression::PatternOptions{});
-    if (!rx.isValid())
-      return;
+  auto emitResults = [self, seq](QList<QPair<QString, QStringList>> results) {
+    QMetaObject::invokeMethod(
+        self,
+        [self, seq, results = std::move(results)]() {
+          if (self && self->m_grepSeq == seq)
+            emit self->finishedGrep(results);
+        },
+        Qt::QueuedConnection);
+  };
 
-    QList<QPair<QString, QStringList>> results;
-    QDirIterator it(storeDir, QStringList() << "*.gpg", QDir::Files,
-                    QDirIterator::Subdirectories);
-    while (it.hasNext()) {
-      if (QThread::currentThread()->isInterruptionRequested())
-        return;
-      const QString filePath = it.next();
-      QString plaintext;
-      Executor::executeBlocking(env, gpgExe,
-                                {"-d", "--quiet", "--yes", "--no-encrypt-to",
-                                 "--batch", "--use-agent", filePath},
-                                &plaintext);
-      if (plaintext.isEmpty())
-        continue;
-      QStringList matches;
-      for (const QString &line : plaintext.split('\n')) {
-        const QString t = line.trimmed();
-        if (!t.isEmpty() && t.contains(rx))
-          matches << t;
-      }
-      if (!matches.isEmpty()) {
-        QString entry = QDir(storeDir).relativeFilePath(filePath);
-        if (entry.endsWith(QLatin1String(".gpg")))
-          entry.chop(4);
-        results.append({entry, matches});
-      }
-    }
+  QThread *thread =
+      QThread::create([self, seq, pattern, caseInsensitive, gpgExe, storeDir,
+                       env, emitResults]() mutable {
+        QRegularExpression rx(
+            pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption
+                                     : QRegularExpression::PatternOptions{});
+        if (!rx.isValid()) {
+          if (self)
+            emitResults({});
+          return;
+        }
 
-    if (self) {
-      QMetaObject::invokeMethod(
-          self,
-          [self, results]() {
-            if (self)
-              emit self->finishedGrep(results);
-          },
-          Qt::QueuedConnection);
-    }
-  });
+        QList<QPair<QString, QStringList>> results;
+        QDirIterator it(storeDir, QStringList() << "*.gpg", QDir::Files,
+                        QDirIterator::Subdirectories);
+        while (it.hasNext()) {
+          if (QThread::currentThread()->isInterruptionRequested())
+            return;
+          const QString filePath = it.next();
+          QString plaintext;
+          const int rc = Executor::executeBlocking(
+              env, gpgExe,
+              {"-d", "--quiet", "--yes", "--no-encrypt-to", "--batch",
+               "--use-agent", pgpg(filePath)},
+              &plaintext);
+          if (rc != 0 || plaintext.isEmpty())
+            continue;
+          QStringList matches;
+          for (const QString &line : plaintext.split('\n')) {
+            const QString t = line.trimmed();
+            if (!t.isEmpty() && t.contains(rx))
+              matches << t;
+          }
+          if (!matches.isEmpty()) {
+            QString entry = QDir(storeDir).relativeFilePath(filePath);
+            if (entry.endsWith(QLatin1String(".gpg")))
+              entry.chop(4);
+            results.append({entry, matches});
+          }
+        }
+
+        if (self)
+          emitResults(std::move(results));
+      });
 
   connect(thread, &QThread::finished, thread, &QObject::deleteLater);
   thread->start();

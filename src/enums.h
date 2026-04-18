@@ -39,10 +39,10 @@ enum PROCESS {
   PASS_COPY,         /**< Copy password file */
   GIT_MOVE,          /**< Git move/rename */
   GIT_COPY,          /**< Git copy */
-  PROCESS_COUNT,     /**< Total number of process types */
-  INVALID,           /**< Invalid/unknown process */
   PASS_OTP_GENERATE, /**< Generate OTP code */
-  PASS_GREP          /**< Search inside password content */
+  PASS_GREP,         /**< Search inside password content */
+  PROCESS_COUNT,     /**< Total number of process types */
+  INVALID            /**< Invalid/unknown process */
 };
 
 } // namespace Enums

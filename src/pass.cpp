@@ -542,6 +542,15 @@ void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
   auto pid = static_cast<PROCESS>(id);
   if (exitCode != 0) {
+    if (pid == PASS_GREP) {
+      // exit code 1 means no matches (standard grep behaviour); treat as empty
+      // result set rather than an error
+      if (exitCode == 1)
+        emit finishedGrep({});
+      else
+        emit processErrorExit(exitCode, err);
+      return;
+    }
     if (pid == PASS_INSERT) {
       const QString friendly = gpgErrorMessage(err);
       if (!friendly.isEmpty()) {

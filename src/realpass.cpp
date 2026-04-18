@@ -201,7 +201,7 @@ void RealPass::Grep(QString pattern, bool caseInsensitive) {
   QStringList args = {"grep"};
   if (caseInsensitive)
     args << "-i";
-  args << pattern;
+  args << "--" << pattern;
   executePass(PASS_GREP, args, QString(), true);
 }
 

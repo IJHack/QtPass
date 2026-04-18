@@ -262,10 +262,18 @@ public:
             const bool force = false) override;
   /**
    * @brief Search all password content by GPG-decrypting each .gpg file.
-   * @param pattern Search pattern (regular expression).
+   *
+   * Pattern is interpreted as a QRegularExpression (PCRE-like), which differs
+   * from RealPass::Grep which uses system `pass grep` (POSIX BRE via grep).
+   * The same pattern may produce different matches across the two backends.
+   *
+   * @param pattern Search pattern (QRegularExpression).
    * @param caseInsensitive true for case-insensitive search.
    */
   void Grep(QString pattern, bool caseInsensitive = false) override;
+
+private:
+  int m_grepSeq = 0;
 };
 
 #endif // SRC_IMITATEPASS_H_

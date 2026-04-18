@@ -664,11 +664,15 @@ void MainWindow::on_grepButton_toggled(bool checked) {
   if (checked) {
     ui->lineEdit->setPlaceholderText(tr("Search content (regex)"));
     ui->lineEdit->clear();
+    searchTimer.stop();
+    proxyModel.setFilterRegularExpression(QRegularExpression());
+    ui->treeView->setVisible(false);
+    ui->grepResultsList->setVisible(false);
   } else {
     ui->lineEdit->setPlaceholderText(tr("Search Password"));
     ui->grepResultsList->clear();
     ui->grepResultsList->setVisible(false);
-    // Restore normal filter
+    ui->treeView->setVisible(true);
     proxyModel.setFilterRegularExpression(QRegularExpression());
     ui->treeView->setRootIndex(proxyModel.mapFromSource(
         model.setRootPath(QtPassSettings::getPassStore())));
@@ -680,10 +684,14 @@ void MainWindow::on_grepButton_toggled(bool checked) {
  */
 void MainWindow::onGrepFinished(
     const QList<QPair<QString, QStringList>> &results) {
+  setUiElementsEnabled(true);
+  if (!m_grepMode)
+    return;
   ui->grepResultsList->clear();
   if (results.isEmpty()) {
     ui->statusBar->showMessage(tr("No matches found."), 3000);
     ui->grepResultsList->setVisible(false);
+    ui->treeView->setVisible(true);
     return;
   }
   for (const auto &pair : results) {
@@ -697,6 +705,7 @@ void MainWindow::onGrepFinished(
     }
   }
   ui->grepResultsList->expandAll();
+  ui->treeView->setVisible(false);
   ui->grepResultsList->setVisible(true);
   ui->statusBar->showMessage(tr("Found %1 match(es).").arg(results.size()),
                              3000);
@@ -710,8 +719,8 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
   const QString entry = item->data(0, Qt::UserRole).toString();
   if (entry.isEmpty())
     return;
-  const QString fullPath =
-      QtPassSettings::getPassStore() + QDir::separator() + entry + ".gpg";
+  const QString fullPath = QDir::cleanPath(
+      QDir(QtPassSettings::getPassStore()).filePath(entry + ".gpg"));
   QModelIndex srcIndex = model.index(fullPath);
   if (!srcIndex.isValid())
     return;

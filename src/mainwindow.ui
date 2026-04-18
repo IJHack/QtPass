@@ -441,7 +441,9 @@
  </customwidgets>
  <tabstops>
   <tabstop>lineEdit</tabstop>
+  <tabstop>grepButton</tabstop>
   <tabstop>treeView</tabstop>
+  <tabstop>grepResultsList</tabstop>
   <tabstop>textBrowser</tabstop>
  </tabstops>
  <resources>

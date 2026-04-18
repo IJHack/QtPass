@@ -130,18 +130,18 @@ public:
    */
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
   /**
-   * @brief Generate random password.
-   * @param length Password length.
-   * @param charset Character set to use.
-   * @return Generated password.
-   */
-  /**
    * @brief Search password content for a pattern.
    * @param pattern Search pattern (regular expression).
    * @param caseInsensitive true for case-insensitive search.
    */
   virtual void Grep(QString pattern, bool caseInsensitive = false) = 0;
 
+  /**
+   * @brief Generate random password.
+   * @param length Password length.
+   * @param charset Character set to use.
+   * @return Generated password.
+   */
   virtual auto generatePassword(unsigned int length, const QString &charset)
       -> QString;
 
