@@ -165,17 +165,17 @@
     <message>
         <location filename="../src/configdialog.cpp" line="817"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Instale GnuPG en su sistema.&lt;br&gt;Instale &lt;strong&gt;gpg&lt;/strong&gt; mediante su gestor de paquetes preferido&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descárguelo&lt;/a&gt; de GnuPG.org</translation>
+        <translation>Instala GnuPG en tu sistema.&lt;br&gt;Instala &lt;strong&gt;gpg&lt;/strong&gt; mediante tu gestor de paquetes preferido&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descárgalo&lt;/a&gt; de GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="871"/>
         <source>Create password-store?</source>
-        <translation>¿Quiere crear un almacén de contraseñas?</translation>
+        <translation>¿Quieres crear un almacén de contraseñas?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="872"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>¿Quiere crear un almacén de contraseñas en %1?</translation>
+        <translation>¿Quieres crear un almacén de contraseñas en %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="877"/>
@@ -506,12 +506,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="806"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Instale GnuPG en su sistema.&lt;br&gt;Instale &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store para obtenerlo.&lt;br&gt;Si ya lo ha hecho, cerciórese de haberlo iniciado una vez y,&lt;br&gt;a continuación, pulse en «Detectar automáticamente» en el diálogo siguiente.</translation>
+        <translation>Instala GnuPG en tu sistema.&lt;br&gt;Instala &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store para obtenerlo.&lt;br&gt;Si ya lo has hecho, asegúrate de haberlo iniciado una vez y,&lt;br&gt;a continuación, haz clic en «Detectar automáticamente» en el diálogo siguiente.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Instale GnuPG en su sistema.&lt;br&gt;Instale &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descárguelo&lt;/a&gt; de GnuPG.org</translation>
+        <translation>Instala GnuPG en tu sistema.&lt;br&gt;Instala &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descárgalo&lt;/a&gt; de GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
@@ -1087,7 +1087,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="759"/>
         <source>Delete password?</source>
-        <translation>¿Quiere eliminar la contraseña?</translation>
+        <translation>¿Quieres eliminar la contraseña?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -1096,7 +1096,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="759"/>
         <source>Delete folder?</source>
-        <translation>¿Quiere eliminar la carpeta?</translation>
+        <translation>¿Quieres eliminar la carpeta?</translation>
     </message>
     <message>
         <source>Selected password file does not exist, not able to edit</source>
@@ -1571,12 +1571,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/storemodel.cpp" line="304"/>
         <source>force overwrite?</source>
-        <translation>¿Quiere forzar la sobrescritura?</translation>
+        <translation>¿Quieres forzar la sobrescritura?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="305"/>
         <source>overwrite %1 with %2?</source>
-        <translation>¿Quiere sobrescribir %1 con %2?</translation>
+        <translation>¿Quieres sobrescribir %1 con %2?</translation>
     </message>
 </context>
 <context>
@@ -1629,7 +1629,7 @@ Blue entries have a secret key available, select one of these to be able to decr
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Selecciona qué usuarios van a poder descifrar las contraseñas almacenadas en esta carpeta.
-Nota: Los archivos existentes no se van a modificar y van a conservar los permisos anteriores hasta que los edits.
+Nota: Los archivos existentes no se van a modificar y van a conservar los permisos anteriores hasta que los edites.
 Las entradas en azul tienen una clave secreta disponible; selecciona una para poder descifrar.
 Las entradas en negro tienen una clave de cifrado disponible y es de confianza; selecciona una para permitir que otros usuarios descifren.
 Las entradas en rojo no son válidas; no vas a poder cifrar con ellas.</translation>

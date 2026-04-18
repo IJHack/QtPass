@@ -165,17 +165,17 @@
     <message>
         <location filename="../src/configdialog.cpp" line="817"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Instale GnuPG en su sistema.&lt;br&gt;Instale &lt;strong&gt;gpg&lt;/strong&gt; mediante su gestor de paquetes preferido&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descárguelo&lt;/a&gt; de GnuPG.org</translation>
+        <translation>Instalá GnuPG en tu sistema.&lt;br&gt;Instalá &lt;strong&gt;gpg&lt;/strong&gt; mediante tu gestor de paquetes preferido&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descargalo&lt;/a&gt; de GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="871"/>
         <source>Create password-store?</source>
-        <translation>¿Quiere crear un almacén de contraseñas?</translation>
+        <translation>¿Querés crear un almacén de contraseñas?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="872"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>¿Quiere crear un almacén de contraseñas en %1?</translation>
+        <translation>¿Querés crear un almacén de contraseñas en %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="877"/>
@@ -506,12 +506,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="806"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Instale GnuPG en su sistema.&lt;br&gt;Instale &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store para obtenerlo.&lt;br&gt;Si ya lo ha hecho, cerciórese de haberlo iniciado una vez y,&lt;br&gt;a continuación, pulse en «Detectar automáticamente» en el diálogo siguiente.</translation>
+        <translation>Instalá GnuPG en tu sistema.&lt;br&gt;Instalá &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store para obtenerlo.&lt;br&gt;Si ya lo hiciste, asegurate de haberlo iniciado una vez y,&lt;br&gt;a continuación, hacé clic en «Detectar automáticamente» en el diálogo siguiente.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Instale GnuPG en su sistema.&lt;br&gt;Instale &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store&lt;br&gt;o &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descárguelo&lt;/a&gt; de GnuPG.org</translation>
+        <translation>Instalá GnuPG en tu sistema.&lt;br&gt;Instalá &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store&lt;br&gt;o &lt;a href=&quot;https://www.gnug.org/download/#sec-1-2&quot;&gt;descargalo&lt;/a&gt; de GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
@@ -599,7 +599,7 @@ dirección de correo</translation>
         <location filename="../src/imitatepass.cpp" line="297"/>
         <location filename="../src/imitatepass.cpp" line="483"/>
         <source>Check .gpgid file signature!</source>
-        <translation>¡Comprueba la firma del archivo .gpgid!</translation>
+        <translation>¡Comprobá la firma del archivo .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="120"/>
@@ -655,7 +655,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="252"/>
         <source>Check selected users!</source>
-        <translation>¡Comprueba los usuarios seleccionados!</translation>
+        <translation>¡Comprobá los usuarios seleccionados!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="253"/>
@@ -775,7 +775,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/keygendialog.ui" line="210"/>
         <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Repeat pass</source>
-        <translation>Repite la contraseña</translation>
+        <translation>Repetí la contraseña</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -1087,7 +1087,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="759"/>
         <source>Delete password?</source>
-        <translation>¿Quiere eliminar la contraseña?</translation>
+        <translation>¿Querés eliminar la contraseña?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -1096,7 +1096,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="759"/>
         <source>Delete folder?</source>
-        <translation>¿Quiere eliminar la carpeta?</translation>
+        <translation>¿Querés eliminar la carpeta?</translation>
     </message>
     <message>
         <source>Selected password file does not exist, not able to edit</source>
@@ -1571,12 +1571,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/storemodel.cpp" line="304"/>
         <source>force overwrite?</source>
-        <translation>¿Quiere forzar la sobrescritura?</translation>
+        <translation>¿Querés forzar la sobrescritura?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="305"/>
         <source>overwrite %1 with %2?</source>
-        <translation>¿Quiere sobrescribir %1 con %2?</translation>
+        <translation>¿Querés sobrescribir %1 con %2?</translation>
     </message>
 </context>
 <context>
