@@ -103,7 +103,7 @@ void StoreModel::setStore(const QString &passStore) {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
   beginFilterChange();
   store = passStore;
-  endFilterChange();
+  endFilterChange(QSortFilterProxyModel::Direction::Rows);
 #else
   store = passStore;
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
