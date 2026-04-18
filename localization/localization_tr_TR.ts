@@ -265,12 +265,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
         <source>Generate</source>
-        <translation>Oluşturmak</translation>
+        <translation>Oluştur</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="772"/>
         <source>Generate GPG key pair</source>
-        <translation>Oluşturmak GPG anahtar çifti</translation>
+        <translation>GPG anahtar çifti oluştur</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
