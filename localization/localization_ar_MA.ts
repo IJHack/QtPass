@@ -207,7 +207,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="695"/>
         <source>&amp;Use pass</source>
-        <translation>&quot; مرور الاستخدام</translation>
+        <translation>&amp;مرور الاستخدام</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="719"/>
@@ -363,12 +363,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="740"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">يرجى تركيب GnuPG على نظامكم. It from GnuPG.org</translation>
+        <translation>يرجى تثبيت GnuPG على نظامك.&lt;br&gt;ثبّت &lt;strong&gt;Ubuntu&lt;/strong&gt; من متجر Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;نزّله&lt;/a&gt; من GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="746"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">يرجى تركيب GnuPG على نظامكم. It from GnuPG.org</translation>
+        <translation>يرجى تثبيت GnuPG على نظامك.&lt;br&gt;ثبّت &lt;strong&gt;Ubuntu&lt;/strong&gt; من متجر Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;نزّله&lt;/a&gt; من GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="800"/>
@@ -423,7 +423,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="688"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;Git/GPG الأصلي</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="725"/>
@@ -651,7 +651,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>للاطلاع على خيارات الخبراء، راجع &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG دليل&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
@@ -977,7 +977,10 @@ Continue?</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;QtPass هي واجهة مستخدم رسومية لـ &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;يمر&lt;/a&gt;مدير كلمات المرور القياسي في أنظمة يونكس.&lt;/p&gt;
+&lt;p&gt;يرجى الإبلاغ عن أي شيء&lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;مشاكل&lt;/a&gt; قد تواجه بعض المشاكل مع هذا البرنامج.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;الوثائق&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;شفرة المصدر&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1137,7 +1140,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="466"/>
         <source>Clipboard not cleared</source>
-        <translation>لوحة الشفاه</translation>
+        <translation>لم يتم مسح الحافظة</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="511"/>
@@ -1163,32 +1166,32 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&quot; شو</translation>
+        <translation>&amp;شو</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation>&quot; هايدي</translation>
+        <translation>&amp;هايدي</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;التقليل</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;تحقيق أقصى استفادة</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;يعيد</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>&amp;يترك</translation>
     </message>
 </context>
 <context>
