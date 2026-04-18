@@ -191,12 +191,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>İçerik aramayı etkinleştir (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola dosyası içeriklerinde aramaya izin ver. Her dosyanın şifresinin çözülmesini gerektirir ve büyük depolarda yavaş olabilir.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -315,7 +315,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu yapılandırma profilini tanımlamak için kullanılan profil adı</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="950"/>
@@ -325,7 +325,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola deposu dizininin yolu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -430,7 +430,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 için alıcıları seçin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
