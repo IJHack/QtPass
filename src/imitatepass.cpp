@@ -1,10 +1,14 @@
 // SPDX-FileCopyrightText: 2016 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "imitatepass.h"
+#include "executor.h"
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QDirIterator>
+#include <QElapsedTimer>
+#include <QPointer>
 #include <QRegularExpression>
+#include <QThread>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -25,6 +29,7 @@ using Enums::GIT_RM;
 using Enums::GPG_GENKEYS;
 using Enums::INVALID;
 using Enums::PASS_COPY;
+using Enums::PASS_GREP;
 using Enums::PASS_INIT;
 using Enums::PASS_INSERT;
 using Enums::PASS_MOVE;
@@ -38,6 +43,23 @@ using Enums::PROCESS_COUNT;
  * we imitate the behavior of pass https://www.passwordstore.org/
  */
 ImitatePass::ImitatePass() = default;
+
+ImitatePass::~ImitatePass() {
+  static constexpr int kGrepThreadTimeoutMs = 5000;
+  for (QThread *t : std::as_const(m_grepThreads))
+    if (t && t->isRunning())
+      t->requestInterruption();
+  QElapsedTimer elapsed;
+  elapsed.start();
+  for (QThread *t : std::as_const(m_grepThreads)) {
+    if (t && t->isRunning()) {
+      const int remaining =
+          kGrepThreadTimeoutMs - static_cast<int>(elapsed.elapsed());
+      if (remaining > 0)
+        t->wait(remaining);
+    }
+  }
+}
 
 static auto pgit(const QString &path) -> QString {
   if (!QtPassSettings::getGitExecutable().startsWith("wsl ")) {
@@ -1014,4 +1036,132 @@ void ImitatePass::executeWrapper(PROCESS id, const QString &app,
                                  bool readStdout, bool readStderr) {
   transactionAdd(id);
   Pass::executeWrapper(id, app, args, input, readStdout, readStderr);
+}
+
+/**
+ * @brief Decrypt one .gpg file and return lines matching rx.
+ */
+auto ImitatePass::grepMatchFile(const QStringList &env, const QString &gpgExe,
+                                const QString &filePath,
+                                const QRegularExpression &rx) -> QStringList {
+  QString plaintext;
+  const int rc =
+      Executor::executeBlocking(env, gpgExe,
+                                {"-d", "--quiet", "--yes", "--no-encrypt-to",
+                                 "--batch", "--use-agent", pgpg(filePath)},
+                                &plaintext);
+  if (rc != 0 || plaintext.isEmpty())
+    return {};
+  QStringList matches;
+  for (const QString &line : plaintext.split('\n')) {
+    QString candidate = line;
+    if (candidate.endsWith('\r'))
+      candidate.chop(1);
+    const QString t = candidate.trimmed();
+    if (!t.isEmpty() && candidate.contains(rx))
+      matches << t;
+  }
+  return matches;
+}
+
+/**
+ * @brief Walk the store, decrypt every .gpg file, collect matches.
+ */
+auto ImitatePass::grepScanStore(const QStringList &env, const QString &gpgExe,
+                                const QString &storeDir,
+                                const QRegularExpression &rx)
+    -> QList<QPair<QString, QStringList>> {
+  QList<QPair<QString, QStringList>> results;
+  QDirIterator it(storeDir, QStringList() << "*.gpg", QDir::Files,
+                  QDirIterator::Subdirectories);
+  while (it.hasNext()) {
+    if (QThread::currentThread()->isInterruptionRequested())
+      return {};
+    const QString filePath = it.next();
+    const QStringList matches = grepMatchFile(env, gpgExe, filePath, rx);
+    if (!matches.isEmpty()) {
+      QString entry = QDir(storeDir).relativeFilePath(filePath);
+      if (entry.endsWith(QLatin1String(".gpg")))
+        entry.chop(4);
+      results.append({entry, matches});
+    }
+  }
+  return results;
+}
+
+/**
+ * @brief Search all password content by GPG-decrypting each .gpg file.
+ *
+ * Runs a background thread to avoid blocking the UI. Results are emitted on
+ * the main thread via QMetaObject::invokeMethod. A sequence counter discards
+ * results from superseded searches.
+ */
+void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
+  for (QThread *t : std::as_const(m_grepThreads))
+    if (t && t->isRunning())
+      t->requestInterruption();
+  // No wait() — blocking the UI thread while GPG decrypts would freeze the
+  // interface. Stale results are discarded via the sequence counter.
+
+  // Advance the sequence before any early return so in-flight workers from the
+  // previous query fail the seq check and cannot publish stale results.
+  const int seq = ++m_grepSeq;
+
+  // Use trimmed() rather than isEmpty(): a whitespace-only string is a valid
+  // regex that matches every non-empty line, which is almost never intentional
+  // and would decrypt the entire store.
+  //
+  // Both early returns post finishedGrep via Qt::QueuedConnection so that the
+  // signal is always delivered asynchronously after Grep() returns, matching
+  // the contract of the threaded path.
+  if (pattern.trimmed().isEmpty()) {
+    QMetaObject::invokeMethod(
+        this,
+        [this, seq]() {
+          if (m_grepSeq == seq)
+            emit finishedGrep({});
+        },
+        Qt::QueuedConnection);
+    return;
+  }
+
+  const QRegularExpression rx(
+      pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption
+                               : QRegularExpression::PatternOptions{});
+  if (!rx.isValid()) {
+    QMetaObject::invokeMethod(
+        this,
+        [this, seq]() {
+          if (m_grepSeq == seq)
+            emit finishedGrep({});
+        },
+        Qt::QueuedConnection);
+    return;
+  }
+  const QString gpgExe = QtPassSettings::getGpgExecutable();
+  const QString storeDir = QtPassSettings::getPassStore();
+  const QStringList env = exec.environment();
+  QPointer<ImitatePass> self(this);
+
+  auto emitResults = [self, seq](QList<QPair<QString, QStringList>> results) {
+    if (!self)
+      return;
+    QMetaObject::invokeMethod(
+        self,
+        [self, seq, results = std::move(results)]() {
+          if (self && self->m_grepSeq == seq)
+            emit self->finishedGrep(results);
+        },
+        Qt::QueuedConnection);
+  };
+
+  QThread *thread = QThread::create([gpgExe, storeDir, env, rx, emitResults]() {
+    emitResults(grepScanStore(env, gpgExe, storeDir, rx));
+  });
+
+  m_grepThreads.append(thread);
+  connect(thread, &QThread::finished, thread, &QObject::deleteLater);
+  connect(thread, &QThread::finished, this,
+          [this, thread]() { m_grepThreads.removeOne(thread); });
+  thread->start();
 }

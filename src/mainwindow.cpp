@@ -18,6 +18,7 @@
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
 #include "util.h"
+#include <QApplication>
 #include <QCloseEvent>
 #include <QDesktopServices>
 #include <QDialog>
@@ -29,6 +30,7 @@
 #include <QMessageBox>
 #include <QShortcut>
 #include <QTimer>
+#include <QTreeWidget>
 #include <utility>
 
 /**
@@ -119,6 +121,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   initStatusBar();
 
   ui->lineEdit->setClearButtonEnabled(true);
+  updateGrepButtonVisibility();
 
   setUiElementsEnabled(true);
 
@@ -318,6 +321,7 @@ void MainWindow::config() {
 
       updateGitButtonVisibility();
       updateOtpButtonVisibility();
+      updateGrepButtonVisibility();
       if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
         initTrayIcon();
       } else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
@@ -382,7 +386,7 @@ void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   // Clear any previously cached clipped text before showing new password
   m_qtPass->clearClippedText();
   QString file = getFile(index, true);
-  ui->passwordName->setText(getFile(index, true));
+  ui->passwordName->setText(file);
   if (!file.isEmpty() && !cleared) {
     QtPassSettings::getPass()->Show(file);
   } else {
@@ -516,6 +520,22 @@ void MainWindow::clearPanel(bool notify) {
     delete item->widget();
     delete item;
   }
+  const bool grepWasVisible = ui->grepResultsList->isVisible();
+  ui->grepResultsList->clear();
+  if (grepWasVisible) {
+    ui->grepResultsList->setVisible(false);
+    ui->treeView->setVisible(true);
+    if (m_grepMode) {
+      m_grepMode = false;
+      ui->grepButton->blockSignals(true);
+      ui->grepButton->setChecked(false);
+      ui->grepButton->blockSignals(false);
+      ui->lineEdit->blockSignals(true);
+      ui->lineEdit->clear();
+      ui->lineEdit->blockSignals(false);
+      ui->lineEdit->setPlaceholderText(tr("Search Password"));
+    }
+  }
   if (notify) {
     QString output = "***" + tr("Password and Content hidden") + "***";
     ui->textBrowser->setHtml(output);
@@ -595,6 +615,8 @@ void MainWindow::onConfig() { config(); }
  * @param arg1
  */
 void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
+  if (m_grepMode)
+    return;
   ui->statusBar->showMessage(tr("Looking for: %1").arg(arg1), 1000);
   ui->treeView->expandAll();
   clearPanel(false);
@@ -640,10 +662,142 @@ void MainWindow::on_lineEdit_returnPressed() {
   dbg() << "on_lineEdit_returnPressed" << proxyModel.rowCount();
 #endif
 
+  if (m_grepMode) {
+    const QString query = ui->lineEdit->text();
+    if (!query.isEmpty()) {
+      m_grepCancelled = false;
+      ui->grepResultsList->clear();
+      ui->statusBar->showMessage(tr("Searching…"));
+      if (!m_grepBusy) {
+        m_grepBusy = true;
+        QApplication::setOverrideCursor(Qt::WaitCursor);
+      }
+      QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
+    } else {
+      m_grepCancelled = true;
+      if (m_grepBusy) {
+        m_grepBusy = false;
+        QApplication::restoreOverrideCursor();
+      }
+      ui->grepResultsList->clear();
+      ui->grepResultsList->setVisible(false);
+      ui->treeView->setVisible(true);
+    }
+    return;
+  }
+
   if (proxyModel.rowCount() > 0) {
     selectFirstFile();
     on_treeView_clicked(ui->treeView->currentIndex());
   }
+}
+
+/**
+ * @brief Toggle grep (content search) mode.
+ */
+void MainWindow::on_grepButton_toggled(bool checked) {
+  m_grepMode = checked;
+  if (checked) {
+    ui->lineEdit->setPlaceholderText(tr("Search content (regex)"));
+    ui->lineEdit->clear();
+    searchTimer.stop();
+    proxyModel.setFilterRegularExpression(QRegularExpression());
+    ui->treeView->setRootIndex(proxyModel.mapFromSource(
+        model.setRootPath(QtPassSettings::getPassStore())));
+    ui->grepResultsList->setVisible(false);
+    // Keep treeView visible until results arrive
+  } else {
+    if (m_grepBusy) {
+      m_grepBusy = false;
+      m_grepCancelled = true;
+      QApplication::restoreOverrideCursor();
+    }
+    searchTimer.stop();
+    ui->lineEdit->blockSignals(true);
+    ui->lineEdit->clear();
+    ui->lineEdit->blockSignals(false);
+    ui->lineEdit->setPlaceholderText(tr("Search Password"));
+    ui->grepResultsList->clear();
+    ui->grepResultsList->setVisible(false);
+    ui->treeView->setVisible(true);
+    proxyModel.setFilterRegularExpression(QRegularExpression());
+    ui->treeView->setRootIndex(proxyModel.mapFromSource(
+        model.setRootPath(QtPassSettings::getPassStore())));
+  }
+}
+
+/**
+ * @brief Display grep results in grepResultsList.
+ */
+void MainWindow::onGrepFinished(
+    const QList<QPair<QString, QStringList>> &results) {
+  if (m_grepBusy) {
+    m_grepBusy = false;
+    QApplication::restoreOverrideCursor();
+  }
+  if (m_grepCancelled) {
+    m_grepCancelled = false;
+    return;
+  }
+  setUiElementsEnabled(true);
+  if (!m_grepMode)
+    return;
+  ui->grepResultsList->clear();
+  if (results.isEmpty()) {
+    ui->statusBar->showMessage(tr("No matches found."), 3000);
+    ui->grepResultsList->setVisible(false);
+    ui->treeView->setVisible(true);
+    return;
+  }
+  const bool hideContent = QtPassSettings::isHideContent();
+  int totalLines = 0;
+  for (const auto &pair : results) {
+    QTreeWidgetItem *entryItem = new QTreeWidgetItem(ui->grepResultsList);
+    entryItem->setText(0, pair.first);
+    entryItem->setData(0, Qt::UserRole, pair.first);
+    for (const QString &line : pair.second) {
+      QTreeWidgetItem *lineItem = new QTreeWidgetItem(entryItem);
+      lineItem->setText(0, hideContent ? "***" + tr("Content hidden") + "***"
+                                       : line);
+      lineItem->setData(0, Qt::UserRole, pair.first);
+      ++totalLines;
+    }
+  }
+  ui->grepResultsList->expandAll();
+  ui->treeView->setVisible(false);
+  ui->grepResultsList->setVisible(true);
+  ui->statusBar->showMessage(
+      tr("Found %n match(es) in %1 entr(ies).", nullptr, totalLines)
+          .arg(results.size()),
+      3000);
+  if (QtPassSettings::isUseAutoclearPanel())
+    clearPanelTimer.start();
+}
+
+/**
+ * @brief Navigate to the password entry when a grep result is clicked.
+ */
+void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
+                                                int /*column*/) {
+  const QString entry = item->data(0, Qt::UserRole).toString();
+  if (entry.isEmpty())
+    return;
+  const QString fullPath = QDir::cleanPath(
+      QDir(QtPassSettings::getPassStore()).filePath(entry + ".gpg"));
+  QModelIndex srcIndex = model.index(fullPath);
+  if (!srcIndex.isValid())
+    return;
+  QModelIndex proxyIndex = proxyModel.mapFromSource(srcIndex);
+  if (!proxyIndex.isValid())
+    return;
+  ui->treeView->setCurrentIndex(proxyIndex);
+  on_treeView_clicked(proxyIndex);
+  if (QtPassSettings::isHideContent() || QtPassSettings::isUseAutoclearPanel())
+    ui->grepResultsList->clear();
+  ui->grepResultsList->setVisible(false);
+  ui->treeView->setVisible(true);
+  ui->treeView->scrollTo(proxyIndex);
+  ui->treeView->setFocus();
 }
 
 /**
@@ -1387,6 +1541,15 @@ void MainWindow::updateOtpButtonVisibility() {
     ui->actionOtp->setEnabled(false);
   } else {
     ui->actionOtp->setEnabled(true);
+  }
+}
+
+void MainWindow::updateGrepButtonVisibility() {
+  const bool enabled = QtPassSettings::isUseGrepSearch();
+  ui->grepButton->setVisible(enabled);
+  ui->grepCaseButton->setVisible(enabled);
+  if (!enabled && m_grepMode) {
+    ui->grepButton->setChecked(false);
   }
 }
 

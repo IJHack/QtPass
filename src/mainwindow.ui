@@ -98,23 +98,68 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>26</height>
-           </size>
+         <layout class="QHBoxLayout" name="searchLayout">
+          <property name="spacing">
+           <number>2</number>
           </property>
-          <property name="focusPolicy">
-           <enum>Qt::StrongFocus</enum>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>Search Password</string>
-          </property>
-         </widget>
+          <item>
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>26</height>
+             </size>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::StrongFocus</enum>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string>Search Password</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="grepButton">
+            <property name="toolTip">
+             <string>Search inside password content (pass grep)</string>
+            </property>
+            <property name="text">
+             <string>⌕</string>
+            </property>
+            <property name="accessibleName">
+             <string>Content search toggle</string>
+            </property>
+            <property name="accessibleDescription">
+             <string>Toggle content search mode to search inside password files</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QToolButton" name="grepCaseButton">
+            <property name="toolTip">
+             <string>Case-insensitive search</string>
+            </property>
+            <property name="text">
+             <string>Aa</string>
+            </property>
+            <property name="accessibleName">
+             <string>Case-insensitive toggle</string>
+            </property>
+            <property name="accessibleDescription">
+             <string>Toggle case-insensitive content search</string>
+            </property>
+            <property name="checkable">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
          <widget class="DeselectableTreeView" name="treeView">
@@ -145,6 +190,27 @@
           <attribute name="headerStretchLastSection">
            <bool>false</bool>
           </attribute>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTreeWidget" name="grepResultsList">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="MinimumExpanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="visible">
+           <bool>false</bool>
+          </property>
+          <property name="headerHidden">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>Results</string>
+           </property>
+          </column>
          </widget>
         </item>
        </layout>
@@ -400,7 +466,10 @@
  </customwidgets>
  <tabstops>
   <tabstop>lineEdit</tabstop>
+  <tabstop>grepButton</tabstop>
+  <tabstop>grepCaseButton</tabstop>
   <tabstop>treeView</tabstop>
+  <tabstop>grepResultsList</tabstop>
   <tabstop>textBrowser</tabstop>
  </tabstops>
  <resources>

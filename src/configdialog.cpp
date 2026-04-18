@@ -109,6 +109,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   useGit(QtPassSettings::isUseGit());
 
   useOtp(QtPassSettings::isUseOtp());
+  useGrepSearch(QtPassSettings::isUseGrepSearch());
   useQrencode(QtPassSettings::isUseQrencode());
 
   usePwgen(QtPassSettings::isUsePwgen());
@@ -272,6 +273,7 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setProfiles(getProfiles());
   QtPassSettings::setUseGit(ui->checkBoxUseGit->isChecked());
   QtPassSettings::setUseOtp(ui->checkBoxUseOtp->isChecked());
+  QtPassSettings::setUseGrepSearch(ui->checkBoxUseGrepSearch->isChecked());
   QtPassSettings::setUseQrencode(ui->checkBoxUseQrencode->isChecked());
   QtPassSettings::setPwgenExecutable(ui->pwgenPath->text());
   QtPassSettings::setUsePwgen(ui->checkBoxUsePwgen->isChecked());
@@ -984,6 +986,10 @@ void ConfigDialog::useGit(bool useGit) {
  */
 void ConfigDialog::useOtp(bool useOtp) {
   ui->checkBoxUseOtp->setChecked(useOtp);
+}
+
+void ConfigDialog::useGrepSearch(bool useGrepSearch) {
+  ui->checkBoxUseGrepSearch->setChecked(useGrepSearch);
 }
 
 /**

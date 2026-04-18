@@ -47,6 +47,7 @@ public:
   void useTrayIcon(bool useSystray);
   void useGit(bool useGit);
   void useOtp(bool useOtp);
+  void useGrepSearch(bool useGrepSearch);
   void useQrencode(bool useQrencode);
   void setPwgenPath(const QString &);
   void usePwgen(bool usePwgen);

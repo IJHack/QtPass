@@ -6,6 +6,9 @@
 #include "pass.h"
 #include "simpletransaction.h"
 
+class QRegularExpression;
+class QThread;
+
 /**
  * @class ImitatePass
  * @brief Implementation that imitates 'pass' when the real tool is unavailable.
@@ -190,7 +193,7 @@ public:
   /**
    * @brief Destructor.
    */
-  ~ImitatePass() override = default;
+  ~ImitatePass() override;
 
   // Git operations
   /**
@@ -260,6 +263,29 @@ public:
    */
   void Copy(const QString src, const QString dest,
             const bool force = false) override;
+  /**
+   * @brief Search all password content by GPG-decrypting each .gpg file.
+   *
+   * Pattern is interpreted as a QRegularExpression (PCRE-like), which differs
+   * from RealPass::Grep which uses system `pass grep` (POSIX BRE via grep).
+   * The same pattern may produce different matches across the two backends.
+   *
+   * @param pattern Search pattern (QRegularExpression).
+   * @param caseInsensitive true for case-insensitive search.
+   */
+  void Grep(QString pattern, bool caseInsensitive = false) override;
+
+private:
+  int m_grepSeq = 0;
+  QList<QThread *> m_grepThreads;
+
+  static auto grepMatchFile(const QStringList &env, const QString &gpgExe,
+                            const QString &filePath,
+                            const QRegularExpression &rx) -> QStringList;
+  static auto grepScanStore(const QStringList &env, const QString &gpgExe,
+                            const QString &storeDir,
+                            const QRegularExpression &rx)
+      -> QList<QPair<QString, QStringList>>;
 };
 
 #endif // SRC_IMITATEPASS_H_

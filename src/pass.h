@@ -130,6 +130,13 @@ public:
    */
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
   /**
+   * @brief Search password content for a pattern.
+   * @param pattern Search pattern (regular expression).
+   * @param caseInsensitive true for case-insensitive search.
+   */
+  virtual void Grep(QString pattern, bool caseInsensitive = false) = 0;
+
+  /**
    * @brief Generate random password.
    * @param length Password length.
    * @param charset Character set to use.
@@ -330,6 +337,10 @@ signals:
    * @brief Emitted when GPG key generation finishes.
    */
   void finishedGenerateGPGKeys(const QString &, const QString &);
+  /**
+   * @brief Emitted when grep finishes with matching results.
+   */
+  void finishedGrep(const QList<QPair<QString, QStringList>> &results);
 };
 
 /**
@@ -345,5 +356,13 @@ signals:
  * Pass object.
  */
 QString gpgErrorMessage(const QString &err);
+
+/**
+ * @brief Parses 'pass grep' raw output into (entry, matches) pairs.
+ *
+ * Declared here so it can be exercised by unit tests without linking the full
+ * Pass object.
+ */
+QList<QPair<QString, QStringList>> parseGrepOutput(const QString &rawOut);
 
 #endif // SRC_PASS_H_

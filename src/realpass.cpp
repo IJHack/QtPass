@@ -14,6 +14,7 @@ using Enums::GIT_INIT;
 using Enums::GIT_PULL;
 using Enums::GIT_PUSH;
 using Enums::PASS_COPY;
+using Enums::PASS_GREP;
 using Enums::PASS_INIT;
 using Enums::PASS_INSERT;
 using Enums::PASS_MOVE;
@@ -189,6 +190,19 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
   args << passSrc;
   args << passDest;
   executePass(PASS_COPY, args);
+}
+
+/**
+ * @brief Search all password content via 'pass grep'.
+ * @param pattern Search pattern.
+ * @param caseInsensitive true for case-insensitive search.
+ */
+void RealPass::Grep(QString pattern, bool caseInsensitive) {
+  QStringList args = {"grep"};
+  if (caseInsensitive)
+    args << "-i";
+  args << "--" << pattern;
+  executePass(PASS_GREP, args, QString(), true);
 }
 
 /**

@@ -34,6 +34,7 @@ class MainWindow;
     This class could really do with an overhaul.
  */
 class QDialog;
+class QTreeWidgetItem;
 class QtPass;
 class TrayIcon;
 /**
@@ -91,6 +92,7 @@ public slots:
   void showStatusMessage(const QString &msg, int timeout = 2000);
   void passShowHandler(const QString &);
   void passOtpHandler(const QString &);
+  void onGrepFinished(const QList<QPair<QString, QStringList>> &results);
 
   void onPush();
   void on_treeView_clicked(const QModelIndex &index);
@@ -99,6 +101,8 @@ public slots:
   void endReencryptPath();
 
 private slots:
+  void on_grepButton_toggled(bool checked);
+  void on_grepResultsList_itemClicked(QTreeWidgetItem *item, int column);
   void addPassword();
   void addFolder();
   void onEdit();
@@ -130,6 +134,9 @@ private slots:
 private:
   QtPass *m_qtPass;
   QScopedPointer<Ui::MainWindow> ui;
+  bool m_grepMode = false;
+  bool m_grepBusy = false;
+  bool m_grepCancelled = false;
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
@@ -160,6 +167,7 @@ private:
 
   void updateGitButtonVisibility();
   void updateOtpButtonVisibility();
+  void updateGrepButtonVisibility();
   void enableGitButtons(const bool &);
 };
 
