@@ -579,7 +579,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Yerini değiştirmek için başarısız oldu %1. Orijinal restore edilmiştir.</translation>
+        <translation>Yerine %1 konulamadı. Orijinal geri yüklendi.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
