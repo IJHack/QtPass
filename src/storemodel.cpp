@@ -101,9 +101,8 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
 
 void StoreModel::setStore(const QString &passStore) {
   store = passStore;
-#if QT_VERSION >= QT_VERSION_CHECK(6, 9, 0)
+#if QT_VERSION >= QT_VERSION_CHECK(6, 8, 0)
   beginFilterChange();
-  endFilterChange();
 #else
   invalidateFilter();
 #endif
