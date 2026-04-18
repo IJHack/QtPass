@@ -1,62 +1,64 @@
 <map id="QtPassSettings::getGpgExecutable" name="QtPassSettings::getGpgExecutable">
-<area shape="rect" id="Node000001" title="Get GPG executable path." alt="" coords="1001,368,1247,394"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a607cc25575bf718f57333bb7854870b4" title="Check if signing keys are valid." alt="" coords="192,111,415,136"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1110,357,1088,308,1054,246,1008,182,981,153,952,127,889,83,831,50,776,27,722,13,666,8,605,11,539,22,463,40,422,54,383,74,323,113,320,109,380,69,420,49,462,34,538,17,605,6,666,3,723,8,778,22,833,45,892,78,955,123,985,149,1012,179,1059,243,1093,305,1115,354"/>
-<area shape="rect" id="Node000004" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="471,74,667,99"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1106,358,1082,319,1047,272,1003,225,952,185,882,149,807,124,733,107,667,97,667,91,734,102,809,119,884,144,955,180,1006,221,1051,269,1086,316,1111,355"/>
-<area shape="rect" id="Node000005" href="$class_util.html#afe6db9149dff37feded5abf38870cda8" title="Verify that the required configuration is complete." alt="" coords="771,195,905,220"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="1101,360,1039,296,998,262,952,234,905,218,907,213,954,229,1001,258,1043,292,1105,356"/>
-<area shape="rect" id="Node000009" href="$class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a" title="Execute GPG command." alt="" coords="747,392,929,418"/>
-<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="988,395,930,400,929,395,987,390"/>
-<area shape="rect" id="Node000012" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Generate GPG keys using batch script." alt="" coords="749,294,927,319"/>
-<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1070,367,953,333,904,322,905,317,954,328,1071,362"/>
-<area shape="rect" id="Node000013" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title="Read recipients from file." alt="" coords="731,656,945,682"/>
-<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1115,408,1093,457,1059,520,1013,584,985,614,955,639,915,659,913,654,952,635,982,610,1009,581,1055,517,1089,455,1110,406"/>
-<area shape="rect" id="Node000016" href="$class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Check if GPG supports Ed25519 encryption." alt="" coords="740,343,936,368"/>
-<area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="988,372,936,367,936,362,988,366"/>
-<area shape="rect" id="Node000019" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="725,244,951,270"/>
-<area shape="poly" id="edge23_Node000001_Node000019" title=" " alt="" coords="1093,362,1030,322,952,284,916,272,918,267,954,279,1033,317,1096,358"/>
-<area shape="rect" id="Node000020" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="783,599,893,624"/>
-<area shape="poly" id="edge25_Node000001_Node000020" title=" " alt="" coords="1111,407,1087,447,1052,495,1007,545,955,586,925,600,894,608,893,603,923,595,952,581,1003,541,1048,492,1083,444,1107,404"/>
-<area shape="rect" id="Node000022" href="$class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c" title="Re&#45;encrypt single file with new recipients." alt="" coords="723,546,953,571"/>
-<area shape="poly" id="edge27_Node000001_Node000022" title=" " alt="" coords="1105,406,1042,469,1001,504,955,533,915,548,913,543,952,528,997,499,1039,466,1101,402"/>
-<area shape="rect" id="Node000023" href="$class_imitate_pass.html#aa6163e2dd259c8f69d0cead7551b573a" title="Sign .gpg&#45;id file with signing keys." alt="" coords="471,443,666,468"/>
-<area shape="poly" id="edge29_Node000001_Node000023" title=" " alt="" coords="1074,401,1017,417,954,432,803,450,667,457,666,452,803,445,953,426,1015,412,1072,395"/>
-<area shape="rect" id="Node000024" href="$class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" title="Verify .gpg&#45;id file exists and is valid." alt="" coords="736,494,940,519"/>
-<area shape="poly" id="edge31_Node000001_Node000024" title=" " alt="" coords="1093,403,1030,440,954,477,896,496,894,491,952,472,1028,435,1090,399"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,443,138,468"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="284,148,241,199,194,260,129,365,85,444,80,442,124,362,190,257,237,195,279,145"/>
-<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="616,65,613,60,605,56,569,52,540,54,525,59,522,65,530,72,526,75,517,65,522,55,539,49,569,47,607,51,617,56,620,62"/>
-<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="802,190,721,142,698,126,674,113,639,102,641,97,676,108,701,121,724,137,805,186"/>
-<area shape="rect" id="Node000006" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="493,196,645,222"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="757,211,645,211,645,206,757,205"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="521,246,616,271"/>
-<area shape="poly" id="edge9_Node000005_Node000007" title=" " alt="" coords="758,225,617,252,616,247,757,220"/>
-<area shape="rect" id="Node000008" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="491,123,647,148"/>
-<area shape="poly" id="edge10_Node000005_Node000008" title=" " alt="" coords="783,194,674,162,628,151,629,146,675,157,784,188"/>
-<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="616,187,613,183,605,179,569,175,540,177,525,182,522,187,530,194,526,198,517,188,522,178,539,172,569,170,607,174,617,179,620,185"/>
-<area shape="rect" id="Node000010" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="497,394,640,419"/>
-<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="733,408,640,409,640,403,733,403"/>
-<area shape="rect" id="Node000011" href="$class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d" title="Show decrypted password." alt="" coords="498,344,639,370"/>
-<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="753,393,639,372,640,367,754,387"/>
-<area shape="rect" id="Node000014" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="205,528,401,554"/>
-<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="717,680,657,680,592,675,526,666,462,649,417,629,376,603,316,556,320,552,379,599,420,624,464,644,527,660,592,670,657,674,717,675"/>
-<area shape="poly" id="edge18_Node000014_Node000003" title=" " alt="" coords="254,526,109,471,111,466,256,521"/>
-<area shape="rect" id="Node000015" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,528,144,554"/>
-<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="191,544,144,544,144,538,191,538"/>
-<area shape="rect" id="Node000017" href="$class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Get default key template for new GPG keys." alt="" coords="463,295,675,320"/>
-<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="752,343,640,323,641,318,753,338"/>
-<area shape="rect" id="Node000018" href="$class_keygen_dialog.html#a565b5698b7bb40720476d61b8b1b8548" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="198,295,409,320"/>
-<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="449,310,409,310,409,305,449,305"/>
-<area shape="poly" id="edge22_Node000018_Node000018" title=" " alt="" coords="344,286,333,277,303,274,279,276,266,281,264,286,270,293,266,297,258,287,263,277,278,271,303,268,335,272,347,282"/>
-<area shape="poly" id="edge24_Node000019_Node000007" title=" " alt="" coords="711,260,616,261,616,255,711,255"/>
-<area shape="rect" id="Node000021" href="$class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6" title="List GPG keys." alt="" coords="513,608,624,634"/>
-<area shape="poly" id="edge26_Node000020_Node000021" title=" " alt="" coords="769,617,624,622,624,616,768,611"/>
-<area shape="poly" id="edge28_Node000022_Node000014" title=" " alt="" coords="709,557,402,547,402,542,709,552"/>
-<area shape="poly" id="edge30_Node000023_Node000003" title=" " alt="" coords="457,458,138,458,138,453,457,453"/>
-<area shape="poly" id="edge32_Node000024_Node000010" title=" " alt="" coords="801,490,742,461,674,433,635,422,636,417,676,428,744,456,803,485"/>
-<area shape="poly" id="edge33_Node000024_Node000023" title=" " alt="" coords="756,494,636,471,637,466,757,489"/>
-<area shape="rect" id="Node000025" href="$class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" title="Verify .gpg&#45;id file for a directory." alt="" coords="478,493,659,533"/>
-<area shape="poly" id="edge34_Node000024_Node000025" title=" " alt="" coords="722,512,660,513,660,508,722,507"/>
-<area shape="poly" id="edge35_Node000025_Node000014" title=" " alt="" coords="465,527,402,533,401,528,464,521"/>
+<area shape="rect" id="Node000001" title="Get GPG executable path." alt="" coords="1001,354,1247,380"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a607cc25575bf718f57333bb7854870b4" title="Check if signing keys are valid." alt="" coords="192,121,415,146"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1112,343,1092,291,1058,224,1012,157,984,127,952,101,888,62,829,34,774,17,719,9,664,10,604,17,463,50,422,64,383,84,323,123,320,118,380,79,420,59,462,44,603,12,663,4,720,4,775,12,831,29,890,57,955,97,987,123,1016,153,1063,222,1096,288,1117,341"/>
+<area shape="rect" id="Node000004" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="471,84,667,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1109,343,1087,299,1052,244,1007,190,981,166,952,147,918,130,882,117,807,99,733,92,667,91,667,86,734,86,808,94,884,111,920,125,955,142,984,162,1011,186,1057,241,1091,296,1114,340"/>
+<area shape="rect" id="Node000005" href="$class_util.html#afe6db9149dff37feded5abf38870cda8" title="Verify that the required configuration is complete." alt="" coords="771,157,905,182"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="1104,345,1079,311,1043,270,1001,230,952,196,929,186,905,179,906,174,931,181,955,191,1004,225,1047,266,1083,307,1109,341"/>
+<area shape="rect" id="Node000009" href="$class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a" title="Execute GPG command." alt="" coords="747,354,929,380"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="988,370,930,370,930,364,988,364"/>
+<area shape="rect" id="Node000012" href="$class_pass.html#a0c29f7bd4ca235d00d9dac6a37e14f4f" title="Generate GPG keys using batch script." alt="" coords="749,256,927,281"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="1085,351,1024,322,953,295,910,284,912,278,954,290,1026,317,1087,346"/>
+<area shape="rect" id="Node000013" href="$class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834" title="Read recipients from file." alt="" coords="731,668,945,693"/>
+<area shape="poly" id="edge15_Node000001_Node000013" title=" " alt="" coords="1118,394,1098,450,1065,522,1044,560,1018,596,989,630,955,659,934,670,932,665,952,654,985,626,1014,593,1039,557,1061,520,1093,448,1113,392"/>
+<area shape="rect" id="Node000016" href="$class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Check if GPG supports Ed25519 encryption." alt="" coords="740,305,936,330"/>
+<area shape="poly" id="edge19_Node000001_Node000016" title=" " alt="" coords="1036,355,912,333,913,328,1037,349"/>
+<area shape="rect" id="Node000019" href="$class_imitate_pass.html#a7789a916aca076ad7ceaf4ef093239d3" title="Search all password content by GPG&#45;decrypting each .gpg file." alt="" coords="769,404,907,429"/>
+<area shape="poly" id="edge23_Node000001_Node000019" title=" " alt="" coords="1037,385,907,407,906,402,1036,379"/>
+<area shape="rect" id="Node000020" href="$class_qt_pass_settings.html#a64ffdab0605be803054150d438254c56" title="Initialize executable paths by auto&#45;detecting them." alt="" coords="725,206,951,232"/>
+<area shape="poly" id="edge24_Node000001_Node000020" title=" " alt="" coords="1098,347,1035,295,995,268,952,245,920,234,922,229,954,241,998,264,1038,291,1101,343"/>
+<area shape="rect" id="Node000021" href="$class_pass.html#a6ed6c10b07137f62e127b290ebd428a2" title="List GPG keys matching patterns." alt="" coords="783,618,893,644"/>
+<area shape="poly" id="edge26_Node000001_Node000021" title=" " alt="" coords="1114,394,1090,438,1056,495,1010,552,984,578,955,601,925,617,894,626,893,621,923,612,952,597,980,574,1006,549,1051,491,1086,436,1109,391"/>
+<area shape="rect" id="Node000023" href="$class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c" title="Re&#45;encrypt single file with new recipients." alt="" coords="723,561,953,586"/>
+<area shape="poly" id="edge28_Node000001_Node000023" title=" " alt="" coords="1108,392,1047,467,1003,509,955,544,908,563,906,558,952,539,1000,504,1043,463,1104,389"/>
+<area shape="rect" id="Node000024" href="$class_imitate_pass.html#aa6163e2dd259c8f69d0cead7551b573a" title="Sign .gpg&#45;id file with signing keys." alt="" coords="471,453,666,478"/>
+<area shape="poly" id="edge30_Node000001_Node000024" title=" " alt="" coords="1089,389,1028,418,954,443,879,457,803,466,666,471,666,466,803,460,879,452,953,438,1026,413,1087,384"/>
+<area shape="rect" id="Node000025" href="$class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240" title="Verify .gpg&#45;id file exists and is valid." alt="" coords="736,505,940,530"/>
+<area shape="poly" id="edge32_Node000001_Node000025" title=" " alt="" coords="1099,391,1036,439,996,465,954,488,900,507,898,502,952,483,993,461,1033,435,1096,387"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206" title="Initialize store." alt="" coords="11,453,138,478"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="284,158,241,208,194,270,129,375,85,454,80,452,124,372,190,267,237,205,279,155"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="616,75,613,70,605,66,569,62,540,64,525,69,522,75,530,82,526,85,517,75,522,65,539,59,569,57,607,61,617,66,620,72"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="784,155,674,123,628,112,629,106,675,118,785,150"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="493,206,645,232"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="757,187,639,209,638,204,756,182"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible." alt="" coords="521,256,616,281"/>
+<area shape="poly" id="edge9_Node000005_Node000007" title=" " alt="" coords="758,182,724,196,710,207,701,220,692,233,676,245,647,258,617,265,616,260,645,253,673,241,688,229,696,217,706,204,721,191,756,178"/>
+<area shape="rect" id="Node000008" href="$class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first&#45;time use wizard." alt="" coords="491,133,647,158"/>
+<area shape="poly" id="edge10_Node000005_Node000008" title=" " alt="" coords="757,165,647,155,647,150,757,160"/>
+<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="616,197,613,193,605,189,569,185,540,187,525,192,522,197,530,204,526,208,517,198,522,188,539,182,569,180,607,184,617,189,620,195"/>
+<area shape="rect" id="Node000010" href="$class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601" title="Insert new password." alt="" coords="497,404,640,429"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="755,385,639,406,638,401,754,380"/>
+<area shape="rect" id="Node000011" href="$class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d" title="Show decrypted password." alt="" coords="498,354,639,380"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="733,370,640,370,640,364,733,364"/>
+<area shape="rect" id="Node000014" href="$class_imitate_pass.html#af331446d163c31f1fca714646c0f6244" title="Re&#45;encrypt entire directory." alt="" coords="205,538,401,564"/>
+<area shape="poly" id="edge16_Node000013_Node000014" title=" " alt="" coords="717,691,657,690,592,686,526,676,462,659,417,639,376,614,317,566,320,562,379,609,420,634,464,654,527,671,592,680,657,685,717,686"/>
+<area shape="poly" id="edge18_Node000014_Node000003" title=" " alt="" coords="254,536,109,481,111,476,256,531"/>
+<area shape="rect" id="Node000015" href="$class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a" title="Copy password file." alt="" coords="5,538,144,564"/>
+<area shape="poly" id="edge17_Node000014_Node000015" title=" " alt="" coords="191,554,144,554,144,548,191,548"/>
+<area shape="rect" id="Node000017" href="$class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Get default key template for new GPG keys." alt="" coords="463,305,675,330"/>
+<area shape="poly" id="edge20_Node000016_Node000017" title=" " alt="" coords="726,320,675,320,675,315,726,315"/>
+<area shape="rect" id="Node000018" href="$class_keygen_dialog.html#a565b5698b7bb40720476d61b8b1b8548" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="198,305,409,330"/>
+<area shape="poly" id="edge21_Node000017_Node000018" title=" " alt="" coords="449,320,409,320,409,315,449,315"/>
+<area shape="poly" id="edge22_Node000018_Node000018" title=" " alt="" coords="344,296,333,287,303,284,279,286,266,291,264,296,270,303,266,307,258,297,263,287,278,281,303,278,335,282,347,292"/>
+<area shape="poly" id="edge25_Node000020_Node000007" title=" " alt="" coords="755,237,617,262,616,257,754,232"/>
+<area shape="rect" id="Node000022" href="$class_pass.html#a170c0e1d359eb3f2d7b5f75f60082bd6" title="List GPG keys." alt="" coords="513,618,624,644"/>
+<area shape="poly" id="edge27_Node000021_Node000022" title=" " alt="" coords="769,634,624,634,624,628,769,628"/>
+<area shape="poly" id="edge29_Node000023_Node000014" title=" " alt="" coords="709,571,402,558,402,552,709,566"/>
+<area shape="poly" id="edge31_Node000024_Node000003" title=" " alt="" coords="457,468,138,468,138,463,457,463"/>
+<area shape="poly" id="edge33_Node000025_Node000010" title=" " alt="" coords="801,501,742,471,674,443,635,432,637,427,676,438,744,466,803,496"/>
+<area shape="poly" id="edge34_Node000025_Node000024" title=" " alt="" coords="757,505,635,481,636,476,758,500"/>
+<area shape="rect" id="Node000026" href="$class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af" title="Verify .gpg&#45;id file for a directory." alt="" coords="478,503,659,543"/>
+<area shape="poly" id="edge35_Node000025_Node000026" title=" " alt="" coords="722,523,660,524,660,519,722,517"/>
+<area shape="poly" id="edge36_Node000026_Node000014" title=" " alt="" coords="465,537,402,543,401,538,464,531"/>
 </map>

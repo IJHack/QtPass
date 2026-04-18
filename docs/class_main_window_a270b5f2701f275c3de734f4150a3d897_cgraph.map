@@ -1,0 +1,12 @@
+<map id="MainWindow::onGrepFinished" name="MainWindow::onGrepFinished">
+<area shape="rect" id="Node000001" title="Display grep results in grepResultsList." alt="" coords="5,63,220,88"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a2e45500a82b847412e95f93e5e1d8fc3" title="Get whether to hide content (password + username)." alt="" coords="271,5,490,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,60,307,31,308,36,173,65"/>
+<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be" title="Get whether to use panel autoclear." alt="" coords="268,55,493,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="220,73,254,73,254,78,220,78"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="277,119,485,159"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="168,86,284,114,282,119,166,91"/>
+<area shape="rect" id="Node000003" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="541,35,744,60"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="490,28,528,32,528,37,490,33"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="493,61,527,57,528,62,494,66"/>
+</map>

@@ -141,6 +141,8 @@ Signals</h2></td></tr>
 <tr class="memdesc:abc6173e796622bf53878d7bd64861c7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when generate finishes.  <br /></td></tr>
 <tr class="memitem:aeb0213d032e070ad788398328c0a080c" id="r_aeb0213d032e070ad788398328c0a080c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aeb0213d032e070ad788398328c0a080c">finishedGenerateGPGKeys</a> (const QString &amp;, const QString &amp;)</td></tr>
 <tr class="memdesc:aeb0213d032e070ad788398328c0a080c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when GPG key generation finishes.  <br /></td></tr>
+<tr class="memitem:a74344f203b81f87b4d42a6281a176db4" id="r_a74344f203b81f87b4d42a6281a176db4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a> (const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</td></tr>
+<tr class="memdesc:a74344f203b81f87b4d42a6281a176db4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when grep finishes with matching results.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -171,6 +173,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1a41ce3d629b20902e9d14ff285c1f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy password file or directory.  <br /></td></tr>
 <tr class="memitem:aee98d184ed11013a9a9dc08d05fbb1a2" id="r_aee98d184ed11013a9a9dc08d05fbb1a2"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aee98d184ed11013a9a9dc08d05fbb1a2">Init</a> (QString path, const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;users)=0</td></tr>
 <tr class="memdesc:aee98d184ed11013a9a9dc08d05fbb1a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize new password store.  <br /></td></tr>
+<tr class="memitem:aeb0ec5b8842c1c27e40dafc2ebcad509" id="r_aeb0ec5b8842c1c27e40dafc2ebcad509"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aeb0ec5b8842c1c27e40dafc2ebcad509">Grep</a> (QString pattern, bool caseInsensitive=false)=0</td></tr>
+<tr class="memdesc:aeb0ec5b8842c1c27e40dafc2ebcad509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search password content for a pattern.  <br /></td></tr>
 <tr class="memitem:a35b3cba623a22f41173670ec34ebb67c" id="r_a35b3cba623a22f41173670ec34ebb67c"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#a35b3cba623a22f41173670ec34ebb67c">generatePassword</a> (unsigned int length, const QString &amp;charset) -&gt; QString</td></tr>
 <tr class="memdesc:a35b3cba623a22f41173670ec34ebb67c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random password.  <br /></td></tr>
 <tr class="memitem:a0c29f7bd4ca235d00d9dac6a37e14f4f" id="r_a0c29f7bd4ca235d00d9dac6a37e14f4f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0c29f7bd4ca235d00d9dac6a37e14f4f">GenerateGPGKeys</a> (QString batch)</td></tr>
@@ -256,7 +260,7 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#_a86">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a46">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#_a88">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a48">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00044">44</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
@@ -281,10 +285,10 @@ Protected Attributes</h2></td></tr>
 
 <p>Construct a <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance. </p>
 <p><a class="el" href="#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance.">Pass::Pass</a> wrapper for using either pass or the pass imitation. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a11">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a12">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00035">35</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00036">36</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
@@ -359,10 +363,10 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Random number in range [0, bound) </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a81">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a86">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00684">684</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00738">738</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
@@ -453,7 +457,7 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a43">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a45">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>.</dd>
 </dl>
 <div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -550,10 +554,10 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a92">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a16">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a94">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a17">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00077">77</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00078">78</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
@@ -631,7 +635,7 @@ Protected Attributes</h2></td></tr>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe">ImitatePass</a>.</p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00083">83</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00084">84</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
@@ -697,10 +701,10 @@ Protected Attributes</h2></td></tr>
 </dl>
 
 <p>Reimplemented in <a class="el" href="class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">ImitatePass</a>.</p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a90">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a13">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a92">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a14">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00505">505</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00545">545</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 <div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
@@ -775,7 +779,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when copy finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a68">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a72">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 <div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -845,7 +849,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when GPG key generation finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a69">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a73">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 <div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-11-summary" class="dynsummary" style="display:block;">
@@ -884,7 +888,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when Git init finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a51">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a55">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 <div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
@@ -923,7 +927,7 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when Git pull finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a53">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a57">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 <div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-13-summary" class="dynsummary" style="display:block;">
@@ -962,13 +966,48 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when Git push finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a55">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a59">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 <div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ab892bcacdbe3081f677e456a3a8ac328_icgraph.svg" width="535" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a74344f203b81f87b4d42a6281a176db4" name="a74344f203b81f87b4d42a6281a176db4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74344f203b81f87b4d42a6281a176db4">&#9670;&#160;</a></span>finishedGrep</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Pass::finishedGrep </td>
+          <td>(</td>
+          <td class="paramtype">const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>results</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Emitted when grep finishes with matching results. </p>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a96">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a50">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+</dl>
+<div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a74344f203b81f87b4d42a6281a176db4_icgraph.svg" width="543" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1001,12 +1040,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when init finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a64">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a68">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
-<div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a7a4c2bbb80372455e0d406fbc940e219_icgraph.svg" width="506" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1040,12 +1079,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when insert finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a60">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a64">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
-<div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-17" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a71d8c179a7875dd2983de2aabff0a8cb_icgraph.svg" width="522" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1079,12 +1118,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when move finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a66">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a70">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
-<div id="dynsection-17" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-18" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a3ca180cb5769aa87186474f7eda9e2a5_icgraph.svg" width="522" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1114,12 +1153,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when OTP generation finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a59">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a63">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
-<div id="dynsection-18" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-19" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a8ca44f13c68a03c1e91fbbfee37388ed_icgraph.svg" width="568" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1153,12 +1192,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when remove finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a62">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a66">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
-<div id="dynsection-19" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-20" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a263cc9ceb5269427237ea43267667197_icgraph.svg" width="539" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1188,12 +1227,12 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Emitted when show finishes. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a75">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a57">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a76">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a61">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
-<div id="dynsection-20" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-21" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a24cdfb567ab68940f2a823704e2ab1ba_icgraph.svg" width="642" height="167"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1223,14 +1262,14 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a38">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a39">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00389">389</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-21" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00390">390</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-22" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div id="dynsection-22-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a0c29f7bd4ca235d00d9dac6a37e14f4f_cgraph.svg" width="100%" height="456"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1281,14 +1320,14 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the password </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a23">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a24">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00120">120</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-22" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00121">121</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-23" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a35b3cba623a22f41173670ec34ebb67c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1339,20 +1378,20 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Generated password string </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a82">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a87">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00710">710</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-23" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_aff660edce34d33f5a2adfa8c130470f0_cgraph.svg" width="460" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-24" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00764">764</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-24" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_aff660edce34d33f5a2adfa8c130470f0_cgraph.svg" width="460" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-25" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_aff660edce34d33f5a2adfa8c130470f0_icgraph.svg" width="470" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1386,20 +1425,20 @@ Protected Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>Default template string.</dd>
 <dd>
 GPG batch template string </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a35">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a36">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00198">198</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-25" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ae3284a937d0ca8ae2ea2d81ec556c37b_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-26" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00199">199</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-26" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-26-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ae3284a937d0ca8ae2ea2d81ec556c37b_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-27" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ae3284a937d0ca8ae2ea2d81ec556c37b_icgraph.svg" width="482" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1444,20 +1483,20 @@ GPG batch template string </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>path to the gpgid file. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a41">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a77">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a43">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a82">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00613">613</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-27" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a7bab4c97e4a327cc34060a67c09959bf_cgraph.svg" width="667" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-28" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00667">667</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-28" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a7bab4c97e4a327cc34060a67c09959bf_cgraph.svg" width="667" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-29" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a7bab4c97e4a327cc34060a67c09959bf_icgraph.svg" width="100%" height="425"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1502,20 +1541,20 @@ GPG batch template string </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>recipients gpg-id contents </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a46">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a78">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a48">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a83">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00643">643</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-29" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-29-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a693825d2ad62813cf103860ef6211370_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-30" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00697">697</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-30" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-30-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a693825d2ad62813cf103860ef6211370_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-31" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-31-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a693825d2ad62813cf103860ef6211370_icgraph.svg" width="100%" height="425"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1573,14 +1612,14 @@ GPG batch template string </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>recipient string </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a80">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a85">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00666">666</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-31" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-31-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00720">720</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-32" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-31-content" class="dyncontent" style="display:none;">
+<div id="dynsection-32-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ae1f31c62b7117b99882625dbef654533_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1730,22 +1769,62 @@ GPG batch template string </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true if Ed25519 is supported.</dd>
 <dd>
 true if ed25519 is supported </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a33">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a34">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00177">177</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-32" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-32-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-32-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a4c2bca8a9a59a032adc68846055b056b_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-33" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00178">178</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-33" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-33-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a4c2bca8a9a59a032adc68846055b056b_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div id="dynsection-34" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-34-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a4c2bca8a9a59a032adc68846055b056b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
+
+</div>
+</div>
+<a id="aeb0ec5b8842c1c27e40dafc2ebcad509" name="aeb0ec5b8842c1c27e40dafc2ebcad509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb0ec5b8842c1c27e40dafc2ebcad509">&#9670;&#160;</a></span>Grep()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Pass::Grep </td>
+          <td>(</td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>pattern</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>caseInsensitive</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel pure-virtual">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Search password content for a pattern. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pattern</td><td>Search pattern (regular expression). </td></tr>
+    <tr><td class="paramname">caseInsensitive</td><td>true for case-insensitive search. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="class_imitate_pass.html#a7789a916aca076ad7ceaf4ef093239d3">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ae231e77648f429687ca7e2cf14275b07">RealPass</a>.</p>
 
 </div>
 </div>
@@ -1806,14 +1885,14 @@ true if ed25519 is supported </dd></dl>
 
 <p>Initialize the <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> instance. </p>
 <p>Initializes the pass wrapper environment. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a21">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a22">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00096">96</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-34" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-34-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00097">97</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-35" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-34-content" class="dyncontent" style="display:none;">
+<div id="dynsection-35-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a012c47a55b3cc3467ad0f013716f623a_cgraph.svg" width="603" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -1903,11 +1982,11 @@ true if ed25519 is supported </dd></dl>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QList&lt;UserInfo&gt; users </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00435">435</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-35" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-35-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00436">436</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-36" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-35-content" class="dyncontent" style="display:none;">
+<div id="dynsection-36-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a170c0e1d359eb3f2d7b5f75f60082bd6_cgraph.svg" width="100%" height="521"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1950,20 +2029,20 @@ true if ed25519 is supported </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QList&lt;UserInfo&gt; users </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a42">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a43">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00412">412</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-36" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-36-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-36-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6ed6c10b07137f62e127b290ebd428a2_cgraph.svg" width="666" height="295"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-37" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00413">413</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-37" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-37-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-37-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6ed6c10b07137f62e127b290ebd428a2_cgraph.svg" width="666" height="295"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-38" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-38-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6ed6c10b07137f62e127b290ebd428a2_icgraph.svg" width="280" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -2078,12 +2157,12 @@ true if ed25519 is supported </dd></dl>
 </div><div class="memdoc">
 
 <p>Emitted on process error exit. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a49">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a51">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
-<div id="dynsection-38" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-38-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-39" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-38-content" class="dyncontent" style="display:none;">
+<div id="dynsection-39-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a9bb040e1a33322a27cd85d8a367ef24f_icgraph.svg" width="624" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -2160,14 +2239,14 @@ true if ed25519 is supported </dd></dl>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Resolved command with program and arguments. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a36">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a37">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00342">342</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-39" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-39-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00343">343</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-40" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-39-content" class="dyncontent" style="display:none;">
+<div id="dynsection-40-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a6a9aa8dc4ff288ce256351b671533a84_icgraph.svg" width="466" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -2209,14 +2288,14 @@ true if ed25519 is supported </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a70">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a75">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00578">578</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-40" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-40-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00632">632</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-41" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-41-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-40-content" class="dyncontent" style="display:none;">
+<div id="dynsection-41-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a4ecc5514ea969ceb06f439698bf6aa9a_icgraph.svg" width="311" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -2281,12 +2360,12 @@ true if ed25519 is supported </dd></dl>
 </div><div class="memdoc">
 
 <p>Emitted before executing a command. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a15">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a16">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
-<div id="dynsection-41" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-41-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-42" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-42-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-41-content" class="dyncontent" style="display:none;">
+<div id="dynsection-42-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a0345d3ffdb213234031e9c84fe8ca7c6_icgraph.svg" width="362" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -2327,12 +2406,12 @@ true if ed25519 is supported </dd></dl>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a70">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a72">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>.</dd>
 </dl>
-<div id="dynsection-42" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-42-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-43" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-43-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-42-content" class="dyncontent" style="display:none;">
+<div id="dynsection-43-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_a404664f7d589a307c9223c373b2622c3_icgraph.svg" width="100%" height="373"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2354,14 +2433,14 @@ true if ed25519 is supported </dd></dl>
 </div><div class="memdoc">
 
 <p>Update environment for subprocesses. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a71">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a76">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00587">587</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-43" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-43-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00641">641</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<div id="dynsection-44" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-44-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-43-content" class="dyncontent" style="display:none;">
+<div id="dynsection-44-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_pass_ac679a086b289cdb9245906948ba0458a_cgraph.svg" width="100%" height="450"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -2387,7 +2466,7 @@ true if ed25519 is supported </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#_a89">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a19">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#_a91">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a20">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00042">42</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>

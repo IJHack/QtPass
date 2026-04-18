@@ -59,5 +59,6 @@ var searchData=
   ['gitpull_5fb_56',['GitPull_b',['../class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2',1,'ImitatePass::GitPull_b()'],['../class_pass.html#a7a109d5c0a7f565398b7238c32bb6328',1,'Pass::GitPull_b()'],['../class_real_pass.html#a6a959408a305cc8dd7cc6c7bd9c17210',1,'RealPass::GitPull_b()']]],
   ['gitpush_57',['GitPush',['../class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9',1,'ImitatePass::GitPush()'],['../class_pass.html#a7b5fa97ca6f3795512ac7c10db5c8f09',1,'Pass::GitPush()'],['../class_real_pass.html#ae32fd82fe5e57b2c45df05bfe2991b5b',1,'RealPass::GitPush()']]],
   ['gpgerrormessage_58',['gpgErrorMessage',['../pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc',1,'gpgErrorMessage(const QString &amp;err) -&gt; QString:&#160;pass.cpp'],['../pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa',1,'gpgErrorMessage(const QString &amp;err):&#160;pass.cpp']]],
-  ['gpgsupportsed25519_59',['gpgSupportsEd25519',['../class_pass.html#a4c2bca8a9a59a032adc68846055b056b',1,'Pass']]]
+  ['gpgsupportsed25519_59',['gpgSupportsEd25519',['../class_pass.html#a4c2bca8a9a59a032adc68846055b056b',1,'Pass']]],
+  ['grep_60',['Grep',['../class_imitate_pass.html#a7789a916aca076ad7ceaf4ef093239d3',1,'ImitatePass::Grep()'],['../class_pass.html#aeb0ec5b8842c1c27e40dafc2ebcad509',1,'Pass::Grep()'],['../class_real_pass.html#ae231e77648f429687ca7e2cf14275b07',1,'RealPass::Grep()']]]
 ];

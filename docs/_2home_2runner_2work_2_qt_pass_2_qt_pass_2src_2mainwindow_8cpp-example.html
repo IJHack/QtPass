@@ -108,6 +108,7 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &quot;ui_mainwindow.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="usersdialog_8h.html">usersdialog.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;QApplication&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;QCloseEvent&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;QDesktopServices&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
@@ -119,6 +120,7 @@ $(function() {
 <div class="line"><span class="preprocessor">#include &lt;QMessageBox&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;QShortcut&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;QTimer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;QTreeWidget&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"></div>
 <div class="line"><a id="a0" name="a0"></a><a class="code hl_function" href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">MainWindow::MainWindow</a>(<span class="keyword">const</span> QString &amp;searchText, QWidget *parent)</div>
@@ -203,6 +205,7 @@ $(function() {
 <div class="line">  initStatusBar();</div>
 <div class="line"> </div>
 <div class="line">  ui-&gt;lineEdit-&gt;setClearButtonEnabled(<span class="keyword">true</span>);</div>
+<div class="line">  updateGrepButtonVisibility();</div>
 <div class="line"> </div>
 <div class="line">  setUiElementsEnabled(<span class="keyword">true</span>);</div>
 <div class="line"> </div>
@@ -360,6 +363,7 @@ $(function() {
 <div class="line"> </div>
 <div class="line">      updateGitButtonVisibility();</div>
 <div class="line">      updateOtpButtonVisibility();</div>
+<div class="line">      updateGrepButtonVisibility();</div>
 <div class="line">      <span class="keywordflow">if</span> (<a id="a23" name="a23"></a><a class="code hl_function" href="class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413">QtPassSettings::isUseTrayIcon</a>() &amp;&amp; tray == <span class="keyword">nullptr</span>) {</div>
 <div class="line">        initTrayIcon();</div>
 <div class="line">      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413">QtPassSettings::isUseTrayIcon</a>() &amp;&amp; tray != <span class="keyword">nullptr</span>) {</div>
@@ -407,7 +411,7 @@ $(function() {
 <div class="line">  <span class="comment">// Clear any previously cached clipped text before showing new password</span></div>
 <div class="line">  m_qtPass-&gt;clearClippedText();</div>
 <div class="line">  QString file = getFile(index, <span class="keyword">true</span>);</div>
-<div class="line">  ui-&gt;passwordName-&gt;setText(getFile(index, <span class="keyword">true</span>));</div>
+<div class="line">  ui-&gt;passwordName-&gt;setText(file);</div>
 <div class="line">  <span class="keywordflow">if</span> (!file.isEmpty() &amp;&amp; !cleared) {</div>
 <div class="line">    <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;Show(file);</div>
 <div class="line">  } <span class="keywordflow">else</span> {</div>
@@ -510,6 +514,22 @@ $(function() {
 <div class="line">    <span class="keyword">delete</span> item-&gt;widget();</div>
 <div class="line">    <span class="keyword">delete</span> item;</div>
 <div class="line">  }</div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">bool</span> grepWasVisible = ui-&gt;grepResultsList-&gt;isVisible();</div>
+<div class="line">  ui-&gt;grepResultsList-&gt;clear();</div>
+<div class="line">  <span class="keywordflow">if</span> (grepWasVisible) {</div>
+<div class="line">    ui-&gt;grepResultsList-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    ui-&gt;treeView-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (m_grepMode) {</div>
+<div class="line">      m_grepMode = <span class="keyword">false</span>;</div>
+<div class="line">      ui-&gt;grepButton-&gt;blockSignals(<span class="keyword">true</span>);</div>
+<div class="line">      ui-&gt;grepButton-&gt;setChecked(<span class="keyword">false</span>);</div>
+<div class="line">      ui-&gt;grepButton-&gt;blockSignals(<span class="keyword">false</span>);</div>
+<div class="line">      ui-&gt;lineEdit-&gt;blockSignals(<span class="keyword">true</span>);</div>
+<div class="line">      ui-&gt;lineEdit-&gt;clear();</div>
+<div class="line">      ui-&gt;lineEdit-&gt;blockSignals(<span class="keyword">false</span>);</div>
+<div class="line">      ui-&gt;lineEdit-&gt;setPlaceholderText(tr(<span class="stringliteral">&quot;Search Password&quot;</span>));</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
 <div class="line">  <span class="keywordflow">if</span> (notify) {</div>
 <div class="line">    QString output = <span class="stringliteral">&quot;***&quot;</span> + tr(<span class="stringliteral">&quot;Password and Content hidden&quot;</span>) + <span class="stringliteral">&quot;***&quot;</span>;</div>
 <div class="line">    ui-&gt;textBrowser-&gt;setHtml(output);</div>
@@ -567,6 +587,8 @@ $(function() {
 <div class="line"><span class="keywordtype">void</span> MainWindow::onConfig() { <a class="code hl_function" href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56">config</a>(); }</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> MainWindow::on_lineEdit_textChanged(<span class="keyword">const</span> QString &amp;arg1) {</div>
+<div class="line">  <span class="keywordflow">if</span> (m_grepMode)</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
 <div class="line">  ui-&gt;statusBar-&gt;showMessage(tr(<span class="stringliteral">&quot;Looking for: %1&quot;</span>).arg(arg1), 1000);</div>
 <div class="line">  ui-&gt;treeView-&gt;expandAll();</div>
 <div class="line">  clearPanel(<span class="keyword">false</span>);</div>
@@ -603,10 +625,133 @@ $(function() {
 <div class="line">  <a id="a53" name="a53"></a><a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; <span class="stringliteral">&quot;on_lineEdit_returnPressed&quot;</span> &lt;&lt; proxyModel.rowCount();</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line"> </div>
+<div class="line">  <span class="keywordflow">if</span> (m_grepMode) {</div>
+<div class="line">    <span class="keyword">const</span> QString query = ui-&gt;lineEdit-&gt;text();</div>
+<div class="line">    <span class="keywordflow">if</span> (!query.isEmpty()) {</div>
+<div class="line">      m_grepCancelled = <span class="keyword">false</span>;</div>
+<div class="line">      ui-&gt;grepResultsList-&gt;clear();</div>
+<div class="line">      ui-&gt;statusBar-&gt;showMessage(tr(<span class="stringliteral">&quot;Searching…&quot;</span>));</div>
+<div class="line">      <span class="keywordflow">if</span> (!m_grepBusy) {</div>
+<div class="line">        m_grepBusy = <span class="keyword">true</span>;</div>
+<div class="line">        QApplication::setOverrideCursor(Qt::WaitCursor);</div>
+<div class="line">      }</div>
+<div class="line">      <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;Grep(query, ui-&gt;grepCaseButton-&gt;isChecked());</div>
+<div class="line">    } <span class="keywordflow">else</span> {</div>
+<div class="line">      m_grepCancelled = <span class="keyword">true</span>;</div>
+<div class="line">      <span class="keywordflow">if</span> (m_grepBusy) {</div>
+<div class="line">        m_grepBusy = <span class="keyword">false</span>;</div>
+<div class="line">        QApplication::restoreOverrideCursor();</div>
+<div class="line">      }</div>
+<div class="line">      ui-&gt;grepResultsList-&gt;clear();</div>
+<div class="line">      ui-&gt;grepResultsList-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">      ui-&gt;treeView-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> (proxyModel.rowCount() &gt; 0) {</div>
 <div class="line">    selectFirstFile();</div>
 <div class="line">    <a class="code hl_slot" href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464">on_treeView_clicked</a>(ui-&gt;treeView-&gt;currentIndex());</div>
 <div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> MainWindow::on_grepButton_toggled(<span class="keywordtype">bool</span> checked) {</div>
+<div class="line">  m_grepMode = checked;</div>
+<div class="line">  <span class="keywordflow">if</span> (checked) {</div>
+<div class="line">    ui-&gt;lineEdit-&gt;setPlaceholderText(tr(<span class="stringliteral">&quot;Search content (regex)&quot;</span>));</div>
+<div class="line">    ui-&gt;lineEdit-&gt;clear();</div>
+<div class="line">    searchTimer.stop();</div>
+<div class="line">    proxyModel.setFilterRegularExpression(QRegularExpression());</div>
+<div class="line">    ui-&gt;treeView-&gt;setRootIndex(proxyModel.mapFromSource(</div>
+<div class="line">        model.setRootPath(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>())));</div>
+<div class="line">    ui-&gt;grepResultsList-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    <span class="comment">// Keep treeView visible until results arrive</span></div>
+<div class="line">  } <span class="keywordflow">else</span> {</div>
+<div class="line">    <span class="keywordflow">if</span> (m_grepBusy) {</div>
+<div class="line">      m_grepBusy = <span class="keyword">false</span>;</div>
+<div class="line">      m_grepCancelled = <span class="keyword">true</span>;</div>
+<div class="line">      QApplication::restoreOverrideCursor();</div>
+<div class="line">    }</div>
+<div class="line">    searchTimer.stop();</div>
+<div class="line">    ui-&gt;lineEdit-&gt;blockSignals(<span class="keyword">true</span>);</div>
+<div class="line">    ui-&gt;lineEdit-&gt;clear();</div>
+<div class="line">    ui-&gt;lineEdit-&gt;blockSignals(<span class="keyword">false</span>);</div>
+<div class="line">    ui-&gt;lineEdit-&gt;setPlaceholderText(tr(<span class="stringliteral">&quot;Search Password&quot;</span>));</div>
+<div class="line">    ui-&gt;grepResultsList-&gt;clear();</div>
+<div class="line">    ui-&gt;grepResultsList-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    ui-&gt;treeView-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">    proxyModel.setFilterRegularExpression(QRegularExpression());</div>
+<div class="line">    ui-&gt;treeView-&gt;setRootIndex(proxyModel.mapFromSource(</div>
+<div class="line">        model.setRootPath(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>())));</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a id="a54" name="a54"></a><a class="code hl_slot" href="class_main_window.html#a270b5f2701f275c3de734f4150a3d897">MainWindow::onGrepFinished</a>(</div>
+<div class="line">    <span class="keyword">const</span> QList&lt;QPair&lt;QString, QStringList&gt;&gt; &amp;results) {</div>
+<div class="line">  <span class="keywordflow">if</span> (m_grepBusy) {</div>
+<div class="line">    m_grepBusy = <span class="keyword">false</span>;</div>
+<div class="line">    QApplication::restoreOverrideCursor();</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">if</span> (m_grepCancelled) {</div>
+<div class="line">    m_grepCancelled = <span class="keyword">false</span>;</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  }</div>
+<div class="line">  <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keyword">true</span>);</div>
+<div class="line">  <span class="keywordflow">if</span> (!m_grepMode)</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  ui-&gt;grepResultsList-&gt;clear();</div>
+<div class="line">  <span class="keywordflow">if</span> (results.isEmpty()) {</div>
+<div class="line">    ui-&gt;statusBar-&gt;showMessage(tr(<span class="stringliteral">&quot;No matches found.&quot;</span>), 3000);</div>
+<div class="line">    ui-&gt;grepResultsList-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">    ui-&gt;treeView-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">bool</span> hideContent = <a class="code hl_function" href="class_qt_pass_settings.html#a2e45500a82b847412e95f93e5e1d8fc3">QtPassSettings::isHideContent</a>();</div>
+<div class="line">  <span class="keywordtype">int</span> totalLines = 0;</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;pair : results) {</div>
+<div class="line">    QTreeWidgetItem *entryItem = <span class="keyword">new</span> QTreeWidgetItem(ui-&gt;grepResultsList);</div>
+<div class="line">    entryItem-&gt;setText(0, pair.first);</div>
+<div class="line">    entryItem-&gt;setData(0, Qt::UserRole, pair.first);</div>
+<div class="line">    <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;line : pair.second) {</div>
+<div class="line">      QTreeWidgetItem *lineItem = <span class="keyword">new</span> QTreeWidgetItem(entryItem);</div>
+<div class="line">      lineItem-&gt;setText(0, hideContent ? <span class="stringliteral">&quot;***&quot;</span> + tr(<span class="stringliteral">&quot;Content hidden&quot;</span>) + <span class="stringliteral">&quot;***&quot;</span></div>
+<div class="line">                                       : line);</div>
+<div class="line">      lineItem-&gt;setData(0, Qt::UserRole, pair.first);</div>
+<div class="line">      ++totalLines;</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">  ui-&gt;grepResultsList-&gt;expandAll();</div>
+<div class="line">  ui-&gt;treeView-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">  ui-&gt;grepResultsList-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">  ui-&gt;statusBar-&gt;showMessage(</div>
+<div class="line">      tr(<span class="stringliteral">&quot;Found %n match(es) in %1 entr(ies).&quot;</span>, <span class="keyword">nullptr</span>, totalLines)</div>
+<div class="line">          .arg(results.size()),</div>
+<div class="line">      3000);</div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be">QtPassSettings::isUseAutoclearPanel</a>())</div>
+<div class="line">    clearPanelTimer.start();</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,</div>
+<div class="line">                                                <span class="keywordtype">int</span> <span class="comment">/*column*/</span>) {</div>
+<div class="line">  <span class="keyword">const</span> QString entry = item-&gt;data(0, Qt::UserRole).toString();</div>
+<div class="line">  <span class="keywordflow">if</span> (entry.isEmpty())</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  <span class="keyword">const</span> QString fullPath = QDir::cleanPath(</div>
+<div class="line">      QDir(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>()).filePath(entry + <span class="stringliteral">&quot;.gpg&quot;</span>));</div>
+<div class="line">  QModelIndex srcIndex = model.index(fullPath);</div>
+<div class="line">  <span class="keywordflow">if</span> (!srcIndex.isValid())</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  QModelIndex proxyIndex = proxyModel.mapFromSource(srcIndex);</div>
+<div class="line">  <span class="keywordflow">if</span> (!proxyIndex.isValid())</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  ui-&gt;treeView-&gt;setCurrentIndex(proxyIndex);</div>
+<div class="line">  <a class="code hl_slot" href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464">on_treeView_clicked</a>(proxyIndex);</div>
+<div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a2e45500a82b847412e95f93e5e1d8fc3">QtPassSettings::isHideContent</a>() || <a class="code hl_function" href="class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be">QtPassSettings::isUseAutoclearPanel</a>())</div>
+<div class="line">    ui-&gt;grepResultsList-&gt;clear();</div>
+<div class="line">  ui-&gt;grepResultsList-&gt;setVisible(<span class="keyword">false</span>);</div>
+<div class="line">  ui-&gt;treeView-&gt;setVisible(<span class="keyword">true</span>);</div>
+<div class="line">  ui-&gt;treeView-&gt;scrollTo(proxyIndex);</div>
+<div class="line">  ui-&gt;treeView-&gt;setFocus();</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> MainWindow::selectFirstFile() {</div>
@@ -710,7 +855,7 @@ $(function() {
 <div class="line"><span class="keywordtype">void</span> MainWindow::onOtp() {</div>
 <div class="line">  QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), <span class="keyword">true</span>);</div>
 <div class="line">  <span class="keywordflow">if</span> (!file.isEmpty()) {</div>
-<div class="line">    <span class="keywordflow">if</span> (<a id="a54" name="a54"></a><a class="code hl_function" href="class_qt_pass_settings.html#a150f44b4615f4634df759dbd810e48e8">QtPassSettings::isUseOtp</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a id="a55" name="a55"></a><a class="code hl_function" href="class_qt_pass_settings.html#a150f44b4615f4634df759dbd810e48e8">QtPassSettings::isUseOtp</a>()) {</div>
 <div class="line">      <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keyword">false</span>);</div>
 <div class="line">      <a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>()-&gt;OtpGenerate(file);</div>
 <div class="line">    }</div>
@@ -724,7 +869,7 @@ $(function() {
 <div class="line">  editPassword(file);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a55" name="a55"></a><a class="code hl_function" href="class_main_window.html#abf0633782804fe58d8590d2e10f138d7">MainWindow::userDialog</a>(<span class="keyword">const</span> QString &amp;dir) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a56" name="a56"></a><a class="code hl_function" href="class_main_window.html#abf0633782804fe58d8590d2e10f138d7">MainWindow::userDialog</a>(<span class="keyword">const</span> QString &amp;dir) {</div>
 <div class="line">  <span class="keywordflow">if</span> (!dir.isEmpty()) {</div>
 <div class="line">    currentDir = dir;</div>
 <div class="line">  }</div>
@@ -743,7 +888,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a56" name="a56"></a><a class="code hl_slot" href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">MainWindow::messageAvailable</a>(<span class="keyword">const</span> QString &amp;message) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a57" name="a57"></a><a class="code hl_slot" href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">MainWindow::messageAvailable</a>(<span class="keyword">const</span> QString &amp;message) {</div>
 <div class="line">  <span class="keywordflow">if</span> (message.isEmpty()) {</div>
 <div class="line">    focusInput();</div>
 <div class="line">  } <span class="keywordflow">else</span> {</div>
@@ -755,14 +900,14 @@ $(function() {
 <div class="line">  raise();</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a57" name="a57"></a><a class="code hl_function" href="class_main_window.html#a3b9eaa6de9809fbc8b52c298133dfe16">MainWindow::generateKeyPair</a>(<span class="keyword">const</span> QString &amp;batch, QDialog *keygenWindow) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a58" name="a58"></a><a class="code hl_function" href="class_main_window.html#a3b9eaa6de9809fbc8b52c298133dfe16">MainWindow::generateKeyPair</a>(<span class="keyword">const</span> QString &amp;batch, QDialog *keygenWindow) {</div>
 <div class="line">  keygen = keygenWindow;</div>
-<div class="line">  emit <a id="a58" name="a58"></a><a class="code hl_signal" href="class_main_window.html#a7e72f32612c2436ff4756c5c25b6b4ec">generateGPGKeyPair</a>(batch);</div>
+<div class="line">  emit <a id="a59" name="a59"></a><a class="code hl_signal" href="class_main_window.html#a7e72f32612c2436ff4756c5c25b6b4ec">generateGPGKeyPair</a>(batch);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> MainWindow::updateProfileBox() {</div>
 <div class="line">  QHash&lt;QString, QHash&lt;QString, QString&gt;&gt; profiles =</div>
-<div class="line">      <a id="a59" name="a59"></a><a class="code hl_function" href="class_qt_pass_settings.html#add3fe08db67b209231af21cf7b8f705d">QtPassSettings::getProfiles</a>();</div>
+<div class="line">      <a id="a60" name="a60"></a><a class="code hl_function" href="class_qt_pass_settings.html#add3fe08db67b209231af21cf7b8f705d">QtPassSettings::getProfiles</a>();</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> (profiles.isEmpty()) {</div>
 <div class="line">    ui-&gt;profileWidget-&gt;hide();</div>
@@ -779,7 +924,7 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">    ui-&gt;profileBox-&gt;model()-&gt;sort(0);</div>
 <div class="line">  }</div>
-<div class="line">  <span class="keywordtype">int</span> index = ui-&gt;profileBox-&gt;findText(<a id="a60" name="a60"></a><a class="code hl_function" href="class_qt_pass_settings.html#aa1bcf7afe1cccd1a599fe15f86a1b66f">QtPassSettings::getProfile</a>());</div>
+<div class="line">  <span class="keywordtype">int</span> index = ui-&gt;profileBox-&gt;findText(<a id="a61" name="a61"></a><a class="code hl_function" href="class_qt_pass_settings.html#aa1bcf7afe1cccd1a599fe15f86a1b66f">QtPassSettings::getProfile</a>());</div>
 <div class="line">  <span class="keywordflow">if</span> (index != -1) { <span class="comment">//  -1 for not found</span></div>
 <div class="line">    ui-&gt;profileBox-&gt;setCurrentIndex(index);</div>
 <div class="line">  }</div>
@@ -796,11 +941,11 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  ui-&gt;lineEdit-&gt;clear();</div>
 <div class="line"> </div>
-<div class="line">  <a id="a61" name="a61"></a><a class="code hl_function" href="class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270">QtPassSettings::setProfile</a>(name);</div>
+<div class="line">  <a id="a62" name="a62"></a><a class="code hl_function" href="class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270">QtPassSettings::setProfile</a>(name);</div>
 <div class="line"> </div>
-<div class="line">  <a id="a62" name="a62"></a><a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(</div>
+<div class="line">  <a id="a63" name="a63"></a><a class="code hl_function" href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a>(</div>
 <div class="line">      <a class="code hl_function" href="class_qt_pass_settings.html#add3fe08db67b209231af21cf7b8f705d">QtPassSettings::getProfiles</a>().value(name).value(<span class="stringliteral">&quot;path&quot;</span>));</div>
-<div class="line">  <a id="a63" name="a63"></a><a class="code hl_function" href="class_qt_pass_settings.html#a4e703d6aa5d6101d82f5a9a41f6b8240">QtPassSettings::setPassSigningKey</a>(</div>
+<div class="line">  <a id="a64" name="a64"></a><a class="code hl_function" href="class_qt_pass_settings.html#a4e703d6aa5d6101d82f5a9a41f6b8240">QtPassSettings::setPassSigningKey</a>(</div>
 <div class="line">      <a class="code hl_function" href="class_qt_pass_settings.html#add3fe08db67b209231af21cf7b8f705d">QtPassSettings::getProfiles</a>().value(name).value(<span class="stringliteral">&quot;signingKey&quot;</span>));</div>
 <div class="line">  ui-&gt;statusBar-&gt;showMessage(tr(<span class="stringliteral">&quot;Profile changed to %1&quot;</span>).arg(name), 2000);</div>
 <div class="line"> </div>
@@ -834,25 +979,25 @@ $(function() {
 <div class="line">  tray = <span class="keyword">nullptr</span>;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a64" name="a64"></a><a class="code hl_function" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">MainWindow::closeEvent</a>(QCloseEvent *event) {</div>
-<div class="line">  <span class="keywordflow">if</span> (<a id="a65" name="a65"></a><a class="code hl_function" href="class_qt_pass_settings.html#ad4152bd817991b07af145a0368b7cb1d">QtPassSettings::isHideOnClose</a>()) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a65" name="a65"></a><a class="code hl_function" href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">MainWindow::closeEvent</a>(QCloseEvent *event) {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a id="a66" name="a66"></a><a class="code hl_function" href="class_qt_pass_settings.html#ad4152bd817991b07af145a0368b7cb1d">QtPassSettings::isHideOnClose</a>()) {</div>
 <div class="line">    this-&gt;hide();</div>
 <div class="line">    <span class="keyword">event</span>-&gt;ignore();</div>
 <div class="line">  } <span class="keywordflow">else</span> {</div>
 <div class="line">    m_qtPass-&gt;clearClipboard();</div>
 <div class="line"> </div>
-<div class="line">    <a id="a66" name="a66"></a><a class="code hl_function" href="class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4">QtPassSettings::setGeometry</a>(saveGeometry());</div>
-<div class="line">    <a id="a67" name="a67"></a><a class="code hl_function" href="class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95">QtPassSettings::setSavestate</a>(saveState());</div>
-<div class="line">    <a id="a68" name="a68"></a><a class="code hl_function" href="class_qt_pass_settings.html#a0394e31adec055bd3d84cd09dca5576c">QtPassSettings::setMaximized</a>(isMaximized());</div>
+<div class="line">    <a id="a67" name="a67"></a><a class="code hl_function" href="class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4">QtPassSettings::setGeometry</a>(saveGeometry());</div>
+<div class="line">    <a id="a68" name="a68"></a><a class="code hl_function" href="class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95">QtPassSettings::setSavestate</a>(saveState());</div>
+<div class="line">    <a id="a69" name="a69"></a><a class="code hl_function" href="class_qt_pass_settings.html#a0394e31adec055bd3d84cd09dca5576c">QtPassSettings::setMaximized</a>(isMaximized());</div>
 <div class="line">    <span class="keywordflow">if</span> (!isMaximized()) {</div>
-<div class="line">      <a id="a69" name="a69"></a><a class="code hl_function" href="class_qt_pass_settings.html#a8b3520f10b70e098629c5b713c69f3a0">QtPassSettings::setPos</a>(pos());</div>
-<div class="line">      <a id="a70" name="a70"></a><a class="code hl_function" href="class_qt_pass_settings.html#adf303d889c36195d4e0efb156baf50a6">QtPassSettings::setSize</a>(size());</div>
+<div class="line">      <a id="a70" name="a70"></a><a class="code hl_function" href="class_qt_pass_settings.html#a8b3520f10b70e098629c5b713c69f3a0">QtPassSettings::setPos</a>(pos());</div>
+<div class="line">      <a id="a71" name="a71"></a><a class="code hl_function" href="class_qt_pass_settings.html#adf303d889c36195d4e0efb156baf50a6">QtPassSettings::setSize</a>(size());</div>
 <div class="line">    }</div>
 <div class="line">    <span class="keyword">event</span>-&gt;accept();</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> <a id="a71" name="a71"></a><a class="code hl_function" href="class_main_window.html#aa07eb275a856e189c141fde5b69a7166">MainWindow::eventFilter</a>(QObject *obj, QEvent *event) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><span class="keyword">auto</span> <a id="a72" name="a72"></a><a class="code hl_function" href="class_main_window.html#aa07eb275a856e189c141fde5b69a7166">MainWindow::eventFilter</a>(QObject *obj, QEvent *event) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line">  <span class="keywordflow">if</span> (obj == ui-&gt;lineEdit &amp;&amp; event-&gt;type() == QEvent::KeyPress) {</div>
 <div class="line">    <span class="keyword">auto</span> *key = <span class="keyword">dynamic_cast&lt;</span>QKeyEvent *<span class="keyword">&gt;</span>(event);</div>
 <div class="line">    <span class="keywordflow">if</span> (key != <span class="keyword">nullptr</span> &amp;&amp; key-&gt;key() == Qt::Key_Down) {</div>
@@ -862,7 +1007,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> QObject::eventFilter(obj, event);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a72" name="a72"></a><a class="code hl_function" href="class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88">MainWindow::keyPressEvent</a>(QKeyEvent *event) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a73" name="a73"></a><a class="code hl_function" href="class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88">MainWindow::keyPressEvent</a>(QKeyEvent *event) {</div>
 <div class="line">  <span class="keywordflow">switch</span> (event-&gt;key()) {</div>
 <div class="line">  <span class="keywordflow">case</span> Qt::Key_Delete:</div>
 <div class="line">    onDelete();</div>
@@ -974,7 +1119,7 @@ $(function() {
 <div class="line">                         tr(<span class="stringliteral">&quot;Failed to create folder: %1&quot;</span>).arg(newdir));</div>
 <div class="line">    <span class="keywordflow">return</span>;</div>
 <div class="line">  }</div>
-<div class="line">  <span class="keywordflow">if</span> (<a id="a73" name="a73"></a><a class="code hl_function" href="class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69">QtPassSettings::isAddGPGId</a>(<span class="keyword">true</span>)) {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a id="a74" name="a74"></a><a class="code hl_function" href="class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69">QtPassSettings::isAddGPGId</a>(<span class="keyword">true</span>)) {</div>
 <div class="line">    QString gpgIdFile = newdir + <span class="stringliteral">&quot;/.gpg-id&quot;</span>;</div>
 <div class="line">    QFile gpgId(gpgIdFile);</div>
 <div class="line">    <span class="keywordflow">if</span> (!gpgId.open(QIODevice::WriteOnly)) {</div>
@@ -1011,7 +1156,7 @@ $(function() {
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> MainWindow::editPassword(<span class="keyword">const</span> QString &amp;file) {</div>
 <div class="line">  <span class="keywordflow">if</span> (!file.isEmpty()) {</div>
-<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>() &amp;&amp; <a id="a74" name="a74"></a><a class="code hl_function" href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a">QtPassSettings::isAutoPull</a>()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>() &amp;&amp; <a id="a75" name="a75"></a><a class="code hl_function" href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a">QtPassSettings::isAutoPull</a>()) {</div>
 <div class="line">      onUpdate(<span class="keyword">true</span>);</div>
 <div class="line">    }</div>
 <div class="line">    setPassword(file, <span class="keyword">false</span>);</div>
@@ -1053,7 +1198,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">if</span> (fileOrFolder.isFile()) {</div>
 <div class="line">    QString file = getFile(ui-&gt;treeView-&gt;currentIndex(), <span class="keyword">true</span>);</div>
 <div class="line">    <span class="comment">// Disconnect any previous connection to avoid accumulation</span></div>
-<div class="line">    disconnect(<a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>(), &amp;<a id="a75" name="a75"></a><a class="code hl_signal" href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba">Pass::finishedShow</a>, <span class="keyword">this</span>,</div>
+<div class="line">    disconnect(<a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>(), &amp;<a id="a76" name="a76"></a><a class="code hl_signal" href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba">Pass::finishedShow</a>, <span class="keyword">this</span>,</div>
 <div class="line">               &amp;MainWindow::passwordFromFileToClipboard);</div>
 <div class="line">    connect(<a class="code hl_function" href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a>(), &amp;<a class="code hl_signal" href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba">Pass::finishedShow</a>, <span class="keyword">this</span>,</div>
 <div class="line">            &amp;MainWindow::passwordFromFileToClipboard);</div>
@@ -1081,19 +1226,19 @@ $(function() {
 <div class="line">  ly-&gt;setContentsMargins(5, 2, 2, 2);</div>
 <div class="line">  ly-&gt;setSpacing(0);</div>
 <div class="line">  frame-&gt;setLayout(ly);</div>
-<div class="line">  <span class="keywordflow">if</span> (<a id="a76" name="a76"></a><a class="code hl_function" href="class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056">QtPassSettings::getClipBoardType</a>() != <a id="a77" name="a77"></a><a class="code hl_enumvalue" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a>) {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a id="a77" name="a77"></a><a class="code hl_function" href="class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056">QtPassSettings::getClipBoardType</a>() != <a id="a78" name="a78"></a><a class="code hl_enumvalue" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a>) {</div>
 <div class="line">    <span class="keyword">auto</span> *fieldLabel = <span class="keyword">new</span> QPushButtonWithClipboard(trimmedValue, <span class="keyword">this</span>);</div>
-<div class="line">    connect(fieldLabel, &amp;<a id="a78" name="a78"></a><a class="code hl_signal" href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">QPushButtonWithClipboard::clicked</a>, m_qtPass,</div>
-<div class="line">            &amp;<a id="a79" name="a79"></a><a class="code hl_slot" href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95">QtPass::copyTextToClipboard</a>);</div>
+<div class="line">    connect(fieldLabel, &amp;<a id="a79" name="a79"></a><a class="code hl_signal" href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">QPushButtonWithClipboard::clicked</a>, m_qtPass,</div>
+<div class="line">            &amp;<a id="a80" name="a80"></a><a class="code hl_slot" href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95">QtPass::copyTextToClipboard</a>);</div>
 <div class="line"> </div>
 <div class="line">    fieldLabel-&gt;setStyleSheet(buttonStyle);</div>
 <div class="line">    frame-&gt;layout()-&gt;addWidget(fieldLabel);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordflow">if</span> (<a id="a80" name="a80"></a><a class="code hl_function" href="class_qt_pass_settings.html#a3641d0df0be548146d788813407000bf">QtPassSettings::isUseQrencode</a>()) {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a id="a81" name="a81"></a><a class="code hl_function" href="class_qt_pass_settings.html#a3641d0df0be548146d788813407000bf">QtPassSettings::isUseQrencode</a>()) {</div>
 <div class="line">    <span class="keyword">auto</span> *qrbutton = <span class="keyword">new</span> QPushButtonAsQRCode(trimmedValue, <span class="keyword">this</span>);</div>
-<div class="line">    connect(qrbutton, &amp;<a id="a81" name="a81"></a><a class="code hl_signal" href="class_q_push_button_as_q_r_code.html#a347f41172463a60dae8c52461436e485">QPushButtonAsQRCode::clicked</a>, m_qtPass,</div>
-<div class="line">            &amp;<a id="a82" name="a82"></a><a class="code hl_slot" href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">QtPass::showTextAsQRCode</a>);</div>
+<div class="line">    connect(qrbutton, &amp;<a id="a82" name="a82"></a><a class="code hl_signal" href="class_q_push_button_as_q_r_code.html#a347f41172463a60dae8c52461436e485">QPushButtonAsQRCode::clicked</a>, m_qtPass,</div>
+<div class="line">            &amp;<a id="a83" name="a83"></a><a class="code hl_slot" href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">QtPass::showTextAsQRCode</a>);</div>
 <div class="line">    qrbutton-&gt;setStyleSheet(buttonStyle);</div>
 <div class="line">    frame-&gt;layout()-&gt;addWidget(qrbutton);</div>
 <div class="line">  }</div>
@@ -1105,7 +1250,7 @@ $(function() {
 <div class="line">            <span class="stringliteral">&quot;monospace;&quot;</span></div>
 <div class="line">          : <span class="stringliteral">&quot;border-style: none; background: transparent;&quot;</span>;</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordflow">if</span> (<a id="a83" name="a83"></a><a class="code hl_function" href="class_qt_pass_settings.html#ac05e5f52d53be077e19ee21f07d1e367">QtPassSettings::isHidePassword</a>() &amp;&amp; trimmedField == tr(<span class="stringliteral">&quot;Password&quot;</span>)) {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a id="a84" name="a84"></a><a class="code hl_function" href="class_qt_pass_settings.html#ac05e5f52d53be077e19ee21f07d1e367">QtPassSettings::isHidePassword</a>() &amp;&amp; trimmedField == tr(<span class="stringliteral">&quot;Password&quot;</span>)) {</div>
 <div class="line">    <span class="keyword">auto</span> *line = <span class="keyword">new</span> QLineEdit();</div>
 <div class="line">    line-&gt;setObjectName(trimmedField);</div>
 <div class="line">    line-&gt;setText(trimmedValue);</div>
@@ -1127,7 +1272,7 @@ $(function() {
 <div class="line">    line-&gt;setSizePolicy(</div>
 <div class="line">        QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));</div>
 <div class="line">    line-&gt;setObjectName(trimmedField);</div>
-<div class="line">    trimmedValue.replace(<a id="a84" name="a84"></a><a class="code hl_function" href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">Util::protocolRegex</a>(), R<span class="stringliteral">&quot;(&lt;a href=&quot;\1&quot;&gt;\1&lt;/a&gt;)&quot;);</span></div>
+<div class="line">    trimmedValue.replace(<a id="a85" name="a85"></a><a class="code hl_function" href="class_util.html#a133c5da0c8a3f106c09977679bc615c3">Util::protocolRegex</a>(), R<span class="stringliteral">&quot;(&lt;a href=&quot;\1&quot;&gt;\1&lt;/a&gt;)&quot;);</span></div>
 <div class="line"><span class="stringliteral">    line-&gt;setText(trimmedValue);</span></div>
 <div class="line"><span class="stringliteral">    line-&gt;setReadOnly(</span><span class="keyword">true</span>);</div>
 <div class="line">    line-&gt;setStyleSheet(lineStyle);</div>
@@ -1172,20 +1317,20 @@ $(function() {
 <div class="line">  <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keyword">false</span>);</div>
 <div class="line">  ui-&gt;treeView-&gt;setDisabled(<span class="keyword">true</span>);</div>
 <div class="line"> </div>
-<div class="line">  <a id="a85" name="a85"></a><a class="code hl_function" href="class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528">QtPassSettings::getImitatePass</a>()-&gt;reencryptPath(</div>
+<div class="line">  <a id="a86" name="a86"></a><a class="code hl_function" href="class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528">QtPassSettings::getImitatePass</a>()-&gt;reencryptPath(</div>
 <div class="line">      QDir::cleanPath(QDir(dir).absolutePath()));</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a86" name="a86"></a><a class="code hl_slot" href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a>() {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a87" name="a87"></a><a class="code hl_slot" href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a>() {</div>
 <div class="line">  <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keyword">false</span>);</div>
 <div class="line">  ui-&gt;treeView-&gt;setDisabled(<span class="keyword">true</span>);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a87" name="a87"></a><a class="code hl_slot" href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">MainWindow::endReencryptPath</a>() { <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keyword">true</span>); }</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a88" name="a88"></a><a class="code hl_slot" href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">MainWindow::endReencryptPath</a>() { <a class="code hl_function" href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a>(<span class="keyword">true</span>); }</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> MainWindow::updateGitButtonVisibility() {</div>
 <div class="line">  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>() ||</div>
-<div class="line">      (<a id="a88" name="a88"></a><a class="code hl_function" href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a>().isEmpty() &amp;&amp;</div>
+<div class="line">      (<a id="a89" name="a89"></a><a class="code hl_function" href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a>().isEmpty() &amp;&amp;</div>
 <div class="line">       <a class="code hl_function" href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db">QtPassSettings::getPassExecutable</a>().isEmpty())) {</div>
 <div class="line">    enableGitButtons(<span class="keyword">false</span>);</div>
 <div class="line">  } <span class="keywordflow">else</span> {</div>
@@ -1204,13 +1349,22 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> MainWindow::updateGrepButtonVisibility() {</div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">bool</span> enabled = <a id="a90" name="a90"></a><a class="code hl_function" href="class_qt_pass_settings.html#a7a2c59796bc7da1e79ee9124a3ea29f4">QtPassSettings::isUseGrepSearch</a>();</div>
+<div class="line">  ui-&gt;grepButton-&gt;setVisible(enabled);</div>
+<div class="line">  ui-&gt;grepCaseButton-&gt;setVisible(enabled);</div>
+<div class="line">  <span class="keywordflow">if</span> (!enabled &amp;&amp; m_grepMode) {</div>
+<div class="line">    ui-&gt;grepButton-&gt;setChecked(<span class="keyword">false</span>);</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> MainWindow::enableGitButtons(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;state) {</div>
 <div class="line">  <span class="comment">// Following GNOME guidelines is preferable disable buttons instead of hide</span></div>
 <div class="line">  ui-&gt;actionPush-&gt;setEnabled(state);</div>
 <div class="line">  ui-&gt;actionUpdate-&gt;setEnabled(state);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a89" name="a89"></a><a class="code hl_slot" href="class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842">MainWindow::critical</a>(<span class="keyword">const</span> QString &amp;title, <span class="keyword">const</span> QString &amp;msg) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a91" name="a91"></a><a class="code hl_slot" href="class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842">MainWindow::critical</a>(<span class="keyword">const</span> QString &amp;title, <span class="keyword">const</span> QString &amp;msg) {</div>
 <div class="line">  QMessageBox::critical(<span class="keyword">this</span>, title, msg);</div>
 <div class="line">}</div>
 <div class="ttc" id="aclass_deselectable_tree_view_html_ac28685648d7a31e19e52882e218346c4"><div class="ttname"><a href="class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4">DeselectableTreeView::emptyClicked</a></div><div class="ttdeci">void emptyClicked()</div><div class="ttdoc">emptyClicked event</div></div>
@@ -1218,74 +1372,76 @@ $(function() {
 <div class="ttc" id="aclass_file_content_html_ac38b9c211d6f62eb7420eecc66f935e8"><div class="ttname"><a href="class_file_content.html#ac38b9c211d6f62eb7420eecc66f935e8">FileContent::getRemainingDataForDisplay</a></div><div class="ttdeci">auto getRemainingDataForDisplay() const -&gt; QString</div><div class="ttdoc">Gets remaining data for display (excludes hidden fields like OTP).</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00084">filecontent.cpp:84</a></div></div>
 <div class="ttc" id="aclass_file_content_html_ac88e8096551d24a41fc0625a4d903139"><div class="ttname"><a href="class_file_content.html#ac88e8096551d24a41fc0625a4d903139">FileContent::getPassword</a></div><div class="ttdeci">auto getPassword() const -&gt; QString</div><div class="ttdoc">Gets the password from the parsed file.</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00062">filecontent.cpp:62</a></div></div>
 <div class="ttc" id="aclass_file_content_html_addf22b7136ee26d2f14bb77dc49c1510"><div class="ttname"><a href="class_file_content.html#addf22b7136ee26d2f14bb77dc49c1510">FileContent::parse</a></div><div class="ttdeci">static auto parse(const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields) -&gt; FileContent</div><div class="ttdoc">parse parses the given fileContent in a FileContent object. The password is accessible through getPas...</div><div class="ttdef"><b>Definition</b> <a href="filecontent_8cpp_source.html#l00024">filecontent.cpp:24</a></div></div>
-<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00051">mainwindow.h:51</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a02ec9927bda826675653c0af916c8f33"><div class="ttname"><a href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a></div><div class="ttdeci">void startReencryptPath()</div><div class="ttdoc">MainWindow::startReencryptPath disable ui elements and treeview.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01362">mainwindow.cpp:1362</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a05fb9d72c044aa3bb7d187b994704e2f"><div class="ttname"><a href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">MainWindow::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">MainWindow::closeEvent hide or quit.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00952">mainwindow.cpp:952</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a0d75695e555bac7331e1ea22bc3159df"><div class="ttname"><a href="class_main_window.html#a0d75695e555bac7331e1ea22bc3159df">MainWindow::passShowHandler</a></div><div class="ttdeci">void passShowHandler(const QString &amp;)</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00439">mainwindow.cpp:439</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a1f7d2c56410fc1bfa135bb907d43313f"><div class="ttname"><a href="class_main_window.html#a1f7d2c56410fc1bfa135bb907d43313f">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow() override</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00135">mainwindow.cpp:135</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a201fc73a7db0d404e8fd49f818696eba"><div class="ttname"><a href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">MainWindow::endReencryptPath</a></div><div class="ttdeci">void endReencryptPath()</div><div class="ttdoc">MainWindow::endReencryptPath re-enable ui elements.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01370">mainwindow.cpp:1370</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a3550b28be1344cf5c012af794dce8c64"><div class="ttname"><a href="class_main_window.html#a3550b28be1344cf5c012af794dce8c64">MainWindow::executeWrapperStarted</a></div><div class="ttdeci">void executeWrapperStarted()</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00422">mainwindow.cpp:422</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a3b9eaa6de9809fbc8b52c298133dfe16"><div class="ttname"><a href="class_main_window.html#a3b9eaa6de9809fbc8b52c298133dfe16">MainWindow::generateKeyPair</a></div><div class="ttdeci">void generateKeyPair(const QString &amp;, QDialog *)</div><div class="ttdoc">MainWindow::generateKeyPair internal gpg keypair generator . .</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00841">mainwindow.cpp:841</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a416ae2140ac1aa9f03a6279316abdcad"><div class="ttname"><a href="class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad">MainWindow::changeEvent</a></div><div class="ttdeci">void changeEvent(QEvent *event) override</div><div class="ttdoc">MainWindow::changeEvent sets focus to the search box.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00152">mainwindow.cpp:152</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a4f1e5c088cf47f1db5c84882a42c1842"><div class="ttname"><a href="class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842">MainWindow::critical</a></div><div class="ttdeci">void critical(const QString &amp;, const QString &amp;)</div><div class="ttdoc">MainWindow::critical critical message popup wrapper.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01404">mainwindow.cpp:1404</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a4fad7c4dec11ceaebcb8a0141280ba4b"><div class="ttname"><a href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">MainWindow::messageAvailable</a></div><div class="ttdeci">void messageAvailable(const QString &amp;message)</div><div class="ttdoc">MainWindow::messageAvailable we have some text/message/search to do.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00824">mainwindow.cpp:824</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a52e97245b2f88492071e639395c4a15a"><div class="ttname"><a href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(const QString &amp;searchText=QString(), QWidget *parent=nullptr)</div><div class="ttdoc">MainWindow::MainWindow handles all of the main functionality and also the main window.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00040">mainwindow.cpp:40</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a55ae3e0d4303334ccabae0a5050cfd88"><div class="ttname"><a href="class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88">MainWindow::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">MainWindow::keyPressEvent did anyone press return, enter or escape?</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00991">mainwindow.cpp:991</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a6961588ebf3c0640200e0cfa920af3be"><div class="ttname"><a href="class_main_window.html#a6961588ebf3c0640200e0cfa920af3be">MainWindow::onPush</a></div><div class="ttdeci">void onPush()</div><div class="ttdoc">MainWindow::onPush do a git push.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00347">mainwindow.cpp:347</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a69f4a122336a6fc3875fc94741e4d1cf"><div class="ttname"><a href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf">MainWindow::showStatusMessage</a></div><div class="ttdeci">void showStatusMessage(const QString &amp;msg, int timeout=2000)</div><div class="ttdoc">Displays message in status bar.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01322">mainwindow.cpp:1322</a></div></div>
-<div class="ttc" id="aclass_main_window_html_a7997fd865548c3baa51f1863bb8fdfa0"><div class="ttname"><a href="class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0">MainWindow::passOtpHandler</a></div><div class="ttdeci">void passOtpHandler(const QString &amp;)</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00496">mainwindow.cpp:496</a></div></div>
+<div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00052">mainwindow.h:52</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a02ec9927bda826675653c0af916c8f33"><div class="ttname"><a href="class_main_window.html#a02ec9927bda826675653c0af916c8f33">MainWindow::startReencryptPath</a></div><div class="ttdeci">void startReencryptPath()</div><div class="ttdoc">MainWindow::startReencryptPath disable ui elements and treeview.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01516">mainwindow.cpp:1516</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a05fb9d72c044aa3bb7d187b994704e2f"><div class="ttname"><a href="class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f">MainWindow::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">MainWindow::closeEvent hide or quit.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01106">mainwindow.cpp:1106</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a0d75695e555bac7331e1ea22bc3159df"><div class="ttname"><a href="class_main_window.html#a0d75695e555bac7331e1ea22bc3159df">MainWindow::passShowHandler</a></div><div class="ttdeci">void passShowHandler(const QString &amp;)</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00443">mainwindow.cpp:443</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a1f7d2c56410fc1bfa135bb907d43313f"><div class="ttname"><a href="class_main_window.html#a1f7d2c56410fc1bfa135bb907d43313f">MainWindow::~MainWindow</a></div><div class="ttdeci">~MainWindow() override</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00138">mainwindow.cpp:138</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a201fc73a7db0d404e8fd49f818696eba"><div class="ttname"><a href="class_main_window.html#a201fc73a7db0d404e8fd49f818696eba">MainWindow::endReencryptPath</a></div><div class="ttdeci">void endReencryptPath()</div><div class="ttdoc">MainWindow::endReencryptPath re-enable ui elements.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01524">mainwindow.cpp:1524</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a270b5f2701f275c3de734f4150a3d897"><div class="ttname"><a href="class_main_window.html#a270b5f2701f275c3de734f4150a3d897">MainWindow::onGrepFinished</a></div><div class="ttdeci">void onGrepFinished(const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</div><div class="ttdoc">Display grep results in grepResultsList.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00732">mainwindow.cpp:732</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a3550b28be1344cf5c012af794dce8c64"><div class="ttname"><a href="class_main_window.html#a3550b28be1344cf5c012af794dce8c64">MainWindow::executeWrapperStarted</a></div><div class="ttdeci">void executeWrapperStarted()</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00426">mainwindow.cpp:426</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a3b9eaa6de9809fbc8b52c298133dfe16"><div class="ttname"><a href="class_main_window.html#a3b9eaa6de9809fbc8b52c298133dfe16">MainWindow::generateKeyPair</a></div><div class="ttdeci">void generateKeyPair(const QString &amp;, QDialog *)</div><div class="ttdoc">MainWindow::generateKeyPair internal gpg keypair generator . .</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00995">mainwindow.cpp:995</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a416ae2140ac1aa9f03a6279316abdcad"><div class="ttname"><a href="class_main_window.html#a416ae2140ac1aa9f03a6279316abdcad">MainWindow::changeEvent</a></div><div class="ttdeci">void changeEvent(QEvent *event) override</div><div class="ttdoc">MainWindow::changeEvent sets focus to the search box.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00155">mainwindow.cpp:155</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a4f1e5c088cf47f1db5c84882a42c1842"><div class="ttname"><a href="class_main_window.html#a4f1e5c088cf47f1db5c84882a42c1842">MainWindow::critical</a></div><div class="ttdeci">void critical(const QString &amp;, const QString &amp;)</div><div class="ttdoc">MainWindow::critical critical message popup wrapper.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01567">mainwindow.cpp:1567</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a4fad7c4dec11ceaebcb8a0141280ba4b"><div class="ttname"><a href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">MainWindow::messageAvailable</a></div><div class="ttdeci">void messageAvailable(const QString &amp;message)</div><div class="ttdoc">MainWindow::messageAvailable we have some text/message/search to do.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00978">mainwindow.cpp:978</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a52e97245b2f88492071e639395c4a15a"><div class="ttname"><a href="class_main_window.html#a52e97245b2f88492071e639395c4a15a">MainWindow::MainWindow</a></div><div class="ttdeci">MainWindow(const QString &amp;searchText=QString(), QWidget *parent=nullptr)</div><div class="ttdoc">MainWindow::MainWindow handles all of the main functionality and also the main window.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00042">mainwindow.cpp:42</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a55ae3e0d4303334ccabae0a5050cfd88"><div class="ttname"><a href="class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88">MainWindow::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">MainWindow::keyPressEvent did anyone press return, enter or escape?</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01145">mainwindow.cpp:1145</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a6961588ebf3c0640200e0cfa920af3be"><div class="ttname"><a href="class_main_window.html#a6961588ebf3c0640200e0cfa920af3be">MainWindow::onPush</a></div><div class="ttdeci">void onPush()</div><div class="ttdoc">MainWindow::onPush do a git push.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00351">mainwindow.cpp:351</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a69f4a122336a6fc3875fc94741e4d1cf"><div class="ttname"><a href="class_main_window.html#a69f4a122336a6fc3875fc94741e4d1cf">MainWindow::showStatusMessage</a></div><div class="ttdeci">void showStatusMessage(const QString &amp;msg, int timeout=2000)</div><div class="ttdoc">Displays message in status bar.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01476">mainwindow.cpp:1476</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a7997fd865548c3baa51f1863bb8fdfa0"><div class="ttname"><a href="class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0">MainWindow::passOtpHandler</a></div><div class="ttdeci">void passOtpHandler(const QString &amp;)</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00500">mainwindow.cpp:500</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a7e1ae254673e36410d4b3a73e1e8ec8e"><div class="ttname"><a href="class_main_window.html#a7e1ae254673e36410d4b3a73e1e8ec8e">MainWindow::passShowHandlerFinished</a></div><div class="ttdeci">void passShowHandlerFinished(const QString &amp;output)</div></div>
 <div class="ttc" id="aclass_main_window_html_a7e72f32612c2436ff4756c5c25b6b4ec"><div class="ttname"><a href="class_main_window.html#a7e72f32612c2436ff4756c5c25b6b4ec">MainWindow::generateGPGKeyPair</a></div><div class="ttdeci">void generateGPGKeyPair(const QString &amp;batch)</div></div>
-<div class="ttc" id="aclass_main_window_html_a9630f0fe0e0941a7996d68014f837ed5"><div class="ttname"><a href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5">MainWindow::restoreWindow</a></div><div class="ttdeci">void restoreWindow()</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00557">mainwindow.cpp:557</a></div></div>
-<div class="ttc" id="aclass_main_window_html_aa07eb275a856e189c141fde5b69a7166"><div class="ttname"><a href="class_main_window.html#aa07eb275a856e189c141fde5b69a7166">MainWindow::eventFilter</a></div><div class="ttdeci">auto eventFilter(QObject *obj, QEvent *event) -&gt; bool override</div><div class="ttdoc">MainWindow::eventFilter filter out some events and focus the treeview.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00977">mainwindow.cpp:977</a></div></div>
-<div class="ttc" id="aclass_main_window_html_aae7cd7af04cedf4a17ede44bffafec89"><div class="ttname"><a href="class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89">MainWindow::flashText</a></div><div class="ttdeci">void flashText(const QString &amp;text, const bool isError, const bool isHtml=false)</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00231">mainwindow.cpp:231</a></div></div>
-<div class="ttc" id="aclass_main_window_html_abf0633782804fe58d8590d2e10f138d7"><div class="ttname"><a href="class_main_window.html#abf0633782804fe58d8590d2e10f138d7">MainWindow::userDialog</a></div><div class="ttdeci">void userDialog(const QString &amp;=&quot;&quot;)</div><div class="ttdoc">MainWindow::userDialog see MainWindow::onUsers().</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00796">mainwindow.cpp:796</a></div></div>
-<div class="ttc" id="aclass_main_window_html_ac240119ea67a770e5d997a5aa0fe47a3"><div class="ttname"><a href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">MainWindow::setUiElementsEnabled</a></div><div class="ttdeci">void setUiElementsEnabled(bool state)</div><div class="ttdoc">MainWindow::setUiElementsEnabled enable or disable the relevant UI elements.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00532">mainwindow.cpp:532</a></div></div>
-<div class="ttc" id="aclass_main_window_html_acc66dda09963fdddea9716163293ddda"><div class="ttname"><a href="class_main_window.html#acc66dda09963fdddea9716163293ddda">MainWindow::getCurrentTreeViewIndex</a></div><div class="ttdeci">auto getCurrentTreeViewIndex() -&gt; QModelIndex</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00208">mainwindow.cpp:208</a></div></div>
-<div class="ttc" id="aclass_main_window_html_ad2a9b38617b357d8fa42744c00a26fcf"><div class="ttname"><a href="class_main_window.html#ad2a9b38617b357d8fa42744c00a26fcf">MainWindow::cleanKeygenDialog</a></div><div class="ttdeci">void cleanKeygenDialog()</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00212">mainwindow.cpp:212</a></div></div>
-<div class="ttc" id="aclass_main_window_html_ad4cf3e2c819cac398728a82f1cf05f3e"><div class="ttname"><a href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e">MainWindow::deselect</a></div><div class="ttdeci">void deselect()</div><div class="ttdoc">MainWindow::deselect clear the selection, password and copy buffer.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00412">mainwindow.cpp:412</a></div></div>
-<div class="ttc" id="aclass_main_window_html_adc7d4b2b210efab401f0b14641f80464"><div class="ttname"><a href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464">MainWindow::on_treeView_clicked</a></div><div class="ttdeci">void on_treeView_clicked(const QModelIndex &amp;index)</div><div class="ttdoc">MainWindow::on_treeView_clicked read the selected password file.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00378">mainwindow.cpp:378</a></div></div>
-<div class="ttc" id="aclass_main_window_html_aeb8091ab5531144b76c1fbb0d63deb56"><div class="ttname"><a href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56">MainWindow::config</a></div><div class="ttdeci">void config()</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00286">mainwindow.cpp:286</a></div></div>
+<div class="ttc" id="aclass_main_window_html_a9630f0fe0e0941a7996d68014f837ed5"><div class="ttname"><a href="class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5">MainWindow::restoreWindow</a></div><div class="ttdeci">void restoreWindow()</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00577">mainwindow.cpp:577</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aa07eb275a856e189c141fde5b69a7166"><div class="ttname"><a href="class_main_window.html#aa07eb275a856e189c141fde5b69a7166">MainWindow::eventFilter</a></div><div class="ttdeci">auto eventFilter(QObject *obj, QEvent *event) -&gt; bool override</div><div class="ttdoc">MainWindow::eventFilter filter out some events and focus the treeview.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l01131">mainwindow.cpp:1131</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aae7cd7af04cedf4a17ede44bffafec89"><div class="ttname"><a href="class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89">MainWindow::flashText</a></div><div class="ttdeci">void flashText(const QString &amp;text, const bool isError, const bool isHtml=false)</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00234">mainwindow.cpp:234</a></div></div>
+<div class="ttc" id="aclass_main_window_html_abf0633782804fe58d8590d2e10f138d7"><div class="ttname"><a href="class_main_window.html#abf0633782804fe58d8590d2e10f138d7">MainWindow::userDialog</a></div><div class="ttdeci">void userDialog(const QString &amp;=&quot;&quot;)</div><div class="ttdoc">MainWindow::userDialog see MainWindow::onUsers().</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00950">mainwindow.cpp:950</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ac240119ea67a770e5d997a5aa0fe47a3"><div class="ttname"><a href="class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3">MainWindow::setUiElementsEnabled</a></div><div class="ttdeci">void setUiElementsEnabled(bool state)</div><div class="ttdoc">MainWindow::setUiElementsEnabled enable or disable the relevant UI elements.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00552">mainwindow.cpp:552</a></div></div>
+<div class="ttc" id="aclass_main_window_html_acc66dda09963fdddea9716163293ddda"><div class="ttname"><a href="class_main_window.html#acc66dda09963fdddea9716163293ddda">MainWindow::getCurrentTreeViewIndex</a></div><div class="ttdeci">auto getCurrentTreeViewIndex() -&gt; QModelIndex</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00211">mainwindow.cpp:211</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ad2a9b38617b357d8fa42744c00a26fcf"><div class="ttname"><a href="class_main_window.html#ad2a9b38617b357d8fa42744c00a26fcf">MainWindow::cleanKeygenDialog</a></div><div class="ttdeci">void cleanKeygenDialog()</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00215">mainwindow.cpp:215</a></div></div>
+<div class="ttc" id="aclass_main_window_html_ad4cf3e2c819cac398728a82f1cf05f3e"><div class="ttname"><a href="class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e">MainWindow::deselect</a></div><div class="ttdeci">void deselect()</div><div class="ttdoc">MainWindow::deselect clear the selection, password and copy buffer.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00416">mainwindow.cpp:416</a></div></div>
+<div class="ttc" id="aclass_main_window_html_adc7d4b2b210efab401f0b14641f80464"><div class="ttname"><a href="class_main_window.html#adc7d4b2b210efab401f0b14641f80464">MainWindow::on_treeView_clicked</a></div><div class="ttdeci">void on_treeView_clicked(const QModelIndex &amp;index)</div><div class="ttdoc">MainWindow::on_treeView_clicked read the selected password file.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00382">mainwindow.cpp:382</a></div></div>
+<div class="ttc" id="aclass_main_window_html_aeb8091ab5531144b76c1fbb0d63deb56"><div class="ttname"><a href="class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56">MainWindow::config</a></div><div class="ttdeci">void config()</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8cpp_source.html#l00289">mainwindow.cpp:289</a></div></div>
 <div class="ttc" id="aclass_pass_html_a24cdfb567ab68940f2a823704e2ab1ba"><div class="ttname"><a href="class_pass.html#a24cdfb567ab68940f2a823704e2ab1ba">Pass::finishedShow</a></div><div class="ttdeci">void finishedShow(const QString &amp;)</div><div class="ttdoc">Emitted when show finishes.</div></div>
 <div class="ttc" id="aclass_q_push_button_as_q_r_code_html_a347f41172463a60dae8c52461436e485"><div class="ttname"><a href="class_q_push_button_as_q_r_code.html#a347f41172463a60dae8c52461436e485">QPushButtonAsQRCode::clicked</a></div><div class="ttdeci">void clicked(const QString &amp;)</div></div>
 <div class="ttc" id="aclass_q_push_button_with_clipboard_html_a511c59d52faad30a26bc23ac307135d4"><div class="ttname"><a href="class_q_push_button_with_clipboard.html#a511c59d52faad30a26bc23ac307135d4">QPushButtonWithClipboard::clicked</a></div><div class="ttdeci">void clicked(const QString &amp;)</div></div>
 <div class="ttc" id="aclass_qt_pass_html"><div class="ttname"><a href="class_qt_pass.html">QtPass</a></div><div class="ttdef"><b>Definition</b> <a href="qtpass_8h_source.html#l00137">qtpass.h:137</a></div></div>
-<div class="ttc" id="aclass_qt_pass_html_acba134fb5281aedee11899a03976aa95"><div class="ttname"><a href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95">QtPass::copyTextToClipboard</a></div><div class="ttdeci">void copyTextToClipboard(const QString &amp;text)</div><div class="ttdoc">MainWindow::copyTextToClipboard copies text to your clipboard.</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00499">qtpass.cpp:499</a></div></div>
-<div class="ttc" id="aclass_qt_pass_html_aef5aaf0605c7681967995ede486590ef"><div class="ttname"><a href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">QtPass::showTextAsQRCode</a></div><div class="ttdeci">void showTextAsQRCode(const QString &amp;text)</div><div class="ttdoc">displays the text as qrcode</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00521">qtpass.cpp:521</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_acba134fb5281aedee11899a03976aa95"><div class="ttname"><a href="class_qt_pass.html#acba134fb5281aedee11899a03976aa95">QtPass::copyTextToClipboard</a></div><div class="ttdeci">void copyTextToClipboard(const QString &amp;text)</div><div class="ttdoc">MainWindow::copyTextToClipboard copies text to your clipboard.</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00500">qtpass.cpp:500</a></div></div>
+<div class="ttc" id="aclass_qt_pass_html_aef5aaf0605c7681967995ede486590ef"><div class="ttname"><a href="class_qt_pass.html#aef5aaf0605c7681967995ede486590ef">QtPass::showTextAsQRCode</a></div><div class="ttdeci">void showTextAsQRCode(const QString &amp;text)</div><div class="ttdoc">displays the text as qrcode</div><div class="ttdef"><b>Definition</b> <a href="qtpass_8cpp_source.html#l00522">qtpass.cpp:522</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a0394e31adec055bd3d84cd09dca5576c"><div class="ttname"><a href="class_qt_pass_settings.html#a0394e31adec055bd3d84cd09dca5576c">QtPassSettings::setMaximized</a></div><div class="ttdeci">static void setMaximized(const bool &amp;maximized)</div><div class="ttdoc">Save maximized state.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00243">qtpasssettings.cpp:243</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_a0e4eacd30635c23c8a08cd5725a68aed"><div class="ttname"><a href="class_qt_pass_settings.html#a0e4eacd30635c23c8a08cd5725a68aed">QtPassSettings::isStartMinimized</a></div><div class="ttdeci">static auto isStartMinimized(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether application should start minimized.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00712">qtpasssettings.cpp:712</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_a150f44b4615f4634df759dbd810e48e8"><div class="ttname"><a href="class_qt_pass_settings.html#a150f44b4615f4634df759dbd810e48e8">QtPassSettings::isUseOtp</a></div><div class="ttdeci">static auto isUseOtp(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether OTP support is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00608">qtpasssettings.cpp:608</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a0e4eacd30635c23c8a08cd5725a68aed"><div class="ttname"><a href="class_qt_pass_settings.html#a0e4eacd30635c23c8a08cd5725a68aed">QtPassSettings::isStartMinimized</a></div><div class="ttdeci">static auto isStartMinimized(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether application should start minimized.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00722">qtpasssettings.cpp:722</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a150f44b4615f4634df759dbd810e48e8"><div class="ttname"><a href="class_qt_pass_settings.html#a150f44b4615f4634df759dbd810e48e8">QtPassSettings::isUseOtp</a></div><div class="ttdeci">static auto isUseOtp(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether OTP support is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00618">qtpasssettings.cpp:618</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a1e28cecc9613aa057c42e625de77a270"><div class="ttname"><a href="class_qt_pass_settings.html#a1e28cecc9613aa057c42e625de77a270">QtPassSettings::setProfile</a></div><div class="ttdeci">static void setProfile(const QString &amp;profile)</div><div class="ttdoc">Save active profile name.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00578">qtpasssettings.cpp:578</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a2876bf9c55e3abcc0460de1985d5234f"><div class="ttname"><a href="class_qt_pass_settings.html#a2876bf9c55e3abcc0460de1985d5234f">QtPassSettings::isNoLineWrapping</a></div><div class="ttdeci">static auto isNoLineWrapping(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get whether to disable line wrapping.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00402">qtpasssettings.cpp:402</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a2b30ee2cd3b185148f63fca568c33f6e"><div class="ttname"><a href="class_qt_pass_settings.html#a2b30ee2cd3b185148f63fca568c33f6e">QtPassSettings::setPassStore</a></div><div class="ttdeci">static void setPassStore(const QString &amp;passStore)</div><div class="ttdoc">Save password store path.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00456">qtpasssettings.cpp:456</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a2e45500a82b847412e95f93e5e1d8fc3"><div class="ttname"><a href="class_qt_pass_settings.html#a2e45500a82b847412e95f93e5e1d8fc3">QtPassSettings::isHideContent</a></div><div class="ttdeci">static auto isHideContent(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get whether to hide content (password + username).</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00375">qtpasssettings.cpp:375</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a2eda707ef417b1198898c6b162ebc142"><div class="ttname"><a href="class_qt_pass_settings.html#a2eda707ef417b1198898c6b162ebc142">QtPassSettings::getSize</a></div><div class="ttdeci">static auto getSize(const QSize &amp;defaultValue=QVariant().toSize()) -&gt; QSize</div><div class="ttdoc">Get saved window size.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00231">qtpasssettings.cpp:231</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a34ba20416835e4de168d4c66f9076b2b"><div class="ttname"><a href="class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b">QtPassSettings::getPass</a></div><div class="ttdeci">static auto getPass() -&gt; Pass *</div><div class="ttdoc">Get currently active pass backend instance.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00171">qtpasssettings.cpp:171</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_a3641d0df0be548146d788813407000bf"><div class="ttname"><a href="class_qt_pass_settings.html#a3641d0df0be548146d788813407000bf">QtPassSettings::isUseQrencode</a></div><div class="ttdeci">static auto isUseQrencode(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether qrencode support is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00616">qtpasssettings.cpp:616</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a3641d0df0be548146d788813407000bf"><div class="ttname"><a href="class_qt_pass_settings.html#a3641d0df0be548146d788813407000bf">QtPassSettings::isUseQrencode</a></div><div class="ttdeci">static auto isUseQrencode(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether qrencode support is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00626">qtpasssettings.cpp:626</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a38cb968ab7c8dd26558b9fe9990740be"><div class="ttname"><a href="class_qt_pass_settings.html#a38cb968ab7c8dd26558b9fe9990740be">QtPassSettings::isUseAutoclearPanel</a></div><div class="ttdeci">static auto isUseAutoclearPanel(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get whether to use panel autoclear.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00345">qtpasssettings.cpp:345</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_a3d196817a466e574236ac869515b105a"><div class="ttname"><a href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a">QtPassSettings::isAutoPull</a></div><div class="ttdeci">static auto isAutoPull(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether automatic pull is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00730">qtpasssettings.cpp:730</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a3d196817a466e574236ac869515b105a"><div class="ttname"><a href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a">QtPassSettings::isAutoPull</a></div><div class="ttdeci">static auto isAutoPull(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether automatic pull is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00740">qtpasssettings.cpp:740</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a4519d1aa1f11653585e546dbfde7c8b3"><div class="ttname"><a href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a></div><div class="ttdeci">static auto isUseGit(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether Git integration is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00592">qtpasssettings.cpp:592</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a4650fff2464ff37ec568cf236c9d2056"><div class="ttname"><a href="class_qt_pass_settings.html#a4650fff2464ff37ec568cf236c9d2056">QtPassSettings::getClipBoardType</a></div><div class="ttdeci">static auto getClipBoardType(const Enums::clipBoardType &amp;defaultValue=Enums::CLIPBOARD_NEVER) -&gt; Enums::clipBoardType</div><div class="ttdoc">Get clipboard type as enum.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00309">qtpasssettings.cpp:309</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_a4b1ea480a08bea181210fca93e4b6d54"><div class="ttname"><a href="class_qt_pass_settings.html#a4b1ea480a08bea181210fca93e4b6d54">QtPassSettings::isTemplateAllFields</a></div><div class="ttdeci">static auto isTemplateAllFields(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether template applies to all fields.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00766">qtpasssettings.cpp:766</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a4b1ea480a08bea181210fca93e4b6d54"><div class="ttname"><a href="class_qt_pass_settings.html#a4b1ea480a08bea181210fca93e4b6d54">QtPassSettings::isTemplateAllFields</a></div><div class="ttdeci">static auto isTemplateAllFields(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether template applies to all fields.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00776">qtpasssettings.cpp:776</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a4e703d6aa5d6101d82f5a9a41f6b8240"><div class="ttname"><a href="class_qt_pass_settings.html#a4e703d6aa5d6101d82f5a9a41f6b8240">QtPassSettings::setPassSigningKey</a></div><div class="ttdeci">static void setPassSigningKey(const QString &amp;passSigningKey)</div><div class="ttdoc">Save GPG signing key.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00465">qtpasssettings.cpp:465</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a538e612e04fe934535e1f7525d55743c"><div class="ttname"><a href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a></div><div class="ttdeci">static auto getPassStore(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get password store directory path.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00433">qtpasssettings.cpp:433</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_a579f75b719c9c4de88585f05d70e4bb0"><div class="ttname"><a href="class_qt_pass_settings.html#a579f75b719c9c4de88585f05d70e4bb0">QtPassSettings::isUseTemplate</a></div><div class="ttdeci">static auto isUseTemplate(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether template usage is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00757">qtpasssettings.cpp:757</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_a6248ec7cef087944b59fa9d2a361b413"><div class="ttname"><a href="class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413">QtPassSettings::isUseTrayIcon</a></div><div class="ttdeci">static auto isUseTrayIcon(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether tray icon support is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00694">qtpasssettings.cpp:694</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a579f75b719c9c4de88585f05d70e4bb0"><div class="ttname"><a href="class_qt_pass_settings.html#a579f75b719c9c4de88585f05d70e4bb0">QtPassSettings::isUseTemplate</a></div><div class="ttdeci">static auto isUseTemplate(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether template usage is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00767">qtpasssettings.cpp:767</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a6248ec7cef087944b59fa9d2a361b413"><div class="ttname"><a href="class_qt_pass_settings.html#a6248ec7cef087944b59fa9d2a361b413">QtPassSettings::isUseTrayIcon</a></div><div class="ttdeci">static auto isUseTrayIcon(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether tray icon support is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00704">qtpasssettings.cpp:704</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a6a8ee0f36101f65c885aa1b56c8b4c69"><div class="ttname"><a href="class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69">QtPassSettings::isAddGPGId</a></div><div class="ttdeci">static auto isAddGPGId(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get whether to auto-add GPG ID when receiving files.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00411">qtpasssettings.cpp:411</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a7a2c59796bc7da1e79ee9124a3ea29f4"><div class="ttname"><a href="class_qt_pass_settings.html#a7a2c59796bc7da1e79ee9124a3ea29f4">QtPassSettings::isUseGrepSearch</a></div><div class="ttdeci">static auto isUseGrepSearch(const bool &amp;defaultValue=false) -&gt; bool</div><div class="ttdoc">Check whether content search (pass grep) is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00608">qtpasssettings.cpp:608</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a8b3520f10b70e098629c5b713c69f3a0"><div class="ttname"><a href="class_qt_pass_settings.html#a8b3520f10b70e098629c5b713c69f3a0">QtPassSettings::setPos</a></div><div class="ttdeci">static void setPos(const QPoint &amp;pos)</div><div class="ttdoc">Save window position.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00225">qtpasssettings.cpp:225</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_a907f64f2e985de5ce864e8687fc114ef"><div class="ttname"><a href="class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef">QtPassSettings::getPassTemplate</a></div><div class="ttdeci">static auto getPassTemplate(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get pass entry template.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00748">qtpasssettings.cpp:748</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a907f64f2e985de5ce864e8687fc114ef"><div class="ttname"><a href="class_qt_pass_settings.html#a907f64f2e985de5ce864e8687fc114ef">QtPassSettings::getPassTemplate</a></div><div class="ttdeci">static auto getPassTemplate(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get pass entry template.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00758">qtpasssettings.cpp:758</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a974f845c0549b4789546c1a5a1e70102"><div class="ttname"><a href="class_qt_pass_settings.html#a974f845c0549b4789546c1a5a1e70102">QtPassSettings::isMaximized</a></div><div class="ttdeci">static auto isMaximized(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get maximized state.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00238">qtpasssettings.cpp:238</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_aa1bcf7afe1cccd1a599fe15f86a1b66f"><div class="ttname"><a href="class_qt_pass_settings.html#aa1bcf7afe1cccd1a599fe15f86a1b66f">QtPassSettings::getProfile</a></div><div class="ttdeci">static auto getProfile(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get active profile name.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00573">qtpasssettings.cpp:573</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_aa6bc2d2f460a567417dd46f134ebacd9"><div class="ttname"><a href="class_qt_pass_settings.html#aa6bc2d2f460a567417dd46f134ebacd9">QtPassSettings::isUseMonospace</a></div><div class="ttdeci">static auto isUseMonospace(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get whether to use monospace font.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00384">qtpasssettings.cpp:384</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_aa7f0ddeedf7401d3fc718ab976938ca2"><div class="ttname"><a href="class_qt_pass_settings.html#aa7f0ddeedf7401d3fc718ab976938ca2">QtPassSettings::setUsePass</a></div><div class="ttdeci">static void setUsePass(const bool &amp;usePass)</div><div class="ttdoc">Save use pass setting.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00297">qtpasssettings.cpp:297</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_ab604ff0e43878db15d7084e917954eb8"><div class="ttname"><a href="class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8">QtPassSettings::getAutoclearPanelSeconds</a></div><div class="ttdeci">static auto getAutoclearPanelSeconds(const int &amp;defaultValue=QVariant().toInt()) -&gt; int</div><div class="ttdoc">Get panel autoclear delay in seconds.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00355">qtpasssettings.cpp:355</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_abd5068c7125fcc7d9eb238aea028fd95"><div class="ttname"><a href="class_qt_pass_settings.html#abd5068c7125fcc7d9eb238aea028fd95">QtPassSettings::setSavestate</a></div><div class="ttdeci">static void setSavestate(const QByteArray &amp;saveState)</div><div class="ttdoc">Save window state.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00209">qtpasssettings.cpp:209</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_abd7d9098856e8f0d8f081fdb0e515fed"><div class="ttname"><a href="class_qt_pass_settings.html#abd7d9098856e8f0d8f081fdb0e515fed">QtPassSettings::isAlwaysOnTop</a></div><div class="ttdeci">static auto isAlwaysOnTop(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether main window should stay always on top.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00721">qtpasssettings.cpp:721</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_abd7d9098856e8f0d8f081fdb0e515fed"><div class="ttname"><a href="class_qt_pass_settings.html#abd7d9098856e8f0d8f081fdb0e515fed">QtPassSettings::isAlwaysOnTop</a></div><div class="ttdeci">static auto isAlwaysOnTop(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether main window should stay always on top.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00731">qtpasssettings.cpp:731</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_ac05e5f52d53be077e19ee21f07d1e367"><div class="ttname"><a href="class_qt_pass_settings.html#ac05e5f52d53be077e19ee21f07d1e367">QtPassSettings::isHidePassword</a></div><div class="ttdeci">static auto isHidePassword(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get whether to hide password in UI.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00366">qtpasssettings.cpp:366</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_ac2673c76b268f6a622c8b3c7829ff8db"><div class="ttname"><a href="class_qt_pass_settings.html#ac2673c76b268f6a622c8b3c7829ff8db">QtPassSettings::getPassExecutable</a></div><div class="ttdeci">static auto getPassExecutable(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get pass executable path.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00494">qtpasssettings.cpp:494</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_acad75f76a1c9128bd15d5679a8cd78d9"><div class="ttname"><a href="class_qt_pass_settings.html#acad75f76a1c9128bd15d5679a8cd78d9">QtPassSettings::getPos</a></div><div class="ttdeci">static auto getPos(const QPoint &amp;defaultValue=QVariant().toPoint()) -&gt; QPoint</div><div class="ttdoc">Get saved window position.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00213">qtpasssettings.cpp:213</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_ad23c0edfc2df7bc06df700b8468a8528"><div class="ttname"><a href="class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528">QtPassSettings::getImitatePass</a></div><div class="ttdeci">static auto getImitatePass() -&gt; ImitatePass *</div><div class="ttdoc">Get imitate pass backend instance.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00782">qtpasssettings.cpp:782</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_ad4152bd817991b07af145a0368b7cb1d"><div class="ttname"><a href="class_qt_pass_settings.html#ad4152bd817991b07af145a0368b7cb1d">QtPassSettings::isHideOnClose</a></div><div class="ttdeci">static auto isHideOnClose(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether closing the window hides the application.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00703">qtpasssettings.cpp:703</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_ad23c0edfc2df7bc06df700b8468a8528"><div class="ttname"><a href="class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528">QtPassSettings::getImitatePass</a></div><div class="ttdeci">static auto getImitatePass() -&gt; ImitatePass *</div><div class="ttdoc">Get imitate pass backend instance.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00792">qtpasssettings.cpp:792</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_ad4152bd817991b07af145a0368b7cb1d"><div class="ttname"><a href="class_qt_pass_settings.html#ad4152bd817991b07af145a0368b7cb1d">QtPassSettings::isHideOnClose</a></div><div class="ttdeci">static auto isHideOnClose(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether closing the window hides the application.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00713">qtpasssettings.cpp:713</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_add3fe08db67b209231af21cf7b8f705d"><div class="ttname"><a href="class_qt_pass_settings.html#add3fe08db67b209231af21cf7b8f705d">QtPassSettings::getProfiles</a></div><div class="ttdeci">static auto getProfiles() -&gt; QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</div><div class="ttdoc">Get all configured profiles.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00116">qtpasssettings.cpp:116</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_adf303d889c36195d4e0efb156baf50a6"><div class="ttname"><a href="class_qt_pass_settings.html#adf303d889c36195d4e0efb156baf50a6">QtPassSettings::setSize</a></div><div class="ttdeci">static void setSize(const QSize &amp;size)</div><div class="ttdoc">Save window size.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00234">qtpasssettings.cpp:234</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_aef634f4b530941fbb41f0f1073f5f1f4"><div class="ttname"><a href="class_qt_pass_settings.html#aef634f4b530941fbb41f0f1073f5f1f4">QtPassSettings::setGeometry</a></div><div class="ttdeci">static void setGeometry(const QByteArray &amp;geometry)</div><div class="ttdoc">Save window geometry.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00199">qtpasssettings.cpp:199</a></div></div>

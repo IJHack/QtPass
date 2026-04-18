@@ -1,16 +1,18 @@
 <map id="MainWindow::setUiElementsEnabled" name="MainWindow::setUiElementsEnabled">
-<area shape="rect" id="Node000001" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="291,162,499,202"/>
+<area shape="rect" id="Node000001" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="291,186,499,226"/>
 <area shape="rect" id="Node000002" href="$class_main_window.html#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re&#45;enable ui elements." alt="" coords="9,5,239,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="367,153,313,97,279,69,241,46,210,33,212,28,244,41,282,65,317,93,371,150"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="371,176,318,109,282,74,241,46,212,33,214,28,244,41,285,70,322,105,375,173"/>
 <area shape="rect" id="Node000003" href="$class_main_window.html#a3550b28be1344cf5c012af794dce8c64" title=" " alt="" coords="15,55,233,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="345,158,296,133,242,110,206,98,208,93,244,105,298,128,347,153"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="356,180,303,144,242,110,211,98,213,93,244,105,306,139,359,175"/>
 <area shape="rect" id="Node000004" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="25,144,223,169"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="277,174,223,169,223,163,277,168"/>
-<area shape="rect" id="Node000005" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="15,193,233,219"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="277,195,233,199,233,194,277,190"/>
-<area shape="rect" id="Node000006" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="9,243,239,268"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="323,209,243,233,190,245,189,240,242,227,322,204"/>
-<area shape="rect" id="Node000007" href="$class_main_window.html#a02ec9927bda826675653c0af916c8f33" title="MainWindow::startReencryptPath disable ui elements and treeview." alt="" coords="5,292,243,317"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="359,213,306,249,244,282,204,294,203,289,242,277,303,244,356,208"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="277,187,194,172,195,167,278,182"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a270b5f2701f275c3de734f4150a3d897" title="Display grep results in grepResultsList." alt="" coords="17,193,231,219"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="277,209,231,209,231,203,277,203"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#a7997fd865548c3baa51f1863bb8fdfa0" title=" " alt="" coords="15,243,233,268"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="278,230,195,245,194,240,277,225"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="9,292,239,317"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="347,235,298,260,244,282,198,295,197,289,242,277,296,255,345,230"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a02ec9927bda826675653c0af916c8f33" title="MainWindow::startReencryptPath disable ui elements and treeview." alt="" coords="5,341,243,367"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="367,238,313,286,279,311,244,331,209,344,207,339,242,326,277,306,309,282,363,234"/>
 <area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="172,135,170,130,161,127,124,123,95,125,79,130,76,135,84,142,81,146,71,136,76,126,94,119,124,117,163,121,173,126,177,132"/>
 </map>

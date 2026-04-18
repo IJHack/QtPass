@@ -90,10 +90,14 @@ $(function() {
 <div class="fragment"><div class="line"><span class="comment">// SPDX-FileCopyrightText: 2016 Anne Jan Brouwer</span></div>
 <div class="line"><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="imitatepass_8h.html">imitatepass.h</a>&quot;</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="executor_8h.html">executor.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="qtpasssettings_8h.html">qtpasssettings.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="util_8h.html">util.h</a>&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;QDirIterator&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;QElapsedTimer&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;QPointer&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;QRegularExpression&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;QThread&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;utility&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="preprocessor">#ifdef QT_DEBUG</span></div>
@@ -114,18 +118,36 @@ $(function() {
 <div class="line"><span class="keyword">using </span><a id="_a11" name="_a11"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c">Enums::GPG_GENKEYS</a>;</div>
 <div class="line"><span class="keyword">using </span><a id="_a12" name="_a12"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a>;</div>
 <div class="line"><span class="keyword">using </span><a id="_a13" name="_a13"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728">Enums::PASS_COPY</a>;</div>
-<div class="line"><span class="keyword">using </span><a id="_a14" name="_a14"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06">Enums::PASS_INIT</a>;</div>
-<div class="line"><span class="keyword">using </span><a id="_a15" name="_a15"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf">Enums::PASS_INSERT</a>;</div>
-<div class="line"><span class="keyword">using </span><a id="_a16" name="_a16"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0">Enums::PASS_MOVE</a>;</div>
-<div class="line"><span class="keyword">using </span><a id="_a17" name="_a17"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a1e9c7d5b4afba75021e17b2e2e799bac">Enums::PASS_OTP_GENERATE</a>;</div>
-<div class="line"><span class="keyword">using </span><a id="_a18" name="_a18"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684">Enums::PASS_REMOVE</a>;</div>
-<div class="line"><span class="keyword">using </span><a id="_a19" name="_a19"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9">Enums::PASS_SHOW</a>;</div>
-<div class="line"><span class="keyword">using </span><a id="_a20" name="_a20"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e">Enums::PROCESS_COUNT</a>;</div>
+<div class="line"><span class="keyword">using </span><a id="_a14" name="_a14"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db">Enums::PASS_GREP</a>;</div>
+<div class="line"><span class="keyword">using </span><a id="_a15" name="_a15"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06">Enums::PASS_INIT</a>;</div>
+<div class="line"><span class="keyword">using </span><a id="_a16" name="_a16"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf">Enums::PASS_INSERT</a>;</div>
+<div class="line"><span class="keyword">using </span><a id="_a17" name="_a17"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0">Enums::PASS_MOVE</a>;</div>
+<div class="line"><span class="keyword">using </span><a id="_a18" name="_a18"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a1e9c7d5b4afba75021e17b2e2e799bac">Enums::PASS_OTP_GENERATE</a>;</div>
+<div class="line"><span class="keyword">using </span><a id="_a19" name="_a19"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684">Enums::PASS_REMOVE</a>;</div>
+<div class="line"><span class="keyword">using </span><a id="_a20" name="_a20"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9">Enums::PASS_SHOW</a>;</div>
+<div class="line"><span class="keyword">using </span><a id="_a21" name="_a21"></a><a class="code hl_enumvalue" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e">Enums::PROCESS_COUNT</a>;</div>
 <div class="line"></div>
-<div class="line"><a id="a21" name="a21"></a><a class="code hl_function" href="class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6">ImitatePass::ImitatePass</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="a22" name="a22"></a><a class="code hl_function" href="class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6">ImitatePass::ImitatePass</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"> </div>
+<div class="line"><a id="a23" name="a23"></a><a class="code hl_function" href="class_imitate_pass.html#a59c774bacec45aa06d10e22bc71f596e">ImitatePass::~ImitatePass</a>() {</div>
+<div class="line">  <span class="keyword">static</span> <span class="keyword">constexpr</span> <span class="keywordtype">int</span> kGrepThreadTimeoutMs = 5000;</div>
+<div class="line">  <span class="keywordflow">for</span> (QThread *t : std::as_const(m_grepThreads))</div>
+<div class="line">    <span class="keywordflow">if</span> (t &amp;&amp; t-&gt;isRunning())</div>
+<div class="line">      t-&gt;requestInterruption();</div>
+<div class="line">  QElapsedTimer elapsed;</div>
+<div class="line">  elapsed.start();</div>
+<div class="line">  <span class="keywordflow">for</span> (QThread *t : std::as_const(m_grepThreads)) {</div>
+<div class="line">    <span class="keywordflow">if</span> (t &amp;&amp; t-&gt;isRunning()) {</div>
+<div class="line">      <span class="keyword">const</span> <span class="keywordtype">int</span> remaining =</div>
+<div class="line">          kGrepThreadTimeoutMs - <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(elapsed.elapsed());</div>
+<div class="line">      <span class="keywordflow">if</span> (remaining &gt; 0)</div>
+<div class="line">        t-&gt;wait(remaining);</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">auto</span> pgit(<span class="keyword">const</span> QString &amp;path) -&gt; QString {</div>
-<div class="line">  <span class="keywordflow">if</span> (!<a id="_a22" name="_a22"></a><a class="code hl_function" href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a>().startsWith(<span class="stringliteral">&quot;wsl &quot;</span>)) {</div>
+<div class="line">  <span class="keywordflow">if</span> (!<a id="_a24" name="_a24"></a><a class="code hl_function" href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a>().startsWith(<span class="stringliteral">&quot;wsl &quot;</span>)) {</div>
 <div class="line">    <span class="keywordflow">return</span> path;</div>
 <div class="line">  }</div>
 <div class="line">  QString res = <span class="stringliteral">&quot;$(wslpath &quot;</span> + path + <span class="stringliteral">&quot;)&quot;</span>;</div>
@@ -133,55 +155,55 @@ $(function() {
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">static</span> <span class="keyword">auto</span> pgpg(<span class="keyword">const</span> QString &amp;path) -&gt; QString {</div>
-<div class="line">  <span class="keywordflow">if</span> (!<a id="_a23" name="_a23"></a><a class="code hl_function" href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a>().startsWith(<span class="stringliteral">&quot;wsl &quot;</span>)) {</div>
+<div class="line">  <span class="keywordflow">if</span> (!<a id="_a25" name="_a25"></a><a class="code hl_function" href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a>().startsWith(<span class="stringliteral">&quot;wsl &quot;</span>)) {</div>
 <div class="line">    <span class="keywordflow">return</span> path;</div>
 <div class="line">  }</div>
 <div class="line">  QString res = <span class="stringliteral">&quot;$(wslpath &quot;</span> + path + <span class="stringliteral">&quot;)&quot;</span>;</div>
 <div class="line">  <span class="keywordflow">return</span> res.replace(<span class="charliteral">&#39;\\&#39;</span>, <span class="charliteral">&#39;/&#39;</span>);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a24" name="a24"></a><a class="code hl_function" href="class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb">ImitatePass::GitInit</a>() {</div>
-<div class="line">  <a id="a25" name="a25"></a><a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a26" name="a26"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a34410c90c94276b18d07de603edc6c48">GIT_INIT</a>, {<span class="stringliteral">&quot;init&quot;</span>, pgit(<a id="a27" name="a27"></a><a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>())});</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a26" name="a26"></a><a class="code hl_function" href="class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb">ImitatePass::GitInit</a>() {</div>
+<div class="line">  <a id="a27" name="a27"></a><a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a28" name="a28"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a34410c90c94276b18d07de603edc6c48">GIT_INIT</a>, {<span class="stringliteral">&quot;init&quot;</span>, pgit(<a id="a29" name="a29"></a><a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>())});</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a28" name="a28"></a><a class="code hl_function" href="class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced">ImitatePass::GitPull</a>() { <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a29" name="a29"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#ae056b4c0e719ac27298e551b5d2585e4">GIT_PULL</a>, {<span class="stringliteral">&quot;pull&quot;</span>}); }</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a30" name="a30"></a><a class="code hl_function" href="class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced">ImitatePass::GitPull</a>() { <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a31" name="a31"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#ae056b4c0e719ac27298e551b5d2585e4">GIT_PULL</a>, {<span class="stringliteral">&quot;pull&quot;</span>}); }</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a30" name="a30"></a><a class="code hl_function" href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2">ImitatePass::GitPull_b</a>() {</div>
-<div class="line">  <a id="a31" name="a31"></a><a class="code hl_function" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a>(<a class="code hl_function" href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a>(), {<span class="stringliteral">&quot;pull&quot;</span>});</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a32" name="a32"></a><a class="code hl_function" href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2">ImitatePass::GitPull_b</a>() {</div>
+<div class="line">  <a id="a33" name="a33"></a><a class="code hl_function" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a>(<a class="code hl_function" href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a>(), {<span class="stringliteral">&quot;pull&quot;</span>});</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a32" name="a32"></a><a class="code hl_function" href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9">ImitatePass::GitPush</a>() {</div>
-<div class="line">  <span class="keywordflow">if</span> (<a id="a33" name="a33"></a><a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>()) {</div>
-<div class="line">    <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a34" name="a34"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#ae9f6db885f59f7594cb420d7b4ed5c40">GIT_PUSH</a>, {<span class="stringliteral">&quot;push&quot;</span>});</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a34" name="a34"></a><a class="code hl_function" href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9">ImitatePass::GitPush</a>() {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a id="a35" name="a35"></a><a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>()) {</div>
+<div class="line">    <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a36" name="a36"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#ae9f6db885f59f7594cb420d7b4ed5c40">GIT_PUSH</a>, {<span class="stringliteral">&quot;push&quot;</span>});</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a35" name="a35"></a><a class="code hl_function" href="class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d">ImitatePass::Show</a>(QString file) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a37" name="a37"></a><a class="code hl_function" href="class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d">ImitatePass::Show</a>(QString file) {</div>
 <div class="line">  file = <a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>() + file + <span class="stringliteral">&quot;.gpg&quot;</span>;</div>
 <div class="line">  QStringList args = {<span class="stringliteral">&quot;-d&quot;</span>,      <span class="stringliteral">&quot;--quiet&quot;</span>,     <span class="stringliteral">&quot;--yes&quot;</span>,   <span class="stringliteral">&quot;--no-encrypt-to&quot;</span>,</div>
 <div class="line">                      <span class="stringliteral">&quot;--batch&quot;</span>, <span class="stringliteral">&quot;--use-agent&quot;</span>, pgpg(file)};</div>
-<div class="line">  <a id="a36" name="a36"></a><a class="code hl_function" href="class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a">executeGpg</a>(<a id="a37" name="a37"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#aaf94f232b7f4c8682729d11aa19855f9">PASS_SHOW</a>, args);</div>
+<div class="line">  <a id="a38" name="a38"></a><a class="code hl_function" href="class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a">executeGpg</a>(<a id="a39" name="a39"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#aaf94f232b7f4c8682729d11aa19855f9">PASS_SHOW</a>, args);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a38" name="a38"></a><a class="code hl_function" href="class_imitate_pass.html#a18eac6111a1d77a3f8ded93b7be16270">ImitatePass::OtpGenerate</a>(QString file) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a40" name="a40"></a><a class="code hl_function" href="class_imitate_pass.html#a18eac6111a1d77a3f8ded93b7be16270">ImitatePass::OtpGenerate</a>(QString file) {</div>
 <div class="line"><span class="preprocessor">#ifdef QT_DEBUG</span></div>
-<div class="line">  <a id="a39" name="a39"></a><a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; <span class="stringliteral">&quot;No OTP generation code for fake pass yet, attempting for file: &quot;</span> +</div>
+<div class="line">  <a id="a41" name="a41"></a><a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; <span class="stringliteral">&quot;No OTP generation code for fake pass yet, attempting for file: &quot;</span> +</div>
 <div class="line">               file;</div>
 <div class="line"><span class="preprocessor">#else</span></div>
 <div class="line">  Q_UNUSED(file)</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a40" name="a40"></a><a class="code hl_function" href="class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601">ImitatePass::Insert</a>(QString file, QString newValue, <span class="keywordtype">bool</span> overwrite) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a42" name="a42"></a><a class="code hl_function" href="class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601">ImitatePass::Insert</a>(QString file, QString newValue, <span class="keywordtype">bool</span> overwrite) {</div>
 <div class="line">  file = file + <span class="stringliteral">&quot;.gpg&quot;</span>;</div>
-<div class="line">  QString gpgIdPath = <a id="a41" name="a41"></a><a class="code hl_function" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a>(file);</div>
-<div class="line">  <span class="keywordflow">if</span> (!<a id="a42" name="a42"></a><a class="code hl_function" href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240">verifyGpgIdFile</a>(gpgIdPath)) {</div>
-<div class="line">    emit <a id="a43" name="a43"></a><a class="code hl_signal" href="class_pass.html#a0eafb54675479378ec98307f0e4fff65">critical</a>(tr(<span class="stringliteral">&quot;Check .gpgid file signature!&quot;</span>),</div>
+<div class="line">  QString gpgIdPath = <a id="a43" name="a43"></a><a class="code hl_function" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a>(file);</div>
+<div class="line">  <span class="keywordflow">if</span> (!<a id="a44" name="a44"></a><a class="code hl_function" href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240">verifyGpgIdFile</a>(gpgIdPath)) {</div>
+<div class="line">    emit <a id="a45" name="a45"></a><a class="code hl_signal" href="class_pass.html#a0eafb54675479378ec98307f0e4fff65">critical</a>(tr(<span class="stringliteral">&quot;Check .gpgid file signature!&quot;</span>),</div>
 <div class="line">                  tr(<span class="stringliteral">&quot;Signature for %1 is invalid.&quot;</span>).arg(gpgIdPath));</div>
 <div class="line">    <span class="keywordflow">return</span>;</div>
 <div class="line">  }</div>
-<div class="line">  <a id="_a44" name="_a44"></a><a class="code hl_class" href="class_imitate_pass_1_1transaction_helper.html">transactionHelper</a> trans(<span class="keyword">this</span>, <a id="a45" name="a45"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a2bd1f466dbc7acf275c15b4ebdc92ebf">PASS_INSERT</a>);</div>
-<div class="line">  QStringList recipients = <a id="a46" name="a46"></a><a class="code hl_function" href="class_pass.html#a693825d2ad62813cf103860ef6211370">Pass::getRecipientList</a>(file);</div>
+<div class="line">  <a id="_a46" name="_a46"></a><a class="code hl_class" href="class_imitate_pass_1_1transaction_helper.html">transactionHelper</a> trans(<span class="keyword">this</span>, <a id="a47" name="a47"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a2bd1f466dbc7acf275c15b4ebdc92ebf">PASS_INSERT</a>);</div>
+<div class="line">  QStringList recipients = <a id="a48" name="a48"></a><a class="code hl_function" href="class_pass.html#a693825d2ad62813cf103860ef6211370">Pass::getRecipientList</a>(file);</div>
 <div class="line">  <span class="keywordflow">if</span> (recipients.isEmpty()) {</div>
 <div class="line">    <span class="comment">// Already emit critical signal to notify user of error - no need to throw</span></div>
 <div class="line">    emit <a class="code hl_signal" href="class_pass.html#a0eafb54675479378ec98307f0e4fff65">critical</a>(tr(<span class="stringliteral">&quot;Can not edit&quot;</span>),</div>
@@ -200,35 +222,35 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">  args.append(<span class="stringliteral">&quot;-&quot;</span>);</div>
 <div class="line">  <a class="code hl_function" href="class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a">executeGpg</a>(<a class="code hl_enumvalue" href="imitatepass_8cpp.html#a2bd1f466dbc7acf275c15b4ebdc92ebf">PASS_INSERT</a>, args, newValue);</div>
-<div class="line">  <span class="keywordflow">if</span> (!<a id="a47" name="a47"></a><a class="code hl_function" href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa">QtPassSettings::isUseWebDav</a>() &amp;&amp; <a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>()) {</div>
+<div class="line">  <span class="keywordflow">if</span> (!<a id="a49" name="a49"></a><a class="code hl_function" href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa">QtPassSettings::isUseWebDav</a>() &amp;&amp; <a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>()) {</div>
 <div class="line">    <span class="comment">// Git is used when enabled - this is the standard pass workflow</span></div>
 <div class="line">    <span class="keywordflow">if</span> (!overwrite) {</div>
-<div class="line">      <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a48" name="a48"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#ab846e1c0e4150201778c04b246f42189">GIT_ADD</a>, {<span class="stringliteral">&quot;add&quot;</span>, pgit(file)});</div>
+<div class="line">      <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a50" name="a50"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#ab846e1c0e4150201778c04b246f42189">GIT_ADD</a>, {<span class="stringliteral">&quot;add&quot;</span>, pgit(file)});</div>
 <div class="line">    }</div>
 <div class="line">    QString path = QDir(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>()).relativeFilePath(file);</div>
-<div class="line">    path.replace(<a id="a49" name="a49"></a><a class="code hl_function" href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">Util::endsWithGpg</a>(), <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line">    path.replace(<a id="a51" name="a51"></a><a class="code hl_function" href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">Util::endsWithGpg</a>(), <span class="stringliteral">&quot;&quot;</span>);</div>
 <div class="line">    QString msg =</div>
 <div class="line">        QString(overwrite ? <span class="stringliteral">&quot;Edit&quot;</span> : <span class="stringliteral">&quot;Add&quot;</span>) + <span class="stringliteral">&quot; for &quot;</span> + path + <span class="stringliteral">&quot; using QtPass.&quot;</span>;</div>
-<div class="line">    <a id="a50" name="a50"></a><a class="code hl_function" href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb">gitCommit</a>(file, msg);</div>
+<div class="line">    <a id="a52" name="a52"></a><a class="code hl_function" href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb">gitCommit</a>(file, msg);</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb">ImitatePass::gitCommit</a>(<span class="keyword">const</span> QString &amp;file, <span class="keyword">const</span> QString &amp;msg) {</div>
 <div class="line">  <span class="keywordflow">if</span> (file.isEmpty()) {</div>
-<div class="line">    <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a51" name="a51"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a9e7d6596768289de311da8b360536556">GIT_COMMIT</a>, {<span class="stringliteral">&quot;commit&quot;</span>, <span class="stringliteral">&quot;-m&quot;</span>, msg});</div>
+<div class="line">    <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a53" name="a53"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a9e7d6596768289de311da8b360536556">GIT_COMMIT</a>, {<span class="stringliteral">&quot;commit&quot;</span>, <span class="stringliteral">&quot;-m&quot;</span>, msg});</div>
 <div class="line">  } <span class="keywordflow">else</span> {</div>
 <div class="line">    <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a class="code hl_enumvalue" href="imitatepass_8cpp.html#a9e7d6596768289de311da8b360536556">GIT_COMMIT</a>, {<span class="stringliteral">&quot;commit&quot;</span>, <span class="stringliteral">&quot;-m&quot;</span>, msg, <span class="stringliteral">&quot;--&quot;</span>, pgit(file)});</div>
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a52" name="a52"></a><a class="code hl_function" href="class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5">ImitatePass::Remove</a>(QString file, <span class="keywordtype">bool</span> isDir) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a54" name="a54"></a><a class="code hl_function" href="class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5">ImitatePass::Remove</a>(QString file, <span class="keywordtype">bool</span> isDir) {</div>
 <div class="line">  file = <a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>() + file;</div>
-<div class="line">  <a class="code hl_class" href="class_imitate_pass_1_1transaction_helper.html">transactionHelper</a> trans(<span class="keyword">this</span>, <a id="a53" name="a53"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a914992f89d2834c13c7978905a1f3684">PASS_REMOVE</a>);</div>
+<div class="line">  <a class="code hl_class" href="class_imitate_pass_1_1transaction_helper.html">transactionHelper</a> trans(<span class="keyword">this</span>, <a id="a55" name="a55"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a914992f89d2834c13c7978905a1f3684">PASS_REMOVE</a>);</div>
 <div class="line">  <span class="keywordflow">if</span> (!isDir) {</div>
 <div class="line">    file += <span class="stringliteral">&quot;.gpg&quot;</span>;</div>
 <div class="line">  }</div>
 <div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>()) {</div>
-<div class="line">    <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a54" name="a54"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#aadb94bb5187ca22b697e5576f46a6e36">GIT_RM</a>, {<span class="stringliteral">&quot;rm&quot;</span>, (isDir ? <span class="stringliteral">&quot;-rf&quot;</span> : <span class="stringliteral">&quot;-f&quot;</span>), pgit(file)});</div>
+<div class="line">    <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a56" name="a56"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#aadb94bb5187ca22b697e5576f46a6e36">GIT_RM</a>, {<span class="stringliteral">&quot;rm&quot;</span>, (isDir ? <span class="stringliteral">&quot;-rf&quot;</span> : <span class="stringliteral">&quot;-f&quot;</span>), pgit(file)});</div>
 <div class="line">    <span class="comment">// Normalize path the same way as add/edit operations</span></div>
 <div class="line">    QString path = QDir(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>()).relativeFilePath(file);</div>
 <div class="line">    path.replace(<a class="code hl_function" href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">Util::endsWithGpg</a>(), <span class="stringliteral">&quot;&quot;</span>);</div>
@@ -243,7 +265,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> <a id="a55" name="a55"></a><a class="code hl_function" href="class_imitate_pass.html#a607cc25575bf718f57333bb7854870b4">ImitatePass::checkSigningKeys</a>(<span class="keyword">const</span> QStringList &amp;signingKeys) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><span class="keyword">auto</span> <a id="a57" name="a57"></a><a class="code hl_function" href="class_imitate_pass.html#a607cc25575bf718f57333bb7854870b4">ImitatePass::checkSigningKeys</a>(<span class="keyword">const</span> QStringList &amp;signingKeys) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line">  QString out;</div>
 <div class="line">  QStringList args =</div>
 <div class="line">      QStringList{<span class="stringliteral">&quot;--status-fd=1&quot;</span>, <span class="stringliteral">&quot;--list-secret-keys&quot;</span>} + signingKeys;</div>
@@ -263,7 +285,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a56" name="a56"></a><a class="code hl_function" href="class_imitate_pass.html#ae65aff95459cee83b5b999f5a83fcac1">ImitatePass::writeGpgIdFile</a>(<span class="keyword">const</span> QString &amp;gpgIdFile,</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a58" name="a58"></a><a class="code hl_function" href="class_imitate_pass.html#ae65aff95459cee83b5b999f5a83fcac1">ImitatePass::writeGpgIdFile</a>(<span class="keyword">const</span> QString &amp;gpgIdFile,</div>
 <div class="line">                                 <span class="keyword">const</span> QList&lt;UserInfo&gt; &amp;users) {</div>
 <div class="line">  QFile gpgId(gpgIdFile);</div>
 <div class="line">  <span class="keywordflow">if</span> (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text)) {</div>
@@ -287,7 +309,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> <a id="a57" name="a57"></a><a class="code hl_function" href="class_imitate_pass.html#aa6163e2dd259c8f69d0cead7551b573a">ImitatePass::signGpgIdFile</a>(<span class="keyword">const</span> QString &amp;gpgIdFile,</div>
+<div class="line"><span class="keyword">auto</span> <a id="a59" name="a59"></a><a class="code hl_function" href="class_imitate_pass.html#aa6163e2dd259c8f69d0cead7551b573a">ImitatePass::signGpgIdFile</a>(<span class="keyword">const</span> QString &amp;gpgIdFile,</div>
 <div class="line">                                <span class="keyword">const</span> QStringList &amp;signingKeys) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line">  QStringList args;</div>
 <div class="line">  <span class="comment">// Use only the first signing key; multiple --default-key options would</span></div>
@@ -320,7 +342,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a58" name="a58"></a><a class="code hl_function" href="class_imitate_pass.html#ae9547b23ef6e8c04b52f514218e50a5c">ImitatePass::gitAddGpgId</a>(<span class="keyword">const</span> QString &amp;gpgIdFile,</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a60" name="a60"></a><a class="code hl_function" href="class_imitate_pass.html#ae9547b23ef6e8c04b52f514218e50a5c">ImitatePass::gitAddGpgId</a>(<span class="keyword">const</span> QString &amp;gpgIdFile,</div>
 <div class="line">                              <span class="keyword">const</span> QString &amp;gpgIdSigFile, <span class="keywordtype">bool</span> addFile,</div>
 <div class="line">                              <span class="keywordtype">bool</span> addSigFile) {</div>
 <div class="line">  <span class="keywordflow">if</span> (addFile) {</div>
@@ -338,10 +360,10 @@ $(function() {
 <div class="line">  <a class="code hl_function" href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb">gitCommit</a>(gpgIdSigFile, <span class="stringliteral">&quot;Added &quot;</span> + commitPath + <span class="stringliteral">&quot; using QtPass.&quot;</span>);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a59" name="a59"></a><a class="code hl_function" href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206">ImitatePass::Init</a>(QString path, <span class="keyword">const</span> QList&lt;UserInfo&gt; &amp;users) {</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a61" name="a61"></a><a class="code hl_function" href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206">ImitatePass::Init</a>(QString path, <span class="keyword">const</span> QList&lt;UserInfo&gt; &amp;users) {</div>
 <div class="line"><span class="preprocessor">#if QT_VERSION &gt;= QT_VERSION_CHECK(5, 15, 0)</span></div>
 <div class="line">  QStringList signingKeys =</div>
-<div class="line">      <a id="a60" name="a60"></a><a class="code hl_function" href="class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee">QtPassSettings::getPassSigningKey</a>().split(<span class="stringliteral">&quot; &quot;</span>, Qt::SkipEmptyParts);</div>
+<div class="line">      <a id="a62" name="a62"></a><a class="code hl_function" href="class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee">QtPassSettings::getPassSigningKey</a>().split(<span class="stringliteral">&quot; &quot;</span>, Qt::SkipEmptyParts);</div>
 <div class="line"><span class="preprocessor">#else</span></div>
 <div class="line">  QStringList signingKeys =</div>
 <div class="line">      <a class="code hl_function" href="class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee">QtPassSettings::getPassSigningKey</a>().split(<span class="stringliteral">&quot; &quot;</span>, QString::SkipEmptyParts);</div>
@@ -363,8 +385,8 @@ $(function() {
 <div class="line"> </div>
 <div class="line">  QString gpgIdFile = path + <span class="stringliteral">&quot;.gpg-id&quot;</span>;</div>
 <div class="line">  <span class="keywordtype">bool</span> addFile = <span class="keyword">false</span>;</div>
-<div class="line">  <a class="code hl_class" href="class_imitate_pass_1_1transaction_helper.html">transactionHelper</a> trans(<span class="keyword">this</span>, <a id="a61" name="a61"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a03ecd1c73f11705f3a0d14e775001a06">PASS_INIT</a>);</div>
-<div class="line">  <span class="keywordflow">if</span> (<a id="a62" name="a62"></a><a class="code hl_function" href="class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69">QtPassSettings::isAddGPGId</a>(<span class="keyword">true</span>)) {</div>
+<div class="line">  <a class="code hl_class" href="class_imitate_pass_1_1transaction_helper.html">transactionHelper</a> trans(<span class="keyword">this</span>, <a id="a63" name="a63"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a03ecd1c73f11705f3a0d14e775001a06">PASS_INIT</a>);</div>
+<div class="line">  <span class="keywordflow">if</span> (<a id="a64" name="a64"></a><a class="code hl_function" href="class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69">QtPassSettings::isAddGPGId</a>(<span class="keyword">true</span>)) {</div>
 <div class="line">    QFileInfo checkFile(gpgIdFile);</div>
 <div class="line">    <span class="keywordflow">if</span> (!checkFile.exists() || !checkFile.isFile()) {</div>
 <div class="line">      addFile = <span class="keyword">true</span>;</div>
@@ -382,7 +404,7 @@ $(function() {
 <div class="line">      !<a class="code hl_function" href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a>().isEmpty()) {</div>
 <div class="line">    <a class="code hl_function" href="class_imitate_pass.html#ae9547b23ef6e8c04b52f514218e50a5c">gitAddGpgId</a>(gpgIdFile, gpgIdSigFile, addFile, addSigFile);</div>
 <div class="line">  }</div>
-<div class="line">  <a id="a63" name="a63"></a><a class="code hl_function" href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244">reencryptPath</a>(path);</div>
+<div class="line">  <a id="a65" name="a65"></a><a class="code hl_function" href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244">reencryptPath</a>(path);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">auto</span> <a class="code hl_function" href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240">ImitatePass::verifyGpgIdFile</a>(<span class="keyword">const</span> QString &amp;file) -&gt; <span class="keywordtype">bool</span> {</div>
@@ -424,7 +446,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> <a id="a64" name="a64"></a><a class="code hl_function" href="class_imitate_pass.html#a8740d9937714c8b6219d1857d7e2ff2c">ImitatePass::removeDir</a>(<span class="keyword">const</span> QString &amp;dirName) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><span class="keyword">auto</span> <a id="a66" name="a66"></a><a class="code hl_function" href="class_imitate_pass.html#a8740d9937714c8b6219d1857d7e2ff2c">ImitatePass::removeDir</a>(<span class="keyword">const</span> QString &amp;dirName) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line">  <span class="keywordtype">bool</span> result = <span class="keyword">true</span>;</div>
 <div class="line">  QDir dir(dirName);</div>
 <div class="line"> </div>
@@ -448,7 +470,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> result;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> <a id="a65" name="a65"></a><a class="code hl_function" href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af">ImitatePass::verifyGpgIdForDir</a>(<span class="keyword">const</span> QString &amp;file,</div>
+<div class="line"><span class="keyword">auto</span> <a id="a67" name="a67"></a><a class="code hl_function" href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af">ImitatePass::verifyGpgIdForDir</a>(<span class="keyword">const</span> QString &amp;file,</div>
 <div class="line">                                    QStringList &amp;gpgIdFilesVerified,</div>
 <div class="line">                                    QStringList &amp;gpgId) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line">  QString gpgIdPath = <a class="code hl_function" href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a>(file);</div>
@@ -466,7 +488,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> <a id="a66" name="a66"></a><a class="code hl_function" href="class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834">ImitatePass::getKeysFromFile</a>(<span class="keyword">const</span> QString &amp;fileName) -&gt; QStringList {</div>
+<div class="line"><span class="keyword">auto</span> <a id="a68" name="a68"></a><a class="code hl_function" href="class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834">ImitatePass::getKeysFromFile</a>(<span class="keyword">const</span> QString &amp;fileName) -&gt; QStringList {</div>
 <div class="line">  QStringList args = {</div>
 <div class="line">      <span class="stringliteral">&quot;-v&quot;</span>,          <span class="stringliteral">&quot;--no-secmem-warning&quot;</span>, <span class="stringliteral">&quot;--no-permission-warning&quot;</span>,</div>
 <div class="line">      <span class="stringliteral">&quot;--list-only&quot;</span>, <span class="stringliteral">&quot;--keyid-format=long&quot;</span>, pgpg(fileName)};</div>
@@ -480,7 +502,7 @@ $(function() {
 <div class="line">  QStringList actualKeys;</div>
 <div class="line">  keys += err;</div>
 <div class="line"><span class="preprocessor">#if QT_VERSION &gt;= QT_VERSION_CHECK(5, 15, 0)</span></div>
-<div class="line">  QStringList key = keys.split(<a id="_a67" name="_a67"></a><a class="code hl_function" href="class_util.html#aced819d4368806d046f0dc24a91843f7">Util::newLinesRegex</a>(), Qt::SkipEmptyParts);</div>
+<div class="line">  QStringList key = keys.split(<a id="_a69" name="_a69"></a><a class="code hl_function" href="class_util.html#aced819d4368806d046f0dc24a91843f7">Util::newLinesRegex</a>(), Qt::SkipEmptyParts);</div>
 <div class="line"><span class="preprocessor">#else</span></div>
 <div class="line">  QStringList key = keys.split(<a class="code hl_function" href="class_util.html#aced819d4368806d046f0dc24a91843f7">Util::newLinesRegex</a>(), QString::SkipEmptyParts);</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
@@ -499,7 +521,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> actualKeys;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> <a id="a68" name="a68"></a><a class="code hl_function" href="class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c">ImitatePass::reencryptSingleFile</a>(<span class="keyword">const</span> QString &amp;fileName,</div>
+<div class="line"><span class="keyword">auto</span> <a id="a70" name="a70"></a><a class="code hl_function" href="class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c">ImitatePass::reencryptSingleFile</a>(<span class="keyword">const</span> QString &amp;fileName,</div>
 <div class="line">                                      <span class="keyword">const</span> QStringList &amp;recipients) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><span class="preprocessor">#ifdef QT_DEBUG</span></div>
 <div class="line">  <a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; <span class="stringliteral">&quot;reencrypt &quot;</span> &lt;&lt; fileName &lt;&lt; <span class="stringliteral">&quot; for &quot;</span> &lt;&lt; recipients;</div>
@@ -609,7 +631,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> <a id="a69" name="a69"></a><a class="code hl_function" href="class_imitate_pass.html#a086365ec85674590afbd883df0b27a80">ImitatePass::createBackupCommit</a>() -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line"><span class="keyword">auto</span> <a id="a71" name="a71"></a><a class="code hl_function" href="class_imitate_pass.html#a086365ec85674590afbd883df0b27a80">ImitatePass::createBackupCommit</a>() -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line">  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>() ||</div>
 <div class="line">      <a class="code hl_function" href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a>().isEmpty()) {</div>
 <div class="line">    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
@@ -638,16 +660,16 @@ $(function() {
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244">ImitatePass::reencryptPath</a>(<span class="keyword">const</span> QString &amp;dir) {</div>
-<div class="line">  emit <a id="a70" name="a70"></a><a class="code hl_signal" href="class_pass.html#a404664f7d589a307c9223c373b2622c3">statusMsg</a>(tr(<span class="stringliteral">&quot;Re-encrypting from folder %1&quot;</span>).arg(dir), 3000);</div>
-<div class="line">  emit <a id="a71" name="a71"></a><a class="code hl_signal" href="class_imitate_pass.html#aecffecc95bd1c0281849dbfe11231e36">startReencryptPath</a>();</div>
-<div class="line">  <span class="keywordflow">if</span> (<a id="a72" name="a72"></a><a class="code hl_function" href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a">QtPassSettings::isAutoPull</a>()) {</div>
+<div class="line">  emit <a id="a72" name="a72"></a><a class="code hl_signal" href="class_pass.html#a404664f7d589a307c9223c373b2622c3">statusMsg</a>(tr(<span class="stringliteral">&quot;Re-encrypting from folder %1&quot;</span>).arg(dir), 3000);</div>
+<div class="line">  emit <a id="a73" name="a73"></a><a class="code hl_signal" href="class_imitate_pass.html#aecffecc95bd1c0281849dbfe11231e36">startReencryptPath</a>();</div>
+<div class="line">  <span class="keywordflow">if</span> (<a id="a74" name="a74"></a><a class="code hl_function" href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a">QtPassSettings::isAutoPull</a>()) {</div>
 <div class="line">    emit <a class="code hl_signal" href="class_pass.html#a404664f7d589a307c9223c373b2622c3">statusMsg</a>(tr(<span class="stringliteral">&quot;Updating password-store&quot;</span>), 2000);</div>
 <div class="line">    <a class="code hl_function" href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2">GitPull_b</a>();</div>
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Create backup before re-encryption - abort if it fails</span></div>
 <div class="line">  <span class="keywordflow">if</span> (!<a class="code hl_function" href="class_imitate_pass.html#a086365ec85674590afbd883df0b27a80">createBackupCommit</a>()) {</div>
-<div class="line">    emit <a id="a73" name="a73"></a><a class="code hl_signal" href="class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7">endReencryptPath</a>();</div>
+<div class="line">    emit <a id="a75" name="a75"></a><a class="code hl_signal" href="class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7">endReencryptPath</a>();</div>
 <div class="line">    <span class="keywordflow">return</span>;</div>
 <div class="line">  }</div>
 <div class="line"> </div>
@@ -695,14 +717,14 @@ $(function() {
 <div class="line">        3000);</div>
 <div class="line">  }</div>
 <div class="line"> </div>
-<div class="line">  <span class="keywordflow">if</span> (<a id="a74" name="a74"></a><a class="code hl_function" href="class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc">QtPassSettings::isAutoPush</a>()) {</div>
+<div class="line">  <span class="keywordflow">if</span> (<a id="a76" name="a76"></a><a class="code hl_function" href="class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc">QtPassSettings::isAutoPush</a>()) {</div>
 <div class="line">    emit <a class="code hl_signal" href="class_pass.html#a404664f7d589a307c9223c373b2622c3">statusMsg</a>(tr(<span class="stringliteral">&quot;Updating password-store&quot;</span>), 2000);</div>
 <div class="line">    <a class="code hl_function" href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9">GitPush</a>();</div>
 <div class="line">  }</div>
 <div class="line">  emit <a class="code hl_signal" href="class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7">endReencryptPath</a>();</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">auto</span> <a id="a75" name="a75"></a><a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">ImitatePass::resolveMoveDestination</a>(<span class="keyword">const</span> QString &amp;src,</div>
+<div class="line"><span class="keyword">auto</span> <a id="a77" name="a77"></a><a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">ImitatePass::resolveMoveDestination</a>(<span class="keyword">const</span> QString &amp;src,</div>
 <div class="line">                                         <span class="keyword">const</span> QString &amp;dest, <span class="keywordtype">bool</span> force)</div>
 <div class="line">    -&gt; QString {</div>
 <div class="line">  QFileInfo srcFileInfo(src);</div>
@@ -749,7 +771,7 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> destFile;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a76" name="a76"></a><a class="code hl_function" href="class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098">ImitatePass::executeMoveGit</a>(<span class="keyword">const</span> QString &amp;src, <span class="keyword">const</span> QString &amp;destFile,</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a78" name="a78"></a><a class="code hl_function" href="class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098">ImitatePass::executeMoveGit</a>(<span class="keyword">const</span> QString &amp;src, <span class="keyword">const</span> QString &amp;destFile,</div>
 <div class="line">                                 <span class="keywordtype">bool</span> force) {</div>
 <div class="line">  QStringList args;</div>
 <div class="line">  args &lt;&lt; <span class="stringliteral">&quot;mv&quot;</span>;</div>
@@ -758,7 +780,7 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">  args &lt;&lt; pgit(src);</div>
 <div class="line">  args &lt;&lt; pgit(destFile);</div>
-<div class="line">  <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a77" name="a77"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a66871faf2cc3342fb01bc0292b209376">GIT_MOVE</a>, args);</div>
+<div class="line">  <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a79" name="a79"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a66871faf2cc3342fb01bc0292b209376">GIT_MOVE</a>, args);</div>
 <div class="line"> </div>
 <div class="line">  QString relSrc = QDir(<a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>()).relativeFilePath(src);</div>
 <div class="line">  relSrc.replace(<a class="code hl_function" href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">Util::endsWithGpg</a>(), <span class="stringliteral">&quot;&quot;</span>);</div>
@@ -770,9 +792,9 @@ $(function() {
 <div class="line">  <a class="code hl_function" href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb">gitCommit</a>(<span class="stringliteral">&quot;&quot;</span>, message);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a78" name="a78"></a><a class="code hl_function" href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2">ImitatePass::Move</a>(<span class="keyword">const</span> QString src, <span class="keyword">const</span> QString dest,</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a80" name="a80"></a><a class="code hl_function" href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2">ImitatePass::Move</a>(<span class="keyword">const</span> QString src, <span class="keyword">const</span> QString dest,</div>
 <div class="line">                       <span class="keyword">const</span> <span class="keywordtype">bool</span> force) {</div>
-<div class="line">  <a class="code hl_class" href="class_imitate_pass_1_1transaction_helper.html">transactionHelper</a> trans(<span class="keyword">this</span>, <a id="a79" name="a79"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a4ceeee5cb90c49b2b875bc30c4d21bd0">PASS_MOVE</a>);</div>
+<div class="line">  <a class="code hl_class" href="class_imitate_pass_1_1transaction_helper.html">transactionHelper</a> trans(<span class="keyword">this</span>, <a id="a81" name="a81"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a4ceeee5cb90c49b2b875bc30c4d21bd0">PASS_MOVE</a>);</div>
 <div class="line">  QString destFile = <a class="code hl_function" href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">resolveMoveDestination</a>(src, dest, force);</div>
 <div class="line">  <span class="keywordflow">if</span> (destFile.isEmpty()) {</div>
 <div class="line">    <span class="keywordflow">return</span>;</div>
@@ -794,10 +816,10 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a80" name="a80"></a><a class="code hl_function" href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a">ImitatePass::Copy</a>(<span class="keyword">const</span> QString src, <span class="keyword">const</span> QString dest,</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a82" name="a82"></a><a class="code hl_function" href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a">ImitatePass::Copy</a>(<span class="keyword">const</span> QString src, <span class="keyword">const</span> QString dest,</div>
 <div class="line">                       <span class="keyword">const</span> <span class="keywordtype">bool</span> force) {</div>
 <div class="line">  QFileInfo destFileInfo(dest);</div>
-<div class="line">  <a class="code hl_class" href="class_imitate_pass_1_1transaction_helper.html">transactionHelper</a> trans(<span class="keyword">this</span>, <a id="a81" name="a81"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a3f804bcfb97b78f571463617e3359728">PASS_COPY</a>);</div>
+<div class="line">  <a class="code hl_class" href="class_imitate_pass_1_1transaction_helper.html">transactionHelper</a> trans(<span class="keyword">this</span>, <a id="a83" name="a83"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a3f804bcfb97b78f571463617e3359728">PASS_COPY</a>);</div>
 <div class="line">  <span class="keywordflow">if</span> (<a class="code hl_function" href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a>()) {</div>
 <div class="line">    QStringList args;</div>
 <div class="line">    args &lt;&lt; <span class="stringliteral">&quot;cp&quot;</span>;</div>
@@ -806,7 +828,7 @@ $(function() {
 <div class="line">    }</div>
 <div class="line">    args &lt;&lt; pgit(src);</div>
 <div class="line">    args &lt;&lt; pgit(dest);</div>
-<div class="line">    <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a82" name="a82"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a93624be701ea8876c5aecb6e7139442a">GIT_COPY</a>, args);</div>
+<div class="line">    <a class="code hl_function" href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">executeGit</a>(<a id="a84" name="a84"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a93624be701ea8876c5aecb6e7139442a">GIT_COPY</a>, args);</div>
 <div class="line"> </div>
 <div class="line">    QString message = QString(<span class="stringliteral">&quot;Copied from %1 to %2 using QtPass.&quot;</span>);</div>
 <div class="line">    message = message.arg(src, dest);</div>
@@ -826,9 +848,9 @@ $(function() {
 <div class="line">  }</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a">ImitatePass::executeGpg</a>(<a id="_a83" name="_a83"></a><a class="code hl_enumeration" href="simpletransaction_8cpp.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> QStringList &amp;args, QString input,</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a">ImitatePass::executeGpg</a>(<a id="_a85" name="_a85"></a><a class="code hl_enumeration" href="simpletransaction_8cpp.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> QStringList &amp;args, QString input,</div>
 <div class="line">                             <span class="keywordtype">bool</span> readStdout, <span class="keywordtype">bool</span> readStderr) {</div>
-<div class="line">  <a id="a84" name="a84"></a><a class="code hl_function" href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe">executeWrapper</a>(<span class="keywordtype">id</span>, <a class="code hl_function" href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a>(), args, std::move(input),</div>
+<div class="line">  <a id="a86" name="a86"></a><a class="code hl_function" href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe">executeWrapper</a>(<span class="keywordtype">id</span>, <a class="code hl_function" href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a>(), args, std::move(input),</div>
 <div class="line">                 readStdout, readStderr);</div>
 <div class="line">}</div>
 <div class="line"></div>
@@ -838,22 +860,22 @@ $(function() {
 <div class="line">                 readStdout, readStderr);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> <a id="a85" name="a85"></a><a class="code hl_function" href="class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">ImitatePass::finished</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> exitCode, <span class="keyword">const</span> QString &amp;out,</div>
+<div class="line"><span class="keywordtype">void</span> <a id="a87" name="a87"></a><a class="code hl_function" href="class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">ImitatePass::finished</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> exitCode, <span class="keyword">const</span> QString &amp;out,</div>
 <div class="line">                           <span class="keyword">const</span> QString &amp;err) {</div>
 <div class="line"><span class="preprocessor">#ifdef QT_DEBUG</span></div>
 <div class="line">  <a class="code hl_define" href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a>() &lt;&lt; <span class="stringliteral">&quot;Imitate Pass&quot;</span>;</div>
 <div class="line"><span class="preprocessor">#endif</span></div>
 <div class="line">  <span class="keyword">static</span> QString transactionOutput;</div>
-<div class="line">  <a id="_a86" name="_a86"></a><a class="code hl_typedef" href="class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772">PROCESS</a> pid = <a id="a87" name="a87"></a><a class="code hl_function" href="classsimple_transaction.html#a3914acc39e65586cd6671aff1ac3afe9">transactionIsOver</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772">PROCESS</a><span class="keyword">&gt;</span>(<span class="keywordtype">id</span>));</div>
+<div class="line">  <a id="_a88" name="_a88"></a><a class="code hl_typedef" href="class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772">PROCESS</a> pid = <a id="a89" name="a89"></a><a class="code hl_function" href="classsimple_transaction.html#a3914acc39e65586cd6671aff1ac3afe9">transactionIsOver</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772">PROCESS</a><span class="keyword">&gt;</span>(<span class="keywordtype">id</span>));</div>
 <div class="line">  transactionOutput.append(out);</div>
 <div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> (exitCode == 0) {</div>
-<div class="line">    <span class="keywordflow">if</span> (pid == <a id="a88" name="a88"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a9da0f55eca9ec763c75e98268dcbd023">INVALID</a>) {</div>
+<div class="line">    <span class="keywordflow">if</span> (pid == <a id="a90" name="a90"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a9da0f55eca9ec763c75e98268dcbd023">INVALID</a>) {</div>
 <div class="line">      <span class="keywordflow">return</span>;</div>
 <div class="line">    }</div>
 <div class="line">  } <span class="keywordflow">else</span> {</div>
 <div class="line">    <span class="keywordflow">while</span> (pid == <a class="code hl_enumvalue" href="imitatepass_8cpp.html#a9da0f55eca9ec763c75e98268dcbd023">INVALID</a>) {</div>
-<div class="line">      <span class="keywordtype">id</span> = <a id="_a89" name="_a89"></a><a class="code hl_variable" href="class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af">exec</a>.cancelNext();</div>
+<div class="line">      <span class="keywordtype">id</span> = <a id="_a91" name="_a91"></a><a class="code hl_variable" href="class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af">exec</a>.cancelNext();</div>
 <div class="line">      <span class="keywordflow">if</span> (<span class="keywordtype">id</span> == -1) {</div>
 <div class="line">        <span class="comment">//  this is probably irrecoverable and shall not happen</span></div>
 <div class="line"><span class="preprocessor">#ifdef QT_DEBUG</span></div>
@@ -864,66 +886,184 @@ $(function() {
 <div class="line">      pid = <a class="code hl_function" href="classsimple_transaction.html#a3914acc39e65586cd6671aff1ac3afe9">transactionIsOver</a>(<span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772">PROCESS</a><span class="keyword">&gt;</span>(<span class="keywordtype">id</span>));</div>
 <div class="line">    }</div>
 <div class="line">  }</div>
-<div class="line">  <a id="a90" name="a90"></a><a class="code hl_slot" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass::finished</a>(pid, exitCode, transactionOutput, err);</div>
+<div class="line">  <a id="a92" name="a92"></a><a class="code hl_slot" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass::finished</a>(pid, exitCode, transactionOutput, err);</div>
 <div class="line">  transactionOutput.clear();</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe">ImitatePass::executeWrapper</a>(<a class="code hl_enumeration" href="simpletransaction_8cpp.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> <span class="keywordtype">id</span>, <span class="keyword">const</span> QString &amp;app,</div>
 <div class="line">                                 <span class="keyword">const</span> QStringList &amp;args, QString input,</div>
 <div class="line">                                 <span class="keywordtype">bool</span> readStdout, <span class="keywordtype">bool</span> readStderr) {</div>
-<div class="line">  <a id="a91" name="a91"></a><a class="code hl_function" href="classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326">transactionAdd</a>(<span class="keywordtype">id</span>);</div>
-<div class="line">  <a id="a92" name="a92"></a><a class="code hl_function" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">Pass::executeWrapper</a>(<span class="keywordtype">id</span>, app, args, input, readStdout, readStderr);</div>
+<div class="line">  <a id="a93" name="a93"></a><a class="code hl_function" href="classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326">transactionAdd</a>(<span class="keywordtype">id</span>);</div>
+<div class="line">  <a id="a94" name="a94"></a><a class="code hl_function" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">Pass::executeWrapper</a>(<span class="keywordtype">id</span>, app, args, input, readStdout, readStderr);</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">auto</span> ImitatePass::grepMatchFile(<span class="keyword">const</span> QStringList &amp;env, <span class="keyword">const</span> QString &amp;gpgExe,</div>
+<div class="line">                                <span class="keyword">const</span> QString &amp;filePath,</div>
+<div class="line">                                <span class="keyword">const</span> QRegularExpression &amp;rx) -&gt; QStringList {</div>
+<div class="line">  QString plaintext;</div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">int</span> rc =</div>
+<div class="line">      <a class="code hl_function" href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a>(env, gpgExe,</div>
+<div class="line">                                {<span class="stringliteral">&quot;-d&quot;</span>, <span class="stringliteral">&quot;--quiet&quot;</span>, <span class="stringliteral">&quot;--yes&quot;</span>, <span class="stringliteral">&quot;--no-encrypt-to&quot;</span>,</div>
+<div class="line">                                 <span class="stringliteral">&quot;--batch&quot;</span>, <span class="stringliteral">&quot;--use-agent&quot;</span>, pgpg(filePath)},</div>
+<div class="line">                                &amp;plaintext);</div>
+<div class="line">  <span class="keywordflow">if</span> (rc != 0 || plaintext.isEmpty())</div>
+<div class="line">    <span class="keywordflow">return</span> {};</div>
+<div class="line">  QStringList matches;</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;line : plaintext.split(<span class="charliteral">&#39;\n&#39;</span>)) {</div>
+<div class="line">    QString candidate = line;</div>
+<div class="line">    <span class="keywordflow">if</span> (candidate.endsWith(<span class="charliteral">&#39;\r&#39;</span>))</div>
+<div class="line">      candidate.chop(1);</div>
+<div class="line">    <span class="keyword">const</span> QString t = candidate.trimmed();</div>
+<div class="line">    <span class="keywordflow">if</span> (!t.isEmpty() &amp;&amp; candidate.contains(rx))</div>
+<div class="line">      matches &lt;&lt; t;</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">return</span> matches;</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">auto</span> ImitatePass::grepScanStore(<span class="keyword">const</span> QStringList &amp;env, <span class="keyword">const</span> QString &amp;gpgExe,</div>
+<div class="line">                                <span class="keyword">const</span> QString &amp;storeDir,</div>
+<div class="line">                                <span class="keyword">const</span> QRegularExpression &amp;rx)</div>
+<div class="line">    -&gt; QList&lt;QPair&lt;QString, QStringList&gt;&gt; {</div>
+<div class="line">  QList&lt;QPair&lt;QString, QStringList&gt;&gt; results;</div>
+<div class="line">  QDirIterator it(storeDir, QStringList() &lt;&lt; <span class="stringliteral">&quot;*.gpg&quot;</span>, QDir::Files,</div>
+<div class="line">                  QDirIterator::Subdirectories);</div>
+<div class="line">  <span class="keywordflow">while</span> (it.hasNext()) {</div>
+<div class="line">    <span class="keywordflow">if</span> (QThread::currentThread()-&gt;isInterruptionRequested())</div>
+<div class="line">      <span class="keywordflow">return</span> {};</div>
+<div class="line">    <span class="keyword">const</span> QString filePath = it.next();</div>
+<div class="line">    <span class="keyword">const</span> QStringList matches = grepMatchFile(env, gpgExe, filePath, rx);</div>
+<div class="line">    <span class="keywordflow">if</span> (!matches.isEmpty()) {</div>
+<div class="line">      QString entry = QDir(storeDir).relativeFilePath(filePath);</div>
+<div class="line">      <span class="keywordflow">if</span> (entry.endsWith(QLatin1String(<span class="stringliteral">&quot;.gpg&quot;</span>)))</div>
+<div class="line">        entry.chop(4);</div>
+<div class="line">      results.append({entry, matches});</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">return</span> results;</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> <a id="a95" name="a95"></a><a class="code hl_function" href="class_imitate_pass.html#a7789a916aca076ad7ceaf4ef093239d3">ImitatePass::Grep</a>(QString pattern, <span class="keywordtype">bool</span> caseInsensitive) {</div>
+<div class="line">  <span class="keywordflow">for</span> (QThread *t : std::as_const(m_grepThreads))</div>
+<div class="line">    <span class="keywordflow">if</span> (t &amp;&amp; t-&gt;isRunning())</div>
+<div class="line">      t-&gt;requestInterruption();</div>
+<div class="line">  <span class="comment">// No wait() — blocking the UI thread while GPG decrypts would freeze the</span></div>
+<div class="line">  <span class="comment">// interface. Stale results are discarded via the sequence counter.</span></div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Advance the sequence before any early return so in-flight workers from the</span></div>
+<div class="line">  <span class="comment">// previous query fail the seq check and cannot publish stale results.</span></div>
+<div class="line">  <span class="keyword">const</span> <span class="keywordtype">int</span> seq = ++m_grepSeq;</div>
+<div class="line"> </div>
+<div class="line">  <span class="comment">// Use trimmed() rather than isEmpty(): a whitespace-only string is a valid</span></div>
+<div class="line">  <span class="comment">// regex that matches every non-empty line, which is almost never intentional</span></div>
+<div class="line">  <span class="comment">// and would decrypt the entire store.</span></div>
+<div class="line">  <span class="comment">//</span></div>
+<div class="line">  <span class="comment">// Both early returns post finishedGrep via Qt::QueuedConnection so that the</span></div>
+<div class="line">  <span class="comment">// signal is always delivered asynchronously after Grep() returns, matching</span></div>
+<div class="line">  <span class="comment">// the contract of the threaded path.</span></div>
+<div class="line">  <span class="keywordflow">if</span> (pattern.trimmed().isEmpty()) {</div>
+<div class="line">    QMetaObject::invokeMethod(</div>
+<div class="line">        <span class="keyword">this</span>,</div>
+<div class="line">        [<span class="keyword">this</span>, seq]() {</div>
+<div class="line">          <span class="keywordflow">if</span> (m_grepSeq == seq)</div>
+<div class="line">            emit <a id="a96" name="a96"></a><a class="code hl_signal" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a>({});</div>
+<div class="line">        },</div>
+<div class="line">        Qt::QueuedConnection);</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">const</span> QRegularExpression rx(</div>
+<div class="line">      pattern, caseInsensitive ? QRegularExpression::CaseInsensitiveOption</div>
+<div class="line">                               : QRegularExpression::PatternOptions{});</div>
+<div class="line">  <span class="keywordflow">if</span> (!rx.isValid()) {</div>
+<div class="line">    QMetaObject::invokeMethod(</div>
+<div class="line">        <span class="keyword">this</span>,</div>
+<div class="line">        [<span class="keyword">this</span>, seq]() {</div>
+<div class="line">          <span class="keywordflow">if</span> (m_grepSeq == seq)</div>
+<div class="line">            emit <a class="code hl_signal" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a>({});</div>
+<div class="line">        },</div>
+<div class="line">        Qt::QueuedConnection);</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keyword">const</span> QString gpgExe = <a class="code hl_function" href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a>();</div>
+<div class="line">  <span class="keyword">const</span> QString storeDir = <a class="code hl_function" href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a>();</div>
+<div class="line">  <span class="keyword">const</span> QStringList env = <a class="code hl_variable" href="class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af">exec</a>.environment();</div>
+<div class="line">  QPointer&lt;ImitatePass&gt; self(<span class="keyword">this</span>);</div>
+<div class="line"> </div>
+<div class="line">  <span class="keyword">auto</span> emitResults = [self, seq](QList&lt;QPair&lt;QString, QStringList&gt;&gt; results) {</div>
+<div class="line">    <span class="keywordflow">if</span> (!self)</div>
+<div class="line">      <span class="keywordflow">return</span>;</div>
+<div class="line">    QMetaObject::invokeMethod(</div>
+<div class="line">        self,</div>
+<div class="line">        [self, seq, results = std::move(results)]() {</div>
+<div class="line">          <span class="keywordflow">if</span> (self &amp;&amp; self-&gt;m_grepSeq == seq)</div>
+<div class="line">            emit self-&gt;finishedGrep(results);</div>
+<div class="line">        },</div>
+<div class="line">        Qt::QueuedConnection);</div>
+<div class="line">  };</div>
+<div class="line"> </div>
+<div class="line">  QThread *thread = QThread::create([gpgExe, storeDir, env, rx, emitResults]() {</div>
+<div class="line">    emitResults(grepScanStore(env, gpgExe, storeDir, rx));</div>
+<div class="line">  });</div>
+<div class="line"> </div>
+<div class="line">  m_grepThreads.append(thread);</div>
+<div class="line">  connect(thread, &amp;QThread::finished, thread, &amp;QObject::deleteLater);</div>
+<div class="line">  connect(thread, &amp;QThread::finished, <span class="keyword">this</span>,</div>
+<div class="line">          [<span class="keyword">this</span>, thread]() { m_grepThreads.removeOne(thread); });</div>
+<div class="line">  thread-&gt;start();</div>
 <div class="line">}</div>
 <div class="ttc" id="aclass_executor_html_a4e210af42a76029683ded3210cf7bce2"><div class="ttname"><a href="class_executor.html#a4e210af42a76029683ded3210cf7bce2">Executor::executeBlocking</a></div><div class="ttdeci">static auto executeBlocking(const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</div><div class="ttdoc">Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.</div><div class="ttdef"><b>Definition</b> <a href="executor_8cpp_source.html#l00223">executor.cpp:223</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_1_1transaction_helper_html"><div class="ttname"><a href="class_imitate_pass_1_1transaction_helper.html">ImitatePass::transactionHelper</a></div><div class="ttdoc">RAII helper for wrapping operations in transactions.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8h_source.html#l00151">imitatepass.h:151</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a086365ec85674590afbd883df0b27a80"><div class="ttname"><a href="class_imitate_pass.html#a086365ec85674590afbd883df0b27a80">ImitatePass::createBackupCommit</a></div><div class="ttdeci">auto createBackupCommit() -&gt; bool</div><div class="ttdoc">Create git backup commit before re-encryption.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00665">imitatepass.cpp:665</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a18eac6111a1d77a3f8ded93b7be16270"><div class="ttname"><a href="class_imitate_pass.html#a18eac6111a1d77a3f8ded93b7be16270">ImitatePass::OtpGenerate</a></div><div class="ttdeci">void OtpGenerate(QString file) override</div><div class="ttdoc">Generate OTP.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00099">imitatepass.cpp:99</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a2bb2e83ad96efa7c111df54230e237bb"><div class="ttname"><a href="class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb">ImitatePass::GitInit</a></div><div class="ttdeci">void GitInit() override</div><div class="ttdoc">Initialize Git repository.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00061">imitatepass.cpp:61</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a2ff555a9fdb035a15b0ea55ce2cb887a"><div class="ttname"><a href="class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a">ImitatePass::executeGpg</a></div><div class="ttdeci">void executeGpg(PROCESS id, const QStringList &amp;args, QString input=QString(), bool readStdout=true, bool readStderr=true)</div><div class="ttdoc">Execute GPG command.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00947">imitatepass.cpp:947</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a5713b5c223fd522d0790debaa33cfbc2"><div class="ttname"><a href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2">ImitatePass::GitPull_b</a></div><div class="ttdeci">void GitPull_b() override</div><div class="ttdoc">Pull with rebase.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00073">imitatepass.cpp:73</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a607cc25575bf718f57333bb7854870b4"><div class="ttname"><a href="class_imitate_pass.html#a607cc25575bf718f57333bb7854870b4">ImitatePass::checkSigningKeys</a></div><div class="ttdeci">auto checkSigningKeys(const QStringList &amp;signingKeys) -&gt; bool</div><div class="ttdoc">Check if signing keys are valid.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00202">imitatepass.cpp:202</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_1_1transaction_helper_html"><div class="ttname"><a href="class_imitate_pass_1_1transaction_helper.html">ImitatePass::transactionHelper</a></div><div class="ttdoc">RAII helper for wrapping operations in transactions.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8h_source.html#l00154">imitatepass.h:154</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a086365ec85674590afbd883df0b27a80"><div class="ttname"><a href="class_imitate_pass.html#a086365ec85674590afbd883df0b27a80">ImitatePass::createBackupCommit</a></div><div class="ttdeci">auto createBackupCommit() -&gt; bool</div><div class="ttdoc">Create git backup commit before re-encryption.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00687">imitatepass.cpp:687</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a18eac6111a1d77a3f8ded93b7be16270"><div class="ttname"><a href="class_imitate_pass.html#a18eac6111a1d77a3f8ded93b7be16270">ImitatePass::OtpGenerate</a></div><div class="ttdeci">void OtpGenerate(QString file) override</div><div class="ttdoc">Generate OTP.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00121">imitatepass.cpp:121</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a2bb2e83ad96efa7c111df54230e237bb"><div class="ttname"><a href="class_imitate_pass.html#a2bb2e83ad96efa7c111df54230e237bb">ImitatePass::GitInit</a></div><div class="ttdeci">void GitInit() override</div><div class="ttdoc">Initialize Git repository.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00083">imitatepass.cpp:83</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a2ff555a9fdb035a15b0ea55ce2cb887a"><div class="ttname"><a href="class_imitate_pass.html#a2ff555a9fdb035a15b0ea55ce2cb887a">ImitatePass::executeGpg</a></div><div class="ttdeci">void executeGpg(PROCESS id, const QStringList &amp;args, QString input=QString(), bool readStdout=true, bool readStderr=true)</div><div class="ttdoc">Execute GPG command.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00969">imitatepass.cpp:969</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a5713b5c223fd522d0790debaa33cfbc2"><div class="ttname"><a href="class_imitate_pass.html#a5713b5c223fd522d0790debaa33cfbc2">ImitatePass::GitPull_b</a></div><div class="ttdeci">void GitPull_b() override</div><div class="ttdoc">Pull with rebase.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00095">imitatepass.cpp:95</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a59c774bacec45aa06d10e22bc71f596e"><div class="ttname"><a href="class_imitate_pass.html#a59c774bacec45aa06d10e22bc71f596e">ImitatePass::~ImitatePass</a></div><div class="ttdeci">~ImitatePass() override</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00047">imitatepass.cpp:47</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a607cc25575bf718f57333bb7854870b4"><div class="ttname"><a href="class_imitate_pass.html#a607cc25575bf718f57333bb7854870b4">ImitatePass::checkSigningKeys</a></div><div class="ttdeci">auto checkSigningKeys(const QStringList &amp;signingKeys) -&gt; bool</div><div class="ttdoc">Check if signing keys are valid.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00224">imitatepass.cpp:224</a></div></div>
 <div class="ttc" id="aclass_imitate_pass_html_a64932bbae7860c2ee6bef6e3d6ed7bc6"><div class="ttname"><a href="class_imitate_pass.html#a64932bbae7860c2ee6bef6e3d6ed7bc6">ImitatePass::ImitatePass</a></div><div class="ttdeci">ImitatePass()</div><div class="ttdoc">Construct ImitatePass instance.</div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a662922741c9302e7ff58690a2f35808c"><div class="ttname"><a href="class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c">ImitatePass::reencryptSingleFile</a></div><div class="ttdeci">auto reencryptSingleFile(const QString &amp;fileName, const QStringList &amp;recipients) -&gt; bool</div><div class="ttdoc">Re-encrypt single file with new recipients.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00551">imitatepass.cpp:551</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a6ecaa7d53d661362511354e96572c240"><div class="ttname"><a href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240">ImitatePass::verifyGpgIdFile</a></div><div class="ttdeci">auto verifyGpgIdFile(const QString &amp;file) -&gt; bool</div><div class="ttdoc">Verify .gpg-id file exists and is valid.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00400">imitatepass.cpp:400</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a6f9682c6103b112a9aa844df7ef6a273"><div class="ttname"><a href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">ImitatePass::executeGit</a></div><div class="ttdeci">void executeGit(PROCESS id, const QStringList &amp;args, QString input=QString(), bool readStdout=true, bool readStderr=true)</div><div class="ttdoc">Execute git command.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00957">imitatepass.cpp:957</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a6fe6b48df3fb04071c8c2c1d5c1d1206"><div class="ttname"><a href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206">ImitatePass::Init</a></div><div class="ttdeci">void Init(QString path, const QList&lt; UserInfo &gt; &amp;users) override</div><div class="ttdoc">Initialize store.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00348">imitatepass.cpp:348</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a7af6102fa60b3267bd1e387e7cfd82af"><div class="ttname"><a href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af">ImitatePass::verifyGpgIdForDir</a></div><div class="ttdeci">auto verifyGpgIdForDir(const QString &amp;file, QStringList &amp;gpgIdFilesVerified, QStringList &amp;gpgId) -&gt; bool</div><div class="ttdoc">Verify .gpg-id file for a directory.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00475">imitatepass.cpp:475</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a84de97293ca1a100b1e466b4a79ec601"><div class="ttname"><a href="class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601">ImitatePass::Insert</a></div><div class="ttdeci">void Insert(QString file, QString newValue, bool overwrite=false) override</div><div class="ttdoc">Insert new password.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00115">imitatepass.cpp:115</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a8740d9937714c8b6219d1857d7e2ff2c"><div class="ttname"><a href="class_imitate_pass.html#a8740d9937714c8b6219d1857d7e2ff2c">ImitatePass::removeDir</a></div><div class="ttdeci">auto removeDir(const QString &amp;dirName) -&gt; bool</div><div class="ttdoc">Remove directory recursively.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00444">imitatepass.cpp:444</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a94389a15db6c782715520aa6fbb13098"><div class="ttname"><a href="class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098">ImitatePass::executeMoveGit</a></div><div class="ttdeci">void executeMoveGit(const QString &amp;src, const QString &amp;destFile, bool force)</div><div class="ttdoc">Execute git move operation.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00843">imitatepass.cpp:843</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a9653850cc56714b9774221204339bbf2"><div class="ttname"><a href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2">ImitatePass::Move</a></div><div class="ttdeci">void Move(const QString src, const QString dest, const bool force=false) override</div><div class="ttdoc">Move password file.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00875">imitatepass.cpp:875</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_a97538d83d4f6a583f840db0865e8609a"><div class="ttname"><a href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a">ImitatePass::Copy</a></div><div class="ttdeci">void Copy(const QString src, const QString dest, const bool force=false) override</div><div class="ttdoc">Copy password file.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00911">imitatepass.cpp:911</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a662922741c9302e7ff58690a2f35808c"><div class="ttname"><a href="class_imitate_pass.html#a662922741c9302e7ff58690a2f35808c">ImitatePass::reencryptSingleFile</a></div><div class="ttdeci">auto reencryptSingleFile(const QString &amp;fileName, const QStringList &amp;recipients) -&gt; bool</div><div class="ttdoc">Re-encrypt single file with new recipients.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00573">imitatepass.cpp:573</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a6ecaa7d53d661362511354e96572c240"><div class="ttname"><a href="class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240">ImitatePass::verifyGpgIdFile</a></div><div class="ttdeci">auto verifyGpgIdFile(const QString &amp;file) -&gt; bool</div><div class="ttdoc">Verify .gpg-id file exists and is valid.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00422">imitatepass.cpp:422</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a6f9682c6103b112a9aa844df7ef6a273"><div class="ttname"><a href="class_imitate_pass.html#a6f9682c6103b112a9aa844df7ef6a273">ImitatePass::executeGit</a></div><div class="ttdeci">void executeGit(PROCESS id, const QStringList &amp;args, QString input=QString(), bool readStdout=true, bool readStderr=true)</div><div class="ttdoc">Execute git command.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00979">imitatepass.cpp:979</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a6fe6b48df3fb04071c8c2c1d5c1d1206"><div class="ttname"><a href="class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206">ImitatePass::Init</a></div><div class="ttdeci">void Init(QString path, const QList&lt; UserInfo &gt; &amp;users) override</div><div class="ttdoc">Initialize store.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00370">imitatepass.cpp:370</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a7789a916aca076ad7ceaf4ef093239d3"><div class="ttname"><a href="class_imitate_pass.html#a7789a916aca076ad7ceaf4ef093239d3">ImitatePass::Grep</a></div><div class="ttdeci">void Grep(QString pattern, bool caseInsensitive=false) override</div><div class="ttdoc">Search all password content by GPG-decrypting each .gpg file.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l01099">imitatepass.cpp:1099</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a7af6102fa60b3267bd1e387e7cfd82af"><div class="ttname"><a href="class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af">ImitatePass::verifyGpgIdForDir</a></div><div class="ttdeci">auto verifyGpgIdForDir(const QString &amp;file, QStringList &amp;gpgIdFilesVerified, QStringList &amp;gpgId) -&gt; bool</div><div class="ttdoc">Verify .gpg-id file for a directory.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00497">imitatepass.cpp:497</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a84de97293ca1a100b1e466b4a79ec601"><div class="ttname"><a href="class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601">ImitatePass::Insert</a></div><div class="ttdeci">void Insert(QString file, QString newValue, bool overwrite=false) override</div><div class="ttdoc">Insert new password.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00137">imitatepass.cpp:137</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a8740d9937714c8b6219d1857d7e2ff2c"><div class="ttname"><a href="class_imitate_pass.html#a8740d9937714c8b6219d1857d7e2ff2c">ImitatePass::removeDir</a></div><div class="ttdeci">auto removeDir(const QString &amp;dirName) -&gt; bool</div><div class="ttdoc">Remove directory recursively.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00466">imitatepass.cpp:466</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a94389a15db6c782715520aa6fbb13098"><div class="ttname"><a href="class_imitate_pass.html#a94389a15db6c782715520aa6fbb13098">ImitatePass::executeMoveGit</a></div><div class="ttdeci">void executeMoveGit(const QString &amp;src, const QString &amp;destFile, bool force)</div><div class="ttdoc">Execute git move operation.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00865">imitatepass.cpp:865</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a9653850cc56714b9774221204339bbf2"><div class="ttname"><a href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2">ImitatePass::Move</a></div><div class="ttdeci">void Move(const QString src, const QString dest, const bool force=false) override</div><div class="ttdoc">Move password file.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00897">imitatepass.cpp:897</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_a97538d83d4f6a583f840db0865e8609a"><div class="ttname"><a href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a">ImitatePass::Copy</a></div><div class="ttdeci">void Copy(const QString src, const QString dest, const bool force=false) override</div><div class="ttdoc">Copy password file.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00933">imitatepass.cpp:933</a></div></div>
 <div class="ttc" id="aclass_imitate_pass_html_a9df2c7246a8686cf92c442c00dc55af7"><div class="ttname"><a href="class_imitate_pass.html#a9df2c7246a8686cf92c442c00dc55af7">ImitatePass::endReencryptPath</a></div><div class="ttdeci">void endReencryptPath()</div><div class="ttdoc">Emitted after finishing re-encryption.</div></div>
-<div class="ttc" id="aclass_imitate_pass_html_aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><div class="ttname"><a href="class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">ImitatePass::finished</a></div><div class="ttdeci">void finished(int id, int exitCode, const QString &amp;out, const QString &amp;err) override</div><div class="ttdoc">Handle process completion.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00973">imitatepass.cpp:973</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_aa2ade77096c04fb94536d675bfaae8fe"><div class="ttname"><a href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe">ImitatePass::executeWrapper</a></div><div class="ttdeci">void executeWrapper(PROCESS id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout=true, bool readStderr=true) override</div><div class="ttdoc">Execute command wrapper.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l01012">imitatepass.cpp:1012</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_aa6163e2dd259c8f69d0cead7551b573a"><div class="ttname"><a href="class_imitate_pass.html#aa6163e2dd259c8f69d0cead7551b573a">ImitatePass::signGpgIdFile</a></div><div class="ttdeci">auto signGpgIdFile(const QString &amp;gpgIdFile, const QStringList &amp;signingKeys) -&gt; bool</div><div class="ttdoc">Sign .gpg-id file with signing keys.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00271">imitatepass.cpp:271</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_ab9cef44c64dae297da55e08266f1c1c5"><div class="ttname"><a href="class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5">ImitatePass::Remove</a></div><div class="ttdeci">void Remove(QString file, bool isDir=false) override</div><div class="ttdoc">Remove password.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00173">imitatepass.cpp:173</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_ab9f0103079ee01a263b70b95cd4aeced"><div class="ttname"><a href="class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced">ImitatePass::GitPull</a></div><div class="ttdeci">void GitPull() override</div><div class="ttdoc">Pull from remote.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00068">imitatepass.cpp:68</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_acfffcbf097c9d4615c01e064e335d65d"><div class="ttname"><a href="class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d">ImitatePass::Show</a></div><div class="ttdeci">void Show(QString file) override</div><div class="ttdoc">Show decrypted password.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00089">imitatepass.cpp:89</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_adfd24194a7787a48b6eddbe8d31fc563"><div class="ttname"><a href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">ImitatePass::resolveMoveDestination</a></div><div class="ttdeci">auto resolveMoveDestination(const QString &amp;src, const QString &amp;dest, bool force) -&gt; QString</div><div class="ttdoc">Resolve destination for move operation.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00785">imitatepass.cpp:785</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_ae61b400e69fcc32c4a80b94fb52107b9"><div class="ttname"><a href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9">ImitatePass::GitPush</a></div><div class="ttdeci">void GitPush() override</div><div class="ttdoc">Push to remote.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00080">imitatepass.cpp:80</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_ae65aff95459cee83b5b999f5a83fcac1"><div class="ttname"><a href="class_imitate_pass.html#ae65aff95459cee83b5b999f5a83fcac1">ImitatePass::writeGpgIdFile</a></div><div class="ttdeci">void writeGpgIdFile(const QString &amp;gpgIdFile, const QList&lt; UserInfo &gt; &amp;users)</div><div class="ttdoc">Write recipients to .gpg-id file.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00234">imitatepass.cpp:234</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_ae9547b23ef6e8c04b52f514218e50a5c"><div class="ttname"><a href="class_imitate_pass.html#ae9547b23ef6e8c04b52f514218e50a5c">ImitatePass::gitAddGpgId</a></div><div class="ttdeci">void gitAddGpgId(const QString &amp;gpgIdFile, const QString &amp;gpgIdSigFile, bool addFile, bool addSigFile)</div><div class="ttdoc">Add .gpg-id to git staging.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00317">imitatepass.cpp:317</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><div class="ttname"><a href="class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">ImitatePass::finished</a></div><div class="ttdeci">void finished(int id, int exitCode, const QString &amp;out, const QString &amp;err) override</div><div class="ttdoc">Handle process completion.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00995">imitatepass.cpp:995</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_aa2ade77096c04fb94536d675bfaae8fe"><div class="ttname"><a href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe">ImitatePass::executeWrapper</a></div><div class="ttdeci">void executeWrapper(PROCESS id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout=true, bool readStderr=true) override</div><div class="ttdoc">Execute command wrapper.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l01034">imitatepass.cpp:1034</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_aa6163e2dd259c8f69d0cead7551b573a"><div class="ttname"><a href="class_imitate_pass.html#aa6163e2dd259c8f69d0cead7551b573a">ImitatePass::signGpgIdFile</a></div><div class="ttdeci">auto signGpgIdFile(const QString &amp;gpgIdFile, const QStringList &amp;signingKeys) -&gt; bool</div><div class="ttdoc">Sign .gpg-id file with signing keys.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00293">imitatepass.cpp:293</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_ab9cef44c64dae297da55e08266f1c1c5"><div class="ttname"><a href="class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5">ImitatePass::Remove</a></div><div class="ttdeci">void Remove(QString file, bool isDir=false) override</div><div class="ttdoc">Remove password.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00195">imitatepass.cpp:195</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_ab9f0103079ee01a263b70b95cd4aeced"><div class="ttname"><a href="class_imitate_pass.html#ab9f0103079ee01a263b70b95cd4aeced">ImitatePass::GitPull</a></div><div class="ttdeci">void GitPull() override</div><div class="ttdoc">Pull from remote.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00090">imitatepass.cpp:90</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_acfffcbf097c9d4615c01e064e335d65d"><div class="ttname"><a href="class_imitate_pass.html#acfffcbf097c9d4615c01e064e335d65d">ImitatePass::Show</a></div><div class="ttdeci">void Show(QString file) override</div><div class="ttdoc">Show decrypted password.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00111">imitatepass.cpp:111</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_adfd24194a7787a48b6eddbe8d31fc563"><div class="ttname"><a href="class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563">ImitatePass::resolveMoveDestination</a></div><div class="ttdeci">auto resolveMoveDestination(const QString &amp;src, const QString &amp;dest, bool force) -&gt; QString</div><div class="ttdoc">Resolve destination for move operation.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00807">imitatepass.cpp:807</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_ae61b400e69fcc32c4a80b94fb52107b9"><div class="ttname"><a href="class_imitate_pass.html#ae61b400e69fcc32c4a80b94fb52107b9">ImitatePass::GitPush</a></div><div class="ttdeci">void GitPush() override</div><div class="ttdoc">Push to remote.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00102">imitatepass.cpp:102</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_ae65aff95459cee83b5b999f5a83fcac1"><div class="ttname"><a href="class_imitate_pass.html#ae65aff95459cee83b5b999f5a83fcac1">ImitatePass::writeGpgIdFile</a></div><div class="ttdeci">void writeGpgIdFile(const QString &amp;gpgIdFile, const QList&lt; UserInfo &gt; &amp;users)</div><div class="ttdoc">Write recipients to .gpg-id file.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00256">imitatepass.cpp:256</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_ae9547b23ef6e8c04b52f514218e50a5c"><div class="ttname"><a href="class_imitate_pass.html#ae9547b23ef6e8c04b52f514218e50a5c">ImitatePass::gitAddGpgId</a></div><div class="ttdeci">void gitAddGpgId(const QString &amp;gpgIdFile, const QString &amp;gpgIdSigFile, bool addFile, bool addSigFile)</div><div class="ttdoc">Add .gpg-id to git staging.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00339">imitatepass.cpp:339</a></div></div>
 <div class="ttc" id="aclass_imitate_pass_html_aecffecc95bd1c0281849dbfe11231e36"><div class="ttname"><a href="class_imitate_pass.html#aecffecc95bd1c0281849dbfe11231e36">ImitatePass::startReencryptPath</a></div><div class="ttdeci">void startReencryptPath()</div><div class="ttdoc">Emitted before starting re-encryption.</div></div>
-<div class="ttc" id="aclass_imitate_pass_html_aef532636a761beee3ecdd5dcedbfc834"><div class="ttname"><a href="class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834">ImitatePass::getKeysFromFile</a></div><div class="ttdeci">auto getKeysFromFile(const QString &amp;fileName) -&gt; QStringList</div><div class="ttdoc">Read recipients from file.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00505">imitatepass.cpp:505</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_af331446d163c31f1fca714646c0f6244"><div class="ttname"><a href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244">ImitatePass::reencryptPath</a></div><div class="ttdeci">void reencryptPath(const QString &amp;dir)</div><div class="ttdoc">Re-encrypt entire directory.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00706">imitatepass.cpp:706</a></div></div>
-<div class="ttc" id="aclass_imitate_pass_html_afcfd84525f2dfd41b131f76c988010fb"><div class="ttname"><a href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb">ImitatePass::gitCommit</a></div><div class="ttdeci">void gitCommit(const QString &amp;file, const QString &amp;msg)</div><div class="ttdoc">Commit changes to git.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00162">imitatepass.cpp:162</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_aef532636a761beee3ecdd5dcedbfc834"><div class="ttname"><a href="class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834">ImitatePass::getKeysFromFile</a></div><div class="ttdeci">auto getKeysFromFile(const QString &amp;fileName) -&gt; QStringList</div><div class="ttdoc">Read recipients from file.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00527">imitatepass.cpp:527</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_af331446d163c31f1fca714646c0f6244"><div class="ttname"><a href="class_imitate_pass.html#af331446d163c31f1fca714646c0f6244">ImitatePass::reencryptPath</a></div><div class="ttdeci">void reencryptPath(const QString &amp;dir)</div><div class="ttdoc">Re-encrypt entire directory.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00728">imitatepass.cpp:728</a></div></div>
+<div class="ttc" id="aclass_imitate_pass_html_afcfd84525f2dfd41b131f76c988010fb"><div class="ttname"><a href="class_imitate_pass.html#afcfd84525f2dfd41b131f76c988010fb">ImitatePass::gitCommit</a></div><div class="ttdeci">void gitCommit(const QString &amp;file, const QString &amp;msg)</div><div class="ttdoc">Commit changes to git.</div><div class="ttdef"><b>Definition</b> <a href="imitatepass_8cpp_source.html#l00184">imitatepass.cpp:184</a></div></div>
 <div class="ttc" id="aclass_pass_html_a0eafb54675479378ec98307f0e4fff65"><div class="ttname"><a href="class_pass.html#a0eafb54675479378ec98307f0e4fff65">Pass::critical</a></div><div class="ttdeci">void critical(const QString &amp;, const QString &amp;)</div><div class="ttdoc">Emit critical error.</div></div>
 <div class="ttc" id="aclass_pass_html_a2e71b5174b4ef25a1e91d8c56177b772"><div class="ttname"><a href="class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772">Pass::PROCESS</a></div><div class="ttdeci">Enums::PROCESS PROCESS</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00044">pass.h:44</a></div></div>
 <div class="ttc" id="aclass_pass_html_a404664f7d589a307c9223c373b2622c3"><div class="ttname"><a href="class_pass.html#a404664f7d589a307c9223c373b2622c3">Pass::statusMsg</a></div><div class="ttdeci">void statusMsg(const QString &amp;, int)</div><div class="ttdoc">Emit status message.</div></div>
-<div class="ttc" id="aclass_pass_html_a66f59138ffe856fd421410d9af9ddc62"><div class="ttname"><a href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">Pass::executeWrapper</a></div><div class="ttdeci">void executeWrapper(PROCESS id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</div><div class="ttdoc">Execute external wrapper command.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00077">pass.cpp:77</a></div></div>
-<div class="ttc" id="aclass_pass_html_a693825d2ad62813cf103860ef6211370"><div class="ttname"><a href="class_pass.html#a693825d2ad62813cf103860ef6211370">Pass::getRecipientList</a></div><div class="ttdeci">static auto getRecipientList(const QString &amp;for_file) -&gt; QStringList</div><div class="ttdoc">Get list of recipients for a password file.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00643">pass.cpp:643</a></div></div>
-<div class="ttc" id="aclass_pass_html_a7bab4c97e4a327cc34060a67c09959bf"><div class="ttname"><a href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a></div><div class="ttdeci">static auto getGpgIdPath(const QString &amp;for_file) -&gt; QString</div><div class="ttdoc">Get .gpg-id file path for a password file.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00613">pass.cpp:613</a></div></div>
+<div class="ttc" id="aclass_pass_html_a66f59138ffe856fd421410d9af9ddc62"><div class="ttname"><a href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">Pass::executeWrapper</a></div><div class="ttdeci">void executeWrapper(PROCESS id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</div><div class="ttdoc">Execute external wrapper command.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00078">pass.cpp:78</a></div></div>
+<div class="ttc" id="aclass_pass_html_a693825d2ad62813cf103860ef6211370"><div class="ttname"><a href="class_pass.html#a693825d2ad62813cf103860ef6211370">Pass::getRecipientList</a></div><div class="ttdeci">static auto getRecipientList(const QString &amp;for_file) -&gt; QStringList</div><div class="ttdoc">Get list of recipients for a password file.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00697">pass.cpp:697</a></div></div>
+<div class="ttc" id="aclass_pass_html_a74344f203b81f87b4d42a6281a176db4"><div class="ttname"><a href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">Pass::finishedGrep</a></div><div class="ttdeci">void finishedGrep(const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</div><div class="ttdoc">Emitted when grep finishes with matching results.</div></div>
+<div class="ttc" id="aclass_pass_html_a7bab4c97e4a327cc34060a67c09959bf"><div class="ttname"><a href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a></div><div class="ttdeci">static auto getGpgIdPath(const QString &amp;for_file) -&gt; QString</div><div class="ttdoc">Get .gpg-id file path for a password file.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00667">pass.cpp:667</a></div></div>
 <div class="ttc" id="aclass_pass_html_a903a833ade1109f9cb75e3bbeab8d0af"><div class="ttname"><a href="class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af">Pass::exec</a></div><div class="ttdeci">Executor exec</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00042">pass.h:42</a></div></div>
-<div class="ttc" id="aclass_pass_html_ad51174f24ecdbc14a55e4588a34b8563"><div class="ttname"><a href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass::finished</a></div><div class="ttdeci">virtual void finished(int id, int exitCode, const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">Handle process completion.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00505">pass.cpp:505</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_a3d196817a466e574236ac869515b105a"><div class="ttname"><a href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a">QtPassSettings::isAutoPull</a></div><div class="ttdeci">static auto isAutoPull(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether automatic pull is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00730">qtpasssettings.cpp:730</a></div></div>
+<div class="ttc" id="aclass_pass_html_ad51174f24ecdbc14a55e4588a34b8563"><div class="ttname"><a href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass::finished</a></div><div class="ttdeci">virtual void finished(int id, int exitCode, const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">Handle process completion.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00545">pass.cpp:545</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_a3d196817a466e574236ac869515b105a"><div class="ttname"><a href="class_qt_pass_settings.html#a3d196817a466e574236ac869515b105a">QtPassSettings::isAutoPull</a></div><div class="ttdeci">static auto isAutoPull(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether automatic pull is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00740">qtpasssettings.cpp:740</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a4519d1aa1f11653585e546dbfde7c8b3"><div class="ttname"><a href="class_qt_pass_settings.html#a4519d1aa1f11653585e546dbfde7c8b3">QtPassSettings::isUseGit</a></div><div class="ttdeci">static auto isUseGit(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether Git integration is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00592">qtpasssettings.cpp:592</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a538e612e04fe934535e1f7525d55743c"><div class="ttname"><a href="class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c">QtPassSettings::getPassStore</a></div><div class="ttdeci">static auto getPassStore(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get password store directory path.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00433">qtpasssettings.cpp:433</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a6a8ee0f36101f65c885aa1b56c8b4c69"><div class="ttname"><a href="class_qt_pass_settings.html#a6a8ee0f36101f65c885aa1b56c8b4c69">QtPassSettings::isAddGPGId</a></div><div class="ttdeci">static auto isAddGPGId(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Get whether to auto-add GPG ID when receiving files.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00411">qtpasssettings.cpp:411</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a6d9beabe93c829cacdcc6c27792ffdba"><div class="ttname"><a href="class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba">QtPassSettings::getGpgExecutable</a></div><div class="ttdeci">static auto getGpgExecutable(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get GPG executable path.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00512">qtpasssettings.cpp:512</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a7b92ee036db63e5d2b49da826b5763ee"><div class="ttname"><a href="class_qt_pass_settings.html#a7b92ee036db63e5d2b49da826b5763ee">QtPassSettings::getPassSigningKey</a></div><div class="ttdeci">static auto getPassSigningKey(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get GPG signing key for pass.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00460">qtpasssettings.cpp:460</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_aacb80ca326700f2bd4987cd5cb6806fa"><div class="ttname"><a href="class_qt_pass_settings.html#aacb80ca326700f2bd4987cd5cb6806fa">QtPassSettings::isUseWebDav</a></div><div class="ttdeci">static auto isUseWebDav(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether WebDAV integration is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00537">qtpasssettings.cpp:537</a></div></div>
-<div class="ttc" id="aclass_qt_pass_settings_html_aed89066431636ed49ae1d65938dcd7cc"><div class="ttname"><a href="class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc">QtPassSettings::isAutoPush</a></div><div class="ttdeci">static auto isAutoPush(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether automatic push is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00739">qtpasssettings.cpp:739</a></div></div>
+<div class="ttc" id="aclass_qt_pass_settings_html_aed89066431636ed49ae1d65938dcd7cc"><div class="ttname"><a href="class_qt_pass_settings.html#aed89066431636ed49ae1d65938dcd7cc">QtPassSettings::isAutoPush</a></div><div class="ttdeci">static auto isAutoPush(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</div><div class="ttdoc">Check whether automatic push is enabled.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00749">qtpasssettings.cpp:749</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_af6dc725440e9961c39fbd6f567749d82"><div class="ttname"><a href="class_qt_pass_settings.html#af6dc725440e9961c39fbd6f567749d82">QtPassSettings::getGitExecutable</a></div><div class="ttdeci">static auto getGitExecutable(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get git executable path.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00503">qtpasssettings.cpp:503</a></div></div>
 <div class="ttc" id="aclass_util_html_a2a7a32586578a9b631bc6b2a821ce616"><div class="ttname"><a href="class_util.html#a2a7a32586578a9b631bc6b2a821ce616">Util::endsWithGpg</a></div><div class="ttdeci">static auto endsWithGpg() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match .gpg file extensions.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00252">util.cpp:252</a></div></div>
 <div class="ttc" id="aclass_util_html_aced819d4368806d046f0dc24a91843f7"><div class="ttname"><a href="class_util.html#aced819d4368806d046f0dc24a91843f7">Util::newLinesRegex</a></div><div class="ttdeci">static auto newLinesRegex() -&gt; const QRegularExpression &amp;</div><div class="ttdoc">Returns a regex to match newline characters.</div><div class="ttdef"><b>Definition</b> <a href="util_8cpp_source.html#l00275">util.cpp:275</a></div></div>
@@ -931,6 +1071,7 @@ $(function() {
 <div class="ttc" id="aclasssimple_transaction_html_a974db4056edcb408e96cf9bc2a6e4326"><div class="ttname"><a href="classsimple_transaction.html#a974db4056edcb408e96cf9bc2a6e4326">simpleTransaction::transactionAdd</a></div><div class="ttdeci">void transactionAdd(Enums::PROCESS)</div><div class="ttdoc">transactionAdd If called after call to transactionStart() and before transactionEnd(),...</div><div class="ttdef"><b>Definition</b> <a href="simpletransaction_8cpp_source.html#l00030">simpletransaction.cpp:30</a></div></div>
 <div class="ttc" id="adebughelper_8h_html"><div class="ttname"><a href="debughelper_8h.html">debughelper.h</a></div><div class="ttdoc">Debug utilities for QtPass.</div></div>
 <div class="ttc" id="adebughelper_8h_html_a1b089898deebf895757ee5e095615ec7"><div class="ttname"><a href="debughelper_8h.html#a1b089898deebf895757ee5e095615ec7">dbg</a></div><div class="ttdeci">#define dbg()</div><div class="ttdoc">Simple debug macro that includes file and line number.</div><div class="ttdef"><b>Definition</b> <a href="debughelper_8h_source.html#l00021">debughelper.h:21</a></div></div>
+<div class="ttc" id="aexecutor_8h_html"><div class="ttname"><a href="executor_8h.html">executor.h</a></div></div>
 <div class="ttc" id="aimitatepass_8cpp_html_a03ecd1c73f11705f3a0d14e775001a06"><div class="ttname"><a href="imitatepass_8cpp.html#a03ecd1c73f11705f3a0d14e775001a06">PASS_INIT</a></div><div class="ttdeci">@ PASS_INIT</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00036">enums.h:36</a></div></div>
 <div class="ttc" id="aimitatepass_8cpp_html_a2bd1f466dbc7acf275c15b4ebdc92ebf"><div class="ttname"><a href="imitatepass_8cpp.html#a2bd1f466dbc7acf275c15b4ebdc92ebf">PASS_INSERT</a></div><div class="ttdeci">@ PASS_INSERT</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00034">enums.h:34</a></div></div>
 <div class="ttc" id="aimitatepass_8cpp_html_a34410c90c94276b18d07de603edc6c48"><div class="ttname"><a href="imitatepass_8cpp.html#a34410c90c94276b18d07de603edc6c48">GIT_INIT</a></div><div class="ttdeci">@ GIT_INIT</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00027">enums.h:27</a></div></div>
@@ -939,7 +1080,7 @@ $(function() {
 <div class="ttc" id="aimitatepass_8cpp_html_a66871faf2cc3342fb01bc0292b209376"><div class="ttname"><a href="imitatepass_8cpp.html#a66871faf2cc3342fb01bc0292b209376">GIT_MOVE</a></div><div class="ttdeci">@ GIT_MOVE</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00040">enums.h:40</a></div></div>
 <div class="ttc" id="aimitatepass_8cpp_html_a914992f89d2834c13c7978905a1f3684"><div class="ttname"><a href="imitatepass_8cpp.html#a914992f89d2834c13c7978905a1f3684">PASS_REMOVE</a></div><div class="ttdeci">@ PASS_REMOVE</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00035">enums.h:35</a></div></div>
 <div class="ttc" id="aimitatepass_8cpp_html_a93624be701ea8876c5aecb6e7139442a"><div class="ttname"><a href="imitatepass_8cpp.html#a93624be701ea8876c5aecb6e7139442a">GIT_COPY</a></div><div class="ttdeci">@ GIT_COPY</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00041">enums.h:41</a></div></div>
-<div class="ttc" id="aimitatepass_8cpp_html_a9da0f55eca9ec763c75e98268dcbd023"><div class="ttname"><a href="imitatepass_8cpp.html#a9da0f55eca9ec763c75e98268dcbd023">INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00043">enums.h:43</a></div></div>
+<div class="ttc" id="aimitatepass_8cpp_html_a9da0f55eca9ec763c75e98268dcbd023"><div class="ttname"><a href="imitatepass_8cpp.html#a9da0f55eca9ec763c75e98268dcbd023">INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00045">enums.h:45</a></div></div>
 <div class="ttc" id="aimitatepass_8cpp_html_a9e7d6596768289de311da8b360536556"><div class="ttname"><a href="imitatepass_8cpp.html#a9e7d6596768289de311da8b360536556">GIT_COMMIT</a></div><div class="ttdeci">@ GIT_COMMIT</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00029">enums.h:29</a></div></div>
 <div class="ttc" id="aimitatepass_8cpp_html_aadb94bb5187ca22b697e5576f46a6e36"><div class="ttname"><a href="imitatepass_8cpp.html#aadb94bb5187ca22b697e5576f46a6e36">GIT_RM</a></div><div class="ttdeci">@ GIT_RM</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00030">enums.h:30</a></div></div>
 <div class="ttc" id="aimitatepass_8cpp_html_aaf94f232b7f4c8682729d11aa19855f9"><div class="ttname"><a href="imitatepass_8cpp.html#aaf94f232b7f4c8682729d11aa19855f9">PASS_SHOW</a></div><div class="ttdeci">@ PASS_SHOW</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00033">enums.h:33</a></div></div>
@@ -951,21 +1092,22 @@ $(function() {
 <div class="ttc" id="anamespace_enums_html_aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef"><div class="ttname"><a href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a></div><div class="ttdeci">@ CLIPBOARD_NEVER</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00017">enums.h:17</a></div></div>
 <div class="ttc" id="anamespace_enums_html_aa36f045555e72e4d536b48aac12ee52daf4f60eefd26af9c92962895d9a55ae2b"><div class="ttname"><a href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52daf4f60eefd26af9c92962895d9a55ae2b">Enums::CLIPBOARD_ON_DEMAND</a></div><div class="ttdeci">@ CLIPBOARD_ON_DEMAND</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00019">enums.h:19</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06">Enums::PASS_INIT</a></div><div class="ttdeci">@ PASS_INIT</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00036">enums.h:36</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a1e9c7d5b4afba75021e17b2e2e799bac"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a1e9c7d5b4afba75021e17b2e2e799bac">Enums::PASS_OTP_GENERATE</a></div><div class="ttdeci">@ PASS_OTP_GENERATE</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00044">enums.h:44</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a1e9c7d5b4afba75021e17b2e2e799bac"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a1e9c7d5b4afba75021e17b2e2e799bac">Enums::PASS_OTP_GENERATE</a></div><div class="ttdeci">@ PASS_OTP_GENERATE</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00042">enums.h:42</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf">Enums::PASS_INSERT</a></div><div class="ttdeci">@ PASS_INSERT</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00034">enums.h:34</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48">Enums::GIT_INIT</a></div><div class="ttdeci">@ GIT_INIT</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00027">enums.h:27</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728">Enums::PASS_COPY</a></div><div class="ttdeci">@ PASS_COPY</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00039">enums.h:39</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0">Enums::PASS_MOVE</a></div><div class="ttdeci">@ PASS_MOVE</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00038">enums.h:38</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376">Enums::GIT_MOVE</a></div><div class="ttdeci">@ GIT_MOVE</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00040">enums.h:40</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db">Enums::PASS_GREP</a></div><div class="ttdeci">@ PASS_GREP</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00043">enums.h:43</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c">Enums::GPG_GENKEYS</a></div><div class="ttdeci">@ GPG_GENKEYS</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00037">enums.h:37</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684">Enums::PASS_REMOVE</a></div><div class="ttdeci">@ PASS_REMOVE</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00035">enums.h:35</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a">Enums::GIT_COPY</a></div><div class="ttdeci">@ GIT_COPY</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00041">enums.h:41</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00043">enums.h:43</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a></div><div class="ttdeci">@ INVALID</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00045">enums.h:45</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556">Enums::GIT_COMMIT</a></div><div class="ttdeci">@ GIT_COMMIT</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00029">enums.h:29</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36">Enums::GIT_RM</a></div><div class="ttdeci">@ GIT_RM</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00030">enums.h:30</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9">Enums::PASS_SHOW</a></div><div class="ttdeci">@ PASS_SHOW</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00033">enums.h:33</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189">Enums::GIT_ADD</a></div><div class="ttdeci">@ GIT_ADD</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00028">enums.h:28</a></div></div>
-<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e">Enums::PROCESS_COUNT</a></div><div class="ttdeci">@ PROCESS_COUNT</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00042">enums.h:42</a></div></div>
+<div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e">Enums::PROCESS_COUNT</a></div><div class="ttdeci">@ PROCESS_COUNT</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00044">enums.h:44</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4">Enums::GIT_PULL</a></div><div class="ttdeci">@ GIT_PULL</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00031">enums.h:31</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40">Enums::GIT_PUSH</a></div><div class="ttdeci">@ GIT_PUSH</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00032">enums.h:32</a></div></div>
 <div class="ttc" id="aqtpasssettings_8h_html"><div class="ttname"><a href="qtpasssettings_8h.html">qtpasssettings.h</a></div></div>
