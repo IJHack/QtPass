@@ -1292,7 +1292,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="402"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>هل تريد فرض الكتابة فوق البيانات؟</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="403"/>
