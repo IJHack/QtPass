@@ -459,11 +459,18 @@ bool containsAny(const QString &str, const QStringList &patterns) {
   return false;
 }
 
+/**
+ * @brief Checks if str contains any of the patterns (case-insensitive).
+ * @param str String to search in (will be lowercased once).
+ * @param patterns List of patterns to search for (must be lowercase; caller
+ * should convert patterns to lowercase before calling).
+ * @return true if any pattern is found.
+ */
 bool containsAnyCaseInsensitive(const QString &str,
                                 const QStringList &patterns) {
   const QString lower = str.toLower();
   for (const QString &p : patterns) {
-    if (lower.contains(p.toLower())) {
+    if (lower.contains(p)) {
       return true;
     }
   }

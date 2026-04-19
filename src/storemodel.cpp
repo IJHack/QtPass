@@ -283,6 +283,10 @@ auto StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
     return true;
   }
 
+  if (action != Qt::MoveAction && action != Qt::CopyAction) {
+    return false;
+  }
+
   dragAndDropInfoPasswordStore info;
   if (!parseDropData(data, &info)) {
     return false;
