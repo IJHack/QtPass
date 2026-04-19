@@ -6,6 +6,7 @@
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QCoreApplication>
+#include <QDebug>
 #include <QDir>
 #include <QFileInfo>
 #include <QProcess>
