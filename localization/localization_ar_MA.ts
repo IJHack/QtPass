@@ -172,12 +172,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>تفعيل البحث عن المحتوى (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>يُتيح البحث داخل محتويات ملفات كلمات المرور. يتطلب ذلك فك تشفير كل ملف، وقد يكون بطيئًا على المخازن الكبيرة.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -267,7 +267,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>اسم الملف الشخصي، المستخدم لتحديد ملف تعريف التكوين هذا</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="950"/>
@@ -277,7 +277,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>مسار دليل تخزين كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -363,12 +363,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>حدد المستلمين لـ %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>ملف تعريف جديد</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="704"/>
@@ -735,47 +735,47 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>ابحث داخل محتوى كلمة المرور (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>تبديل البحث عن المحتوى</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>قم بتبديل وضع البحث عن المحتوى للبحث داخل ملفات كلمات المرور</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>بحث غير حساس لحالة الأحرف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>مفتاح تبديل غير حساس لحالة الأحرف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>تفعيل البحث عن المحتوى غير الحساس لحالة الأحرف</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>نتائج</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -922,28 +922,28 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>جارٍ البحث…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>البحث في المحتوى (باستخدام التعبيرات النمطية)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>لم يتم العثور على نتائج.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>تم العثور على تطابق بنسبة %n في المدخل %1.</numerusform>
+            <numerusform>تم العثور على تطابق بنسبة %n في المدخل %1.</numerusform>
+            <numerusform>تم العثور على %n تطابق في %1 مدخلاً.</numerusform>
+            <numerusform>تم العثور على %n تطابق في %1 مدخلاً.</numerusform>
+            <numerusform>تم العثور على %n تطابق في %1 مدخلاً.</numerusform>
+            <numerusform>تم العثور على %n تطابق في %1 مدخلاً.</numerusform>
         </translation>
     </message>
     <message>
@@ -1109,25 +1109,25 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="486"/>
         <location filename="../src/pass.cpp" line="505"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>فشل التشفير: انتهت صلاحية مفتاح GPG. يرجى تجديده أو استبداله.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="491"/>
         <location filename="../src/pass.cpp" line="510"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>فشل التشفير: تم إلغاء مفتاح GPG.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="495"/>
         <location filename="../src/pass.cpp" line="515"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>فشل التشفير: لم يتم العثور على مفتاح GPG الخاص بالمستلم أو أنه غير صالح. تحقق من صحة معرّف المفتاح في ملف .gpg-id ومن استيراده.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="499"/>
         <location filename="../src/pass.cpp" line="519"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>فشلت عملية التشفير. يرجى التأكد من صحة مفتاح GPG الخاص بك.</translation>
     </message>
 </context>
 <context>
