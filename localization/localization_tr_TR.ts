@@ -335,7 +335,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="961"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Seçmeli: GPG, dürüstlük doğrulama için .gpg-id dosyaları imzalamak için anahtar. Kullanıcı listesini tampering&apos;den korumanız gerektiğinde boş bırakın.</translation>
+        <translation>Seçmeli: GPG, dürüstlük doğrulaması için .gpg-id dosyalarını imzalamak üzere anahtar. Kullanıcı listesini kurcalamaya karşı korumanız gerekmedikçe boş bırakın.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="971"/>
@@ -435,7 +435,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="704"/>
@@ -803,47 +803,47 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola içeriğinde ara (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>İçerik arama geçişi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Parola dosyalarının içinde aramak için içerik arama modunu değiştir</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Büyük/küçük harf duyarsız arama</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Büyük/küçük harf duyarsız geçiş</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Büyük/küçük harf duyarsız içerik aramayı değiştir</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Sonuçlar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -1025,7 +1025,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%1 girdide %n eşleşme bulundu.</numerusform>
         </translation>
     </message>
     <message>
@@ -1180,25 +1180,25 @@ Devam edilsin mi?</translation>
         <location filename="../src/pass.cpp" line="486"/>
         <location filename="../src/pass.cpp" line="505"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifreleme başarısız oldu: GPG anahtarının süresi dolmuş. Lütfen anahtarı yenileyin veya değiştirin.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="491"/>
         <location filename="../src/pass.cpp" line="510"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifreleme başarısız oldu: GPG anahtarı iptal edilmiş.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="495"/>
         <location filename="../src/pass.cpp" line="515"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifreleme başarısız oldu: Alıcının GPG anahtarı bulunamadı veya geçersiz. .gpg-id içindeki anahtar kimliğinin doğru olduğundan ve içe aktarıldığından emin olun.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="499"/>
         <location filename="../src/pass.cpp" line="519"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Şifreleme başarısız oldu. GPG anahtarınızın geçerli olduğunu kontrol edin.</translation>
     </message>
 </context>
 <context>
