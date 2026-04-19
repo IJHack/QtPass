@@ -1025,7 +1025,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
+            <numerusform>%1 girdide %n eşleşme bulundu.</numerusform>
         </translation>
     </message>
     <message>
