@@ -1324,7 +1324,7 @@ Pokračovat?</translation>
         <location filename="../src/pass.cpp" line="498"/>
         <location filename="../src/pass.cpp" line="518"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Šifrování selhalo: příjemce GPG klíč nebyl nalezen nebo neplatný. Zkontrolujte, zda je klíčové ID v .gpg-id správné a importované.</translation>
+        <translation>Šifrování selhalo: GPG klíč příjemce nebyl nalezen nebo je neplatný. Zkontrolujte, zda je ID klíče v .gpg-id správné a zda byl klíč importován.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="502"/>
