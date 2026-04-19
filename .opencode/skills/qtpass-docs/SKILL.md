@@ -216,6 +216,6 @@ doxygen Doxyfile
 
 - Unnamed parameters in header declarations — name every parameter
 - Orphaned `/** */` blocks not immediately above their declaration
-- Missing `@return` on non-void functions
+- Missing `@return` on non-void functions (recommended, not enforced with `WARN_NO_PARAMDOC = NO`)
 - Signals with unnamed parameters (Qt signals need docs too)
 - `@unknowncommand` typos in doc blocks
