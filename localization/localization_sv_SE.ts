@@ -314,12 +314,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivera innehållssökning (med grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tillåt sökning i lösenordsfiler. Kräver att varje fil dekrypteras och kan vara långsamt på stora lagringsplatser.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
@@ -334,12 +334,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilnamn, som används för att identifiera denna konfigurationsprofil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Sökväg till katalogen för lösenordslagring</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -430,12 +430,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj mottagare för %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="808"/>
@@ -1030,47 +1030,47 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök i lösenordsinnehållet (med grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Innehållssökning växel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla sökläge för innehåll för att söka i lösenordsfiler</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Skiftlägesokänslig sökning</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Skiftlägesokänsligt växel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Växla skiftlägesokänsligt innehållssökning</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultat</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -1128,17 +1128,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Söker…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sök innehåll (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inga träffar hittades.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
@@ -1285,25 +1285,25 @@ Fortsätta?</translation>
         <location filename="../src/pass.cpp" line="486"/>
         <location filename="../src/pass.cpp" line="505"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptering misslyckades: GPG-nyckeln har gått ut. Förnya eller ersätt den.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="491"/>
         <location filename="../src/pass.cpp" line="510"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptering misslyckades: GPG-nyckeln har återkallats.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="495"/>
         <location filename="../src/pass.cpp" line="515"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptering misslyckades: mottagarens GPG-nyckel hittades inte eller är ogiltig. Kontrollera att nyckel-ID:t i .gpg-id är korrekt och importerat.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="499"/>
         <location filename="../src/pass.cpp" line="519"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptering misslyckades. Kontrollera att din GPG-nyckel är giltig.</translation>
     </message>
 </context>
 <context>
