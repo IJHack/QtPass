@@ -11,6 +11,7 @@
 #include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
+#include <algorithm>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -51,9 +52,10 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
       QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w"),
       QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")};
   const QString wslenvPrefix = QStringLiteral("WSLENV=");
-  auto it = std::find_if(env.begin(), env.end(), [&](const QString &s) {
-    return s.startsWith(wslenvPrefix);
-  });
+  auto it =
+      std::find_if(env.begin(), env.end(), [&wslenvPrefix](const QString &s) {
+        return s.startsWith(wslenvPrefix);
+      });
   if (it == env.end()) {
     env.append(wslenvPrefix + wslenvVars.join(':'));
   } else {
@@ -357,7 +359,8 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
   }
 
   const QString first = parts.first();
-  if (first == "wsl" || first == "wsl.exe") {
+  if (first.compare("wsl", Qt::CaseInsensitive) == 0 ||
+      first.compare("wsl.exe", Qt::CaseInsensitive) == 0) {
     if (parts.size() >= 2 && parts.at(1).startsWith("sh")) {
       return {"gpgconf", {}};
     }
@@ -613,10 +616,11 @@ void Pass::handleGrepError(int exitCode, const QString &err) {
 auto Pass::formatInsertError(const QString &friendly, const QString &err)
     -> QString {
   QStringList humanLines;
-  for (QString line : err.split('\n')) {
-    line.remove('\r');
-    if (!line.startsWith(QLatin1String("[GNUPG:]")))
-      humanLines.append(line);
+  for (const QString &line : err.split('\n')) {
+    QString cleanedLine = line;
+    cleanedLine.remove('\r');
+    if (!cleanedLine.startsWith(QLatin1String("[GNUPG:]")))
+      humanLines.append(cleanedLine);
   }
   const QString humanErr = humanLines.join('\n').trimmed();
   return humanErr.isEmpty() ? friendly : friendly + "\n\n" + humanErr;
