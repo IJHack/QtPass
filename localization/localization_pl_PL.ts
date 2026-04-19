@@ -1356,7 +1356,7 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="402"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wymusić nadpisanie?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="403"/>
