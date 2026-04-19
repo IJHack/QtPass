@@ -226,6 +226,24 @@ npx prettier --write FAQ.md
 npx prettier --write ".opencode/skills/*/SKILL.md"
 ```
 
+### textlint (Natural Language)
+
+Lints natural language in Markdown files:
+
+```bash
+# Install (if needed)
+cd .opencode && npm install textlint --save-dev
+
+# Check markdown files
+npx textlint ".opencode/skills/qtpass-*/SKILL.md"
+```
+
+Auto-fix:
+
+```bash
+npx textlint --fix ".opencode/skills/qtpass-*/SKILL.md"
+```
+
 ## Prettier Patterns
 
 Prettier auto-fixes many linting issues. Run before `act`:
