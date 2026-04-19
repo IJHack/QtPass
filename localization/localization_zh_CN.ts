@@ -1339,12 +1339,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>密码长度无效</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法生成零长度密码。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
@@ -1542,7 +1542,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>强制覆盖？</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
