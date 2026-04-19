@@ -88,6 +88,7 @@ $(function() {
 <code>#include &quot;<a class="el" href="qtpasssettings_8h_source.html">qtpasssettings.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="util_8h_source.html">util.h</a>&quot;</code><br />
 <code>#include &lt;QCoreApplication&gt;</code><br />
+<code>#include &lt;QDebug&gt;</code><br />
 <code>#include &lt;QDir&gt;</code><br />
 <code>#include &lt;QFileInfo&gt;</code><br />
 <code>#include &lt;QProcess&gt;</code><br />
@@ -130,10 +131,10 @@ Functions</h2></td></tr>
 <p>Maps GPG stderr (which may include &ndash;status-fd 2 tokens) to a translated user-friendly encryption error string. </p>
 <p>Checks machine-readable [GNUPG:] status tokens first (locale-independent), then falls back to case-insensitive substring matching for GPG builds that do not emit status tokens. Returns an empty string when no known pattern matches.</p>
 <p>Declared here so it can be exercised by unit tests without linking the full <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> object. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a46">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a50">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00485">485</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00507">507</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 
 </div>
 </div>
@@ -154,10 +155,10 @@ Functions</h2></td></tr>
 
 <p>Parses 'pass grep' raw output into (entry, matches) pairs. </p>
 <p>pass grep emits ANSI blue color (\x1B[94m) at the start of each entry header line. This is checked before stripping ANSI so headers are detected reliably regardless of locale. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a47">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
+<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a51">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00546">546</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00568">568</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 
 </div>
 </div>
