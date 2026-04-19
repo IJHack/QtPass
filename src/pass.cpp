@@ -378,7 +378,7 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
     return {"gpgconf", {}};
   }
 
-  QString gpgconfPath = findGpgconfInGpgDir(gpgPath);
+  QString gpgconfPath = findGpgconfInGpgDir(first);
   if (!gpgconfPath.isEmpty()) {
     return {gpgconfPath, {}};
   }
