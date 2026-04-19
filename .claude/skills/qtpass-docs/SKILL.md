@@ -194,22 +194,22 @@ When adding new public APIs, every public symbol in a header needs a Doxygen doc
  */
 ```
 
-The CI enforces **zero Doxygen warnings** via `docs.yml` + `WARN_AS_ERROR = FAIL_ON_WARNINGS`.
+Doxygen runs in CI via `docs.yml` but does not enforce zero warnings (see actual settings below).
 
-#### Enforced Doxyfile settings
+#### Current Doxyfile settings
 
 | Setting            | Value              | Purpose                                           |
 | ------------------ | ------------------ | ------------------------------------------------- |
-| `FILE_PATTERNS`    | `*.h`              | Avoids duplicate warnings from `.cpp` docs        |
-| `EXTRACT_ALL`      | `NO`               | Enables `WARN_NO_PARAMDOC` to fire                |
-| `WARN_NO_PARAMDOC` | `YES`              | Requires `@param`/`@return` on all public symbols |
-| `WARN_AS_ERROR`    | `FAIL_ON_WARNINGS` | Fails CI on any undocumented symbol               |
+| `FILE_PATTERNS`    | `*.cpp *.h *.md`  | Includes cpp, header, and markdown files           |
+| `EXTRACT_ALL`      | `YES`              | Extracts docs for all entities                     |
+| `WARN_NO_PARAMDOC` | `NO`               | Does not warn for missing parameter documentation  |
+| `WARN_AS_ERROR`    | `NO`               | Doxygen warnings do not fail CI                    |
 
 #### Run locally before pushing
 
 ```bash
 doxygen Doxyfile
-# Any output = warning = CI will fail
+# Check output for warnings (they won't fail CI)
 ```
 
 #### Common doc mistakes that cause warnings

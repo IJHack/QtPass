@@ -98,26 +98,23 @@ act push -W .github/workflows/reuse.yml
 
 ## Doxygen Documentation Linting
 
-The CI enforces zero Doxygen warnings via `docs.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
+Doxygen runs in CI via `docs.yml` but does not enforce zero warnings (see actual settings below). It currently runs without checking exit codes.
 
 ### Run Doxygen Locally
 
 ```bash
 doxygen Doxyfile
-# Zero output = no warnings = CI will pass
+# Check for warnings; they won't fail CI
 ```
 
-### Key Doxyfile Settings
+### Current Doxyfile Settings
 
-| Setting            | Value                                                           | Why                                                    |
-| ------------------ | --------------------------------------------------------------- | ------------------------------------------------------ |
-| `FILE_PATTERNS`    | `*.h` only                                                      | Avoids "already documented" from duplicate `.cpp` docs |
-| `INPUT`            | `. main/main.cpp`                                               | Picks up `@mainpage` in `main.cpp` explicitly          |
-| `EXCLUDE`          | `CHANGELOG.md src/settingsconstants.h src/qprogressindicator.h` | Suppress noise from third-party / auto-generated files |
-| `EXCLUDE_PATTERNS` | `*/tests/*`                                                     | Test classes need no public API docs                   |
-| `EXTRACT_ALL`      | `NO`                                                            | Required for `WARN_NO_PARAMDOC` to fire                |
-| `WARN_NO_PARAMDOC` | `YES`                                                           | Flags missing `@param`/`@return` on all public symbols |
-| `WARN_AS_ERROR`    | `FAIL_ON_WARNINGS`                                              | CI fails on any warning                                |
+| Setting            | Value              | Purpose                                           |
+| ------------------ | ------------------ | ------------------------------------------------- |
+| `FILE_PATTERNS`    | `*.cpp *.h *.md`  | Includes cpp, header, and markdown files           |
+| `EXTRACT_ALL`      | `YES`              | Extracts docs for all entities                  |
+| `WARN_NO_PARAMDOC` | `NO`               | Does not warn for missing parameter documentation  |
+| `WARN_AS_ERROR`    | `NO`               | Doxygen warnings do not fail CI                    |
 
 ### Doxygen Comment Style
 
