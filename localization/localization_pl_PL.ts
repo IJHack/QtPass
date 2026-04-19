@@ -1171,26 +1171,26 @@ Kontynuować?</translation>
         <translation>Nie można wygenerować hasła, nie zostały wybrane żadne zestawy znaki w konfiguracji!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="455"/>
-        <location filename="../src/pass.cpp" line="476"/>
+        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="505"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Szyfrowanie nie powiodło się: klucz GPG wygasł. Należy go odnowić lub wymienić.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="460"/>
-        <location filename="../src/pass.cpp" line="481"/>
+        <location filename="../src/pass.cpp" line="491"/>
+        <location filename="../src/pass.cpp" line="510"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Szyfrowanie nie powiodło się: klucz GPG został unieważniony.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="464"/>
-        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="495"/>
+        <location filename="../src/pass.cpp" line="515"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Szyfrowanie nie powiodło się: klucz GPG odbiorcy nie został znaleziony lub jest nieprawidłowy. Sprawdź, czy identyfikator klucza w pliku .gpg-id jest poprawny i zaimportuj go.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="468"/>
-        <location filename="../src/pass.cpp" line="490"/>
+        <location filename="../src/pass.cpp" line="499"/>
+        <location filename="../src/pass.cpp" line="519"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Szyfrowanie nie powiodło się. Sprawdź, czy klucz GPG jest prawidłowy.</translation>
     </message>
@@ -1350,12 +1350,12 @@ Kontynuować?</translation>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="318"/>
+        <location filename="../src/storemodel.cpp" line="381"/>
         <source>force overwrite?</source>
         <translation>wymuś nadpisanie?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="319"/>
+        <location filename="../src/storemodel.cpp" line="382"/>
         <source>overwrite %1 with %2?</source>
         <translation>nadpisać %1 przez %2?</translation>
     </message>

@@ -1305,26 +1305,26 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <translation>No se puede generar la contraseña, ¡no hay caracteres para elegir establecidos en la configuración!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="455"/>
-        <location filename="../src/pass.cpp" line="476"/>
+        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="505"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Error de cifrado: la clave GPG ha caducado. Por favor, renueve o reemplace la clave.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="460"/>
-        <location filename="../src/pass.cpp" line="481"/>
+        <location filename="../src/pass.cpp" line="491"/>
+        <location filename="../src/pass.cpp" line="510"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Error de cifrado: la clave GPG ha sido revocada.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="464"/>
-        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="495"/>
+        <location filename="../src/pass.cpp" line="515"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Error de cifrado: no se encontró la clave GPG del destinatario o esta no es válida. Compruebe que el ID de la clave en .gpg-id sea correcto y se haya importado.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="468"/>
-        <location filename="../src/pass.cpp" line="490"/>
+        <location filename="../src/pass.cpp" line="499"/>
+        <location filename="../src/pass.cpp" line="519"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>El cifrado falló. Compruebe que su clave GPG sea válida.</translation>
     </message>
@@ -1484,12 +1484,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="318"/>
+        <location filename="../src/storemodel.cpp" line="381"/>
         <source>force overwrite?</source>
         <translation>¿Querés forzar la sobrescritura?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="319"/>
+        <location filename="../src/storemodel.cpp" line="382"/>
         <source>overwrite %1 with %2?</source>
         <translation>¿Querés sobrescribir %1 con %2?</translation>
     </message>

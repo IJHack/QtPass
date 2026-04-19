@@ -94,7 +94,7 @@ jobs:
           version: ${{ matrix.qt }}
 
       - name: Install dependencies (Linux)
-        if: runner.os == 'Linux'
+        if: runner.os == 'Linux' && steps.need_build.outputs.run_build == 'true'
         run: |
           sudo apt-get update
           sudo apt-get install -y pinentry-tty

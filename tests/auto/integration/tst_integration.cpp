@@ -183,7 +183,8 @@ void tst_integration::initTestCase() {
   // never blocks waiting for a PIN dialog on systems without a pinentry GUI.
   {
     const QByteArray agentPayload =
-        "allow-loopback-pinentry\ndefault-cache-ttl 300\n";
+        "allow-loopback-pinentry\ndefault-cache-ttl 300\npinentry-program "
+        "/usr/bin/pinentry-tty\n";
     QFile agentConf(QDir::cleanPath(m_gnupgHome.path() + "/gpg-agent.conf"));
     QVERIFY2(
         agentConf.open(QIODevice::WriteOnly | QIODevice::Text),
@@ -228,6 +229,7 @@ void tst_integration::initTestCase() {
   QtPassSettings::getInstance()->setValue(SettingsConstants::gpgHome,
                                           m_gnupgHome.path());
   QtPassSettings::setGpgExecutable(m_gpgExe);
+  QtPassSettings::setPassSigningKey(QString());
   qRegisterMetaType<GrepResults>("GrepResults");
   qRegisterMetaType<GrepResults>(
       "QList<QPair<QString,QStringList>>"); // Qt5 fallback
@@ -489,10 +491,10 @@ void tst_integration::realPass_insertAndShow() {
   setupPass(pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   pass.Insert(QStringLiteral("realtest"),
               QStringLiteral("realpassword\nurl: example.com\n"), false);
-  QVERIFY2(waitForSignal(insertSpy, 20000),
-           "RealPass finishedInsert not emitted");
+  QVERIFY2(waitForSignal(insertSpy, 20000), gpgInsertErrorMsg(insertErrorSpy));
 
   QSignalSpy showSpy(&pass, &Pass::finishedShow);
   pass.Show(QStringLiteral("realtest"));
@@ -529,11 +531,13 @@ void tst_integration::realPass_insertAndGrep() {
   setupPass(pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   pass.Insert(QStringLiteral("email/gmail"),
               QStringLiteral("gmailpass\nurl: mail.google.com\n"), false);
-  QVERIFY2(waitForSignal(insertSpy, 20000), "insert 1 not emitted");
+  QVERIFY2(waitForSignal(insertSpy, 20000), gpgInsertErrorMsg(insertErrorSpy));
 
   insertSpy.clear();
+  insertErrorSpy.clear();
   pass.Insert(QStringLiteral("email/outlook"),
               QStringLiteral("outlookpass\nurl: outlook.com\n"), false);
   QVERIFY2(waitForSignal(insertSpy, 20000), "insert 2 not emitted");
