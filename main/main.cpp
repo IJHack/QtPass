@@ -24,7 +24,7 @@
  *
  * @subsection dependencies Dependencies
  *
- * - QtPass requires Qt 5.2 or later.
+ * - QtPass requires Qt 5.15 or later.
  * - The Linguist package is required to compile the translations.
  * - For use of the fallback icons the SVG library is required.
  *
@@ -38,13 +38,21 @@
  * `qmake && make && make install`
  */
 
+/**
+ * @brief Joins all arguments from index @p start onward into a space-separated
+ * string.
+ * @param args Full argument list.
+ * @param start Index of the first argument to include.
+ * @return Space-joined string of the remaining arguments.
+ */
 static auto joinRemainingArgs(const QStringList &args, int start) -> QString {
   Q_ASSERT(start >= 0 && start <= args.size());
   return args.mid(start).join(" ");
 }
 
 /**
- * @brief Appends a suffix to a target string, inserting a separating space if the target is not empty.
+ * @brief Appends a suffix to a target string, inserting a separating space if
+ * the target is not empty.
  *
  * If `suffix` is empty, `target` is left unchanged.
  *

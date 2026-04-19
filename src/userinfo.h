@@ -6,15 +6,6 @@
 #include <QDateTime>
 #include <QString>
 
-/**
-   * @brief Indicates whether the key's validity is 'f' (full) or 'u' (ultimate).
-   * @returns `true` if `validity` is 'f' or 'u', `false` otherwise.
-   */
-  
-  /**
-   * @brief Indicates whether the key's validity is marginal ('m').
-   * @returns `true` if `validity` is 'm', `false` otherwise.
-   */
 struct UserInfo {
   UserInfo() : validity('-'), have_secret(false), enabled(false) {}
 

@@ -22,14 +22,6 @@ class SingleApplication;
 void qt_set_sequence_auto_mnemonic(bool b);
 #endif
 
-/**
- * @brief UI form class containing widgets and layout for the application's main window.
- *
- * Forward declaration of the Qt Designer / uic-generated UI form type used to
- * instantiate and access the MainWindow's widgets and layout. This is the
- * UI representation only and not the QMainWindow subclass that implements the
- * application's behavior.
- */
 namespace Ui {
 class MainWindow;
 }
