@@ -138,6 +138,11 @@ void Pass::init() {
  */
 auto Pass::generatePassword(unsigned int length, const QString &charset)
     -> QString {
+  if (length == 0) {
+    emit critical(tr("Invalid password length"),
+                  tr("Can't generate password with zero length."));
+    return {};
+  }
   QString passwd;
   if (QtPassSettings::isUsePwgen()) {
     // --secure goes first as it overrides --no-* otherwise
@@ -172,10 +177,7 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
     // Validate charset - if CUSTOM is selected but chars are empty,
     // fall back to ALLCHARS to prevent weak passwords (issue #780)
     const QString cs = fallbackCharset(charset);
-    if (length == 0) {
-      emit critical(tr("Invalid password length"),
-                    tr("Can't generate password with zero length."));
-    } else if (cs.length() > 0) {
+    if (cs.length() > 0) {
       passwd = generateRandomPassword(cs, length);
     } else {
       emit critical(
