@@ -111,7 +111,7 @@ doxygen Doxyfile
 
 | Setting            | Value            | Purpose                                           |
 | ------------------ | ---------------- | ------------------------------------------------- |
-| `FILE_PATTERNS`    | `*.cpp *.h *.md` | Includes cpp, header, and markdown files          |
+| `FILE_PATTERNS`    | `*.cpp *.h *.md` | Includes cpp, header, and Markdown files          |
 | `EXTRACT_ALL`      | `YES`            | Extracts docs for all entities                    |
 | `WARN_NO_PARAMDOC` | `NO`             | Does not warn for missing parameter documentation |
 | `WARN_AS_ERROR`    | `NO`             | Doxygen warnings do not fail CI                   |
