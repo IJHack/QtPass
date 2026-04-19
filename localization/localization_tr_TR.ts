@@ -1026,6 +1026,7 @@ Expire-Date: 0
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation type="unfinished">
             <numerusform>%1 girdide %n eşleşme bulundu.</numerusform>
+            <numerusform>%1 girdide %n eşleşme bulundu.</numerusform>
         </translation>
     </message>
     <message>
