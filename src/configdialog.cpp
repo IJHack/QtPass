@@ -549,7 +549,6 @@ void ConfigDialog::on_checkBoxAutoclear_clicked() {
 /**
  * @brief ConfigDialog::genKey tunnel function to make MainWindow generate a
  * gpg key pair.
- * @todo refactor the process to not be entangled so much.
  * @param batch
  * @param dialog
  */
@@ -768,7 +767,6 @@ auto ConfigDialog::isPassOtpAvailable() -> bool {
 
 /**
  * @brief ConfigDialog::wizard first-time use wizard.
- * @todo make this thing more reliable.
  */
 void ConfigDialog::wizard() {
   (void)Util::configIsValid();

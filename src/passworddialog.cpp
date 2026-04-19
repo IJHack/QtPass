@@ -91,7 +91,6 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
 /**
  * @brief PasswordDialog::on_createPasswordButton_clicked generate a random
  * passwords.
- * @todo refactor when process is untangled from MainWindow class.
  */
 void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
