@@ -357,7 +357,8 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
   }
 
   const QString first = parts.first();
-  if (first == "wsl" || first == "wsl.exe") {
+  if (first.compare("wsl", Qt::CaseInsensitive) == 0 ||
+      first.compare("wsl.exe", Qt::CaseInsensitive) == 0) {
     if (parts.size() >= 2 && parts.at(1).startsWith("sh")) {
       return {"gpgconf", {}};
     }
