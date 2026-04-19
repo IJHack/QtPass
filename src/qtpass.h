@@ -55,7 +55,8 @@ public:
   /**
    * @brief Update the tracked clipped text value.
    * @param text Primary text to store.
-   * @param p_output Optional additional output used when computing the value.
+   * @param p_output Optional additional output used when determining the final
+   *        clipped text value.
    */
   void setClippedText(const QString &text, const QString &p_output = QString());
 

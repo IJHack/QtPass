@@ -35,7 +35,7 @@
  *
  * On most *nix systems all you need is:
  *
- * `qmake && make && make install`
+ * `qmake6 && make && make install` (use `qmake` for Qt5 legacy builds)
  */
 
 /**

@@ -724,7 +724,8 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
  * active it will emit a warning and return without modifying env.
  *
  * @param key Environment variable name with trailing '=' (anchors the lookup).
- * @param value Value to set for the variable; an empty string unsets the variable.
+ * @param value Value to set for the variable; an empty string unsets the
+ * variable.
  */
 void Pass::setEnvVar(const QString &key, const QString &value) {
   const bool hasEq = key.endsWith('=');
@@ -735,9 +736,7 @@ void Pass::setEnvVar(const QString &key, const QString &value) {
                << key;
     return;
   }
-  const QStringList existing = env.filter(key);
-  for (const QString &entry : existing)
-    env.removeAll(entry);
+  env.removeIf([&key](const QString &entry) { return entry.startsWith(key); });
   if (!value.isEmpty())
     env.append(key + value);
 }
@@ -745,9 +744,10 @@ void Pass::setEnvVar(const QString &key, const QString &value) {
 /**
  * @brief Update the process environment used for executing external commands.
  *
- * Updates environment entries for PASSWORD_STORE_SIGNING_KEY, PASSWORD_STORE_DIR,
- * PASSWORD_STORE_GENERATED_LENGTH, and PASSWORD_STORE_CHARACTER_SET based on
- * current settings, then applies the environment to the internal executor.
+ * Updates environment entries for PASSWORD_STORE_SIGNING_KEY,
+ * PASSWORD_STORE_DIR, PASSWORD_STORE_GENERATED_LENGTH, and
+ * PASSWORD_STORE_CHARACTER_SET based on current settings, then applies the
+ * environment to the internal executor.
  */
 void Pass::updateEnv() {
   setEnvVar(QStringLiteral("PASSWORD_STORE_SIGNING_KEY="),
