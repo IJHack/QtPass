@@ -102,7 +102,7 @@ jobs:
       - name: Install dependencies (macOS)
         if: runner.os == 'macOS' && steps.need_build.outputs.run_build == 'true'
         run: |
-          brew install pass pass-otp
+          brew install pass pass-extension-otp
 
       - name: qmake
         if: steps.need_build.outputs.run_build == 'true'
