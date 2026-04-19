@@ -797,7 +797,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Введена вами електронна скринька не є дійсною електронною скринькою.</translation>
+        <translation>Введена вами адреса електронної пошти не є дійсною адресою електронної пошти.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
