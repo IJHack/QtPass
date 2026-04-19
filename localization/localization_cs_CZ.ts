@@ -414,7 +414,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Povolit vyhledávání obsahu souboru v souboru heslem. Vyžaduje dešifrování každého souboru a může být pomalá na velkých obchodech.</translation>
+        <translation>Povolit vyhledávání v obsahu souborů s hesly. Vyžaduje dešifrování každého souboru a ve velkých úložištích může být pomalé.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
@@ -1312,7 +1312,7 @@ Pokračovat?</translation>
         <location filename="../src/pass.cpp" line="489"/>
         <location filename="../src/pass.cpp" line="508"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>Šifrování selhalo: GPG klíč vyprší. Prosím, obnovit nebo vyměnit.</translation>
+        <translation>Šifrování selhalo: platnost GPG klíče vypršela. Obnovte jej nebo jej nahraďte.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="494"/>
