@@ -399,7 +399,7 @@ auto StoreModel::handleFileToFileDrop(const QString &cleanedSrc,
                                       Qt::DropAction action) -> bool {
   QWidget *parentWidget = qobject_cast<QWidget *>(parent());
   int answer = QMessageBox::question(
-      parentWidget, tr("force overwrite?"),
+      parentWidget, tr("Force overwrite?"),
       tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc),
       QMessageBox::Yes | QMessageBox::No);
   bool force = answer == QMessageBox::Yes;
