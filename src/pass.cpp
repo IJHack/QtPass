@@ -678,7 +678,7 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
 void Pass::setEnvVar(const QString &key, const QString &value) {
   Q_ASSERT(key.endsWith('='));
   const QStringList existing = env.filter(key);
-  for (const QString &entry : std::as_const(existing))
+  for (const QString &entry : existing)
     env.removeAll(entry);
   if (!value.isEmpty())
     env.append(key + value);
