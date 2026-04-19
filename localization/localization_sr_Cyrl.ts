@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Омогући претрагу садржаја (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Дозволи претрагу унутар садржаја датотеке са лозинкама. Захтева дешифровање сваке датотеке и може бити споро у великим складиштима.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
@@ -151,7 +151,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Назив профила, који се користи за идентификацију овог конфигурационог профила</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
