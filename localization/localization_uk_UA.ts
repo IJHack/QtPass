@@ -730,7 +730,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Повторіть pass</translation>
+        <translation>Повторіть пароль</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -792,7 +792,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation>Неправильна електронна скринька</translation>
+        <translation>Неправильна адреса електронної пошти</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
