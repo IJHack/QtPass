@@ -6,11 +6,11 @@
 #include <QLineEdit>
 #include <QPushButton>
 
+class QWidget;
 /**
  * @class QPushButtonShowPassword
  * @brief QPushButton that toggles visibility of an associated QLineEdit.
  */
-class QWidget;
 class QPushButtonShowPassword : public QPushButton {
   Q_OBJECT
 

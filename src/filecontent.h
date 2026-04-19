@@ -72,7 +72,8 @@ public:
    * @param allFields whether all fields should be considered as named values.
    * If set to false only templateFields are returned in getNamedValues().
    *
-   * @return
+   * @return A FileContent instance with password, named values, and remaining
+   *         data populated from the parsed input.
    */
   static auto parse(const QString &fileContent,
                     const QStringList &templateFields, bool allFields)

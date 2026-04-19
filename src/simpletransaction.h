@@ -48,10 +48,11 @@ public:
    * @brief transactionIsOver checks wheather currently finished process is last
    *                          in current transaction
    *
+   * @param current the process that just finished.
    * @return result of transaction as set by transactionAdd or transactionEnd if
    *         the transaction is over or PROCESS::INVALID if it's not yet over
    */
-  auto transactionIsOver(Enums::PROCESS) -> Enums::PROCESS;
+  auto transactionIsOver(Enums::PROCESS current) -> Enums::PROCESS;
 };
 
 #endif // SRC_SIMPLETRANSACTION_H_

@@ -63,7 +63,8 @@ public:
   /**
    * @brief Open the GPG key generation dialog.
    * @param batch GPG batch parameter string.
-   * @param dialog Parent dialog to return to after generation.
+   * @param dialog Dialog to store as the active keygen dialog; it is kept as
+   *        activeKeygenDialog and represents the UI used during generation.
    */
   void generateKeyPair(const QString &batch, QDialog *dialog);
 

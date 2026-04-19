@@ -16,15 +16,20 @@
 
 /**
  * @struct ResolvedGpgconfCommand
- * @brief Holds a resolved gpgconf executable path and its arguments.
+ * @brief Represents a command invocation for gpgconf operations.
+ *
+ * On Unix this is typically just the gpgconf binary; on Windows/WSL it may be
+ * a wrapper such as wsl.exe with gpgconf as a prefixed argument.
  */
 struct ResolvedGpgconfCommand {
   /**
-   * @brief Full path to the gpgconf executable.
+   * @brief Executable to run — may be a bare name resolved via PATH or a
+   * wrapper (e.g. wsl.exe) rather than a direct gpgconf path.
    */
   QString program;
   /**
-   * @brief Arguments to pass to gpgconf (e.g. ["--kill", "gpg-agent"]).
+   * @brief Full argv list, including any wrapper/prefix args followed by the
+   * actual gpgconf operation flags (e.g. ["--kill", "gpg-agent"]).
    */
   QStringList arguments;
 };
@@ -307,63 +312,90 @@ signals:
 
   /**
    * @brief Emitted on process error exit.
+   * @param exitCode Process exit code.
+   * @param err Error message or stderr output.
    */
   void processErrorExit(int exitCode, const QString &err);
 
   /**
    * @brief Emitted when any operation finishes.
+   * @param out Standard output from the process.
+   * @param err Standard error from the process.
    */
-  void finishedAny(const QString &, const QString &);
+  void finishedAny(const QString &out, const QString &err);
   /**
    * @brief Emitted when Git init finishes.
+   * @param out Standard output.
+   * @param err Standard error.
    */
-  void finishedGitInit(const QString &, const QString &);
+  void finishedGitInit(const QString &out, const QString &err);
   /**
    * @brief Emitted when Git pull finishes.
+   * @param out Standard output.
+   * @param err Standard error.
    */
-  void finishedGitPull(const QString &, const QString &);
+  void finishedGitPull(const QString &out, const QString &err);
   /**
    * @brief Emitted when Git push finishes.
+   * @param out Standard output.
+   * @param err Standard error.
    */
-  void finishedGitPush(const QString &, const QString &);
+  void finishedGitPush(const QString &out, const QString &err);
   /**
    * @brief Emitted when show finishes.
+   * @param out Decrypted password file content.
    */
-  void finishedShow(const QString &);
+  void finishedShow(const QString &out);
   /**
    * @brief Emitted when OTP generation finishes.
+   * @param out Generated OTP value.
    */
-  void finishedOtpGenerate(const QString &);
+  void finishedOtpGenerate(const QString &out);
   /**
    * @brief Emitted when insert finishes.
+   * @param out Standard output.
+   * @param err Standard error.
    */
-  void finishedInsert(const QString &, const QString &);
+  void finishedInsert(const QString &out, const QString &err);
   /**
    * @brief Emitted when remove finishes.
+   * @param out Standard output.
+   * @param err Standard error.
    */
-  void finishedRemove(const QString &, const QString &);
+  void finishedRemove(const QString &out, const QString &err);
   /**
    * @brief Emitted when init finishes.
+   * @param out Standard output.
+   * @param err Standard error.
    */
-  void finishedInit(const QString &, const QString &);
+  void finishedInit(const QString &out, const QString &err);
   /**
    * @brief Emitted when move finishes.
+   * @param out Standard output.
+   * @param err Standard error.
    */
-  void finishedMove(const QString &, const QString &);
+  void finishedMove(const QString &out, const QString &err);
   /**
    * @brief Emitted when copy finishes.
+   * @param out Standard output.
+   * @param err Standard error.
    */
-  void finishedCopy(const QString &, const QString &);
+  void finishedCopy(const QString &out, const QString &err);
   /**
    * @brief Emitted when generate finishes.
+   * @param out Standard output.
+   * @param err Standard error.
    */
-  void finishedGenerate(const QString &, const QString &);
+  void finishedGenerate(const QString &out, const QString &err);
   /**
    * @brief Emitted when GPG key generation finishes.
+   * @param out Standard output.
+   * @param err Standard error.
    */
-  void finishedGenerateGPGKeys(const QString &, const QString &);
+  void finishedGenerateGPGKeys(const QString &out, const QString &err);
   /**
    * @brief Emitted when grep finishes with matching results.
+   * @param results List of (entry path, matching lines) pairs.
    */
   void finishedGrep(const QList<QPair<QString, QStringList>> &results);
 };

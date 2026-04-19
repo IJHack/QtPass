@@ -16,6 +16,7 @@
  */
 class SingleApplication : public QApplication {
   Q_OBJECT
+
 public:
   /**
    * @brief Construct a SingleApplication with a unique instance key.
