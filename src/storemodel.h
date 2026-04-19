@@ -82,7 +82,8 @@ public:
    * @param sourceModel Filesystem model to wrap.
    * @param passStore Root path of password store.
    */
-  void setModelAndStore(QFileSystemModel *sourceModel, QString passStore);
+  void setModelAndStore(QFileSystemModel *sourceModel,
+                        const QString &passStore);
 
   /**
    * @brief Update the store path used for filtering without changing the source
