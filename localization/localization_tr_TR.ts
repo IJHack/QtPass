@@ -626,7 +626,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Şifreyi yeniden tanımlamak için başarısız oldu %1</translation>
+        <translation>%1 yeniden şifrelenemedi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
