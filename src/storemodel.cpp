@@ -114,15 +114,17 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
 
 void StoreModel::setStore(const QString &passStore) {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
-  // Qt 6.10+ provides beginFilterChange()/endFilterChange(), which is the
-  // preferred API for scoped and more efficient filter updates.
+  // beginFilterChange() is available since Qt 6.9, but the Direction-scoped
+  // endFilterChange(QSortFilterProxyModel::Direction) overload is only
+  // available since Qt 6.10, which is the preferred API for scoped and more
+  // efficient filter updates.
   beginFilterChange();
   store = passStore;
   endFilterChange(QSortFilterProxyModel::Direction::Rows);
 #else
-  // Older Qt versions do not provide the begin/end filter change API, so we
-  // update the store and manually invalidate the filter as a compatibility
-  // path.
+  // Direction-scoped filter changes are unavailable before Qt 6.10, so older
+  // Qt versions must manually invalidate filters. We update the store and
+  // manually invalidate the filter as a compatibility path.
   store = passStore;
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
   QSortFilterProxyModel::invalidateFilter();
