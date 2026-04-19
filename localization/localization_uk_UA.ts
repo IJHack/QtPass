@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Потрібні пошуки вмісту за паролем. Потрібне розшифрування кожного файлу та може бути повільним у великих сховищах.</translation>
+        <translation>Дозволити пошук у вмісті файлів паролів. Потрібно розшифрувати кожен файл, і це може бути повільно у великих сховищах.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
