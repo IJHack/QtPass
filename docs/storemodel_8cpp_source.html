@@ -146,7 +146,7 @@ $(function() {
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <span class="keywordflow">if</span> (fs == <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keywordflow">return</span> retVal;</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">// Gives you the info for number of childs with a parent</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="comment">// Gives you the info for number of children with a parent</span></div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordflow">if</span> (sourceModel()-&gt;rowCount(index) &gt; 0) {</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> nChild = 0; nChild &lt; sourceModel()-&gt;rowCount(index); ++nChild) {</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      QModelIndex childIndex = sourceModel()-&gt;index(nChild, 0, index);</div>
@@ -440,7 +440,7 @@ $(function() {
 <div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>                                      Qt::DropAction action) -&gt; <span class="keywordtype">bool</span> {</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  QWidget *parentWidget = qobject_cast&lt;QWidget *&gt;(parent());</div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>  <span class="keywordtype">int</span> answer = QMessageBox::question(</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>      parentWidget, tr(<span class="stringliteral">&quot;force overwrite?&quot;</span>),</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>      parentWidget, tr(<span class="stringliteral">&quot;Force overwrite?&quot;</span>),</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>      tr(<span class="stringliteral">&quot;overwrite %1 with %2?&quot;</span>).arg(cleanedDest, cleanedSrc),</div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>      QMessageBox::Yes | QMessageBox::No);</div>
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>  <span class="keywordtype">bool</span> force = answer == QMessageBox::Yes;</div>
