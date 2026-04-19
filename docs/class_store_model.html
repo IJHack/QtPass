@@ -101,8 +101,8 @@ $(function() {
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d113aadab8e115cdd963f2246333664" id="r_a1d113aadab8e115cdd963f2246333664"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1d113aadab8e115cdd963f2246333664">StoreModel</a> ()</td></tr>
 <tr class="memdesc:a1d113aadab8e115cdd963f2246333664"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a>.  <br /></td></tr>
-<tr class="memitem:a7467757a647b6cd9af462fd157e478a4" id="r_a7467757a647b6cd9af462fd157e478a4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a7467757a647b6cd9af462fd157e478a4">filterAcceptsRow</a> (int, const QModelIndex &amp;) const -&gt; bool override</td></tr>
-<tr class="memdesc:a7467757a647b6cd9af462fd157e478a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter whether a row should be displayed.  <br /></td></tr>
+<tr class="memitem:a02542fddfeea1874e849c0bb1d94f6c1" id="r_a02542fddfeea1874e849c0bb1d94f6c1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a02542fddfeea1874e849c0bb1d94f6c1">filterAcceptsRow</a> (int source_row, const QModelIndex &amp;source_parent) const -&gt; bool override</td></tr>
+<tr class="memdesc:a02542fddfeea1874e849c0bb1d94f6c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter whether a row should be displayed.  <br /></td></tr>
 <tr class="memitem:a3f87cb8b3ca0d20117f37386e4701691" id="r_a3f87cb8b3ca0d20117f37386e4701691"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a3f87cb8b3ca0d20117f37386e4701691">showThis</a> (const QModelIndex &amp;index) const -&gt; bool</td></tr>
 <tr class="memdesc:a3f87cb8b3ca0d20117f37386e4701691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a specific index should be shown.  <br /></td></tr>
 <tr class="memitem:af223e13120a72e556a394aae4a92ad0f" id="r_af223e13120a72e556a394aae4a92ad0f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af223e13120a72e556a394aae4a92ad0f">setModelAndStore</a> (QFileSystemModel *sourceModel, QString passStore)</td></tr>
@@ -388,8 +388,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7467757a647b6cd9af462fd157e478a4" name="a7467757a647b6cd9af462fd157e478a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7467757a647b6cd9af462fd157e478a4">&#9670;&#160;</a></span>filterAcceptsRow()</h2>
+<a id="a02542fddfeea1874e849c0bb1d94f6c1" name="a02542fddfeea1874e849c0bb1d94f6c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02542fddfeea1874e849c0bb1d94f6c1">&#9670;&#160;</a></span>filterAcceptsRow()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -416,7 +416,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Filter whether a row should be displayed. </p>
-<p><a class="el" href="#a7467757a647b6cd9af462fd157e478a4" title="Filter whether a row should be displayed.">StoreModel::filterAcceptsRow</a> should row be shown, wrapper for <a class="el" href="#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown.">StoreModel::showThis</a> method.</p>
+<p><a class="el" href="#a02542fddfeea1874e849c0bb1d94f6c1" title="Filter whether a row should be displayed.">StoreModel::filterAcceptsRow</a> should row be shown, wrapper for <a class="el" href="#a3f87cb8b3ca0d20117f37386e4701691" title="Check if a specific index should be shown.">StoreModel::showThis</a> method.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">source_row</td><td>Row index in source model. </td></tr>
@@ -439,7 +439,7 @@ Public Member Functions</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a7467757a647b6cd9af462fd157e478a4_cgraph.svg" width="626" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_store_model_a02542fddfeea1874e849c0bb1d94f6c1_cgraph.svg" width="626" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -514,7 +514,7 @@ Public Member Functions</h2></td></tr>
 <p>Get the password store root path. </p>
 <dl class="section return"><dt>Returns</dt><dd>Store path. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00116">116</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="storemodel_8h_source.html#l00117">117</a> of file <a class="el" href="storemodel_8h_source.html">storemodel.h</a>.</p>
 
 </div>
 </div>
