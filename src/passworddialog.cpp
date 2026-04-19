@@ -96,7 +96,7 @@ void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
   const int currentIndex = ui->passwordTemplateSwitch->currentIndex();
   if (currentIndex < 0 ||
-      currentIndex >= static_cast<int>(m_passConfig.Characters.size())) {
+      currentIndex >= static_cast<int>(PasswordConfiguration::CHARSETS_COUNT)) {
     ui->widget->setEnabled(true);
     return;
   }
