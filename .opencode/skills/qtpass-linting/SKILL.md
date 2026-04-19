@@ -223,7 +223,7 @@ Common diagnostics:
 npx prettier --write README.md
 npx prettier --write .github/workflows/*.yml
 npx prettier --write FAQ.md
-npx prettier --write "**/*"
+cd skills && npx prettier --write "*/SKILL.md"
 ```
 
 ### textlint (Natural Language)
@@ -231,16 +231,14 @@ npx prettier --write "**/*"
 Lints natural language in Markdown files. Requires textlint in the agent config:
 
 ```bash
-# From any project root, find skills folder and lint it
-SKILLS=$(find . -maxdepth 2 -type d -name "skills" | head -1)
-npx textlint "$SKILLS/qtpass-*/SKILL.md"
+# From .opencode/skills/ or .claude/skills/ folder
+cd skills && npx textlint "*/SKILL.md"
 ```
 
 Auto-fix:
 
 ```bash
-SKILLS=$(find . -maxdepth 2 -type d -name "skills" | head -1)
-npx textlint --fix "$SKILLS/qtpass-*/SKILL.md"
+cd skills && npx textlint --fix "*/SKILL.md"
 ```
 
 ## Prettier Patterns
