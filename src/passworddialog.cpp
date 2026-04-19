@@ -187,7 +187,7 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
 
   if (m_templating) {
     QWidget *previous = ui->checkBoxShow;
-    foreach (QString field, m_fields) {
+    for (const QString &field : m_fields) {
       if (field.isEmpty()) {
         continue;
       }
