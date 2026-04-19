@@ -75,7 +75,7 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   if (fs == nullptr) {
     return retVal;
   }
-  // Gives you the info for number of childs with a parent
+  // Gives you the info for number of children with a parent
   if (sourceModel()->rowCount(index) > 0) {
     for (int nChild = 0; nChild < sourceModel()->rowCount(index); ++nChild) {
       QModelIndex childIndex = sourceModel()->index(nChild, 0, index);
