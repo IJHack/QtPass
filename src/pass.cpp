@@ -525,14 +525,16 @@ auto gpgErrorMessage(const QString &err) -> QString {
   return {};
 }
 
-static auto isGrepHeaderLine(const QString &rawLine, const QString &trimmedLine)
+namespace {
+auto isGrepHeaderLine(const QString &rawLine, const QString &trimmedLine)
     -> bool {
   // ANSI-colored header starts with the blue escape; plain-text fallback:
   // a non-indented line ending with ':' (pass grep format without color)
   return rawLine.startsWith(QStringLiteral("\x1B[94m")) ||
          (!rawLine.startsWith(' ') && !rawLine.startsWith('\t') &&
-          trimmedLine.endsWith(':') && !trimmedLine.isEmpty());
+          trimmedLine.endsWith(':'));
 }
+} // namespace
 
 /**
  * @brief Parses 'pass grep' raw output into (entry, matches) pairs.
