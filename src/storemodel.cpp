@@ -4,6 +4,7 @@
 #include "qtpasssettings.h"
 
 #include "util.h"
+#include <QApplication>
 #include <QDebug>
 #include <QFileSystemModel>
 #include <QMessageBox>
@@ -295,8 +296,8 @@ auto StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
   return executeDropAction(info, action, parent);
 }
 
-bool StoreModel::parseDropData(const QMimeData *data,
-                               dragAndDropInfoPasswordStore *outInfo) {
+auto StoreModel::parseDropData(const QMimeData *data,
+                               dragAndDropInfoPasswordStore *outInfo) -> bool {
   QByteArray encodedData =
       data->data("application/vnd+qtpass.dragAndDropInfoPasswordStore");
   if (encodedData.isEmpty()) {
@@ -328,8 +329,7 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
   if (info.isDir) {
     return handleDirDrop(cleanedSrc, destFileinfo, srcFileInfo, action);
   }
-  return handleFileDrop(cleanedSrc, cleanedDest, destFileinfo, action,
-                        info.isFile);
+  return handleFileDrop(cleanedSrc, cleanedDest, destFileinfo, action);
 }
 
 auto StoreModel::handleDirDrop(const QString &cleanedSrc,
@@ -355,7 +355,7 @@ auto StoreModel::handleDirDrop(const QString &cleanedSrc,
 auto StoreModel::handleFileDrop(const QString &cleanedSrc,
                                 const QString &cleanedDest,
                                 const QFileInfo &destFileinfo,
-                                Qt::DropAction action, bool isFile) -> bool {
+                                Qt::DropAction action) -> bool {
   if (destFileinfo.isDir()) {
     return handleFileToDirDrop(cleanedSrc, cleanedDest, action);
   }
@@ -376,8 +376,9 @@ auto StoreModel::handleFileToDirDrop(const QString &cleanedSrc,
 auto StoreModel::handleFileToFileDrop(const QString &cleanedSrc,
                                       const QString &cleanedDest,
                                       Qt::DropAction action) -> bool {
+  QWidget *parentWidget = qobject_cast<QWidget *>(parent());
   int answer = QMessageBox::question(
-      nullptr, tr("force overwrite?"),
+      parentWidget, tr("force overwrite?"),
       tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc),
       QMessageBox::Yes | QMessageBox::No);
   bool force = answer == QMessageBox::Yes;

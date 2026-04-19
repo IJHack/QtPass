@@ -450,7 +450,7 @@ auto Pass::listKeys(const QString &keystring, bool secret) -> QList<UserInfo> {
  */
 namespace {
 
-bool containsAny(const QString &str, const QStringList &patterns) {
+auto containsAny(const QString &str, const QStringList &patterns) -> bool {
   for (const QString &p : patterns) {
     if (str.contains(p)) {
       return true;
@@ -466,8 +466,8 @@ bool containsAny(const QString &str, const QStringList &patterns) {
  * should convert patterns to lowercase before calling).
  * @return true if any pattern is found.
  */
-bool containsAnyCaseInsensitive(const QString &str,
-                                const QStringList &patterns) {
+auto containsAnyCaseInsensitive(const QString &str, const QStringList &patterns)
+    -> bool {
   const QString lower = str.toLower();
   for (const QString &p : patterns) {
     if (lower.contains(p)) {
@@ -515,7 +515,7 @@ auto gpgErrorMessage(const QString &err) -> QString {
     return QCoreApplication::translate(
         "Pass", "Encryption failed: recipient GPG key not found or invalid. "
                 "Check that the key ID in .gpg-id is correct and imported.");
-  if (err.toLower().contains(QLatin1String("encryption failed")))
+  if (containsAnyCaseInsensitive(err, {QLatin1String("encryption failed")}))
     return QCoreApplication::translate(
         "Pass", "Encryption failed. Check that your GPG key is valid.");
 

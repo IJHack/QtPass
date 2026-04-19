@@ -36,8 +36,8 @@ private:
   QFileSystemModel *fs;
   QString store;
 
-  bool parseDropData(const QMimeData *data,
-                     dragAndDropInfoPasswordStore *outInfo);
+  auto parseDropData(const QMimeData *data,
+                     dragAndDropInfoPasswordStore *outInfo) -> bool;
   auto executeDropAction(const dragAndDropInfoPasswordStore &info,
                          Qt::DropAction action, const QModelIndex &parent)
       -> bool;
@@ -45,8 +45,8 @@ private:
                      const QFileInfo &srcFileInfo, Qt::DropAction action)
       -> bool;
   auto handleFileDrop(const QString &cleanedSrc, const QString &cleanedDest,
-                      const QFileInfo &destFileinfo, Qt::DropAction action,
-                      bool isFile) -> bool;
+                      const QFileInfo &destFileinfo, Qt::DropAction action)
+      -> bool;
   auto handleFileToDirDrop(const QString &cleanedSrc,
                            const QString &cleanedDest, Qt::DropAction action)
       -> bool;
