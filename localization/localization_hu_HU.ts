@@ -1059,7 +1059,7 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation>Keresési tartalom (regex)</translation>
+        <translation>Tartalom keresése (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
