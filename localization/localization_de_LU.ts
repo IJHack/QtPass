@@ -1269,12 +1269,12 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Passwortlänge</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Es kann kein Passwort mit der Länge Null generiert werden.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
