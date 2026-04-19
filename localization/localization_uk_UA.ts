@@ -1347,36 +1347,36 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="165"/>
+        <location filename="../src/pass.cpp" line="167"/>
         <source>No characters chosen</source>
         <translation>Не вибрано жодного символа</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="166"/>
+        <location filename="../src/pass.cpp" line="168"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Не вдається згенерувати пароль, у конфігурації немає символів для вибору!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="486"/>
-        <location filename="../src/pass.cpp" line="505"/>
+        <location filename="../src/pass.cpp" line="489"/>
+        <location filename="../src/pass.cpp" line="508"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Помилка шифрування: термін дії ключа GPG минув. Будь ласка, поновіть або замініть його.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="491"/>
-        <location filename="../src/pass.cpp" line="510"/>
+        <location filename="../src/pass.cpp" line="494"/>
+        <location filename="../src/pass.cpp" line="513"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Не вдалося шифрувати: ключ GPG відкликано.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="495"/>
-        <location filename="../src/pass.cpp" line="515"/>
+        <location filename="../src/pass.cpp" line="498"/>
+        <location filename="../src/pass.cpp" line="518"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Не вдалося шифрувати: ключ GPG одержувача не знайдено або він недійсний. Перевірте, чи ідентифікатор ключа в .gpg-id правильний та імпортований.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="499"/>
-        <location filename="../src/pass.cpp" line="519"/>
+        <location filename="../src/pass.cpp" line="502"/>
+        <location filename="../src/pass.cpp" line="522"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Не вдалося шифрувати. Перевірте, чи ваш GPG-ключ дійсний.</translation>
     </message>
@@ -1536,12 +1536,16 @@ Continue?</source>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="381"/>
         <source>force overwrite?</source>
-        <translation>примусово перезаписати?</translation>
+        <translation type="vanished">примусово перезаписати?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="382"/>
+        <location filename="../src/storemodel.cpp" line="402"/>
+        <source>Force overwrite?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/storemodel.cpp" line="403"/>
         <source>overwrite %1 with %2?</source>
         <translation>перезаписати %1 на %2?</translation>
     </message>

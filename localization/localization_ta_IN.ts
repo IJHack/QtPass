@@ -1378,36 +1378,36 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="165"/>
+        <location filename="../src/pass.cpp" line="167"/>
         <source>No characters chosen</source>
         <translation>தேர்ந்தெடுக்கப்பட்ட எழுத்துக்கள் இல்லை</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="166"/>
+        <location filename="../src/pass.cpp" line="168"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>கடவுச்சொல்லை உருவாக்க முடியாது, உள்ளமைவில் அமைக்கப்பட்டவற்றிலிருந்து தேர்வு செய்ய எழுத்துக்கள் எதுவும் இல்லை!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="486"/>
-        <location filename="../src/pass.cpp" line="505"/>
+        <location filename="../src/pass.cpp" line="489"/>
+        <location filename="../src/pass.cpp" line="508"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="491"/>
-        <location filename="../src/pass.cpp" line="510"/>
+        <location filename="../src/pass.cpp" line="494"/>
+        <location filename="../src/pass.cpp" line="513"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="495"/>
-        <location filename="../src/pass.cpp" line="515"/>
+        <location filename="../src/pass.cpp" line="498"/>
+        <location filename="../src/pass.cpp" line="518"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="499"/>
-        <location filename="../src/pass.cpp" line="519"/>
+        <location filename="../src/pass.cpp" line="502"/>
+        <location filename="../src/pass.cpp" line="522"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1567,12 +1567,16 @@ Continue?</source>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="381"/>
         <source>force overwrite?</source>
-        <translation>ஃபோர்ச் ஓவர்ரைட்?</translation>
+        <translation type="vanished">ஃபோர்ச் ஓவர்ரைட்?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="382"/>
+        <location filename="../src/storemodel.cpp" line="402"/>
+        <source>Force overwrite?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/storemodel.cpp" line="403"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1 ஐ %2 உடன் மேலெழுதவா?</translation>
     </message>

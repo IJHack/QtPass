@@ -1305,36 +1305,36 @@ Fortfahren?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="165"/>
+        <location filename="../src/pass.cpp" line="167"/>
         <source>No characters chosen</source>
         <translation>Keine Zeichen ausgewählt</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="166"/>
+        <location filename="../src/pass.cpp" line="168"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Kennwortgenerierung nicht möglich: Keine Zeichen zur Generierung ausgewählt!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="486"/>
-        <location filename="../src/pass.cpp" line="505"/>
+        <location filename="../src/pass.cpp" line="489"/>
+        <location filename="../src/pass.cpp" line="508"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Verschlüsselung fehlgeschlagen: Der GPG-Schlüssel ist abgelaufen. Bitte erneuern oder ersetzen Sie ihn.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="491"/>
-        <location filename="../src/pass.cpp" line="510"/>
+        <location filename="../src/pass.cpp" line="494"/>
+        <location filename="../src/pass.cpp" line="513"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Verschlüsselung versagt: GPG-Schlüssel wurde aufgehoben.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="495"/>
-        <location filename="../src/pass.cpp" line="515"/>
+        <location filename="../src/pass.cpp" line="498"/>
+        <location filename="../src/pass.cpp" line="518"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Verschlüsselung versagt: Empfänger GPG-Schlüssel nicht gefunden oder ungültig. Überprüfen Sie, ob die Schlüssel-ID in .gpg-id korrekt und importiert ist.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="499"/>
-        <location filename="../src/pass.cpp" line="519"/>
+        <location filename="../src/pass.cpp" line="502"/>
+        <location filename="../src/pass.cpp" line="522"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Verschlüsselung versagt. Überprüfen Sie, ob Ihr GPG-Schlüssel gültig ist.</translation>
     </message>
@@ -1494,12 +1494,16 @@ Fortfahren?</translation>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="381"/>
         <source>force overwrite?</source>
-        <translation>Überschreiben erzwingen?</translation>
+        <translation type="vanished">Überschreiben erzwingen?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="382"/>
+        <location filename="../src/storemodel.cpp" line="402"/>
+        <source>Force overwrite?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/storemodel.cpp" line="403"/>
         <source>overwrite %1 with %2?</source>
         <translation>Überschreiben %1 mit %2?</translation>
     </message>

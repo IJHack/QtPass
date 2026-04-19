@@ -1026,7 +1026,6 @@ Expire-Date: 0
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation type="unfinished">
             <numerusform>%1 girdide %n eşleşme bulundu.</numerusform>
-            <numerusform>%1 girdide %n eşleşme bulundu.</numerusform>
         </translation>
     </message>
     <message>
@@ -1168,36 +1167,36 @@ Devam edilsin mi?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="165"/>
+        <location filename="../src/pass.cpp" line="167"/>
         <source>No characters chosen</source>
         <translation>Hiçbir karakter seçilmedi</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="166"/>
+        <location filename="../src/pass.cpp" line="168"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Parola oluşturulamıyor, yapılandırmadaki küme içinden seçim yapabileceğiniz karakter yok!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="486"/>
-        <location filename="../src/pass.cpp" line="505"/>
+        <location filename="../src/pass.cpp" line="489"/>
+        <location filename="../src/pass.cpp" line="508"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Şifreleme başarısız oldu: GPG anahtarının süresi dolmuş. Lütfen anahtarı yenileyin veya değiştirin.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="491"/>
-        <location filename="../src/pass.cpp" line="510"/>
+        <location filename="../src/pass.cpp" line="494"/>
+        <location filename="../src/pass.cpp" line="513"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Şifreleme başarısız oldu: GPG anahtarı iptal edilmiş.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="495"/>
-        <location filename="../src/pass.cpp" line="515"/>
+        <location filename="../src/pass.cpp" line="498"/>
+        <location filename="../src/pass.cpp" line="518"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Şifreleme başarısız oldu: Alıcının GPG anahtarı bulunamadı veya geçersiz. .gpg-id içindeki anahtar kimliğinin doğru olduğundan ve içe aktarıldığından emin olun.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="499"/>
-        <location filename="../src/pass.cpp" line="519"/>
+        <location filename="../src/pass.cpp" line="502"/>
+        <location filename="../src/pass.cpp" line="522"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Şifreleme başarısız oldu. GPG anahtarınızın geçerli olduğunu kontrol edin.</translation>
     </message>
@@ -1357,12 +1356,16 @@ Devam edilsin mi?</translation>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="381"/>
         <source>force overwrite?</source>
-        <translation>üzerine yazmaya zorlansın mı?</translation>
+        <translation type="vanished">üzerine yazmaya zorlansın mı?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="382"/>
+        <location filename="../src/storemodel.cpp" line="402"/>
+        <source>Force overwrite?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/storemodel.cpp" line="403"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1 üzerine %2 yazılsın mı?</translation>
     </message>
