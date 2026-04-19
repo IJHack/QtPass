@@ -47,6 +47,14 @@ static QString findGpg() {
   return QStandardPaths::findExecutable("gpg");
 }
 
+static QString findGpgconf() {
+  for (const auto &c : {"/usr/bin/gpgconf", "/usr/local/bin/gpgconf"}) {
+    if (QFile::exists(c))
+      return c;
+  }
+  return QStandardPaths::findExecutable("gpgconf");
+}
+
 static QString findPass() { return QStandardPaths::findExecutable("pass"); }
 
 // Run gpg synchronously with the given GNUPGHOME, return exit code.
@@ -124,6 +132,7 @@ class tst_integration : public QObject {
   QString m_gpgExe;
   QTemporaryDir m_gnupgHome;
   QString m_keyFingerprint;
+  QString m_originalPassSigningKey;
 
   // Wait for a signal spy to receive at least one signal (up to timeoutMs).
   static bool waitForSignal(QSignalSpy &spy, int timeoutMs = 15000) {
@@ -204,12 +213,16 @@ void tst_integration::initTestCase() {
 
   // Pre-start the agent so GPG subprocesses don't hang waiting for it.
   {
+    QString gpgconfExe = findGpgconf();
+    if (gpgconfExe.isEmpty()) {
+      QSKIP("gpgconf not found - skipping GPG integration tests");
+    }
     QProcess agentLaunch;
     QProcessEnvironment agentEnv = QProcessEnvironment::systemEnvironment();
     agentEnv.insert("GNUPGHOME", m_gnupgHome.path());
     agentLaunch.setProcessEnvironment(agentEnv);
     agentLaunch.start(
-        "gpgconf", {"--homedir", m_gnupgHome.path(), "--launch", "gpg-agent"});
+        gpgconfExe, {"--homedir", m_gnupgHome.path(), "--launch", "gpg-agent"});
     QVERIFY2(agentLaunch.waitForStarted(5000), "gpgconf failed to start");
     QVERIFY2(agentLaunch.waitForFinished(10000),
              "gpgconf --launch gpg-agent timed out");
@@ -231,6 +244,7 @@ void tst_integration::initTestCase() {
   QtPassSettings::getInstance()->setValue(SettingsConstants::gpgHome,
                                           m_gnupgHome.path());
   QtPassSettings::setGpgExecutable(m_gpgExe);
+  m_originalPassSigningKey = QtPassSettings::getPassSigningKey();
   QtPassSettings::setPassSigningKey(QString());
   qRegisterMetaType<GrepResults>("GrepResults");
   qRegisterMetaType<GrepResults>(
@@ -238,6 +252,9 @@ void tst_integration::initTestCase() {
 }
 
 void tst_integration::cleanupTestCase() {
+  // Restore original pass signing key
+  QtPassSettings::setPassSigningKey(m_originalPassSigningKey);
+
   // Kill any gpg-agent started in our temporary homedir so it doesn't linger.
   QProcess killer;
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
@@ -539,6 +556,7 @@ void tst_integration::realPass_insertAndGrep() {
   QVERIFY2(waitForSignal(insertSpy, 20000), gpgInsertErrorMsg(insertErrorSpy));
 
   insertSpy.clear();
+  insertErrorSpy.clear();
   pass.Insert(QStringLiteral("email/outlook"),
               QStringLiteral("outlookpass\nurl: outlook.com\n"), false);
   QVERIFY2(waitForSignal(insertSpy, 20000), gpgInsertErrorMsg(insertErrorSpy));
