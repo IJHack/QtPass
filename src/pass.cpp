@@ -41,8 +41,9 @@ auto effectiveCharset(const PasswordConfiguration &passConfig) -> QString {
   int sel = passConfig.selected;
   if (sel < 0 || sel >= PasswordConfiguration::CHARSETS_COUNT)
     sel = PasswordConfiguration::ALLCHARS;
-  return fallbackCharset(passConfig.Characters[sel],
-                         passConfig.Characters[PasswordConfiguration::ALLCHARS]);
+  return fallbackCharset(
+      passConfig.Characters[sel],
+      passConfig.Characters[PasswordConfiguration::ALLCHARS]);
 }
 } // namespace
 
