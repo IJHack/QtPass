@@ -6,38 +6,28 @@
 #include <QLineEdit>
 #include <QPushButton>
 
-/*!
-    \class QPushButtonAsQRCode
-    \brief Stylish widget to display the field as QR Code
-*/
+/**
+ * @class QPushButtonShowPassword
+ * @brief QPushButton that toggles visibility of an associated QLineEdit.
+ */
 class QWidget;
-/**
- * QPushButton that controls visibility of the associated QLineEdit's contents
- * (e.g., show/hide password).
- *
- * @param line QLineEdit whose contents are shown or hidden by this button.
- * @param parent Optional parent widget.
- */
-/**
- * Emitted when the button action occurs, carrying the current text of the
- * associated QLineEdit.
- *
- * @param The current text of the associated QLineEdit.
- */
-/**
- * Handles the button activation state and updates the associated QLineEdit
- * accordingly.
- *
- * @param checked The new checked/toggled state of the button.
- */
 class QPushButtonShowPassword : public QPushButton {
   Q_OBJECT
 
 public:
+  /**
+   * @brief Construct a show-password button linked to the given QLineEdit.
+   * @param line QLineEdit whose contents are shown or hidden by this button.
+   * @param parent Optional parent widget.
+   */
   explicit QPushButtonShowPassword(QLineEdit *line, QWidget *parent = nullptr);
 
 signals:
-  void clicked(const QString &);
+  /**
+   * @brief Emitted on button activation with the current text of the line edit.
+   * @param text Current text of the associated QLineEdit.
+   */
+  void clicked(const QString &text);
 
 private slots:
   void buttonClicked(bool);

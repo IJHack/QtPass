@@ -19,7 +19,13 @@
  * @brief Holds a resolved gpgconf executable path and its arguments.
  */
 struct ResolvedGpgconfCommand {
+  /**
+   * @brief Full path to the gpgconf executable.
+   */
   QString program;
+  /**
+   * @brief Arguments to pass to gpgconf (e.g. ["--kill", "gpg-agent"]).
+   */
   QStringList arguments;
 };
 
@@ -43,8 +49,14 @@ class Pass : public QObject {
   QStringList env;
 
 protected:
+  /**
+   * @brief Internal command executor for queuing and running subprocesses.
+   */
   Executor exec;
 
+  /**
+   * @brief Alias for Enums::PROCESS used throughout this class.
+   */
   using PROCESS = Enums::PROCESS;
 
 public:
@@ -282,16 +294,16 @@ signals:
   void startingExecuteWrapper();
   /**
    * @brief Emit status message.
-   * @param Message text.
-   * @param Timeout in ms.
+   * @param msg Status text.
+   * @param timeout Display duration in milliseconds.
    */
-  void statusMsg(const QString &, int);
+  void statusMsg(const QString &msg, int timeout);
   /**
    * @brief Emit critical error.
-   * @param title Error title.
-   * @param message Error message.
+   * @param title Error dialog title.
+   * @param message Error description.
    */
-  void critical(const QString &, const QString &);
+  void critical(const QString &title, const QString &message);
 
   /**
    * @brief Emitted on process error exit.

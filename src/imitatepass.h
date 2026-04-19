@@ -174,12 +174,22 @@ public:
 protected:
   /**
    * @brief Handle process completion.
+   * @param id Process identifier.
+   * @param exitCode Process exit code.
+   * @param out Standard output from the process.
+   * @param err Standard error from the process.
    */
   void finished(int id, int exitCode, const QString &out,
                 const QString &err) override;
 
   /**
    * @brief Execute command wrapper.
+   * @param id Process identifier.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param input Data to write to stdin.
+   * @param readStdout Whether to capture stdout.
+   * @param readStderr Whether to capture stderr.
    */
   void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
                       QString input, bool readStdout = true,
@@ -216,22 +226,31 @@ public:
   // Password operations
   /**
    * @brief Show decrypted password.
+   * @param file Path to the password file relative to store root.
    */
   void Show(QString file) override;
   /**
    * @brief Generate OTP.
+   * @param file Path to the password file.
    */
   void OtpGenerate(QString file) override;
   /**
    * @brief Insert new password.
+   * @param file Path to the password file.
+   * @param newValue Password content to store.
+   * @param overwrite true to overwrite an existing file.
    */
   void Insert(QString file, QString newValue, bool overwrite = false) override;
   /**
    * @brief Remove password.
+   * @param file Path to the file or directory to remove.
+   * @param isDir true if removing a directory.
    */
   void Remove(QString file, bool isDir = false) override;
   /**
    * @brief Initialize store.
+   * @param path Root path of the password store.
+   * @param users List of recipient GPG keys.
    */
   void Init(QString path, const QList<UserInfo> &users) override;
 
@@ -255,11 +274,17 @@ signals:
 public:
   /**
    * @brief Move password file.
+   * @param src Source path.
+   * @param dest Destination path.
+   * @param force true to overwrite existing destination.
    */
   void Move(const QString src, const QString dest,
             const bool force = false) override;
   /**
    * @brief Copy password file.
+   * @param src Source path.
+   * @param dest Destination path.
+   * @param force true to overwrite existing destination.
    */
   void Copy(const QString src, const QString dest,
             const bool force = false) override;

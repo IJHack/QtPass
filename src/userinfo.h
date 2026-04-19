@@ -11,6 +11,9 @@
  * @brief Stores GPG key info including validity, creation date, and more.
  */
 struct UserInfo {
+  /**
+   * @brief Construct a UserInfo with default (invalid/disabled) state.
+   */
   UserInfo() : validity('-'), have_secret(false), enabled(false) {}
 
   /**

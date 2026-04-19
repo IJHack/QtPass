@@ -17,6 +17,9 @@ class simpleTransaction {
   std::queue<std::pair<Enums::PROCESS, Enums::PROCESS>> transactionQueue;
 
 public:
+  /**
+   * @brief Construct a simpleTransaction in its initial idle state.
+   */
   simpleTransaction()
       : transactionDepth(0), lastInTransaction(Enums::INVALID) {}
   /**
@@ -32,15 +35,15 @@ public:
    *                       process as the only step in transaction(it's value is
    *                       treated as transaction result).
    *
-   * @param id process that shall be treated as part of transaction
+   * @param process process that shall be treated as part of transaction
    */
-  void transactionAdd(Enums::PROCESS);
+  void transactionAdd(Enums::PROCESS process);
   /**
    * @brief transactionEnd marks end of transaction
    *
-   * @param pid value that will be used as a result of transaction
+   * @param process value that will be used as a result of transaction
    */
-  void transactionEnd(Enums::PROCESS);
+  void transactionEnd(Enums::PROCESS process);
   /**
    * @brief transactionIsOver checks wheather currently finished process is last
    *                          in current transaction

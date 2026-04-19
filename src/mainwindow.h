@@ -46,6 +46,11 @@ class MainWindow : public QMainWindow {
   Q_OBJECT
 
 public:
+  /**
+   * @brief Construct the main window.
+   * @param searchText Initial search text to populate the search field.
+   * @param parent Optional parent widget.
+   */
   explicit MainWindow(const QString &searchText = QString(),
                       QWidget *parent = nullptr);
   ~MainWindow() override;
@@ -106,14 +111,43 @@ public:
   void cleanKeygenDialog();
 
 protected:
+  /**
+   * @brief Save window state and geometry on close.
+   * @param event The close event.
+   */
   void closeEvent(QCloseEvent *event) override;
+  /**
+   * @brief Handle keyboard shortcuts.
+   * @param event The key press event.
+   */
   void keyPressEvent(QKeyEvent *event) override;
+  /**
+   * @brief React to language or window state changes.
+   * @param event The change event.
+   */
   void changeEvent(QEvent *event) override;
+  /**
+   * @brief Filter events from watched objects.
+   * @param obj The object that received the event.
+   * @param event The event to filter.
+   * @return true if the event was consumed.
+   */
   auto eventFilter(QObject *obj, QEvent *event) -> bool override;
 
 signals:
+  /**
+   * @brief Emitted when the pass show handler has finished decrypting.
+   * @param output Decrypted password file content.
+   */
   void passShowHandlerFinished(const QString &output);
+  /**
+   * @brief Emitted when a Git init is required for the current store.
+   */
   void passGitInitNeeded();
+  /**
+   * @brief Emitted to trigger GPG key pair generation.
+   * @param batch GPG batch parameter string.
+   */
   void generateGPGKeyPair(const QString &batch);
 
 public slots:

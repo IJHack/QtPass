@@ -30,6 +30,10 @@ class ConfigDialog : public QDialog {
   Q_OBJECT
 
 public:
+  /**
+   * @brief Construct a ConfigDialog associated with the given main window.
+   * @param parent The application's MainWindow.
+   */
   explicit ConfigDialog(MainWindow *parent);
   ~ConfigDialog() override;
 
@@ -130,6 +134,10 @@ public:
   void useTemplate(bool useTemplate);
 
 protected:
+  /**
+   * @brief Save settings and clean up on close.
+   * @param event The close event.
+   */
   void closeEvent(QCloseEvent *event) override;
 
 private slots:

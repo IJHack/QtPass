@@ -12,7 +12,13 @@
  * @brief A name/value pair parsed from a password file field.
  */
 struct NamedValue {
+  /**
+   * @brief Field name (the part before the colon in "name: value").
+   */
   QString name;
+  /**
+   * @brief Field value (the part after the colon in "name: value").
+   */
   QString value;
 };
 
@@ -27,8 +33,17 @@ inline bool operator==(const NamedValue &a, const NamedValue &b) {
 class NamedValues : public QList<NamedValue> {
 public:
   NamedValues();
+  /**
+   * @brief Construct a NamedValues list from an initializer list.
+   * @param values Initial set of NamedValue pairs.
+   */
   NamedValues(std::initializer_list<NamedValue> values);
 
+  /**
+   * @brief Remove and return the value for the named field.
+   * @param name Field name to look up and remove.
+   * @return The value of the removed field, or an empty string if not found.
+   */
   auto takeValue(const QString &name) -> QString;
 };
 
@@ -80,8 +95,9 @@ public:
   [[nodiscard]] auto getRemainingData() const -> QString;
 
   /**
-   * @like getRemainingData but without data that should not be displayed
+   * @brief Like getRemainingData but without data that should not be displayed
    * (like a TOTP secret).
+   * @return Remaining data string safe for display.
    */
   [[nodiscard]] auto getRemainingDataForDisplay() const -> QString;
 

@@ -20,10 +20,18 @@ class KeygenDialog : public QDialog {
   Q_OBJECT
 
 public:
+  /**
+   * @brief Construct a KeygenDialog with an optional parent ConfigDialog.
+   * @param parent Parent dialog, or nullptr.
+   */
   explicit KeygenDialog(ConfigDialog *parent = nullptr);
   ~KeygenDialog() override;
 
 protected:
+  /**
+   * @brief Handle dialog close, emitting appropriate signals.
+   * @param event The close event.
+   */
   void closeEvent(QCloseEvent *event) override;
 
 private slots:

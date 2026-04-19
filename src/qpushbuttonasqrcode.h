@@ -5,59 +5,40 @@
 
 #include <QPushButton>
 
-/*!
-    \class QPushButtonAsQRCode
-    \brief Stylish widget to display the field as QR Code
-*/
+/**
+ * @class QPushButtonAsQRCode
+ * @brief QPushButton that presents a text payload as a QR code action.
+ */
 class QWidget;
-/**
- * Stylish QPushButton that represents a field as a QR code and holds a text
- * payload to copy or transmit.
- */
-
-/**
- * Create a QPushButton configured to present text as a QR-code-related action.
- * @param textToCopy Initial text stored for copying or QR-code use (may be
- * empty).
- * @param parent Optional parent widget.
- */
-
-/**
- * Return the stored text used for copy or QR-code actions.
- * @returns The current stored text.
- */
-
-/**
- * Update the stored text used for copy or QR-code actions.
- * @param value New text to store.
- */
-
-/**
- * Emitted when the button is activated, delivering the current text payload.
- * @param text The current stored text.
- */
-
-/**
- * Reset the button's icon to its default appearance.
- */
-
-/**
- * Handle a change/click event reported as a boolean state.
- * @param checked True if the button is in the checked/active state, false
- * otherwise.
- */
 class QPushButtonAsQRCode : public QPushButton {
   Q_OBJECT
 
 public:
+  /**
+   * @brief Construct a QPushButtonAsQRCode with an optional initial text.
+   * @param textToCopy Initial text stored for QR-code use (may be empty).
+   * @param parent Optional parent widget.
+   */
   explicit QPushButtonAsQRCode(QString textToCopy = "",
                                QWidget *parent = nullptr);
 
+  /**
+   * @brief Return the stored text used for QR-code actions.
+   * @return The current stored text.
+   */
   [[nodiscard]] auto getTextToCopy() const -> QString;
+  /**
+   * @brief Update the stored text used for QR-code actions.
+   * @param value New text to store.
+   */
   void setTextToCopy(const QString &value);
 
 signals:
-  void clicked(const QString &);
+  /**
+   * @brief Emitted when the button is activated with the current text payload.
+   * @param text The stored text.
+   */
+  void clicked(const QString &text);
 
 private:
   void buttonClicked(bool);

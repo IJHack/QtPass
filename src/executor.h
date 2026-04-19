@@ -67,37 +67,107 @@ class Executor : public QObject {
                                    const QStringList &args);
 
 public:
+  /**
+   * @brief Construct an Executor with an optional parent QObject.
+   * @param parent Parent QObject, or nullptr for no parent.
+   */
   explicit Executor(QObject *parent = nullptr);
 
+  /**
+   * @brief Queue a command without stdin input.
+   * @param id Caller-assigned process identifier.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param readStdout Whether to capture stdout.
+   * @param readStderr Whether to capture stderr.
+   */
   void execute(int id, const QString &app, const QStringList &args,
                bool readStdout, bool readStderr = true);
 
+  /**
+   * @brief Queue a command with an explicit working directory.
+   * @param id Caller-assigned process identifier.
+   * @param workDir Working directory for the process.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param readStdout Whether to capture stdout.
+   * @param readStderr Whether to capture stderr.
+   */
   void execute(int id, const QString &workDir, const QString &app,
                const QStringList &args, bool readStdout,
                bool readStderr = true);
 
+  /**
+   * @brief Queue a command with optional stdin input.
+   * @param id Caller-assigned process identifier.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param input Data to write to stdin.
+   * @param readStdout Whether to capture stdout.
+   * @param readStderr Whether to capture stderr.
+   */
   void execute(int id, const QString &app, const QStringList &args,
                QString input = QString(), bool readStdout = false,
                bool readStderr = true);
 
+  /**
+   * @brief Queue a command with working directory and optional stdin input.
+   * @param id Caller-assigned process identifier.
+   * @param workDir Working directory for the process.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param input Data to write to stdin.
+   * @param readStdout Whether to capture stdout.
+   * @param readStderr Whether to capture stderr.
+   */
   void execute(int id, const QString &workDir, const QString &app,
                const QStringList &args, QString input = QString(),
                bool readStdout = false, bool readStderr = true);
 
+  /**
+   * @brief Run a command synchronously and return its exit code.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param input Data to write to stdin.
+   * @param process_out If non-null, receives stdout output.
+   * @param process_err If non-null, receives stderr output.
+   * @return Process exit code.
+   */
   static auto executeBlocking(const QString &app, const QStringList &args,
                               const QString &input = QString(),
                               QString *process_out = nullptr,
                               QString *process_err = nullptr) -> int;
 
+  /**
+   * @brief Run a command synchronously capturing stdout and stderr.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param process_out Receives stdout output.
+   * @param process_err If non-null, receives stderr output.
+   * @return Process exit code.
+   */
   static auto executeBlocking(const QString &app, const QStringList &args,
                               QString *process_out,
                               QString *process_err = nullptr) -> int;
 
+  /**
+   * @brief Run a command synchronously with a custom environment.
+   * @param env Environment variable list in "KEY=value" format.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param process_out If non-null, receives stdout output.
+   * @param process_err If non-null, receives stderr output.
+   * @return Process exit code.
+   */
   static auto executeBlocking(const QStringList &env, const QString &app,
                               const QStringList &args,
                               QString *process_out = nullptr,
                               QString *process_err = nullptr) -> int;
 
+  /**
+   * @brief Set the environment passed to all child processes.
+   * @param env Environment variable list in "KEY=value" format.
+   */
   void setEnvironment(const QStringList &env);
   /**
    * @brief Return the environment passed to child processes.
@@ -105,6 +175,10 @@ public:
    */
   auto environment() const -> QStringList;
 
+  /**
+   * @brief Cancel the next queued command without executing it.
+   * @return The id of the cancelled command, or -1 if the queue was empty.
+   */
   auto cancelNext() -> int;
 private slots:
   void finished(int exitCode, QProcess::ExitStatus exitStatus);

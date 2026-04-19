@@ -736,7 +736,10 @@ void Pass::setEnvVar(const QString &key, const QString &value) {
                << key;
     return;
   }
-  env.removeIf([&key](const QString &entry) { return entry.startsWith(key); });
+  env.erase(std::remove_if(
+                env.begin(), env.end(),
+                [&key](const QString &entry) { return entry.startsWith(key); }),
+            env.end());
   if (!value.isEmpty())
     env.append(key + value);
 }

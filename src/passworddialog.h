@@ -24,8 +24,19 @@ class PasswordDialog : public QDialog {
   Q_OBJECT
 
 public:
+  /**
+   * @brief Construct a PasswordDialog for entering a new password.
+   * @param passConfig Password generation configuration.
+   * @param parent Optional parent widget.
+   */
   explicit PasswordDialog(PasswordConfiguration passConfig,
                           QWidget *parent = nullptr);
+  /**
+   * @brief Construct a PasswordDialog for editing an existing password file.
+   * @param file Path to the password file being edited.
+   * @param isNew true if creating a new entry, false if editing existing.
+   * @param parent Optional parent widget.
+   */
   PasswordDialog(QString file, const bool &isNew, QWidget *parent = nullptr);
   ~PasswordDialog() override;
 
