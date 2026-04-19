@@ -110,8 +110,8 @@ public:
   void setTemplate(const QString &rawFields, bool useTemplate);
 
   void templateAll(bool templateAll);
-  void setLength(int l);
-  void setPasswordCharTemplate(int t);
+  void setLength(int length);
+  void setPasswordCharTemplate(int templateIndex);
   void usePwgen(bool usePwgen);
 
 public slots:
