@@ -222,7 +222,9 @@ void PasswordDialog::templateAll(bool templateAll) {
  * PasswordDialog::setLength password length.
  * @param length
  */
-void PasswordDialog::setLength(int length) { ui->spinBox_pwdLength->setValue(length); }
+void PasswordDialog::setLength(int length) {
+  ui->spinBox_pwdLength->setValue(length);
+}
 
 /**
  * @brief PasswordDialog::setPasswordCharTemplate
