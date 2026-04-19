@@ -175,7 +175,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation type="vanished">Use pwgen</translation>
+        <translation type="vanished">Використовувати pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
