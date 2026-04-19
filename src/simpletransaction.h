@@ -50,7 +50,7 @@ public:
    *
    * @param current the process that just finished.
    * @return result of transaction as set by transactionAdd or transactionEnd if
-   *         the transaction is over or PROCESS::INVALID if it's not yet over
+   *         the transaction is over or Enums::INVALID if it's not yet over
    */
   auto transactionIsOver(Enums::PROCESS current) -> Enums::PROCESS;
 };
