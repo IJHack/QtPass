@@ -378,7 +378,7 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
     return {"gpgconf", {}};
   }
 
-  QString gpgconfPath = findGpgconfInGpgDir(gpgPath);
+  QString gpgconfPath = findGpgconfInGpgDir(first);
   if (!gpgconfPath.isEmpty()) {
     return {gpgconfPath, {}};
   }
@@ -395,12 +395,12 @@ void Pass::GenerateGPGKeys(QString batch) {
   // This helps avoid "database locked" timeouts during key generation
   QString gpgPath = QtPassSettings::getGpgExecutable();
   if (!gpgPath.isEmpty()) {
-    ResolvedGpgconfCommand gpgconf = resolveGpgconfCommand(gpgPath);
-    QStringList killArgs = gpgconf.arguments;
+    ResolvedGpgconfCommand resolvedGpgconf = resolveGpgconfCommand(gpgPath);
+    QStringList killArgs = resolvedGpgconf.arguments;
     killArgs << "--kill";
     killArgs << "gpg-agent";
     // Use same environment as key generation to target correct gpg-agent
-    Executor::executeBlocking(env, gpgconf.program, killArgs);
+    Executor::executeBlocking(env, resolvedGpgconf.program, killArgs);
   }
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},
@@ -525,6 +525,17 @@ auto gpgErrorMessage(const QString &err) -> QString {
   return {};
 }
 
+namespace {
+auto isGrepHeaderLine(const QString &rawLine, const QString &trimmedLine)
+    -> bool {
+  // ANSI-colored header starts with the blue escape; plain-text fallback:
+  // a non-indented line ending with ':' (pass grep format without color)
+  return rawLine.startsWith(QStringLiteral("\x1B[94m")) ||
+         (!rawLine.startsWith(' ') && !rawLine.startsWith('\t') &&
+          trimmedLine.endsWith(':'));
+}
+} // namespace
+
 /**
  * @brief Parses 'pass grep' raw output into (entry, matches) pairs.
  *
@@ -544,11 +555,7 @@ auto parseGrepOutput(const QString &rawOut)
     line.remove('\r');
     line.remove(ansi);
     line = line.trimmed();
-    // ANSI-colored header starts with the blue escape; plain-text fallback:
-    // a non-indented line ending with ':' (pass grep format without color)
-    bool isHeader = rawLine.startsWith(QStringLiteral("\x1B[94m")) ||
-                    (!rawLine.startsWith(' ') && !rawLine.startsWith('\t') &&
-                     line.endsWith(':') && !line.isEmpty());
+    const bool isHeader = isGrepHeaderLine(rawLine, line);
     if (isHeader) {
       if (!currentEntry.isEmpty() && !currentMatches.isEmpty())
         results.append({currentEntry, currentMatches});
@@ -794,13 +801,13 @@ auto Pass::boundedRandom(quint32 bound) -> quint32 {
   // Rejection-sampling threshold to avoid modulo bias:
   // In quint32 arithmetic, (1 + ~bound) wraps to (2^32 - bound), so
   // (1 + ~bound) % bound == 2^32 % bound.
-  // Values randval < max_mod_bound are rejected; accepted values produce a
-  // uniform distribution when reduced with (randval % bound).
-  const quint32 max_mod_bound = (1 + ~bound) % bound;
+  // Values randval < rejectionThreshold are rejected; accepted values
+  // produce a uniform distribution when reduced with (randval % bound).
+  const quint32 rejectionThreshold = (1 + ~bound) % bound;
 
   do {
     randval = QRandomGenerator::system()->generate();
-  } while (randval < max_mod_bound);
+  } while (randval < rejectionThreshold);
 
   return randval % bound;
 }
