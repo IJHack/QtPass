@@ -97,7 +97,11 @@ jobs:
         if: runner.os == 'Linux' && steps.need_build.outputs.run_build == 'true'
         run: |
           sudo apt-get update
-          sudo apt-get install -y pinentry-tty
+          sudo apt-get install -y pinentry-tty pass
+
+      - name: Install dependencies (macOS)
+        if: runner.os == 'macOS' && steps.need_build.outputs.run_build == 'true'
+        run: brew install pass
 
       - name: qmake
         if: steps.need_build.outputs.run_build == 'true'
