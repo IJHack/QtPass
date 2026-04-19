@@ -258,6 +258,15 @@ protected slots:
   virtual void finished(int id, int exitCode, const QString &out,
                         const QString &err);
 
+private:
+  void handleProcessError(PROCESS pid, int exitCode, const QString &out,
+                          const QString &err);
+  void handleGrepError(int exitCode, const QString &err);
+  auto formatInsertError(const QString &friendly, const QString &err)
+      -> QString;
+  void emitProcessFinishedSignal(PROCESS pid, const QString &out,
+                                 const QString &err);
+
 signals:
   /**
    * @brief Emitted when a process error occurs.

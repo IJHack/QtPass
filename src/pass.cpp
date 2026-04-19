@@ -448,45 +448,67 @@ auto Pass::listKeys(const QString &keystring, bool secret) -> QList<UserInfo> {
  * @param err Raw stderr from GPG
  * @return Translated human-readable error, or empty string if not recognised
  */
+namespace {
+
+bool containsAny(const QString &str, const QStringList &patterns) {
+  for (const QString &p : patterns) {
+    if (str.contains(p)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+bool containsAnyCaseInsensitive(const QString &str,
+                                const QStringList &patterns) {
+  const QString lower = str.toLower();
+  for (const QString &p : patterns) {
+    if (lower.contains(p.toLower())) {
+      return true;
+    }
+  }
+  return false;
+}
+
+} // namespace
+
 auto gpgErrorMessage(const QString &err) -> QString {
   // Machine-readable status tokens added by --status-fd 2
-  if (err.contains(QStringLiteral("[GNUPG:] KEYEXPIRED")) ||
-      err.contains(QStringLiteral("[GNUPG:] INV_RECP 5 ")))
-    return QCoreApplication::translate("Pass",
-                                       "Encryption failed: GPG key has expired."
-                                       " Please renew or replace it.");
-  if (err.contains(QStringLiteral("[GNUPG:] KEYREVOKED")) ||
-      err.contains(QStringLiteral("[GNUPG:] INV_RECP 4 ")))
+  if (containsAny(err, {QStringLiteral("[GNUPG:] KEYEXPIRED"),
+                        QStringLiteral("[GNUPG:] INV_RECP 5 ")}))
+    return QCoreApplication::translate(
+        "Pass", "Encryption failed: GPG key has expired. Please renew or "
+                "replace it.");
+  if (containsAny(err, {QStringLiteral("[GNUPG:] KEYREVOKED"),
+                        QStringLiteral("[GNUPG:] INV_RECP 4 ")}))
     return QCoreApplication::translate(
         "Pass", "Encryption failed: GPG key has been revoked.");
-  if (err.contains(QStringLiteral("[GNUPG:] NO_PUBKEY")) ||
-      err.contains(QStringLiteral("[GNUPG:] INV_RECP")))
+  if (containsAny(err, {QStringLiteral("[GNUPG:] NO_PUBKEY"),
+                        QStringLiteral("[GNUPG:] INV_RECP")}))
     return QCoreApplication::translate(
-        "Pass", "Encryption failed: recipient GPG key not found or invalid."
-                " Check that the key ID in .gpg-id is correct and imported.");
+        "Pass", "Encryption failed: recipient GPG key not found or invalid. "
+                "Check that the key ID in .gpg-id is correct and imported.");
   if (err.contains(QStringLiteral("[GNUPG:] FAILURE")))
     return QCoreApplication::translate(
         "Pass", "Encryption failed. Check that your GPG key is valid.");
 
-  // Locale-dependent fallbacks for GPG versions / configurations that don't
-  // emit status tokens
-  const QString lower = err.toLower();
-  if (lower.contains(QLatin1String("key has expired")) ||
-      lower.contains(QLatin1String("key expired")))
-    return QCoreApplication::translate("Pass",
-                                       "Encryption failed: GPG key has expired."
-                                       " Please renew or replace it.");
-  if (lower.contains(QLatin1String("key has been revoked")) ||
-      lower.contains(QLatin1String("revoked")))
+  // Locale-dependent fallbacks
+  if (containsAnyCaseInsensitive(err, {QLatin1String("key has expired"),
+                                       QLatin1String("key expired")}))
+    return QCoreApplication::translate(
+        "Pass", "Encryption failed: GPG key has expired. Please renew or "
+                "replace it.");
+  if (containsAnyCaseInsensitive(err, {QLatin1String("key has been revoked"),
+                                       QLatin1String("revoked")}))
     return QCoreApplication::translate(
         "Pass", "Encryption failed: GPG key has been revoked.");
-  if (lower.contains(QLatin1String("no public key")) ||
-      lower.contains(QLatin1String("unusable public key")) ||
-      lower.contains(QLatin1String("no secret key")))
+  if (containsAnyCaseInsensitive(err, {QLatin1String("no public key"),
+                                       QLatin1String("unusable public key"),
+                                       QLatin1String("no secret key")}))
     return QCoreApplication::translate(
-        "Pass", "Encryption failed: recipient GPG key not found or invalid."
-                " Check that the key ID in .gpg-id is correct and imported.");
-  if (lower.contains(QLatin1String("encryption failed")))
+        "Pass", "Encryption failed: recipient GPG key not found or invalid. "
+                "Check that the key ID in .gpg-id is correct and imported.");
+  if (err.toLower().contains(QLatin1String("encryption failed")))
     return QCoreApplication::translate(
         "Pass", "Encryption failed. Check that your GPG key is valid.");
 
@@ -545,39 +567,56 @@ auto parseGrepOutput(const QString &rawOut)
 void Pass::finished(int id, int exitCode, const QString &out,
                     const QString &err) {
   auto pid = static_cast<PROCESS>(id);
+
   if (exitCode != 0) {
-    if (pid == PASS_GREP) {
-      // exit code 1 means no matches (standard grep behaviour); treat as empty
-      // result set rather than an error
-      if (exitCode == 1) {
-        emit finishedGrep({});
-      } else {
-        emit processErrorExit(exitCode, err);
-        emit finishedGrep({});
-      }
-      return;
-    }
-    if (pid == PASS_INSERT) {
-      const QString friendly = gpgErrorMessage(err);
-      if (!friendly.isEmpty()) {
-        // Strip machine-readable [GNUPG:] status lines before showing raw
-        // output; they are only useful for detection, not for display.
-        QStringList humanLines;
-        for (QString line : err.split('\n')) {
-          line.remove('\r');
-          if (!line.startsWith(QLatin1String("[GNUPG:]")))
-            humanLines.append(line);
-        }
-        const QString humanErr = humanLines.join('\n').trimmed();
-        emit processErrorExit(exitCode, humanErr.isEmpty()
-                                            ? friendly
-                                            : friendly + "\n\n" + humanErr);
-        return;
-      }
-    }
-    emit processErrorExit(exitCode, err);
+    handleProcessError(pid, exitCode, out, err);
     return;
   }
+
+  emitProcessFinishedSignal(pid, out, err);
+}
+
+void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
+                              const QString &err) {
+  if (pid == PASS_GREP) {
+    handleGrepError(exitCode, err);
+    return;
+  }
+
+  if (pid == PASS_INSERT) {
+    const QString friendly = gpgErrorMessage(err);
+    if (!friendly.isEmpty()) {
+      emit processErrorExit(exitCode, formatInsertError(friendly, err));
+      return;
+    }
+  }
+
+  emit processErrorExit(exitCode, err);
+}
+
+void Pass::handleGrepError(int exitCode, const QString &err) {
+  if (exitCode == 1) {
+    emit finishedGrep({});
+  } else {
+    emit processErrorExit(exitCode, err);
+    emit finishedGrep({});
+  }
+}
+
+auto Pass::formatInsertError(const QString &friendly, const QString &err)
+    -> QString {
+  QStringList humanLines;
+  for (QString line : err.split('\n')) {
+    line.remove('\r');
+    if (!line.startsWith(QLatin1String("[GNUPG:]")))
+      humanLines.append(line);
+  }
+  const QString humanErr = humanLines.join('\n').trimmed();
+  return humanErr.isEmpty() ? friendly : friendly + "\n\n" + humanErr;
+}
+
+void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
+                                     const QString &err) {
   switch (pid) {
   case GIT_INIT:
     emit finishedGitInit(out, err);
