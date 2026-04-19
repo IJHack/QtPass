@@ -1490,7 +1490,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/storemodel.cpp" line="402"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Querés forzar la sobrescritura?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="403"/>
