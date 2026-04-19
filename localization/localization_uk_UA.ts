@@ -715,7 +715,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>Електронна скринька</translation>
+        <translation>Електронна пошта</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
