@@ -1391,12 +1391,12 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige wachtwoordlengte</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Het is niet mogelijk om een wachtwoord met een lengte van nul te genereren.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
