@@ -396,62 +396,62 @@ email</translation>
         <translation>이 필드는 필수 항목입니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="654"/>
+        <location filename="../src/configdialog.cpp" line="653"/>
         <source>Select recipients for %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="672"/>
+        <location filename="../src/configdialog.cpp" line="671"/>
         <source>New Profile</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="704"/>
+        <location filename="../src/configdialog.cpp" line="703"/>
         <source>No profile selected</source>
         <translation>프로필이 선택 되지 않았습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="705"/>
+        <location filename="../src/configdialog.cpp" line="704"/>
         <source>No profile selected to delete</source>
         <translation>삭제할 프로필을 선택하세요</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="805"/>
+        <location filename="../src/configdialog.cpp" line="803"/>
         <source>GnuPG not found</source>
         <translation>GnuPG를 찾을 수 없습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="819"/>
+        <location filename="../src/configdialog.cpp" line="817"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>시스템에 GnuPG를 설치하세요. &lt;br&gt;패키지 관리자를 사용하여 &lt;strong&gt;gpg&lt;/strong&gt;를 설치하거나&lt;br&gt;GnuPG.org에서 &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;다운로드&lt;/a&gt;하세요</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="873"/>
+        <location filename="../src/configdialog.cpp" line="871"/>
         <source>Create password-store?</source>
         <translation>비밀번호 저장소를 생성하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="874"/>
+        <location filename="../src/configdialog.cpp" line="872"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>%1에 비밀번호 저장소를 생성하시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="879"/>
+        <location filename="../src/configdialog.cpp" line="877"/>
         <source>Error</source>
         <translation>오류</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="880"/>
+        <location filename="../src/configdialog.cpp" line="878"/>
         <source>Failed to create password-store at: %1</source>
         <translation>%1 위치에서 비밀번호 저장소 생성에 실패했습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="911"/>
+        <location filename="../src/configdialog.cpp" line="909"/>
         <source>Password store not initialised</source>
         <translation>비밀번호 저장소가 초기화되지 않았습니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="912"/>
+        <location filename="../src/configdialog.cpp" line="910"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>%1 폴더가 비밀번호 저장소가 아니거나 초기화되지 않았습니다.</translation>
     </message>
@@ -481,12 +481,12 @@ email</translation>
         <translation>qrencode 설치가 필요합니다</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="808"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>시스템에 GnuPG를 설치하세요.&lt;br&gt;GnuPG를 얻기 위해 마이크로소프트 스토어에서 &lt;strong&gt;우분투&lt;/strong&gt;를 설치하세요&lt;br&gt;이미 설치했다면 한번 시작했는지 확인하고&lt;br&gt;다음 대화상자에서 &quot;자동 감지&quot;를 클릭하세요.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="813"/>
+        <location filename="../src/configdialog.cpp" line="811"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>시스템에 GnuPG를 설치하세요.&lt;br&gt;마이크로소프트 스토어에서 &lt;strong&gt;우분투&lt;/strong&gt;를 설치하거나&lt;br&gt;GnuPG.org에서 &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;다운로드&lt;/a&gt;받으세요.</translation>
     </message>
@@ -1345,36 +1345,46 @@ Continue?</source>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="167"/>
+        <location filename="../src/pass.cpp" line="142"/>
+        <source>Invalid password length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="143"/>
+        <source>Can&apos;t generate password with zero length.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="186"/>
         <source>No characters chosen</source>
         <translation>선택한 문자 없음</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="168"/>
+        <location filename="../src/pass.cpp" line="187"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>비밀번호를 생성할 수 없습니다. 환경 구성에서 선택한 문자 집합에서 사용할 수 있는 문자가 없습니다!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="489"/>
-        <location filename="../src/pass.cpp" line="508"/>
+        <location filename="../src/pass.cpp" line="511"/>
+        <location filename="../src/pass.cpp" line="530"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="494"/>
-        <location filename="../src/pass.cpp" line="513"/>
+        <location filename="../src/pass.cpp" line="516"/>
+        <location filename="../src/pass.cpp" line="535"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="498"/>
-        <location filename="../src/pass.cpp" line="518"/>
+        <location filename="../src/pass.cpp" line="520"/>
+        <location filename="../src/pass.cpp" line="540"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="502"/>
-        <location filename="../src/pass.cpp" line="522"/>
+        <location filename="../src/pass.cpp" line="524"/>
+        <location filename="../src/pass.cpp" line="544"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1538,12 +1548,12 @@ Continue?</source>
         <translation type="vanished">강제로 덮어쓰시겠습니까?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="402"/>
+        <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="403"/>
+        <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
         <translation>%1을(를) %2(으)로 덮어쓰시겠습니까?</translation>
     </message>

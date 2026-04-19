@@ -361,72 +361,72 @@
         <translation>To pole jest wymagane</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="654"/>
+        <location filename="../src/configdialog.cpp" line="653"/>
         <source>Select recipients for %1</source>
         <translation>Wybierz odbiorców dla %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="672"/>
+        <location filename="../src/configdialog.cpp" line="671"/>
         <source>New Profile</source>
         <translation>Nowy profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="704"/>
+        <location filename="../src/configdialog.cpp" line="703"/>
         <source>No profile selected</source>
         <translation>Nie wybrano profilu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="705"/>
+        <location filename="../src/configdialog.cpp" line="704"/>
         <source>No profile selected to delete</source>
         <translation>Nie wybrano profilu do usunięcia</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="805"/>
+        <location filename="../src/configdialog.cpp" line="803"/>
         <source>GnuPG not found</source>
         <translation>Nie znaleziono GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="808"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;Ubuntu&lt;/strong&gt; z Microsoft Store.&lt;br&gt;Jeśli już to zrobiłeś, upewnij się, że uruchomiłeś system raz i&lt;br&gt;kliknij „Automatycznie wykryj” w następnym oknie dialogowym.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="813"/>
+        <location filename="../src/configdialog.cpp" line="811"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;Ubuntu&lt;/strong&gt; z Microsoft Store&lt;br&gt;lub &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;zainstaluj&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="819"/>
+        <location filename="../src/configdialog.cpp" line="817"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;gpg&lt;/strong&gt; używając twojego ulubionego menedżera proramów&lt;br&gt;lub &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;zainstaluj&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="873"/>
+        <location filename="../src/configdialog.cpp" line="871"/>
         <source>Create password-store?</source>
         <translation>Stworzyć magazyn haseł?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="874"/>
+        <location filename="../src/configdialog.cpp" line="872"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Czy chciałbyś stworzyć magazyn haseł w %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="879"/>
+        <location filename="../src/configdialog.cpp" line="877"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="880"/>
+        <location filename="../src/configdialog.cpp" line="878"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Nie udało się utworzyć magazynu haseł w: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="911"/>
+        <location filename="../src/configdialog.cpp" line="909"/>
         <source>Password store not initialised</source>
         <translation>Magazyn haseł nie został zainicjowany</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="912"/>
+        <location filename="../src/configdialog.cpp" line="910"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Folder %1 nie posiada magazynu haseł lub jeszcze nie jest zainicjowany.</translation>
     </message>
@@ -1161,36 +1161,46 @@ Kontynuować?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="167"/>
+        <location filename="../src/pass.cpp" line="142"/>
+        <source>Invalid password length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="143"/>
+        <source>Can&apos;t generate password with zero length.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="186"/>
         <source>No characters chosen</source>
         <translation>Brak wybranych znaków</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="168"/>
+        <location filename="../src/pass.cpp" line="187"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Nie można wygenerować hasła, nie zostały wybrane żadne zestawy znaki w konfiguracji!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="489"/>
-        <location filename="../src/pass.cpp" line="508"/>
+        <location filename="../src/pass.cpp" line="511"/>
+        <location filename="../src/pass.cpp" line="530"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Szyfrowanie nie powiodło się: klucz GPG wygasł. Należy go odnowić lub wymienić.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="494"/>
-        <location filename="../src/pass.cpp" line="513"/>
+        <location filename="../src/pass.cpp" line="516"/>
+        <location filename="../src/pass.cpp" line="535"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Szyfrowanie nie powiodło się: klucz GPG został unieważniony.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="498"/>
-        <location filename="../src/pass.cpp" line="518"/>
+        <location filename="../src/pass.cpp" line="520"/>
+        <location filename="../src/pass.cpp" line="540"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Szyfrowanie nie powiodło się: klucz GPG odbiorcy nie został znaleziony lub jest nieprawidłowy. Sprawdź, czy identyfikator klucza w pliku .gpg-id jest poprawny i zaimportuj go.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="502"/>
-        <location filename="../src/pass.cpp" line="522"/>
+        <location filename="../src/pass.cpp" line="524"/>
+        <location filename="../src/pass.cpp" line="544"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Szyfrowanie nie powiodło się. Sprawdź, czy klucz GPG jest prawidłowy.</translation>
     </message>
@@ -1354,12 +1364,12 @@ Kontynuować?</translation>
         <translation type="vanished">wymuś nadpisanie?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="402"/>
+        <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
         <translation>Wymusić nadpisanie?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="403"/>
+        <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
         <translation>nadpisać %1 przez %2?</translation>
     </message>

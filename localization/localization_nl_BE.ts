@@ -396,62 +396,62 @@ email</translation>
         <translation>Dit veld is verplicht</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="654"/>
+        <location filename="../src/configdialog.cpp" line="653"/>
         <source>Select recipients for %1</source>
         <translation>Selecteer ontvangers voor %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="672"/>
+        <location filename="../src/configdialog.cpp" line="671"/>
         <source>New Profile</source>
         <translation>Nieuw Profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="704"/>
+        <location filename="../src/configdialog.cpp" line="703"/>
         <source>No profile selected</source>
         <translation>Geen profiel geselecteerd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="705"/>
+        <location filename="../src/configdialog.cpp" line="704"/>
         <source>No profile selected to delete</source>
         <translation>Geen profiel geselecteerd om te verwijderen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="805"/>
+        <location filename="../src/configdialog.cpp" line="803"/>
         <source>GnuPG not found</source>
         <translation>GnuPG niet gevonden</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="819"/>
+        <location filename="../src/configdialog.cpp" line="817"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;gpg&lt;/strong&gt; via je favoriete package manager&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; op GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="873"/>
+        <location filename="../src/configdialog.cpp" line="871"/>
         <source>Create password-store?</source>
         <translation>Maak password-store aan?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="874"/>
+        <location filename="../src/configdialog.cpp" line="872"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Wil je een password-store maken op %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="879"/>
+        <location filename="../src/configdialog.cpp" line="877"/>
         <source>Error</source>
         <translation>Fout</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="880"/>
+        <location filename="../src/configdialog.cpp" line="878"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Het aanmaken van de wachtwoordopslag is mislukt op: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="911"/>
+        <location filename="../src/configdialog.cpp" line="909"/>
         <source>Password store not initialised</source>
         <translation>Password-store niet geïnitialiseerd</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="912"/>
+        <location filename="../src/configdialog.cpp" line="910"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>De map %1 lijkt geen password store te zijn of is nog niet geïnitialiseerd.</translation>
     </message>
@@ -485,12 +485,12 @@ email</translation>
         <translation>Automatisch detecteren</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="808"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Installeer GnuPG op uw systeem. &lt;br&gt; Installeer &lt;strong&gt; Ubuntu &lt;/strong&gt; vanuit de Microsoft Store om het te krijgen. &lt;br&gt; Als u dit al hebt gedaan, zorg er dan voor dat u het eenmaal hebt gestart en klik op &quot;Autodetect&quot; in het volgende dialoogvenster.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="813"/>
+        <location filename="../src/configdialog.cpp" line="811"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Installeer GnuPG op uw systeem. &lt;br&gt; Installeer &lt;strong&gt; Ubuntu &lt;/strong&gt; vanuit de Microsoft Store &lt;br&gt; of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2 &quot;&gt; download &lt;/a&gt; van GnuPG.org</translation>
     </message>
@@ -1389,36 +1389,46 @@ Doorgaan?</translation>
 <context>
     <name>Pass</name>
     <message>
-        <location filename="../src/pass.cpp" line="167"/>
+        <location filename="../src/pass.cpp" line="142"/>
+        <source>Invalid password length</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="143"/>
+        <source>Can&apos;t generate password with zero length.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/pass.cpp" line="186"/>
         <source>No characters chosen</source>
         <translation>Geen karakters gekozen</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="168"/>
+        <location filename="../src/pass.cpp" line="187"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
         <translation>Kan wachtwoord niet genereren, er zijn geen karakters gekozen in de configuratie!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="489"/>
-        <location filename="../src/pass.cpp" line="508"/>
+        <location filename="../src/pass.cpp" line="511"/>
+        <location filename="../src/pass.cpp" line="530"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Encryptie faalde: GPG-sleutel is verlopen. Vernieuwen of vervangen.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="494"/>
-        <location filename="../src/pass.cpp" line="513"/>
+        <location filename="../src/pass.cpp" line="516"/>
+        <location filename="../src/pass.cpp" line="535"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Encryptie faalde: GPG sleutel is ingetrokken.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="498"/>
-        <location filename="../src/pass.cpp" line="518"/>
+        <location filename="../src/pass.cpp" line="520"/>
+        <location filename="../src/pass.cpp" line="540"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Encryptie faalde, ontvanger GPG-sleutel niet gevonden of ongeldig. Controleer dat de sleutel ID in .gpg-id klopt en geïmporteerd is.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="502"/>
-        <location filename="../src/pass.cpp" line="522"/>
+        <location filename="../src/pass.cpp" line="524"/>
+        <location filename="../src/pass.cpp" line="544"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Encryptie faalde. Controleer dat je GPG sleutel geldig is.</translation>
     </message>
@@ -1582,12 +1592,12 @@ Doorgaan?</translation>
         <translation type="vanished">overschrijven afdwingen?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="402"/>
+        <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
         <translation>Overschrijven afdwingen?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="403"/>
+        <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
         <translation>overschrijven van %1 met %2?</translation>
     </message>
