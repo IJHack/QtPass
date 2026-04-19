@@ -2,7 +2,6 @@
 name: qtpass-docs
 description: Documentation guide for QtPass - README, FAQ, localization
 license: GPL-3.0-or-later
-compatibility: opencode
 metadata:
   audience: developers
   workflow: documentation
@@ -88,7 +87,7 @@ npx prettier --write README.md
 
 ```bash
 npx prettier --write <markdown-file>
-npx prettier --write .opencode/skills/*/SKILL.md
+npx prettier --write .claude/skills/*/SKILL.md
 ```
 
 ### YAML (prettier)
@@ -185,12 +184,38 @@ Keep CHANGELOG entries consistent:
 
 ### Doxygen Comments in Code
 
-When adding new public APIs:
+When adding new public APIs, every public symbol in a header needs a Doxygen doc block:
 
 ```cpp
 /**
- * @brief Brief description
- * @param param1 Description of first parameter
- * @return Description of return value
+ * @brief Brief description.
+ * @param param1 Description of first parameter.
+ * @return Description of return value.
  */
 ```
+
+Doxygen runs in CI via `docs.yml` but does not enforce zero warnings (see actual settings below).
+
+#### Current Doxyfile settings
+
+| Setting            | Value              | Purpose                                           |
+| ------------------ | ------------------ | ------------------------------------------------- |
+| `FILE_PATTERNS`    | `*.cpp *.h *.md`  | Includes cpp, header, and markdown files           |
+| `EXTRACT_ALL`      | `YES`              | Extracts docs for all entities                     |
+| `WARN_NO_PARAMDOC` | `NO`               | Does not warn for missing parameter documentation  |
+| `WARN_AS_ERROR`    | `NO`               | Doxygen warnings do not fail CI                    |
+
+#### Run locally before pushing
+
+```bash
+doxygen Doxyfile
+# Check output for warnings (they won't fail CI)
+```
+
+#### Common doc mistakes that cause warnings
+
+- Unnamed parameters in header declarations — name every parameter
+- Orphaned `/** */` blocks not immediately above their declaration
+- Missing `@return` on non-void functions
+- Signals with unnamed parameters (Qt signals need docs too)
+- `@unknowncommand` typos in doc blocks

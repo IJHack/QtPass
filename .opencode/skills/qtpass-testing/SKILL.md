@@ -2,7 +2,6 @@
 name: qtpass-testing
 description: Comprehensive guide for QtPass unit testing with Qt Test
 license: GPL-3.0-or-later
-compatibility: opencode
 metadata:
   audience: developers
   workflow: testing

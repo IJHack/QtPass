@@ -2,7 +2,6 @@
 name: qtpass-linting
 description: QtPass CI/CD workflow - run GitHub Actions locally with act, linters, formatters
 license: GPL-3.0-or-later
-compatibility: opencode
 metadata:
   audience: developers
   workflow: linting
@@ -97,6 +96,53 @@ Check license headers and REUSE compliance:
 act push -W .github/workflows/reuse.yml
 ```
 
+## Doxygen Documentation Linting
+
+Doxygen runs in CI via `docs.yml` but does not enforce zero warnings (see actual settings below). It currently runs without checking exit codes.
+
+### Run Doxygen Locally
+
+```bash
+doxygen Doxyfile
+# Check for warnings; they won't fail CI
+```
+
+### Current Doxyfile Settings
+
+| Setting            | Value              | Purpose                                           |
+| ------------------ | ------------------ | ------------------------------------------------- |
+| `FILE_PATTERNS`    | `*.cpp *.h *.md`  | Includes cpp, header, and markdown files           |
+| `EXTRACT_ALL`      | `YES`              | Extracts docs for all entities                  |
+| `WARN_NO_PARAMDOC` | `NO`               | Does not warn for missing parameter documentation  |
+| `WARN_AS_ERROR`    | `NO`               | Doxygen warnings do not fail CI                    |
+
+### Doxygen Comment Style
+
+Use `/** */` blocks with `@brief`, `@param`, `@return`:
+
+```cpp
+/**
+ * @brief Brief one-line description.
+ * @param name Description of parameter.
+ * @return Description of return value.
+ */
+```
+
+### Common Warning Causes
+
+- **Unnamed parameters in declarations**: `void foo(int)` — name all parameters: `void foo(int count)`
+- **Orphaned doc blocks**: A `/** ... */` not immediately preceding its declaration is misattributed. Move the block directly above the declaration.
+- **Missing `@return`**: Required for every non-void function when `WARN_NO_PARAMDOC = YES`
+- **Signals with unnamed params**: Qt signals also need named parameters and `@param` docs
+- **`@xyz` typos**: Doxygen treats unknown `@word` as commands — use `@brief Like` not `@like`
+
+### Coverage Report (optional)
+
+```bash
+pip install coverxygen
+python -m coverxygen --xml-dir xml/ --src-dir . --output coverage.info
+```
+
 ## Common Linters
 
 ### Gitleaks (Secret Detection)
@@ -177,7 +223,7 @@ Common diagnostics:
 npx prettier --write README.md
 npx prettier --write .github/workflows/*.yml
 npx prettier --write FAQ.md
-npx prettier --write .opencode/skills/*/SKILL.md
+npx prettier --write .claude/skills/*/SKILL.md
 ```
 
 ## Prettier Patterns

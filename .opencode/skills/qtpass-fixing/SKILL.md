@@ -2,7 +2,6 @@
 name: qtpass-fixing
 description: Bug fixing workflow for QtPass - find, fix, test, PR
 license: GPL-3.0-or-later
-compatibility: opencode
 metadata:
   audience: developers
   workflow: bugfix
@@ -270,6 +269,51 @@ if (index < 0 || index >= m_userList.size()) {
 }
 ```
 
+### Qt Version Compatibility (Qt 5.15 vs Qt 6.x)
+
+CI tests both Qt 5.15 and Qt 6.8. Some Qt 6 APIs do not exist in Qt 5.15:
+
+| Qt 6 API                  | Qt 5.15-compatible alternative            |
+| ------------------------- | ----------------------------------------- |
+| `QStringList::removeIf()` | `erase/remove_if` with a predicate lambda |
+| `QList::removeIf()`       | same pattern                              |
+
+```cpp
+// Bad — Qt 6.1+ only, fails on Qt 5.15
+env.removeIf([&key](const QString &e) { return e.startsWith(key); });
+
+// Good — works on Qt 5.15 and Qt 6.x
+env.erase(std::remove_if(env.begin(), env.end(),
+                          [&key](const QString &entry) {
+                            return entry.startsWith(key);
+                          }),
+          env.end());
+```
+
+When filtering with a substring match (e.g., environment variable removal), use `startsWith` rather than `contains` or `filter()` to avoid removing unrelated entries with similar prefixes:
+
+```cpp
+// Bad — filter("FOO") also removes "FOOBAR=value"
+env = env.filter(key);
+
+// Good — explicit prefix check
+env.erase(std::remove_if(env.begin(), env.end(),
+                          [&key](const QString &e) { return e.startsWith(key); }),
+          env.end());
+```
+
+### std::as_const on Range-For to Prevent Implicit Detachment
+
+When iterating over a Qt container that is a non-const member variable, add `std::as_const()` to prevent Qt from making an implicit copy (detach):
+
+```cpp
+// Bad — may detach the container implicitly
+for (const auto &field : m_fields) { ... }
+
+// Good — no detach, no copy
+for (const auto &field : std::as_const(m_fields)) { ... }
+```
+
 ### Boolean Logic Bugs
 
 When comparing booleans, use `&&` instead of `==` to avoid unexpected true values:
@@ -310,7 +354,7 @@ act push -W .github/workflows/linter.yml -j build
 ```bash
 npx prettier --write <config-file>
 npx prettier --write .github/workflows/*.yml
-npx prettier --write .opencode/skills/*/SKILL.md
+npx prettier --write .claude/skills/*/SKILL.md
 ```
 
 ### C++ (clang-format)
