@@ -6,12 +6,20 @@
 #include "enums.h"
 #include <queue>
 
+/**
+ * @class simpleTransaction
+ * @brief Tracks a sequence of processes that should be treated as one atomic
+ * operation.
+ */
 class simpleTransaction {
   int transactionDepth;
   Enums::PROCESS lastInTransaction;
   std::queue<std::pair<Enums::PROCESS, Enums::PROCESS>> transactionQueue;
 
 public:
+  /**
+   * @brief Construct a simpleTransaction in its initial idle state.
+   */
   simpleTransaction()
       : transactionDepth(0), lastInTransaction(Enums::INVALID) {}
   /**
@@ -27,23 +35,24 @@ public:
    *                       process as the only step in transaction(it's value is
    *                       treated as transaction result).
    *
-   * @param id process that shall be treated as part of transaction
+   * @param process process that shall be treated as part of transaction
    */
-  void transactionAdd(Enums::PROCESS);
+  void transactionAdd(Enums::PROCESS process);
   /**
    * @brief transactionEnd marks end of transaction
    *
-   * @param pid value that will be used as a result of transaction
+   * @param process value that will be used as a result of transaction
    */
-  void transactionEnd(Enums::PROCESS);
+  void transactionEnd(Enums::PROCESS process);
   /**
    * @brief transactionIsOver checks wheather currently finished process is last
    *                          in current transaction
    *
+   * @param current the process that just finished.
    * @return result of transaction as set by transactionAdd or transactionEnd if
-   *         the transaction is over or PROCESS::INVALID if it's not yet over
+   *         the transaction is over or Enums::INVALID if it's not yet over
    */
-  auto transactionIsOver(Enums::PROCESS) -> Enums::PROCESS;
+  auto transactionIsOver(Enums::PROCESS current) -> Enums::PROCESS;
 };
 
 #endif // SRC_SIMPLETRANSACTION_H_

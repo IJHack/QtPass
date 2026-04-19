@@ -24,6 +24,9 @@ class QFileSystemModel;
  * @brief Holds information for drag and drop operations in the password store.
  */
 struct dragAndDropInfoPasswordStore {
+  /**
+   * @brief Type of the dragged item.
+   */
   enum class ItemKind {
     Unknown,   /**< Item type has not been determined yet */
     Directory, /**< Dragged item is a directory */

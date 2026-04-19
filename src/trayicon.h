@@ -6,61 +6,56 @@
 #include <QSystemTrayIcon>
 #include <QWidget>
 
-/*!
-    \class TrayIcon
-    \brief Handles the systemtray icon and menu.
- */
 class QAction;
 class QMainWindow;
 class QMenu;
+
 /**
- * Construct a TrayIcon associated with the given main window.
- * @param parent Pointer to the QMainWindow this tray icon controls and mirrors.
- */
-/**
- * Display a transient notification message via the tray icon.
- * @param title Title text of the notification.
- * @param msg Body text of the notification.
- * @param time Duration to display the notification in milliseconds.
- */
-/**
- * Show or hide the tray-related UI and behavior.
- * @param visible `true` to make tray UI active/visible, `false` to
- * deactivate/hide it.
- */
-/**
- * Report whether tray resources have been allocated and initialized.
- * @returns `true` if resources are allocated, `false` otherwise.
- */
-/**
- * Toggle the visibility/state of the associated main window in response to user
- * interaction.
- */
-/**
- * Handle activation events from the system tray icon.
- * @param reason The activation reason provided by QSystemTrayIcon.
- */
-/**
- * Create and configure the tray menu actions (show, hide, minimize, maximize,
- * restore, quit).
- */
-/**
- * Initialize the QSystemTrayIcon and its context menu, wiring actions and event
- * handling.
+ * @class TrayIcon
+ * @brief Handles the system tray icon and menu.
  */
 class TrayIcon : public QWidget {
   Q_OBJECT
 
 public:
+  /**
+   * @brief Construct a TrayIcon associated with the given main window.
+   * @param parent Pointer to the QMainWindow this tray icon controls.
+   */
   explicit TrayIcon(QMainWindow *parent);
+
+  /**
+   * @brief Display a transient notification message via the tray icon.
+   * @param title Title text of the notification.
+   * @param msg Body text of the notification.
+   * @param time Duration to display the notification in milliseconds.
+   */
   void showMessage(const QString &title, const QString &msg, int time);
+
+  /**
+   * @brief Show or hide the tray icon and its associated UI.
+   * @param visible true to make the tray icon visible, false to hide it.
+   */
   void setVisible(bool visible);
+
+  /**
+   * @brief Check whether tray resources have been allocated and initialized.
+   * @return true if tray resources are allocated and initialized.
+   */
   auto getIsAllocated() -> bool;
 
 signals:
 
 public slots:
+  /**
+   * @brief Toggle the visibility of the associated main window.
+   */
   void showHideParent();
+
+  /**
+   * @brief Handle activation events from the system tray icon.
+   * @param reason The activation reason provided by QSystemTrayIcon.
+   */
   void iconActivated(QSystemTrayIcon::ActivationReason reason);
 
 private:

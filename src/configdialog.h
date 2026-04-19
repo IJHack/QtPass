@@ -14,48 +14,130 @@ struct UserInfo;
 class ConfigDialog;
 } // namespace Ui
 
-/*!
-    \class ConfigDialog
-    \brief The ConfigDialog handles the configuration interface.
-
-    This class should also take the handling from the MainWindow class.
-*/
 class MainWindow;
 class QCloseEvent;
 class QTableWidgetItem;
+
 /**
- * Configuration dialog providing UI and accessors for application settings.
+ * @class ConfigDialog
+ * @brief The ConfigDialog handles the configuration interface.
  *
  * Presents controls for profiles, generation tools (pwgen/pass),
  * GPG/git/OTP/qrencode integration, template handling, tray icon and
  * autoclear options, and exposes methods to read and update those settings.
- * Also overrides closeEvent to perform dialog-close handling.
  */
 class ConfigDialog : public QDialog {
   Q_OBJECT
 
 public:
+  /**
+   * @brief Construct a ConfigDialog associated with the given main window.
+   * @param parent The application's MainWindow.
+   */
   explicit ConfigDialog(MainWindow *parent);
   ~ConfigDialog() override;
 
+  /**
+   * @brief Enable or disable clipboard selection mode.
+   * @param useSelection true to enable selection mode.
+   */
   void useSelection(bool useSelection);
+
+  /**
+   * @brief Enable or disable autoclear of the clipboard.
+   * @param useAutoclear true to enable autoclear.
+   */
   void useAutoclear(bool useAutoclear);
+
+  /**
+   * @brief Enable or disable autoclear of the panel.
+   * @param useAutoclearPanel true to enable panel autoclear.
+   */
   void useAutoclearPanel(bool useAutoclearPanel);
+
+  /**
+   * @brief Return all configured profiles.
+   * @return Hash of profile name to key-value settings map.
+   */
   auto getProfiles() -> QHash<QString, QHash<QString, QString>>;
+
+  /**
+   * @brief Run the first-time setup wizard.
+   */
   void wizard();
-  void genKey(const QString &, QDialog *);
+
+  /**
+   * @brief Start GPG key generation.
+   * @param batch GPG batch parameter string.
+   * @param dialog Parent dialog to return to after generation.
+   */
+  void genKey(const QString &batch, QDialog *dialog);
+
+  /**
+   * @brief Show or hide the system tray icon.
+   * @param useSystray true to enable the tray icon.
+   */
   void useTrayIcon(bool useSystray);
+
+  /**
+   * @brief Enable or disable git integration.
+   * @param useGit true to enable git.
+   */
   void useGit(bool useGit);
+
+  /**
+   * @brief Enable or disable OTP support.
+   * @param useOtp true to enable OTP.
+   */
   void useOtp(bool useOtp);
+
+  /**
+   * @brief Enable or disable grep content search.
+   * @param useGrepSearch true to enable grep search.
+   */
   void useGrepSearch(bool useGrepSearch);
+
+  /**
+   * @brief Enable or disable QR code display.
+   * @param useQrencode true to enable qrencode.
+   */
   void useQrencode(bool useQrencode);
-  void setPwgenPath(const QString &);
+
+  /**
+   * @brief Set the path to the pwgen executable.
+   * @param path Path to pwgen.
+   */
+  void setPwgenPath(const QString &path);
+
+  /**
+   * @brief Enable or disable pwgen-based password generation.
+   * @param usePwgen true to use pwgen.
+   */
   void usePwgen(bool usePwgen);
+
+  /**
+   * @brief Apply a password configuration to the dialog controls.
+   * @param config Configuration to display.
+   */
   void setPasswordConfiguration(const PasswordConfiguration &config);
+
+  /**
+   * @brief Read the current password configuration from the dialog controls.
+   * @return Current PasswordConfiguration.
+   */
   auto getPasswordConfiguration() -> PasswordConfiguration;
+
+  /**
+   * @brief Enable or disable password file templating.
+   * @param useTemplate true to enable the template.
+   */
   void useTemplate(bool useTemplate);
 
 protected:
+  /**
+   * @brief Save settings and clean up on close.
+   * @param event The close event.
+   */
   void closeEvent(QCloseEvent *event) override;
 
 private slots:

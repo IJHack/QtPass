@@ -11,37 +11,54 @@
 #include <QTranslator>
 #include <QtWidgets>
 
-/*! \mainpage QtPass
+/**
+ * @mainpage QtPass
  *
- * \section intro_sec Introduction
+ * @section intro_sec Introduction
  *
  * QtPass is a multi-platform GUI for pass, the standard unix password manager.
  *
  * https://qtpass.org/
  *
- * \section install_sec Installation
+ * @section install_sec Installation
  *
- * \subsection dependencies Dependencies
+ * @subsection dependencies Dependencies
  *
- * - QtPass requires Qt 5.2 or later.
+ * - QtPass requires Qt 6.x or later (Qt 5.15 retained for legacy support).
  * - The Linguist package is required to compile the translations.
  * - For use of the fallback icons the SVG library is required.
  *
  * At runtime the only real dependency is gpg2 but to make the most of it,
  * you'll need git and pass too.
  *
- * \subsection source From source
+ * @subsection source From source
  *
  * On most *nix systems all you need is:
  *
- * `qmake && make && make install`
+ * `qmake6 && make && make install` (use `qmake` for Qt5 legacy builds)
  */
 
+/**
+ * @brief Joins all arguments from index @p start onward into a space-separated
+ * string.
+ * @param args Full argument list.
+ * @param start Index of the first argument to include.
+ * @return Space-joined string of the remaining arguments.
+ */
 static auto joinRemainingArgs(const QStringList &args, int start) -> QString {
   Q_ASSERT(start >= 0 && start <= args.size());
   return args.mid(start).join(" ");
 }
 
+/**
+ * @brief Appends a suffix to a target string, inserting a separating space if
+ * the target is not empty.
+ *
+ * If `suffix` is empty, `target` is left unchanged.
+ *
+ * @param target String to append to; modified in place.
+ * @param suffix Suffix to append.
+ */
 static auto appendWithSpaceIfSuffixNotEmpty(QString &target,
                                             const QString &suffix) -> void {
   if (!suffix.isEmpty()) {
@@ -52,10 +69,11 @@ static auto appendWithSpaceIfSuffixNotEmpty(QString &target,
 }
 
 /**
- * @brief main
- * @param argc
- * @param argv
- * @return
+ * @brief Application entry point: parses arguments and launches the main
+ * window.
+ * @param argc Argument count.
+ * @param argv Argument vector.
+ * @return Application exit code.
  */
 auto main(int argc, char *argv[]) -> int {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)

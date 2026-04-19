@@ -26,78 +26,199 @@ namespace Ui {
 class MainWindow;
 }
 
-/*!
-    \class MainWindow
-    \brief The MainWindow class does way too much, not only is it a switchboard,
-    configuration handler and more, it's also the process-manager.
-
-    This class could really do with an overhaul.
- */
 class QDialog;
 class QTreeWidgetItem;
 class QtPass;
 class TrayIcon;
+
 /**
- * Main application window that orchestrates UI, user interactions, and external
- * process handlers.
+ * @class MainWindow
+ * @brief Main application window orchestrating UI, user interactions, and
+ * external process handlers.
  *
  * Provides the central interface for managing items, folders, passwords, and
  * OTPs; coordinates UI components (toolbars, panels, dialogs, status/tray),
  * selection and navigation in the underlying file/store models, and lifecycle
  * interactions with external handlers (e.g., pass, Git, GPG key generation,
- * OTP). Exposes methods to restore and configure window state, control grouped
- * UI element enablement, display transient messages, and access or reset the
- * key-generation dialog.
+ * OTP).
  */
 class MainWindow : public QMainWindow {
   Q_OBJECT
 
 public:
+  /**
+   * @brief Construct the main window.
+   * @param searchText Initial search text to populate the search field.
+   * @param parent Optional parent widget.
+   */
   explicit MainWindow(const QString &searchText = QString(),
                       QWidget *parent = nullptr);
   ~MainWindow() override;
 
+  /**
+   * @brief Restore window geometry and state from saved settings.
+   */
   void restoreWindow();
-  void generateKeyPair(const QString &, QDialog *);
-  void userDialog(const QString & = "");
+
+  /**
+   * @brief Open the GPG key generation dialog.
+   * @param batch GPG batch parameter string.
+   * @param dialog Dialog to store as the active keygen dialog; it is kept as
+   *        activeKeygenDialog and represents the UI used during generation.
+   */
+  void generateKeyPair(const QString &batch, QDialog *dialog);
+
+  /**
+   * @brief Open the user/recipient management dialog.
+   * @param dir Directory for which to manage recipients.
+   */
+  void userDialog(const QString &dir = "");
+
+  /**
+   * @brief Open the configuration dialog.
+   */
   void config();
 
+  /**
+   * @brief Enable or disable the main UI elements.
+   * @param state true to enable, false to disable.
+   */
   void setUiElementsEnabled(bool state);
+
+  /**
+   * @brief Display a transient message in the text panel.
+   * @param text Message text to display.
+   * @param isError true to style the message as an error.
+   * @param isHtml true if text contains HTML markup.
+   */
   void flashText(const QString &text, const bool isError,
                  const bool isHtml = false);
 
+  /**
+   * @brief Return the currently selected index in the tree view.
+   * @return Current QModelIndex.
+   */
   auto getCurrentTreeViewIndex() -> QModelIndex;
 
+  /**
+   * @brief Return the active key generation dialog, if any.
+   * @return Pointer to the keygen QDialog, or nullptr.
+   */
   auto getKeygenDialog() -> QDialog * { return this->keygen; }
+
+  /**
+   * @brief Destroy and clear the key generation dialog.
+   */
   void cleanKeygenDialog();
 
 protected:
+  /**
+   * @brief Save window state and geometry on close.
+   * @param event The close event.
+   */
   void closeEvent(QCloseEvent *event) override;
+  /**
+   * @brief Handle keyboard shortcuts.
+   * @param event The key press event.
+   */
   void keyPressEvent(QKeyEvent *event) override;
+  /**
+   * @brief React to language or window state changes.
+   * @param event The change event.
+   */
   void changeEvent(QEvent *event) override;
+  /**
+   * @brief Filter events from watched objects.
+   * @param obj The object that received the event.
+   * @param event The event to filter.
+   * @return true if the event was consumed.
+   */
   auto eventFilter(QObject *obj, QEvent *event) -> bool override;
 
 signals:
+  /**
+   * @brief Emitted when the pass show handler has finished decrypting.
+   * @param output Decrypted password file content.
+   */
   void passShowHandlerFinished(const QString &output);
+  /**
+   * @brief Emitted when a Git init is required for the current store.
+   */
   void passGitInitNeeded();
+  /**
+   * @brief Emitted to trigger GPG key pair generation.
+   * @param batch GPG batch parameter string.
+   */
   void generateGPGKeyPair(const QString &batch);
 
 public slots:
+  /**
+   * @brief Clear the current tree view selection.
+   */
   void deselect();
 
+  /**
+   * @brief Handle an incoming inter-process message (single-instance mode).
+   * @param message Message string received from another instance.
+   */
   void messageAvailable(const QString &message);
-  void critical(const QString &, const QString &);
 
+  /**
+   * @brief Display a critical error dialog.
+   * @param title Dialog title.
+   * @param msg Error message body.
+   */
+  void critical(const QString &title, const QString &msg);
+
+  /**
+   * @brief Slot called when an external process wrapper has started.
+   */
   void executeWrapperStarted();
+
+  /**
+   * @brief Show a message in the status bar for the given duration.
+   * @param msg Message to display.
+   * @param timeout Duration in milliseconds (default 2000).
+   */
   void showStatusMessage(const QString &msg, int timeout = 2000);
-  void passShowHandler(const QString &);
-  void passOtpHandler(const QString &);
+
+  /**
+   * @brief Handle output from the pass show command.
+   * @param output Decrypted password file content.
+   */
+  void passShowHandler(const QString &output);
+
+  /**
+   * @brief Handle output from the pass OTP command.
+   * @param output OTP output string.
+   */
+  void passOtpHandler(const QString &output);
+
+  /**
+   * @brief Handle results from a completed grep search.
+   * @param results List of file/match pairs from the grep operation.
+   */
   void onGrepFinished(const QList<QPair<QString, QStringList>> &results);
 
+  /**
+   * @brief Trigger a git push operation.
+   */
   void onPush();
+
+  /**
+   * @brief Handle a click on an item in the tree view.
+   * @param index The model index that was clicked.
+   */
   void on_treeView_clicked(const QModelIndex &index);
 
+  /**
+   * @brief Begin a re-encryption pass on the current path.
+   */
   void startReencryptPath();
+
+  /**
+   * @brief Finish a re-encryption pass on the current path.
+   */
   void endReencryptPath();
 
 private slots:

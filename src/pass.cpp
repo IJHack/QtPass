@@ -655,6 +655,16 @@ auto Pass::formatInsertError(const QString &friendly, const QString &err)
   return humanErr.isEmpty() ? friendly : friendly + "\n\n" + humanErr;
 }
 
+/**
+ * @brief Emit the appropriate finished signal for a completed subprocess.
+ *
+ * Emits a specific Qt signal corresponding to the given process identifier; for
+ * grep results the stdout is parsed into a list of matches before emitting.
+ *
+ * @param pid The process identifier indicating which finished signal to emit.
+ * @param out Standard output produced by the process.
+ * @param err Standard error produced by the process.
+ */
 void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
                                      const QString &err) {
   switch (pid) {
@@ -703,11 +713,20 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
 }
 
 /**
- * @brief Pass::updateEnv update the execution environment (used when
- * switching profiles)
+ * @brief Set or remove a single environment variable in the local env list.
+ *
+ * The provided key must include a trailing '=' (e.g. "FOO="). Existing entries
+ * whose text begins with the given key are removed before the new value is
+ * applied. If value is non-empty the pair "key+value" is appended; if value is
+ * empty the variable is removed.
+ *
+ * The function asserts if key does not end with '='; if the assertion is not
+ * active it will emit a warning and return without modifying env.
+ *
+ * @param key Environment variable name with trailing '=' (anchors the lookup).
+ * @param value Value to set for the variable; an empty string unsets the
+ * variable.
  */
-// key must include the trailing '=' (e.g. "FOO="); env.filter() does substring
-// matching so the '=' anchors the lookup to avoid collisions with longer names.
 void Pass::setEnvVar(const QString &key, const QString &value) {
   const bool hasEq = key.endsWith('=');
   Q_ASSERT_X(hasEq, "Pass::setEnvVar",
@@ -717,13 +736,22 @@ void Pass::setEnvVar(const QString &key, const QString &value) {
                << key;
     return;
   }
-  const QStringList existing = env.filter(key);
-  for (const QString &entry : existing)
-    env.removeAll(entry);
+  env.erase(std::remove_if(
+                env.begin(), env.end(),
+                [&key](const QString &entry) { return entry.startsWith(key); }),
+            env.end());
   if (!value.isEmpty())
     env.append(key + value);
 }
 
+/**
+ * @brief Update the process environment used for executing external commands.
+ *
+ * Updates environment entries for PASSWORD_STORE_SIGNING_KEY,
+ * PASSWORD_STORE_DIR, PASSWORD_STORE_GENERATED_LENGTH, and
+ * PASSWORD_STORE_CHARACTER_SET based on current settings, then applies the
+ * environment to the internal executor.
+ */
 void Pass::updateEnv() {
   setEnvVar(QStringLiteral("PASSWORD_STORE_SIGNING_KEY="),
             QtPassSettings::getPassSigningKey());
