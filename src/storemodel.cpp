@@ -121,7 +121,8 @@ void StoreModel::setStore(const QString &passStore) {
   endFilterChange(QSortFilterProxyModel::Direction::Rows);
 #else
   // Older Qt versions do not provide the begin/end filter change API, so we
-  // update the store and manually invalidate the filter as a compatibility path.
+  // update the store and manually invalidate the filter as a compatibility
+  // path.
   store = passStore;
 #if QT_VERSION >= QT_VERSION_CHECK(6, 5, 0)
   QSortFilterProxyModel::invalidateFilter();
