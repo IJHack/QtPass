@@ -34,6 +34,7 @@ tests/auto/passwordconfig/tst_passwordconfig
 tests/auto/simpletransaction/tst_simpletransaction
 tests/auto/filecontent/tst_filecontent
 tests/auto/gpgkeystate/tst_gpgkeystate
+tests/auto/integration/tst_integration
 **/*.gc*
 *.bak
 README.c*
