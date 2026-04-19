@@ -3,6 +3,7 @@
 #ifndef SRC_STOREMODEL_H_
 #define SRC_STOREMODEL_H_
 
+#include <QFileInfo>
 #include <QSortFilterProxyModel>
 
 /**
@@ -34,6 +35,24 @@ class StoreModel : public QSortFilterProxyModel {
 private:
   QFileSystemModel *fs;
   QString store;
+
+  auto parseDropData(const QMimeData *data,
+                     dragAndDropInfoPasswordStore *outInfo) -> bool;
+  auto executeDropAction(const dragAndDropInfoPasswordStore &info,
+                         Qt::DropAction action, const QModelIndex &parent)
+      -> bool;
+  auto handleDirDrop(const QString &cleanedSrc, const QFileInfo &destFileinfo,
+                     const QFileInfo &srcFileInfo, Qt::DropAction action)
+      -> bool;
+  auto handleFileDrop(const QString &cleanedSrc, const QString &cleanedDest,
+                      const QFileInfo &destFileinfo, Qt::DropAction action)
+      -> bool;
+  auto handleFileToDirDrop(const QString &cleanedSrc,
+                           const QString &cleanedDest, Qt::DropAction action)
+      -> bool;
+  auto handleFileToFileDrop(const QString &cleanedSrc,
+                            const QString &cleanedDest, Qt::DropAction action)
+      -> bool;
 
 public:
   /**
