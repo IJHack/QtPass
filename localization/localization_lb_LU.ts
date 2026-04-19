@@ -176,12 +176,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhaltssich aktivéieren (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Erlaabt d&apos;Sich am Inhalt vun enger Passwuertdatei. Erfuerdert d&apos;Entschlësselung vun all Datei a kann op grousse Späicher lues sinn.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilnumm, deen benotzt gëtt fir dëse Konfiguratiounsprofil z&apos;identifizéieren</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="950"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Wee zum Verzeichnis vum Passwuertspäicher</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -367,12 +367,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Empfänger fir %1 auswielen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Neie Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="704"/>
@@ -771,47 +771,47 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Am Passwuertinhalt sichen (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhaltssich-/Schaltknäppchen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivéiert den Inhaltssichmodus fir a Passwuertdateien ze sichen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Grouss- a klengschreiwungslos Sich</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Grouss- a klengschlëssellos-Schalter</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Grouss- a klengschnittsofhängeg Inhaltssich ausschalten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultater</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -966,24 +966,24 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Sichen…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Inhalt duerchsichen (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Keng Treffer fonnt.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n Iwwereneestëmmung an %1 Entrée fonnt.</numerusform>
+            <numerusform>%n Iwwereneestëmmungen an %1 Entréen fonnt.</numerusform>
         </translation>
     </message>
     <message>
@@ -1149,25 +1149,25 @@ Weider?</translation>
         <location filename="../src/pass.cpp" line="486"/>
         <location filename="../src/pass.cpp" line="505"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verschlësselung feelgeschloen: De GPG-Schlëssel ass ofgelaf. Erneiert oder ersetzt en.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="491"/>
         <location filename="../src/pass.cpp" line="510"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verschlësselung feelgeschloen: De GPG-Schlëssel gouf zréckgezunn.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="495"/>
         <location filename="../src/pass.cpp" line="515"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verschlësselung feelgeschloen: Den GPG-Schlëssel vum Empfänger gouf net fonnt oder ass ongëlteg. Kontrolléiert ob d&apos;Schlëssel-ID an der .gpg-id korrekt ass an importéiert ass.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="499"/>
         <location filename="../src/pass.cpp" line="519"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verschlësselung feelgeschloen. Kontrolléiert ob Äre GPG-Schlëssel gëlteg ass.</translation>
     </message>
 </context>
 <context>
