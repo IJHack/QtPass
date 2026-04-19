@@ -24,9 +24,14 @@ class QFileSystemModel;
  * @brief Holds information for drag and drop operations in the password store.
  */
 struct dragAndDropInfoPasswordStore {
-  bool isDir;   /**< true if dragged item is a directory */
-  bool isFile;  /**< true if dragged item is a file */
-  QString path; /**< Full path to the dragged item */
+  enum class ItemKind {
+    Unknown,   /**< Item type has not been determined yet */
+    Directory, /**< Dragged item is a directory */
+    File       /**< Dragged item is a file */
+  };
+
+  ItemKind kind{ItemKind::Unknown}; /**< Type of dragged item */
+  QString path;                     /**< Full path to the dragged item */
 };
 
 class StoreModel : public QSortFilterProxyModel {
@@ -82,7 +87,8 @@ public:
    * @param sourceModel Filesystem model to wrap.
    * @param passStore Root path of password store.
    */
-  void setModelAndStore(QFileSystemModel *sourceModel, QString passStore);
+  void setModelAndStore(QFileSystemModel *sourceModel,
+                        const QString &passStore);
 
   /**
    * @brief Update the store path used for filtering without changing the source

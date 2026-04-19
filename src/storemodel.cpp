@@ -11,14 +11,12 @@
 #include <QMimeData>
 #include <QRegularExpression>
 #include <QtGlobal>
-#include <utility>
 
 auto operator<<(
     QDataStream &out,
     const dragAndDropInfoPasswordStore &dragAndDropInfoPasswordStore)
     -> QDataStream & {
-  out << dragAndDropInfoPasswordStore.isDir
-      << dragAndDropInfoPasswordStore.isFile
+  out << static_cast<quint8>(dragAndDropInfoPasswordStore.kind)
       << dragAndDropInfoPasswordStore.path;
   return out;
 }
@@ -26,8 +24,22 @@ auto operator<<(
 auto operator>>(QDataStream &in,
                 dragAndDropInfoPasswordStore &dragAndDropInfoPasswordStore)
     -> QDataStream & {
-  in >> dragAndDropInfoPasswordStore.isDir >>
-      dragAndDropInfoPasswordStore.isFile >> dragAndDropInfoPasswordStore.path;
+  quint8 k;
+  in >> k >> dragAndDropInfoPasswordStore.path;
+  switch (k) {
+  case static_cast<quint8>(dragAndDropInfoPasswordStore::ItemKind::Directory):
+    dragAndDropInfoPasswordStore.kind =
+        dragAndDropInfoPasswordStore::ItemKind::Directory;
+    break;
+  case static_cast<quint8>(dragAndDropInfoPasswordStore::ItemKind::File):
+    dragAndDropInfoPasswordStore.kind =
+        dragAndDropInfoPasswordStore::ItemKind::File;
+    break;
+  default:
+    dragAndDropInfoPasswordStore.kind =
+        dragAndDropInfoPasswordStore::ItemKind::Unknown;
+    break;
+  }
   return in;
 }
 
@@ -94,10 +106,10 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
  * @param passStore
  */
 void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
-                                  QString passStore) {
+                                  const QString &passStore) {
   setSourceModel(sourceModel);
   fs = sourceModel;
-  store = std::move(passStore);
+  store = passStore;
 }
 
 void StoreModel::setStore(const QString &passStore) {
@@ -192,8 +204,10 @@ auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
   if (index.isValid()) {
     QModelIndex useIndex = mapToSource(index);
 
-    info.isDir = fs->fileInfo(useIndex).isDir();
-    info.isFile = fs->fileInfo(useIndex).isFile();
+    if (fs->fileInfo(useIndex).isDir())
+      info.kind = dragAndDropInfoPasswordStore::ItemKind::Directory;
+    else if (fs->fileInfo(useIndex).isFile())
+      info.kind = dragAndDropInfoPasswordStore::ItemKind::File;
     info.path = fs->fileInfo(useIndex).absoluteFilePath();
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
     stream << info;
@@ -248,16 +262,18 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
     return false;
   }
 
+  using IK = dragAndDropInfoPasswordStore::ItemKind;
   // you can drop a folder on a folder
-  if (fs->fileInfo(mapToSource(useIndex)).isDir() && info.isDir) {
+  if (fs->fileInfo(mapToSource(useIndex)).isDir() &&
+      info.kind == IK::Directory) {
     return true;
   }
   // you can drop a file on a folder
-  if (fs->fileInfo(mapToSource(useIndex)).isDir() && info.isFile) {
+  if (fs->fileInfo(mapToSource(useIndex)).isDir() && info.kind == IK::File) {
     return true;
   }
   // you can drop a file on a file
-  if (fs->fileInfo(mapToSource(useIndex)).isFile() && info.isFile) {
+  if (fs->fileInfo(mapToSource(useIndex)).isFile() && info.kind == IK::File) {
     return true;
   }
 
@@ -326,10 +342,15 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
   QString cleanedSrc = QDir::cleanPath(srcFileInfo.absoluteFilePath());
   QString cleanedDest = QDir::cleanPath(destFileinfo.absoluteFilePath());
 
-  if (info.isDir) {
+  switch (info.kind) {
+  case dragAndDropInfoPasswordStore::ItemKind::Directory:
     return handleDirDrop(cleanedSrc, destFileinfo, srcFileInfo, action);
+  case dragAndDropInfoPasswordStore::ItemKind::File:
+    return handleFileDrop(cleanedSrc, cleanedDest, destFileinfo, action);
+  default:
+    qWarning() << "executeDropAction: unexpected ItemKind, ignoring drop";
+    return false;
   }
-  return handleFileDrop(cleanedSrc, cleanedDest, destFileinfo, action);
 }
 
 auto StoreModel::handleDirDrop(const QString &cleanedSrc,
