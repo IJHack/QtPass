@@ -266,7 +266,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation type="vanished">Nati&amp;ve git/gpg</translation>
+        <translation type="vanished">Вбудований git/gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
