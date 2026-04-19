@@ -1425,10 +1425,10 @@ Blue entries have a secret key available, select one of these to be able to decr
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Bu klasörde saklanan parolaları çözebilecek kullanıcıları seçin.
-Not: Mevcut dosyalar değiştirilmeyecektir ve düzenlersiniz kadar eski izinler korunacaktır.
-Mavi girdiler bir gizli anahtar mevcuttur, bunlardan birini seçerek parolayı çözebilirsiniz.
-Siyah girdiler bir şifreleme anahtarı mevcut ve güvenilir olup, bunlardan birini seçerek diğerlerine izin verebilirsiniz.
-Kırmızı girdiler geçerli değildir, bularına şifrelemeye izin veremezsiniz.</translation>
+Not: Mevcut dosyalar değiştirilmeyecektir ve siz onları düzenleyene kadar eski izinleri koruyacaktır.
+Mavi girdilerde kullanılabilir bir gizli anahtar vardır; parolaları çözebilmek için bunlardan birini seçin.
+Siyah girdilerde kullanılabilir ve güvenilir bir şifreleme anahtarı vardır; başkalarının şifre çözebilmesine izin vermek için bunlardan birini seçin.
+Kırmızı girdiler geçerli değildir; bunlara şifreleme yapamazsınız.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
