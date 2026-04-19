@@ -1009,23 +1009,23 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Aranıyor…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Arama içeriği (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eşleşme Bulunamadı.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform>%1 girdide %n eşleşme bulundu.</numerusform>
+        <translation>
+            <numerusform>%1 girişte %n eşleşme bulundu.</numerusform>
         </translation>
     </message>
     <message>
