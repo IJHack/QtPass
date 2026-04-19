@@ -33,14 +33,17 @@ using Enums::PASS_REMOVE;
 using Enums::PASS_SHOW;
 
 namespace {
-QString effectiveCharset(const PasswordConfiguration &passConfig) {
+auto fallbackCharset(const QString &input) -> QString {
+  return input.isEmpty() ? QtPassSettings::getPasswordConfiguration()
+                               .Characters[PasswordConfiguration::ALLCHARS]
+                         : input;
+}
+
+auto effectiveCharset(const PasswordConfiguration &passConfig) -> QString {
   int sel = passConfig.selected;
   if (sel < 0 || sel >= PasswordConfiguration::CHARSETS_COUNT)
     sel = PasswordConfiguration::ALLCHARS;
-  QString charset = passConfig.Characters[sel];
-  if (charset.isEmpty())
-    charset = passConfig.Characters[PasswordConfiguration::ALLCHARS];
-  return charset;
+  return fallbackCharset(passConfig.Characters[sel]);
 }
 } // namespace
 
@@ -168,11 +171,7 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
   } else {
     // Validate charset - if CUSTOM is selected but chars are empty,
     // fall back to ALLCHARS to prevent weak passwords (issue #780)
-    QString cs = charset;
-    if (cs.isEmpty()) {
-      cs = QtPassSettings::getPasswordConfiguration()
-               .Characters[PasswordConfiguration::ALLCHARS];
-    }
+    const QString cs = fallbackCharset(charset);
     if (length == 0) {
       emit critical(tr("Invalid password length"),
                     tr("Can't generate password with zero length."));
