@@ -1060,7 +1060,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Skiftlägesokänsligt växel</translation>
+        <translation>Skiftlägesokänslig växel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
