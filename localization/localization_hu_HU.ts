@@ -141,12 +141,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Tartalmazási keresés (pass grep)</translation>
+        <translation>Tartalomkeresés engedélyezése (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Engedélyezze a jelszó fájl tartalmának keresését. Minden fájl titkosítását igényli, és lassítható a nagy boltokban.</translation>
+        <translation>Engedélyezze a keresést a jelszófájlok tartalmában. Minden fájl visszafejtését igényli, és nagy tárolók esetén lassú lehet.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
@@ -906,12 +906,12 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Tartalom keresési tojás</translation>
+        <translation>Tartalomkeresés kapcsoló</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Toggle tartalom keresési mód, hogy keresse a jelszó fájlokat</translation>
+        <translation>Tartalomkeresési mód be- és kikapcsolása jelszófájlokban való kereséshez</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
@@ -926,12 +926,12 @@ Lejárat-dátum: 0
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Kis- és nagybetűket megkülönböztető váltás</translation>
+        <translation>Kis- és nagybetűre nem érzékeny váltás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation>Toggle eset-insensitive tartalomkeresés</translation>
+        <translation>Kis- és nagybetűket nem megkülönböztető tartalomkeresés be- és kikapcsolása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
@@ -1248,7 +1248,7 @@ Folytatja?</translation>
         <location filename="../src/pass.cpp" line="495"/>
         <location filename="../src/pass.cpp" line="515"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>A titkosítás kudarcot vallott: a címzett GPG kulcs nem talált vagy érvénytelen. Ellenőrizze, hogy a .gpg-id kulcsfontosságú azonosítója helyes és importált.</translation>
+        <translation>A titkosítás sikertelen: a címzett GPG-kulcsa nem található vagy érvénytelen. Ellenőrizze, hogy a .gpg-id fájlban szereplő kulcsazonosító helyes-e, és importálva van-e.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="499"/>
