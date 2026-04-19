@@ -1050,7 +1050,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation>Skiftlägeskänslig sökning</translation>
+        <translation>Skiftlägesokänslig sökning</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
