@@ -399,7 +399,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="93"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>Pass OTP förlängning måste installeras</translation>
+        <translation>Pass OTP tillägg måste installeras</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="98"/>
