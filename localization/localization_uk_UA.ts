@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Потрібні пошуки вмісту за паролем. Потрібне розшифрування кожного файлу та може бути повільним у великих сховищах.</translation>
+        <translation>Дозволити пошук у вмісті файлів паролів. Потрібно розшифрувати кожен файл, і це може бути повільно у великих сховищах.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
@@ -561,7 +561,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Перевірте файлу підпису .gpgid!</translation>
+        <translation>Перевірте підпис файлу .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -715,7 +715,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>Електронна скринька</translation>
+        <translation>Електронна пошта</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
@@ -797,7 +797,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Введена вами електронна скринька не є дійсною електронною скринькою.</translation>
+        <translation>Введена вами адреса електронної пошти не є дійсною адресою електронної пошти.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="196"/>
