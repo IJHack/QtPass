@@ -896,7 +896,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">වින්‍යාසය</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="449"/>
