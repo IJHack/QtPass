@@ -220,17 +220,19 @@ void PasswordDialog::templateAll(bool templateAll) {
 /**
  * @brief PasswordDialog::setLength
  * PasswordDialog::setLength password length.
- * @param l
+ * @param length
  */
-void PasswordDialog::setLength(int l) { ui->spinBox_pwdLength->setValue(l); }
+void PasswordDialog::setLength(int length) {
+  ui->spinBox_pwdLength->setValue(length);
+}
 
 /**
  * @brief PasswordDialog::setPasswordCharTemplate
  * PasswordDialog::setPasswordCharTemplate chose the template style.
- * @param t
+ * @param templateIndex
  */
-void PasswordDialog::setPasswordCharTemplate(int t) {
-  ui->passwordTemplateSwitch->setCurrentIndex(t);
+void PasswordDialog::setPasswordCharTemplate(int templateIndex) {
+  ui->passwordTemplateSwitch->setCurrentIndex(templateIndex);
 }
 
 /**
