@@ -613,10 +613,11 @@ void Pass::handleGrepError(int exitCode, const QString &err) {
 auto Pass::formatInsertError(const QString &friendly, const QString &err)
     -> QString {
   QStringList humanLines;
-  for (QString line : err.split('\n')) {
-    line.remove('\r');
-    if (!line.startsWith(QLatin1String("[GNUPG:]")))
-      humanLines.append(line);
+  for (const QString &line : err.split('\n')) {
+    QString cleanedLine = line;
+    cleanedLine.remove('\r');
+    if (!cleanedLine.startsWith(QLatin1String("[GNUPG:]")))
+      humanLines.append(cleanedLine);
   }
   const QString humanErr = humanLines.join('\n').trimmed();
   return humanErr.isEmpty() ? friendly : friendly + "\n\n" + humanErr;
