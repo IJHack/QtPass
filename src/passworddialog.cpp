@@ -90,7 +90,7 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
 
 /**
  * @brief PasswordDialog::on_createPasswordButton_clicked generate a random
- * passwords.
+ * password.
  */
 void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
@@ -98,7 +98,7 @@ void PasswordDialog::on_createPasswordButton_clicked() {
       static_cast<unsigned int>(ui->spinBox_pwdLength->value()),
       m_passConfig.Characters[static_cast<PasswordConfiguration::characterSet>(
           ui->passwordTemplateSwitch->currentIndex())]);
-  if (newPass.length() > 0) {
+  if (!newPass.isEmpty()) {
     ui->lineEditPassword->setText(newPass);
   }
   ui->widget->setEnabled(true);
@@ -187,7 +187,7 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
 
   if (m_templating) {
     QWidget *previous = ui->checkBoxShow;
-    foreach (QString field, m_fields) {
+    for (const QString &field : std::as_const(m_fields)) {
       if (field.isEmpty()) {
         continue;
       }
