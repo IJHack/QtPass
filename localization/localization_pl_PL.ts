@@ -1163,12 +1163,12 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Nieprawidłowa długość hasła</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie można wygenerować hasła o zerowej długości.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
