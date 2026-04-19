@@ -5,10 +5,10 @@ var indexSectionsWithContent =
   2: "eu",
   3: "acdefghikmpqrstuw",
   4: "abcdefghiklmnopqrstuvw~",
-  5: "acdeghiklmnpqstuvw",
+  5: "acdeghklmnpqstuvw",
   6: "gp",
-  7: "cgp",
-  8: "acfgipsu",
+  7: "cgip",
+  8: "acdfgipsu",
   9: "t",
   10: "ads",
   11: "acdfgilopqstw"

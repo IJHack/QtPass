@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['process_0',['PROCESS',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69',1,'Enums::PROCESS'],['../simpletransaction_8cpp.html#ac8b64f00258db4fec59578fddbe8ea69',1,'PROCESS:&#160;enums.h']]]
+  ['itemkind_0',['ItemKind',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6',1,'dragAndDropInfoPasswordStore']]]
 ];

@@ -11,7 +11,8 @@ var searchData=
   ['dialogmaximized_8',['dialogMaximized',['../class_settings_constants.html#ab15246c28469532b0983b0a1f34204e8',1,'SettingsConstants']]],
   ['dialogpos_9',['dialogPos',['../class_settings_constants.html#ad19648aaf95f4471f290d5eed09878b6',1,'SettingsConstants']]],
   ['dialogsize_10',['dialogSize',['../class_settings_constants.html#aa9ac148007cefba2b007e183569e6791',1,'SettingsConstants']]],
-  ['displayasis_11',['displayAsIs',['../class_settings_constants.html#adc29ead56e2fe252b128f1557825182b',1,'SettingsConstants']]],
-  ['draganddropinfopasswordstore_12',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
-  ['dropmimedata_13',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]]
+  ['directory_11',['Directory',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6ae73cda510e8bb947f7e61089e5581494',1,'dragAndDropInfoPasswordStore']]],
+  ['displayasis_12',['displayAsIs',['../class_settings_constants.html#adc29ead56e2fe252b128f1557825182b',1,'SettingsConstants']]],
+  ['draganddropinfopasswordstore_13',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
+  ['dropmimedata_14',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]]
 ];

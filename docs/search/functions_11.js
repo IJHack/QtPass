@@ -32,7 +32,7 @@ var searchData=
   ['setlength_29',['setLength',['../class_password_dialog.html#ac865a161a2be2d4837761a1305a71db9',1,'PasswordDialog']]],
   ['setlessrandom_30',['setLessRandom',['../class_qt_pass_settings.html#ae2bb9346c54f975132be281f8ba64175',1,'QtPassSettings']]],
   ['setmaximized_31',['setMaximized',['../class_qt_pass_settings.html#a0394e31adec055bd3d84cd09dca5576c',1,'QtPassSettings']]],
-  ['setmodelandstore_32',['setModelAndStore',['../class_store_model.html#af223e13120a72e556a394aae4a92ad0f',1,'StoreModel']]],
+  ['setmodelandstore_32',['setModelAndStore',['../class_store_model.html#a71787f93027b50575cfbdcbb1d8de071',1,'StoreModel']]],
   ['setnolinewrapping_33',['setNoLineWrapping',['../class_qt_pass_settings.html#ac65499ee663c37d6ec045ce7a6641094',1,'QtPassSettings']]],
   ['setpass_34',['setPass',['../class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8',1,'PasswordDialog']]],
   ['setpassexecutable_35',['setPassExecutable',['../class_qt_pass_settings.html#a0c04867f8f676925acdeb71fdb69e39f',1,'QtPassSettings']]],
