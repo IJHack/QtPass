@@ -1,27 +1,25 @@
 <map id="QtPassSettings::getImitatePass" name="QtPassSettings::getImitatePass">
-<area shape="rect" id="Node000001" title="Get imitate pass backend instance." alt="" coords="736,231,960,256"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="511,231,688,256"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="722,246,688,246,688,241,722,241"/>
-<area shape="rect" id="Node000003" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance." alt="" coords="286,5,438,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="586,219,568,180,541,132,505,84,461,44,437,32,439,27,464,40,509,81,545,129,572,177,591,217"/>
-<area shape="rect" id="Node000004" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="286,79,438,104"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="578,222,529,169,497,141,461,118,435,107,437,102,464,113,500,137,533,165,582,218"/>
-<area shape="rect" id="Node000005" href="$class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e" title="Handle dropped MIME data." alt="" coords="261,128,463,153"/>
-<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="567,225,519,195,462,167,427,156,429,151,464,162,522,191,570,221"/>
-<area shape="rect" id="Node000006" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="263,201,461,227"/>
-<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="497,233,461,229,461,224,498,228"/>
-<area shape="rect" id="Node000007" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="265,251,459,291"/>
-<area shape="poly" id="edge8_Node000002_Node000007" title=" " alt="" coords="497,258,460,263,459,257,497,253"/>
-<area shape="rect" id="Node000009" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="282,316,442,341"/>
-<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="561,265,464,306,421,319,419,313,462,301,559,260"/>
-<area shape="rect" id="Node000010" href="$class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="265,390,459,430"/>
-<area shape="poly" id="edge11_Node000002_Node000010" title=" " alt="" coords="575,267,525,309,464,355,403,392,400,388,461,350,522,305,572,263"/>
-<area shape="rect" id="Node000011" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="12,418,207,458"/>
-<area shape="poly" id="edge14_Node000002_Node000011" title=" " alt="" coords="592,270,575,311,548,360,512,408,489,428,464,444,430,459,393,469,318,476,246,472,183,461,184,455,246,466,318,471,392,464,428,454,461,440,486,424,508,404,544,357,570,309,587,268"/>
-<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="405,70,393,61,362,57,337,59,323,64,320,70,327,77,323,80,315,70,319,60,335,54,362,52,395,56,408,65"/>
-<area shape="poly" id="edge7_Node000006_Node000006" title=" " alt="" coords="405,192,393,183,362,180,337,182,323,187,320,192,327,199,323,203,315,193,319,183,335,177,362,175,395,179,408,188"/>
-<area shape="rect" id="Node000008" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,259,213,284"/>
-<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="251,274,214,274,214,269,251,269"/>
-<area shape="poly" id="edge12_Node000010_Node000010" title=" " alt="" coords="402,378,388,371,362,369,339,371,325,375,320,381,323,389,318,390,315,380,322,371,338,365,362,363,390,366,405,373"/>
-<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="251,425,207,430,207,425,251,420"/>
+<area shape="rect" id="Node000001" title="Get imitate pass backend instance." alt="" coords="732,209,956,235"/>
+<area shape="rect" id="Node000002" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="507,209,684,235"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="718,225,684,225,684,219,718,219"/>
+<area shape="rect" id="Node000003" href="$class_users_dialog.html#aa1630582c14afcef9ad80398752762a4" title="Handle dialog acceptance." alt="" coords="284,5,436,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="580,198,561,163,533,121,499,79,457,44,435,33,438,28,460,40,502,76,538,118,565,160,585,196"/>
+<area shape="rect" id="Node000004" href="$class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56" title=" " alt="" coords="284,79,436,104"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="570,202,521,159,490,136,458,118,428,107,430,102,460,113,493,132,524,154,574,198"/>
+<area shape="rect" id="Node000005" href="$class_main_window.html#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="261,152,459,177"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="529,209,412,180,413,175,530,203"/>
+<area shape="rect" id="Node000006" href="$class_main_window.html#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file." alt="" coords="263,202,457,242"/>
+<area shape="poly" id="edge7_Node000002_Node000006" title=" " alt="" coords="493,225,458,225,458,219,493,219"/>
+<area shape="rect" id="Node000008" href="$class_main_window.html#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push." alt="" coords="280,267,440,292"/>
+<area shape="poly" id="edge9_Node000002_Node000008" title=" " alt="" coords="530,241,413,269,412,264,529,235"/>
+<area shape="rect" id="Node000009" href="$class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="263,341,457,381"/>
+<area shape="poly" id="edge10_Node000002_Node000009" title=" " alt="" coords="563,244,460,306,397,343,394,338,457,301,560,239"/>
+<area shape="rect" id="Node000010" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="12,369,207,409"/>
+<area shape="poly" id="edge13_Node000002_Node000010" title=" " alt="" coords="585,249,567,284,539,325,504,365,483,382,460,395,427,408,392,417,320,424,250,421,189,411,190,406,251,415,320,419,391,412,425,403,457,390,480,377,500,361,535,322,562,281,580,246"/>
+<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="402,70,391,61,360,57,335,59,321,64,319,70,326,77,322,80,314,70,318,60,334,54,360,52,393,56,406,65"/>
+<area shape="poly" id="edge6_Node000005_Node000005" title=" " alt="" coords="402,143,391,134,360,131,335,133,321,138,319,143,326,150,322,154,314,144,318,134,334,128,360,125,393,129,406,139"/>
+<area shape="rect" id="Node000007" href="$class_main_window.html#a55ae3e0d4303334ccabae0a5050cfd88" title="MainWindow::keyPressEvent did anyone press return, enter or escape?" alt="" coords="5,209,213,235"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="249,225,213,225,213,219,249,219"/>
+<area shape="poly" id="edge11_Node000009_Node000009" title=" " alt="" coords="400,329,386,322,360,319,337,321,324,326,319,332,321,340,316,341,314,331,321,322,336,316,360,314,387,317,402,324"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="249,376,207,380,207,375,249,370"/>
 </map>

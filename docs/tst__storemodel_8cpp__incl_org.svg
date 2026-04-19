@@ -90,19 +90,19 @@
 </a>
 </g>
 </g>
-<!-- Node7 -->
-<g id="Node000007" class="node">
-<title>Node7</title>
-<g id="a_Node000007"><a xlink:title=" ">
+<!-- Node8 -->
+<g id="Node000008" class="node">
+<title>Node8</title>
+<g id="a_Node000008"><a xlink:title=" ">
 <polygon fill="#e0e0e0" stroke="#999999" points="505,-74 391,-74 391,-55 505,-55 505,-74"/>
 <text text-anchor="middle" x="448" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">tst_storemodel.moc</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node7 -->
-<g id="edge6_Node000001_Node000007" class="edge">
-<title>Node1&#45;&gt;Node7</title>
-<g id="a_edge6_Node000001_Node000007"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node8 -->
+<g id="edge7_Node000001_Node000008" class="edge">
+<title>Node1&#45;&gt;Node8</title>
+<g id="a_edge7_Node000001_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M263.66,-110.06C306.23,-99.77 363.36,-85.96 402.68,-76.45"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="403.63,-79.83 412.52,-74.08 401.98,-73.02 403.63,-79.83"/>
 </a>
@@ -112,8 +112,8 @@
 <g id="Node000006" class="node">
 <title>Node6</title>
 <g id="a_Node000006"><a xlink:title=" ">
-<polygon fill="#e0e0e0" stroke="#999999" points="373,-19 247,-19 247,0 373,0 373,-19"/>
-<text text-anchor="middle" x="310" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QSortFilterProxyModel</text>
+<polygon fill="#e0e0e0" stroke="#999999" points="284,-19 224,-19 224,0 284,0 284,-19"/>
+<text text-anchor="middle" x="254" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QFileInfo</text>
 </a>
 </g>
 </g>
@@ -121,8 +121,26 @@
 <g id="edge5_Node000005_Node000006" class="edge">
 <title>Node5&#45;&gt;Node6</title>
 <g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M310,-54.75C310,-47.8 310,-37.85 310,-29.13"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="313.5,-29.09 310,-19.09 306.5,-29.09 313.5,-29.09"/>
+<path fill="none" stroke="#63b8ff" d="M301,-54.98C292.81,-47.23 280.49,-35.58 270.53,-26.14"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="272.83,-23.5 263.16,-19.17 268.02,-28.59 272.83,-23.5"/>
+</a>
+</g>
+</g>
+<!-- Node7 -->
+<g id="Node000007" class="node">
+<title>Node7</title>
+<g id="a_Node000007"><a xlink:title=" ">
+<polygon fill="#e0e0e0" stroke="#999999" points="428,-19 302,-19 302,0 428,0 428,-19"/>
+<text text-anchor="middle" x="365" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QSortFilterProxyModel</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node7 -->
+<g id="edge6_Node000005_Node000007" class="edge">
+<title>Node5&#45;&gt;Node7</title>
+<g id="a_edge6_Node000005_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M319.08,-54.75C327.09,-47.03 338.96,-35.6 348.62,-26.28"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="351.31,-28.55 356.09,-19.09 346.46,-23.51 351.31,-28.55"/>
 </a>
 </g>
 </g>

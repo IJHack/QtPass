@@ -8,8 +8,10 @@
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="283,46,283,79,277,79,277,46"/>
 <area shape="rect" id="Node000005" href="$storemodel_8h.html" title=" " alt="" coords="335,93,502,119"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="315,43,387,84,385,89,312,48"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="527,93,679,119"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="358,43,543,87,542,93,356,48"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="335,167,503,192"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="421,119,421,153,416,153,416,119"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="527,93,679,119"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="358,43,543,87,542,93,356,48"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="304,167,384,192"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="409,121,368,159,364,155,405,117"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="408,167,576,192"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="433,117,472,155,468,159,429,121"/>
 </map>

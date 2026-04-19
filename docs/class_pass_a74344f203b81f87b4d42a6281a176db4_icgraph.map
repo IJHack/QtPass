@@ -1,11 +1,5 @@
 <map id="Pass::finishedGrep" name="Pass::finishedGrep">
-<area shape="rect" id="Node000001" title="Emitted when grep finishes with matching results." alt="" coords="396,55,537,80"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#ad51174f24ecdbc14a55e4588a34b8563" title="Handle process completion." alt="" coords="224,29,335,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="382,59,335,52,335,47,383,53"/>
-<area shape="rect" id="Node000005" href="$class_imitate_pass.html#a7789a916aca076ad7ceaf4ef093239d3" title="Search all password content by GPG&#45;decrypting each .gpg file." alt="" coords="211,79,348,104"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="383,81,348,85,348,80,382,75"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="5,5,163,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="210,36,162,30,163,25,211,31"/>
-<area shape="rect" id="Node000004" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance." alt="" coords="40,55,128,80"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="211,54,128,64,128,59,210,48"/>
+<area shape="rect" id="Node000001" title="Emitted when grep finishes with matching results." alt="" coords="191,5,332,31"/>
+<area shape="rect" id="Node000002" href="$class_imitate_pass.html#a7789a916aca076ad7ceaf4ef093239d3" title="Search all password content by GPG&#45;decrypting each .gpg file." alt="" coords="5,5,143,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,21,143,21,143,15,177,15"/>
 </map>

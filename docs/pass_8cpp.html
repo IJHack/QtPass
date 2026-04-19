@@ -106,7 +106,7 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a388f8d7993f9747d0a97070d93faf6bc" id="r_a388f8d7993f9747d0a97070d93faf6bc"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a388f8d7993f9747d0a97070d93faf6bc">gpgErrorMessage</a> (const QString &amp;err) -&gt; QString</td></tr>
-<tr class="memdesc:a388f8d7993f9747d0a97070d93faf6bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps GPG stderr (which may include &ndash;status-fd 2 tokens) to a user-friendly encryption error string.  <br /></td></tr>
+<tr class="memdesc:a388f8d7993f9747d0a97070d93faf6bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps GPG stderr (which may include &ndash;status-fd 2 tokens) to a translated user-friendly encryption error string.  <br /></td></tr>
 <tr class="memitem:a5cd7330aa71995b67ac34b2966ba1026" id="r_a5cd7330aa71995b67ac34b2966ba1026"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a5cd7330aa71995b67ac34b2966ba1026">parseGrepOutput</a> (const QString &amp;rawOut) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</td></tr>
 <tr class="memdesc:a5cd7330aa71995b67ac34b2966ba1026"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses 'pass grep' raw output into (entry, matches) pairs.  <br /></td></tr>
 </table>
@@ -121,31 +121,18 @@ Functions</h2></td></tr>
           <td class="memname">auto gpgErrorMessage </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>err</em></span></td><td>)</td>
-          <td> -&gt; QString</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Maps GPG stderr (which may include &ndash;status-fd 2 tokens) to a user-friendly encryption error string. </p>
-<p>Maps GPG stderr (which may include &ndash;status-fd 2 tokens) to a translated user-friendly encryption error string.</p>
-<p>Checked in order: machine-readable [GNUPG:] status tokens first (locale- independent), then case-insensitive substring fallbacks for GPG builds that don't emit status tokens.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">err</td><td>Raw stderr from GPG </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Translated human-readable error, or empty string if not recognised </dd></dl>
+<p>Maps GPG stderr (which may include &ndash;status-fd 2 tokens) to a translated user-friendly encryption error string. </p>
+<p>Checks machine-readable [GNUPG:] status tokens first (locale-independent), then falls back to case-insensitive substring matching for GPG builds that do not emit status tokens. Returns an empty string when no known pattern matches.</p>
+<p>Declared here so it can be exercised by unit tests without linking the full <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> object. </p>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a46">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00451">451</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="pass_8cpp_a388f8d7993f9747d0a97070d93faf6bc_icgraph.svg" width="510" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00482">482</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,13 +156,7 @@ Functions</h2></td></tr>
 <dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a47">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00503">503</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="pass_8cpp_a5cd7330aa71995b67ac34b2966ba1026_icgraph.svg" width="508" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="pass_8cpp_source.html#l00532">532</a> of file <a class="el" href="pass_8cpp_source.html">pass.cpp</a>.</p>
 
 </div>
 </div>

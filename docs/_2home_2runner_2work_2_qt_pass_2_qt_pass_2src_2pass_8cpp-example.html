@@ -441,45 +441,67 @@ $(function() {
 <div class="line">  <span class="keywordflow">return</span> listKeys(QStringList(keystring), secret);</div>
 <div class="line">}</div>
 <div class="line"></div>
+<div class="line"><span class="keyword">namespace </span>{</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> containsAny(<span class="keyword">const</span> QString &amp;str, <span class="keyword">const</span> QStringList &amp;patterns) -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;p : patterns) {</div>
+<div class="line">    <span class="keywordflow">if</span> (str.contains(p)) {</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">auto</span> containsAnyCaseInsensitive(<span class="keyword">const</span> QString &amp;str, <span class="keyword">const</span> QStringList &amp;patterns)</div>
+<div class="line">    -&gt; <span class="keywordtype">bool</span> {</div>
+<div class="line">  <span class="keyword">const</span> QString lower = str.toLower();</div>
+<div class="line">  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;p : patterns) {</div>
+<div class="line">    <span class="keywordflow">if</span> (lower.contains(p)) {</div>
+<div class="line">      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">} <span class="comment">// namespace</span></div>
+<div class="line"> </div>
 <div class="line"><span class="keyword">auto</span> <a id="a46" name="a46"></a><a class="code hl_function" href="pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc">gpgErrorMessage</a>(<span class="keyword">const</span> QString &amp;err) -&gt; QString {</div>
 <div class="line">  <span class="comment">// Machine-readable status tokens added by --status-fd 2</span></div>
-<div class="line">  <span class="keywordflow">if</span> (err.contains(QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] KEYEXPIRED&quot;</span>)) ||</div>
-<div class="line">      err.contains(QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] INV_RECP 5 &quot;</span>)))</div>
-<div class="line">    <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;Pass&quot;</span>,</div>
-<div class="line">                                       <span class="stringliteral">&quot;Encryption failed: GPG key has expired.&quot;</span></div>
-<div class="line">                                       <span class="stringliteral">&quot; Please renew or replace it.&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">if</span> (err.contains(QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] KEYREVOKED&quot;</span>)) ||</div>
-<div class="line">      err.contains(QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] INV_RECP 4 &quot;</span>)))</div>
+<div class="line">  <span class="keywordflow">if</span> (containsAny(err, {QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] KEYEXPIRED&quot;</span>),</div>
+<div class="line">                        QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] INV_RECP 5 &quot;</span>)}))</div>
+<div class="line">    <span class="keywordflow">return</span> QCoreApplication::translate(</div>
+<div class="line">        <span class="stringliteral">&quot;Pass&quot;</span>, <span class="stringliteral">&quot;Encryption failed: GPG key has expired. Please renew or &quot;</span></div>
+<div class="line">                <span class="stringliteral">&quot;replace it.&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">if</span> (containsAny(err, {QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] KEYREVOKED&quot;</span>),</div>
+<div class="line">                        QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] INV_RECP 4 &quot;</span>)}))</div>
 <div class="line">    <span class="keywordflow">return</span> QCoreApplication::translate(</div>
 <div class="line">        <span class="stringliteral">&quot;Pass&quot;</span>, <span class="stringliteral">&quot;Encryption failed: GPG key has been revoked.&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">if</span> (err.contains(QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] NO_PUBKEY&quot;</span>)) ||</div>
-<div class="line">      err.contains(QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] INV_RECP&quot;</span>)))</div>
+<div class="line">  <span class="keywordflow">if</span> (containsAny(err, {QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] NO_PUBKEY&quot;</span>),</div>
+<div class="line">                        QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] INV_RECP&quot;</span>)}))</div>
 <div class="line">    <span class="keywordflow">return</span> QCoreApplication::translate(</div>
-<div class="line">        <span class="stringliteral">&quot;Pass&quot;</span>, <span class="stringliteral">&quot;Encryption failed: recipient GPG key not found or invalid.&quot;</span></div>
-<div class="line">                <span class="stringliteral">&quot; Check that the key ID in .gpg-id is correct and imported.&quot;</span>);</div>
+<div class="line">        <span class="stringliteral">&quot;Pass&quot;</span>, <span class="stringliteral">&quot;Encryption failed: recipient GPG key not found or invalid. &quot;</span></div>
+<div class="line">                <span class="stringliteral">&quot;Check that the key ID in .gpg-id is correct and imported.&quot;</span>);</div>
 <div class="line">  <span class="keywordflow">if</span> (err.contains(QStringLiteral(<span class="stringliteral">&quot;[GNUPG:] FAILURE&quot;</span>)))</div>
 <div class="line">    <span class="keywordflow">return</span> QCoreApplication::translate(</div>
 <div class="line">        <span class="stringliteral">&quot;Pass&quot;</span>, <span class="stringliteral">&quot;Encryption failed. Check that your GPG key is valid.&quot;</span>);</div>
 <div class="line"> </div>
-<div class="line">  <span class="comment">// Locale-dependent fallbacks for GPG versions / configurations that don&#39;t</span></div>
-<div class="line">  <span class="comment">// emit status tokens</span></div>
-<div class="line">  <span class="keyword">const</span> QString lower = err.toLower();</div>
-<div class="line">  <span class="keywordflow">if</span> (lower.contains(QLatin1String(<span class="stringliteral">&quot;key has expired&quot;</span>)) ||</div>
-<div class="line">      lower.contains(QLatin1String(<span class="stringliteral">&quot;key expired&quot;</span>)))</div>
-<div class="line">    <span class="keywordflow">return</span> QCoreApplication::translate(<span class="stringliteral">&quot;Pass&quot;</span>,</div>
-<div class="line">                                       <span class="stringliteral">&quot;Encryption failed: GPG key has expired.&quot;</span></div>
-<div class="line">                                       <span class="stringliteral">&quot; Please renew or replace it.&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">if</span> (lower.contains(QLatin1String(<span class="stringliteral">&quot;key has been revoked&quot;</span>)) ||</div>
-<div class="line">      lower.contains(QLatin1String(<span class="stringliteral">&quot;revoked&quot;</span>)))</div>
+<div class="line">  <span class="comment">// Locale-dependent fallbacks</span></div>
+<div class="line">  <span class="keywordflow">if</span> (containsAnyCaseInsensitive(err, {QLatin1String(<span class="stringliteral">&quot;key has expired&quot;</span>),</div>
+<div class="line">                                       QLatin1String(<span class="stringliteral">&quot;key expired&quot;</span>)}))</div>
+<div class="line">    <span class="keywordflow">return</span> QCoreApplication::translate(</div>
+<div class="line">        <span class="stringliteral">&quot;Pass&quot;</span>, <span class="stringliteral">&quot;Encryption failed: GPG key has expired. Please renew or &quot;</span></div>
+<div class="line">                <span class="stringliteral">&quot;replace it.&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">if</span> (containsAnyCaseInsensitive(err, {QLatin1String(<span class="stringliteral">&quot;key has been revoked&quot;</span>),</div>
+<div class="line">                                       QLatin1String(<span class="stringliteral">&quot;revoked&quot;</span>)}))</div>
 <div class="line">    <span class="keywordflow">return</span> QCoreApplication::translate(</div>
 <div class="line">        <span class="stringliteral">&quot;Pass&quot;</span>, <span class="stringliteral">&quot;Encryption failed: GPG key has been revoked.&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">if</span> (lower.contains(QLatin1String(<span class="stringliteral">&quot;no public key&quot;</span>)) ||</div>
-<div class="line">      lower.contains(QLatin1String(<span class="stringliteral">&quot;unusable public key&quot;</span>)) ||</div>
-<div class="line">      lower.contains(QLatin1String(<span class="stringliteral">&quot;no secret key&quot;</span>)))</div>
+<div class="line">  <span class="keywordflow">if</span> (containsAnyCaseInsensitive(err, {QLatin1String(<span class="stringliteral">&quot;no public key&quot;</span>),</div>
+<div class="line">                                       QLatin1String(<span class="stringliteral">&quot;unusable public key&quot;</span>),</div>
+<div class="line">                                       QLatin1String(<span class="stringliteral">&quot;no secret key&quot;</span>)}))</div>
 <div class="line">    <span class="keywordflow">return</span> QCoreApplication::translate(</div>
-<div class="line">        <span class="stringliteral">&quot;Pass&quot;</span>, <span class="stringliteral">&quot;Encryption failed: recipient GPG key not found or invalid.&quot;</span></div>
-<div class="line">                <span class="stringliteral">&quot; Check that the key ID in .gpg-id is correct and imported.&quot;</span>);</div>
-<div class="line">  <span class="keywordflow">if</span> (lower.contains(QLatin1String(<span class="stringliteral">&quot;encryption failed&quot;</span>)))</div>
+<div class="line">        <span class="stringliteral">&quot;Pass&quot;</span>, <span class="stringliteral">&quot;Encryption failed: recipient GPG key not found or invalid. &quot;</span></div>
+<div class="line">                <span class="stringliteral">&quot;Check that the key ID in .gpg-id is correct and imported.&quot;</span>);</div>
+<div class="line">  <span class="keywordflow">if</span> (containsAnyCaseInsensitive(err, {QLatin1String(<span class="stringliteral">&quot;encryption failed&quot;</span>)}))</div>
 <div class="line">    <span class="keywordflow">return</span> QCoreApplication::translate(</div>
 <div class="line">        <span class="stringliteral">&quot;Pass&quot;</span>, <span class="stringliteral">&quot;Encryption failed. Check that your GPG key is valid.&quot;</span>);</div>
 <div class="line"> </div>
@@ -521,39 +543,56 @@ $(function() {
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_slot" href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass::finished</a>(<span class="keywordtype">int</span> <span class="keywordtype">id</span>, <span class="keywordtype">int</span> exitCode, <span class="keyword">const</span> QString &amp;out,</div>
 <div class="line">                    <span class="keyword">const</span> QString &amp;err) {</div>
 <div class="line">  <span class="keyword">auto</span> pid = <span class="keyword">static_cast&lt;</span><a id="_a48" name="_a48"></a><a class="code hl_typedef" href="class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772">PROCESS</a><span class="keyword">&gt;</span>(id);</div>
+<div class="line"> </div>
 <div class="line">  <span class="keywordflow">if</span> (exitCode != 0) {</div>
-<div class="line">    <span class="keywordflow">if</span> (pid == <a id="a49" name="a49"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a705ae598082cb55d56dde08f43dfe8db">PASS_GREP</a>) {</div>
-<div class="line">      <span class="comment">// exit code 1 means no matches (standard grep behaviour); treat as empty</span></div>
-<div class="line">      <span class="comment">// result set rather than an error</span></div>
-<div class="line">      <span class="keywordflow">if</span> (exitCode == 1) {</div>
-<div class="line">        emit <a id="a50" name="a50"></a><a class="code hl_signal" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a>({});</div>
-<div class="line">      } <span class="keywordflow">else</span> {</div>
-<div class="line">        emit <a id="a51" name="a51"></a><a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(exitCode, err);</div>
-<div class="line">        emit <a class="code hl_signal" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a>({});</div>
-<div class="line">      }</div>
-<div class="line">      <span class="keywordflow">return</span>;</div>
-<div class="line">    }</div>
-<div class="line">    <span class="keywordflow">if</span> (pid == <a id="a52" name="a52"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a2bd1f466dbc7acf275c15b4ebdc92ebf">PASS_INSERT</a>) {</div>
-<div class="line">      <span class="keyword">const</span> QString friendly = <a id="a53" name="a53"></a><a class="code hl_function" href="pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa">gpgErrorMessage</a>(err);</div>
-<div class="line">      <span class="keywordflow">if</span> (!friendly.isEmpty()) {</div>
-<div class="line">        <span class="comment">// Strip machine-readable [GNUPG:] status lines before showing raw</span></div>
-<div class="line">        <span class="comment">// output; they are only useful for detection, not for display.</span></div>
-<div class="line">        QStringList humanLines;</div>
-<div class="line">        <span class="keywordflow">for</span> (QString line : err.split(<span class="charliteral">&#39;\n&#39;</span>)) {</div>
-<div class="line">          line.remove(<span class="charliteral">&#39;\r&#39;</span>);</div>
-<div class="line">          <span class="keywordflow">if</span> (!line.startsWith(QLatin1String(<span class="stringliteral">&quot;[GNUPG:]&quot;</span>)))</div>
-<div class="line">            humanLines.append(line);</div>
-<div class="line">        }</div>
-<div class="line">        <span class="keyword">const</span> QString humanErr = humanLines.join(<span class="charliteral">&#39;\n&#39;</span>).trimmed();</div>
-<div class="line">        emit <a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(exitCode, humanErr.isEmpty()</div>
-<div class="line">                                            ? friendly</div>
-<div class="line">                                            : friendly + <span class="stringliteral">&quot;\n\n&quot;</span> + humanErr);</div>
-<div class="line">        <span class="keywordflow">return</span>;</div>
-<div class="line">      }</div>
-<div class="line">    }</div>
-<div class="line">    emit <a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(exitCode, err);</div>
+<div class="line">    handleProcessError(pid, exitCode, out, err);</div>
 <div class="line">    <span class="keywordflow">return</span>;</div>
 <div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  emitProcessFinishedSignal(pid, out, err);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> Pass::handleProcessError(<a class="code hl_enumeration" href="simpletransaction_8cpp.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> pid, <span class="keywordtype">int</span> exitCode, <span class="keyword">const</span> QString &amp;out,</div>
+<div class="line">                              <span class="keyword">const</span> QString &amp;err) {</div>
+<div class="line">  <span class="keywordflow">if</span> (pid == <a id="a49" name="a49"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a705ae598082cb55d56dde08f43dfe8db">PASS_GREP</a>) {</div>
+<div class="line">    handleGrepError(exitCode, err);</div>
+<div class="line">    <span class="keywordflow">return</span>;</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordflow">if</span> (pid == <a id="a50" name="a50"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a2bd1f466dbc7acf275c15b4ebdc92ebf">PASS_INSERT</a>) {</div>
+<div class="line">    <span class="keyword">const</span> QString friendly = <a id="a51" name="a51"></a><a class="code hl_function" href="pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa">gpgErrorMessage</a>(err);</div>
+<div class="line">    <span class="keywordflow">if</span> (!friendly.isEmpty()) {</div>
+<div class="line">      emit <a id="a52" name="a52"></a><a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(exitCode, formatInsertError(friendly, err));</div>
+<div class="line">      <span class="keywordflow">return</span>;</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line"> </div>
+<div class="line">  emit <a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(exitCode, err);</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> Pass::handleGrepError(<span class="keywordtype">int</span> exitCode, <span class="keyword">const</span> QString &amp;err) {</div>
+<div class="line">  <span class="keywordflow">if</span> (exitCode == 1) {</div>
+<div class="line">    emit <a id="a53" name="a53"></a><a class="code hl_signal" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a>({});</div>
+<div class="line">  } <span class="keywordflow">else</span> {</div>
+<div class="line">    emit <a class="code hl_signal" href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">processErrorExit</a>(exitCode, err);</div>
+<div class="line">    emit <a class="code hl_signal" href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">finishedGrep</a>({});</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">auto</span> Pass::formatInsertError(<span class="keyword">const</span> QString &amp;friendly, <span class="keyword">const</span> QString &amp;err)</div>
+<div class="line">    -&gt; QString {</div>
+<div class="line">  QStringList humanLines;</div>
+<div class="line">  <span class="keywordflow">for</span> (QString line : err.split(<span class="charliteral">&#39;\n&#39;</span>)) {</div>
+<div class="line">    line.remove(<span class="charliteral">&#39;\r&#39;</span>);</div>
+<div class="line">    <span class="keywordflow">if</span> (!line.startsWith(QLatin1String(<span class="stringliteral">&quot;[GNUPG:]&quot;</span>)))</div>
+<div class="line">      humanLines.append(line);</div>
+<div class="line">  }</div>
+<div class="line">  <span class="keyword">const</span> QString humanErr = humanLines.join(<span class="charliteral">&#39;\n&#39;</span>).trimmed();</div>
+<div class="line">  <span class="keywordflow">return</span> humanErr.isEmpty() ? friendly : friendly + <span class="stringliteral">&quot;\n\n&quot;</span> + humanErr;</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> Pass::emitProcessFinishedSignal(<a class="code hl_enumeration" href="simpletransaction_8cpp.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> pid, <span class="keyword">const</span> QString &amp;out,</div>
+<div class="line">                                     <span class="keyword">const</span> QString &amp;err) {</div>
 <div class="line">  <span class="keywordflow">switch</span> (pid) {</div>
 <div class="line">  <span class="keywordflow">case</span> <a id="a54" name="a54"></a><a class="code hl_enumvalue" href="imitatepass_8cpp.html#a34410c90c94276b18d07de603edc6c48">GIT_INIT</a>:</div>
 <div class="line">    emit <a id="a55" name="a55"></a><a class="code hl_signal" href="class_pass.html#a52541582298af5b2707447e3a57f85bf">finishedGitInit</a>(out, err);</div>
@@ -730,29 +769,29 @@ $(function() {
 <div class="ttc" id="aclass_pass_html_a35b3cba623a22f41173670ec34ebb67c"><div class="ttname"><a href="class_pass.html#a35b3cba623a22f41173670ec34ebb67c">Pass::generatePassword</a></div><div class="ttdeci">virtual auto generatePassword(unsigned int length, const QString &amp;charset) -&gt; QString</div><div class="ttdoc">Generate random password.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00121">pass.cpp:121</a></div></div>
 <div class="ttc" id="aclass_pass_html_a3ca180cb5769aa87186474f7eda9e2a5"><div class="ttname"><a href="class_pass.html#a3ca180cb5769aa87186474f7eda9e2a5">Pass::finishedMove</a></div><div class="ttdeci">void finishedMove(const QString &amp;, const QString &amp;)</div><div class="ttdoc">Emitted when move finishes.</div></div>
 <div class="ttc" id="aclass_pass_html_a4c2bca8a9a59a032adc68846055b056b"><div class="ttname"><a href="class_pass.html#a4c2bca8a9a59a032adc68846055b056b">Pass::gpgSupportsEd25519</a></div><div class="ttdeci">static bool gpgSupportsEd25519()</div><div class="ttdoc">Check if GPG supports Ed25519 encryption.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00178">pass.cpp:178</a></div></div>
-<div class="ttc" id="aclass_pass_html_a4ecc5514ea969ceb06f439698bf6aa9a"><div class="ttname"><a href="class_pass.html#a4ecc5514ea969ceb06f439698bf6aa9a">Pass::setEnvVar</a></div><div class="ttdeci">void setEnvVar(const QString &amp;key, const QString &amp;value)</div><div class="ttdoc">Set or remove an environment variable.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00632">pass.cpp:632</a></div></div>
-<div class="ttc" id="aclass_pass_html_a4f63e4e86c7ffec6df333e466fb38c3b"><div class="ttname"><a href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">Pass::boundedRandom</a></div><div class="ttdeci">auto boundedRandom(quint32 bound) -&gt; quint32</div><div class="ttdoc">Generate random number in range.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00738">pass.cpp:738</a></div></div>
+<div class="ttc" id="aclass_pass_html_a4ecc5514ea969ceb06f439698bf6aa9a"><div class="ttname"><a href="class_pass.html#a4ecc5514ea969ceb06f439698bf6aa9a">Pass::setEnvVar</a></div><div class="ttdeci">void setEnvVar(const QString &amp;key, const QString &amp;value)</div><div class="ttdoc">Set or remove an environment variable.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00678">pass.cpp:678</a></div></div>
+<div class="ttc" id="aclass_pass_html_a4f63e4e86c7ffec6df333e466fb38c3b"><div class="ttname"><a href="class_pass.html#a4f63e4e86c7ffec6df333e466fb38c3b">Pass::boundedRandom</a></div><div class="ttdeci">auto boundedRandom(quint32 bound) -&gt; quint32</div><div class="ttdoc">Generate random number in range.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00784">pass.cpp:784</a></div></div>
 <div class="ttc" id="aclass_pass_html_a52541582298af5b2707447e3a57f85bf"><div class="ttname"><a href="class_pass.html#a52541582298af5b2707447e3a57f85bf">Pass::finishedGitInit</a></div><div class="ttdeci">void finishedGitInit(const QString &amp;, const QString &amp;)</div><div class="ttdoc">Emitted when Git init finishes.</div></div>
 <div class="ttc" id="aclass_pass_html_a5d0cea4019f5c123fb4a4417de8d95b9"><div class="ttname"><a href="class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9">Pass::Pass</a></div><div class="ttdeci">Pass()</div><div class="ttdoc">Construct a Pass instance.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00036">pass.cpp:36</a></div></div>
 <div class="ttc" id="aclass_pass_html_a66f59138ffe856fd421410d9af9ddc62"><div class="ttname"><a href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">Pass::executeWrapper</a></div><div class="ttdeci">void executeWrapper(PROCESS id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</div><div class="ttdoc">Execute external wrapper command.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00078">pass.cpp:78</a></div></div>
-<div class="ttc" id="aclass_pass_html_a693825d2ad62813cf103860ef6211370"><div class="ttname"><a href="class_pass.html#a693825d2ad62813cf103860ef6211370">Pass::getRecipientList</a></div><div class="ttdeci">static auto getRecipientList(const QString &amp;for_file) -&gt; QStringList</div><div class="ttdoc">Get list of recipients for a password file.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00697">pass.cpp:697</a></div></div>
+<div class="ttc" id="aclass_pass_html_a693825d2ad62813cf103860ef6211370"><div class="ttname"><a href="class_pass.html#a693825d2ad62813cf103860ef6211370">Pass::getRecipientList</a></div><div class="ttdeci">static auto getRecipientList(const QString &amp;for_file) -&gt; QStringList</div><div class="ttdoc">Get list of recipients for a password file.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00743">pass.cpp:743</a></div></div>
 <div class="ttc" id="aclass_pass_html_a6a9aa8dc4ff288ce256351b671533a84"><div class="ttname"><a href="class_pass.html#a6a9aa8dc4ff288ce256351b671533a84">Pass::resolveGpgconfCommand</a></div><div class="ttdeci">static auto resolveGpgconfCommand(const QString &amp;gpgPath) -&gt; ResolvedGpgconfCommand</div><div class="ttdoc">Resolve the gpgconf command to kill agents.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00343">pass.cpp:343</a></div></div>
 <div class="ttc" id="aclass_pass_html_a6ed6c10b07137f62e127b290ebd428a2"><div class="ttname"><a href="class_pass.html#a6ed6c10b07137f62e127b290ebd428a2">Pass::listKeys</a></div><div class="ttdeci">auto listKeys(QStringList keystrings, bool secret=false) -&gt; QList&lt; UserInfo &gt;</div><div class="ttdoc">List GPG keys matching patterns.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00413">pass.cpp:413</a></div></div>
 <div class="ttc" id="aclass_pass_html_a71d8c179a7875dd2983de2aabff0a8cb"><div class="ttname"><a href="class_pass.html#a71d8c179a7875dd2983de2aabff0a8cb">Pass::finishedInsert</a></div><div class="ttdeci">void finishedInsert(const QString &amp;, const QString &amp;)</div><div class="ttdoc">Emitted when insert finishes.</div></div>
 <div class="ttc" id="aclass_pass_html_a74344f203b81f87b4d42a6281a176db4"><div class="ttname"><a href="class_pass.html#a74344f203b81f87b4d42a6281a176db4">Pass::finishedGrep</a></div><div class="ttdeci">void finishedGrep(const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</div><div class="ttdoc">Emitted when grep finishes with matching results.</div></div>
 <div class="ttc" id="aclass_pass_html_a7a4c2bbb80372455e0d406fbc940e219"><div class="ttname"><a href="class_pass.html#a7a4c2bbb80372455e0d406fbc940e219">Pass::finishedInit</a></div><div class="ttdeci">void finishedInit(const QString &amp;, const QString &amp;)</div><div class="ttdoc">Emitted when init finishes.</div></div>
-<div class="ttc" id="aclass_pass_html_a7bab4c97e4a327cc34060a67c09959bf"><div class="ttname"><a href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a></div><div class="ttdeci">static auto getGpgIdPath(const QString &amp;for_file) -&gt; QString</div><div class="ttdoc">Get .gpg-id file path for a password file.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00667">pass.cpp:667</a></div></div>
+<div class="ttc" id="aclass_pass_html_a7bab4c97e4a327cc34060a67c09959bf"><div class="ttname"><a href="class_pass.html#a7bab4c97e4a327cc34060a67c09959bf">Pass::getGpgIdPath</a></div><div class="ttdeci">static auto getGpgIdPath(const QString &amp;for_file) -&gt; QString</div><div class="ttdoc">Get .gpg-id file path for a password file.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00713">pass.cpp:713</a></div></div>
 <div class="ttc" id="aclass_pass_html_a8ca44f13c68a03c1e91fbbfee37388ed"><div class="ttname"><a href="class_pass.html#a8ca44f13c68a03c1e91fbbfee37388ed">Pass::finishedOtpGenerate</a></div><div class="ttdeci">void finishedOtpGenerate(const QString &amp;)</div><div class="ttdoc">Emitted when OTP generation finishes.</div></div>
 <div class="ttc" id="aclass_pass_html_a903a833ade1109f9cb75e3bbeab8d0af"><div class="ttname"><a href="class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af">Pass::exec</a></div><div class="ttdeci">Executor exec</div><div class="ttdef"><b>Definition</b> <a href="pass_8h_source.html#l00042">pass.h:42</a></div></div>
 <div class="ttc" id="aclass_pass_html_a9bb040e1a33322a27cd85d8a367ef24f"><div class="ttname"><a href="class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f">Pass::processErrorExit</a></div><div class="ttdeci">void processErrorExit(int exitCode, const QString &amp;err)</div><div class="ttdoc">Emitted on process error exit.</div></div>
 <div class="ttc" id="aclass_pass_html_ab6d3acbdce8a5bc579bef175c85382df"><div class="ttname"><a href="class_pass.html#ab6d3acbdce8a5bc579bef175c85382df">Pass::finishedGitPull</a></div><div class="ttdeci">void finishedGitPull(const QString &amp;, const QString &amp;)</div><div class="ttdoc">Emitted when Git pull finishes.</div></div>
 <div class="ttc" id="aclass_pass_html_ab892bcacdbe3081f677e456a3a8ac328"><div class="ttname"><a href="class_pass.html#ab892bcacdbe3081f677e456a3a8ac328">Pass::finishedGitPush</a></div><div class="ttdeci">void finishedGitPush(const QString &amp;, const QString &amp;)</div><div class="ttdoc">Emitted when Git push finishes.</div></div>
-<div class="ttc" id="aclass_pass_html_ac679a086b289cdb9245906948ba0458a"><div class="ttname"><a href="class_pass.html#ac679a086b289cdb9245906948ba0458a">Pass::updateEnv</a></div><div class="ttdeci">void updateEnv()</div><div class="ttdoc">Update environment for subprocesses.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00641">pass.cpp:641</a></div></div>
-<div class="ttc" id="aclass_pass_html_ad51174f24ecdbc14a55e4588a34b8563"><div class="ttname"><a href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass::finished</a></div><div class="ttdeci">virtual void finished(int id, int exitCode, const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">Handle process completion.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00545">pass.cpp:545</a></div></div>
-<div class="ttc" id="aclass_pass_html_ae1f31c62b7117b99882625dbef654533"><div class="ttname"><a href="class_pass.html#ae1f31c62b7117b99882625dbef654533">Pass::getRecipientString</a></div><div class="ttdeci">static auto getRecipientString(const QString &amp;for_file, const QString &amp;separator=&quot; &quot;, int *count=nullptr) -&gt; QStringList</div><div class="ttdoc">Get recipients as string.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00720">pass.cpp:720</a></div></div>
+<div class="ttc" id="aclass_pass_html_ac679a086b289cdb9245906948ba0458a"><div class="ttname"><a href="class_pass.html#ac679a086b289cdb9245906948ba0458a">Pass::updateEnv</a></div><div class="ttdeci">void updateEnv()</div><div class="ttdoc">Update environment for subprocesses.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00687">pass.cpp:687</a></div></div>
+<div class="ttc" id="aclass_pass_html_ad51174f24ecdbc14a55e4588a34b8563"><div class="ttname"><a href="class_pass.html#ad51174f24ecdbc14a55e4588a34b8563">Pass::finished</a></div><div class="ttdeci">virtual void finished(int id, int exitCode, const QString &amp;out, const QString &amp;err)</div><div class="ttdoc">Handle process completion.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00574">pass.cpp:574</a></div></div>
+<div class="ttc" id="aclass_pass_html_ae1f31c62b7117b99882625dbef654533"><div class="ttname"><a href="class_pass.html#ae1f31c62b7117b99882625dbef654533">Pass::getRecipientString</a></div><div class="ttdeci">static auto getRecipientString(const QString &amp;for_file, const QString &amp;separator=&quot; &quot;, int *count=nullptr) -&gt; QStringList</div><div class="ttdoc">Get recipients as string.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00766">pass.cpp:766</a></div></div>
 <div class="ttc" id="aclass_pass_html_ae3284a937d0ca8ae2ea2d81ec556c37b"><div class="ttname"><a href="class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b">Pass::getDefaultKeyTemplate</a></div><div class="ttdeci">static QString getDefaultKeyTemplate()</div><div class="ttdoc">Get default key template for new GPG keys.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00199">pass.cpp:199</a></div></div>
 <div class="ttc" id="aclass_pass_html_aeb0213d032e070ad788398328c0a080c"><div class="ttname"><a href="class_pass.html#aeb0213d032e070ad788398328c0a080c">Pass::finishedGenerateGPGKeys</a></div><div class="ttdeci">void finishedGenerateGPGKeys(const QString &amp;, const QString &amp;)</div><div class="ttdoc">Emitted when GPG key generation finishes.</div></div>
-<div class="ttc" id="aclass_pass_html_aff660edce34d33f5a2adfa8c130470f0"><div class="ttname"><a href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">Pass::generateRandomPassword</a></div><div class="ttdeci">auto generateRandomPassword(const QString &amp;charset, unsigned int length) -&gt; QString</div><div class="ttdoc">Generate random password from charset.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00764">pass.cpp:764</a></div></div>
+<div class="ttc" id="aclass_pass_html_aff660edce34d33f5a2adfa8c130470f0"><div class="ttname"><a href="class_pass.html#aff660edce34d33f5a2adfa8c130470f0">Pass::generateRandomPassword</a></div><div class="ttdeci">auto generateRandomPassword(const QString &amp;charset, unsigned int length) -&gt; QString</div><div class="ttdoc">Generate random password from charset.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00810">pass.cpp:810</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a1d47181e99a5865d5d37f07b632d459f"><div class="ttname"><a href="class_qt_pass_settings.html#a1d47181e99a5865d5d37f07b632d459f">QtPassSettings::getPwgenExecutable</a></div><div class="ttdeci">static auto getPwgenExecutable(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get pwgen executable path.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00521">qtpasssettings.cpp:521</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a3503e8d11b7e24b35a34801f755ba80a"><div class="ttname"><a href="class_qt_pass_settings.html#a3503e8d11b7e24b35a34801f755ba80a">QtPassSettings::getPasswordConfiguration</a></div><div class="ttdeci">static auto getPasswordConfiguration() -&gt; PasswordConfiguration</div><div class="ttdoc">Get complete password generation configuration.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00074">qtpasssettings.cpp:74</a></div></div>
 <div class="ttc" id="aclass_qt_pass_settings_html_a36413c39a8bcd96110dd612158168946"><div class="ttname"><a href="class_qt_pass_settings.html#a36413c39a8bcd96110dd612158168946">QtPassSettings::getGpgHome</a></div><div class="ttdeci">static auto getGpgHome(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</div><div class="ttdoc">Get GPG home directory.</div><div class="ttdef"><b>Definition</b> <a href="qtpasssettings_8cpp_source.html#l00531">qtpasssettings.cpp:531</a></div></div>
@@ -795,11 +834,11 @@ $(function() {
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9">Enums::PASS_SHOW</a></div><div class="ttdeci">@ PASS_SHOW</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00033">enums.h:33</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4">Enums::GIT_PULL</a></div><div class="ttdeci">@ GIT_PULL</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00031">enums.h:31</a></div></div>
 <div class="ttc" id="anamespace_enums_html_ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40"><div class="ttname"><a href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40">Enums::GIT_PUSH</a></div><div class="ttdeci">@ GIT_PUSH</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00032">enums.h:32</a></div></div>
-<div class="ttc" id="apass_8cpp_html_a388f8d7993f9747d0a97070d93faf6bc"><div class="ttname"><a href="pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc">gpgErrorMessage</a></div><div class="ttdeci">auto gpgErrorMessage(const QString &amp;err) -&gt; QString</div><div class="ttdoc">Maps GPG stderr (which may include –status-fd 2 tokens) to a user-friendly encryption error string.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00451">pass.cpp:451</a></div></div>
-<div class="ttc" id="apass_8cpp_html_a5cd7330aa71995b67ac34b2966ba1026"><div class="ttname"><a href="pass_8cpp.html#a5cd7330aa71995b67ac34b2966ba1026">parseGrepOutput</a></div><div class="ttdeci">auto parseGrepOutput(const QString &amp;rawOut) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</div><div class="ttdoc">Parses &#39;pass grep&#39; raw output into (entry, matches) pairs.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00503">pass.cpp:503</a></div></div>
+<div class="ttc" id="apass_8cpp_html_a388f8d7993f9747d0a97070d93faf6bc"><div class="ttname"><a href="pass_8cpp.html#a388f8d7993f9747d0a97070d93faf6bc">gpgErrorMessage</a></div><div class="ttdeci">auto gpgErrorMessage(const QString &amp;err) -&gt; QString</div><div class="ttdoc">Maps GPG stderr (which may include –status-fd 2 tokens) to a translated user-friendly encryption erro...</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00482">pass.cpp:482</a></div></div>
+<div class="ttc" id="apass_8cpp_html_a5cd7330aa71995b67ac34b2966ba1026"><div class="ttname"><a href="pass_8cpp.html#a5cd7330aa71995b67ac34b2966ba1026">parseGrepOutput</a></div><div class="ttdeci">auto parseGrepOutput(const QString &amp;rawOut) -&gt; QList&lt; QPair&lt; QString, QStringList &gt; &gt;</div><div class="ttdoc">Parses &#39;pass grep&#39; raw output into (entry, matches) pairs.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00532">pass.cpp:532</a></div></div>
 <div class="ttc" id="apass_8h_html"><div class="ttname"><a href="pass_8h.html">pass.h</a></div></div>
-<div class="ttc" id="apass_8h_html_a7ba018a324c930bae05281216170dd83"><div class="ttname"><a href="pass_8h.html#a7ba018a324c930bae05281216170dd83">parseGrepOutput</a></div><div class="ttdeci">QList&lt; QPair&lt; QString, QStringList &gt; &gt; parseGrepOutput(const QString &amp;rawOut)</div><div class="ttdoc">Parses &#39;pass grep&#39; raw output into (entry, matches) pairs.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00503">pass.cpp:503</a></div></div>
-<div class="ttc" id="apass_8h_html_afa8cf07459ecaebabd4662150f6aecaa"><div class="ttname"><a href="pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa">gpgErrorMessage</a></div><div class="ttdeci">QString gpgErrorMessage(const QString &amp;err)</div><div class="ttdoc">Maps GPG stderr (which may include –status-fd 2 tokens) to a translated user-friendly encryption erro...</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00451">pass.cpp:451</a></div></div>
+<div class="ttc" id="apass_8h_html_a7ba018a324c930bae05281216170dd83"><div class="ttname"><a href="pass_8h.html#a7ba018a324c930bae05281216170dd83">parseGrepOutput</a></div><div class="ttdeci">QList&lt; QPair&lt; QString, QStringList &gt; &gt; parseGrepOutput(const QString &amp;rawOut)</div><div class="ttdoc">Parses &#39;pass grep&#39; raw output into (entry, matches) pairs.</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00532">pass.cpp:532</a></div></div>
+<div class="ttc" id="apass_8h_html_afa8cf07459ecaebabd4662150f6aecaa"><div class="ttname"><a href="pass_8h.html#afa8cf07459ecaebabd4662150f6aecaa">gpgErrorMessage</a></div><div class="ttdeci">QString gpgErrorMessage(const QString &amp;err)</div><div class="ttdoc">Maps GPG stderr (which may include –status-fd 2 tokens) to a translated user-friendly encryption erro...</div><div class="ttdef"><b>Definition</b> <a href="pass_8cpp_source.html#l00482">pass.cpp:482</a></div></div>
 <div class="ttc" id="aqtpasssettings_8h_html"><div class="ttname"><a href="qtpasssettings_8h.html">qtpasssettings.h</a></div></div>
 <div class="ttc" id="asimpletransaction_8cpp_html_ac8b64f00258db4fec59578fddbe8ea69"><div class="ttname"><a href="simpletransaction_8cpp.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a></div><div class="ttdeci">PROCESS</div><div class="ttdoc">Identifies different subprocess operations used in QtPass.</div><div class="ttdef"><b>Definition</b> <a href="enums_8h_source.html#l00026">enums.h:26</a></div></div>
 <div class="ttc" id="astruct_password_configuration_html_a1f0990ce1daaecb8852976eeb7df61bd"><div class="ttname"><a href="struct_password_configuration.html#a1f0990ce1daaecb8852976eeb7df61bd">PasswordConfiguration::length</a></div><div class="ttdeci">int length</div><div class="ttdoc">Length of the password.</div><div class="ttdef"><b>Definition</b> <a href="passwordconfiguration_8h_source.html#l00026">passwordconfiguration.h:26</a></div></div>

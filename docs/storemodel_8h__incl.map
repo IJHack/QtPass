@@ -1,5 +1,7 @@
 <map id="src/storemodel.h" name="src/storemodel.h">
-<area shape="rect" id="Node000001" title=" " alt="" coords="24,5,155,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,173,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,31,92,65,87,65,87,31"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="53,5,184,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,85,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,33,69,71,65,67,105,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="109,79,277,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="132,29,173,67,169,71,129,33"/>
 </map>
