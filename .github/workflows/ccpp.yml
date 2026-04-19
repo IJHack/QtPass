@@ -93,6 +93,17 @@ jobs:
         with:
           version: ${{ matrix.qt }}
 
+      - name: Install dependencies (Linux)
+        if: runner.os == 'Linux' && steps.need_build.outputs.run_build == 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pinentry-tty pass pass-extension-otp
+
+      - name: Install dependencies (macOS)
+        if: runner.os == 'macOS' && steps.need_build.outputs.run_build == 'true'
+        run: |
+          brew install pass pass-otp
+
       - name: qmake
         if: steps.need_build.outputs.run_build == 'true'
         run: qmake

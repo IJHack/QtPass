@@ -47,6 +47,14 @@ static QString findGpg() {
   return QStandardPaths::findExecutable("gpg");
 }
 
+static QString findGpgconf() {
+  for (const auto &c : {"/usr/bin/gpgconf", "/usr/local/bin/gpgconf"}) {
+    if (QFile::exists(c))
+      return c;
+  }
+  return QStandardPaths::findExecutable("gpgconf");
+}
+
 static QString findPass() { return QStandardPaths::findExecutable("pass"); }
 
 // Run gpg synchronously with the given GNUPGHOME, return exit code.
@@ -90,14 +98,28 @@ static QString generateTestKey(const QString &gnupgHome) {
   runGpg(gnupgHome, {"--with-colons", "--fingerprint", "qtpass-test@localhost"},
          QString(), &out);
 
+  QString fingerprint;
   for (const auto &line : out.split('\n')) {
     if (line.startsWith("fpr:")) {
       const auto parts = line.split(':');
-      if (parts.size() >= 10)
-        return parts[9].trimmed();
+      if (parts.size() >= 10) {
+        fingerprint = parts[9].trimmed();
+        break;
+      }
     }
   }
-  return {};
+  if (fingerprint.isEmpty())
+    return {};
+
+  // Explicitly set ultimate trust — some GPG versions don't auto-assign it
+  // from --gen-key --batch, which causes encryption to refuse the key.
+  if (runGpg(gnupgHome, {"--batch", "--import-ownertrust"},
+             fingerprint + ":6:\n") != 0) {
+    qWarning() << "Failed to import ownertrust for key:" << fingerprint;
+    return {};
+  }
+
+  return fingerprint;
 }
 
 // ---------------------------------------------------------------------------
@@ -110,6 +132,7 @@ class tst_integration : public QObject {
   QString m_gpgExe;
   QTemporaryDir m_gnupgHome;
   QString m_keyFingerprint;
+  QString m_originalPassSigningKey;
 
   // Wait for a signal spy to receive at least one signal (up to timeoutMs).
   static bool waitForSignal(QSignalSpy &spy, int timeoutMs = 15000) {
@@ -122,6 +145,15 @@ class tst_integration : public QObject {
   static void setupPass(Pass &pass) {
     pass.init();
     pass.updateEnv();
+  }
+
+  static auto gpgInsertErrorMsg(const QSignalSpy &errorSpy) -> QByteArray {
+    if (errorSpy.count() > 0)
+      return QString("GPG Insert error (rc=%1): %2")
+          .arg(errorSpy[0][0].toInt())
+          .arg(errorSpy[0][1].toString())
+          .toUtf8();
+    return "finishedInsert not emitted (GPG may have hung or failed to start)";
   }
 
 private Q_SLOTS:
@@ -156,6 +188,51 @@ void tst_integration::initTestCase() {
   QFile::setPermissions(m_gnupgHome.path(),
                         QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
 
+  // Configure gpg-agent for headless/CI: allow loopback pinentry so GPG
+  // never blocks waiting for a PIN dialog on systems without a pinentry GUI.
+  {
+    QByteArray agentPayload =
+        "allow-loopback-pinentry\ndefault-cache-ttl 300\n";
+#ifdef Q_OS_LINUX
+    agentPayload += "pinentry-program /usr/bin/pinentry-tty\n";
+#endif
+    QFile agentConf(QDir::cleanPath(m_gnupgHome.path() + "/gpg-agent.conf"));
+    QVERIFY2(
+        agentConf.open(QIODevice::WriteOnly | QIODevice::Text),
+        qPrintable("Cannot open gpg-agent.conf: " + agentConf.errorString()));
+    QVERIFY2(
+        agentConf.write(agentPayload) == agentPayload.size(),
+        qPrintable("Cannot write gpg-agent.conf: " + agentConf.errorString()));
+    const QByteArray gpgPayload = "pinentry-mode loopback\nbatch\nno-tty\n";
+    QFile gpgConf(QDir::cleanPath(m_gnupgHome.path() + "/gpg.conf"));
+    QVERIFY2(gpgConf.open(QIODevice::WriteOnly | QIODevice::Text),
+             qPrintable("Cannot open gpg.conf: " + gpgConf.errorString()));
+    QVERIFY2(gpgConf.write(gpgPayload) == gpgPayload.size(),
+             qPrintable("Cannot write gpg.conf: " + gpgConf.errorString()));
+  }
+
+  // Pre-start the agent so GPG subprocesses don't hang waiting for it.
+  {
+    QString gpgconfExe = findGpgconf();
+    if (gpgconfExe.isEmpty()) {
+      QSKIP("gpgconf not found - skipping GPG integration tests");
+    }
+    QProcess agentLaunch;
+    QProcessEnvironment agentEnv = QProcessEnvironment::systemEnvironment();
+    agentEnv.insert("GNUPGHOME", m_gnupgHome.path());
+    agentLaunch.setProcessEnvironment(agentEnv);
+    agentLaunch.start(
+        gpgconfExe, {"--homedir", m_gnupgHome.path(), "--launch", "gpg-agent"});
+    QVERIFY2(agentLaunch.waitForStarted(5000), "gpgconf failed to start");
+    QVERIFY2(agentLaunch.waitForFinished(10000),
+             "gpgconf --launch gpg-agent timed out");
+    QVERIFY2(agentLaunch.exitStatus() == QProcess::NormalExit &&
+                 agentLaunch.exitCode() == 0,
+             qPrintable("gpgconf --launch gpg-agent failed (rc=" +
+                        QString::number(agentLaunch.exitCode()) +
+                        "): " + agentLaunch.readAllStandardError()));
+  }
+
   m_keyFingerprint = generateTestKey(m_gnupgHome.path());
   QVERIFY2(!m_keyFingerprint.isEmpty(),
            "Failed to generate GPG key for integration tests");
@@ -167,12 +244,17 @@ void tst_integration::initTestCase() {
   QtPassSettings::getInstance()->setValue(SettingsConstants::gpgHome,
                                           m_gnupgHome.path());
   QtPassSettings::setGpgExecutable(m_gpgExe);
+  m_originalPassSigningKey = QtPassSettings::getPassSigningKey();
+  QtPassSettings::setPassSigningKey(QString());
   qRegisterMetaType<GrepResults>("GrepResults");
   qRegisterMetaType<GrepResults>(
       "QList<QPair<QString,QStringList>>"); // Qt5 fallback
 }
 
 void tst_integration::cleanupTestCase() {
+  // Restore original pass signing key
+  QtPassSettings::setPassSigningKey(m_originalPassSigningKey);
+
   // Kill any gpg-agent started in our temporary homedir so it doesn't linger.
   QProcess killer;
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
@@ -208,8 +290,9 @@ void tst_integration::imitatePass_insertAndShow() {
   QVERIFY(QDir(storeDir.path()).mkpath("test"));
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   pass.Insert(entryName, entryContent, false);
-  QVERIFY2(waitForSignal(insertSpy), "finishedInsert not emitted");
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
 
   // Verify the .gpg file was created.
   const QString expectedFile = storeDir.path() + "/" + entryName + ".gpg";
@@ -245,14 +328,16 @@ void tst_integration::imitatePass_insertAndGrep() {
   QVERIFY(QDir(storeDir.path()).mkpath("work"));
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   pass.Insert(QStringLiteral("work/github"),
               QStringLiteral("s3cr3t\ntoken: abc123\n"), false);
-  QVERIFY2(waitForSignal(insertSpy), "finishedInsert not emitted");
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
 
   insertSpy.clear();
+  insertErrorSpy.clear();
   pass.Insert(QStringLiteral("work/gitlab"),
               QStringLiteral("another\ntoken: xyz789\n"), false);
-  QVERIFY2(waitForSignal(insertSpy), "finishedInsert not emitted (2nd)");
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
 
   QSignalSpy grepSpy(&pass, &Pass::finishedGrep);
   pass.Grep(QStringLiteral("token"));
@@ -278,8 +363,9 @@ void tst_integration::imitatePass_insertMoveAndShow() {
   setupPass(pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   pass.Insert(QStringLiteral("original"), QStringLiteral("moveme\n"), false);
-  QVERIFY2(waitForSignal(insertSpy), "finishedInsert not emitted");
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
 
   const QString src = storeDir.path() + "/original.gpg";
   const QString dst = storeDir.path() + "/moved.gpg";
@@ -313,8 +399,9 @@ void tst_integration::imitatePass_insertCopyAndShow() {
   setupPass(pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   pass.Insert(QStringLiteral("original"), QStringLiteral("copyme\n"), false);
-  QVERIFY2(waitForSignal(insertSpy), "finishedInsert not emitted");
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
 
   const QString src = storeDir.path() + "/original.gpg";
   const QString dst = storeDir.path() + "/copy.gpg";
@@ -347,8 +434,9 @@ void tst_integration::imitatePass_insertAndRemove() {
   setupPass(pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   pass.Insert(QStringLiteral("deleteme"), QStringLiteral("gone\n"), false);
-  QVERIFY2(waitForSignal(insertSpy), "finishedInsert not emitted");
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
 
   const QString gpgFile = storeDir.path() + "/deleteme.gpg";
   QVERIFY2(QFile::exists(gpgFile), "file must exist before remove");
@@ -376,9 +464,10 @@ void tst_integration::imitatePass_nestedDirectoryInsertAndShow() {
   QVERIFY(QDir(storeDir.path()).mkpath("level1/level2/level3"));
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   pass.Insert(QStringLiteral("level1/level2/level3/deep"),
               QStringLiteral("deepvalue\n"), false);
-  QVERIFY2(waitForSignal(insertSpy), "finishedInsert not emitted");
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
 
   const QString gpgFile = storeDir.path() + "/level1/level2/level3/deep.gpg";
   QVERIFY2(QFile::exists(gpgFile), "nested .gpg file should be created");
@@ -421,10 +510,10 @@ void tst_integration::realPass_insertAndShow() {
   setupPass(pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   pass.Insert(QStringLiteral("realtest"),
               QStringLiteral("realpassword\nurl: example.com\n"), false);
-  QVERIFY2(waitForSignal(insertSpy, 20000),
-           "RealPass finishedInsert not emitted");
+  QVERIFY2(waitForSignal(insertSpy, 20000), gpgInsertErrorMsg(insertErrorSpy));
 
   QSignalSpy showSpy(&pass, &Pass::finishedShow);
   pass.Show(QStringLiteral("realtest"));
@@ -461,14 +550,16 @@ void tst_integration::realPass_insertAndGrep() {
   setupPass(pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
   pass.Insert(QStringLiteral("email/gmail"),
               QStringLiteral("gmailpass\nurl: mail.google.com\n"), false);
-  QVERIFY2(waitForSignal(insertSpy, 20000), "insert 1 not emitted");
+  QVERIFY2(waitForSignal(insertSpy, 20000), gpgInsertErrorMsg(insertErrorSpy));
 
   insertSpy.clear();
+  insertErrorSpy.clear();
   pass.Insert(QStringLiteral("email/outlook"),
               QStringLiteral("outlookpass\nurl: outlook.com\n"), false);
-  QVERIFY2(waitForSignal(insertSpy, 20000), "insert 2 not emitted");
+  QVERIFY2(waitForSignal(insertSpy, 20000), gpgInsertErrorMsg(insertErrorSpy));
 
   QSignalSpy grepSpy(&pass, &Pass::finishedGrep);
   pass.Grep(QStringLiteral("url"));
