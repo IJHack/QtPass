@@ -203,7 +203,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation type="vanished">Use git</translation>
+        <translation type="vanished">Використовувати git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="512"/>
