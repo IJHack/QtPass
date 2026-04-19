@@ -181,7 +181,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Lejo kërkimin brenda përmbajtjes së skedarit me fjalëkalim. Kërkon deshifrimin e çdo skedari dhe mund të jetë i ngadaltë në dyqanet e mëdha.</translation>
+        <translation>Lejo kërkimin brenda përmbajtjes së skedarëve të fjalëkalimeve. Kërkon deshifrimin e çdo skedari dhe mund të jetë i ngadaltë në depo të mëdha fjalëkalimesh.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -791,7 +791,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation>Kërkim pa ndjeshmëri ndaj shkronjave të mëdha dhe të mëdha</translation>
+        <translation>Kërkim pa dallim mes shkronjave të mëdha dhe të vogla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -801,12 +801,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Aktivizimi i pandjeshmërisë ndaj madhësive të mëdha dhe të mëdha</translation>
+        <translation>Aktivizimi i kërkimit pa dallim mes shkronjave të mëdha dhe të vogla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation>Aktivizo/çaktivizo kërkimin e përmbajtjes pa ndjeshmëri ndaj shkronjave të mëdha dhe të mëdha</translation>
+        <translation>Aktivizo/çaktivizo kërkimin e përmbajtjes pa dallim mes shkronjave të mëdha dhe të vogla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
