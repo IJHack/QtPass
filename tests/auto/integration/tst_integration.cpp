@@ -105,7 +105,11 @@ static QString generateTestKey(const QString &gnupgHome) {
 
   // Explicitly set ultimate trust — some GPG versions don't auto-assign it
   // from --gen-key --batch, which causes encryption to refuse the key.
-  runGpg(gnupgHome, {"--batch", "--import-ownertrust"}, fingerprint + ":6:\n");
+  if (runGpg(gnupgHome, {"--batch", "--import-ownertrust"},
+             fingerprint + ":6:\n") != 0) {
+    qWarning() << "Failed to import ownertrust for key:" << fingerprint;
+    return {};
+  }
 
   return fingerprint;
 }
@@ -134,7 +138,7 @@ class tst_integration : public QObject {
     pass.updateEnv();
   }
 
-  static QByteArray gpgInsertErrorMsg(const QSignalSpy &errorSpy) {
+  static auto gpgInsertErrorMsg(const QSignalSpy &errorSpy) -> QByteArray {
     if (errorSpy.count() > 0)
       return QString("GPG Insert error (rc=%1): %2")
           .arg(errorSpy[0][0].toInt())
@@ -180,7 +184,7 @@ void tst_integration::initTestCase() {
   {
     const QByteArray agentPayload =
         "allow-loopback-pinentry\ndefault-cache-ttl 300\n";
-    QFile agentConf(m_gnupgHome.path() + "/gpg-agent.conf");
+    QFile agentConf(QDir::cleanPath(m_gnupgHome.path() + "/gpg-agent.conf"));
     QVERIFY2(
         agentConf.open(QIODevice::WriteOnly | QIODevice::Text),
         qPrintable("Cannot open gpg-agent.conf: " + agentConf.errorString()));
@@ -188,7 +192,7 @@ void tst_integration::initTestCase() {
         agentConf.write(agentPayload) == agentPayload.size(),
         qPrintable("Cannot write gpg-agent.conf: " + agentConf.errorString()));
     const QByteArray gpgPayload = "pinentry-mode loopback\nbatch\nno-tty\n";
-    QFile gpgConf(m_gnupgHome.path() + "/gpg.conf");
+    QFile gpgConf(QDir::cleanPath(m_gnupgHome.path() + "/gpg.conf"));
     QVERIFY2(gpgConf.open(QIODevice::WriteOnly | QIODevice::Text),
              qPrintable("Cannot open gpg.conf: " + gpgConf.errorString()));
     QVERIFY2(gpgConf.write(gpgPayload) == gpgPayload.size(),

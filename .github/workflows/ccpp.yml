@@ -93,6 +93,12 @@ jobs:
         with:
           version: ${{ matrix.qt }}
 
+      - name: Install dependencies (Linux)
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pinentry-tty
+
       - name: qmake
         if: steps.need_build.outputs.run_build == 'true'
         run: qmake
