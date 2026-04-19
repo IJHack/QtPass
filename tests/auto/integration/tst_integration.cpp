@@ -156,6 +156,28 @@ void tst_integration::initTestCase() {
   QFile::setPermissions(m_gnupgHome.path(),
                         QFile::ReadOwner | QFile::WriteOwner | QFile::ExeOwner);
 
+  // Configure gpg-agent for headless/CI: allow loopback pinentry so GPG
+  // never blocks waiting for a PIN dialog on systems without a pinentry GUI.
+  {
+    QFile agentConf(m_gnupgHome.path() + "/gpg-agent.conf");
+    if (agentConf.open(QIODevice::WriteOnly | QIODevice::Text))
+      agentConf.write("allow-loopback-pinentry\ndefault-cache-ttl 300\n");
+    QFile gpgConf(m_gnupgHome.path() + "/gpg.conf");
+    if (gpgConf.open(QIODevice::WriteOnly | QIODevice::Text))
+      gpgConf.write("pinentry-mode loopback\nbatch\nno-tty\n");
+  }
+
+  // Pre-start the agent so GPG subprocesses don't hang waiting for it.
+  {
+    QProcess agentLaunch;
+    QProcessEnvironment agentEnv = QProcessEnvironment::systemEnvironment();
+    agentEnv.insert("GNUPGHOME", m_gnupgHome.path());
+    agentLaunch.setProcessEnvironment(agentEnv);
+    agentLaunch.start(
+        "gpgconf", {"--homedir", m_gnupgHome.path(), "--launch", "gpg-agent"});
+    agentLaunch.waitForFinished(10000);
+  }
+
   m_keyFingerprint = generateTestKey(m_gnupgHome.path());
   QVERIFY2(!m_keyFingerprint.isEmpty(),
            "Failed to generate GPG key for integration tests");
