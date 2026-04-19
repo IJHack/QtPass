@@ -666,7 +666,7 @@ $(function() {
 <div class="line"><a id="l00678" name="l00678"></a><span class="lineno"><a class="line" href="class_pass.html#a4ecc5514ea969ceb06f439698bf6aa9a">  678</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="class_pass.html#a4ecc5514ea969ceb06f439698bf6aa9a">Pass::setEnvVar</a>(<span class="keyword">const</span> QString &amp;key, <span class="keyword">const</span> QString &amp;value) {</div>
 <div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>  Q_ASSERT(key.endsWith(<span class="charliteral">&#39;=&#39;</span>));</div>
 <div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>  <span class="keyword">const</span> QStringList existing = env.filter(key);</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;entry : std::as_const(existing))</div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> QString &amp;entry : existing)</div>
 <div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>    env.removeAll(entry);</div>
 <div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>  <span class="keywordflow">if</span> (!value.isEmpty())</div>
 <div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>    env.append(key + value);</div>
