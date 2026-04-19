@@ -1024,7 +1024,7 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%1 girdide %n eşleşme bulundu.</numerusform>
         </translation>
     </message>
@@ -1362,7 +1362,7 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="402"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Üzerine zorla yaz?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="403"/>
