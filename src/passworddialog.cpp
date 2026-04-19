@@ -90,7 +90,7 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
 
 /**
  * @brief PasswordDialog::on_createPasswordButton_clicked generate a random
- * passwords.
+ * password.
  */
 void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
