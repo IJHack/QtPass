@@ -66,7 +66,8 @@ public:
    * @param source_parent Parent index in source model.
    * @return true if row should be displayed.
    */
-  [[nodiscard]] auto filterAcceptsRow(int, const QModelIndex &) const
+  [[nodiscard]] auto filterAcceptsRow(int source_row,
+                                      const QModelIndex &source_parent) const
       -> bool override;
 
   /**
