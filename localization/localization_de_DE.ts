@@ -1500,7 +1500,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="402"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Überschreiben erzwingen?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="403"/>
