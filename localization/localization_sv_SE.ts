@@ -1143,9 +1143,9 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform type="unfinished"></numerusform>
-            <numerusform type="unfinished"></numerusform>
+        <translation>
+            <numerusform>Hittade %n matchning i %1 post.</numerusform>
+            <numerusform>Hittade %n träffar i %1 poster.</numerusform>
         </translation>
     </message>
     <message>
