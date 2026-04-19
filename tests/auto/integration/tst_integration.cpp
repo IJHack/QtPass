@@ -160,11 +160,19 @@ void tst_integration::initTestCase() {
   // never blocks waiting for a PIN dialog on systems without a pinentry GUI.
   {
     QFile agentConf(m_gnupgHome.path() + "/gpg-agent.conf");
-    if (agentConf.open(QIODevice::WriteOnly | QIODevice::Text))
-      agentConf.write("allow-loopback-pinentry\ndefault-cache-ttl 300\n");
+    QVERIFY2(agentConf.open(QIODevice::WriteOnly | QIODevice::Text),
+             qPrintable("Cannot open gpg-agent.conf: " +
+                        agentConf.errorString()));
+    QVERIFY2(
+        agentConf.write("allow-loopback-pinentry\ndefault-cache-ttl 300\n") >
+            0,
+        qPrintable("Cannot write gpg-agent.conf: " + agentConf.errorString()));
     QFile gpgConf(m_gnupgHome.path() + "/gpg.conf");
-    if (gpgConf.open(QIODevice::WriteOnly | QIODevice::Text))
-      gpgConf.write("pinentry-mode loopback\nbatch\nno-tty\n");
+    QVERIFY2(gpgConf.open(QIODevice::WriteOnly | QIODevice::Text),
+             qPrintable("Cannot open gpg.conf: " + gpgConf.errorString()));
+    QVERIFY2(
+        gpgConf.write("pinentry-mode loopback\nbatch\nno-tty\n") > 0,
+        qPrintable("Cannot write gpg.conf: " + gpgConf.errorString()));
   }
 
   // Pre-start the agent so GPG subprocesses don't hang waiting for it.
@@ -175,7 +183,16 @@ void tst_integration::initTestCase() {
     agentLaunch.setProcessEnvironment(agentEnv);
     agentLaunch.start(
         "gpgconf", {"--homedir", m_gnupgHome.path(), "--launch", "gpg-agent"});
-    agentLaunch.waitForFinished(10000);
+    QVERIFY2(agentLaunch.waitForStarted(5000),
+             "gpgconf failed to start");
+    QVERIFY2(agentLaunch.waitForFinished(10000),
+             "gpgconf --launch gpg-agent timed out");
+    QVERIFY2(agentLaunch.exitStatus() == QProcess::NormalExit &&
+                 agentLaunch.exitCode() == 0,
+             qPrintable(
+                 "gpgconf --launch gpg-agent failed (rc=" +
+                 QString::number(agentLaunch.exitCode()) + "): " +
+                 agentLaunch.readAllStandardError()));
   }
 
   m_keyFingerprint = generateTestKey(m_gnupgHome.path());
