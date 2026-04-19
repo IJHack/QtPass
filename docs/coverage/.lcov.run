@@ -4171,6 +4171,7 @@ DA:188,10
 DA:189,3
 DA:190,6
 DA:191,3
+DA:192,1
 DA:194,2
 DA:195,2
 DA:196,2
@@ -4191,8 +4192,8 @@ DA:237,0
 DA:243,11
 DA:244,11
 DA:246,11
-LF:108
-LH:62
+LF:109
+LH:63
 end_of_record
 TN:
 SF:/home/runner/work/QtPass/QtPass/src/profileinit.cpp
