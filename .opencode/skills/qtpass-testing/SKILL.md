@@ -479,7 +479,7 @@ Formats: .md, .yml, .html, .css, .js, .json, etc.
 ```bash
 npx prettier --write <file>
 npx prettier --write .github/workflows/*.yml
-npx prettier --write "*/*/SKILL.md"
+npx prettier --write "**/*"
 ```
 
 ### C++ (clang-format)

@@ -223,7 +223,7 @@ Common diagnostics:
 npx prettier --write README.md
 npx prettier --write .github/workflows/*.yml
 npx prettier --write FAQ.md
-npx prettier --write "*/*/SKILL.md"
+npx prettier --write "**/*"
 ```
 
 ### textlint (Natural Language)
