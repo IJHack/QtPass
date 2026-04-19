@@ -26,8 +26,20 @@ auto operator>>(QDataStream &in,
     -> QDataStream & {
   quint8 k;
   in >> k >> dragAndDropInfoPasswordStore.path;
-  dragAndDropInfoPasswordStore.kind =
-      static_cast<dragAndDropInfoPasswordStore::ItemKind>(k);
+  switch (k) {
+  case static_cast<quint8>(dragAndDropInfoPasswordStore::ItemKind::Directory):
+    dragAndDropInfoPasswordStore.kind =
+        dragAndDropInfoPasswordStore::ItemKind::Directory;
+    break;
+  case static_cast<quint8>(dragAndDropInfoPasswordStore::ItemKind::File):
+    dragAndDropInfoPasswordStore.kind =
+        dragAndDropInfoPasswordStore::ItemKind::File;
+    break;
+  default:
+    dragAndDropInfoPasswordStore.kind =
+        dragAndDropInfoPasswordStore::ItemKind::Unknown;
+    break;
+  }
   return in;
 }
 
@@ -330,10 +342,15 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
   QString cleanedSrc = QDir::cleanPath(srcFileInfo.absoluteFilePath());
   QString cleanedDest = QDir::cleanPath(destFileinfo.absoluteFilePath());
 
-  if (info.kind == dragAndDropInfoPasswordStore::ItemKind::Directory) {
+  switch (info.kind) {
+  case dragAndDropInfoPasswordStore::ItemKind::Directory:
     return handleDirDrop(cleanedSrc, destFileinfo, srcFileInfo, action);
+  case dragAndDropInfoPasswordStore::ItemKind::File:
+    return handleFileDrop(cleanedSrc, cleanedDest, destFileinfo, action);
+  default:
+    qWarning() << "executeDropAction: unexpected ItemKind, ignoring drop";
+    return false;
   }
-  return handleFileDrop(cleanedSrc, cleanedDest, destFileinfo, action);
 }
 
 auto StoreModel::handleDirDrop(const QString &cleanedSrc,
