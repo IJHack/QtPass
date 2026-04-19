@@ -39,7 +39,8 @@ public:
   void setVisible(bool visible);
 
   /**
-   * @brief Returns true if tray resources have been allocated and initialized.
+   * @brief Check whether tray resources have been allocated and initialized.
+   * @return true if tray resources are allocated and initialized.
    */
   auto getIsAllocated() -> bool;
 

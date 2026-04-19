@@ -14,19 +14,22 @@ struct UserInfo {
   UserInfo() : validity('-'), have_secret(false), enabled(false) {}
 
   /**
-   * @brief Returns true when validity is f or u.
+   * @brief Check full validity per GnuPG validity codes.
+   * @return true when validity is 'f' or 'u'.
    * http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS
    */
   auto fullyValid() const -> bool {
     return (validity == 'f') || (validity == 'u');
   }
   /**
-   * @brief Returns true when validity is m.
+   * @brief Check marginal validity per GnuPG validity codes.
+   * @return true when validity is 'm'.
    * http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS
    */
   auto marginallyValid() const -> bool { return validity == 'm'; }
   /**
-   * @brief Returns true when fullyValid or marginallyValid.
+   * @brief Check whether the key has any usable validity level.
+   * @return true when fullyValid() or marginallyValid() is true.
    */
   auto isValid() const -> bool { return fullyValid() || marginallyValid(); }
 

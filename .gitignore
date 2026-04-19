@@ -43,6 +43,7 @@ README.rtf
 html/**
 rtf/**
 latex/**
+xml/**
 qmake_qmake_qm_files.qrc
 src/.qm/
 weblate
