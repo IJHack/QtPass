@@ -203,12 +203,14 @@ auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
   QModelIndex index = indexes.at(0);
   if (index.isValid()) {
     QModelIndex useIndex = mapToSource(index);
+    const QFileInfo fileInfo = fs->fileInfo(useIndex);
 
-    if (fs->fileInfo(useIndex).isDir())
+    if (fileInfo.isDir()) {
       info.kind = dragAndDropInfoPasswordStore::ItemKind::Directory;
-    else if (fs->fileInfo(useIndex).isFile())
+    } else if (fileInfo.isFile()) {
       info.kind = dragAndDropInfoPasswordStore::ItemKind::File;
-    info.path = fs->fileInfo(useIndex).absoluteFilePath();
+    }
+    info.path = fileInfo.absoluteFilePath();
     QDataStream stream(&encodedData, QIODevice::WriteOnly);
     stream << info;
   }
