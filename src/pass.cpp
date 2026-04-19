@@ -51,7 +51,7 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
       QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w"),
       QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")};
   const QString wslenvPrefix = QStringLiteral("WSLENV=");
-  auto it = std::find_if(env.begin(), env.end(), [&](const QString &s) {
+  auto it = std::find_if(env.begin(), env.end(), [&wslenvPrefix](const QString &s) {
     return s.startsWith(wslenvPrefix);
   });
   if (it == env.end()) {
