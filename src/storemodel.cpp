@@ -75,7 +75,7 @@ auto StoreModel::showThis(const QModelIndex &index) const -> bool {
   if (fs == nullptr) {
     return retVal;
   }
-  // Gives you the info for number of childs with a parent
+  // Gives you the info for number of children with a parent
   if (sourceModel()->rowCount(index) > 0) {
     for (int nChild = 0; nChild < sourceModel()->rowCount(index); ++nChild) {
       QModelIndex childIndex = sourceModel()->index(nChild, 0, index);
@@ -399,7 +399,7 @@ auto StoreModel::handleFileToFileDrop(const QString &cleanedSrc,
                                       Qt::DropAction action) -> bool {
   QWidget *parentWidget = qobject_cast<QWidget *>(parent());
   int answer = QMessageBox::question(
-      parentWidget, tr("force overwrite?"),
+      parentWidget, tr("Force overwrite?"),
       tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc),
       QMessageBox::Yes | QMessageBox::No);
   bool force = answer == QMessageBox::Yes;
