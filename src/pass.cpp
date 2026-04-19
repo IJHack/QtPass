@@ -31,6 +31,18 @@ using Enums::PASS_OTP_GENERATE;
 using Enums::PASS_REMOVE;
 using Enums::PASS_SHOW;
 
+namespace {
+QString effectiveCharset(const PasswordConfiguration &passConfig) {
+  int sel = passConfig.selected;
+  if (sel < 0 || sel >= PasswordConfiguration::CHARSETS_COUNT)
+    sel = PasswordConfiguration::ALLCHARS;
+  QString charset = passConfig.Characters[sel];
+  if (charset.isEmpty())
+    charset = passConfig.Characters[PasswordConfiguration::ALLCHARS];
+  return charset;
+}
+} // namespace
+
 /**
  * @brief Pass::Pass wrapper for using either pass or the pass imitation
  */
@@ -155,13 +167,16 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
   } else {
     // Validate charset - if CUSTOM is selected but chars are empty,
     // fall back to ALLCHARS to prevent weak passwords (issue #780)
-    QString effectiveCharset = charset;
-    if (effectiveCharset.isEmpty()) {
-      effectiveCharset = QtPassSettings::getPasswordConfiguration()
-                             .Characters[PasswordConfiguration::ALLCHARS];
+    QString cs = charset;
+    if (cs.isEmpty()) {
+      cs = QtPassSettings::getPasswordConfiguration()
+               .Characters[PasswordConfiguration::ALLCHARS];
     }
-    if (effectiveCharset.length() > 0) {
-      passwd = generateRandomPassword(effectiveCharset, length);
+    if (length == 0) {
+      emit critical(tr("Invalid password length"),
+                    tr("Can't generate password with zero length."));
+    } else if (cs.length() > 0) {
+      passwd = generateRandomPassword(cs, length);
     } else {
       emit critical(
           tr("No characters chosen"),
@@ -272,6 +287,9 @@ QString findGpgconfInGpgDir(const QString &gpgPath) {
   return QString();
 }
 
+// Compatibility shim for Qt < 5.15 where QProcess::splitCommand is not
+// available. Keep this fallback while supporting pre-5.15 builds; remove once
+// the project's minimum supported Qt version is raised to 5.15 or newer.
 #if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
 /**
  * @brief Splits a command string into arguments while respecting quotes and
@@ -688,6 +706,11 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
 // matching so the '=' anchors the lookup to avoid collisions with longer names.
 void Pass::setEnvVar(const QString &key, const QString &value) {
   Q_ASSERT(key.endsWith('='));
+  if (!key.endsWith('=')) {
+    qWarning() << "Pass::setEnvVar called with malformed key (missing '='):"
+               << key;
+    return;
+  }
   const QStringList existing = env.filter(key);
   for (const QString &entry : existing)
     env.removeAll(entry);
@@ -705,13 +728,8 @@ void Pass::updateEnv() {
   setEnvVar(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH="),
             QString::number(passConfig.length));
 
-  int sel = passConfig.selected;
-  if (sel < 0 || sel >= PasswordConfiguration::CHARSETS_COUNT)
-    sel = PasswordConfiguration::ALLCHARS;
-  QString charset = passConfig.Characters[sel];
-  if (charset.isEmpty())
-    charset = passConfig.Characters[PasswordConfiguration::ALLCHARS];
-  setEnvVar(QStringLiteral("PASSWORD_STORE_CHARACTER_SET="), charset);
+  setEnvVar(QStringLiteral("PASSWORD_STORE_CHARACTER_SET="),
+            effectiveCharset(passConfig));
 
   exec.setEnvironment(env);
 }
@@ -798,11 +816,14 @@ auto Pass::boundedRandom(quint32 bound) -> quint32 {
   }
 
   quint32 randval;
-  // Rejection-sampling threshold to avoid modulo bias:
-  // In quint32 arithmetic, (1 + ~bound) wraps to (2^32 - bound), so
-  // (1 + ~bound) % bound == 2^32 % bound.
-  // Values randval < rejectionThreshold are rejected; accepted values
-  // produce a uniform distribution when reduced with (randval % bound).
+  // Rejection-sampling threshold to avoid modulo bias.
+  // This follows the well-known "arc4random_uniform"-style approach:
+  // reject values in the low range [0, min), where
+  //   min = 2^32 % bound
+  // so that the remaining range size is an exact multiple of `bound`.
+  //
+  // In quint32 arithmetic, (1 + ~bound) wraps to (2^32 - bound), therefore
+  //   (1 + ~bound) % bound == 2^32 % bound.
   const quint32 rejectionThreshold = (1 + ~bound) % bound;
 
   do {
