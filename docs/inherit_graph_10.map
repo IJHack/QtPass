@@ -1,33 +1,35 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,277,80,303"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,301,80,327"/>
 <area shape="rect" id="Node000001" href="$class_executor.html" title="id Identifier provided by the caller for this queued request." alt="" coords="170,5,249,31"/>
-<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="43,263,48,216,62,156,87,94,104,65,126,40,147,27,169,19,171,24,149,31,130,44,109,69,91,96,67,157,54,217,48,264"/>
+<area shape="poly" id="edge8_Node000000_Node000001" title=" " alt="" coords="42,287,46,236,59,169,69,135,84,100,103,68,126,40,146,27,169,19,171,24,149,31,130,44,107,71,89,103,74,136,64,171,51,236,47,288"/>
 <area shape="rect" id="Node000002" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="184,55,235,80"/>
-<area shape="poly" id="edge9_Node000000_Node000002" title=" " alt="" coords="45,263,54,224,69,178,93,130,126,89,154,74,183,67,184,72,156,79,130,93,97,133,74,180,59,226,50,264"/>
+<area shape="poly" id="edge9_Node000000_Node000002" title=" " alt="" coords="44,287,51,244,65,191,90,137,106,112,126,89,154,73,183,66,184,72,156,78,130,93,110,115,94,139,70,193,56,245,49,288"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass.html" title=" " alt="" coords="176,104,243,129"/>
-<area shape="poly" id="edge12_Node000000_Node000006" title=" " alt="" coords="49,263,77,201,99,167,126,139,150,125,175,118,177,123,152,130,130,143,103,171,81,203,54,265"/>
+<area shape="poly" id="edge12_Node000000_Node000006" title=" " alt="" coords="47,287,57,253,73,213,96,173,126,139,150,125,175,118,177,123,152,130,130,143,100,176,78,216,62,255,52,288"/>
 <area shape="rect" id="Node000007" href="$classtst__executor.html" title=" " alt="" coords="158,153,261,179"/>
-<area shape="poly" id="edge13_Node000000_Node000007" title=" " alt="" coords="56,264,85,225,105,205,127,188,157,174,159,179,129,192,108,209,90,228,61,267"/>
+<area shape="poly" id="edge13_Node000000_Node000007" title=" " alt="" coords="52,287,81,237,102,210,126,188,157,173,159,178,130,192,106,214,85,240,57,290"/>
 <area shape="rect" id="Node000008" href="$classtst__filecontent.html" title=" " alt="" coords="152,203,267,228"/>
-<area shape="poly" id="edge14_Node000000_Node000008" title=" " alt="" coords="73,267,127,237,158,226,160,231,129,242,75,272"/>
+<area shape="poly" id="edge14_Node000000_Node000008" title=" " alt="" coords="63,289,91,262,127,237,153,226,155,231,129,242,95,266,66,293"/>
 <area shape="rect" id="Node000009" href="$classtst__gpgkeystate.html" title=" " alt="" coords="146,252,273,277"/>
-<area shape="poly" id="edge15_Node000000_Node000009" title=" " alt="" coords="93,280,146,272,146,277,94,285"/>
-<area shape="rect" id="Node000010" href="$classtst__passwordconfig.html" title=" " alt="" coords="136,301,283,327"/>
-<area shape="poly" id="edge16_Node000000_Node000010" title=" " alt="" coords="94,295,136,301,135,306,94,300"/>
-<area shape="rect" id="Node000011" href="$classtst__settings.html" title=" " alt="" coords="160,351,259,376"/>
-<area shape="poly" id="edge17_Node000000_Node000011" title=" " alt="" coords="76,307,129,336,163,348,161,353,127,340,74,312"/>
-<area shape="rect" id="Node000012" href="$classtst__simpletransaction.html" title=" " alt="" coords="128,400,291,425"/>
-<area shape="poly" id="edge18_Node000000_Node000012" title=" " alt="" coords="61,313,90,350,129,385,155,398,152,402,127,390,86,354,57,316"/>
-<area shape="rect" id="Node000013" href="$classtst__storemodel.html" title=" " alt="" coords="149,449,269,475"/>
-<area shape="poly" id="edge19_Node000000_Node000013" title=" " alt="" coords="54,314,82,375,103,407,130,435,151,447,149,452,126,439,99,410,77,378,50,317"/>
-<area shape="rect" id="Node000014" href="$classtst__ui.html" title=" " alt="" coords="180,499,239,524"/>
-<area shape="poly" id="edge20_Node000000_Node000014" title=" " alt="" coords="51,316,59,354,75,399,98,445,130,484,154,498,181,506,179,511,152,503,126,488,93,448,70,401,54,355,46,317"/>
-<area shape="rect" id="Node000015" href="$classtst__util.html" title="The tst_util class is our first unit test." alt="" coords="176,548,243,573"/>
-<area shape="poly" id="edge21_Node000000_Node000015" title=" " alt="" coords="48,316,54,362,68,421,92,481,109,509,130,533,152,547,176,555,175,560,149,552,126,537,105,512,87,484,62,422,49,363,43,317"/>
-<area shape="rect" id="Node000003" href="$class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable." alt="" coords="339,351,437,376"/>
-<area shape="poly" id="edge10_Node000002_Node000003" title=" " alt="" coords="249,69,272,76,292,89,319,120,340,156,357,194,369,232,384,302,389,350,383,351,378,302,364,233,352,195,336,158,315,124,289,93,270,81,248,74"/>
+<area shape="poly" id="edge15_Node000000_Node000009" title=" " alt="" coords="93,297,127,286,165,275,166,280,129,291,94,302"/>
+<area shape="rect" id="Node000010" href="$classtst__integration.html" title=" " alt="" coords="151,301,268,327"/>
+<area shape="poly" id="edge16_Node000000_Node000010" title=" " alt="" coords="94,311,150,311,150,317,94,317"/>
+<area shape="rect" id="Node000011" href="$classtst__passwordconfig.html" title=" " alt="" coords="136,351,283,376"/>
+<area shape="poly" id="edge17_Node000000_Node000011" title=" " alt="" coords="94,326,166,348,165,353,93,331"/>
+<area shape="rect" id="Node000012" href="$classtst__settings.html" title=" " alt="" coords="160,400,259,425"/>
+<area shape="poly" id="edge18_Node000000_Node000012" title=" " alt="" coords="66,334,95,361,129,385,161,398,159,403,127,390,92,365,63,338"/>
+<area shape="rect" id="Node000013" href="$classtst__simpletransaction.html" title=" " alt="" coords="128,449,291,475"/>
+<area shape="poly" id="edge19_Node000000_Node000013" title=" " alt="" coords="57,338,86,387,106,413,130,434,152,447,150,452,126,439,102,416,81,390,53,340"/>
+<area shape="rect" id="Node000014" href="$classtst__storemodel.html" title=" " alt="" coords="149,499,269,524"/>
+<area shape="poly" id="edge20_Node000000_Node000014" title=" " alt="" coords="52,339,62,372,78,411,100,450,130,484,151,497,148,501,126,488,96,454,73,414,57,374,47,341"/>
+<area shape="rect" id="Node000015" href="$classtst__ui.html" title=" " alt="" coords="180,548,239,573"/>
+<area shape="poly" id="edge21_Node000000_Node000015" title=" " alt="" coords="49,340,57,383,71,435,95,488,111,512,130,533,154,548,180,555,179,560,152,553,126,537,106,515,90,490,66,436,51,384,44,341"/>
+<area shape="rect" id="Node000016" href="$classtst__util.html" title="The tst_util class is our first unit test." alt="" coords="176,597,243,623"/>
+<area shape="poly" id="edge22_Node000000_Node000016" title=" " alt="" coords="47,340,52,391,64,456,89,524,107,555,130,583,152,597,177,604,175,609,149,602,126,587,103,558,84,526,59,458,46,392,42,341"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable." alt="" coords="339,375,437,400"/>
+<area shape="poly" id="edge10_Node000002_Node000003" title=" " alt="" coords="249,69,272,76,292,89,321,124,343,163,360,204,372,246,385,322,389,374,384,375,380,323,367,247,355,206,338,165,317,127,289,93,270,81,248,74"/>
 <area shape="rect" id="Node000005" href="$class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command&#45;line tool." alt="" coords="348,55,428,80"/>
 <area shape="poly" id="edge11_Node000002_Node000005" title=" " alt="" coords="248,65,348,65,348,70,248,70"/>
-<area shape="rect" id="Node000004" href="$classsimple_transaction.html" title=" " alt="" coords="139,597,279,623"/>
-<area shape="poly" id="edge22_Node000004_Node000003" title=" " alt="" coords="283,588,289,584,311,560,330,532,358,472,375,416,382,376,388,377,380,417,363,474,335,535,316,563,292,588,287,592"/>
+<area shape="rect" id="Node000004" href="$classsimple_transaction.html" title=" " alt="" coords="139,647,279,672"/>
+<area shape="poly" id="edge23_Node000004_Node000003" title=" " alt="" coords="284,637,289,633,313,606,333,575,361,507,377,444,383,400,388,401,382,445,366,509,338,577,317,609,293,637,288,641"/>
 </map>

@@ -1,7 +1,7 @@
 <map id="tests/auto/simpletransaction" name="tests/auto/simpletransaction">
 <area shape="rect" id="node1" href="dir_3f0555e9e3a29a7c08cfc7a793da6f02.html" title="simpletransaction" alt="" coords="27,52,165,77"/>
 <area shape="rect" id="node2" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html" title="src" alt="" coords="75,125,117,151"/>
-<area shape="poly" id="edge1" href="dir_000009_000010.html" alt="" coords="99,78,99,112,93,112,93,78"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000009_000010.html" title="2" alt="" coords="100,100,109,114"/>
+<area shape="poly" id="edge1" href="dir_000010_000011.html" alt="" coords="99,78,99,112,93,112,93,78"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000010_000011.html" title="2" alt="" coords="100,100,109,114"/>
 <area shape="rect" id="clust1" href="dir_b44f685f27163a3532809a80b4a9ed75.html" title="auto" alt="" coords="16,16,176,88"/>
 </map>
