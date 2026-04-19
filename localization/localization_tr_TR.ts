@@ -335,7 +335,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="961"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Seçmeli: GPG, dürüstlük doğrulaması için .gpg-id dosyalarını imzalamak üzere anahtar. Kullanıcı listesini kurcalamaya karşı korumanız gerekmedikçe boş bırakın.</translation>
+        <translation>Seçmeli: GPG, bütünlük doğrulaması için .gpg-id dosyalarını imzalamak üzere anahtar. Kullanıcı listesini kurcalamaya karşı korumanız gerekmedikçe boş bırakın.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="971"/>
