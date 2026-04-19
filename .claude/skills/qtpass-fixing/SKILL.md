@@ -354,7 +354,7 @@ act push -W .github/workflows/linter.yml -j build
 ```bash
 npx prettier --write <config-file>
 npx prettier --write .github/workflows/*.yml
-npx prettier --write .claude/skills/*/SKILL.md
+npx prettier --write "*/*/SKILL.md"
 ```
 
 ### C++ (clang-format)
