@@ -94,10 +94,17 @@ void PasswordDialog::on_checkBoxShow_stateChanged(int arg1) {
  */
 void PasswordDialog::on_createPasswordButton_clicked() {
   ui->widget->setEnabled(false);
+  const int currentIndex = ui->passwordTemplateSwitch->currentIndex();
+  if (currentIndex < 0 ||
+      currentIndex >= static_cast<int>(m_passConfig.Characters.size())) {
+    ui->widget->setEnabled(true);
+    return;
+  }
+
   QString newPass = QtPassSettings::getPass()->generatePassword(
       static_cast<unsigned int>(ui->spinBox_pwdLength->value()),
       m_passConfig.Characters[static_cast<PasswordConfiguration::characterSet>(
-          ui->passwordTemplateSwitch->currentIndex())]);
+          currentIndex)]);
   if (!newPass.isEmpty()) {
     ui->lineEditPassword->setText(newPass);
   }
