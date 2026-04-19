@@ -792,7 +792,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation>Неправильна електронна скринька</translation>
+        <translation>Неправильна адреса електронної пошти</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
