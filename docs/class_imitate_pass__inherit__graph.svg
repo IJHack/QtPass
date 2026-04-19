@@ -50,7 +50,7 @@
 <g id="Node000003" class="node">
 <title>Node3</title>
 <g id="a_Node000003"><a xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="56,-129 0,-129 0,-110 56,-110 56,-129"/>
+<polygon fill="white" stroke="#bfbfbf" points="56,-129 0,-129 0,-110 56,-110 56,-129"/>
 <text text-anchor="middle" x="28" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">QObject</text>
 </a>
 </g>
@@ -67,7 +67,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="classsimple_transaction.html" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="classsimple_transaction.html" target="_top" xlink:title="Tracks a sequence of processes that should be treated as one atomic operation.">
 <polygon fill="white" stroke="#666666" points="170.5,-74 65.5,-74 65.5,-55 170.5,-55 170.5,-74"/>
 <text text-anchor="middle" x="118" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">simpleTransaction</text>
 </a>

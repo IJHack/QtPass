@@ -1,5 +1,5 @@
 <map id="TrayIcon" name="TrayIcon">
-<area shape="rect" id="Node000001" title="Handles the systemtray icon and menu." alt="" coords="7,79,83,104"/>
+<area shape="rect" id="Node000001" title="Handles the system tray icon and menu." alt="" coords="7,79,83,104"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,84,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="47,44,47,79,42,79,42,44"/>
 </map>

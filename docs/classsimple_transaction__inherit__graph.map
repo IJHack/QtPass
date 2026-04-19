@@ -1,5 +1,5 @@
 <map id="simpleTransaction" name="simpleTransaction">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,145,31"/>
+<area shape="rect" id="Node000001" title="Tracks a sequence of processes that should be treated as one atomic operation." alt="" coords="5,5,145,31"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable." alt="" coords="26,79,125,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="78,44,78,79,73,79,73,44"/>
 </map>

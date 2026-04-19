@@ -1,15 +1,4 @@
 <map id="FileContent::getNamedValues" name="FileContent::getNamedValues">
-<area shape="rect" id="Node000001" title="Gets named value pairs from the parsed file." alt="" coords="999,42,1213,67"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="721,17,951,42"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="985,46,950,43,951,37,985,41"/>
-<area shape="rect" id="Node000003" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Sets content in the password field in the interface." alt="" coords="729,66,943,91"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="985,68,944,72,943,66,985,63"/>
-<area shape="rect" id="Node000004" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title="Sets the password from pass show output." alt="" coords="491,66,673,91"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="715,81,674,81,674,76,715,76"/>
-<area shape="rect" id="Node000005" href="$class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="248,29,443,69"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="477,68,443,64,443,59,478,63"/>
-<area shape="rect" id="Node000006" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="5,59,200,99"/>
-<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="477,84,443,84,248,84,200,83,200,78,248,79,443,79,477,78"/>
-<area shape="poly" id="edge5_Node000005_Node000005" title=" " alt="" coords="385,18,371,11,345,8,323,10,309,15,304,21,307,28,302,30,299,20,306,10,322,5,345,3,373,6,388,13"/>
-<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="235,65,201,70,200,64,234,60"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,220,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="151,20,140,11,113,8,90,10,78,15,75,20,82,28,78,31,70,21,74,11,89,5,113,3,142,6,154,15"/>
 </map>

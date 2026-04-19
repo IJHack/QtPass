@@ -72,7 +72,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><b>src</b></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -80,18 +80,18 @@ $(function() {
   <div class="headertitle"><div class="title">usersdialog.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="usersdialog_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2015 Anne Jan Brouwer</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2015 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_USERSDIALOG_H_</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_USERSDIALOG_H_</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="userinfo_8h.html">userinfo.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;userinfo.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QDialog&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QRegularExpression&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespace_ui.html">Ui</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span>Ui {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">class </span>UsersDialog;</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>}</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
@@ -104,15 +104,15 @@ $(function() {
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  Q_OBJECT</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_users_dialog.html#ae6e0d6aeb3519a01c154a6f087c1d9fb">UsersDialog</a>(<span class="keyword">const</span> QString &amp;dir, QWidget *parent = <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <a class="code hl_function" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">~UsersDialog</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="class_users_dialog.html#ae6e0d6aeb3519a01c154a6f087c1d9fb">   37</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="class_users_dialog.html#ae6e0d6aeb3519a01c154a6f087c1d9fb">UsersDialog</a>(<span class="keyword">const</span> QString &amp;dir, QWidget *parent = <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">   41</a></span>  <a class="code hl_function" href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">~UsersDialog</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">accept</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">   47</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">accept</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5">closeEvent</a>(QCloseEvent *event) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">keyPressEvent</a>(QKeyEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5">   54</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5">closeEvent</a>(QCloseEvent *event) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">   59</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">keyPressEvent</a>(QKeyEvent *event) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">private</span> slots:</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  <span class="keywordtype">void</span> itemChange(QListWidgetItem *item);</div>
@@ -150,14 +150,12 @@ $(function() {
 </div>
 <div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
 <div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="preprocessor">#endif </span><span class="comment">// SRC_USERSDIALOG_H_</span></div>
-<div class="ttc" id="aclass_users_dialog_html_a046728922f9ad9d2bf17ff64bf639d06"><div class="ttname"><a href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">UsersDialog::~UsersDialog</a></div><div class="ttdeci">~UsersDialog() override</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00158">usersdialog.cpp:158</a></div></div>
-<div class="ttc" id="aclass_users_dialog_html_a2b8e6e8605111e43bab64328add16ddb"><div class="ttname"><a href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">UsersDialog::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">Handle key press.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00188">usersdialog.cpp:188</a></div></div>
-<div class="ttc" id="aclass_users_dialog_html_aa1630582c14afcef9ad80398752762a4"><div class="ttname"><a href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">UsersDialog::accept</a></div><div class="ttdeci">void accept() override</div><div class="ttdoc">Handle dialog acceptance.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00163">usersdialog.cpp:163</a></div></div>
-<div class="ttc" id="aclass_users_dialog_html_ac1ca78f350c1f7655e0d32a1f1a07ba5"><div class="ttname"><a href="class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5">UsersDialog::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">Handle close event.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00173">usersdialog.cpp:173</a></div></div>
-<div class="ttc" id="aclass_users_dialog_html_ae6e0d6aeb3519a01c154a6f087c1d9fb"><div class="ttname"><a href="class_users_dialog.html#ae6e0d6aeb3519a01c154a6f087c1d9fb">UsersDialog::UsersDialog</a></div><div class="ttdeci">UsersDialog(const QString &amp;dir, QWidget *parent=nullptr)</div><div class="ttdoc">Construct users dialog.</div><div class="ttdef"><b>Definition</b> <a href="usersdialog_8cpp_source.html#l00024">usersdialog.cpp:24</a></div></div>
-<div class="ttc" id="anamespace_ui_html"><div class="ttname"><a href="namespace_ui.html">Ui</a></div><div class="ttdef"><b>Definition</b> <a href="configdialog_8h_source.html#l00011">configdialog.h:11</a></div></div>
-<div class="ttc" id="astruct_user_info_html"><div class="ttname"><a href="struct_user_info.html">UserInfo</a></div><div class="ttdoc">Stores key info lines including validity, creation date and more.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00013">userinfo.h:13</a></div></div>
-<div class="ttc" id="auserinfo_8h_html"><div class="ttname"><a href="userinfo_8h.html">userinfo.h</a></div></div>
+<div class="ttc" id="aclass_users_dialog_html_a046728922f9ad9d2bf17ff64bf639d06"><div class="ttname"><a href="class_users_dialog.html#a046728922f9ad9d2bf17ff64bf639d06">UsersDialog::~UsersDialog</a></div><div class="ttdeci">~UsersDialog() override</div><div class="ttdoc">Destructor.</div></div>
+<div class="ttc" id="aclass_users_dialog_html_a2b8e6e8605111e43bab64328add16ddb"><div class="ttname"><a href="class_users_dialog.html#a2b8e6e8605111e43bab64328add16ddb">UsersDialog::keyPressEvent</a></div><div class="ttdeci">void keyPressEvent(QKeyEvent *event) override</div><div class="ttdoc">Handle key press.</div></div>
+<div class="ttc" id="aclass_users_dialog_html_aa1630582c14afcef9ad80398752762a4"><div class="ttname"><a href="class_users_dialog.html#aa1630582c14afcef9ad80398752762a4">UsersDialog::accept</a></div><div class="ttdeci">void accept() override</div><div class="ttdoc">Handle dialog acceptance.</div></div>
+<div class="ttc" id="aclass_users_dialog_html_ac1ca78f350c1f7655e0d32a1f1a07ba5"><div class="ttname"><a href="class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5">UsersDialog::closeEvent</a></div><div class="ttdeci">void closeEvent(QCloseEvent *event) override</div><div class="ttdoc">Handle close event.</div></div>
+<div class="ttc" id="aclass_users_dialog_html_ae6e0d6aeb3519a01c154a6f087c1d9fb"><div class="ttname"><a href="class_users_dialog.html#ae6e0d6aeb3519a01c154a6f087c1d9fb">UsersDialog::UsersDialog</a></div><div class="ttdeci">UsersDialog(const QString &amp;dir, QWidget *parent=nullptr)</div><div class="ttdoc">Construct users dialog.</div></div>
+<div class="ttc" id="astruct_user_info_html"><div class="ttname"><a href="struct_user_info.html">UserInfo</a></div><div class="ttdoc">Stores GPG key info including validity, creation date, and more.</div><div class="ttdef"><b>Definition</b> <a href="userinfo_8h_source.html#l00013">userinfo.h:13</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

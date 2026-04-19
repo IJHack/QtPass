@@ -82,6 +82,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Orchestrates clipboard management, pass signal handling, and application-level operations for the <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a> application.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="qtpass_8h_source.html">qtpass.h</a>&gt;</code></p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Inheritance diagram for QtPass:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -98,40 +101,42 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a3febdf740ba4d78a4149d7d7c3b9284e" id="r_a3febdf740ba4d78a4149d7d7c3b9284e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3febdf740ba4d78a4149d7d7c3b9284e">clearClipboard</a> ()</td></tr>
-<tr class="memdesc:a3febdf740ba4d78a4149d7d7c3b9284e"><td class="mdescLeft">&#160;</td><td class="mdescRight">MainWindow::clearClipboard remove clipboard contents.  <br /></td></tr>
+<tr class="memitem:a3febdf740ba4d78a4149d7d7c3b9284e" id="r_a3febdf740ba4d78a4149d7d7c3b9284e"><td class="memItemLeft"><a id="a3febdf740ba4d78a4149d7d7c3b9284e" name="a3febdf740ba4d78a4149d7d7c3b9284e"></a>
+void&#160;</td><td class="memItemRight"><b>clearClipboard</b> ()</td></tr>
+<tr class="memdesc:a3febdf740ba4d78a4149d7d7c3b9284e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the system clipboard contents immediately. <br /></td></tr>
 <tr class="memitem:acba134fb5281aedee11899a03976aa95" id="r_acba134fb5281aedee11899a03976aa95"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acba134fb5281aedee11899a03976aa95">copyTextToClipboard</a> (const QString &amp;text)</td></tr>
-<tr class="memdesc:acba134fb5281aedee11899a03976aa95"><td class="mdescLeft">&#160;</td><td class="mdescRight">MainWindow::copyTextToClipboard copies text to your clipboard.  <br /></td></tr>
+<tr class="memdesc:acba134fb5281aedee11899a03976aa95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy text into the system clipboard.  <br /></td></tr>
 <tr class="memitem:aef5aaf0605c7681967995ede486590ef" id="r_aef5aaf0605c7681967995ede486590ef"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aef5aaf0605c7681967995ede486590ef">showTextAsQRCode</a> (const QString &amp;text)</td></tr>
-<tr class="memdesc:aef5aaf0605c7681967995ede486590ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">displays the text as qrcode  <br /></td></tr>
+<tr class="memdesc:aef5aaf0605c7681967995ede486590ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request display of text as a QR code in the UI.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa9f6862ff8875c387423b462ac7f9cad" id="r_aa9f6862ff8875c387423b462ac7f9cad"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa9f6862ff8875c387423b462ac7f9cad">QtPass</a> (<a class="el" href="class_main_window.html">MainWindow</a> *mainWindow)</td></tr>
-<tr class="memdesc:aa9f6862ff8875c387423b462ac7f9cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="class_qt_pass.html">QtPass</a> instance.  <br /></td></tr>
-<tr class="memitem:a70447af6f0e0540106a423a45dc27c99" id="r_a70447af6f0e0540106a423a45dc27c99"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a70447af6f0e0540106a423a45dc27c99">~QtPass</a> ()</td></tr>
-<tr class="memdesc:a70447af6f0e0540106a423a45dc27c99"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!">QtPass::~QtPass</a> destroy!  <br /></td></tr>
+<tr class="memdesc:aa9f6862ff8875c387423b462ac7f9cad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a> instance associated with the given main window.  <br /></td></tr>
 <tr class="memitem:ad0a4d7627e6303e412d4a832a8bad77c" id="r_ad0a4d7627e6303e412d4a832a8bad77c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad0a4d7627e6303e412d4a832a8bad77c">init</a> () -&gt; bool</td></tr>
-<tr class="memdesc:ad0a4d7627e6303e412d4a832a8bad77c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible.">QtPass::init</a> make sure we are ready to go as soon as possible.  <br /></td></tr>
-<tr class="memitem:a74adba9dd6915c9db50762279b62be89" id="r_a74adba9dd6915c9db50762279b62be89"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a74adba9dd6915c9db50762279b62be89">setClippedText</a> (const QString &amp;, const QString &amp;p_output=QString())</td></tr>
-<tr class="memdesc:a74adba9dd6915c9db50762279b62be89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the text to be stored in clipboard and handles clipboard operations.  <br /></td></tr>
-<tr class="memitem:a00f9914078839b980f3d66ddbed61cab" id="r_a00f9914078839b980f3d66ddbed61cab"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a00f9914078839b980f3d66ddbed61cab">clearClippedText</a> ()</td></tr>
-<tr class="memdesc:a00f9914078839b980f3d66ddbed61cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the stored clipped text.  <br /></td></tr>
-<tr class="memitem:a24eb2c0a19143db0ba3a741c66881be6" id="r_a24eb2c0a19143db0ba3a741c66881be6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a24eb2c0a19143db0ba3a741c66881be6">setClipboardTimer</a> ()</td></tr>
-<tr class="memdesc:a24eb2c0a19143db0ba3a741c66881be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the clipboard clear timer based on autoclear settings.  <br /></td></tr>
+<tr class="memdesc:ad0a4d7627e6303e412d4a832a8bad77c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize internal state and signal connections.  <br /></td></tr>
+<tr class="memitem:a34a92aa7506eb436628c7c7ff6bfc489" id="r_a34a92aa7506eb436628c7c7ff6bfc489"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a34a92aa7506eb436628c7c7ff6bfc489">setClippedText</a> (const QString &amp;text, const QString &amp;p_output=QString())</td></tr>
+<tr class="memdesc:a34a92aa7506eb436628c7c7ff6bfc489"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the tracked clipped text value.  <br /></td></tr>
+<tr class="memitem:a00f9914078839b980f3d66ddbed61cab" id="r_a00f9914078839b980f3d66ddbed61cab"><td class="memItemLeft"><a id="a00f9914078839b980f3d66ddbed61cab" name="a00f9914078839b980f3d66ddbed61cab"></a>
+void&#160;</td><td class="memItemRight"><b>clearClippedText</b> ()</td></tr>
+<tr class="memdesc:a00f9914078839b980f3d66ddbed61cab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove any stored clipped text value. <br /></td></tr>
+<tr class="memitem:a24eb2c0a19143db0ba3a741c66881be6" id="r_a24eb2c0a19143db0ba3a741c66881be6"><td class="memItemLeft"><a id="a24eb2c0a19143db0ba3a741c66881be6" name="a24eb2c0a19143db0ba3a741c66881be6"></a>
+void&#160;</td><td class="memItemRight"><b>setClipboardTimer</b> ()</td></tr>
+<tr class="memdesc:a24eb2c0a19143db0ba3a741c66881be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure and start the clipboard-clear timer. <br /></td></tr>
 <tr class="memitem:a2ac40a69378a7085bebc633984ae6a57" id="r_a2ac40a69378a7085bebc633984ae6a57"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a2ac40a69378a7085bebc633984ae6a57">isFreshStart</a> () -&gt; bool</td></tr>
+<tr class="memdesc:a2ac40a69378a7085bebc633984ae6a57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether this instance is in a fresh-start state.  <br /></td></tr>
 <tr class="memitem:a5b63b7418723b400f0db2afa450f1199" id="r_a5b63b7418723b400f0db2afa450f1199"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5b63b7418723b400f0db2afa450f1199">setFreshStart</a> (const bool &amp;fs)</td></tr>
+<tr class="memdesc:a5b63b7418723b400f0db2afa450f1199"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the fresh-start state.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abd2dacf3e88b411ef39ec78f49bbdd2d" id="r_abd2dacf3e88b411ef39ec78f49bbdd2d"><td class="memItemLeft">static QDialog *&#160;</td><td class="memItemRight"><a class="el" href="#abd2dacf3e88b411ef39ec78f49bbdd2d">createQRCodePopup</a> (const QPixmap &amp;image)</td></tr>
-<tr class="memdesc:abd2dacf3e88b411ef39ec78f49bbdd2d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#abd2dacf3e88b411ef39ec78f49bbdd2d" title="QtPass::createQRCodePopup creates a popup dialog with the given QR code image. This is extracted for ...">QtPass::createQRCodePopup</a> creates a popup dialog with the given QR code image. This is extracted for testability. The caller is responsible for showing and managing the popup lifecycle.  <br /></td></tr>
+<tr class="memitem:a87eca9145118d654cf0e87fe3f2b7a7d" id="r_a87eca9145118d654cf0e87fe3f2b7a7d"><td class="memItemLeft">static QDialog *&#160;</td><td class="memItemRight"><a class="el" href="#a87eca9145118d654cf0e87fe3f2b7a7d">createQRCodePopup</a> (const QPixmap &amp;image)</td></tr>
+<tr class="memdesc:a87eca9145118d654cf0e87fe3f2b7a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a modal dialog configured to display the given QR code.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#_a2">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
+<div class="textblock"><p>Orchestrates clipboard management, pass signal handling, and application-level operations for the <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a> application. </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00137">137</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00038">38</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa9f6862ff8875c387423b462ac7f9cad" name="aa9f6862ff8875c387423b462ac7f9cad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9f6862ff8875c387423b462ac7f9cad">&#9670;&#160;</a></span>QtPass()</h2>
@@ -148,108 +153,29 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs a <a class="el" href="class_qt_pass.html">QtPass</a> instance. </p>
+<p>Construct a <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a> instance associated with the given main window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">mainWindow</td><td>The main window reference </td></tr>
+    <tr><td class="paramname">mainWindow</td><td>Pointer to the application's <a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a>. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00036">36</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
 <div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa9f6862ff8875c387423b462ac7f9cad_cgraph.svg" width="100%" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa9f6862ff8875c387423b462ac7f9cad_cgraph.svg" width="130" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-
-</div>
-</div>
-<a id="a70447af6f0e0540106a423a45dc27c99" name="a70447af6f0e0540106a423a45dc27c99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a70447af6f0e0540106a423a45dc27c99">&#9670;&#160;</a></span>~QtPass()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">QtPass::~QtPass </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="#a70447af6f0e0540106a423a45dc27c99" title="QtPass::~QtPass destroy!">QtPass::~QtPass</a> destroy! </p>
-
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00059">59</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a70447af6f0e0540106a423a45dc27c99_cgraph.svg" width="656" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aa9f6862ff8875c387423b462ac7f9cad_icgraph.svg" width="130" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="a3febdf740ba4d78a4149d7d7c3b9284e" name="a3febdf740ba4d78a4149d7d7c3b9284e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3febdf740ba4d78a4149d7d7c3b9284e">&#9670;&#160;</a></span>clearClipboard</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QtPass::clearClipboard </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>MainWindow::clearClipboard remove clipboard contents. </p>
-
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00452">452</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a3febdf740ba4d78a4149d7d7c3b9284e_icgraph.svg" width="346" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a00f9914078839b980f3d66ddbed61cab" name="a00f9914078839b980f3d66ddbed61cab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00f9914078839b980f3d66ddbed61cab">&#9670;&#160;</a></span>clearClippedText()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QtPass::clearClippedText </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Clears the stored clipped text. </p>
-
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00439">439</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-
-</div>
-</div>
 <a id="acba134fb5281aedee11899a03976aa95" name="acba134fb5281aedee11899a03976aa95"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acba134fb5281aedee11899a03976aa95">&#9670;&#160;</a></span>copyTextToClipboard</h2>
 
@@ -273,34 +199,18 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>MainWindow::copyTextToClipboard copies text to your clipboard. </p>
+<p>Copy text into the system clipboard. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td></td></tr>
+    <tr><td class="paramname">text</td><td>Text to copy. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a80">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00500">500</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_acba134fb5281aedee11899a03976aa95_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_acba134fb5281aedee11899a03976aa95_icgraph.svg" width="438" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
-<a id="abd2dacf3e88b411ef39ec78f49bbdd2d" name="abd2dacf3e88b411ef39ec78f49bbdd2d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abd2dacf3e88b411ef39ec78f49bbdd2d">&#9670;&#160;</a></span>createQRCodePopup()</h2>
+<a id="a87eca9145118d654cf0e87fe3f2b7a7d" name="a87eca9145118d654cf0e87fe3f2b7a7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87eca9145118d654cf0e87fe3f2b7a7d">&#9670;&#160;</a></span>createQRCodePopup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -322,22 +232,14 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#abd2dacf3e88b411ef39ec78f49bbdd2d" title="QtPass::createQRCodePopup creates a popup dialog with the given QR code image. This is extracted for ...">QtPass::createQRCodePopup</a> creates a popup dialog with the given QR code image. This is extracted for testability. The caller is responsible for showing and managing the popup lifecycle. </p>
+<p>Create a modal dialog configured to display the given QR code. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">image</td><td>The QR code pixmap to display </td></tr>
+    <tr><td class="paramname">image</td><td>Pixmap containing the rendered QR code. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The created popup dialog </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00550">550</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_abd2dacf3e88b411ef39ec78f49bbdd2d_icgraph.svg" width="468" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to a QDialog showing the image; caller takes ownership. </dd></dl>
 
 </div>
 </div>
@@ -351,20 +253,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto QtPass::init </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; bool</td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#ad0a4d7627e6303e412d4a832a8bad77c" title="QtPass::init make sure we are ready to go as soon as possible.">QtPass::init</a> make sure we are ready to go as soon as possible. </p>
-
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00076">76</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_ad0a4d7627e6303e412d4a832a8bad77c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
+<p>Initialize internal state and signal connections. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if initialization succeeded. </dd></dl>
 
 </div>
 </div>
@@ -391,45 +286,15 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00148">148</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p>Return whether this instance is in a fresh-start state. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if in fresh-start state. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00077">77</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 
 </div>
 </div>
-<a id="a24eb2c0a19143db0ba3a741c66881be6" name="a24eb2c0a19143db0ba3a741c66881be6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24eb2c0a19143db0ba3a741c66881be6">&#9670;&#160;</a></span>setClipboardTimer()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QtPass::setClipboardTimer </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets the clipboard clear timer based on autoclear settings. </p>
-
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00444">444</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a24eb2c0a19143db0ba3a741c66881be6_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a24eb2c0a19143db0ba3a741c66881be6_icgraph.svg" width="372" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a74adba9dd6915c9db50762279b62be89" name="a74adba9dd6915c9db50762279b62be89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74adba9dd6915c9db50762279b62be89">&#9670;&#160;</a></span>setClippedText()</h2>
+<a id="a34a92aa7506eb436628c7c7ff6bfc489" name="a34a92aa7506eb436628c7c7ff6bfc489"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34a92aa7506eb436628c7c7ff6bfc489">&#9670;&#160;</a></span>setClippedText()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,7 +302,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void QtPass::setClippedText </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>password</em></span>, </td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>text</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -447,22 +312,14 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets the text to be stored in clipboard and handles clipboard operations. </p>
+<p>Update the tracked clipped text value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">password</td><td>The password or text to store </td></tr>
-    <tr><td class="paramname">p_output</td><td>Additional output text </td></tr>
+    <tr><td class="paramname">text</td><td>Primary text to store. </td></tr>
+    <tr><td class="paramname">p_output</td><td>Optional additional output used when determining the final clipped text value. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00427">427</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_a74adba9dd6915c9db50762279b62be89_cgraph.svg" width="100%" height="450"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
@@ -489,7 +346,15 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00149">149</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
+<p>Set the fresh-start state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fs</td><td>New fresh-start state value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="qtpass_8h_source.html#l00083">83</a> of file <a class="el" href="qtpass_8h_source.html">qtpass.h</a>.</p>
 
 </div>
 </div>
@@ -516,29 +381,18 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>displays the text as qrcode </p>
+<p>Request display of text as a QR code in the UI. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">text</td><td></td></tr>
+    <tr><td class="paramname">text</td><td>Text to convert into a QR code. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a83">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="qtpass_8cpp_source.html#l00522">522</a> of file <a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a>.</p>
-<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_qt_pass_aef5aaf0605c7681967995ede486590ef_cgraph.svg" width="100%" height="376"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="qtpass_8h_source.html">qtpass.h</a></li>
-<li>src/<a class="el" href="qtpass_8cpp_source.html">qtpass.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

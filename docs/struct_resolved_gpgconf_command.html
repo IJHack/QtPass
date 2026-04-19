@@ -80,18 +80,23 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a command invocation for gpgconf operations.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="pass_8h_source.html">pass.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:ae34ff02051398b8688497a4fb373e1d3" id="r_ae34ff02051398b8688497a4fb373e1d3"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#ae34ff02051398b8688497a4fb373e1d3">program</a></td></tr>
+<tr class="memdesc:ae34ff02051398b8688497a4fb373e1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executable to run — may be a bare name resolved via PATH or a wrapper (e.g. wsl.exe) rather than a direct gpgconf path.  <br /></td></tr>
 <tr class="memitem:aa06fa6189e39477786bbb118dca49556" id="r_aa06fa6189e39477786bbb118dca49556"><td class="memItemLeft">QStringList&#160;</td><td class="memItemRight"><a class="el" href="#aa06fa6189e39477786bbb118dca49556">arguments</a></td></tr>
+<tr class="memdesc:aa06fa6189e39477786bbb118dca49556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Full argv list, including any wrapper/prefix args followed by the actual gpgconf operation flags (e.g. ["--kill", "gpg-agent"]).  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a42">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
-</dl>
+<div class="textblock"><p>Represents a command invocation for gpgconf operations. </p>
+<p>On Unix this is typically just the gpgconf binary; on Windows/WSL it may be a wrapper such as wsl.exe with gpgconf as a prefixed argument. </p>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00017">17</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00024">24</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 </div><a name="doc-variable-members" id="doc-variable-members"></a><h2 id="header-doc-variable-members" class="groupheader">Member Data Documentation</h2>
 <a id="aa06fa6189e39477786bbb118dca49556" name="aa06fa6189e39477786bbb118dca49556"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa06fa6189e39477786bbb118dca49556">&#9670;&#160;</a></span>arguments</h2>
@@ -104,10 +109,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a44">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00019">19</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p>Full argv list, including any wrapper/prefix args followed by the actual gpgconf operation flags (e.g. ["--kill", "gpg-agent"]). </p>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00034">34</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>
@@ -122,10 +127,10 @@ Public Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#a45">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00018">18</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
+<p>Executable to run — may be a bare name resolved via PATH or a wrapper (e.g. wsl.exe) rather than a direct gpgconf path. </p>
+
+<p class="definition">Definition at line <a class="el" href="pass_8h_source.html#l00029">29</a> of file <a class="el" href="pass_8h_source.html">pass.h</a>.</p>
 
 </div>
 </div>

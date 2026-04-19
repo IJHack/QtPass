@@ -1,5 +1,4 @@
 <map id="FileContent::getRemainingDataForDisplay" name="FileContent::getRemainingDataForDisplay">
-<area shape="rect" id="Node000001" title="Gets remaining data for display (excludes hidden fields like OTP)." alt="" coords="283,5,477,45"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#a0d75695e555bac7331e1ea22bc3159df" title=" " alt="" coords="5,13,235,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="269,28,235,28,235,23,269,23"/>
+<area shape="rect" id="Node000001" title="Like getRemainingData but without data that should not be displayed (like a TOTP secret)." alt="" coords="5,29,200,69"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="135,17,124,11,103,8,84,10,73,15,69,21,71,28,66,30,64,20,70,11,83,5,103,3,126,6,138,13"/>
 </map>

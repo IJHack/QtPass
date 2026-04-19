@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['key_5fid_0',['key_id',['../struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6',1,'UserInfo']]],
-  ['kind_1',['kind',['../structdrag_and_drop_info_password_store.html#ab4bf9c0e8d5cce80a689fd57b3b97541',1,'dragAndDropInfoPasswordStore']]]
+  ['name_0',['name',['../struct_named_value.html#a2c5db0fcfdabcee423cc74c6e5362867',1,'NamedValue::name'],['../struct_user_info.html#acf06e7727153cca2cd8b4a912517a2bb',1,'UserInfo::name']]]
 ];

@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['dialoggeometry_0',['dialogGeometry',['../class_settings_constants.html#a23e4bf464696a794718cb8aa837e3035',1,'SettingsConstants']]],
-  ['dialogmaximized_1',['dialogMaximized',['../class_settings_constants.html#ab15246c28469532b0983b0a1f34204e8',1,'SettingsConstants']]],
-  ['dialogpos_2',['dialogPos',['../class_settings_constants.html#ad19648aaf95f4471f290d5eed09878b6',1,'SettingsConstants']]],
-  ['dialogsize_3',['dialogSize',['../class_settings_constants.html#aa9ac148007cefba2b007e183569e6791',1,'SettingsConstants']]],
-  ['displayasis_4',['displayAsIs',['../class_settings_constants.html#adc29ead56e2fe252b128f1557825182b',1,'SettingsConstants']]]
+  ['enabled_0',['enabled',['../struct_user_info.html#a163a4e36d5d12cbfc3c13c60f33c5f1f',1,'UserInfo']]],
+  ['exec_1',['exec',['../class_pass.html#a903a833ade1109f9cb75e3bbeab8d0af',1,'Pass']]],
+  ['expiry_2',['expiry',['../struct_user_info.html#af6b3e6dc6e34553f764e577d2994f5aa',1,'UserInfo']]]
 ];

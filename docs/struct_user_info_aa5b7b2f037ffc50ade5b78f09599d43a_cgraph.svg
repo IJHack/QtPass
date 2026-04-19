@@ -22,7 +22,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="UserInfo::isValid when fullyValid or marginallyValid.">
+<g id="a_Node000001"><a xlink:title="Check whether the key has any usable validity level.">
 <polygon fill="#999999" stroke="#666666" points="96,-37 0,-37 0,-18 96,-18 96,-37"/>
 <text text-anchor="middle" x="48" y="-25" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::isValid</text>
 </a>
@@ -31,7 +31,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" target="_top" xlink:title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb....">
+<g id="a_Node000002"><a xlink:href="struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" target="_top" xlink:title="Check full validity per GnuPG validity codes.">
 <polygon fill="white" stroke="#666666" points="257,-56 147,-56 147,-37 257,-37 257,-56"/>
 <text text-anchor="middle" x="202" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::fullyValid</text>
 </a>
@@ -49,7 +49,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" target="_top" xlink:title="UserInfo::marginallyValid when validity is m. http://git.gnupg.org/cgi&#45;bin/gitweb....">
+<g id="a_Node000003"><a xlink:href="struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" target="_top" xlink:title="Check marginal validity per GnuPG validity codes.">
 <polygon fill="white" stroke="#666666" points="272,-19 132,-19 132,0 272,0 272,-19"/>
 <text text-anchor="middle" x="202" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">UserInfo::marginallyValid</text>
 </a>

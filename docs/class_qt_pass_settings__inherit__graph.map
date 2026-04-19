@@ -1,5 +1,5 @@
 <map id="QtPassSettings" name="QtPassSettings">
-<area shape="rect" id="Node000001" title="Singleton settings manager implementation." alt="" coords="5,79,124,104"/>
+<area shape="rect" id="Node000001" title="Singleton that stores QtPass settings, handles persistence and defaults." alt="" coords="5,79,124,104"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="22,5,107,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,44,67,79,62,79,62,44"/>
 </map>

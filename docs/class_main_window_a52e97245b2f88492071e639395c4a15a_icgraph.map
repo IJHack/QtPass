@@ -1,4 +1,4 @@
 <map id="MainWindow::MainWindow" name="MainWindow::MainWindow">
-<area shape="rect" id="Node000001" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,29,203,55"/>
+<area shape="rect" id="Node000001" title="Construct the main window." alt="" coords="5,29,203,55"/>
 <area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="139,19,129,11,104,8,83,10,72,15,70,20,76,28,71,31,65,21,68,11,82,5,104,3,131,6,142,15"/>
 </map>

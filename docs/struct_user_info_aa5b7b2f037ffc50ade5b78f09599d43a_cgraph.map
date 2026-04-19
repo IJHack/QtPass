@@ -1,7 +1,7 @@
 <map id="UserInfo::isValid" name="UserInfo::isValid">
-<area shape="rect" id="Node000001" title="UserInfo::isValid when fullyValid or marginallyValid." alt="" coords="5,31,133,56"/>
-<area shape="rect" id="Node000002" href="$struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi&#45;bin/gitweb...." alt="" coords="201,5,348,31"/>
+<area shape="rect" id="Node000001" title="Check whether the key has any usable validity level." alt="" coords="5,31,133,56"/>
+<area shape="rect" id="Node000002" href="$struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5" title="Check full validity per GnuPG validity codes." alt="" coords="201,5,348,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,33,187,26,188,31,134,38"/>
-<area shape="rect" id="Node000003" href="$struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" title="UserInfo::marginallyValid when validity is m. http://git.gnupg.org/cgi&#45;bin/gitweb...." alt="" coords="181,55,368,80"/>
+<area shape="rect" id="Node000003" href="$struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd" title="Check marginal validity per GnuPG validity codes." alt="" coords="181,55,368,80"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,48,168,52,167,57,133,53"/>
 </map>

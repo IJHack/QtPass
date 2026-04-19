@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['verifygpgidfile_0',['verifyGpgIdFile',['../class_imitate_pass.html#a6ecaa7d53d661362511354e96572c240',1,'ImitatePass']]],
-  ['verifygpgidfordir_1',['verifyGpgIdForDir',['../class_imitate_pass.html#a7af6102fa60b3267bd1e387e7cfd82af',1,'ImitatePass']]]
+  ['wizard_0',['wizard',['../class_config_dialog.html#ad5b80066591f19fdaaa06b7cb5ba7f15',1,'ConfigDialog']]],
+  ['writegpgidfile_1',['writeGpgIdFile',['../class_imitate_pass.html#ae65aff95459cee83b5b999f5a83fcac1',1,'ImitatePass']]]
 ];

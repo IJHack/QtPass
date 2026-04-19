@@ -80,7 +80,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> class is mostly a list of <a class="el" href="struct_named_value.html">NamedValue</a> but also has a method to take a specific <a class="el" href="struct_named_value.html">NamedValue</a> pair out of the list.  
+<p>The <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> class is mostly a list of <a class="el" href="struct_named_value.html" title="A name/value pair parsed from a password file field.">NamedValue</a> but also has a method to take a specific <a class="el" href="struct_named_value.html" title="A name/value pair parsed from a password file field.">NamedValue</a> pair out of the list.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="filecontent_8h_source.html">filecontent.h</a>&gt;</code></p>
@@ -99,47 +99,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abe1c3dc2619efbc91cfd2d19c98a6dc6" id="r_abe1c3dc2619efbc91cfd2d19c98a6dc6"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#abe1c3dc2619efbc91cfd2d19c98a6dc6">NamedValues</a> ()</td></tr>
-<tr class="memdesc:abe1c3dc2619efbc91cfd2d19c98a6dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor for <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a>.  <br /></td></tr>
 <tr class="memitem:ae05206d5b3c53ee4545089e8f7997b4f" id="r_ae05206d5b3c53ee4545089e8f7997b4f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ae05206d5b3c53ee4545089e8f7997b4f">NamedValues</a> (std::initializer_list&lt; <a class="el" href="struct_named_value.html">NamedValue</a> &gt; values)</td></tr>
-<tr class="memdesc:ae05206d5b3c53ee4545089e8f7997b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> from initializer list.  <br /></td></tr>
+<tr class="memdesc:ae05206d5b3c53ee4545089e8f7997b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> list from an initializer list.  <br /></td></tr>
 <tr class="memitem:a427d280bd24b10d9a5b627b1fa4b5f4b" id="r_a427d280bd24b10d9a5b627b1fa4b5f4b"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a427d280bd24b10d9a5b627b1fa4b5f4b">takeValue</a> (const QString &amp;name) -&gt; QString</td></tr>
-<tr class="memdesc:a427d280bd24b10d9a5b627b1fa4b5f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds and removes a named value by name.  <br /></td></tr>
+<tr class="memdesc:a427d280bd24b10d9a5b627b1fa4b5f4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove and return the value for the named field.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> class is mostly a list of <a class="el" href="struct_named_value.html">NamedValue</a> but also has a method to take a specific <a class="el" href="struct_named_value.html">NamedValue</a> pair out of the list. </p>
+<div class="textblock"><p>The <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> class is mostly a list of <a class="el" href="struct_named_value.html" title="A name/value pair parsed from a password file field.">NamedValue</a> but also has a method to take a specific <a class="el" href="struct_named_value.html" title="A name/value pair parsed from a password file field.">NamedValue</a> pair out of the list. </p>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00023">23</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00033">33</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abe1c3dc2619efbc91cfd2d19c98a6dc6" name="abe1c3dc2619efbc91cfd2d19c98a6dc6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe1c3dc2619efbc91cfd2d19c98a6dc6">&#9670;&#160;</a></span>NamedValues() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">NamedValues::NamedValues </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel default">default</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Default constructor for <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a>. </p>
-
-</div>
-</div>
 <a id="ae05206d5b3c53ee4545089e8f7997b4f" name="ae05206d5b3c53ee4545089e8f7997b4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae05206d5b3c53ee4545089e8f7997b4f">&#9670;&#160;</a></span>NamedValues() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05206d5b3c53ee4545089e8f7997b4f">&#9670;&#160;</a></span>NamedValues()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,15 +124,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Constructs <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> from initializer list. </p>
+<p>Construct a <a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> list from an initializer list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">values</td><td>Initializer list of <a class="el" href="struct_named_value.html">NamedValue</a> </td></tr>
+    <tr><td class="paramname">values</td><td>Initial set of <a class="el" href="struct_named_value.html" title="A name/value pair parsed from a password file field.">NamedValue</a> pairs. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00110">110</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
 
 </div>
 </div>
@@ -176,33 +145,24 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto NamedValues::takeValue </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>name</em></span></td><td>)</td>
-          <td> -&gt; QString</td>
+          <td> -&gt;  QString</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Finds and removes a named value by name. </p>
+<p>Remove and return the value for the named field. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">name</td><td>The name to search for </td></tr>
+    <tr><td class="paramname">name</td><td>Field name to look up and remove. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The value if found, empty string otherwise </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00118">118</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_named_values_a427d280bd24b10d9a5b627b1fa4b5f4b_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>The value of the removed field, or an empty string if not found. </dd></dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="filecontent_8h_source.html">filecontent.h</a></li>
-<li>src/<a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

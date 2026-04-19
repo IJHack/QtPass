@@ -83,7 +83,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a> class does way too much, not only is it a switchboard, configuration handler and more, it's also the process-manager.  
+<p>Main application window orchestrating UI, user interactions, and external process handlers.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>&gt;</code></p>
@@ -102,72 +102,88 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:ad4cf3e2c819cac398728a82f1cf05f3e" id="r_ad4cf3e2c819cac398728a82f1cf05f3e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad4cf3e2c819cac398728a82f1cf05f3e">deselect</a> ()</td></tr>
-<tr class="memdesc:ad4cf3e2c819cac398728a82f1cf05f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer.">MainWindow::deselect</a> clear the selection, password and copy buffer.  <br /></td></tr>
+<tr class="memitem:ad4cf3e2c819cac398728a82f1cf05f3e" id="r_ad4cf3e2c819cac398728a82f1cf05f3e"><td class="memItemLeft"><a id="ad4cf3e2c819cac398728a82f1cf05f3e" name="ad4cf3e2c819cac398728a82f1cf05f3e"></a>
+void&#160;</td><td class="memItemRight"><b>deselect</b> ()</td></tr>
+<tr class="memdesc:ad4cf3e2c819cac398728a82f1cf05f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current tree view selection. <br /></td></tr>
 <tr class="memitem:a4fad7c4dec11ceaebcb8a0141280ba4b" id="r_a4fad7c4dec11ceaebcb8a0141280ba4b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4fad7c4dec11ceaebcb8a0141280ba4b">messageAvailable</a> (const QString &amp;message)</td></tr>
-<tr class="memdesc:a4fad7c4dec11ceaebcb8a0141280ba4b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a4fad7c4dec11ceaebcb8a0141280ba4b" title="MainWindow::messageAvailable we have some text/message/search to do.">MainWindow::messageAvailable</a> we have some text/message/search to do.  <br /></td></tr>
-<tr class="memitem:a4f1e5c088cf47f1db5c84882a42c1842" id="r_a4f1e5c088cf47f1db5c84882a42c1842"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4f1e5c088cf47f1db5c84882a42c1842">critical</a> (const QString &amp;, const QString &amp;)</td></tr>
-<tr class="memdesc:a4f1e5c088cf47f1db5c84882a42c1842"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a4f1e5c088cf47f1db5c84882a42c1842" title="MainWindow::critical critical message popup wrapper.">MainWindow::critical</a> critical message popup wrapper.  <br /></td></tr>
-<tr class="memitem:a3550b28be1344cf5c012af794dce8c64" id="r_a3550b28be1344cf5c012af794dce8c64"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3550b28be1344cf5c012af794dce8c64">executeWrapperStarted</a> ()</td></tr>
+<tr class="memdesc:a4fad7c4dec11ceaebcb8a0141280ba4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an incoming inter-process message (single-instance mode).  <br /></td></tr>
+<tr class="memitem:a8719b3a133e95915dd72b244db1e49bf" id="r_a8719b3a133e95915dd72b244db1e49bf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8719b3a133e95915dd72b244db1e49bf">critical</a> (const QString &amp;title, const QString &amp;msg)</td></tr>
+<tr class="memdesc:a8719b3a133e95915dd72b244db1e49bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display a critical error dialog.  <br /></td></tr>
+<tr class="memitem:a3550b28be1344cf5c012af794dce8c64" id="r_a3550b28be1344cf5c012af794dce8c64"><td class="memItemLeft"><a id="a3550b28be1344cf5c012af794dce8c64" name="a3550b28be1344cf5c012af794dce8c64"></a>
+void&#160;</td><td class="memItemRight"><b>executeWrapperStarted</b> ()</td></tr>
+<tr class="memdesc:a3550b28be1344cf5c012af794dce8c64"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot called when an external process wrapper has started. <br /></td></tr>
 <tr class="memitem:a69f4a122336a6fc3875fc94741e4d1cf" id="r_a69f4a122336a6fc3875fc94741e4d1cf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a69f4a122336a6fc3875fc94741e4d1cf">showStatusMessage</a> (const QString &amp;msg, int timeout=2000)</td></tr>
-<tr class="memdesc:a69f4a122336a6fc3875fc94741e4d1cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays message in status bar.  <br /></td></tr>
-<tr class="memitem:a0d75695e555bac7331e1ea22bc3159df" id="r_a0d75695e555bac7331e1ea22bc3159df"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0d75695e555bac7331e1ea22bc3159df">passShowHandler</a> (const QString &amp;)</td></tr>
-<tr class="memitem:a7997fd865548c3baa51f1863bb8fdfa0" id="r_a7997fd865548c3baa51f1863bb8fdfa0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7997fd865548c3baa51f1863bb8fdfa0">passOtpHandler</a> (const QString &amp;)</td></tr>
+<tr class="memdesc:a69f4a122336a6fc3875fc94741e4d1cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show a message in the status bar for the given duration.  <br /></td></tr>
+<tr class="memitem:a35dcbf29b9cfe87b6f7d597b7abba480" id="r_a35dcbf29b9cfe87b6f7d597b7abba480"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a35dcbf29b9cfe87b6f7d597b7abba480">passShowHandler</a> (const QString &amp;output)</td></tr>
+<tr class="memdesc:a35dcbf29b9cfe87b6f7d597b7abba480"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle output from the pass show command.  <br /></td></tr>
+<tr class="memitem:ad138cb03123dbf06fe8a118ea057412d" id="r_ad138cb03123dbf06fe8a118ea057412d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad138cb03123dbf06fe8a118ea057412d">passOtpHandler</a> (const QString &amp;output)</td></tr>
+<tr class="memdesc:ad138cb03123dbf06fe8a118ea057412d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle output from the pass OTP command.  <br /></td></tr>
 <tr class="memitem:a270b5f2701f275c3de734f4150a3d897" id="r_a270b5f2701f275c3de734f4150a3d897"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a270b5f2701f275c3de734f4150a3d897">onGrepFinished</a> (const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</td></tr>
-<tr class="memdesc:a270b5f2701f275c3de734f4150a3d897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display grep results in grepResultsList.  <br /></td></tr>
-<tr class="memitem:a6961588ebf3c0640200e0cfa920af3be" id="r_a6961588ebf3c0640200e0cfa920af3be"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6961588ebf3c0640200e0cfa920af3be">onPush</a> ()</td></tr>
-<tr class="memdesc:a6961588ebf3c0640200e0cfa920af3be"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push.">MainWindow::onPush</a> do a git push.  <br /></td></tr>
+<tr class="memdesc:a270b5f2701f275c3de734f4150a3d897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle results from a completed grep search.  <br /></td></tr>
+<tr class="memitem:a6961588ebf3c0640200e0cfa920af3be" id="r_a6961588ebf3c0640200e0cfa920af3be"><td class="memItemLeft"><a id="a6961588ebf3c0640200e0cfa920af3be" name="a6961588ebf3c0640200e0cfa920af3be"></a>
+void&#160;</td><td class="memItemRight"><b>onPush</b> ()</td></tr>
+<tr class="memdesc:a6961588ebf3c0640200e0cfa920af3be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger a git push operation. <br /></td></tr>
 <tr class="memitem:adc7d4b2b210efab401f0b14641f80464" id="r_adc7d4b2b210efab401f0b14641f80464"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#adc7d4b2b210efab401f0b14641f80464">on_treeView_clicked</a> (const QModelIndex &amp;index)</td></tr>
-<tr class="memdesc:adc7d4b2b210efab401f0b14641f80464"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file.">MainWindow::on_treeView_clicked</a> read the selected password file.  <br /></td></tr>
-<tr class="memitem:a02ec9927bda826675653c0af916c8f33" id="r_a02ec9927bda826675653c0af916c8f33"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a02ec9927bda826675653c0af916c8f33">startReencryptPath</a> ()</td></tr>
-<tr class="memdesc:a02ec9927bda826675653c0af916c8f33"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a02ec9927bda826675653c0af916c8f33" title="MainWindow::startReencryptPath disable ui elements and treeview.">MainWindow::startReencryptPath</a> disable ui elements and treeview.  <br /></td></tr>
-<tr class="memitem:a201fc73a7db0d404e8fd49f818696eba" id="r_a201fc73a7db0d404e8fd49f818696eba"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a201fc73a7db0d404e8fd49f818696eba">endReencryptPath</a> ()</td></tr>
-<tr class="memdesc:a201fc73a7db0d404e8fd49f818696eba"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re-enable ui elements.">MainWindow::endReencryptPath</a> re-enable ui elements.  <br /></td></tr>
+<tr class="memdesc:adc7d4b2b210efab401f0b14641f80464"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle a click on an item in the tree view.  <br /></td></tr>
+<tr class="memitem:a02ec9927bda826675653c0af916c8f33" id="r_a02ec9927bda826675653c0af916c8f33"><td class="memItemLeft"><a id="a02ec9927bda826675653c0af916c8f33" name="a02ec9927bda826675653c0af916c8f33"></a>
+void&#160;</td><td class="memItemRight"><b>startReencryptPath</b> ()</td></tr>
+<tr class="memdesc:a02ec9927bda826675653c0af916c8f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begin a re-encryption pass on the current path. <br /></td></tr>
+<tr class="memitem:a201fc73a7db0d404e8fd49f818696eba" id="r_a201fc73a7db0d404e8fd49f818696eba"><td class="memItemLeft"><a id="a201fc73a7db0d404e8fd49f818696eba" name="a201fc73a7db0d404e8fd49f818696eba"></a>
+void&#160;</td><td class="memItemRight"><b>endReencryptPath</b> ()</td></tr>
+<tr class="memdesc:a201fc73a7db0d404e8fd49f818696eba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finish a re-encryption pass on the current path. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
 <tr class="memitem:a7e1ae254673e36410d4b3a73e1e8ec8e" id="r_a7e1ae254673e36410d4b3a73e1e8ec8e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7e1ae254673e36410d4b3a73e1e8ec8e">passShowHandlerFinished</a> (const QString &amp;output)</td></tr>
-<tr class="memitem:a3c5e045f6f13c0c6054ff4d4cdb58498" id="r_a3c5e045f6f13c0c6054ff4d4cdb58498"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3c5e045f6f13c0c6054ff4d4cdb58498">passGitInitNeeded</a> ()</td></tr>
+<tr class="memdesc:a7e1ae254673e36410d4b3a73e1e8ec8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when the pass show handler has finished decrypting.  <br /></td></tr>
+<tr class="memitem:a3c5e045f6f13c0c6054ff4d4cdb58498" id="r_a3c5e045f6f13c0c6054ff4d4cdb58498"><td class="memItemLeft"><a id="a3c5e045f6f13c0c6054ff4d4cdb58498" name="a3c5e045f6f13c0c6054ff4d4cdb58498"></a>
+void&#160;</td><td class="memItemRight"><b>passGitInitNeeded</b> ()</td></tr>
+<tr class="memdesc:a3c5e045f6f13c0c6054ff4d4cdb58498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted when a Git init is required for the current store. <br /></td></tr>
 <tr class="memitem:a7e72f32612c2436ff4756c5c25b6b4ec" id="r_a7e72f32612c2436ff4756c5c25b6b4ec"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7e72f32612c2436ff4756c5c25b6b4ec">generateGPGKeyPair</a> (const QString &amp;batch)</td></tr>
+<tr class="memdesc:a7e72f32612c2436ff4756c5c25b6b4ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Emitted to trigger GPG key pair generation.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a52e97245b2f88492071e639395c4a15a" id="r_a52e97245b2f88492071e639395c4a15a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a52e97245b2f88492071e639395c4a15a">MainWindow</a> (const QString &amp;searchText=QString(), QWidget *parent=nullptr)</td></tr>
-<tr class="memdesc:a52e97245b2f88492071e639395c4a15a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window.">MainWindow::MainWindow</a> handles all of the main functionality and also the main window.  <br /></td></tr>
-<tr class="memitem:a1f7d2c56410fc1bfa135bb907d43313f" id="r_a1f7d2c56410fc1bfa135bb907d43313f"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1f7d2c56410fc1bfa135bb907d43313f">~MainWindow</a> () override</td></tr>
-<tr class="memitem:a9630f0fe0e0941a7996d68014f837ed5" id="r_a9630f0fe0e0941a7996d68014f837ed5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9630f0fe0e0941a7996d68014f837ed5">restoreWindow</a> ()</td></tr>
-<tr class="memitem:a3b9eaa6de9809fbc8b52c298133dfe16" id="r_a3b9eaa6de9809fbc8b52c298133dfe16"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3b9eaa6de9809fbc8b52c298133dfe16">generateKeyPair</a> (const QString &amp;, QDialog *)</td></tr>
-<tr class="memdesc:a3b9eaa6de9809fbc8b52c298133dfe16"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a3b9eaa6de9809fbc8b52c298133dfe16" title="MainWindow::generateKeyPair internal gpg keypair generator . .">MainWindow::generateKeyPair</a> internal gpg keypair generator . .  <br /></td></tr>
-<tr class="memitem:abf0633782804fe58d8590d2e10f138d7" id="r_abf0633782804fe58d8590d2e10f138d7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abf0633782804fe58d8590d2e10f138d7">userDialog</a> (const QString &amp;=&quot;&quot;)</td></tr>
-<tr class="memdesc:abf0633782804fe58d8590d2e10f138d7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#abf0633782804fe58d8590d2e10f138d7" title="MainWindow::userDialog see MainWindow::onUsers().">MainWindow::userDialog</a> see MainWindow::onUsers().  <br /></td></tr>
-<tr class="memitem:aeb8091ab5531144b76c1fbb0d63deb56" id="r_aeb8091ab5531144b76c1fbb0d63deb56"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aeb8091ab5531144b76c1fbb0d63deb56">config</a> ()</td></tr>
+<tr class="memdesc:a52e97245b2f88492071e639395c4a15a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the main window.  <br /></td></tr>
+<tr class="memitem:a9630f0fe0e0941a7996d68014f837ed5" id="r_a9630f0fe0e0941a7996d68014f837ed5"><td class="memItemLeft"><a id="a9630f0fe0e0941a7996d68014f837ed5" name="a9630f0fe0e0941a7996d68014f837ed5"></a>
+void&#160;</td><td class="memItemRight"><b>restoreWindow</b> ()</td></tr>
+<tr class="memdesc:a9630f0fe0e0941a7996d68014f837ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Restore window geometry and state from saved settings. <br /></td></tr>
+<tr class="memitem:a8737aac54ea6a935210f9a35ac914aa7" id="r_a8737aac54ea6a935210f9a35ac914aa7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8737aac54ea6a935210f9a35ac914aa7">generateKeyPair</a> (const QString &amp;batch, QDialog *dialog)</td></tr>
+<tr class="memdesc:a8737aac54ea6a935210f9a35ac914aa7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the GPG key generation dialog.  <br /></td></tr>
+<tr class="memitem:a056b66175a3d3ffc3146535726bb4e50" id="r_a056b66175a3d3ffc3146535726bb4e50"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a056b66175a3d3ffc3146535726bb4e50">userDialog</a> (const QString &amp;dir=&quot;&quot;)</td></tr>
+<tr class="memdesc:a056b66175a3d3ffc3146535726bb4e50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the user/recipient management dialog.  <br /></td></tr>
+<tr class="memitem:aeb8091ab5531144b76c1fbb0d63deb56" id="r_aeb8091ab5531144b76c1fbb0d63deb56"><td class="memItemLeft"><a id="aeb8091ab5531144b76c1fbb0d63deb56" name="aeb8091ab5531144b76c1fbb0d63deb56"></a>
+void&#160;</td><td class="memItemRight"><b>config</b> ()</td></tr>
+<tr class="memdesc:aeb8091ab5531144b76c1fbb0d63deb56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open the configuration dialog. <br /></td></tr>
 <tr class="memitem:ac240119ea67a770e5d997a5aa0fe47a3" id="r_ac240119ea67a770e5d997a5aa0fe47a3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac240119ea67a770e5d997a5aa0fe47a3">setUiElementsEnabled</a> (bool state)</td></tr>
-<tr class="memdesc:ac240119ea67a770e5d997a5aa0fe47a3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements.">MainWindow::setUiElementsEnabled</a> enable or disable the relevant UI elements.  <br /></td></tr>
+<tr class="memdesc:ac240119ea67a770e5d997a5aa0fe47a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable the main UI elements.  <br /></td></tr>
 <tr class="memitem:aae7cd7af04cedf4a17ede44bffafec89" id="r_aae7cd7af04cedf4a17ede44bffafec89"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aae7cd7af04cedf4a17ede44bffafec89">flashText</a> (const QString &amp;text, const bool isError, const bool isHtml=false)</td></tr>
+<tr class="memdesc:aae7cd7af04cedf4a17ede44bffafec89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display a transient message in the text panel.  <br /></td></tr>
 <tr class="memitem:acc66dda09963fdddea9716163293ddda" id="r_acc66dda09963fdddea9716163293ddda"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#acc66dda09963fdddea9716163293ddda">getCurrentTreeViewIndex</a> () -&gt; QModelIndex</td></tr>
+<tr class="memdesc:acc66dda09963fdddea9716163293ddda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the currently selected index in the tree view.  <br /></td></tr>
 <tr class="memitem:ae5b8c234b3175974bc135317232d1e1c" id="r_ae5b8c234b3175974bc135317232d1e1c"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ae5b8c234b3175974bc135317232d1e1c">getKeygenDialog</a> () -&gt; QDialog *</td></tr>
-<tr class="memitem:ad2a9b38617b357d8fa42744c00a26fcf" id="r_ad2a9b38617b357d8fa42744c00a26fcf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad2a9b38617b357d8fa42744c00a26fcf">cleanKeygenDialog</a> ()</td></tr>
+<tr class="memdesc:ae5b8c234b3175974bc135317232d1e1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the active key generation dialog, if any.  <br /></td></tr>
+<tr class="memitem:ad2a9b38617b357d8fa42744c00a26fcf" id="r_ad2a9b38617b357d8fa42744c00a26fcf"><td class="memItemLeft"><a id="ad2a9b38617b357d8fa42744c00a26fcf" name="ad2a9b38617b357d8fa42744c00a26fcf"></a>
+void&#160;</td><td class="memItemRight"><b>cleanKeygenDialog</b> ()</td></tr>
+<tr class="memdesc:ad2a9b38617b357d8fa42744c00a26fcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy and clear the key generation dialog. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a05fb9d72c044aa3bb7d187b994704e2f" id="r_a05fb9d72c044aa3bb7d187b994704e2f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a05fb9d72c044aa3bb7d187b994704e2f">closeEvent</a> (QCloseEvent *event) override</td></tr>
-<tr class="memdesc:a05fb9d72c044aa3bb7d187b994704e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a05fb9d72c044aa3bb7d187b994704e2f" title="MainWindow::closeEvent hide or quit.">MainWindow::closeEvent</a> hide or quit.  <br /></td></tr>
+<tr class="memdesc:a05fb9d72c044aa3bb7d187b994704e2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save window state and geometry on close.  <br /></td></tr>
 <tr class="memitem:a55ae3e0d4303334ccabae0a5050cfd88" id="r_a55ae3e0d4303334ccabae0a5050cfd88"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a55ae3e0d4303334ccabae0a5050cfd88">keyPressEvent</a> (QKeyEvent *event) override</td></tr>
-<tr class="memdesc:a55ae3e0d4303334ccabae0a5050cfd88"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a55ae3e0d4303334ccabae0a5050cfd88" title="MainWindow::keyPressEvent did anyone press return, enter or escape?">MainWindow::keyPressEvent</a> did anyone press return, enter or escape?  <br /></td></tr>
+<tr class="memdesc:a55ae3e0d4303334ccabae0a5050cfd88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle keyboard shortcuts.  <br /></td></tr>
 <tr class="memitem:a416ae2140ac1aa9f03a6279316abdcad" id="r_a416ae2140ac1aa9f03a6279316abdcad"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a416ae2140ac1aa9f03a6279316abdcad">changeEvent</a> (QEvent *event) override</td></tr>
-<tr class="memdesc:a416ae2140ac1aa9f03a6279316abdcad"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a416ae2140ac1aa9f03a6279316abdcad" title="MainWindow::changeEvent sets focus to the search box.">MainWindow::changeEvent</a> sets focus to the search box.  <br /></td></tr>
+<tr class="memdesc:a416ae2140ac1aa9f03a6279316abdcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">React to language or window state changes.  <br /></td></tr>
 <tr class="memitem:aa07eb275a856e189c141fde5b69a7166" id="r_aa07eb275a856e189c141fde5b69a7166"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa07eb275a856e189c141fde5b69a7166">eventFilter</a> (QObject *obj, QEvent *event) -&gt; bool override</td></tr>
-<tr class="memdesc:aa07eb275a856e189c141fde5b69a7166"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#aa07eb275a856e189c141fde5b69a7166" title="MainWindow::eventFilter filter out some events and focus the treeview.">MainWindow::eventFilter</a> filter out some events and focus the treeview.  <br /></td></tr>
+<tr class="memdesc:aa07eb275a856e189c141fde5b69a7166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter events from watched objects.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>The <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a> class does way too much, not only is it a switchboard, configuration handler and more, it's also the process-manager. </p>
-<p>Main application window that orchestrates UI, user interactions, and external process handlers.</p>
-<p>Provides the central interface for managing items, folders, passwords, and OTPs; coordinates UI components (toolbars, panels, dialogs, status/tray), selection and navigation in the underlying file/store models, and lifecycle interactions with external handlers (e.g., pass, Git, GPG key generation, OTP). Exposes methods to restore and configure window state, control grouped UI element enablement, display transient messages, and access or reset the key-generation dialog.</p>
-<p>This class could really do with an overhaul. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#_a1">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#_a1">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
+<div class="textblock"><p>Main application window orchestrating UI, user interactions, and external process handlers. </p>
+<p>Provides the central interface for managing items, folders, passwords, and OTPs; coordinates UI components (toolbars, panels, dialogs, status/tray), selection and navigation in the underlying file/store models, and lifecycle interactions with external handlers (e.g., pass, Git, GPG key generation, OTP). </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00052">52</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00045">45</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a52e97245b2f88492071e639395c4a15a" name="a52e97245b2f88492071e639395c4a15a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52e97245b2f88492071e639395c4a15a">&#9670;&#160;</a></span>MainWindow()</h2>
@@ -196,23 +212,19 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a52e97245b2f88492071e639395c4a15a" title="MainWindow::MainWindow handles all of the main functionality and also the main window.">MainWindow::MainWindow</a> handles all of the main functionality and also the main window. </p>
+<p>Construct the main window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">searchText</td><td>for searching from cli </td></tr>
-    <tr><td class="paramname">parent</td><td>pointer </td></tr>
+    <tr><td class="paramname">searchText</td><td>Initial search text to populate the search field. </td></tr>
+    <tr><td class="paramname">parent</td><td>Optional parent widget. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a0">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00042">42</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 <div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a52e97245b2f88492071e639395c4a15a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a52e97245b2f88492071e639395c4a15a_cgraph.svg" width="208" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -220,35 +232,6 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a52e97245b2f88492071e639395c4a15a_icgraph.svg" width="208" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-
-</div>
-</div>
-<a id="a1f7d2c56410fc1bfa135bb907d43313f" name="a1f7d2c56410fc1bfa135bb907d43313f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f7d2c56410fc1bfa135bb907d43313f">&#9670;&#160;</a></span>~MainWindow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">MainWindow::~MainWindow </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a12">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00138">138</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -276,38 +259,13 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a416ae2140ac1aa9f03a6279316abdcad" title="MainWindow::changeEvent sets focus to the search box.">MainWindow::changeEvent</a> sets focus to the search box. </p>
+<p>React to language or window state changes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td></td></tr>
+    <tr><td class="paramname">event</td><td>The change event. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a13">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00155">155</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ad2a9b38617b357d8fa42744c00a26fcf" name="ad2a9b38617b357d8fa42744c00a26fcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad2a9b38617b357d8fa42744c00a26fcf">&#9670;&#160;</a></span>cleanKeygenDialog()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::cleanKeygenDialog </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a16">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00215">215</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 
 </div>
 </div>
@@ -334,61 +292,18 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a05fb9d72c044aa3bb7d187b994704e2f" title="MainWindow::closeEvent hide or quit.">MainWindow::closeEvent</a> hide or quit. </p>
+<p>Save window state and geometry on close. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td></td></tr>
+    <tr><td class="paramname">event</td><td>The close event. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a65">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01106">1106</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a05fb9d72c044aa3bb7d187b994704e2f_cgraph.svg" width="100%" height="524"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
-<a id="aeb8091ab5531144b76c1fbb0d63deb56" name="aeb8091ab5531144b76c1fbb0d63deb56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb8091ab5531144b76c1fbb0d63deb56">&#9670;&#160;</a></span>config()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::config </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a19">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00289">289</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_aeb8091ab5531144b76c1fbb0d63deb56_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_aeb8091ab5531144b76c1fbb0d63deb56_icgraph.svg" width="163" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a4f1e5c088cf47f1db5c84882a42c1842" name="a4f1e5c088cf47f1db5c84882a42c1842"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f1e5c088cf47f1db5c84882a42c1842">&#9670;&#160;</a></span>critical</h2>
+<a id="a8719b3a133e95915dd72b244db1e49bf" name="a8719b3a133e95915dd72b244db1e49bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8719b3a133e95915dd72b244db1e49bf">&#9670;&#160;</a></span>critical</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -414,92 +329,14 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a4f1e5c088cf47f1db5c84882a42c1842" title="MainWindow::critical critical message popup wrapper.">MainWindow::critical</a> critical message popup wrapper. </p>
+<p>Display a critical error dialog. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">title</td><td></td></tr>
-    <tr><td class="paramname">msg</td><td></td></tr>
+    <tr><td class="paramname">title</td><td>Dialog title. </td></tr>
+    <tr><td class="paramname">msg</td><td>Error message body. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a91">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01567">1567</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-
-</div>
-</div>
-<a id="ad4cf3e2c819cac398728a82f1cf05f3e" name="ad4cf3e2c819cac398728a82f1cf05f3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4cf3e2c819cac398728a82f1cf05f3e">&#9670;&#160;</a></span>deselect</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::deselect </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer.">MainWindow::deselect</a> clear the selection, password and copy buffer. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#_a6">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00416">416</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ad4cf3e2c819cac398728a82f1cf05f3e_icgraph.svg" width="424" height="134"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a201fc73a7db0d404e8fd49f818696eba" name="a201fc73a7db0d404e8fd49f818696eba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a201fc73a7db0d404e8fd49f818696eba">&#9670;&#160;</a></span>endReencryptPath</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::endReencryptPath </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="#a201fc73a7db0d404e8fd49f818696eba" title="MainWindow::endReencryptPath re-enable ui elements.">MainWindow::endReencryptPath</a> re-enable ui elements. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a88">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01524">1524</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a201fc73a7db0d404e8fd49f818696eba_cgraph.svg" width="498" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -520,7 +357,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;) -&gt; bool</td>
+          <td class="paramtype">QEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span>&#160;) -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -530,54 +367,15 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#aa07eb275a856e189c141fde5b69a7166" title="MainWindow::eventFilter filter out some events and focus the treeview.">MainWindow::eventFilter</a> filter out some events and focus the treeview. </p>
+<p>Filter events from watched objects. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">obj</td><td></td></tr>
-    <tr><td class="paramname">event</td><td></td></tr>
+    <tr><td class="paramname">obj</td><td>The object that received the event. </td></tr>
+    <tr><td class="paramname">event</td><td>The event to filter. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a72">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01131">1131</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a3550b28be1344cf5c012af794dce8c64" name="a3550b28be1344cf5c012af794dce8c64"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3550b28be1344cf5c012af794dce8c64">&#9670;&#160;</a></span>executeWrapperStarted</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::executeWrapperStarted </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a28">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00426">426</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a3550b28be1344cf5c012af794dce8c64_cgraph.svg" width="486" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>true if the event was consumed. </dd></dl>
 
 </div>
 </div>
@@ -604,16 +402,16 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a17">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00234">234</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_aae7cd7af04cedf4a17ede44bffafec89_icgraph.svg" width="447" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p>Display a transient message in the text panel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">text</td><td>Message text to display. </td></tr>
+    <tr><td class="paramname">isError</td><td>true to style the message as an error. </td></tr>
+    <tr><td class="paramname">isHtml</td><td>true if text contains HTML markup. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -639,19 +437,19 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a59">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
+
+<p>Emitted to trigger GPG key pair generation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">batch</td><td>GPG batch parameter string. </td></tr>
+  </table>
+  </dd>
 </dl>
-<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a7e72f32612c2436ff4756c5c25b6b4ec_icgraph.svg" width="524" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
-<a id="a3b9eaa6de9809fbc8b52c298133dfe16" name="a3b9eaa6de9809fbc8b52c298133dfe16"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b9eaa6de9809fbc8b52c298133dfe16">&#9670;&#160;</a></span>generateKeyPair()</h2>
+<a id="a8737aac54ea6a935210f9a35ac914aa7" name="a8737aac54ea6a935210f9a35ac914aa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8737aac54ea6a935210f9a35ac914aa7">&#9670;&#160;</a></span>generateKeyPair()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -664,29 +462,19 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QDialog *</td>          <td class="paramname"><span class="paramname"><em>keygenWindow</em></span>&#160;)</td>
+          <td class="paramtype">QDialog *</td>          <td class="paramname"><span class="paramname"><em>dialog</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a3b9eaa6de9809fbc8b52c298133dfe16" title="MainWindow::generateKeyPair internal gpg keypair generator . .">MainWindow::generateKeyPair</a> internal gpg keypair generator . . </p>
+<p>Open the GPG key generation dialog. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">batch</td><td></td></tr>
-    <tr><td class="paramname">keygenWindow</td><td></td></tr>
+    <tr><td class="paramname">batch</td><td>GPG batch parameter string. </td></tr>
+    <tr><td class="paramname">dialog</td><td>Dialog to store as the active keygen dialog; it is kept as activeKeygenDialog and represents the UI used during generation. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a58">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00995">995</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a3b9eaa6de9809fbc8b52c298133dfe16_cgraph.svg" width="524" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -700,14 +488,13 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">auto MainWindow::getCurrentTreeViewIndex </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; QModelIndex</td>
+          <td> -&gt;  QModelIndex</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a15">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00211">211</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
+<p>Return the currently selected index in the tree view. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current QModelIndex. </dd></dl>
 
 </div>
 </div>
@@ -734,7 +521,10 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00071">71</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p>Return the active key generation dialog, if any. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the keygen QDialog, or nullptr. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00107">107</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -761,23 +551,13 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a55ae3e0d4303334ccabae0a5050cfd88" title="MainWindow::keyPressEvent did anyone press return, enter or escape?">MainWindow::keyPressEvent</a> did anyone press return, enter or escape? </p>
+<p>Handle keyboard shortcuts. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td></td></tr>
+    <tr><td class="paramname">event</td><td>The key press event. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a73">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01145">1145</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a55ae3e0d4303334ccabae0a5050cfd88_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
@@ -804,23 +584,13 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a4fad7c4dec11ceaebcb8a0141280ba4b" title="MainWindow::messageAvailable we have some text/message/search to do.">MainWindow::messageAvailable</a> we have some text/message/search to do. </p>
+<p>Handle an incoming inter-process message (single-instance mode). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td></td></tr>
+    <tr><td class="paramname">message</td><td>Message string received from another instance. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a57">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00978">978</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a4fad7c4dec11ceaebcb8a0141280ba4b_icgraph.svg" width="346" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -847,29 +617,13 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#adc7d4b2b210efab401f0b14641f80464" title="MainWindow::on_treeView_clicked read the selected password file.">MainWindow::on_treeView_clicked</a> read the selected password file. </p>
+<p>Handle a click on an item in the tree view. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
+    <tr><td class="paramname">index</td><td>The model index that was clicked. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a26">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00382">382</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_adc7d4b2b210efab401f0b14641f80464_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_adc7d4b2b210efab401f0b14641f80464_icgraph.svg" width="462" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -896,84 +650,18 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Display grep results in grepResultsList. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a54">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
+<p>Handle results from a completed grep search. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">results</td><td>List of file/match pairs from the grep operation. </td></tr>
+  </table>
+  </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00732">732</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-17" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a270b5f2701f275c3de734f4150a3d897_cgraph.svg" width="100%" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
 </div>
 </div>
-<a id="a6961588ebf3c0640200e0cfa920af3be" name="a6961588ebf3c0640200e0cfa920af3be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6961588ebf3c0640200e0cfa920af3be">&#9670;&#160;</a></span>onPush</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::onPush </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="#a6961588ebf3c0640200e0cfa920af3be" title="MainWindow::onPush do a git push.">MainWindow::onPush</a> do a git push. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a14">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00351">351</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-18" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a6961588ebf3c0640200e0cfa920af3be_cgraph.svg" width="100%" height="477"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a3c5e045f6f13c0c6054ff4d4cdb58498" name="a3c5e045f6f13c0c6054ff4d4cdb58498"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c5e045f6f13c0c6054ff4d4cdb58498">&#9670;&#160;</a></span>passGitInitNeeded</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::passGitInitNeeded </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7997fd865548c3baa51f1863bb8fdfa0" name="a7997fd865548c3baa51f1863bb8fdfa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7997fd865548c3baa51f1863bb8fdfa0">&#9670;&#160;</a></span>passOtpHandler</h2>
+<a id="ad138cb03123dbf06fe8a118ea057412d" name="ad138cb03123dbf06fe8a118ea057412d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad138cb03123dbf06fe8a118ea057412d">&#9670;&#160;</a></span>passOtpHandler</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -984,7 +672,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void MainWindow::passOtpHandler </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>p_output</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -994,21 +682,19 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a44">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
+
+<p>Handle output from the pass OTP command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>OTP output string. </td></tr>
+  </table>
+  </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00500">500</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-19" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a7997fd865548c3baa51f1863bb8fdfa0_cgraph.svg" width="100%" height="461"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
 </div>
 </div>
-<a id="a0d75695e555bac7331e1ea22bc3159df" name="a0d75695e555bac7331e1ea22bc3159df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0d75695e555bac7331e1ea22bc3159df">&#9670;&#160;</a></span>passShowHandler</h2>
+<a id="a35dcbf29b9cfe87b6f7d597b7abba480" name="a35dcbf29b9cfe87b6f7d597b7abba480"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35dcbf29b9cfe87b6f7d597b7abba480">&#9670;&#160;</a></span>passShowHandler</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1019,7 +705,7 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void MainWindow::passShowHandler </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>p_output</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1029,16 +715,14 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a30">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00443">443</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-20" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a0d75695e555bac7331e1ea22bc3159df_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
+<p>Handle output from the pass show command. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Decrypted password file content. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1064,41 +748,14 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a43">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
+
+<p>Emitted when the pass show handler has finished decrypting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Decrypted password file content. </td></tr>
+  </table>
+  </dd>
 </dl>
-<div id="dynsection-21" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a7e1ae254673e36410d4b3a73e1e8ec8e_icgraph.svg" width="518" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a9630f0fe0e0941a7996d68014f837ed5" name="a9630f0fe0e0941a7996d68014f837ed5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9630f0fe0e0941a7996d68014f837ed5">&#9670;&#160;</a></span>restoreWindow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::restoreWindow </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a46">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00577">577</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-22" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a9630f0fe0e0941a7996d68014f837ed5_cgraph.svg" width="100%" height="598"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
@@ -1117,23 +774,13 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements.">MainWindow::setUiElementsEnabled</a> enable or disable the relevant UI elements. </p>
+<p>Enable or disable the main UI elements. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">state</td><td></td></tr>
+    <tr><td class="paramname">state</td><td>true to enable, false to disable. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a29">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00552">552</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-23" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_ac240119ea67a770e5d997a5aa0fe47a3_icgraph.svg" width="504" height="372"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -1164,66 +811,19 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Displays message in status bar. </p>
+<p>Show a message in the status bar for the given duration. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">msg</td><td>text to be displayed </td></tr>
-    <tr><td class="paramname">timeout</td><td>time for which msg shall be visible </td></tr>
+    <tr><td class="paramname">msg</td><td>Message to display. </td></tr>
+    <tr><td class="paramname">timeout</td><td>Duration in milliseconds (default 2000). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a45">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01476">1476</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-24" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a69f4a122336a6fc3875fc94741e4d1cf_icgraph.svg" width="523" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
-<a id="a02ec9927bda826675653c0af916c8f33" name="a02ec9927bda826675653c0af916c8f33"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02ec9927bda826675653c0af916c8f33">&#9670;&#160;</a></span>startReencryptPath</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MainWindow::startReencryptPath </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="#a02ec9927bda826675653c0af916c8f33" title="MainWindow::startReencryptPath disable ui elements and treeview.">MainWindow::startReencryptPath</a> disable ui elements and treeview. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a87">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l01516">1516</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
-<div id="dynsection-25" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_main_window_a02ec9927bda826675653c0af916c8f33_cgraph.svg" width="504" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="abf0633782804fe58d8590d2e10f138d7" name="abf0633782804fe58d8590d2e10f138d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf0633782804fe58d8590d2e10f138d7">&#9670;&#160;</a></span>userDialog()</h2>
+<a id="a056b66175a3d3ffc3146535726bb4e50" name="a056b66175a3d3ffc3146535726bb4e50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a056b66175a3d3ffc3146535726bb4e50">&#9670;&#160;</a></span>userDialog()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1237,23 +837,18 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#abf0633782804fe58d8590d2e10f138d7" title="MainWindow::userDialog see MainWindow::onUsers().">MainWindow::userDialog</a> see MainWindow::onUsers(). </p>
+<p>Open the user/recipient management dialog. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">dir</td><td>folder to edit users for. </td></tr>
+    <tr><td class="paramname">dir</td><td>Directory for which to manage recipients. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a56">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="mainwindow_8cpp_source.html#l00950">950</a> of file <a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="mainwindow_8h_source.html">mainwindow.h</a></li>
-<li>src/<a class="el" href="mainwindow_8cpp_source.html">mainwindow.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

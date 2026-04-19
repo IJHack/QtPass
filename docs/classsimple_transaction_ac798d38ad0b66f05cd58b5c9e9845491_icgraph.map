@@ -1,5 +1,5 @@
 <map id="simpleTransaction::simpleTransaction" name="simpleTransaction::simpleTransaction">
-<area shape="rect" id="Node000001" title=" " alt="" coords="243,5,391,45"/>
+<area shape="rect" id="Node000001" title="Construct a simpleTransaction in its initial idle state." alt="" coords="243,5,391,45"/>
 <area shape="rect" id="Node000002" href="$class_imitate_pass_1_1transaction_helper.html#ab37f5a0aff46fb0aa7ae9cc9cc17f38e" title="Start transaction." alt="" coords="5,5,195,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,28,195,28,195,23,229,23"/>
 </map>

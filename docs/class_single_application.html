@@ -82,7 +82,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Provide single-instance application behavior and inter-process messaging using a unique key.  
+<p>QApplication subclass enforcing single-instance behavior via IPC.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>&gt;</code></p>
@@ -101,8 +101,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a3257ffeb5c48de33e6ded14902c9f238" id="r_a3257ffeb5c48de33e6ded14902c9f238"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3257ffeb5c48de33e6ded14902c9f238">receiveMessage</a> ()</td></tr>
-<tr class="memdesc:a3257ffeb5c48de33e6ded14902c9f238"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a3257ffeb5c48de33e6ded14902c9f238" title="SingleApplication::receiveMessage we have received (a command line) message.">SingleApplication::receiveMessage</a> we have received (a command line) message.  <br /></td></tr>
+<tr class="memitem:a3257ffeb5c48de33e6ded14902c9f238" id="r_a3257ffeb5c48de33e6ded14902c9f238"><td class="memItemLeft"><a id="a3257ffeb5c48de33e6ded14902c9f238" name="a3257ffeb5c48de33e6ded14902c9f238"></a>
+void&#160;</td><td class="memItemRight"><b>receiveMessage</b> ()</td></tr>
+<tr class="memdesc:a3257ffeb5c48de33e6ded14902c9f238"><td class="mdescLeft">&#160;</td><td class="mdescRight">Slot invoked when an incoming IPC message arrives. <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-signals" class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
@@ -112,45 +113,17 @@ Signals</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a55e5986206cf99fe05d33169d9eb71f5" id="r_a55e5986206cf99fe05d33169d9eb71f5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a55e5986206cf99fe05d33169d9eb71f5">SingleApplication</a> (int &amp;argc, char *argv[], QString uniqueKey)</td></tr>
-<tr class="memdesc:a55e5986206cf99fe05d33169d9eb71f5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a55e5986206cf99fe05d33169d9eb71f5" title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c...">SingleApplication::SingleApplication</a> this replaces the QApplication allowing for local socket based communications.  <br /></td></tr>
+<tr class="memdesc:a55e5986206cf99fe05d33169d9eb71f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_single_application.html" title="QApplication subclass enforcing single-instance behavior via IPC.">SingleApplication</a> with a unique instance key.  <br /></td></tr>
 <tr class="memitem:a9408850aec7bca2e43e386f35ed780f4" id="r_a9408850aec7bca2e43e386f35ed780f4"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a9408850aec7bca2e43e386f35ed780f4">isRunning</a> () -&gt; bool</td></tr>
-<tr class="memdesc:a9408850aec7bca2e43e386f35ed780f4"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a9408850aec7bca2e43e386f35ed780f4" title="SingleApplication::isRunning is there already a QtPass instance running, to check wether to be server...">SingleApplication::isRunning</a> is there already a <a class="el" href="class_qt_pass.html">QtPass</a> instance running, to check wether to be server or client.  <br /></td></tr>
+<tr class="memdesc:a9408850aec7bca2e43e386f35ed780f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query whether another instance is already running.  <br /></td></tr>
 <tr class="memitem:ad63149f60ac6676dda4397a90116e351" id="r_ad63149f60ac6676dda4397a90116e351"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ad63149f60ac6676dda4397a90116e351">sendMessage</a> (const QString &amp;message) -&gt; bool</td></tr>
-<tr class="memdesc:ad63149f60ac6676dda4397a90116e351"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ad63149f60ac6676dda4397a90116e351" title="SingleApplication::sendMessage send a message (from commandline) to an already running QtPass instanc...">SingleApplication::sendMessage</a> send a message (from commandline) to an already running <a class="el" href="class_qt_pass.html">QtPass</a> instance.  <br /></td></tr>
+<tr class="memdesc:ad63149f60ac6676dda4397a90116e351"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a message to the running instance.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Provide single-instance application behavior and inter-process messaging using a unique key. </p>
-<p>This QApplication subclass detects whether another instance with the same unique key is already running and enables sending and receiving textual messages between instances (typically to forward command-line arguments to the already-running instance).</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">argc</td><td>Reference to program argc forwarded to QApplication. </td></tr>
-    <tr><td class="paramname">argv</td><td>Program argv forwarded to QApplication. </td></tr>
-    <tr><td class="paramname">uniqueKey</td><td>Identifier used to scope the single-instance mechanism and the local IPC resources.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Query whether another instance of the application is already running.</p>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if an instance with the same unique key is already running, <span class="tt">false</span> otherwise.</dd></dl>
-<p>Send a textual message to the running instance identified by the unique key.</p>
-<p>The message is delivered to the existing instance; intended use is to forward command-line arguments.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>Text to send to the running instance. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if the message was successfully delivered, <span class="tt">false</span> otherwise.</dd></dl>
-<p>Slot invoked when an incoming message is received on the local server.</p>
-<p>Emits messageAvailable() with the received payload.</p>
-<p>Notification emitted when a textual message from another process is received.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">message</td><td>The message payload (for example, forwarded command-line arguments). </td></tr>
-  </table>
-  </dd>
-</dl>
+<div class="textblock"><p>QApplication subclass enforcing single-instance behavior via IPC. </p>
+<p>Detects whether another instance with the same unique key is running and enables forwarding messages (e.g., command-line arguments) to it. </p>
 
-<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00056">56</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="singleapplication_8h_source.html#l00017">17</a> of file <a class="el" href="singleapplication_8h_source.html">singleapplication.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a55e5986206cf99fe05d33169d9eb71f5" name="a55e5986206cf99fe05d33169d9eb71f5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55e5986206cf99fe05d33169d9eb71f5">&#9670;&#160;</a></span>SingleApplication()</h2>
@@ -176,29 +149,15 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a55e5986206cf99fe05d33169d9eb71f5" title="SingleApplication::SingleApplication this replaces the QApplication allowing for local socket based c...">SingleApplication::SingleApplication</a> this replaces the QApplication allowing for local socket based communications. </p>
+<p>Construct a <a class="el" href="class_single_application.html" title="QApplication subclass enforcing single-instance behavior via IPC.">SingleApplication</a> with a unique instance key. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">argc</td><td></td></tr>
-    <tr><td class="paramname">argv</td><td></td></tr>
-    <tr><td class="paramname">uniqueKey</td><td></td></tr>
+    <tr><td class="paramname">argc</td><td>Reference to program argc forwarded to QApplication. </td></tr>
+    <tr><td class="paramname">argv</td><td>Program argv forwarded to QApplication. </td></tr>
+    <tr><td class="paramname">uniqueKey</td><td>Key used to identify and scope the single instance. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00017">17</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a55e5986206cf99fe05d33169d9eb71f5_cgraph.svg" width="535" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a55e5986206cf99fe05d33169d9eb71f5_icgraph.svg" width="154" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -213,27 +172,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto SingleApplication::isRunning </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; bool</td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a9408850aec7bca2e43e386f35ed780f4" title="SingleApplication::isRunning is there already a QtPass instance running, to check wether to be server...">SingleApplication::isRunning</a> is there already a <a class="el" href="class_qt_pass.html">QtPass</a> instance running, to check wether to be server or client. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00066">66</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a9408850aec7bca2e43e386f35ed780f4_cgraph.svg" width="154" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a9408850aec7bca2e43e386f35ed780f4_icgraph.svg" width="256" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p>Query whether another instance is already running. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if another instance with the same key is running. </dd></dl>
 
 </div>
 </div>
@@ -267,53 +212,6 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ab893aad585d0cc3ee82659709a6a069b_icgraph.svg" width="535" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a3257ffeb5c48de33e6ded14902c9f238" name="a3257ffeb5c48de33e6ded14902c9f238"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3257ffeb5c48de33e6ded14902c9f238">&#9670;&#160;</a></span>receiveMessage</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SingleApplication::receiveMessage </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="#a3257ffeb5c48de33e6ded14902c9f238" title="SingleApplication::receiveMessage we have received (a command line) message.">SingleApplication::receiveMessage</a> we have received (a command line) message. </p>
-
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00046">46</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a3257ffeb5c48de33e6ded14902c9f238_cgraph.svg" width="344" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_a3257ffeb5c48de33e6ded14902c9f238_icgraph.svg" width="344" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -327,39 +225,24 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto SingleApplication::sendMessage </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
-          <td> -&gt; bool</td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#ad63149f60ac6676dda4397a90116e351" title="SingleApplication::sendMessage send a message (from commandline) to an already running QtPass instanc...">SingleApplication::sendMessage</a> send a message (from commandline) to an already running <a class="el" href="class_qt_pass.html">QtPass</a> instance. </p>
+<p>Send a message to the running instance. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">message</td><td></td></tr>
+    <tr><td class="paramname">message</td><td>Text to deliver (typically forwarded command-line args). </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="singleapplication_8cpp_source.html#l00074">74</a> of file <a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a>.</p>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ad63149f60ac6676dda4397a90116e351_cgraph.svg" width="154" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_single_application_ad63149f60ac6676dda4397a90116e351_icgraph.svg" width="256" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>true if the message was successfully delivered. </dd></dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="singleapplication_8h_source.html">singleapplication.h</a></li>
-<li>src/<a class="el" href="singleapplication_8cpp_source.html">singleapplication.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

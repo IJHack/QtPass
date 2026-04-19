@@ -1,7 +1,4 @@
 <map id="ConfigDialog::useSelection" name="ConfigDialog::useSelection">
-<area shape="rect" id="Node000001" title="ConfigDialog::useSelection set the clipboard type use from MainWindow." alt="" coords="249,29,445,55"/>
-<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="391,20,388,15,380,12,347,8,321,10,307,15,305,20,312,27,308,31,299,21,304,11,320,5,347,3,382,7,391,11,395,17"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,29,201,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,45,201,45,201,39,236,39"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="147,20,144,15,136,12,103,8,77,10,63,15,61,20,68,27,64,31,55,21,60,11,76,5,103,3,138,7,147,11,151,17"/>
+<area shape="rect" id="Node000001" title="Enable or disable clipboard selection mode." alt="" coords="5,29,201,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="138,19,128,11,103,8,83,10,72,15,70,20,75,28,71,31,64,21,68,11,81,5,103,3,130,6,141,15"/>
 </map>

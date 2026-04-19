@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Stores key info lines including validity, creation date and more.  
+<p>Stores GPG key info including validity, creation date, and more.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="userinfo_8h_source.html">userinfo.h</a>&gt;</code></p>
@@ -89,34 +89,33 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aebbc7aa95fa4142a0059e7dec61acefa" id="r_aebbc7aa95fa4142a0059e7dec61acefa"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aebbc7aa95fa4142a0059e7dec61acefa">UserInfo</a> ()</td></tr>
+<tr class="memdesc:aebbc7aa95fa4142a0059e7dec61acefa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="struct_user_info.html" title="Stores GPG key info including validity, creation date, and more.">UserInfo</a> with default (invalid/disabled) state.  <br /></td></tr>
 <tr class="memitem:a93677d46e6641eb4148c5f09ed5850a5" id="r_a93677d46e6641eb4148c5f09ed5850a5"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a93677d46e6641eb4148c5f09ed5850a5">fullyValid</a> () const -&gt; bool</td></tr>
-<tr class="memdesc:a93677d46e6641eb4148c5f09ed5850a5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a93677d46e6641eb4148c5f09ed5850a5" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi-bin/gitweb....">UserInfo::fullyValid</a> when validity is f or u. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>.  <br /></td></tr>
+<tr class="memdesc:a93677d46e6641eb4148c5f09ed5850a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check full validity per GnuPG validity codes.  <br /></td></tr>
 <tr class="memitem:a1bd803884a9f1fb8a954d891c14bf2fd" id="r_a1bd803884a9f1fb8a954d891c14bf2fd"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a1bd803884a9f1fb8a954d891c14bf2fd">marginallyValid</a> () const -&gt; bool</td></tr>
-<tr class="memdesc:a1bd803884a9f1fb8a954d891c14bf2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a1bd803884a9f1fb8a954d891c14bf2fd" title="UserInfo::marginallyValid when validity is m. http://git.gnupg.org/cgi-bin/gitweb....">UserInfo::marginallyValid</a> when validity is m. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>.  <br /></td></tr>
+<tr class="memdesc:a1bd803884a9f1fb8a954d891c14bf2fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check marginal validity per GnuPG validity codes.  <br /></td></tr>
 <tr class="memitem:aa5b7b2f037ffc50ade5b78f09599d43a" id="r_aa5b7b2f037ffc50ade5b78f09599d43a"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa5b7b2f037ffc50ade5b78f09599d43a">isValid</a> () const -&gt; bool</td></tr>
-<tr class="memdesc:aa5b7b2f037ffc50ade5b78f09599d43a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#aa5b7b2f037ffc50ade5b78f09599d43a" title="UserInfo::isValid when fullyValid or marginallyValid.">UserInfo::isValid</a> when fullyValid or marginallyValid.  <br /></td></tr>
+<tr class="memdesc:aa5b7b2f037ffc50ade5b78f09599d43a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the key has any usable validity level.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-attribs" class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:acf06e7727153cca2cd8b4a912517a2bb" id="r_acf06e7727153cca2cd8b4a912517a2bb"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#acf06e7727153cca2cd8b4a912517a2bb">name</a></td></tr>
-<tr class="memdesc:acf06e7727153cca2cd8b4a912517a2bb"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#acf06e7727153cca2cd8b4a912517a2bb" title="UserInfo::name GPG user ID / full name.">UserInfo::name</a> GPG user ID / full name.  <br /></td></tr>
+<tr class="memdesc:acf06e7727153cca2cd8b4a912517a2bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPG user ID / full name.  <br /></td></tr>
 <tr class="memitem:a7ea1df76d75ada608ce5a641bd53f7e6" id="r_a7ea1df76d75ada608ce5a641bd53f7e6"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a></td></tr>
-<tr class="memdesc:a7ea1df76d75ada608ce5a641bd53f7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a7ea1df76d75ada608ce5a641bd53f7e6" title="UserInfo::key_id hexadecimal representation of the GnuPG key identifier.">UserInfo::key_id</a> hexadecimal representation of the GnuPG key identifier.  <br /></td></tr>
+<tr class="memdesc:a7ea1df76d75ada608ce5a641bd53f7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hexadecimal representation of the GnuPG key identifier.  <br /></td></tr>
 <tr class="memitem:af09fb1cdf748f23cb6a74fa7e2972766" id="r_af09fb1cdf748f23cb6a74fa7e2972766"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#af09fb1cdf748f23cb6a74fa7e2972766">validity</a></td></tr>
-<tr class="memdesc:af09fb1cdf748f23cb6a74fa7e2972766"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#af09fb1cdf748f23cb6a74fa7e2972766" title="UserInfo::validity GnuPG representation of validity http://git.gnupg.org/cgi-bin/gitweb....">UserInfo::validity</a> GnuPG representation of validity <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>.  <br /></td></tr>
+<tr class="memdesc:af09fb1cdf748f23cb6a74fa7e2972766"><td class="mdescLeft">&#160;</td><td class="mdescRight">GnuPG representation of validity. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>.  <br /></td></tr>
 <tr class="memitem:a0779dd42b6e6810c191b08b788ebaf99" id="r_a0779dd42b6e6810c191b08b788ebaf99"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0779dd42b6e6810c191b08b788ebaf99">have_secret</a></td></tr>
-<tr class="memdesc:a0779dd42b6e6810c191b08b788ebaf99"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a0779dd42b6e6810c191b08b788ebaf99" title="UserInfo::have_secret whether secret key is available (can decrypt with this key).">UserInfo::have_secret</a> whether secret key is available (can decrypt with this key).  <br /></td></tr>
+<tr class="memdesc:a0779dd42b6e6810c191b08b788ebaf99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether secret key is available (can decrypt with this key).  <br /></td></tr>
 <tr class="memitem:a163a4e36d5d12cbfc3c13c60f33c5f1f" id="r_a163a4e36d5d12cbfc3c13c60f33c5f1f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a163a4e36d5d12cbfc3c13c60f33c5f1f">enabled</a></td></tr>
-<tr class="memdesc:a163a4e36d5d12cbfc3c13c60f33c5f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a163a4e36d5d12cbfc3c13c60f33c5f1f" title="UserInfo::enabled Whether this user/key is enabled for normal use. True when the key should be treate...">UserInfo::enabled</a> Whether this user/key is enabled for normal use. True when the key should be treated as active/usable; false when it is disabled.  <br /></td></tr>
+<tr class="memdesc:a163a4e36d5d12cbfc3c13c60f33c5f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this user/key is enabled for normal use.  <br /></td></tr>
 <tr class="memitem:af6b3e6dc6e34553f764e577d2994f5aa" id="r_af6b3e6dc6e34553f764e577d2994f5aa"><td class="memItemLeft">QDateTime&#160;</td><td class="memItemRight"><a class="el" href="#af6b3e6dc6e34553f764e577d2994f5aa">expiry</a></td></tr>
-<tr class="memdesc:af6b3e6dc6e34553f764e577d2994f5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#af6b3e6dc6e34553f764e577d2994f5aa" title="UserInfo::expiry date/time when key expires.">UserInfo::expiry</a> date/time when key expires.  <br /></td></tr>
+<tr class="memdesc:af6b3e6dc6e34553f764e577d2994f5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Date/time when key expires.  <br /></td></tr>
 <tr class="memitem:ac7919fbe53ce83369fc4bcfef8934ff6" id="r_ac7919fbe53ce83369fc4bcfef8934ff6"><td class="memItemLeft">QDateTime&#160;</td><td class="memItemRight"><a class="el" href="#ac7919fbe53ce83369fc4bcfef8934ff6">created</a></td></tr>
-<tr class="memdesc:ac7919fbe53ce83369fc4bcfef8934ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ac7919fbe53ce83369fc4bcfef8934ff6" title="UserInfo::created date/time when key was created.">UserInfo::created</a> date/time when key was created.  <br /></td></tr>
+<tr class="memdesc:ac7919fbe53ce83369fc4bcfef8934ff6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Date/time when key was created.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Stores key info lines including validity, creation date and more. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#_a91">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
+<div class="textblock"><p>Stores GPG key info including validity, creation date, and more. </p>
 
 <p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00013">13</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -143,7 +142,9 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00014">14</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p>Construct a <a class="el" href="struct_user_info.html" title="Stores GPG key info including validity, creation date, and more.">UserInfo</a> with default (invalid/disabled) state. </p>
+
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00017">17</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 
 </div>
 </div>
@@ -171,9 +172,10 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a93677d46e6641eb4148c5f09ed5850a5" title="UserInfo::fullyValid when validity is f or u. http://git.gnupg.org/cgi-bin/gitweb....">UserInfo::fullyValid</a> when validity is f or u. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>. </p>
+<p>Check full validity per GnuPG validity codes. </p>
+<dl class="section return"><dt>Returns</dt><dd>true when validity is 'f' or 'u'. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00020">20</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00024">24</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 <div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
@@ -206,9 +208,10 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#aa5b7b2f037ffc50ade5b78f09599d43a" title="UserInfo::isValid when fullyValid or marginallyValid.">UserInfo::isValid</a> when fullyValid or marginallyValid. </p>
+<p>Check whether the key has any usable validity level. </p>
+<dl class="section return"><dt>Returns</dt><dd>true when <a class="el" href="#a93677d46e6641eb4148c5f09ed5850a5" title="Check full validity per GnuPG validity codes.">fullyValid()</a> or <a class="el" href="#a1bd803884a9f1fb8a954d891c14bf2fd" title="Check marginal validity per GnuPG validity codes.">marginallyValid()</a> is true. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00031">31</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00037">37</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 <div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
@@ -241,9 +244,10 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a1bd803884a9f1fb8a954d891c14bf2fd" title="UserInfo::marginallyValid when validity is m. http://git.gnupg.org/cgi-bin/gitweb....">UserInfo::marginallyValid</a> when validity is m. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>. </p>
+<p>Check marginal validity per GnuPG validity codes. </p>
+<dl class="section return"><dt>Returns</dt><dd>true when validity is 'm'. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00027">27</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00032">32</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 <div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
@@ -266,9 +270,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#ac7919fbe53ce83369fc4bcfef8934ff6" title="UserInfo::created date/time when key was created.">UserInfo::created</a> date/time when key was created. </p>
+<p>Date/time when key was created. </p>
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00066">66</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00067">67</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 
 </div>
 </div>
@@ -284,9 +288,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a163a4e36d5d12cbfc3c13c60f33c5f1f" title="UserInfo::enabled Whether this user/key is enabled for normal use. True when the key should be treate...">UserInfo::enabled</a> Whether this user/key is enabled for normal use. True when the key should be treated as active/usable; false when it is disabled. </p>
+<p>Whether this user/key is enabled for normal use. </p>
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00058">58</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00059">59</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 
 </div>
 </div>
@@ -302,9 +306,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#af6b3e6dc6e34553f764e577d2994f5aa" title="UserInfo::expiry date/time when key expires.">UserInfo::expiry</a> date/time when key expires. </p>
+<p>Date/time when key expires. </p>
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00062">62</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00063">63</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 
 </div>
 </div>
@@ -320,9 +324,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a0779dd42b6e6810c191b08b788ebaf99" title="UserInfo::have_secret whether secret key is available (can decrypt with this key).">UserInfo::have_secret</a> whether secret key is available (can decrypt with this key). </p>
+<p>Whether secret key is available (can decrypt with this key). </p>
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00051">51</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00055">55</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 
 </div>
 </div>
@@ -338,9 +342,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a7ea1df76d75ada608ce5a641bd53f7e6" title="UserInfo::key_id hexadecimal representation of the GnuPG key identifier.">UserInfo::key_id</a> hexadecimal representation of the GnuPG key identifier. </p>
+<p>Hexadecimal representation of the GnuPG key identifier. </p>
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00041">41</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00046">46</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 
 </div>
 </div>
@@ -356,11 +360,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#acf06e7727153cca2cd8b4a912517a2bb" title="UserInfo::name GPG user ID / full name.">UserInfo::name</a> GPG user ID / full name. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a92">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
+<p>GPG user ID / full name. </p>
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00036">36</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00042">42</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 
 </div>
 </div>
@@ -376,9 +378,9 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#af09fb1cdf748f23cb6a74fa7e2972766" title="UserInfo::validity GnuPG representation of validity http://git.gnupg.org/cgi-bin/gitweb....">UserInfo::validity</a> GnuPG representation of validity <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>. </p>
+<p>GnuPG representation of validity. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>. </p>
 
-<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00046">46</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="userinfo_8h_source.html#l00051">51</a> of file <a class="el" href="userinfo_8h_source.html">userinfo.h</a>.</p>
 
 </div>
 </div>

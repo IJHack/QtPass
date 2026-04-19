@@ -1,36 +1,4 @@
 <map id="MainWindow::MainWindow" name="MainWindow::MainWindow">
-<area shape="rect" id="Node000001" title="MainWindow::MainWindow handles all of the main functionality and also the main window." alt="" coords="5,221,203,247"/>
-<area shape="poly" id="edge18_Node000001_Node000001" title=" " alt="" coords="61,223,52,213,57,203,75,197,104,195,142,199,152,204,156,210,151,212,149,208,140,204,104,200,76,202,60,207,57,212,65,219"/>
-<area shape="rect" id="Node000002" href="$class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e" title="MainWindow::deselect clear the selection, password and copy buffer." alt="" coords="285,5,453,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,220,127,184,157,135,198,84,223,61,249,41,271,30,273,35,252,46,226,65,202,88,162,138,132,187,113,223"/>
-<area shape="rect" id="Node000003" href="$class_deselectable_tree_view.html#ac28685648d7a31e19e52882e218346c4" title="emptyClicked event" alt="" coords="286,55,453,95"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="114,219,169,164,207,132,249,105,271,95,274,100,252,110,210,137,172,168,118,223"/>
-<area shape="rect" id="Node000004" href="$class_util.html#a503abb6ccbf2aa18056c220b9b45284e" title="Locate the password store directory." alt="" coords="283,120,455,145"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="128,219,183,191,250,162,299,146,301,151,252,167,185,196,130,224"/>
-<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#ab604ff0e43878db15d7084e917954eb8" title="Get panel autoclear delay in seconds." alt="" coords="543,83,753,123"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="177,219,346,187,487,154,535,133,558,125,560,130,537,138,489,159,348,192,178,224"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a34ba20416835e4de168d4c66f9076b2b" title="Get currently active pass backend instance." alt="" coords="281,221,458,247"/>
-<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="203,231,267,231,267,237,203,237"/>
-<area shape="rect" id="Node000012" href="$class_qt_pass_settings.html#a538e612e04fe934535e1f7525d55743c" title="Get password store directory path." alt="" coords="543,296,753,321"/>
-<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="179,244,251,255,529,292,529,297,250,261,178,249"/>
-<area shape="rect" id="Node000013" href="$class_qt_pass_settings.html#a2876bf9c55e3abcc0460de1985d5234f" title="Get whether to disable line wrapping." alt="" coords="557,346,739,386"/>
-<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="132,244,186,269,251,293,327,312,403,329,543,351,542,357,402,334,325,318,250,298,184,274,130,249"/>
-<area shape="rect" id="Node000014" href="$class_qt_pass_settings.html#aa6bc2d2f460a567417dd46f134ebacd9" title="Get whether to use monospace font." alt="" coords="251,373,488,399"/>
-<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="119,245,173,297,211,326,252,352,290,367,288,372,249,356,208,331,170,301,115,249"/>
-<area shape="rect" id="Node000015" href="$class_main_window.html#ac240119ea67a770e5d997a5aa0fe47a3" title="MainWindow::setUiElementsEnabled enable or disable the relevant UI elements." alt="" coords="265,423,473,463"/>
-<area shape="poly" id="edge19_Node000001_Node000015" title=" " alt="" coords="114,246,134,279,165,323,205,370,252,409,263,415,260,420,249,414,201,373,160,326,130,282,110,248"/>
-<area shape="rect" id="Node000005" href="$class_util.html#acfa7240a7682876cf78d5a44bbbb81de" title="Ensure a folder path always ends with the native directory separator." alt="" coords="555,33,741,59"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="451,117,487,105,501,96,510,87,520,78,535,69,557,60,559,65,537,74,523,82,514,91,504,101,489,110,453,123"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="808,296,1011,321"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="738,121,761,133,805,168,843,208,896,282,891,285,839,212,801,172,759,138,736,126"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#ad23c0edfc2df7bc06df700b8468a8528" title="Get imitate pass backend instance." alt="" coords="536,148,760,173"/>
-<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="420,219,487,199,535,182,567,174,568,179,537,187,489,205,421,224"/>
-<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#a8f8fb086b283ad2089e64b37d4950d5e" title="Get real pass backend instance." alt="" coords="545,197,751,223"/>
-<area shape="poly" id="edge9_Node000008_Node000010" title=" " alt="" coords="458,224,531,217,531,223,459,229"/>
-<area shape="rect" id="Node000011" href="$class_qt_pass_settings.html#a51d5b6ef611562d9247d5c482e6449a8" title="Get whether to use pass (true) or GPG (false)." alt="" coords="552,247,744,272"/>
-<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="459,239,538,247,538,252,458,245"/>
-<area shape="poly" id="edge11_Node000011_Node000007" title=" " alt="" coords="716,269,828,291,827,296,715,275"/>
-<area shape="poly" id="edge13_Node000012_Node000007" title=" " alt="" coords="753,306,794,306,794,311,753,311"/>
-<area shape="poly" id="edge15_Node000013_Node000007" title=" " alt="" coords="739,343,837,322,838,327,740,349"/>
-<area shape="poly" id="edge17_Node000014_Node000007" title=" " alt="" coords="431,396,499,406,582,413,671,411,716,405,759,395,794,382,827,365,881,328,884,332,830,370,796,387,761,401,717,410,672,416,582,418,498,412,430,401"/>
+<area shape="rect" id="Node000001" title="Construct the main window." alt="" coords="5,29,203,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="71,31,65,21,68,11,82,5,104,3,131,6,142,15,139,19,129,11,104,8,83,10,72,15,70,20,76,28"/>
 </map>

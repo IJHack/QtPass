@@ -1,5 +1,5 @@
 <map id="QPushButtonWithClipboard" name="QPushButtonWithClipboard">
-<area shape="rect" id="Node000001" title="Stylish widget to allow copying of password and account details." alt="" coords="5,79,204,104"/>
+<area shape="rect" id="Node000001" title="QPushButton that stores a text payload and emits it when activated." alt="" coords="5,79,204,104"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="51,5,158,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,44,107,79,102,79,102,44"/>
 </map>

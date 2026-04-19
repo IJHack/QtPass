@@ -101,37 +101,17 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a565b5698b7bb40720476d61b8b1b8548" id="r_a565b5698b7bb40720476d61b8b1b8548"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a565b5698b7bb40720476d61b8b1b8548">KeygenDialog</a> (<a class="el" href="class_config_dialog.html">ConfigDialog</a> *parent=nullptr)</td></tr>
-<tr class="memdesc:a565b5698b7bb40720476d61b8b1b8548"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a565b5698b7bb40720476d61b8b1b8548" title="KeygenDialog::KeygenDialog basic constructor.">KeygenDialog::KeygenDialog</a> basic constructor.  <br /></td></tr>
-<tr class="memitem:ab469a4e10fb2b2ee324e57cb1e209a3e" id="r_ab469a4e10fb2b2ee324e57cb1e209a3e"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#ab469a4e10fb2b2ee324e57cb1e209a3e">~KeygenDialog</a> () override</td></tr>
-<tr class="memdesc:ab469a4e10fb2b2ee324e57cb1e209a3e"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ab469a4e10fb2b2ee324e57cb1e209a3e" title="KeygenDialog::~KeygenDialog even more basic destructor.">KeygenDialog::~KeygenDialog</a> even more basic destructor.  <br /></td></tr>
+<tr class="memdesc:a565b5698b7bb40720476d61b8b1b8548"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a> with an optional parent <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a>.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:a37012091a78f400d9bdc7b6f6b5949ef" id="r_a37012091a78f400d9bdc7b6f6b5949ef"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a37012091a78f400d9bdc7b6f6b5949ef">closeEvent</a> (QCloseEvent *event) override</td></tr>
-<tr class="memdesc:a37012091a78f400d9bdc7b6f6b5949ef"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a37012091a78f400d9bdc7b6f6b5949ef" title="KeygenDialog::closeEvent we are done here.">KeygenDialog::closeEvent</a> we are done here.  <br /></td></tr>
+<tr class="memdesc:a37012091a78f400d9bdc7b6f6b5949ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle dialog close, emitting appropriate signals.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Handles GPG keypair generation. </p>
-<p>Construct the <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a>. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">parent</td><td>Optional parent <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a> used to return to config UI. Destroy the <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a> and release associated resources. Handle the widget close event to perform any cleanup or confirm actions before closing. </td></tr>
-    <tr><td class="paramname">event</td><td>Close event provided by Qt. Update internal state when the first passphrase text changes. </td></tr>
-    <tr><td class="paramname">arg1</td><td>New passphrase text from the first input field. Update internal state when the confirmation passphrase text changes. </td></tr>
-    <tr><td class="paramname">arg1</td><td>New passphrase text from the confirmation input field. React to changes of the checkbox controlling protection options. </td></tr>
-    <tr><td class="paramname">arg1</td><td>New checkbox state (value corresponds to Qt::CheckState). Update internal state when the email text changes. </td></tr>
-    <tr><td class="paramname">arg1</td><td>New email text from the email input field. Update internal state when the name text changes. </td></tr>
-    <tr><td class="paramname">arg1</td><td>New name text from the name input field. Perform a text replacement within the dialog using the provided strings. </td></tr>
-    <tr><td class="paramname">from</td><td>Text to be replaced. </td></tr>
-    <tr><td class="paramname">to</td><td>Replacement text. Finalize the dialog with the given result code and perform any necessary teardown. </td></tr>
-    <tr><td class="paramname">r</td><td>Result code passed to QDialog::done. Enable or disable "no protection" behavior for generated keys or inputs. </td></tr>
-    <tr><td class="paramname">enable</td><td><span class="tt">true</span> to enable no-protection mode, <span class="tt">false</span> to disable it. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#_a101">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00074">74</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="keygendialog_8h_source.html#l00019">19</a> of file <a class="el" href="keygendialog_8h_source.html">keygendialog.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a565b5698b7bb40720476d61b8b1b8548" name="a565b5698b7bb40720476d61b8b1b8548"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a565b5698b7bb40720476d61b8b1b8548">&#9670;&#160;</a></span>KeygenDialog()</h2>
@@ -156,20 +136,18 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a565b5698b7bb40720476d61b8b1b8548" title="KeygenDialog::KeygenDialog basic constructor.">KeygenDialog::KeygenDialog</a> basic constructor. </p>
+<p>Construct a <a class="el" href="class_keygen_dialog.html" title="Handles GPG keypair generation.">KeygenDialog</a> with an optional parent <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td></td></tr>
+    <tr><td class="paramname">parent</td><td>Parent dialog, or nullptr. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00021">21</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
 <div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a565b5698b7bb40720476d61b8b1b8548_cgraph.svg" width="100%" height="527"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a565b5698b7bb40720476d61b8b1b8548_cgraph.svg" width="222" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -177,35 +155,6 @@ Protected Member Functions</h2></td></tr>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a565b5698b7bb40720476d61b8b1b8548_icgraph.svg" width="222" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-
-</div>
-</div>
-<a id="ab469a4e10fb2b2ee324e57cb1e209a3e" name="ab469a4e10fb2b2ee324e57cb1e209a3e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab469a4e10fb2b2ee324e57cb1e209a3e">&#9670;&#160;</a></span>~KeygenDialog()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">KeygenDialog::~KeygenDialog </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="#ab469a4e10fb2b2ee324e57cb1e209a3e" title="KeygenDialog::~KeygenDialog even more basic destructor.">KeygenDialog::~KeygenDialog</a> even more basic destructor. </p>
-
-<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00047">47</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
 
 </div>
 </div>
@@ -233,27 +182,18 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a37012091a78f400d9bdc7b6f6b5949ef" title="KeygenDialog::closeEvent we are done here.">KeygenDialog::closeEvent</a> we are done here. </p>
+<p>Handle dialog close, emitting appropriate signals. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td></td></tr>
+    <tr><td class="paramname">event</td><td>The close event. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="keygendialog_8cpp_source.html#l00216">216</a> of file <a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_keygen_dialog_a37012091a78f400d9bdc7b6f6b5949ef_cgraph.svg" width="100%" height="461"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="keygendialog_8h_source.html">keygendialog.h</a></li>
-<li>src/<a class="el" href="keygendialog_8cpp_source.html">keygendialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -72,7 +72,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+<li class="navelem"><b>src</b></li>  </ul>
 </div>
 </div><!-- top -->
 <div id="doc-content">
@@ -80,36 +80,24 @@ $(function() {
   <div class="headertitle"><div class="title">gpgkeystate.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="gpgkeystate_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#ifndef SRC_GPGKEYSTATE_H_</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#define SRC_GPGKEYSTATE_H_</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="userinfo_8h.html">userinfo.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;userinfo.h&quot;</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;QList&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;QString&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;QStringList&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314ad9c8b6ee49fc11baca5fdda1a2957ad7">   12</a></span><span class="keyword">enum class</span> <a class="code hl_enumeration" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314">GpgRecordType</a> { <a class="code hl_enumvalue" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</a>, <a class="code hl_enumvalue" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314aa29bdd003ef6c0c34279807341f450f2">Pub</a>, <a class="code hl_enumvalue" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a2d5cc554c126edb041901fa7d79b558b">Sec</a>, <a class="code hl_enumvalue" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a43dc4c29d59c2c845bbb01ce770692f5">Uid</a>, <a class="code hl_enumvalue" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314ad9c8b6ee49fc11baca5fdda1a2957ad7">Fpr</a>, <a class="code hl_enumvalue" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314ae80155eceb940c89e2de63ad05868db2">Sub</a>, <a class="code hl_enumvalue" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314af700434ad8179b8a4eb0d625aa4181f5">Ssb</a>, <a class="code hl_enumvalue" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a091f41cecca1c417dc7eb8ff9d76cee9">Grp</a> };</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">enum class</span> GpgRecordType { Unknown, Pub, Sec, Uid, Fpr, Sub, Ssb, Grp };</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><a class="code hl_enumeration" href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314">GpgRecordType</a> <a class="code hl_function" href="gpgkeystate_8h.html#ad0639911b85a0cc4ad970d6eae3a7078">classifyRecord</a>(<span class="keyword">const</span> QString &amp;record_type);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>GpgRecordType classifyRecord(<span class="keyword">const</span> QString &amp;record_type);</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>QList&lt;UserInfo&gt; <a class="code hl_function" href="gpgkeystate_8h.html#a72d30aad697116826b8f605e7b855a0a">parseGpgColonOutput</a>(<span class="keyword">const</span> QString &amp;output, <span class="keywordtype">bool</span> secret);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>QList&lt;UserInfo&gt; parseGpgColonOutput(<span class="keyword">const</span> QString &amp;output, <span class="keywordtype">bool</span> secret);</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#endif </span><span class="comment">// SRC_GPGKEYSTATE_H_</span></div>
-<div class="ttc" id="agpgkeystate_8h_html_a72d30aad697116826b8f605e7b855a0a"><div class="ttname"><a href="gpgkeystate_8h.html#a72d30aad697116826b8f605e7b855a0a">parseGpgColonOutput</a></div><div class="ttdeci">QList&lt; UserInfo &gt; parseGpgColonOutput(const QString &amp;output, bool secret)</div><div class="ttdoc">Parse GPG –with-colons output into a list of UserInfo.</div><div class="ttdef"><b>Definition</b> <a href="gpgkeystate_8cpp_source.html#l00110">gpgkeystate.cpp:110</a></div></div>
-<div class="ttc" id="agpgkeystate_8h_html_a775e5ef64248fea2506a55dce8b08314"><div class="ttname"><a href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314">GpgRecordType</a></div><div class="ttdeci">GpgRecordType</div><div class="ttdef"><b>Definition</b> <a href="#l00012">gpgkeystate.h:12</a></div></div>
-<div class="ttc" id="agpgkeystate_8h_html_a775e5ef64248fea2506a55dce8b08314a091f41cecca1c417dc7eb8ff9d76cee9"><div class="ttname"><a href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a091f41cecca1c417dc7eb8ff9d76cee9">GpgRecordType::Grp</a></div><div class="ttdeci">@ Grp</div><div class="ttdef"><b>Definition</b> <a href="#l00012">gpgkeystate.h:12</a></div></div>
-<div class="ttc" id="agpgkeystate_8h_html_a775e5ef64248fea2506a55dce8b08314a2d5cc554c126edb041901fa7d79b558b"><div class="ttname"><a href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a2d5cc554c126edb041901fa7d79b558b">GpgRecordType::Sec</a></div><div class="ttdeci">@ Sec</div><div class="ttdef"><b>Definition</b> <a href="#l00012">gpgkeystate.h:12</a></div></div>
-<div class="ttc" id="agpgkeystate_8h_html_a775e5ef64248fea2506a55dce8b08314a43dc4c29d59c2c845bbb01ce770692f5"><div class="ttname"><a href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a43dc4c29d59c2c845bbb01ce770692f5">GpgRecordType::Uid</a></div><div class="ttdeci">@ Uid</div><div class="ttdef"><b>Definition</b> <a href="#l00012">gpgkeystate.h:12</a></div></div>
-<div class="ttc" id="agpgkeystate_8h_html_a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e"><div class="ttname"><a href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e">GpgRecordType::Unknown</a></div><div class="ttdeci">@ Unknown</div><div class="ttdef"><b>Definition</b> <a href="#l00012">gpgkeystate.h:12</a></div></div>
-<div class="ttc" id="agpgkeystate_8h_html_a775e5ef64248fea2506a55dce8b08314aa29bdd003ef6c0c34279807341f450f2"><div class="ttname"><a href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314aa29bdd003ef6c0c34279807341f450f2">GpgRecordType::Pub</a></div><div class="ttdeci">@ Pub</div><div class="ttdef"><b>Definition</b> <a href="#l00012">gpgkeystate.h:12</a></div></div>
-<div class="ttc" id="agpgkeystate_8h_html_a775e5ef64248fea2506a55dce8b08314ad9c8b6ee49fc11baca5fdda1a2957ad7"><div class="ttname"><a href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314ad9c8b6ee49fc11baca5fdda1a2957ad7">GpgRecordType::Fpr</a></div><div class="ttdeci">@ Fpr</div><div class="ttdef"><b>Definition</b> <a href="#l00012">gpgkeystate.h:12</a></div></div>
-<div class="ttc" id="agpgkeystate_8h_html_a775e5ef64248fea2506a55dce8b08314ae80155eceb940c89e2de63ad05868db2"><div class="ttname"><a href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314ae80155eceb940c89e2de63ad05868db2">GpgRecordType::Sub</a></div><div class="ttdeci">@ Sub</div><div class="ttdef"><b>Definition</b> <a href="#l00012">gpgkeystate.h:12</a></div></div>
-<div class="ttc" id="agpgkeystate_8h_html_a775e5ef64248fea2506a55dce8b08314af700434ad8179b8a4eb0d625aa4181f5"><div class="ttname"><a href="gpgkeystate_8h.html#a775e5ef64248fea2506a55dce8b08314af700434ad8179b8a4eb0d625aa4181f5">GpgRecordType::Ssb</a></div><div class="ttdeci">@ Ssb</div><div class="ttdef"><b>Definition</b> <a href="#l00012">gpgkeystate.h:12</a></div></div>
-<div class="ttc" id="agpgkeystate_8h_html_ad0639911b85a0cc4ad970d6eae3a7078"><div class="ttname"><a href="gpgkeystate_8h.html#ad0639911b85a0cc4ad970d6eae3a7078">classifyRecord</a></div><div class="ttdeci">GpgRecordType classifyRecord(const QString &amp;record_type)</div><div class="ttdoc">Classify a GPG colon output record type.</div><div class="ttdef"><b>Definition</b> <a href="gpgkeystate_8cpp_source.html#l00023">gpgkeystate.cpp:23</a></div></div>
-<div class="ttc" id="auserinfo_8h_html"><div class="ttname"><a href="userinfo_8h.html">userinfo.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

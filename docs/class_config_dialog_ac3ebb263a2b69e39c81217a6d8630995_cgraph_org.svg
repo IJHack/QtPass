@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="ConfigDialog::usePwgen set preference for using pwgen (can be overruled by empty pwgenPath)....">
+<g id="a_Node000001"><a xlink:title="Enable or disable pwgen&#45;based password generation.">
 <polygon fill="#999999" stroke="#666666" points="134,-19 0,-19 0,0 134,0 134,-19"/>
 <text text-anchor="middle" x="67" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">ConfigDialog::usePwgen</text>
 </a>

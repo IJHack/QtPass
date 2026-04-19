@@ -1,13 +1,4 @@
 <map id="FileContent::getRemainingData" name="FileContent::getRemainingData">
-<area shape="rect" id="Node000001" title="Gets remaining data not in named values." alt="" coords="984,66,1211,91"/>
-<area shape="rect" id="Node000002" href="$class_password_dialog.html#a2beae0dab7b339ce55d7f2bebe80a172" title="Sets content in the password field in the interface." alt="" coords="721,66,936,91"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="971,81,936,81,936,76,971,76"/>
-<area shape="rect" id="Node000003" href="$class_password_dialog.html#aca023385bb581500a1e4a880a6283ad8" title="Sets the password from pass show output." alt="" coords="491,66,673,91"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="708,81,674,81,674,76,708,76"/>
-<area shape="rect" id="Node000004" href="$class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e" title="PasswordDialog::PasswordDialog basic constructor." alt="" coords="248,29,443,69"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="477,68,443,64,443,59,478,63"/>
-<area shape="rect" id="Node000005" href="$class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98" title="PasswordDialog::PasswordDialog complete constructor." alt="" coords="5,59,200,99"/>
-<area shape="poly" id="edge6_Node000003_Node000005" title=" " alt="" coords="477,84,443,84,248,84,200,83,200,78,248,79,443,79,477,78"/>
-<area shape="poly" id="edge4_Node000004_Node000004" title=" " alt="" coords="385,18,371,11,345,8,323,10,309,15,304,21,307,28,302,30,299,20,306,10,322,5,345,3,373,6,388,13"/>
-<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="235,65,201,70,200,64,234,60"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,29,232,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="159,20,149,11,119,8,94,10,82,15,79,20,86,27,82,31,74,21,78,11,93,5,119,3,151,7,163,16"/>
 </map>

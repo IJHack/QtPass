@@ -80,42 +80,39 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Static utility functions implementation.  
+<p>Some static utilities to be used elsewhere.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="util_8h_source.html">util.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aee9122a528c60168a0c105bfbed062d5" id="r_aee9122a528c60168a0c105bfbed062d5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aee9122a528c60168a0c105bfbed062d5">findBinaryInPath</a> (const QString &amp;binary) -&gt; QString</td></tr>
-<tr class="memdesc:aee9122a528c60168a0c105bfbed062d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.  <br /></td></tr>
-<tr class="memitem:a503abb6ccbf2aa18056c220b9b45284e" id="r_a503abb6ccbf2aa18056c220b9b45284e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a503abb6ccbf2aa18056c220b9b45284e">findPasswordStore</a> () -&gt; QString</td></tr>
-<tr class="memdesc:a503abb6ccbf2aa18056c220b9b45284e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the password store directory.  <br /></td></tr>
-<tr class="memitem:acfa7240a7682876cf78d5a44bbbb81de" id="r_acfa7240a7682876cf78d5a44bbbb81de"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acfa7240a7682876cf78d5a44bbbb81de">normalizeFolderPath</a> (const QString &amp;path) -&gt; QString</td></tr>
-<tr class="memdesc:acfa7240a7682876cf78d5a44bbbb81de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with the native directory separator.  <br /></td></tr>
-<tr class="memitem:afe6db9149dff37feded5abf38870cda8" id="r_afe6db9149dff37feded5abf38870cda8"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#afe6db9149dff37feded5abf38870cda8">configIsValid</a> () -&gt; bool</td></tr>
-<tr class="memdesc:afe6db9149dff37feded5abf38870cda8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that the required configuration is complete.  <br /></td></tr>
-<tr class="memitem:a5df2739baa9b1df5f183c66739699d3d" id="r_a5df2739baa9b1df5f183c66739699d3d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5df2739baa9b1df5f183c66739699d3d">getDir</a> (const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const <a class="el" href="class_store_model.html">StoreModel</a> &amp;storeModel) -&gt; QString</td></tr>
-<tr class="memdesc:a5df2739baa9b1df5f183c66739699d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected folder path, either relative to the configured pass store or absolute.  <br /></td></tr>
-<tr class="memitem:a2a7a32586578a9b631bc6b2a821ce616" id="r_a2a7a32586578a9b631bc6b2a821ce616"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2a7a32586578a9b631bc6b2a821ce616">endsWithGpg</a> () -&gt; const QRegularExpression &amp;</td></tr>
-<tr class="memdesc:a2a7a32586578a9b631bc6b2a821ce616"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match .gpg file extensions.  <br /></td></tr>
-<tr class="memitem:a133c5da0c8a3f106c09977679bc615c3" id="r_a133c5da0c8a3f106c09977679bc615c3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a133c5da0c8a3f106c09977679bc615c3">protocolRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
-<tr class="memdesc:a133c5da0c8a3f106c09977679bc615c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match URL protocols.  <br /></td></tr>
-<tr class="memitem:aced819d4368806d046f0dc24a91843f7" id="r_aced819d4368806d046f0dc24a91843f7"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aced819d4368806d046f0dc24a91843f7">newLinesRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
-<tr class="memdesc:aced819d4368806d046f0dc24a91843f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match newline characters.  <br /></td></tr>
-<tr class="memitem:aba7296e41ef990d5d945d5ed8cd99bd5" id="r_aba7296e41ef990d5d945d5ed8cd99bd5"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aba7296e41ef990d5d945d5ed8cd99bd5">isValidKeyId</a> (const QString &amp;keyId) -&gt; bool</td></tr>
-<tr class="memdesc:aba7296e41ef990d5d945d5ed8cd99bd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a string looks like a valid GPG key ID. Accepts:  <br /></td></tr>
+<tr class="memitem:aa93547aecfd166a3e0eac955370cc05c" id="r_aa93547aecfd166a3e0eac955370cc05c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa93547aecfd166a3e0eac955370cc05c">findBinaryInPath</a> (const QString &amp;binary) -&gt; QString</td></tr>
+<tr class="memdesc:aa93547aecfd166a3e0eac955370cc05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.  <br /></td></tr>
+<tr class="memitem:abfddcff8c37fbb33e86605e4fb7250db" id="r_abfddcff8c37fbb33e86605e4fb7250db"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abfddcff8c37fbb33e86605e4fb7250db">findPasswordStore</a> () -&gt; QString</td></tr>
+<tr class="memdesc:abfddcff8c37fbb33e86605e4fb7250db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the password store directory.  <br /></td></tr>
+<tr class="memitem:ab23a1afdcad63df9101660fd6e53b763" id="r_ab23a1afdcad63df9101660fd6e53b763"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab23a1afdcad63df9101660fd6e53b763">normalizeFolderPath</a> (const QString &amp;path) -&gt; QString</td></tr>
+<tr class="memdesc:ab23a1afdcad63df9101660fd6e53b763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with the native directory separator.  <br /></td></tr>
+<tr class="memitem:af67c5e8a8475d367aad069275251558d" id="r_af67c5e8a8475d367aad069275251558d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af67c5e8a8475d367aad069275251558d">configIsValid</a> () -&gt; bool</td></tr>
+<tr class="memdesc:af67c5e8a8475d367aad069275251558d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that the required configuration is complete.  <br /></td></tr>
+<tr class="memitem:a43035d8b47eb0a01bb0274e800cd8ef0" id="r_a43035d8b47eb0a01bb0274e800cd8ef0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a43035d8b47eb0a01bb0274e800cd8ef0">getDir</a> (const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const <a class="el" href="class_store_model.html">StoreModel</a> &amp;storeModel) -&gt; QString</td></tr>
+<tr class="memdesc:a43035d8b47eb0a01bb0274e800cd8ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected folder path, either relative to the configured pass store or absolute.  <br /></td></tr>
+<tr class="memitem:a8ed01cfd3773e5b0034089f2f952a030" id="r_a8ed01cfd3773e5b0034089f2f952a030"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8ed01cfd3773e5b0034089f2f952a030">endsWithGpg</a> () -&gt; const QRegularExpression &amp;</td></tr>
+<tr class="memdesc:a8ed01cfd3773e5b0034089f2f952a030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match .gpg file extensions.  <br /></td></tr>
+<tr class="memitem:a73aa66df403921fb49c57548f83490bc" id="r_a73aa66df403921fb49c57548f83490bc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a73aa66df403921fb49c57548f83490bc">protocolRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
+<tr class="memdesc:a73aa66df403921fb49c57548f83490bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match URL protocols.  <br /></td></tr>
+<tr class="memitem:a0ba6ef4e4542287d5b257252728d1aa4" id="r_a0ba6ef4e4542287d5b257252728d1aa4"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ba6ef4e4542287d5b257252728d1aa4">newLinesRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
+<tr class="memdesc:a0ba6ef4e4542287d5b257252728d1aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match newline characters.  <br /></td></tr>
+<tr class="memitem:a7a6dcbde6840aab13f34a83a4ce9f3c1" id="r_a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7a6dcbde6840aab13f34a83a4ce9f3c1">isValidKeyId</a> (const QString &amp;keyId) -&gt; bool</td></tr>
+<tr class="memdesc:a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a string looks like a valid GPG key ID. Accepts:  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Static utility functions implementation. </p>
-<p>Some static utilities to be used elsewhere.</p>
-<p>Implementation of utility functions for path handling, binary discovery, and configuration validation.</p>
-<dl class="section see"><dt>See also</dt><dd><a class="el" href="util_8h.html">util.h</a> </dd></dl>
+<div class="textblock"><p>Some static utilities to be used elsewhere. </p>
 
 <p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00020">20</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="afe6db9149dff37feded5abf38870cda8" name="afe6db9149dff37feded5abf38870cda8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe6db9149dff37feded5abf38870cda8">&#9670;&#160;</a></span>configIsValid()</h2>
+<a id="af67c5e8a8475d367aad069275251558d" name="af67c5e8a8475d367aad069275251558d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af67c5e8a8475d367aad069275251558d">&#9670;&#160;</a></span>configIsValid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -127,7 +124,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Util::configIsValid </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; bool</td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -139,27 +136,11 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Verify that the required configuration is complete. </p>
 <dl class="section return"><dt>Returns</dt><dd>bool <span class="tt">true</span> if the password store's <span class="tt">.gpg-id</span> exists AND the configured executable (pass or gpg, depending on settings) exists or is a WSL wrapper; <span class="tt">false</span> otherwise. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#_a44">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>, <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a22">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a5">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00191">191</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_afe6db9149dff37feded5abf38870cda8_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_afe6db9149dff37feded5abf38870cda8_icgraph.svg" width="390" height="232"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
-<a id="a2a7a32586578a9b631bc6b2a821ce616" name="a2a7a32586578a9b631bc6b2a821ce616"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a7a32586578a9b631bc6b2a821ce616">&#9670;&#160;</a></span>endsWithGpg()</h2>
+<a id="a8ed01cfd3773e5b0034089f2f952a030" name="a8ed01cfd3773e5b0034089f2f952a030"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ed01cfd3773e5b0034089f2f952a030">&#9670;&#160;</a></span>endsWithGpg()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -171,7 +152,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Util::endsWithGpg </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; const QRegularExpression &amp;</td>
+          <td> -&gt;  const QRegularExpression &amp;</td>
         </tr>
       </table>
   </td>
@@ -183,21 +164,11 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns a regex to match .gpg file extensions. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a51">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#_a25">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a12">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00252">252</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a2a7a32586578a9b631bc6b2a821ce616_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
-<a id="aee9122a528c60168a0c105bfbed062d5" name="aee9122a528c60168a0c105bfbed062d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee9122a528c60168a0c105bfbed062d5">&#9670;&#160;</a></span>findBinaryInPath()</h2>
+<a id="aa93547aecfd166a3e0eac955370cc05c" name="aa93547aecfd166a3e0eac955370cc05c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93547aecfd166a3e0eac955370cc05c">&#9670;&#160;</a></span>findBinaryInPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -209,7 +180,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Util::findBinaryInPath </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>binary</em></span></td><td>)</td>
-          <td> -&gt; QString</td>
+          <td> -&gt;  QString</td>
         </tr>
       </table>
   </td>
@@ -227,27 +198,11 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Absolute path to the executable if found, empty QString otherwise. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a89">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>, <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2qtpasssettings_8cpp-example.html#a97">/home/runner/work/QtPass/QtPass/src/qtpasssettings.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a3">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00120">120</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aee9122a528c60168a0c105bfbed062d5_cgraph.svg" width="411" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aee9122a528c60168a0c105bfbed062d5_icgraph.svg" width="587" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
-<a id="a503abb6ccbf2aa18056c220b9b45284e" name="a503abb6ccbf2aa18056c220b9b45284e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a503abb6ccbf2aa18056c220b9b45284e">&#9670;&#160;</a></span>findPasswordStore()</h2>
+<a id="abfddcff8c37fbb33e86605e4fb7250db" name="abfddcff8c37fbb33e86605e4fb7250db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfddcff8c37fbb33e86605e4fb7250db">&#9670;&#160;</a></span>findPasswordStore()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -259,7 +214,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Util::findPasswordStore </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; QString</td>
+          <td> -&gt;  QString</td>
         </tr>
       </table>
   </td>
@@ -270,31 +225,12 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Locate the password store directory. </p>
-<p>Resolves the path to the password store directory.</p>
-<dl class="section return"><dt>Returns</dt><dd>QString Path to the password store, always ends with native directory separator.</dd></dl>
-<p>Initializes the environment, checks for the <code class="JavaDocCode"><br/>
-PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific default location under the user's home directory. </p><dl class="section return"><dt>Returns</dt><dd>QString - Normalized path to the password store folder. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#_a4">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a1">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00077">77</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a503abb6ccbf2aa18056c220b9b45284e_cgraph.svg" width="418" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a503abb6ccbf2aa18056c220b9b45284e_icgraph.svg" width="428" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>QString Path to the password store, always ends with native directory separator. </dd></dl>
 
 </div>
 </div>
-<a id="a5df2739baa9b1df5f183c66739699d3d" name="a5df2739baa9b1df5f183c66739699d3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5df2739baa9b1df5f183c66739699d3d">&#9670;&#160;</a></span>getDir()</h2>
+<a id="a43035d8b47eb0a01bb0274e800cd8ef0" name="a43035d8b47eb0a01bb0274e800cd8ef0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43035d8b47eb0a01bb0274e800cd8ef0">&#9670;&#160;</a></span>getDir()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,7 +256,7 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_store_model.html">StoreModel</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>storeModel</em></span>&#160;) -&gt; QString</td>
+          <td class="paramtype">const <a class="el" href="class_store_model.html">StoreModel</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>storeModel</em></span>&#160;) -&gt;  QString</td>
         </tr>
       </table>
   </td>
@@ -341,27 +277,11 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Folder path that always ends with the native directory separator. Returns an empty string when <span class="tt">index</span> is invalid and <span class="tt">forPass</span> is true; otherwise returns the pass store root. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a27">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a10">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00234">234</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a5df2739baa9b1df5f183c66739699d3d_cgraph.svg" width="614" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_a5df2739baa9b1df5f183c66739699d3d_icgraph.svg" width="603" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
-<a id="aba7296e41ef990d5d945d5ed8cd99bd5" name="aba7296e41ef990d5d945d5ed8cd99bd5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba7296e41ef990d5d945d5ed8cd99bd5">&#9670;&#160;</a></span>isValidKeyId()</h2>
+<a id="a7a6dcbde6840aab13f34a83a4ce9f3c1" name="a7a6dcbde6840aab13f34a83a4ce9f3c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a6dcbde6840aab13f34a83a4ce9f3c1">&#9670;&#160;</a></span>isValidKeyId()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -373,7 +293,7 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
           <td class="memname">auto Util::isValidKeyId </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>keyId</em></span></td><td>)</td>
-          <td> -&gt; bool</td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
   </td>
@@ -396,21 +316,11 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
 <dl class="section return"><dt>Returns</dt><dd>true if the key ID format is valid, false otherwise. </dd></dl>
 </li>
 </ul>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a85">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a15">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00280">280</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aba7296e41ef990d5d945d5ed8cd99bd5_icgraph.svg" width="100%" height="425"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
-<a id="aced819d4368806d046f0dc24a91843f7" name="aced819d4368806d046f0dc24a91843f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aced819d4368806d046f0dc24a91843f7">&#9670;&#160;</a></span>newLinesRegex()</h2>
+<a id="a0ba6ef4e4542287d5b257252728d1aa4" name="a0ba6ef4e4542287d5b257252728d1aa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ba6ef4e4542287d5b257252728d1aa4">&#9670;&#160;</a></span>newLinesRegex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -422,7 +332,7 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
           <td class="memname">auto Util::newLinesRegex </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; const QRegularExpression &amp;</td>
+          <td> -&gt;  const QRegularExpression &amp;</td>
         </tr>
       </table>
   </td>
@@ -434,21 +344,11 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
 
 <p>Returns a regex to match newline characters. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#_a69">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a14">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00275">275</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_aced819d4368806d046f0dc24a91843f7_icgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
-<a id="acfa7240a7682876cf78d5a44bbbb81de" name="acfa7240a7682876cf78d5a44bbbb81de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfa7240a7682876cf78d5a44bbbb81de">&#9670;&#160;</a></span>normalizeFolderPath()</h2>
+<a id="ab23a1afdcad63df9101660fd6e53b763" name="ab23a1afdcad63df9101660fd6e53b763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab23a1afdcad63df9101660fd6e53b763">&#9670;&#160;</a></span>normalizeFolderPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -460,7 +360,7 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
           <td class="memname">auto Util::normalizeFolderPath </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
-          <td> -&gt; QString</td>
+          <td> -&gt;  QString</td>
         </tr>
       </table>
   </td>
@@ -478,21 +378,11 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>QString Path with trailing separator added if missing. </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a51">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a2">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00094">94</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
-<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_util_acfa7240a7682876cf78d5a44bbbb81de_icgraph.svg" width="663" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
-<a id="a133c5da0c8a3f106c09977679bc615c3" name="a133c5da0c8a3f106c09977679bc615c3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a133c5da0c8a3f106c09977679bc615c3">&#9670;&#160;</a></span>protocolRegex()</h2>
+<a id="a73aa66df403921fb49c57548f83490bc" name="a73aa66df403921fb49c57548f83490bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73aa66df403921fb49c57548f83490bc">&#9670;&#160;</a></span>protocolRegex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -504,7 +394,7 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
           <td class="memname">auto Util::protocolRegex </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; const QRegularExpression &amp;</td>
+          <td> -&gt;  const QRegularExpression &amp;</td>
         </tr>
       </table>
   </td>
@@ -515,21 +405,12 @@ PASSWORD_STORE_DIR</code> variable, and falls back to a platform-specific defaul
 </div><div class="memdoc">
 
 <p>Returns a regex to match URL protocols. </p>
-<p>Returns a regex matching common remote/network protocol schemes.</p>
-<dl class="section return"><dt>Returns</dt><dd>Reference to static regex</dd></dl>
-<p>Matches <a href="http://">http://</a>, <a href="https://">https://</a>, <a href="ftp://">ftp://</a>, <a href="ftps://">ftps://</a>, ssh://, <a href="sftp://">sftp://</a>, webdav://, webdavs://</p>
-<p>Note: Local file URLs (<a href="file:///">file:///</a>) are intentionally excluded by design, as they represent local paths rather than network protocols. If this behavior needs to change, update both this function and the corresponding test.</p>
-<dl class="section return"><dt>Returns</dt><dd>QRegularExpression reference </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a85">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#a13">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="util_8cpp_source.html#l00269">269</a> of file <a class="el" href="util_8cpp_source.html">util.cpp</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="util_8h_source.html">util.h</a></li>
-<li>src/<a class="el" href="util_8cpp_source.html">util.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

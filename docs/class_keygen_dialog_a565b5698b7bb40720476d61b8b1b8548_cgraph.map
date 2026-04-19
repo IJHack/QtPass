@@ -1,26 +1,4 @@
 <map id="KeygenDialog::KeygenDialog" name="KeygenDialog::KeygenDialog">
-<area shape="rect" id="Node000001" title="KeygenDialog::KeygenDialog basic constructor." alt="" coords="5,156,216,181"/>
-<area shape="poly" id="edge14_Node000001_Node000001" title=" " alt="" coords="69,158,60,148,64,138,82,131,111,129,147,133,157,138,161,144,157,147,154,142,146,138,111,135,83,137,68,142,65,147,73,154"/>
-<area shape="rect" id="Node000002" href="$class_pass.html#ae3284a937d0ca8ae2ea2d81ec556c37b" title="Get default key template for new GPG keys." alt="" coords="264,47,476,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="136,153,263,94,316,74,318,79,265,99,138,158"/>
-<area shape="rect" id="Node000007" href="$class_qt_pass_settings.html#ad15e182609e00a394ec9acdd4d1a19f5" title="Get saved dialog geometry." alt="" coords="535,91,726,131"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="213,153,264,147,521,120,522,125,264,153,214,159"/>
-<area shape="rect" id="Node000008" href="$class_qt_pass_settings.html#a2c8d54afd8f4caf43e1727fe27202949" title="Get saved dialog position." alt="" coords="524,156,737,181"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="216,166,510,166,510,171,216,171"/>
-<area shape="rect" id="Node000009" href="$class_qt_pass_settings.html#a849902104116f90df3ecba03d92b1815" title="Get saved dialog size." alt="" coords="799,207,1017,232"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="216,173,785,209,785,214,216,178"/>
-<area shape="rect" id="Node000010" href="$class_qt_pass_settings.html#ab343d163d18abe49c1ed2d06266c4b5e" title="Get dialog maximized state." alt="" coords="280,257,460,297"/>
-<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="140,179,265,236,300,249,298,254,263,240,138,184"/>
-<area shape="rect" id="Node000003" href="$class_pass.html#a4c2bca8a9a59a032adc68846055b056b" title="Check if GPG supports Ed25519 encryption." alt="" coords="533,41,729,67"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="476,54,519,54,519,59,476,60"/>
-<area shape="rect" id="Node000004" href="$class_executor.html#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin." alt="" coords="811,5,1005,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="728,39,798,30,798,35,729,44"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a6d9beabe93c829cacdcc6c27792ffdba" title="Get GPG executable path." alt="" coords="785,55,1031,80"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="729,56,772,58,771,63,729,61"/>
-<area shape="rect" id="Node000006" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="1079,156,1281,181"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="967,78,1032,97,1091,122,1144,147,1141,152,1089,127,1030,102,965,83"/>
-<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="727,117,1031,147,1068,152,1067,157,1030,153,726,122"/>
-<area shape="poly" id="edge9_Node000008_Node000006" title=" " alt="" coords="737,166,1065,166,1065,171,737,171"/>
-<area shape="poly" id="edge11_Node000009_Node000006" title=" " alt="" coords="976,204,1097,181,1098,187,977,209"/>
-<area shape="poly" id="edge13_Node000010_Node000006" title=" " alt="" coords="460,281,576,286,719,285,876,272,954,259,1030,242,1094,217,1148,187,1150,191,1096,222,1031,247,955,265,876,277,719,290,575,291,460,287"/>
+<area shape="rect" id="Node000001" title="Construct a KeygenDialog with an optional parent ConfigDialog." alt="" coords="5,29,216,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="77,31,69,21,73,11,87,5,111,3,140,6,151,15,148,20,138,11,111,8,89,10,77,15,74,20,81,28"/>
 </map>

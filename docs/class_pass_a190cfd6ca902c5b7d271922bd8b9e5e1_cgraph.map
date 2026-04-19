@@ -1,0 +1,5 @@
+<map id="Pass::getDefaultKeyTemplate" name="Pass::getDefaultKeyTemplate">
+<area shape="rect" id="Node000001" title="Get default key template for new GPG keys." alt="" coords="5,5,217,31"/>
+<area shape="rect" id="Node000002" href="$class_pass.html#a5d0cea4019f5c123fb4a4417de8d95b9" title="Construct a Pass instance." alt="" coords="265,5,353,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="218,15,252,15,252,21,218,21"/>
+</map>

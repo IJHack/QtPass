@@ -1,4 +1,4 @@
 <map id="ConfigDialog::useTemplate" name="ConfigDialog::useTemplate">
-<area shape="rect" id="Node000001" title="ConfigDialog::useTemplate set preference for using templates." alt="" coords="5,29,201,55"/>
+<area shape="rect" id="Node000001" title="Enable or disable password file templating." alt="" coords="5,29,201,55"/>
 <area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="71,31,64,21,68,11,81,5,103,3,130,6,141,15,138,19,128,11,103,8,83,10,72,15,70,20,75,28"/>
 </map>

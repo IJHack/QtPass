@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['allchars_0',['ALLCHARS',['../struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173ab6c9b1db9fdc1a62c5126c905acd5611',1,'PasswordConfiguration']]],
-  ['alphabetical_1',['ALPHABETICAL',['../struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173a6df06d290e40210839e4315605604e40',1,'PasswordConfiguration']]],
-  ['alphanumeric_2',['ALPHANUMERIC',['../struct_password_configuration.html#a45c20d47cf36382f524d4a400a8d2173afc48f773005a525f5b3a60d60d36018e',1,'PasswordConfiguration']]]
+  ['clipboard_5falways_0',['CLIPBOARD_ALWAYS',['../namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da00dc0ed766a614a278d3f392089c814e',1,'Enums']]],
+  ['clipboard_5fnever_1',['CLIPBOARD_NEVER',['../namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef',1,'Enums']]],
+  ['clipboard_5fon_5fdemand_2',['CLIPBOARD_ON_DEMAND',['../namespace_enums.html#aa36f045555e72e4d536b48aac12ee52daf4f60eefd26af9c92962895d9a55ae2b',1,'Enums']]]
 ];

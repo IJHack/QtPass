@@ -32,7 +32,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classsimple_transaction.html#ac798d38ad0b66f05cd58b5c9e9845491" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="classsimple_transaction.html#ac798d38ad0b66f05cd58b5c9e9845491" target="_top" xlink:title="Construct a simpleTransaction in its initial idle state.">
 <polygon fill="white" stroke="#666666" points="289,-30 178,-30 178,0 289,0 289,-30"/>
 <text text-anchor="start" x="186" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">simpleTransaction::</text>
 <text text-anchor="middle" x="233.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">simpleTransaction</text>

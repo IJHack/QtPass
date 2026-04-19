@@ -2,7 +2,7 @@
 <area shape="rect" id="Node000001" title="Abstract base class for password store operations." alt="" coords="23,176,73,201"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,5,80,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="46,45,50,176,45,176,41,45"/>
-<area shape="rect" id="Node000003" href="$class_executor.html" title="id Identifier provided by the caller for this queued request." alt="" coords="65,80,143,105"/>
+<area shape="rect" id="Node000003" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="65,80,143,105"/>
 <area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="64,40,96,78,92,81,59,43"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="92,118,57,177,53,174,88,116"/>
 </map>

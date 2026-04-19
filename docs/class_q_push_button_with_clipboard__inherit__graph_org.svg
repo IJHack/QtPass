@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="Stylish widget to allow copying of password and account details.">
+<g id="a_Node000001"><a xlink:title="QPushButton that stores a text payload and emits it when activated.">
 <polygon fill="#999999" stroke="#666666" points="149,-19 0,-19 0,0 149,0 149,-19"/>
 <text text-anchor="middle" x="74.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">QPushButtonWithClipboard</text>
 </a>
@@ -21,7 +21,7 @@
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="114.5,-74 34.5,-74 34.5,-55 114.5,-55 114.5,-74"/>
+<polygon fill="white" stroke="#bfbfbf" points="114.5,-74 34.5,-74 34.5,-55 114.5,-55 114.5,-74"/>
 <text text-anchor="middle" x="74.5" y="-62" font-family="Helvetica,sans-Serif" font-size="10.00">QPushButton</text>
 </a>
 </g>

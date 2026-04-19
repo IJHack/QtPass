@@ -1,5 +1,4 @@
 <map id="StoreModel::canDropMimeData" name="StoreModel::canDropMimeData">
-<area shape="rect" id="Node000001" title="Check if drop is possible." alt="" coords="255,5,481,31"/>
-<area shape="rect" id="Node000002" href="$class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e" title="Handle dropped MIME data." alt="" coords="5,5,207,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="241,21,207,21,207,15,241,15"/>
+<area shape="rect" id="Node000001" title="Check if drop is possible." alt="" coords="5,29,232,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="159,20,149,11,119,8,94,10,82,15,79,20,86,27,82,31,74,21,78,11,93,5,119,3,151,7,163,16"/>
 </map>

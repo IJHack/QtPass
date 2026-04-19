@@ -81,27 +81,29 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Represents the parsed contents of a password file.  
+ <a href="#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="filecontent_8h_source.html">filecontent.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac88e8096551d24a41fc0625a4d903139" id="r_ac88e8096551d24a41fc0625a4d903139"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac88e8096551d24a41fc0625a4d903139">getPassword</a> () const -&gt; QString</td></tr>
-<tr class="memdesc:ac88e8096551d24a41fc0625a4d903139"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the password from the parsed file.  <br /></td></tr>
 <tr class="memitem:a89393e371a598cb3e0d7d149dbc431b1" id="r_a89393e371a598cb3e0d7d149dbc431b1"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues</a> () const -&gt; <a class="el" href="class_named_values.html">NamedValues</a></td></tr>
-<tr class="memdesc:a89393e371a598cb3e0d7d149dbc431b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets named value pairs from the parsed file.  <br /></td></tr>
 <tr class="memitem:a845c61a8c0f52e5aa73953c9162dd47d" id="r_a845c61a8c0f52e5aa73953c9162dd47d"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a845c61a8c0f52e5aa73953c9162dd47d">getRemainingData</a> () const -&gt; QString</td></tr>
-<tr class="memdesc:a845c61a8c0f52e5aa73953c9162dd47d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets remaining data not in named values.  <br /></td></tr>
 <tr class="memitem:ac38b9c211d6f62eb7420eecc66f935e8" id="r_ac38b9c211d6f62eb7420eecc66f935e8"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac38b9c211d6f62eb7420eecc66f935e8">getRemainingDataForDisplay</a> () const -&gt; QString</td></tr>
-<tr class="memdesc:ac38b9c211d6f62eb7420eecc66f935e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets remaining data for display (excludes hidden fields like OTP).  <br /></td></tr>
+<tr class="memdesc:ac38b9c211d6f62eb7420eecc66f935e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Like getRemainingData but without data that should not be displayed (like a TOTP secret).  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:addf22b7136ee26d2f14bb77dc49c1510" id="r_addf22b7136ee26d2f14bb77dc49c1510"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#addf22b7136ee26d2f14bb77dc49c1510">parse</a> (const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields) -&gt; <a class="el" href="class_file_content.html">FileContent</a></td></tr>
-<tr class="memdesc:addf22b7136ee26d2f14bb77dc49c1510"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse parses the given fileContent in a <a class="el" href="class_file_content.html">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depeding on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay.  <br /></td></tr>
+<tr class="memitem:af8c5c3b19e2f1244c5e83aa40521ebde" id="r_af8c5c3b19e2f1244c5e83aa40521ebde"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af8c5c3b19e2f1244c5e83aa40521ebde">parse</a> (const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields) -&gt; <a class="el" href="class_file_content.html">FileContent</a></td></tr>
+<tr class="memdesc:af8c5c3b19e2f1244c5e83aa40521ebde"><td class="mdescLeft">&#160;</td><td class="mdescRight">parse parses the given fileContent in a <a class="el" href="class_file_content.html" title="Represents the parsed contents of a password file.">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depeding on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00031">31</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
+<div class="textblock"><p>Represents the parsed contents of a password file. </p>
+<p>Splits the file into a password line, named key/value fields, and remaining data. Use <a class="el" href="#af8c5c3b19e2f1244c5e83aa40521ebde" title="parse parses the given fileContent in a FileContent object. The password is accessible through getPas...">FileContent::parse</a> to construct an instance. </p>
+
+<p class="definition">Definition at line <a class="el" href="filecontent_8h_source.html#l00057">57</a> of file <a class="el" href="filecontent_8h_source.html">filecontent.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a89393e371a598cb3e0d7d149dbc431b1" name="a89393e371a598cb3e0d7d149dbc431b1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a89393e371a598cb3e0d7d149dbc431b1">&#9670;&#160;</a></span>getNamedValues()</h2>
@@ -116,7 +118,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto FileContent::getNamedValues </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; <a class="el" href="class_named_values.html">NamedValues</a></td>
+          <td> const -&gt;  <a class="el" href="class_named_values.html">NamedValues</a></td>
         </tr>
       </table>
   </td>
@@ -125,20 +127,18 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Gets named value pairs from the parsed file. </p>
-<dl class="section return"><dt>Returns</dt><dd>the named values in the file in the order of appearence, with template values first.</dd>
-<dd>
-<a class="el" href="class_named_values.html" title="The NamedValues class is mostly a list of NamedValue but also has a method to take a specific NamedVa...">NamedValues</a> list with name:value pairs </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a38">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00068">68</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<dl class="section return"><dt>Returns</dt><dd>the named values in the file in the order of appearence, with template values first. </dd></dl>
+<div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a89393e371a598cb3e0d7d149dbc431b1_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a89393e371a598cb3e0d7d149dbc431b1_cgraph.svg" width="226" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a89393e371a598cb3e0d7d149dbc431b1_icgraph.svg" width="226" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -156,7 +156,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto FileContent::getPassword </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; QString</td>
+          <td> const -&gt;  QString</td>
         </tr>
       </table>
   </td>
@@ -165,21 +165,7 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Gets the password from the parsed file. </p>
-<dl class="section return"><dt>Returns</dt><dd>the password from the parsed file.</dd>
-<dd>
-The password string </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a35">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00062">62</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ac88e8096551d24a41fc0625a4d903139_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>the password from the parsed file. </dd></dl>
 
 </div>
 </div>
@@ -196,7 +182,7 @@ The password string </dd></dl>
           <td class="memname">auto FileContent::getRemainingData </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; QString</td>
+          <td> const -&gt;  QString</td>
         </tr>
       </table>
   </td>
@@ -205,18 +191,18 @@ The password string </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Gets remaining data not in named values. </p>
-<dl class="section return"><dt>Returns</dt><dd>the data that is not the password and not in getNamedValues.</dd>
-<dd>
-Remaining data as string </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00076">76</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<dl class="section return"><dt>Returns</dt><dd>the data that is not the password and not in getNamedValues. </dd></dl>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a845c61a8c0f52e5aa73953c9162dd47d_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a845c61a8c0f52e5aa73953c9162dd47d_cgraph.svg" width="238" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_a845c61a8c0f52e5aa73953c9162dd47d_icgraph.svg" width="238" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -234,7 +220,7 @@ Remaining data as string </dd></dl>
           <td class="memname">auto FileContent::getRemainingDataForDisplay </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; QString</td>
+          <td> const -&gt;  QString</td>
         </tr>
       </table>
   </td>
@@ -244,24 +230,25 @@ Remaining data as string </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>Gets remaining data for display (excludes hidden fields like OTP). </p>
-<p>@like getRemainingData but without data that should not be displayed (like a TOTP secret).</p>
-<dl class="section return"><dt>Returns</dt><dd>Remaining data suitable for display </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a41">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
+<p>Like getRemainingData but without data that should not be displayed (like a TOTP secret). </p>
+<dl class="section return"><dt>Returns</dt><dd>Remaining data string safe for display. </dd></dl>
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ac38b9c211d6f62eb7420eecc66f935e8_cgraph.svg" width="206" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ac38b9c211d6f62eb7420eecc66f935e8_icgraph.svg" width="206" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00084">84</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_ac38b9c211d6f62eb7420eecc66f935e8_icgraph.svg" width="483" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="addf22b7136ee26d2f14bb77dc49c1510" name="addf22b7136ee26d2f14bb77dc49c1510"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#addf22b7136ee26d2f14bb77dc49c1510">&#9670;&#160;</a></span>parse()</h2>
+<a id="af8c5c3b19e2f1244c5e83aa40521ebde" name="af8c5c3b19e2f1244c5e83aa40521ebde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8c5c3b19e2f1244c5e83aa40521ebde">&#9670;&#160;</a></span>parse()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -282,7 +269,7 @@ Remaining data as string </dd></dl>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>allFields</em></span>&#160;) -&gt; <a class="el" href="class_file_content.html">FileContent</a></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>allFields</em></span>&#160;) -&gt;  <a class="el" href="class_file_content.html">FileContent</a></td>
         </tr>
       </table>
   </td>
@@ -292,42 +279,21 @@ Remaining data as string </dd></dl>
 </table>
 </div><div class="memdoc">
 
-<p>parse parses the given fileContent in a <a class="el" href="class_file_content.html">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depeding on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay. </p>
-<p>Parses password file content into structured data.</p>
+<p>parse parses the given fileContent in a <a class="el" href="class_file_content.html" title="Represents the parsed contents of a password file.">FileContent</a> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depeding on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fileContent</td><td>the file content to parse.</td></tr>
-    <tr><td class="paramname">templateFields</td><td>the fields in the template. Fields in the template will always be in <a class="el" href="#a89393e371a598cb3e0d7d149dbc431b1" title="Gets named value pairs from the parsed file.">getNamedValues()</a> at the beginning of the list in the same order.</td></tr>
-    <tr><td class="paramname">allFields</td><td>whether all fields should be considered as named values. If set to false only templateFields are returned in <a class="el" href="#a89393e371a598cb3e0d7d149dbc431b1" title="Gets named value pairs from the parsed file.">getNamedValues()</a>.</td></tr>
+    <tr><td class="paramname">templateFields</td><td>the fields in the template. Fields in the template will always be in <a class="el" href="#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues()</a> at the beginning of the list in the same order.</td></tr>
+    <tr><td class="paramname">allFields</td><td>whether all fields should be considered as named values. If set to false only templateFields are returned in <a class="el" href="#a89393e371a598cb3e0d7d149dbc431b1">getNamedValues()</a>.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fileContent</td><td>Raw file content </td></tr>
-    <tr><td class="paramname">templateFields</td><td>Fields defined in the template </td></tr>
-    <tr><td class="paramname">allFields</td><td>Whether to include all name:value pairs </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Parsed <a class="el" href="class_file_content.html">FileContent</a> object </dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2mainwindow_8cpp-example.html#a34">/home/runner/work/QtPass/QtPass/src/mainwindow.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="filecontent_8cpp_source.html#l00024">24</a> of file <a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_file_content_addf22b7136ee26d2f14bb77dc49c1510_icgraph.svg" width="100%" height="378"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>A <a class="el" href="class_file_content.html" title="Represents the parsed contents of a password file.">FileContent</a> instance with password, named values, and remaining data populated from the parsed input. </dd></dl>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="filecontent_8h_source.html">filecontent.h</a></li>
-<li>src/<a class="el" href="filecontent_8cpp_source.html">filecontent.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

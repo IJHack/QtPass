@@ -1,7 +1,4 @@
 <map id="ConfigDialog::useQrencode" name="ConfigDialog::useQrencode">
-<area shape="rect" id="Node000001" title="ConfigDialog::useQrencode set preference for using qrencode plugin." alt="" coords="249,29,448,55"/>
-<area shape="poly" id="edge3_Node000001_Node000001" title=" " alt="" coords="392,20,390,15,382,12,349,8,322,10,308,15,306,20,313,27,309,31,300,21,305,11,321,5,349,3,383,7,393,11,397,17"/>
-<area shape="rect" id="Node000002" href="$class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen." alt="" coords="5,29,201,55"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,45,201,45,201,39,236,39"/>
-<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="147,20,144,15,137,12,103,8,77,10,63,15,60,20,67,27,64,31,55,21,59,11,76,5,103,3,138,7,148,11,152,17"/>
+<area shape="rect" id="Node000001" title="Enable or disable QR code display." alt="" coords="5,29,204,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="140,19,130,11,105,8,84,10,73,15,70,20,76,28,72,31,65,21,69,11,82,5,105,3,132,6,143,15"/>
 </map>

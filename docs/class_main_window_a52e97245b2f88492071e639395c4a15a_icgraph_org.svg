@@ -11,7 +11,7 @@
 <!-- Node1 -->
 <g id="Node000001" class="node">
 <title>Node1</title>
-<g id="a_Node000001"><a xlink:title="MainWindow::MainWindow handles all of the main functionality and also the main window.">
+<g id="a_Node000001"><a xlink:title="Construct the main window.">
 <polygon fill="#999999" stroke="#666666" points="148,-19 0,-19 0,0 148,0 148,-19"/>
 <text text-anchor="middle" x="74" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">MainWindow::MainWindow</text>
 </a>

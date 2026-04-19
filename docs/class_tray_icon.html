@@ -81,7 +81,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Handles the systemtray icon and menu.  
+<p>Handles the system tray icon and menu.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="trayicon_8h_source.html">trayicon.h</a>&gt;</code></p>
@@ -100,43 +100,27 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-slots" class="groupheader"><a id="pub-slots" name="pub-slots"></a>
 Public Slots</h2></td></tr>
-<tr class="memitem:a20f8b921d79beca21f6dcb98741d57fc" id="r_a20f8b921d79beca21f6dcb98741d57fc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a20f8b921d79beca21f6dcb98741d57fc">showHideParent</a> ()</td></tr>
-<tr class="memdesc:a20f8b921d79beca21f6dcb98741d57fc"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a20f8b921d79beca21f6dcb98741d57fc" title="TrayIcon::showHideParent toggle app visibility.">TrayIcon::showHideParent</a> toggle app visibility.  <br /></td></tr>
+<tr class="memitem:a20f8b921d79beca21f6dcb98741d57fc" id="r_a20f8b921d79beca21f6dcb98741d57fc"><td class="memItemLeft"><a id="a20f8b921d79beca21f6dcb98741d57fc" name="a20f8b921d79beca21f6dcb98741d57fc"></a>
+void&#160;</td><td class="memItemRight"><b>showHideParent</b> ()</td></tr>
+<tr class="memdesc:a20f8b921d79beca21f6dcb98741d57fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Toggle the visibility of the associated main window. <br /></td></tr>
 <tr class="memitem:a36c341a8b31884cd45060a92258e92b8" id="r_a36c341a8b31884cd45060a92258e92b8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a36c341a8b31884cd45060a92258e92b8">iconActivated</a> (QSystemTrayIcon::ActivationReason reason)</td></tr>
-<tr class="memdesc:a36c341a8b31884cd45060a92258e92b8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a36c341a8b31884cd45060a92258e92b8" title="TrayIcon::iconActivated you clicked on the trayicon.">TrayIcon::iconActivated</a> you clicked on the trayicon.  <br /></td></tr>
+<tr class="memdesc:a36c341a8b31884cd45060a92258e92b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle activation events from the system tray icon.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a587e1467cf97c27f4269f1c47c1e4ac5" id="r_a587e1467cf97c27f4269f1c47c1e4ac5"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a587e1467cf97c27f4269f1c47c1e4ac5">TrayIcon</a> (QMainWindow *parent)</td></tr>
-<tr class="memdesc:a587e1467cf97c27f4269f1c47c1e4ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a587e1467cf97c27f4269f1c47c1e4ac5" title="TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on it (currently) only Quits.">TrayIcon::TrayIcon</a> use a (system) tray icon with a nice <a class="el" href="class_qt_pass.html">QtPass</a> logo on it (currently) only Quits.  <br /></td></tr>
+<tr class="memdesc:a587e1467cf97c27f4269f1c47c1e4ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_tray_icon.html" title="Handles the system tray icon and menu.">TrayIcon</a> associated with the given main window.  <br /></td></tr>
 <tr class="memitem:a40737136f8d85dad4a10ddb58619157a" id="r_a40737136f8d85dad4a10ddb58619157a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a40737136f8d85dad4a10ddb58619157a">showMessage</a> (const QString &amp;title, const QString &amp;msg, int time)</td></tr>
-<tr class="memdesc:a40737136f8d85dad4a10ddb58619157a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a40737136f8d85dad4a10ddb58619157a" title="TrayIcon::showMessage show a systray message for notification.">TrayIcon::showMessage</a> show a systray message for notification.  <br /></td></tr>
+<tr class="memdesc:a40737136f8d85dad4a10ddb58619157a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display a transient notification message via the tray icon.  <br /></td></tr>
 <tr class="memitem:ab4cb316b0b39606fcb9b796cbed59bd1" id="r_ab4cb316b0b39606fcb9b796cbed59bd1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab4cb316b0b39606fcb9b796cbed59bd1">setVisible</a> (bool visible)</td></tr>
-<tr class="memdesc:ab4cb316b0b39606fcb9b796cbed59bd1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ab4cb316b0b39606fcb9b796cbed59bd1" title="TrayIcon::setVisible show or hide the icon.">TrayIcon::setVisible</a> show or hide the icon.  <br /></td></tr>
+<tr class="memdesc:ab4cb316b0b39606fcb9b796cbed59bd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show or hide the tray icon and its associated UI.  <br /></td></tr>
 <tr class="memitem:ac43b5d2538c69cfcf6399eb29b9ddb47" id="r_ac43b5d2538c69cfcf6399eb29b9ddb47"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#ac43b5d2538c69cfcf6399eb29b9ddb47">getIsAllocated</a> () -&gt; bool</td></tr>
-<tr class="memdesc:ac43b5d2538c69cfcf6399eb29b9ddb47"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ac43b5d2538c69cfcf6399eb29b9ddb47" title="TrayIcon::getIsAllocated return if TrayIcon is allocated.">TrayIcon::getIsAllocated</a> return if <a class="el" href="class_tray_icon.html" title="Handles the systemtray icon and menu.">TrayIcon</a> is allocated.  <br /></td></tr>
+<tr class="memdesc:ac43b5d2538c69cfcf6399eb29b9ddb47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether tray resources have been allocated and initialized.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Handles the systemtray icon and menu. </p>
-<p>Construct a <a class="el" href="class_tray_icon.html" title="Handles the systemtray icon and menu.">TrayIcon</a> associated with the given main window. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">parent</td><td>Pointer to the QMainWindow this tray icon controls and mirrors. Display a transient notification message via the tray icon. </td></tr>
-    <tr><td class="paramname">title</td><td>Title text of the notification. </td></tr>
-    <tr><td class="paramname">msg</td><td>Body text of the notification. </td></tr>
-    <tr><td class="paramname">time</td><td>Duration to display the notification in milliseconds. Show or hide the tray-related UI and behavior. </td></tr>
-    <tr><td class="paramname">visible</td><td><span class="tt">true</span> to make tray UI active/visible, <span class="tt">false</span> to deactivate/hide it. Report whether tray resources have been allocated and initialized. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><span class="tt">true</span> if resources are allocated, <span class="tt">false</span> otherwise. Toggle the visibility/state of the associated main window in response to user interaction. Handle activation events from the system tray icon. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">reason</td><td>The activation reason provided by QSystemTrayIcon. Create and configure the tray menu actions (show, hide, minimize, maximize, restore, quit). Initialize the QSystemTrayIcon and its context menu, wiring actions and event handling. </td></tr>
-  </table>
-  </dd>
-</dl>
+<div class="textblock"><p>Handles the system tray icon and menu. </p>
 
-<p class="definition">Definition at line <a class="el" href="trayicon_8h_source.html#l00051">51</a> of file <a class="el" href="trayicon_8h_source.html">trayicon.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="trayicon_8h_source.html#l00017">17</a> of file <a class="el" href="trayicon_8h_source.html">trayicon.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a587e1467cf97c27f4269f1c47c1e4ac5" name="a587e1467cf97c27f4269f1c47c1e4ac5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a587e1467cf97c27f4269f1c47c1e4ac5">&#9670;&#160;</a></span>TrayIcon()</h2>
@@ -161,21 +145,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a587e1467cf97c27f4269f1c47c1e4ac5" title="TrayIcon::TrayIcon use a (system) tray icon with a nice QtPass logo on it (currently) only Quits.">TrayIcon::TrayIcon</a> use a (system) tray icon with a nice <a class="el" href="class_qt_pass.html">QtPass</a> logo on it (currently) only Quits. </p>
+<p>Construct a <a class="el" href="class_tray_icon.html" title="Handles the system tray icon and menu.">TrayIcon</a> associated with the given main window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td></td></tr>
+    <tr><td class="paramname">parent</td><td>Pointer to the QMainWindow this tray icon controls. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="trayicon_8cpp_source.html#l00018">18</a> of file <a class="el" href="trayicon_8cpp_source.html">trayicon.cpp</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_tray_icon_a587e1467cf97c27f4269f1c47c1e4ac5_cgraph.svg" width="608" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -190,14 +166,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">auto TrayIcon::getIsAllocated </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; bool</td>
+          <td> -&gt;  bool</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#ac43b5d2538c69cfcf6399eb29b9ddb47" title="TrayIcon::getIsAllocated return if TrayIcon is allocated.">TrayIcon::getIsAllocated</a> return if <a class="el" href="class_tray_icon.html" title="Handles the systemtray icon and menu.">TrayIcon</a> is allocated. </p>
-
-<p class="definition">Definition at line <a class="el" href="trayicon_8cpp_source.html#l00061">61</a> of file <a class="el" href="trayicon_8cpp_source.html">trayicon.cpp</a>.</p>
+<p>Check whether tray resources have been allocated and initialized. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if tray resources are allocated and initialized. </dd></dl>
 
 </div>
 </div>
@@ -224,27 +199,13 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a36c341a8b31884cd45060a92258e92b8" title="TrayIcon::iconActivated you clicked on the trayicon.">TrayIcon::iconActivated</a> you clicked on the trayicon. </p>
+<p>Handle activation events from the system tray icon. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">reason</td><td></td></tr>
+    <tr><td class="paramname">reason</td><td>The activation reason provided by QSystemTrayIcon. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="trayicon_8cpp_source.html#l00124">124</a> of file <a class="el" href="trayicon_8cpp_source.html">trayicon.cpp</a>.</p>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_tray_icon_a36c341a8b31884cd45060a92258e92b8_cgraph.svg" width="422" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_tray_icon_a36c341a8b31884cd45060a92258e92b8_icgraph.svg" width="371" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -263,50 +224,13 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#ab4cb316b0b39606fcb9b796cbed59bd1" title="TrayIcon::setVisible show or hide the icon.">TrayIcon::setVisible</a> show or hide the icon. </p>
+<p>Show or hide the tray icon and its associated UI. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">visible</td><td></td></tr>
+    <tr><td class="paramname">visible</td><td>true to make the tray icon visible, false to hide it. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="trayicon_8cpp_source.html#l00050">50</a> of file <a class="el" href="trayicon_8cpp_source.html">trayicon.cpp</a>.</p>
-
-</div>
-</div>
-<a id="a20f8b921d79beca21f6dcb98741d57fc" name="a20f8b921d79beca21f6dcb98741d57fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20f8b921d79beca21f6dcb98741d57fc">&#9670;&#160;</a></span>showHideParent</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void TrayIcon::showHideParent </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="#a20f8b921d79beca21f6dcb98741d57fc" title="TrayIcon::showHideParent toggle app visibility.">TrayIcon::showHideParent</a> toggle app visibility. </p>
-
-<p class="definition">Definition at line <a class="el" href="trayicon_8cpp_source.html#l00112">112</a> of file <a class="el" href="trayicon_8cpp_source.html">trayicon.cpp</a>.</p>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_tray_icon_a20f8b921d79beca21f6dcb98741d57fc_icgraph.svg" width="608" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -334,29 +258,20 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a40737136f8d85dad4a10ddb58619157a" title="TrayIcon::showMessage show a systray message for notification.">TrayIcon::showMessage</a> show a systray message for notification. </p>
+<p>Display a transient notification message via the tray icon. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">title</td><td></td></tr>
-    <tr><td class="paramname">msg</td><td></td></tr>
-    <tr><td class="paramname">time</td><td></td></tr>
+    <tr><td class="paramname">title</td><td>Title text of the notification. </td></tr>
+    <tr><td class="paramname">msg</td><td>Body text of the notification. </td></tr>
+    <tr><td class="paramname">time</td><td>Duration to display the notification in milliseconds. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="trayicon_8cpp_source.html#l00144">144</a> of file <a class="el" href="trayicon_8cpp_source.html">trayicon.cpp</a>.</p>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_tray_icon_a40737136f8d85dad4a10ddb58619157a_icgraph.svg" width="595" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="trayicon_8h_source.html">trayicon.h</a></li>
-<li>src/<a class="el" href="trayicon_8cpp_source.html">trayicon.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

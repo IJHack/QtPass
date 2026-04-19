@@ -82,7 +82,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>id Identifier provided by the caller for this queued request.  
+<p>Runs non-interactive external commands in FIFO order using a single QProcess.  
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="executor_8h_source.html">executor.h</a>&gt;</code></p>
@@ -103,75 +103,45 @@ $(function() {
 Signals</h2></td></tr>
 <tr class="memitem:ace810a6d93c74dec7188038210c5a731" id="r_ace810a6d93c74dec7188038210c5a731"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ace810a6d93c74dec7188038210c5a731">finished</a> (int id, int exitCode, const QString &amp;output, const QString &amp;errout)</td></tr>
 <tr class="memdesc:ace810a6d93c74dec7188038210c5a731"><td class="mdescLeft">&#160;</td><td class="mdescRight">finished signal that is emited when process finishes  <br /></td></tr>
-<tr class="memitem:acfcfc18b0b973791530302eb8179e038" id="r_acfcfc18b0b973791530302eb8179e038"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acfcfc18b0b973791530302eb8179e038">starting</a> ()</td></tr>
-<tr class="memdesc:acfcfc18b0b973791530302eb8179e038"><td class="mdescLeft">&#160;</td><td class="mdescRight">starting signal that is emited when process starts  <br /></td></tr>
+<tr class="memitem:acfcfc18b0b973791530302eb8179e038" id="r_acfcfc18b0b973791530302eb8179e038"><td class="memItemLeft"><a id="acfcfc18b0b973791530302eb8179e038" name="acfcfc18b0b973791530302eb8179e038"></a>
+void&#160;</td><td class="memItemRight"><b>starting</b> ()</td></tr>
+<tr class="memdesc:acfcfc18b0b973791530302eb8179e038"><td class="mdescLeft">&#160;</td><td class="mdescRight">starting signal that is emited when process starts <br /></td></tr>
 <tr class="memitem:a9c450bcba881197a3e10eb1bf59b3a88" id="r_a9c450bcba881197a3e10eb1bf59b3a88"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9c450bcba881197a3e10eb1bf59b3a88">error</a> (int id, int exitCode, const QString &amp;output, const QString &amp;errout)</td></tr>
 <tr class="memdesc:a9c450bcba881197a3e10eb1bf59b3a88"><td class="mdescLeft">&#160;</td><td class="mdescRight">error signal that is emited when process finishes with an error  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa15bf32ce5a10a04dce8fe549247ac7d" id="r_aa15bf32ce5a10a04dce8fe549247ac7d"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#aa15bf32ce5a10a04dce8fe549247ac7d">Executor</a> (QObject *parent=nullptr)</td></tr>
-<tr class="memdesc:aa15bf32ce5a10a04dce8fe549247ac7d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#aa15bf32ce5a10a04dce8fe549247ac7d" title="Executor::Executor executes external applications.">Executor::Executor</a> executes external applications.  <br /></td></tr>
+<tr class="memdesc:aa15bf32ce5a10a04dce8fe549247ac7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct an <a class="el" href="class_executor.html" title="Runs non-interactive external commands in FIFO order using a single QProcess.">Executor</a> with an optional parent QObject.  <br /></td></tr>
 <tr class="memitem:a7c4305c0af542f0174492badfdbfbc74" id="r_a7c4305c0af542f0174492badfdbfbc74"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74">execute</a> (int id, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</td></tr>
-<tr class="memdesc:a7c4305c0af542f0174492badfdbfbc74"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app.">Executor::execute</a> execute an app.  <br /></td></tr>
+<tr class="memdesc:a7c4305c0af542f0174492badfdbfbc74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue a command without stdin input.  <br /></td></tr>
 <tr class="memitem:a490166ea519a8047e207da8d67f3c0d2" id="r_a490166ea519a8047e207da8d67f3c0d2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a490166ea519a8047e207da8d67f3c0d2">execute</a> (int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</td></tr>
-<tr class="memdesc:a490166ea519a8047e207da8d67f3c0d2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app.">Executor::execute</a> executes an app from a workDir.  <br /></td></tr>
+<tr class="memdesc:a490166ea519a8047e207da8d67f3c0d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue a command with an explicit working directory.  <br /></td></tr>
 <tr class="memitem:aedd0216127ab9915112df45d9eaaccfe" id="r_aedd0216127ab9915112df45d9eaaccfe"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aedd0216127ab9915112df45d9eaaccfe">execute</a> (int id, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)</td></tr>
-<tr class="memdesc:aedd0216127ab9915112df45d9eaaccfe"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app.">Executor::execute</a> an app, takes input and presents it as stdin.  <br /></td></tr>
+<tr class="memdesc:aedd0216127ab9915112df45d9eaaccfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue a command with optional stdin input.  <br /></td></tr>
 <tr class="memitem:affda40d546db75d35f38db1ec1414bf7" id="r_affda40d546db75d35f38db1ec1414bf7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#affda40d546db75d35f38db1ec1414bf7">execute</a> (int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)</td></tr>
-<tr class="memdesc:affda40d546db75d35f38db1ec1414bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app.">Executor::execute</a> executes an app from a workDir, takes input and presents it as stdin.  <br /></td></tr>
+<tr class="memdesc:affda40d546db75d35f38db1ec1414bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue a command with working directory and optional stdin input.  <br /></td></tr>
 <tr class="memitem:abbe0bc7b3fd09d84f2f04ddcc0bc095f" id="r_abbe0bc7b3fd09d84f2f04ddcc0bc095f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abbe0bc7b3fd09d84f2f04ddcc0bc095f">setEnvironment</a> (const QStringList &amp;env)</td></tr>
-<tr class="memdesc:abbe0bc7b3fd09d84f2f04ddcc0bc095f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes.">Executor::setEnvironment</a> set environment variables for executor processes.  <br /></td></tr>
+<tr class="memdesc:abbe0bc7b3fd09d84f2f04ddcc0bc095f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the environment passed to all child processes.  <br /></td></tr>
 <tr class="memitem:a6f315e4938ca57158737cd4006458e74" id="r_a6f315e4938ca57158737cd4006458e74"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a6f315e4938ca57158737cd4006458e74">environment</a> () const -&gt; QStringList</td></tr>
 <tr class="memdesc:a6f315e4938ca57158737cd4006458e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the environment passed to child processes.  <br /></td></tr>
 <tr class="memitem:aee160ee2ec954bdb58a3a38555536090" id="r_aee160ee2ec954bdb58a3a38555536090"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aee160ee2ec954bdb58a3a38555536090">cancelNext</a> () -&gt; int</td></tr>
-<tr class="memdesc:aee160ee2ec954bdb58a3a38555536090"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running.">Executor::cancelNext</a> cancels execution of first process in queue if it's not already running.  <br /></td></tr>
+<tr class="memdesc:aee160ee2ec954bdb58a3a38555536090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cancel the next queued command without executing it.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4e210af42a76029683ded3210cf7bce2" id="r_a4e210af42a76029683ded3210cf7bce2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4e210af42a76029683ded3210cf7bce2">executeBlocking</a> (const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
-<tr class="memdesc:a4e210af42a76029683ded3210cf7bce2"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">Executor::executeBlocking</a> blocking version of the executor, takes input and presents it as stdin.  <br /></td></tr>
-<tr class="memitem:a9c01e6e31745874177b21982ce2cd4d1" id="r_a9c01e6e31745874177b21982ce2cd4d1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9c01e6e31745874177b21982ce2cd4d1">executeBlocking</a> (const QString &amp;app, const QStringList &amp;args, QString *process_out, QString *process_err=nullptr) -&gt; int</td></tr>
-<tr class="memdesc:a9c01e6e31745874177b21982ce2cd4d1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">Executor::executeBlocking</a> blocking version of the executor.  <br /></td></tr>
-<tr class="memitem:a357bff28ec9487a4d36187b5e85ee8a3" id="r_a357bff28ec9487a4d36187b5e85ee8a3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a357bff28ec9487a4d36187b5e85ee8a3">executeBlocking</a> (const QStringList &amp;env, const QString &amp;app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
-<tr class="memdesc:a357bff28ec9487a4d36187b5e85ee8a3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">Executor::executeBlocking</a> blocking version with custom environment.  <br /></td></tr>
+<tr class="memitem:acd16a6a2c0d0cb55406c99b72c9d299f" id="r_acd16a6a2c0d0cb55406c99b72c9d299f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#acd16a6a2c0d0cb55406c99b72c9d299f">executeBlocking</a> (const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
+<tr class="memdesc:acd16a6a2c0d0cb55406c99b72c9d299f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously and return its exit code.  <br /></td></tr>
+<tr class="memitem:aec1ef83ae0df4b4a2773b5ad533c837e" id="r_aec1ef83ae0df4b4a2773b5ad533c837e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aec1ef83ae0df4b4a2773b5ad533c837e">executeBlocking</a> (const QString &amp;app, const QStringList &amp;args, QString *process_out, QString *process_err=nullptr) -&gt; int</td></tr>
+<tr class="memdesc:aec1ef83ae0df4b4a2773b5ad533c837e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously capturing stdout and stderr.  <br /></td></tr>
+<tr class="memitem:a05a429f16a6a4c10f48928fedc58f502" id="r_a05a429f16a6a4c10f48928fedc58f502"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a05a429f16a6a4c10f48928fedc58f502">executeBlocking</a> (const QStringList &amp;env, const QString &amp;app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</td></tr>
+<tr class="memdesc:a05a429f16a6a4c10f48928fedc58f502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run a command synchronously with a custom environment.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>id Identifier provided by the caller for this queued request. </p>
-<p><a class="el" href="class_executor.html" title="id Identifier provided by the caller for this queued request.">Executor</a> executes external commands used for password, git, and other non-interactive operations.</p>
-<p>Uses a single QProcess and an internal FIFO queue to run requested commands in order and emit completion or error signals for each request. Execution queue item representing a single non-interactive process request.</p>
-<p>Contains the command, its arguments, optional stdin content, capture flags, and an optional working directory.</p>
-<p>app Path to the executable to run.</p>
-<p>args Arguments to pass to the executable.</p>
-<p>input Data to write to the process's stdin.</p>
-<p>readStdout When true, capture the process's stdout for the result.</p>
-<p>readStderr When true, capture the process's stderr for the result. Note: stderr is captured regardless of this flag when the process exits with a non-zero exit code.</p>
-<p>workingDir Working directory in which the process will be started.</p>
-<p>finished Emitted when a queued process completes.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">id</td><td>Identifier of the completed request. </td></tr>
-    <tr><td class="paramname">exitCode</td><td>Process exit code. </td></tr>
-    <tr><td class="paramname">output</td><td>Captured stdout produced by the process (may be empty). </td></tr>
-    <tr><td class="paramname">errout</td><td>Captured stderr produced by the process (may be empty).</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>starting Emitted when the executor begins running a queued process.</p>
-<p>error Emitted when a queued process finishes with an error condition.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">id</td><td>Identifier of the failed request. </td></tr>
-    <tr><td class="paramname">exitCode</td><td>Process exit code. </td></tr>
-    <tr><td class="paramname">output</td><td>Captured stdout produced by the process (may be empty). </td></tr>
-    <tr><td class="paramname">errout</td><td>Captured stderr produced by the process (may be empty). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a18">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
-</dl>
+<div class="textblock"><p>Runs non-interactive external commands in FIFO order using a single QProcess. </p>
+<p>Queues execution requests and emits per-request completion or error signals; supports optional stdin, configurable stdout/stderr capture, and per-request working directory and environment. </p>
 
-<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00076">76</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="executor_8h_source.html#l00020">20</a> of file <a class="el" href="executor_8h_source.html">executor.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa15bf32ce5a10a04dce8fe549247ac7d" name="aa15bf32ce5a10a04dce8fe549247ac7d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa15bf32ce5a10a04dce8fe549247ac7d">&#9670;&#160;</a></span>Executor()</h2>
@@ -196,27 +166,13 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#aa15bf32ce5a10a04dce8fe549247ac7d" title="Executor::Executor executes external applications.">Executor::Executor</a> executes external applications. </p>
+<p>Construct an <a class="el" href="class_executor.html" title="Runs non-interactive external commands in FIFO order using a single QProcess.">Executor</a> with an optional parent QObject. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td></td></tr>
+    <tr><td class="paramname">parent</td><td>Parent QObject, or nullptr for no parent. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00022">22</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_aa15bf32ce5a10a04dce8fe549247ac7d_cgraph.svg" width="338" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_aa15bf32ce5a10a04dce8fe549247ac7d_icgraph.svg" width="154" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -231,15 +187,25 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Executor::cancelNext </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; int</td>
+          <td> -&gt;  int</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#aee160ee2ec954bdb58a3a38555536090" title="Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running.">Executor::cancelNext</a> cancels execution of first process in queue if it's not already running. </p>
-<dl class="section return"><dt>Returns</dt><dd>id of the cancelled process or -1 on error </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00334">334</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<p>Cancel the next queued command without executing it. </p>
+<dl class="section return"><dt>Returns</dt><dd>The id of the cancelled command, or -1 if the queue was empty. </dd></dl>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_aee160ee2ec954bdb58a3a38555536090_cgraph.svg" width="170" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_aee160ee2ec954bdb58a3a38555536090_icgraph.svg" width="170" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -253,15 +219,13 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">auto Executor::environment </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const -&gt; QStringList</td>
+          <td> const -&gt;  QStringList</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Return the environment passed to child processes. </p>
 <dl class="section return"><dt>Returns</dt><dd>Environment as a list of "KEY=value" strings. </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00324">324</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
 
 </div>
 </div>
@@ -312,6 +276,18 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a9c450bcba881197a3e10eb1bf59b3a88_cgraph.svg" width="128" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a9c450bcba881197a3e10eb1bf59b3a88_icgraph.svg" width="128" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -349,31 +325,17 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app.">Executor::execute</a> execute an app. </p>
+<p>Queue a command without stdin input. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td></td></tr>
-    <tr><td class="paramname">app</td><td></td></tr>
-    <tr><td class="paramname">args</td><td></td></tr>
-    <tr><td class="paramname">readStdout</td><td></td></tr>
-    <tr><td class="paramname">readStderr</td><td></td></tr>
+    <tr><td class="paramname">id</td><td>Caller-assigned process identifier. </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">readStdout</td><td>Whether to capture stdout. </td></tr>
+    <tr><td class="paramname">readStderr</td><td>Whether to capture stderr. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00111">111</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a7c4305c0af542f0174492badfdbfbc74_cgraph.svg" width="148" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a7c4305c0af542f0174492badfdbfbc74_icgraph.svg" width="334" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -416,26 +378,18 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app.">Executor::execute</a> an app, takes input and presents it as stdin. </p>
+<p>Queue a command with optional stdin input. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td></td></tr>
-    <tr><td class="paramname">app</td><td></td></tr>
-    <tr><td class="paramname">args</td><td></td></tr>
-    <tr><td class="paramname">input</td><td></td></tr>
-    <tr><td class="paramname">readStdout</td><td></td></tr>
-    <tr><td class="paramname">readStderr</td><td></td></tr>
+    <tr><td class="paramname">id</td><td>Caller-assigned process identifier. </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">input</td><td>Data to write to stdin. </td></tr>
+    <tr><td class="paramname">readStdout</td><td>Whether to capture stdout. </td></tr>
+    <tr><td class="paramname">readStderr</td><td>Whether to capture stderr. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00140">140</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_aedd0216127ab9915112df45d9eaaccfe_cgraph.svg" width="334" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -478,26 +432,18 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app.">Executor::execute</a> executes an app from a workDir. </p>
+<p>Queue a command with an explicit working directory. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td></td></tr>
-    <tr><td class="paramname">workDir</td><td></td></tr>
-    <tr><td class="paramname">app</td><td></td></tr>
-    <tr><td class="paramname">args</td><td></td></tr>
-    <tr><td class="paramname">readStdout</td><td></td></tr>
-    <tr><td class="paramname">readStderr</td><td></td></tr>
+    <tr><td class="paramname">id</td><td>Caller-assigned process identifier. </td></tr>
+    <tr><td class="paramname">workDir</td><td>Working directory for the process. </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">readStdout</td><td>Whether to capture stdout. </td></tr>
+    <tr><td class="paramname">readStderr</td><td>Whether to capture stderr. </td></tr>
   </table>
   </dd>
 </dl>
-
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00125">125</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a490166ea519a8047e207da8d67f3c0d2_cgraph.svg" width="334" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -545,26 +491,24 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a7c4305c0af542f0174492badfdbfbc74" title="Executor::execute execute an app.">Executor::execute</a> executes an app from a workDir, takes input and presents it as stdin. </p>
+<p>Queue a command with working directory and optional stdin input. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td></td></tr>
-    <tr><td class="paramname">workDir</td><td></td></tr>
-    <tr><td class="paramname">app</td><td></td></tr>
-    <tr><td class="paramname">args</td><td></td></tr>
-    <tr><td class="paramname">input</td><td></td></tr>
-    <tr><td class="paramname">readStdout</td><td></td></tr>
-    <tr><td class="paramname">readStderr</td><td></td></tr>
+    <tr><td class="paramname">id</td><td>Caller-assigned process identifier. </td></tr>
+    <tr><td class="paramname">workDir</td><td>Working directory for the process. </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">input</td><td>Data to write to stdin. </td></tr>
+    <tr><td class="paramname">readStdout</td><td>Whether to capture stdout. </td></tr>
+    <tr><td class="paramname">readStderr</td><td>Whether to capture stderr. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00156">156</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-
 </div>
 </div>
-<a id="a4e210af42a76029683ded3210cf7bce2" name="a4e210af42a76029683ded3210cf7bce2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4e210af42a76029683ded3210cf7bce2">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[1/3]</span></h2>
+<a id="acd16a6a2c0d0cb55406c99b72c9d299f" name="acd16a6a2c0d0cb55406c99b72c9d299f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd16a6a2c0d0cb55406c99b72c9d299f">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -595,7 +539,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>process_err</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; int</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>process_err</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  int</td>
         </tr>
       </table>
   </td>
@@ -605,34 +549,23 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">Executor::executeBlocking</a> blocking version of the executor, takes input and presents it as stdin. </p>
+<p>Run a command synchronously and return its exit code. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">app</td><td></td></tr>
-    <tr><td class="paramname">args</td><td></td></tr>
-    <tr><td class="paramname">input</td><td></td></tr>
-    <tr><td class="paramname">process_out</td><td></td></tr>
-    <tr><td class="paramname">process_err</td><td></td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">input</td><td>Data to write to stdin. </td></tr>
+    <tr><td class="paramname">process_out</td><td>If non-null, receives stdout output. </td></tr>
+    <tr><td class="paramname">process_err</td><td>If non-null, receives stderr output. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<p>Note: Returning error code instead of throwing to maintain compatibility with the existing error handling pattern used throughout <a class="el" href="class_qt_pass.html">QtPass</a>. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2imitatepass_8cpp-example.html#a33">/home/runner/work/QtPass/QtPass/src/imitatepass.cpp</a>, <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a35">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>, and <a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2util_8cpp-example.html#_a4">/home/runner/work/QtPass/QtPass/src/util.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00223">223</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a4e210af42a76029683ded3210cf7bce2_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>Process exit code. </dd></dl>
 
 </div>
 </div>
-<a id="a9c01e6e31745874177b21982ce2cd4d1" name="a9c01e6e31745874177b21982ce2cd4d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c01e6e31745874177b21982ce2cd4d1">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[2/3]</span></h2>
+<a id="aec1ef83ae0df4b4a2773b5ad533c837e" name="aec1ef83ae0df4b4a2773b5ad533c837e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec1ef83ae0df4b4a2773b5ad533c837e">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -658,7 +591,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>process_err</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; int</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>process_err</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  int</td>
         </tr>
       </table>
   </td>
@@ -668,30 +601,22 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">Executor::executeBlocking</a> blocking version of the executor. </p>
+<p>Run a command synchronously capturing stdout and stderr. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">app</td><td></td></tr>
-    <tr><td class="paramname">args</td><td></td></tr>
-    <tr><td class="paramname">process_out</td><td></td></tr>
-    <tr><td class="paramname">process_err</td><td></td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">process_out</td><td>Receives stdout output. </td></tr>
+    <tr><td class="paramname">process_err</td><td>If non-null, receives stderr output. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00268">268</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_a9c01e6e31745874177b21982ce2cd4d1_cgraph.svg" width="446" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<dl class="section return"><dt>Returns</dt><dd>Process exit code. </dd></dl>
 
 </div>
 </div>
-<a id="a357bff28ec9487a4d36187b5e85ee8a3" name="a357bff28ec9487a4d36187b5e85ee8a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a357bff28ec9487a4d36187b5e85ee8a3">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[3/3]</span></h2>
+<a id="a05a429f16a6a4c10f48928fedc58f502" name="a05a429f16a6a4c10f48928fedc58f502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05a429f16a6a4c10f48928fedc58f502">&#9670;&#160;</a></span>executeBlocking() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -722,7 +647,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>process_err</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt; int</td>
+          <td class="paramtype">QString *</td>          <td class="paramname"><span class="paramname"><em>process_err</em></span><span class="paramdefsep"> = </span><span class="paramdefval">nullptr</span>&#160;) -&gt;  int</td>
         </tr>
       </table>
   </td>
@@ -732,20 +657,18 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a4e210af42a76029683ded3210cf7bce2" title="Executor::executeBlocking blocking version of the executor, takes input and presents it as stdin.">Executor::executeBlocking</a> blocking version with custom environment. </p>
+<p>Run a command synchronously with a custom environment. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">env</td><td>Environment variables to set </td></tr>
-    <tr><td class="paramname">app</td><td>Executable path </td></tr>
-    <tr><td class="paramname">args</td><td>Arguments </td></tr>
-    <tr><td class="paramname">process_out</td><td>Standard output </td></tr>
-    <tr><td class="paramname">process_err</td><td>Standard error </td></tr>
+    <tr><td class="paramname">env</td><td>Environment variable list in "KEY=value" format. </td></tr>
+    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
+    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
+    <tr><td class="paramname">process_out</td><td>If non-null, receives stdout output. </td></tr>
+    <tr><td class="paramname">process_err</td><td>If non-null, receives stderr output. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Exit code </dd></dl>
-
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00283">283</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>Process exit code. </dd></dl>
 
 </div>
 </div>
@@ -814,56 +737,18 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#abbe0bc7b3fd09d84f2f04ddcc0bc095f" title="Executor::setEnvironment set environment variables for executor processes.">Executor::setEnvironment</a> set environment variables for executor processes. </p>
+<p>Set the environment passed to all child processes. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">env</td><td></td></tr>
+    <tr><td class="paramname">env</td><td>Environment variable list in "KEY=value" format. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="executor_8cpp_source.html#l00320">320</a> of file <a class="el" href="executor_8cpp_source.html">executor.cpp</a>.</p>
-
 </div>
 </div>
-<a id="acfcfc18b0b973791530302eb8179e038" name="acfcfc18b0b973791530302eb8179e038"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfcfc18b0b973791530302eb8179e038">&#9670;&#160;</a></span>starting</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Executor::starting </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel signal">signal</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>starting signal that is emited when process starts </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2pass_8cpp-example.html#_a20">/home/runner/work/QtPass/QtPass/src/pass.cpp</a>.</dd>
-</dl>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_executor_acfcfc18b0b973791530302eb8179e038_icgraph.svg" width="338" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="executor_8h_source.html">executor.h</a></li>
-<li>src/<a class="el" href="executor_8cpp_source.html">executor.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

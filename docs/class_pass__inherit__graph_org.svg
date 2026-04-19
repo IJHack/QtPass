@@ -57,7 +57,7 @@
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="107,-129 51,-129 51,-110 107,-110 107,-129"/>
+<polygon fill="white" stroke="#bfbfbf" points="107,-129 51,-129 51,-110 107,-110 107,-129"/>
 <text text-anchor="middle" x="79" y="-117" font-family="Helvetica,sans-Serif" font-size="10.00">QObject</text>
 </a>
 </g>

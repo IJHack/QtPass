@@ -1,10 +1,6 @@
 <map id="StoreModel::dropMimeData" name="StoreModel::dropMimeData">
-<area shape="rect" id="Node000001" title="Handle dropped MIME data." alt="" coords="5,31,207,56"/>
-<area shape="rect" id="Node000002" href="$class_store_model.html#accf361cc9145306e3063f7b0be939476" title="Check if drop is possible." alt="" coords="255,5,481,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,31,241,28,241,33,207,36"/>
-<area shape="rect" id="Node000003" href="$class_store_model.html#a18097d60174b1d370e13d6a04ab7847f" title="Get display data for index." alt="" coords="529,31,663,56"/>
-<area shape="poly" id="edge4_Node000001_Node000003" title=" " alt="" coords="207,41,516,41,516,46,207,46"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="482,28,516,32,515,37,481,33"/>
-<area shape="rect" id="Node000004" href="$class_util.html#a2a7a32586578a9b631bc6b2a821ce616" title="Returns a regex to match .gpg file extensions." alt="" coords="711,31,851,56"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="663,41,697,41,697,46,663,46"/>
+<area shape="rect" id="Node000001" title="Handle dropped MIME data." alt="" coords="5,29,207,55"/>
+<area shape="poly" id="edge2_Node000001_Node000001" title=" " alt="" coords="71,31,64,21,67,11,82,5,106,3,136,6,147,15,144,20,134,11,106,8,83,10,71,15,69,20,75,28"/>
+<area shape="rect" id="Node000002" href="$class_store_model.html#a18097d60174b1d370e13d6a04ab7847f" title="Get display data for index." alt="" coords="255,29,388,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,39,241,39,241,45,207,45"/>
 </map>

@@ -21,7 +21,7 @@
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="56,-147 0,-147 0,-128 56,-128 56,-147"/>
+<polygon fill="white" stroke="#bfbfbf" points="56,-147 0,-147 0,-128 56,-128 56,-147"/>
 <text text-anchor="middle" x="28" y="-135" font-family="Helvetica,sans-Serif" font-size="10.00">QObject</text>
 </a>
 </g>
@@ -38,7 +38,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="class_executor.html" target="_top" xlink:title="id Identifier provided by the caller for this queued request.">
+<g id="a_Node000003"><a xlink:href="class_executor.html" target="_top" xlink:title="Runs non&#45;interactive external commands in FIFO order using a single QProcess.">
 <polygon fill="white" stroke="#666666" points="103.5,-91 44.5,-91 44.5,-72 103.5,-72 103.5,-91"/>
 <text text-anchor="middle" x="74" y="-79" font-family="Helvetica,sans-Serif" font-size="10.00">Executor</text>
 </a>

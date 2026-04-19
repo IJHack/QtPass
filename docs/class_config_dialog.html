@@ -101,53 +101,51 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a815d6d8ddf1de9386427ddef691a02a1" id="r_a815d6d8ddf1de9386427ddef691a02a1"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a815d6d8ddf1de9386427ddef691a02a1">ConfigDialog</a> (<a class="el" href="class_main_window.html">MainWindow</a> *parent)</td></tr>
-<tr class="memdesc:a815d6d8ddf1de9386427ddef691a02a1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen.">ConfigDialog::ConfigDialog</a> this sets up the configuration screen.  <br /></td></tr>
-<tr class="memitem:a1b7b022b97d128fb1f749c9190f20b4a" id="r_a1b7b022b97d128fb1f749c9190f20b4a"><td class="memItemLeft">&#160;</td><td class="memItemRight"><a class="el" href="#a1b7b022b97d128fb1f749c9190f20b4a">~ConfigDialog</a> () override</td></tr>
-<tr class="memdesc:a1b7b022b97d128fb1f749c9190f20b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a1b7b022b97d128fb1f749c9190f20b4a" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,...">ConfigDialog::~ConfigDialog</a> config destructor, makes sure the mainWindow knows about git, gpg and pass executables.  <br /></td></tr>
+<tr class="memdesc:a815d6d8ddf1de9386427ddef691a02a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a> associated with the given main window.  <br /></td></tr>
 <tr class="memitem:af93386c7b55bd8ae35fda6f096d46eb6" id="r_af93386c7b55bd8ae35fda6f096d46eb6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af93386c7b55bd8ae35fda6f096d46eb6">useSelection</a> (bool useSelection)</td></tr>
-<tr class="memdesc:af93386c7b55bd8ae35fda6f096d46eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#af93386c7b55bd8ae35fda6f096d46eb6" title="ConfigDialog::useSelection set the clipboard type use from MainWindow.">ConfigDialog::useSelection</a> set the clipboard type use from <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a>.  <br /></td></tr>
+<tr class="memdesc:af93386c7b55bd8ae35fda6f096d46eb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable clipboard selection mode.  <br /></td></tr>
 <tr class="memitem:a56eaebf7e3e16da16fd6f1fdb44c9d91" id="r_a56eaebf7e3e16da16fd6f1fdb44c9d91"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a56eaebf7e3e16da16fd6f1fdb44c9d91">useAutoclear</a> (bool useAutoclear)</td></tr>
-<tr class="memdesc:a56eaebf7e3e16da16fd6f1fdb44c9d91"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a56eaebf7e3e16da16fd6f1fdb44c9d91" title="ConfigDialog::useAutoclear set the clipboard autoclear use from MainWindow.">ConfigDialog::useAutoclear</a> set the clipboard autoclear use from <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a>.  <br /></td></tr>
+<tr class="memdesc:a56eaebf7e3e16da16fd6f1fdb44c9d91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable autoclear of the clipboard.  <br /></td></tr>
 <tr class="memitem:a5439c3bc35c849fbef4c9248ee9042d0" id="r_a5439c3bc35c849fbef4c9248ee9042d0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5439c3bc35c849fbef4c9248ee9042d0">useAutoclearPanel</a> (bool useAutoclearPanel)</td></tr>
-<tr class="memdesc:a5439c3bc35c849fbef4c9248ee9042d0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a5439c3bc35c849fbef4c9248ee9042d0" title="ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow.">ConfigDialog::useAutoclearPanel</a> set the panel autoclear use from <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a>.  <br /></td></tr>
+<tr class="memdesc:a5439c3bc35c849fbef4c9248ee9042d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable autoclear of the panel.  <br /></td></tr>
 <tr class="memitem:a0ae43a6dc241ebbf619f61171fbbd123" id="r_a0ae43a6dc241ebbf619f61171fbbd123"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a0ae43a6dc241ebbf619f61171fbbd123">getProfiles</a> () -&gt; QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</td></tr>
-<tr class="memdesc:a0ae43a6dc241ebbf619f61171fbbd123"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a0ae43a6dc241ebbf619f61171fbbd123" title="ConfigDialog::getProfiles return profile list.">ConfigDialog::getProfiles</a> return profile list.  <br /></td></tr>
-<tr class="memitem:ad5b80066591f19fdaaa06b7cb5ba7f15" id="r_ad5b80066591f19fdaaa06b7cb5ba7f15"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad5b80066591f19fdaaa06b7cb5ba7f15">wizard</a> ()</td></tr>
-<tr class="memdesc:ad5b80066591f19fdaaa06b7cb5ba7f15"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first-time use wizard.">ConfigDialog::wizard</a> first-time use wizard.  <br /></td></tr>
-<tr class="memitem:afc3507e2de1b459ee118b51ef672f868" id="r_afc3507e2de1b459ee118b51ef672f868"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afc3507e2de1b459ee118b51ef672f868">genKey</a> (const QString &amp;, QDialog *)</td></tr>
-<tr class="memdesc:afc3507e2de1b459ee118b51ef672f868"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#afc3507e2de1b459ee118b51ef672f868" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair.">ConfigDialog::genKey</a> tunnel function to make <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a> generate a gpg key pair.  <br /></td></tr>
+<tr class="memdesc:a0ae43a6dc241ebbf619f61171fbbd123"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return all configured profiles.  <br /></td></tr>
+<tr class="memitem:ad5b80066591f19fdaaa06b7cb5ba7f15" id="r_ad5b80066591f19fdaaa06b7cb5ba7f15"><td class="memItemLeft"><a id="ad5b80066591f19fdaaa06b7cb5ba7f15" name="ad5b80066591f19fdaaa06b7cb5ba7f15"></a>
+void&#160;</td><td class="memItemRight"><b>wizard</b> ()</td></tr>
+<tr class="memdesc:ad5b80066591f19fdaaa06b7cb5ba7f15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the first-time setup wizard. <br /></td></tr>
+<tr class="memitem:a99e19a79c9bfd47ee251487c6e766605" id="r_a99e19a79c9bfd47ee251487c6e766605"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a99e19a79c9bfd47ee251487c6e766605">genKey</a> (const QString &amp;batch, QDialog *dialog)</td></tr>
+<tr class="memdesc:a99e19a79c9bfd47ee251487c6e766605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Start GPG key generation.  <br /></td></tr>
 <tr class="memitem:aac383b23ed9b34eb52918de2b10d9567" id="r_aac383b23ed9b34eb52918de2b10d9567"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aac383b23ed9b34eb52918de2b10d9567">useTrayIcon</a> (bool useSystray)</td></tr>
-<tr class="memdesc:aac383b23ed9b34eb52918de2b10d9567"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#aac383b23ed9b34eb52918de2b10d9567" title="ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc...">ConfigDialog::useTrayIcon</a> set preference for using trayicon. Enable or disable related checkboxes accordingly.  <br /></td></tr>
+<tr class="memdesc:aac383b23ed9b34eb52918de2b10d9567"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show or hide the system tray icon.  <br /></td></tr>
 <tr class="memitem:a4dcec976dc9117924ed9c230e9683c9f" id="r_a4dcec976dc9117924ed9c230e9683c9f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4dcec976dc9117924ed9c230e9683c9f">useGit</a> (bool useGit)</td></tr>
-<tr class="memdesc:a4dcec976dc9117924ed9c230e9683c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a4dcec976dc9117924ed9c230e9683c9f" title="ConfigDialog::useGit set preference for using git.">ConfigDialog::useGit</a> set preference for using git.  <br /></td></tr>
+<tr class="memdesc:a4dcec976dc9117924ed9c230e9683c9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable git integration.  <br /></td></tr>
 <tr class="memitem:a2a395844557989cf343503e80b075ba0" id="r_a2a395844557989cf343503e80b075ba0"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2a395844557989cf343503e80b075ba0">useOtp</a> (bool useOtp)</td></tr>
-<tr class="memdesc:a2a395844557989cf343503e80b075ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a2a395844557989cf343503e80b075ba0" title="ConfigDialog::useOtp set preference for using otp plugin.">ConfigDialog::useOtp</a> set preference for using otp plugin.  <br /></td></tr>
+<tr class="memdesc:a2a395844557989cf343503e80b075ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable OTP support.  <br /></td></tr>
 <tr class="memitem:a859c596a86c2ee90176c93d8c52f12a7" id="r_a859c596a86c2ee90176c93d8c52f12a7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a859c596a86c2ee90176c93d8c52f12a7">useGrepSearch</a> (bool useGrepSearch)</td></tr>
+<tr class="memdesc:a859c596a86c2ee90176c93d8c52f12a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable grep content search.  <br /></td></tr>
 <tr class="memitem:a6dbe2089e9c89952aac994d4a359c3f9" id="r_a6dbe2089e9c89952aac994d4a359c3f9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6dbe2089e9c89952aac994d4a359c3f9">useQrencode</a> (bool useQrencode)</td></tr>
-<tr class="memdesc:a6dbe2089e9c89952aac994d4a359c3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a6dbe2089e9c89952aac994d4a359c3f9" title="ConfigDialog::useQrencode set preference for using qrencode plugin.">ConfigDialog::useQrencode</a> set preference for using qrencode plugin.  <br /></td></tr>
-<tr class="memitem:a87ab40396f3b1435975ff84baae9802c" id="r_a87ab40396f3b1435975ff84baae9802c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a87ab40396f3b1435975ff84baae9802c">setPwgenPath</a> (const QString &amp;)</td></tr>
-<tr class="memdesc:a87ab40396f3b1435975ff84baae9802c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a87ab40396f3b1435975ff84baae9802c" title="ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf...">ConfigDialog::setPwgenPath</a> set pwgen executable path. Enable or disable related options in the interface.  <br /></td></tr>
+<tr class="memdesc:a6dbe2089e9c89952aac994d4a359c3f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable QR code display.  <br /></td></tr>
+<tr class="memitem:a3d42b658f6b8436e9f6ca17059703c0a" id="r_a3d42b658f6b8436e9f6ca17059703c0a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3d42b658f6b8436e9f6ca17059703c0a">setPwgenPath</a> (const QString &amp;path)</td></tr>
+<tr class="memdesc:a3d42b658f6b8436e9f6ca17059703c0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the path to the pwgen executable.  <br /></td></tr>
 <tr class="memitem:ac3ebb263a2b69e39c81217a6d8630995" id="r_ac3ebb263a2b69e39c81217a6d8630995"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac3ebb263a2b69e39c81217a6d8630995">usePwgen</a> (bool usePwgen)</td></tr>
-<tr class="memdesc:ac3ebb263a2b69e39c81217a6d8630995"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ac3ebb263a2b69e39c81217a6d8630995" title="ConfigDialog::usePwgen set preference for using pwgen (can be overruled by empty pwgenPath)....">ConfigDialog::usePwgen</a> set preference for using pwgen (can be overruled by empty pwgenPath). enable or disable related options in the interface via ConfigDialog::on_checkBoxUsePwgen_clicked.  <br /></td></tr>
+<tr class="memdesc:ac3ebb263a2b69e39c81217a6d8630995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable pwgen-based password generation.  <br /></td></tr>
 <tr class="memitem:a003ec5de7c29ced34f045f0843d2e95b" id="r_a003ec5de7c29ced34f045f0843d2e95b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a003ec5de7c29ced34f045f0843d2e95b">setPasswordConfiguration</a> (const <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a> &amp;config)</td></tr>
+<tr class="memdesc:a003ec5de7c29ced34f045f0843d2e95b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a password configuration to the dialog controls.  <br /></td></tr>
 <tr class="memitem:a97c5f924a95b30f4d6a60df361c2b3ba" id="r_a97c5f924a95b30f4d6a60df361c2b3ba"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#a97c5f924a95b30f4d6a60df361c2b3ba">getPasswordConfiguration</a> () -&gt; <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td></tr>
+<tr class="memdesc:a97c5f924a95b30f4d6a60df361c2b3ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the current password configuration from the dialog controls.  <br /></td></tr>
 <tr class="memitem:a791fbb09740f62bff81c104ce61a0c1a" id="r_a791fbb09740f62bff81c104ce61a0c1a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a791fbb09740f62bff81c104ce61a0c1a">useTemplate</a> (bool useTemplate)</td></tr>
-<tr class="memdesc:a791fbb09740f62bff81c104ce61a0c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a791fbb09740f62bff81c104ce61a0c1a" title="ConfigDialog::useTemplate set preference for using templates.">ConfigDialog::useTemplate</a> set preference for using templates.  <br /></td></tr>
+<tr class="memdesc:a791fbb09740f62bff81c104ce61a0c1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable password file templating.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-methods" class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad5f28221ebec0701bb56c43780a452b3" id="r_ad5f28221ebec0701bb56c43780a452b3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad5f28221ebec0701bb56c43780a452b3">closeEvent</a> (QCloseEvent *event) override</td></tr>
-<tr class="memdesc:ad5f28221ebec0701bb56c43780a452b3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#ad5f28221ebec0701bb56c43780a452b3" title="ConfigDialog::closeEvent close this window.">ConfigDialog::closeEvent</a> close this window.  <br /></td></tr>
+<tr class="memdesc:ad5f28221ebec0701bb56c43780a452b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save settings and clean up on close.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a> handles the configuration interface. </p>
-<p>Configuration dialog providing UI and accessors for application settings.</p>
-<p>Presents controls for profiles, generation tools (pwgen/pass), GPG/git/OTP/qrencode integration, template handling, tray icon and autoclear options, and exposes methods to read and update those settings. Also overrides closeEvent to perform dialog-close handling.</p>
-<p>This class should also take the handling from the <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a> class. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#_a2">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
+<p>Presents controls for profiles, generation tools (pwgen/pass), GPG/git/OTP/qrencode integration, template handling, tray icon and autoclear options, and exposes methods to read and update those settings. </p>
 
-<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00034">34</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="configdialog_8h_source.html#l00029">29</a> of file <a class="el" href="configdialog_8h_source.html">configdialog.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a815d6d8ddf1de9386427ddef691a02a1" name="a815d6d8ddf1de9386427ddef691a02a1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a815d6d8ddf1de9386427ddef691a02a1">&#9670;&#160;</a></span>ConfigDialog()</h2>
@@ -172,65 +170,24 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a815d6d8ddf1de9386427ddef691a02a1" title="ConfigDialog::ConfigDialog this sets up the configuration screen.">ConfigDialog::ConfigDialog</a> this sets up the configuration screen. </p>
+<p>Construct a <a class="el" href="class_config_dialog.html" title="The ConfigDialog handles the configuration interface.">ConfigDialog</a> associated with the given main window. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td></td></tr>
+    <tr><td class="paramname">parent</td><td>The application's <a class="el" href="class_main_window.html" title="Main application window orchestrating UI, user interactions, and external process handlers.">MainWindow</a>. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a0">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00031">31</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
 <div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a815d6d8ddf1de9386427ddef691a02a1_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a815d6d8ddf1de9386427ddef691a02a1_cgraph.svg" width="207" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div id="dynsection-3" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a815d6d8ddf1de9386427ddef691a02a1_icgraph.svg" width="207" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a1b7b022b97d128fb1f749c9190f20b4a" name="a1b7b022b97d128fb1f749c9190f20b4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1b7b022b97d128fb1f749c9190f20b4a">&#9670;&#160;</a></span>~ConfigDialog()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ConfigDialog::~ConfigDialog </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="#a1b7b022b97d128fb1f749c9190f20b4a" title="ConfigDialog::~ConfigDialog config destructor, makes sure the mainWindow knows about git,...">ConfigDialog::~ConfigDialog</a> config destructor, makes sure the mainWindow knows about git, gpg and pass executables. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a45">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00155">155</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a1b7b022b97d128fb1f749c9190f20b4a_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -259,28 +216,18 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#ad5f28221ebec0701bb56c43780a452b3" title="ConfigDialog::closeEvent close this window.">ConfigDialog::closeEvent</a> close this window. </p>
+<p>Save settings and clean up on close. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">event</td><td></td></tr>
+    <tr><td class="paramname">event</td><td>The close event. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a103">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00962">962</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ad5f28221ebec0701bb56c43780a452b3_cgraph.svg" width="100%" height="461"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
-<a id="afc3507e2de1b459ee118b51ef672f868" name="afc3507e2de1b459ee118b51ef672f868"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc3507e2de1b459ee118b51ef672f868">&#9670;&#160;</a></span>genKey()</h2>
+<a id="a99e19a79c9bfd47ee251487c6e766605" name="a99e19a79c9bfd47ee251487c6e766605"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99e19a79c9bfd47ee251487c6e766605">&#9670;&#160;</a></span>genKey()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -298,18 +245,14 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#afc3507e2de1b459ee118b51ef672f868" title="ConfigDialog::genKey tunnel function to make MainWindow generate a gpg key pair.">ConfigDialog::genKey</a> tunnel function to make <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a> generate a gpg key pair. </p>
+<p>Start GPG key generation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">batch</td><td></td></tr>
-    <tr><td class="paramname">dialog</td><td></td></tr>
+    <tr><td class="paramname">batch</td><td>GPG batch parameter string. </td></tr>
+    <tr><td class="paramname">dialog</td><td>Parent dialog to return to after generation. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a96">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00555">555</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
 
 </div>
 </div>
@@ -323,14 +266,13 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">auto ConfigDialog::getPasswordConfiguration </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td>
+          <td> -&gt;  <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a81">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01082">1082</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<p>Read the current password configuration from the dialog controls. </p>
+<dl class="section return"><dt>Returns</dt><dd>Current <a class="el" href="struct_password_configuration.html" title="Holds the password configuration settings.">PasswordConfiguration</a>. </dd></dl>
 
 </div>
 </div>
@@ -344,17 +286,13 @@ Protected Member Functions</h2></td></tr>
           <td class="memname">auto ConfigDialog::getProfiles </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> -&gt; QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</td>
+          <td> -&gt;  QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a0ae43a6dc241ebbf619f61171fbbd123" title="ConfigDialog::getProfiles return profile list.">ConfigDialog::getProfiles</a> return profile list. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a69">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00595">595</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
+<p>Return all configured profiles. </p>
+<dl class="section return"><dt>Returns</dt><dd>Hash of profile name to key-value settings map. </dd></dl>
 
 </div>
 </div>
@@ -372,21 +310,19 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a113">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
+
+<p>Apply a password configuration to the dialog controls. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>Configuration to display. </td></tr>
+  </table>
+  </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01072">1072</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a003ec5de7c29ced34f045f0843d2e95b_icgraph.svg" width="450" height="68"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
 </div>
 </div>
-<a id="a87ab40396f3b1435975ff84baae9802c" name="a87ab40396f3b1435975ff84baae9802c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87ab40396f3b1435975ff84baae9802c">&#9670;&#160;</a></span>setPwgenPath()</h2>
+<a id="a3d42b658f6b8436e9f6ca17059703c0a" name="a3d42b658f6b8436e9f6ca17059703c0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d42b658f6b8436e9f6ca17059703c0a">&#9670;&#160;</a></span>setPwgenPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -394,29 +330,19 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void ConfigDialog::setPwgenPath </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>pwgen</em></span></td><td>)</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a87ab40396f3b1435975ff84baae9802c" title="ConfigDialog::setPwgenPath set pwgen executable path. Enable or disable related options in the interf...">ConfigDialog::setPwgenPath</a> set pwgen executable path. Enable or disable related options in the interface. </p>
+<p>Set the path to the pwgen executable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pwgen</td><td></td></tr>
+    <tr><td class="paramname">path</td><td>Path to pwgen. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a111">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01031">1031</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a87ab40396f3b1435975ff84baae9802c_icgraph.svg" width="459" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -435,28 +361,24 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a56eaebf7e3e16da16fd6f1fdb44c9d91" title="ConfigDialog::useAutoclear set the clipboard autoclear use from MainWindow.">ConfigDialog::useAutoclear</a> set the clipboard autoclear use from <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a>. </p>
+<p>Enable or disable autoclear of the clipboard. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a56eaebf7e3e16da16fd6f1fdb44c9d91" title="ConfigDialog::useAutoclear set the clipboard autoclear use from MainWindow.">useAutoclear</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="#a56eaebf7e3e16da16fd6f1fdb44c9d91" title="Enable or disable autoclear of the clipboard.">useAutoclear</a></td><td>true to enable autoclear. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a94">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00518">518</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-4" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a56eaebf7e3e16da16fd6f1fdb44c9d91_cgraph.svg" width="210" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-5" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-9-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a56eaebf7e3e16da16fd6f1fdb44c9d91_icgraph.svg" width="454" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a56eaebf7e3e16da16fd6f1fdb44c9d91_icgraph.svg" width="210" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -476,28 +398,24 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a5439c3bc35c849fbef4c9248ee9042d0" title="ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow.">ConfigDialog::useAutoclearPanel</a> set the panel autoclear use from <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a>. </p>
+<p>Enable or disable autoclear of the panel. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a5439c3bc35c849fbef4c9248ee9042d0" title="ConfigDialog::useAutoclearPanel set the panel autoclear use from MainWindow.">useAutoclearPanel</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="#a5439c3bc35c849fbef4c9248ee9042d0" title="Enable or disable autoclear of the panel.">useAutoclearPanel</a></td><td>true to enable panel autoclear. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a95">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00528">528</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-6" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a5439c3bc35c849fbef4c9248ee9042d0_cgraph.svg" width="210" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-7" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-11-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a5439c3bc35c849fbef4c9248ee9042d0_icgraph.svg" width="454" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a5439c3bc35c849fbef4c9248ee9042d0_icgraph.svg" width="210" height="75"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -517,28 +435,24 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a4dcec976dc9117924ed9c230e9683c9f" title="ConfigDialog::useGit set preference for using git.">ConfigDialog::useGit</a> set preference for using git. </p>
+<p>Enable or disable git integration. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a4dcec976dc9117924ed9c230e9683c9f" title="ConfigDialog::useGit set preference for using git.">useGit</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="#a4dcec976dc9117924ed9c230e9683c9f" title="Enable or disable git integration.">useGit</a></td><td>true to enable git. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a49">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00976">976</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-8" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-12-content" class="dyncontent" style="display:none;">
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a4dcec976dc9117924ed9c230e9683c9f_cgraph.svg" width="166" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-9" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a4dcec976dc9117924ed9c230e9683c9f_icgraph.svg" width="410" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a4dcec976dc9117924ed9c230e9683c9f_icgraph.svg" width="166" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -557,21 +471,25 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a109">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
 
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00989">989</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
+<p>Enable or disable grep content search. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="#a859c596a86c2ee90176c93d8c52f12a7" title="Enable or disable grep content search.">useGrepSearch</a></td><td>true to enable grep search. </td></tr>
+  </table>
+  </dd>
+</dl>
+<div id="dynsection-10" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-14-content" class="dyncontent" style="display:none;">
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a859c596a86c2ee90176c93d8c52f12a7_cgraph.svg" width="222" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-11" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-11-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a859c596a86c2ee90176c93d8c52f12a7_icgraph.svg" width="466" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-11-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a859c596a86c2ee90176c93d8c52f12a7_icgraph.svg" width="222" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -591,28 +509,24 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a2a395844557989cf343503e80b075ba0" title="ConfigDialog::useOtp set preference for using otp plugin.">ConfigDialog::useOtp</a> set preference for using otp plugin. </p>
+<p>Enable or disable OTP support. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a2a395844557989cf343503e80b075ba0" title="ConfigDialog::useOtp set preference for using otp plugin.">useOtp</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="#a2a395844557989cf343503e80b075ba0" title="Enable or disable OTP support.">useOtp</a></td><td>true to enable OTP. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a108">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00985">985</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-12" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a2a395844557989cf343503e80b075ba0_cgraph.svg" width="170" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-17" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-13" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a2a395844557989cf343503e80b075ba0_icgraph.svg" width="414" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a2a395844557989cf343503e80b075ba0_icgraph.svg" width="170" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -632,28 +546,24 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#ac3ebb263a2b69e39c81217a6d8630995" title="ConfigDialog::usePwgen set preference for using pwgen (can be overruled by empty pwgenPath)....">ConfigDialog::usePwgen</a> set preference for using pwgen (can be overruled by empty pwgenPath). enable or disable related options in the interface via ConfigDialog::on_checkBoxUsePwgen_clicked. </p>
+<p>Enable or disable pwgen-based password generation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#ac3ebb263a2b69e39c81217a6d8630995" title="ConfigDialog::usePwgen set preference for using pwgen (can be overruled by empty pwgenPath)....">usePwgen</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="#ac3ebb263a2b69e39c81217a6d8630995" title="Enable or disable pwgen-based password generation.">usePwgen</a></td><td>true to use pwgen. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#_a112">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01064">1064</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-18" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-14" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-18-content" class="dyncontent" style="display:none;">
+<div id="dynsection-14-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ac3ebb263a2b69e39c81217a6d8630995_cgraph.svg" width="190" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-19" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-15" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ac3ebb263a2b69e39c81217a6d8630995_icgraph.svg" width="434" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ac3ebb263a2b69e39c81217a6d8630995_icgraph.svg" width="190" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -673,28 +583,24 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a6dbe2089e9c89952aac994d4a359c3f9" title="ConfigDialog::useQrencode set preference for using qrencode plugin.">ConfigDialog::useQrencode</a> set preference for using qrencode plugin. </p>
+<p>Enable or disable QR code display. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a6dbe2089e9c89952aac994d4a359c3f9" title="ConfigDialog::useQrencode set preference for using qrencode plugin.">useQrencode</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="#a6dbe2089e9c89952aac994d4a359c3f9" title="Enable or disable QR code display.">useQrencode</a></td><td>true to enable qrencode. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a110">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00997">997</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-20" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-16" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a6dbe2089e9c89952aac994d4a359c3f9_cgraph.svg" width="210" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-21" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-17" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a6dbe2089e9c89952aac994d4a359c3f9_icgraph.svg" width="454" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a6dbe2089e9c89952aac994d4a359c3f9_icgraph.svg" width="210" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -714,28 +620,24 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#af93386c7b55bd8ae35fda6f096d46eb6" title="ConfigDialog::useSelection set the clipboard type use from MainWindow.">ConfigDialog::useSelection</a> set the clipboard type use from <a class="el" href="class_main_window.html" title="The MainWindow class does way too much, not only is it a switchboard, configuration handler and more,...">MainWindow</a>. </p>
+<p>Enable or disable clipboard selection mode. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#af93386c7b55bd8ae35fda6f096d46eb6" title="ConfigDialog::useSelection set the clipboard type use from MainWindow.">useSelection</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="#af93386c7b55bd8ae35fda6f096d46eb6" title="Enable or disable clipboard selection mode.">useSelection</a></td><td>true to enable selection mode. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a93">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00508">508</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-22" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-22-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-18" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-22-content" class="dyncontent" style="display:none;">
+<div id="dynsection-18-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_af93386c7b55bd8ae35fda6f096d46eb6_cgraph.svg" width="207" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-23" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-19" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_af93386c7b55bd8ae35fda6f096d46eb6_icgraph.svg" width="451" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_af93386c7b55bd8ae35fda6f096d46eb6_icgraph.svg" width="207" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -755,28 +657,24 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#a791fbb09740f62bff81c104ce61a0c1a" title="ConfigDialog::useTemplate set preference for using templates.">ConfigDialog::useTemplate</a> set preference for using templates. </p>
+<p>Enable or disable password file templating. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="#a791fbb09740f62bff81c104ce61a0c1a" title="ConfigDialog::useTemplate set preference for using templates.">useTemplate</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="#a791fbb09740f62bff81c104ce61a0c1a" title="Enable or disable password file templating.">useTemplate</a></td><td>true to enable the template. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a120">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l01126">1126</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-24" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-20" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a791fbb09740f62bff81c104ce61a0c1a_cgraph.svg" width="207" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
-<div id="dynsection-25" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-21" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a791fbb09740f62bff81c104ce61a0c1a_icgraph.svg" width="451" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_a791fbb09740f62bff81c104ce61a0c1a_icgraph.svg" width="207" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -796,58 +694,18 @@ Protected Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="#aac383b23ed9b34eb52918de2b10d9567" title="ConfigDialog::useTrayIcon set preference for using trayicon. Enable or disable related checkboxes acc...">ConfigDialog::useTrayIcon</a> set preference for using trayicon. Enable or disable related checkboxes accordingly. </p>
+<p>Show or hide the system tray icon. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">useSystray</td><td></td></tr>
+    <tr><td class="paramname">useSystray</td><td>true to enable the tray icon. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a102">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00935">935</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-26" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the caller graph for this function:</div>
-<div id="dynsection-26-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-26-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_aac383b23ed9b34eb52918de2b10d9567_icgraph.svg" width="446" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
-<a id="ad5b80066591f19fdaaa06b7cb5ba7f15" name="ad5b80066591f19fdaaa06b7cb5ba7f15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5b80066591f19fdaaa06b7cb5ba7f15">&#9670;&#160;</a></span>wizard()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ConfigDialog::wizard </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p><a class="el" href="#ad5b80066591f19fdaaa06b7cb5ba7f15" title="ConfigDialog::wizard first-time use wizard.">ConfigDialog::wizard</a> first-time use wizard. </p>
-<dl class="section examples"><dt>Examples</dt><dd><a class="el" href="_2home_2runner_2work_2_qt_pass_2_qt_pass_2src_2configdialog_8cpp-example.html#a99">/home/runner/work/QtPass/QtPass/src/configdialog.cpp</a>.</dd>
-</dl>
-
-<p class="definition">Definition at line <a class="el" href="configdialog_8cpp_source.html#l00771">771</a> of file <a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a>.</p>
-<div id="dynsection-27" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Here is the call graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" loading="lazy" frameborder="0" src="class_config_dialog_ad5b80066591f19fdaaa06b7cb5ba7f15_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="configdialog_8h_source.html">configdialog.h</a></li>
-<li>src/<a class="el" href="configdialog_8cpp_source.html">configdialog.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

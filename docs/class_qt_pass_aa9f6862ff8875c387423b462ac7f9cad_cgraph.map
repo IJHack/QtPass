@@ -1,11 +1,4 @@
 <map id="QtPass::QtPass" name="QtPass::QtPass">
-<area shape="rect" id="Node000001" title="Constructs a QtPass instance." alt="" coords="5,31,124,56"/>
-<area shape="rect" id="Node000002" href="$class_qt_pass.html#a3febdf740ba4d78a4149d7d7c3b9284e" title="MainWindow::clearClipboard remove clipboard contents." alt="" coords="185,5,353,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,33,171,27,172,33,125,39"/>
-<area shape="rect" id="Node000003" href="$class_qt_pass.html#a24eb2c0a19143db0ba3a741c66881be6" title="Sets the clipboard clear timer based on autoclear settings." alt="" coords="172,55,367,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,48,158,52,158,57,124,53"/>
-<area shape="rect" id="Node000004" href="$class_qt_pass_settings.html#aead53a3d50a85e281db276edf586ffc8" title="Get autoclear delay in seconds." alt="" coords="415,47,625,87"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="367,65,401,65,401,70,367,70"/>
-<area shape="rect" id="Node000005" href="$class_qt_pass_settings.html#a2483e7de01f9e312ee0fbf8a1637f29d" title="Get the singleton instance." alt="" coords="673,55,876,80"/>
-<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="626,65,659,65,659,70,626,70"/>
+<area shape="rect" id="Node000001" title="Construct a QtPass instance associated with the given main window." alt="" coords="5,29,124,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="44,30,40,21,42,12,51,5,65,3,81,6,88,14,84,18,78,11,65,8,53,10,47,14,45,20,49,28"/>
 </map>

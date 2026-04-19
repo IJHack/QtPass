@@ -1,5 +1,4 @@
 <map id="Executor::cancelNext" name="Executor::cancelNext">
-<area shape="rect" id="Node000001" title="Executor::cancelNext cancels execution of first process in queue if it&#39;s not already running." alt="" coords="211,5,369,31"/>
-<area shape="rect" id="Node000002" href="$class_imitate_pass.html#aa0b75b53b2a2d62b0fbffbb5d2d7efe4" title="Handle process completion." alt="" coords="5,5,163,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,21,163,21,163,15,197,15"/>
+<area shape="rect" id="Node000001" title="Cancel the next queued command without executing it." alt="" coords="5,29,164,55"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="112,19,104,11,85,8,68,10,60,15,58,20,63,28,58,31,53,21,56,11,67,5,85,3,106,6,116,15"/>
 </map>
