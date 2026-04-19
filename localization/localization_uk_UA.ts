@@ -36,7 +36,7 @@
     </message>
     <message>
         <source>Password Behaviour:</source>
-        <translation type="vanished">Password Behaviour:</translation>
+        <translation type="vanished">Поведінка пароля:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
@@ -175,7 +175,7 @@
     </message>
     <message>
         <source>Use pwgen</source>
-        <translation type="vanished">Use pwgen</translation>
+        <translation type="vanished">Використовувати pwgen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -203,7 +203,7 @@
     </message>
     <message>
         <source>Use git</source>
-        <translation type="vanished">Use git</translation>
+        <translation type="vanished">Використовувати git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="512"/>
@@ -227,7 +227,7 @@
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation type="vanished">Use pass otp extension</translation>
+        <translation type="vanished">Використовувати розширення pass otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -266,7 +266,7 @@
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
-        <translation type="vanished">Nati&amp;ve git/gpg</translation>
+        <translation type="vanished">Вбудований git/gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
