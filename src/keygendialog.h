@@ -9,67 +9,12 @@ namespace Ui {
 class KeygenDialog;
 }
 
-/*!
-    \class KeygenDialog
-    \brief Handles GPG keypair generation.
- */
 class ConfigDialog;
 class QCloseEvent;
-/**
- * Construct the KeygenDialog.
- * @param parent Optional parent ConfigDialog used to return to config UI.
- */
 
 /**
- * Destroy the KeygenDialog and release associated resources.
- */
-
-/**
- * Handle the widget close event to perform any cleanup or confirm
- * actions before closing.
- * @param event Close event provided by Qt.
- */
-
-/**
- * Update internal state when the first passphrase text changes.
- * @param arg1 New passphrase text from the first input field.
- */
-
-/**
- * Update internal state when the confirmation passphrase text changes.
- * @param arg1 New passphrase text from the confirmation input field.
- */
-
-/**
- * React to changes of the checkbox controlling protection options.
- * @param arg1 New checkbox state (value corresponds to Qt::CheckState).
- */
-
-/**
- * Update internal state when the email text changes.
- * @param arg1 New email text from the email input field.
- */
-
-/**
- * Update internal state when the name text changes.
- * @param arg1 New name text from the name input field.
- */
-
-/**
- * Perform a text replacement within the dialog using the provided strings.
- * @param from Text to be replaced.
- * @param to Replacement text.
- */
-
-/**
- * Finalize the dialog with the given result code and perform any
- * necessary teardown.
- * @param r Result code passed to QDialog::done.
- */
-
-/**
- * Enable or disable "no protection" behavior for generated keys or inputs.
- * @param enable `true` to enable no-protection mode, `false` to disable it.
+ * @class KeygenDialog
+ * @brief Handles GPG keypair generation.
  */
 class KeygenDialog : public QDialog {
   Q_OBJECT

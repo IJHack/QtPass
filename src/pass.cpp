@@ -703,8 +703,9 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
 }
 
 /**
- * @brief Pass::updateEnv update the execution environment (used when
- * switching profiles)
+ * @brief Pass::setEnvVar set or remove a single environment variable.
+ * @param key Variable name including trailing '=' (e.g. "FOO=").
+ * @param value Value to set; pass an empty string to remove the variable.
  */
 // key must include the trailing '=' (e.g. "FOO="); env.filter() does substring
 // matching so the '=' anchors the lookup to avoid collisions with longer names.
@@ -724,6 +725,10 @@ void Pass::setEnvVar(const QString &key, const QString &value) {
     env.append(key + value);
 }
 
+/**
+ * @brief Pass::updateEnv update the execution environment (used when
+ * switching profiles)
+ */
 void Pass::updateEnv() {
   setEnvVar(QStringLiteral("PASSWORD_STORE_SIGNING_KEY="),
             QtPassSettings::getPassSigningKey());

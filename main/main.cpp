@@ -11,17 +11,18 @@
 #include <QTranslator>
 #include <QtWidgets>
 
-/*! \mainpage QtPass
+/**
+ * @mainpage QtPass
  *
- * \section intro_sec Introduction
+ * @section intro_sec Introduction
  *
  * QtPass is a multi-platform GUI for pass, the standard unix password manager.
  *
  * https://qtpass.org/
  *
- * \section install_sec Installation
+ * @section install_sec Installation
  *
- * \subsection dependencies Dependencies
+ * @subsection dependencies Dependencies
  *
  * - QtPass requires Qt 5.2 or later.
  * - The Linguist package is required to compile the translations.
@@ -30,7 +31,7 @@
  * At runtime the only real dependency is gpg2 but to make the most of it,
  * you'll need git and pass too.
  *
- * \subsection source From source
+ * @subsection source From source
  *
  * On most *nix systems all you need is:
  *
@@ -52,10 +53,11 @@ static auto appendWithSpaceIfSuffixNotEmpty(QString &target,
 }
 
 /**
- * @brief main
- * @param argc
- * @param argv
- * @return
+ * @brief Application entry point: parses arguments and launches the main
+ * window.
+ * @param argc Argument count.
+ * @param argv Argument vector.
+ * @return Application exit code.
  */
 auto main(int argc, char *argv[]) -> int {
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)

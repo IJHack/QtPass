@@ -5,13 +5,13 @@
 
 #include <QString>
 
-/*!
-    \struct PasswordConfiguration
-    \brief  Holds the Password configuration settings
+/**
+ * @struct PasswordConfiguration
+ * @brief Holds the password configuration settings.
  */
 struct PasswordConfiguration {
   /**
-   * \brief The selected character set.
+   * @brief The selected character set.
    */
   enum characterSet {
     ALLCHARS = 0,
@@ -21,11 +21,11 @@ struct PasswordConfiguration {
     CHARSETS_COUNT //   have to be last, for easier initialization of arrays
   } selected;
   /**
-   * \brief Length of the password.
+   * @brief Length of the password.
    */
   int length;
   /**
-   * \brief The different character sets.
+   * @brief The different character sets.
    */
   QString Characters[CHARSETS_COUNT];
   PasswordConfiguration() : selected(ALLCHARS), length(16) {
