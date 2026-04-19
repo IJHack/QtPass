@@ -1,0 +1,492 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="tst__executor_8cpp" kind="file" language="C++">
+    <compoundname>tst_executor.cpp</compoundname>
+    <includes local="no">QtTest</includes>
+    <includes refid="executor_8h" local="yes">../../../src/executor.h</includes>
+    <includes refid="pass_8h" local="yes">../../../src/pass.h</includes>
+    <includes refid="qtpasssettings_8h" local="yes">../../../src/qtpasssettings.h</includes>
+    <includes local="yes">tst_executor.moc</includes>
+    <incdepgraph>
+      <node id="8">
+        <label>enums.h</label>
+        <link refid="enums_8h"/>
+      </node>
+      <node id="3">
+        <label>../../../src/executor.h</label>
+        <link refid="executor_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>imitatepass.h</label>
+        <link refid="imitatepass_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>../../../src/pass.h</label>
+        <link refid="pass_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>passwordconfiguration.h</label>
+        <link refid="passwordconfiguration_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>../../../src/qtpasssettings.h</label>
+        <link refid="qtpasssettings_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>realpass.h</label>
+        <link refid="realpass_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>settingsconstants.h</label>
+        <link refid="settingsconstants_8h"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>simpletransaction.h</label>
+        <link refid="simpletransaction_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>userinfo.h</label>
+        <link refid="userinfo_8h"/>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tests/auto/executor/tst_executor.cpp</label>
+        <link refid="tst__executor_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>QByteArray</label>
+      </node>
+      <node id="10">
+        <label>QDateTime</label>
+      </node>
+      <node id="23">
+        <label>QHash</label>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+      <node id="24">
+        <label>QPoint</label>
+      </node>
+      <node id="5">
+        <label>QProcess</label>
+      </node>
+      <node id="6">
+        <label>QQueue</label>
+      </node>
+      <node id="25">
+        <label>QScopedPointer</label>
+      </node>
+      <node id="26">
+        <label>QSettings</label>
+      </node>
+      <node id="27">
+        <label>QSize</label>
+      </node>
+      <node id="11">
+        <label>QString</label>
+      </node>
+      <node id="12">
+        <label>QStringList</label>
+      </node>
+      <node id="28">
+        <label>QVariant</label>
+      </node>
+      <node id="2">
+        <label>QtTest</label>
+      </node>
+      <node id="13">
+        <label>cassert</label>
+      </node>
+      <node id="14">
+        <label>map</label>
+      </node>
+      <node id="18">
+        <label>queue</label>
+      </node>
+      <node id="29">
+        <label>tst_executor.moc</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classtst__executor" prot="public">tst_executor</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2026<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtTest&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="executor_8h" kindref="compound">../../../src/executor.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pass_8h" kindref="compound">../../../src/pass.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="qtpasssettings_8h" kindref="compound">../../../src/qtpasssettings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classtst__executor" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtst__executor" kindref="compound">tst_executor</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject<sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Q_OS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingEcho();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingWithArgs();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingWithInput();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingExitCode();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingStderr();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingEmptyArgs();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingEchoMultiple();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingSpecialChars();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingWithEnv();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingWithEnvEmpty();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingWithEnvSetsVariable();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingTwoArgOverload();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingConstQStringRef();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingNotFound();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingGpgVersion();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>gpgSupportsEd25519();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getDefaultKeyTemplate();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingGpgKillAgent();</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>resolveGpgconfCommand();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executeBlockingWithEnvNotFound();</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Q_OS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingEcho()<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;echo&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;hello&quot;</highlight><highlight class="normal">},<sp/>QString(),<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>should<sp/>exit<sp/>successfully&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>QVERIFY2(output.contains(</highlight><highlight class="stringliteral">&quot;hello&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;output<sp/>should<sp/>contain<sp/>&apos;hello&apos;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingWithArgs()<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;echo&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;hello&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;world&quot;</highlight><highlight class="normal">},<sp/>QString(),<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>should<sp/>exit<sp/>successfully&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>QVERIFY2(output.contains(</highlight><highlight class="stringliteral">&quot;hello<sp/>world&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;output<sp/>should<sp/>contain<sp/>both<sp/>args&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingWithInput()<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>QString<sp/>input<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;test<sp/>input&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;cat&quot;</highlight><highlight class="normal">,<sp/>{},<sp/>input,<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;cat<sp/>should<sp/>exit<sp/>successfully&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/>QVERIFY2(output.contains(</highlight><highlight class="stringliteral">&quot;test<sp/>input&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;output<sp/>should<sp/>echo<sp/>input&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingExitCode()<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;false&quot;</highlight><highlight class="normal">,<sp/>{},<sp/>QString(),<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>!=<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;false<sp/>should<sp/>exit<sp/>with<sp/>non-zero&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingStderr()<sp/>{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>QString<sp/>err;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;sh&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;-c&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>error<sp/>&gt;&amp;2&quot;</highlight><highlight class="normal">},<sp/>QString(),<sp/>&amp;output,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;err);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>QVERIFY2(err.contains(</highlight><highlight class="stringliteral">&quot;error&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;stderr<sp/>should<sp/>contain<sp/>error&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingEmptyArgs()<sp/>{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;echo&quot;</highlight><highlight class="normal">,<sp/>{},<sp/>QString(),<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>with<sp/>empty<sp/>args<sp/>should<sp/>succeed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingEchoMultiple()<sp/>{</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;sh&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;-c&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>a<sp/>&amp;&amp;<sp/>echo<sp/>b&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QString(),<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;shell<sp/>should<sp/>exit<sp/>successfully&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>QVERIFY(output.contains(</highlight><highlight class="stringliteral">&quot;a&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>QVERIFY(output.contains(</highlight><highlight class="stringliteral">&quot;b&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingSpecialChars()<sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;echo&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;$PATH&quot;</highlight><highlight class="normal">},<sp/>QString(),<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>should<sp/>succeed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>QVERIFY2(output.trimmed()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;$PATH&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;literal<sp/>$PATH<sp/>should<sp/>be<sp/>preserved&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Tests<sp/>for<sp/>the<sp/>third<sp/>executeBlocking<sp/>overload:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>executeBlocking(const<sp/>QStringList<sp/>&amp;env,<sp/>const<sp/>QString<sp/>&amp;app,<sp/>...)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>overload<sp/>was<sp/>changed<sp/>from<sp/>(QString<sp/>app)<sp/>to<sp/>(const<sp/>QString<sp/>&amp;app).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingWithEnv()<sp/>{</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Basic:<sp/>custom<sp/>env,<sp/>echo<sp/>succeeds,<sp/>output<sp/>captured.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>QStringList<sp/>env<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;MY_VAR=hello_env&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(env,<sp/></highlight><highlight class="stringliteral">&quot;sh&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;-c&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>ok&quot;</highlight><highlight class="normal">},<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;sh<sp/>with<sp/>custom<sp/>env<sp/>should<sp/>exit<sp/>0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>QVERIFY2(output.contains(</highlight><highlight class="stringliteral">&quot;ok&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;output<sp/>should<sp/>contain<sp/>&apos;ok&apos;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingWithEnvEmpty()<sp/>{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Empty<sp/>env<sp/>list:<sp/>process<sp/>starts<sp/>with<sp/>an<sp/>empty<sp/>environment.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>On<sp/>POSIX,<sp/>running<sp/>&apos;env&apos;<sp/>with<sp/>empty<sp/>environment<sp/>should<sp/>succeed.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/>QStringList<sp/>env;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>QString<sp/>err;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(env,<sp/></highlight><highlight class="stringliteral">&quot;sh&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;-c&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>empty&quot;</highlight><highlight class="normal">},<sp/>&amp;output,<sp/>&amp;err);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;sh<sp/>with<sp/>empty<sp/>env<sp/>should<sp/>start&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>QVERIFY2(output.contains(</highlight><highlight class="stringliteral">&quot;empty&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;output<sp/>should<sp/>contain<sp/>&apos;empty&apos;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingWithEnvSetsVariable()<sp/>{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Verify<sp/>that<sp/>a<sp/>variable<sp/>injected<sp/>via<sp/>the<sp/>env<sp/>parameter<sp/>is<sp/>visible<sp/>inside</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>process.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>QStringList<sp/>env<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;QTPASS_TEST_VAR=injected_value&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>env,<sp/></highlight><highlight class="stringliteral">&quot;sh&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;-c&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>$QTPASS_TEST_VAR&quot;</highlight><highlight class="normal">},<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;sh<sp/>should<sp/>exit<sp/>0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>QVERIFY2(output.contains(</highlight><highlight class="stringliteral">&quot;injected_value&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;env<sp/>variable<sp/>should<sp/>be<sp/>visible<sp/>in<sp/>child<sp/>process&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingTwoArgOverload()<sp/>{</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>two-argument<sp/>overload<sp/>(app,<sp/>args,<sp/>out,<sp/>err)<sp/>delegates<sp/>to<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>three-argument<sp/>overload<sp/>with<sp/>empty<sp/>input.<sp/>Verify<sp/>it<sp/>captures<sp/>stdout.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>QString<sp/>err;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;echo&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;two-arg-overload&quot;</highlight><highlight class="normal">},<sp/>&amp;output,<sp/>&amp;err);</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;echo<sp/>two-arg-overload<sp/>should<sp/>succeed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>QVERIFY2(output.contains(</highlight><highlight class="stringliteral">&quot;two-arg-overload&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;output<sp/>should<sp/>contain<sp/>&apos;two-arg-overload&apos;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingConstQStringRef()<sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Explicitly<sp/>verify<sp/>that<sp/>the<sp/>refactored<sp/>const<sp/>QString<sp/>&amp;<sp/>parameter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>accepts<sp/>a<sp/>const-qualified<sp/>variable<sp/>without<sp/>copies<sp/>or<sp/>issues.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>app<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;echo&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>args<sp/>=<sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;const-ref-ok&quot;</highlight><highlight class="normal">)};</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(app,<sp/>args,<sp/>QString(),<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;const<sp/>QString&amp;<sp/>app<sp/>should<sp/>be<sp/>accepted&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>QVERIFY2(output.contains(</highlight><highlight class="stringliteral">&quot;const-ref-ok&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;output<sp/>should<sp/>contain<sp/>&apos;const-ref-ok&apos;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingNotFound()<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;nonexistent_command_xyz&quot;</highlight><highlight class="normal">,<sp/>{},</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QString(),<sp/>&amp;output);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>!=<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;nonexistent<sp/>should<sp/>fail&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingWithEnvNotFound()<sp/>{</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>env-based<sp/>overload<sp/>should<sp/>also<sp/>fail<sp/>gracefully<sp/>for<sp/>a<sp/>missing<sp/>binary.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/>QStringList<sp/>env<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;MY_VAR=irrelevant&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(env,<sp/></highlight><highlight class="stringliteral">&quot;nonexistent_command_env_xyz&quot;</highlight><highlight class="normal">,<sp/>{},</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;output);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>!=<sp/>0,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;env-overload<sp/>with<sp/>nonexistent<sp/>command<sp/>should<sp/>return<sp/>non-zero&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="175"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingGpgVersion()<sp/>{</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>QString<sp/>err;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;gpg&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;--version&quot;</highlight><highlight class="normal">},<sp/>QString(),<sp/>&amp;output,<sp/>&amp;err);</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>QSKIP(</highlight><highlight class="stringliteral">&quot;gpg<sp/>not<sp/>available&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/>QVERIFY2(output.contains(</highlight><highlight class="stringliteral">&quot;gpg&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;output<sp/>should<sp/>contain<sp/>gpg&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::gpgSupportsEd25519()<sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/>QString<sp/>err;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;gpg&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;--version&quot;</highlight><highlight class="normal">},<sp/>QString(),<sp/>&amp;output,<sp/>&amp;err);</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/>QSKIP(</highlight><highlight class="stringliteral">&quot;gpg<sp/>not<sp/>available&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>supported<sp/>=<sp/><ref refid="class_pass_1a4c2bca8a9a59a032adc68846055b056b" kindref="member">Pass::gpgSupportsEd25519</ref>();</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/>QRegularExpression<sp/>versionRegex(R</highlight><highlight class="stringliteral">&quot;(gpg<sp/>\(GnuPG\)<sp/>(\d+)\.(\d+))&quot;);</highlight></codeline>
+<codeline lineno="198"><highlight class="stringliteral"><sp/><sp/>QRegularExpressionMatch<sp/>match<sp/>=<sp/>versionRegex.match(output);</highlight></codeline>
+<codeline lineno="199"><highlight class="stringliteral"><sp/><sp/>QVERIFY2(match.hasMatch(),<sp/></highlight><highlight class="stringliteral">&quot;Could<sp/>not<sp/>parse<sp/>gpg<sp/>version<sp/>output&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>major<sp/>=<sp/>match.captured(1).toInt();</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minor<sp/>=<sp/>match.captured(2).toInt();</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>expectedSupported<sp/>=<sp/>major<sp/>&gt;<sp/>2<sp/>||<sp/>(major<sp/>==<sp/>2<sp/>&amp;&amp;<sp/>minor<sp/>&gt;=<sp/>1);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(supported<sp/>!=<sp/>expectedSupported)<sp/>{</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>QSKIP(</highlight><highlight class="stringliteral">&quot;GPG<sp/>version<sp/>mismatch<sp/>between<sp/>test<sp/>and<sp/>Pass::gpgSupportsEd25519&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::getDefaultKeyTemplate()<sp/>{</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>QString<sp/>templateStr<sp/>=<sp/><ref refid="class_pass_1ae3284a937d0ca8ae2ea2d81ec556c37b" kindref="member">Pass::getDefaultKeyTemplate</ref>();</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/>QVERIFY2(!templateStr.isEmpty(),<sp/></highlight><highlight class="stringliteral">&quot;Default<sp/>key<sp/>template<sp/>should<sp/>not<sp/>be<sp/>empty&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>QVERIFY2(templateStr.contains(</highlight><highlight class="stringliteral">&quot;Key-Type&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Template<sp/>should<sp/>contain<sp/>Key-Type&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="213"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::executeBlockingGpgKillAgent()<sp/>{</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>Q_OS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/>QString<sp/>output;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/>QString<sp/>err;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(</highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,<sp/>{</highlight><highlight class="stringliteral">&quot;--kill&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;gpg-agent&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QString(),<sp/>&amp;output,<sp/>&amp;err);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(result<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/>QSKIP(</highlight><highlight class="stringliteral">&quot;gpgconf<sp/>not<sp/>available<sp/>in<sp/>PATH&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/>QVERIFY2(result<sp/>==<sp/>0,<sp/></highlight><highlight class="stringliteral">&quot;gpgconf<sp/>--kill<sp/>gpg-agent<sp/>should<sp/>succeed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/>QSKIP(</highlight><highlight class="stringliteral">&quot;gpgconf<sp/>not<sp/>available<sp/>on<sp/>Windows&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_executor::resolveGpgconfCommand()<sp/>{</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Empty<sp/>input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kindref="member">Pass::resolveGpgconfCommand</ref>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(result.program<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Empty<sp/>input<sp/>should<sp/>fallback<sp/>to<sp/>gpgconf&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>WSL<sp/>simple</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kindref="member">Pass::resolveGpgconfCommand</ref>(</highlight><highlight class="stringliteral">&quot;wsl<sp/>gpg2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/>expectedArgs<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(result.program<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;wsl&quot;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>result.arguments<sp/>==<sp/>expectedArgs,</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;WSL<sp/>simple<sp/>should<sp/>replace<sp/>gpg<sp/>with<sp/>gpgconf&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>WSL<sp/>with<sp/>distro</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kindref="member">Pass::resolveGpgconfCommand</ref>(</highlight><highlight class="stringliteral">&quot;wsl<sp/>--distro<sp/>Debian<sp/>gpg2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(result.program<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;wsl&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;WSL<sp/>distro<sp/>preserves<sp/>wsl&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(result.arguments.contains(</highlight><highlight class="stringliteral">&quot;--distro&quot;</highlight><highlight class="normal">)<sp/>&amp;&amp;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.arguments.contains(</highlight><highlight class="stringliteral">&quot;Debian&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;WSL<sp/>distro<sp/>arguments<sp/>should<sp/>be<sp/>preserved&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>WSL<sp/>with<sp/>full<sp/>path</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kindref="member">Pass::resolveGpgconfCommand</ref>(</highlight><highlight class="stringliteral">&quot;wsl<sp/>/usr/bin/gpg2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/>expectedArgs<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;/usr/bin/gpgconf&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(result.program<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;wsl&quot;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>result.arguments<sp/>==<sp/>expectedArgs,</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;WSL<sp/>with<sp/>full<sp/>path<sp/>should<sp/>preserve<sp/>directory&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>WSL<sp/>complex<sp/>(should<sp/>fallback)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kindref="member">Pass::resolveGpgconfCommand</ref>(</highlight><highlight class="stringliteral">&quot;wsl<sp/>sh<sp/>-c<sp/>\&quot;gpg2<sp/>--version\&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(result.program<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Complex<sp/>WSL<sp/>shell<sp/>should<sp/>fallback&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>WSL<sp/>malformed<sp/>(only<sp/>&quot;wsl&quot;)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kindref="member">Pass::resolveGpgconfCommand</ref>(</highlight><highlight class="stringliteral">&quot;wsl&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(result.program<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Malformed<sp/>WSL<sp/>should<sp/>fallback&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>PATH-only</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kindref="member">Pass::resolveGpgconfCommand</ref>(</highlight><highlight class="stringliteral">&quot;gpg2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(result.program<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>result.arguments.isEmpty(),</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;PATH-only<sp/>should<sp/>fallback<sp/>with<sp/>no<sp/>extra<sp/>arguments&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Unix<sp/>absolute<sp/>-<sp/>use<sp/>temp<sp/>directory<sp/>for<sp/>filesystem-independent<sp/>test</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>QTemporaryDir<sp/>tempDir;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(tempDir.isValid(),<sp/></highlight><highlight class="stringliteral">&quot;Temp<sp/>directory<sp/>should<sp/>be<sp/>valid&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>absPath<sp/>=<sp/>tempDir.path()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/gpg2&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/>QFile<sp/>gpg2File(absPath);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(gpg2File.open(QIODevice::WriteOnly),</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>be<sp/>able<sp/>to<sp/>create<sp/>temporary<sp/>gpg2<sp/>file&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/>gpg2File.close();</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>result<sp/>=<sp/><ref refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kindref="member">Pass::resolveGpgconfCommand</ref>(absPath);</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(result.program<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Absolute<sp/>path<sp/>should<sp/>fallback&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="294"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal">QTEST_MAIN(<ref refid="classtst__executor" kindref="compound">tst_executor</ref>)</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tst_executor.moc&quot;</highlight></codeline>
+    </programlisting>
+    <location file="tests/auto/executor/tst_executor.cpp"/>
+  </compounddef>
+</doxygen>

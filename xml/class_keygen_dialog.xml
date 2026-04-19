@@ -1,0 +1,418 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_keygen_dialog" kind="class" language="C++" prot="public">
+    <compoundname>KeygenDialog</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
+    <includes refid="keygendialog_8h" local="no">keygendialog.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_keygen_dialog_1afc4de5b73afae45366cd06085c6b97e2" prot="private" static="no" mutable="no">
+        <type>Ui::KeygenDialog *</type>
+        <definition>Ui::KeygenDialog* KeygenDialog::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <qualifiedname>KeygenDialog::ui</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="37" column="20" bodyfile="src/keygendialog.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_keygen_dialog_1ad905ceeb44a9af9c471e15dc14a4a1e1" prot="private" static="no" mutable="no">
+        <type><ref refid="class_config_dialog" kindref="compound">ConfigDialog</ref> *</type>
+        <definition>ConfigDialog* KeygenDialog::dialog</definition>
+        <argsstring></argsstring>
+        <name>dialog</name>
+        <qualifiedname>KeygenDialog::dialog</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="41" column="16" bodyfile="src/keygendialog.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_keygen_dialog_1a565b5698b7bb40720476d61b8b1b8548" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KeygenDialog::KeygenDialog</definition>
+        <argsstring>(ConfigDialog *parent=nullptr)</argsstring>
+        <name>KeygenDialog</name>
+        <qualifiedname>KeygenDialog::KeygenDialog</qualifiedname>
+        <param>
+          <type><ref refid="class_config_dialog" kindref="compound">ConfigDialog</ref> *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para><ref refid="class_keygen_dialog_1a565b5698b7bb40720476d61b8b1b8548" kindref="member">KeygenDialog::KeygenDialog</ref> basic constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="23" column="12" bodyfile="src/keygendialog.cpp" bodystart="21" bodyend="42"/>
+        <references refid="class_pass_1ae3284a937d0ca8ae2ea2d81ec556c37b" compoundref="pass_8cpp" startline="220" endline="245">Pass::getDefaultKeyTemplate</references>
+        <references refid="class_qt_pass_settings_1ad15e182609e00a394ec9acdd4d1a19f5" compoundref="qtpasssettings_8cpp" startline="247" endline="253">QtPassSettings::getDialogGeometry</references>
+        <references refid="class_qt_pass_settings_1a2c8d54afd8f4caf43e1727fe27202949" compoundref="qtpasssettings_8cpp" startline="260" endline="265">QtPassSettings::getDialogPos</references>
+        <references refid="class_qt_pass_settings_1a849902104116f90df3ecba03d92b1815" compoundref="qtpasssettings_8cpp" startline="270" endline="275">QtPassSettings::getDialogSize</references>
+        <references refid="class_qt_pass_settings_1ab343d163d18abe49c1ed2d06266c4b5e" compoundref="qtpasssettings_8cpp" startline="280" endline="285">QtPassSettings::isDialogMaximized</references>
+        <references refid="class_keygen_dialog_1a565b5698b7bb40720476d61b8b1b8548" compoundref="keygendialog_8cpp" startline="21" endline="42">KeygenDialog</references>
+        <referencedby refid="class_keygen_dialog_1a565b5698b7bb40720476d61b8b1b8548" compoundref="keygendialog_8cpp" startline="21" endline="42">KeygenDialog</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_keygen_dialog_1ab469a4e10fb2b2ee324e57cb1e209a3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>KeygenDialog::~KeygenDialog</definition>
+        <argsstring>() override</argsstring>
+        <name>~KeygenDialog</name>
+        <qualifiedname>KeygenDialog::~KeygenDialog</qualifiedname>
+        <briefdescription>
+<para><ref refid="class_keygen_dialog_1ab469a4e10fb2b2ee324e57cb1e209a3e" kindref="member">KeygenDialog::~KeygenDialog</ref> even more basic destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="24" column="3" bodyfile="src/keygendialog.cpp" bodystart="47" bodyend="47"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_keygen_dialog_1a37012091a78f400d9bdc7b6f6b5949ef" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeygenDialog::closeEvent</definition>
+        <argsstring>(QCloseEvent *event) override</argsstring>
+        <name>closeEvent</name>
+        <qualifiedname>KeygenDialog::closeEvent</qualifiedname>
+        <param>
+          <type>QCloseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_keygen_dialog_1a37012091a78f400d9bdc7b6f6b5949ef" kindref="member">KeygenDialog::closeEvent</ref> we are done here. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="27" column="8" bodyfile="src/keygendialog.cpp" bodystart="216" bodyend="224"/>
+        <references refid="class_qt_pass_settings_1ac1f692aef9f02af744bcce281ba627fe" compoundref="qtpasssettings_8cpp" startline="254" endline="258">QtPassSettings::setDialogGeometry</references>
+        <references refid="class_qt_pass_settings_1a9d645c896deab1261f2b5df359c3a252" compoundref="qtpasssettings_8cpp" startline="286" endline="290">QtPassSettings::setDialogMaximized</references>
+        <references refid="class_qt_pass_settings_1a692d3221b60ab8c5ed5f51814a72fcb1" compoundref="qtpasssettings_8cpp" startline="266" endline="268">QtPassSettings::setDialogPos</references>
+        <references refid="class_qt_pass_settings_1a980190de5a6dcba935573d00f3023804" compoundref="qtpasssettings_8cpp" startline="276" endline="278">QtPassSettings::setDialogSize</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_keygen_dialog_1a68eaa387bd0f5f3074636fcfb6a5cc2f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeygenDialog::on_passphrase1_textChanged</definition>
+        <argsstring>(const QString &amp;arg1)</argsstring>
+        <name>on_passphrase1_textChanged</name>
+        <qualifiedname>KeygenDialog::on_passphrase1_textChanged</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>KeygenDialog::on_passphrase1_textChanged see if we want to have protection. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arg1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="30" column="8" bodyfile="src/keygendialog.cpp" bodystart="54" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_keygen_dialog_1af674d915b30db393f7dd6c0824ef363d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeygenDialog::on_passphrase2_textChanged</definition>
+        <argsstring>(const QString &amp;arg1)</argsstring>
+        <name>on_passphrase2_textChanged</name>
+        <qualifiedname>KeygenDialog::on_passphrase2_textChanged</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>KeygenDialog::on_passphrase2_textChanged wrapper for KeygenDialog::on_passphrase1_textChanged. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arg1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="31" column="8" bodyfile="src/keygendialog.cpp" bodystart="69" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_keygen_dialog_1a5867d453099c4648a3b0ffda3ba9ced4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeygenDialog::on_checkBox_stateChanged</definition>
+        <argsstring>(int arg1)</argsstring>
+        <name>on_checkBox_stateChanged</name>
+        <qualifiedname>KeygenDialog::on_checkBox_stateChanged</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>KeygenDialog::on_checkBox_stateChanged expert mode enabled / disabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arg1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="32" column="8" bodyfile="src/keygendialog.cpp" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_keygen_dialog_1aa28f8db828f60edd4195bcc9f9e8cb6e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeygenDialog::on_email_textChanged</definition>
+        <argsstring>(const QString &amp;arg1)</argsstring>
+        <name>on_email_textChanged</name>
+        <qualifiedname>KeygenDialog::on_email_textChanged</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>KeygenDialog::on_email_textChanged update the email in keypair generation template. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arg1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="33" column="8" bodyfile="src/keygendialog.cpp" bodystart="87" bodyend="89"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_keygen_dialog_1ac0ebf04c899e95033f560ae4aae5b2f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeygenDialog::on_name_textChanged</definition>
+        <argsstring>(const QString &amp;arg1)</argsstring>
+        <name>on_name_textChanged</name>
+        <qualifiedname>KeygenDialog::on_name_textChanged</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+<para>KeygenDialog::on_name_textChanged update the name in keypair generation template. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>arg1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="34" column="8" bodyfile="src/keygendialog.cpp" bodystart="96" bodyend="98"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_keygen_dialog_1a70e11c97dde0d4d88ff43ec555eb8bbf" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeygenDialog::replace</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>replace</name>
+        <qualifiedname>KeygenDialog::replace</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>key</defname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>value</defname>
+        </param>
+        <briefdescription>
+<para>KeygenDialog::replace do some regex magic. fore replacing Passphrase and protection in keypair generation template. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="38" column="8" bodyfile="src/keygendialog.cpp" bodystart="106" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_keygen_dialog_1a805475e990ca590a79cb795072400a5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeygenDialog::done</definition>
+        <argsstring>(int r) override</argsstring>
+        <name>done</name>
+        <qualifiedname>KeygenDialog::done</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>r</declname>
+        </param>
+        <briefdescription>
+<para>KeygenDialog::done we are going to create a key pair and show the <ref refid="class_q_progress_indicator" kindref="compound">QProgressIndicator</ref> and some text since the generation will take some time. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="39" column="8" bodyfile="src/keygendialog.cpp" bodystart="164" bodyend="210"/>
+      </memberdef>
+      <memberdef kind="function" id="class_keygen_dialog_1a22c3d8dfe5f2ec73feb12cb727887c53" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void KeygenDialog::no_protection</definition>
+        <argsstring>(bool enable)</argsstring>
+        <name>no_protection</name>
+        <qualifiedname>KeygenDialog::no_protection</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>enable</declname>
+        </param>
+        <briefdescription>
+<para>KeygenDialog::no_protection remove protection in keypair generation template. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>enable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/keygendialog.h" line="40" column="8" bodyfile="src/keygendialog.cpp" bodystart="131" bodyend="157"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Handles GPG keypair generation. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>KeygenDialog</label>
+        <link refid="class_keygen_dialog"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QDialog</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>KeygenDialog</label>
+        <link refid="class_keygen_dialog"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QDialog</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/keygendialog.h" line="19" column="1" bodyfile="src/keygendialog.h" bodystart="19" bodyend="42"/>
+    <listofallmembers>
+      <member refid="class_keygen_dialog_1a37012091a78f400d9bdc7b6f6b5949ef" prot="protected" virt="non-virtual"><scope>KeygenDialog</scope><name>closeEvent</name></member>
+      <member refid="class_keygen_dialog_1ad905ceeb44a9af9c471e15dc14a4a1e1" prot="private" virt="non-virtual"><scope>KeygenDialog</scope><name>dialog</name></member>
+      <member refid="class_keygen_dialog_1a805475e990ca590a79cb795072400a5a" prot="private" virt="non-virtual"><scope>KeygenDialog</scope><name>done</name></member>
+      <member refid="class_keygen_dialog_1a565b5698b7bb40720476d61b8b1b8548" prot="public" virt="non-virtual"><scope>KeygenDialog</scope><name>KeygenDialog</name></member>
+      <member refid="class_keygen_dialog_1a22c3d8dfe5f2ec73feb12cb727887c53" prot="private" virt="non-virtual"><scope>KeygenDialog</scope><name>no_protection</name></member>
+      <member refid="class_keygen_dialog_1a5867d453099c4648a3b0ffda3ba9ced4" prot="private" virt="non-virtual"><scope>KeygenDialog</scope><name>on_checkBox_stateChanged</name></member>
+      <member refid="class_keygen_dialog_1aa28f8db828f60edd4195bcc9f9e8cb6e" prot="private" virt="non-virtual"><scope>KeygenDialog</scope><name>on_email_textChanged</name></member>
+      <member refid="class_keygen_dialog_1ac0ebf04c899e95033f560ae4aae5b2f3" prot="private" virt="non-virtual"><scope>KeygenDialog</scope><name>on_name_textChanged</name></member>
+      <member refid="class_keygen_dialog_1a68eaa387bd0f5f3074636fcfb6a5cc2f" prot="private" virt="non-virtual"><scope>KeygenDialog</scope><name>on_passphrase1_textChanged</name></member>
+      <member refid="class_keygen_dialog_1af674d915b30db393f7dd6c0824ef363d" prot="private" virt="non-virtual"><scope>KeygenDialog</scope><name>on_passphrase2_textChanged</name></member>
+      <member refid="class_keygen_dialog_1a70e11c97dde0d4d88ff43ec555eb8bbf" prot="private" virt="non-virtual"><scope>KeygenDialog</scope><name>replace</name></member>
+      <member refid="class_keygen_dialog_1afc4de5b73afae45366cd06085c6b97e2" prot="private" virt="non-virtual"><scope>KeygenDialog</scope><name>ui</name></member>
+      <member refid="class_keygen_dialog_1ab469a4e10fb2b2ee324e57cb1e209a3e" prot="public" virt="non-virtual"><scope>KeygenDialog</scope><name>~KeygenDialog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

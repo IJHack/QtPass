@@ -6,6 +6,11 @@
 #include "enums.h"
 #include <queue>
 
+/**
+ * @class simpleTransaction
+ * @brief Tracks a sequence of processes that should be treated as one atomic
+ * operation.
+ */
 class simpleTransaction {
   int transactionDepth;
   Enums::PROCESS lastInTransaction;

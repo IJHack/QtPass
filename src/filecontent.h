@@ -7,6 +7,10 @@
 #include <QString>
 #include <QStringList>
 
+/**
+ * @struct NamedValue
+ * @brief A name/value pair parsed from a password file field.
+ */
 struct NamedValue {
   QString name;
   QString value;
@@ -28,6 +32,13 @@ public:
   auto takeValue(const QString &name) -> QString;
 };
 
+/**
+ * @class FileContent
+ * @brief Represents the parsed contents of a password file.
+ *
+ * Splits the file into a password line, named key/value fields, and
+ * remaining data. Use FileContent::parse to construct an instance.
+ */
 class FileContent {
 public:
   /**

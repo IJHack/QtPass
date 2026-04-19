@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_profile_init" kind="class" language="C++" prot="public">
+    <compoundname>ProfileInit</compoundname>
+    <includes refid="profileinit_8h" local="no">profileinit.h</includes>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_profile_init_1a1d8b28d9c505d6419193cade236a8865" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ProfileInit::needsInit</definition>
+        <argsstring>(const QString &amp;path)</argsstring>
+        <name>needsInit</name>
+        <qualifiedname>ProfileInit::needsInit</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Check if a profile path needs initialization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if a profile path is new (doesn&apos;t have .gpg-id yet).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The profile path to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the path exists but has no .gpg-id file.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The profile path to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the path needs initialization. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/profileinit.h" line="25" column="15" bodyfile="src/profileinit.cpp" bodystart="18" bodyend="24"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_profile_init_1af2dd6c255ddbd8bd06759d7632d19f97" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ProfileInit::ProfileInit</definition>
+        <argsstring>()=default</argsstring>
+        <name>ProfileInit</name>
+        <qualifiedname>ProfileInit::ProfileInit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/profileinit.h" line="28" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Utility class for profile initialization operations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/profileinit.h" line="18" column="1" bodyfile="src/profileinit.h" bodystart="18" bodyend="29"/>
+    <listofallmembers>
+      <member refid="class_profile_init_1a1d8b28d9c505d6419193cade236a8865" prot="public" virt="non-virtual"><scope>ProfileInit</scope><name>needsInit</name></member>
+      <member refid="class_profile_init_1af2dd6c255ddbd8bd06759d7632d19f97" prot="private" virt="non-virtual"><scope>ProfileInit</scope><name>ProfileInit</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

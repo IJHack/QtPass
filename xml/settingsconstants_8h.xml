@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="settingsconstants_8h" kind="file" language="C++">
+    <compoundname>settingsconstants.h</compoundname>
+    <includes local="no">QString</includes>
+    <includedby refid="qtpasssettings_8h" local="yes">src/qtpasssettings.h</includedby>
+    <includedby refid="settingsconstants_8cpp" local="yes">src/settingsconstants.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/settingsconstants.h</label>
+        <link refid="settingsconstants_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QString</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/configdialog.cpp</label>
+        <link refid="configdialog_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/imitatepass.cpp</label>
+        <link refid="imitatepass_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/keygendialog.cpp</label>
+        <link refid="keygendialog_8cpp"/>
+      </node>
+      <node id="6">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/pass.cpp</label>
+        <link refid="pass_8cpp"/>
+      </node>
+      <node id="8">
+        <label>src/passworddialog.cpp</label>
+        <link refid="passworddialog_8cpp"/>
+      </node>
+      <node id="9">
+        <label>src/qtpass.cpp</label>
+        <link refid="qtpass_8cpp"/>
+      </node>
+      <node id="10">
+        <label>src/qtpasssettings.cpp</label>
+        <link refid="qtpasssettings_8cpp"/>
+      </node>
+      <node id="2">
+        <label>src/qtpasssettings.h</label>
+        <link refid="qtpasssettings_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>src/realpass.cpp</label>
+        <link refid="realpass_8cpp"/>
+      </node>
+      <node id="20">
+        <label>src/settingsconstants.cpp</label>
+        <link refid="settingsconstants_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/settingsconstants.h</label>
+        <link refid="settingsconstants_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>src/storemodel.cpp</label>
+        <link refid="storemodel_8cpp"/>
+      </node>
+      <node id="13">
+        <label>src/usersdialog.cpp</label>
+        <link refid="usersdialog_8cpp"/>
+      </node>
+      <node id="14">
+        <label>src/util.cpp</label>
+        <link refid="util_8cpp"/>
+      </node>
+      <node id="15">
+        <label>tests/auto/executor/tst_executor.cpp</label>
+        <link refid="tst__executor_8cpp"/>
+      </node>
+      <node id="16">
+        <label>tests/auto/integration/tst_integration.cpp</label>
+        <link refid="tst__integration_8cpp"/>
+      </node>
+      <node id="17">
+        <label>tests/auto/passwordconfig/tst_passwordconfig.cpp</label>
+        <link refid="tst__passwordconfig_8cpp"/>
+      </node>
+      <node id="18">
+        <label>tests/auto/settings/tst_settings.cpp</label>
+        <link refid="tst__settings_8cpp"/>
+      </node>
+      <node id="19">
+        <label>tests/auto/util/tst_util.cpp</label>
+        <link refid="tst__util_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_settings_constants" prot="public">SettingsConstants</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2016<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_SETTINGSCONSTANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_SETTINGSCONSTANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="class_settings_constants" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">SettingsConstants<sp/>{</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="14" refid="class_settings_constants_1a3de52d12e7e80ae5b7873fddff1b9f8e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a3de52d12e7e80ae5b7873fddff1b9f8e" kindref="member">version</ref>;</highlight></codeline>
+<codeline lineno="15" refid="class_settings_constants_1a17bb63a99181826b3d7150ca7a49ce97" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a17bb63a99181826b3d7150ca7a49ce97" kindref="member">groupMainwindow</ref>;</highlight></codeline>
+<codeline lineno="16" refid="class_settings_constants_1a365665295aa0e7862e11cfcd39472f10" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a365665295aa0e7862e11cfcd39472f10" kindref="member">geometry</ref>;</highlight></codeline>
+<codeline lineno="17" refid="class_settings_constants_1a053c1a12c4d9503e87de1750529bab4a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a053c1a12c4d9503e87de1750529bab4a" kindref="member">savestate</ref>;</highlight></codeline>
+<codeline lineno="18" refid="class_settings_constants_1a80121ec23fe903e42cb557a1725bc0f6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a80121ec23fe903e42cb557a1725bc0f6" kindref="member">pos</ref>;</highlight></codeline>
+<codeline lineno="19" refid="class_settings_constants_1aa24168ac65bc6e2234e41df49f3c57ff" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1aa24168ac65bc6e2234e41df49f3c57ff" kindref="member">size</ref>;</highlight></codeline>
+<codeline lineno="20" refid="class_settings_constants_1a02d876a1caeda24fadb8dffce6cf3b9a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a02d876a1caeda24fadb8dffce6cf3b9a" kindref="member">maximized</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Dialog-specific<sp/>settings<sp/>(with<sp/>key<sp/>prefix)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="class_settings_constants_1a23e4bf464696a794718cb8aa837e3035" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a23e4bf464696a794718cb8aa837e3035" kindref="member">dialogGeometry</ref>;</highlight></codeline>
+<codeline lineno="24" refid="class_settings_constants_1ad19648aaf95f4471f290d5eed09878b6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ad19648aaf95f4471f290d5eed09878b6" kindref="member">dialogPos</ref>;</highlight></codeline>
+<codeline lineno="25" refid="class_settings_constants_1aa9ac148007cefba2b007e183569e6791" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1aa9ac148007cefba2b007e183569e6791" kindref="member">dialogSize</ref>;</highlight></codeline>
+<codeline lineno="26" refid="class_settings_constants_1ab15246c28469532b0983b0a1f34204e8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ab15246c28469532b0983b0a1f34204e8" kindref="member">dialogMaximized</ref>;</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28" refid="class_settings_constants_1a95469c1eb31639a4b77394808f995d20" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a95469c1eb31639a4b77394808f995d20" kindref="member">splitterLeft</ref>;</highlight></codeline>
+<codeline lineno="29" refid="class_settings_constants_1adde31e400372c0b385d6400d6ad6b6f4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1adde31e400372c0b385d6400d6ad6b6f4" kindref="member">splitterRight</ref>;</highlight></codeline>
+<codeline lineno="30" refid="class_settings_constants_1a77796de4c6b0edfd2aaaf10b84d04322" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a77796de4c6b0edfd2aaaf10b84d04322" kindref="member">usePass</ref>;</highlight></codeline>
+<codeline lineno="31" refid="class_settings_constants_1a4444d3b784dfd5156d5fdd0d16fb4cd7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a4444d3b784dfd5156d5fdd0d16fb4cd7" kindref="member">useAutoclear</ref>;</highlight></codeline>
+<codeline lineno="32" refid="class_settings_constants_1a0d0ae02026d7f4d75430d36987a3da3f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a0d0ae02026d7f4d75430d36987a3da3f" kindref="member">useSelection</ref>;</highlight></codeline>
+<codeline lineno="33" refid="class_settings_constants_1ac63a6660dc3ebc3e56315be2ebbc0faa" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ac63a6660dc3ebc3e56315be2ebbc0faa" kindref="member">autoclearSeconds</ref>;</highlight></codeline>
+<codeline lineno="34" refid="class_settings_constants_1a634d47e31c1ce7eabea4435d16637c46" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a634d47e31c1ce7eabea4435d16637c46" kindref="member">useAutoclearPanel</ref>;</highlight></codeline>
+<codeline lineno="35" refid="class_settings_constants_1a5ec5ac869534644bd4346e8dea77ffba" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a5ec5ac869534644bd4346e8dea77ffba" kindref="member">autoclearPanelSeconds</ref>;</highlight></codeline>
+<codeline lineno="36" refid="class_settings_constants_1afbc1b506d8be09e7544800e766d1d646" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1afbc1b506d8be09e7544800e766d1d646" kindref="member">hidePassword</ref>;</highlight></codeline>
+<codeline lineno="37" refid="class_settings_constants_1aba878a33c6a53c647107125cec65eeab" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1aba878a33c6a53c647107125cec65eeab" kindref="member">hideContent</ref>;</highlight></codeline>
+<codeline lineno="38" refid="class_settings_constants_1ac9a883bbdfb102492ff6b142881b9858" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ac9a883bbdfb102492ff6b142881b9858" kindref="member">useMonospace</ref>;</highlight></codeline>
+<codeline lineno="39" refid="class_settings_constants_1adc29ead56e2fe252b128f1557825182b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1adc29ead56e2fe252b128f1557825182b" kindref="member">displayAsIs</ref>;</highlight></codeline>
+<codeline lineno="40" refid="class_settings_constants_1a15ac4ca5bfd78514373fc31aace7ff4e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a15ac4ca5bfd78514373fc31aace7ff4e" kindref="member">noLineWrapping</ref>;</highlight></codeline>
+<codeline lineno="41" refid="class_settings_constants_1ae8bb26023402bc1ba2e20c5c50e54ceb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ae8bb26023402bc1ba2e20c5c50e54ceb" kindref="member">addGPGId</ref>;</highlight></codeline>
+<codeline lineno="42" refid="class_settings_constants_1ad1c1aedcb39fc6a23158821f0ed3adb9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ad1c1aedcb39fc6a23158821f0ed3adb9" kindref="member">passStore</ref>;</highlight></codeline>
+<codeline lineno="43" refid="class_settings_constants_1ae4c68ad958d910cffea195c7c42fa2fe" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ae4c68ad958d910cffea195c7c42fa2fe" kindref="member">passSigningKey</ref>;</highlight></codeline>
+<codeline lineno="44" refid="class_settings_constants_1a129a080625ae659203e277d0e78e5487" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a129a080625ae659203e277d0e78e5487" kindref="member">passExecutable</ref>;</highlight></codeline>
+<codeline lineno="45" refid="class_settings_constants_1a87180f2fe03867a8e572ef9d62a655d2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a87180f2fe03867a8e572ef9d62a655d2" kindref="member">gitExecutable</ref>;</highlight></codeline>
+<codeline lineno="46" refid="class_settings_constants_1a8c72bc930a606b9ee9480af305d18774" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a8c72bc930a606b9ee9480af305d18774" kindref="member">gpgExecutable</ref>;</highlight></codeline>
+<codeline lineno="47" refid="class_settings_constants_1a2e5906837f972ba26da95b17a299a3ba" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a2e5906837f972ba26da95b17a299a3ba" kindref="member">pwgenExecutable</ref>;</highlight></codeline>
+<codeline lineno="48" refid="class_settings_constants_1a39e0d8ee7720bd491373684454de3e53" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a39e0d8ee7720bd491373684454de3e53" kindref="member">gpgHome</ref>;</highlight></codeline>
+<codeline lineno="49" refid="class_settings_constants_1a75445b52ece8f937838fee79d9f7ef33" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a75445b52ece8f937838fee79d9f7ef33" kindref="member">useWebDav</ref>;</highlight></codeline>
+<codeline lineno="50" refid="class_settings_constants_1a4533f2750b3f68712d0db55a61a38934" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a4533f2750b3f68712d0db55a61a38934" kindref="member">webDavUrl</ref>;</highlight></codeline>
+<codeline lineno="51" refid="class_settings_constants_1ac2034ea727e241fee4b9d0ff104dde68" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ac2034ea727e241fee4b9d0ff104dde68" kindref="member">webDavUser</ref>;</highlight></codeline>
+<codeline lineno="52" refid="class_settings_constants_1adbff3df7013fbed0344a8332dc70d341" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1adbff3df7013fbed0344a8332dc70d341" kindref="member">webDavPassword</ref>;</highlight></codeline>
+<codeline lineno="53" refid="class_settings_constants_1a8ed5c3840acb4b3ec4f80010bfc95752" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a8ed5c3840acb4b3ec4f80010bfc95752" kindref="member">profile</ref>;</highlight></codeline>
+<codeline lineno="54" refid="class_settings_constants_1a14b7a50dbd8fe5db782f5980a3968a21" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a14b7a50dbd8fe5db782f5980a3968a21" kindref="member">groupProfiles</ref>;</highlight></codeline>
+<codeline lineno="55" refid="class_settings_constants_1a80c25fbbfd8513ea7548c31dc72bcf85" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a80c25fbbfd8513ea7548c31dc72bcf85" kindref="member">useGit</ref>;</highlight></codeline>
+<codeline lineno="56" refid="class_settings_constants_1a1b5dc0b93a6188891fdddf85f2ed1ed8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a1b5dc0b93a6188891fdddf85f2ed1ed8" kindref="member">useGrepSearch</ref>;</highlight></codeline>
+<codeline lineno="57" refid="class_settings_constants_1aaa144f0572561c7c4000154457963dc4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1aaa144f0572561c7c4000154457963dc4" kindref="member">useOtp</ref>;</highlight></codeline>
+<codeline lineno="58" refid="class_settings_constants_1aed8ee30c56dcffd9c5b7405ea5a3a265" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1aed8ee30c56dcffd9c5b7405ea5a3a265" kindref="member">useQrencode</ref>;</highlight></codeline>
+<codeline lineno="59" refid="class_settings_constants_1acd17501a9a69d4aff8092aeee37d3d33" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1acd17501a9a69d4aff8092aeee37d3d33" kindref="member">qrencodeExecutable</ref>;</highlight></codeline>
+<codeline lineno="60" refid="class_settings_constants_1a0c3a88eed6013961790144cc002e20cc" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a0c3a88eed6013961790144cc002e20cc" kindref="member">useClipboard</ref>;</highlight></codeline>
+<codeline lineno="61" refid="class_settings_constants_1ac926a25c56d48a11da3cff5a23fd8b16" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ac926a25c56d48a11da3cff5a23fd8b16" kindref="member">usePwgen</ref>;</highlight></codeline>
+<codeline lineno="62" refid="class_settings_constants_1abcb58477dd63b63640fbe35974bdcedf" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1abcb58477dd63b63640fbe35974bdcedf" kindref="member">avoidCapitals</ref>;</highlight></codeline>
+<codeline lineno="63" refid="class_settings_constants_1a616a0c24ab9897bbac939b7cee7196e4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a616a0c24ab9897bbac939b7cee7196e4" kindref="member">avoidNumbers</ref>;</highlight></codeline>
+<codeline lineno="64" refid="class_settings_constants_1a2d071c348517e7a9228e4fd7a59d5a31" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a2d071c348517e7a9228e4fd7a59d5a31" kindref="member">lessRandom</ref>;</highlight></codeline>
+<codeline lineno="65" refid="class_settings_constants_1ae23ec21e4f84063d29277dcaf71f6f53" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ae23ec21e4f84063d29277dcaf71f6f53" kindref="member">useSymbols</ref>;</highlight></codeline>
+<codeline lineno="66" refid="class_settings_constants_1aca3257fc3c7273a84f7778a9a423578a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1aca3257fc3c7273a84f7778a9a423578a" kindref="member">passwordLength</ref>;</highlight></codeline>
+<codeline lineno="67" refid="class_settings_constants_1aa47459c77b080d7de87628de266eaa1f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1aa47459c77b080d7de87628de266eaa1f" kindref="member">passwordCharsSelection</ref>;</highlight></codeline>
+<codeline lineno="68" refid="class_settings_constants_1adb65eb8bb0c422d09cee42ec08d3f346" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1adb65eb8bb0c422d09cee42ec08d3f346" kindref="member">passwordChars</ref>;</highlight></codeline>
+<codeline lineno="69" refid="class_settings_constants_1aa0488c30e7780f2341e24d319fed477d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1aa0488c30e7780f2341e24d319fed477d" kindref="member">useTrayIcon</ref>;</highlight></codeline>
+<codeline lineno="70" refid="class_settings_constants_1a79f1956996b05f80fe154913392841c5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a79f1956996b05f80fe154913392841c5" kindref="member">hideOnClose</ref>;</highlight></codeline>
+<codeline lineno="71" refid="class_settings_constants_1aafa5676073803ea4b2a8f9fdcf46598e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1aafa5676073803ea4b2a8f9fdcf46598e" kindref="member">startMinimized</ref>;</highlight></codeline>
+<codeline lineno="72" refid="class_settings_constants_1a7d05bbc50a639edd067e7a1ea7bac296" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a7d05bbc50a639edd067e7a1ea7bac296" kindref="member">alwaysOnTop</ref>;</highlight></codeline>
+<codeline lineno="73" refid="class_settings_constants_1a21d9ccfc07d159dbc5813f3d9fe55095" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a21d9ccfc07d159dbc5813f3d9fe55095" kindref="member">autoPull</ref>;</highlight></codeline>
+<codeline lineno="74" refid="class_settings_constants_1af5b3f7e8b9b2d56316c59df4d909a43e" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1af5b3f7e8b9b2d56316c59df4d909a43e" kindref="member">autoPush</ref>;</highlight></codeline>
+<codeline lineno="75" refid="class_settings_constants_1a3ee585d593241adc734399f02267bbb0" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a3ee585d593241adc734399f02267bbb0" kindref="member">passTemplate</ref>;</highlight></codeline>
+<codeline lineno="76" refid="class_settings_constants_1af2aeddac9d26672fdd039fe65a5ef91f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1af2aeddac9d26672fdd039fe65a5ef91f" kindref="member">useTemplate</ref>;</highlight></codeline>
+<codeline lineno="77" refid="class_settings_constants_1ae703d41511419b500a03f57b32023a6b" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1ae703d41511419b500a03f57b32023a6b" kindref="member">templateAllFields</ref>;</highlight></codeline>
+<codeline lineno="78" refid="class_settings_constants_1a59fa0305ecba68c982f12115713de9d5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/><ref refid="class_settings_constants_1a59fa0305ecba68c982f12115713de9d5" kindref="member">clipBoardType</ref>;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/>SettingsConstants();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_SETTINGSCONSTANTS_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/settingsconstants.h"/>
+  </compounddef>
+</doxygen>

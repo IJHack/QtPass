@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>QtPass</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![GitHub<sp/>release](https://img.shields.io/github/v/release/IJHack/QtPass?include_prereleases)](https://github.com/IJHack/QtPass/releases)</highlight></codeline>
+<codeline><highlight class="normal">[![Packaging<sp/>status](https://repology.org/badge/tiny-repos/qtpass.svg)](https://repology.org/metapackage/qtpass)</highlight></codeline>
+<codeline><highlight class="normal">[![latest<sp/>packaged<sp/>version(s)](https://repology.org/badge/latest-versions/qtpass.svg)](https://repology.org/metapackage/qtpass)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![QMake<sp/>GitHub<sp/>Action](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml/badge.svg?branch=main)](https://github.com/IJHack/QtPass/actions/workflows/ccpp.yml?query=branch%3Amain)</highlight></codeline>
+<codeline><highlight class="normal">[![Build<sp/>status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/main?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/main)</highlight></codeline>
+<codeline><highlight class="normal">[![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![Coverity<sp/>scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)</highlight></codeline>
+<codeline><highlight class="normal">[![Coverage<sp/>Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)</highlight></codeline>
+<codeline><highlight class="normal">[![codecov](https://codecov.io/gh/IJHack/QtPass/branch/main/graph/badge.svg)](https://codecov.io/gh/IJHack/QtPass)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![FOSSA<sp/>Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FIJHack%2FQtPass.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FIJHack%2FQtPass)</highlight></codeline>
+<codeline><highlight class="normal">[![Translation<sp/>status](https://hosted.weblate.org/widgets/qtpass/-/qtpass/svg-badge.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">QtPass<sp/>is<sp/>a<sp/>multi-platform<sp/>GUI<sp/>for<sp/>[pass](https://www.passwordstore.org/),</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>standard<sp/>Unix<sp/>password<sp/>manager,<sp/>providing<sp/>a<sp/>secure<sp/>and<sp/>intuitive<sp/>way<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">manage<sp/>your<sp/>passwords.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">_Available<sp/>in<sp/>42<sp/>languages_</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Features</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Using<sp/>`pass`<sp/>or<sp/>`git`<sp/>and<sp/>`gpg2`<sp/>directly</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Cross<sp/>platform:<sp/>Linux,<sp/>BSD,<sp/>macOS<sp/>and<sp/>Windows</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Native<sp/>widgets<sp/>and<sp/>iconography<sp/>where<sp/>possible</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Per-folder<sp/>user<sp/>selection<sp/>for<sp/>multi-recipient<sp/>encryption</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Multiple<sp/>profiles<sp/>support</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>OTP<sp/>(One-Time<sp/>Password)<sp/>support</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Password<sp/>generation<sp/>with<sp/>configurable<sp/>complexity</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Git<sp/>integration<sp/>for<sp/>version<sp/>control</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Smartcard<sp/>and<sp/>USB<sp/>token<sp/>support<sp/>(OpenPGP,<sp/>YubiKey)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Configurable<sp/>shoulder<sp/>surfing<sp/>protection</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Experimental<sp/>WebDAV<sp/>support</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Easy<sp/>onboarding<sp/>for<sp/>new<sp/>users</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Logo<sp/>based<sp/>on<sp/>[Heart-padlock<sp/>by<sp/>AnonMoos](https://commons.wikimedia.org/wiki/File:Heart-padlock.svg).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Installation</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>From<sp/>package</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">OpenSUSE<sp/>&amp;<sp/>Fedora</highlight></codeline>
+<codeline><highlight class="normal">`yum<sp/>install<sp/>qtpass`</highlight></codeline>
+<codeline><highlight class="normal">`dnf<sp/>install<sp/>qtpass`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Debian,<sp/>Ubuntu<sp/>and<sp/>derivates<sp/>like<sp/>Mint,<sp/>Kali<sp/>&amp;<sp/>Raspbian</highlight></codeline>
+<codeline><highlight class="normal">`apt-get<sp/>install<sp/>qtpass`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Arch<sp/>Linux</highlight></codeline>
+<codeline><highlight class="normal">`pacman<sp/>-S<sp/>qtpass`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Gentoo</highlight></codeline>
+<codeline><highlight class="normal">`emerge<sp/>-atv<sp/>qtpass`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Sabayon</highlight></codeline>
+<codeline><highlight class="normal">`equo<sp/>install<sp/>qtpass`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">FreeBSD</highlight></codeline>
+<codeline><highlight class="normal">`pkg<sp/>install<sp/>qtpass`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">macOS</highlight></codeline>
+<codeline><highlight class="normal">`brew<sp/>install<sp/>--cask<sp/>qtpass`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Windows</highlight></codeline>
+<codeline><highlight class="normal">`choco<sp/>install<sp/>qtpass`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![Packaging<sp/>status](https://repology.org/badge/vertical-allrepos/qtpass.svg)](https://repology.org/metapackage/qtpass)</highlight></codeline>
+<codeline><highlight class="normal">[![Translation<sp/>status](https://hosted.weblate.org/widgets/qtpass/-/multi-auto.svg)](https://hosted.weblate.org/engage/qtpass/?utm_source=widget)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>From<sp/>Source</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">####<sp/>Dependencies</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>requires<sp/>Qt<sp/>5.12<sp/>or<sp/>later<sp/>(Qt<sp/>6<sp/>supported)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>Linguist<sp/>package<sp/>is<sp/>required<sp/>to<sp/>compile<sp/>translations</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>For<sp/>fallback<sp/>icons,<sp/>the<sp/>SVG<sp/>library<sp/>is<sp/>required</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Runtime<sp/>dependencies:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`gpg2`<sp/>(GnuPG<sp/>2.2+)<sp/>-<sp/>required</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`git`<sp/>-<sp/>optional,<sp/>for<sp/>repository<sp/>sync</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`pass`<sp/>(1.7+)<sp/>-<sp/>optional,<sp/>can<sp/>use<sp/>native<sp/>GPG/Git</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Your<sp/>GPG<sp/>must<sp/>be<sp/>configured<sp/>with<sp/>a<sp/>graphical<sp/>pinentry<sp/>when<sp/>applicable.<sp/>Same<sp/>goes<sp/>for<sp/>Git<sp/>authentication.</highlight></codeline>
+<codeline><highlight class="normal">On<sp/>macOS,<sp/>`pinentry-mac`<sp/>from<sp/>Homebrew<sp/>works<sp/>best<sp/>(gpgtools<sp/>also<sp/>works).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">On<sp/>most<sp/>Unix<sp/>systems<sp/>all<sp/>you<sp/>need<sp/>is:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">qmake6<sp/>&amp;&amp;<sp/>make<sp/>&amp;&amp;<sp/>make<sp/>install</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Windows</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">See<sp/>[Windows.md](Windows.md)<sp/>for<sp/>Windows-specific<sp/>installation<sp/>and<sp/>build<sp/>instructions.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Using<sp/>profiles</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Profiles<sp/>allow<sp/>grouping<sp/>passwords.<sp/>Each<sp/>profile<sp/>might<sp/>use<sp/>a<sp/>different<sp/>Git<sp/>repository<sp/>and/or<sp/>different<sp/>gpg<sp/>key.</highlight></codeline>
+<codeline><highlight class="normal">Each<sp/>profile<sp/>also<sp/>can<sp/>be<sp/>associated<sp/>with<sp/>a<sp/>GPG<sp/>key<sp/>to<sp/>sign<sp/>and<sp/>verify<sp/>the<sp/>.gpg-id<sp/>file<sp/>for<sp/>integrity.</highlight></codeline>
+<codeline><highlight class="normal">A<sp/>typical<sp/>use<sp/>case<sp/>is<sp/>to<sp/>separate<sp/>personal<sp/>and<sp/>work<sp/>passwords.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&gt;<sp/>**Hint**&lt;br&gt;</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>Instead<sp/>of<sp/>using<sp/>different<sp/>git<sp/>repositories<sp/>for<sp/>the<sp/>various<sp/>profiles<sp/>passwords<sp/>could<sp/>be<sp/>synchronized<sp/>with<sp/>different</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>branches<sp/>from<sp/>the<sp/>same<sp/>repository.<sp/>Just<sp/>clone<sp/>the<sp/>repository<sp/>into<sp/>the<sp/>profile<sp/>folders<sp/>and<sp/>checkout<sp/>the<sp/>related</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>branch.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Example</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">The<sp/>following<sp/>commands<sp/>set<sp/>up<sp/>two<sp/>profile<sp/>folders:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```sh</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>~/.password-store/</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Replace<sp/>these<sp/>with<sp/>your<sp/>own<sp/>repositories<sp/>(HTTPS<sp/>or<sp/>SSH).</highlight></codeline>
+<codeline><highlight class="normal">PERSONAL_REPO_URL=&quot;&lt;your-personal-password-repository-url&gt;&quot;</highlight></codeline>
+<codeline><highlight class="normal">WORK_REPO_URL=&quot;&lt;your-work-password-repository-url&gt;&quot;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Examples:</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>git<sp/>clone<sp/>https://git.example.com/you/qtpass-personal.git<sp/>personal</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>git<sp/>clone<sp/>git@git.example.com:you/qtpass-work.git<sp/>work</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>&quot;${PERSONAL_REPO_URL}&quot;<sp/>personal<sp/>&amp;&amp;<sp/>echo<sp/>&quot;personal/&quot;<sp/>&gt;&gt;<sp/>.gitignore</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>&quot;${WORK_REPO_URL}&quot;<sp/>work<sp/>&amp;&amp;<sp/>echo<sp/>&quot;work/&quot;<sp/>&gt;&gt;<sp/>.gitignore</highlight></codeline>
+<codeline><highlight class="normal">pass<sp/>init<sp/>-p<sp/>personal<sp/>[personal<sp/>GnuPG-ID]<sp/>&amp;&amp;<sp/>git<sp/>-C<sp/>personal<sp/>push</highlight></codeline>
+<codeline><highlight class="normal">pass<sp/>init<sp/>-p<sp/>work<sp/>[work<sp/>GnuPG-ID]<sp/>&amp;&amp;<sp/>git<sp/>-C<sp/>work<sp/>push</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Note:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Replace<sp/>`PERSONAL_REPO_URL`<sp/>and<sp/>`WORK_REPO_URL`<sp/>with<sp/>repositories<sp/>you<sp/>own<sp/>and<sp/>control.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Replace<sp/>`[personal<sp/>GnuPG-ID]`<sp/>and<sp/>`[work<sp/>GnuPG-ID]`<sp/>with<sp/>the<sp/>ID<sp/>from<sp/>the<sp/>related<sp/>GnuPG<sp/>key.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>parts<sp/>`echo<sp/>...<sp/>&gt;&gt;<sp/>.gitignore`<sp/>are<sp/>just<sp/>needed<sp/>in<sp/>case<sp/>there<sp/>is<sp/>a<sp/>Git<sp/>repository<sp/>present<sp/>in<sp/>the<sp/>base<sp/>directory.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Once<sp/>the<sp/>repositories<sp/>and<sp/>GnuPG-ID&apos;s<sp/>have<sp/>been<sp/>defined<sp/>the<sp/>profiles<sp/>can<sp/>be<sp/>set<sp/>up<sp/>in<sp/>QtPass.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Links<sp/>of<sp/>interest</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>[Git<sp/>Tools<sp/>-<sp/>Credential<sp/>Storage](https://git-scm.com/book/en/v2/Git-Tools-Credential-Storage)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Dealing<sp/>with<sp/>secrets](https://gist.github.com/maelvls/79d49740ce9208c26d6a1b10b0d95b5e)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[Git<sp/>Credential<sp/>Manager](https://github.com/GitCredentialManager/git-credential-manager)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[password-store](https://git.zx2c4.com/password-store/about/)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Testing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>is<sp/>done<sp/>with<sp/>`make<sp/>check`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Codecoverage<sp/>can<sp/>be<sp/>done<sp/>with<sp/>`make<sp/>lcov`,<sp/>`make<sp/>gcov`,<sp/>`make<sp/>coveralls`<sp/>and/or<sp/>`make<sp/>codecov`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Be<sp/>sure<sp/>to<sp/>first<sp/>run:<sp/>`make<sp/>distclean<sp/>&amp;&amp;<sp/>qmake6<sp/>CONFIG+=coverage<sp/>qtpass.pro`</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Security<sp/>considerations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Using<sp/>this<sp/>program<sp/>will<sp/>not<sp/>magically<sp/>keep<sp/>your<sp/>passwords<sp/>secure<sp/>against</highlight></codeline>
+<codeline><highlight class="normal">compromised<sp/>computers<sp/>even<sp/>if<sp/>you<sp/>use<sp/>it<sp/>in<sp/>combination<sp/>with<sp/>a<sp/>smartcard.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">It<sp/>does<sp/>protect<sp/>future<sp/>and<sp/>changed<sp/>passwords<sp/>though<sp/>against<sp/>anyone<sp/>with<sp/>access<sp/>to</highlight></codeline>
+<codeline><highlight class="normal">your<sp/>password<sp/>store<sp/>only<sp/>but<sp/>not<sp/>your<sp/>keys.</highlight></codeline>
+<codeline><highlight class="normal">Used<sp/>with<sp/>a<sp/>smartcard<sp/>it<sp/>also<sp/>protects<sp/>against<sp/>anyone<sp/>just<sp/>monitoring/copying</highlight></codeline>
+<codeline><highlight class="normal">all<sp/>files/keystrokes<sp/>on<sp/>that<sp/>machine<sp/>and<sp/>such<sp/>an<sp/>attacker<sp/>would<sp/>only<sp/>gain<sp/>access</highlight></codeline>
+<codeline><highlight class="normal">to<sp/>the<sp/>passwords<sp/>you<sp/>actually<sp/>use.</highlight></codeline>
+<codeline><highlight class="normal">Once<sp/>you<sp/>plug<sp/>in<sp/>your<sp/>smartcard<sp/>and<sp/>enter<sp/>your<sp/>PIN<sp/>(or<sp/>due<sp/>to<sp/>CVE-2015-3298</highlight></codeline>
+<codeline><highlight class="normal">even<sp/>without<sp/>your<sp/>PIN)<sp/>all<sp/>your<sp/>passwords<sp/>available<sp/>to<sp/>the<sp/>machine<sp/>can<sp/>be</highlight></codeline>
+<codeline><highlight class="normal">decrypted<sp/>by<sp/>it,<sp/>if<sp/>there<sp/>is<sp/>malicious<sp/>software<sp/>targeted<sp/>specifically<sp/>against</highlight></codeline>
+<codeline><highlight class="normal">it<sp/>installed<sp/>(or<sp/>at<sp/>least<sp/>one<sp/>that<sp/>knows<sp/>how<sp/>to<sp/>use<sp/>a<sp/>smartcard).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">To<sp/>get<sp/>better<sp/>protection<sp/>when<sp/>using<sp/>a<sp/>smartcard<sp/>even<sp/>against<sp/>a<sp/>targeted</highlight></codeline>
+<codeline><highlight class="normal">attack<sp/>I<sp/>can<sp/>think<sp/>of<sp/>at<sp/>least<sp/>two<sp/>options:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>smartcard<sp/>must<sp/>require<sp/>explicit<sp/>confirmation<sp/>for<sp/>each<sp/>decryption<sp/>operation.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Or<sp/>if<sp/>it<sp/>just<sp/>provides<sp/>a<sp/>counter<sp/>for<sp/>decrypted<sp/>data<sp/>you<sp/>could<sp/>at<sp/>least<sp/>notice</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>an<sp/>attack<sp/>afterwards,<sp/>though<sp/>at<sp/>quite<sp/>some<sp/>effort<sp/>on<sp/>your<sp/>part.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>a<sp/>different<sp/>smartcard<sp/>for<sp/>each<sp/>(group<sp/>of)<sp/>key.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>If<sp/>using<sp/>a<sp/>YubiKey<sp/>or<sp/>U2F<sp/>module<sp/>or<sp/>similar<sp/>that<sp/>requires<sp/>a<sp/>&quot;button&quot;<sp/>press<sp/>for</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>other<sp/>authentication<sp/>methods<sp/>you<sp/>can<sp/>use<sp/>one<sp/>OTP/U2F<sp/>enabled<sp/>WebDAV<sp/>account<sp/>per</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>password<sp/>(or<sp/>groups<sp/>of<sp/>passwords)<sp/>as<sp/>a<sp/>quite<sp/>inconvenient<sp/>workaround.</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Unfortunately<sp/>I<sp/>do<sp/>not<sp/>know<sp/>of<sp/>any<sp/>WebDAV<sp/>service<sp/>with<sp/>OTP<sp/>support<sp/>except<sp/>ownCloud</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>(so<sp/>you<sp/>would<sp/>have<sp/>to<sp/>run<sp/>your<sp/>own<sp/>server).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Known<sp/>issues</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Filtering<sp/>(searching)<sp/>breaks<sp/>the<sp/>tree/model<sp/>sometimes</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Starting<sp/>without<sp/>a<sp/>correctly<sp/>set<sp/>password-store<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>gives<sp/>weird<sp/>results<sp/>in<sp/>the<sp/>tree<sp/>view</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Planned<sp/>features</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Plugins<sp/>based<sp/>on<sp/>field<sp/>name,<sp/>plugins<sp/>follow<sp/>same<sp/>format<sp/>as<sp/>password<sp/>files</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Colour<sp/>coding<sp/>folders<sp/>(possibly<sp/>disabling<sp/>folders<sp/>you<sp/>can&apos;t<sp/>decrypt)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Optional<sp/>table<sp/>view<sp/>of<sp/>decrypted<sp/>folder<sp/>contents</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Opening<sp/>of<sp/>(basic<sp/>auth)<sp/>URLs<sp/>in<sp/>default<sp/>browser?</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Possibly<sp/>with<sp/>helper<sp/>plugin<sp/>for<sp/>filling<sp/>out<sp/>forms?</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>WebDAV<sp/>(configuration)<sp/>support</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Some<sp/>other<sp/>form<sp/>of<sp/>remote<sp/>storage<sp/>that<sp/>allows<sp/>for</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>accountability<sp/>/<sp/>auditing<sp/>(web<sp/>API<sp/>to<sp/>retrieve<sp/>the<sp/>.gpg<sp/>files?)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Further<sp/>reading</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[FAQ](FAQ.md)<sp/>and<sp/>[CONTRIBUTING](CONTRIBUTING.md)<sp/>documentation.</highlight></codeline>
+<codeline><highlight class="normal">[CHANGELOG](CHANGELOG.md)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Official<sp/>QtPass<sp/>site](https://qtpass.org/)</highlight></codeline>
+<codeline><highlight class="normal">[Source<sp/>code](https://github.com/IJHack/QtPass)</highlight></codeline>
+<codeline><highlight class="normal">[Issue<sp/>queue](https://github.com/IJHack/QtPass/issues)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">&gt;<sp/>**AI<sp/>Assistance**&lt;br&gt;</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>Parts<sp/>of<sp/>this<sp/>project<sp/>were<sp/>developed<sp/>with<sp/>assistance<sp/>from<sp/>AI<sp/>tools<sp/>(such<sp/>as<sp/>[OpenCode](https://opencode.ai/)).</highlight></codeline>
+<codeline><highlight class="normal">&gt;<sp/>AI-generated<sp/>code<sp/>is<sp/>reviewed<sp/>and<sp/>tested<sp/>before<sp/>inclusion.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>License</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>repository<sp/>follows<sp/>the<sp/>[REUSE<sp/>Specification<sp/>v3.2](https://reuse.software/spec-3.2/).</highlight></codeline>
+<codeline><highlight class="normal">Please<sp/>see<sp/>[LICENSES/](./LICENSES),<sp/>[REUSE.toml](./REUSE.toml)<sp/>and</highlight></codeline>
+<codeline><highlight class="normal">the<sp/>individual<sp/>`*.license`<sp/>files<sp/>(if<sp/>any)<sp/>for<sp/>copyright<sp/>and<sp/>license<sp/>information.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>GNU<sp/>General<sp/>Public<sp/>License<sp/>v3.0</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[![GNU<sp/>GPL<sp/>v3.0](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl.html)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[View<sp/>official<sp/>GNU<sp/>site](https://www.gnu.org/licenses/gpl.html)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[&lt;img<sp/>src=&quot;https://opensource.org/wp-content/uploads/2022/10/osi-badge-dark.svg&quot;<sp/>alt=&quot;OSI-approved<sp/>license&quot;<sp/>width=&quot;127&quot;&gt;](https://opensource.org/licenses/GPL-3.0)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[View<sp/>the<sp/>Open<sp/>Source<sp/>Initiative<sp/>site](https://opensource.org/licenses/GPL-3.0)</highlight></codeline>
+    </programlisting>
+    <location file="README.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,251 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="realpass_8h" kind="file" language="C++">
+    <compoundname>realpass.h</compoundname>
+    <includes refid="pass_8h" local="yes">pass.h</includes>
+    <includedby refid="qtpasssettings_8h" local="yes">src/qtpasssettings.h</includedby>
+    <includedby refid="realpass_8cpp" local="yes">src/realpass.cpp</includedby>
+    <includedby refid="tst__integration_8cpp" local="yes">tests/auto/integration/tst_integration.cpp</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>enums.h</label>
+        <link refid="enums_8h"/>
+      </node>
+      <node id="4">
+        <label>executor.h</label>
+        <link refid="executor_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>pass.h</label>
+        <link refid="pass_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/realpass.h</label>
+        <link refid="realpass_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>userinfo.h</label>
+        <link refid="userinfo_8h"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>QDateTime</label>
+      </node>
+      <node id="5">
+        <label>QObject</label>
+      </node>
+      <node id="6">
+        <label>QProcess</label>
+      </node>
+      <node id="7">
+        <label>QQueue</label>
+      </node>
+      <node id="10">
+        <label>QString</label>
+      </node>
+      <node id="11">
+        <label>QStringList</label>
+      </node>
+      <node id="12">
+        <label>cassert</label>
+      </node>
+      <node id="13">
+        <label>map</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>src/configdialog.cpp</label>
+        <link refid="configdialog_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/imitatepass.cpp</label>
+        <link refid="imitatepass_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/keygendialog.cpp</label>
+        <link refid="keygendialog_8cpp"/>
+      </node>
+      <node id="6">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/pass.cpp</label>
+        <link refid="pass_8cpp"/>
+      </node>
+      <node id="8">
+        <label>src/passworddialog.cpp</label>
+        <link refid="passworddialog_8cpp"/>
+      </node>
+      <node id="9">
+        <label>src/qtpass.cpp</label>
+        <link refid="qtpass_8cpp"/>
+      </node>
+      <node id="10">
+        <label>src/qtpasssettings.cpp</label>
+        <link refid="qtpasssettings_8cpp"/>
+      </node>
+      <node id="2">
+        <label>src/qtpasssettings.h</label>
+        <link refid="qtpasssettings_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>src/realpass.cpp</label>
+        <link refid="realpass_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/realpass.h</label>
+        <link refid="realpass_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>src/storemodel.cpp</label>
+        <link refid="storemodel_8cpp"/>
+      </node>
+      <node id="13">
+        <label>src/usersdialog.cpp</label>
+        <link refid="usersdialog_8cpp"/>
+      </node>
+      <node id="14">
+        <label>src/util.cpp</label>
+        <link refid="util_8cpp"/>
+      </node>
+      <node id="15">
+        <label>tests/auto/executor/tst_executor.cpp</label>
+        <link refid="tst__executor_8cpp"/>
+      </node>
+      <node id="16">
+        <label>tests/auto/integration/tst_integration.cpp</label>
+        <link refid="tst__integration_8cpp"/>
+      </node>
+      <node id="17">
+        <label>tests/auto/passwordconfig/tst_passwordconfig.cpp</label>
+        <link refid="tst__passwordconfig_8cpp"/>
+      </node>
+      <node id="18">
+        <label>tests/auto/settings/tst_settings.cpp</label>
+        <link refid="tst__settings_8cpp"/>
+      </node>
+      <node id="19">
+        <label>tests/auto/util/tst_util.cpp</label>
+        <link refid="tst__util_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_real_pass" prot="public">RealPass</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2016<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_REALPASS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_REALPASS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pass_8h" kindref="compound">pass.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="class_real_pass" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_real_pass_1a6bfb05f4c53a784e8c3ab12a787c74f6" kindref="member">RealPass</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a5d0cea4019f5c123fb4a4417de8d95b9" kindref="member">Pass</ref><sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>executePass(<ref refid="class_pass_1a2e71b5174b4ef25a1e91d8c56177b772" kindref="member">PROCESS</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;args,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QString<sp/>input<sp/>=<sp/>QString(),<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStdout<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStderr<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="38" refid="class_real_pass_1a6bfb05f4c53a784e8c3ab12a787c74f6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_real_pass_1a6bfb05f4c53a784e8c3ab12a787c74f6" kindref="member">RealPass</ref>();</highlight></codeline>
+<codeline lineno="42" refid="class_real_pass_1a6052a58fe3e9ed707143b3e6d05b787c" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_real_pass_1a6052a58fe3e9ed707143b3e6d05b787c" kindref="member">~RealPass</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal"><sp/>=<sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Git<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1aacaf85a65fc1398c356dd44370e5e22f" kindref="member">GitInit</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1ac3206e85bc586214e6cc75186cff65c3" kindref="member">GitPull</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1a6a959408a305cc8dd7cc6c7bd9c17210" kindref="member">GitPull_b</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1ae32fd82fe5e57b2c45df05bfe2991b5b" kindref="member">GitPush</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Password<sp/>operations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1a63da21db00da709ae5aa8f7a992e16e1" kindref="member">Show</ref>(QString<sp/>file)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1a39c56e5ad8b46fc6c4f00b7000bccc99" kindref="member">OtpGenerate</ref>(QString<sp/>file)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1a45193fab522965fe8b1c8f8996e6a49a" kindref="member">Insert</ref>(QString<sp/>file,<sp/>QString<sp/>newValue,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>overwrite<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1a96679194b4a0e6b99eb41cf25349c7fd" kindref="member">Remove</ref>(QString<sp/>file,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isDir<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1a12a7e631a5040eee70da06585fe047ba" kindref="member">Init</ref>(QString<sp/>path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;UserInfo&gt;<sp/>&amp;users)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Pass<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1ad9f71cf753e5fce4772bec086237d033" kindref="member">Move</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>dest,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>force<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1a640ea218267605b9ca78c21ca5677690" kindref="member">Copy</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>dest,</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>force<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_real_pass_1ae231e77648f429687ca7e2cf14275b07" kindref="member">Grep</ref>(QString<sp/>pattern,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>caseInsensitive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_REALPASS_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/realpass.h"/>
+  </compounddef>
+</doxygen>

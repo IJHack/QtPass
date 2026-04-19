@@ -1,0 +1,1751 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classtst__util" kind="class" language="C++" prot="public">
+    <compoundname>tst_util</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <innerclass refid="structtst__util_1_1_pass_store_guard" prot="private">tst_util::PassStoreGuard</innerclass>
+    <innerclass refid="classtst__util_1_1_test_pass" prot="private">tst_util::TestPass</innerclass>
+    <innerclass refid="structtst__util_1_1_setting_guard" prot="private">tst_util::SettingGuard</innerclass>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classtst__util_1a3c9db354c2f1e43b730113080ae8af9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tst_util::tst_util</definition>
+        <argsstring>()</argsstring>
+        <name>tst_util</name>
+        <qualifiedname>tst_util::tst_util</qualifiedname>
+        <briefdescription>
+<para><ref refid="classtst__util_1a3c9db354c2f1e43b730113080ae8af9e" kindref="member">tst_util::tst_util</ref> basic constructor </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="36" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="classtst__util_1a8899ee1b3b2db1a8008fdc30f778969f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>tst_util::~tst_util</definition>
+        <argsstring>() override</argsstring>
+        <name>~tst_util</name>
+        <qualifiedname>tst_util::~tst_util</qualifiedname>
+        <briefdescription>
+<para><ref refid="classtst__util_1a8899ee1b3b2db1a8008fdc30f778969f" kindref="member">tst_util::~tst_util</ref> basic destructor </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="37" column="3"/>
+        <references refid="classtst__util_1a1889cedba30d1d96c60e84effbf7f313" compoundref="tst__util_8cpp" startline="225" endline="227">cleanup</references>
+        <references refid="classtst__util_1a54654491215c8cca86f921eb20bfcf95" compoundref="tst__util_8cpp" startline="216" endline="220">init</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="classtst__util_1a54654491215c8cca86f921eb20bfcf95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>tst_util::init</qualifiedname>
+        <briefdescription>
+<para><ref refid="classtst__util_1a54654491215c8cca86f921eb20bfcf95" kindref="member">tst_util::init</ref> unit test init method </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="40" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="216" bodyend="220"/>
+        <referencedby refid="classtst__util_1a8899ee1b3b2db1a8008fdc30f778969f">~tst_util</referencedby>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a1889cedba30d1d96c60e84effbf7f313" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::cleanup</definition>
+        <argsstring>()</argsstring>
+        <name>cleanup</name>
+        <qualifiedname>tst_util::cleanup</qualifiedname>
+        <briefdescription>
+<para><ref refid="classtst__util_1a1889cedba30d1d96c60e84effbf7f313" kindref="member">tst_util::cleanup</ref> unit test cleanup method </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="41" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="225" bodyend="227"/>
+        <referencedby refid="classtst__util_1a8899ee1b3b2db1a8008fdc30f778969f">~tst_util</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="classtst__util_1a4aa4f56e3a1a5bd3a98deecbe804dc65" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::cleanupTestCase</definition>
+        <argsstring>()</argsstring>
+        <name>cleanupTestCase</name>
+        <qualifiedname>tst_util::cleanupTestCase</qualifiedname>
+        <briefdescription>
+<para>tst_util::cleanupTestCase test case cleanup method </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="89" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="232" bodyend="234"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a66a39d538faa612c4d87177016806468" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::normalizeFolderPath</definition>
+        <argsstring>()</argsstring>
+        <name>normalizeFolderPath</name>
+        <qualifiedname>tst_util::normalizeFolderPath</qualifiedname>
+        <briefdescription>
+<para>tst_util::normalizeFolderPath test to check correct working of <ref refid="class_util_1acfa7240a7682876cf78d5a44bbbb81de" kindref="member">Util::normalizeFolderPath</ref> the paths should always end with a slash </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="90" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="240" bodyend="276"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1abc8e5c9a82d78785f3262100f16e6789" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::normalizeFolderPathEdgeCases</definition>
+        <argsstring>()</argsstring>
+        <name>normalizeFolderPathEdgeCases</name>
+        <qualifiedname>tst_util::normalizeFolderPathEdgeCases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="91" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="396" bodyend="410"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a5851aed2e759b26c37e659c9067ae610" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::fileContent</definition>
+        <argsstring>()</argsstring>
+        <name>fileContent</name>
+        <qualifiedname>tst_util::fileContent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="92" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="278" bodyend="307"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ac726095615941a2f9c5a8b64f60f339e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::fileContentEdgeCases</definition>
+        <argsstring>()</argsstring>
+        <name>fileContentEdgeCases</name>
+        <qualifiedname>tst_util::fileContentEdgeCases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="93" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="412" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a3772e2dd629734798a6efa86ca383a6a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::namedValuesTakeValue</definition>
+        <argsstring>()</argsstring>
+        <name>namedValuesTakeValue</name>
+        <qualifiedname>tst_util::namedValuesTakeValue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="94" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="309" bodyend="325"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1af3edc0122144144fdd2827462b500718" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::namedValuesEdgeCases</definition>
+        <argsstring>()</argsstring>
+        <name>namedValuesEdgeCases</name>
+        <qualifiedname>tst_util::namedValuesEdgeCases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="95" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="441" bodyend="456"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aaa1b437e7b79e86ec4ee592cbfb01e1c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::totpHiddenFromDisplay</definition>
+        <argsstring>()</argsstring>
+        <name>totpHiddenFromDisplay</name>
+        <qualifiedname>tst_util::totpHiddenFromDisplay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="96" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="327" bodyend="343"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ab3c64dd64cb1704d76a056bdf937b968" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::testAwsUrl</definition>
+        <argsstring>()</argsstring>
+        <name>testAwsUrl</name>
+        <qualifiedname>tst_util::testAwsUrl</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="97" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="345" bodyend="359"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a13747ca714732f4a2fda54d55f45ee8c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::regexPatterns</definition>
+        <argsstring>()</argsstring>
+        <name>regexPatterns</name>
+        <qualifiedname>tst_util::regexPatterns</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="98" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="361" bodyend="394"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a51e6988cdb983d31ae9007e40b43cd2e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::regexPatternEdgeCases</definition>
+        <argsstring>()</argsstring>
+        <name>regexPatternEdgeCases</name>
+        <qualifiedname>tst_util::regexPatternEdgeCases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="99" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="458" bodyend="475"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aef8e4481c22ee217296b8bf8ddc0e3af" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::endsWithGpgEdgeCases</definition>
+        <argsstring>()</argsstring>
+        <name>endsWithGpgEdgeCases</name>
+        <qualifiedname>tst_util::endsWithGpgEdgeCases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="100" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="477" bodyend="487"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a600b0d22b0d2878b6980416c6227fc35" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::userInfoValidity</definition>
+        <argsstring>()</argsstring>
+        <name>userInfoValidity</name>
+        <qualifiedname>tst_util::userInfoValidity</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="101" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="489" bodyend="513"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a41d5a2777d21b6f2f6cf9db41b0e0263" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::userInfoValidityEdgeCases</definition>
+        <argsstring>()</argsstring>
+        <name>userInfoValidityEdgeCases</name>
+        <qualifiedname>tst_util::userInfoValidityEdgeCases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="102" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="515" bodyend="529"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a5f3f66e4d14e0a857f00c372f1efe9a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::passwordConfigurationCharacters</definition>
+        <argsstring>()</argsstring>
+        <name>passwordConfigurationCharacters</name>
+        <qualifiedname>tst_util::passwordConfigurationCharacters</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="103" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="531" bodyend="546"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a8b69213906283c67174b2a16e43d5a4e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::simpleTransactionBasic</definition>
+        <argsstring>()</argsstring>
+        <name>simpleTransactionBasic</name>
+        <qualifiedname>tst_util::simpleTransactionBasic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="104" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="548" bodyend="553"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a4fe9b3655430781d1a96273b908f1f76" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::simpleTransactionNested</definition>
+        <argsstring>()</argsstring>
+        <name>simpleTransactionNested</name>
+        <qualifiedname>tst_util::simpleTransactionNested</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="105" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="555" bodyend="564"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a4b0dca0b6db9b29e176290896846c3fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::createGpgIdFile</definition>
+        <argsstring>()</argsstring>
+        <name>createGpgIdFile</name>
+        <qualifiedname>tst_util::createGpgIdFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="106" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="566" bodyend="592"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a8f8e941e17691943050338c7f42bfff8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::createGpgIdFileEmptyKeys</definition>
+        <argsstring>()</argsstring>
+        <name>createGpgIdFileEmptyKeys</name>
+        <qualifiedname>tst_util::createGpgIdFileEmptyKeys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="107" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="594" bodyend="613"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a4b9f312319271ae45a1a76c78aeaf1e2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::generateRandomPassword</definition>
+        <argsstring>()</argsstring>
+        <name>generateRandomPassword</name>
+        <qualifiedname>tst_util::generateRandomPassword</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="108" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="615" bodyend="669"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a28ec5784edb728a2a755bc34b9ae0a81" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::boundedRandom</definition>
+        <argsstring>()</argsstring>
+        <name>boundedRandom</name>
+        <qualifiedname>tst_util::boundedRandom</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="109" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="671" bodyend="703"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a7c41cf9b12e50c288fcfda450ff8ad5a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPath</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPath</name>
+        <qualifiedname>tst_util::findBinaryInPath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="110" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="705" bodyend="717"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ad65e3c033736e67983ff75554316529e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findPasswordStore</definition>
+        <argsstring>()</argsstring>
+        <name>findPasswordStore</name>
+        <qualifiedname>tst_util::findPasswordStore</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="111" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="719" bodyend="723"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a76372d2b2b8693a330c82f5e68e47d67" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::configIsValid</definition>
+        <argsstring>()</argsstring>
+        <name>configIsValid</name>
+        <qualifiedname>tst_util::configIsValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="112" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="725" bodyend="759"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a389b97c6869eaa40b1e730c4297913c3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::getDirBasic</definition>
+        <argsstring>()</argsstring>
+        <name>getDirBasic</name>
+        <qualifiedname>tst_util::getDirBasic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="113" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="761" bodyend="788"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ab56232b310d640d8986664c7054d2436" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::getDirWithIndex</definition>
+        <argsstring>()</argsstring>
+        <name>getDirWithIndex</name>
+        <qualifiedname>tst_util::getDirWithIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="114" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="790" bodyend="852"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a0078264f60d3b6ed88f6970fba209723" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPathNotFound</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPathNotFound</name>
+        <qualifiedname>tst_util::findBinaryInPathNotFound</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="115" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="854" bodyend="857"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ab9f9722dadb619acedb7b43ac7a158f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findPasswordStoreEnvVar</definition>
+        <argsstring>()</argsstring>
+        <name>findPasswordStoreEnvVar</name>
+        <qualifiedname>tst_util::findPasswordStoreEnvVar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="116" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="859" bodyend="862"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a23b6e8cc412b307687e0aa95b8398645" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::normalizeFolderPathMultipleCalls</definition>
+        <argsstring>()</argsstring>
+        <name>normalizeFolderPathMultipleCalls</name>
+        <qualifiedname>tst_util::normalizeFolderPathMultipleCalls</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="117" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="864" bodyend="869"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a15a3bf39533dd7cf97343b76a7dda5ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::userInfoFullyValid</definition>
+        <argsstring>()</argsstring>
+        <name>userInfoFullyValid</name>
+        <qualifiedname>tst_util::userInfoFullyValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="118" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="871" bodyend="879"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1acce7d690fe06bcf61c8d5c0e4b20cd13" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::userInfoMarginallyValid</definition>
+        <argsstring>()</argsstring>
+        <name>userInfoMarginallyValid</name>
+        <qualifiedname>tst_util::userInfoMarginallyValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="119" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="881" bodyend="887"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a7b97cff53bea7d8988542f5d5168b6e2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::userInfoIsValid</definition>
+        <argsstring>()</argsstring>
+        <name>userInfoIsValid</name>
+        <qualifiedname>tst_util::userInfoIsValid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="120" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="889" bodyend="897"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ac2658bf7581a3e89e14e966e79dda092" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::userInfoCreatedAndExpiry</definition>
+        <argsstring>()</argsstring>
+        <name>userInfoCreatedAndExpiry</name>
+        <qualifiedname>tst_util::userInfoCreatedAndExpiry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="121" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="899" bodyend="916"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a37af85b9a6ef782f5dd93de3581980f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::qProgressIndicatorBasic</definition>
+        <argsstring>()</argsstring>
+        <name>qProgressIndicatorBasic</name>
+        <qualifiedname>tst_util::qProgressIndicatorBasic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="122" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="918" bodyend="921"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a0d3faad11071a1799bf50ae30a976f7a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::qProgressIndicatorStartStop</definition>
+        <argsstring>()</argsstring>
+        <name>qProgressIndicatorStartStop</name>
+        <qualifiedname>tst_util::qProgressIndicatorStartStop</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="123" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="923" bodyend="929"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a81ae51a0377e44380c672d9f892cd7c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::namedValueBasic</definition>
+        <argsstring>()</argsstring>
+        <name>namedValueBasic</name>
+        <qualifiedname>tst_util::namedValueBasic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="124" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="931" bodyend="937"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a5367ac081eff34b6e2926633f0a953fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::namedValueMultiple</definition>
+        <argsstring>()</argsstring>
+        <name>namedValueMultiple</name>
+        <qualifiedname>tst_util::namedValueMultiple</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="125" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="939" bodyend="946"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a61ec944e61736833ae62b5cb716c4ca6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::buildClipboardMimeDataLinux</definition>
+        <argsstring>()</argsstring>
+        <name>buildClipboardMimeDataLinux</name>
+        <qualifiedname>tst_util::buildClipboardMimeDataLinux</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="126" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1360" bodyend="1372"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a92f39487506a0142ebe5d8c046be9d25" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::buildClipboardMimeDataWindows</definition>
+        <argsstring>()</argsstring>
+        <name>buildClipboardMimeDataWindows</name>
+        <qualifiedname>tst_util::buildClipboardMimeDataWindows</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="127" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1374" bodyend="1400"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1abaae2a782a51a52564cf00a8d2af6ea2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::buildClipboardMimeDataMac</definition>
+        <argsstring>()</argsstring>
+        <name>buildClipboardMimeDataMac</name>
+        <qualifiedname>tst_util::buildClipboardMimeDataMac</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="128" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1422" bodyend="1437"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a832d25d6640927cc1fa5e7ee4933de6b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::utilRegexEnsuresGpg</definition>
+        <argsstring>()</argsstring>
+        <name>utilRegexEnsuresGpg</name>
+        <qualifiedname>tst_util::utilRegexEnsuresGpg</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="129" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1439" bodyend="1445"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1afdb057bbd14a8b7bedcd289d14f0ba74" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::utilRegexProtocol</definition>
+        <argsstring>()</argsstring>
+        <name>utilRegexProtocol</name>
+        <qualifiedname>tst_util::utilRegexProtocol</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="130" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1447" bodyend="1454"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aed0eff37f3fc3503e1c6803f36d5c2f8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::utilRegexNewLines</definition>
+        <argsstring>()</argsstring>
+        <name>utilRegexNewLines</name>
+        <qualifiedname>tst_util::utilRegexNewLines</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="131" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1456" bodyend="1462"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1accbae7282eefa4a504b71875756c15b7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::reencryptPathNormalization</definition>
+        <argsstring>()</argsstring>
+        <name>reencryptPathNormalization</name>
+        <qualifiedname>tst_util::reencryptPathNormalization</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="132" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1464" bodyend="1475"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a62ed6af6c9ba469956e885192bdaf946" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::reencryptPathAbsolutePath</definition>
+        <argsstring>()</argsstring>
+        <name>reencryptPathAbsolutePath</name>
+        <qualifiedname>tst_util::reencryptPathAbsolutePath</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="133" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1477" bodyend="1491"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a09ca276e923dfbb6ff10b951677a3e2b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::buildClipboardMimeDataDword</definition>
+        <argsstring>()</argsstring>
+        <name>buildClipboardMimeDataDword</name>
+        <qualifiedname>tst_util::buildClipboardMimeDataDword</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="134" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1402" bodyend="1420"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aee1feaa298c9a7cce67696f1407941c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::imitatePassResolveMoveDestination</definition>
+        <argsstring>()</argsstring>
+        <name>imitatePassResolveMoveDestination</name>
+        <qualifiedname>tst_util::imitatePassResolveMoveDestination</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="135" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="948" bodyend="961"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aa97d0e596df2e59f38dbf35ebfaa0fdc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::imitatePassResolveMoveDestinationForce</definition>
+        <argsstring>()</argsstring>
+        <name>imitatePassResolveMoveDestinationForce</name>
+        <qualifiedname>tst_util::imitatePassResolveMoveDestinationForce</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="136" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="963" bodyend="980"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ae41b207ddd4662ebcf39bd0ce4be67ab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::imitatePassResolveMoveDestinationDestExistsNoForce</definition>
+        <argsstring>()</argsstring>
+        <name>imitatePassResolveMoveDestinationDestExistsNoForce</name>
+        <qualifiedname>tst_util::imitatePassResolveMoveDestinationDestExistsNoForce</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="137" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="982" bodyend="1000"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aba1a20bc0daa439ace7acbc42b7ec2c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::imitatePassResolveMoveDestinationDir</definition>
+        <argsstring>()</argsstring>
+        <name>imitatePassResolveMoveDestinationDir</name>
+        <qualifiedname>tst_util::imitatePassResolveMoveDestinationDir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="138" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1002" bodyend="1014"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a6f16cbefbc6e8d62d461e9e6c8335118" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::imitatePassResolveMoveDestinationNonExistent</definition>
+        <argsstring>()</argsstring>
+        <name>imitatePassResolveMoveDestinationNonExistent</name>
+        <qualifiedname>tst_util::imitatePassResolveMoveDestinationNonExistent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="139" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1016" bodyend="1023"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a2e76302c497a53f6aac4e078bce57c0d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::imitatePassRemoveDir</definition>
+        <argsstring>()</argsstring>
+        <name>imitatePassRemoveDir</name>
+        <qualifiedname>tst_util::imitatePassRemoveDir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="140" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1025" bodyend="1034"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a4dbd4e465f51a25727769bccaea75ab7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::getRecipientListBasic</definition>
+        <argsstring>()</argsstring>
+        <name>getRecipientListBasic</name>
+        <qualifiedname>tst_util::getRecipientListBasic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="141" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1036" bodyend="1052"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aa97b41ce25c2e6170877a5b99187ca41" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::getRecipientListEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>getRecipientListEmpty</name>
+        <qualifiedname>tst_util::getRecipientListEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="142" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1054" bodyend="1067"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a46b3065ed73a377ea82185fe7c7d2001" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::getRecipientListWithComments</definition>
+        <argsstring>()</argsstring>
+        <name>getRecipientListWithComments</name>
+        <qualifiedname>tst_util::getRecipientListWithComments</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="143" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1069" bodyend="1085"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ae80d818fca7c9e3ee356310157ba3886" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::getRecipientListInvalidKeyId</definition>
+        <argsstring>()</argsstring>
+        <name>getRecipientListInvalidKeyId</name>
+        <qualifiedname>tst_util::getRecipientListInvalidKeyId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="144" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1087" bodyend="1106"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a63f058cd15dc21188c1d015387d84556" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::isValidKeyIdBasic</definition>
+        <argsstring>()</argsstring>
+        <name>isValidKeyIdBasic</name>
+        <qualifiedname>tst_util::isValidKeyIdBasic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="145" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1108" bodyend="1113"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ac9b1572ea5b43c77682010de7d41142f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::isValidKeyIdWith0xPrefix</definition>
+        <argsstring>()</argsstring>
+        <name>isValidKeyIdWith0xPrefix</name>
+        <qualifiedname>tst_util::isValidKeyIdWith0xPrefix</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="146" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1115" bodyend="1121"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a2ae483fa6600d9433e9ad289a8ec2f6d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::isValidKeyIdWithEmail</definition>
+        <argsstring>()</argsstring>
+        <name>isValidKeyIdWithEmail</name>
+        <qualifiedname>tst_util::isValidKeyIdWithEmail</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="147" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1123" bodyend="1129"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a1d4961694171de1a4ce0ad6ed6a27b47" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::isValidKeyIdInvalid</definition>
+        <argsstring>()</argsstring>
+        <name>isValidKeyIdInvalid</name>
+        <qualifiedname>tst_util::isValidKeyIdInvalid</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="148" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1131" bodyend="1137"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a52e1b71d6998de5fe92760c02d833054" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::getRecipientStringCount</definition>
+        <argsstring>()</argsstring>
+        <name>getRecipientStringCount</name>
+        <qualifiedname>tst_util::getRecipientStringCount</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="149" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1139" bodyend="1170"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a6e511772027be9a3f51c3b4751b31b23" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::getGpgIdPathBasic</definition>
+        <argsstring>()</argsstring>
+        <name>getGpgIdPathBasic</name>
+        <qualifiedname>tst_util::getGpgIdPathBasic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="150" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1172" bodyend="1188"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ace29170af2dfc2f78ae0030e8d6c5b49" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::getGpgIdPathSubfolder</definition>
+        <argsstring>()</argsstring>
+        <name>getGpgIdPathSubfolder</name>
+        <qualifiedname>tst_util::getGpgIdPathSubfolder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="151" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1190" bodyend="1207"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a4a97b5341de5f6421d7036f470afcbd8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::getGpgIdPathNotFound</definition>
+        <argsstring>()</argsstring>
+        <name>getGpgIdPathNotFound</name>
+        <qualifiedname>tst_util::getGpgIdPathNotFound</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="152" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1209" bodyend="1220"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a777b8b0718bb36b7ad223a2be51a4cea" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPathReturnedPathIsAbsolute</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPathReturnedPathIsAbsolute</name>
+        <qualifiedname>tst_util::findBinaryInPathReturnedPathIsAbsolute</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="153" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1225" bodyend="1239"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a8b228a2b346ac543d8d70e52688fd5bb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPathReturnedPathIsExecutable</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPathReturnedPathIsExecutable</name>
+        <qualifiedname>tst_util::findBinaryInPathReturnedPathIsExecutable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="154" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1241" bodyend="1256"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a0d31cddeeeefa38ec5e90cebcfa3d881" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPathMultipleKnownBinaries</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPathMultipleKnownBinaries</name>
+        <qualifiedname>tst_util::findBinaryInPathMultipleKnownBinaries</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="155" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1258" bodyend="1278"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ab9656435513cb1b641ba4f42e02b4a6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPathConsistency</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPathConsistency</name>
+        <qualifiedname>tst_util::findBinaryInPathConsistency</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="156" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1280" bodyend="1292"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aa34f81432284ac22b6d2c76c8e3dc42e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPathResultContainsBinaryName</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPathResultContainsBinaryName</name>
+        <qualifiedname>tst_util::findBinaryInPathResultContainsBinaryName</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="157" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1294" bodyend="1309"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a31b40f96fc05bacc63d902a0ab578405" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPathTempExecutableInTempDir</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPathTempExecutableInTempDir</name>
+        <qualifiedname>tst_util::findBinaryInPathTempExecutableInTempDir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="158" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1311" bodyend="1358"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ac945b0532945ec79b0cbb900d00de090" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPathWithConstQStringRef</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPathWithConstQStringRef</name>
+        <qualifiedname>tst_util::findBinaryInPathWithConstQStringRef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="159" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1498" bodyend="1512"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a2137c4f2ade1872bd11ce53960354548" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPathEmptyString</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPathEmptyString</name>
+        <qualifiedname>tst_util::findBinaryInPathEmptyString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="160" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1514" bodyend="1520"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a8eceff2ff650014df92156388da4a2e3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::findBinaryInPathStringLiteral</definition>
+        <argsstring>()</argsstring>
+        <name>findBinaryInPathStringLiteral</name>
+        <qualifiedname>tst_util::findBinaryInPathStringLiteral</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="161" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1522" bodyend="1535"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a72517c3de61941a6ed043c19c97ef248" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::setEnvVarAdds</definition>
+        <argsstring>()</argsstring>
+        <name>setEnvVarAdds</name>
+        <qualifiedname>tst_util::setEnvVarAdds</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="162" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1537" bodyend="1543"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1acc5fce5d68e385af1ea4023debcd5d8d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::setEnvVarUpdates</definition>
+        <argsstring>()</argsstring>
+        <name>setEnvVarUpdates</name>
+        <qualifiedname>tst_util::setEnvVarUpdates</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="163" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1545" bodyend="1555"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a41f677852db1c058597b519977eed3c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::setEnvVarRemoves</definition>
+        <argsstring>()</argsstring>
+        <name>setEnvVarRemoves</name>
+        <qualifiedname>tst_util::setEnvVarRemoves</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="164" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1557" bodyend="1564"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a7775c9686999ab3d18ab4aa7252cf424" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::setEnvVarNoopOnMissingRemove</definition>
+        <argsstring>()</argsstring>
+        <name>setEnvVarNoopOnMissingRemove</name>
+        <qualifiedname>tst_util::setEnvVarNoopOnMissingRemove</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="165" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1566" bodyend="1572"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ae9d3bb974fb8b3e170df80ce8f8ecd03" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::updateEnvSetsExpectedVars</definition>
+        <argsstring>()</argsstring>
+        <name>updateEnvSetsExpectedVars</name>
+        <qualifiedname>tst_util::updateEnvSetsExpectedVars</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="166" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1574" bodyend="1595"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a71b1b98f2e38c1f3ca8c40f846bd2680" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars</definition>
+        <argsstring>()</argsstring>
+        <name>updateEnvEmptyCustomCharsetFallsBackToAllChars</name>
+        <qualifiedname>tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="167" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1597" bodyend="1620"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a9b8ac2017d63a8daf8580ac0b18eb988" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::updateEnvWslenvContainsRequiredVars</definition>
+        <argsstring>()</argsstring>
+        <name>updateEnvWslenvContainsRequiredVars</name>
+        <qualifiedname>tst_util::updateEnvWslenvContainsRequiredVars</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="168" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1622" bodyend="1638"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a54ea15203d3c769d2c62b06d6e340a67" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageKeyExpiredStatusToken</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageKeyExpiredStatusToken</name>
+        <qualifiedname>tst_util::gpgErrorMessageKeyExpiredStatusToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="169" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1642" bodyend="1650"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ae0e8208d683a094767f53643d74b0666" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageKeyRevokedStatusToken</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageKeyRevokedStatusToken</name>
+        <qualifiedname>tst_util::gpgErrorMessageKeyRevokedStatusToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="170" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1652" bodyend="1659"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a0fcaa1035c176117b190709455ec4f79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageNoPubkeyStatusToken</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageNoPubkeyStatusToken</name>
+        <qualifiedname>tst_util::gpgErrorMessageNoPubkeyStatusToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="171" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1661" bodyend="1669"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a94b7a147cf6bc8000d344f808d6f78cb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageInvRecpStatusToken</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageInvRecpStatusToken</name>
+        <qualifiedname>tst_util::gpgErrorMessageInvRecpStatusToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="172" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1671" bodyend="1696"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1af835185efb759bd824fc19fdb260f033" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageFailureStatusToken</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageFailureStatusToken</name>
+        <qualifiedname>tst_util::gpgErrorMessageFailureStatusToken</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="173" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1698" bodyend="1704"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a1732fbbf779ad1b6e9f5be472827b394" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageKeyExpiredFallback</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageKeyExpiredFallback</name>
+        <qualifiedname>tst_util::gpgErrorMessageKeyExpiredFallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="174" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1706" bodyend="1713"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ad697594ee51814ff382a0730c6641978" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageRevokedFallback</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageRevokedFallback</name>
+        <qualifiedname>tst_util::gpgErrorMessageRevokedFallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="175" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1715" bodyend="1722"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a8ad4c18a7566912ce35c42d774d05724" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageNoPubkeyFallback</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageNoPubkeyFallback</name>
+        <qualifiedname>tst_util::gpgErrorMessageNoPubkeyFallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="176" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1724" bodyend="1732"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a64cfb1aa975c9215d1d90afcb8cf5d82" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageEncryptionFailedFallback</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageEncryptionFailedFallback</name>
+        <qualifiedname>tst_util::gpgErrorMessageEncryptionFailedFallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="177" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1734" bodyend="1741"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a677cf9b8a325f504a9f6965c12b511eb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageUnknownReturnsEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageUnknownReturnsEmpty</name>
+        <qualifiedname>tst_util::gpgErrorMessageUnknownReturnsEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="178" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1743" bodyend="1748"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a581cbd94042f2576ee0725cec933414f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::gpgErrorMessageStatusTokenTakesPriorityOverFallback</definition>
+        <argsstring>()</argsstring>
+        <name>gpgErrorMessageStatusTokenTakesPriorityOverFallback</name>
+        <qualifiedname>tst_util::gpgErrorMessageStatusTokenTakesPriorityOverFallback</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="179" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1750" bodyend="1758"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a855cb2265b03c6ba57baf7a795054098" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputEmpty</name>
+        <qualifiedname>tst_util::parseGrepOutputEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="181" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1762" bodyend="1765"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a704d6974042e339549eae4b570b1b2a7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputSingleEntry</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputSingleEntry</name>
+        <qualifiedname>tst_util::parseGrepOutputSingleEntry</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="182" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1767" bodyend="1775"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a6ed4a1eb32bd5d61894ee9393d32b8c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputMultipleEntries</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputMultipleEntries</name>
+        <qualifiedname>tst_util::parseGrepOutputMultipleEntries</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="183" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1777" bodyend="1786"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a9734a12194104969249d6cdaf97749c4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputAnsiStripped</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputAnsiStripped</name>
+        <qualifiedname>tst_util::parseGrepOutputAnsiStripped</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="184" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1788" bodyend="1795"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a4fa1c67cd4ac48e84cc3ac8b4bdd9e68" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputHeaderColonStripped</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputHeaderColonStripped</name>
+        <qualifiedname>tst_util::parseGrepOutputHeaderColonStripped</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="185" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1797" bodyend="1805"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a37779b6567c2494fe601349eb135bc2d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputCrlfHandled</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputCrlfHandled</name>
+        <qualifiedname>tst_util::parseGrepOutputCrlfHandled</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="186" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1807" bodyend="1813"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a7264fb4a2a50a8a536ac57d024fd952a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputOrphanMatchesIgnored</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputOrphanMatchesIgnored</name>
+        <qualifiedname>tst_util::parseGrepOutputOrphanMatchesIgnored</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="187" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1815" bodyend="1823"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a5b6b79b0609be942ad3a0d2bde40ceff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputEmptyMatchLinesIgnored</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputEmptyMatchLinesIgnored</name>
+        <qualifiedname>tst_util::parseGrepOutputEmptyMatchLinesIgnored</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="188" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1825" bodyend="1830"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a8c7cd1429d635f719253ef1e685cfcff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputLastEntryIncluded</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputLastEntryIncluded</name>
+        <qualifiedname>tst_util::parseGrepOutputLastEntryIncluded</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="189" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1832" bodyend="1838"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1abf4bcb2502a29f8b651e8795c8064687" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputEmbeddedBlueNotHeader</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputEmbeddedBlueNotHeader</name>
+        <qualifiedname>tst_util::parseGrepOutputEmbeddedBlueNotHeader</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="190" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1840" bodyend="1852"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aa962858257accc6c6b8b6bdd75e60582" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::parseGrepOutputPlainTextHeaders</definition>
+        <argsstring>()</argsstring>
+        <name>parseGrepOutputPlainTextHeaders</name>
+        <qualifiedname>tst_util::parseGrepOutputPlainTextHeaders</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="191" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1854" bodyend="1864"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aea29ac7010e0dca74e6bb918cb02f948" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::passFinishedGrepNoMatchEmitsEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>passFinishedGrepNoMatchEmitsEmpty</name>
+        <qualifiedname>tst_util::passFinishedGrepNoMatchEmitsEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="193" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1868" bodyend="1879"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aa7ef4105499b33d2f17d95360c61a3ae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::passFinishedGrepErrorEmitsProcessError</definition>
+        <argsstring>()</argsstring>
+        <name>passFinishedGrepErrorEmitsProcessError</name>
+        <qualifiedname>tst_util::passFinishedGrepErrorEmitsProcessError</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="194" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1881" bodyend="1891"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1aa6ea617c01795af60b73a2a4c30f0bc0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::passFinishedGrepSuccessEmitsResults</definition>
+        <argsstring>()</argsstring>
+        <name>passFinishedGrepSuccessEmitsResults</name>
+        <qualifiedname>tst_util::passFinishedGrepSuccessEmitsResults</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="195" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1893" bodyend="1909"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1ab5ef28353f08d6f595c8db445e49c80b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::grepMatchFileFailedDecryptReturnsEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>grepMatchFileFailedDecryptReturnsEmpty</name>
+        <qualifiedname>tst_util::grepMatchFileFailedDecryptReturnsEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="197" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1913" bodyend="1922"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1abaec45f391fc30cf21d365719f4f0f6c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::grepScanStoreEmptyDirReturnsEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>grepScanStoreEmptyDirReturnsEmpty</name>
+        <qualifiedname>tst_util::grepScanStoreEmptyDirReturnsEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="198" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1924" bodyend="1932"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a0721c59f6eb7ee662da1c21fd574de1c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::grepImitatePassEmptyStoreEmitsEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>grepImitatePassEmptyStoreEmitsEmpty</name>
+        <qualifiedname>tst_util::grepImitatePassEmptyStoreEmitsEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="199" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1934" bodyend="1948"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__util_1a67df08d10abff70fc1434318353527b5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_util::grepImitatePassInvalidRegexEmitsEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>grepImitatePassInvalidRegexEmitsEmpty</name>
+        <qualifiedname>tst_util::grepImitatePassInvalidRegexEmitsEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/util/tst_util.cpp" line="200" column="8" bodyfile="tests/auto/util/tst_util.cpp" bodystart="1950" bodyend="1964"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The <ref refid="classtst__util" kindref="compound">tst_util</ref> class is our first unit test. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>tst_util</label>
+        <link refid="classtst__util"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>tst_util</label>
+        <link refid="classtst__util"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="tests/auto/util/tst_util.cpp" line="32" column="1" bodyfile="tests/auto/util/tst_util.cpp" bodystart="32" bodyend="201"/>
+    <listofallmembers>
+      <member refid="classtst__util_1a28ec5784edb728a2a755bc34b9ae0a81" prot="private" virt="non-virtual"><scope>tst_util</scope><name>boundedRandom</name></member>
+      <member refid="classtst__util_1a09ca276e923dfbb6ff10b951677a3e2b" prot="private" virt="non-virtual"><scope>tst_util</scope><name>buildClipboardMimeDataDword</name></member>
+      <member refid="classtst__util_1a61ec944e61736833ae62b5cb716c4ca6" prot="private" virt="non-virtual"><scope>tst_util</scope><name>buildClipboardMimeDataLinux</name></member>
+      <member refid="classtst__util_1abaae2a782a51a52564cf00a8d2af6ea2" prot="private" virt="non-virtual"><scope>tst_util</scope><name>buildClipboardMimeDataMac</name></member>
+      <member refid="classtst__util_1a92f39487506a0142ebe5d8c046be9d25" prot="private" virt="non-virtual"><scope>tst_util</scope><name>buildClipboardMimeDataWindows</name></member>
+      <member refid="classtst__util_1a1889cedba30d1d96c60e84effbf7f313" prot="public" virt="non-virtual"><scope>tst_util</scope><name>cleanup</name></member>
+      <member refid="classtst__util_1a4aa4f56e3a1a5bd3a98deecbe804dc65" prot="private" virt="non-virtual"><scope>tst_util</scope><name>cleanupTestCase</name></member>
+      <member refid="classtst__util_1a76372d2b2b8693a330c82f5e68e47d67" prot="private" virt="non-virtual"><scope>tst_util</scope><name>configIsValid</name></member>
+      <member refid="classtst__util_1a4b0dca0b6db9b29e176290896846c3fe" prot="private" virt="non-virtual"><scope>tst_util</scope><name>createGpgIdFile</name></member>
+      <member refid="classtst__util_1a8f8e941e17691943050338c7f42bfff8" prot="private" virt="non-virtual"><scope>tst_util</scope><name>createGpgIdFileEmptyKeys</name></member>
+      <member refid="classtst__util_1aef8e4481c22ee217296b8bf8ddc0e3af" prot="private" virt="non-virtual"><scope>tst_util</scope><name>endsWithGpgEdgeCases</name></member>
+      <member refid="classtst__util_1a5851aed2e759b26c37e659c9067ae610" prot="private" virt="non-virtual"><scope>tst_util</scope><name>fileContent</name></member>
+      <member refid="classtst__util_1ac726095615941a2f9c5a8b64f60f339e" prot="private" virt="non-virtual"><scope>tst_util</scope><name>fileContentEdgeCases</name></member>
+      <member refid="classtst__util_1a7c41cf9b12e50c288fcfda450ff8ad5a" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPath</name></member>
+      <member refid="classtst__util_1ab9656435513cb1b641ba4f42e02b4a6c" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPathConsistency</name></member>
+      <member refid="classtst__util_1a2137c4f2ade1872bd11ce53960354548" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPathEmptyString</name></member>
+      <member refid="classtst__util_1a0d31cddeeeefa38ec5e90cebcfa3d881" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPathMultipleKnownBinaries</name></member>
+      <member refid="classtst__util_1a0078264f60d3b6ed88f6970fba209723" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPathNotFound</name></member>
+      <member refid="classtst__util_1aa34f81432284ac22b6d2c76c8e3dc42e" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPathResultContainsBinaryName</name></member>
+      <member refid="classtst__util_1a777b8b0718bb36b7ad223a2be51a4cea" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPathReturnedPathIsAbsolute</name></member>
+      <member refid="classtst__util_1a8b228a2b346ac543d8d70e52688fd5bb" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPathReturnedPathIsExecutable</name></member>
+      <member refid="classtst__util_1a8eceff2ff650014df92156388da4a2e3" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPathStringLiteral</name></member>
+      <member refid="classtst__util_1a31b40f96fc05bacc63d902a0ab578405" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPathTempExecutableInTempDir</name></member>
+      <member refid="classtst__util_1ac945b0532945ec79b0cbb900d00de090" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findBinaryInPathWithConstQStringRef</name></member>
+      <member refid="classtst__util_1ad65e3c033736e67983ff75554316529e" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findPasswordStore</name></member>
+      <member refid="classtst__util_1ab9f9722dadb619acedb7b43ac7a158f2" prot="private" virt="non-virtual"><scope>tst_util</scope><name>findPasswordStoreEnvVar</name></member>
+      <member refid="classtst__util_1a4b9f312319271ae45a1a76c78aeaf1e2" prot="private" virt="non-virtual"><scope>tst_util</scope><name>generateRandomPassword</name></member>
+      <member refid="classtst__util_1a389b97c6869eaa40b1e730c4297913c3" prot="private" virt="non-virtual"><scope>tst_util</scope><name>getDirBasic</name></member>
+      <member refid="classtst__util_1ab56232b310d640d8986664c7054d2436" prot="private" virt="non-virtual"><scope>tst_util</scope><name>getDirWithIndex</name></member>
+      <member refid="classtst__util_1a6e511772027be9a3f51c3b4751b31b23" prot="private" virt="non-virtual"><scope>tst_util</scope><name>getGpgIdPathBasic</name></member>
+      <member refid="classtst__util_1a4a97b5341de5f6421d7036f470afcbd8" prot="private" virt="non-virtual"><scope>tst_util</scope><name>getGpgIdPathNotFound</name></member>
+      <member refid="classtst__util_1ace29170af2dfc2f78ae0030e8d6c5b49" prot="private" virt="non-virtual"><scope>tst_util</scope><name>getGpgIdPathSubfolder</name></member>
+      <member refid="classtst__util_1a4dbd4e465f51a25727769bccaea75ab7" prot="private" virt="non-virtual"><scope>tst_util</scope><name>getRecipientListBasic</name></member>
+      <member refid="classtst__util_1aa97b41ce25c2e6170877a5b99187ca41" prot="private" virt="non-virtual"><scope>tst_util</scope><name>getRecipientListEmpty</name></member>
+      <member refid="classtst__util_1ae80d818fca7c9e3ee356310157ba3886" prot="private" virt="non-virtual"><scope>tst_util</scope><name>getRecipientListInvalidKeyId</name></member>
+      <member refid="classtst__util_1a46b3065ed73a377ea82185fe7c7d2001" prot="private" virt="non-virtual"><scope>tst_util</scope><name>getRecipientListWithComments</name></member>
+      <member refid="classtst__util_1a52e1b71d6998de5fe92760c02d833054" prot="private" virt="non-virtual"><scope>tst_util</scope><name>getRecipientStringCount</name></member>
+      <member refid="classtst__util_1a64cfb1aa975c9215d1d90afcb8cf5d82" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageEncryptionFailedFallback</name></member>
+      <member refid="classtst__util_1af835185efb759bd824fc19fdb260f033" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageFailureStatusToken</name></member>
+      <member refid="classtst__util_1a94b7a147cf6bc8000d344f808d6f78cb" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageInvRecpStatusToken</name></member>
+      <member refid="classtst__util_1a1732fbbf779ad1b6e9f5be472827b394" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageKeyExpiredFallback</name></member>
+      <member refid="classtst__util_1a54ea15203d3c769d2c62b06d6e340a67" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageKeyExpiredStatusToken</name></member>
+      <member refid="classtst__util_1ae0e8208d683a094767f53643d74b0666" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageKeyRevokedStatusToken</name></member>
+      <member refid="classtst__util_1a8ad4c18a7566912ce35c42d774d05724" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageNoPubkeyFallback</name></member>
+      <member refid="classtst__util_1a0fcaa1035c176117b190709455ec4f79" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageNoPubkeyStatusToken</name></member>
+      <member refid="classtst__util_1ad697594ee51814ff382a0730c6641978" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageRevokedFallback</name></member>
+      <member refid="classtst__util_1a581cbd94042f2576ee0725cec933414f" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageStatusTokenTakesPriorityOverFallback</name></member>
+      <member refid="classtst__util_1a677cf9b8a325f504a9f6965c12b511eb" prot="private" virt="non-virtual"><scope>tst_util</scope><name>gpgErrorMessageUnknownReturnsEmpty</name></member>
+      <member refid="classtst__util_1a0721c59f6eb7ee662da1c21fd574de1c" prot="private" virt="non-virtual"><scope>tst_util</scope><name>grepImitatePassEmptyStoreEmitsEmpty</name></member>
+      <member refid="classtst__util_1a67df08d10abff70fc1434318353527b5" prot="private" virt="non-virtual"><scope>tst_util</scope><name>grepImitatePassInvalidRegexEmitsEmpty</name></member>
+      <member refid="classtst__util_1ab5ef28353f08d6f595c8db445e49c80b" prot="private" virt="non-virtual"><scope>tst_util</scope><name>grepMatchFileFailedDecryptReturnsEmpty</name></member>
+      <member refid="classtst__util_1abaec45f391fc30cf21d365719f4f0f6c" prot="private" virt="non-virtual"><scope>tst_util</scope><name>grepScanStoreEmptyDirReturnsEmpty</name></member>
+      <member refid="classtst__util_1a2e76302c497a53f6aac4e078bce57c0d" prot="private" virt="non-virtual"><scope>tst_util</scope><name>imitatePassRemoveDir</name></member>
+      <member refid="classtst__util_1aee1feaa298c9a7cce67696f1407941c6" prot="private" virt="non-virtual"><scope>tst_util</scope><name>imitatePassResolveMoveDestination</name></member>
+      <member refid="classtst__util_1ae41b207ddd4662ebcf39bd0ce4be67ab" prot="private" virt="non-virtual"><scope>tst_util</scope><name>imitatePassResolveMoveDestinationDestExistsNoForce</name></member>
+      <member refid="classtst__util_1aba1a20bc0daa439ace7acbc42b7ec2c0" prot="private" virt="non-virtual"><scope>tst_util</scope><name>imitatePassResolveMoveDestinationDir</name></member>
+      <member refid="classtst__util_1aa97d0e596df2e59f38dbf35ebfaa0fdc" prot="private" virt="non-virtual"><scope>tst_util</scope><name>imitatePassResolveMoveDestinationForce</name></member>
+      <member refid="classtst__util_1a6f16cbefbc6e8d62d461e9e6c8335118" prot="private" virt="non-virtual"><scope>tst_util</scope><name>imitatePassResolveMoveDestinationNonExistent</name></member>
+      <member refid="classtst__util_1a54654491215c8cca86f921eb20bfcf95" prot="public" virt="non-virtual"><scope>tst_util</scope><name>init</name></member>
+      <member refid="classtst__util_1a63f058cd15dc21188c1d015387d84556" prot="private" virt="non-virtual"><scope>tst_util</scope><name>isValidKeyIdBasic</name></member>
+      <member refid="classtst__util_1a1d4961694171de1a4ce0ad6ed6a27b47" prot="private" virt="non-virtual"><scope>tst_util</scope><name>isValidKeyIdInvalid</name></member>
+      <member refid="classtst__util_1ac9b1572ea5b43c77682010de7d41142f" prot="private" virt="non-virtual"><scope>tst_util</scope><name>isValidKeyIdWith0xPrefix</name></member>
+      <member refid="classtst__util_1a2ae483fa6600d9433e9ad289a8ec2f6d" prot="private" virt="non-virtual"><scope>tst_util</scope><name>isValidKeyIdWithEmail</name></member>
+      <member refid="classtst__util_1a81ae51a0377e44380c672d9f892cd7c4" prot="private" virt="non-virtual"><scope>tst_util</scope><name>namedValueBasic</name></member>
+      <member refid="classtst__util_1a5367ac081eff34b6e2926633f0a953fb" prot="private" virt="non-virtual"><scope>tst_util</scope><name>namedValueMultiple</name></member>
+      <member refid="classtst__util_1af3edc0122144144fdd2827462b500718" prot="private" virt="non-virtual"><scope>tst_util</scope><name>namedValuesEdgeCases</name></member>
+      <member refid="classtst__util_1a3772e2dd629734798a6efa86ca383a6a" prot="private" virt="non-virtual"><scope>tst_util</scope><name>namedValuesTakeValue</name></member>
+      <member refid="classtst__util_1a66a39d538faa612c4d87177016806468" prot="private" virt="non-virtual"><scope>tst_util</scope><name>normalizeFolderPath</name></member>
+      <member refid="classtst__util_1abc8e5c9a82d78785f3262100f16e6789" prot="private" virt="non-virtual"><scope>tst_util</scope><name>normalizeFolderPathEdgeCases</name></member>
+      <member refid="classtst__util_1a23b6e8cc412b307687e0aa95b8398645" prot="private" virt="non-virtual"><scope>tst_util</scope><name>normalizeFolderPathMultipleCalls</name></member>
+      <member refid="classtst__util_1a9734a12194104969249d6cdaf97749c4" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputAnsiStripped</name></member>
+      <member refid="classtst__util_1a37779b6567c2494fe601349eb135bc2d" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputCrlfHandled</name></member>
+      <member refid="classtst__util_1abf4bcb2502a29f8b651e8795c8064687" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputEmbeddedBlueNotHeader</name></member>
+      <member refid="classtst__util_1a855cb2265b03c6ba57baf7a795054098" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputEmpty</name></member>
+      <member refid="classtst__util_1a5b6b79b0609be942ad3a0d2bde40ceff" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputEmptyMatchLinesIgnored</name></member>
+      <member refid="classtst__util_1a4fa1c67cd4ac48e84cc3ac8b4bdd9e68" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputHeaderColonStripped</name></member>
+      <member refid="classtst__util_1a8c7cd1429d635f719253ef1e685cfcff" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputLastEntryIncluded</name></member>
+      <member refid="classtst__util_1a6ed4a1eb32bd5d61894ee9393d32b8c4" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputMultipleEntries</name></member>
+      <member refid="classtst__util_1a7264fb4a2a50a8a536ac57d024fd952a" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputOrphanMatchesIgnored</name></member>
+      <member refid="classtst__util_1aa962858257accc6c6b8b6bdd75e60582" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputPlainTextHeaders</name></member>
+      <member refid="classtst__util_1a704d6974042e339549eae4b570b1b2a7" prot="private" virt="non-virtual"><scope>tst_util</scope><name>parseGrepOutputSingleEntry</name></member>
+      <member refid="classtst__util_1aa7ef4105499b33d2f17d95360c61a3ae" prot="private" virt="non-virtual"><scope>tst_util</scope><name>passFinishedGrepErrorEmitsProcessError</name></member>
+      <member refid="classtst__util_1aea29ac7010e0dca74e6bb918cb02f948" prot="private" virt="non-virtual"><scope>tst_util</scope><name>passFinishedGrepNoMatchEmitsEmpty</name></member>
+      <member refid="classtst__util_1aa6ea617c01795af60b73a2a4c30f0bc0" prot="private" virt="non-virtual"><scope>tst_util</scope><name>passFinishedGrepSuccessEmitsResults</name></member>
+      <member refid="classtst__util_1a5f3f66e4d14e0a857f00c372f1efe9a6" prot="private" virt="non-virtual"><scope>tst_util</scope><name>passwordConfigurationCharacters</name></member>
+      <member refid="classtst__util_1a37af85b9a6ef782f5dd93de3581980f2" prot="private" virt="non-virtual"><scope>tst_util</scope><name>qProgressIndicatorBasic</name></member>
+      <member refid="classtst__util_1a0d3faad11071a1799bf50ae30a976f7a" prot="private" virt="non-virtual"><scope>tst_util</scope><name>qProgressIndicatorStartStop</name></member>
+      <member refid="classtst__util_1a62ed6af6c9ba469956e885192bdaf946" prot="private" virt="non-virtual"><scope>tst_util</scope><name>reencryptPathAbsolutePath</name></member>
+      <member refid="classtst__util_1accbae7282eefa4a504b71875756c15b7" prot="private" virt="non-virtual"><scope>tst_util</scope><name>reencryptPathNormalization</name></member>
+      <member refid="classtst__util_1a51e6988cdb983d31ae9007e40b43cd2e" prot="private" virt="non-virtual"><scope>tst_util</scope><name>regexPatternEdgeCases</name></member>
+      <member refid="classtst__util_1a13747ca714732f4a2fda54d55f45ee8c" prot="private" virt="non-virtual"><scope>tst_util</scope><name>regexPatterns</name></member>
+      <member refid="classtst__util_1a72517c3de61941a6ed043c19c97ef248" prot="private" virt="non-virtual"><scope>tst_util</scope><name>setEnvVarAdds</name></member>
+      <member refid="classtst__util_1a7775c9686999ab3d18ab4aa7252cf424" prot="private" virt="non-virtual"><scope>tst_util</scope><name>setEnvVarNoopOnMissingRemove</name></member>
+      <member refid="classtst__util_1a41f677852db1c058597b519977eed3c1" prot="private" virt="non-virtual"><scope>tst_util</scope><name>setEnvVarRemoves</name></member>
+      <member refid="classtst__util_1acc5fce5d68e385af1ea4023debcd5d8d" prot="private" virt="non-virtual"><scope>tst_util</scope><name>setEnvVarUpdates</name></member>
+      <member refid="classtst__util_1a8b69213906283c67174b2a16e43d5a4e" prot="private" virt="non-virtual"><scope>tst_util</scope><name>simpleTransactionBasic</name></member>
+      <member refid="classtst__util_1a4fe9b3655430781d1a96273b908f1f76" prot="private" virt="non-virtual"><scope>tst_util</scope><name>simpleTransactionNested</name></member>
+      <member refid="classtst__util_1ab3c64dd64cb1704d76a056bdf937b968" prot="private" virt="non-virtual"><scope>tst_util</scope><name>testAwsUrl</name></member>
+      <member refid="classtst__util_1aaa1b437e7b79e86ec4ee592cbfb01e1c" prot="private" virt="non-virtual"><scope>tst_util</scope><name>totpHiddenFromDisplay</name></member>
+      <member refid="classtst__util_1a3c9db354c2f1e43b730113080ae8af9e" prot="public" virt="non-virtual"><scope>tst_util</scope><name>tst_util</name></member>
+      <member refid="classtst__util_1a71b1b98f2e38c1f3ca8c40f846bd2680" prot="private" virt="non-virtual"><scope>tst_util</scope><name>updateEnvEmptyCustomCharsetFallsBackToAllChars</name></member>
+      <member refid="classtst__util_1ae9d3bb974fb8b3e170df80ce8f8ecd03" prot="private" virt="non-virtual"><scope>tst_util</scope><name>updateEnvSetsExpectedVars</name></member>
+      <member refid="classtst__util_1a9b8ac2017d63a8daf8580ac0b18eb988" prot="private" virt="non-virtual"><scope>tst_util</scope><name>updateEnvWslenvContainsRequiredVars</name></member>
+      <member refid="classtst__util_1ac2658bf7581a3e89e14e966e79dda092" prot="private" virt="non-virtual"><scope>tst_util</scope><name>userInfoCreatedAndExpiry</name></member>
+      <member refid="classtst__util_1a15a3bf39533dd7cf97343b76a7dda5ba" prot="private" virt="non-virtual"><scope>tst_util</scope><name>userInfoFullyValid</name></member>
+      <member refid="classtst__util_1a7b97cff53bea7d8988542f5d5168b6e2" prot="private" virt="non-virtual"><scope>tst_util</scope><name>userInfoIsValid</name></member>
+      <member refid="classtst__util_1acce7d690fe06bcf61c8d5c0e4b20cd13" prot="private" virt="non-virtual"><scope>tst_util</scope><name>userInfoMarginallyValid</name></member>
+      <member refid="classtst__util_1a600b0d22b0d2878b6980416c6227fc35" prot="private" virt="non-virtual"><scope>tst_util</scope><name>userInfoValidity</name></member>
+      <member refid="classtst__util_1a41d5a2777d21b6f2f6cf9db41b0e0263" prot="private" virt="non-virtual"><scope>tst_util</scope><name>userInfoValidityEdgeCases</name></member>
+      <member refid="classtst__util_1a832d25d6640927cc1fa5e7ee4933de6b" prot="private" virt="non-virtual"><scope>tst_util</scope><name>utilRegexEnsuresGpg</name></member>
+      <member refid="classtst__util_1aed0eff37f3fc3503e1c6803f36d5c2f8" prot="private" virt="non-virtual"><scope>tst_util</scope><name>utilRegexNewLines</name></member>
+      <member refid="classtst__util_1afdb057bbd14a8b7bedcd289d14f0ba74" prot="private" virt="non-virtual"><scope>tst_util</scope><name>utilRegexProtocol</name></member>
+      <member refid="classtst__util_1a8899ee1b3b2db1a8008fdc30f778969f" prot="public" virt="non-virtual"><scope>tst_util</scope><name>~tst_util</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

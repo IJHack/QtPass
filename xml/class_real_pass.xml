@@ -1,0 +1,810 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_real_pass" kind="class" language="C++" prot="public">
+    <compoundname>RealPass</compoundname>
+    <basecompoundref refid="class_pass" prot="public" virt="non-virtual">Pass</basecompoundref>
+    <includes refid="realpass_8h" local="no">realpass.h</includes>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_real_pass_1ae210a8e9148b9ea58e229e770b88f19b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void RealPass::executePass</definition>
+        <argsstring>(PROCESS id, const QStringList &amp;args, QString input=QString(), bool readStdout=true, bool readStderr=true)</argsstring>
+        <name>executePass</name>
+        <qualifiedname>RealPass::executePass</qualifiedname>
+        <param>
+          <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>input</declname>
+          <defval>QString()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStdout</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStderr</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Execute pass command with arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Wrapper for executing pass commands.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input to pass to stdin. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStdout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Capture stdout. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStderr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Capture stderr.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process identifier for this operation </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command-line arguments for pass </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input to pass to the process (typically empty) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStdout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to capture standard output </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStderr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to capture standard error output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="30" column="8" bodyfile="src/realpass.cpp" bodystart="216" bodyend="220"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_real_pass_1a6bfb05f4c53a784e8c3ab12a787c74f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RealPass::RealPass</definition>
+        <argsstring>()</argsstring>
+        <name>RealPass</name>
+        <qualifiedname>RealPass::RealPass</qualifiedname>
+        <briefdescription>
+<para>Construct a <ref refid="class_real_pass" kindref="compound">RealPass</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="38" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1a6052a58fe3e9ed707143b3e6d05b787c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>RealPass::~RealPass</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~RealPass</name>
+        <qualifiedname>RealPass::~RealPass</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="42" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1aacaf85a65fc1398c356dd44370e5e22f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::GitInit</definition>
+        <argsstring>() override</argsstring>
+        <name>GitInit</name>
+        <qualifiedname>RealPass::GitInit</qualifiedname>
+        <reimplements refid="class_pass_1a26bec7c69e7c35ccb67f8057db90825e">GitInit</reimplements>
+        <briefdescription>
+<para>Initialize Git repository in password store. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1aacaf85a65fc1398c356dd44370e5e22f" kindref="member">RealPass::GitInit</ref> pass git init wrapper. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="48" column="8" bodyfile="src/realpass.cpp" bodystart="30" bodyend="30"/>
+        <references refid="imitatepass_8cpp_1a34410c90c94276b18d07de603edc6c48" compoundref="enums_8h" startline="27">GIT_INIT</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1ac3206e85bc586214e6cc75186cff65c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::GitPull</definition>
+        <argsstring>() override</argsstring>
+        <name>GitPull</name>
+        <qualifiedname>RealPass::GitPull</qualifiedname>
+        <reimplements refid="class_pass_1a30c3829a890d65d3e4ba90c12b1852e8">GitPull</reimplements>
+        <briefdescription>
+<para>Pull changes from remote. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1ac3206e85bc586214e6cc75186cff65c3" kindref="member">RealPass::GitPull</ref> pass git pull wrapper. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="52" column="8" bodyfile="src/realpass.cpp" bodystart="49" bodyend="49"/>
+        <references refid="imitatepass_8cpp_1ae056b4c0e719ac27298e551b5d2585e4" compoundref="enums_8h" startline="31">GIT_PULL</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1a6a959408a305cc8dd7cc6c7bd9c17210" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::GitPull_b</definition>
+        <argsstring>() override</argsstring>
+        <name>GitPull_b</name>
+        <qualifiedname>RealPass::GitPull_b</qualifiedname>
+        <reimplements refid="class_pass_1a7a109d5c0a7f565398b7238c32bb6328">GitPull_b</reimplements>
+        <briefdescription>
+<para>Pull with rebase. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1aacaf85a65fc1398c356dd44370e5e22f" kindref="member">RealPass::GitInit</ref> pass git pull wrapper which blocks until process finishes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="56" column="8" bodyfile="src/realpass.cpp" bodystart="36" bodyend="44"/>
+        <references refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" compoundref="debughelper_8h" startline="21">dbg</references>
+        <references refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" compoundref="executor_8cpp" startline="223" endline="258">Executor::executeBlocking</references>
+        <references refid="class_qt_pass_settings_1ac2673c76b268f6a622c8b3c7829ff8db" compoundref="qtpasssettings_8cpp" startline="494" endline="498">QtPassSettings::getPassExecutable</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1ae32fd82fe5e57b2c45df05bfe2991b5b" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::GitPush</definition>
+        <argsstring>() override</argsstring>
+        <name>GitPush</name>
+        <qualifiedname>RealPass::GitPush</qualifiedname>
+        <reimplements refid="class_pass_1a7b5fa97ca6f3795512ac7c10db5c8f09">GitPush</reimplements>
+        <briefdescription>
+<para>Push changes to remote. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1ae32fd82fe5e57b2c45df05bfe2991b5b" kindref="member">RealPass::GitPush</ref> pass git push wrapper. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="60" column="8" bodyfile="src/realpass.cpp" bodystart="54" bodyend="54"/>
+        <references refid="imitatepass_8cpp_1ae9f6db885f59f7594cb420d7b4ed5c40" compoundref="enums_8h" startline="32">GIT_PUSH</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1a63da21db00da709ae5aa8f7a992e16e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::Show</definition>
+        <argsstring>(QString file) override</argsstring>
+        <name>Show</name>
+        <qualifiedname>RealPass::Show</qualifiedname>
+        <reimplements refid="class_pass_1a6520ffa669cd7934091934b24593d99c">Show</reimplements>
+        <param>
+          <type>QString</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+<para>Show decrypted password. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1a63da21db00da709ae5aa8f7a992e16e1" kindref="member">RealPass::Show</ref> pass show.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to password file.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file to decrypt</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>if block is set, returns exit status of internal decryption process otherwise returns QProcess::NormalExit </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="67" column="8" bodyfile="src/realpass.cpp" bodystart="65" bodyend="67"/>
+        <references refid="imitatepass_8cpp_1aaf94f232b7f4c8682729d11aa19855f9" compoundref="enums_8h" startline="33">PASS_SHOW</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1a39c56e5ad8b46fc6c4f00b7000bccc99" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::OtpGenerate</definition>
+        <argsstring>(QString file) override</argsstring>
+        <name>OtpGenerate</name>
+        <qualifiedname>RealPass::OtpGenerate</qualifiedname>
+        <reimplements refid="class_pass_1abfe228b7e546aeb0e33bb8102f2e7f19">OtpGenerate</reimplements>
+        <param>
+          <type>QString</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+<para>Generate OTP code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1a39c56e5ad8b46fc6c4f00b7000bccc99" kindref="member">RealPass::OtpGenerate</ref> pass otp.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to password file with OTP.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>file containing OTP uri </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="72" column="8" bodyfile="src/realpass.cpp" bodystart="73" bodyend="75"/>
+        <references refid="imitatepass_8cpp_1a1e9c7d5b4afba75021e17b2e2e799bac" compoundref="enums_8h" startline="42">PASS_OTP_GENERATE</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1a45193fab522965fe8b1c8f8996e6a49a" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::Insert</definition>
+        <argsstring>(QString file, QString newValue, bool overwrite=false) override</argsstring>
+        <name>Insert</name>
+        <qualifiedname>RealPass::Insert</qualifiedname>
+        <reimplements refid="class_pass_1a86ad2005a6517f9c304a9e156755778c">Insert</reimplements>
+        <param>
+          <type>QString</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>newValue</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>overwrite</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Insert new password. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1a45193fab522965fe8b1c8f8996e6a49a" kindref="member">RealPass::Insert</ref> pass insert.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to password file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>newValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Password content. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>overwrite</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to overwrite existing. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="79" column="8" bodyfile="src/realpass.cpp" bodystart="80" bodyend="87"/>
+        <references refid="imitatepass_8cpp_1a2bd1f466dbc7acf275c15b4ebdc92ebf" compoundref="enums_8h" startline="34">PASS_INSERT</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1a96679194b4a0e6b99eb41cf25349c7fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::Remove</definition>
+        <argsstring>(QString file, bool isDir=false) override</argsstring>
+        <name>Remove</name>
+        <qualifiedname>RealPass::Remove</qualifiedname>
+        <reimplements refid="class_pass_1a5aedb6df7aa57385eb19a78cdbd3e764">Remove</reimplements>
+        <param>
+          <type>QString</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isDir</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Remove password or directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1a96679194b4a0e6b99eb41cf25349c7fd" kindref="member">RealPass::Remove</ref> pass remove wrapper.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to remove. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if removing directory. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="85" column="8" bodyfile="src/realpass.cpp" bodystart="92" bodyend="94"/>
+        <references refid="imitatepass_8cpp_1a914992f89d2834c13c7978905a1f3684" compoundref="enums_8h" startline="35">PASS_REMOVE</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1a12a7e631a5040eee70da06585fe047ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::Init</definition>
+        <argsstring>(QString path, const QList&lt; UserInfo &gt; &amp;users) override</argsstring>
+        <name>Init</name>
+        <qualifiedname>RealPass::Init</qualifiedname>
+        <reimplements refid="class_pass_1aee98d184ed11013a9a9dc08d05fbb1a2">Init</reimplements>
+        <param>
+          <type>QString</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const QList&lt; <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &gt; &amp;</type>
+          <declname>users</declname>
+        </param>
+        <briefdescription>
+<para>Initialize password store. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1a12a7e631a5040eee70da06585fe047ba" kindref="member">RealPass::Init</ref> initialize pass repository.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Store root path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>users</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPG recipients.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Absolute path to new password-store </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>users</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list of users with ability to decrypt new password-store </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="91" column="8" bodyfile="src/realpass.cpp" bodystart="102" bodyend="115"/>
+        <references refid="struct_user_info_1a163a4e36d5d12cbfc3c13c60f33c5f1f" compoundref="userinfo_8h" startline="49">UserInfo::enabled</references>
+        <references refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" compoundref="qtpasssettings_8cpp" startline="433" endline="455">QtPassSettings::getPassStore</references>
+        <references refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" compoundref="userinfo_8h" startline="36">UserInfo::key_id</references>
+        <references refid="imitatepass_8cpp_1a03ecd1c73f11705f3a0d14e775001a06" compoundref="enums_8h" startline="36">PASS_INIT</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1ad9f71cf753e5fce4772bec086237d033" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::Move</definition>
+        <argsstring>(const QString src, const QString dest, const bool force=false) override</argsstring>
+        <name>Move</name>
+        <qualifiedname>RealPass::Move</qualifiedname>
+        <reimplements refid="class_pass_1ab9dde6644865bd583dc09a52d17ffb49">Move</reimplements>
+        <param>
+          <type>const QString</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const QString</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>force</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Move password file or directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1ad9f71cf753e5fce4772bec086237d033" kindref="member">RealPass::Move</ref> move a file (or folder).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Overwrite existing.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>source file or folder </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>destination file or folder </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>overwrite </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="101" column="8" bodyfile="src/realpass.cpp" bodystart="123" bodyend="155"/>
+        <references refid="class_util_1a2a7a32586578a9b631bc6b2a821ce616" compoundref="util_8cpp" startline="252" endline="255">Util::endsWithGpg</references>
+        <references refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" compoundref="qtpasssettings_8cpp" startline="433" endline="455">QtPassSettings::getPassStore</references>
+        <references refid="imitatepass_8cpp_1a4ceeee5cb90c49b2b875bc30c4d21bd0" compoundref="enums_8h" startline="38">PASS_MOVE</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1a640ea218267605b9ca78c21ca5677690" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::Copy</definition>
+        <argsstring>(const QString src, const QString dest, const bool force=false) override</argsstring>
+        <name>Copy</name>
+        <qualifiedname>RealPass::Copy</qualifiedname>
+        <reimplements refid="class_pass_1a1a41ce3d629b20902e9d14ff285c1f49">Copy</reimplements>
+        <param>
+          <type>const QString</type>
+          <declname>src</declname>
+        </param>
+        <param>
+          <type>const QString</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>force</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Copy password file or directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_real_pass_1a640ea218267605b9ca78c21ca5677690" kindref="member">RealPass::Copy</ref> copy a file (or folder).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Overwrite existing.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>src</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>source file or folder </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>destination file or folder </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>overwrite </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="109" column="8" bodyfile="src/realpass.cpp" bodystart="163" bodyend="193"/>
+        <references refid="class_util_1a2a7a32586578a9b631bc6b2a821ce616" compoundref="util_8cpp" startline="252" endline="255">Util::endsWithGpg</references>
+        <references refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" compoundref="qtpasssettings_8cpp" startline="433" endline="455">QtPassSettings::getPassStore</references>
+        <references refid="imitatepass_8cpp_1a3f804bcfb97b78f571463617e3359728" compoundref="enums_8h" startline="39">PASS_COPY</references>
+      </memberdef>
+      <memberdef kind="function" id="class_real_pass_1ae231e77648f429687ca7e2cf14275b07" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void RealPass::Grep</definition>
+        <argsstring>(QString pattern, bool caseInsensitive=false) override</argsstring>
+        <name>Grep</name>
+        <qualifiedname>RealPass::Grep</qualifiedname>
+        <reimplements refid="class_pass_1aeb0ec5b8842c1c27e40dafc2ebcad509">Grep</reimplements>
+        <param>
+          <type>QString</type>
+          <declname>pattern</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>caseInsensitive</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Search password content via &apos;pass grep&apos;. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Search all password content via &apos;pass grep&apos;.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pattern</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Search pattern. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>caseInsensitive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true for case-insensitive search. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/realpass.h" line="116" column="8" bodyfile="src/realpass.cpp" bodystart="200" bodyend="206"/>
+        <references refid="imitatepass_8cpp_1a705ae598082cb55d56dde08f43dfe8db" compoundref="enums_8h" startline="43">PASS_GREP</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Implementation of <ref refid="class_pass" kindref="compound">Pass</ref> that wraps the &apos;pass&apos; command-line tool. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_real_pass" kindref="compound">RealPass</ref> delegates all password store operations to the external &apos;pass&apos; utility. It provides a Qt-native interface while handling:<itemizedlist>
+<listitem><para>Git integration (init, pull, push)</para>
+</listitem><listitem><para>Password CRUD (show, insert, remove, move, copy)</para>
+</listitem><listitem><para>OTP generation</para>
+</listitem><listitem><para>Store initialization with GPG keys</para>
+</listitem></itemizedlist>
+</para>
+<para>This is the primary implementation when &apos;pass&apos; is available on the system. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>Pass</label>
+        <link refid="class_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>RealPass</label>
+        <link refid="class_real_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="4">
+        <label>Executor</label>
+        <link refid="class_executor"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Pass</label>
+        <link refid="class_pass"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>exec</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>RealPass</label>
+        <link refid="class_real_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/realpass.h" line="21" column="1" bodyfile="src/realpass.h" bodystart="21" bodyend="117"/>
+    <listofallmembers>
+      <member refid="class_pass_1a4f63e4e86c7ffec6df333e466fb38c3b" prot="protected" virt="non-virtual"><scope>RealPass</scope><name>boundedRandom</name></member>
+      <member refid="class_real_pass_1a640ea218267605b9ca78c21ca5677690" prot="public" virt="virtual"><scope>RealPass</scope><name>Copy</name></member>
+      <member refid="class_pass_1a0eafb54675479378ec98307f0e4fff65" prot="public" virt="non-virtual"><scope>RealPass</scope><name>critical</name></member>
+      <member refid="class_pass_1ad0afad0f75995803c1aa90d936e3db18" prot="public" virt="non-virtual"><scope>RealPass</scope><name>error</name></member>
+      <member refid="class_pass_1a903a833ade1109f9cb75e3bbeab8d0af" prot="protected" virt="non-virtual"><scope>RealPass</scope><name>exec</name></member>
+      <member refid="class_real_pass_1ae210a8e9148b9ea58e229e770b88f19b" prot="private" virt="non-virtual"><scope>RealPass</scope><name>executePass</name></member>
+      <member refid="class_pass_1a66f59138ffe856fd421410d9af9ddc62" prot="protected" virt="non-virtual"><scope>RealPass</scope><name>executeWrapper</name></member>
+      <member refid="class_pass_1a924b4cd54e4b5e24fa42661b7eccec07" prot="protected" virt="virtual"><scope>RealPass</scope><name>executeWrapper</name></member>
+      <member refid="class_pass_1ad51174f24ecdbc14a55e4588a34b8563" prot="protected" virt="virtual"><scope>RealPass</scope><name>finished</name></member>
+      <member refid="class_pass_1a6811d3de9b04450c59cf17d7ce9272a5" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedAny</name></member>
+      <member refid="class_pass_1a22febea5d24676854f3dad24260df4d5" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedCopy</name></member>
+      <member refid="class_pass_1abc6173e796622bf53878d7bd64861c7c" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedGenerate</name></member>
+      <member refid="class_pass_1aeb0213d032e070ad788398328c0a080c" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedGenerateGPGKeys</name></member>
+      <member refid="class_pass_1a52541582298af5b2707447e3a57f85bf" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedGitInit</name></member>
+      <member refid="class_pass_1ab6d3acbdce8a5bc579bef175c85382df" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedGitPull</name></member>
+      <member refid="class_pass_1ab892bcacdbe3081f677e456a3a8ac328" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedGitPush</name></member>
+      <member refid="class_pass_1a74344f203b81f87b4d42a6281a176db4" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedGrep</name></member>
+      <member refid="class_pass_1a7a4c2bbb80372455e0d406fbc940e219" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedInit</name></member>
+      <member refid="class_pass_1a71d8c179a7875dd2983de2aabff0a8cb" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedInsert</name></member>
+      <member refid="class_pass_1a3ca180cb5769aa87186474f7eda9e2a5" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedMove</name></member>
+      <member refid="class_pass_1a8ca44f13c68a03c1e91fbbfee37388ed" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedOtpGenerate</name></member>
+      <member refid="class_pass_1a263cc9ceb5269427237ea43267667197" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedRemove</name></member>
+      <member refid="class_pass_1a24cdfb567ab68940f2a823704e2ab1ba" prot="public" virt="non-virtual"><scope>RealPass</scope><name>finishedShow</name></member>
+      <member refid="class_pass_1a0c29f7bd4ca235d00d9dac6a37e14f4f" prot="public" virt="non-virtual"><scope>RealPass</scope><name>GenerateGPGKeys</name></member>
+      <member refid="class_pass_1a35b3cba623a22f41173670ec34ebb67c" prot="public" virt="virtual"><scope>RealPass</scope><name>generatePassword</name></member>
+      <member refid="class_pass_1aff660edce34d33f5a2adfa8c130470f0" prot="protected" virt="non-virtual"><scope>RealPass</scope><name>generateRandomPassword</name></member>
+      <member refid="class_pass_1ae3284a937d0ca8ae2ea2d81ec556c37b" prot="public" virt="non-virtual"><scope>RealPass</scope><name>getDefaultKeyTemplate</name></member>
+      <member refid="class_pass_1a7bab4c97e4a327cc34060a67c09959bf" prot="public" virt="non-virtual"><scope>RealPass</scope><name>getGpgIdPath</name></member>
+      <member refid="class_pass_1a693825d2ad62813cf103860ef6211370" prot="public" virt="non-virtual"><scope>RealPass</scope><name>getRecipientList</name></member>
+      <member refid="class_pass_1ae1f31c62b7117b99882625dbef654533" prot="public" virt="non-virtual"><scope>RealPass</scope><name>getRecipientString</name></member>
+      <member refid="class_real_pass_1aacaf85a65fc1398c356dd44370e5e22f" prot="public" virt="virtual"><scope>RealPass</scope><name>GitInit</name></member>
+      <member refid="class_real_pass_1ac3206e85bc586214e6cc75186cff65c3" prot="public" virt="virtual"><scope>RealPass</scope><name>GitPull</name></member>
+      <member refid="class_real_pass_1a6a959408a305cc8dd7cc6c7bd9c17210" prot="public" virt="virtual"><scope>RealPass</scope><name>GitPull_b</name></member>
+      <member refid="class_real_pass_1ae32fd82fe5e57b2c45df05bfe2991b5b" prot="public" virt="virtual"><scope>RealPass</scope><name>GitPush</name></member>
+      <member refid="class_pass_1a4c2bca8a9a59a032adc68846055b056b" prot="public" virt="non-virtual"><scope>RealPass</scope><name>gpgSupportsEd25519</name></member>
+      <member refid="class_real_pass_1ae231e77648f429687ca7e2cf14275b07" prot="public" virt="virtual"><scope>RealPass</scope><name>Grep</name></member>
+      <member refid="class_real_pass_1a12a7e631a5040eee70da06585fe047ba" prot="public" virt="virtual"><scope>RealPass</scope><name>Init</name></member>
+      <member refid="class_pass_1a012c47a55b3cc3467ad0f013716f623a" prot="public" virt="non-virtual"><scope>RealPass</scope><name>init</name></member>
+      <member refid="class_real_pass_1a45193fab522965fe8b1c8f8996e6a49a" prot="public" virt="virtual"><scope>RealPass</scope><name>Insert</name></member>
+      <member refid="class_pass_1a6ed6c10b07137f62e127b290ebd428a2" prot="public" virt="non-virtual"><scope>RealPass</scope><name>listKeys</name></member>
+      <member refid="class_pass_1a170c0e1d359eb3f2d7b5f75f60082bd6" prot="public" virt="non-virtual"><scope>RealPass</scope><name>listKeys</name></member>
+      <member refid="class_real_pass_1ad9f71cf753e5fce4772bec086237d033" prot="public" virt="virtual"><scope>RealPass</scope><name>Move</name></member>
+      <member refid="class_real_pass_1a39c56e5ad8b46fc6c4f00b7000bccc99" prot="public" virt="virtual"><scope>RealPass</scope><name>OtpGenerate</name></member>
+      <member refid="class_pass_1a5d0cea4019f5c123fb4a4417de8d95b9" prot="public" virt="non-virtual"><scope>RealPass</scope><name>Pass</name></member>
+      <member refid="class_pass_1a2e71b5174b4ef25a1e91d8c56177b772" prot="protected" virt="non-virtual"><scope>RealPass</scope><name>PROCESS</name></member>
+      <member refid="class_pass_1a9bb040e1a33322a27cd85d8a367ef24f" prot="public" virt="non-virtual"><scope>RealPass</scope><name>processErrorExit</name></member>
+      <member refid="class_real_pass_1a6bfb05f4c53a784e8c3ab12a787c74f6" prot="public" virt="non-virtual"><scope>RealPass</scope><name>RealPass</name></member>
+      <member refid="class_real_pass_1a96679194b4a0e6b99eb41cf25349c7fd" prot="public" virt="virtual"><scope>RealPass</scope><name>Remove</name></member>
+      <member refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" prot="public" virt="non-virtual"><scope>RealPass</scope><name>resolveGpgconfCommand</name></member>
+      <member refid="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" prot="protected" virt="non-virtual"><scope>RealPass</scope><name>setEnvVar</name></member>
+      <member refid="class_real_pass_1a63da21db00da709ae5aa8f7a992e16e1" prot="public" virt="virtual"><scope>RealPass</scope><name>Show</name></member>
+      <member refid="class_pass_1a0345d3ffdb213234031e9c84fe8ca7c6" prot="public" virt="non-virtual"><scope>RealPass</scope><name>startingExecuteWrapper</name></member>
+      <member refid="class_pass_1a404664f7d589a307c9223c373b2622c3" prot="public" virt="non-virtual"><scope>RealPass</scope><name>statusMsg</name></member>
+      <member refid="class_pass_1ac679a086b289cdb9245906948ba0458a" prot="public" virt="non-virtual"><scope>RealPass</scope><name>updateEnv</name></member>
+      <member refid="class_pass_1a9575bbed98a8dfb8a3f5a30c18d8bfcf" prot="public" virt="non-virtual"><scope>RealPass</scope><name>~Pass</name></member>
+      <member refid="class_real_pass_1a6052a58fe3e9ed707143b3e6d05b787c" prot="public" virt="non-virtual"><scope>RealPass</scope><name>~RealPass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

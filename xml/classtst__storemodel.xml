@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classtst__storemodel" kind="class" language="C++" prot="public">
+    <compoundname>tst_storemodel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="classtst__storemodel_1a3252117411e23ff11774d18d63f5a25d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::dataRemovesGpgExtension</definition>
+        <argsstring>()</argsstring>
+        <name>dataRemovesGpgExtension</name>
+        <qualifiedname>tst_storemodel::dataRemovesGpgExtension</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="13" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="32" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a51e07ee70f5391b8808b3ce2b06d81c6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::dataWithInvalidIndex</definition>
+        <argsstring>()</argsstring>
+        <name>dataWithInvalidIndex</name>
+        <qualifiedname>tst_storemodel::dataWithInvalidIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="14" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="177" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1ad1c4d7b74a98596e580860131e70d794" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::flagsWithValidIndex</definition>
+        <argsstring>()</argsstring>
+        <name>flagsWithValidIndex</name>
+        <qualifiedname>tst_storemodel::flagsWithValidIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="15" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="53" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1afed1932ac01bb77d49e1349ad95ef65a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::flagsWithInvalidIndex</definition>
+        <argsstring>()</argsstring>
+        <name>flagsWithInvalidIndex</name>
+        <qualifiedname>tst_storemodel::flagsWithInvalidIndex</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="16" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="72" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a12c2db5ca5c2f076f7ae91eff326aae0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::mimeTypes</definition>
+        <argsstring>()</argsstring>
+        <name>mimeTypes</name>
+        <qualifiedname>tst_storemodel::mimeTypes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="17" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="83" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a5cdf94db199b0d33aa866a96f651cba7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::mimeData</definition>
+        <argsstring>()</argsstring>
+        <name>mimeData</name>
+        <qualifiedname>tst_storemodel::mimeData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="18" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="188" bodyend="207"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a295f76ee549af5fa20e2aa615243f9de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::lessThan</definition>
+        <argsstring>()</argsstring>
+        <name>lessThan</name>
+        <qualifiedname>tst_storemodel::lessThan</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="19" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="90" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a817c0a82ebe2cba6f7a52ccc50b0946c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::lessThanDirsFirst</definition>
+        <argsstring>()</argsstring>
+        <name>lessThanDirsFirst</name>
+        <qualifiedname>tst_storemodel::lessThanDirsFirst</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="20" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="209" bodyend="235"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1aa6b32743b4135fc65baadbdda2a3dcac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::supportedDropActions</definition>
+        <argsstring>()</argsstring>
+        <name>supportedDropActions</name>
+        <qualifiedname>tst_storemodel::supportedDropActions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="21" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="111" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a43abcb6bacd2f127b4e3ea7dc540fc57" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::supportedDragActions</definition>
+        <argsstring>()</argsstring>
+        <name>supportedDragActions</name>
+        <qualifiedname>tst_storemodel::supportedDragActions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="22" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="118" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a4853e2f162fffc14f965b91e6d7ce69f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::filterAcceptsRowHidden</definition>
+        <argsstring>()</argsstring>
+        <name>filterAcceptsRowHidden</name>
+        <qualifiedname>tst_storemodel::filterAcceptsRowHidden</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="23" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="125" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a9f11cc716f0ff9a517a176e789435fae" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::filterExcludesGitDirectory</definition>
+        <argsstring>()</argsstring>
+        <name>filterExcludesGitDirectory</name>
+        <qualifiedname>tst_storemodel::filterExcludesGitDirectory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="24" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="143" bodyend="157"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a0bbd8a8225a346e43a5972043c5df62f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::filterAcceptsRowVisible</definition>
+        <argsstring>()</argsstring>
+        <name>filterAcceptsRowVisible</name>
+        <qualifiedname>tst_storemodel::filterAcceptsRowVisible</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="25" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="159" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1acedaddc062dfb574ace1a22693aac0fc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::setModelAndStore</definition>
+        <argsstring>()</argsstring>
+        <name>setModelAndStore</name>
+        <qualifiedname>tst_storemodel::setModelAndStore</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="26" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="237" bodyend="245"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a3c6f7f9e30dfb7ca43d38a3d526ec99a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::showThisWithNullFs</definition>
+        <argsstring>()</argsstring>
+        <name>showThisWithNullFs</name>
+        <qualifiedname>tst_storemodel::showThisWithNullFs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="27" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="247" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1ad926e5ee215ea2a31ad49f8e24b684e3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::getStoreBasic</definition>
+        <argsstring>()</argsstring>
+        <name>getStoreBasic</name>
+        <qualifiedname>tst_storemodel::getStoreBasic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="28" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="254" bodyend="262"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__storemodel_1a2cff31f021d2f8964a1e7f509583d291" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_storemodel::filterRegularExpression</definition>
+        <argsstring>()</argsstring>
+        <name>filterRegularExpression</name>
+        <qualifiedname>tst_storemodel::filterRegularExpression</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/model/tst_storemodel.cpp" line="29" column="8" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="264" bodyend="269"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>tst_storemodel</label>
+        <link refid="classtst__storemodel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>tst_storemodel</label>
+        <link refid="classtst__storemodel"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="tests/auto/model/tst_storemodel.cpp" line="9" column="1" bodyfile="tests/auto/model/tst_storemodel.cpp" bodystart="9" bodyend="30"/>
+    <listofallmembers>
+      <member refid="classtst__storemodel_1a3252117411e23ff11774d18d63f5a25d" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>dataRemovesGpgExtension</name></member>
+      <member refid="classtst__storemodel_1a51e07ee70f5391b8808b3ce2b06d81c6" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>dataWithInvalidIndex</name></member>
+      <member refid="classtst__storemodel_1a4853e2f162fffc14f965b91e6d7ce69f" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>filterAcceptsRowHidden</name></member>
+      <member refid="classtst__storemodel_1a0bbd8a8225a346e43a5972043c5df62f" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>filterAcceptsRowVisible</name></member>
+      <member refid="classtst__storemodel_1a9f11cc716f0ff9a517a176e789435fae" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>filterExcludesGitDirectory</name></member>
+      <member refid="classtst__storemodel_1a2cff31f021d2f8964a1e7f509583d291" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>filterRegularExpression</name></member>
+      <member refid="classtst__storemodel_1afed1932ac01bb77d49e1349ad95ef65a" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>flagsWithInvalidIndex</name></member>
+      <member refid="classtst__storemodel_1ad1c4d7b74a98596e580860131e70d794" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>flagsWithValidIndex</name></member>
+      <member refid="classtst__storemodel_1ad926e5ee215ea2a31ad49f8e24b684e3" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>getStoreBasic</name></member>
+      <member refid="classtst__storemodel_1a295f76ee549af5fa20e2aa615243f9de" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>lessThan</name></member>
+      <member refid="classtst__storemodel_1a817c0a82ebe2cba6f7a52ccc50b0946c" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>lessThanDirsFirst</name></member>
+      <member refid="classtst__storemodel_1a5cdf94db199b0d33aa866a96f651cba7" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>mimeData</name></member>
+      <member refid="classtst__storemodel_1a12c2db5ca5c2f076f7ae91eff326aae0" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>mimeTypes</name></member>
+      <member refid="classtst__storemodel_1acedaddc062dfb574ace1a22693aac0fc" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>setModelAndStore</name></member>
+      <member refid="classtst__storemodel_1a3c6f7f9e30dfb7ca43d38a3d526ec99a" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>showThisWithNullFs</name></member>
+      <member refid="classtst__storemodel_1a43abcb6bacd2f127b4e3ea7dc540fc57" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>supportedDragActions</name></member>
+      <member refid="classtst__storemodel_1aa6b32743b4135fc65baadbdda2a3dcac" prot="private" virt="non-virtual"><scope>tst_storemodel</scope><name>supportedDropActions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

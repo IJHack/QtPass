@@ -1,0 +1,1008 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_c_h_a_n_g_e_l_o_g_8md" kind="file" language="Markdown">
+    <compoundname>CHANGELOG.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Changelog</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[1.6.0](https://github.com/IJHack/QtPass/tree/v1.6.0)<sp/>(2026-04-13)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Highlights</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Auto-detect<sp/>Git<sp/>in<sp/>existing<sp/>password-store<sp/>[#804](https://github.com/IJHack/QtPass/pull/804)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>ed25519<sp/>for<sp/>GPG<sp/>key<sp/>generation<sp/>when<sp/>available<sp/>[#790](https://github.com/IJHack/QtPass/pull/790)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Improved<sp/>GPG<sp/>key<sp/>parsing<sp/>with<sp/>new<sp/>`gpgkeystate`<sp/>module</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>New<sp/>Features</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>auto-detect<sp/>Git<sp/>in<sp/>existing<sp/>password-store</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>ed25519<sp/>(ECC)<sp/>for<sp/>GPG<sp/>key<sp/>generation<sp/>when<sp/>GPG<sp/>supports<sp/>it</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>compile_commands.json<sp/>generation<sp/>script<sp/>for<sp/>IDE<sp/>tooling</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Improvements</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Improved<sp/>GPG<sp/>key<sp/>parsing<sp/>with<sp/>new<sp/>`gpgkeystate`<sp/>module<sp/>[#979](https://github.com/IJHack/QtPass/pull/979)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Improved<sp/>WSL<sp/>path<sp/>handling<sp/>for<sp/>gpgconf<sp/>resolution</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Re-encryption<sp/>security<sp/>improvements<sp/>[#815](https://github.com/IJHack/QtPass/issues/815)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Kill<sp/>stale<sp/>GPG<sp/>agents<sp/>before<sp/>key<sp/>generation<sp/>[#815](https://github.com/IJHack/QtPass/issues/815)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Consolidated<sp/>release<sp/>scripts<sp/>into<sp/>`scripts/`<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>UsersDialog<sp/>performance<sp/>optimizations<sp/>[#977](https://github.com/IJHack/QtPass/pull/977)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Bugfixes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>path<sp/>separator<sp/>check<sp/>in<sp/>gpgconf<sp/>resolution</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>.gpg-id<sp/>path<sp/>construction<sp/>for<sp/>cross-platform<sp/>[#780](https://github.com/IJHack/QtPass/issues/780)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>re-encryption<sp/>security<sp/>issues</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>GPG<sp/>key<sp/>generation<sp/>timeout<sp/>handling<sp/>[#815](https://github.com/IJHack/QtPass/issues/815)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>clipboard<sp/>history<sp/>password<sp/>exclusion<sp/>[#970](https://github.com/IJHack/QtPass/pull/970)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>transparent<sp/>context<sp/>menu<sp/>in<sp/>dark<sp/>mode<sp/>[#967](https://github.com/IJHack/QtPass/pull/967)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>window<sp/>positioning<sp/>with<sp/>window<sp/>manager<sp/>[#947](https://github.com/IJHack/QtPass/pull/947)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>theme<sp/>colors<sp/>for<sp/>button<sp/>icons<sp/>[#949](https://github.com/IJHack/QtPass/pull/949)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>hardcoded<sp/>black<sp/>text<sp/>in<sp/>dark<sp/>mode<sp/>[#946](https://github.com/IJHack/QtPass/pull/946)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Testing</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>`gpgkeystate`<sp/>test<sp/>suite<sp/>(8<sp/>test<sp/>suites<sp/>total)<sp/>[#979](https://github.com/IJHack/QtPass/pull/979)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>GPG<sp/>colon<sp/>output<sp/>fixtures</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Improved<sp/>test<sp/>assertions<sp/>and<sp/>coverage<sp/>[#978](https://github.com/IJHack/QtPass/pull/978),<sp/>[#981](https://github.com/IJHack/QtPass/pull/981),<sp/>[#982](https://github.com/IJHack/QtPass/pull/982)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Documentation<sp/>&amp;<sp/>Maintenance</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>AGENTS.md<sp/>for<sp/>AI<sp/>agent<sp/>guidance</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>security<sp/>policy<sp/>(SECURITY.md)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Extensive<sp/>doxygen<sp/>documentation<sp/>improvements</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CI/CD<sp/>improvements<sp/>and<sp/>optimizations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Localization</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Updated<sp/>translations<sp/>via<sp/>Weblate</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Release,<sp/>CI<sp/>and<sp/>Maintenance</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Consolidated<sp/>release<sp/>scripts<sp/>into<sp/>`scripts/`<sp/>folder</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>compile_commands.json<sp/>generation<sp/>script</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Extensive<sp/>code<sp/>quality<sp/>improvements<sp/>via<sp/>AI-assisted<sp/>review</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>CI/CD<sp/>workflow<sp/>optimizations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.5.1...v1.6.0)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.6.0...HEAD)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[1.5.1](https://github.com/IJHack/QtPass/tree/v1.5.1)<sp/>(2026-03-22)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>crash<sp/>on<sp/>Wayland<sp/>when<sp/>screenAt()<sp/>returns<sp/>null<sp/>[#706](https://github.com/IJHack/QtPass/issues/706),<sp/>[#663](https://github.com/IJHack/QtPass/issues/663)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>CLI<sp/>arguments<sp/>being<sp/>parsed<sp/>as<sp/>password<sp/>search<sp/>[#652](https://github.com/IJHack/QtPass/issues/652)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>OTP<sp/>error<sp/>handling<sp/>with<sp/>better<sp/>messages<sp/>and<sp/>pass-otp<sp/>availability<sp/>check<sp/>[#677](https://github.com/IJHack/QtPass/issues/677)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>window<sp/>icon<sp/>not<sp/>showing<sp/>on<sp/>dialog<sp/>boxes<sp/>[#671](https://github.com/IJHack/QtPass/issues/671)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>Slovak<sp/>translation<sp/>GPG<sp/>keygen<sp/>script<sp/>[#667](https://github.com/IJHack/QtPass/issues/667)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Suppressed<sp/>qApp<sp/>deprecation<sp/>warnings<sp/>on<sp/>Qt6</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[1.5.0](https://github.com/IJHack/QtPass/tree/v1.5.0)<sp/>(2026-03-21)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Highlights<sp/>&lt;!--<sp/>markdownlint-disable-line<sp/>MD024<sp/>--&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>`1.5.0`<sp/>release<sp/>metadata<sp/>and<sp/>packaging<sp/>preparation<sp/>across<sp/>the<sp/>desktop<sp/>app,<sp/>installer,<sp/>and<sp/>CI<sp/>configuration.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Windows<sp/>release<sp/>pipeline<sp/>reliability<sp/>improvements<sp/>for<sp/>AppVeyor<sp/>and<sp/>Inno<sp/>Setup<sp/>packaging.</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Modernized<sp/>C++/Qt<sp/>build<sp/>pipeline<sp/>with<sp/>clang-tidy<sp/>and<sp/>wider<sp/>lint/test<sp/>hardening.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Fixes<sp/>&amp;<sp/>Improvements</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>profile<sp/>handling<sp/>issues<sp/>in<sp/>Qt6<sp/>compatibility<sp/>scenarios<sp/>and<sp/>improved<sp/>profile<sp/>selection<sp/>behavior<sp/>[#681](https://github.com/IJHack/QtPass/pull/681),<sp/>[#695](https://github.com/IJHack/QtPass/pull/695).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Preserved<sp/>existing<sp/>application<sp/>behavior<sp/>when<sp/>launching<sp/>`qtpass`<sp/>without<sp/>parameters<sp/>[#704](https://github.com/IJHack/QtPass/pull/704).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Removed<sp/>a<sp/>regression<sp/>where<sp/>gpg_id<sp/>comments<sp/>could<sp/>be<sp/>altered<sp/>[#658](https://github.com/IJHack/QtPass/pull/658).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>missing<sp/>include<sp/>path<sp/>fixes<sp/>and<sp/>small<sp/>reliability<sp/>hardening<sp/>in<sp/>core<sp/>code<sp/>paths<sp/>[#690](https://github.com/IJHack/QtPass/pull/690),<sp/>[#716](https://github.com/IJHack/QtPass/pull/716).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Release,<sp/>CI<sp/>and<sp/>Maintenance<sp/>&lt;!--<sp/>markdownlint-disable-line<sp/>MD024<sp/>--&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Added/updated<sp/>PublicCode<sp/>and<sp/>CI<sp/>workflows,<sp/>including<sp/>release-time<sp/>validation<sp/>and<sp/>action<sp/>upgrades<sp/>[#701](https://github.com/IJHack/QtPass/pull/701),<sp/>[#709](https://github.com/IJHack/QtPass/pull/709),<sp/>[#710](https://github.com/IJHack/QtPass/pull/710),<sp/>[#711](https://github.com/IJHack/QtPass/pull/711),<sp/>[#712](https://github.com/IJHack/QtPass/pull/712).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Completed<sp/>the<sp/>AppVeyor/Inno<sp/>Setup<sp/>modernization<sp/>and<sp/>packaging<sp/>updates<sp/>[#722](https://github.com/IJHack/QtPass/pull/722).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Updated<sp/>readme<sp/>status<sp/>badges<sp/>and<sp/>branch<sp/>links<sp/>to<sp/>current<sp/>workflow<sp/>targets<sp/>[#724](https://github.com/IJHack/QtPass/pull/724).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Localization<sp/>&lt;!--<sp/>markdownlint-disable-line<sp/>MD024<sp/>--&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Synchronised<sp/>a<sp/>large<sp/>set<sp/>of<sp/>translation<sp/>updates<sp/>through<sp/>Weblate<sp/>and<sp/>translation<sp/>automation<sp/>to<sp/>improve<sp/>language<sp/>coverage<sp/>and<sp/>keep<sp/>localization<sp/>current<sp/>[#659](https://github.com/IJHack/QtPass/pull/659),<sp/>[#664](https://github.com/IJHack/QtPass/pull/664),<sp/>[#666](https://github.com/IJHack/QtPass/pull/666),<sp/>[#669](https://github.com/IJHack/QtPass/pull/669),<sp/>[#670](https://github.com/IJHack/QtPass/pull/670),<sp/>[#673](https://github.com/IJHack/QtPass/pull/673),<sp/>[#676](https://github.com/IJHack/QtPass/pull/676),<sp/>[#685](https://github.com/IJHack/QtPass/pull/685),<sp/>[#689](https://github.com/IJHack/QtPass/pull/689),<sp/>[#691](https://github.com/IJHack/QtPass/pull/691),<sp/>[#699](https://github.com/IJHack/QtPass/pull/699),<sp/>[#702](https://github.com/IJHack/QtPass/pull/702),<sp/>[#703](https://github.com/IJHack/QtPass/pull/703),<sp/>[#707](https://github.com/IJHack/QtPass/pull/707),<sp/>[#713](https://github.com/IJHack/QtPass/pull/713),<sp/>[#723](https://github.com/IJHack/QtPass/pull/723).<sp/>&lt;!--<sp/>markdownlint-disable-line<sp/>MD013<sp/>--&gt;</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**New<sp/>Contributors**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>@Vascom<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#656](https://github.com/IJHack/QtPass/pull/656).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@shemeshg<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#658](https://github.com/IJHack/QtPass/pull/658).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@ruimaciel<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#672](https://github.com/IJHack/QtPass/pull/672).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@vdchuyen<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#680](https://github.com/IJHack/QtPass/pull/680).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@souk4711<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#681](https://github.com/IJHack/QtPass/pull/681).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@principis<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#690](https://github.com/IJHack/QtPass/pull/690).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@stkw0<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#695](https://github.com/IJHack/QtPass/pull/695).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@publiccode-pr-bot<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#701](https://github.com/IJHack/QtPass/pull/701).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@transifex-integration[bot]<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#698](https://github.com/IJHack/QtPass/pull/698).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@basil<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#704](https://github.com/IJHack/QtPass/pull/704).</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>@dependabot[bot]<sp/>made<sp/>their<sp/>first<sp/>contribution<sp/>in<sp/>[#709](https://github.com/IJHack/QtPass/pull/709).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.4.0...v1.5.0)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.4.0](https://github.com/IJHack/QtPass/tree/v1.4.0)<sp/>(2023-09-17)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/1.4.0-rc2...v1.4.0)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Update<sp/>site<sp/>to<sp/>reflect<sp/>new<sp/>brew<sp/>command<sp/>syntax<sp/>[\#601](https://github.com/IJHack/QtPass/issues/601)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>-<sp/>not<sp/>asking<sp/>for<sp/>password<sp/>[\#585](https://github.com/IJHack/QtPass/issues/585)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Missing<sp/>menu<sp/>[\#574](https://github.com/IJHack/QtPass/issues/574)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Initial<sp/>Korean<sp/>from<sp/>Weblate<sp/>[\#655](https://github.com/IJHack/QtPass/pull/655)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Natural<sp/>language<sp/>fixes<sp/>[\#654](https://github.com/IJHack/QtPass/pull/654)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#650](https://github.com/IJHack/QtPass/pull/650)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>Serbian<sp/>and<sp/>Estonian<sp/>to<sp/>project<sp/>file<sp/>[\#649](https://github.com/IJHack/QtPass/pull/649)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#648](https://github.com/IJHack/QtPass/pull/648)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#647](https://github.com/IJHack/QtPass/pull/647)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Version<sp/>bump<sp/>and<sp/>cleanup<sp/>[\#646](https://github.com/IJHack/QtPass/pull/646)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[1.4.0-rc2](https://github.com/IJHack/QtPass/tree/1.4.0-rc2)<sp/>(2023-08-31)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/1.4.0-rc1...1.4.0-rc2)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>OTP<sp/>function<sp/>stopped<sp/>working<sp/>[\#630](https://github.com/IJHack/QtPass/issues/630)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Cannot<sp/>decrypt<sp/>own<sp/>passwords;<sp/>No<sp/>secret<sp/>key<sp/>[\#580](https://github.com/IJHack/QtPass/issues/580)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>gpg<sp/>not<sp/>found<sp/>on<sp/>macOS<sp/>[\#575](https://github.com/IJHack/QtPass/issues/575)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Installation<sp/>is<sp/>failed<sp/>using<sp/>latest<sp/>Homebrew<sp/>in<sp/>macOS<sp/>[\#564](https://github.com/IJHack/QtPass/issues/564)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Deleting<sp/>a<sp/>directory<sp/>sometimes<sp/>deletes<sp/>the<sp/>entire<sp/>password<sp/>store<sp/>including<sp/>Git<sp/>repositories<sp/>[\#556](https://github.com/IJHack/QtPass/issues/556)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>\[Windows\]<sp/>Git<sp/>repository<sp/>not<sp/>working<sp/>[\#638](https://github.com/IJHack/QtPass/issues/638)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>support<sp/>`PASSWORD_STORE_SIGNING_KEY`<sp/>with<sp/>profiles<sp/>[\#624](https://github.com/IJHack/QtPass/issues/624)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Support<sp/>multiple<sp/>branches<sp/>via<sp/>&quot;Profiles&quot;<sp/>feature<sp/>[\#545](https://github.com/IJHack/QtPass/issues/545)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>clang-format<sp/>-i<sp/>src/\*.cpp<sp/>src/\*.h<sp/>[\#645](https://github.com/IJHack/QtPass/pull/645)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#644](https://github.com/IJHack/QtPass/pull/644)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>taborder<sp/>and<sp/>add<sp/>buddies<sp/>in<sp/>keygen<sp/>dialog<sp/>[\#643](https://github.com/IJHack/QtPass/pull/643)<sp/>([svuorela](https://github.com/svuorela))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Restore<sp/>licensing<sp/>info<sp/>for<sp/>QProgressIndicator<sp/>[\#642](https://github.com/IJHack/QtPass/pull/642)<sp/>([svuorela](https://github.com/svuorela))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Clazy<sp/>cleanup<sp/>and<sp/>other<sp/>minor<sp/>fixes<sp/>[\#641](https://github.com/IJHack/QtPass/pull/641)<sp/>([svuorela](https://github.com/svuorela))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>fix<sp/>the<sp/>unintended<sp/>&quot;running&quot;<sp/>of<sp/>the<sp/>entropy<sp/>window<sp/>in<sp/>the<sp/>keygen<sp/>dial…<sp/>[\#640](https://github.com/IJHack/QtPass/pull/640)<sp/>([lherschi](https://github.com/lherschi))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#636](https://github.com/IJHack/QtPass/pull/636)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>pass<sp/>store<sp/>signing<sp/>key<sp/>feature<sp/>[\#634](https://github.com/IJHack/QtPass/pull/634)<sp/>([timegrid](https://github.com/timegrid))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#633](https://github.com/IJHack/QtPass/pull/633)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#632](https://github.com/IJHack/QtPass/pull/632)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#629](https://github.com/IJHack/QtPass/pull/629)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#628](https://github.com/IJHack/QtPass/pull/628)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#627](https://github.com/IJHack/QtPass/pull/627)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#626](https://github.com/IJHack/QtPass/pull/626)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#622](https://github.com/IJHack/QtPass/pull/622)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>markdownlint<sp/>--fix<sp/>&amp;&amp;<sp/>textlint<sp/>--fix<sp/>[\#621](https://github.com/IJHack/QtPass/pull/621)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Document<sp/>&quot;Using<sp/>profiles&quot;<sp/>[\#619](https://github.com/IJHack/QtPass/pull/619)<sp/>([buepro](https://github.com/buepro))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#618](https://github.com/IJHack/QtPass/pull/618)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#617](https://github.com/IJHack/QtPass/pull/617)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>super-linter<sp/>ENV<sp/>variables<sp/>in<sp/>shared<sp/>location<sp/>for<sp/>local<sp/>and<sp/>automated<sp/>[\#616](https://github.com/IJHack/QtPass/pull/616)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>fix<sp/>bug<sp/>=\&gt;<sp/>clipboard<sp/>was<sp/>not<sp/>cleared<sp/>when<sp/>using<sp/>primary<sp/>selection<sp/>[\#615](https://github.com/IJHack/QtPass/pull/615)<sp/>([pythcoiner](https://github.com/pythcoiner))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#614](https://github.com/IJHack/QtPass/pull/614)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#613](https://github.com/IJHack/QtPass/pull/613)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Removed<sp/>travis<sp/>\(no<sp/>longer<sp/>free\)<sp/>and<sp/>lgtm<sp/>\(migrated<sp/>to<sp/>GitHub\)<sp/>[\#612](https://github.com/IJHack/QtPass/pull/612)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#611](https://github.com/IJHack/QtPass/pull/611)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Super<sp/>Linter<sp/>added<sp/>and<sp/>fixing<sp/>findings<sp/>[\#610](https://github.com/IJHack/QtPass/pull/610)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>New<sp/>Transifex<sp/>integration<sp/>yml<sp/>[\#609](https://github.com/IJHack/QtPass/pull/609)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Install<sp/>QT<sp/>in<sp/>codeql<sp/>workflow<sp/>[\#608](https://github.com/IJHack/QtPass/pull/608)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#607](https://github.com/IJHack/QtPass/pull/607)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translation<sp/>cleanup<sp/>[\#606](https://github.com/IJHack/QtPass/pull/606)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>translations<sp/>updated<sp/>[\#605](https://github.com/IJHack/QtPass/pull/605)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>accidental<sp/>deletion<sp/>of<sp/>entire<sp/>passwordstore<sp/>[\#604](https://github.com/IJHack/QtPass/pull/604)<sp/>([FSMaxB](https://github.com/FSMaxB))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>more<sp/>options<sp/>for<sp/>the<sp/>password<sp/>displaying<sp/>[\#587](https://github.com/IJHack/QtPass/pull/587)<sp/>([l3u](https://github.com/l3u))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Delete<sp/>context<sp/>menu<sp/>after<sp/>exec<sp/>[\#578](https://github.com/IJHack/QtPass/pull/578)<sp/>([fasked](https://github.com/fasked))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Hosted<sp/>Weblate<sp/>[\#576](https://github.com/IJHack/QtPass/pull/576)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[1.4.0-rc1](https://github.com/IJHack/QtPass/tree/1.4.0-rc1)<sp/>(2021-09-22)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.3.2...1.4.0-rc1)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Set<sp/>correct<sp/>WM_CLASS<sp/>for<sp/>the<sp/>qr-code<sp/>popup<sp/>[\#506](https://github.com/IJHack/QtPass/issues/506)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>does<sp/>not<sp/>detect<sp/>current<sp/>$GNUPGHOME<sp/>and<sp/>causes<sp/>it<sp/>to<sp/>fail<sp/>decryption<sp/>[\#569](https://github.com/IJHack/QtPass/issues/569)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>\&lt;tt\&gt;<sp/>...<sp/>\&lt;/tt\&gt;<sp/>included<sp/>in<sp/>password<sp/>text<sp/>[\#542](https://github.com/IJHack/QtPass/issues/542)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Markup<sp/>tags<sp/>are<sp/>left<sp/>in<sp/>password<sp/>and<sp/>clipboard<sp/>[\#533](https://github.com/IJHack/QtPass/issues/533)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Renaming<sp/>passwords<sp/>and<sp/>directories<sp/>fail<sp/>[\#487](https://github.com/IJHack/QtPass/issues/487)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Will<sp/>not<sp/>run<sp/>on<sp/>Windows<sp/>10<sp/>1903<sp/>b18362.418<sp/>[\#486](https://github.com/IJHack/QtPass/issues/486)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Hide<sp/>results<sp/>on<sp/>search<sp/>[\#551](https://github.com/IJHack/QtPass/issues/551)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>1.3.2<sp/>freezes<sp/>on<sp/>macOS<sp/>10.15.6<sp/>when<sp/>trying<sp/>to<sp/>display<sp/>password<sp/>[\#544](https://github.com/IJHack/QtPass/issues/544)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Icons<sp/>are<sp/>blurry<sp/>when<sp/>fractional<sp/>scaling<sp/>is<sp/>enabled<sp/>[\#525](https://github.com/IJHack/QtPass/issues/525)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>\[Request\]<sp/>clear<sp/>search<sp/>password<sp/>when<sp/>change<sp/>profile<sp/>[\#524](https://github.com/IJHack/QtPass/issues/524)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Copying<sp/>not<sp/>possible<sp/>on<sp/>Ubuntu<sp/>20.04<sp/>[\#521](https://github.com/IJHack/QtPass/issues/521)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>UI<sp/>can&apos;t<sp/>handle<sp/>passwords<sp/>with<sp/>periods<sp/>in<sp/>their<sp/>name<sp/>[\#520](https://github.com/IJHack/QtPass/issues/520)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Display<sp/>passwords<sp/>in<sp/>mono<sp/>space<sp/>font<sp/>[\#514](https://github.com/IJHack/QtPass/issues/514)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>1.3.2<sp/>for<sp/>Ubuntu<sp/>19.10<sp/>\(eoan\)<sp/>[\#512](https://github.com/IJHack/QtPass/issues/512)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Default<sp/>password<sp/>visibility<sp/>[\#511](https://github.com/IJHack/QtPass/issues/511)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Consider<sp/>mentioning<sp/>export<sp/>abilities<sp/>in<sp/>migration<sp/>docs,<sp/>if<sp/>any<sp/>are<sp/>present<sp/>[\#505](https://github.com/IJHack/QtPass/issues/505)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Enable<sp/>out-of-source<sp/>\(shadow\)<sp/>builds.<sp/>[\#501](https://github.com/IJHack/QtPass/issues/501)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>password<sp/>visiblity<sp/>can&apos;t<sp/>be<sp/>fully<sp/>hidden<sp/>[\#496](https://github.com/IJHack/QtPass/issues/496)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>need<sp/>updating<sp/>and<sp/>checking<sp/>[\#488](https://github.com/IJHack/QtPass/issues/488)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Frontend<sp/>doesn&apos;t<sp/>work<sp/>well<sp/>with<sp/>HiDPI<sp/>screen<sp/>[\#464](https://github.com/IJHack/QtPass/issues/464)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>How<sp/>to<sp/>let<sp/>QtPass<sp/>use<sp/>the<sp/>real<sp/>&quot;pass&quot;<sp/>on<sp/>windows<sp/>[\#458](https://github.com/IJHack/QtPass/issues/458)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fresh<sp/>install<sp/>of<sp/>Antergos<sp/>with<sp/>Deepin<sp/>-<sp/>High<sp/>DPI<sp/>scaling<sp/>is<sp/>not<sp/>working<sp/>[\#417](https://github.com/IJHack/QtPass/issues/417)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Strange<sp/>behavior<sp/>when<sp/>clearing<sp/>filter<sp/>[\#402](https://github.com/IJHack/QtPass/issues/402)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Tray<sp/>icon<sp/>remains<sp/>after<sp/>quitting<sp/>program<sp/>[\#401](https://github.com/IJHack/QtPass/issues/401)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>doesn&apos;t<sp/>work<sp/>will<sp/>pass<sp/>in<sp/>WSL<sp/>[\#375](https://github.com/IJHack/QtPass/issues/375)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>UI<sp/>is<sp/>blurry<sp/>on<sp/>HiDPI<sp/>screens<sp/>on<sp/>macOS<sp/>\(retina\)<sp/>since<sp/>1.2.x<sp/>[\#355](https://github.com/IJHack/QtPass/issues/355)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>No<sp/>prompt<sp/>for<sp/>passphrase<sp/>for<sp/>Git<sp/>key<sp/>on<sp/>windows.<sp/>[\#317](https://github.com/IJHack/QtPass/issues/317)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Config<sp/>dialog&apos;s<sp/>Password<sp/>Generation<sp/>field<sp/>got<sp/>crowded<sp/>between<sp/>1.1.3<sp/>and<sp/>1.1.6<sp/>[\#278](https://github.com/IJHack/QtPass/issues/278)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#573](https://github.com/IJHack/QtPass/pull/573)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>keys<sp/>created/expires<sp/>dates<sp/>in<sp/>the<sp/>users<sp/>dialog<sp/>window<sp/>\(fix:<sp/>571\)<sp/>[\#572](https://github.com/IJHack/QtPass/pull/572)<sp/>([nfetisov](https://github.com/nfetisov))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Correct<sp/>a<sp/>typo<sp/>in<sp/>pass.cpp<sp/>[\#570](https://github.com/IJHack/QtPass/pull/570)<sp/>([felixonmars](https://github.com/felixonmars))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>installation<sp/>instructions<sp/>in<sp/>README.md<sp/>[\#565](https://github.com/IJHack/QtPass/pull/565)<sp/>([kawarimidoll](https://github.com/kawarimidoll))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#563](https://github.com/IJHack/QtPass/pull/563)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#562](https://github.com/IJHack/QtPass/pull/562)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#560](https://github.com/IJHack/QtPass/pull/560)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Keep<sp/>suffices<sp/>when<sp/>moving<sp/>\(to\)<sp/>a<sp/>directory<sp/>while<sp/>imitiating<sp/>pass<sp/>[\#559](https://github.com/IJHack/QtPass/pull/559)<sp/>([ichthyosaurus](https://github.com/ichthyosaurus))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Explicitly<sp/>only<sp/>remove<sp/>&quot;.gpg&quot;<sp/>when<sp/>renaming<sp/>files<sp/>[\#558](https://github.com/IJHack/QtPass/pull/558)<sp/>([ichthyosaurus](https://github.com/ichthyosaurus))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#554](https://github.com/IJHack/QtPass/pull/554)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#553](https://github.com/IJHack/QtPass/pull/553)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#552](https://github.com/IJHack/QtPass/pull/552)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#548](https://github.com/IJHack/QtPass/pull/548)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Move<sp/>MainWindow<sp/>to<sp/>the<sp/>screen<sp/>the<sp/>cursor<sp/>is<sp/>on<sp/>[\#547](https://github.com/IJHack/QtPass/pull/547)<sp/>([inhinias](https://github.com/inhinias))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#541](https://github.com/IJHack/QtPass/pull/541)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#535](https://github.com/IJHack/QtPass/pull/535)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>issues<sp/>with<sp/>renaming<sp/>passwords<sp/>and<sp/>moving<sp/>folders<sp/>[\#532](https://github.com/IJHack/QtPass/pull/532)<sp/>([ChaoticEnigma](https://github.com/ChaoticEnigma))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#531](https://github.com/IJHack/QtPass/pull/531)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translations<sp/>update<sp/>from<sp/>Weblate<sp/>[\#530](https://github.com/IJHack/QtPass/pull/530)<sp/>([weblate](https://github.com/weblate))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Clear<sp/>search<sp/>on<sp/>profile<sp/>change<sp/>[\#529](https://github.com/IJHack/QtPass/pull/529)<sp/>([cmol](https://github.com/cmol))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>\#514<sp/>Show<sp/>password<sp/>with<sp/>a<sp/>monospace<sp/>font<sp/>[\#528](https://github.com/IJHack/QtPass/pull/528)<sp/>([cmol](https://github.com/cmol))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Update<sp/>minimum<sp/>Qt<sp/>version<sp/>[\#527](https://github.com/IJHack/QtPass/pull/527)<sp/>([cmol](https://github.com/cmol))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>blurry<sp/>icons<sp/>when<sp/>fractional<sp/>scaling<sp/>is<sp/>enabled<sp/>[\#526](https://github.com/IJHack/QtPass/pull/526)<sp/>([mthw0](https://github.com/mthw0))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Spelling:<sp/>Git<sp/>pull,<sp/>Git<sp/>push<sp/>[\#516](https://github.com/IJHack/QtPass/pull/516)<sp/>([comradekingu](https://github.com/comradekingu))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Enable<sp/>ubuntu,<sp/>windows<sp/>and<sp/>macOS<sp/>based<sp/>builds<sp/>for<sp/>CI<sp/>[\#508](https://github.com/IJHack/QtPass/pull/508)<sp/>([boppybibbles](https://github.com/boppybibbles))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Enable<sp/>out-of-source<sp/>build<sp/>[\#503](https://github.com/IJHack/QtPass/pull/503)<sp/>([boppybibbles](https://github.com/boppybibbles))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>new<sp/>stable<sp/>version<sp/>of<sp/>`install-qt-action`.<sp/>[\#502](https://github.com/IJHack/QtPass/pull/502)<sp/>([boppybibbles](https://github.com/boppybibbles))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Don&apos;t<sp/>base<sp/>pass-otp<sp/>availability<sp/>decision<sp/>on<sp/>hardcoded<sp/>/usr/lib<sp/>[\#499](https://github.com/IJHack/QtPass/pull/499)<sp/>([nh2](https://github.com/nh2))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Spelling:<sp/>Search<sp/>for<sp/>users,<sp/>,<sp/>[\#495](https://github.com/IJHack/QtPass/pull/495)<sp/>([comradekingu](https://github.com/comradekingu))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Spelling:<sp/>Keylist<sp/>missing,<sp/>Could<sp/>not<sp/>fetch,<sp/>GPG<sp/>[\#493](https://github.com/IJHack/QtPass/pull/493)<sp/>([comradekingu](https://github.com/comradekingu))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Spelling:<sp/>Git,<sp/>GPG,<sp/>PWGen,<sp/>etc.<sp/>[\#492](https://github.com/IJHack/QtPass/pull/492)<sp/>([comradekingu](https://github.com/comradekingu))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Don&apos;t<sp/>use<sp/>a<sp/>deprecated<sp/>method<sp/>[\#491](https://github.com/IJHack/QtPass/pull/491)<sp/>([amarsman](https://github.com/amarsman))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Issue<sp/>\#402:<sp/>&apos;deselect\(\)&apos;<sp/>on<sp/>clearing<sp/>filter<sp/>[\#490](https://github.com/IJHack/QtPass/pull/490)<sp/>([petr-nehez](https://github.com/petr-nehez))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.3.2](https://github.com/IJHack/QtPass/tree/v1.3.2)<sp/>(2019-10-09)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.3.1...v1.3.2)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>could<sp/>not<sp/>run<sp/>on<sp/>Windows7<sp/>thin<sp/>[\#485](https://github.com/IJHack/QtPass/issues/485)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Segfault<sp/>on<sp/>application<sp/>startup<sp/>\(macOS\)<sp/>[\#481](https://github.com/IJHack/QtPass/issues/481)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Application<sp/>crashes<sp/>on<sp/>empty<sp/>password<sp/>store<sp/>[\#466](https://github.com/IJHack/QtPass/issues/466)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>App<sp/>is<sp/>completely<sp/>broken<sp/>[\#423](https://github.com/IJHack/QtPass/issues/423)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Edit<sp/>window<sp/>on<sp/>Gnome<sp/>has<sp/>no<sp/>padding<sp/>around<sp/>[\#484](https://github.com/IJHack/QtPass/issues/484)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Buttons<sp/>width<sp/>on<sp/>RHEL<sp/>8<sp/>[\#483](https://github.com/IJHack/QtPass/issues/483)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`Start<sp/>minimized&apos;<sp/>no<sp/>longer<sp/>works<sp/>[\#471](https://github.com/IJHack/QtPass/issues/471)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Editor<sp/>doesn&apos;t<sp/>wait<sp/>for<sp/>PGP<sp/>key<sp/>to<sp/>decrypt<sp/>[\#470](https://github.com/IJHack/QtPass/issues/470)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>v1.3.0<sp/>Data<sp/>Not<sp/>Showing<sp/>[\#465](https://github.com/IJHack/QtPass/issues/465)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Hangs<sp/>on<sp/>macOS<sp/>after<sp/>Security<sp/>Update<sp/>2019-003<sp/>10.12.6<sp/>[\#461](https://github.com/IJHack/QtPass/issues/461)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>No<sp/>public<sp/>key<sp/>[\#308](https://github.com/IJHack/QtPass/issues/308)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Don&apos;t<sp/>call<sp/>QtPass::setup\(\)<sp/>from<sp/>QtPass<sp/>class<sp/>constructor<sp/>\(should<sp/>fix<sp/>\#466\)<sp/>[\#482](https://github.com/IJHack/QtPass/pull/482)<sp/>([maciejsszmigiero](https://github.com/maciejsszmigiero))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.3.1](https://github.com/IJHack/QtPass/tree/v1.3.1)<sp/>(2019-10-01)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.3.0...v1.3.1)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Renaming<sp/>password<sp/>[\#463](https://github.com/IJHack/QtPass/issues/463)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>\[Feature<sp/>Request\]<sp/>Edit<sp/>main<sp/>title<sp/>field<sp/>[\#446](https://github.com/IJHack/QtPass/issues/446)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>build:<sp/>dependency<sp/>issue<sp/>[\#467](https://github.com/IJHack/QtPass/issues/467)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>is<sp/>running<sp/>but<sp/>no<sp/>GUI<sp/>[\#451](https://github.com/IJHack/QtPass/issues/451)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Additional<sp/>lines<sp/>\(notes\)<sp/>are<sp/>not<sp/>shown<sp/>[\#474](https://github.com/IJHack/QtPass/issues/474)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Bundle<sp/>ID<sp/>is<sp/>literally<sp/>`$(PRODUCT_BUNDLE_IDENTIFIER)`<sp/>[\#448](https://github.com/IJHack/QtPass/issues/448)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>license<sp/>scan<sp/>report<sp/>and<sp/>status<sp/>[\#480](https://github.com/IJHack/QtPass/pull/480)<sp/>([fossabot](https://github.com/fossabot))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Build<sp/>tooling<sp/>related<sp/>fixes<sp/>[\#479](https://github.com/IJHack/QtPass/pull/479)<sp/>([maciejsszmigiero](https://github.com/maciejsszmigiero))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>missing<sp/>overrides<sp/>[\#478](https://github.com/IJHack/QtPass/pull/478)<sp/>([amarsman](https://github.com/amarsman))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Main<sp/>window<sp/>entry<sp/>details<sp/>improvements<sp/>[\#477](https://github.com/IJHack/QtPass/pull/477)<sp/>([maciejsszmigiero](https://github.com/maciejsszmigiero))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>HTML<sp/>links<sp/>color<sp/>and<sp/>NL<sp/>translation<sp/>building<sp/>error<sp/>[\#476](https://github.com/IJHack/QtPass/pull/476)<sp/>([a-andreyev](https://github.com/a-andreyev))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Restore<sp/>directories-first<sp/>order<sp/>of<sp/>passwords<sp/>tree<sp/>view<sp/>on<sp/>non-Mac<sp/>platforms<sp/>[\#475](https://github.com/IJHack/QtPass/pull/475)<sp/>([maciejsszmigiero](https://github.com/maciejsszmigiero))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>missing<sp/>finishedShow\(\)<sp/>signal<sp/>connection<sp/>in<sp/>PasswordDialog<sp/>constructor<sp/>\(fixes<sp/>the<sp/>&quot;Edit<sp/>password&quot;<sp/>function\)<sp/>[\#473](https://github.com/IJHack/QtPass/pull/473)<sp/>([maciejsszmigiero](https://github.com/maciejsszmigiero))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Sorted<sp/>profiles<sp/>dropdown<sp/>as<sp/>in<sp/>\#404<sp/>[\#472](https://github.com/IJHack/QtPass/pull/472)<sp/>([Noettore](https://github.com/Noettore))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>support<sp/>for<sp/>passwords<sp/>and<sp/>directories<sp/>renaming<sp/>as<sp/>requested<sp/>in<sp/>\#463<sp/>[\#469](https://github.com/IJHack/QtPass/pull/469)<sp/>([Noettore](https://github.com/Noettore))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>missing<sp/>app<sp/>ID<sp/>and<sp/>icon<sp/>on<sp/>Wayland.<sp/>[\#468](https://github.com/IJHack/QtPass/pull/468)<sp/>([lightbulbjim](https://github.com/lightbulbjim))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.3.0](https://github.com/IJHack/QtPass/tree/v1.3.0)<sp/>(2019-08-20)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.2.3...v1.3.0)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Localization<sp/>makes<sp/>commits<sp/>absolutely<sp/>unreadable<sp/>[\#405](https://github.com/IJHack/QtPass/issues/405)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>otp<sp/>\(two<sp/>factor<sp/>authentication\)<sp/>support<sp/>[\#327](https://github.com/IJHack/QtPass/issues/327)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Open<sp/>specific<sp/>entry<sp/>from<sp/>command-line<sp/>parameter<sp/>[\#32](https://github.com/IJHack/QtPass/issues/32)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Windows<sp/>sigsev<sp/>issues<sp/>[\#326](https://github.com/IJHack/QtPass/issues/326)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Access<sp/>to<sp/>the<sp/>/<sp/>\(root\)<sp/>directory<sp/>form<sp/>within<sp/>the<sp/>application<sp/>window<sp/>on<sp/>macOS<sp/>[\#302](https://github.com/IJHack/QtPass/issues/302)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>PRNG<sp/>seeding<sp/>is<sp/>done<sp/>totally<sp/>wrong<sp/>[\#238](https://github.com/IJHack/QtPass/issues/238)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Context<sp/>menu<sp/>on<sp/>transparent<sp/>fields<sp/>is<sp/>transparent<sp/>too<sp/>.<sp/>.<sp/>[\#227](https://github.com/IJHack/QtPass/issues/227)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>various<sp/>issues<sp/>with<sp/>Info.plist<sp/>file<sp/>on<sp/>macOS<sp/>[\#457](https://github.com/IJHack/QtPass/issues/457)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Can<sp/>not<sp/>add<sp/>new<sp/>passwords<sp/>for<sp/>some<sp/>reason<sp/>[\#454](https://github.com/IJHack/QtPass/issues/454)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>GnuPG<sp/>not<sp/>found<sp/>on<sp/>Linux<sp/>Mint<sp/>[\#433](https://github.com/IJHack/QtPass/issues/433)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>How<sp/>to<sp/>clean<sp/>up<sp/>the<sp/>app<sp/>[\#429](https://github.com/IJHack/QtPass/issues/429)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>LAN<sp/>sync<sp/>request<sp/>[\#427](https://github.com/IJHack/QtPass/issues/427)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Profiles<sp/>can<sp/>not<sp/>be<sp/>removed<sp/>[\#415](https://github.com/IJHack/QtPass/issues/415)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Compilation<sp/>error<sp/>in<sp/>\(K\)ubuntu<sp/>16.04.5<sp/>with<sp/>sources<sp/>tar.gz<sp/>from<sp/>version<sp/>1.2.3<sp/>[\#408](https://github.com/IJHack/QtPass/issues/408)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Prevent<sp/>from<sp/>removing<sp/>whole<sp/>password-store<sp/>directory<sp/>and<sp/>hidden<sp/>directories<sp/>and<sp/>files<sp/>[\#400](https://github.com/IJHack/QtPass/issues/400)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Version<sp/>information<sp/>string/s<sp/>[\#398](https://github.com/IJHack/QtPass/issues/398)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>We<sp/>should<sp/>select<sp/>a<sp/>C++<sp/>std<sp/>too<sp/>[\#372](https://github.com/IJHack/QtPass/issues/372)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>We<sp/>should<sp/>select<sp/>a<sp/>minimum<sp/>Qt<sp/>version<sp/>[\#371](https://github.com/IJHack/QtPass/issues/371)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Problem<sp/>with<sp/>GNUpg<sp/>not<sp/>found<sp/>on<sp/>macOS<sp/>[\#362](https://github.com/IJHack/QtPass/issues/362)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Compiling<sp/>for<sp/>Linux<sp/>Mint<sp/>18<sp/>Ubuntu<sp/>16<sp/>[\#357](https://github.com/IJHack/QtPass/issues/357)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>make<sp/>qtpass<sp/>portable<sp/>in<sp/>windows<sp/>[\#356](https://github.com/IJHack/QtPass/issues/356)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Unable<sp/>to<sp/>see<sp/>main<sp/>application<sp/>window<sp/>\(applicationn<sp/>runs<sp/>minimized<sp/>to<sp/>tray<sp/>only\)<sp/>[\#286](https://github.com/IJHack/QtPass/issues/286)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Startup<sp/>variables<sp/>and<sp/>parameters<sp/>[\#212](https://github.com/IJHack/QtPass/issues/212)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>\[macOS\]<sp/>Password<sp/>input<sp/>dialog<sp/>suddenly<sp/>stopped<sp/>popping<sp/>up<sp/>[\#191](https://github.com/IJHack/QtPass/issues/191)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>MainWindow<sp/>is<sp/>a<sp/>giant<sp/>monolithic<sp/>mess<sp/>[\#107](https://github.com/IJHack/QtPass/issues/107)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>key<sp/>fingerprint<sp/>as<sp/>ID<sp/>instead<sp/>of<sp/>“long”<sp/>ID.<sp/>[\#452](https://github.com/IJHack/QtPass/pull/452)<sp/>([Natureshadow](https://github.com/Natureshadow))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Typo:<sp/>dialouge<sp/>to<sp/>dialogue.<sp/>[\#444](https://github.com/IJHack/QtPass/pull/444)<sp/>([georgjaehnig](https://github.com/georgjaehnig))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Scripts<sp/>and<sp/>logic<sp/>specific<sp/>to<sp/>Windows<sp/>Store<sp/>releases<sp/>[\#439](https://github.com/IJHack/QtPass/pull/439)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>For<sp/>config<sp/>check,<sp/>check<sp/>that<sp/>the<sp/>selected<sp/>binary<sp/>is<sp/>available.<sp/>[\#438](https://github.com/IJHack/QtPass/pull/438)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>character<sp/>encoding<sp/>issues<sp/>for<sp/>non-UTF-8<sp/>locales.<sp/>[\#435](https://github.com/IJHack/QtPass/pull/435)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixes<sp/>and<sp/>improvments<sp/>for<sp/>config<sp/>dialog<sp/>[\#432](https://github.com/IJHack/QtPass/pull/432)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Support<sp/>for<sp/>using<sp/>WSL<sp/>binaries<sp/>on<sp/>Windows<sp/>[\#431](https://github.com/IJHack/QtPass/pull/431)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Bugfixes<sp/>and<sp/>Windows<sp/>compatibility<sp/>improvements<sp/>[\#430](https://github.com/IJHack/QtPass/pull/430)<sp/>([mrsch](https://github.com/mrsch))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Semi-automatic<sp/>code<sp/>cleanup<sp/>[\#425](https://github.com/IJHack/QtPass/pull/425)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Update<sp/>to<sp/>prevent<sp/>the<sp/>installer<sp/>requesting<sp/>admin<sp/>[\#424](https://github.com/IJHack/QtPass/pull/424)<sp/>([hughwilliams94](https://github.com/hughwilliams94))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Display<sp/>passwords<sp/>as<sp/>QR<sp/>codes<sp/>[\#421](https://github.com/IJHack/QtPass/pull/421)<sp/>([frawi](https://github.com/frawi))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Tested<sp/>working<sp/>on<sp/>macOS<sp/>HS<sp/>with<sp/>pinentry-mac<sp/>[\#419](https://github.com/IJHack/QtPass/pull/419)<sp/>([riccardocossu](https://github.com/riccardocossu))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Dutch<sp/>\(nl\)<sp/>translation<sp/>improvements<sp/>[\#418](https://github.com/IJHack/QtPass/pull/418)<sp/>([equaeghe](https://github.com/equaeghe))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Bugfixes<sp/>[\#413](https://github.com/IJHack/QtPass/pull/413)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>pwgen:<sp/>fix<sp/>inverted<sp/>&quot;Generate<sp/>...<sp/>less<sp/>secure<sp/>passwords&quot;<sp/>checkbox<sp/>[\#409](https://github.com/IJHack/QtPass/pull/409)<sp/>([ahippo](https://github.com/ahippo))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Continuing<sp/>refactoring<sp/>[\#407](https://github.com/IJHack/QtPass/pull/407)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>\#390<sp/>make<sp/>box<sp/>cheched<sp/>when<sp/>opening<sp/>a<sp/>folder<sp/>users<sp/>panel<sp/>[\#403](https://github.com/IJHack/QtPass/pull/403)<sp/>([kenji21](https://github.com/kenji21))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.2.3](https://github.com/IJHack/QtPass/tree/v1.2.3)<sp/>(2018-06-04)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.2.2...v1.2.3)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Consider<sp/>repology<sp/>badges<sp/>[\#396](https://github.com/IJHack/QtPass/issues/396)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Unable<sp/>to<sp/>create<sp/>new<sp/>password<sp/>[\#391](https://github.com/IJHack/QtPass/issues/391)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Duplicate<sp/>prefix<sp/>in<sp/>installation<sp/>of<sp/>tests<sp/>directory<sp/>in<sp/>v1.2.2.<sp/>[\#389](https://github.com/IJHack/QtPass/issues/389)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Compilation<sp/>error<sp/>on<sp/>FreeBSD<sp/>member<sp/>access<sp/>into<sp/>incomplete<sp/>type<sp/>[\#388](https://github.com/IJHack/QtPass/issues/388)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>No<sp/>icons<sp/>on<sp/>macOS<sp/>[\#377](https://github.com/IJHack/QtPass/issues/377)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>support<sp/>for<sp/>OTP<sp/>code<sp/>generation<sp/>on<sp/>Linux<sp/>as<sp/>requested<sp/>in<sp/>\#327<sp/>[\#394](https://github.com/IJHack/QtPass/pull/394)<sp/>([Noettore](https://github.com/Noettore))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Revert<sp/>scroll<sp/>bar<sp/>changes<sp/>[\#393](https://github.com/IJHack/QtPass/pull/393)<sp/>([destanyol](https://github.com/destanyol))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>High<sp/>Dpi<sp/>Support.<sp/>Works<sp/>now<sp/>under<sp/>Windows<sp/>and<sp/>KDE/Plasma.<sp/>[\#392](https://github.com/IJHack/QtPass/pull/392)<sp/>([hgraeber](https://github.com/hgraeber))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.2.2](https://github.com/IJHack/QtPass/tree/v1.2.2)<sp/>(2018-05-07)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.2.1...v1.2.2)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Cleaning<sp/>\#includes<sp/>[\#364](https://github.com/IJHack/QtPass/pull/364)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Insecure<sp/>Password<sp/>Generation<sp/>[\#338](https://github.com/IJHack/QtPass/issues/338)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Clipboard<sp/>clearing<sp/>timer<sp/>is<sp/>not<sp/>reset<sp/>when<sp/>new<sp/>passwords<sp/>are<sp/>copied<sp/>to<sp/>the<sp/>clipboard<sp/>[\#309](https://github.com/IJHack/QtPass/issues/309)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Removal<sp/>of<sp/>files<sp/>outside<sp/>of<sp/>password-store<sp/>[\#300](https://github.com/IJHack/QtPass/issues/300)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Some<sp/>fixes<sp/>and<sp/>refactoring.<sp/>[\#376](https://github.com/IJHack/QtPass/pull/376)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>&amp;<sp/>make<sp/>clearClipboard<sp/>more<sp/>robust<sp/>[\#359](https://github.com/IJHack/QtPass/pull/359)<sp/>([lukedirtwalker](https://github.com/lukedirtwalker))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Multiple<sp/>question<sp/>marks<sp/>while<sp/>trying<sp/>to<sp/>delete<sp/>password<sp/>[\#385](https://github.com/IJHack/QtPass/issues/385)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>No<sp/>button<sp/>icons<sp/>and<sp/>text<sp/>in<sp/>&quot;menu<sp/>bar&quot;<sp/>[\#383](https://github.com/IJHack/QtPass/issues/383)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Cannot<sp/>add<sp/>a<sp/>new<sp/>password<sp/>[\#380](https://github.com/IJHack/QtPass/issues/380)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Tiny<sp/>bit<sp/>of<sp/>regression<sp/>[\#379](https://github.com/IJHack/QtPass/issues/379)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Running<sp/>qtPass<sp/>remotelly<sp/>not<sp/>prompting<sp/>for<sp/>the<sp/>GPG<sp/>key<sp/>passphrasse<sp/>[\#374](https://github.com/IJHack/QtPass/issues/374)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Entire<sp/>program<sp/>is<sp/>huge<sp/>on<sp/>High<sp/>DPI<sp/>screen<sp/>on<sp/>Linux<sp/>[\#369](https://github.com/IJHack/QtPass/issues/369)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Two<sp/>new<sp/>issues<sp/>since<sp/>latest<sp/>refactoring<sp/>[\#368](https://github.com/IJHack/QtPass/issues/368)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Chocolatey<sp/>package<sp/>outdated<sp/>[\#366](https://github.com/IJHack/QtPass/issues/366)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>How<sp/>do<sp/>I<sp/>change<sp/>the<sp/>language<sp/>?<sp/>[\#352](https://github.com/IJHack/QtPass/issues/352)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Parallel<sp/>make<sp/>issue<sp/>in<sp/>qtpass-1.2.1:<sp/>ld:<sp/>cannot<sp/>find<sp/>-lqtpass<sp/>[\#350](https://github.com/IJHack/QtPass/issues/350)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>&quot;copy&quot;<sp/>icon<sp/>has<sp/>disappeared<sp/>in<sp/>v1.2.1<sp/>[\#344](https://github.com/IJHack/QtPass/issues/344)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>No<sp/>password<sp/>entry<sp/>prompt<sp/>[\#343](https://github.com/IJHack/QtPass/issues/343)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Can&apos;t<sp/>install<sp/>on<sp/>macOS<sp/>Sierra<sp/>[\#337](https://github.com/IJHack/QtPass/issues/337)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>No<sp/>icon<sp/>on<sp/>macOS<sp/>[\#333](https://github.com/IJHack/QtPass/issues/333)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Font<sp/>and<sp/>spacing<sp/>used<sp/>for<sp/>URL<sp/>links<sp/>on<sp/>right<sp/>in<sp/>main<sp/>window<sp/>absurdly<sp/>large<sp/>[\#329](https://github.com/IJHack/QtPass/issues/329)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>don&apos;t<sp/>display<sp/>all<sp/>lines<sp/>with<sp/>templates<sp/>[\#273](https://github.com/IJHack/QtPass/issues/273)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>2<sp/>simple<sp/>fixes<sp/>[\#386](https://github.com/IJHack/QtPass/pull/386)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Should<sp/>fix<sp/>\#383<sp/>[\#384](https://github.com/IJHack/QtPass/pull/384)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Move<sp/>connect<sp/>action<sp/>to<sp/>main.cpp.<sp/>Default<sp/>search<sp/>text<sp/>as<sp/>parameter<sp/>of…<sp/>[\#382](https://github.com/IJHack/QtPass/pull/382)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>fix<sp/>\#380<sp/>[\#381](https://github.com/IJHack/QtPass/pull/381)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Small<sp/>refactoring.<sp/>[\#378](https://github.com/IJHack/QtPass/pull/378)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Sorry<sp/>for<sp/>last<sp/>error<sp/>:\)<sp/>[\#370](https://github.com/IJHack/QtPass/pull/370)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Optimizations<sp/>:\)<sp/>[\#367](https://github.com/IJHack/QtPass/pull/367)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Removed<sp/>comment<sp/>out<sp/>\#includes<sp/>[\#365](https://github.com/IJHack/QtPass/pull/365)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>fix<sp/>for<sp/>\#300<sp/>[\#363](https://github.com/IJHack/QtPass/pull/363)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Translated<sp/>all<sp/>missing<sp/>content<sp/>to<sp/>Italian,<sp/>created<sp/>Release<sp/>of<sp/>transla…<sp/>[\#361](https://github.com/IJHack/QtPass/pull/361)<sp/>([FiloSpaTeam](https://github.com/FiloSpaTeam))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Refactoring<sp/>[\#360](https://github.com/IJHack/QtPass/pull/360)<sp/>([lukedirtwalker](https://github.com/lukedirtwalker))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Display<sp/>all<sp/>fields<sp/>when<sp/>using<sp/>template<sp/>setting,<sp/>fixes<sp/>\#273<sp/>[\#358](https://github.com/IJHack/QtPass/pull/358)<sp/>([lukedirtwalker](https://github.com/lukedirtwalker))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Update<sp/>CONTRIBUTING.md<sp/>[\#354](https://github.com/IJHack/QtPass/pull/354)<sp/>([5bentz](https://github.com/5bentz))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>two<sp/>entries<sp/>in<sp/>FAQ<sp/>about<sp/>the<sp/>language<sp/>[\#353](https://github.com/IJHack/QtPass/pull/353)<sp/>([5bentz](https://github.com/5bentz))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>typo<sp/>in<sp/>french<sp/>translation<sp/>[\#349](https://github.com/IJHack/QtPass/pull/349)<sp/>([babolivier](https://github.com/babolivier))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>New<sp/>scroll<sp/>bar<sp/>on<sp/>large<sp/>files<sp/>[\#347](https://github.com/IJHack/QtPass/pull/347)<sp/>([destanyol](https://github.com/destanyol))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>nested<sp/>template<sp/>argument<sp/>list<sp/>compile<sp/>error<sp/>[\#346](https://github.com/IJHack/QtPass/pull/346)<sp/>([martinburchell](https://github.com/martinburchell))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Honor<sp/>PREFIX<sp/>during<sp/>tests<sp/>install<sp/>[\#345](https://github.com/IJHack/QtPass/pull/345)<sp/>([SpiderX](https://github.com/SpiderX))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.2.1](https://github.com/IJHack/QtPass/tree/v1.2.1)<sp/>(2018-01-04)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.2.0...v1.2.1)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Question:<sp/>is<sp/>it<sp/>possible<sp/>to<sp/>mass<sp/>import<sp/>passes?<sp/>[\#339](https://github.com/IJHack/QtPass/issues/339)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Version<sp/>1.2.0<sp/>leaks<sp/>passwords<sp/>[\#334](https://github.com/IJHack/QtPass/issues/334)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>signed<sp/>release<sp/>files<sp/>[\#332](https://github.com/IJHack/QtPass/issues/332)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>2017<sp/>[\#330](https://github.com/IJHack/QtPass/issues/330)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>importing<sp/>settings<sp/>from<sp/>1.1.5<sp/>or<sp/>older<sp/>clipboard<sp/>settings<sp/>revert<sp/>to<sp/>No<sp/>Clipboard<sp/>[\#232](https://github.com/IJHack/QtPass/issues/232)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Insecure<sp/>password<sp/>generation<sp/>[\#342](https://github.com/IJHack/QtPass/pull/342)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>Catalan<sp/>translation<sp/>[\#336](https://github.com/IJHack/QtPass/pull/336)<sp/>([rbuj](https://github.com/rbuj))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.2.0](https://github.com/IJHack/QtPass/tree/v1.2.0)<sp/>(2017-11-08)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.1.6...v1.2.0)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Icon<sp/>tray<sp/>from<sp/>system<sp/>icon<sp/>theme<sp/>[\#318](https://github.com/IJHack/QtPass/issues/318)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Copy<sp/>button<sp/>for<sp/>each<sp/>custom<sp/>field<sp/>[\#291](https://github.com/IJHack/QtPass/issues/291)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Feature<sp/>Request:<sp/>Use<sp/>primary<sp/>selection<sp/>instead<sp/>of<sp/>clipboard<sp/>[\#280](https://github.com/IJHack/QtPass/issues/280)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>primary<sp/>selection<sp/>as<sp/>clipboard<sp/>option<sp/>[\#281](https://github.com/IJHack/QtPass/pull/281)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Feature:<sp/>CTRL/CMD<sp/>+<sp/>Q<sp/>closes<sp/>the<sp/>mainwindow<sp/>\#258<sp/>[\#259](https://github.com/IJHack/QtPass/pull/259)<sp/>([YoshiMan](https://github.com/YoshiMan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Feature/testing<sp/>moved<sp/>sources<sp/>to<sp/>src<sp/>added<sp/>tests<sp/>[\#257](https://github.com/IJHack/QtPass/pull/257)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>enabled<sp/>drag<sp/>and<sp/>drop<sp/>support<sp/>for<sp/>passwords<sp/>and<sp/>passwordfolders<sp/>[\#245](https://github.com/IJHack/QtPass/pull/245)<sp/>([YoshiMan](https://github.com/YoshiMan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Password<sp/>dialog<sp/>decoupling<sp/>from<sp/>MW<sp/>[\#242](https://github.com/IJHack/QtPass/pull/242)<sp/>([tezeb](https://github.com/tezeb))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Refactoring<sp/>of<sp/>qpushbuttonwithclipboard<sp/>and<sp/>timers<sp/>[\#241](https://github.com/IJHack/QtPass/pull/241)<sp/>([tezeb](https://github.com/tezeb))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>added<sp/>a<sp/>copy<sp/>button<sp/>for<sp/>each<sp/>line<sp/>to<sp/>paste<sp/>the<sp/>content<sp/>into<sp/>the<sp/>clipboard,<sp/>&quot;pass<sp/>init<sp/>--<sp/>path=&quot;<sp/>command<sp/>with<sp/>right<sp/>path-parameter,<sp/>lupdate<sp/>qtpass.pro<sp/>[\#218](https://github.com/IJHack/QtPass/pull/218)<sp/>([YoshiMan](https://github.com/YoshiMan))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Do<sp/>not<sp/>hide<sp/>passwords<sp/>and<sp/>no<sp/>generator<sp/>[\#267](https://github.com/IJHack/QtPass/issues/267)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Weird<sp/>behavior<sp/>when<sp/>turning<sp/>on<sp/>Git<sp/>support<sp/>\(auto<sp/>push/pull\)<sp/>with<sp/>non-clean<sp/>Git<sp/>dir<sp/>[\#128](https://github.com/IJHack/QtPass/issues/128)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>SingleApplication<sp/>implementation<sp/>buggy<sp/>[\#26](https://github.com/IJHack/QtPass/issues/26)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Tab<sp/>order<sp/>is<sp/>wrong<sp/>in<sp/>password<sp/>dialog<sp/>[\#331](https://github.com/IJHack/QtPass/issues/331)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Missing<sp/>icons<sp/>since<sp/>split<sp/>to<sp/>static<sp/>lib<sp/>[\#325](https://github.com/IJHack/QtPass/issues/325)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>&quot;-session<sp/>XXX&quot;<sp/>upon<sp/>session<sp/>restore<sp/>taken<sp/>as<sp/>search<sp/>string<sp/>[\#320](https://github.com/IJHack/QtPass/issues/320)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Instructions<sp/>to<sp/>install<sp/>it<sp/>on<sp/>OSX<sp/>maybe<sp/>outdated<sp/>[\#315](https://github.com/IJHack/QtPass/issues/315)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>hangs<sp/>when<sp/>trying<sp/>to<sp/>decrypt<sp/>entry<sp/>[\#313](https://github.com/IJHack/QtPass/issues/313)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Unable<sp/>to<sp/>locate<sp/>package<sp/>\(Linux<sp/>Mint<sp/>17.3\)<sp/>[\#310](https://github.com/IJHack/QtPass/issues/310)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Git<sp/>commit<sp/>signing<sp/>[\#303](https://github.com/IJHack/QtPass/issues/303)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>to<sp/>Linux<sp/>brew<sp/>[\#301](https://github.com/IJHack/QtPass/issues/301)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Pass<sp/>1.7<sp/>testing<sp/>[\#299](https://github.com/IJHack/QtPass/issues/299)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Measure<sp/>unit-test<sp/>code<sp/>coverage<sp/>[\#298](https://github.com/IJHack/QtPass/issues/298)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Config<sp/>dialog:<sp/>Propose<sp/>&quot;Password<sp/>behaviour&quot;<sp/>label<sp/>change<sp/>[\#294](https://github.com/IJHack/QtPass/issues/294)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>make<sp/>install<sp/>currently<sp/>broken.<sp/>[\#289](https://github.com/IJHack/QtPass/issues/289)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Unable<sp/>to<sp/>locate<sp/>package<sp/>\(Raspbian\)<sp/>[\#287](https://github.com/IJHack/QtPass/issues/287)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>There<sp/>is<sp/>no<sp/>`git<sp/>cp`<sp/>[\#272](https://github.com/IJHack/QtPass/issues/272)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>pass<sp/>is<sp/>apparently<sp/>switching<sp/>out<sp/>pwgen<sp/>[\#264](https://github.com/IJHack/QtPass/issues/264)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Bugs<sp/>since<sp/>refactoring<sp/>[\#262](https://github.com/IJHack/QtPass/issues/262)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>pass<sp/>working<sp/>fine<sp/>but<sp/>qtprocess<sp/>failure<sp/>with<sp/>qtpass<sp/>[\#260](https://github.com/IJHack/QtPass/issues/260)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Feature:<sp/>CTRL/CMD<sp/>+<sp/>Q<sp/>closes<sp/>the<sp/>mainwindow<sp/>[\#258](https://github.com/IJHack/QtPass/issues/258)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Refactoring:<sp/>removal<sp/>of<sp/>lastDecrypt<sp/>[\#256](https://github.com/IJHack/QtPass/issues/256)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Pass<sp/>environment<sp/>not<sp/>set-up<sp/>correctly<sp/>[\#250](https://github.com/IJHack/QtPass/issues/250)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Make<sp/>fails<sp/>-<sp/>std<sp/>c++11<sp/>not<sp/>set<sp/>[\#244](https://github.com/IJHack/QtPass/issues/244)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Double-clicking<sp/>might<sp/>open<sp/>previous<sp/>entry<sp/>instead<sp/>of<sp/>one<sp/>double-clicked<sp/>on<sp/>[\#243](https://github.com/IJHack/QtPass/issues/243)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Clean<sp/>up<sp/>ConfigDialog<sp/>[\#235](https://github.com/IJHack/QtPass/issues/235)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Extract<sp/>static<sp/>library<sp/>and<sp/>separate<sp/>main<sp/>function<sp/>[\#324](https://github.com/IJHack/QtPass/pull/324)<sp/>([tezeb](https://github.com/tezeb))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>galego<sp/>actualizado<sp/>[\#323](https://github.com/IJHack/QtPass/pull/323)<sp/>([xmgz](https://github.com/xmgz))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>sftp,<sp/>ftps,<sp/>webdav<sp/>and<sp/>webdavs<sp/>as<sp/>supported<sp/>links<sp/>[\#322](https://github.com/IJHack/QtPass/pull/322)<sp/>([cgonzalez](https://github.com/cgonzalez))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Ignore<sp/>cmdline<sp/>arguments<sp/>if<sp/>-session<sp/>is<sp/>used.<sp/>[\#321](https://github.com/IJHack/QtPass/pull/321)<sp/>([Achimh3011](https://github.com/Achimh3011))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Finished<sp/>French<sp/>translation<sp/>\(and<sp/>proof-read<sp/>the<sp/>already<sp/>translated<sp/>strings\).<sp/>[\#311](https://github.com/IJHack/QtPass/pull/311)<sp/>([Marcool04](https://github.com/Marcool04))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Once<sp/>again,<sp/>code<sp/>coverage<sp/>[\#305](https://github.com/IJHack/QtPass/pull/305)<sp/>([tezeb](https://github.com/tezeb))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fixed<sp/>path<sp/>of<sp/>resources.qrc<sp/>[\#297](https://github.com/IJHack/QtPass/pull/297)<sp/>([sideeffect42](https://github.com/sideeffect42))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>pt_PT<sp/>translation<sp/>[\#295](https://github.com/IJHack/QtPass/pull/295)<sp/>([keitalbame](https://github.com/keitalbame))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Update<sp/>README.md<sp/>[\#293](https://github.com/IJHack/QtPass/pull/293)<sp/>([joostruis](https://github.com/joostruis))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>small<sp/>band<sp/>aid<sp/>fix<sp/>for<sp/>password<sp/>generation<sp/>on<sp/>windows<sp/>[\#276](https://github.com/IJHack/QtPass/pull/276)<sp/>([treat1](https://github.com/treat1))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Final<sp/>step<sp/>in<sp/>process<sp/>mgmt<sp/>refactoring<sp/>[\#275](https://github.com/IJHack/QtPass/pull/275)<sp/>([tezeb](https://github.com/tezeb))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>pwgen<sp/>and<sp/>refactor<sp/>Pass::finished<sp/>[\#271](https://github.com/IJHack/QtPass/pull/271)<sp/>([tezeb](https://github.com/tezeb))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Process<sp/>specific<sp/>signals<sp/>for<sp/>process<sp/>management<sp/>[\#270](https://github.com/IJHack/QtPass/pull/270)<sp/>([tezeb](https://github.com/tezeb))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>\#239<sp/>reencrypting<sp/>after<sp/>a<sp/>drag<sp/>and<sp/>drop<sp/>action<sp/>[\#261](https://github.com/IJHack/QtPass/pull/261)<sp/>([YoshiMan](https://github.com/YoshiMan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>this<sp/>if<sp/>evaluetes<sp/>ervery<sp/>time<sp/>to<sp/>true<sp/>[\#255](https://github.com/IJHack/QtPass/pull/255)<sp/>([YoshiMan](https://github.com/YoshiMan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>executeing<sp/>pass<sp/>show<sp/>before<sp/>editpassword<sp/>dialog<sp/>shows<sp/>up<sp/>[\#254](https://github.com/IJHack/QtPass/pull/254)<sp/>([YoshiMan](https://github.com/YoshiMan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Minor<sp/>fix<sp/>for<sp/>filenames<sp/>and<sp/>Git<sp/>push<sp/>[\#251](https://github.com/IJHack/QtPass/pull/251)<sp/>([tezeb](https://github.com/tezeb))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Process<sp/>management<sp/>refactoring<sp/>part<sp/>2<sp/>[\#249](https://github.com/IJHack/QtPass/pull/249)<sp/>([tezeb](https://github.com/tezeb))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>refactoring<sp/>-<sp/>pass<sp/>ifce,<sp/>process<sp/>mgmt<sp/>[\#234](https://github.com/IJHack/QtPass/pull/234)<sp/>([tezeb](https://github.com/tezeb))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Solve<sp/>double-click<sp/>issue<sp/>[\#230](https://github.com/IJHack/QtPass/pull/230)<sp/>([jounathaen](https://github.com/jounathaen))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>refactoring,<sp/>new<sp/>QtPassSettings<sp/>class,<sp/>all<sp/>settings<sp/>should<sp/>be<sp/>read<sp/>and<sp/>written<sp/>here<sp/>[\#224](https://github.com/IJHack/QtPass/pull/224)<sp/>([YoshiMan](https://github.com/YoshiMan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Moved<sp/>@YoshiMan<sp/>&apos;s<sp/>copy<sp/>buttons<sp/>inside<sp/>the<sp/>line<sp/>Edit<sp/>[\#222](https://github.com/IJHack/QtPass/pull/222)<sp/>([jounathaen](https://github.com/jounathaen))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>UI<sp/>Improvements<sp/>[\#220](https://github.com/IJHack/QtPass/pull/220)<sp/>([jounathaen](https://github.com/jounathaen))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>creating<sp/>password<sp/>store<sp/>directory,<sp/>if<sp/>it<sp/>doesnot<sp/>exists,<sp/>de_DE<sp/>translation<sp/>fixes<sp/>and<sp/>removed<sp/>obsolete<sp/>translations<sp/>[\#216](https://github.com/IJHack/QtPass/pull/216)<sp/>([YoshiMan](https://github.com/YoshiMan))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.1.6](https://github.com/IJHack/QtPass/tree/v1.1.6)<sp/>(2016-12-02)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.1.5...v1.1.6)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Feedback<sp/>on<sp/>copy<sp/>button<sp/>use<sp/>[\#229](https://github.com/IJHack/QtPass/issues/229)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Clickable<sp/>URLs<sp/>+<sp/>open<sp/>in<sp/>default<sp/>browser<sp/>[\#226](https://github.com/IJHack/QtPass/issues/226)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Deselecting<sp/>password<sp/>re-opens<sp/>the<sp/>file<sp/>[\#221](https://github.com/IJHack/QtPass/issues/221)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Copy<sp/>password<sp/>button<sp/>should<sp/>include<sp/>tooltip<sp/>to<sp/>say<sp/>why,<sp/>when<sp/>disabled<sp/>[\#214](https://github.com/IJHack/QtPass/issues/214)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>starts<sp/>by<sp/>searching<sp/>for<sp/>-psn_0_12345<sp/>on<sp/>macOS<sp/>[\#213](https://github.com/IJHack/QtPass/issues/213)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Copy<sp/>after<sp/>timeout<sp/>[\#189](https://github.com/IJHack/QtPass/issues/189)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Feature<sp/>Request:<sp/>Copy<sp/>template<sp/>fields<sp/>with<sp/>button<sp/>[\#133](https://github.com/IJHack/QtPass/issues/133)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Cannot<sp/>create<sp/>top<sp/>level<sp/>folder<sp/>[\#127](https://github.com/IJHack/QtPass/issues/127)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Feature:<sp/>moving<sp/>items<sp/>\(reordering<sp/>folders\)<sp/>[\#116](https://github.com/IJHack/QtPass/issues/116)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Regression<sp/>with<sp/>new<sp/>view<sp/>mode<sp/>when<sp/>using<sp/>templates<sp/>and<sp/>URLs<sp/>[\#223](https://github.com/IJHack/QtPass/issues/223)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Problems<sp/>with<sp/>high<sp/>dpi<sp/>screen<sp/>[\#217](https://github.com/IJHack/QtPass/issues/217)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Hangs<sp/>forever<sp/>on<sp/>Generate<sp/>GnuPG<sp/>keypair<sp/>[\#215](https://github.com/IJHack/QtPass/issues/215)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>recent<sp/>change<sp/>to<sp/>passworddialog.cpp<sp/>[\#188](https://github.com/IJHack/QtPass/issues/188)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Re-opening<sp/>entry<sp/>in<sp/>QtPass<sp/>on<sp/>Windows<sp/>does<sp/>not<sp/>put<sp/>login<sp/>or<sp/>URL<sp/>values<sp/>back<sp/>in<sp/>the<sp/>right<sp/>place<sp/>[\#183](https://github.com/IJHack/QtPass/issues/183)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Click<sp/>does<sp/>not<sp/>stick<sp/>[\#233](https://github.com/IJHack/QtPass/issues/233)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>double-click<sp/>on<sp/>Treeview<sp/>does<sp/>not<sp/>open<sp/>the<sp/>edit<sp/>dialouge<sp/>[\#228](https://github.com/IJHack/QtPass/issues/228)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Windows<sp/>-<sp/>Enable<sp/>GPG<sp/>SSH<sp/>Authentication<sp/>[\#225](https://github.com/IJHack/QtPass/issues/225)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>We<sp/>need<sp/>autotype<sp/>.<sp/>.<sp/>[\#65](https://github.com/IJHack/QtPass/issues/65)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.1.5](https://github.com/IJHack/QtPass/tree/v1.1.5)<sp/>(2016-10-19)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.1.4...v1.1.5)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>I<sp/>translated<sp/>for<sp/>Simplified<sp/>Chinese.<sp/>[\#208](https://github.com/IJHack/QtPass/issues/208)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Short<sp/>fullname<sp/>hangs<sp/>QtPass<sp/>keypair<sp/>generation<sp/>process<sp/>for<sp/>infinite<sp/>time<sp/>[\#202](https://github.com/IJHack/QtPass/issues/202)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>More<sp/>options<sp/>for<sp/>password<sp/>generation<sp/>[\#98](https://github.com/IJHack/QtPass/issues/98)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Git<sp/>hangs<sp/>on<sp/>windows<sp/>[\#71](https://github.com/IJHack/QtPass/issues/71)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>view<sp/>box<sp/>is<sp/>trimming<sp/>whitespace<sp/>[\#210](https://github.com/IJHack/QtPass/issues/210)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>PREFIX<sp/>is<sp/>now<sp/>really<sp/>a<sp/>prefix<sp/>[\#185](https://github.com/IJHack/QtPass/issues/185)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass,<sp/>Git<sp/>and<sp/>windows<sp/>[\#173](https://github.com/IJHack/QtPass/issues/173)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Allow<sp/>SSH<sp/>links<sp/>[\#211](https://github.com/IJHack/QtPass/pull/211)<sp/>([cgonzalez](https://github.com/cgonzalez))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Increase<sp/>maximum<sp/>password<sp/>length<sp/>to<sp/>255<sp/>[\#209](https://github.com/IJHack/QtPass/pull/209)<sp/>([vladimiroff](https://github.com/vladimiroff))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Password<sp/>templates<sp/>[\#207](https://github.com/IJHack/QtPass/pull/207)<sp/>([jounathaen](https://github.com/jounathaen))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Updated<sp/>German<sp/>Translation<sp/>[\#206](https://github.com/IJHack/QtPass/pull/206)<sp/>([jounathaen](https://github.com/jounathaen))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Italian<sp/>translation<sp/>[\#204](https://github.com/IJHack/QtPass/pull/204)<sp/>([dakk](https://github.com/dakk))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>keygendialog<sp/>email<sp/>and<sp/>name<sp/>validition<sp/>\(issue<sp/>202\)<sp/>[\#203](https://github.com/IJHack/QtPass/pull/203)<sp/>([dakk](https://github.com/dakk))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Lookup<sp/>validity<sp/>field<sp/>to<sp/>check<sp/>if<sp/>keys<sp/>are<sp/>valid<sp/>[\#201](https://github.com/IJHack/QtPass/pull/201)<sp/>([thotypous](https://github.com/thotypous))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>spelling<sp/>error<sp/>[\#200](https://github.com/IJHack/QtPass/pull/200)<sp/>([innir](https://github.com/innir))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.1.4](https://github.com/IJHack/QtPass/tree/v1.1.4)<sp/>(2016-09-26)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.1.3...v1.1.4)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Re-assign<sp/>permissions<sp/>when<sp/>adding<sp/>users<sp/>[\#161](https://github.com/IJHack/QtPass/issues/161)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Main<sp/>window<sp/>immediately<sp/>closes<sp/>upon<sp/>app<sp/>launch<sp/>[\#139](https://github.com/IJHack/QtPass/issues/139)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>German<sp/>umlauts<sp/>fails<sp/>[\#192](https://github.com/IJHack/QtPass/issues/192)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Error<sp/>after<sp/>change<sp/>configuration<sp/>[\#190](https://github.com/IJHack/QtPass/issues/190)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Bug:<sp/>Special<sp/>characters<sp/>in<sp/>Template<sp/>[\#131](https://github.com/IJHack/QtPass/issues/131)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Character<sp/>encoding<sp/>issue<sp/>with<sp/>GPG<sp/>key<sp/>[\#101](https://github.com/IJHack/QtPass/issues/101)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>saved<sp/>password<sp/>&apos;§&apos;<sp/>turns<sp/>to<sp/>&apos;Â§&apos;<sp/>when<sp/>copied<sp/>to<sp/>clipboard<sp/>or<sp/>shown<sp/>when<sp/>editing<sp/>[\#91](https://github.com/IJHack/QtPass/issues/91)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Signed<sp/>releases<sp/>[\#186](https://github.com/IJHack/QtPass/issues/186)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Why<sp/>it&apos;s<sp/>not<sp/>listed<sp/>in<sp/>wikipedia.org/wiki/List_of_password_managers<sp/>?<sp/>[\#164](https://github.com/IJHack/QtPass/issues/164)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Bitdefender<sp/>blocks<sp/>installation<sp/>and<sp/>quarantines<sp/>the<sp/>.exe<sp/>and<sp/>.ink<sp/>[\#138](https://github.com/IJHack/QtPass/issues/138)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>issue<sp/>91<sp/>bugfix<sp/>[\#199](https://github.com/IJHack/QtPass/pull/199)<sp/>([asalamon74](https://github.com/asalamon74))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>issue<sp/>101<sp/>bugfix<sp/>[\#198](https://github.com/IJHack/QtPass/pull/198)<sp/>([asalamon74](https://github.com/asalamon74))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Czech<sp/>translation<sp/>[\#195](https://github.com/IJHack/QtPass/pull/195)<sp/>([svetlemodry](https://github.com/svetlemodry))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.1.3](https://github.com/IJHack/QtPass/tree/v1.1.3)<sp/>(2016-06-10)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.1.2...v1.1.3)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>edit<sp/>of<sp/>password<sp/>broken<sp/>with<sp/>active<sp/>&quot;Automatically<sp/>push&quot;<sp/>[\#177](https://github.com/IJHack/QtPass/issues/177)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Clipboard<sp/>not<sp/>cleared<sp/>when<sp/>quitting<sp/>or<sp/>killing<sp/>application<sp/>[\#171](https://github.com/IJHack/QtPass/issues/171)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Hide<sp/>content<sp/>doesn&apos;t<sp/>work<sp/>when<sp/>using<sp/>templates<sp/>[\#160](https://github.com/IJHack/QtPass/issues/160)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>a<sp/>\(small\)<sp/>manpage<sp/>[\#174](https://github.com/IJHack/QtPass/issues/174)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.1.2](https://github.com/IJHack/QtPass/tree/v1.1.2)<sp/>(2016-06-10)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.1.1...v1.1.2)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>qtpass<sp/>on<sp/>windows,<sp/>space<sp/>in<sp/>front<sp/>of<sp/>URL<sp/>and<sp/>Username<sp/>[\#182](https://github.com/IJHack/QtPass/issues/182)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Deletion<sp/>of<sp/>folder<sp/>doesn&apos;t<sp/>work<sp/>on<sp/>Debian/GNU<sp/>Linux<sp/>[\#181](https://github.com/IJHack/QtPass/issues/181)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>gpg:<sp/>decryption<sp/>failed:<sp/>No<sp/>secret<sp/>key<sp/>[\#179](https://github.com/IJHack/QtPass/issues/179)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>&quot;gpg-agent:<sp/>command<sp/>get_passphrase<sp/>failed:<sp/>No<sp/>such<sp/>file<sp/>or<sp/>directory&quot;<sp/>[\#156](https://github.com/IJHack/QtPass/issues/156)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>add<sp/>Appdata<sp/>file<sp/>and<sp/>update<sp/>desktop<sp/>file<sp/>[\#178](https://github.com/IJHack/QtPass/pull/178)<sp/>([daveol](https://github.com/daveol))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>HTTPS<sp/>everywhere<sp/>[\#176](https://github.com/IJHack/QtPass/pull/176)<sp/>([da2x](https://github.com/da2x))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>build<sp/>issues<sp/>with<sp/>MSVC2015<sp/>on<sp/>Windows<sp/>[\#175](https://github.com/IJHack/QtPass/pull/175)<sp/>([msvi](https://github.com/msvi))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.1.1](https://github.com/IJHack/QtPass/tree/v1.1.1)<sp/>(2016-04-04)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.1.0...v1.1.1)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Signed<sp/>binaries<sp/>[\#149](https://github.com/IJHack/QtPass/issues/149)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Icon<sp/>theme<sp/>and<sp/>Cinnamon<sp/>[\#146](https://github.com/IJHack/QtPass/issues/146)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Bind<sp/>a<sp/>key<sp/>to<sp/>the<sp/>clear<sp/>action<sp/>[\#142](https://github.com/IJHack/QtPass/issues/142)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Installation<sp/>dependencies<sp/>[\#140](https://github.com/IJHack/QtPass/issues/140)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>All<sp/>text<sp/>input<sp/>fields<sp/>need<sp/>example<sp/>text<sp/>&amp;<sp/>edit<sp/>dialogue<sp/>changes<sp/>[\#85](https://github.com/IJHack/QtPass/issues/85)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>OSX:<sp/>Qt-window<sp/>closed<sp/>only<sp/>reappears<sp/>when<sp/>&apos;active&apos;<sp/>and<sp/>using<sp/>tray<sp/>incon<sp/>[\#77](https://github.com/IJHack/QtPass/issues/77)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Spelling<sp/>bug:<sp/>German<sp/>translation<sp/>of<sp/>push<sp/>and<sp/>pull<sp/>[\#110](https://github.com/IJHack/QtPass/issues/110)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>gpg:<sp/>decryption<sp/>failed:<sp/>No<sp/>secret<sp/>key<sp/>[\#92](https://github.com/IJHack/QtPass/issues/92)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Remove<sp/>outdated<sp/>Debian<sp/>packaging<sp/>[\#165](https://github.com/IJHack/QtPass/issues/165)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Same<sp/>name<sp/>for<sp/>file<sp/>and<sp/>folder<sp/>[\#159](https://github.com/IJHack/QtPass/issues/159)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Icons<sp/>don&apos;t<sp/>work<sp/>on<sp/>nixos<sp/>[\#157](https://github.com/IJHack/QtPass/issues/157)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>gpg:<sp/>Sorry,<sp/>we<sp/>are<sp/>in<sp/>batchmode<sp/>-<sp/>can&apos;t<sp/>get<sp/>input<sp/>[\#151](https://github.com/IJHack/QtPass/issues/151)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>lupdate<sp/>and<sp/>Russian<sp/>translation<sp/>[\#170](https://github.com/IJHack/QtPass/pull/170)<sp/>([ahippo](https://github.com/ahippo))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Remove<sp/>path<sp/>to<sp/>password<sp/>store<sp/>in<sp/>commit<sp/>message<sp/>and<sp/>a<sp/>leading<sp/>space.<sp/>[\#169](https://github.com/IJHack/QtPass/pull/169)<sp/>([ahippo](https://github.com/ahippo))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Use<sp/>--secure<sp/>for<sp/>pwgen<sp/>and<sp/>add<sp/>more<sp/>configurable<sp/>options<sp/>[\#168](https://github.com/IJHack/QtPass/pull/168)<sp/>([ahippo](https://github.com/ahippo))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Remove<sp/>Debian<sp/>packaging<sp/>[\#166](https://github.com/IJHack/QtPass/pull/166)<sp/>([innir](https://github.com/innir))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>update<sp/>gl_Es<sp/>[\#162](https://github.com/IJHack/QtPass/pull/162)<sp/>([xmgz](https://github.com/xmgz))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Two<sp/>UI<sp/>Tweaks<sp/>[\#158](https://github.com/IJHack/QtPass/pull/158)<sp/>([lftl](https://github.com/lftl))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>configwindow.ui<sp/>default/start<sp/>tab<sp/>set<sp/>to<sp/>&quot;settings&quot;<sp/>[\#154](https://github.com/IJHack/QtPass/pull/154)<sp/>([jounathaen](https://github.com/jounathaen))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>FAQ<sp/>update<sp/>concerning<sp/>button-icons<sp/>on<sp/>cinnamon<sp/>[\#153](https://github.com/IJHack/QtPass/pull/153)<sp/>([jounathaen](https://github.com/jounathaen))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.1.0](https://github.com/IJHack/QtPass/tree/v1.1.0)<sp/>(2016-01-25)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.0.6...v1.1.0)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Clear<sp/>text<sp/>input:<sp/>use<sp/>system<sp/>icon<sp/>instead<sp/>of<sp/>x<sp/>[\#84](https://github.com/IJHack/QtPass/issues/84)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>System<sp/>Icons<sp/>on<sp/>Buttons<sp/>and<sp/>double-click<sp/>on<sp/>treeView<sp/>[\#124](https://github.com/IJHack/QtPass/pull/124)<sp/>([jounathaen](https://github.com/jounathaen))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>\[resolved\]<sp/>Error<sp/>in<sp/>compiling<sp/>macOS<sp/>El<sp/>capitan<sp/>[\#148](https://github.com/IJHack/QtPass/issues/148)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Pre<sp/>1.1<sp/>mixing<sp/>[\#145](https://github.com/IJHack/QtPass/pull/145)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>RPM<sp/>Spec<sp/>file<sp/>updates<sp/>[\#137](https://github.com/IJHack/QtPass/pull/137)<sp/>([muff1nman](https://github.com/muff1nman))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>swedish<sp/>translations<sp/>[\#135](https://github.com/IJHack/QtPass/pull/135)<sp/>([ralphtheninja](https://github.com/ralphtheninja))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.0.6](https://github.com/IJHack/QtPass/tree/v1.0.6)<sp/>(2016-01-03)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.0.5...v1.0.6)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Feature:<sp/>Always<sp/>on<sp/>top<sp/>[\#118](https://github.com/IJHack/QtPass/issues/118)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Option<sp/>to<sp/>show<sp/>minimized<sp/>instance<sp/>[\#99](https://github.com/IJHack/QtPass/issues/99)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Bug:<sp/>deleted<sp/>record<sp/>stays<sp/>in<sp/>memory<sp/>[\#117](https://github.com/IJHack/QtPass/issues/117)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>SIGSEGV<sp/>in<sp/>MainWindow::executeWrapper<sp/>on<sp/>clean<sp/>install<sp/>[\#122](https://github.com/IJHack/QtPass/issues/122)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>improved<sp/>the<sp/>German<sp/>translation<sp/>[\#134](https://github.com/IJHack/QtPass/pull/134)<sp/>([retokromer](https://github.com/retokromer))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>qrand<sp/>always<sp/>generating<sp/>the<sp/>same<sp/>sequence<sp/>of<sp/>passwords<sp/>[\#129](https://github.com/IJHack/QtPass/pull/129)<sp/>([treat1](https://github.com/treat1))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>some<sp/>improvements<sp/>[\#126](https://github.com/IJHack/QtPass/pull/126)<sp/>([retokromer](https://github.com/retokromer))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>added<sp/>one<sp/>translation<sp/>[\#125](https://github.com/IJHack/QtPass/pull/125)<sp/>([retokromer](https://github.com/retokromer))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>initial<sp/>attempt<sp/>to<sp/>create<sp/>a<sp/>RPM<sp/>spec<sp/>file<sp/>[\#121](https://github.com/IJHack/QtPass/pull/121)<sp/>([bram-ivs](https://github.com/bram-ivs))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Cleanup<sp/>and<sp/>coding<sp/>standards<sp/>[\#120](https://github.com/IJHack/QtPass/pull/120)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Modified<sp/>the<sp/>clipboard<sp/>logic<sp/>to<sp/>allow<sp/>for<sp/>on-demand<sp/>copy<sp/>to<sp/>clipboard.<sp/>[\#119](https://github.com/IJHack/QtPass/pull/119)<sp/>([jonhanks](https://github.com/jonhanks))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.0.5](https://github.com/IJHack/QtPass/tree/v1.0.5)<sp/>(2015-11-18)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.0.4...v1.0.5)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>using<sp/>pwgen<sp/>adds<sp/>carriage-return<sp/>[\#115](https://github.com/IJHack/QtPass/issues/115)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Enhancement:<sp/>color<sp/>code<sp/>Git<sp/>results<sp/>[\#111](https://github.com/IJHack/QtPass/issues/111)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Fix<sp/>bug<sp/>that<sp/>prints<sp/>&quot;Unknown<sp/>error&quot;<sp/>to<sp/>the<sp/>terminal<sp/>[\#113](https://github.com/IJHack/QtPass/pull/113)<sp/>([dvaerum](https://github.com/dvaerum))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.0.4](https://github.com/IJHack/QtPass/tree/v1.0.4)<sp/>(2015-11-03)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.0.3...v1.0.4)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>support<sp/>for<sp/>RightToLeft<sp/>languages<sp/>[\#108](https://github.com/IJHack/QtPass/issues/108)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.0.3](https://github.com/IJHack/QtPass/tree/v1.0.3)<sp/>(2015-10-25)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.0.2...v1.0.3)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Get<sp/>PREFIX<sp/>variable<sp/>from<sp/>environment<sp/>[\#106](https://github.com/IJHack/QtPass/issues/106)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Password<sp/>file<sp/>named<sp/>`git`<sp/>returns<sp/>error<sp/>[\#105](https://github.com/IJHack/QtPass/issues/105)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Get<sp/>PREFIX<sp/>variable<sp/>from<sp/>environment<sp/>[\#104](https://github.com/IJHack/QtPass/pull/104)<sp/>([jorti](https://github.com/jorti))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>spanish<sp/>translations<sp/>added<sp/>[\#103](https://github.com/IJHack/QtPass/pull/103)<sp/>([mrpnkt](https://github.com/mrpnkt))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.0.2](https://github.com/IJHack/QtPass/tree/v1.0.2)<sp/>(2015-09-24)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.0.1...v1.0.2)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Generate<sp/>password:<sp/>Floating<sp/>point<sp/>exception<sp/>\(core<sp/>dumped\)<sp/>[\#102](https://github.com/IJHack/QtPass/issues/102)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>A<sp/>way<sp/>to<sp/>indicate<sp/>the<sp/>installation<sp/>prefix<sp/>is<sp/>needed<sp/>[\#100](https://github.com/IJHack/QtPass/issues/100)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>IPv4<sp/>URLs<sp/>are<sp/>non-clickable<sp/>[\#97](https://github.com/IJHack/QtPass/issues/97)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>app<sp/>crashes<sp/>when<sp/>&quot;Use<sp/>pwgen&quot;<sp/>is<sp/>unselected,<sp/>and<sp/>&quot;Generate&quot;<sp/>is<sp/>clicked.<sp/>[\#95](https://github.com/IJHack/QtPass/issues/95)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Some<sp/>minor<sp/>improvements<sp/>on<sp/>the<sp/>templating<sp/>part<sp/>[\#93](https://github.com/IJHack/QtPass/issues/93)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>app<sp/>crashes<sp/>with<sp/>variant<sp/>of<sp/>&quot;pwgen&quot;<sp/>app<sp/>[\#90](https://github.com/IJHack/QtPass/issues/90)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.0.1](https://github.com/IJHack/QtPass/tree/v1.0.1)<sp/>(2015-08-09)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v1.0.0...v1.0.1)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Implemented<sp/>enhancements:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Users<sp/>setup<sp/>-<sp/>key<sp/>colours<sp/>could<sp/>be<sp/>improved<sp/>[\#82](https://github.com/IJHack/QtPass/issues/82)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>When<sp/>QtPass<sp/>starts,<sp/>focus<sp/>search<sp/>input<sp/>box<sp/>[\#89](https://github.com/IJHack/QtPass/issues/89)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Clear<sp/>the<sp/>password<sp/>display<sp/>after<sp/>some<sp/>time<sp/>[\#86](https://github.com/IJHack/QtPass/issues/86)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Auto<sp/>push/pull<sp/>[\#83](https://github.com/IJHack/QtPass/issues/83)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>qtpass<sp/>doesn&apos;t<sp/>commit<sp/>deletes<sp/>to<sp/>Git<sp/>[\#81](https://github.com/IJHack/QtPass/issues/81)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Always<sp/>crashes<sp/>while<sp/>using<sp/>the<sp/>quick-search<sp/>input<sp/>[\#79](https://github.com/IJHack/QtPass/issues/79)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Git<sp/>initialisation<sp/>[\#72](https://github.com/IJHack/QtPass/issues/72)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Initialising<sp/>new<sp/>repo&apos;s<sp/>doesn&apos;t<sp/>work<sp/>correctly<sp/>[\#55](https://github.com/IJHack/QtPass/issues/55)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>gpg:<sp/>Sorry,<sp/>no<sp/>terminal<sp/>at<sp/>all<sp/>requested<sp/>-<sp/>can&apos;t<sp/>get<sp/>input<sp/>[\#18](https://github.com/IJHack/QtPass/issues/18)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Issue<sp/>86<sp/>clear<sp/>panel<sp/>[\#87](https://github.com/IJHack/QtPass/pull/87)<sp/>([karlgrz](https://github.com/karlgrz))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Update<sp/>FAQ<sp/>for<sp/>Yubikey<sp/>NEO<sp/>helper<sp/>in<sp/>.bashrc<sp/>for<sp/>Ubuntu<sp/>[\#80](https://github.com/IJHack/QtPass/pull/80)<sp/>([karlgrz](https://github.com/karlgrz))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>\[WIP\]<sp/>Call<sp/>&apos;pass<sp/>Git<sp/>init&apos;<sp/>on<sp/>creation<sp/>of<sp/>password-store<sp/>when<sp/>useGit<sp/>[\#78](https://github.com/IJHack/QtPass/pull/78)<sp/>([dennisdegreef](https://github.com/dennisdegreef))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v1.0.0](https://github.com/IJHack/QtPass/tree/v1.0.0)<sp/>(2015-08-01)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v0.9.2...v1.0.0)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Yubikey<sp/>Neo<sp/>Pin<sp/>entry<sp/>not<sp/>working<sp/>properly<sp/>on<sp/>Ubuntu<sp/>15.04<sp/>[\#73](https://github.com/IJHack/QtPass/issues/73)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Updating<sp/>hungarian<sp/>localisation<sp/>[\#76](https://github.com/IJHack/QtPass/pull/76)<sp/>([damnlie](https://github.com/damnlie))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>added<sp/>DE<sp/>translations<sp/>[\#74](https://github.com/IJHack/QtPass/pull/74)<sp/>([Friedy](https://github.com/Friedy))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v0.9.2](https://github.com/IJHack/QtPass/tree/v0.9.2)<sp/>(2015-07-30)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v0.9.1...v0.9.2)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Show<sp/>expiration<sp/>date<sp/>in<sp/>key<sp/>setup<sp/>[\#70](https://github.com/IJHack/QtPass/issues/70)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v0.9.1](https://github.com/IJHack/QtPass/tree/v0.9.1)<sp/>(2015-07-29)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v0.9.0...v0.9.1)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Minimize<sp/>on<sp/>startup.<sp/>[\#69](https://github.com/IJHack/QtPass/issues/69)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>tray<sp/>icon<sp/>in<sp/>xfce<sp/>[\#58](https://github.com/IJHack/QtPass/issues/58)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Git<sp/>intergration<sp/>[\#57](https://github.com/IJHack/QtPass/issues/57)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Weird<sp/>characters<sp/>in<sp/>filenames<sp/>breaks<sp/>loading<sp/>gpg<sp/>files<sp/>[\#10](https://github.com/IJHack/QtPass/issues/10)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v0.9.0](https://github.com/IJHack/QtPass/tree/v0.9.0)<sp/>(2015-07-17)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v0.8.6...v0.9.0)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Request:<sp/>Integrate<sp/>qtpass<sp/>with<sp/>pwgen<sp/>for<sp/>generating<sp/>passwords.<sp/>[\#68](https://github.com/IJHack/QtPass/issues/68)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v0.8.6](https://github.com/IJHack/QtPass/tree/v0.8.6)<sp/>(2015-07-17)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v0.8.5.1...v0.8.6)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Copy<sp/>password<sp/>by<sp/>Ctrl+C<sp/>[\#60](https://github.com/IJHack/QtPass/issues/60)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Remember<sp/>window<sp/>size<sp/>and<sp/>vertical<sp/>pane<sp/>width<sp/>[\#59](https://github.com/IJHack/QtPass/issues/59)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Multiline<sp/>Editing<sp/>[\#34](https://github.com/IJHack/QtPass/issues/34)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>To<sp/>make<sp/>building<sp/>successfull<sp/>wi<sp/>Desktop<sp/>Qt<sp/>5.4.0<sp/>MSVC2012<sp/>OpenGL<sp/>32bit<sp/>[\#67](https://github.com/IJHack/QtPass/pull/67)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v0.8.5.1](https://github.com/IJHack/QtPass/tree/v0.8.5.1)<sp/>(2015-07-08)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v0.8.5...v0.8.5.1)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v0.8.5](https://github.com/IJHack/QtPass/tree/v0.8.5)<sp/>(2015-07-08)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v0.8.4...v0.8.5)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Won&apos;t<sp/>compile<sp/>on<sp/>Kubuntu<sp/>15.10<sp/>[\#61](https://github.com/IJHack/QtPass/issues/61)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Hanging<sp/>process<sp/>gives<sp/>weird<sp/>effects<sp/>[\#56](https://github.com/IJHack/QtPass/issues/56)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Directory<sp/>separator<sp/>actually<sp/>broken<sp/>by<sp/>208171fd09c55ad765fdf4fa1de9a7f0757fa72d<sp/>[\#53](https://github.com/IJHack/QtPass/issues/53)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Many<sp/>deadlocks<sp/>and<sp/>other<sp/>nasty<sp/>bugfixes<sp/>[\#64](https://github.com/IJHack/QtPass/pull/64)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Mention<sp/>qt5-default<sp/>package<sp/>in<sp/>readme<sp/>[\#62](https://github.com/IJHack/QtPass/pull/62)<sp/>([lorrin](https://github.com/lorrin))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Some<sp/>hacks<sp/>I<sp/>needed<sp/>for<sp/>portable<sp/>gpg4win<sp/>release<sp/>[\#54](https://github.com/IJHack/QtPass/pull/54)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v0.8.4](https://github.com/IJHack/QtPass/tree/v0.8.4)<sp/>(2015-06-11)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v0.8.3...v0.8.4)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>does<sp/>not<sp/>detect<sp/>GPG<sp/>installation<sp/>[\#50](https://github.com/IJHack/QtPass/issues/50)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Cannot<sp/>create<sp/>new<sp/>folders<sp/>[\#48](https://github.com/IJHack/QtPass/issues/48)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Better<sp/>error<sp/>handling<sp/>when<sp/>no<sp/>pass<sp/>or<sp/>gpg<sp/>found<sp/>initially<sp/>[\#13](https://github.com/IJHack/QtPass/issues/13)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Develop<sp/>[\#52](https://github.com/IJHack/QtPass/pull/52)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Minor<sp/>thingies<sp/>[\#51](https://github.com/IJHack/QtPass/pull/51)<sp/>([beefcurtains](https://github.com/beefcurtains))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v0.8.3](https://github.com/IJHack/QtPass/tree/v0.8.3)<sp/>(2015-06-09)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v0.8.2...v0.8.3)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Bugfixes<sp/>[\#49](https://github.com/IJHack/QtPass/pull/49)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v0.8.2](https://github.com/IJHack/QtPass/tree/v0.8.2)<sp/>(2015-05-27)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/v0.8.1...v0.8.2)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Typo<sp/>in<sp/>37f17f3808c1c97bd72c165a530c67a4bfb82edb?<sp/>[\#45](https://github.com/IJHack/QtPass/issues/45)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Signing<sp/>of<sp/>keys<sp/>from<sp/>user<sp/>management<sp/>[\#41](https://github.com/IJHack/QtPass/issues/41)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Provide<sp/>more<sp/>information<sp/>in<sp/>user<sp/>list.<sp/>[\#47](https://github.com/IJHack/QtPass/pull/47)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Enable<sp/>C++11<sp/>and<sp/>use<sp/>it<sp/>to<sp/>simplify<sp/>loops.<sp/>[\#46](https://github.com/IJHack/QtPass/pull/46)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>[v0.8.1](https://github.com/IJHack/QtPass/tree/v0.8.1)<sp/>(2015-05-06)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">[Full<sp/>Changelog](https://github.com/IJHack/QtPass/compare/c2eb3dff58e4de577f6c250ad225d42f762b6c26...v0.8.1)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Fixed<sp/>bugs:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>Some<sp/>items<sp/>not<sp/>found<sp/>on<sp/>first<sp/>search<sp/>[\#8](https://github.com/IJHack/QtPass/issues/8)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Closed<sp/>issues:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>compiling<sp/>qtpass<sp/>on<sp/>ubuntu<sp/>15.04<sp/>-<sp/>fails<sp/>due<sp/>to<sp/>newer<sp/>qmake<sp/>version<sp/>[\#43](https://github.com/IJHack/QtPass/issues/43)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>QProcess::start:<sp/>Process<sp/>is<sp/>already<sp/>running<sp/>[\#40](https://github.com/IJHack/QtPass/issues/40)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Extra<sp/>line<sp/>breaks<sp/>seem<sp/>to<sp/>be<sp/>added<sp/>to<sp/>the<sp/>\(HTML\)<sp/>output<sp/>[\#39](https://github.com/IJHack/QtPass/issues/39)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Missing<sp/>develop<sp/>branch<sp/>and<sp/>release<sp/>testing<sp/>[\#38](https://github.com/IJHack/QtPass/issues/38)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Windows<sp/>WebDAV<sp/>broken<sp/>by<sp/>24f8dec3c203921f765e923e6ae6a4069b8cf50a<sp/>[\#36](https://github.com/IJHack/QtPass/issues/36)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>.gpg-id<sp/>file<sp/>not<sp/>added<sp/>to<sp/>Git<sp/>[\#35](https://github.com/IJHack/QtPass/issues/35)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Icon<sp/>filenames<sp/>[\#31](https://github.com/IJHack/QtPass/issues/31)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>`GNUPGHOME`<sp/>environment<sp/>variable<sp/>[\#30](https://github.com/IJHack/QtPass/issues/30)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Feature:<sp/>webdav<sp/>alternative<sp/>to<sp/>Git<sp/>[\#28](https://github.com/IJHack/QtPass/issues/28)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Windows:<sp/>not<sp/>working<sp/>due<sp/>to<sp/>pointless<sp/>use<sp/>of<sp/>&quot;sh&quot;<sp/>[\#16](https://github.com/IJHack/QtPass/issues/16)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Windows:<sp/>support<sp/>static<sp/>build<sp/>and<sp/>enable<sp/>ASLR<sp/>and<sp/>NX<sp/>[\#15](https://github.com/IJHack/QtPass/issues/15)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Some<sp/>paths<sp/>to<sp/>executables<sp/>are<sp/>printed<sp/>when<sp/>starting<sp/>up<sp/>[\#11](https://github.com/IJHack/QtPass/issues/11)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">**Merged<sp/>pull<sp/>requests:**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>SingleApplication<sp/>per<sp/>user<sp/>and<sp/>leading<sp/>newline<sp/>removed<sp/>from<sp/>output<sp/>[\#44](https://github.com/IJHack/QtPass/pull/44)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>User<sp/>filtering<sp/>and<sp/>many<sp/>fixes<sp/>[\#42](https://github.com/IJHack/QtPass/pull/42)<sp/>([annejan](https://github.com/annejan))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Re-enable<sp/>Windows<sp/>WebDAV<sp/>support.<sp/>[\#37](https://github.com/IJHack/QtPass/pull/37)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>User<sp/>robustness<sp/>[\#33](https://github.com/IJHack/QtPass/pull/33)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>WebDAV<sp/>support.<sp/>[\#29](https://github.com/IJHack/QtPass/pull/29)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>nosingleapp<sp/>config.<sp/>[\#27](https://github.com/IJHack/QtPass/pull/27)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Add<sp/>Makefile<sp/>with<sp/>commands<sp/>to<sp/>make<sp/>a<sp/>binary<sp/>release<sp/>ZIP<sp/>file.<sp/>[\#25](https://github.com/IJHack/QtPass/pull/25)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Start<sp/>process<sp/>only<sp/>after<sp/>we<sp/>finished<sp/>disabling<sp/>UI<sp/>elements<sp/>etc.<sp/>[\#24](https://github.com/IJHack/QtPass/pull/24)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Support<sp/>for<sp/>editing<sp/>.gpg-id<sp/>via<sp/>GUI<sp/>with<sp/>public<sp/>keyring<sp/>list.<sp/>[\#23](https://github.com/IJHack/QtPass/pull/23)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>More<sp/>proper<sp/>support<sp/>for<sp/>subdirectories.<sp/>[\#22](https://github.com/IJHack/QtPass/pull/22)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Russian<sp/>translation<sp/>\(+typo<sp/>fixed\)<sp/>[\#20](https://github.com/IJHack/QtPass/pull/20)<sp/>([mexus](https://github.com/mexus))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Windows-related<sp/>fixes.<sp/>[\#17](https://github.com/IJHack/QtPass/pull/17)<sp/>([rdoeffinger](https://github.com/rdoeffinger))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Deal<sp/>with<sp/>&quot;special&quot;<sp/>characters<sp/>[\#14](https://github.com/IJHack/QtPass/pull/14)<sp/>([JiCiT](https://github.com/JiCiT))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>galician<sp/>and<sp/>spanish<sp/>localization<sp/>files<sp/>created<sp/>[\#12](https://github.com/IJHack/QtPass/pull/12)<sp/>([xmgz](https://github.com/xmgz))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Update<sp/>localization_hu_HU.ts<sp/>[\#9](https://github.com/IJHack/QtPass/pull/9)<sp/>([damnlie](https://github.com/damnlie))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Replace<sp/>which<sp/>invocations<sp/>with<sp/>actual<sp/>path<sp/>resolution<sp/>code<sp/>[\#7](https://github.com/IJHack/QtPass/pull/7)<sp/>([shitbangs](https://github.com/shitbangs))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Added<sp/>Swedish<sp/>and<sp/>Polish<sp/>localization<sp/>to<sp/>resources<sp/>[\#6](https://github.com/IJHack/QtPass/pull/6)<sp/>([iamtew](https://github.com/iamtew))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Swedish<sp/>localization<sp/>[\#5](https://github.com/IJHack/QtPass/pull/5)<sp/>([iamtew](https://github.com/iamtew))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Update<sp/>localization_hu_HU.ts<sp/>[\#4](https://github.com/IJHack/QtPass/pull/4)<sp/>([reesenemesis](https://github.com/reesenemesis))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Update<sp/>localization_hu_HU.ts<sp/>[\#3](https://github.com/IJHack/QtPass/pull/3)<sp/>([reesenemesis](https://github.com/reesenemesis))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>[pass](http://www.passwordstore.org/)<sp/>[\#2](https://github.com/IJHack/QtPass/pull/2)<sp/>([guaka](https://github.com/guaka))</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Beginning<sp/>of<sp/>German<sp/>translation<sp/>[\#1](https://github.com/IJHack/QtPass/pull/1)<sp/>([mwfc](https://github.com/mwfc))</highlight></codeline>
+    </programlisting>
+    <location file="CHANGELOG.md"/>
+  </compounddef>
+</doxygen>

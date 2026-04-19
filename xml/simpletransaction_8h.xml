@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="simpletransaction_8h" kind="file" language="C++">
+    <compoundname>simpletransaction.h</compoundname>
+    <includes refid="enums_8h" local="yes">enums.h</includes>
+    <includes local="no">queue</includes>
+    <includedby refid="imitatepass_8h" local="yes">src/imitatepass.h</includedby>
+    <includedby refid="simpletransaction_8cpp" local="yes">src/simpletransaction.cpp</includedby>
+    <includedby refid="tst__simpletransaction_8cpp" local="yes">tests/auto/simpletransaction/tst_simpletransaction.cpp</includedby>
+    <includedby refid="tst__util_8cpp" local="yes">tests/auto/util/tst_util.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>enums.h</label>
+        <link refid="enums_8h"/>
+      </node>
+      <node id="1">
+        <label>src/simpletransaction.h</label>
+        <link refid="simpletransaction_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>queue</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="5">
+        <label>src/configdialog.cpp</label>
+        <link refid="configdialog_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/imitatepass.cpp</label>
+        <link refid="imitatepass_8cpp"/>
+      </node>
+      <node id="2">
+        <label>src/imitatepass.h</label>
+        <link refid="imitatepass_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/keygendialog.cpp</label>
+        <link refid="keygendialog_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="8">
+        <label>src/pass.cpp</label>
+        <link refid="pass_8cpp"/>
+      </node>
+      <node id="9">
+        <label>src/passworddialog.cpp</label>
+        <link refid="passworddialog_8cpp"/>
+      </node>
+      <node id="10">
+        <label>src/qtpass.cpp</label>
+        <link refid="qtpass_8cpp"/>
+      </node>
+      <node id="11">
+        <label>src/qtpasssettings.cpp</label>
+        <link refid="qtpasssettings_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/qtpasssettings.h</label>
+        <link refid="qtpasssettings_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>src/realpass.cpp</label>
+        <link refid="realpass_8cpp"/>
+      </node>
+      <node id="21">
+        <label>src/simpletransaction.cpp</label>
+        <link refid="simpletransaction_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/simpletransaction.h</label>
+        <link refid="simpletransaction_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>src/storemodel.cpp</label>
+        <link refid="storemodel_8cpp"/>
+      </node>
+      <node id="14">
+        <label>src/usersdialog.cpp</label>
+        <link refid="usersdialog_8cpp"/>
+      </node>
+      <node id="15">
+        <label>src/util.cpp</label>
+        <link refid="util_8cpp"/>
+      </node>
+      <node id="16">
+        <label>tests/auto/executor/tst_executor.cpp</label>
+        <link refid="tst__executor_8cpp"/>
+      </node>
+      <node id="17">
+        <label>tests/auto/integration/tst_integration.cpp</label>
+        <link refid="tst__integration_8cpp"/>
+      </node>
+      <node id="18">
+        <label>tests/auto/passwordconfig/tst_passwordconfig.cpp</label>
+        <link refid="tst__passwordconfig_8cpp"/>
+      </node>
+      <node id="19">
+        <label>tests/auto/settings/tst_settings.cpp</label>
+        <link refid="tst__settings_8cpp"/>
+      </node>
+      <node id="22">
+        <label>tests/auto/simpletransaction/tst_simpletransaction.cpp</label>
+        <link refid="tst__simpletransaction_8cpp"/>
+      </node>
+      <node id="20">
+        <label>tests/auto/util/tst_util.cpp</label>
+        <link refid="tst__util_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classsimple_transaction" prot="public">simpleTransaction</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2017<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_SIMPLETRANSACTION_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_SIMPLETRANSACTION_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="enums_8h" kindref="compound">enums.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classsimple_transaction" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsimple_transaction_1ac798d38ad0b66f05cd58b5c9e9845491" kindref="member">simpleTransaction</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>transactionDepth;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref><sp/>lastInTransaction;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/>std::queue&lt;std::pair&lt;Enums::PROCESS,<sp/>Enums::PROCESS&gt;&gt;<sp/>transactionQueue;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="15" refid="classsimple_transaction_1ac798d38ad0b66f05cd58b5c9e9845491" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classsimple_transaction_1ac798d38ad0b66f05cd58b5c9e9845491" kindref="member">simpleTransaction</ref>()</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>transactionDepth(0),<sp/>lastInTransaction(<ref refid="namespace_enums" kindref="compound">Enums</ref>::<ref refid="imitatepass_8cpp_1a9da0f55eca9ec763c75e98268dcbd023" kindref="member">INVALID</ref>)<sp/>{}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsimple_transaction_1aafd98f73dfc5352f307115cabc2a5ed4" kindref="member">transactionStart</ref>();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsimple_transaction_1a974db4056edcb408e96cf9bc2a6e4326" kindref="member">transactionAdd</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref>);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsimple_transaction_1a76e9280b4cc192ff420520fefa557c63" kindref="member">transactionEnd</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="classsimple_transaction_1a3914acc39e65586cd6671aff1ac3afe9" kindref="member">transactionIsOver</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref>)<sp/>-&gt;<sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref>;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_SIMPLETRANSACTION_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/simpletransaction.h"/>
+  </compounddef>
+</doxygen>

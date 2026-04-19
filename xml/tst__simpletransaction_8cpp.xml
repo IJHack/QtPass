@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="tst__simpletransaction_8cpp" kind="file" language="C++">
+    <compoundname>tst_simpletransaction.cpp</compoundname>
+    <includes local="no">QtTest</includes>
+    <includes refid="enums_8h" local="yes">../../../src/enums.h</includes>
+    <includes refid="simpletransaction_8h" local="yes">../../../src/simpletransaction.h</includes>
+    <includes local="yes">tst_simpletransaction.moc</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>../../../src/enums.h</label>
+        <link refid="enums_8h"/>
+      </node>
+      <node id="4">
+        <label>../../../src/simpletransaction.h</label>
+        <link refid="simpletransaction_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tests/auto/simpletransaction/tst_simpletransaction.cpp</label>
+        <link refid="tst__simpletransaction_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QtTest</label>
+      </node>
+      <node id="5">
+        <label>queue</label>
+      </node>
+      <node id="6">
+        <label>tst_simpletransaction.moc</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classtst__simpletransaction" prot="public">tst_simpletransaction</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2026<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtTest&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="enums_8h" kindref="compound">../../../src/enums.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="simpletransaction_8h" kindref="compound">../../../src/simpletransaction.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="classtst__simpletransaction" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtst__simpletransaction" kindref="compound">tst_simpletransaction</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>transactionStartEnd();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>transactionAdd();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>transactionIsOver();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>nestedTransaction();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cleanupTestCase();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_simpletransaction::transactionStartEnd()<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><ref refid="classsimple_transaction" kindref="compound">simpleTransaction</ref><sp/>st;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/>st.<ref refid="classsimple_transaction_1a974db4056edcb408e96cf9bc2a6e4326" kindref="member">transactionAdd</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9" kindref="member">Enums::PASS_SHOW</ref>);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref><sp/>result<sp/>=<sp/>st.<ref refid="classsimple_transaction_1a3914acc39e65586cd6671aff1ac3afe9" kindref="member">transactionIsOver</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9" kindref="member">Enums::PASS_SHOW</ref>);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/>QCOMPARE(result,<sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9" kindref="member">Enums::PASS_SHOW</ref>);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_simpletransaction::transactionAdd()<sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>simpleTransaction<sp/>st;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/>st.<ref refid="classsimple_transaction_1a974db4056edcb408e96cf9bc2a6e4326" kindref="member">transactionAdd</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9" kindref="member">Enums::PASS_SHOW</ref>);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>st.<ref refid="classsimple_transaction_1a974db4056edcb408e96cf9bc2a6e4326" kindref="member">transactionAdd</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4" kindref="member">Enums::GIT_PULL</ref>);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_simpletransaction::transactionIsOver()<sp/>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/>simpleTransaction<sp/>st;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>st.<ref refid="classsimple_transaction_1a974db4056edcb408e96cf9bc2a6e4326" kindref="member">transactionAdd</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf" kindref="member">Enums::PASS_INSERT</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref><sp/>result<sp/>=<sp/>st.<ref refid="classsimple_transaction_1a3914acc39e65586cd6671aff1ac3afe9" kindref="member">transactionIsOver</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf" kindref="member">Enums::PASS_INSERT</ref>);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>QCOMPARE(result,<sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf" kindref="member">Enums::PASS_INSERT</ref>);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_simpletransaction::nestedTransaction()<sp/>{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>simpleTransaction<sp/>st;</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>st.<ref refid="classsimple_transaction_1a974db4056edcb408e96cf9bc2a6e4326" kindref="member">transactionAdd</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9" kindref="member">Enums::PASS_SHOW</ref>);</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>st.<ref refid="classsimple_transaction_1a974db4056edcb408e96cf9bc2a6e4326" kindref="member">transactionAdd</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4" kindref="member">Enums::GIT_PULL</ref>);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref><sp/>passShowResult<sp/>=<sp/>st.<ref refid="classsimple_transaction_1a3914acc39e65586cd6671aff1ac3afe9" kindref="member">transactionIsOver</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9" kindref="member">Enums::PASS_SHOW</ref>);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>QCOMPARE(passShowResult,<sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9" kindref="member">Enums::PASS_SHOW</ref>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref><sp/>gitPullResult<sp/>=<sp/>st.<ref refid="classsimple_transaction_1a3914acc39e65586cd6671aff1ac3afe9" kindref="member">transactionIsOver</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4" kindref="member">Enums::GIT_PULL</ref>);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>QCOMPARE(gitPullResult,<sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4" kindref="member">Enums::GIT_PULL</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_simpletransaction::cleanupTestCase()<sp/>{}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal">QTEST_MAIN(<ref refid="classtst__simpletransaction" kindref="compound">tst_simpletransaction</ref>)</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tst_simpletransaction.moc&quot;</highlight></codeline>
+    </programlisting>
+    <location file="tests/auto/simpletransaction/tst_simpletransaction.cpp"/>
+  </compounddef>
+</doxygen>

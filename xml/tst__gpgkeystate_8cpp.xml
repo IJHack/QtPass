@@ -1,0 +1,475 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="tst__gpgkeystate_8cpp" kind="file" language="C++">
+    <compoundname>tst_gpgkeystate.cpp</compoundname>
+    <includes local="no">QtTest</includes>
+    <includes local="no">algorithm</includes>
+    <includes refid="gpgkeystate_8h" local="yes">../../../src/gpgkeystate.h</includes>
+    <includes refid="gpgkeystate__p_8h" local="yes">../../../src/gpgkeystate_p.h</includes>
+    <includes refid="userinfo_8h" local="yes">../../../src/userinfo.h</includes>
+    <includes local="yes">tst_gpgkeystate.moc</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>../../../src/gpgkeystate.h</label>
+        <link refid="gpgkeystate_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>../../../src/gpgkeystate_p.h</label>
+        <link refid="gpgkeystate__p_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>userinfo.h</label>
+        <link refid="userinfo_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tests/auto/gpgkeystate/tst_gpgkeystate.cpp</label>
+        <link refid="tst__gpgkeystate_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>QDateTime</label>
+      </node>
+      <node id="8">
+        <label>QList</label>
+      </node>
+      <node id="7">
+        <label>QString</label>
+      </node>
+      <node id="9">
+        <label>QStringList</label>
+      </node>
+      <node id="2">
+        <label>QtTest</label>
+      </node>
+      <node id="3">
+        <label>algorithm</label>
+      </node>
+      <node id="11">
+        <label>tst_gpgkeystate.moc</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classtst__gpgkeystate" prot="public">tst_gpgkeystate</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2026<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtTest&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gpgkeystate_8h" kindref="compound">../../../src/gpgkeystate.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gpgkeystate__p_8h" kindref="compound">../../../src/gpgkeystate_p.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="userinfo_8h" kindref="compound">../../../src/userinfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classtst__gpgkeystate" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtst__gpgkeystate" kindref="compound">tst_gpgkeystate</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseMultiKeyPublic();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseMultiKeyPublic_data();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseSecretKeys();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseSecretKeys_data();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseSingleKey();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseSingleKey_data();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseKeyRollover();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseKeyRollover_data();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>classifyRecordTypes();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>classifyRecordEmpty();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handlePubSecEmptyFields();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handlePubSecShortList();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleFprEdgeCases();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>classifyRecordWithConstQString();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseGpgColonOutputWithGrpRecord();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseGpgColonOutputUnknownRecordTypes();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseGpgColonOutputAllPublicRecordTypes();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseMultiKeyPublic()<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>QFETCH(QString,<sp/>input);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/>QFETCH(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>expectedCount);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>includeSecretKeys<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>QList&lt;UserInfo&gt;<sp/>result<sp/>=<sp/><ref refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" kindref="member">parseGpgColonOutput</ref>(input,<sp/>includeSecretKeys);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>QVERIFY2(result.size()<sp/>==<sp/>expectedCount,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qPrintable(QString(</highlight><highlight class="stringliteral">&quot;Expected<sp/>%1<sp/>keys,<sp/>got<sp/>%2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(expectedCount)</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(result.size())));</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_user_info" kindref="compound">UserInfo</ref><sp/>&amp;user<sp/>:<sp/>result)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(!user.have_secret,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Public<sp/>keys<sp/>should<sp/>not<sp/>have<sp/>secret<sp/>capability&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(expectedCount<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(!result.at(0).key_id.isEmpty(),<sp/></highlight><highlight class="stringliteral">&quot;First<sp/>key<sp/>should<sp/>have<sp/>key_id&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(!result.at(0).name.isEmpty(),<sp/></highlight><highlight class="stringliteral">&quot;First<sp/>key<sp/>should<sp/>have<sp/>name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(expectedCount<sp/>&gt;<sp/>1)<sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(!result.at(1).key_id.isEmpty(),<sp/></highlight><highlight class="stringliteral">&quot;Second<sp/>key<sp/>should<sp/>have<sp/>key_id&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(!result.at(1).name.isEmpty(),<sp/></highlight><highlight class="stringliteral">&quot;Second<sp/>key<sp/>should<sp/>have<sp/>name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseMultiKeyPublic_data()<sp/>{</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>QTest::addColumn&lt;QString&gt;(</highlight><highlight class="stringliteral">&quot;input&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>QTest::addColumn&lt;int&gt;(</highlight><highlight class="stringliteral">&quot;expectedCount&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>QString<sp/>input<sp/>=<sp/>R</highlight><highlight class="stringliteral">&quot;(tru::1:1775005973:0:3:1:5</highlight></codeline>
+<codeline lineno="65"><highlight class="stringliteral">pub:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA::::::23::0:</highlight></codeline>
+<codeline lineno="66"><highlight class="stringliteral">fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:</highlight></codeline>
+<codeline lineno="67"><highlight class="stringliteral">uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Anne<sp/>Jan<sp/>Brouwer<sp/>&lt;henk@annejan.com&gt;::::::::::0:</highlight></codeline>
+<codeline lineno="68"><highlight class="stringliteral">sub:u:4096:1:6DF67C6BAD8383CB:1774947438::::::esa::::::23:</highlight></codeline>
+<codeline lineno="69"><highlight class="stringliteral">pub:f:4096:1:693A0AF3FA364E76:1775005968:::f:::escarESCA::::::23::0:</highlight></codeline>
+<codeline lineno="70"><highlight class="stringliteral">fpr:::::::::4EF2550F79F4E9E68B09F71D693A0AF3FA364E76:</highlight></codeline>
+<codeline lineno="71"><highlight class="stringliteral">uid:f::::1775005968::8AA011711F27F6E08DF71653718C299A13B323A0::Harrie<sp/>de<sp/>Bot<sp/>&lt;harrie@annejan.com&gt;::::::::::0:)&quot;;</highlight></codeline>
+<codeline lineno="72"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="73"><highlight class="stringliteral"><sp/><sp/>QTest::newRow(</highlight><highlight class="stringliteral">&quot;two-public-keys&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>input<sp/>&lt;&lt;<sp/>2;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseSecretKeys()<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>QFETCH(QString,<sp/>input);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>QFETCH(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>expectedCount);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>QFETCH(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">,<sp/>expectHaveSecret);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>includeSecretKeys<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>QList&lt;UserInfo&gt;<sp/>result<sp/>=<sp/><ref refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" kindref="member">parseGpgColonOutput</ref>(input,<sp/>includeSecretKeys);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>QVERIFY2(result.size()<sp/>==<sp/>expectedCount,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qPrintable(QString(</highlight><highlight class="stringliteral">&quot;Expected<sp/>%1<sp/>keys,<sp/>got<sp/>%2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(expectedCount)</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(result.size())));</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(expectedCount<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY(!result.isEmpty());</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>result.size();<sp/>++i)<sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>UserInfo<sp/>&amp;user<sp/>=<sp/>result.at(i);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QVERIFY2(</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>user.<ref refid="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" kindref="member">have_secret</ref><sp/>==<sp/>expectHaveSecret,</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qPrintable(QString(</highlight><highlight class="stringliteral">&quot;Key<sp/>at<sp/>index<sp/>%1<sp/>has<sp/>have_secret=%2,<sp/>expected<sp/>%3&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(i)</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(user.<ref refid="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" kindref="member">have_secret</ref>)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(expectHaveSecret)));</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseSecretKeys_data()<sp/>{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>QTest::addColumn&lt;QString&gt;(</highlight><highlight class="stringliteral">&quot;input&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>QTest::addColumn&lt;int&gt;(</highlight><highlight class="stringliteral">&quot;expectedCount&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>QTest::addColumn&lt;bool&gt;(</highlight><highlight class="stringliteral">&quot;expectHaveSecret&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>QString<sp/>input<sp/>=</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>R</highlight><highlight class="stringliteral">&quot;(sec:u:4096:1:31850CF72D9CDDE9:1774947438:::u:::escarESCA:::+:::23::0:</highlight></codeline>
+<codeline lineno="110"><highlight class="stringliteral">fpr:::::::::13A47CCE2B3DA3AC340A274A31850CF72D9CDDE9:</highlight></codeline>
+<codeline lineno="111"><highlight class="stringliteral">uid:u::::1774947438::CBF23008234AA5F88824CE76140F482FAE34923E::Anne<sp/>Jan<sp/>Brouwer<sp/>&lt;henk@annejan.com&gt;::::::::::0:</highlight></codeline>
+<codeline lineno="112"><highlight class="stringliteral">ssb:u:4096:1:6DF67C6BAD8383CB:1774947438::::::esa:::+:::23:)&quot;;</highlight></codeline>
+<codeline lineno="113"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="114"><highlight class="stringliteral"><sp/><sp/>QTest::newRow(</highlight><highlight class="stringliteral">&quot;single-secret-key&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>input<sp/>&lt;&lt;<sp/>1<sp/>&lt;&lt;<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseSingleKey()<sp/>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/>QFETCH(QString,<sp/>input);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/>QFETCH(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>expectedCount);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>QFETCH(QString,<sp/>expectedKeyId);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>includeSecretKeys<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>QList&lt;UserInfo&gt;<sp/>result<sp/>=<sp/><ref refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" kindref="member">parseGpgColonOutput</ref>(input,<sp/>includeSecretKeys);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>QVERIFY2(result.size()<sp/>==<sp/>expectedCount,</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qPrintable(QString(</highlight><highlight class="stringliteral">&quot;Expected<sp/>%1<sp/>keys,<sp/>got<sp/>%2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(expectedCount)</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(result.size())));</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!result.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(!result.first().key_id.isEmpty(),</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Parsed<sp/>key<sp/>should<sp/>have<sp/>a<sp/>key_id&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!expectedKeyId.isEmpty())<sp/>{</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QVERIFY2(result.first().key_id<sp/>==<sp/>expectedKeyId,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qPrintable(QString(</highlight><highlight class="stringliteral">&quot;Expected<sp/>key_id<sp/>%1,<sp/>got<sp/>%2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(expectedKeyId)</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(result.first().key_id)));</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseSingleKey_data()<sp/>{</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>QTest::addColumn&lt;QString&gt;(</highlight><highlight class="stringliteral">&quot;input&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>QTest::addColumn&lt;int&gt;(</highlight><highlight class="stringliteral">&quot;expectedCount&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>QTest::addColumn&lt;QString&gt;(</highlight><highlight class="stringliteral">&quot;expectedKeyId&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>QTest::newRow(</highlight><highlight class="stringliteral">&quot;pub-only&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;pub:u:4096:1:ABC123:1774947438:::u::::::23::0:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>1<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ABC123&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>QTest::newRow(</highlight><highlight class="stringliteral">&quot;pub-with-fpr&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;pub:u:4096:1:ABC123:1774947438:::u::::::23:&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;:0:\nfpr:::::::::FINGERPRINT123456789:&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>1<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;ABC123&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseKeyRollover()<sp/>{</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>QFETCH(QString,<sp/>input);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>QFETCH(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/>expectedCount);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>includeSecretKeys<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>QList&lt;UserInfo&gt;<sp/>result<sp/>=<sp/><ref refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" kindref="member">parseGpgColonOutput</ref>(input,<sp/>includeSecretKeys);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/>QVERIFY2(result.size()<sp/>==<sp/>expectedCount,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qPrintable(QString(</highlight><highlight class="stringliteral">&quot;Expected<sp/>%1<sp/>keys,<sp/>got<sp/>%2&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(expectedCount)</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.arg(result.size())));</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>containsKeyId<sp/>=<sp/>[&amp;](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;keyId)<sp/>{</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>std::any_of(</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.cbegin(),<sp/>result.cend(),</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>[&amp;](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>UserInfo<sp/>&amp;user)<sp/>{<sp/>return<sp/>user.key_id<sp/>==<sp/>keyId;<sp/>});</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>QVERIFY2(containsKeyId(</highlight><highlight class="stringliteral">&quot;AAA111&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;Expected<sp/>AAA111<sp/>key<sp/>to<sp/>be<sp/>parsed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/>QVERIFY2(containsKeyId(</highlight><highlight class="stringliteral">&quot;BBB222&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;Expected<sp/>BBB222<sp/>key<sp/>to<sp/>be<sp/>parsed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/>QVERIFY2(containsKeyId(</highlight><highlight class="stringliteral">&quot;CCC333&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="stringliteral">&quot;Expected<sp/>CCC333<sp/>key<sp/>to<sp/>be<sp/>parsed&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseKeyRollover_data()<sp/>{</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>QTest::addColumn&lt;QString&gt;(</highlight><highlight class="stringliteral">&quot;input&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>QTest::addColumn&lt;int&gt;(</highlight><highlight class="stringliteral">&quot;expectedCount&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/>QString<sp/>input<sp/>=<sp/>R</highlight><highlight class="stringliteral">&quot;(pub:u:4096:1:AAA111:1774947438:::u::::</highlight></codeline>
+<codeline lineno="180"><highlight class="stringliteral">fpr:::::::::AAA111FINGERPRINT:</highlight></codeline>
+<codeline lineno="181"><highlight class="stringliteral">uid:u::::1774947438::NAME1::user1@test.com:::::::0:</highlight></codeline>
+<codeline lineno="182"><highlight class="stringliteral">pub:u:4096:1:BBB222:1774947438:::u::::</highlight></codeline>
+<codeline lineno="183"><highlight class="stringliteral">fpr:::::::::BBB222FINGERPRINT:</highlight></codeline>
+<codeline lineno="184"><highlight class="stringliteral">uid:u::::1774947438::NAME2::user2@test.com:::::::0:</highlight></codeline>
+<codeline lineno="185"><highlight class="stringliteral">pub:u:4096:1:CCC333:1774947438:::u::::</highlight></codeline>
+<codeline lineno="186"><highlight class="stringliteral">fpr:::::::::CCC333FINGERPRINT:</highlight></codeline>
+<codeline lineno="187"><highlight class="stringliteral">uid:u::::1774947438::NAME3::user3@test.com:::::::0:)&quot;;</highlight></codeline>
+<codeline lineno="188"><highlight class="stringliteral"></highlight></codeline>
+<codeline lineno="189"><highlight class="stringliteral"><sp/><sp/>QTest::newRow(</highlight><highlight class="stringliteral">&quot;three-keys-rollover&quot;</highlight><highlight class="normal">)<sp/>&lt;&lt;<sp/>input<sp/>&lt;&lt;<sp/>3;</highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::classifyRecordTypes()<sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;pub&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314aa29bdd003ef6c0c34279807341f450f2" kindref="member">GpgRecordType::Pub</ref>,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>classify<sp/>pub<sp/>record&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;sec&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a2d5cc554c126edb041901fa7d79b558b" kindref="member">GpgRecordType::Sec</ref>,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>classify<sp/>sec<sp/>record&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;uid&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a43dc4c29d59c2c845bbb01ce770692f5" kindref="member">GpgRecordType::Uid</ref>,</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>classify<sp/>uid<sp/>record&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;fpr&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314ad9c8b6ee49fc11baca5fdda1a2957ad7" kindref="member">GpgRecordType::Fpr</ref>,</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>classify<sp/>fpr<sp/>record&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;sub&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314ae80155eceb940c89e2de63ad05868db2" kindref="member">GpgRecordType::Sub</ref>,</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>classify<sp/>sub<sp/>record&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;ssb&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314af700434ad8179b8a4eb0d625aa4181f5" kindref="member">GpgRecordType::Ssb</ref>,</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>classify<sp/>ssb<sp/>record&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;grp&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a091f41cecca1c417dc7eb8ff9d76cee9" kindref="member">GpgRecordType::Grp</ref>,</highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>classify<sp/>grp<sp/>record&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;unknown&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">GpgRecordType::Unknown</ref>,</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>classify<sp/>unknown<sp/>record<sp/>types<sp/>as<sp/>Unknown&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::classifyRecordEmpty()<sp/>{</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">GpgRecordType::Unknown</ref>,</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>classify<sp/>empty<sp/>as<sp/>Unknown&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;PUB&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">GpgRecordType::Unknown</ref>,</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>be<sp/>case-sensitive&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/>QVERIFY2(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(</highlight><highlight class="stringliteral">&quot;pubx&quot;</highlight><highlight class="normal">)<sp/>==<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">GpgRecordType::Unknown</ref>,</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>not<sp/>match<sp/>partial&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::handlePubSecEmptyFields()<sp/>{</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/>UserInfo<sp/>user;</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/>QStringList<sp/>props;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/>props<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;pub&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>validity<sp/>empty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;4096&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;keyId00001&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>created<sp/>empty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">//<sp/>expiry<sp/>empty</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Test<sp/>User&quot;</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>name</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/><ref refid="gpgkeystate_8cpp_1a10a7a502b6b816c2ad7d1d175d9f5a0c" kindref="member">handlePubSecRecord</ref>(props,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>user);</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>QVERIFY2(user.<ref refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" kindref="member">key_id</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;keyId00001&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>parse<sp/>key_id&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>QVERIFY2(user.<ref refid="struct_user_info_1acf06e7727153cca2cd8b4a912517a2bb" kindref="member">name</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;Test<sp/>User&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>parse<sp/>name&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/>QVERIFY2(user.<ref refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" kindref="member">validity</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Empty<sp/>validity<sp/>should<sp/>be<sp/>dash&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>QVERIFY2(!user.<ref refid="struct_user_info_1ac7919fbe53ce83369fc4bcfef8934ff6" kindref="member">created</ref>.isValid(),<sp/></highlight><highlight class="stringliteral">&quot;Empty<sp/>created<sp/>should<sp/>be<sp/>invalid&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/>QVERIFY2(!user.<ref refid="struct_user_info_1af6b3e6dc6e34553f764e577d2994f5aa" kindref="member">expiry</ref>.isValid(),<sp/></highlight><highlight class="stringliteral">&quot;Empty<sp/>expiry<sp/>should<sp/>be<sp/>invalid&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/>QVERIFY2(!user.<ref refid="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" kindref="member">have_secret</ref>,<sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>not<sp/>have<sp/>secret&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="242"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::handlePubSecShortList()<sp/>{</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/>QStringList<sp/>shortProps;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/>shortProps.append(</highlight><highlight class="stringliteral">&quot;pub&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/>shortProps.append(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/>shortProps.append(</highlight><highlight class="stringliteral">&quot;4096&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/>shortProps.append(</highlight><highlight class="stringliteral">&quot;1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>shortProps.append(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">//<sp/>5:<sp/>created</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>verifyShortListIgnored<sp/>=<sp/>[](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>UserInfo<sp/>&amp;u,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*ctx)<sp/>{</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(u.<ref refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" kindref="member">key_id</ref>.isEmpty(),<sp/></highlight><highlight class="stringliteral">&quot;Short<sp/>list<sp/>should<sp/>be<sp/>ignored&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(u.<ref refid="struct_user_info_1acf06e7727153cca2cd8b4a912517a2bb" kindref="member">name</ref>.isEmpty(),<sp/></highlight><highlight class="stringliteral">&quot;Short<sp/>list<sp/>ignored:<sp/>name<sp/>empty&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(u.<ref refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" kindref="member">validity</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;-&apos;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Short<sp/>list<sp/>ignored:<sp/>default<sp/>validity&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(!u.<ref refid="struct_user_info_1ac7919fbe53ce83369fc4bcfef8934ff6" kindref="member">created</ref>.isValid(),<sp/></highlight><highlight class="stringliteral">&quot;Short<sp/>list<sp/>ignored:<sp/>created<sp/>invalid&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(!u.<ref refid="struct_user_info_1af6b3e6dc6e34553f764e577d2994f5aa" kindref="member">expiry</ref>.isValid(),<sp/></highlight><highlight class="stringliteral">&quot;Short<sp/>list<sp/>ignored:<sp/>expiry<sp/>invalid&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>QVERIFY2(!u.<ref refid="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" kindref="member">have_secret</ref>,<sp/>ctx);</highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/>UserInfo<sp/>publicUser;</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/><ref refid="gpgkeystate_8cpp_1a10a7a502b6b816c2ad7d1d175d9f5a0c" kindref="member">handlePubSecRecord</ref>(shortProps,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">,<sp/>publicUser);</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/>verifyShortListIgnored(publicUser,</highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Short<sp/>list<sp/>ignored:<sp/>no<sp/>secret<sp/>for<sp/>public&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/>UserInfo<sp/>secretUser;</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><ref refid="gpgkeystate_8cpp_1a10a7a502b6b816c2ad7d1d175d9f5a0c" kindref="member">handlePubSecRecord</ref>(shortProps,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,<sp/>secretUser);</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/>verifyShortListIgnored(secretUser,</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Short<sp/>list<sp/>ignored:<sp/>no<sp/>secret<sp/>for<sp/>secret<sp/>input&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="270"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::handleFprEdgeCases()<sp/>{</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/>UserInfo<sp/>user;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/>user.<ref refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" kindref="member">key_id</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;id123&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/>QStringList<sp/>emptyProps;</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>10;<sp/>++i)</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/>emptyProps.append(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><ref refid="gpgkeystate_8cpp_1ab4971658d9c682542957f596dc275178" kindref="member">handleFprRecord</ref>(emptyProps,<sp/>user);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/>QVERIFY2(user.<ref refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" kindref="member">key_id</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;id123&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Empty<sp/>fpr<sp/>should<sp/>not<sp/>change<sp/>key_id&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/>QStringList<sp/>nonMatchingProps;</highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>10;<sp/>++i)</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/>nonMatchingProps.append(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/>nonMatchingProps[9]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;otherFingerprint&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><ref refid="gpgkeystate_8cpp_1ab4971658d9c682542957f596dc275178" kindref="member">handleFprRecord</ref>(nonMatchingProps,<sp/>user);</highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/>QVERIFY2(user.<ref refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" kindref="member">key_id</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;id123&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Non-matching<sp/>fpr<sp/>should<sp/>not<sp/>change<sp/>key_id&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/>user.<ref refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" kindref="member">key_id</ref><sp/>=<sp/></highlight><highlight class="stringliteral">&quot;id456&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/>QStringList<sp/>matchingProps;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>10;<sp/>++i)</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>matchingProps.append(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/>matchingProps[9]<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;full<sp/>fingerprint<sp/>id456&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><ref refid="gpgkeystate_8cpp_1ab4971658d9c682542957f596dc275178" kindref="member">handleFprRecord</ref>(matchingProps,<sp/>user);</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/>QVERIFY2(user.<ref refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" kindref="member">key_id</ref><sp/>==<sp/></highlight><highlight class="stringliteral">&quot;full<sp/>fingerprint<sp/>id456&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;fpr<sp/>ending<sp/>with<sp/>key_id<sp/>should<sp/>update<sp/>to<sp/>full<sp/>fingerprint&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="297"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Tests<sp/>targeting<sp/>the<sp/>const-ref<sp/>refactor<sp/>in<sp/>gpgkeystate.cpp.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>PR<sp/>changed<sp/>`const<sp/>QString<sp/>record_type<sp/>=<sp/>props[0]`<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight><highlight class="comment">//<sp/>`const<sp/>QString<sp/>&amp;record_type<sp/>=<sp/>props[0]`<sp/>inside<sp/>parseGpgColonOutput.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="comment">//<sp/>These<sp/>tests<sp/>verify<sp/>that<sp/>classifyRecord<sp/>and<sp/>parseGpgColonOutput<sp/>correctly</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight><highlight class="comment">//<sp/>handle<sp/>all<sp/>record<sp/>types<sp/>with<sp/>the<sp/>const-ref<sp/>binding<sp/>in<sp/>place.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::classifyRecordWithConstQString()<sp/>{</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Verify<sp/>classifyRecord<sp/>is<sp/>callable<sp/>with<sp/>a<sp/>const<sp/>QString&amp;<sp/>and<sp/>returns<sp/>the</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>correct<sp/>GpgRecordType<sp/>for<sp/>each<sp/>recognised<sp/>tag.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>pubTag<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;pub&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/>QCOMPARE(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(pubTag),<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314aa29bdd003ef6c0c34279807341f450f2" kindref="member">GpgRecordType::Pub</ref>);</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>secTag<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;sec&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/>QCOMPARE(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(secTag),<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a2d5cc554c126edb041901fa7d79b558b" kindref="member">GpgRecordType::Sec</ref>);</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>uidTag<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;uid&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/>QCOMPARE(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(uidTag),<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a43dc4c29d59c2c845bbb01ce770692f5" kindref="member">GpgRecordType::Uid</ref>);</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>fprTag<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;fpr&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/>QCOMPARE(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(fprTag),<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314ad9c8b6ee49fc11baca5fdda1a2957ad7" kindref="member">GpgRecordType::Fpr</ref>);</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>subTag<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;sub&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/>QCOMPARE(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(subTag),<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314ae80155eceb940c89e2de63ad05868db2" kindref="member">GpgRecordType::Sub</ref>);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>ssbTag<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;ssb&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/>QCOMPARE(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(ssbTag),<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314af700434ad8179b8a4eb0d625aa4181f5" kindref="member">GpgRecordType::Ssb</ref>);</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>grpTag<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;grp&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/>QCOMPARE(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(grpTag),<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a091f41cecca1c417dc7eb8ff9d76cee9" kindref="member">GpgRecordType::Grp</ref>);</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>unknownTag<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;tru&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/>QCOMPARE(<ref refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kindref="member">classifyRecord</ref>(unknownTag),<sp/><ref refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">GpgRecordType::Unknown</ref>);</highlight></codeline>
+<codeline lineno="331"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseGpgColonOutputWithGrpRecord()<sp/>{</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>A<sp/>&apos;grp&apos;<sp/>record<sp/>appears<sp/>in<sp/>real<sp/>GPG<sp/>output<sp/>but<sp/>is<sp/>not<sp/>a<sp/>key/uid<sp/>carrier.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>After<sp/>the<sp/>const-ref<sp/>change,<sp/>parseGpgColonOutput<sp/>should<sp/>still<sp/>skip<sp/>grp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>lines<sp/>without<sp/>crashing<sp/>and<sp/>return<sp/>only<sp/>the<sp/>real<sp/>key.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>input<sp/>=</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;pub:u:4096:1:AAABBBCCC:1774947438:::u::::\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;grp:::::::::GROUPKEYID:\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;uid:u::::1774947438::HASH::Alice<sp/>&lt;alice@test.org&gt;::::\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/>QList&lt;UserInfo&gt;<sp/>result<sp/>=<sp/><ref refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" kindref="member">parseGpgColonOutput</ref>(input,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/>QVERIFY2(result.size()<sp/>==<sp/>1,</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;grp<sp/>record<sp/>should<sp/>be<sp/>ignored;<sp/>only<sp/>one<sp/>key<sp/>expected&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/>QVERIFY2(result.first().key_id<sp/>==<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;AAABBBCCC&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;key_id<sp/>should<sp/>be<sp/>parsed<sp/>correctly<sp/>alongside<sp/>grp<sp/>record&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="347"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="349"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseGpgColonOutputUnknownRecordTypes()<sp/>{</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Lines<sp/>with<sp/>unrecognised<sp/>record<sp/>types<sp/>(&apos;tru&apos;,<sp/>&apos;rvk&apos;,<sp/>&apos;spk&apos;,<sp/>etc.)<sp/>must</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>be<sp/>silently<sp/>skipped.<sp/>The<sp/>const-ref<sp/>binding<sp/>of<sp/>record_type<sp/>should<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>introduce<sp/>dangling-reference<sp/>problems<sp/>for<sp/>these<sp/>paths.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>input<sp/>=</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;tru::1:9999999999:0:3:1:5\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;pub:f:4096:1:DEADBEEF01:1774947438:::f::::\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;rvk:::::::::REVOKER_FINGERPRINT:\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;fpr:::::::::DEADBEEF01FINGERPRINT:\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;uid:f::::1774947438::H::Bob<sp/>&lt;bob@test.org&gt;::::\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/>QList&lt;UserInfo&gt;<sp/>result<sp/>=<sp/><ref refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" kindref="member">parseGpgColonOutput</ref>(input,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/>QVERIFY2(result.size()<sp/>==<sp/>1,</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;tru/rvk<sp/>records<sp/>should<sp/>be<sp/>ignored;<sp/>one<sp/>key<sp/>expected&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/>QVERIFY2(result.first().key_id<sp/>==<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;DEADBEEF01&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;key_id<sp/>should<sp/>be<sp/>parsed<sp/>despite<sp/>surrounding<sp/>unknown<sp/>records&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="365"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_gpgkeystate::parseGpgColonOutputAllPublicRecordTypes()<sp/>{</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Exercise<sp/>sub<sp/>and<sp/>ssb<sp/>record<sp/>types<sp/>together<sp/>with<sp/>pub/uid/fpr<sp/>to<sp/>confirm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>const-ref<sp/>record_type<sp/>variable<sp/>classifies<sp/>them<sp/>all<sp/>correctly<sp/>within</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>parse<sp/>loop.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>input<sp/>=</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;pub:u:4096:1:MAINKEY001:1774947438:::u::::\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;fpr:::::::::MAINKEY001FINGERPRINT:\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;uid:u::::1774947438::HASH::Carol<sp/>&lt;carol@test.org&gt;::::\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;sub:u:4096:1:SUBKEY001:1774947438::::::esa:::\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;ssb:u:4096:1:SUBKEY002:1774947438::::::esa:::\n&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/>QList&lt;UserInfo&gt;<sp/>result<sp/>=<sp/><ref refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" kindref="member">parseGpgColonOutput</ref>(input,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>sub<sp/>and<sp/>ssb<sp/>records<sp/>extend<sp/>the<sp/>current<sp/>key;<sp/>they<sp/>do<sp/>not<sp/>create<sp/>new<sp/>entries.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/>QVERIFY2(result.size()<sp/>==<sp/>1,</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;sub/ssb<sp/>records<sp/>should<sp/>not<sp/>create<sp/>additional<sp/>UserInfo<sp/>entries&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/>QVERIFY2(result.first().key_id<sp/>==<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;MAINKEY001&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;key_id<sp/>should<sp/>reflect<sp/>the<sp/>pub<sp/>record&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/>QVERIFY2(!result.first().name.isEmpty(),<sp/></highlight><highlight class="stringliteral">&quot;UID<sp/>name<sp/>should<sp/>be<sp/>populated&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="385"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal">QTEST_MAIN(<ref refid="classtst__gpgkeystate" kindref="compound">tst_gpgkeystate</ref>)</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tst_gpgkeystate.moc&quot;</highlight></codeline>
+    </programlisting>
+    <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp"/>
+  </compounddef>
+</doxygen>

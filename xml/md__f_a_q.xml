@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="md__f_a_q" kind="page">
+    <compoundname>md__f_a_q</compoundname>
+    <title>FAQ</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="1">Issues</heading>
+</para>
+<para><heading level="2">Can&apos;t save a password</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>Is the folder initialized? Easiest way is to use the [Users] button and make sure you can encrypt for someone (e.g. yourself)</para>
+</listitem><listitem><para>Are you using Git? If not, make sure it is switched off.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">I have an issue with GNOME keyring</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>Disable GNOME keyring</para>
+</listitem><listitem><para>Create a <computeroutput>~/.gnupg/gpg-agent.conf</computeroutput> containing:</para>
+</listitem></itemizedlist>
+</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">enable-ssh-support</highlight></codeline>
+<codeline><highlight class="normal">write-env-file</highlight></codeline>
+<codeline><highlight class="normal">use-standard-socket</highlight></codeline>
+<codeline><highlight class="normal">default-cache-ttl<sp/>600</highlight></codeline>
+<codeline><highlight class="normal">max-cache-ttl<sp/>7200</highlight></codeline>
+</programlisting></para>
+<para><itemizedlist>
+<listitem><para>See the <ulink url="https://www.passwordstore.org/#faq">pass FAQ</ulink> for more troubleshooting tips.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">I don&apos;t get a passphrase / PIN dialog</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>You&apos;ll need to install a pinentry package (often called <computeroutput>pinentry-qt</computeroutput>, <computeroutput>pinentry-qt5</computeroutput>, or a similar name like <computeroutput>pinentry-gtk</computeroutput> depending on your distribution; search in your package manager) and possibly set the full path to that executable in your <computeroutput>~/.gnupg/gpg-agent.conf</computeroutput> for example: <computeroutput>pinentry-program /usr/bin/pinentry-qt</computeroutput></para>
+</listitem><listitem><para>On some systems it might be necessary to create a symbolic link <computeroutput>/usr/bin/pinentry</computeroutput> to your pinentry application of choice eg: <computeroutput>ln -s /usr/bin/pinentry-qt /usr/bin/pinentry</computeroutput></para>
+</listitem><listitem><para>On macOS <computeroutput>pinentry-program /usr/local/bin/pinentry-mac</computeroutput> works after installing <computeroutput>pinentry-mac</computeroutput> from Homebrew.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">I have another issue with gpg</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>On modern systems, <computeroutput>gpg</computeroutput> is usually GnuPG 2.x already. If your system has separate <computeroutput>gpg</computeroutput> and <computeroutput>gpg2</computeroutput> keyrings (typically older or custom setups), your key may exist in one but not the other.</para>
+</listitem></itemizedlist>
+</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">gpg<sp/>--export<sp/>[ID]<sp/>&gt;<sp/>public.key</highlight></codeline>
+<codeline><highlight class="normal">gpg<sp/>--export-secret-key<sp/>[ID]<sp/>&gt;<sp/>private.key</highlight></codeline>
+<codeline><highlight class="normal">gpg2<sp/>--import<sp/>public.key</highlight></codeline>
+<codeline><highlight class="normal">gpg2<sp/>--import<sp/>private.key</highlight></codeline>
+<codeline><highlight class="normal">rm<sp/>public.key<sp/>private.key</highlight></codeline>
+</programlisting></para>
+<para>Where [ID] is your gpg key-id. If your setup is reversed, exchange <computeroutput>gpg</computeroutput> and <computeroutput>gpg2</computeroutput> accordingly.</para>
+<para><heading level="2">Git doesn&apos;t work on Windows</heading>
+</para>
+<para>Git for Windows comes with an <computeroutput>ssh-askpass</computeroutput> compatible command, <computeroutput>git-gui--askpass</computeroutput> (located in <computeroutput>/mingw64/libexec/git-core/git-gui--askpass</computeroutput> on PortableGit version, presumably some place similar for the installed version).</para>
+<para>To use it:</para>
+<para><orderedlist>
+<listitem><para>Set <computeroutput>SSH_ASKPASS</computeroutput> environment variable to the full path of <computeroutput>git-gui--askpass</computeroutput>, for example:</para>
+<para><programlisting filename=".text"><codeline><highlight class="normal">C:\Program<sp/>Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe</highlight></codeline>
+</programlisting></para>
+</listitem><listitem><para>Optionally set <computeroutput>GIT_ASKPASS</computeroutput> to the same value so Git uses the same helper.</para>
+</listitem><listitem><para>Restart <ref refid="class_qt_pass" kindref="compound">QtPass</ref> after setting the environment variables.</para>
+</listitem></orderedlist>
+</para>
+<para>Example using PowerShell:</para>
+<para><programlisting filename=".powershell"><codeline><highlight class="normal">$env:SSH_ASKPASS<sp/>=<sp/>&quot;C:\Program<sp/>Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;</highlight></codeline>
+<codeline><highlight class="normal">$env:GIT_ASKPASS<sp/>=<sp/>&quot;C:\Program<sp/>Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;</highlight></codeline>
+</programlisting></para>
+<para>Or to make it permanent:</para>
+<para><programlisting filename=".powershell"><codeline><highlight class="normal">setx<sp/>SSH_ASKPASS<sp/>&quot;C:\Program<sp/>Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;</highlight></codeline>
+<codeline><highlight class="normal">setx<sp/>GIT_ASKPASS<sp/>&quot;C:\Program<sp/>Files\Git\mingw64\libexec\git-core\git-gui--askpass.exe&quot;</highlight></codeline>
+</programlisting></para>
+<para><bold>Note:</bold> After using <computeroutput>setx</computeroutput>, you&apos;ll need to start <ref refid="class_qt_pass" kindref="compound">QtPass</ref> in a new session (close and reopen your terminal, or log out and back in) for the environment variables to take effect.</para>
+<para><heading level="2">Git has issues with GPG SSH Authentication</heading>
+</para>
+<para>This tutorial might resolve your issues. <ulink url="https://gitforwindows.org/OpenSSH-Integration-with-Pageant">https://gitforwindows.org/OpenSSH-Integration-with-Pageant</ulink></para>
+<para><heading level="2">GPG says &quot;Public key unusable&quot; or &quot;No secret key&quot;</heading>
+</para>
+<para>Your GPG key may not be trusted or has expired. Run <computeroutput>gpg --edit-key &lt;KEYID&gt;</computeroutput> and:</para>
+<para><itemizedlist>
+<listitem><para>Set the trust level to &quot;ultimate&quot; (<computeroutput>trust</computeroutput> command)</para>
+</listitem><listitem><para>Check if the key has expired (<computeroutput>expire</computeroutput> command to extend if needed)</para>
+</listitem><listitem><para>For smartcards/YubiKeys, ensure the card is connected and unlocked (you can verify with <computeroutput>gpg --card-status</computeroutput>)</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">What is the &quot;Signing Key&quot; in profile settings?</heading>
+</para>
+<para>The Signing Key field in profile configuration is <bold>optional</bold> and usually should be <bold>left empty</bold>.</para>
+<para>It is only needed if you want to create <bold>detached signatures</bold> for your <computeroutput>.gpg-id</computeroutput> files to verify the recipients list hasn&apos;t been tampered with. Most users can ignore this field.</para>
+<para>Common mistake: Putting your GPG key ID here will cause &quot;Signature does not exist&quot; errors when saving passwords. Leave it empty unless you specifically need signature verification.</para>
+<para><heading level="2">OTP QR codes don&apos;t work on macOS</heading>
+</para>
+<para>Applications launched from Finder don&apos;t inherit the shell PATH. Install <ref refid="class_qt_pass" kindref="compound">QtPass</ref> via Homebrew (which sets up PATH correctly) or create a wrapper script that sets PATH before launching <ref refid="class_qt_pass" kindref="compound">QtPass</ref>, for example:</para>
+<para><programlisting filename=".bash"><codeline><highlight class="normal">#!/usr/bin/env<sp/>bash</highlight></codeline>
+<codeline><highlight class="normal">#<sp/>Adjust<sp/>PATH<sp/>as<sp/>needed<sp/>for<sp/>your<sp/>Homebrew<sp/>/<sp/>QtPass<sp/>installation</highlight></codeline>
+<codeline><highlight class="normal">export<sp/>PATH=&quot;/usr/local/bin:/opt/homebrew/bin:$PATH&quot;</highlight></codeline>
+<codeline><highlight class="normal">exec<sp/>/Applications/QtPass.app/Contents/MacOS/qtpass<sp/>&quot;$@&quot;</highlight></codeline>
+</programlisting></para>
+<para>Save this script (e.g. as <computeroutput>~/bin/qtpass-wrapper.sh</computeroutput>), make it executable with <computeroutput>chmod +x ~/bin/qtpass-wrapper.sh</computeroutput>, and configure your launcher (Automator app, custom .app bundle, or shortcut) to run this script instead of starting <ref refid="class_qt_pass" kindref="compound">QtPass</ref> directly.</para>
+<para><heading level="2"><ref refid="class_qt_pass" kindref="compound">QtPass</ref> doesn&apos;t follow my system language</heading>
+</para>
+<para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> uses the system language at startup. On some desktop environments, you may need to launch <ref refid="class_qt_pass" kindref="compound">QtPass</ref> from the terminal or configure your desktop environment to pass the correct locale environment variables.</para>
+<para><heading level="2">Where is the configuration stored?</heading>
+</para>
+<para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> tries to use the native configuration location for the operating system it is running on.</para>
+<para><itemizedlist>
+<listitem><para>Linux and BSD: <computeroutput>$HOME/.config/IJHack/QtPass.conf</computeroutput></para>
+</listitem><listitem><para>macOS: <computeroutput>$HOME/Library/Preferences/com.IJHack.QtPass.plist</computeroutput></para>
+</listitem><listitem><para>Windows registry: <computeroutput>HKEY_CURRENT_USER\Software\IJHack\<ref refid="class_qt_pass" kindref="compound">QtPass</ref></computeroutput></para>
+</listitem></itemizedlist>
+</para>
+<para>These settings can be overridden by a <computeroutput>qtpass.ini</computeroutput> file in the folder where the application resides. So-called &quot;portable config&quot;.</para>
+<para>There are some things to take care of when trying to sync on some systems (especially macOS, with regards to text and binary .plist files).</para>
+<para>More information: <ulink url="https://doc.qt.io/qt-6/qsettings.html#platform-specific-notes">https://doc.qt.io/qt-6/qsettings.html#platform-specific-notes</ulink></para>
+<para><heading level="2">Where can I ask for help?</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>Create an issue on <ulink url="https://github.com/IJHack/QtPass/issues">GitHub</ulink>.</para>
+</listitem><listitem><para>Send an email to <ulink url="mailto:help@qtpass.org">help@qtpass.org</ulink></para>
+</listitem><listitem><para>Visit the <ulink url="https://qtpass.org/">Official QtPass site</ulink></para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">Can I import from KeePass, LastPass or X?</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>Yes, check <ulink url="https://www.passwordstore.org/#migration">passwordstore.org/#migration</ulink> for more info.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">I don&apos;t see icons on the buttons</heading>
+</para>
+<para>You do not have the Qt SVG library installed. Please install using your favorite package manager.</para>
+<para><heading level="2">I get icons that do not fit my (X11) default</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>On some WindowManagers, Qt doesn&apos;t know what icon set to use. A trick:</para>
+</listitem></itemizedlist>
+</para>
+<para><programlisting filename=".sh"><codeline><highlight class="normal">export<sp/>DESKTOP_SESSION=gnome</highlight></codeline>
+</programlisting></para>
+<para><heading level="2">Can not find either qmake or qmake6</heading>
+</para>
+<para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> uses Qt6 by default. Use:</para>
+<para><itemizedlist>
+<listitem><para><computeroutput>qmake6</computeroutput> - for Qt6 (recommended, default)</para>
+</listitem><listitem><para><computeroutput>qmake</computeroutput> - for Qt5</para>
+</listitem></itemizedlist>
+</para>
+<para>If you get an error like &quot;QApplication&quot; not found or Qt installation issues, make sure you&apos;re using the correct qmake version for your Qt installation.</para>
+<para>On some systems, you may need to specify the full path, e.g., <computeroutput>/usr/lib/qt6/bin/qmake6</computeroutput>.</para>
+<para><heading level="2">Qt installation issues</heading>
+</para>
+<para>If you encounter Qt installation issues, you&apos;ll have to install the current version via your package manager or download it from <ulink url="https://www.qt.io/download/">https://www.qt.io/download/</ulink> and build from source.</para>
+<para><heading level="2">I don&apos;t like the design, what gives?</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>It&apos;s all on GitHub, clone, change and send a pull request.</para>
+</listitem><listitem><para>Open an issue and point out defects or better yet propose changes.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2"><ref refid="class_qt_pass" kindref="compound">QtPass</ref> is not in my native language</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>Unfortunately, <ref refid="class_qt_pass" kindref="compound">QtPass</ref> might not support your native language, or the translations might be incomplete. Check if newer versions of <ref refid="class_qt_pass" kindref="compound">QtPass</ref> support it.</para>
+</listitem><listitem><para>If translations are available but aren&apos;t working, try to set the language manually (see below) or open an issue.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="2">How do I set the language manually?</heading>
+</para>
+<para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> uses the system language. Changing it depends on your system:</para>
+<para><itemizedlist>
+<listitem><para>on Linux: <computeroutput>LANGUAGE=fr qtpass</computeroutput> will run <ref refid="class_qt_pass" kindref="compound">QtPass</ref> in French.</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="1">How can I help improve <ref refid="class_qt_pass" kindref="compound">QtPass</ref>?</heading>
+</para>
+<para><heading level="2">I would like to donate</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>Time:<itemizedlist>
+<listitem><para>Read <ref refid="md__c_o_n_t_r_i_b_u_t_i_n_g" kindref="compound">contributing</ref> documentation.</para>
+</listitem><listitem><para>Fork, clone, hack and send a pull request.</para>
+</listitem><listitem><para>Find an <ulink url="https://github.com/IJHack/QtPass/issues">issue</ulink> to work on.</para>
+</listitem><listitem><para>Participate in our bug bounty, you submit an issue and help us fix it, I send you a bounty. </para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+    </detaileddescription>
+    <location file="FAQ.md"/>
+  </compounddef>
+</doxygen>

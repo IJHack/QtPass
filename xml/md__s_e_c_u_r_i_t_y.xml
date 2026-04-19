@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="md__s_e_c_u_r_i_t_y" kind="page">
+    <compoundname>md__s_e_c_u_r_i_t_y</compoundname>
+    <title>Security Policy</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><heading level="1">Supported Versions</heading>
+</para>
+<para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> is actively maintained and security updates are provided for the latest releases. Older versions are not supported.</para>
+<para><table rows="3" cols="2"><row>
+<entry thead="yes"><para>Version  </para>
+</entry><entry thead="yes"><para>Supported  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>1.5.x  </para>
+</entry><entry thead="no"><para>:white_check_mark:  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&lt; 1.5  </para>
+</entry><entry thead="no"><para>:x:  </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="1">Reporting a Vulnerability</heading>
+</para>
+<para>If you discover a security vulnerability in <ref refid="class_qt_pass" kindref="compound">QtPass</ref>, please report it responsibly:</para>
+<para><orderedlist>
+<listitem><para><bold>Do NOT</bold> create a public GitHub issue for security vulnerabilities</para>
+</listitem><listitem><para><bold>Do</bold> email the maintainer directly at: <computeroutput>help@qtpass.org</computeroutput></para>
+</listitem><listitem><para><bold>Alternative</bold>: Open a private security advisory via GitHub</para>
+</listitem><listitem><para><bold>Include</bold> in your report:<itemizedlist>
+<listitem><para>Description of the vulnerability</para>
+</listitem><listitem><para>Steps to reproduce the issue</para>
+</listitem><listitem><para>Potential impact assessment</para>
+</listitem><listitem><para>Any suggested fixes (optional)</para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+<para><heading level="1">Response Timeline</heading>
+</para>
+<para><itemizedlist>
+<listitem><para><bold>Acknowledgment</bold>: Within 48 hours</para>
+</listitem><listitem><para><bold>Initial assessment</bold>: Within 7 days</para>
+</listitem><listitem><para><bold>Fix timeline</bold>: Depends on severity; critical issues are prioritized</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="1">Security Considerations</heading>
+</para>
+<para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> is a GUI for <ulink url="https://www.passwordstore.org/">pass</ulink>, the standard Unix password manager. Keep in mind:</para>
+<para><itemizedlist>
+<listitem><para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> does not encrypt passwords - encryption is handled by GPG</para>
+</listitem><listitem><para>Passwords are stored in your local password store (typically <computeroutput>~/.password-store</computeroutput>)</para>
+</listitem><listitem><para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> requires GPG to be installed and configured on your system</para>
+</listitem><listitem><para>The clipboard is cleared after a configurable timeout (default: 45 seconds)</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="1">Dependencies</heading>
+</para>
+<para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> depends on:</para>
+<para><itemizedlist>
+<listitem><para><bold>Qt6</bold> (primary; use <computeroutput>qmake6</computeroutput>) - GUI framework</para>
+</listitem><listitem><para><bold>Qt5</bold> (5.15+, legacy; use <computeroutput>qmake</computeroutput>) - GUI framework</para>
+</listitem><listitem><para><bold>GPG</bold> (gpg2) - encryption</para>
+</listitem><listitem><para><bold>pass</bold> (optional) - password store CLI</para>
+</listitem><listitem><para><bold>Git</bold> (optional) - version control</para>
+</listitem></itemizedlist>
+</para>
+<para>Ensure your system dependencies are kept up to date for security patches. </para>
+    </detaileddescription>
+    <location file="SECURITY.md"/>
+  </compounddef>
+</doxygen>

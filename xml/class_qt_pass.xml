@@ -1,0 +1,859 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_qt_pass" kind="class" language="C++" prot="public">
+    <compoundname>QtPass</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="qtpass_8h" local="no">qtpass.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_qt_pass_1a3184ade39a4807a95e883c0fc56429cb" prot="private" static="no" mutable="no">
+        <type><ref refid="class_main_window" kindref="compound">MainWindow</ref> *</type>
+        <definition>MainWindow* QtPass::m_mainWindow</definition>
+        <argsstring></argsstring>
+        <name>m_mainWindow</name>
+        <qualifiedname>QtPass::m_mainWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="152" column="14" bodyfile="src/qtpass.h" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_pass_1ada0239287cb448c5460b7e47340eb391" prot="private" static="no" mutable="no">
+        <type>QProcess</type>
+        <definition>QProcess QtPass::fusedav</definition>
+        <argsstring></argsstring>
+        <name>fusedav</name>
+        <qualifiedname>QtPass::fusedav</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="154" column="12" bodyfile="src/qtpass.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_pass_1a86aa75dd07db75e34eafdbeb6f31977a" prot="private" static="no" mutable="no">
+        <type>QTimer</type>
+        <definition>QTimer QtPass::clearClipboardTimer</definition>
+        <argsstring></argsstring>
+        <name>clearClipboardTimer</name>
+        <qualifiedname>QtPass::clearClipboardTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="156" column="10" bodyfile="src/qtpass.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_pass_1a875d23ff13180943b4a1e18320f61bff" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString QtPass::clippedText</definition>
+        <argsstring></argsstring>
+        <name>clippedText</name>
+        <qualifiedname>QtPass::clippedText</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="157" column="11" bodyfile="src/qtpass.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_pass_1ae66e17170da4f45626e3bff33e138466" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QtPass::freshStart</definition>
+        <argsstring></argsstring>
+        <name>freshStart</name>
+        <qualifiedname>QtPass::freshStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="158" column="8" bodyfile="src/qtpass.h" bodystart="158" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_qt_pass_1aa9f6862ff8875c387423b462ac7f9cad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QtPass::QtPass</definition>
+        <argsstring>(MainWindow *mainWindow)</argsstring>
+        <name>QtPass</name>
+        <qualifiedname>QtPass::QtPass</qualifiedname>
+        <param>
+          <type><ref refid="class_main_window" kindref="compound">MainWindow</ref> *</type>
+          <declname>mainWindow</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a <ref refid="class_qt_pass" kindref="compound">QtPass</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mainWindow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The main window reference </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="141" column="3" bodyfile="src/qtpass.cpp" bodystart="36" bodyend="54"/>
+        <references refid="class_qt_pass_1a3febdf740ba4d78a4149d7d7c3b9284e" compoundref="qtpass_8cpp" startline="452" endline="471">clearClipboard</references>
+        <references refid="class_qt_pass_1a24eb2c0a19143db0ba3a741c66881be6" compoundref="qtpass_8cpp" startline="444" endline="447">setClipboardTimer</references>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_1a70447af6f0e0540106a423a45dc27c99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QtPass::~QtPass</definition>
+        <argsstring>()</argsstring>
+        <name>~QtPass</name>
+        <qualifiedname>QtPass::~QtPass</qualifiedname>
+        <briefdescription>
+<para><ref refid="class_qt_pass_1a70447af6f0e0540106a423a45dc27c99" kindref="member">QtPass::~QtPass</ref> destroy! </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="142" column="3" bodyfile="src/qtpass.cpp" bodystart="59" bodyend="70"/>
+        <references refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" compoundref="qtpasssettings_8cpp" startline="433" endline="455">QtPassSettings::getPassStore</references>
+        <references refid="class_qt_pass_settings_1aacb80ca326700f2bd4987cd5cb6806fa" compoundref="qtpasssettings_8cpp" startline="537" endline="541">QtPassSettings::isUseWebDav</references>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_1ad0a4d7627e6303e412d4a832a8bad77c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QtPass::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>QtPass::init</qualifiedname>
+        <briefdescription>
+<para><ref refid="class_qt_pass_1ad0a4d7627e6303e412d4a832a8bad77c" kindref="member">QtPass::init</ref> make sure we are ready to go as soon as possible. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="144" column="8" bodyfile="src/qtpass.cpp" bodystart="76" bodyend="125"/>
+        <references refid="class_util_1afe6db9149dff37feded5abf38870cda8" compoundref="util_8cpp" startline="191" endline="213">Util::configIsValid</references>
+        <references refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" compoundref="debughelper_8h" startline="21">dbg</references>
+        <references refid="class_util_1a503abb6ccbf2aa18056c220b9b45284e" compoundref="util_8cpp" startline="77" endline="92">Util::findPasswordStore</references>
+        <references refid="class_qt_pass_settings_1ab604ff0e43878db15d7084e917954eb8" compoundref="qtpasssettings_8cpp" startline="355" endline="359">QtPassSettings::getAutoclearPanelSeconds</references>
+        <references refid="class_qt_pass_settings_1aead53a3d50a85e281db276edf586ffc8" compoundref="qtpasssettings_8cpp" startline="335" endline="339">QtPassSettings::getAutoclearSeconds</references>
+        <references refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" compoundref="qtpasssettings_8cpp" startline="433" endline="455">QtPassSettings::getPassStore</references>
+        <references refid="class_qt_pass_settings_1a907f64f2e985de5ce864e8687fc114ef" compoundref="qtpasssettings_8cpp" startline="758" endline="762">QtPassSettings::getPassTemplate</references>
+        <references refid="class_qt_pass_settings_1a1d47181e99a5865d5d37f07b632d459f" compoundref="qtpasssettings_8cpp" startline="521" endline="526">QtPassSettings::getPwgenExecutable</references>
+        <references refid="class_qt_pass_settings_1a5623f8d47534a6c21eb9fd95540b253e" compoundref="qtpasssettings_8cpp" startline="185" endline="189">QtPassSettings::getVersion</references>
+        <references refid="class_qt_pass_settings_1a64ffdab0605be803054150d438254c56" compoundref="qtpasssettings_8cpp" startline="477" endline="493">QtPassSettings::initExecutables</references>
+        <references refid="class_qt_pass_settings_1aacb80ca326700f2bd4987cd5cb6806fa" compoundref="qtpasssettings_8cpp" startline="537" endline="541">QtPassSettings::isUseWebDav</references>
+        <references refid="class_qt_pass_settings_1a0a5bcdb628ca6614d5c26c5c24a0a54f" compoundref="qtpasssettings_8cpp" startline="360" endline="364">QtPassSettings::setAutoclearPanelSeconds</references>
+        <references refid="class_qt_pass_settings_1ac5fa2696d8fe671f7a1c8b401c87441c" compoundref="qtpasssettings_8cpp" startline="340" endline="343">QtPassSettings::setAutoclearSeconds</references>
+        <references refid="class_qt_pass_settings_1a2b30ee2cd3b185148f63fca568c33f6e" compoundref="qtpasssettings_8cpp" startline="456" endline="458">QtPassSettings::setPassStore</references>
+        <references refid="class_qt_pass_settings_1a7c5668e2951f99c2241d7308f0228f72" compoundref="qtpasssettings_8cpp" startline="763" endline="765">QtPassSettings::setPassTemplate</references>
+        <references refid="class_qt_pass_settings_1a4899b84700fb828989f74869c6516334" compoundref="qtpasssettings_8cpp" startline="652" endline="654">QtPassSettings::setUsePwgen</references>
+        <references refid="class_qt_pass_settings_1a8cd81cd735281c71eab54091bde73081" compoundref="qtpasssettings_8cpp" startline="190" endline="192">QtPassSettings::setVersion</references>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_1a74adba9dd6915c9db50762279b62be89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::setClippedText</definition>
+        <argsstring>(const QString &amp;, const QString &amp;p_output=QString())</argsstring>
+        <name>setClippedText</name>
+        <qualifiedname>QtPass::setClippedText</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>password</defname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>p_output</declname>
+          <defval>QString()</defval>
+        </param>
+        <briefdescription>
+<para>Sets the text to be stored in clipboard and handles clipboard operations. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>password</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The password or text to store </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Additional output text </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="145" column="8" bodyfile="src/qtpass.cpp" bodystart="427" bodyend="435"/>
+        <references refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52da00dc0ed766a614a278d3f392089c814e" compoundref="enums_8h" startline="18">Enums::CLIPBOARD_ALWAYS</references>
+        <references refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef" compoundref="enums_8h" startline="17">Enums::CLIPBOARD_NEVER</references>
+        <references refid="class_qt_pass_1acba134fb5281aedee11899a03976aa95" compoundref="qtpass_8cpp" startline="500" endline="516">copyTextToClipboard</references>
+        <references refid="class_qt_pass_settings_1a4650fff2464ff37ec568cf236c9d2056" compoundref="qtpasssettings_8cpp" startline="309" endline="312">QtPassSettings::getClipBoardType</references>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_1a00f9914078839b980f3d66ddbed61cab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::clearClippedText</definition>
+        <argsstring>()</argsstring>
+        <name>clearClippedText</name>
+        <qualifiedname>QtPass::clearClippedText</qualifiedname>
+        <briefdescription>
+<para>Clears the stored clipped text. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="146" column="8" bodyfile="src/qtpass.cpp" bodystart="439" bodyend="439"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_1a24eb2c0a19143db0ba3a741c66881be6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::setClipboardTimer</definition>
+        <argsstring>()</argsstring>
+        <name>setClipboardTimer</name>
+        <qualifiedname>QtPass::setClipboardTimer</qualifiedname>
+        <briefdescription>
+<para>Sets the clipboard clear timer based on autoclear settings. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="147" column="8" bodyfile="src/qtpass.cpp" bodystart="444" bodyend="447"/>
+        <references refid="class_qt_pass_settings_1aead53a3d50a85e281db276edf586ffc8" compoundref="qtpasssettings_8cpp" startline="335" endline="339">QtPassSettings::getAutoclearSeconds</references>
+        <references refid="util_8h_1a6e21cb4edfdc8220e9e3916caaff71f8" compoundref="util_8h" startline="12">MS_PER_SECOND</references>
+        <referencedby refid="class_qt_pass_1aa9f6862ff8875c387423b462ac7f9cad" compoundref="qtpass_8cpp" startline="36" endline="54">QtPass</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_1a2ac40a69378a7085bebc633984ae6a57" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QtPass::isFreshStart</definition>
+        <argsstring>()</argsstring>
+        <name>isFreshStart</name>
+        <qualifiedname>QtPass::isFreshStart</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="148" column="8" bodyfile="src/qtpass.h" bodystart="148" bodyend="148"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_1a5b63b7418723b400f0db2afa450f1199" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::setFreshStart</definition>
+        <argsstring>(const bool &amp;fs)</argsstring>
+        <name>setFreshStart</name>
+        <qualifiedname>QtPass::setFreshStart</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>fs</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="149" column="8" bodyfile="src/qtpass.h" bodystart="149" bodyend="149"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_qt_pass_1a31567020dd1509f6a89ccf8119d8f72e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::setMainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>setMainWindow</name>
+        <qualifiedname>QtPass::setMainWindow</qualifiedname>
+        <briefdescription>
+<para>Sets up the main window and connects signal handlers. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="160" column="8" bodyfile="src/qtpass.cpp" bodystart="130" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_1a81e0207207f490616dd442837a2469d4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::connectPassSignalHandlers</definition>
+        <argsstring>(Pass *pass)</argsstring>
+        <name>connectPassSignalHandlers</name>
+        <qualifiedname>QtPass::connectPassSignalHandlers</qualifiedname>
+        <param>
+          <type><ref refid="class_pass" kindref="compound">Pass</ref> *</type>
+          <declname>pass</declname>
+        </param>
+        <briefdescription>
+<para>Connects pass signal handlers to <ref refid="class_qt_pass" kindref="compound">QtPass</ref> slots. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pass instance to connect </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="161" column="8" bodyfile="src/qtpass.cpp" bodystart="169" bodyend="192"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_1a59c43f897794c45969f5d8dde89902c9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::mountWebDav</definition>
+        <argsstring>()</argsstring>
+        <name>mountWebDav</name>
+        <qualifiedname>QtPass::mountWebDav</qualifiedname>
+        <briefdescription>
+<para>QtPass::mountWebDav is some scary voodoo magic. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="162" column="8" bodyfile="src/qtpass.cpp" bodystart="197" bodyend="265"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_qt_pass_1a3febdf740ba4d78a4149d7d7c3b9284e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::clearClipboard</definition>
+        <argsstring>()</argsstring>
+        <name>clearClipboard</name>
+        <qualifiedname>QtPass::clearClipboard</qualifiedname>
+        <briefdescription>
+<para>MainWindow::clearClipboard remove clipboard contents. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="167" column="8" bodyfile="src/qtpass.cpp" bodystart="452" bodyend="471"/>
+        <referencedby refid="class_qt_pass_1aa9f6862ff8875c387423b462ac7f9cad" compoundref="qtpass_8cpp" startline="36" endline="54">QtPass</referencedby>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_pass_1acba134fb5281aedee11899a03976aa95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::copyTextToClipboard</definition>
+        <argsstring>(const QString &amp;text)</argsstring>
+        <name>copyTextToClipboard</name>
+        <qualifiedname>QtPass::copyTextToClipboard</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>MainWindow::copyTextToClipboard copies text to your clipboard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="168" column="8" bodyfile="src/qtpass.cpp" bodystart="500" bodyend="516"/>
+        <references refid="qtpass_8h_1ad02159f3c84f6ec8d7535395bdb55d99" compoundref="qtpass_8cpp" startline="478" endline="494">buildClipboardMimeData</references>
+        <references refid="class_qt_pass_settings_1a0a517b1977765eb6032f330482abb85b" compoundref="qtpasssettings_8cpp" startline="326" endline="330">QtPassSettings::isUseAutoclear</references>
+        <references refid="class_qt_pass_settings_1a00123b42f05b026cf2697c02e0797442" compoundref="qtpasssettings_8cpp" startline="317" endline="321">QtPassSettings::isUseSelection</references>
+        <referencedby refid="class_qt_pass_1a74adba9dd6915c9db50762279b62be89" compoundref="qtpass_8cpp" startline="427" endline="435">setClippedText</referencedby>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_pass_1aef5aaf0605c7681967995ede486590ef" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::showTextAsQRCode</definition>
+        <argsstring>(const QString &amp;text)</argsstring>
+        <name>showTextAsQRCode</name>
+        <qualifiedname>QtPass::showTextAsQRCode</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>displays the text as qrcode </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="169" column="8" bodyfile="src/qtpass.cpp" bodystart="522" bodyend="541"/>
+        <references refid="class_qt_pass_1abd2dacf3e88b411ef39ec78f49bbdd2d" compoundref="qtpass_8cpp" startline="550" endline="562">createQRCodePopup</references>
+        <references refid="class_qt_pass_settings_1a822fd7d3ac81333a825e26a673e986df" compoundref="qtpasssettings_8cpp" startline="636" endline="641">QtPassSettings::getQrencodeExecutable</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_qt_pass_1abd2dacf3e88b411ef39ec78f49bbdd2d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QDialog *</type>
+        <definition>QDialog * QtPass::createQRCodePopup</definition>
+        <argsstring>(const QPixmap &amp;image)</argsstring>
+        <name>createQRCodePopup</name>
+        <qualifiedname>QtPass::createQRCodePopup</qualifiedname>
+        <param>
+          <type>const QPixmap &amp;</type>
+          <declname>image</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_qt_pass_1abd2dacf3e88b411ef39ec78f49bbdd2d" kindref="member">QtPass::createQRCodePopup</ref> creates a popup dialog with the given QR code image. This is extracted for testability. The caller is responsible for showing and managing the popup lifecycle. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The QR code pixmap to display </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The created popup dialog </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="172" column="18" bodyfile="src/qtpass.cpp" bodystart="550" bodyend="562"/>
+        <referencedby refid="class_qt_pass_1aef5aaf0605c7681967995ede486590ef" compoundref="qtpass_8cpp" startline="522" endline="541">showTextAsQRCode</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_qt_pass_1a7d3e06a595d5d1f4482db64bf69b0de1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::processError</definition>
+        <argsstring>(QProcess::ProcessError)</argsstring>
+        <name>processError</name>
+        <qualifiedname>QtPass::processError</qualifiedname>
+        <param>
+          <type>QProcess::ProcessError</type>
+          <defname>error</defname>
+        </param>
+        <briefdescription>
+<para>QtPass::processError something went wrong. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="175" column="8" bodyfile="src/qtpass.cpp" bodystart="271" bodyend="295"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_pass_1a7d8bb992974416cd9dff6b1a9603c05c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::processErrorExit</definition>
+        <argsstring>(int exitCode, const QString &amp;)</argsstring>
+        <name>processErrorExit</name>
+        <qualifiedname>QtPass::processErrorExit</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>exitCode</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>p_error</defname>
+        </param>
+        <briefdescription>
+<para>Handles process error exit. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>exitCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The exit code </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The error message </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="176" column="8" bodyfile="src/qtpass.cpp" bodystart="302" bodyend="328"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_pass_1a76a71f5503c97b460722b6f16233059c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::processFinished</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>processFinished</name>
+        <qualifiedname>QtPass::processFinished</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>p_output</defname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>p_errout</defname>
+        </param>
+        <briefdescription>
+<para>QtPass::processFinished background process has finished. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>exitCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exitStatus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>stdout from a process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>errout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>stderr from a process </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="177" column="8" bodyfile="src/qtpass.cpp" bodystart="337" bodyend="344"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_pass_1ae0c52baa634e6073e8eede2943560fb5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::passStoreChanged</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>passStoreChanged</name>
+        <qualifiedname>QtPass::passStoreChanged</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>p_out</defname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>p_err</defname>
+        </param>
+        <briefdescription>
+<para>Called when pass store has changed. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output from the process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="179" column="8" bodyfile="src/qtpass.cpp" bodystart="351" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_pass_1aa523b6c7bc0217447b1d0a17e4a5d4dd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::passShowHandlerFinished</definition>
+        <argsstring>(QString output)</argsstring>
+        <name>passShowHandlerFinished</name>
+        <qualifiedname>QtPass::passShowHandlerFinished</qualifiedname>
+        <param>
+          <type>QString</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+<para>Called when the password show handler has finished. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The password content to display </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="180" column="8" bodyfile="src/qtpass.cpp" bodystart="391" bodyend="393"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_pass_1ab7c71f983556835691ab2da4a51f5f9b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::doGitPush</definition>
+        <argsstring>()</argsstring>
+        <name>doGitPush</name>
+        <qualifiedname>QtPass::doGitPush</qualifiedname>
+        <briefdescription>
+<para>Performs automatic git push if enabled in settings. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="182" column="8" bodyfile="src/qtpass.cpp" bodystart="415" bodyend="419"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_pass_1a0c620874cefadbd8e9bab71c4b43225f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::finishedInsert</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedInsert</name>
+        <qualifiedname>QtPass::finishedInsert</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>p_output</defname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <defname>p_errout</defname>
+        </param>
+        <briefdescription>
+<para>Called when an insert operation has finished. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output from the process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_errout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="183" column="8" bodyfile="src/qtpass.cpp" bodystart="361" bodyend="365"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_pass_1a2c015c305d755aed00db95ef5e8223e1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::onKeyGenerationComplete</definition>
+        <argsstring>(const QString &amp;p_output, const QString &amp;p_errout)</argsstring>
+        <name>onKeyGenerationComplete</name>
+        <qualifiedname>QtPass::onKeyGenerationComplete</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>p_output</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>p_errout</declname>
+        </param>
+        <briefdescription>
+<para>Called when GPG key generation is complete. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>p_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard output from the key generation process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_errout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard error output from the key generation process </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="184" column="8" bodyfile="src/qtpass.cpp" bodystart="372" bodyend="385"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_qt_pass_1a203d14de45a249172b0638891493f1c1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QtPass::showInTextBrowser</definition>
+        <argsstring>(QString output, const QString &amp;prefix=QString(), const QString &amp;postfix=QString())</argsstring>
+        <name>showInTextBrowser</name>
+        <qualifiedname>QtPass::showInTextBrowser</qualifiedname>
+        <param>
+          <type>QString</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>prefix</declname>
+          <defval>QString()</defval>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>postfix</declname>
+          <defval>QString()</defval>
+        </param>
+        <briefdescription>
+<para>Displays output text in the main window&apos;s text browser. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text to display </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional prefix to prepend to the output </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>postfix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional postfix to append to the output </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="187" column="8" bodyfile="src/qtpass.cpp" bodystart="401" bodyend="410"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>QtPass</label>
+        <link refid="class_qt_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>QtPass</label>
+        <link refid="class_qt_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/qtpass.h" line="137" column="1" bodyfile="src/qtpass.h" bodystart="137" bodyend="189"/>
+    <listofallmembers>
+      <member refid="class_qt_pass_1a3febdf740ba4d78a4149d7d7c3b9284e" prot="public" virt="non-virtual"><scope>QtPass</scope><name>clearClipboard</name></member>
+      <member refid="class_qt_pass_1a86aa75dd07db75e34eafdbeb6f31977a" prot="private" virt="non-virtual"><scope>QtPass</scope><name>clearClipboardTimer</name></member>
+      <member refid="class_qt_pass_1a00f9914078839b980f3d66ddbed61cab" prot="public" virt="non-virtual"><scope>QtPass</scope><name>clearClippedText</name></member>
+      <member refid="class_qt_pass_1a875d23ff13180943b4a1e18320f61bff" prot="private" virt="non-virtual"><scope>QtPass</scope><name>clippedText</name></member>
+      <member refid="class_qt_pass_1a81e0207207f490616dd442837a2469d4" prot="private" virt="non-virtual"><scope>QtPass</scope><name>connectPassSignalHandlers</name></member>
+      <member refid="class_qt_pass_1acba134fb5281aedee11899a03976aa95" prot="public" virt="non-virtual"><scope>QtPass</scope><name>copyTextToClipboard</name></member>
+      <member refid="class_qt_pass_1abd2dacf3e88b411ef39ec78f49bbdd2d" prot="public" virt="non-virtual"><scope>QtPass</scope><name>createQRCodePopup</name></member>
+      <member refid="class_qt_pass_1ab7c71f983556835691ab2da4a51f5f9b" prot="private" virt="non-virtual"><scope>QtPass</scope><name>doGitPush</name></member>
+      <member refid="class_qt_pass_1a0c620874cefadbd8e9bab71c4b43225f" prot="private" virt="non-virtual"><scope>QtPass</scope><name>finishedInsert</name></member>
+      <member refid="class_qt_pass_1ae66e17170da4f45626e3bff33e138466" prot="private" virt="non-virtual"><scope>QtPass</scope><name>freshStart</name></member>
+      <member refid="class_qt_pass_1ada0239287cb448c5460b7e47340eb391" prot="private" virt="non-virtual"><scope>QtPass</scope><name>fusedav</name></member>
+      <member refid="class_qt_pass_1ad0a4d7627e6303e412d4a832a8bad77c" prot="public" virt="non-virtual"><scope>QtPass</scope><name>init</name></member>
+      <member refid="class_qt_pass_1a2ac40a69378a7085bebc633984ae6a57" prot="public" virt="non-virtual"><scope>QtPass</scope><name>isFreshStart</name></member>
+      <member refid="class_qt_pass_1a3184ade39a4807a95e883c0fc56429cb" prot="private" virt="non-virtual"><scope>QtPass</scope><name>m_mainWindow</name></member>
+      <member refid="class_qt_pass_1a59c43f897794c45969f5d8dde89902c9" prot="private" virt="non-virtual"><scope>QtPass</scope><name>mountWebDav</name></member>
+      <member refid="class_qt_pass_1a2c015c305d755aed00db95ef5e8223e1" prot="private" virt="non-virtual"><scope>QtPass</scope><name>onKeyGenerationComplete</name></member>
+      <member refid="class_qt_pass_1aa523b6c7bc0217447b1d0a17e4a5d4dd" prot="private" virt="non-virtual"><scope>QtPass</scope><name>passShowHandlerFinished</name></member>
+      <member refid="class_qt_pass_1ae0c52baa634e6073e8eede2943560fb5" prot="private" virt="non-virtual"><scope>QtPass</scope><name>passStoreChanged</name></member>
+      <member refid="class_qt_pass_1a7d3e06a595d5d1f4482db64bf69b0de1" prot="private" virt="non-virtual"><scope>QtPass</scope><name>processError</name></member>
+      <member refid="class_qt_pass_1a7d8bb992974416cd9dff6b1a9603c05c" prot="private" virt="non-virtual"><scope>QtPass</scope><name>processErrorExit</name></member>
+      <member refid="class_qt_pass_1a76a71f5503c97b460722b6f16233059c" prot="private" virt="non-virtual"><scope>QtPass</scope><name>processFinished</name></member>
+      <member refid="class_qt_pass_1aa9f6862ff8875c387423b462ac7f9cad" prot="public" virt="non-virtual"><scope>QtPass</scope><name>QtPass</name></member>
+      <member refid="class_qt_pass_1a24eb2c0a19143db0ba3a741c66881be6" prot="public" virt="non-virtual"><scope>QtPass</scope><name>setClipboardTimer</name></member>
+      <member refid="class_qt_pass_1a74adba9dd6915c9db50762279b62be89" prot="public" virt="non-virtual"><scope>QtPass</scope><name>setClippedText</name></member>
+      <member refid="class_qt_pass_1a5b63b7418723b400f0db2afa450f1199" prot="public" virt="non-virtual"><scope>QtPass</scope><name>setFreshStart</name></member>
+      <member refid="class_qt_pass_1a31567020dd1509f6a89ccf8119d8f72e" prot="private" virt="non-virtual"><scope>QtPass</scope><name>setMainWindow</name></member>
+      <member refid="class_qt_pass_1a203d14de45a249172b0638891493f1c1" prot="private" virt="non-virtual"><scope>QtPass</scope><name>showInTextBrowser</name></member>
+      <member refid="class_qt_pass_1aef5aaf0605c7681967995ede486590ef" prot="public" virt="non-virtual"><scope>QtPass</scope><name>showTextAsQRCode</name></member>
+      <member refid="class_qt_pass_1a70447af6f0e0540106a423a45dc27c99" prot="public" virt="non-virtual"><scope>QtPass</scope><name>~QtPass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

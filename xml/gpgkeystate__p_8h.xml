@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="gpgkeystate__p_8h" kind="file" language="C++">
+    <compoundname>gpgkeystate_p.h</compoundname>
+    <includes refid="userinfo_8h" local="yes">userinfo.h</includes>
+    <includes local="no">QStringList</includes>
+    <includedby refid="gpgkeystate_8cpp" local="yes">src/gpgkeystate.cpp</includedby>
+    <includedby refid="tst__gpgkeystate_8cpp" local="yes">tests/auto/gpgkeystate/tst_gpgkeystate.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/gpgkeystate_p.h</label>
+        <link refid="gpgkeystate__p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>userinfo.h</label>
+        <link refid="userinfo_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QDateTime</label>
+      </node>
+      <node id="4">
+        <label>QString</label>
+      </node>
+      <node id="5">
+        <label>QStringList</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/gpgkeystate.cpp</label>
+        <link refid="gpgkeystate_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/gpgkeystate_p.h</label>
+        <link refid="gpgkeystate__p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>tests/auto/gpgkeystate/tst_gpgkeystate.cpp</label>
+        <link refid="tst__gpgkeystate_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="gpgkeystate__p_8h_1a10a7a502b6b816c2ad7d1d175d9f5a0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handlePubSecRecord</definition>
+        <argsstring>(const QStringList &amp;props, bool secret, UserInfo &amp;current_user)</argsstring>
+        <name>handlePubSecRecord</name>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>props</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>secret</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_user_info" kindref="compound">UserInfo</ref> &amp;</type>
+          <declname>current_user</declname>
+        </param>
+        <briefdescription>
+<para>Handle a pub or sec record in GPG colon output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>props</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The colon-split fields of the record </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secret</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>True if this is a secret key record (sec) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>current_user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_user_info" kindref="compound">UserInfo</ref> to populate with key data </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gpgkeystate_p.h" line="10" column="6" bodyfile="src/gpgkeystate.cpp" bodystart="54" bodyend="78" declfile="src/gpgkeystate_p.h" declline="10" declcolumn="6"/>
+        <references refid="struct_user_info_1ac7919fbe53ce83369fc4bcfef8934ff6" compoundref="userinfo_8h" startline="57">UserInfo::created</references>
+        <references refid="struct_user_info_1af6b3e6dc6e34553f764e577d2994f5aa" compoundref="userinfo_8h" startline="53">UserInfo::expiry</references>
+        <references refid="gpgkeystate_8cpp_1a69e233a1835a1144e03c500dd12e1ceb" compoundref="gpgkeystate_8cpp" startline="13">GPG_FIELD_CREATED</references>
+        <references refid="gpgkeystate_8cpp_1a507bef6b6730728b307c81d412678d7b" compoundref="gpgkeystate_8cpp" startline="14">GPG_FIELD_EXPIRY</references>
+        <references refid="gpgkeystate_8cpp_1a357bd82fd34f78f3d2b3c6fb5c908507" compoundref="gpgkeystate_8cpp" startline="12">GPG_FIELD_KEY_ID</references>
+        <references refid="gpgkeystate_8cpp_1ae5f56f2b618bc4b7ec5b1042c4cf598f" compoundref="gpgkeystate_8cpp" startline="15">GPG_FIELD_USERID</references>
+        <references refid="gpgkeystate_8cpp_1a400ec72afc8302fae0ab23a748d4aa6e" compoundref="gpgkeystate_8cpp" startline="11">GPG_FIELD_VALIDITY</references>
+        <references refid="gpgkeystate_8cpp_1a861b1e6e88e396ccb5cb8c9813bb271b" compoundref="gpgkeystate_8cpp" startline="10">GPG_MIN_FIELDS</references>
+        <references refid="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" compoundref="userinfo_8h" startline="45">UserInfo::have_secret</references>
+        <references refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" compoundref="userinfo_8h" startline="36">UserInfo::key_id</references>
+        <references refid="struct_user_info_1acf06e7727153cca2cd8b4a912517a2bb" compoundref="userinfo_8h" startline="32">UserInfo::name</references>
+        <references refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" compoundref="userinfo_8h" startline="41">UserInfo::validity</references>
+        <referencedby refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" compoundref="gpgkeystate_8cpp" startline="110" endline="161">parseGpgColonOutput</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="gpgkeystate__p_8h_1ab4971658d9c682542957f596dc275178" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handleFprRecord</definition>
+        <argsstring>(const QStringList &amp;props, UserInfo &amp;current_user)</argsstring>
+        <name>handleFprRecord</name>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>props</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_user_info" kindref="compound">UserInfo</ref> &amp;</type>
+          <declname>current_user</declname>
+        </param>
+        <briefdescription>
+<para>Handle an fpr (fingerprint) record in GPG colon output. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>props</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The colon-split fields of the record </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>current_user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="struct_user_info" kindref="compound">UserInfo</ref> to update with fingerprint if it matches key </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gpgkeystate_p.h" line="12" column="6" bodyfile="src/gpgkeystate.cpp" bodystart="94" bodyend="102" declfile="src/gpgkeystate_p.h" declline="12" declcolumn="6"/>
+        <references refid="gpgkeystate_8cpp_1ae5f56f2b618bc4b7ec5b1042c4cf598f" compoundref="gpgkeystate_8cpp" startline="15">GPG_FIELD_USERID</references>
+        <references refid="gpgkeystate_8cpp_1a861b1e6e88e396ccb5cb8c9813bb271b" compoundref="gpgkeystate_8cpp" startline="10">GPG_MIN_FIELDS</references>
+        <references refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" compoundref="userinfo_8h" startline="36">UserInfo::key_id</references>
+        <referencedby refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" compoundref="gpgkeystate_8cpp" startline="110" endline="161">parseGpgColonOutput</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2026<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_GPGKEYSTATE_P_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_GPGKEYSTATE_P_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="userinfo_8h" kindref="compound">userinfo.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStringList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gpgkeystate__p_8h_1a10a7a502b6b816c2ad7d1d175d9f5a0c" kindref="member">handlePubSecRecord</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;props,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>secret,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_user_info" kindref="compound">UserInfo</ref><sp/>&amp;current_user);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="gpgkeystate__p_8h_1ab4971658d9c682542957f596dc275178" kindref="member">handleFprRecord</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;props,<sp/><ref refid="struct_user_info" kindref="compound">UserInfo</ref><sp/>&amp;current_user);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_GPGKEYSTATE_P_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/gpgkeystate_p.h"/>
+  </compounddef>
+</doxygen>

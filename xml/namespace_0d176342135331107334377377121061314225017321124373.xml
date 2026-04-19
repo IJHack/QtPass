@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="namespace_0d176342135331107334377377121061314225017321124373" kind="namespace" language="C++">
+    <compoundname>@176342135331107334377377121061314225017321124373</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/pass.cpp" line="35" column="1"/>
+  </compounddef>
+</doxygen>

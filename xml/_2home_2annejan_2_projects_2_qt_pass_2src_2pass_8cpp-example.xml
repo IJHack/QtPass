@@ -1,0 +1,733 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_2home_2annejan_2_projects_2_qt_pass_2src_2pass_8cpp-example" kind="example">
+    <compoundname>/home/annejan/Projects/QtPass/src/pass.cpp</compoundname>
+    <briefdescription>
+<para>Finds the path to the gpgconf executable in the same directory as the given GPG path.</para>
+<para>QString result = findGpgconfInGpgDir(gpgPath); std::cout &lt;&lt; result.toStdString() &lt;&lt; std::endl; // Expected output: path to gpgconf or empty string. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Finds the path to the gpgconf executable in the same directory as the given GPG path.</para>
+<para>QString result = findGpgconfInGpgDir(gpgPath); std::cout &lt;&lt; result.toStdString() &lt;&lt; std::endl; // Expected output: path to gpgconf or empty string<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gpgPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Absolute path to a GPG executable or related file used to locate gpgconf. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QString - The full path to gpgconf if found and executable; otherwise an empty QString. <programlisting filename="/home/annejan/Projects/QtPass/src/pass.cpp"><codeline><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2016<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pass_8h" kindref="compound">pass.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gpgkeystate_8h" kindref="compound">gpgkeystate.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="helpers_8h" kindref="compound">helpers.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="qtpasssettings_8h" kindref="compound">qtpasssettings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="util_8h" kindref="compound">util.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QCoreApplication&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDebug&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDir&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QFileInfo&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QProcess&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QRandomGenerator&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QRegularExpression&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;algorithm&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>QT_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="debughelper_8h" kindref="compound">debughelper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48" kindref="member">Enums::GIT_INIT</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4" kindref="member">Enums::GIT_PULL</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40" kindref="member">Enums::GIT_PUSH</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c" kindref="member">Enums::GPG_GENKEYS</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728" kindref="member">Enums::PASS_COPY</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db" kindref="member">Enums::PASS_GREP</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06" kindref="member">Enums::PASS_INIT</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf" kindref="member">Enums::PASS_INSERT</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0" kindref="member">Enums::PASS_MOVE</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a1e9c7d5b4afba75021e17b2e2e799bac" kindref="member">Enums::PASS_OTP_GENERATE</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684" kindref="member">Enums::PASS_REMOVE</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9" kindref="member">Enums::PASS_SHOW</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>fallbackCharset(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;input,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;fallback)<sp/>-&gt;<sp/>QString<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>input.isEmpty()<sp/>?<sp/>fallback<sp/>:<sp/>input;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>effectiveCharset(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="struct_password_configuration" kindref="compound">PasswordConfiguration</ref><sp/>&amp;passConfig)<sp/>-&gt;<sp/>QString<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>sel<sp/>=<sp/>passConfig.selected;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(sel<sp/>&lt;<sp/>0<sp/>||<sp/>sel<sp/>&gt;=<sp/><ref refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173aa2455d2938f04bb57d15204bd06c2bfc" kindref="member">PasswordConfiguration::CHARSETS_COUNT</ref>)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>sel<sp/>=<sp/><ref refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173ab6c9b1db9fdc1a62c5126c905acd5611" kindref="member">PasswordConfiguration::ALLCHARS</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>fallbackCharset(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>passConfig.Characters[sel],</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>passConfig.Characters[<ref refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173ab6c9b1db9fdc1a62c5126c905acd5611" kindref="member">PasswordConfiguration::ALLCHARS</ref>]);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><ref refid="class_pass_1a5d0cea4019f5c123fb4a4417de8d95b9" kindref="member">Pass::Pass</ref>()<sp/>:<sp/>wrapperRunning(false),<sp/>env(QProcess::systemEnvironment())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>connect(&amp;exec,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>(<ref refid="class_executor" kindref="compound">Executor</ref>::*)(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal">QString<sp/>&amp;,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const<sp/></highlight><highlight class="normal">QString<sp/>&amp;)</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(&amp;Executor::finished),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_pass_1ad51174f24ecdbc14a55e4588a34b8563" kindref="member">Pass::finished</ref>);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>was<sp/>previously<sp/>using<sp/>direct<sp/>QProcess<sp/>signals.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>code<sp/>now<sp/>uses<sp/>Executor<sp/>instead<sp/>of<sp/>raw<sp/>QProcess<sp/>for<sp/>better<sp/>control.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>connect(&amp;process,<sp/>SIGNAL(error(QProcess::ProcessError)),<sp/>this,</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SIGNAL(error(QProcess::ProcessError)));</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>connect(&amp;exec,<sp/>&amp;<ref refid="class_executor_1acfcfc18b0b973791530302eb8179e038" kindref="member">Executor::starting</ref>,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;<ref refid="class_pass_1a0345d3ffdb213234031e9c84fe8ca7c6" kindref="member">Pass::startingExecuteWrapper</ref>);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Merge<sp/>our<sp/>vars<sp/>into<sp/>WSLENV<sp/>rather<sp/>than<sp/>blindly<sp/>appending<sp/>a<sp/>duplicate<sp/>entry</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>wslenvVars<sp/>=<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;PASSWORD_STORE_DIR/p&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;PASSWORD_STORE_GENERATED_LENGTH/w&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;PASSWORD_STORE_CHARACTER_SET/w&quot;</highlight><highlight class="normal">)};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>wslenvPrefix<sp/>=<sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;WSLENV=&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>it<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::find_if(env.begin(),<sp/>env.end(),<sp/>[&amp;wslenvPrefix](</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;s)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>return<sp/>s.startsWith(wslenvPrefix);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(it<sp/>==<sp/>env.end())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>env.append(wslenvPrefix<sp/>+<sp/>wslenvVars.join(</highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/>parts<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>it-&gt;mid(wslenvPrefix.size()).split(</highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">,<sp/>Qt::SkipEmptyParts);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;v<sp/>:<sp/>wslenvVars)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!parts.contains(v))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>parts.append(v);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*it<sp/>=<sp/>wslenvPrefix<sp/>+<sp/>parts.join(</highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a66f59138ffe856fd421410d9af9ddc62" kindref="member">Pass::executeWrapper</ref>(<ref refid="simpletransaction_8cpp_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;app,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;args,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStdout,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStderr)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="class_pass_1a66f59138ffe856fd421410d9af9ddc62" kindref="member">executeWrapper</ref>(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/>app,<sp/>args,<sp/>QString(),<sp/>readStdout,<sp/>readStderr);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a66f59138ffe856fd421410d9af9ddc62" kindref="member">Pass::executeWrapper</ref>(<ref refid="simpletransaction_8cpp_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;app,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;args,<sp/>QString<sp/>input,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStdout,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStderr)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>QT_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" kindref="member">dbg</ref>()<sp/>&lt;&lt;<sp/>app<sp/>&lt;&lt;<sp/>args;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="class_pass_1a903a833ade1109f9cb75e3bbeab8d0af" kindref="member">exec</ref>.execute(</highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/><ref refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" kindref="member">QtPassSettings::getPassStore</ref>(),<sp/>app,<sp/>args,<sp/>std::move(input),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>readStdout,<sp/>readStderr);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a012c47a55b3cc3467ad0f013716f623a" kindref="member">Pass::init</ref>()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__APPLE__</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>it<sp/>exists,<sp/>add<sp/>the<sp/>gpgtools<sp/>to<sp/>PATH</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(QFile(</highlight><highlight class="stringliteral">&quot;/usr/local/MacGPG2/bin&quot;</highlight><highlight class="normal">).exists())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>env.replaceInStrings(</highlight><highlight class="stringliteral">&quot;PATH=&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;PATH=/usr/local/MacGPG2/bin:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Add<sp/>missing<sp/>/usr/local/bin</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(env.filter(</highlight><highlight class="stringliteral">&quot;/usr/local/bin&quot;</highlight><highlight class="normal">).isEmpty())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>env.replaceInStrings(</highlight><highlight class="stringliteral">&quot;PATH=&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;PATH=/usr/local/bin:&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_qt_pass_settings_1a36413c39a8bcd96110dd612158168946" kindref="member">QtPassSettings::getGpgHome</ref>().isEmpty())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>QDir<sp/>absHome(<ref refid="class_qt_pass_settings_1a36413c39a8bcd96110dd612158168946" kindref="member">QtPassSettings::getGpgHome</ref>());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>absHome.makeAbsolute();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>env<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;GNUPGHOME=&quot;</highlight><highlight class="normal"><sp/>+<sp/>absHome.path();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a35b3cba623a22f41173670ec34ebb67c" kindref="member">Pass::generatePassword</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;charset)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-&gt;<sp/>QString<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(length<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/>critical(tr(</highlight><highlight class="stringliteral">&quot;Invalid<sp/>password<sp/>length&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr(</highlight><highlight class="stringliteral">&quot;Can&apos;t<sp/>generate<sp/>password<sp/>with<sp/>zero<sp/>length.&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>passwd;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_qt_pass_settings_1abba786920f2fb3afbdc04fe43f8144e2" kindref="member">QtPassSettings::isUsePwgen</ref>())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>--secure<sp/>goes<sp/>first<sp/>as<sp/>it<sp/>overrides<sp/>--no-*<sp/>otherwise</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/>args;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>args.append(</highlight><highlight class="stringliteral">&quot;-1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!<ref refid="class_qt_pass_settings_1a901005f778f15b9ee833f2ab08573917" kindref="member">QtPassSettings::isLessRandom</ref>())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>args.append(</highlight><highlight class="stringliteral">&quot;--secure&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>args.append(<ref refid="class_qt_pass_settings_1a694bfde7cafcdd174b706945ba264639" kindref="member">QtPassSettings::isAvoidCapitals</ref>()<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;--no-capitalize&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;--capitalize&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>args.append(<ref refid="class_qt_pass_settings_1ac00931edbba70ed05bb304df05919b9d" kindref="member">QtPassSettings::isAvoidNumbers</ref>()<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;--no-numerals&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;--numerals&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_qt_pass_settings_1a814fdd902d1ed560225331a93d9d3ccd" kindref="member">QtPassSettings::isUseSymbols</ref>())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>args.append(</highlight><highlight class="stringliteral">&quot;--symbols&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>args.append(QString::number(length));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>executeBlocking<sp/>returns<sp/>0<sp/>on<sp/>success,<sp/>non-zero<sp/>on<sp/>failure</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(<ref refid="class_qt_pass_settings_1a1d47181e99a5865d5d37f07b632d459f" kindref="member">QtPassSettings::getPwgenExecutable</ref>(),<sp/>args,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;passwd)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegularExpression<sp/>literalNewLines{</highlight><highlight class="stringliteral">&quot;[\\n\\r]&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>passwd.remove(literalNewLines);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>passwd.clear();</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>QT_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>qDebug()<sp/>&lt;&lt;<sp/>__FILE__<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>__LINE__<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;\t&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;pwgen<sp/>fail&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>is<sp/>already<sp/>handled<sp/>by<sp/>clearing<sp/>passwd;<sp/>no<sp/>need<sp/>for<sp/>critical</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>signal<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Validate<sp/>charset<sp/>-<sp/>if<sp/>CUSTOM<sp/>is<sp/>selected<sp/>but<sp/>chars<sp/>are<sp/>empty,</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>fall<sp/>back<sp/>to<sp/>ALLCHARS<sp/>to<sp/>prevent<sp/>weak<sp/>passwords<sp/>(issue<sp/>#780)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>cs<sp/>=<sp/>fallbackCharset(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>charset,<sp/><ref refid="class_qt_pass_settings_1a3503e8d11b7e24b35a34801f755ba80a" kindref="member">QtPassSettings::getPasswordConfiguration</ref>()</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.Characters[<ref refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173ab6c9b1db9fdc1a62c5126c905acd5611" kindref="member">PasswordConfiguration::ALLCHARS</ref>]);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(cs.length()<sp/>&gt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>passwd<sp/>=<sp/>generateRandomPassword(cs,<sp/>length);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/>critical(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr(</highlight><highlight class="stringliteral">&quot;No<sp/>characters<sp/>chosen&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>tr(</highlight><highlight class="stringliteral">&quot;Can&apos;t<sp/>generate<sp/>password,<sp/>there<sp/>are<sp/>no<sp/>characters<sp/>to<sp/>choose<sp/>from<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;set<sp/>in<sp/>the<sp/>configuration!&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>passwd;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a4c2bca8a9a59a032adc68846055b056b" kindref="member">Pass::gpgSupportsEd25519</ref>()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>out,<sp/>err;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(<ref refid="class_qt_pass_settings_1a6d9beabe93c829cacdcc6c27792ffdba" kindref="member">QtPassSettings::getGpgExecutable</ref>(),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight><highlight class="stringliteral">&quot;--version&quot;</highlight><highlight class="normal">},<sp/>&amp;out,<sp/>&amp;err)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QRegularExpression<sp/>versionRegex(R</highlight><highlight class="stringliteral">&quot;(gpg<sp/>\(GnuPG\)<sp/>(\d+)\.(\d+))&quot;);</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/>QRegularExpressionMatch<sp/>match<sp/>=<sp/>versionRegex.match(out);</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!match.hasMatch())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>major<sp/>=<sp/>match.captured(1).toInt();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>minor<sp/>=<sp/>match.captured(2).toInt();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>major<sp/>&gt;<sp/>2<sp/>||<sp/>(major<sp/>==<sp/>2<sp/>&amp;&amp;<sp/>minor<sp/>&gt;=<sp/>1);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">QString<sp/><ref refid="class_pass_1ae3284a937d0ca8ae2ea2d81ec556c37b" kindref="member">Pass::getDefaultKeyTemplate</ref>()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_pass_1a4c2bca8a9a59a032adc68846055b056b" kindref="member">gpgSupportsEd25519</ref>())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;%echo<sp/>Generating<sp/>a<sp/>default<sp/>key\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Key-Type:<sp/>EdDSA\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Key-Curve:<sp/>Ed25519\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Subkey-Type:<sp/>ECDH\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Subkey-Curve:<sp/>Curve25519\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Name-Real:<sp/>\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Name-Comment:<sp/>QtPass\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Name-Email:<sp/>\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Expire-Date:<sp/>0\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%no-protection\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%commit\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%echo<sp/>done&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;%echo<sp/>Generating<sp/>a<sp/>default<sp/>key\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Key-Type:<sp/>RSA\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Subkey-Type:<sp/>RSA\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Name-Real:<sp/>\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Name-Comment:<sp/>QtPass\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Name-Email:<sp/>\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Expire-Date:<sp/>0\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%no-protection\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%commit\n&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;%echo<sp/>done&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>resolveWslGpgconfPath(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;lastPart)<sp/>-&gt;<sp/>QString<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>lastSep<sp/>=<sp/>lastPart.lastIndexOf(</highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lastSep<sp/>&lt;<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>lastSep<sp/>=<sp/>lastPart.lastIndexOf(</highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lastSep<sp/>&gt;=<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>lastPart.left(lastSep<sp/>+<sp/>1)<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">QString<sp/>findGpgconfInGpgDir(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;gpgPath)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QFileInfo<sp/>gpgInfo(gpgPath);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!gpgInfo.isAbsolute())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QString();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QDir<sp/>dir(gpgInfo.absolutePath());</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>Q_OS_WIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QFileInfo<sp/>candidateExe(dir.filePath(</highlight><highlight class="stringliteral">&quot;gpgconf.exe&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(candidateExe.isExecutable())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>candidateExe.filePath();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QFileInfo<sp/>candidate(dir.filePath(</highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(candidate.isExecutable())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>candidate.filePath();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QString();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>Compatibility<sp/>shim<sp/>for<sp/>Qt<sp/>&lt;<sp/>5.15<sp/>where<sp/>QProcess::splitCommand<sp/>is<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>available.<sp/>Keep<sp/>this<sp/>fallback<sp/>while<sp/>supporting<sp/>pre-5.15<sp/>builds;<sp/>remove<sp/>once</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>the<sp/>project&apos;s<sp/>minimum<sp/>supported<sp/>Qt<sp/>version<sp/>is<sp/>raised<sp/>to<sp/>5.15<sp/>or<sp/>newer.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>QT_VERSION<sp/>&lt;<sp/>QT_VERSION_CHECK(5,<sp/>15,<sp/>0)</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">QStringList<sp/>splitCommandCompat(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;command)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QStringList<sp/>result;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>current;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inSingleQuote<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>inDoubleQuote<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>escaping<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(QChar<sp/>ch<sp/>:<sp/>command)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(escaping)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>current.append(ch);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>escaping<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>escaping<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\&apos;&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>!inDoubleQuote)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>inSingleQuote<sp/>=<sp/>!inSingleQuote;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ch<sp/>==<sp/></highlight><highlight class="charliteral">&apos;&quot;&apos;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>!inSingleQuote)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>inDoubleQuote<sp/>=<sp/>!inDoubleQuote;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(ch.isSpace()<sp/>&amp;&amp;<sp/>!inSingleQuote<sp/>&amp;&amp;<sp/>!inDoubleQuote)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!current.isEmpty())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result.append(current);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>current.clear();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>current.append(ch);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(escaping)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>current.append(</highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!current.isEmpty())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>result.append(current);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kindref="member">Pass::resolveGpgconfCommand</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;gpgPath)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-&gt;<sp/><ref refid="struct_resolved_gpgconf_command" kindref="compound">ResolvedGpgconfCommand</ref><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(gpgPath.trimmed().isEmpty())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,<sp/>{}};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>QT_VERSION<sp/>&gt;=<sp/>QT_VERSION_CHECK(5,<sp/>15,<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QStringList<sp/>parts<sp/>=<sp/>QProcess::splitCommand(gpgPath);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QStringList<sp/>parts<sp/>=<sp/>splitCommandCompat(gpgPath);</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parts.isEmpty())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,<sp/>{}};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>first<sp/>=<sp/>parts.first();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(first.compare(</highlight><highlight class="stringliteral">&quot;wsl&quot;</highlight><highlight class="normal">,<sp/>Qt::CaseInsensitive)<sp/>==<sp/>0<sp/>||</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>first.compare(</highlight><highlight class="stringliteral">&quot;wsl.exe&quot;</highlight><highlight class="normal">,<sp/>Qt::CaseInsensitive)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parts.size()<sp/>&gt;=<sp/>2<sp/>&amp;&amp;<sp/>parts.at(1).startsWith(</highlight><highlight class="stringliteral">&quot;sh&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,<sp/>{}};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parts.size()<sp/>&gt;=<sp/>2<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QFileInfo(parts.last()).fileName().startsWith(</highlight><highlight class="stringliteral">&quot;gpg&quot;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QString<sp/>wslGpgconf<sp/>=<sp/>resolveWslGpgconfPath(parts.last());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>parts.removeLast();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>parts.append(wslGpgconf);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{parts.first(),<sp/>parts.mid(1)};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,<sp/>{}};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!first.contains(</highlight><highlight class="charliteral">&apos;/&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/>!first.contains(</highlight><highlight class="charliteral">&apos;\\&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,<sp/>{}};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>gpgconfPath<sp/>=<sp/>findGpgconfInGpgDir(first);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!gpgconfPath.isEmpty())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{gpgconfPath,<sp/>{}};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{</highlight><highlight class="stringliteral">&quot;gpgconf&quot;</highlight><highlight class="normal">,<sp/>{}};</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a0c29f7bd4ca235d00d9dac6a37e14f4f" kindref="member">Pass::GenerateGPGKeys</ref>(QString<sp/>batch)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Kill<sp/>any<sp/>stale<sp/>GPG<sp/>agents<sp/>that<sp/>might<sp/>be<sp/>holding<sp/>locks<sp/>on<sp/>the<sp/>key<sp/>database</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>helps<sp/>avoid<sp/>&quot;database<sp/>locked&quot;<sp/>timeouts<sp/>during<sp/>key<sp/>generation</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>gpgPath<sp/>=<sp/><ref refid="class_qt_pass_settings_1a6d9beabe93c829cacdcc6c27792ffdba" kindref="member">QtPassSettings::getGpgExecutable</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!gpgPath.isEmpty())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>ResolvedGpgconfCommand<sp/>resolvedGpgconf<sp/>=<sp/><ref refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kindref="member">resolveGpgconfCommand</ref>(gpgPath);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>QStringList<sp/>killArgs<sp/>=<sp/>resolvedGpgconf.<ref refid="struct_resolved_gpgconf_command_1aa06fa6189e39477786bbb118dca49556" kindref="member">arguments</ref>;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>killArgs<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;--kill&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>killArgs<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;gpg-agent&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Use<sp/>same<sp/>environment<sp/>as<sp/>key<sp/>generation<sp/>to<sp/>target<sp/>correct<sp/>gpg-agent</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(env,<sp/>resolvedGpgconf.<ref refid="struct_resolved_gpgconf_command_1ae34ff02051398b8688497a4fb373e1d3" kindref="member">program</ref>,<sp/>killArgs);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="class_pass_1a66f59138ffe856fd421410d9af9ddc62" kindref="member">executeWrapper</ref>(<ref refid="imitatepass_8cpp_1a8c1e49dd6a89933e17a3377e9833b55c" kindref="member">GPG_GENKEYS</ref>,<sp/>gpgPath,<sp/>{</highlight><highlight class="stringliteral">&quot;--gen-key&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;--no-tty&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;--batch&quot;</highlight><highlight class="normal">},</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::move(batch));</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a6ed6c10b07137f62e127b290ebd428a2" kindref="member">Pass::listKeys</ref>(QStringList<sp/>keystrings,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>secret)<sp/>-&gt;<sp/>QList&lt;UserInfo&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QStringList<sp/>args<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;--no-tty&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;--with-colons&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;--with-fingerprint&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>args.append(secret<sp/>?<sp/></highlight><highlight class="stringliteral">&quot;--list-secret-keys&quot;</highlight><highlight class="normal"><sp/>:<sp/></highlight><highlight class="stringliteral">&quot;--list-keys&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;keystring<sp/>:<sp/><ref refid="helpers_8h_1adc90de3a8181fb745eeea1b76cfd2ed7" kindref="member">AS_CONST</ref>(keystrings))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!keystring.isEmpty())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>args.append(keystring);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>p_out;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kindref="member">Executor::executeBlocking</ref>(<ref refid="class_qt_pass_settings_1a6d9beabe93c829cacdcc6c27792ffdba" kindref="member">QtPassSettings::getGpgExecutable</ref>(),<sp/>args,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;p_out)<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QList&lt;UserInfo&gt;();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" kindref="member">parseGpgColonOutput</ref>(p_out,<sp/>secret);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a6ed6c10b07137f62e127b290ebd428a2" kindref="member">Pass::listKeys</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;keystring,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>secret)<sp/>-&gt;<sp/>QList&lt;UserInfo&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>listKeys(QStringList(keystring),<sp/>secret);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>containsAny(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;str,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;patterns)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;p<sp/>:<sp/>patterns)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(str.contains(p))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>containsAnyCaseInsensitive(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;str,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;patterns)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>lower<sp/>=<sp/>str.toLower();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;p<sp/>:<sp/>patterns)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(lower.contains(p))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="pass_8cpp_1a388f8d7993f9747d0a97070d93faf6bc" kindref="member">gpgErrorMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;err)<sp/>-&gt;<sp/>QString<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Machine-readable<sp/>status<sp/>tokens<sp/>added<sp/>by<sp/>--status-fd<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(containsAny(err,<sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;[GNUPG:]<sp/>KEYEXPIRED&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;[GNUPG:]<sp/>INV_RECP<sp/>5<sp/>&quot;</highlight><highlight class="normal">)}))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QCoreApplication::translate(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Pass&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Encryption<sp/>failed:<sp/>GPG<sp/>key<sp/>has<sp/>expired.<sp/>Please<sp/>renew<sp/>or<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;replace<sp/>it.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(containsAny(err,<sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;[GNUPG:]<sp/>KEYREVOKED&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;[GNUPG:]<sp/>INV_RECP<sp/>4<sp/>&quot;</highlight><highlight class="normal">)}))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QCoreApplication::translate(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Pass&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Encryption<sp/>failed:<sp/>GPG<sp/>key<sp/>has<sp/>been<sp/>revoked.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(containsAny(err,<sp/>{QStringLiteral(</highlight><highlight class="stringliteral">&quot;[GNUPG:]<sp/>NO_PUBKEY&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(</highlight><highlight class="stringliteral">&quot;[GNUPG:]<sp/>INV_RECP&quot;</highlight><highlight class="normal">)}))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QCoreApplication::translate(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Pass&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Encryption<sp/>failed:<sp/>recipient<sp/>GPG<sp/>key<sp/>not<sp/>found<sp/>or<sp/>invalid.<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Check<sp/>that<sp/>the<sp/>key<sp/>ID<sp/>in<sp/>.gpg-id<sp/>is<sp/>correct<sp/>and<sp/>imported.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(err.contains(QStringLiteral(</highlight><highlight class="stringliteral">&quot;[GNUPG:]<sp/>FAILURE&quot;</highlight><highlight class="normal">)))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QCoreApplication::translate(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Pass&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Encryption<sp/>failed.<sp/>Check<sp/>that<sp/>your<sp/>GPG<sp/>key<sp/>is<sp/>valid.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Locale-dependent<sp/>fallbacks</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(containsAnyCaseInsensitive(err,<sp/>{QLatin1String(</highlight><highlight class="stringliteral">&quot;key<sp/>has<sp/>expired&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLatin1String(</highlight><highlight class="stringliteral">&quot;key<sp/>expired&quot;</highlight><highlight class="normal">)}))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QCoreApplication::translate(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Pass&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Encryption<sp/>failed:<sp/>GPG<sp/>key<sp/>has<sp/>expired.<sp/>Please<sp/>renew<sp/>or<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;replace<sp/>it.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(containsAnyCaseInsensitive(err,<sp/>{QLatin1String(</highlight><highlight class="stringliteral">&quot;key<sp/>has<sp/>been<sp/>revoked&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLatin1String(</highlight><highlight class="stringliteral">&quot;revoked&quot;</highlight><highlight class="normal">)}))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QCoreApplication::translate(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Pass&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Encryption<sp/>failed:<sp/>GPG<sp/>key<sp/>has<sp/>been<sp/>revoked.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(containsAnyCaseInsensitive(err,<sp/>{QLatin1String(</highlight><highlight class="stringliteral">&quot;no<sp/>public<sp/>key&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLatin1String(</highlight><highlight class="stringliteral">&quot;unusable<sp/>public<sp/>key&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QLatin1String(</highlight><highlight class="stringliteral">&quot;no<sp/>secret<sp/>key&quot;</highlight><highlight class="normal">)}))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QCoreApplication::translate(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Pass&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Encryption<sp/>failed:<sp/>recipient<sp/>GPG<sp/>key<sp/>not<sp/>found<sp/>or<sp/>invalid.<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Check<sp/>that<sp/>the<sp/>key<sp/>ID<sp/>in<sp/>.gpg-id<sp/>is<sp/>correct<sp/>and<sp/>imported.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(containsAnyCaseInsensitive(err,<sp/>{QLatin1String(</highlight><highlight class="stringliteral">&quot;encryption<sp/>failed&quot;</highlight><highlight class="normal">)}))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QCoreApplication::translate(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Pass&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Encryption<sp/>failed.<sp/>Check<sp/>that<sp/>your<sp/>GPG<sp/>key<sp/>is<sp/>valid.&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{};</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>isGrepHeaderLine(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;rawLine,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;trimmedLine)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>ANSI-colored<sp/>header<sp/>starts<sp/>with<sp/>the<sp/>blue<sp/>escape;<sp/>plain-text<sp/>fallback:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>a<sp/>non-indented<sp/>line<sp/>ending<sp/>with<sp/>&apos;:&apos;<sp/>(pass<sp/>grep<sp/>format<sp/>without<sp/>color)</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>rawLine.startsWith(QStringLiteral(</highlight><highlight class="stringliteral">&quot;\x1B[94m&quot;</highlight><highlight class="normal">))<sp/>||</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(!rawLine.startsWith(</highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;<sp/>!rawLine.startsWith(</highlight><highlight class="charliteral">&apos;\t&apos;</highlight><highlight class="normal">)<sp/>&amp;&amp;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>trimmedLine.endsWith(</highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="pass_8cpp_1a5cd7330aa71995b67ac34b2966ba1026" kindref="member">parseGrepOutput</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;rawOut)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-&gt;<sp/>QList&lt;QPair&lt;QString,<sp/>QStringList&gt;&gt;<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegularExpression<sp/>ansi(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QStringLiteral(R</highlight><highlight class="stringliteral">&quot;(\x1B\[[0-9;]*[a-zA-Z])&quot;));</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/>QList&lt;QPair&lt;QString,<sp/>QStringList&gt;&gt;<sp/>results;</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/>QString<sp/>currentEntry;</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/>QStringList<sp/>currentMatches;</highlight></codeline>
+<codeline><highlight class="stringliteral"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;rawLine<sp/>:<sp/>rawOut.split(</highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>line<sp/>=<sp/>rawLine;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>line.remove(</highlight><highlight class="charliteral">&apos;\r&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>line.remove(ansi);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>line<sp/>=<sp/>line.trimmed();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isHeader<sp/>=<sp/>isGrepHeaderLine(rawLine,<sp/>line);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(isHeader)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!currentEntry.isEmpty()<sp/>&amp;&amp;<sp/>!currentMatches.isEmpty())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>results.append({currentEntry,<sp/>currentMatches});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>currentEntry<sp/>=<sp/>line.endsWith(</highlight><highlight class="charliteral">&apos;:&apos;</highlight><highlight class="normal">)<sp/>?<sp/>line.chopped(1)<sp/>:<sp/>line;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>currentMatches.clear();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!currentEntry.isEmpty())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!line.isEmpty())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>currentMatches<sp/>&lt;&lt;<sp/>line;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!currentEntry.isEmpty()<sp/>&amp;&amp;<sp/>!currentMatches.isEmpty())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>results.append({currentEntry,<sp/>currentMatches});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>results;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_pass_1ad51174f24ecdbc14a55e4588a34b8563" kindref="member">Pass::finished</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitCode,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;out,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;err)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>pid<sp/>=<sp/></highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal"><ref refid="class_pass_1a2e71b5174b4ef25a1e91d8c56177b772" kindref="member">PROCESS</ref></highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(id);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(exitCode<sp/>!=<sp/>0)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>handleProcessError(pid,<sp/>exitCode,<sp/>out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>emitProcessFinishedSignal(pid,<sp/>out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Pass::handleProcessError(<ref refid="simpletransaction_8cpp_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref><sp/>pid,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitCode,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;out,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;err)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid<sp/>==<sp/><ref refid="imitatepass_8cpp_1a705ae598082cb55d56dde08f43dfe8db" kindref="member">PASS_GREP</ref>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>handleGrepError(exitCode,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(pid<sp/>==<sp/><ref refid="imitatepass_8cpp_1a2bd1f466dbc7acf275c15b4ebdc92ebf" kindref="member">PASS_INSERT</ref>)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>friendly<sp/>=<sp/><ref refid="pass_8h_1afa8cf07459ecaebabd4662150f6aecaa" kindref="member">gpgErrorMessage</ref>(err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!friendly.isEmpty())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a9bb040e1a33322a27cd85d8a367ef24f" kindref="member">processErrorExit</ref>(exitCode,<sp/>formatInsertError(friendly,<sp/>err));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>emit<sp/><ref refid="class_pass_1a9bb040e1a33322a27cd85d8a367ef24f" kindref="member">processErrorExit</ref>(exitCode,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Pass::handleGrepError(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitCode,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;err)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(exitCode<sp/>==<sp/>1)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a74344f203b81f87b4d42a6281a176db4" kindref="member">finishedGrep</ref>({});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a9bb040e1a33322a27cd85d8a367ef24f" kindref="member">processErrorExit</ref>(exitCode,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a74344f203b81f87b4d42a6281a176db4" kindref="member">finishedGrep</ref>({});</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>Pass::formatInsertError(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;friendly,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;err)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-&gt;<sp/>QString<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QStringList<sp/>humanLines;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;line<sp/>:<sp/>err.split(</highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>cleanedLine<sp/>=<sp/>line;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>cleanedLine.remove(</highlight><highlight class="charliteral">&apos;\r&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!cleanedLine.startsWith(QLatin1String(</highlight><highlight class="stringliteral">&quot;[GNUPG:]&quot;</highlight><highlight class="normal">)))</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>humanLines.append(cleanedLine);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>humanErr<sp/>=<sp/>humanLines.join(</highlight><highlight class="charliteral">&apos;\n&apos;</highlight><highlight class="normal">).trimmed();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>humanErr.isEmpty()<sp/>?<sp/>friendly<sp/>:<sp/>friendly<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;\n\n&quot;</highlight><highlight class="normal"><sp/>+<sp/>humanErr;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>Pass::emitProcessFinishedSignal(<ref refid="simpletransaction_8cpp_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref><sp/>pid,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;out,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;err)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(pid)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1a34410c90c94276b18d07de603edc6c48" kindref="member">GIT_INIT</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a52541582298af5b2707447e3a57f85bf" kindref="member">finishedGitInit</ref>(out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1ae056b4c0e719ac27298e551b5d2585e4" kindref="member">GIT_PULL</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1ab6d3acbdce8a5bc579bef175c85382df" kindref="member">finishedGitPull</ref>(out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1ae9f6db885f59f7594cb420d7b4ed5c40" kindref="member">GIT_PUSH</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1ab892bcacdbe3081f677e456a3a8ac328" kindref="member">finishedGitPush</ref>(out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1aaf94f232b7f4c8682729d11aa19855f9" kindref="member">PASS_SHOW</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a24cdfb567ab68940f2a823704e2ab1ba" kindref="member">finishedShow</ref>(out);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1a1e9c7d5b4afba75021e17b2e2e799bac" kindref="member">PASS_OTP_GENERATE</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a8ca44f13c68a03c1e91fbbfee37388ed" kindref="member">finishedOtpGenerate</ref>(out);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1a2bd1f466dbc7acf275c15b4ebdc92ebf" kindref="member">PASS_INSERT</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a71d8c179a7875dd2983de2aabff0a8cb" kindref="member">finishedInsert</ref>(out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1a914992f89d2834c13c7978905a1f3684" kindref="member">PASS_REMOVE</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a263cc9ceb5269427237ea43267667197" kindref="member">finishedRemove</ref>(out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1a03ecd1c73f11705f3a0d14e775001a06" kindref="member">PASS_INIT</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a7a4c2bbb80372455e0d406fbc940e219" kindref="member">finishedInit</ref>(out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1a4ceeee5cb90c49b2b875bc30c4d21bd0" kindref="member">PASS_MOVE</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a3ca180cb5769aa87186474f7eda9e2a5" kindref="member">finishedMove</ref>(out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1a3f804bcfb97b78f571463617e3359728" kindref="member">PASS_COPY</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a22febea5d24676854f3dad24260df4d5" kindref="member">finishedCopy</ref>(out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1a8c1e49dd6a89933e17a3377e9833b55c" kindref="member">GPG_GENKEYS</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1aeb0213d032e070ad788398328c0a080c" kindref="member">finishedGenerateGPGKeys</ref>(out,<sp/>err);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/><ref refid="imitatepass_8cpp_1a705ae598082cb55d56dde08f43dfe8db" kindref="member">PASS_GREP</ref>:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>emit<sp/><ref refid="class_pass_1a74344f203b81f87b4d42a6281a176db4" kindref="member">finishedGrep</ref>(<ref refid="pass_8h_1a7ba018a324c930bae05281216170dd83" kindref="member">parseGrepOutput</ref>(out));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>QT_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" kindref="member">dbg</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Unhandled<sp/>process<sp/>type&quot;</highlight><highlight class="normal"><sp/>&lt;&lt;<sp/>pid;</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>key<sp/>must<sp/>include<sp/>the<sp/>trailing<sp/>&apos;=&apos;<sp/>(e.g.<sp/>&quot;FOO=&quot;);<sp/>env.filter()<sp/>does<sp/>substring</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" kindref="member">Pass::setEnvVar</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;key,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;value)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>hasEq<sp/>=<sp/>key.endsWith(</highlight><highlight class="charliteral">&apos;=&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Q_ASSERT_X(hasEq,<sp/></highlight><highlight class="stringliteral">&quot;Pass::setEnvVar&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;called<sp/>with<sp/>malformed<sp/>key<sp/>(missing<sp/>&apos;=&apos;)&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!hasEq)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>qWarning()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;Pass::setEnvVar<sp/>called<sp/>with<sp/>malformed<sp/>key<sp/>(missing<sp/>&apos;=&apos;):&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&lt;&lt;<sp/>key;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>existing<sp/>=<sp/>env.filter(key);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;entry<sp/>:<sp/>existing)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>env.removeAll(entry);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!value.isEmpty())</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>env.append(key<sp/>+<sp/>value);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_pass_1ac679a086b289cdb9245906948ba0458a" kindref="member">Pass::updateEnv</ref>()<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" kindref="member">setEnvVar</ref>(QStringLiteral(</highlight><highlight class="stringliteral">&quot;PASSWORD_STORE_SIGNING_KEY=&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_qt_pass_settings_1a7b92ee036db63e5d2b49da826b5763ee" kindref="member">QtPassSettings::getPassSigningKey</ref>());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" kindref="member">setEnvVar</ref>(QStringLiteral(</highlight><highlight class="stringliteral">&quot;PASSWORD_STORE_DIR=&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" kindref="member">QtPassSettings::getPassStore</ref>());</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>PasswordConfiguration<sp/>passConfig<sp/>=<sp/><ref refid="class_qt_pass_settings_1a3503e8d11b7e24b35a34801f755ba80a" kindref="member">QtPassSettings::getPasswordConfiguration</ref>();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" kindref="member">setEnvVar</ref>(QStringLiteral(</highlight><highlight class="stringliteral">&quot;PASSWORD_STORE_GENERATED_LENGTH=&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QString::number(passConfig.<ref refid="struct_password_configuration_1a1f0990ce1daaecb8852976eeb7df61bd" kindref="member">length</ref>));</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" kindref="member">setEnvVar</ref>(QStringLiteral(</highlight><highlight class="stringliteral">&quot;PASSWORD_STORE_CHARACTER_SET=&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>effectiveCharset(passConfig));</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><ref refid="class_pass_1a903a833ade1109f9cb75e3bbeab8d0af" kindref="member">exec</ref>.setEnvironment(env);</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a7bab4c97e4a327cc34060a67c09959bf" kindref="member">Pass::getGpgIdPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;for_file)<sp/>-&gt;<sp/>QString<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>passStore<sp/>=</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>QDir::fromNativeSeparators(<ref refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" kindref="member">QtPassSettings::getPassStore</ref>());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>normalizedFile<sp/>=<sp/>QDir::fromNativeSeparators(for_file);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>fullPath<sp/>=<sp/>normalizedFile.startsWith(passStore)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>?<sp/>normalizedFile</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>passStore<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;/&quot;</highlight><highlight class="normal"><sp/>+<sp/>normalizedFile;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QDir<sp/>gpgIdDir(QFileInfo(fullPath).absoluteDir());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>found<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(gpgIdDir.exists()<sp/>&amp;&amp;<sp/>gpgIdDir.absolutePath().startsWith(passStore))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(QFile(gpgIdDir.absoluteFilePath(</highlight><highlight class="stringliteral">&quot;.gpg-id&quot;</highlight><highlight class="normal">)).exists())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>found<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!gpgIdDir.cdUp())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>gpgIdPath(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>found<sp/>?<sp/>gpgIdDir.absoluteFilePath(</highlight><highlight class="stringliteral">&quot;.gpg-id&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>QDir(<ref refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" kindref="member">QtPassSettings::getPassStore</ref>()).filePath(</highlight><highlight class="stringliteral">&quot;.gpg-id&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>gpgIdPath;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a693825d2ad62813cf103860ef6211370" kindref="member">Pass::getRecipientList</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;for_file)<sp/>-&gt;<sp/>QStringList<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QFile<sp/>gpgId(getGpgIdPath(for_file));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!gpgId.open(QIODevice::ReadOnly<sp/>|<sp/>QIODevice::Text))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QStringList<sp/>recipients;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(!gpgId.atEnd())<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>QString<sp/>recipient(gpgId.readLine());</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>recipient<sp/>=<sp/>recipient.split(</highlight><highlight class="stringliteral">&quot;#&quot;</highlight><highlight class="normal">)[0].trimmed();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!recipient.isEmpty()<sp/>&amp;&amp;<sp/><ref refid="class_util_1aba7296e41ef990d5d945d5ed8cd99bd5" kindref="member">Util::isValidKeyId</ref>(recipient))<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>recipients<sp/>+=<sp/>recipient;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>recipients;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_pass_1ae1f31c62b7117b99882625dbef654533" kindref="member">Pass::getRecipientString</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;for_file,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;separator,</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>*count)<sp/>-&gt;<sp/>QStringList<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>Q_UNUSED(separator)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QStringList<sp/>recipients<sp/>=<sp/><ref refid="class_pass_1a693825d2ad62813cf103860ef6211370" kindref="member">Pass::getRecipientList</ref>(for_file);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(count)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>*count<sp/>=<sp/>recipients.size();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>recipients;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Copyright<sp/>(C)<sp/>2017<sp/>Jason<sp/>A.<sp/>Donenfeld<sp/>&lt;Jason@zx2c4.com&gt;.<sp/>All<sp/>Rights<sp/>Reserved.</highlight></codeline>
+<codeline><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_pass_1a4f63e4e86c7ffec6df333e466fb38c3b" kindref="member">Pass::boundedRandom</ref>(quint32<sp/>bound)<sp/>-&gt;<sp/>quint32<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(bound<sp/>&lt;<sp/>2)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>0;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>quint32<sp/>randval;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Rejection-sampling<sp/>threshold<sp/>to<sp/>avoid<sp/>modulo<sp/>bias.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>follows<sp/>the<sp/>well-known<sp/>&quot;arc4random_uniform&quot;-style<sp/>approach:</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>reject<sp/>values<sp/>in<sp/>the<sp/>low<sp/>range<sp/>[0,<sp/>min),<sp/>where</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>min<sp/>=<sp/>2^32<sp/>%<sp/>bound</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>so<sp/>that<sp/>the<sp/>remaining<sp/>range<sp/>size<sp/>is<sp/>an<sp/>exact<sp/>multiple<sp/>of<sp/>`bound`.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>In<sp/>quint32<sp/>arithmetic,<sp/>(1<sp/>+<sp/>~bound)<sp/>wraps<sp/>to<sp/>(2^32<sp/>-<sp/>bound),<sp/>therefore</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/>(1<sp/>+<sp/>~bound)<sp/>%<sp/>bound<sp/>==<sp/>2^32<sp/>%<sp/>bound.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>quint32<sp/>rejectionThreshold<sp/>=<sp/>(1<sp/>+<sp/>~bound)<sp/>%<sp/>bound;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">do</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>randval<sp/>=<sp/>QRandomGenerator::system()-&gt;generate();</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(randval<sp/>&lt;<sp/>rejectionThreshold);</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>randval<sp/>%<sp/>bound;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_pass_1aff660edce34d33f5a2adfa8c130470f0" kindref="member">Pass::generateRandomPassword</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;charset,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>length)</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>-&gt;<sp/>QString<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(charset.isEmpty()<sp/>||<sp/>length<sp/>==<sp/>0U)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>{};</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>QString<sp/>out;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>length;<sp/>++i)<sp/>{</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>out.append(charset.at(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="keywordtype">int</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>boundedRandom(</highlight><highlight class="keyword">static_cast&lt;</highlight><highlight class="normal">quint32</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(charset.length())))));</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>out;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+</programlisting> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <location file="src/pass.cpp"/>
+  </compounddef>
+</doxygen>

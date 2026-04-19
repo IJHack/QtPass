@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="util_8h" kind="file" language="C++">
+    <compoundname>util.h</compoundname>
+    <includes refid="storemodel_8h" local="yes">storemodel.h</includes>
+    <includes local="no">QFileSystemModel</includes>
+    <includes local="no">QProcessEnvironment</includes>
+    <includes local="no">QRegularExpression</includes>
+    <includes local="no">QString</includes>
+    <includedby refid="configdialog_8cpp" local="yes">src/configdialog.cpp</includedby>
+    <includedby refid="gpgkeystate_8cpp" local="yes">src/gpgkeystate.cpp</includedby>
+    <includedby refid="imitatepass_8cpp" local="yes">src/imitatepass.cpp</includedby>
+    <includedby refid="keygendialog_8cpp" local="yes">src/keygendialog.cpp</includedby>
+    <includedby refid="mainwindow_8cpp" local="yes">src/mainwindow.cpp</includedby>
+    <includedby refid="pass_8cpp" local="yes">src/pass.cpp</includedby>
+    <includedby refid="qtpass_8cpp" local="yes">src/qtpass.cpp</includedby>
+    <includedby refid="qtpasssettings_8cpp" local="yes">src/qtpasssettings.cpp</includedby>
+    <includedby refid="realpass_8cpp" local="yes">src/realpass.cpp</includedby>
+    <includedby refid="storemodel_8cpp" local="yes">src/storemodel.cpp</includedby>
+    <includedby refid="util_8cpp" local="yes">src/util.cpp</includedby>
+    <includedby refid="tst__util_8cpp" local="yes">tests/auto/util/tst_util.cpp</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>storemodel.h</label>
+        <link refid="storemodel_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/util.h</label>
+        <link refid="util_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QFileInfo</label>
+      </node>
+      <node id="5">
+        <label>QFileSystemModel</label>
+      </node>
+      <node id="6">
+        <label>QProcessEnvironment</label>
+      </node>
+      <node id="7">
+        <label>QRegularExpression</label>
+      </node>
+      <node id="4">
+        <label>QSortFilterProxyModel</label>
+      </node>
+      <node id="8">
+        <label>QString</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/configdialog.cpp</label>
+        <link refid="configdialog_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/gpgkeystate.cpp</label>
+        <link refid="gpgkeystate_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/imitatepass.cpp</label>
+        <link refid="imitatepass_8cpp"/>
+      </node>
+      <node id="5">
+        <label>src/keygendialog.cpp</label>
+        <link refid="keygendialog_8cpp"/>
+      </node>
+      <node id="6">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="7">
+        <label>src/pass.cpp</label>
+        <link refid="pass_8cpp"/>
+      </node>
+      <node id="8">
+        <label>src/qtpass.cpp</label>
+        <link refid="qtpass_8cpp"/>
+      </node>
+      <node id="9">
+        <label>src/qtpasssettings.cpp</label>
+        <link refid="qtpasssettings_8cpp"/>
+      </node>
+      <node id="10">
+        <label>src/realpass.cpp</label>
+        <link refid="realpass_8cpp"/>
+      </node>
+      <node id="11">
+        <label>src/storemodel.cpp</label>
+        <link refid="storemodel_8cpp"/>
+      </node>
+      <node id="12">
+        <label>src/util.cpp</label>
+        <link refid="util_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/util.h</label>
+        <link refid="util_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>tests/auto/util/tst_util.cpp</label>
+        <link refid="tst__util_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_util" prot="public">Util</innerclass>
+    <sectiondef kind="var">
+      <memberdef kind="variable" id="util_8h_1a6e21cb4edfdc8220e9e3916caaff71f8" prot="public" static="no" constexpr="yes" mutable="no">
+        <type>int</type>
+        <definition>int MS_PER_SECOND</definition>
+        <argsstring></argsstring>
+        <name>MS_PER_SECOND</name>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="12" column="15" bodyfile="src/util.h" bodystart="12" bodyend="-1"/>
+        <referencedby refid="class_main_window_1aeb8091ab5531144b76c1fbb0d63deb56" compoundref="mainwindow_8cpp" startline="289" endline="334">MainWindow::config</referencedby>
+        <referencedby refid="class_main_window_1a52e97245b2f88492071e639395c4a15a" compoundref="mainwindow_8cpp" startline="42" endline="136">MainWindow::MainWindow</referencedby>
+        <referencedby refid="class_qt_pass_1a24eb2c0a19143db0ba3a741c66881be6" compoundref="qtpass_8cpp" startline="444" endline="447">QtPass::setClipboardTimer</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2014<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_UTIL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_UTIL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="storemodel_8h" kindref="compound">storemodel.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QFileSystemModel&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QProcessEnvironment&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QRegularExpression&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="util_8h_1a6e21cb4edfdc8220e9e3916caaff71f8" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="util_8h_1a6e21cb4edfdc8220e9e3916caaff71f8" kindref="member">MS_PER_SECOND</ref><sp/>=<sp/>1000;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_store_model" kindref="compound">StoreModel</ref>;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="class_util" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_util" kindref="compound">Util</ref><sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_util_1aee9122a528c60168a0c105bfbed062d5" kindref="member">findBinaryInPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;binary)<sp/>-&gt;<sp/>QString;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_util_1a503abb6ccbf2aa18056c220b9b45284e" kindref="member">findPasswordStore</ref>()<sp/>-&gt;<sp/>QString;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_util_1acfa7240a7682876cf78d5a44bbbb81de" kindref="member">normalizeFolderPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;path)<sp/>-&gt;<sp/>QString;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_util_1afe6db9149dff37feded5abf38870cda8" kindref="member">configIsValid</ref>()<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_util_1a5df2739baa9b1df5f183c66739699d3d" kindref="member">getDir</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>forPass,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFileSystemModel<sp/>&amp;model,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="class_store_model" kindref="compound">StoreModel</ref><sp/>&amp;storeModel)<sp/>-&gt;<sp/>QString;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_util_1a2a7a32586578a9b631bc6b2a821ce616" kindref="member">endsWithGpg</ref>()<sp/>-&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegularExpression<sp/>&amp;;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_util_1a133c5da0c8a3f106c09977679bc615c3" kindref="member">protocolRegex</ref>()<sp/>-&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegularExpression<sp/>&amp;;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_util_1aced819d4368806d046f0dc24a91843f7" kindref="member">newLinesRegex</ref>()<sp/>-&gt;<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegularExpression<sp/>&amp;;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_util_1aba7296e41ef990d5d945d5ed8cd99bd5" kindref="member">isValidKeyId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;keyId)<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>initialiseEnvironment();</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QProcessEnvironment<sp/>_env;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_envInitialised;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_UTIL_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/util.h"/>
+  </compounddef>
+</doxygen>

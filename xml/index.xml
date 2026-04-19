@@ -1,0 +1,1443 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.16.1" xml:lang="en-US">
+  <compound refid="class_config_dialog" kind="class"><name>ConfigDialog</name>
+    <member refid="class_config_dialog_1a5de66ac7a8a063efdd7c515b1e75e5f3" kind="variable"><name>ui</name></member>
+    <member refid="class_config_dialog_1a76ff26d0cd88209998e803e6dbdb06df" kind="variable"><name>mainWindow</name></member>
+    <member refid="class_config_dialog_1a815d6d8ddf1de9386427ddef691a02a1" kind="function"><name>ConfigDialog</name></member>
+    <member refid="class_config_dialog_1a1b7b022b97d128fb1f749c9190f20b4a" kind="function"><name>~ConfigDialog</name></member>
+    <member refid="class_config_dialog_1af93386c7b55bd8ae35fda6f096d46eb6" kind="function"><name>useSelection</name></member>
+    <member refid="class_config_dialog_1a56eaebf7e3e16da16fd6f1fdb44c9d91" kind="function"><name>useAutoclear</name></member>
+    <member refid="class_config_dialog_1a5439c3bc35c849fbef4c9248ee9042d0" kind="function"><name>useAutoclearPanel</name></member>
+    <member refid="class_config_dialog_1a0ae43a6dc241ebbf619f61171fbbd123" kind="function"><name>getProfiles</name></member>
+    <member refid="class_config_dialog_1ad5b80066591f19fdaaa06b7cb5ba7f15" kind="function"><name>wizard</name></member>
+    <member refid="class_config_dialog_1a99e19a79c9bfd47ee251487c6e766605" kind="function"><name>genKey</name></member>
+    <member refid="class_config_dialog_1aac383b23ed9b34eb52918de2b10d9567" kind="function"><name>useTrayIcon</name></member>
+    <member refid="class_config_dialog_1a4dcec976dc9117924ed9c230e9683c9f" kind="function"><name>useGit</name></member>
+    <member refid="class_config_dialog_1a2a395844557989cf343503e80b075ba0" kind="function"><name>useOtp</name></member>
+    <member refid="class_config_dialog_1a859c596a86c2ee90176c93d8c52f12a7" kind="function"><name>useGrepSearch</name></member>
+    <member refid="class_config_dialog_1a6dbe2089e9c89952aac994d4a359c3f9" kind="function"><name>useQrencode</name></member>
+    <member refid="class_config_dialog_1a3d42b658f6b8436e9f6ca17059703c0a" kind="function"><name>setPwgenPath</name></member>
+    <member refid="class_config_dialog_1ac3ebb263a2b69e39c81217a6d8630995" kind="function"><name>usePwgen</name></member>
+    <member refid="class_config_dialog_1a003ec5de7c29ced34f045f0843d2e95b" kind="function"><name>setPasswordConfiguration</name></member>
+    <member refid="class_config_dialog_1a97c5f924a95b30f4d6a60df361c2b3ba" kind="function"><name>getPasswordConfiguration</name></member>
+    <member refid="class_config_dialog_1a791fbb09740f62bff81c104ce61a0c1a" kind="function"><name>useTemplate</name></member>
+    <member refid="class_config_dialog_1ad5f28221ebec0701bb56c43780a452b3" kind="function"><name>closeEvent</name></member>
+    <member refid="class_config_dialog_1abcea9914e341675611d83dff8b9b3163" kind="slot"><name>on_accepted</name></member>
+    <member refid="class_config_dialog_1a6e92d229bd1e70a1f4e7e8976a469a6a" kind="slot"><name>on_autodetectButton_clicked</name></member>
+    <member refid="class_config_dialog_1a2650ddbdc272cc7effb0541261a921f3" kind="slot"><name>on_radioButtonNative_clicked</name></member>
+    <member refid="class_config_dialog_1a4ed1aadd50231d08811bb5c5b0bcc0f2" kind="slot"><name>on_radioButtonPass_clicked</name></member>
+    <member refid="class_config_dialog_1a1a52ca14165a03beea9340cbce56afd0" kind="slot"><name>on_toolButtonGit_clicked</name></member>
+    <member refid="class_config_dialog_1ab801a2b12893d85d8eafbe681ae27021" kind="slot"><name>on_toolButtonGpg_clicked</name></member>
+    <member refid="class_config_dialog_1a3c8eaa46778f3979272be6bbce64f91e" kind="slot"><name>on_pushButtonGenerateKey_clicked</name></member>
+    <member refid="class_config_dialog_1ac22dcb9077296941812bdb51270fdac7" kind="slot"><name>on_toolButtonPwgen_clicked</name></member>
+    <member refid="class_config_dialog_1a930e754343bae4fccbabe902323a537a" kind="slot"><name>on_toolButtonPass_clicked</name></member>
+    <member refid="class_config_dialog_1a454d1350021aa2dc4f7224af944411a5" kind="slot"><name>on_toolButtonStore_clicked</name></member>
+    <member refid="class_config_dialog_1afc327eb70ad53971429cf3a0431040c0" kind="slot"><name>on_comboBoxClipboard_activated</name></member>
+    <member refid="class_config_dialog_1a3c2493f751659bbb60cfae939ad7ff83" kind="slot"><name>on_passwordCharTemplateSelector_activated</name></member>
+    <member refid="class_config_dialog_1ac002e1ead832154404e3edf6a41debfc" kind="slot"><name>on_checkBoxSelection_clicked</name></member>
+    <member refid="class_config_dialog_1a10ef2078234f8c76d10e30dbefff5380" kind="slot"><name>on_checkBoxAutoclear_clicked</name></member>
+    <member refid="class_config_dialog_1a40ca0e8a835360a92c58a758eb94144b" kind="slot"><name>on_checkBoxAutoclearPanel_clicked</name></member>
+    <member refid="class_config_dialog_1aecb3ede31edbc31bf9e295289f3cef15" kind="slot"><name>on_addButton_clicked</name></member>
+    <member refid="class_config_dialog_1a013a0a52437c29cb37ac47d73ed900a6" kind="slot"><name>on_deleteButton_clicked</name></member>
+    <member refid="class_config_dialog_1a785d6596aa5bebfb17cb65ed6238c648" kind="slot"><name>on_profileTable_cellDoubleClicked</name></member>
+    <member refid="class_config_dialog_1a48e28d30f4a3edeeea9b1cb54f1f8f4f" kind="slot"><name>on_checkBoxUseTrayIcon_clicked</name></member>
+    <member refid="class_config_dialog_1a96ca92ab55a5269a7d8615a137a877ac" kind="slot"><name>on_checkBoxUseGit_clicked</name></member>
+    <member refid="class_config_dialog_1a60f6395954c6e70c33ad3c6c42260e73" kind="slot"><name>on_checkBoxUsePwgen_clicked</name></member>
+    <member refid="class_config_dialog_1afc4c9e5b5a57b3e057162cd8454aeb96" kind="slot"><name>on_checkBoxUseTemplate_clicked</name></member>
+    <member refid="class_config_dialog_1af474ad0e382063ac382053dd284f79be" kind="slot"><name>onProfileTableItemChanged</name></member>
+    <member refid="class_config_dialog_1a2aabd94adf217941b0d0f72df1b290ac" kind="function"><name>getSecretKeys</name></member>
+    <member refid="class_config_dialog_1a4a0bde52cacd0bcda1f76c3c117b0a46" kind="function"><name>setGitPath</name></member>
+    <member refid="class_config_dialog_1afad9d376d13bc53350c00712f29ae660" kind="function"><name>setProfiles</name></member>
+    <member refid="class_config_dialog_1a7f3e2d9557dc842724d7754504e9ee0a" kind="function"><name>usePass</name></member>
+    <member refid="class_config_dialog_1a93a014267e13ce2a518d6ff125bcb172" kind="function"><name>setGroupBoxState</name></member>
+    <member refid="class_config_dialog_1a8ac46697f885118d2eb8773e22d28d85" kind="function"><name>selectExecutable</name></member>
+    <member refid="class_config_dialog_1af46ecbc080ed3effc646a2776608bc03" kind="function"><name>selectFolder</name></member>
+    <member refid="class_config_dialog_1aa8acc8fb6a7213f68c4dbe9dac733a6f" kind="function"><name>criticalMessage</name></member>
+    <member refid="class_config_dialog_1a8561037d433d6bf1f6309c12c736415b" kind="function"><name>isPassOtpAvailable</name></member>
+    <member refid="class_config_dialog_1a6d86adacb6e72afa9a46bd921afbc6df" kind="function"><name>isQrencodeAvailable</name></member>
+    <member refid="class_config_dialog_1adba67c942ef9700fab8d38adbf498188" kind="function"><name>validate</name></member>
+    <member refid="class_config_dialog_1a3e9e230897996d67178921ce4c56d9a8" kind="function"><name>checkGpgExistence</name></member>
+    <member refid="class_config_dialog_1a40db2e36d9511872ae14a23027a7327f" kind="function"><name>checkSecretKeys</name></member>
+    <member refid="class_config_dialog_1ab724d995ac3e3dabd626372977b69971" kind="function"><name>checkPasswordStore</name></member>
+    <member refid="class_config_dialog_1a708180c7084b140f86a53a8f3854cdb0" kind="function"><name>handleGpgIdFile</name></member>
+    <member refid="class_config_dialog_1ad8d991a7f4c7325cdc21d31de416bd87" kind="function"><name>initializeNewProfiles</name></member>
+  </compound>
+  <compound refid="class_deselectable_tree_view" kind="class"><name>DeselectableTreeView</name>
+    <member refid="class_deselectable_tree_view_1a25d7d24dddf49ee15ef1b0870fa293f8" kind="variable"><name>doubleClickHappened</name></member>
+    <member refid="class_deselectable_tree_view_1a72e3ccd9a689aeb6273def627bc40783" kind="variable"><name>clickSelected</name></member>
+    <member refid="class_deselectable_tree_view_1a78b4bc9a59d8db8531a1e270a7793b26" kind="function"><name>DeselectableTreeView</name></member>
+    <member refid="class_deselectable_tree_view_1aeae99d030001a2ed590a8abfe31c462b" kind="function"><name>~DeselectableTreeView</name></member>
+    <member refid="class_deselectable_tree_view_1ac28685648d7a31e19e52882e218346c4" kind="signal"><name>emptyClicked</name></member>
+    <member refid="class_deselectable_tree_view_1abfcdd23266bf6bcd318eeb25aac40ea7" kind="function"><name>mousePressEvent</name></member>
+    <member refid="class_deselectable_tree_view_1a0209e85dea0f1cf67c70c9545500eca5" kind="function"><name>mouseReleaseEvent</name></member>
+    <member refid="class_deselectable_tree_view_1a3e29a7d444e39f91c52b83a920791a8d" kind="function"><name>mouseDoubleClickEvent</name></member>
+  </compound>
+  <compound refid="structdrag_and_drop_info_password_store" kind="struct"><name>dragAndDropInfoPasswordStore</name>
+    <member refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6" kind="enum"><name>ItemKind</name></member>
+    <member refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6a88183b946cc5f0e8c96b2e66e1c74a7e" kind="enumvalue"><name>Unknown</name></member>
+    <member refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6ae73cda510e8bb947f7e61089e5581494" kind="enumvalue"><name>Directory</name></member>
+    <member refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6a0b27918290ff5323bea1e3b78a9cf04e" kind="enumvalue"><name>File</name></member>
+    <member refid="structdrag_and_drop_info_password_store_1ab4bf9c0e8d5cce80a689fd57b3b97541" kind="variable"><name>kind</name></member>
+    <member refid="structdrag_and_drop_info_password_store_1ac3d6eb02633ddfd1a290cbaf27ca5390" kind="variable"><name>path</name></member>
+  </compound>
+  <compound refid="struct_executor_1_1exec_queue_item" kind="struct"><name>Executor::execQueueItem</name>
+    <member refid="struct_executor_1_1exec_queue_item_1ac5aa98b0f5c30e598c2358d893c354f6" kind="variable"><name>id</name></member>
+    <member refid="struct_executor_1_1exec_queue_item_1a6c14e3755868e8aac85f1bc6533079c1" kind="variable"><name>app</name></member>
+    <member refid="struct_executor_1_1exec_queue_item_1a82dd9dc614f628fc6d321bc8aa1dce28" kind="variable"><name>args</name></member>
+    <member refid="struct_executor_1_1exec_queue_item_1aeae02c2b8ce25b8f8cf69cec2a56632c" kind="variable"><name>input</name></member>
+    <member refid="struct_executor_1_1exec_queue_item_1a4fe58bc4fe9cd53718bfebb5479450ae" kind="variable"><name>readStdout</name></member>
+    <member refid="struct_executor_1_1exec_queue_item_1adf9dd74cf88d0457c236ab9edfb75325" kind="variable"><name>readStderr</name></member>
+    <member refid="struct_executor_1_1exec_queue_item_1a4d6d518a0c9e7d03c089a116ba5e880f" kind="variable"><name>workingDir</name></member>
+  </compound>
+  <compound refid="class_executor" kind="class"><name>Executor</name>
+    <member refid="class_executor_1a4db05185b2bdf594b6a54c1dc826789f" kind="variable"><name>m_execQueue</name></member>
+    <member refid="class_executor_1af165b60b2641b431ca57c506e5c5d9e8" kind="variable"><name>m_process</name></member>
+    <member refid="class_executor_1abd923dfe9e21c7914d3973ef3d4ebefc" kind="variable"><name>running</name></member>
+    <member refid="class_executor_1ae71c92047b8337f770294e84211d850f" kind="function"><name>executeNext</name></member>
+    <member refid="class_executor_1a0e7d705c3e518123be1e08777191fc17" kind="function"><name>startProcess</name></member>
+    <member refid="class_executor_1acdee96eeda5f2a7934ecfe22fe0e57fa" kind="function"><name>startProcessBlocking</name></member>
+    <member refid="class_executor_1aa15bf32ce5a10a04dce8fe549247ac7d" kind="function"><name>Executor</name></member>
+    <member refid="class_executor_1a7c4305c0af542f0174492badfdbfbc74" kind="function"><name>execute</name></member>
+    <member refid="class_executor_1a490166ea519a8047e207da8d67f3c0d2" kind="function"><name>execute</name></member>
+    <member refid="class_executor_1aedd0216127ab9915112df45d9eaaccfe" kind="function"><name>execute</name></member>
+    <member refid="class_executor_1affda40d546db75d35f38db1ec1414bf7" kind="function"><name>execute</name></member>
+    <member refid="class_executor_1abbe0bc7b3fd09d84f2f04ddcc0bc095f" kind="function"><name>setEnvironment</name></member>
+    <member refid="class_executor_1a6f315e4938ca57158737cd4006458e74" kind="function"><name>environment</name></member>
+    <member refid="class_executor_1aee160ee2ec954bdb58a3a38555536090" kind="function"><name>cancelNext</name></member>
+    <member refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" kind="function"><name>executeBlocking</name></member>
+    <member refid="class_executor_1a9c01e6e31745874177b21982ce2cd4d1" kind="function"><name>executeBlocking</name></member>
+    <member refid="class_executor_1a357bff28ec9487a4d36187b5e85ee8a3" kind="function"><name>executeBlocking</name></member>
+    <member refid="class_executor_1a0410b6338ca33b6df0f3d783e94c8b20" kind="slot"><name>finished</name></member>
+    <member refid="class_executor_1ace810a6d93c74dec7188038210c5a731" kind="signal"><name>finished</name></member>
+    <member refid="class_executor_1acfcfc18b0b973791530302eb8179e038" kind="signal"><name>starting</name></member>
+    <member refid="class_executor_1a9c450bcba881197a3e10eb1bf59b3a88" kind="signal"><name>error</name></member>
+  </compound>
+  <compound refid="class_file_content" kind="class"><name>FileContent</name>
+    <member refid="class_file_content_1a5c5035cd2054014d2ff2fdfbb7bb7dac" kind="variable"><name>password</name></member>
+    <member refid="class_file_content_1aabce3daaa0ff8a8af022128b3eb4f518" kind="variable"><name>namedValues</name></member>
+    <member refid="class_file_content_1a4a28534f84dee950888b5ff68a5a0cc2" kind="variable"><name>remainingData</name></member>
+    <member refid="class_file_content_1ad581a32699afdbc00f52fe97e8585eef" kind="variable"><name>remainingDataDisplay</name></member>
+    <member refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kind="function"><name>parse</name></member>
+    <member refid="class_file_content_1ac88e8096551d24a41fc0625a4d903139" kind="function"><name>getPassword</name></member>
+    <member refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kind="function"><name>getNamedValues</name></member>
+    <member refid="class_file_content_1a845c61a8c0f52e5aa73953c9162dd47d" kind="function"><name>getRemainingData</name></member>
+    <member refid="class_file_content_1ac38b9c211d6f62eb7420eecc66f935e8" kind="function"><name>getRemainingDataForDisplay</name></member>
+    <member refid="class_file_content_1a18ff7f726f39b9f393b3f26b3c1ab4bd" kind="function"><name>FileContent</name></member>
+  </compound>
+  <compound refid="class_imitate_pass" kind="class"><name>ImitatePass</name>
+    <member refid="class_imitate_pass_1a18cf3033eb76990c7a2e294ef0c13ebb" kind="friend"><name>tst_util</name></member>
+    <member refid="class_imitate_pass_1a373a20115d195552dcf1760f5c97cd92" kind="variable"><name>m_grepSeq</name></member>
+    <member refid="class_imitate_pass_1a9e0f4b7cbd6e45bd9ee692d8a2504701" kind="variable"><name>m_grepThreads</name></member>
+    <member refid="class_imitate_pass_1a6ecaa7d53d661362511354e96572c240" kind="function"><name>verifyGpgIdFile</name></member>
+    <member refid="class_imitate_pass_1a8740d9937714c8b6219d1857d7e2ff2c" kind="function"><name>removeDir</name></member>
+    <member refid="class_imitate_pass_1a607cc25575bf718f57333bb7854870b4" kind="function"><name>checkSigningKeys</name></member>
+    <member refid="class_imitate_pass_1ae65aff95459cee83b5b999f5a83fcac1" kind="function"><name>writeGpgIdFile</name></member>
+    <member refid="class_imitate_pass_1aa6163e2dd259c8f69d0cead7551b573a" kind="function"><name>signGpgIdFile</name></member>
+    <member refid="class_imitate_pass_1ae9547b23ef6e8c04b52f514218e50a5c" kind="function"><name>gitAddGpgId</name></member>
+    <member refid="class_imitate_pass_1a7af6102fa60b3267bd1e387e7cfd82af" kind="function"><name>verifyGpgIdForDir</name></member>
+    <member refid="class_imitate_pass_1a086365ec85674590afbd883df0b27a80" kind="function"><name>createBackupCommit</name></member>
+    <member refid="class_imitate_pass_1aef532636a761beee3ecdd5dcedbfc834" kind="function"><name>getKeysFromFile</name></member>
+    <member refid="class_imitate_pass_1a662922741c9302e7ff58690a2f35808c" kind="function"><name>reencryptSingleFile</name></member>
+    <member refid="class_imitate_pass_1adfd24194a7787a48b6eddbe8d31fc563" kind="function"><name>resolveMoveDestination</name></member>
+    <member refid="class_imitate_pass_1aa0b75b53b2a2d62b0fbffbb5d2d7efe4" kind="function"><name>finished</name></member>
+    <member refid="class_imitate_pass_1aa2ade77096c04fb94536d675bfaae8fe" kind="function"><name>executeWrapper</name></member>
+    <member refid="class_imitate_pass_1a94389a15db6c782715520aa6fbb13098" kind="function"><name>executeMoveGit</name></member>
+    <member refid="class_imitate_pass_1afcfd84525f2dfd41b131f76c988010fb" kind="function"><name>gitCommit</name></member>
+    <member refid="class_imitate_pass_1a6f9682c6103b112a9aa844df7ef6a273" kind="function"><name>executeGit</name></member>
+    <member refid="class_imitate_pass_1a2ff555a9fdb035a15b0ea55ce2cb887a" kind="function"><name>executeGpg</name></member>
+    <member refid="class_imitate_pass_1a64932bbae7860c2ee6bef6e3d6ed7bc6" kind="function"><name>ImitatePass</name></member>
+    <member refid="class_imitate_pass_1a59c774bacec45aa06d10e22bc71f596e" kind="function"><name>~ImitatePass</name></member>
+    <member refid="class_imitate_pass_1a2bb2e83ad96efa7c111df54230e237bb" kind="function"><name>GitInit</name></member>
+    <member refid="class_imitate_pass_1ab9f0103079ee01a263b70b95cd4aeced" kind="function"><name>GitPull</name></member>
+    <member refid="class_imitate_pass_1a5713b5c223fd522d0790debaa33cfbc2" kind="function"><name>GitPull_b</name></member>
+    <member refid="class_imitate_pass_1ae61b400e69fcc32c4a80b94fb52107b9" kind="function"><name>GitPush</name></member>
+    <member refid="class_imitate_pass_1acfffcbf097c9d4615c01e064e335d65d" kind="function"><name>Show</name></member>
+    <member refid="class_imitate_pass_1a18eac6111a1d77a3f8ded93b7be16270" kind="function"><name>OtpGenerate</name></member>
+    <member refid="class_imitate_pass_1a84de97293ca1a100b1e466b4a79ec601" kind="function"><name>Insert</name></member>
+    <member refid="class_imitate_pass_1ab9cef44c64dae297da55e08266f1c1c5" kind="function"><name>Remove</name></member>
+    <member refid="class_imitate_pass_1a6fe6b48df3fb04071c8c2c1d5c1d1206" kind="function"><name>Init</name></member>
+    <member refid="class_imitate_pass_1af331446d163c31f1fca714646c0f6244" kind="function"><name>reencryptPath</name></member>
+    <member refid="class_imitate_pass_1a9653850cc56714b9774221204339bbf2" kind="function"><name>Move</name></member>
+    <member refid="class_imitate_pass_1a97538d83d4f6a583f840db0865e8609a" kind="function"><name>Copy</name></member>
+    <member refid="class_imitate_pass_1a7789a916aca076ad7ceaf4ef093239d3" kind="function"><name>Grep</name></member>
+    <member refid="class_imitate_pass_1aecffecc95bd1c0281849dbfe11231e36" kind="signal"><name>startReencryptPath</name></member>
+    <member refid="class_imitate_pass_1a9df2c7246a8686cf92c442c00dc55af7" kind="signal"><name>endReencryptPath</name></member>
+    <member refid="class_imitate_pass_1ab21537e584889d27f65171e83439ded6" kind="function"><name>grepMatchFile</name></member>
+    <member refid="class_imitate_pass_1a1ccdef023c6aac45fcdacc091dbad04f" kind="function"><name>grepScanStore</name></member>
+  </compound>
+  <compound refid="class_keygen_dialog" kind="class"><name>KeygenDialog</name>
+    <member refid="class_keygen_dialog_1afc4de5b73afae45366cd06085c6b97e2" kind="variable"><name>ui</name></member>
+    <member refid="class_keygen_dialog_1ad905ceeb44a9af9c471e15dc14a4a1e1" kind="variable"><name>dialog</name></member>
+    <member refid="class_keygen_dialog_1a565b5698b7bb40720476d61b8b1b8548" kind="function"><name>KeygenDialog</name></member>
+    <member refid="class_keygen_dialog_1ab469a4e10fb2b2ee324e57cb1e209a3e" kind="function"><name>~KeygenDialog</name></member>
+    <member refid="class_keygen_dialog_1a37012091a78f400d9bdc7b6f6b5949ef" kind="function"><name>closeEvent</name></member>
+    <member refid="class_keygen_dialog_1a68eaa387bd0f5f3074636fcfb6a5cc2f" kind="slot"><name>on_passphrase1_textChanged</name></member>
+    <member refid="class_keygen_dialog_1af674d915b30db393f7dd6c0824ef363d" kind="slot"><name>on_passphrase2_textChanged</name></member>
+    <member refid="class_keygen_dialog_1a5867d453099c4648a3b0ffda3ba9ced4" kind="slot"><name>on_checkBox_stateChanged</name></member>
+    <member refid="class_keygen_dialog_1aa28f8db828f60edd4195bcc9f9e8cb6e" kind="slot"><name>on_email_textChanged</name></member>
+    <member refid="class_keygen_dialog_1ac0ebf04c899e95033f560ae4aae5b2f3" kind="slot"><name>on_name_textChanged</name></member>
+    <member refid="class_keygen_dialog_1a70e11c97dde0d4d88ff43ec555eb8bbf" kind="function"><name>replace</name></member>
+    <member refid="class_keygen_dialog_1a805475e990ca590a79cb795072400a5a" kind="function"><name>done</name></member>
+    <member refid="class_keygen_dialog_1a22c3d8dfe5f2ec73feb12cb727887c53" kind="function"><name>no_protection</name></member>
+  </compound>
+  <compound refid="class_main_window" kind="class"><name>MainWindow</name>
+    <member refid="class_main_window_1ae772473e8fa0047f5db5bcb410dc88a1" kind="variable"><name>m_qtPass</name></member>
+    <member refid="class_main_window_1a9df5005557a207e799dbe45333adac74" kind="variable"><name>ui</name></member>
+    <member refid="class_main_window_1a560a81fad6d7a17c2b1f46755ca700fe" kind="variable"><name>m_grepMode</name></member>
+    <member refid="class_main_window_1a32707fc245288047cedac53da045ca7f" kind="variable"><name>m_grepBusy</name></member>
+    <member refid="class_main_window_1af947f68a3f5d59ac8b2afe51c6e10950" kind="variable"><name>m_grepCancelled</name></member>
+    <member refid="class_main_window_1a3e1ab9920e8d9ebdebd74743e4b24353" kind="variable"><name>model</name></member>
+    <member refid="class_main_window_1a8bc09b350f76be1008a0b6ec417e80a4" kind="variable"><name>proxyModel</name></member>
+    <member refid="class_main_window_1a66a9d5894a1e71cf76ba491755c946d2" kind="variable"><name>selectionModel</name></member>
+    <member refid="class_main_window_1a7428919d42945d4b83863ca4219f38ac" kind="variable"><name>clearPanelTimer</name></member>
+    <member refid="class_main_window_1a3707d5edf6ae13711a525bb03044eb29" kind="variable"><name>searchTimer</name></member>
+    <member refid="class_main_window_1abe50b9d4d552efc920574ccd735ad5a7" kind="variable"><name>keygen</name></member>
+    <member refid="class_main_window_1a0e9dd617cca11ee0e5289b5931e701bf" kind="variable"><name>currentDir</name></member>
+    <member refid="class_main_window_1ab0a61daeb571586ac7f2efdf402f5991" kind="variable"><name>tray</name></member>
+    <member refid="class_main_window_1a52e97245b2f88492071e639395c4a15a" kind="function"><name>MainWindow</name></member>
+    <member refid="class_main_window_1a1f7d2c56410fc1bfa135bb907d43313f" kind="function"><name>~MainWindow</name></member>
+    <member refid="class_main_window_1a9630f0fe0e0941a7996d68014f837ed5" kind="function"><name>restoreWindow</name></member>
+    <member refid="class_main_window_1a8737aac54ea6a935210f9a35ac914aa7" kind="function"><name>generateKeyPair</name></member>
+    <member refid="class_main_window_1a056b66175a3d3ffc3146535726bb4e50" kind="function"><name>userDialog</name></member>
+    <member refid="class_main_window_1aeb8091ab5531144b76c1fbb0d63deb56" kind="function"><name>config</name></member>
+    <member refid="class_main_window_1ac240119ea67a770e5d997a5aa0fe47a3" kind="function"><name>setUiElementsEnabled</name></member>
+    <member refid="class_main_window_1aae7cd7af04cedf4a17ede44bffafec89" kind="function"><name>flashText</name></member>
+    <member refid="class_main_window_1acc66dda09963fdddea9716163293ddda" kind="function"><name>getCurrentTreeViewIndex</name></member>
+    <member refid="class_main_window_1ae5b8c234b3175974bc135317232d1e1c" kind="function"><name>getKeygenDialog</name></member>
+    <member refid="class_main_window_1ad2a9b38617b357d8fa42744c00a26fcf" kind="function"><name>cleanKeygenDialog</name></member>
+    <member refid="class_main_window_1a05fb9d72c044aa3bb7d187b994704e2f" kind="function"><name>closeEvent</name></member>
+    <member refid="class_main_window_1a55ae3e0d4303334ccabae0a5050cfd88" kind="function"><name>keyPressEvent</name></member>
+    <member refid="class_main_window_1a416ae2140ac1aa9f03a6279316abdcad" kind="function"><name>changeEvent</name></member>
+    <member refid="class_main_window_1aa07eb275a856e189c141fde5b69a7166" kind="function"><name>eventFilter</name></member>
+    <member refid="class_main_window_1a7e1ae254673e36410d4b3a73e1e8ec8e" kind="signal"><name>passShowHandlerFinished</name></member>
+    <member refid="class_main_window_1a3c5e045f6f13c0c6054ff4d4cdb58498" kind="signal"><name>passGitInitNeeded</name></member>
+    <member refid="class_main_window_1a7e72f32612c2436ff4756c5c25b6b4ec" kind="signal"><name>generateGPGKeyPair</name></member>
+    <member refid="class_main_window_1ad4cf3e2c819cac398728a82f1cf05f3e" kind="slot"><name>deselect</name></member>
+    <member refid="class_main_window_1a4fad7c4dec11ceaebcb8a0141280ba4b" kind="slot"><name>messageAvailable</name></member>
+    <member refid="class_main_window_1a8719b3a133e95915dd72b244db1e49bf" kind="slot"><name>critical</name></member>
+    <member refid="class_main_window_1a3550b28be1344cf5c012af794dce8c64" kind="slot"><name>executeWrapperStarted</name></member>
+    <member refid="class_main_window_1a69f4a122336a6fc3875fc94741e4d1cf" kind="slot"><name>showStatusMessage</name></member>
+    <member refid="class_main_window_1a35dcbf29b9cfe87b6f7d597b7abba480" kind="slot"><name>passShowHandler</name></member>
+    <member refid="class_main_window_1ad138cb03123dbf06fe8a118ea057412d" kind="slot"><name>passOtpHandler</name></member>
+    <member refid="class_main_window_1a270b5f2701f275c3de734f4150a3d897" kind="slot"><name>onGrepFinished</name></member>
+    <member refid="class_main_window_1a6961588ebf3c0640200e0cfa920af3be" kind="slot"><name>onPush</name></member>
+    <member refid="class_main_window_1adc7d4b2b210efab401f0b14641f80464" kind="slot"><name>on_treeView_clicked</name></member>
+    <member refid="class_main_window_1a02ec9927bda826675653c0af916c8f33" kind="slot"><name>startReencryptPath</name></member>
+    <member refid="class_main_window_1a201fc73a7db0d404e8fd49f818696eba" kind="slot"><name>endReencryptPath</name></member>
+    <member refid="class_main_window_1a7390a38fa0f78bcd05f797c70a959ac5" kind="slot"><name>on_grepButton_toggled</name></member>
+    <member refid="class_main_window_1a7cb8cceb6798c42b16f050462c37650f" kind="slot"><name>on_grepResultsList_itemClicked</name></member>
+    <member refid="class_main_window_1a03b4f9d80c2f9e80c9e4acfa72346554" kind="slot"><name>addPassword</name></member>
+    <member refid="class_main_window_1a43847693f774d77737aa23aa4a1ac272" kind="slot"><name>addFolder</name></member>
+    <member refid="class_main_window_1a9480c0a26284df09cf4d595b0d1952fe" kind="slot"><name>onEdit</name></member>
+    <member refid="class_main_window_1a3f29a7235acf922406190b6477167a80" kind="slot"><name>onDelete</name></member>
+    <member refid="class_main_window_1a974b178baf718f5f5fe81d391aa666d7" kind="slot"><name>onOtp</name></member>
+    <member refid="class_main_window_1ad1f26db71fe29fdea3b1cd36bfc9c8d5" kind="slot"><name>onUpdate</name></member>
+    <member refid="class_main_window_1ae65d3d151c79c84cedefbe6999ae89f3" kind="slot"><name>onUsers</name></member>
+    <member refid="class_main_window_1a1a9f8db082fd90bdd667e5b7ebca8f44" kind="slot"><name>onConfig</name></member>
+    <member refid="class_main_window_1a5a951938ec2d2a1e10579cd1f2889439" kind="slot"><name>on_treeView_doubleClicked</name></member>
+    <member refid="class_main_window_1abf59e43f7b3141fb5c25565c92e3abdb" kind="slot"><name>clearPanel</name></member>
+    <member refid="class_main_window_1af679b5f4773b48738fc67c5d5179751d" kind="slot"><name>on_lineEdit_textChanged</name></member>
+    <member refid="class_main_window_1a6ed67aa63c63c4867166cb21115d64f7" kind="slot"><name>on_lineEdit_returnPressed</name></member>
+    <member refid="class_main_window_1aba5c7672bd97eaa3f86e1db73a9da286" kind="slot"><name>on_profileBox_currentTextChanged</name></member>
+    <member refid="class_main_window_1a856c67c50c07ca0b0f4c81b818a0f742" kind="slot"><name>showContextMenu</name></member>
+    <member refid="class_main_window_1a98a902aa097483416e0bebf9fd5ce860" kind="slot"><name>showBrowserContextMenu</name></member>
+    <member refid="class_main_window_1aa6db15fe86b6fa20bec8f0298ff9a595" kind="slot"><name>openFolder</name></member>
+    <member refid="class_main_window_1a0e788394d24c96b5c2e35126f0c2cc1a" kind="slot"><name>renameFolder</name></member>
+    <member refid="class_main_window_1a20827510d49857c719ad689075438d09" kind="slot"><name>editPassword</name></member>
+    <member refid="class_main_window_1af58bd54fe790497dd1d8793619c94661" kind="slot"><name>renamePassword</name></member>
+    <member refid="class_main_window_1a6ba35e7bf11ebd5236990a00daa079d7" kind="slot"><name>focusInput</name></member>
+    <member refid="class_main_window_1a5389ebc0c173ffa3d38ead9b48a16cbb" kind="slot"><name>copyPasswordFromTreeview</name></member>
+    <member refid="class_main_window_1a2e3cdf69adc857095ff39f3d84c0c848" kind="slot"><name>passwordFromFileToClipboard</name></member>
+    <member refid="class_main_window_1a661b52ed29bc2ff2b16d973c8306fdca" kind="slot"><name>onTimeoutSearch</name></member>
+    <member refid="class_main_window_1a1ea53c7a8b5941564ac8e94ed18abe7a" kind="function"><name>initToolBarButtons</name></member>
+    <member refid="class_main_window_1ab03270fd7d6947737a5e3d57684c8547" kind="function"><name>initStatusBar</name></member>
+    <member refid="class_main_window_1a154d6f626586344f44a46bf9a5c52c2c" kind="function"><name>updateText</name></member>
+    <member refid="class_main_window_1a7491c2974ab54018ac9a7d1738a4f654" kind="function"><name>selectFirstFile</name></member>
+    <member refid="class_main_window_1ae9a674e42e112906d72b37ede211ca4d" kind="function"><name>firstFile</name></member>
+    <member refid="class_main_window_1a85cec615546547f3cc85f1e5ab0df594" kind="function"><name>getFile</name></member>
+    <member refid="class_main_window_1a3ebba5c6981eeebef8e40aa5135c8ecb" kind="function"><name>setPassword</name></member>
+    <member refid="class_main_window_1a91bfea12c6549f4eb243b4d41a1e3895" kind="function"><name>updateProfileBox</name></member>
+    <member refid="class_main_window_1aac6a34d508898a862807dc2512e6b659" kind="function"><name>initTrayIcon</name></member>
+    <member refid="class_main_window_1ae6cd4b4efa51da309090b9c394ae5a57" kind="function"><name>destroyTrayIcon</name></member>
+    <member refid="class_main_window_1a1cba9669e738b5cdd8076bf7a6ec1eab" kind="function"><name>clearTemplateWidgets</name></member>
+    <member refid="class_main_window_1a7cf82cedc4d5f790a8ed0bb4fadbbb16" kind="function"><name>reencryptPath</name></member>
+    <member refid="class_main_window_1af4b6b032c63a043ed8afbb720723dc56" kind="function"><name>addToGridLayout</name></member>
+    <member refid="class_main_window_1ac5705aca84795de049d9a0f0a0d5e3fb" kind="function"><name>applyTextBrowserSettings</name></member>
+    <member refid="class_main_window_1a8c981247a44bc74f5152c312c15a8a79" kind="function"><name>applyWindowFlagsSettings</name></member>
+    <member refid="class_main_window_1a7afd2bb118cb0c01ac50344edb6660d5" kind="function"><name>updateGitButtonVisibility</name></member>
+    <member refid="class_main_window_1a4cbb48928fc0724e08fbf19d884f6545" kind="function"><name>updateOtpButtonVisibility</name></member>
+    <member refid="class_main_window_1a45b0da2bbc51131497c2b47ff2168200" kind="function"><name>updateGrepButtonVisibility</name></member>
+    <member refid="class_main_window_1a7d82616c59adef47e09adf3a9005ff94" kind="function"><name>enableGitButtons</name></member>
+  </compound>
+  <compound refid="struct_named_value" kind="struct"><name>NamedValue</name>
+    <member refid="struct_named_value_1a2c5db0fcfdabcee423cc74c6e5362867" kind="variable"><name>name</name></member>
+    <member refid="struct_named_value_1a7e9785f69be8f0cce61f22113bbf725d" kind="variable"><name>value</name></member>
+  </compound>
+  <compound refid="class_named_values" kind="class"><name>NamedValues</name>
+    <member refid="class_named_values_1abe1c3dc2619efbc91cfd2d19c98a6dc6" kind="function"><name>NamedValues</name></member>
+    <member refid="class_named_values_1ae05206d5b3c53ee4545089e8f7997b4f" kind="function"><name>NamedValues</name></member>
+    <member refid="class_named_values_1a427d280bd24b10d9a5b627b1fa4b5f4b" kind="function"><name>takeValue</name></member>
+  </compound>
+  <compound refid="class_pass" kind="class"><name>Pass</name>
+    <member refid="class_pass_1a2e71b5174b4ef25a1e91d8c56177b772" kind="typedef"><name>PROCESS</name></member>
+    <member refid="class_pass_1a056fe06a59546aa9539a60a9ba566546" kind="variable"><name>wrapperRunning</name></member>
+    <member refid="class_pass_1abe8595bd553f84e7ccdb9f3d94144909" kind="variable"><name>env</name></member>
+    <member refid="class_pass_1a903a833ade1109f9cb75e3bbeab8d0af" kind="variable"><name>exec</name></member>
+    <member refid="class_pass_1a5d0cea4019f5c123fb4a4417de8d95b9" kind="function"><name>Pass</name></member>
+    <member refid="class_pass_1a012c47a55b3cc3467ad0f013716f623a" kind="function"><name>init</name></member>
+    <member refid="class_pass_1a9575bbed98a8dfb8a3f5a30c18d8bfcf" kind="function"><name>~Pass</name></member>
+    <member refid="class_pass_1a26bec7c69e7c35ccb67f8057db90825e" kind="function"><name>GitInit</name></member>
+    <member refid="class_pass_1a30c3829a890d65d3e4ba90c12b1852e8" kind="function"><name>GitPull</name></member>
+    <member refid="class_pass_1a7a109d5c0a7f565398b7238c32bb6328" kind="function"><name>GitPull_b</name></member>
+    <member refid="class_pass_1a7b5fa97ca6f3795512ac7c10db5c8f09" kind="function"><name>GitPush</name></member>
+    <member refid="class_pass_1a6520ffa669cd7934091934b24593d99c" kind="function"><name>Show</name></member>
+    <member refid="class_pass_1abfe228b7e546aeb0e33bb8102f2e7f19" kind="function"><name>OtpGenerate</name></member>
+    <member refid="class_pass_1a86ad2005a6517f9c304a9e156755778c" kind="function"><name>Insert</name></member>
+    <member refid="class_pass_1a5aedb6df7aa57385eb19a78cdbd3e764" kind="function"><name>Remove</name></member>
+    <member refid="class_pass_1ab9dde6644865bd583dc09a52d17ffb49" kind="function"><name>Move</name></member>
+    <member refid="class_pass_1a1a41ce3d629b20902e9d14ff285c1f49" kind="function"><name>Copy</name></member>
+    <member refid="class_pass_1aee98d184ed11013a9a9dc08d05fbb1a2" kind="function"><name>Init</name></member>
+    <member refid="class_pass_1aeb0ec5b8842c1c27e40dafc2ebcad509" kind="function"><name>Grep</name></member>
+    <member refid="class_pass_1a35b3cba623a22f41173670ec34ebb67c" kind="function"><name>generatePassword</name></member>
+    <member refid="class_pass_1a0c29f7bd4ca235d00d9dac6a37e14f4f" kind="function"><name>GenerateGPGKeys</name></member>
+    <member refid="class_pass_1a6ed6c10b07137f62e127b290ebd428a2" kind="function"><name>listKeys</name></member>
+    <member refid="class_pass_1a170c0e1d359eb3f2d7b5f75f60082bd6" kind="function"><name>listKeys</name></member>
+    <member refid="class_pass_1ac679a086b289cdb9245906948ba0458a" kind="function"><name>updateEnv</name></member>
+    <member refid="class_pass_1a4c2bca8a9a59a032adc68846055b056b" kind="function"><name>gpgSupportsEd25519</name></member>
+    <member refid="class_pass_1ae3284a937d0ca8ae2ea2d81ec556c37b" kind="function"><name>getDefaultKeyTemplate</name></member>
+    <member refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" kind="function"><name>resolveGpgconfCommand</name></member>
+    <member refid="class_pass_1a7bab4c97e4a327cc34060a67c09959bf" kind="function"><name>getGpgIdPath</name></member>
+    <member refid="class_pass_1a693825d2ad62813cf103860ef6211370" kind="function"><name>getRecipientList</name></member>
+    <member refid="class_pass_1ae1f31c62b7117b99882625dbef654533" kind="function"><name>getRecipientString</name></member>
+    <member refid="class_pass_1a66f59138ffe856fd421410d9af9ddc62" kind="function"><name>executeWrapper</name></member>
+    <member refid="class_pass_1aff660edce34d33f5a2adfa8c130470f0" kind="function"><name>generateRandomPassword</name></member>
+    <member refid="class_pass_1a4f63e4e86c7ffec6df333e466fb38c3b" kind="function"><name>boundedRandom</name></member>
+    <member refid="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" kind="function"><name>setEnvVar</name></member>
+    <member refid="class_pass_1a924b4cd54e4b5e24fa42661b7eccec07" kind="function"><name>executeWrapper</name></member>
+    <member refid="class_pass_1ad51174f24ecdbc14a55e4588a34b8563" kind="slot"><name>finished</name></member>
+    <member refid="class_pass_1a23d86a80c0e1772771f097062dc0ab7c" kind="function"><name>handleProcessError</name></member>
+    <member refid="class_pass_1a08f74d0bc2e7adf119c7bc171925f2c8" kind="function"><name>handleGrepError</name></member>
+    <member refid="class_pass_1aa7deb8fc813c6652b169d11bb687f613" kind="function"><name>formatInsertError</name></member>
+    <member refid="class_pass_1a57b61261a84b79bb73b209b3511a87ff" kind="function"><name>emitProcessFinishedSignal</name></member>
+    <member refid="class_pass_1ad0afad0f75995803c1aa90d936e3db18" kind="signal"><name>error</name></member>
+    <member refid="class_pass_1a0345d3ffdb213234031e9c84fe8ca7c6" kind="signal"><name>startingExecuteWrapper</name></member>
+    <member refid="class_pass_1a404664f7d589a307c9223c373b2622c3" kind="signal"><name>statusMsg</name></member>
+    <member refid="class_pass_1a0eafb54675479378ec98307f0e4fff65" kind="signal"><name>critical</name></member>
+    <member refid="class_pass_1a9bb040e1a33322a27cd85d8a367ef24f" kind="signal"><name>processErrorExit</name></member>
+    <member refid="class_pass_1a6811d3de9b04450c59cf17d7ce9272a5" kind="signal"><name>finishedAny</name></member>
+    <member refid="class_pass_1a52541582298af5b2707447e3a57f85bf" kind="signal"><name>finishedGitInit</name></member>
+    <member refid="class_pass_1ab6d3acbdce8a5bc579bef175c85382df" kind="signal"><name>finishedGitPull</name></member>
+    <member refid="class_pass_1ab892bcacdbe3081f677e456a3a8ac328" kind="signal"><name>finishedGitPush</name></member>
+    <member refid="class_pass_1a24cdfb567ab68940f2a823704e2ab1ba" kind="signal"><name>finishedShow</name></member>
+    <member refid="class_pass_1a8ca44f13c68a03c1e91fbbfee37388ed" kind="signal"><name>finishedOtpGenerate</name></member>
+    <member refid="class_pass_1a71d8c179a7875dd2983de2aabff0a8cb" kind="signal"><name>finishedInsert</name></member>
+    <member refid="class_pass_1a263cc9ceb5269427237ea43267667197" kind="signal"><name>finishedRemove</name></member>
+    <member refid="class_pass_1a7a4c2bbb80372455e0d406fbc940e219" kind="signal"><name>finishedInit</name></member>
+    <member refid="class_pass_1a3ca180cb5769aa87186474f7eda9e2a5" kind="signal"><name>finishedMove</name></member>
+    <member refid="class_pass_1a22febea5d24676854f3dad24260df4d5" kind="signal"><name>finishedCopy</name></member>
+    <member refid="class_pass_1abc6173e796622bf53878d7bd64861c7c" kind="signal"><name>finishedGenerate</name></member>
+    <member refid="class_pass_1aeb0213d032e070ad788398328c0a080c" kind="signal"><name>finishedGenerateGPGKeys</name></member>
+    <member refid="class_pass_1a74344f203b81f87b4d42a6281a176db4" kind="signal"><name>finishedGrep</name></member>
+  </compound>
+  <compound refid="structtst__util_1_1_pass_store_guard" kind="struct"><name>tst_util::PassStoreGuard</name>
+    <member refid="structtst__util_1_1_pass_store_guard_1a767891cdb2e6a6991e45ef7e925969ce" kind="variable"><name>original</name></member>
+    <member refid="structtst__util_1_1_pass_store_guard_1ad92d5d97eedaf252abd02432898d5dcf" kind="function"><name>PassStoreGuard</name></member>
+    <member refid="structtst__util_1_1_pass_store_guard_1aafcc80beef807be018c3228fbae8f259" kind="function"><name>~PassStoreGuard</name></member>
+  </compound>
+  <compound refid="struct_password_configuration" kind="struct"><name>PasswordConfiguration</name>
+    <member refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173" kind="enum"><name>characterSet</name></member>
+    <member refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173ab6c9b1db9fdc1a62c5126c905acd5611" kind="enumvalue"><name>ALLCHARS</name></member>
+    <member refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173a6df06d290e40210839e4315605604e40" kind="enumvalue"><name>ALPHABETICAL</name></member>
+    <member refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173afc48f773005a525f5b3a60d60d36018e" kind="enumvalue"><name>ALPHANUMERIC</name></member>
+    <member refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173af35fc83c482c602e7e5039fad8e97f3a" kind="enumvalue"><name>CUSTOM</name></member>
+    <member refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173aa2455d2938f04bb57d15204bd06c2bfc" kind="enumvalue"><name>CHARSETS_COUNT</name></member>
+    <member refid="struct_password_configuration_1a28756e64706f58e8c48450b902ff5083" kind="variable"><name>selected</name></member>
+    <member refid="struct_password_configuration_1a1f0990ce1daaecb8852976eeb7df61bd" kind="variable"><name>length</name></member>
+    <member refid="struct_password_configuration_1a6d50fde9d48abd59aba5ec545b49bfd0" kind="variable"><name>Characters</name></member>
+    <member refid="struct_password_configuration_1ac5767646f5116892b972d32ae6bbf561" kind="function"><name>PasswordConfiguration</name></member>
+  </compound>
+  <compound refid="class_password_dialog" kind="class"><name>PasswordDialog</name>
+    <member refid="class_password_dialog_1a9866f878cf7b068e0ec74b0733c6523e" kind="variable"><name>ui</name></member>
+    <member refid="class_password_dialog_1aab7118867180538bae7a84bcdb25c13e" kind="variable"><name>m_passConfig</name></member>
+    <member refid="class_password_dialog_1a1ec8b1c5dbc22b837c0ef488564824f9" kind="variable"><name>m_fields</name></member>
+    <member refid="class_password_dialog_1a760b0e586c9e090365f50b20bc327877" kind="variable"><name>m_file</name></member>
+    <member refid="class_password_dialog_1a0babf3db47a8da35da550c991be84f0c" kind="variable"><name>m_templating</name></member>
+    <member refid="class_password_dialog_1a4d4d0ed37161f3f768e27ffea9267bfc" kind="variable"><name>m_allFields</name></member>
+    <member refid="class_password_dialog_1a624596401aa7d44b384dc715b126fb90" kind="variable"><name>m_isNew</name></member>
+    <member refid="class_password_dialog_1accd8243913c6a1baf7286c01d526cfe9" kind="variable"><name>templateLines</name></member>
+    <member refid="class_password_dialog_1a9ad796d47ca18c744bd38b1274099ae7" kind="variable"><name>otherLines</name></member>
+    <member refid="class_password_dialog_1a61ddeb0b0a60558c150a6fbe35306c2e" kind="function"><name>PasswordDialog</name></member>
+    <member refid="class_password_dialog_1a2122f5d2737b70e5602a7bced9b5cf98" kind="function"><name>PasswordDialog</name></member>
+    <member refid="class_password_dialog_1aab4b61c236d0589bd862171c7f8ef72e" kind="function"><name>~PasswordDialog</name></member>
+    <member refid="class_password_dialog_1a2beae0dab7b339ce55d7f2bebe80a172" kind="function"><name>setPassword</name></member>
+    <member refid="class_password_dialog_1acb8f5a8a5f192eab7557143b6e816ceb" kind="function"><name>getPassword</name></member>
+    <member refid="class_password_dialog_1ac157ada38d02eb47d7038b2edb1a2e9e" kind="function"><name>setTemplate</name></member>
+    <member refid="class_password_dialog_1ac2af2ce4836edf9d5fda52d5ec66af82" kind="function"><name>templateAll</name></member>
+    <member refid="class_password_dialog_1a6dabd26913d6885e270545b85d477b0d" kind="function"><name>setLength</name></member>
+    <member refid="class_password_dialog_1abf3ff0128bdd1931b1c332789c1e1931" kind="function"><name>setPasswordCharTemplate</name></member>
+    <member refid="class_password_dialog_1abe02aee12f78e5914cf79162df9e77e4" kind="function"><name>usePwgen</name></member>
+    <member refid="class_password_dialog_1aca023385bb581500a1e4a880a6283ad8" kind="slot"><name>setPass</name></member>
+    <member refid="class_password_dialog_1ab569146d3fdce21dbeb36cb222701737" kind="slot"><name>on_checkBoxShow_stateChanged</name></member>
+    <member refid="class_password_dialog_1ae3f9bdded8d39dea9081d405fec9e355" kind="slot"><name>on_createPasswordButton_clicked</name></member>
+    <member refid="class_password_dialog_1ab8a92bf0a5bfab474644c851ec86e14e" kind="slot"><name>on_accepted</name></member>
+    <member refid="class_password_dialog_1acddd50947c80336ac71442d186e7c6ff" kind="slot"><name>on_rejected</name></member>
+  </compound>
+  <compound refid="class_profile_init" kind="class"><name>ProfileInit</name>
+    <member refid="class_profile_init_1a1d8b28d9c505d6419193cade236a8865" kind="function"><name>needsInit</name></member>
+    <member refid="class_profile_init_1af2dd6c255ddbd8bd06759d7632d19f97" kind="function"><name>ProfileInit</name></member>
+  </compound>
+  <compound refid="class_q_progress_indicator" kind="class"><name>QProgressIndicator</name>
+    <member refid="class_q_progress_indicator_1a2778d074879bdaa8e6f6fd3e1c073c57" kind="variable"><name>m_angle</name></member>
+    <member refid="class_q_progress_indicator_1ad8cbe02d64fb3c13763759578d19e7fa" kind="variable"><name>m_timerId</name></member>
+    <member refid="class_q_progress_indicator_1abfb504a3fef6a24b67b722b49aa5d016" kind="variable"><name>m_delay</name></member>
+    <member refid="class_q_progress_indicator_1a7e958f53d1c6614fb0584c990c52e854" kind="variable"><name>m_displayedWhenStopped</name></member>
+    <member refid="class_q_progress_indicator_1a1dcc51f6f5989d1c4ca9bfa215482ffa" kind="variable"><name>m_color</name></member>
+    <member refid="class_q_progress_indicator_1a3228b3ca2a8a5a5de146a4ae29f259f7" kind="function"><name>QProgressIndicator</name></member>
+    <member refid="class_q_progress_indicator_1a05684f369a8e1b8b790ace81adfb33d8" kind="function"><name>animationDelay</name></member>
+    <member refid="class_q_progress_indicator_1a47b1957d5839a55ce0ea7b25c15ec464" kind="function"><name>isAnimated</name></member>
+    <member refid="class_q_progress_indicator_1a5ca2c2e3a6e271add0a72ab5b3609d30" kind="function"><name>isDisplayedWhenStopped</name></member>
+    <member refid="class_q_progress_indicator_1afce11eec7046594b7a9cf28b69cdcc40" kind="function"><name>color</name></member>
+    <member refid="class_q_progress_indicator_1abb066bcf10e146d6c2f5c3620ebce18c" kind="function"><name>sizeHint</name></member>
+    <member refid="class_q_progress_indicator_1a21abb1b67291184583e3ce01407c9553" kind="function"><name>heightForWidth</name></member>
+    <member refid="class_q_progress_indicator_1a53aa626e870ee75390766c6044788d06" kind="slot"><name>startAnimation</name></member>
+    <member refid="class_q_progress_indicator_1a27ea54a92ade9c85761918cb98c96f95" kind="slot"><name>stopAnimation</name></member>
+    <member refid="class_q_progress_indicator_1acf826f02de241cb47fa329bf437d450d" kind="slot"><name>setAnimationDelay</name></member>
+    <member refid="class_q_progress_indicator_1ab50e609e706868a0cd28caee364c3d13" kind="slot"><name>setDisplayedWhenStopped</name></member>
+    <member refid="class_q_progress_indicator_1a62161c81afb5ce019e9a7a55c69e3654" kind="slot"><name>setColor</name></member>
+    <member refid="class_q_progress_indicator_1a121c7de89fecff682c45d2adee60310d" kind="function"><name>timerEvent</name></member>
+    <member refid="class_q_progress_indicator_1a38d3e8644a4e74d892b42270c9b6ae8f" kind="function"><name>paintEvent</name></member>
+  </compound>
+  <compound refid="class_q_push_button_as_q_r_code" kind="class"><name>QPushButtonAsQRCode</name>
+    <member refid="class_q_push_button_as_q_r_code_1ab66dcc144fb8a7b51867c523a0d5018f" kind="variable"><name>textToCopy</name></member>
+    <member refid="class_q_push_button_as_q_r_code_1a8e79f10b1a94893897a2fcb9cdf2c007" kind="variable"><name>iconEdit</name></member>
+    <member refid="class_q_push_button_as_q_r_code_1a8b9e33d9c6a605b6071267d0f5bd3c00" kind="function"><name>QPushButtonAsQRCode</name></member>
+    <member refid="class_q_push_button_as_q_r_code_1ac760ad4c81ab153edbe4ab0e6215aae4" kind="function"><name>getTextToCopy</name></member>
+    <member refid="class_q_push_button_as_q_r_code_1ac2d3260a757c28d04758c1901e5dbd40" kind="function"><name>setTextToCopy</name></member>
+    <member refid="class_q_push_button_as_q_r_code_1a347f41172463a60dae8c52461436e485" kind="signal"><name>clicked</name></member>
+    <member refid="class_q_push_button_as_q_r_code_1ac2fa1ba2acc046f5c2c4ad3a261873de" kind="function"><name>buttonClicked</name></member>
+  </compound>
+  <compound refid="class_q_push_button_show_password" kind="class"><name>QPushButtonShowPassword</name>
+    <member refid="class_q_push_button_show_password_1a3ac89ce3aabb2e32696459c0b936ce78" kind="variable"><name>iconEdit</name></member>
+    <member refid="class_q_push_button_show_password_1a2205735cfa6683a8574d8d125f3112fb" kind="variable"><name>iconEditPushed</name></member>
+    <member refid="class_q_push_button_show_password_1ad2776ccae25516e9fb7c64fb16e6167d" kind="variable"><name>line</name></member>
+    <member refid="class_q_push_button_show_password_1a1e81689266a6cde3a115466da1aee783" kind="function"><name>QPushButtonShowPassword</name></member>
+    <member refid="class_q_push_button_show_password_1a87b7cd7b74f800d1ba0ffd3e25d072ed" kind="signal"><name>clicked</name></member>
+    <member refid="class_q_push_button_show_password_1a26417500f40ab71eae847bd8e7ff6248" kind="slot"><name>buttonClicked</name></member>
+  </compound>
+  <compound refid="class_q_push_button_with_clipboard" kind="class"><name>QPushButtonWithClipboard</name>
+    <member refid="class_q_push_button_with_clipboard_1ae496ba137d74cd4c645fbc809efa2be4" kind="variable"><name>textToCopy</name></member>
+    <member refid="class_q_push_button_with_clipboard_1adbdd9cd9cc2a5af533f81e17057bda48" kind="variable"><name>iconEdit</name></member>
+    <member refid="class_q_push_button_with_clipboard_1ab6e4e5f78a314a40ae4a059c9cd1208e" kind="variable"><name>iconEditPushed</name></member>
+    <member refid="class_q_push_button_with_clipboard_1a9fcd74d855d552598d1ebf4910f53666" kind="function"><name>QPushButtonWithClipboard</name></member>
+    <member refid="class_q_push_button_with_clipboard_1ab3e53e28b6caaa7276eec98432020cff" kind="function"><name>getTextToCopy</name></member>
+    <member refid="class_q_push_button_with_clipboard_1a37c9946fb4910d41ab047c2a2b1a2ca8" kind="function"><name>setTextToCopy</name></member>
+    <member refid="class_q_push_button_with_clipboard_1a511c59d52faad30a26bc23ac307135d4" kind="signal"><name>clicked</name></member>
+    <member refid="class_q_push_button_with_clipboard_1a54c897f5d3d52aafb69bf34f64c2d037" kind="slot"><name>changeIconDefault</name></member>
+    <member refid="class_q_push_button_with_clipboard_1a0aa34402ab183aa5bf72e0113b60536b" kind="slot"><name>buttonClicked</name></member>
+  </compound>
+  <compound refid="struct_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d_1_1qt__meta__tag___z_n10_store_model_e__t" kind="struct"><name>QT_WARNING_DISABLE_DEPRECATED::qt_meta_tag_ZN10StoreModelE_t</name>
+  </compound>
+  <compound refid="class_qt_pass" kind="class"><name>QtPass</name>
+    <member refid="class_qt_pass_1a3184ade39a4807a95e883c0fc56429cb" kind="variable"><name>m_mainWindow</name></member>
+    <member refid="class_qt_pass_1ada0239287cb448c5460b7e47340eb391" kind="variable"><name>fusedav</name></member>
+    <member refid="class_qt_pass_1a86aa75dd07db75e34eafdbeb6f31977a" kind="variable"><name>clearClipboardTimer</name></member>
+    <member refid="class_qt_pass_1a875d23ff13180943b4a1e18320f61bff" kind="variable"><name>clippedText</name></member>
+    <member refid="class_qt_pass_1ae66e17170da4f45626e3bff33e138466" kind="variable"><name>freshStart</name></member>
+    <member refid="class_qt_pass_1aa9f6862ff8875c387423b462ac7f9cad" kind="function"><name>QtPass</name></member>
+    <member refid="class_qt_pass_1a70447af6f0e0540106a423a45dc27c99" kind="function"><name>~QtPass</name></member>
+    <member refid="class_qt_pass_1ad0a4d7627e6303e412d4a832a8bad77c" kind="function"><name>init</name></member>
+    <member refid="class_qt_pass_1a74adba9dd6915c9db50762279b62be89" kind="function"><name>setClippedText</name></member>
+    <member refid="class_qt_pass_1a00f9914078839b980f3d66ddbed61cab" kind="function"><name>clearClippedText</name></member>
+    <member refid="class_qt_pass_1a24eb2c0a19143db0ba3a741c66881be6" kind="function"><name>setClipboardTimer</name></member>
+    <member refid="class_qt_pass_1a2ac40a69378a7085bebc633984ae6a57" kind="function"><name>isFreshStart</name></member>
+    <member refid="class_qt_pass_1a5b63b7418723b400f0db2afa450f1199" kind="function"><name>setFreshStart</name></member>
+    <member refid="class_qt_pass_1a31567020dd1509f6a89ccf8119d8f72e" kind="function"><name>setMainWindow</name></member>
+    <member refid="class_qt_pass_1a81e0207207f490616dd442837a2469d4" kind="function"><name>connectPassSignalHandlers</name></member>
+    <member refid="class_qt_pass_1a59c43f897794c45969f5d8dde89902c9" kind="function"><name>mountWebDav</name></member>
+    <member refid="class_qt_pass_1a3febdf740ba4d78a4149d7d7c3b9284e" kind="slot"><name>clearClipboard</name></member>
+    <member refid="class_qt_pass_1acba134fb5281aedee11899a03976aa95" kind="slot"><name>copyTextToClipboard</name></member>
+    <member refid="class_qt_pass_1aef5aaf0605c7681967995ede486590ef" kind="slot"><name>showTextAsQRCode</name></member>
+    <member refid="class_qt_pass_1abd2dacf3e88b411ef39ec78f49bbdd2d" kind="function"><name>createQRCodePopup</name></member>
+    <member refid="class_qt_pass_1a7d3e06a595d5d1f4482db64bf69b0de1" kind="slot"><name>processError</name></member>
+    <member refid="class_qt_pass_1a7d8bb992974416cd9dff6b1a9603c05c" kind="slot"><name>processErrorExit</name></member>
+    <member refid="class_qt_pass_1a76a71f5503c97b460722b6f16233059c" kind="slot"><name>processFinished</name></member>
+    <member refid="class_qt_pass_1ae0c52baa634e6073e8eede2943560fb5" kind="slot"><name>passStoreChanged</name></member>
+    <member refid="class_qt_pass_1aa523b6c7bc0217447b1d0a17e4a5d4dd" kind="slot"><name>passShowHandlerFinished</name></member>
+    <member refid="class_qt_pass_1ab7c71f983556835691ab2da4a51f5f9b" kind="slot"><name>doGitPush</name></member>
+    <member refid="class_qt_pass_1a0c620874cefadbd8e9bab71c4b43225f" kind="slot"><name>finishedInsert</name></member>
+    <member refid="class_qt_pass_1a2c015c305d755aed00db95ef5e8223e1" kind="slot"><name>onKeyGenerationComplete</name></member>
+    <member refid="class_qt_pass_1a203d14de45a249172b0638891493f1c1" kind="slot"><name>showInTextBrowser</name></member>
+  </compound>
+  <compound refid="class_qt_pass_settings" kind="class"><name>QtPassSettings</name>
+    <member refid="class_qt_pass_settings_1a182a8c7e9d3fc5738da9c9c67ea7a743" kind="variable"><name>initialized</name></member>
+    <member refid="class_qt_pass_settings_1adee7d69291b6dea108ddc7b5e0399103" kind="variable"><name>m_instance</name></member>
+    <member refid="class_qt_pass_settings_1a24a78849f22fafbc5ea127f0fde578bc" kind="variable"><name>pass</name></member>
+    <member refid="class_qt_pass_settings_1a0efe6e20266b7ff4f0a4378bc42e0b66" kind="variable"><name>realPass</name></member>
+    <member refid="class_qt_pass_settings_1afeb3246b23e5ba99f5f5d6c23c959445" kind="variable"><name>imitatePass</name></member>
+    <member refid="class_qt_pass_settings_1acf70027402216485ed1ee1a36fb55cf0" kind="function"><name>QtPassSettings</name></member>
+    <member refid="class_qt_pass_settings_1ad7bcd850d6cb2b8046e2d8deb4822639" kind="function"><name>QtPassSettings</name></member>
+    <member refid="class_qt_pass_settings_1adceeba713360a20aa915923caedb9806" kind="function"><name>QtPassSettings</name></member>
+    <member refid="class_qt_pass_settings_1a59e8e3f711ac35bbee6e2f7b54b583d9" kind="function"><name>~QtPassSettings</name></member>
+    <member refid="class_qt_pass_settings_1a2483e7de01f9e312ee0fbf8a1637f29d" kind="function"><name>getInstance</name></member>
+    <member refid="class_qt_pass_settings_1a5623f8d47534a6c21eb9fd95540b253e" kind="function"><name>getVersion</name></member>
+    <member refid="class_qt_pass_settings_1a8cd81cd735281c71eab54091bde73081" kind="function"><name>setVersion</name></member>
+    <member refid="class_qt_pass_settings_1af927e98c41ba80029ce3267a7dcc4ca1" kind="function"><name>getGeometry</name></member>
+    <member refid="class_qt_pass_settings_1aef634f4b530941fbb41f0f1073f5f1f4" kind="function"><name>setGeometry</name></member>
+    <member refid="class_qt_pass_settings_1afeada475d9f9777f06b9f624026dde18" kind="function"><name>getSavestate</name></member>
+    <member refid="class_qt_pass_settings_1abd5068c7125fcc7d9eb238aea028fd95" kind="function"><name>setSavestate</name></member>
+    <member refid="class_qt_pass_settings_1acad75f76a1c9128bd15d5679a8cd78d9" kind="function"><name>getPos</name></member>
+    <member refid="class_qt_pass_settings_1a8b3520f10b70e098629c5b713c69f3a0" kind="function"><name>setPos</name></member>
+    <member refid="class_qt_pass_settings_1a2eda707ef417b1198898c6b162ebc142" kind="function"><name>getSize</name></member>
+    <member refid="class_qt_pass_settings_1adf303d889c36195d4e0efb156baf50a6" kind="function"><name>setSize</name></member>
+    <member refid="class_qt_pass_settings_1a974f845c0549b4789546c1a5a1e70102" kind="function"><name>isMaximized</name></member>
+    <member refid="class_qt_pass_settings_1a0394e31adec055bd3d84cd09dca5576c" kind="function"><name>setMaximized</name></member>
+    <member refid="class_qt_pass_settings_1ad15e182609e00a394ec9acdd4d1a19f5" kind="function"><name>getDialogGeometry</name></member>
+    <member refid="class_qt_pass_settings_1ac1f692aef9f02af744bcce281ba627fe" kind="function"><name>setDialogGeometry</name></member>
+    <member refid="class_qt_pass_settings_1a2c8d54afd8f4caf43e1727fe27202949" kind="function"><name>getDialogPos</name></member>
+    <member refid="class_qt_pass_settings_1a692d3221b60ab8c5ed5f51814a72fcb1" kind="function"><name>setDialogPos</name></member>
+    <member refid="class_qt_pass_settings_1a849902104116f90df3ecba03d92b1815" kind="function"><name>getDialogSize</name></member>
+    <member refid="class_qt_pass_settings_1a980190de5a6dcba935573d00f3023804" kind="function"><name>setDialogSize</name></member>
+    <member refid="class_qt_pass_settings_1ab343d163d18abe49c1ed2d06266c4b5e" kind="function"><name>isDialogMaximized</name></member>
+    <member refid="class_qt_pass_settings_1a9d645c896deab1261f2b5df359c3a252" kind="function"><name>setDialogMaximized</name></member>
+    <member refid="class_qt_pass_settings_1a51d5b6ef611562d9247d5c482e6449a8" kind="function"><name>isUsePass</name></member>
+    <member refid="class_qt_pass_settings_1aa7f0ddeedf7401d3fc718ab976938ca2" kind="function"><name>setUsePass</name></member>
+    <member refid="class_qt_pass_settings_1af667580efb0077ef2f34c6916c78a6ea" kind="function"><name>getClipBoardTypeRaw</name></member>
+    <member refid="class_qt_pass_settings_1a4650fff2464ff37ec568cf236c9d2056" kind="function"><name>getClipBoardType</name></member>
+    <member refid="class_qt_pass_settings_1ad63f4a9bb2341681c9364b0eb2c0735d" kind="function"><name>setClipBoardType</name></member>
+    <member refid="class_qt_pass_settings_1a00123b42f05b026cf2697c02e0797442" kind="function"><name>isUseSelection</name></member>
+    <member refid="class_qt_pass_settings_1af40ab682a88d2fa494bb349d2b6ef591" kind="function"><name>setUseSelection</name></member>
+    <member refid="class_qt_pass_settings_1a0a517b1977765eb6032f330482abb85b" kind="function"><name>isUseAutoclear</name></member>
+    <member refid="class_qt_pass_settings_1a8deb96dd37776cb2e864f8799bc17820" kind="function"><name>setUseAutoclear</name></member>
+    <member refid="class_qt_pass_settings_1aead53a3d50a85e281db276edf586ffc8" kind="function"><name>getAutoclearSeconds</name></member>
+    <member refid="class_qt_pass_settings_1ac5fa2696d8fe671f7a1c8b401c87441c" kind="function"><name>setAutoclearSeconds</name></member>
+    <member refid="class_qt_pass_settings_1a38cb968ab7c8dd26558b9fe9990740be" kind="function"><name>isUseAutoclearPanel</name></member>
+    <member refid="class_qt_pass_settings_1ac3afbfb8dca45e6569eea291e47fb1d8" kind="function"><name>setUseAutoclearPanel</name></member>
+    <member refid="class_qt_pass_settings_1ab604ff0e43878db15d7084e917954eb8" kind="function"><name>getAutoclearPanelSeconds</name></member>
+    <member refid="class_qt_pass_settings_1a0a5bcdb628ca6614d5c26c5c24a0a54f" kind="function"><name>setAutoclearPanelSeconds</name></member>
+    <member refid="class_qt_pass_settings_1ac05e5f52d53be077e19ee21f07d1e367" kind="function"><name>isHidePassword</name></member>
+    <member refid="class_qt_pass_settings_1a0fdaeac9234b197815c6d370df40f738" kind="function"><name>setHidePassword</name></member>
+    <member refid="class_qt_pass_settings_1a2e45500a82b847412e95f93e5e1d8fc3" kind="function"><name>isHideContent</name></member>
+    <member refid="class_qt_pass_settings_1aebed15b7a02c5b8fd36b6eb8941109b0" kind="function"><name>setHideContent</name></member>
+    <member refid="class_qt_pass_settings_1aa6bc2d2f460a567417dd46f134ebacd9" kind="function"><name>isUseMonospace</name></member>
+    <member refid="class_qt_pass_settings_1a97f70332d244d24ce56a04a9ed60f270" kind="function"><name>setUseMonospace</name></member>
+    <member refid="class_qt_pass_settings_1afaa574ceedde650a5b713bdb13e1b5eb" kind="function"><name>isDisplayAsIs</name></member>
+    <member refid="class_qt_pass_settings_1a9560e2814df0f4340eb57fbb5efeb560" kind="function"><name>setDisplayAsIs</name></member>
+    <member refid="class_qt_pass_settings_1a2876bf9c55e3abcc0460de1985d5234f" kind="function"><name>isNoLineWrapping</name></member>
+    <member refid="class_qt_pass_settings_1ac65499ee663c37d6ec045ce7a6641094" kind="function"><name>setNoLineWrapping</name></member>
+    <member refid="class_qt_pass_settings_1a6a8ee0f36101f65c885aa1b56c8b4c69" kind="function"><name>isAddGPGId</name></member>
+    <member refid="class_qt_pass_settings_1aa70084beefe80e320c69ad69975869bd" kind="function"><name>setAddGPGId</name></member>
+    <member refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" kind="function"><name>getPassStore</name></member>
+    <member refid="class_qt_pass_settings_1a2b30ee2cd3b185148f63fca568c33f6e" kind="function"><name>setPassStore</name></member>
+    <member refid="class_qt_pass_settings_1a7b92ee036db63e5d2b49da826b5763ee" kind="function"><name>getPassSigningKey</name></member>
+    <member refid="class_qt_pass_settings_1a4e703d6aa5d6101d82f5a9a41f6b8240" kind="function"><name>setPassSigningKey</name></member>
+    <member refid="class_qt_pass_settings_1a64ffdab0605be803054150d438254c56" kind="function"><name>initExecutables</name></member>
+    <member refid="class_qt_pass_settings_1ac2673c76b268f6a622c8b3c7829ff8db" kind="function"><name>getPassExecutable</name></member>
+    <member refid="class_qt_pass_settings_1a0c04867f8f676925acdeb71fdb69e39f" kind="function"><name>setPassExecutable</name></member>
+    <member refid="class_qt_pass_settings_1af6dc725440e9961c39fbd6f567749d82" kind="function"><name>getGitExecutable</name></member>
+    <member refid="class_qt_pass_settings_1a423f05b95badd51857630009e9ce629f" kind="function"><name>setGitExecutable</name></member>
+    <member refid="class_qt_pass_settings_1a6d9beabe93c829cacdcc6c27792ffdba" kind="function"><name>getGpgExecutable</name></member>
+    <member refid="class_qt_pass_settings_1a875e260d3a73f82c0804a5c6b282d4ca" kind="function"><name>setGpgExecutable</name></member>
+    <member refid="class_qt_pass_settings_1a1d47181e99a5865d5d37f07b632d459f" kind="function"><name>getPwgenExecutable</name></member>
+    <member refid="class_qt_pass_settings_1a169a2e42423e3c53b3cf4fd3566b27b4" kind="function"><name>setPwgenExecutable</name></member>
+    <member refid="class_qt_pass_settings_1a36413c39a8bcd96110dd612158168946" kind="function"><name>getGpgHome</name></member>
+    <member refid="class_qt_pass_settings_1aacb80ca326700f2bd4987cd5cb6806fa" kind="function"><name>isUseWebDav</name></member>
+    <member refid="class_qt_pass_settings_1a07d5d044077bd606bc56161d256e9324" kind="function"><name>setUseWebDav</name></member>
+    <member refid="class_qt_pass_settings_1aa6390d99bd94542bb71f05ae78d4eb6b" kind="function"><name>getWebDavUrl</name></member>
+    <member refid="class_qt_pass_settings_1aa1891a4fd4ed7018c6f221ac6d44b418" kind="function"><name>setWebDavUrl</name></member>
+    <member refid="class_qt_pass_settings_1a2a4b76e27a5a78ec408ca8a17e8f8794" kind="function"><name>getWebDavUser</name></member>
+    <member refid="class_qt_pass_settings_1a949425524d8b789565d0c1eaa8a6ca30" kind="function"><name>setWebDavUser</name></member>
+    <member refid="class_qt_pass_settings_1a0d19224d5d33cdac3f5a963ab22d70c9" kind="function"><name>getWebDavPassword</name></member>
+    <member refid="class_qt_pass_settings_1a22796f29e69f9882b1581e94db805d8a" kind="function"><name>setWebDavPassword</name></member>
+    <member refid="class_qt_pass_settings_1aa1bcf7afe1cccd1a599fe15f86a1b66f" kind="function"><name>getProfile</name></member>
+    <member refid="class_qt_pass_settings_1a1e28cecc9613aa057c42e625de77a270" kind="function"><name>setProfile</name></member>
+    <member refid="class_qt_pass_settings_1a4519d1aa1f11653585e546dbfde7c8b3" kind="function"><name>isUseGit</name></member>
+    <member refid="class_qt_pass_settings_1afc9621d9abe43370e41e01bc9f9cb51f" kind="function"><name>setUseGit</name></member>
+    <member refid="class_qt_pass_settings_1a7a2c59796bc7da1e79ee9124a3ea29f4" kind="function"><name>isUseGrepSearch</name></member>
+    <member refid="class_qt_pass_settings_1a28b079c1746dd2904dceb0e64bcf4dc5" kind="function"><name>setUseGrepSearch</name></member>
+    <member refid="class_qt_pass_settings_1a150f44b4615f4634df759dbd810e48e8" kind="function"><name>isUseOtp</name></member>
+    <member refid="class_qt_pass_settings_1a45626883c75241e6b30979176a910913" kind="function"><name>setUseOtp</name></member>
+    <member refid="class_qt_pass_settings_1a3641d0df0be548146d788813407000bf" kind="function"><name>isUseQrencode</name></member>
+    <member refid="class_qt_pass_settings_1acabb2b552b7f917ae8573c9983b6b902" kind="function"><name>setUseQrencode</name></member>
+    <member refid="class_qt_pass_settings_1a822fd7d3ac81333a825e26a673e986df" kind="function"><name>getQrencodeExecutable</name></member>
+    <member refid="class_qt_pass_settings_1a9fc49a7028760e8df558db90a8502b8e" kind="function"><name>setQrencodeExecutable</name></member>
+    <member refid="class_qt_pass_settings_1abba786920f2fb3afbdc04fe43f8144e2" kind="function"><name>isUsePwgen</name></member>
+    <member refid="class_qt_pass_settings_1a4899b84700fb828989f74869c6516334" kind="function"><name>setUsePwgen</name></member>
+    <member refid="class_qt_pass_settings_1a694bfde7cafcdd174b706945ba264639" kind="function"><name>isAvoidCapitals</name></member>
+    <member refid="class_qt_pass_settings_1a9bf8f951e2c85c9d2c42506d905279be" kind="function"><name>setAvoidCapitals</name></member>
+    <member refid="class_qt_pass_settings_1ac00931edbba70ed05bb304df05919b9d" kind="function"><name>isAvoidNumbers</name></member>
+    <member refid="class_qt_pass_settings_1acf54d69c152094b545fbd4dc748872d4" kind="function"><name>setAvoidNumbers</name></member>
+    <member refid="class_qt_pass_settings_1a901005f778f15b9ee833f2ab08573917" kind="function"><name>isLessRandom</name></member>
+    <member refid="class_qt_pass_settings_1ae2bb9346c54f975132be281f8ba64175" kind="function"><name>setLessRandom</name></member>
+    <member refid="class_qt_pass_settings_1a814fdd902d1ed560225331a93d9d3ccd" kind="function"><name>isUseSymbols</name></member>
+    <member refid="class_qt_pass_settings_1afa7e2c2f5ce00e8ef854fd608849dc19" kind="function"><name>setUseSymbols</name></member>
+    <member refid="class_qt_pass_settings_1a3503e8d11b7e24b35a34801f755ba80a" kind="function"><name>getPasswordConfiguration</name></member>
+    <member refid="class_qt_pass_settings_1a2e9664870c74f1c2d3b0ed8122a95221" kind="function"><name>setPasswordConfiguration</name></member>
+    <member refid="class_qt_pass_settings_1a371fc64dc2b1f14cd3e8cb21cae1635e" kind="function"><name>setPasswordLength</name></member>
+    <member refid="class_qt_pass_settings_1a89891627f9f4e713f19af9926b6df606" kind="function"><name>setPasswordCharsSelection</name></member>
+    <member refid="class_qt_pass_settings_1a438558288d25adc0eaeb10e1d9e6001c" kind="function"><name>setPasswordChars</name></member>
+    <member refid="class_qt_pass_settings_1a6248ec7cef087944b59fa9d2a361b413" kind="function"><name>isUseTrayIcon</name></member>
+    <member refid="class_qt_pass_settings_1a21bde5a8f18623f23e32e7c8c0241c16" kind="function"><name>setUseTrayIcon</name></member>
+    <member refid="class_qt_pass_settings_1ad4152bd817991b07af145a0368b7cb1d" kind="function"><name>isHideOnClose</name></member>
+    <member refid="class_qt_pass_settings_1a30bf1d3b1b68e5f8bafaa0aa7550994d" kind="function"><name>setHideOnClose</name></member>
+    <member refid="class_qt_pass_settings_1a0e4eacd30635c23c8a08cd5725a68aed" kind="function"><name>isStartMinimized</name></member>
+    <member refid="class_qt_pass_settings_1a07c79f8dba7614bd47dbb314af9fd671" kind="function"><name>setStartMinimized</name></member>
+    <member refid="class_qt_pass_settings_1abd7d9098856e8f0d8f081fdb0e515fed" kind="function"><name>isAlwaysOnTop</name></member>
+    <member refid="class_qt_pass_settings_1a90501b44c9281579f49e0a56f9ca8cef" kind="function"><name>setAlwaysOnTop</name></member>
+    <member refid="class_qt_pass_settings_1a3d196817a466e574236ac869515b105a" kind="function"><name>isAutoPull</name></member>
+    <member refid="class_qt_pass_settings_1a6f82e230c69ee762342da5c9f548a405" kind="function"><name>setAutoPull</name></member>
+    <member refid="class_qt_pass_settings_1aed89066431636ed49ae1d65938dcd7cc" kind="function"><name>isAutoPush</name></member>
+    <member refid="class_qt_pass_settings_1ad41efa6a9c7cd545e8a2cc66a7b87d8b" kind="function"><name>setAutoPush</name></member>
+    <member refid="class_qt_pass_settings_1a907f64f2e985de5ce864e8687fc114ef" kind="function"><name>getPassTemplate</name></member>
+    <member refid="class_qt_pass_settings_1a7c5668e2951f99c2241d7308f0228f72" kind="function"><name>setPassTemplate</name></member>
+    <member refid="class_qt_pass_settings_1a579f75b719c9c4de88585f05d70e4bb0" kind="function"><name>isUseTemplate</name></member>
+    <member refid="class_qt_pass_settings_1a654752cacf06bf5830719934152070c8" kind="function"><name>setUseTemplate</name></member>
+    <member refid="class_qt_pass_settings_1a4b1ea480a08bea181210fca93e4b6d54" kind="function"><name>isTemplateAllFields</name></member>
+    <member refid="class_qt_pass_settings_1af867f1e7648ae1a4926578d9ec3cdfae" kind="function"><name>setTemplateAllFields</name></member>
+    <member refid="class_qt_pass_settings_1add3fe08db67b209231af21cf7b8f705d" kind="function"><name>getProfiles</name></member>
+    <member refid="class_qt_pass_settings_1a4635ee8c60b928d8798df35a5ba79df1" kind="function"><name>setProfiles</name></member>
+    <member refid="class_qt_pass_settings_1a34ba20416835e4de168d4c66f9076b2b" kind="function"><name>getPass</name></member>
+    <member refid="class_qt_pass_settings_1a8f8fb086b283ad2089e64b37d4950d5e" kind="function"><name>getRealPass</name></member>
+    <member refid="class_qt_pass_settings_1ad23c0edfc2df7bc06df700b8468a8528" kind="function"><name>getImitatePass</name></member>
+  </compound>
+  <compound refid="class_real_pass" kind="class"><name>RealPass</name>
+    <member refid="class_real_pass_1ae210a8e9148b9ea58e229e770b88f19b" kind="function"><name>executePass</name></member>
+    <member refid="class_real_pass_1a6bfb05f4c53a784e8c3ab12a787c74f6" kind="function"><name>RealPass</name></member>
+    <member refid="class_real_pass_1a6052a58fe3e9ed707143b3e6d05b787c" kind="function"><name>~RealPass</name></member>
+    <member refid="class_real_pass_1aacaf85a65fc1398c356dd44370e5e22f" kind="function"><name>GitInit</name></member>
+    <member refid="class_real_pass_1ac3206e85bc586214e6cc75186cff65c3" kind="function"><name>GitPull</name></member>
+    <member refid="class_real_pass_1a6a959408a305cc8dd7cc6c7bd9c17210" kind="function"><name>GitPull_b</name></member>
+    <member refid="class_real_pass_1ae32fd82fe5e57b2c45df05bfe2991b5b" kind="function"><name>GitPush</name></member>
+    <member refid="class_real_pass_1a63da21db00da709ae5aa8f7a992e16e1" kind="function"><name>Show</name></member>
+    <member refid="class_real_pass_1a39c56e5ad8b46fc6c4f00b7000bccc99" kind="function"><name>OtpGenerate</name></member>
+    <member refid="class_real_pass_1a45193fab522965fe8b1c8f8996e6a49a" kind="function"><name>Insert</name></member>
+    <member refid="class_real_pass_1a96679194b4a0e6b99eb41cf25349c7fd" kind="function"><name>Remove</name></member>
+    <member refid="class_real_pass_1a12a7e631a5040eee70da06585fe047ba" kind="function"><name>Init</name></member>
+    <member refid="class_real_pass_1ad9f71cf753e5fce4772bec086237d033" kind="function"><name>Move</name></member>
+    <member refid="class_real_pass_1a640ea218267605b9ca78c21ca5677690" kind="function"><name>Copy</name></member>
+    <member refid="class_real_pass_1ae231e77648f429687ca7e2cf14275b07" kind="function"><name>Grep</name></member>
+  </compound>
+  <compound refid="struct_resolved_gpgconf_command" kind="struct"><name>ResolvedGpgconfCommand</name>
+    <member refid="struct_resolved_gpgconf_command_1ae34ff02051398b8688497a4fb373e1d3" kind="variable"><name>program</name></member>
+    <member refid="struct_resolved_gpgconf_command_1aa06fa6189e39477786bbb118dca49556" kind="variable"><name>arguments</name></member>
+  </compound>
+  <compound refid="structtst__util_1_1_setting_guard" kind="struct"><name>tst_util::SettingGuard</name>
+    <member refid="structtst__util_1_1_setting_guard_1ab219c5c939751e40cd5d433ab388a224" kind="variable"><name>original</name></member>
+    <member refid="structtst__util_1_1_setting_guard_1a997bda48f508be3c7ef60131878ccedd" kind="function"><name>SettingGuard</name></member>
+    <member refid="structtst__util_1_1_setting_guard_1aa3ac990fc8e4267e21fea9cbbb9222b5" kind="function"><name>~SettingGuard</name></member>
+    <member refid="structtst__util_1_1_setting_guard_1a9648686b15fcca2163aeb5dda9f1d135" kind="function"><name>SettingGuard</name></member>
+    <member refid="structtst__util_1_1_setting_guard_1a5773b5bf67b393344bb4687c890799d6" kind="function"><name>operator=</name></member>
+  </compound>
+  <compound refid="class_settings_constants" kind="class"><name>SettingsConstants</name>
+    <member refid="class_settings_constants_1a3de52d12e7e80ae5b7873fddff1b9f8e" kind="variable"><name>version</name></member>
+    <member refid="class_settings_constants_1a17bb63a99181826b3d7150ca7a49ce97" kind="variable"><name>groupMainwindow</name></member>
+    <member refid="class_settings_constants_1a365665295aa0e7862e11cfcd39472f10" kind="variable"><name>geometry</name></member>
+    <member refid="class_settings_constants_1a053c1a12c4d9503e87de1750529bab4a" kind="variable"><name>savestate</name></member>
+    <member refid="class_settings_constants_1a80121ec23fe903e42cb557a1725bc0f6" kind="variable"><name>pos</name></member>
+    <member refid="class_settings_constants_1aa24168ac65bc6e2234e41df49f3c57ff" kind="variable"><name>size</name></member>
+    <member refid="class_settings_constants_1a02d876a1caeda24fadb8dffce6cf3b9a" kind="variable"><name>maximized</name></member>
+    <member refid="class_settings_constants_1a23e4bf464696a794718cb8aa837e3035" kind="variable"><name>dialogGeometry</name></member>
+    <member refid="class_settings_constants_1ad19648aaf95f4471f290d5eed09878b6" kind="variable"><name>dialogPos</name></member>
+    <member refid="class_settings_constants_1aa9ac148007cefba2b007e183569e6791" kind="variable"><name>dialogSize</name></member>
+    <member refid="class_settings_constants_1ab15246c28469532b0983b0a1f34204e8" kind="variable"><name>dialogMaximized</name></member>
+    <member refid="class_settings_constants_1a95469c1eb31639a4b77394808f995d20" kind="variable"><name>splitterLeft</name></member>
+    <member refid="class_settings_constants_1adde31e400372c0b385d6400d6ad6b6f4" kind="variable"><name>splitterRight</name></member>
+    <member refid="class_settings_constants_1a77796de4c6b0edfd2aaaf10b84d04322" kind="variable"><name>usePass</name></member>
+    <member refid="class_settings_constants_1a4444d3b784dfd5156d5fdd0d16fb4cd7" kind="variable"><name>useAutoclear</name></member>
+    <member refid="class_settings_constants_1a0d0ae02026d7f4d75430d36987a3da3f" kind="variable"><name>useSelection</name></member>
+    <member refid="class_settings_constants_1ac63a6660dc3ebc3e56315be2ebbc0faa" kind="variable"><name>autoclearSeconds</name></member>
+    <member refid="class_settings_constants_1a634d47e31c1ce7eabea4435d16637c46" kind="variable"><name>useAutoclearPanel</name></member>
+    <member refid="class_settings_constants_1a5ec5ac869534644bd4346e8dea77ffba" kind="variable"><name>autoclearPanelSeconds</name></member>
+    <member refid="class_settings_constants_1afbc1b506d8be09e7544800e766d1d646" kind="variable"><name>hidePassword</name></member>
+    <member refid="class_settings_constants_1aba878a33c6a53c647107125cec65eeab" kind="variable"><name>hideContent</name></member>
+    <member refid="class_settings_constants_1ac9a883bbdfb102492ff6b142881b9858" kind="variable"><name>useMonospace</name></member>
+    <member refid="class_settings_constants_1adc29ead56e2fe252b128f1557825182b" kind="variable"><name>displayAsIs</name></member>
+    <member refid="class_settings_constants_1a15ac4ca5bfd78514373fc31aace7ff4e" kind="variable"><name>noLineWrapping</name></member>
+    <member refid="class_settings_constants_1ae8bb26023402bc1ba2e20c5c50e54ceb" kind="variable"><name>addGPGId</name></member>
+    <member refid="class_settings_constants_1ad1c1aedcb39fc6a23158821f0ed3adb9" kind="variable"><name>passStore</name></member>
+    <member refid="class_settings_constants_1ae4c68ad958d910cffea195c7c42fa2fe" kind="variable"><name>passSigningKey</name></member>
+    <member refid="class_settings_constants_1a129a080625ae659203e277d0e78e5487" kind="variable"><name>passExecutable</name></member>
+    <member refid="class_settings_constants_1a87180f2fe03867a8e572ef9d62a655d2" kind="variable"><name>gitExecutable</name></member>
+    <member refid="class_settings_constants_1a8c72bc930a606b9ee9480af305d18774" kind="variable"><name>gpgExecutable</name></member>
+    <member refid="class_settings_constants_1a2e5906837f972ba26da95b17a299a3ba" kind="variable"><name>pwgenExecutable</name></member>
+    <member refid="class_settings_constants_1a39e0d8ee7720bd491373684454de3e53" kind="variable"><name>gpgHome</name></member>
+    <member refid="class_settings_constants_1a75445b52ece8f937838fee79d9f7ef33" kind="variable"><name>useWebDav</name></member>
+    <member refid="class_settings_constants_1a4533f2750b3f68712d0db55a61a38934" kind="variable"><name>webDavUrl</name></member>
+    <member refid="class_settings_constants_1ac2034ea727e241fee4b9d0ff104dde68" kind="variable"><name>webDavUser</name></member>
+    <member refid="class_settings_constants_1adbff3df7013fbed0344a8332dc70d341" kind="variable"><name>webDavPassword</name></member>
+    <member refid="class_settings_constants_1a8ed5c3840acb4b3ec4f80010bfc95752" kind="variable"><name>profile</name></member>
+    <member refid="class_settings_constants_1a14b7a50dbd8fe5db782f5980a3968a21" kind="variable"><name>groupProfiles</name></member>
+    <member refid="class_settings_constants_1a80c25fbbfd8513ea7548c31dc72bcf85" kind="variable"><name>useGit</name></member>
+    <member refid="class_settings_constants_1a1b5dc0b93a6188891fdddf85f2ed1ed8" kind="variable"><name>useGrepSearch</name></member>
+    <member refid="class_settings_constants_1aaa144f0572561c7c4000154457963dc4" kind="variable"><name>useOtp</name></member>
+    <member refid="class_settings_constants_1aed8ee30c56dcffd9c5b7405ea5a3a265" kind="variable"><name>useQrencode</name></member>
+    <member refid="class_settings_constants_1acd17501a9a69d4aff8092aeee37d3d33" kind="variable"><name>qrencodeExecutable</name></member>
+    <member refid="class_settings_constants_1a0c3a88eed6013961790144cc002e20cc" kind="variable"><name>useClipboard</name></member>
+    <member refid="class_settings_constants_1ac926a25c56d48a11da3cff5a23fd8b16" kind="variable"><name>usePwgen</name></member>
+    <member refid="class_settings_constants_1abcb58477dd63b63640fbe35974bdcedf" kind="variable"><name>avoidCapitals</name></member>
+    <member refid="class_settings_constants_1a616a0c24ab9897bbac939b7cee7196e4" kind="variable"><name>avoidNumbers</name></member>
+    <member refid="class_settings_constants_1a2d071c348517e7a9228e4fd7a59d5a31" kind="variable"><name>lessRandom</name></member>
+    <member refid="class_settings_constants_1ae23ec21e4f84063d29277dcaf71f6f53" kind="variable"><name>useSymbols</name></member>
+    <member refid="class_settings_constants_1aca3257fc3c7273a84f7778a9a423578a" kind="variable"><name>passwordLength</name></member>
+    <member refid="class_settings_constants_1aa47459c77b080d7de87628de266eaa1f" kind="variable"><name>passwordCharsSelection</name></member>
+    <member refid="class_settings_constants_1adb65eb8bb0c422d09cee42ec08d3f346" kind="variable"><name>passwordChars</name></member>
+    <member refid="class_settings_constants_1aa0488c30e7780f2341e24d319fed477d" kind="variable"><name>useTrayIcon</name></member>
+    <member refid="class_settings_constants_1a79f1956996b05f80fe154913392841c5" kind="variable"><name>hideOnClose</name></member>
+    <member refid="class_settings_constants_1aafa5676073803ea4b2a8f9fdcf46598e" kind="variable"><name>startMinimized</name></member>
+    <member refid="class_settings_constants_1a7d05bbc50a639edd067e7a1ea7bac296" kind="variable"><name>alwaysOnTop</name></member>
+    <member refid="class_settings_constants_1a21d9ccfc07d159dbc5813f3d9fe55095" kind="variable"><name>autoPull</name></member>
+    <member refid="class_settings_constants_1af5b3f7e8b9b2d56316c59df4d909a43e" kind="variable"><name>autoPush</name></member>
+    <member refid="class_settings_constants_1a3ee585d593241adc734399f02267bbb0" kind="variable"><name>passTemplate</name></member>
+    <member refid="class_settings_constants_1af2aeddac9d26672fdd039fe65a5ef91f" kind="variable"><name>useTemplate</name></member>
+    <member refid="class_settings_constants_1ae703d41511419b500a03f57b32023a6b" kind="variable"><name>templateAllFields</name></member>
+    <member refid="class_settings_constants_1a59fa0305ecba68c982f12115713de9d5" kind="variable"><name>clipBoardType</name></member>
+    <member refid="class_settings_constants_1a4dc202104d284bc37d94b861107c4d73" kind="function"><name>SettingsConstants</name></member>
+  </compound>
+  <compound refid="classsimple_transaction" kind="class"><name>simpleTransaction</name>
+    <member refid="classsimple_transaction_1a666549f1851d7766b9b6a28b74a6f8b8" kind="variable"><name>transactionDepth</name></member>
+    <member refid="classsimple_transaction_1adc3819b705f6a781cecba778a73ef113" kind="variable"><name>lastInTransaction</name></member>
+    <member refid="classsimple_transaction_1a47cdf0e891aa053215f634d9669f5b62" kind="variable"><name>transactionQueue</name></member>
+    <member refid="classsimple_transaction_1ac798d38ad0b66f05cd58b5c9e9845491" kind="function"><name>simpleTransaction</name></member>
+    <member refid="classsimple_transaction_1aafd98f73dfc5352f307115cabc2a5ed4" kind="function"><name>transactionStart</name></member>
+    <member refid="classsimple_transaction_1a974db4056edcb408e96cf9bc2a6e4326" kind="function"><name>transactionAdd</name></member>
+    <member refid="classsimple_transaction_1a76e9280b4cc192ff420520fefa557c63" kind="function"><name>transactionEnd</name></member>
+    <member refid="classsimple_transaction_1a3914acc39e65586cd6671aff1ac3afe9" kind="function"><name>transactionIsOver</name></member>
+  </compound>
+  <compound refid="class_single_application" kind="class"><name>SingleApplication</name>
+    <member refid="class_single_application_1a1101486283e5f1580c02f8e1562f195f" kind="variable"><name>_isRunning</name></member>
+    <member refid="class_single_application_1a796b973c0f8cbb128b557bbd9c048010" kind="variable"><name>_uniqueKey</name></member>
+    <member refid="class_single_application_1a049e4d9a1ee8290afef91106c402cdda" kind="variable"><name>sharedMemory</name></member>
+    <member refid="class_single_application_1a4893f9017498cae49ff2bb6db7f777f7" kind="variable"><name>localServer</name></member>
+    <member refid="class_single_application_1a7fe3d993e578290d1ecd2033d7d5e0d9" kind="variable"><name>timeout</name></member>
+    <member refid="class_single_application_1a55e5986206cf99fe05d33169d9eb71f5" kind="function"><name>SingleApplication</name></member>
+    <member refid="class_single_application_1a9408850aec7bca2e43e386f35ed780f4" kind="function"><name>isRunning</name></member>
+    <member refid="class_single_application_1ad63149f60ac6676dda4397a90116e351" kind="function"><name>sendMessage</name></member>
+    <member refid="class_single_application_1a3257ffeb5c48de33e6ded14902c9f238" kind="slot"><name>receiveMessage</name></member>
+    <member refid="class_single_application_1ab893aad585d0cc3ee82659709a6a069b" kind="signal"><name>messageAvailable</name></member>
+  </compound>
+  <compound refid="class_store_model" kind="class"><name>StoreModel</name>
+    <member refid="class_store_model_1af094c70fe862af6d3e2023938b745a44" kind="variable"><name>fs</name></member>
+    <member refid="class_store_model_1a98ebce85d60d3372420113fe7e714428" kind="variable"><name>store</name></member>
+    <member refid="class_store_model_1abc75ce13ef6785cacd4fe2b68dc79a2d" kind="function"><name>parseDropData</name></member>
+    <member refid="class_store_model_1ac8112afed88ec3d85bc3c6c442fa3a27" kind="function"><name>executeDropAction</name></member>
+    <member refid="class_store_model_1ae36073bde3d394665c9f8be46da3d8a3" kind="function"><name>handleDirDrop</name></member>
+    <member refid="class_store_model_1a504379e5d853cb5ac22e36e6c344bb3f" kind="function"><name>handleFileDrop</name></member>
+    <member refid="class_store_model_1a7d85df802e1b851b190d0a7ddbb8400e" kind="function"><name>handleFileToDirDrop</name></member>
+    <member refid="class_store_model_1a90755d30882300c439b53577d99443f1" kind="function"><name>handleFileToFileDrop</name></member>
+    <member refid="class_store_model_1a1d113aadab8e115cdd963f2246333664" kind="function"><name>StoreModel</name></member>
+    <member refid="class_store_model_1a02542fddfeea1874e849c0bb1d94f6c1" kind="function"><name>filterAcceptsRow</name></member>
+    <member refid="class_store_model_1a3f87cb8b3ca0d20117f37386e4701691" kind="function"><name>showThis</name></member>
+    <member refid="class_store_model_1a71787f93027b50575cfbdcbb1d8de071" kind="function"><name>setModelAndStore</name></member>
+    <member refid="class_store_model_1a8578051e478ac18e32bb50bc9cb82ee8" kind="function"><name>setStore</name></member>
+    <member refid="class_store_model_1a18097d60174b1d370e13d6a04ab7847f" kind="function"><name>data</name></member>
+    <member refid="class_store_model_1adc8a200930127d54a13b2f15f5478445" kind="function"><name>lessThan</name></member>
+    <member refid="class_store_model_1a0adadb60fe309f7f5dad9f27cec9b7d2" kind="function"><name>getStore</name></member>
+    <member refid="class_store_model_1af6982f1562988c413ae9e95e87a713a1" kind="function"><name>supportedDropActions</name></member>
+    <member refid="class_store_model_1aa0d2f19f9d92f85e5a7696f747bd5648" kind="function"><name>supportedDragActions</name></member>
+    <member refid="class_store_model_1ab8ebcb53ce116b2ff658a6d49134531d" kind="function"><name>flags</name></member>
+    <member refid="class_store_model_1a40620d3b37bb04b06b999308bf2ee137" kind="function"><name>mimeTypes</name></member>
+    <member refid="class_store_model_1a8a6c01f4d7883133d69730ceb1e97a09" kind="function"><name>mimeData</name></member>
+    <member refid="class_store_model_1accf361cc9145306e3063f7b0be939476" kind="function"><name>canDropMimeData</name></member>
+    <member refid="class_store_model_1a7eddcc6b50d64067e2ccf10c8ac82b8e" kind="function"><name>dropMimeData</name></member>
+  </compound>
+  <compound refid="classtst__util_1_1_test_pass" kind="class"><name>tst_util::TestPass</name>
+    <member refid="classtst__util_1_1_test_pass_1a60aa60f02c2406761ae9f5f4b9abb338" kind="function"><name>callSetEnvVar</name></member>
+    <member refid="classtst__util_1_1_test_pass_1ab631233e2fb2a8d9a006607d5d7391c1" kind="function"><name>environment</name></member>
+    <member refid="classtst__util_1_1_test_pass_1acedd66ad70865aa42bafc6e5a10c1c75" kind="function"><name>callFinished</name></member>
+    <member refid="classtst__util_1_1_test_pass_1af806933734a95ec590b93b8cf9a48c30" kind="function"><name>callPassFinished</name></member>
+  </compound>
+  <compound refid="class_imitate_pass_1_1transaction_helper" kind="class"><name>ImitatePass::transactionHelper</name>
+    <member refid="class_imitate_pass_1_1transaction_helper_1a67a16c55a1629c66f945a8f482825795" kind="variable"><name>m_transaction</name></member>
+    <member refid="class_imitate_pass_1_1transaction_helper_1a585d7b3a011ff3dc3bc0341be82812d2" kind="variable"><name>m_result</name></member>
+    <member refid="class_imitate_pass_1_1transaction_helper_1ab37f5a0aff46fb0aa7ae9cc9cc17f38e" kind="function"><name>transactionHelper</name></member>
+    <member refid="class_imitate_pass_1_1transaction_helper_1aa359cfd5a9b65156dbca7b159cda9f2b" kind="function"><name>~transactionHelper</name></member>
+  </compound>
+  <compound refid="class_tray_icon" kind="class"><name>TrayIcon</name>
+    <member refid="class_tray_icon_1ac3ed465c5410c76e723497cad352665d" kind="variable"><name>showAction</name></member>
+    <member refid="class_tray_icon_1a152f2344330d45e76e60f371e412f23c" kind="variable"><name>hideAction</name></member>
+    <member refid="class_tray_icon_1a93823602fd2ec7d5a42ba98a9d542c47" kind="variable"><name>minimizeAction</name></member>
+    <member refid="class_tray_icon_1a6eeb738d4e2274fb8becf21726455db3" kind="variable"><name>maximizeAction</name></member>
+    <member refid="class_tray_icon_1a4b668e37495a62aae4f185f8eba96192" kind="variable"><name>restoreAction</name></member>
+    <member refid="class_tray_icon_1aea292382f17c685d67845a448729de80" kind="variable"><name>quitAction</name></member>
+    <member refid="class_tray_icon_1a6863ce4e41778dc20d012f95660f35b9" kind="variable"><name>sysTrayIcon</name></member>
+    <member refid="class_tray_icon_1a7fdcea2d29c8f9e9d51bff80c0f19d40" kind="variable"><name>trayIconMenu</name></member>
+    <member refid="class_tray_icon_1ab6f2699cd4f3b60009bf47fcea1bc6eb" kind="variable"><name>parentwin</name></member>
+    <member refid="class_tray_icon_1a8de3c98e95df06a2b2981dafb283e518" kind="variable"><name>isAllocated</name></member>
+    <member refid="class_tray_icon_1a587e1467cf97c27f4269f1c47c1e4ac5" kind="function"><name>TrayIcon</name></member>
+    <member refid="class_tray_icon_1a40737136f8d85dad4a10ddb58619157a" kind="function"><name>showMessage</name></member>
+    <member refid="class_tray_icon_1ab4cb316b0b39606fcb9b796cbed59bd1" kind="function"><name>setVisible</name></member>
+    <member refid="class_tray_icon_1ac43b5d2538c69cfcf6399eb29b9ddb47" kind="function"><name>getIsAllocated</name></member>
+    <member refid="class_tray_icon_1a20f8b921d79beca21f6dcb98741d57fc" kind="slot"><name>showHideParent</name></member>
+    <member refid="class_tray_icon_1a36c341a8b31884cd45060a92258e92b8" kind="slot"><name>iconActivated</name></member>
+    <member refid="class_tray_icon_1a2b5808f03a006945a8cfbd96c6f68f29" kind="function"><name>createActions</name></member>
+    <member refid="class_tray_icon_1a937817b83e4f11e4f500608e3bc16e6b" kind="function"><name>createTrayIcon</name></member>
+  </compound>
+  <compound refid="classtst__executor" kind="class"><name>tst_executor</name>
+    <member refid="classtst__executor_1a89aaed19d3a9d969bbb37316c91f53ba" kind="slot"><name>executeBlockingEcho</name></member>
+    <member refid="classtst__executor_1ad5e0eb0ea12c121bd62eeb54923fe4f2" kind="slot"><name>executeBlockingWithArgs</name></member>
+    <member refid="classtst__executor_1a54eb552fc3b51ddb5e25c4a7e5357226" kind="slot"><name>executeBlockingWithInput</name></member>
+    <member refid="classtst__executor_1a3d682fd8aeb67dad703567feb805c51d" kind="slot"><name>executeBlockingExitCode</name></member>
+    <member refid="classtst__executor_1ad71e99d1ef76d746cf8afed7df164d56" kind="slot"><name>executeBlockingStderr</name></member>
+    <member refid="classtst__executor_1a938cf1648cc9f30a966fd22d54495a72" kind="slot"><name>executeBlockingEmptyArgs</name></member>
+    <member refid="classtst__executor_1a49fe6f4eb402c7e1b67963be5c869f16" kind="slot"><name>executeBlockingEchoMultiple</name></member>
+    <member refid="classtst__executor_1a1b4a335eb36826c5d83d92e727fa47d4" kind="slot"><name>executeBlockingSpecialChars</name></member>
+    <member refid="classtst__executor_1aeec957b3dbe9fab8096162e112bc5d23" kind="slot"><name>executeBlockingWithEnv</name></member>
+    <member refid="classtst__executor_1a4630d2bd55208a8cb19e44e010a83c24" kind="slot"><name>executeBlockingWithEnvEmpty</name></member>
+    <member refid="classtst__executor_1a8ebc63fb86f1977d80cf31cc6776f926" kind="slot"><name>executeBlockingWithEnvSetsVariable</name></member>
+    <member refid="classtst__executor_1ac6fae5e905873607a055e8406cf1e165" kind="slot"><name>executeBlockingTwoArgOverload</name></member>
+    <member refid="classtst__executor_1a7d750fb4a20f1aa57560789586a9fd6f" kind="slot"><name>executeBlockingConstQStringRef</name></member>
+    <member refid="classtst__executor_1adda8ff847f42143e4004c22e7792cb4f" kind="slot"><name>executeBlockingNotFound</name></member>
+    <member refid="classtst__executor_1ac1e65431bbd4921c9df246b17f6a4ab0" kind="slot"><name>executeBlockingGpgVersion</name></member>
+    <member refid="classtst__executor_1a137c7550b5504a10a7e4159d4cfb9a2d" kind="slot"><name>gpgSupportsEd25519</name></member>
+    <member refid="classtst__executor_1a3d594b28d5a3ba7154e49697b8e78222" kind="slot"><name>getDefaultKeyTemplate</name></member>
+    <member refid="classtst__executor_1a8d1c2385d9a505bed3828f46f0d1891f" kind="slot"><name>executeBlockingGpgKillAgent</name></member>
+    <member refid="classtst__executor_1a7c4e68f6dd0d10c325acb0d2620270a1" kind="slot"><name>resolveGpgconfCommand</name></member>
+    <member refid="classtst__executor_1aaee4d0e039fe2c683cac7370fde1ac9a" kind="slot"><name>executeBlockingWithEnvNotFound</name></member>
+  </compound>
+  <compound refid="classtst__filecontent" kind="class"><name>tst_filecontent</name>
+    <member refid="classtst__filecontent_1a8a0ab7e9fcf3dc5f845de80331d29336" kind="slot"><name>parsePlainPassword</name></member>
+    <member refid="classtst__filecontent_1ae5f3a046490d4f58fd6dff8d7c6cd6e0" kind="slot"><name>parsePasswordWithNamedFields</name></member>
+    <member refid="classtst__filecontent_1a3ac74c58a318939690bf3b6e699798c1" kind="slot"><name>parseWithTemplateFields</name></member>
+    <member refid="classtst__filecontent_1a063d0c78616dd13b23b38d90d46f1192" kind="slot"><name>parseWithAllFields</name></member>
+    <member refid="classtst__filecontent_1a19911506b5a669b114595d2876f93989" kind="slot"><name>getRemainingData</name></member>
+    <member refid="classtst__filecontent_1a3f6b0ee0be1199ff130fd01265a533b8" kind="slot"><name>getRemainingDataForDisplay</name></member>
+    <member refid="classtst__filecontent_1a22b97f06e09e0f2ef07a6a930ff0ee5a" kind="slot"><name>namedValuesTakeValue</name></member>
+    <member refid="classtst__filecontent_1a3f53dfb8cfcb3452f4c1ff734532e675" kind="slot"><name>namedValuesTakeValueNotFound</name></member>
+    <member refid="classtst__filecontent_1a2e13193dd28632af4c19a6b8a415a0ba" kind="slot"><name>parseEmptyContent</name></member>
+    <member refid="classtst__filecontent_1a9a6629b6bd334e65d8c11d7c81c10fa2" kind="slot"><name>parsePasswordOnly</name></member>
+    <member refid="classtst__filecontent_1a2bf86441a7c4bd9e1e7b720dce1aafe4" kind="slot"><name>parseMultipleNamedFields</name></member>
+    <member refid="classtst__filecontent_1ad1a71e6f6a5a240b6a2e25abc5a6dcd9" kind="slot"><name>parseMatchingTemplateFields</name></member>
+    <member refid="classtst__filecontent_1a28159d0cabbabbdb0a09553b5ba5cfe5" kind="slot"><name>parseOtpauthHiddenLine</name></member>
+    <member refid="classtst__filecontent_1abc4195d4cf40456b5cc0ff983e7e603b" kind="slot"><name>parseColonInValue</name></member>
+    <member refid="classtst__filecontent_1ad14f3e24428c8889fec2e6b23dcb0906" kind="slot"><name>parseTemplateFieldsCaseSensitive</name></member>
+  </compound>
+  <compound refid="classtst__gpgkeystate" kind="class"><name>tst_gpgkeystate</name>
+    <member refid="classtst__gpgkeystate_1abf82bfd87d153b83ea13c949241b6e87" kind="slot"><name>parseMultiKeyPublic</name></member>
+    <member refid="classtst__gpgkeystate_1aa5f7bc8e84b11c1c86fdd04815df9a26" kind="slot"><name>parseMultiKeyPublic_data</name></member>
+    <member refid="classtst__gpgkeystate_1a130c49b28bbf472105324c57f007e7da" kind="slot"><name>parseSecretKeys</name></member>
+    <member refid="classtst__gpgkeystate_1a8bf84ca6aa7fb6b5db5934fda128ec20" kind="slot"><name>parseSecretKeys_data</name></member>
+    <member refid="classtst__gpgkeystate_1ac974965dbf5d346e4ac346375377fd17" kind="slot"><name>parseSingleKey</name></member>
+    <member refid="classtst__gpgkeystate_1a36510eb21794c41405d0f1b5a29f3114" kind="slot"><name>parseSingleKey_data</name></member>
+    <member refid="classtst__gpgkeystate_1afb4cef1ac2f5bc2f0508b69b010e8cd4" kind="slot"><name>parseKeyRollover</name></member>
+    <member refid="classtst__gpgkeystate_1a759cead3e39948a39eb4344cb3aa9db7" kind="slot"><name>parseKeyRollover_data</name></member>
+    <member refid="classtst__gpgkeystate_1a9ae841809ffa6fd2ace704218770164a" kind="slot"><name>classifyRecordTypes</name></member>
+    <member refid="classtst__gpgkeystate_1a4edc206a738c41d83cd2805399ec6e3e" kind="slot"><name>classifyRecordEmpty</name></member>
+    <member refid="classtst__gpgkeystate_1a51d1613cb75d264b4554ff6c8e6077c5" kind="slot"><name>handlePubSecEmptyFields</name></member>
+    <member refid="classtst__gpgkeystate_1a7f8f0840def4ecb18cabeba03b36359d" kind="slot"><name>handlePubSecShortList</name></member>
+    <member refid="classtst__gpgkeystate_1a010e92f4108ac463894185cc2d509b84" kind="slot"><name>handleFprEdgeCases</name></member>
+    <member refid="classtst__gpgkeystate_1abad83e3756fdfcfb84bae31f62cd9f62" kind="slot"><name>classifyRecordWithConstQString</name></member>
+    <member refid="classtst__gpgkeystate_1aedae02c4d609ffb371bd41fccf2dc002" kind="slot"><name>parseGpgColonOutputWithGrpRecord</name></member>
+    <member refid="classtst__gpgkeystate_1aceafa37065b2e962d2f48d875cab19ef" kind="slot"><name>parseGpgColonOutputUnknownRecordTypes</name></member>
+    <member refid="classtst__gpgkeystate_1a87a65dae9d8ada55445d86de16ed903e" kind="slot"><name>parseGpgColonOutputAllPublicRecordTypes</name></member>
+  </compound>
+  <compound refid="classtst__integration" kind="class"><name>tst_integration</name>
+    <member refid="classtst__integration_1adbf1eedf230c76a22fa366ae19522e17" kind="variable"><name>m_gpgExe</name></member>
+    <member refid="classtst__integration_1a767d78560e3c135774ec233d49cf2dde" kind="variable"><name>m_gnupgHome</name></member>
+    <member refid="classtst__integration_1a9ae552a29492220e1129e411f1917703" kind="variable"><name>m_keyFingerprint</name></member>
+    <member refid="classtst__integration_1a58bc15f9d59937b9330de30dadf1a1ee" kind="variable"><name>m_originalPassSigningKey</name></member>
+    <member refid="classtst__integration_1aa2aeadfabec96faeba6073a960f3a961" kind="function"><name>waitForSignal</name></member>
+    <member refid="classtst__integration_1aebc3da669faef1bc02e4ef9ed0a8b363" kind="function"><name>setupPass</name></member>
+    <member refid="classtst__integration_1a4dfd3288c89cf3d77170a509e9175777" kind="function"><name>gpgInsertErrorMsg</name></member>
+    <member refid="classtst__integration_1a8ba8deb012479d0b972521efac5b7f8e" kind="function"><name>runGitConfig</name></member>
+    <member refid="classtst__integration_1a9685dca45f01f6577022bc6a79190a80" kind="slot"><name>initTestCase</name></member>
+    <member refid="classtst__integration_1a3718ea53781ca792b92d837b8fd78c01" kind="slot"><name>cleanupTestCase</name></member>
+    <member refid="classtst__integration_1a4ddbe39e859b448157c6ff835a3a8604" kind="slot"><name>imitatePass_insertAndShow</name></member>
+    <member refid="classtst__integration_1a7dca6a5148857d802f44a56107e5cf08" kind="slot"><name>imitatePass_insertAndGrep</name></member>
+    <member refid="classtst__integration_1a7c522a01973742553ab07ba973b6a1dc" kind="slot"><name>imitatePass_insertMoveAndShow</name></member>
+    <member refid="classtst__integration_1a2b0e1a74e3d4e2a62324f22dbbb89ca4" kind="slot"><name>imitatePass_insertCopyAndShow</name></member>
+    <member refid="classtst__integration_1a912c8d7006bf7954c76cddfcd32e9812" kind="slot"><name>imitatePass_insertAndRemove</name></member>
+    <member refid="classtst__integration_1a2ff0a78ba281af02cf05fa67179694b9" kind="slot"><name>imitatePass_nestedDirectoryInsertAndShow</name></member>
+    <member refid="classtst__integration_1a56051a366b4ac6653059ed685dc85f8d" kind="slot"><name>imitatePass_editExistingEntry</name></member>
+    <member refid="classtst__integration_1ab48743ba4d406dce3458762e9c845a48" kind="slot"><name>imitatePass_gitInitAndCommit</name></member>
+    <member refid="classtst__integration_1a2afb6c243694333c180720d2e150d4c7" kind="slot"><name>realPass_insertAndShow</name></member>
+    <member refid="classtst__integration_1aa58e8a788e667df0fd7298dbfa1a8246" kind="slot"><name>realPass_insertAndGrep</name></member>
+    <member refid="classtst__integration_1a6de851a5adeafb45b8fd205843d7d0ea" kind="slot"><name>imitatePass_otpGenerate</name></member>
+  </compound>
+  <compound refid="classtst__passwordconfig" kind="class"><name>tst_passwordconfig</name>
+    <member refid="classtst__passwordconfig_1a7bd18e6a458e46a73a09f431f5f374ae" kind="slot"><name>initTestCase</name></member>
+    <member refid="classtst__passwordconfig_1a23bd64896cbf3ebf916dbb4749de51d7" kind="slot"><name>passwordConfigurationDefaults</name></member>
+    <member refid="classtst__passwordconfig_1ae232287fd2d0c9b57dc4758793be2e1b" kind="slot"><name>passwordConfigurationSetters</name></member>
+    <member refid="classtst__passwordconfig_1a143b970f114341bafd2acfebc1b0cb6c" kind="slot"><name>passwordConfigurationCharacterSets</name></member>
+    <member refid="classtst__passwordconfig_1a5c173b64d78c61c648025ac1f51c19a1" kind="slot"><name>passwordConfigurationLength</name></member>
+    <member refid="classtst__passwordconfig_1a0ffd70ff136827854e629fd107715e3d" kind="slot"><name>passwordConfigurationCustomChars</name></member>
+  </compound>
+  <compound refid="classtst__settings" kind="class"><name>tst_settings</name>
+    <member refid="classtst__settings_1a5a0501659a6290ca2e85cae0ff70da44" kind="variable"><name>m_settingsBackupPath</name></member>
+    <member refid="classtst__settings_1a916bfaf059c202a4804071c50fe9a064" kind="variable"><name>m_isPortableMode</name></member>
+    <member refid="classtst__settings_1abd9b253d677eb244764c1b46813c7afa" kind="slot"><name>initTestCase</name></member>
+    <member refid="classtst__settings_1af6239edac550fbdc48e7ae005ef152cd" kind="slot"><name>cleanupTestCase</name></member>
+    <member refid="classtst__settings_1a54f5f37f8c607928090e094bb93b8ea2" kind="slot"><name>getPasswordConfigurationDefault</name></member>
+    <member refid="classtst__settings_1af966bd65b2dc9be84f23eade4128614e" kind="slot"><name>setAndGetPasswordConfiguration</name></member>
+    <member refid="classtst__settings_1a46e338bc6b5b2ef015600f27335fbbd3" kind="slot"><name>getProfilesEmpty</name></member>
+    <member refid="classtst__settings_1a6b4fa5d0d6a7d9095bfdffb74c98d9bd" kind="slot"><name>setAndGetProfiles</name></member>
+    <member refid="classtst__settings_1a89afa4d42ae05ba62c3501c3f31ebfb8" kind="slot"><name>setAndGetVersion</name></member>
+    <member refid="classtst__settings_1abd2c6bc9ee9961697c7e650675b5829f" kind="slot"><name>setAndGetGeometry</name></member>
+    <member refid="classtst__settings_1a4c9842f2bc0935a0d053e3cfb678c2ef" kind="slot"><name>getPassStore</name></member>
+    <member refid="classtst__settings_1a8d7912a964941356b1672320baeb68d1" kind="slot"><name>setAndGetPassStore</name></member>
+    <member refid="classtst__settings_1abb1ae12ec3bcc2e16db63989101672c1" kind="slot"><name>boolRoundTrip_data</name></member>
+    <member refid="classtst__settings_1a8fc4826609d7fbdb1efbea76dad3fd0d" kind="slot"><name>boolRoundTrip</name></member>
+    <member refid="classtst__settings_1af0b0b97d5c090458563b7415efa98490" kind="slot"><name>intRoundTrip_data</name></member>
+    <member refid="classtst__settings_1abcf47e139fc1719a4d2192207e0fd430" kind="slot"><name>intRoundTrip</name></member>
+    <member refid="classtst__settings_1a22981fe4c4fd17935d6d1b0ed4d26619" kind="slot"><name>stringRoundTrip_data</name></member>
+    <member refid="classtst__settings_1a36871926eba2e7d0a5b0fdbc0a5a12c6" kind="slot"><name>stringRoundTrip</name></member>
+    <member refid="classtst__settings_1a150e6eb9358618f80e547c06e7e53a06" kind="slot"><name>setAndGetClipBoardType</name></member>
+    <member refid="classtst__settings_1abd3e1a075e913d4e28480f92a6c2ea88" kind="slot"><name>setAndGetPasswordLength</name></member>
+    <member refid="classtst__settings_1ab9698a26082c18d1c42f13f09eac1f23" kind="slot"><name>autoDetectGit</name></member>
+    <member refid="classtst__settings_1a212dc01ec442cf88152ec654d71452f1" kind="slot"><name>setAndGetSavestate</name></member>
+    <member refid="classtst__settings_1a1f7d1a2073721f169aae6a480ffef92c" kind="slot"><name>setAndGetPos</name></member>
+    <member refid="classtst__settings_1a2e22922b39405ffabf0c5779308eb48c" kind="slot"><name>setAndGetSize</name></member>
+    <member refid="classtst__settings_1a952ebcbeb8c8376f5a1fe5b829f3a1e1" kind="slot"><name>setAndGetDialogGeometry</name></member>
+    <member refid="classtst__settings_1a12d27d9a1c730a0498d49604326dcd2a" kind="slot"><name>setAndGetDialogPos</name></member>
+    <member refid="classtst__settings_1af43348f23498ab5e041c50f0666ae198" kind="slot"><name>setAndGetDialogSize</name></member>
+    <member refid="classtst__settings_1aeadcfa6b3e22f85e67a1caa6711fa022" kind="slot"><name>setAndGetDialogMaximized</name></member>
+    <member refid="classtst__settings_1a1b1c8b2278520c0b87bfcd1b1a5c8eec" kind="slot"><name>setAndGetPasswordCharsSelection</name></member>
+    <member refid="classtst__settings_1a40c4b0f8b6f86db9ed5137378225a639" kind="slot"><name>setAndGetPasswordChars</name></member>
+    <member refid="classtst__settings_1ad0e651adb5addf143f4c633e0e337720" kind="slot"><name>setAndGetMultipleProfiles</name></member>
+    <member refid="classtst__settings_1a4779039987559319c60a63c57f8a6fbd" kind="slot"><name>setAndGetProfileDefault</name></member>
+  </compound>
+  <compound refid="classtst__simpletransaction" kind="class"><name>tst_simpletransaction</name>
+    <member refid="classtst__simpletransaction_1ac8a8b6e8191dee27052cda8723065333" kind="slot"><name>transactionStartEnd</name></member>
+    <member refid="classtst__simpletransaction_1a19dc7328b102cd7854aaa45760d546bb" kind="slot"><name>transactionAdd</name></member>
+    <member refid="classtst__simpletransaction_1a20f6e0c8ec2925245fafc8533dd8f42a" kind="slot"><name>transactionIsOver</name></member>
+    <member refid="classtst__simpletransaction_1a0b027e7964f993b1953e857c42259bdf" kind="slot"><name>nestedTransaction</name></member>
+    <member refid="classtst__simpletransaction_1a4417a407268ab554d2de7106cc7e7b3a" kind="slot"><name>cleanupTestCase</name></member>
+  </compound>
+  <compound refid="classtst__storemodel" kind="class"><name>tst_storemodel</name>
+    <member refid="classtst__storemodel_1a3252117411e23ff11774d18d63f5a25d" kind="slot"><name>dataRemovesGpgExtension</name></member>
+    <member refid="classtst__storemodel_1a51e07ee70f5391b8808b3ce2b06d81c6" kind="slot"><name>dataWithInvalidIndex</name></member>
+    <member refid="classtst__storemodel_1ad1c4d7b74a98596e580860131e70d794" kind="slot"><name>flagsWithValidIndex</name></member>
+    <member refid="classtst__storemodel_1afed1932ac01bb77d49e1349ad95ef65a" kind="slot"><name>flagsWithInvalidIndex</name></member>
+    <member refid="classtst__storemodel_1a12c2db5ca5c2f076f7ae91eff326aae0" kind="slot"><name>mimeTypes</name></member>
+    <member refid="classtst__storemodel_1a5cdf94db199b0d33aa866a96f651cba7" kind="slot"><name>mimeData</name></member>
+    <member refid="classtst__storemodel_1a295f76ee549af5fa20e2aa615243f9de" kind="slot"><name>lessThan</name></member>
+    <member refid="classtst__storemodel_1a817c0a82ebe2cba6f7a52ccc50b0946c" kind="slot"><name>lessThanDirsFirst</name></member>
+    <member refid="classtst__storemodel_1aa6b32743b4135fc65baadbdda2a3dcac" kind="slot"><name>supportedDropActions</name></member>
+    <member refid="classtst__storemodel_1a43abcb6bacd2f127b4e3ea7dc540fc57" kind="slot"><name>supportedDragActions</name></member>
+    <member refid="classtst__storemodel_1a4853e2f162fffc14f965b91e6d7ce69f" kind="slot"><name>filterAcceptsRowHidden</name></member>
+    <member refid="classtst__storemodel_1a9f11cc716f0ff9a517a176e789435fae" kind="slot"><name>filterExcludesGitDirectory</name></member>
+    <member refid="classtst__storemodel_1a0bbd8a8225a346e43a5972043c5df62f" kind="slot"><name>filterAcceptsRowVisible</name></member>
+    <member refid="classtst__storemodel_1acedaddc062dfb574ace1a22693aac0fc" kind="slot"><name>setModelAndStore</name></member>
+    <member refid="classtst__storemodel_1a3c6f7f9e30dfb7ca43d38a3d526ec99a" kind="slot"><name>showThisWithNullFs</name></member>
+    <member refid="classtst__storemodel_1ad926e5ee215ea2a31ad49f8e24b684e3" kind="slot"><name>getStoreBasic</name></member>
+    <member refid="classtst__storemodel_1a2cff31f021d2f8964a1e7f509583d291" kind="slot"><name>filterRegularExpression</name></member>
+  </compound>
+  <compound refid="classtst__ui" kind="class"><name>tst_ui</name>
+    <member refid="classtst__ui_1afa12983308f421e11e68b1d829741316" kind="slot"><name>initTestCase</name></member>
+    <member refid="classtst__ui_1aa65549d01e088c19a398e96011dae72a" kind="slot"><name>contentRemainsSame</name></member>
+    <member refid="classtst__ui_1a6fba5e6dfd60774a0ce69754ff9ab754" kind="slot"><name>emptyPassword</name></member>
+    <member refid="classtst__ui_1a182b5a20b5b4fc3a1e7b44ab5e5052ee" kind="slot"><name>multilineRemainingData</name></member>
+    <member refid="classtst__ui_1a9d1208bbc51cb1ab180db158a5e580a7" kind="slot"><name>cleanupTestCase</name></member>
+    <member refid="classtst__ui_1aa888640787d76199312c16d8b795bd11" kind="slot"><name>passwordDialogBasic</name></member>
+    <member refid="classtst__ui_1aeaa5123d73c1425dee1b38f65a6bb3c4" kind="slot"><name>passwordDialogWithTemplate</name></member>
+    <member refid="classtst__ui_1ab5cf867cfada77d178040a1c2c537dd7" kind="slot"><name>qrCodePopupDeletesOnClose</name></member>
+    <member refid="classtst__ui_1a67c2cc23d34e955953cc7d40398fd3ad" kind="slot"><name>qrCodePopupHasDeleteOnCloseAttribute</name></member>
+    <member refid="classtst__ui_1aca216a6c5ec23b8b73c4dc8fa8e0c089" kind="slot"><name>createQRCodePopupSetsDeleteOnClose</name></member>
+    <member refid="classtst__ui_1a1479116c35dd2a68406074b528c5bf32" kind="slot"><name>dialogWithoutDeleteOnCloseDoesNotAutoDelete</name></member>
+    <member refid="classtst__ui_1a6527bbfd3c7ee1a669c17cd3a5f47b89" kind="slot"><name>clipboardButtonDefaultText</name></member>
+    <member refid="classtst__ui_1a29af763954877038ed2baa1b296a0ee1" kind="slot"><name>clipboardButtonConstructorText</name></member>
+    <member refid="classtst__ui_1a8394b341073f0118e1a30b4fd232530f" kind="slot"><name>clipboardButtonGetSetText</name></member>
+    <member refid="classtst__ui_1a8e4c3b13b2d75427e7bf3ee54232a88f" kind="slot"><name>clipboardButtonSetEmptyText</name></member>
+    <member refid="classtst__ui_1a5aeae352a5c67338a123ee7963a9e254" kind="slot"><name>clipboardButtonSetAndGetRoundtrip</name></member>
+    <member refid="classtst__ui_1a25d9e5fcfd1a85bbbce0cd3f78fe8957" kind="slot"><name>clipboardButtonClickEmitsSignal</name></member>
+    <member refid="classtst__ui_1aa2a1d204d0fa2c35b2b5cf842c22a3bc" kind="slot"><name>clipboardButtonClickSignalCarriesText</name></member>
+    <member refid="classtst__ui_1a13c44fa6cec8d01c7b0aef73905fd7af" kind="slot"><name>clipboardButtonClickAfterSetTextCarriesNewText</name></member>
+    <member refid="classtst__ui_1a1cbfac7f2fa9bb509896ea8e83eeeb7b" kind="slot"><name>qrCodeButtonDefaultText</name></member>
+    <member refid="classtst__ui_1a6479296ba3732545961c7c709487131c" kind="slot"><name>qrCodeButtonConstructorText</name></member>
+    <member refid="classtst__ui_1a1ac43de73649a6f3b4c5fb1a8c86dd01" kind="slot"><name>qrCodeButtonGetSetText</name></member>
+    <member refid="classtst__ui_1a7762a44dee531a8b2e1ee6f51322186a" kind="slot"><name>qrCodeButtonSetEmptyText</name></member>
+    <member refid="classtst__ui_1a5c05d2517c3114e1db94cf7e479bed5a" kind="slot"><name>qrCodeButtonSetAndGetRoundtrip</name></member>
+    <member refid="classtst__ui_1a66e61132b818629905e278c777540f39" kind="slot"><name>qrCodeButtonClickEmitsSignal</name></member>
+    <member refid="classtst__ui_1aed8425e517844366fcb903aa1213b410" kind="slot"><name>qrCodeButtonClickSignalCarriesText</name></member>
+    <member refid="classtst__ui_1a017039ed7b2e86a2d95078b14dba404e" kind="slot"><name>qrCodeButtonClickAfterSetTextCarriesNewText</name></member>
+    <member refid="classtst__ui_1af254643f31cbbba884ff30d1d1e4f527" kind="slot"><name>showPasswordButtonInitialEchoMode</name></member>
+    <member refid="classtst__ui_1a934b622e6475f7249172d2da937888ab" kind="slot"><name>showPasswordButtonClickTogglesEchoMode</name></member>
+    <member refid="classtst__ui_1ae88ae97601f8bb343847123310844559" kind="slot"><name>showPasswordButtonDoubleClickRestoresEchoMode</name></member>
+    <member refid="classtst__ui_1affdc6d8bb6ff7886eee4c8c4c03d8fd2" kind="slot"><name>progressIndicatorDefaultNotAnimated</name></member>
+    <member refid="classtst__ui_1af059eb92b171a8408dd060eec5f9925c" kind="slot"><name>progressIndicatorDefaultDelay</name></member>
+    <member refid="classtst__ui_1a96c43836c5ef1b89bbc0a66f363e330d" kind="slot"><name>progressIndicatorDefaultNotDisplayedWhenStopped</name></member>
+    <member refid="classtst__ui_1a1e4d9a876edec372b9e510ec0eb82293" kind="slot"><name>progressIndicatorDefaultColor</name></member>
+    <member refid="classtst__ui_1a8489847744a5df0cf654a5dffd6315b9" kind="slot"><name>progressIndicatorStartAnimation</name></member>
+    <member refid="classtst__ui_1abc5a954c2b73ea51acaadb941d1646bd" kind="slot"><name>progressIndicatorStopAnimation</name></member>
+    <member refid="classtst__ui_1ae05947c2decf8ede8a5938fa4f36aff1" kind="slot"><name>progressIndicatorStartStopCycle</name></member>
+    <member refid="classtst__ui_1a0164008f93e7076cdcf0f0b24c613e15" kind="slot"><name>progressIndicatorSetAnimationDelay</name></member>
+    <member refid="classtst__ui_1a16e632d93ff08d38ad2000ddc3a7a1d8" kind="slot"><name>progressIndicatorSetDisplayedWhenStopped</name></member>
+    <member refid="classtst__ui_1a35347c222356d2e62f049d394b0886ff" kind="slot"><name>progressIndicatorSetColor</name></member>
+    <member refid="classtst__ui_1a6c7bb2ca3f2d50a3a9056d95425ec5dc" kind="slot"><name>progressIndicatorSizeHint</name></member>
+    <member refid="classtst__ui_1a7d23a1857ebb865892634559db384c55" kind="slot"><name>progressIndicatorHeightForWidth</name></member>
+    <member refid="classtst__ui_1a2cc64ba8bb494504d106e020b1965497" kind="slot"><name>progressIndicatorStopWhenNotRunningIsHarmless</name></member>
+    <member refid="classtst__ui_1ac2dc311cf7c98b145004c70c2f396d9f" kind="slot"><name>progressIndicatorStartTwiceDoesNotDuplicate</name></member>
+    <member refid="classtst__ui_1a99ca618d5fe953c144041407b88b5409" kind="slot"><name>deselectableTreeViewConstruction</name></member>
+    <member refid="classtst__ui_1afd86ef8cc65c6ed619c4d0a971184f2c" kind="slot"><name>deselectableTreeViewHasEmptyClickedSignal</name></member>
+  </compound>
+  <compound refid="classtst__util" kind="class"><name>tst_util</name>
+    <member refid="classtst__util_1a3c9db354c2f1e43b730113080ae8af9e" kind="function"><name>tst_util</name></member>
+    <member refid="classtst__util_1a8899ee1b3b2db1a8008fdc30f778969f" kind="function"><name>~tst_util</name></member>
+    <member refid="classtst__util_1a54654491215c8cca86f921eb20bfcf95" kind="slot"><name>init</name></member>
+    <member refid="classtst__util_1a1889cedba30d1d96c60e84effbf7f313" kind="slot"><name>cleanup</name></member>
+    <member refid="classtst__util_1a4aa4f56e3a1a5bd3a98deecbe804dc65" kind="slot"><name>cleanupTestCase</name></member>
+    <member refid="classtst__util_1a66a39d538faa612c4d87177016806468" kind="slot"><name>normalizeFolderPath</name></member>
+    <member refid="classtst__util_1abc8e5c9a82d78785f3262100f16e6789" kind="slot"><name>normalizeFolderPathEdgeCases</name></member>
+    <member refid="classtst__util_1a5851aed2e759b26c37e659c9067ae610" kind="slot"><name>fileContent</name></member>
+    <member refid="classtst__util_1ac726095615941a2f9c5a8b64f60f339e" kind="slot"><name>fileContentEdgeCases</name></member>
+    <member refid="classtst__util_1a3772e2dd629734798a6efa86ca383a6a" kind="slot"><name>namedValuesTakeValue</name></member>
+    <member refid="classtst__util_1af3edc0122144144fdd2827462b500718" kind="slot"><name>namedValuesEdgeCases</name></member>
+    <member refid="classtst__util_1aaa1b437e7b79e86ec4ee592cbfb01e1c" kind="slot"><name>totpHiddenFromDisplay</name></member>
+    <member refid="classtst__util_1ab3c64dd64cb1704d76a056bdf937b968" kind="slot"><name>testAwsUrl</name></member>
+    <member refid="classtst__util_1a13747ca714732f4a2fda54d55f45ee8c" kind="slot"><name>regexPatterns</name></member>
+    <member refid="classtst__util_1a51e6988cdb983d31ae9007e40b43cd2e" kind="slot"><name>regexPatternEdgeCases</name></member>
+    <member refid="classtst__util_1aef8e4481c22ee217296b8bf8ddc0e3af" kind="slot"><name>endsWithGpgEdgeCases</name></member>
+    <member refid="classtst__util_1a600b0d22b0d2878b6980416c6227fc35" kind="slot"><name>userInfoValidity</name></member>
+    <member refid="classtst__util_1a41d5a2777d21b6f2f6cf9db41b0e0263" kind="slot"><name>userInfoValidityEdgeCases</name></member>
+    <member refid="classtst__util_1a5f3f66e4d14e0a857f00c372f1efe9a6" kind="slot"><name>passwordConfigurationCharacters</name></member>
+    <member refid="classtst__util_1a8b69213906283c67174b2a16e43d5a4e" kind="slot"><name>simpleTransactionBasic</name></member>
+    <member refid="classtst__util_1a4fe9b3655430781d1a96273b908f1f76" kind="slot"><name>simpleTransactionNested</name></member>
+    <member refid="classtst__util_1a4b0dca0b6db9b29e176290896846c3fe" kind="slot"><name>createGpgIdFile</name></member>
+    <member refid="classtst__util_1a8f8e941e17691943050338c7f42bfff8" kind="slot"><name>createGpgIdFileEmptyKeys</name></member>
+    <member refid="classtst__util_1a4b9f312319271ae45a1a76c78aeaf1e2" kind="slot"><name>generateRandomPassword</name></member>
+    <member refid="classtst__util_1a28ec5784edb728a2a755bc34b9ae0a81" kind="slot"><name>boundedRandom</name></member>
+    <member refid="classtst__util_1a7c41cf9b12e50c288fcfda450ff8ad5a" kind="slot"><name>findBinaryInPath</name></member>
+    <member refid="classtst__util_1ad65e3c033736e67983ff75554316529e" kind="slot"><name>findPasswordStore</name></member>
+    <member refid="classtst__util_1a76372d2b2b8693a330c82f5e68e47d67" kind="slot"><name>configIsValid</name></member>
+    <member refid="classtst__util_1a389b97c6869eaa40b1e730c4297913c3" kind="slot"><name>getDirBasic</name></member>
+    <member refid="classtst__util_1ab56232b310d640d8986664c7054d2436" kind="slot"><name>getDirWithIndex</name></member>
+    <member refid="classtst__util_1a0078264f60d3b6ed88f6970fba209723" kind="slot"><name>findBinaryInPathNotFound</name></member>
+    <member refid="classtst__util_1ab9f9722dadb619acedb7b43ac7a158f2" kind="slot"><name>findPasswordStoreEnvVar</name></member>
+    <member refid="classtst__util_1a23b6e8cc412b307687e0aa95b8398645" kind="slot"><name>normalizeFolderPathMultipleCalls</name></member>
+    <member refid="classtst__util_1a15a3bf39533dd7cf97343b76a7dda5ba" kind="slot"><name>userInfoFullyValid</name></member>
+    <member refid="classtst__util_1acce7d690fe06bcf61c8d5c0e4b20cd13" kind="slot"><name>userInfoMarginallyValid</name></member>
+    <member refid="classtst__util_1a7b97cff53bea7d8988542f5d5168b6e2" kind="slot"><name>userInfoIsValid</name></member>
+    <member refid="classtst__util_1ac2658bf7581a3e89e14e966e79dda092" kind="slot"><name>userInfoCreatedAndExpiry</name></member>
+    <member refid="classtst__util_1a37af85b9a6ef782f5dd93de3581980f2" kind="slot"><name>qProgressIndicatorBasic</name></member>
+    <member refid="classtst__util_1a0d3faad11071a1799bf50ae30a976f7a" kind="slot"><name>qProgressIndicatorStartStop</name></member>
+    <member refid="classtst__util_1a81ae51a0377e44380c672d9f892cd7c4" kind="slot"><name>namedValueBasic</name></member>
+    <member refid="classtst__util_1a5367ac081eff34b6e2926633f0a953fb" kind="slot"><name>namedValueMultiple</name></member>
+    <member refid="classtst__util_1a61ec944e61736833ae62b5cb716c4ca6" kind="slot"><name>buildClipboardMimeDataLinux</name></member>
+    <member refid="classtst__util_1a92f39487506a0142ebe5d8c046be9d25" kind="slot"><name>buildClipboardMimeDataWindows</name></member>
+    <member refid="classtst__util_1abaae2a782a51a52564cf00a8d2af6ea2" kind="slot"><name>buildClipboardMimeDataMac</name></member>
+    <member refid="classtst__util_1a832d25d6640927cc1fa5e7ee4933de6b" kind="slot"><name>utilRegexEnsuresGpg</name></member>
+    <member refid="classtst__util_1afdb057bbd14a8b7bedcd289d14f0ba74" kind="slot"><name>utilRegexProtocol</name></member>
+    <member refid="classtst__util_1aed0eff37f3fc3503e1c6803f36d5c2f8" kind="slot"><name>utilRegexNewLines</name></member>
+    <member refid="classtst__util_1accbae7282eefa4a504b71875756c15b7" kind="slot"><name>reencryptPathNormalization</name></member>
+    <member refid="classtst__util_1a62ed6af6c9ba469956e885192bdaf946" kind="slot"><name>reencryptPathAbsolutePath</name></member>
+    <member refid="classtst__util_1a09ca276e923dfbb6ff10b951677a3e2b" kind="slot"><name>buildClipboardMimeDataDword</name></member>
+    <member refid="classtst__util_1aee1feaa298c9a7cce67696f1407941c6" kind="slot"><name>imitatePassResolveMoveDestination</name></member>
+    <member refid="classtst__util_1aa97d0e596df2e59f38dbf35ebfaa0fdc" kind="slot"><name>imitatePassResolveMoveDestinationForce</name></member>
+    <member refid="classtst__util_1ae41b207ddd4662ebcf39bd0ce4be67ab" kind="slot"><name>imitatePassResolveMoveDestinationDestExistsNoForce</name></member>
+    <member refid="classtst__util_1aba1a20bc0daa439ace7acbc42b7ec2c0" kind="slot"><name>imitatePassResolveMoveDestinationDir</name></member>
+    <member refid="classtst__util_1a6f16cbefbc6e8d62d461e9e6c8335118" kind="slot"><name>imitatePassResolveMoveDestinationNonExistent</name></member>
+    <member refid="classtst__util_1a2e76302c497a53f6aac4e078bce57c0d" kind="slot"><name>imitatePassRemoveDir</name></member>
+    <member refid="classtst__util_1a4dbd4e465f51a25727769bccaea75ab7" kind="slot"><name>getRecipientListBasic</name></member>
+    <member refid="classtst__util_1aa97b41ce25c2e6170877a5b99187ca41" kind="slot"><name>getRecipientListEmpty</name></member>
+    <member refid="classtst__util_1a46b3065ed73a377ea82185fe7c7d2001" kind="slot"><name>getRecipientListWithComments</name></member>
+    <member refid="classtst__util_1ae80d818fca7c9e3ee356310157ba3886" kind="slot"><name>getRecipientListInvalidKeyId</name></member>
+    <member refid="classtst__util_1a63f058cd15dc21188c1d015387d84556" kind="slot"><name>isValidKeyIdBasic</name></member>
+    <member refid="classtst__util_1ac9b1572ea5b43c77682010de7d41142f" kind="slot"><name>isValidKeyIdWith0xPrefix</name></member>
+    <member refid="classtst__util_1a2ae483fa6600d9433e9ad289a8ec2f6d" kind="slot"><name>isValidKeyIdWithEmail</name></member>
+    <member refid="classtst__util_1a1d4961694171de1a4ce0ad6ed6a27b47" kind="slot"><name>isValidKeyIdInvalid</name></member>
+    <member refid="classtst__util_1a52e1b71d6998de5fe92760c02d833054" kind="slot"><name>getRecipientStringCount</name></member>
+    <member refid="classtst__util_1a6e511772027be9a3f51c3b4751b31b23" kind="slot"><name>getGpgIdPathBasic</name></member>
+    <member refid="classtst__util_1ace29170af2dfc2f78ae0030e8d6c5b49" kind="slot"><name>getGpgIdPathSubfolder</name></member>
+    <member refid="classtst__util_1a4a97b5341de5f6421d7036f470afcbd8" kind="slot"><name>getGpgIdPathNotFound</name></member>
+    <member refid="classtst__util_1a777b8b0718bb36b7ad223a2be51a4cea" kind="slot"><name>findBinaryInPathReturnedPathIsAbsolute</name></member>
+    <member refid="classtst__util_1a8b228a2b346ac543d8d70e52688fd5bb" kind="slot"><name>findBinaryInPathReturnedPathIsExecutable</name></member>
+    <member refid="classtst__util_1a0d31cddeeeefa38ec5e90cebcfa3d881" kind="slot"><name>findBinaryInPathMultipleKnownBinaries</name></member>
+    <member refid="classtst__util_1ab9656435513cb1b641ba4f42e02b4a6c" kind="slot"><name>findBinaryInPathConsistency</name></member>
+    <member refid="classtst__util_1aa34f81432284ac22b6d2c76c8e3dc42e" kind="slot"><name>findBinaryInPathResultContainsBinaryName</name></member>
+    <member refid="classtst__util_1a31b40f96fc05bacc63d902a0ab578405" kind="slot"><name>findBinaryInPathTempExecutableInTempDir</name></member>
+    <member refid="classtst__util_1ac945b0532945ec79b0cbb900d00de090" kind="slot"><name>findBinaryInPathWithConstQStringRef</name></member>
+    <member refid="classtst__util_1a2137c4f2ade1872bd11ce53960354548" kind="slot"><name>findBinaryInPathEmptyString</name></member>
+    <member refid="classtst__util_1a8eceff2ff650014df92156388da4a2e3" kind="slot"><name>findBinaryInPathStringLiteral</name></member>
+    <member refid="classtst__util_1a72517c3de61941a6ed043c19c97ef248" kind="slot"><name>setEnvVarAdds</name></member>
+    <member refid="classtst__util_1acc5fce5d68e385af1ea4023debcd5d8d" kind="slot"><name>setEnvVarUpdates</name></member>
+    <member refid="classtst__util_1a41f677852db1c058597b519977eed3c1" kind="slot"><name>setEnvVarRemoves</name></member>
+    <member refid="classtst__util_1a7775c9686999ab3d18ab4aa7252cf424" kind="slot"><name>setEnvVarNoopOnMissingRemove</name></member>
+    <member refid="classtst__util_1ae9d3bb974fb8b3e170df80ce8f8ecd03" kind="slot"><name>updateEnvSetsExpectedVars</name></member>
+    <member refid="classtst__util_1a71b1b98f2e38c1f3ca8c40f846bd2680" kind="slot"><name>updateEnvEmptyCustomCharsetFallsBackToAllChars</name></member>
+    <member refid="classtst__util_1a9b8ac2017d63a8daf8580ac0b18eb988" kind="slot"><name>updateEnvWslenvContainsRequiredVars</name></member>
+    <member refid="classtst__util_1a54ea15203d3c769d2c62b06d6e340a67" kind="slot"><name>gpgErrorMessageKeyExpiredStatusToken</name></member>
+    <member refid="classtst__util_1ae0e8208d683a094767f53643d74b0666" kind="slot"><name>gpgErrorMessageKeyRevokedStatusToken</name></member>
+    <member refid="classtst__util_1a0fcaa1035c176117b190709455ec4f79" kind="slot"><name>gpgErrorMessageNoPubkeyStatusToken</name></member>
+    <member refid="classtst__util_1a94b7a147cf6bc8000d344f808d6f78cb" kind="slot"><name>gpgErrorMessageInvRecpStatusToken</name></member>
+    <member refid="classtst__util_1af835185efb759bd824fc19fdb260f033" kind="slot"><name>gpgErrorMessageFailureStatusToken</name></member>
+    <member refid="classtst__util_1a1732fbbf779ad1b6e9f5be472827b394" kind="slot"><name>gpgErrorMessageKeyExpiredFallback</name></member>
+    <member refid="classtst__util_1ad697594ee51814ff382a0730c6641978" kind="slot"><name>gpgErrorMessageRevokedFallback</name></member>
+    <member refid="classtst__util_1a8ad4c18a7566912ce35c42d774d05724" kind="slot"><name>gpgErrorMessageNoPubkeyFallback</name></member>
+    <member refid="classtst__util_1a64cfb1aa975c9215d1d90afcb8cf5d82" kind="slot"><name>gpgErrorMessageEncryptionFailedFallback</name></member>
+    <member refid="classtst__util_1a677cf9b8a325f504a9f6965c12b511eb" kind="slot"><name>gpgErrorMessageUnknownReturnsEmpty</name></member>
+    <member refid="classtst__util_1a581cbd94042f2576ee0725cec933414f" kind="slot"><name>gpgErrorMessageStatusTokenTakesPriorityOverFallback</name></member>
+    <member refid="classtst__util_1a855cb2265b03c6ba57baf7a795054098" kind="slot"><name>parseGrepOutputEmpty</name></member>
+    <member refid="classtst__util_1a704d6974042e339549eae4b570b1b2a7" kind="slot"><name>parseGrepOutputSingleEntry</name></member>
+    <member refid="classtst__util_1a6ed4a1eb32bd5d61894ee9393d32b8c4" kind="slot"><name>parseGrepOutputMultipleEntries</name></member>
+    <member refid="classtst__util_1a9734a12194104969249d6cdaf97749c4" kind="slot"><name>parseGrepOutputAnsiStripped</name></member>
+    <member refid="classtst__util_1a4fa1c67cd4ac48e84cc3ac8b4bdd9e68" kind="slot"><name>parseGrepOutputHeaderColonStripped</name></member>
+    <member refid="classtst__util_1a37779b6567c2494fe601349eb135bc2d" kind="slot"><name>parseGrepOutputCrlfHandled</name></member>
+    <member refid="classtst__util_1a7264fb4a2a50a8a536ac57d024fd952a" kind="slot"><name>parseGrepOutputOrphanMatchesIgnored</name></member>
+    <member refid="classtst__util_1a5b6b79b0609be942ad3a0d2bde40ceff" kind="slot"><name>parseGrepOutputEmptyMatchLinesIgnored</name></member>
+    <member refid="classtst__util_1a8c7cd1429d635f719253ef1e685cfcff" kind="slot"><name>parseGrepOutputLastEntryIncluded</name></member>
+    <member refid="classtst__util_1abf4bcb2502a29f8b651e8795c8064687" kind="slot"><name>parseGrepOutputEmbeddedBlueNotHeader</name></member>
+    <member refid="classtst__util_1aa962858257accc6c6b8b6bdd75e60582" kind="slot"><name>parseGrepOutputPlainTextHeaders</name></member>
+    <member refid="classtst__util_1aea29ac7010e0dca74e6bb918cb02f948" kind="slot"><name>passFinishedGrepNoMatchEmitsEmpty</name></member>
+    <member refid="classtst__util_1aa7ef4105499b33d2f17d95360c61a3ae" kind="slot"><name>passFinishedGrepErrorEmitsProcessError</name></member>
+    <member refid="classtst__util_1aa6ea617c01795af60b73a2a4c30f0bc0" kind="slot"><name>passFinishedGrepSuccessEmitsResults</name></member>
+    <member refid="classtst__util_1ab5ef28353f08d6f595c8db445e49c80b" kind="slot"><name>grepMatchFileFailedDecryptReturnsEmpty</name></member>
+    <member refid="classtst__util_1abaec45f391fc30cf21d365719f4f0f6c" kind="slot"><name>grepScanStoreEmptyDirReturnsEmpty</name></member>
+    <member refid="classtst__util_1a0721c59f6eb7ee662da1c21fd574de1c" kind="slot"><name>grepImitatePassEmptyStoreEmitsEmpty</name></member>
+    <member refid="classtst__util_1a67df08d10abff70fc1434318353527b5" kind="slot"><name>grepImitatePassInvalidRegexEmitsEmpty</name></member>
+  </compound>
+  <compound refid="struct_user_info" kind="struct"><name>UserInfo</name>
+    <member refid="struct_user_info_1acf06e7727153cca2cd8b4a912517a2bb" kind="variable"><name>name</name></member>
+    <member refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" kind="variable"><name>key_id</name></member>
+    <member refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" kind="variable"><name>validity</name></member>
+    <member refid="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" kind="variable"><name>have_secret</name></member>
+    <member refid="struct_user_info_1a163a4e36d5d12cbfc3c13c60f33c5f1f" kind="variable"><name>enabled</name></member>
+    <member refid="struct_user_info_1af6b3e6dc6e34553f764e577d2994f5aa" kind="variable"><name>expiry</name></member>
+    <member refid="struct_user_info_1ac7919fbe53ce83369fc4bcfef8934ff6" kind="variable"><name>created</name></member>
+    <member refid="struct_user_info_1aebbc7aa95fa4142a0059e7dec61acefa" kind="function"><name>UserInfo</name></member>
+    <member refid="struct_user_info_1a93677d46e6641eb4148c5f09ed5850a5" kind="function"><name>fullyValid</name></member>
+    <member refid="struct_user_info_1a1bd803884a9f1fb8a954d891c14bf2fd" kind="function"><name>marginallyValid</name></member>
+    <member refid="struct_user_info_1aa5b7b2f037ffc50ade5b78f09599d43a" kind="function"><name>isValid</name></member>
+  </compound>
+  <compound refid="class_users_dialog" kind="class"><name>UsersDialog</name>
+    <member refid="class_users_dialog_1a36e5b193b2150f5d58e1b77df5d01d8b" kind="variable"><name>ui</name></member>
+    <member refid="class_users_dialog_1a50e207112771a8c69d73a326f8efb0e2" kind="variable"><name>m_userList</name></member>
+    <member refid="class_users_dialog_1a486ab9a602907d6110dceaed9a7b3138" kind="variable"><name>m_dir</name></member>
+    <member refid="class_users_dialog_1a50a8ee7a2dbd27672249f0c8d109beb8" kind="variable"><name>m_lastFilter</name></member>
+    <member refid="class_users_dialog_1a01126f883fe8cf0f351d340945af8552" kind="variable"><name>m_cachedPatternString</name></member>
+    <member refid="class_users_dialog_1a0b48f9c3f9f9ab0fd01598c00ab29216" kind="variable"><name>m_cachedNameFilter</name></member>
+    <member refid="class_users_dialog_1a6d7caab10693c9c45c0089c931f5843b" kind="variable"><name>m_cachedCurrentDateTime</name></member>
+    <member refid="class_users_dialog_1aa6d656c586c0469fe10e5a7055255c07" kind="variable"><name>m_cachedDateTimeValid</name></member>
+    <member refid="class_users_dialog_1ae6e0d6aeb3519a01c154a6f087c1d9fb" kind="function"><name>UsersDialog</name></member>
+    <member refid="class_users_dialog_1a046728922f9ad9d2bf17ff64bf639d06" kind="function"><name>~UsersDialog</name></member>
+    <member refid="class_users_dialog_1aa1630582c14afcef9ad80398752762a4" kind="slot"><name>accept</name></member>
+    <member refid="class_users_dialog_1ac1ca78f350c1f7655e0d32a1f1a07ba5" kind="function"><name>closeEvent</name></member>
+    <member refid="class_users_dialog_1a2b8e6e8605111e43bab64328add16ddb" kind="function"><name>keyPressEvent</name></member>
+    <member refid="class_users_dialog_1a0a9df57e10de95c375523902b4bbdc5b" kind="slot"><name>itemChange</name></member>
+    <member refid="class_users_dialog_1a20609c91440503dc7f84f26a43d01509" kind="slot"><name>on_lineEdit_textChanged</name></member>
+    <member refid="class_users_dialog_1ae4d6d585d09d26213b5c1fe757974544" kind="slot"><name>on_checkBox_clicked</name></member>
+    <member refid="class_users_dialog_1a72f07ae1b408688108f0855624c789d2" kind="function"><name>restoreDialogState</name></member>
+    <member refid="class_users_dialog_1a56e762c68f4ae6faf7e50c227598e0f1" kind="function"><name>connectSignals</name></member>
+    <member refid="class_users_dialog_1aeeb98a4267c9aaa8c8087d4fb3774565" kind="function"><name>loadGpgKeys</name></member>
+    <member refid="class_users_dialog_1aae28ed1da1149c4e1d1685a6e4c9d3a2" kind="function"><name>markSecretKeys</name></member>
+    <member refid="class_users_dialog_1aa1508b1fe6dc8fba34257d72a1633a4b" kind="function"><name>loadRecipients</name></member>
+    <member refid="class_users_dialog_1a9742afa42c3edaec91f62ddcb116002d" kind="function"><name>populateList</name></member>
+    <member refid="class_users_dialog_1ad8f7dcefe8f44773b5931295c2e35833" kind="function"><name>passesFilter</name></member>
+    <member refid="class_users_dialog_1a248e650a6f68a40a4bd7ea10b5686106" kind="function"><name>isUserExpired</name></member>
+    <member refid="class_users_dialog_1a7c4ef95e4ab5bfd72e93f5dbcf1be189" kind="function"><name>buildUserText</name></member>
+    <member refid="class_users_dialog_1a400f5ae49e827ac46e88be4ae2f7141d" kind="function"><name>applyUserStyling</name></member>
+  </compound>
+  <compound refid="class_util" kind="class"><name>Util</name>
+    <member refid="class_util_1a6f14f16322c96b174b357bbad4b66b67" kind="variable"><name>_env</name></member>
+    <member refid="class_util_1aeccb471a23085461c3c79f24f7f82e2c" kind="variable"><name>_envInitialised</name></member>
+    <member refid="class_util_1aee9122a528c60168a0c105bfbed062d5" kind="function"><name>findBinaryInPath</name></member>
+    <member refid="class_util_1a503abb6ccbf2aa18056c220b9b45284e" kind="function"><name>findPasswordStore</name></member>
+    <member refid="class_util_1acfa7240a7682876cf78d5a44bbbb81de" kind="function"><name>normalizeFolderPath</name></member>
+    <member refid="class_util_1afe6db9149dff37feded5abf38870cda8" kind="function"><name>configIsValid</name></member>
+    <member refid="class_util_1a5df2739baa9b1df5f183c66739699d3d" kind="function"><name>getDir</name></member>
+    <member refid="class_util_1a2a7a32586578a9b631bc6b2a821ce616" kind="function"><name>endsWithGpg</name></member>
+    <member refid="class_util_1a133c5da0c8a3f106c09977679bc615c3" kind="function"><name>protocolRegex</name></member>
+    <member refid="class_util_1aced819d4368806d046f0dc24a91843f7" kind="function"><name>newLinesRegex</name></member>
+    <member refid="class_util_1aba7296e41ef990d5d945d5ed8cd99bd5" kind="function"><name>isValidKeyId</name></member>
+    <member refid="class_util_1ae448351f44d5e8f0d03eeff8ef3e54b2" kind="function"><name>initialiseEnvironment</name></member>
+  </compound>
+  <compound refid="namespace_0d176342135331107334377377121061314225017321124373" kind="namespace"><name>@176342135331107334377377121061314225017321124373</name>
+  </compound>
+  <compound refid="namespace_0d245304373211365314240330222037051302222212363345" kind="namespace"><name>@245304373211365314240330222037051302222212363345</name>
+  </compound>
+  <compound refid="namespace_0d355345243231151050217034246174124040237276003026" kind="namespace"><name>@355345243231151050217034246174124040237276003026</name>
+  </compound>
+  <compound refid="namespace_enums" kind="namespace"><name>Enums</name>
+    <member refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52d" kind="enum"><name>clipBoardType</name></member>
+    <member refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef" kind="enumvalue"><name>CLIPBOARD_NEVER</name></member>
+    <member refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52da00dc0ed766a614a278d3f392089c814e" kind="enumvalue"><name>CLIPBOARD_ALWAYS</name></member>
+    <member refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52daf4f60eefd26af9c92962895d9a55ae2b" kind="enumvalue"><name>CLIPBOARD_ON_DEMAND</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kind="enum"><name>PROCESS</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48" kind="enumvalue"><name>GIT_INIT</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189" kind="enumvalue"><name>GIT_ADD</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556" kind="enumvalue"><name>GIT_COMMIT</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36" kind="enumvalue"><name>GIT_RM</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4" kind="enumvalue"><name>GIT_PULL</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40" kind="enumvalue"><name>GIT_PUSH</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9" kind="enumvalue"><name>PASS_SHOW</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf" kind="enumvalue"><name>PASS_INSERT</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684" kind="enumvalue"><name>PASS_REMOVE</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06" kind="enumvalue"><name>PASS_INIT</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c" kind="enumvalue"><name>GPG_GENKEYS</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0" kind="enumvalue"><name>PASS_MOVE</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728" kind="enumvalue"><name>PASS_COPY</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376" kind="enumvalue"><name>GIT_MOVE</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a" kind="enumvalue"><name>GIT_COPY</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a1e9c7d5b4afba75021e17b2e2e799bac" kind="enumvalue"><name>PASS_OTP_GENERATE</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db" kind="enumvalue"><name>PASS_GREP</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e" kind="enumvalue"><name>PROCESS_COUNT</name></member>
+    <member refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023" kind="enumvalue"><name>INVALID</name></member>
+  </compound>
+  <compound refid="namespace_q_t___w_a_r_n_i_n_g___d_i_s_a_b_l_e___d_e_p_r_e_c_a_t_e_d" kind="namespace"><name>QT_WARNING_DISABLE_DEPRECATED</name>
+  </compound>
+  <compound refid="namespace_ui" kind="namespace"><name>Ui</name>
+  </compound>
+  <compound refid="_a_g_e_n_t_s_8md" kind="file"><name>AGENTS.md</name>
+  </compound>
+  <compound refid="_c_h_a_n_g_e_l_o_g_8md" kind="file"><name>CHANGELOG.md</name>
+  </compound>
+  <compound refid="_c_o_d_e___o_f___c_o_n_d_u_c_t_8md" kind="file"><name>CODE_OF_CONDUCT.md</name>
+  </compound>
+  <compound refid="_c_o_n_t_r_i_b_u_t_i_n_g_8md" kind="file"><name>CONTRIBUTING.md</name>
+  </compound>
+  <compound refid="_f_a_q_8md" kind="file"><name>FAQ.md</name>
+  </compound>
+  <compound refid="main_8cpp" kind="file"><name>main.cpp</name>
+    <member refid="main_8cpp_1a995d2d6ad06426c0ea94fe89d742bde3" kind="function"><name>joinRemainingArgs</name></member>
+    <member refid="main_8cpp_1aef4b6e5a592d917ddf43ca95fc3fc21c" kind="function"><name>appendWithSpaceIfSuffixNotEmpty</name></member>
+    <member refid="main_8cpp_1a7114aa2dd6837734db57667a298dfcc4" kind="function"><name>main</name></member>
+  </compound>
+  <compound refid="_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="scripts_2_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
+  <compound refid="_s_e_c_u_r_i_t_y_8md" kind="file"><name>SECURITY.md</name>
+  </compound>
+  <compound refid="configdialog_8cpp" kind="file"><name>configdialog.cpp</name>
+  </compound>
+  <compound refid="configdialog_8h" kind="file"><name>configdialog.h</name>
+  </compound>
+  <compound refid="debughelper_8h" kind="file"><name>debughelper.h</name>
+    <member refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" kind="define"><name>dbg</name></member>
+  </compound>
+  <compound refid="deselectabletreeview_8h" kind="file"><name>deselectabletreeview.h</name>
+  </compound>
+  <compound refid="enums_8h" kind="file"><name>enums.h</name>
+  </compound>
+  <compound refid="executor_8cpp" kind="file"><name>executor.cpp</name>
+    <member refid="executor_8cpp_1a9d39ffb866debc6cf32c5f3e20a23b85" kind="function"><name>decodeAssumingUtf8</name></member>
+  </compound>
+  <compound refid="executor_8h" kind="file"><name>executor.h</name>
+  </compound>
+  <compound refid="filecontent_8cpp" kind="file"><name>filecontent.cpp</name>
+    <member refid="filecontent_8cpp_1a675927185d9a8c3fb4d0310af8c2198a" kind="function"><name>isLineHidden</name></member>
+  </compound>
+  <compound refid="filecontent_8h" kind="file"><name>filecontent.h</name>
+    <member refid="filecontent_8h_1a009ac2ea0587e59974fc7801567deccc" kind="function"><name>operator==</name></member>
+  </compound>
+  <compound refid="gpgkeystate_8cpp" kind="file"><name>gpgkeystate.cpp</name>
+    <member refid="gpgkeystate_8cpp_1a861b1e6e88e396ccb5cb8c9813bb271b" kind="variable"><name>GPG_MIN_FIELDS</name></member>
+    <member refid="gpgkeystate_8cpp_1a400ec72afc8302fae0ab23a748d4aa6e" kind="variable"><name>GPG_FIELD_VALIDITY</name></member>
+    <member refid="gpgkeystate_8cpp_1a357bd82fd34f78f3d2b3c6fb5c908507" kind="variable"><name>GPG_FIELD_KEY_ID</name></member>
+    <member refid="gpgkeystate_8cpp_1a69e233a1835a1144e03c500dd12e1ceb" kind="variable"><name>GPG_FIELD_CREATED</name></member>
+    <member refid="gpgkeystate_8cpp_1a507bef6b6730728b307c81d412678d7b" kind="variable"><name>GPG_FIELD_EXPIRY</name></member>
+    <member refid="gpgkeystate_8cpp_1ae5f56f2b618bc4b7ec5b1042c4cf598f" kind="variable"><name>GPG_FIELD_USERID</name></member>
+    <member refid="gpgkeystate_8cpp_1ab1cf61cd18b2400baaea7e88b55651dd" kind="function"><name>classifyRecord</name></member>
+    <member refid="gpgkeystate_8cpp_1a10a7a502b6b816c2ad7d1d175d9f5a0c" kind="function"><name>handlePubSecRecord</name></member>
+    <member refid="gpgkeystate_8cpp_1adbcf251249671777862e00f89092058b" kind="function"><name>handleUidRecord</name></member>
+    <member refid="gpgkeystate_8cpp_1ab4971658d9c682542957f596dc275178" kind="function"><name>handleFprRecord</name></member>
+    <member refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" kind="function"><name>parseGpgColonOutput</name></member>
+  </compound>
+  <compound refid="gpgkeystate_8h" kind="file"><name>gpgkeystate.h</name>
+    <member refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314" kind="enum"><name>GpgRecordType</name></member>
+    <member refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e" kind="enumvalue"><name>Unknown</name></member>
+    <member refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314aa29bdd003ef6c0c34279807341f450f2" kind="enumvalue"><name>Pub</name></member>
+    <member refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a2d5cc554c126edb041901fa7d79b558b" kind="enumvalue"><name>Sec</name></member>
+    <member refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a43dc4c29d59c2c845bbb01ce770692f5" kind="enumvalue"><name>Uid</name></member>
+    <member refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314ad9c8b6ee49fc11baca5fdda1a2957ad7" kind="enumvalue"><name>Fpr</name></member>
+    <member refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314ae80155eceb940c89e2de63ad05868db2" kind="enumvalue"><name>Sub</name></member>
+    <member refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314af700434ad8179b8a4eb0d625aa4181f5" kind="enumvalue"><name>Ssb</name></member>
+    <member refid="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a091f41cecca1c417dc7eb8ff9d76cee9" kind="enumvalue"><name>Grp</name></member>
+    <member refid="gpgkeystate_8h_1ad0639911b85a0cc4ad970d6eae3a7078" kind="function"><name>classifyRecord</name></member>
+    <member refid="gpgkeystate_8h_1a72d30aad697116826b8f605e7b855a0a" kind="function"><name>parseGpgColonOutput</name></member>
+  </compound>
+  <compound refid="gpgkeystate__p_8h" kind="file"><name>gpgkeystate_p.h</name>
+    <member refid="gpgkeystate__p_8h_1a10a7a502b6b816c2ad7d1d175d9f5a0c" kind="function"><name>handlePubSecRecord</name></member>
+    <member refid="gpgkeystate__p_8h_1ab4971658d9c682542957f596dc275178" kind="function"><name>handleFprRecord</name></member>
+  </compound>
+  <compound refid="helpers_8h" kind="file"><name>helpers.h</name>
+    <member refid="helpers_8h_1adc90de3a8181fb745eeea1b76cfd2ed7" kind="define"><name>AS_CONST</name></member>
+  </compound>
+  <compound refid="imitatepass_8cpp" kind="file"><name>imitatepass.cpp</name>
+    <member refid="imitatepass_8cpp_1a317669c8046896371d61df1cfa1243ee" kind="function"><name>pgit</name></member>
+    <member refid="imitatepass_8cpp_1ad9bfa15eaff8b1815de5d6e83433847d" kind="function"><name>pgpg</name></member>
+  </compound>
+  <compound refid="imitatepass_8h" kind="file"><name>imitatepass.h</name>
+  </compound>
+  <compound refid="keygendialog_8cpp" kind="file"><name>keygendialog.cpp</name>
+  </compound>
+  <compound refid="keygendialog_8h" kind="file"><name>keygendialog.h</name>
+  </compound>
+  <compound refid="mainwindow_8cpp" kind="file"><name>mainwindow.cpp</name>
+  </compound>
+  <compound refid="mainwindow_8h" kind="file"><name>mainwindow.h</name>
+    <member refid="mainwindow_8h_1a3c3ec6230612f3516ce9c9b17b6a9d66" kind="define"><name>SingleApplication</name></member>
+  </compound>
+  <compound refid="pass_8cpp" kind="file"><name>pass.cpp</name>
+    <member refid="pass_8cpp_1a388f8d7993f9747d0a97070d93faf6bc" kind="function"><name>gpgErrorMessage</name></member>
+    <member refid="pass_8cpp_1a5cd7330aa71995b67ac34b2966ba1026" kind="function"><name>parseGrepOutput</name></member>
+  </compound>
+  <compound refid="pass_8h" kind="file"><name>pass.h</name>
+    <member refid="pass_8h_1afa8cf07459ecaebabd4662150f6aecaa" kind="function"><name>gpgErrorMessage</name></member>
+    <member refid="pass_8h_1a7ba018a324c930bae05281216170dd83" kind="function"><name>parseGrepOutput</name></member>
+  </compound>
+  <compound refid="passwordconfiguration_8h" kind="file"><name>passwordconfiguration.h</name>
+  </compound>
+  <compound refid="passworddialog_8cpp" kind="file"><name>passworddialog.cpp</name>
+  </compound>
+  <compound refid="passworddialog_8h" kind="file"><name>passworddialog.h</name>
+  </compound>
+  <compound refid="profileinit_8cpp" kind="file"><name>profileinit.cpp</name>
+  </compound>
+  <compound refid="profileinit_8h" kind="file"><name>profileinit.h</name>
+  </compound>
+  <compound refid="qprogressindicator_8cpp" kind="file"><name>qprogressindicator.cpp</name>
+  </compound>
+  <compound refid="qprogressindicator_8h" kind="file"><name>qprogressindicator.h</name>
+  </compound>
+  <compound refid="qpushbuttonasqrcode_8cpp" kind="file"><name>qpushbuttonasqrcode.cpp</name>
+  </compound>
+  <compound refid="qpushbuttonasqrcode_8h" kind="file"><name>qpushbuttonasqrcode.h</name>
+  </compound>
+  <compound refid="qpushbuttonshowpassword_8cpp" kind="file"><name>qpushbuttonshowpassword.cpp</name>
+  </compound>
+  <compound refid="qpushbuttonshowpassword_8h" kind="file"><name>qpushbuttonshowpassword.h</name>
+  </compound>
+  <compound refid="qpushbuttonwithclipboard_8cpp" kind="file"><name>qpushbuttonwithclipboard.cpp</name>
+  </compound>
+  <compound refid="qpushbuttonwithclipboard_8h" kind="file"><name>qpushbuttonwithclipboard.h</name>
+  </compound>
+  <compound refid="qtpass_8cpp" kind="file"><name>qtpass.cpp</name>
+    <member refid="qtpass_8cpp_1ad02159f3c84f6ec8d7535395bdb55d99" kind="function"><name>buildClipboardMimeData</name></member>
+  </compound>
+  <compound refid="qtpass_8h" kind="file"><name>qtpass.h</name>
+    <member refid="qtpass_8h_1ad02159f3c84f6ec8d7535395bdb55d99" kind="function"><name>buildClipboardMimeData</name></member>
+    <member refid="qtpass_8h_1a3c09484969938782ada78d86c565b534" kind="function"><name>dwordBytes</name></member>
+  </compound>
+  <compound refid="qtpasssettings_8cpp" kind="file"><name>qtpasssettings.cpp</name>
+  </compound>
+  <compound refid="qtpasssettings_8h" kind="file"><name>qtpasssettings.h</name>
+  </compound>
+  <compound refid="realpass_8cpp" kind="file"><name>realpass.cpp</name>
+  </compound>
+  <compound refid="realpass_8h" kind="file"><name>realpass.h</name>
+  </compound>
+  <compound refid="settingsconstants_8cpp" kind="file"><name>settingsconstants.cpp</name>
+  </compound>
+  <compound refid="settingsconstants_8h" kind="file"><name>settingsconstants.h</name>
+  </compound>
+  <compound refid="simpletransaction_8cpp" kind="file"><name>simpletransaction.cpp</name>
+    <member refid="simpletransaction_8cpp_1ac8b64f00258db4fec59578fddbe8ea69" kind="enum"><name>PROCESS</name></member>
+  </compound>
+  <compound refid="simpletransaction_8h" kind="file"><name>simpletransaction.h</name>
+  </compound>
+  <compound refid="singleapplication_8cpp" kind="file"><name>singleapplication.cpp</name>
+  </compound>
+  <compound refid="singleapplication_8h" kind="file"><name>singleapplication.h</name>
+  </compound>
+  <compound refid="storemodel_8cpp" kind="file"><name>storemodel.cpp</name>
+    <member refid="storemodel_8cpp_1afc083425f31039e02ed3fb6d2568c75e" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="storemodel_8cpp_1a441429051f93e71877b9bdb2ef809980" kind="function"><name>operator&gt;&gt;</name></member>
+  </compound>
+  <compound refid="storemodel_8h" kind="file"><name>storemodel.h</name>
+  </compound>
+  <compound refid="trayicon_8cpp" kind="file"><name>trayicon.cpp</name>
+  </compound>
+  <compound refid="trayicon_8h" kind="file"><name>trayicon.h</name>
+  </compound>
+  <compound refid="userinfo_8h" kind="file"><name>userinfo.h</name>
+  </compound>
+  <compound refid="usersdialog_8cpp" kind="file"><name>usersdialog.cpp</name>
+  </compound>
+  <compound refid="usersdialog_8h" kind="file"><name>usersdialog.h</name>
+  </compound>
+  <compound refid="util_8cpp" kind="file"><name>util.cpp</name>
+  </compound>
+  <compound refid="util_8h" kind="file"><name>util.h</name>
+    <member refid="util_8h_1a6e21cb4edfdc8220e9e3916caaff71f8" kind="variable"><name>MS_PER_SECOND</name></member>
+  </compound>
+  <compound refid="tst__executor_8cpp" kind="file"><name>tst_executor.cpp</name>
+  </compound>
+  <compound refid="tst__filecontent_8cpp" kind="file"><name>tst_filecontent.cpp</name>
+  </compound>
+  <compound refid="tst__gpgkeystate_8cpp" kind="file"><name>tst_gpgkeystate.cpp</name>
+  </compound>
+  <compound refid="tst__integration_8cpp" kind="file"><name>tst_integration.cpp</name>
+    <member refid="tst__integration_8cpp_1a53b754717bd816997dcfa297da5c97d6" kind="typedef"><name>GrepResults</name></member>
+    <member refid="tst__integration_8cpp_1a0429939f1b7fbabe1adf87ead45ea3bf" kind="function"><name>findGpg</name></member>
+    <member refid="tst__integration_8cpp_1adaea9109b540c8ce0fd8766f0728451f" kind="function"><name>findGpgconf</name></member>
+    <member refid="tst__integration_8cpp_1afcc21f2af6bf5e536c801d291bedc413" kind="function"><name>findPass</name></member>
+    <member refid="tst__integration_8cpp_1af3b8036e3f39e2f58c638de89ffc5b2b" kind="function"><name>runGpg</name></member>
+    <member refid="tst__integration_8cpp_1ad61dfd27a332863b88afea62d1f0b679" kind="function"><name>generateTestKey</name></member>
+  </compound>
+  <compound refid="tst__storemodel_8cpp" kind="file"><name>tst_storemodel.cpp</name>
+  </compound>
+  <compound refid="tst__passwordconfig_8cpp" kind="file"><name>tst_passwordconfig.cpp</name>
+  </compound>
+  <compound refid="tst__settings_8cpp" kind="file"><name>tst_settings.cpp</name>
+  </compound>
+  <compound refid="tst__simpletransaction_8cpp" kind="file"><name>tst_simpletransaction.cpp</name>
+  </compound>
+  <compound refid="moc__storemodel_8cpp" kind="file"><name>moc_storemodel.cpp</name>
+    <member refid="moc__storemodel_8cpp_1ad83b2306f94b5b9e5625794fc238c8a0" kind="define"><name>Q_CONSTINIT</name></member>
+  </compound>
+  <compound refid="tst__ui_8cpp" kind="file"><name>tst_ui.cpp</name>
+  </compound>
+  <compound refid="tst__util_8cpp" kind="file"><name>tst_util.cpp</name>
+    <member refid="tst__util_8cpp_1a53b754717bd816997dcfa297da5c97d6" kind="typedef"><name>GrepResults</name></member>
+  </compound>
+  <compound refid="_windows_8md" kind="file"><name>Windows.md</name>
+  </compound>
+  <compound refid="md__a_g_e_n_t_s" kind="page"><name>md__a_g_e_n_t_s</name>
+  </compound>
+  <compound refid="md__c_h_a_n_g_e_l_o_g" kind="page"><name>md__c_h_a_n_g_e_l_o_g</name>
+  </compound>
+  <compound refid="md__c_o_d_e___o_f___c_o_n_d_u_c_t" kind="page"><name>md__c_o_d_e___o_f___c_o_n_d_u_c_t</name>
+  </compound>
+  <compound refid="md__c_o_n_t_r_i_b_u_t_i_n_g" kind="page"><name>md__c_o_n_t_r_i_b_u_t_i_n_g</name>
+  </compound>
+  <compound refid="md__f_a_q" kind="page"><name>md__f_a_q</name>
+  </compound>
+  <compound refid="md__r_e_a_d_m_e" kind="page"><name>md__r_e_a_d_m_e</name>
+  </compound>
+  <compound refid="md__s_e_c_u_r_i_t_y" kind="page"><name>md__s_e_c_u_r_i_t_y</name>
+  </compound>
+  <compound refid="md__windows" kind="page"><name>md__windows</name>
+  </compound>
+  <compound refid="dir_b44f685f27163a3532809a80b4a9ed75" kind="dir"><name>tests/auto</name>
+  </compound>
+  <compound refid="dir_671e8a4ee7af9fb8a9582cadfb52fa9c" kind="dir"><name>tests/auto/executor</name>
+  </compound>
+  <compound refid="dir_db424e7afcbdf0b26e363838eac7c673" kind="dir"><name>tests/auto/filecontent</name>
+  </compound>
+  <compound refid="dir_3ab0eadb787fa308c16ec737e6de2d36" kind="dir"><name>tests/auto/gpgkeystate</name>
+  </compound>
+  <compound refid="dir_b61ea95ec2b8840575a0c8ae6afb5cfb" kind="dir"><name>tests/auto/integration</name>
+  </compound>
+  <compound refid="dir_5c982d53a68cdbcd421152b4020263a9" kind="dir"><name>main</name>
+  </compound>
+  <compound refid="dir_d4b2d0a48fe0d1d3271350935c41bea7" kind="dir"><name>tests/auto/model</name>
+  </compound>
+  <compound refid="dir_016d430cf92e9c14132a0210a2d894fc" kind="dir"><name>tests/auto/passwordconfig</name>
+  </compound>
+  <compound refid="dir_53e6fa9553ac22a5646d2a2b2d7b97a1" kind="dir"><name>scripts</name>
+  </compound>
+  <compound refid="dir_dcbbb74d69da406d8be3b4403e1c5ea6" kind="dir"><name>tests/auto/settings</name>
+  </compound>
+  <compound refid="dir_3f0555e9e3a29a7c08cfc7a793da6f02" kind="dir"><name>tests/auto/simpletransaction</name>
+  </compound>
+  <compound refid="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir"><name>src</name>
+  </compound>
+  <compound refid="dir_59425e443f801f1f2fd8bbe4959a3ccf" kind="dir"><name>tests</name>
+  </compound>
+  <compound refid="dir_bbba954b5edbd413edbd65435d6df797" kind="dir"><name>tests/auto/ui</name>
+  </compound>
+  <compound refid="dir_954a37c1c7cccffaff6234647baf63ce" kind="dir"><name>tests/auto/util</name>
+  </compound>
+  <compound refid="_2home_2annejan_2_projects_2_qt_pass_2src_2configdialog_8cpp-example" kind="example"><name>/home/annejan/Projects/QtPass/src/configdialog.cpp</name>
+  </compound>
+  <compound refid="_2home_2annejan_2_projects_2_qt_pass_2src_2imitatepass_8cpp-example" kind="example"><name>/home/annejan/Projects/QtPass/src/imitatepass.cpp</name>
+  </compound>
+  <compound refid="_2home_2annejan_2_projects_2_qt_pass_2src_2mainwindow_8cpp-example" kind="example"><name>/home/annejan/Projects/QtPass/src/mainwindow.cpp</name>
+  </compound>
+  <compound refid="_2home_2annejan_2_projects_2_qt_pass_2src_2pass_8cpp-example" kind="example"><name>/home/annejan/Projects/QtPass/src/pass.cpp</name>
+  </compound>
+  <compound refid="_2home_2annejan_2_projects_2_qt_pass_2src_2qtpasssettings_8cpp-example" kind="example"><name>/home/annejan/Projects/QtPass/src/qtpasssettings.cpp</name>
+  </compound>
+  <compound refid="_2home_2annejan_2_projects_2_qt_pass_2src_2util_8cpp-example" kind="example"><name>/home/annejan/Projects/QtPass/src/util.cpp</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

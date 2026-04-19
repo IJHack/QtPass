@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="scripts_2_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>QtPass<sp/>Scripts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">This<sp/>directory<sp/>contains<sp/>helper<sp/>scripts<sp/>for<sp/>development<sp/>and<sp/>releases.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Development</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Script<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Description<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>------------------------------<sp/>|<sp/>----------------------------------------------------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`generate-compile-commands.sh`<sp/>|<sp/>Generate<sp/>`compile_commands.json`<sp/>for<sp/>IDE/LSP<sp/>tooling<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Release</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Script<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Description<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>------------------------<sp/>|<sp/>-------------------------------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`release-linux.sh`<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Build<sp/>and<sp/>install<sp/>on<sp/>Linux<sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`release-mac.sh`<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Build<sp/>and<sp/>package<sp/>for<sp/>macOS<sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`sign-release-assets.sh`<sp/>|<sp/>Sign<sp/>release<sp/>artifacts<sp/>with<sp/>GPG<sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Usage</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Generate<sp/>compile_commands.json</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">For<sp/>IDE/LSP<sp/>code<sp/>completion:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```bash</highlight></codeline>
+<codeline><highlight class="normal">./scripts/generate-compile-commands.sh</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Release<sp/>Scripts</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">See<sp/>the<sp/>[qtpass-releasing<sp/>skill](../.opencode/skills/qtpass-releasing/SKILL.md)<sp/>for<sp/>detailed<sp/>release<sp/>workflow.</highlight></codeline>
+    </programlisting>
+    <location file="scripts/README.md"/>
+  </compounddef>
+</doxygen>

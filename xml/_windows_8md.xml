@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_windows_8md" kind="file" language="Markdown">
+    <compoundname>Windows.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Windows<sp/>Guide</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">QtPass<sp/>builds<sp/>on<sp/>Windows<sp/>using<sp/>MSVC,<sp/>qmake<sp/>and<sp/>nmake.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">MinGW<sp/>is<sp/>not<sp/>supported<sp/>with<sp/>nmake.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Install<sp/>QtPass</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Using<sp/>Chocolatey<sp/>(recommended)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Run<sp/>in<sp/>**Administrator<sp/>PowerShell**:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```powershell</highlight></codeline>
+<codeline><highlight class="normal">Set-ExecutionPolicy<sp/>Bypass<sp/>-Scope<sp/>Process<sp/>-Force;<sp/>[System.Net.ServicePointManager]::SecurityProtocol<sp/>=<sp/>[System.Net.ServicePointManager]::SecurityProtocol<sp/>-bor<sp/>3072;<sp/>iex<sp/>((New-Object<sp/>System.Net.WebClient).DownloadString(&apos;https://community.chocolatey.org/install.ps1&apos;))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">choco<sp/>install<sp/>vcredist140<sp/>-y</highlight></codeline>
+<codeline><highlight class="normal">choco<sp/>install<sp/>qtpass<sp/>-y</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Or<sp/>download<sp/>from<sp/>releases</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Download<sp/>the<sp/>latest<sp/>`.exe`<sp/>installer<sp/>from<sp/>[GitHub<sp/>Releases](https://github.com/IJHack/QtPass/releases)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Install<sp/>GPG</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">QtPass<sp/>requires<sp/>GPG<sp/>for<sp/>encryption.<sp/>Install<sp/>[Gpg4win](https://www.gpg4win.org/).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Key<sp/>generation<sp/>can<sp/>take<sp/>a<sp/>long<sp/>time<sp/>(especially<sp/>RSA<sp/>4096-bit<sp/>keys)<sp/>-<sp/>this<sp/>is<sp/>normal.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Building<sp/>from<sp/>Source</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Step<sp/>1:<sp/>Install<sp/>dependencies</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Run<sp/>in<sp/>**Administrator<sp/>PowerShell**:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```powershell</highlight></codeline>
+<codeline><highlight class="normal">choco<sp/>install<sp/>-y<sp/>git<sp/>python<sp/>visualstudio2022buildtools<sp/>visualstudio2022-workload-vctools</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Step<sp/>2:<sp/>Install<sp/>Qt</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Install<sp/>an<sp/>**MSVC<sp/>build<sp/>of<sp/>Qt**<sp/>(not<sp/>MinGW).</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Do<sp/>not<sp/>use<sp/>`mingw_64`.<sp/>It<sp/>will<sp/>not<sp/>work<sp/>with<sp/>`nmake`.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Run<sp/>in<sp/>**normal<sp/>PowerShell**:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```powershell</highlight></codeline>
+<codeline><highlight class="normal">py<sp/>-m<sp/>pip<sp/>install<sp/>--user<sp/>-U<sp/>aqtinstall</highlight></codeline>
+<codeline><highlight class="normal">py<sp/>-m<sp/>aqt<sp/>install-qt<sp/>-O<sp/>C:\Qt<sp/>windows<sp/>desktop<sp/>6.8.0<sp/>win64_msvc2022_64</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Step<sp/>3:<sp/>Open<sp/>a<sp/>shell<sp/>with<sp/>MSVC<sp/>environment</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Open<sp/>a<sp/>**Developer<sp/>Command<sp/>Prompt<sp/>for<sp/>VS<sp/>2022**<sp/>or<sp/>run:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cmd</highlight></codeline>
+<codeline><highlight class="normal">&quot;%ProgramFiles(x86)%\Microsoft<sp/>Visual<sp/>Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat&quot;<sp/>-arch=amd64<sp/>-host_arch=amd64</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>set:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cmd</highlight></codeline>
+<codeline><highlight class="normal">set<sp/>PATH=C:\Qt\6.8.0\msvc2022_64\bin;C:\Program<sp/>Files\Git\bin;%PATH%</highlight></codeline>
+<codeline><highlight class="normal">set<sp/>QMAKESPEC=</highlight></codeline>
+<codeline><highlight class="normal">set<sp/>QTDIR=</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Step<sp/>4:<sp/>Clone<sp/>and<sp/>build</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cmd</highlight></codeline>
+<codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/IJHack/QtPass.git</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>QtPass</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>previously<sp/>built<sp/>with<sp/>another<sp/>Qt<sp/>version<sp/>or<sp/>toolchain:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cmd</highlight></codeline>
+<codeline><highlight class="normal">del<sp/>.qmake.stash</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Then<sp/>build:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cmd</highlight></codeline>
+<codeline><highlight class="normal">qmake<sp/>-spec<sp/>win32-msvc</highlight></codeline>
+<codeline><highlight class="normal">nmake</highlight></codeline>
+<codeline><highlight class="normal">nmake<sp/>check<sp/>TESTARGS=&quot;--platform<sp/>offscreen&quot;</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Notes</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>qmake<sp/>must<sp/>come<sp/>from<sp/>`msvc2022_64`,<sp/>not<sp/>`mingw_64`</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>nmake<sp/>requires<sp/>the<sp/>MSVC<sp/>environment<sp/>(`VsDevCmd.bat`)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>tests<sp/>expect<sp/>`bash`<sp/>(provided<sp/>by<sp/>Git<sp/>for<sp/>Windows)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>First<sp/>Run</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Launch<sp/>QtPass</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Click<sp/>&quot;Autodetect&quot;<sp/>to<sp/>find<sp/>GPG<sp/>and<sp/>Git</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Set<sp/>your<sp/>password<sp/>store<sp/>location<sp/>(default:<sp/>`%APPDATA%\password-store`)</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>Or<sp/>select<sp/>an<sp/>existing<sp/>`pass`<sp/>store<sp/>folder</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Configure<sp/>GPG<sp/>Key</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Go<sp/>to<sp/>**Config<sp/>→<sp/>User**<sp/>to<sp/>select<sp/>your<sp/>GPG<sp/>key</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>If<sp/>using<sp/>for<sp/>the<sp/>first<sp/>time,<sp/>generate<sp/>a<sp/>key<sp/>with<sp/>**Config<sp/>→<sp/>Generate<sp/>GPG<sp/>key**</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Initialize<sp/>Password<sp/>Store<sp/>(if<sp/>new)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>Click<sp/>**File<sp/>→<sp/>Initialize**</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>Select<sp/>your<sp/>GPG<sp/>key(s)<sp/>for<sp/>encryption</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>Your<sp/>`.gpg-id`<sp/>file<sp/>will<sp/>be<sp/>created</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Troubleshooting</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Issue<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Solution<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>---------------------------------------------------<sp/>|<sp/>---------------------------------------------------------------------------------------------------------------------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>&quot;GnuPG<sp/>not<sp/>found&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Install<sp/>[Gpg4win](https://www.gpg4win.org/),<sp/>restart<sp/>QtPass,<sp/>or<sp/>set<sp/>path<sp/>manually<sp/>in<sp/>Config<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>&quot;Signature<sp/>does<sp/>not<sp/>exist&quot;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Ensure<sp/>your<sp/>GPG<sp/>key<sp/>is<sp/>in<sp/>the<sp/>`.gpg-id`<sp/>file<sp/>via<sp/>**Config<sp/>→<sp/>Users**<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Git<sp/>not<sp/>working<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Use<sp/>[Git<sp/>Credential<sp/>Manager](https://github.com/GitCredentialManager/git-credential-manager)<sp/>for<sp/>HTTPS<sp/>authentication<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>App<sp/>doesn&apos;t<sp/>start<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>Install<sp/>`vcredist140`<sp/>(Visual<sp/>C++<sp/>Redistributable)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>`QMAKE_MSC_VER`<sp/>isn&apos;t<sp/>set<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>delete<sp/>`.qmake.stash`<sp/>and<sp/>rerun<sp/>qmake<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>nmake<sp/>fails<sp/>with<sp/>Unix<sp/>commands<sp/>(`test`,<sp/>`mkdir<sp/>-p`)<sp/>|<sp/>Wrong<sp/>Qt<sp/>variant<sp/>installed<sp/>(MinGW<sp/>instead<sp/>of<sp/>MSVC)<sp/>-<sp/>reinstall<sp/>using<sp/>MSVC<sp/>Qt<sp/>build<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>Should<sp/>find<sp/>bash<sp/>in<sp/>PATH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>ensure<sp/>`C:\Program<sp/>Files\Git\bin`<sp/>is<sp/>on<sp/>PATH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>cl<sp/>not<sp/>found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>MSVC<sp/>environment<sp/>not<sp/>loaded<sp/>-<sp/>run<sp/>VsDevCmd.bat<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">###<sp/>Build<sp/>fails<sp/>with<sp/>weird<sp/>errors</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Clean<sp/>and<sp/>reconfigure:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">```cmd</highlight></codeline>
+<codeline><highlight class="normal">del<sp/>.qmake.stash</highlight></codeline>
+<codeline><highlight class="normal">nmake<sp/>distclean</highlight></codeline>
+<codeline><highlight class="normal">qmake</highlight></codeline>
+<codeline><highlight class="normal">```</highlight></codeline>
+    </programlisting>
+    <location file="Windows.md"/>
+  </compounddef>
+</doxygen>

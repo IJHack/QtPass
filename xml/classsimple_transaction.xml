@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classsimple_transaction" kind="class" language="C++" prot="public">
+    <compoundname>simpleTransaction</compoundname>
+    <derivedcompoundref refid="class_imitate_pass" prot="private" virt="non-virtual">ImitatePass</derivedcompoundref>
+    <includes refid="simpletransaction_8h" local="no">simpletransaction.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classsimple_transaction_1a666549f1851d7766b9b6a28b74a6f8b8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int simpleTransaction::transactionDepth</definition>
+        <argsstring></argsstring>
+        <name>transactionDepth</name>
+        <qualifiedname>simpleTransaction::transactionDepth</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/simpletransaction.h" line="10" column="7" bodyfile="src/simpletransaction.h" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple_transaction_1adc3819b705f6a781cecba778a73ef113" prot="private" static="no" mutable="no">
+        <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref></type>
+        <definition>Enums::PROCESS simpleTransaction::lastInTransaction</definition>
+        <argsstring></argsstring>
+        <name>lastInTransaction</name>
+        <qualifiedname>simpleTransaction::lastInTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/simpletransaction.h" line="11" column="18" bodyfile="src/simpletransaction.h" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classsimple_transaction_1a47cdf0e891aa053215f634d9669f5b62" prot="private" static="no" mutable="no">
+        <type>std::queue&lt; std::pair&lt; <ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref>, <ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref> &gt; &gt;</type>
+        <definition>std::queue&lt;std::pair&lt;Enums::PROCESS, Enums::PROCESS&gt; &gt; simpleTransaction::transactionQueue</definition>
+        <argsstring></argsstring>
+        <name>transactionQueue</name>
+        <qualifiedname>simpleTransaction::transactionQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/simpletransaction.h" line="12" column="14" bodyfile="src/simpletransaction.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsimple_transaction_1ac798d38ad0b66f05cd58b5c9e9845491" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>simpleTransaction::simpleTransaction</definition>
+        <argsstring>()</argsstring>
+        <name>simpleTransaction</name>
+        <qualifiedname>simpleTransaction::simpleTransaction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/simpletransaction.h" line="15" column="3" bodyfile="src/simpletransaction.h" bodystart="15" bodyend="16"/>
+        <references refid="imitatepass_8cpp_1a9da0f55eca9ec763c75e98268dcbd023" compoundref="enums_8h" startline="45">INVALID</references>
+        <referencedby refid="class_imitate_pass_1_1transaction_helper_1ab37f5a0aff46fb0aa7ae9cc9cc17f38e" compoundref="imitatepass_8h" startline="164" endline="167">ImitatePass::transactionHelper::transactionHelper</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classsimple_transaction_1aafd98f73dfc5352f307115cabc2a5ed4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simpleTransaction::transactionStart</definition>
+        <argsstring>()</argsstring>
+        <name>transactionStart</name>
+        <qualifiedname>simpleTransaction::transactionStart</qualifiedname>
+        <briefdescription>
+<para>transactionStart this function is used to mark start of the sequence of processes that shall be treated as one operation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Marks the start of a sequence of processes that shall be treated as one operation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/simpletransaction.h" line="22" column="8" bodyfile="src/simpletransaction.cpp" bodystart="17" bodyend="22"/>
+        <references refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" compoundref="debughelper_8h" startline="21">dbg</references>
+      </memberdef>
+      <memberdef kind="function" id="classsimple_transaction_1a974db4056edcb408e96cf9bc2a6e4326" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simpleTransaction::transactionAdd</definition>
+        <argsstring>(Enums::PROCESS)</argsstring>
+        <name>transactionAdd</name>
+        <qualifiedname>simpleTransaction::transactionAdd</qualifiedname>
+        <param>
+          <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref></type>
+          <defname>id</defname>
+        </param>
+        <briefdescription>
+<para>transactionAdd If called after call to <ref refid="classsimple_transaction_1aafd98f73dfc5352f307115cabc2a5ed4" kindref="member">transactionStart()</ref> and before <ref refid="classsimple_transaction_1a76e9280b4cc192ff420520fefa557c63" kindref="member">transactionEnd()</ref>, this method marks given process as next step in transaction. Otherwise it marks given process as the only step in transaction(it&apos;s value is treated as transaction result). </para>
+        </briefdescription>
+        <detaileddescription>
+<para>If called after <ref refid="classsimple_transaction_1aafd98f73dfc5352f307115cabc2a5ed4" kindref="member">transactionStart()</ref> and before <ref refid="classsimple_transaction_1a76e9280b4cc192ff420520fefa557c63" kindref="member">transactionEnd()</ref>, this marks the given process as the next step in the transaction. Otherwise it marks the process as the only step in the transaction.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>process that shall be treated as part of transaction</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process that shall be treated as part of the transaction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/simpletransaction.h" line="32" column="8" bodyfile="src/simpletransaction.cpp" bodystart="30" bodyend="39"/>
+        <references refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" compoundref="debughelper_8h" startline="21">dbg</references>
+        <referencedby refid="class_imitate_pass_1aa2ade77096c04fb94536d675bfaae8fe" compoundref="imitatepass_8cpp" startline="1034" endline="1039">ImitatePass::executeWrapper</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classsimple_transaction_1a76e9280b4cc192ff420520fefa557c63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void simpleTransaction::transactionEnd</definition>
+        <argsstring>(Enums::PROCESS)</argsstring>
+        <name>transactionEnd</name>
+        <qualifiedname>simpleTransaction::transactionEnd</qualifiedname>
+        <param>
+          <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref></type>
+          <defname>pid</defname>
+        </param>
+        <briefdescription>
+<para>transactionEnd marks end of transaction </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Marks the end of the current transaction.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>value that will be used as a result of transaction</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value that will be used as the result of the transaction </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/simpletransaction.h" line="38" column="8" bodyfile="src/simpletransaction.cpp" bodystart="45" bodyend="56"/>
+        <references refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" compoundref="debughelper_8h" startline="21">dbg</references>
+        <references refid="imitatepass_8cpp_1a9da0f55eca9ec763c75e98268dcbd023" compoundref="enums_8h" startline="45">INVALID</references>
+      </memberdef>
+      <memberdef kind="function" id="classsimple_transaction_1a3914acc39e65586cd6671aff1ac3afe9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref></type>
+        <definition>Enums::PROCESS simpleTransaction::transactionIsOver</definition>
+        <argsstring>(Enums::PROCESS)</argsstring>
+        <name>transactionIsOver</name>
+        <qualifiedname>simpleTransaction::transactionIsOver</qualifiedname>
+        <param>
+          <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref></type>
+        </param>
+        <briefdescription>
+<para>transactionIsOver checks wheather currently finished process is last in current transaction </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks whether the currently finished process is last in current transaction.</para>
+<para><simplesect kind="return"><para>result of transaction as set by transactionAdd or transactionEnd if the transaction is over or <ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023" kindref="member">PROCESS::INVALID</ref> if it&apos;s not yet over</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The process id to check </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Result of transaction as set by transactionAdd or transactionEnd, or <ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023" kindref="member">PROCESS::INVALID</ref> if the transaction is not yet over </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/simpletransaction.h" line="46" column="8" bodyfile="src/simpletransaction.cpp" bodystart="65" bodyend="75"/>
+        <references refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" compoundref="debughelper_8h" startline="21">dbg</references>
+        <references refid="imitatepass_8cpp_1a9da0f55eca9ec763c75e98268dcbd023" compoundref="enums_8h" startline="45">INVALID</references>
+        <referencedby refid="class_imitate_pass_1aa0b75b53b2a2d62b0fbffbb5d2d7efe4" compoundref="imitatepass_8cpp" startline="995" endline="1023">ImitatePass::finished</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>ImitatePass</label>
+        <link refid="class_imitate_pass"/>
+        <childnode refid="1" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>simpleTransaction</label>
+        <link refid="classsimple_transaction"/>
+      </node>
+    </inheritancegraph>
+    <location file="src/simpletransaction.h" line="9" column="1" bodyfile="src/simpletransaction.h" bodystart="9" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classsimple_transaction_1adc3819b705f6a781cecba778a73ef113" prot="private" virt="non-virtual"><scope>simpleTransaction</scope><name>lastInTransaction</name></member>
+      <member refid="classsimple_transaction_1ac798d38ad0b66f05cd58b5c9e9845491" prot="public" virt="non-virtual"><scope>simpleTransaction</scope><name>simpleTransaction</name></member>
+      <member refid="classsimple_transaction_1a974db4056edcb408e96cf9bc2a6e4326" prot="public" virt="non-virtual"><scope>simpleTransaction</scope><name>transactionAdd</name></member>
+      <member refid="classsimple_transaction_1a666549f1851d7766b9b6a28b74a6f8b8" prot="private" virt="non-virtual"><scope>simpleTransaction</scope><name>transactionDepth</name></member>
+      <member refid="classsimple_transaction_1a76e9280b4cc192ff420520fefa557c63" prot="public" virt="non-virtual"><scope>simpleTransaction</scope><name>transactionEnd</name></member>
+      <member refid="classsimple_transaction_1a3914acc39e65586cd6671aff1ac3afe9" prot="public" virt="non-virtual"><scope>simpleTransaction</scope><name>transactionIsOver</name></member>
+      <member refid="classsimple_transaction_1a47cdf0e891aa053215f634d9669f5b62" prot="private" virt="non-virtual"><scope>simpleTransaction</scope><name>transactionQueue</name></member>
+      <member refid="classsimple_transaction_1aafd98f73dfc5352f307115cabc2a5ed4" prot="public" virt="non-virtual"><scope>simpleTransaction</scope><name>transactionStart</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

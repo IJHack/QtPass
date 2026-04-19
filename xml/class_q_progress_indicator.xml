@@ -1,0 +1,523 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_q_progress_indicator" kind="class" language="C++" prot="public">
+    <compoundname>QProgressIndicator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QWidget</basecompoundref>
+    <includes refid="qprogressindicator_8h" local="no">qprogressindicator.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_q_progress_indicator_1a2778d074879bdaa8e6f6fd3e1c073c57" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int QProgressIndicator::m_angle</definition>
+        <argsstring></argsstring>
+        <name>m_angle</name>
+        <qualifiedname>QProgressIndicator::m_angle</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="179" column="7" bodyfile="src/qprogressindicator.h" bodystart="179" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_progress_indicator_1ad8cbe02d64fb3c13763759578d19e7fa" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int QProgressIndicator::m_timerId</definition>
+        <argsstring></argsstring>
+        <name>m_timerId</name>
+        <qualifiedname>QProgressIndicator::m_timerId</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="180" column="7" bodyfile="src/qprogressindicator.h" bodystart="180" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_progress_indicator_1abfb504a3fef6a24b67b722b49aa5d016" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int QProgressIndicator::m_delay</definition>
+        <argsstring></argsstring>
+        <name>m_delay</name>
+        <qualifiedname>QProgressIndicator::m_delay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="181" column="7" bodyfile="src/qprogressindicator.h" bodystart="181" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_progress_indicator_1a7e958f53d1c6614fb0584c990c52e854" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool QProgressIndicator::m_displayedWhenStopped</definition>
+        <argsstring></argsstring>
+        <name>m_displayedWhenStopped</name>
+        <qualifiedname>QProgressIndicator::m_displayedWhenStopped</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="182" column="8" bodyfile="src/qprogressindicator.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_progress_indicator_1a1dcc51f6f5989d1c4ca9bfa215482ffa" prot="private" static="no" mutable="no">
+        <type>QColor</type>
+        <definition>QColor QProgressIndicator::m_color</definition>
+        <argsstring></argsstring>
+        <name>m_color</name>
+        <qualifiedname>QProgressIndicator::m_color</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="183" column="10" bodyfile="src/qprogressindicator.h" bodystart="183" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_progress_indicator_1a3228b3ca2a8a5a5de146a4ae29f259f7" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QProgressIndicator::QProgressIndicator</definition>
+        <argsstring>(QWidget *parent=nullptr)</argsstring>
+        <name>QProgressIndicator</name>
+        <qualifiedname>QProgressIndicator::QProgressIndicator</qualifiedname>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para><ref refid="class_q_progress_indicator_1a3228b3ca2a8a5a5de146a4ae29f259f7" kindref="member">QProgressIndicator::QProgressIndicator</ref> constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>widget the indicator is placed in. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="111" column="12" bodyfile="src/qprogressindicator.cpp" bodystart="36" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_progress_indicator_1a05684f369a8e1b8b790ace81adfb33d8" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int QProgressIndicator::animationDelay</definition>
+        <argsstring>() const</argsstring>
+        <name>animationDelay</name>
+        <qualifiedname>QProgressIndicator::animationDelay</qualifiedname>
+        <briefdescription>
+<para>Returns the delay between animation steps. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The number of milliseconds between animation steps. By default, the animation delay is set to 40 milliseconds. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1acf826f02de241cb47fa329bf437d450d" kindref="member">setAnimationDelay</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="118" column="9" bodyfile="src/qprogressindicator.h" bodystart="118" bodyend="118"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_progress_indicator_1a47b1957d5839a55ce0ea7b25c15ec464" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QProgressIndicator::isAnimated</definition>
+        <argsstring>() const</argsstring>
+        <name>isAnimated</name>
+        <qualifiedname>QProgressIndicator::isAnimated</qualifiedname>
+        <briefdescription>
+<para>Returns a Boolean value indicating whether the component is currently animated. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Animation state. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a53aa626e870ee75390766c6044788d06" kindref="member">startAnimation</ref> <ref refid="class_q_progress_indicator_1a27ea54a92ade9c85761918cb98c96f95" kindref="member">stopAnimation</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="125" column="9" bodyfile="src/qprogressindicator.cpp" bodystart="43" bodyend="43"/>
+        <referencedby refid="class_q_progress_indicator_1a38d3e8644a4e74d892b42270c9b6ae8f" compoundref="qprogressindicator_8cpp" startline="116" endline="147">paintEvent</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_q_progress_indicator_1a5ca2c2e3a6e271add0a72ab5b3609d30" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool QProgressIndicator::isDisplayedWhenStopped</definition>
+        <argsstring>() const</argsstring>
+        <name>isDisplayedWhenStopped</name>
+        <qualifiedname>QProgressIndicator::isDisplayedWhenStopped</qualifiedname>
+        <briefdescription>
+<para>Returns a Boolean value indicating whether the receiver shows itself even when it is not animating. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Return true if the progress indicator shows itself even when it is not animating. By default, it returns false. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1ab50e609e706868a0cd28caee364c3d13" kindref="member">setDisplayedWhenStopped</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="133" column="9" bodyfile="src/qprogressindicator.cpp" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_progress_indicator_1afce11eec7046594b7a9cf28b69cdcc40" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>const QColor &amp;</type>
+        <definition>const QColor &amp; QProgressIndicator::color</definition>
+        <argsstring>() const</argsstring>
+        <name>color</name>
+        <qualifiedname>QProgressIndicator::color</qualifiedname>
+        <briefdescription>
+<para>Returns the color of the component. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a62161c81afb5ce019e9a7a55c69e3654" kindref="member">setColor</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="138" column="9" bodyfile="src/qprogressindicator.h" bodystart="138" bodyend="138"/>
+        <references refid="class_q_progress_indicator_1afce11eec7046594b7a9cf28b69cdcc40" compoundref="qprogressindicator_8h" startline="138" endline="138">color</references>
+        <referencedby refid="class_q_progress_indicator_1afce11eec7046594b7a9cf28b69cdcc40" compoundref="qprogressindicator_8h" startline="138" endline="138">color</referencedby>
+        <referencedby refid="class_q_progress_indicator_1a38d3e8644a4e74d892b42270c9b6ae8f" compoundref="qprogressindicator_8cpp" startline="116" endline="147">paintEvent</referencedby>
+        <referencedby refid="class_q_progress_indicator_1a62161c81afb5ce019e9a7a55c69e3654" compoundref="qprogressindicator_8cpp" startline="85" endline="89">setColor</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_q_progress_indicator_1abb066bcf10e146d6c2f5c3620ebce18c" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="virtual">
+        <type>QSize</type>
+        <definition>QSize QProgressIndicator::sizeHint</definition>
+        <argsstring>() const</argsstring>
+        <name>sizeHint</name>
+        <qualifiedname>QProgressIndicator::sizeHint</qualifiedname>
+        <briefdescription>
+<para><ref refid="class_q_progress_indicator_1abb066bcf10e146d6c2f5c3620ebce18c" kindref="member">QProgressIndicator::sizeHint</ref> default minimum size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>QSize(20, 20) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="140" column="17" bodyfile="src/qprogressindicator.cpp" bodystart="95" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_progress_indicator_1a21abb1b67291184583e3ce01407c9553" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int QProgressIndicator::heightForWidth</definition>
+        <argsstring>(int w) const</argsstring>
+        <name>heightForWidth</name>
+        <qualifiedname>QProgressIndicator::heightForWidth</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_q_progress_indicator_1a21abb1b67291184583e3ce01407c9553" kindref="member">QProgressIndicator::heightForWidth</ref> square ratio. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>requested width </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>w returned height </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="141" column="9" bodyfile="src/qprogressindicator.cpp" bodystart="102" bodyend="102"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_q_progress_indicator_1a53aa626e870ee75390766c6044788d06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QProgressIndicator::startAnimation</definition>
+        <argsstring>()</argsstring>
+        <name>startAnimation</name>
+        <qualifiedname>QProgressIndicator::startAnimation</qualifiedname>
+        <briefdescription>
+<para>Starts the spin animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a27ea54a92ade9c85761918cb98c96f95" kindref="member">stopAnimation</ref> <ref refid="class_q_progress_indicator_1a47b1957d5839a55ce0ea7b25c15ec464" kindref="member">isAnimated</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="147" column="8" bodyfile="src/qprogressindicator.cpp" bodystart="55" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_q_progress_indicator_1a27ea54a92ade9c85761918cb98c96f95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QProgressIndicator::stopAnimation</definition>
+        <argsstring>()</argsstring>
+        <name>stopAnimation</name>
+        <qualifiedname>QProgressIndicator::stopAnimation</qualifiedname>
+        <briefdescription>
+<para>Stops the spin animation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a53aa626e870ee75390766c6044788d06" kindref="member">startAnimation</ref> <ref refid="class_q_progress_indicator_1a47b1957d5839a55ce0ea7b25c15ec464" kindref="member">isAnimated</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="152" column="8" bodyfile="src/qprogressindicator.cpp" bodystart="63" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_q_progress_indicator_1acf826f02de241cb47fa329bf437d450d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QProgressIndicator::setAnimationDelay</definition>
+        <argsstring>(int delay)</argsstring>
+        <name>setAnimationDelay</name>
+        <qualifiedname>QProgressIndicator::setAnimationDelay</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>delay</declname>
+        </param>
+        <briefdescription>
+<para>Sets the delay between animation steps. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Setting the <emphasis>delay</emphasis> to a value larger than 40 slows the animation, while setting the <emphasis>delay</emphasis> to a smaller value speeds it up. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delay, in milliseconds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a05684f369a8e1b8b790ace81adfb33d8" kindref="member">animationDelay</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="160" column="8" bodyfile="src/qprogressindicator.cpp" bodystart="73" bodyend="83"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_q_progress_indicator_1ab50e609e706868a0cd28caee364c3d13" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QProgressIndicator::setDisplayedWhenStopped</definition>
+        <argsstring>(bool state)</argsstring>
+        <name>setDisplayedWhenStopped</name>
+        <qualifiedname>QProgressIndicator::setDisplayedWhenStopped</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Sets whether the component hides itself when it is not animating. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The animation state. Set false to hide the progress indicator when it is not animating; otherwise true. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a5ca2c2e3a6e271add0a72ab5b3609d30" kindref="member">isDisplayedWhenStopped</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="167" column="8" bodyfile="src/qprogressindicator.cpp" bodystart="45" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_q_progress_indicator_1a62161c81afb5ce019e9a7a55c69e3654" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QProgressIndicator::setColor</definition>
+        <argsstring>(const QColor &amp;color)</argsstring>
+        <name>setColor</name>
+        <qualifiedname>QProgressIndicator::setColor</qualifiedname>
+        <param>
+          <type>const QColor &amp;</type>
+          <declname>color</declname>
+        </param>
+        <briefdescription>
+<para>Sets the color of the components to the given color. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="class_q_progress_indicator_1afce11eec7046594b7a9cf28b69cdcc40" kindref="member">color</ref> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="172" column="8" bodyfile="src/qprogressindicator.cpp" bodystart="85" bodyend="89"/>
+        <references refid="class_q_progress_indicator_1afce11eec7046594b7a9cf28b69cdcc40" compoundref="qprogressindicator_8h" startline="138" endline="138">color</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_q_progress_indicator_1a121c7de89fecff682c45d2adee60310d" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QProgressIndicator::timerEvent</definition>
+        <argsstring>(QTimerEvent *event)</argsstring>
+        <name>timerEvent</name>
+        <qualifiedname>QProgressIndicator::timerEvent</qualifiedname>
+        <param>
+          <type>QTimerEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_q_progress_indicator_1a121c7de89fecff682c45d2adee60310d" kindref="member">QProgressIndicator::timerEvent</ref> do the actual animation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="175" column="16" bodyfile="src/qprogressindicator.cpp" bodystart="107" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_progress_indicator_1a38d3e8644a4e74d892b42270c9b6ae8f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void QProgressIndicator::paintEvent</definition>
+        <argsstring>(QPaintEvent *event)</argsstring>
+        <name>paintEvent</name>
+        <qualifiedname>QProgressIndicator::paintEvent</qualifiedname>
+        <param>
+          <type>QPaintEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_q_progress_indicator_1a38d3e8644a4e74d892b42270c9b6ae8f" kindref="member">QProgressIndicator::paintEvent</ref> draw the spinner. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qprogressindicator.h" line="176" column="16" bodyfile="src/qprogressindicator.cpp" bodystart="116" bodyend="147"/>
+        <references refid="class_q_progress_indicator_1afce11eec7046594b7a9cf28b69cdcc40" compoundref="qprogressindicator_8h" startline="138" endline="138">color</references>
+        <references refid="class_q_progress_indicator_1a47b1957d5839a55ce0ea7b25c15ec464" compoundref="qprogressindicator_8cpp" startline="43" endline="43">isAnimated</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para><ref refid="class_q_progress_indicator" kindref="compound">QProgressIndicator</ref> provides a simple indeterminate progress indicator widget that spins to show the application is busy. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="see"><para>QProgressBar</para>
+</simplesect>
+Returns the delay between animation steps.</para>
+<para><simplesect kind="return"><para>The number of milliseconds between animation steps. The default value is 40. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1acf826f02de241cb47fa329bf437d450d" kindref="member">setAnimationDelay</ref></para>
+</simplesect>
+Indicates whether the indicator is currently animating.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the indicator is animating, <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a53aa626e870ee75390766c6044788d06" kindref="member">startAnimation</ref> <ref refid="class_q_progress_indicator_1a27ea54a92ade9c85761918cb98c96f95" kindref="member">stopAnimation</ref></para>
+</simplesect>
+Indicates whether the indicator remains visible when not animating.</para>
+<para><simplesect kind="return"><para><computeroutput>true</computeroutput> if the indicator shows itself when stopped, <computeroutput>false</computeroutput> otherwise. The default is <computeroutput>false</computeroutput>. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1ab50e609e706868a0cd28caee364c3d13" kindref="member">setDisplayedWhenStopped</ref></para>
+</simplesect>
+Returns the current drawing color used by the indicator.</para>
+<para><simplesect kind="return"><para>Reference to the indicator&apos;s QColor. </para>
+</simplesect>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a62161c81afb5ce019e9a7a55c69e3654" kindref="member">setColor</ref></para>
+</simplesect>
+Starts the spin animation.</para>
+<para><simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a27ea54a92ade9c85761918cb98c96f95" kindref="member">stopAnimation</ref> <ref refid="class_q_progress_indicator_1a47b1957d5839a55ce0ea7b25c15ec464" kindref="member">isAnimated</ref></para>
+</simplesect>
+Stops the spin animation.</para>
+<para><simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a53aa626e870ee75390766c6044788d06" kindref="member">startAnimation</ref> <ref refid="class_q_progress_indicator_1a47b1957d5839a55ce0ea7b25c15ec464" kindref="member">isAnimated</ref></para>
+</simplesect>
+Sets the delay between animation steps.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delay in milliseconds. Values larger than 40 slow the animation; values smaller than 40 speed it up. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a05684f369a8e1b8b790ace81adfb33d8" kindref="member">animationDelay</ref></para>
+</simplesect>
+Sets whether the indicator remains visible when not animating.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Set to <computeroutput>true</computeroutput> to keep the indicator visible when stopped; set to <computeroutput>false</computeroutput> to hide it when stopped. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1a5ca2c2e3a6e271add0a72ab5b3609d30" kindref="member">isDisplayedWhenStopped</ref></para>
+</simplesect>
+Sets the drawing color for the indicator.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername><ref refid="class_q_progress_indicator_1afce11eec7046594b7a9cf28b69cdcc40" kindref="member">color</ref></parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new color to use for rendering the indicator. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="class_q_progress_indicator_1afce11eec7046594b7a9cf28b69cdcc40" kindref="member">color</ref> </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>QProgressIndicator</label>
+        <link refid="class_q_progress_indicator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QWidget</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>QProgressIndicator</label>
+        <link refid="class_q_progress_indicator"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QWidget</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/qprogressindicator.h" line="107" column="1" bodyfile="src/qprogressindicator.h" bodystart="107" bodyend="184"/>
+    <listofallmembers>
+      <member refid="class_q_progress_indicator_1a05684f369a8e1b8b790ace81adfb33d8" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>animationDelay</name></member>
+      <member refid="class_q_progress_indicator_1afce11eec7046594b7a9cf28b69cdcc40" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>color</name></member>
+      <member refid="class_q_progress_indicator_1a21abb1b67291184583e3ce01407c9553" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>heightForWidth</name></member>
+      <member refid="class_q_progress_indicator_1a47b1957d5839a55ce0ea7b25c15ec464" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>isAnimated</name></member>
+      <member refid="class_q_progress_indicator_1a5ca2c2e3a6e271add0a72ab5b3609d30" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>isDisplayedWhenStopped</name></member>
+      <member refid="class_q_progress_indicator_1a2778d074879bdaa8e6f6fd3e1c073c57" prot="private" virt="non-virtual"><scope>QProgressIndicator</scope><name>m_angle</name></member>
+      <member refid="class_q_progress_indicator_1a1dcc51f6f5989d1c4ca9bfa215482ffa" prot="private" virt="non-virtual"><scope>QProgressIndicator</scope><name>m_color</name></member>
+      <member refid="class_q_progress_indicator_1abfb504a3fef6a24b67b722b49aa5d016" prot="private" virt="non-virtual"><scope>QProgressIndicator</scope><name>m_delay</name></member>
+      <member refid="class_q_progress_indicator_1a7e958f53d1c6614fb0584c990c52e854" prot="private" virt="non-virtual"><scope>QProgressIndicator</scope><name>m_displayedWhenStopped</name></member>
+      <member refid="class_q_progress_indicator_1ad8cbe02d64fb3c13763759578d19e7fa" prot="private" virt="non-virtual"><scope>QProgressIndicator</scope><name>m_timerId</name></member>
+      <member refid="class_q_progress_indicator_1a38d3e8644a4e74d892b42270c9b6ae8f" prot="protected" virt="virtual"><scope>QProgressIndicator</scope><name>paintEvent</name></member>
+      <member refid="class_q_progress_indicator_1a3228b3ca2a8a5a5de146a4ae29f259f7" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>QProgressIndicator</name></member>
+      <member refid="class_q_progress_indicator_1acf826f02de241cb47fa329bf437d450d" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>setAnimationDelay</name></member>
+      <member refid="class_q_progress_indicator_1a62161c81afb5ce019e9a7a55c69e3654" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>setColor</name></member>
+      <member refid="class_q_progress_indicator_1ab50e609e706868a0cd28caee364c3d13" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>setDisplayedWhenStopped</name></member>
+      <member refid="class_q_progress_indicator_1abb066bcf10e146d6c2f5c3620ebce18c" prot="public" virt="virtual"><scope>QProgressIndicator</scope><name>sizeHint</name></member>
+      <member refid="class_q_progress_indicator_1a53aa626e870ee75390766c6044788d06" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>startAnimation</name></member>
+      <member refid="class_q_progress_indicator_1a27ea54a92ade9c85761918cb98c96f95" prot="public" virt="non-virtual"><scope>QProgressIndicator</scope><name>stopAnimation</name></member>
+      <member refid="class_q_progress_indicator_1a121c7de89fecff682c45d2adee60310d" prot="protected" virt="virtual"><scope>QProgressIndicator</scope><name>timerEvent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

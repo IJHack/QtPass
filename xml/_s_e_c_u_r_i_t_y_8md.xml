@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="_s_e_c_u_r_i_t_y_8md" kind="file" language="Markdown">
+    <compoundname>SECURITY.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Security<sp/>Policy</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Supported<sp/>Versions</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">QtPass<sp/>is<sp/>actively<sp/>maintained<sp/>and<sp/>security<sp/>updates<sp/>are<sp/>provided<sp/>for<sp/>the<sp/>latest<sp/>releases.<sp/>Older<sp/>versions<sp/>are<sp/>not<sp/>supported.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">|<sp/>Version<sp/>|<sp/>Supported<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>-------<sp/>|<sp/>------------------<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>1.5.x<sp/><sp/><sp/>|<sp/>:white_check_mark:<sp/>|</highlight></codeline>
+<codeline><highlight class="normal">|<sp/>&lt;<sp/>1.5<sp/><sp/><sp/>|<sp/>:x:<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Reporting<sp/>a<sp/>Vulnerability</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">If<sp/>you<sp/>discover<sp/>a<sp/>security<sp/>vulnerability<sp/>in<sp/>QtPass,<sp/>please<sp/>report<sp/>it<sp/>responsibly:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">1.<sp/>**Do<sp/>NOT**<sp/>create<sp/>a<sp/>public<sp/>GitHub<sp/>issue<sp/>for<sp/>security<sp/>vulnerabilities</highlight></codeline>
+<codeline><highlight class="normal">2.<sp/>**Do**<sp/>email<sp/>the<sp/>maintainer<sp/>directly<sp/>at:<sp/>`help@qtpass.org`</highlight></codeline>
+<codeline><highlight class="normal">3.<sp/>**Alternative**:<sp/>Open<sp/>a<sp/>private<sp/>security<sp/>advisory<sp/>via<sp/>GitHub</highlight></codeline>
+<codeline><highlight class="normal">4.<sp/>**Include**<sp/>in<sp/>your<sp/>report:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Description<sp/>of<sp/>the<sp/>vulnerability</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Steps<sp/>to<sp/>reproduce<sp/>the<sp/>issue</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Potential<sp/>impact<sp/>assessment</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/>-<sp/>Any<sp/>suggested<sp/>fixes<sp/>(optional)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Response<sp/>Timeline</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Acknowledgment**:<sp/>Within<sp/>48<sp/>hours</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Initial<sp/>assessment**:<sp/>Within<sp/>7<sp/>days</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Fix<sp/>timeline**:<sp/>Depends<sp/>on<sp/>severity;<sp/>critical<sp/>issues<sp/>are<sp/>prioritized</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Security<sp/>Considerations</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">QtPass<sp/>is<sp/>a<sp/>GUI<sp/>for<sp/>[pass](https://www.passwordstore.org/),<sp/>the<sp/>standard<sp/>Unix<sp/>password<sp/>manager.<sp/>Keep<sp/>in<sp/>mind:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>does<sp/>not<sp/>encrypt<sp/>passwords<sp/>-<sp/>encryption<sp/>is<sp/>handled<sp/>by<sp/>GPG</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>Passwords<sp/>are<sp/>stored<sp/>in<sp/>your<sp/>local<sp/>password<sp/>store<sp/>(typically<sp/>`~/.password-store`)</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>QtPass<sp/>requires<sp/>GPG<sp/>to<sp/>be<sp/>installed<sp/>and<sp/>configured<sp/>on<sp/>your<sp/>system</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>The<sp/>clipboard<sp/>is<sp/>cleared<sp/>after<sp/>a<sp/>configurable<sp/>timeout<sp/>(default:<sp/>45<sp/>seconds)</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">##<sp/>Dependencies</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">QtPass<sp/>depends<sp/>on:</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">-<sp/>**Qt6**<sp/>(primary;<sp/>use<sp/>`qmake6`)<sp/>-<sp/>GUI<sp/>framework</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Qt5**<sp/>(5.15+,<sp/>legacy;<sp/>use<sp/>`qmake`)<sp/>-<sp/>GUI<sp/>framework</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**GPG**<sp/>(gpg2)<sp/>-<sp/>encryption</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**pass**<sp/>(optional)<sp/>-<sp/>password<sp/>store<sp/>CLI</highlight></codeline>
+<codeline><highlight class="normal">-<sp/>**Git**<sp/>(optional)<sp/>-<sp/>version<sp/>control</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">Ensure<sp/>your<sp/>system<sp/>dependencies<sp/>are<sp/>kept<sp/>up<sp/>to<sp/>date<sp/>for<sp/>security<sp/>patches.</highlight></codeline>
+    </programlisting>
+    <location file="SECURITY.md"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="trayicon_8cpp" kind="file" language="C++">
+    <compoundname>trayicon.cpp</compoundname>
+    <includes refid="trayicon_8h" local="yes">trayicon.h</includes>
+    <includes local="no">QAction</includes>
+    <includes local="no">QApplication</includes>
+    <includes local="no">QMainWindow</includes>
+    <includes local="no">QMenu</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/trayicon.cpp</label>
+        <link refid="trayicon_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>trayicon.h</label>
+        <link refid="trayicon_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>QAction</label>
+      </node>
+      <node id="6">
+        <label>QApplication</label>
+      </node>
+      <node id="7">
+        <label>QMainWindow</label>
+      </node>
+      <node id="8">
+        <label>QMenu</label>
+      </node>
+      <node id="3">
+        <label>QSystemTrayIcon</label>
+      </node>
+      <node id="4">
+        <label>QWidget</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2015<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="trayicon_8h" kindref="compound">trayicon.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QAction&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QApplication&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QMainWindow&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QMenu&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>QT_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="debughelper_8h" kindref="compound">debughelper.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="class_tray_icon_1a587e1467cf97c27f4269f1c47c1e4ac5" refkind="member"><highlight class="normal"><ref refid="class_tray_icon_1a587e1467cf97c27f4269f1c47c1e4ac5" kindref="member">TrayIcon::TrayIcon</ref>(QMainWindow<sp/>*parent)</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>showAction(nullptr),<sp/>hideAction(nullptr),<sp/>minimizeAction(nullptr),</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>maximizeAction(nullptr),<sp/>restoreAction(nullptr),<sp/>quitAction(nullptr),</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>sysTrayIcon(nullptr),<sp/>trayIconMenu(nullptr),<sp/>isAllocated(false)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/>parentwin<sp/>=<sp/>parent;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(QSystemTrayIcon::isSystemTrayAvailable())<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>createActions();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>createTrayIcon();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>sysTrayIcon-&gt;setIcon(</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QIcon::fromTheme(</highlight><highlight class="stringliteral">&quot;qtpass-tray&quot;</highlight><highlight class="normal">,<sp/>QIcon(</highlight><highlight class="stringliteral">&quot;:/artwork/icon.png&quot;</highlight><highlight class="normal">)));</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>sysTrayIcon-&gt;show();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>QObject::connect(sysTrayIcon,<sp/>&amp;QSystemTrayIcon::activated,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;<ref refid="class_tray_icon_1a36c341a8b31884cd45060a92258e92b8" kindref="member">TrayIcon::iconActivated</ref>);</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>isAllocated<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>QT_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>NOLINTNEXTLINE(readability/braces)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" kindref="member">dbg</ref>()<sp/>&lt;&lt;<sp/></highlight><highlight class="stringliteral">&quot;No<sp/>tray<sp/>icon<sp/>for<sp/>this<sp/>OS<sp/>possibly<sp/>also<sp/>not<sp/>show<sp/>options?&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50" refid="class_tray_icon_1ab4cb316b0b39606fcb9b796cbed59bd1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_tray_icon_1ab4cb316b0b39606fcb9b796cbed59bd1" kindref="member">TrayIcon::setVisible</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>visible)<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(visible)<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>parentwin-&gt;show();</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>parentwin-&gt;hide();</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="class_tray_icon_1ac43b5d2538c69cfcf6399eb29b9ddb47" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_tray_icon_1ac43b5d2538c69cfcf6399eb29b9ddb47" kindref="member">TrayIcon::getIsAllocated</ref>()<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>isAllocated;<sp/>}</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TrayIcon::createActions()<sp/>{</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>showAction<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QAction(tr(</highlight><highlight class="stringliteral">&quot;&amp;Show&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>connect(showAction,<sp/>&amp;QAction::triggered,<sp/>parentwin,<sp/>&amp;QWidget::show);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>hideAction<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QAction(tr(</highlight><highlight class="stringliteral">&quot;&amp;Hide&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>connect(hideAction,<sp/>&amp;QAction::triggered,<sp/>parentwin,<sp/>&amp;QWidget::hide);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>minimizeAction<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QAction(tr(</highlight><highlight class="stringliteral">&quot;Mi&amp;nimize&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>connect(minimizeAction,<sp/>&amp;QAction::triggered,<sp/>parentwin,</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;QWidget::showMinimized);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>maximizeAction<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QAction(tr(</highlight><highlight class="stringliteral">&quot;Ma&amp;ximize&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>connect(maximizeAction,<sp/>&amp;QAction::triggered,<sp/>parentwin,</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;QWidget::showMaximized);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>restoreAction<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QAction(tr(</highlight><highlight class="stringliteral">&quot;&amp;Restore&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>connect(restoreAction,<sp/>&amp;QAction::triggered,<sp/>parentwin,<sp/>&amp;QWidget::showNormal);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>quitAction<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QAction(tr(</highlight><highlight class="stringliteral">&quot;&amp;Quit&quot;</highlight><highlight class="normal">),<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>QT_VERSION<sp/>&gt;=<sp/>QT_VERSION_CHECK(6,<sp/>0,<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>push</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>ignored<sp/>&quot;-Wdeprecated-declarations&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/>connect(quitAction,<sp/>&amp;QAction::triggered,<sp/>qApp,<sp/>&amp;QApplication::quit);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>QT_VERSION<sp/>&gt;=<sp/>QT_VERSION_CHECK(6,<sp/>0,<sp/>0)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TrayIcon::createTrayIcon()<sp/>{</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>trayIconMenu<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QMenu(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>trayIconMenu-&gt;addAction(showAction);</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>trayIconMenu-&gt;addAction(hideAction);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/>trayIconMenu-&gt;addAction(minimizeAction);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>trayIconMenu-&gt;addAction(maximizeAction);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>trayIconMenu-&gt;addAction(restoreAction);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>trayIconMenu-&gt;addSeparator();</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>trayIconMenu-&gt;addAction(quitAction);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/>sysTrayIcon<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QSystemTrayIcon(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>sysTrayIcon-&gt;setContextMenu(trayIconMenu);</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="class_tray_icon_1a20f8b921d79beca21f6dcb98741d57fc" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_tray_icon_1a20f8b921d79beca21f6dcb98741d57fc" kindref="member">TrayIcon::showHideParent</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(parentwin-&gt;isVisible())<sp/>{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>parentwin-&gt;hide();</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>parentwin-&gt;show();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="class_tray_icon_1a36c341a8b31884cd45060a92258e92b8" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_tray_icon_1a36c341a8b31884cd45060a92258e92b8" kindref="member">TrayIcon::iconActivated</ref>(QSystemTrayIcon::ActivationReason<sp/>reason)<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">switch</highlight><highlight class="normal"><sp/>(reason)<sp/>{</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>QSystemTrayIcon::Trigger:</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>QSystemTrayIcon::DoubleClick:</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_tray_icon_1a20f8b921d79beca21f6dcb98741d57fc" kindref="member">showHideParent</ref>();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">case</highlight><highlight class="normal"><sp/>QSystemTrayIcon::MiddleClick:</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_tray_icon_1a40737136f8d85dad4a10ddb58619157a" kindref="member">showMessage</ref>(</highlight><highlight class="stringliteral">&quot;test&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;test<sp/>msg&quot;</highlight><highlight class="normal">,<sp/>1000);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">default</highlight><highlight class="normal">:<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="class_tray_icon_1a40737136f8d85dad4a10ddb58619157a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_tray_icon_1a40737136f8d85dad4a10ddb58619157a" kindref="member">TrayIcon::showMessage</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;title,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;msg,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>time)<sp/>{</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>sysTrayIcon-&gt;showMessage(title,<sp/>msg,<sp/>QSystemTrayIcon::Information,<sp/>time);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/trayicon.cpp"/>
+  </compounddef>
+</doxygen>

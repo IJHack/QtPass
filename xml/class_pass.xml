@@ -1,0 +1,2296 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="class_pass" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>Pass</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <derivedcompoundref refid="class_imitate_pass" prot="public" virt="non-virtual">ImitatePass</derivedcompoundref>
+    <derivedcompoundref refid="class_real_pass" prot="public" virt="non-virtual">RealPass</derivedcompoundref>
+    <includes refid="pass_8h" local="no">pass.h</includes>
+    <sectiondef kind="protected-type">
+      <memberdef kind="typedef" id="class_pass_1a2e71b5174b4ef25a1e91d8c56177b772" prot="protected" static="no">
+        <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref></type>
+        <definition>using Pass::PROCESS = Enums::PROCESS</definition>
+        <argsstring></argsstring>
+        <name>PROCESS</name>
+        <qualifiedname>Pass::PROCESS</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="44" column="3" bodyfile="src/pass.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_pass_1a056fe06a59546aa9539a60a9ba566546" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Pass::wrapperRunning</definition>
+        <argsstring></argsstring>
+        <name>wrapperRunning</name>
+        <qualifiedname>Pass::wrapperRunning</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="38" column="8" bodyfile="src/pass.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_pass_1abe8595bd553f84e7ccdb9f3d94144909" prot="private" static="no" mutable="no">
+        <type>QStringList</type>
+        <definition>QStringList Pass::env</definition>
+        <argsstring></argsstring>
+        <name>env</name>
+        <qualifiedname>Pass::env</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="39" column="15" bodyfile="src/pass.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="class_pass_1a903a833ade1109f9cb75e3bbeab8d0af" prot="protected" static="no" mutable="no">
+        <type><ref refid="class_executor" kindref="compound">Executor</ref></type>
+        <definition>Executor Pass::exec</definition>
+        <argsstring></argsstring>
+        <name>exec</name>
+        <qualifiedname>Pass::exec</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="42" column="12" bodyfile="src/pass.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="class_pass_1a924b4cd54e4b5e24fa42661b7eccec07" compoundref="pass_8cpp" startline="102" endline="110">executeWrapper</referencedby>
+        <referencedby refid="class_imitate_pass_1aa0b75b53b2a2d62b0fbffbb5d2d7efe4" compoundref="imitatepass_8cpp" startline="995" endline="1023">ImitatePass::finished</referencedby>
+        <referencedby refid="class_imitate_pass_1a7789a916aca076ad7ceaf4ef093239d3" compoundref="imitatepass_8cpp" startline="1099" endline="1167">ImitatePass::Grep</referencedby>
+        <referencedby refid="class_pass_1a5d0cea4019f5c123fb4a4417de8d95b9" compoundref="pass_8cpp" startline="53" endline="86">Pass</referencedby>
+        <referencedby refid="class_pass_1ac679a086b289cdb9245906948ba0458a" compoundref="pass_8cpp" startline="758" endline="772">updateEnv</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_pass_1a5d0cea4019f5c123fb4a4417de8d95b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Pass::Pass</definition>
+        <argsstring>()</argsstring>
+        <name>Pass</name>
+        <qualifiedname>Pass::Pass</qualifiedname>
+        <briefdescription>
+<para>Construct a <ref refid="class_pass" kindref="compound">Pass</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_pass_1a5d0cea4019f5c123fb4a4417de8d95b9" kindref="member">Pass::Pass</ref> wrapper for using either pass or the pass imitation. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="50" column="3" bodyfile="src/pass.cpp" bodystart="53" bodyend="86"/>
+        <references refid="class_pass_1a903a833ade1109f9cb75e3bbeab8d0af" compoundref="pass_8h" startline="42">exec</references>
+        <references refid="class_pass_1ad51174f24ecdbc14a55e4588a34b8563" compoundref="pass_8cpp" startline="606" endline="616">finished</references>
+        <references refid="class_executor_1acfcfc18b0b973791530302eb8179e038">Executor::starting</references>
+        <references refid="class_pass_1a0345d3ffdb213234031e9c84fe8ca7c6">startingExecuteWrapper</references>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a012c47a55b3cc3467ad0f013716f623a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::init</definition>
+        <argsstring>()</argsstring>
+        <name>init</name>
+        <qualifiedname>Pass::init</qualifiedname>
+        <briefdescription>
+<para>Initialize the <ref refid="class_pass" kindref="compound">Pass</ref> instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes the pass wrapper environment. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="54" column="8" bodyfile="src/pass.cpp" bodystart="115" bodyend="130"/>
+        <references refid="class_qt_pass_settings_1a36413c39a8bcd96110dd612158168946" compoundref="qtpasssettings_8cpp" startline="531" endline="535">QtPassSettings::getGpgHome</references>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a9575bbed98a8dfb8a3f5a30c18d8bfcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Pass::~Pass</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~Pass</name>
+        <qualifiedname>Pass::~Pass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="66" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a26bec7c69e7c35ccb67f8057db90825e" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::GitInit</definition>
+        <argsstring>()=0</argsstring>
+        <name>GitInit</name>
+        <qualifiedname>Pass::GitInit</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1a2bb2e83ad96efa7c111df54230e237bb">GitInit</reimplementedby>
+        <reimplementedby refid="class_real_pass_1aacaf85a65fc1398c356dd44370e5e22f">GitInit</reimplementedby>
+        <briefdescription>
+<para>Initialize Git repository in password store. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="72" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a30c3829a890d65d3e4ba90c12b1852e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::GitPull</definition>
+        <argsstring>()=0</argsstring>
+        <name>GitPull</name>
+        <qualifiedname>Pass::GitPull</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1ab9f0103079ee01a263b70b95cd4aeced">GitPull</reimplementedby>
+        <reimplementedby refid="class_real_pass_1ac3206e85bc586214e6cc75186cff65c3">GitPull</reimplementedby>
+        <briefdescription>
+<para>Pull changes from remote Git repository. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="76" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a7a109d5c0a7f565398b7238c32bb6328" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::GitPull_b</definition>
+        <argsstring>()=0</argsstring>
+        <name>GitPull_b</name>
+        <qualifiedname>Pass::GitPull_b</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1a5713b5c223fd522d0790debaa33cfbc2">GitPull_b</reimplementedby>
+        <reimplementedby refid="class_real_pass_1a6a959408a305cc8dd7cc6c7bd9c17210">GitPull_b</reimplementedby>
+        <briefdescription>
+<para>Pull with rebase from remote. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="80" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a7b5fa97ca6f3795512ac7c10db5c8f09" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::GitPush</definition>
+        <argsstring>()=0</argsstring>
+        <name>GitPush</name>
+        <qualifiedname>Pass::GitPush</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1ae61b400e69fcc32c4a80b94fb52107b9">GitPush</reimplementedby>
+        <reimplementedby refid="class_real_pass_1ae32fd82fe5e57b2c45df05bfe2991b5b">GitPush</reimplementedby>
+        <briefdescription>
+<para>Push changes to remote Git repository. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="84" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a6520ffa669cd7934091934b24593d99c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::Show</definition>
+        <argsstring>(QString file)=0</argsstring>
+        <name>Show</name>
+        <qualifiedname>Pass::Show</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1acfffcbf097c9d4615c01e064e335d65d">Show</reimplementedby>
+        <reimplementedby refid="class_real_pass_1a63da21db00da709ae5aa8f7a992e16e1">Show</reimplementedby>
+        <param>
+          <type>QString</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+<para>Show decrypted password file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to password file relative to store root. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="91" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1abfe228b7e546aeb0e33bb8102f2e7f19" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::OtpGenerate</definition>
+        <argsstring>(QString file)=0</argsstring>
+        <name>OtpGenerate</name>
+        <qualifiedname>Pass::OtpGenerate</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1a18eac6111a1d77a3f8ded93b7be16270">OtpGenerate</reimplementedby>
+        <reimplementedby refid="class_real_pass_1a39c56e5ad8b46fc6c4f00b7000bccc99">OtpGenerate</reimplementedby>
+        <param>
+          <type>QString</type>
+          <declname>file</declname>
+        </param>
+        <briefdescription>
+<para>Generate OTP for password file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to password file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="96" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a86ad2005a6517f9c304a9e156755778c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::Insert</definition>
+        <argsstring>(QString file, QString value, bool force)=0</argsstring>
+        <name>Insert</name>
+        <qualifiedname>Pass::Insert</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1a84de97293ca1a100b1e466b4a79ec601">Insert</reimplementedby>
+        <reimplementedby refid="class_real_pass_1a45193fab522965fe8b1c8f8996e6a49a">Insert</reimplementedby>
+        <param>
+          <type>QString</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>force</declname>
+        </param>
+        <briefdescription>
+<para>Insert or update password. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to password file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Password content to store. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Overwrite existing file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="103" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a5aedb6df7aa57385eb19a78cdbd3e764" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::Remove</definition>
+        <argsstring>(QString file, bool isDir)=0</argsstring>
+        <name>Remove</name>
+        <qualifiedname>Pass::Remove</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1ab9cef44c64dae297da55e08266f1c1c5">Remove</reimplementedby>
+        <reimplementedby refid="class_real_pass_1a96679194b4a0e6b99eb41cf25349c7fd">Remove</reimplementedby>
+        <param>
+          <type>QString</type>
+          <declname>file</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isDir</declname>
+        </param>
+        <briefdescription>
+<para>Remove password file or directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to remove. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if removing a directory. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="109" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1ab9dde6644865bd583dc09a52d17ffb49" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::Move</definition>
+        <argsstring>(const QString srcDir, const QString dest, const bool force=false)=0</argsstring>
+        <name>Move</name>
+        <qualifiedname>Pass::Move</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1a9653850cc56714b9774221204339bbf2">Move</reimplementedby>
+        <reimplementedby refid="class_real_pass_1ad9f71cf753e5fce4772bec086237d033">Move</reimplementedby>
+        <param>
+          <type>const QString</type>
+          <declname>srcDir</declname>
+        </param>
+        <param>
+          <type>const QString</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>force</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Move password file or directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>srcDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Overwrite existing. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="116" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a1a41ce3d629b20902e9d14ff285c1f49" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::Copy</definition>
+        <argsstring>(const QString srcDir, const QString dest, const bool force=false)=0</argsstring>
+        <name>Copy</name>
+        <qualifiedname>Pass::Copy</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1a97538d83d4f6a583f840db0865e8609a">Copy</reimplementedby>
+        <reimplementedby refid="class_real_pass_1a640ea218267605b9ca78c21ca5677690">Copy</reimplementedby>
+        <param>
+          <type>const QString</type>
+          <declname>srcDir</declname>
+        </param>
+        <param>
+          <type>const QString</type>
+          <declname>dest</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>force</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Copy password file or directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>srcDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Source path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dest</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Destination path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>force</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Overwrite existing. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="124" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1aee98d184ed11013a9a9dc08d05fbb1a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::Init</definition>
+        <argsstring>(QString path, const QList&lt; UserInfo &gt; &amp;users)=0</argsstring>
+        <name>Init</name>
+        <qualifiedname>Pass::Init</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1a6fe6b48df3fb04071c8c2c1d5c1d1206">Init</reimplementedby>
+        <reimplementedby refid="class_real_pass_1a12a7e631a5040eee70da06585fe047ba">Init</reimplementedby>
+        <param>
+          <type>QString</type>
+          <declname>path</declname>
+        </param>
+        <param>
+          <type>const QList&lt; <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &gt; &amp;</type>
+          <declname>users</declname>
+        </param>
+        <briefdescription>
+<para>Initialize new password store. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Root of password store. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>users</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of recipient GPG keys. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="131" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1aeb0ec5b8842c1c27e40dafc2ebcad509" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void Pass::Grep</definition>
+        <argsstring>(QString pattern, bool caseInsensitive=false)=0</argsstring>
+        <name>Grep</name>
+        <qualifiedname>Pass::Grep</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1a7789a916aca076ad7ceaf4ef093239d3">Grep</reimplementedby>
+        <reimplementedby refid="class_real_pass_1ae231e77648f429687ca7e2cf14275b07">Grep</reimplementedby>
+        <param>
+          <type>QString</type>
+          <declname>pattern</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>caseInsensitive</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Search password content for a pattern. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pattern</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Search pattern (regular expression). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>caseInsensitive</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true for case-insensitive search. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="137" column="16"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a35b3cba623a22f41173670ec34ebb67c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>QString</type>
+        <definition>QString Pass::generatePassword</definition>
+        <argsstring>(unsigned int length, const QString &amp;charset)</argsstring>
+        <name>generatePassword</name>
+        <qualifiedname>Pass::generatePassword</qualifiedname>
+        <param>
+          <type>unsigned int</type>
+          <declname>length</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>charset</declname>
+        </param>
+        <briefdescription>
+<para>Generate random password. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Pass::Generate use either pwgen or internal password generator.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Password length. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character set to use. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Generated password.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>of the desired password </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>charset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>to use for generation </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the password </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="145" column="16" bodyfile="src/pass.cpp" bodystart="139" bodyend="192"/>
+        <references refid="struct_password_configuration_1a45c20d47cf36382f524d4a400a8d2173ab6c9b1db9fdc1a62c5126c905acd5611" compoundref="passwordconfiguration_8h" startline="17">PasswordConfiguration::ALLCHARS</references>
+        <references refid="class_pass_1a0eafb54675479378ec98307f0e4fff65">critical</references>
+        <references refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" compoundref="executor_8cpp" startline="223" endline="258">Executor::executeBlocking</references>
+        <references refid="class_pass_1aff660edce34d33f5a2adfa8c130470f0" compoundref="pass_8cpp" startline="879" endline="890">generateRandomPassword</references>
+        <references refid="class_qt_pass_settings_1a3503e8d11b7e24b35a34801f755ba80a" compoundref="qtpasssettings_8cpp" startline="74" endline="92">QtPassSettings::getPasswordConfiguration</references>
+        <references refid="class_qt_pass_settings_1a1d47181e99a5865d5d37f07b632d459f" compoundref="qtpasssettings_8cpp" startline="521" endline="526">QtPassSettings::getPwgenExecutable</references>
+        <references refid="class_qt_pass_settings_1a694bfde7cafcdd174b706945ba264639" compoundref="qtpasssettings_8cpp" startline="656" endline="660">QtPassSettings::isAvoidCapitals</references>
+        <references refid="class_qt_pass_settings_1ac00931edbba70ed05bb304df05919b9d" compoundref="qtpasssettings_8cpp" startline="665" endline="669">QtPassSettings::isAvoidNumbers</references>
+        <references refid="class_qt_pass_settings_1a901005f778f15b9ee833f2ab08573917" compoundref="qtpasssettings_8cpp" startline="674" endline="678">QtPassSettings::isLessRandom</references>
+        <references refid="class_qt_pass_settings_1abba786920f2fb3afbdc04fe43f8144e2" compoundref="qtpasssettings_8cpp" startline="647" endline="651">QtPassSettings::isUsePwgen</references>
+        <references refid="class_qt_pass_settings_1a814fdd902d1ed560225331a93d9d3ccd" compoundref="qtpasssettings_8cpp" startline="683" endline="687">QtPassSettings::isUseSymbols</references>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a0c29f7bd4ca235d00d9dac6a37e14f4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::GenerateGPGKeys</definition>
+        <argsstring>(QString batch)</argsstring>
+        <name>GenerateGPGKeys</name>
+        <qualifiedname>Pass::GenerateGPGKeys</qualifiedname>
+        <param>
+          <type>QString</type>
+          <declname>batch</declname>
+        </param>
+        <briefdescription>
+<para>Generate GPG keys using batch script. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_pass_1a0c29f7bd4ca235d00d9dac6a37e14f4f" kindref="member">Pass::GenerateGPGKeys</ref> internal gpg keypair generator . .</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>batch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPG batch script content.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>batch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GnuPG style configuration string </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="153" column="8" bodyfile="src/pass.cpp" bodystart="415" bodyend="430"/>
+        <references refid="struct_resolved_gpgconf_command_1aa06fa6189e39477786bbb118dca49556" compoundref="pass_8h" startline="19">ResolvedGpgconfCommand::arguments</references>
+        <references refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" compoundref="executor_8cpp" startline="223" endline="258">Executor::executeBlocking</references>
+        <references refid="class_pass_1a66f59138ffe856fd421410d9af9ddc62" compoundref="pass_8cpp" startline="96" endline="100">executeWrapper</references>
+        <references refid="class_qt_pass_settings_1a6d9beabe93c829cacdcc6c27792ffdba" compoundref="qtpasssettings_8cpp" startline="512" endline="516">QtPassSettings::getGpgExecutable</references>
+        <references refid="imitatepass_8cpp_1a8c1e49dd6a89933e17a3377e9833b55c" compoundref="enums_8h" startline="37">GPG_GENKEYS</references>
+        <references refid="struct_resolved_gpgconf_command_1ae34ff02051398b8688497a4fb373e1d3" compoundref="pass_8h" startline="18">ResolvedGpgconfCommand::program</references>
+        <references refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" compoundref="pass_8cpp" startline="367" endline="409">resolveGpgconfCommand</references>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a6ed6c10b07137f62e127b290ebd428a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &gt;</type>
+        <definition>QList&lt; UserInfo &gt; Pass::listKeys</definition>
+        <argsstring>(QStringList keystrings, bool secret=false)</argsstring>
+        <name>listKeys</name>
+        <qualifiedname>Pass::listKeys</qualifiedname>
+        <param>
+          <type>QStringList</type>
+          <declname>keystrings</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>secret</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>List GPG keys matching patterns. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_pass_1a6ed6c10b07137f62e127b290ebd428a2" kindref="member">Pass::listKeys</ref> list users.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keystrings</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of search patterns. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secret</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Include secret keys. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>List of matching keys.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keystrings</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secret</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list private keys </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QList&lt;UserInfo&gt; users </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="160" column="8" bodyfile="src/pass.cpp" bodystart="438" bodyend="453"/>
+        <references refid="helpers_8h_1adc90de3a8181fb745eeea1b76cfd2ed7" compoundref="helpers_8h" startline="20">AS_CONST</references>
+        <references refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" compoundref="executor_8cpp" startline="223" endline="258">Executor::executeBlocking</references>
+        <references refid="class_qt_pass_settings_1a6d9beabe93c829cacdcc6c27792ffdba" compoundref="qtpasssettings_8cpp" startline="512" endline="516">QtPassSettings::getGpgExecutable</references>
+        <references refid="gpgkeystate_8cpp_1a12e5b0425a769a2aa80c91f3f5e1ddc8" compoundref="gpgkeystate_8cpp" startline="110" endline="161">parseGpgColonOutput</references>
+        <referencedby refid="class_pass_1a170c0e1d359eb3f2d7b5f75f60082bd6" compoundref="pass_8cpp" startline="461" endline="463">listKeys</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a170c0e1d359eb3f2d7b5f75f60082bd6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &gt;</type>
+        <definition>QList&lt; UserInfo &gt; Pass::listKeys</definition>
+        <argsstring>(const QString &amp;keystring=&quot;&quot;, bool secret=false)</argsstring>
+        <name>listKeys</name>
+        <qualifiedname>Pass::listKeys</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>keystring</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>secret</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>List GPG keys. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_pass_1a6ed6c10b07137f62e127b290ebd428a2" kindref="member">Pass::listKeys</ref> list users.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keystring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Search pattern. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secret</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Include secret keys. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>List of matching keys.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keystring</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secret</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>list private keys </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QList&lt;UserInfo&gt; users </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="167" column="8" bodyfile="src/pass.cpp" bodystart="461" bodyend="463"/>
+        <references refid="class_pass_1a6ed6c10b07137f62e127b290ebd428a2" compoundref="pass_8cpp" startline="438" endline="453">listKeys</references>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1ac679a086b289cdb9245906948ba0458a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::updateEnv</definition>
+        <argsstring>()</argsstring>
+        <name>updateEnv</name>
+        <qualifiedname>Pass::updateEnv</qualifiedname>
+        <briefdescription>
+<para>Update environment for subprocesses. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Update the process environment used for executing external commands.</para>
+<para>Updates environment entries for PASSWORD_STORE_SIGNING_KEY, PASSWORD_STORE_DIR, PASSWORD_STORE_GENERATED_LENGTH, and PASSWORD_STORE_CHARACTER_SET based on current settings, then applies the environment to the internal executor. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="172" column="8" bodyfile="src/pass.cpp" bodystart="758" bodyend="772"/>
+        <references refid="class_pass_1a903a833ade1109f9cb75e3bbeab8d0af" compoundref="pass_8h" startline="42">exec</references>
+        <references refid="class_qt_pass_settings_1a7b92ee036db63e5d2b49da826b5763ee" compoundref="qtpasssettings_8cpp" startline="460" endline="464">QtPassSettings::getPassSigningKey</references>
+        <references refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" compoundref="qtpasssettings_8cpp" startline="433" endline="455">QtPassSettings::getPassStore</references>
+        <references refid="class_qt_pass_settings_1a3503e8d11b7e24b35a34801f755ba80a" compoundref="qtpasssettings_8cpp" startline="74" endline="92">QtPassSettings::getPasswordConfiguration</references>
+        <references refid="struct_password_configuration_1a1f0990ce1daaecb8852976eeb7df61bd" compoundref="passwordconfiguration_8h" startline="26">PasswordConfiguration::length</references>
+        <references refid="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" compoundref="pass_8cpp" startline="735" endline="749">setEnvVar</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_pass_1a4c2bca8a9a59a032adc68846055b056b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool Pass::gpgSupportsEd25519</definition>
+        <argsstring>()</argsstring>
+        <name>gpgSupportsEd25519</name>
+        <qualifiedname>Pass::gpgSupportsEd25519</qualifiedname>
+        <briefdescription>
+<para>Check if GPG supports Ed25519 encryption. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_pass_1a4c2bca8a9a59a032adc68846055b056b" kindref="member">Pass::gpgSupportsEd25519</ref> check if GPG supports ed25519 (ECC) GPG 2.1+ supports ed25519 which is much faster for key generation.</para>
+<para><simplesect kind="return"><para>true if Ed25519 is supported.</para>
+</simplesect>
+<simplesect kind="return"><para>true if ed25519 is supported </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="59" column="15" bodyfile="src/pass.cpp" bodystart="199" bodyend="213"/>
+        <references refid="class_executor_1a4e210af42a76029683ded3210cf7bce2" compoundref="executor_8cpp" startline="223" endline="258">Executor::executeBlocking</references>
+        <references refid="class_qt_pass_settings_1a6d9beabe93c829cacdcc6c27792ffdba" compoundref="qtpasssettings_8cpp" startline="512" endline="516">QtPassSettings::getGpgExecutable</references>
+        <referencedby refid="class_pass_1ae3284a937d0ca8ae2ea2d81ec556c37b" compoundref="pass_8cpp" startline="220" endline="245">getDefaultKeyTemplate</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1ae3284a937d0ca8ae2ea2d81ec556c37b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Pass::getDefaultKeyTemplate</definition>
+        <argsstring>()</argsstring>
+        <name>getDefaultKeyTemplate</name>
+        <qualifiedname>Pass::getDefaultKeyTemplate</qualifiedname>
+        <briefdescription>
+<para>Get default key template for new GPG keys. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_pass_1ae3284a937d0ca8ae2ea2d81ec556c37b" kindref="member">Pass::getDefaultKeyTemplate</ref> return default key generation template Uses ed25519 if supported, otherwise falls back to RSA.</para>
+<para><simplesect kind="return"><para>Default template string.</para>
+</simplesect>
+<simplesect kind="return"><para>GPG batch template string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="64" column="18" bodyfile="src/pass.cpp" bodystart="220" bodyend="245"/>
+        <references refid="class_pass_1a4c2bca8a9a59a032adc68846055b056b" compoundref="pass_8cpp" startline="199" endline="213">gpgSupportsEd25519</references>
+        <referencedby refid="class_keygen_dialog_1a565b5698b7bb40720476d61b8b1b8548" compoundref="keygendialog_8cpp" startline="21" endline="42">KeygenDialog::KeygenDialog</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="struct_resolved_gpgconf_command" kindref="compound">ResolvedGpgconfCommand</ref></type>
+        <definition>ResolvedGpgconfCommand Pass::resolveGpgconfCommand</definition>
+        <argsstring>(const QString &amp;gpgPath)</argsstring>
+        <name>resolveGpgconfCommand</name>
+        <qualifiedname>Pass::resolveGpgconfCommand</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>gpgPath</declname>
+        </param>
+        <briefdescription>
+<para>Resolve the gpgconf command to kill agents. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gpgPath</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to gpg executable. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Resolved command with program and arguments. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="180" column="15" bodyfile="src/pass.cpp" bodystart="367" bodyend="409"/>
+        <referencedby refid="class_pass_1a0c29f7bd4ca235d00d9dac6a37e14f4f" compoundref="pass_8cpp" startline="415" endline="430">GenerateGPGKeys</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a7bab4c97e4a327cc34060a67c09959bf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Pass::getGpgIdPath</definition>
+        <argsstring>(const QString &amp;for_file)</argsstring>
+        <name>getGpgIdPath</name>
+        <qualifiedname>Pass::getGpgIdPath</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>for_file</declname>
+        </param>
+        <briefdescription>
+<para>Get .gpg-id file path for a password file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_pass_1a7bab4c97e4a327cc34060a67c09959bf" kindref="member">Pass::getGpgIdPath</ref> return gpgid file path for some file (folder).</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>for_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to password file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Path to .gpg-id file.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>for_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which file (folder) would you like the gpgid file path for. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>path to the gpgid file. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="187" column="15" bodyfile="src/pass.cpp" bodystart="779" bodyend="802"/>
+        <references refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" compoundref="qtpasssettings_8cpp" startline="433" endline="455">QtPassSettings::getPassStore</references>
+        <referencedby refid="class_pass_1a693825d2ad62813cf103860ef6211370" compoundref="pass_8cpp" startline="809" endline="823">getRecipientList</referencedby>
+        <referencedby refid="class_imitate_pass_1a84de97293ca1a100b1e466b4a79ec601" compoundref="imitatepass_8cpp" startline="137" endline="176">ImitatePass::Insert</referencedby>
+        <referencedby refid="class_imitate_pass_1a7af6102fa60b3267bd1e387e7cfd82af" compoundref="imitatepass_8cpp" startline="497" endline="513">ImitatePass::verifyGpgIdForDir</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a693825d2ad62813cf103860ef6211370" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QStringList</type>
+        <definition>QStringList Pass::getRecipientList</definition>
+        <argsstring>(const QString &amp;for_file)</argsstring>
+        <name>getRecipientList</name>
+        <qualifiedname>Pass::getRecipientList</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>for_file</declname>
+        </param>
+        <briefdescription>
+<para>Get list of recipients for a password file. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_pass_1a693825d2ad62813cf103860ef6211370" kindref="member">Pass::getRecipientList</ref> return list of gpg-id&apos;s to encrypt for.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>for_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to password file. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>List of recipient key IDs.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>for_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which file (folder) would you like recipients for </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>recipients gpg-id contents </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="193" column="15" bodyfile="src/pass.cpp" bodystart="809" bodyend="823"/>
+        <references refid="class_pass_1a7bab4c97e4a327cc34060a67c09959bf" compoundref="pass_8cpp" startline="779" endline="802">getGpgIdPath</references>
+        <references refid="class_util_1aba7296e41ef990d5d945d5ed8cd99bd5" compoundref="util_8cpp" startline="280" endline="301">Util::isValidKeyId</references>
+        <referencedby refid="class_pass_1ae1f31c62b7117b99882625dbef654533" compoundref="pass_8cpp" startline="832" endline="840">getRecipientString</referencedby>
+        <referencedby refid="class_imitate_pass_1a84de97293ca1a100b1e466b4a79ec601" compoundref="imitatepass_8cpp" startline="137" endline="176">ImitatePass::Insert</referencedby>
+        <referencedby refid="class_imitate_pass_1a7af6102fa60b3267bd1e387e7cfd82af" compoundref="imitatepass_8cpp" startline="497" endline="513">ImitatePass::verifyGpgIdForDir</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1ae1f31c62b7117b99882625dbef654533" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QStringList</type>
+        <definition>QStringList Pass::getRecipientString</definition>
+        <argsstring>(const QString &amp;for_file, const QString &amp;separator=&quot; &quot;, int *count=nullptr)</argsstring>
+        <name>getRecipientString</name>
+        <qualifiedname>Pass::getRecipientString</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>for_file</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>separator</declname>
+          <defval>&quot; &quot;</defval>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>count</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Get recipients as string. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_pass_1ae1f31c62b7117b99882625dbef654533" kindref="member">Pass::getRecipientString</ref> formatted string for use with GPG.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>for_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to password file. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>separator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Separator between recipients. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to store recipient count. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>List of recipient key IDs.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>for_file</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>which file (folder) would you like recipients for </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>separator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>formating separator eg: &quot; -r &quot; </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>recipient string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="201" column="15" bodyfile="src/pass.cpp" bodystart="832" bodyend="840"/>
+        <references refid="class_pass_1a693825d2ad62813cf103860ef6211370" compoundref="pass_8cpp" startline="809" endline="823">getRecipientList</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_pass_1a66f59138ffe856fd421410d9af9ddc62" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::executeWrapper</definition>
+        <argsstring>(PROCESS id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</argsstring>
+        <name>executeWrapper</name>
+        <qualifiedname>Pass::executeWrapper</qualifiedname>
+        <param>
+          <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStdout</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStderr</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Execute external wrapper command. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Executes a wrapper command.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Executable path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStdout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Capture stdout. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStderr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Capture stderr.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process ID </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Application to execute </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Arguments </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStdout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to read stdout </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStderr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to read stderr </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="214" column="8" bodyfile="src/pass.cpp" bodystart="96" bodyend="100"/>
+        <references refid="class_pass_1a66f59138ffe856fd421410d9af9ddc62" compoundref="pass_8cpp" startline="96" endline="100">executeWrapper</references>
+        <referencedby refid="class_imitate_pass_1aa2ade77096c04fb94536d675bfaae8fe" compoundref="imitatepass_8cpp" startline="1034" endline="1039">ImitatePass::executeWrapper</referencedby>
+        <referencedby refid="class_pass_1a66f59138ffe856fd421410d9af9ddc62" compoundref="pass_8cpp" startline="96" endline="100">executeWrapper</referencedby>
+        <referencedby refid="class_pass_1a0c29f7bd4ca235d00d9dac6a37e14f4f" compoundref="pass_8cpp" startline="415" endline="430">GenerateGPGKeys</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1aff660edce34d33f5a2adfa8c130470f0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Pass::generateRandomPassword</definition>
+        <argsstring>(const QString &amp;charset, unsigned int length)</argsstring>
+        <name>generateRandomPassword</name>
+        <qualifiedname>Pass::generateRandomPassword</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>charset</declname>
+        </param>
+        <param>
+          <type>unsigned int</type>
+          <declname>length</declname>
+        </param>
+        <briefdescription>
+<para>Generate random password from charset. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Generates a random password from the given charset.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>charset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Character set. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Password length. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Generated password.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>charset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Characters to use in the password </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Desired password length </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Generated password string </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="222" column="8" bodyfile="src/pass.cpp" bodystart="879" bodyend="890"/>
+        <references refid="class_pass_1a4f63e4e86c7ffec6df333e466fb38c3b" compoundref="pass_8cpp" startline="850" endline="871">boundedRandom</references>
+        <referencedby refid="class_pass_1a35b3cba623a22f41173670ec34ebb67c" compoundref="pass_8cpp" startline="139" endline="192">generatePassword</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a4f63e4e86c7ffec6df333e466fb38c3b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>quint32</type>
+        <definition>quint32 Pass::boundedRandom</definition>
+        <argsstring>(quint32 bound)</argsstring>
+        <name>boundedRandom</name>
+        <qualifiedname>Pass::boundedRandom</qualifiedname>
+        <param>
+          <type>quint32</type>
+          <declname>bound</declname>
+        </param>
+        <briefdescription>
+<para>Generate random number in range. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Generates a random number bounded by the given value.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper bound (exclusive). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Random number.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bound</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Upper bound (exclusive) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Random number in range [0, bound) </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="229" column="8" bodyfile="src/pass.cpp" bodystart="850" bodyend="871"/>
+        <referencedby refid="class_pass_1aff660edce34d33f5a2adfa8c130470f0" compoundref="pass_8cpp" startline="879" endline="890">generateRandomPassword</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::setEnvVar</definition>
+        <argsstring>(const QString &amp;key, const QString &amp;value)</argsstring>
+        <name>setEnvVar</name>
+        <qualifiedname>Pass::setEnvVar</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Set or remove an environment variable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><ref refid="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" kindref="member">Pass::setEnvVar</ref> set or remove a single environment variable.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name including trailing &apos;=&apos;. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New value; empty string removes the variable.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Variable name including trailing &apos;=&apos; (e.g. &quot;FOO=&quot;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to set; pass an empty string to remove the variable.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Set or remove a single environment variable in the local env list.</para>
+<para>The provided key must include a trailing &apos;=&apos; (e.g. &quot;FOO=&quot;). Existing entries whose text begins with the given key are removed before the new value is applied. If value is non-empty the pair &quot;key+value&quot; is appended; if value is empty the variable is removed.</para>
+<para>The function asserts if key does not end with &apos;=&apos;; if the assertion is not active it will emit a warning and return without modifying env.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Environment variable name with trailing &apos;=&apos; (anchors the lookup). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to set for the variable; an empty string unsets the variable. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="235" column="8" bodyfile="src/pass.cpp" bodystart="735" bodyend="749"/>
+        <referencedby refid="class_pass_1ac679a086b289cdb9245906948ba0458a" compoundref="pass_8cpp" startline="758" endline="772">updateEnv</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a924b4cd54e4b5e24fa42661b7eccec07" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Pass::executeWrapper</definition>
+        <argsstring>(PROCESS id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout=true, bool readStderr=true)</argsstring>
+        <name>executeWrapper</name>
+        <qualifiedname>Pass::executeWrapper</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1aa2ade77096c04fb94536d675bfaae8fe">executeWrapper</reimplementedby>
+        <param>
+          <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref></type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStdout</declname>
+          <defval>true</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStderr</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Execute wrapper with input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Executable path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Input to pass to stdin. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStdout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Capture stdout. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStderr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Capture stderr. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="246" column="16" bodyfile="src/pass.cpp" bodystart="102" bodyend="110"/>
+        <references refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" compoundref="debughelper_8h" startline="21">dbg</references>
+        <references refid="class_pass_1a903a833ade1109f9cb75e3bbeab8d0af" compoundref="pass_8h" startline="42">exec</references>
+        <references refid="class_qt_pass_settings_1a538e612e04fe934535e1f7525d55743c" compoundref="qtpasssettings_8cpp" startline="433" endline="455">QtPassSettings::getPassStore</references>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-slot">
+      <memberdef kind="slot" id="class_pass_1ad51174f24ecdbc14a55e4588a34b8563" prot="protected" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void Pass::finished</definition>
+        <argsstring>(int id, int exitCode, const QString &amp;out, const QString &amp;err)</argsstring>
+        <name>finished</name>
+        <qualifiedname>Pass::finished</qualifiedname>
+        <reimplementedby refid="class_imitate_pass_1aa0b75b53b2a2d62b0fbffbb5d2d7efe4">finished</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>exitCode</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+<para>Handle process completion. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Pass::processFinished reemits specific signal based on what process has finished.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exitCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Process exit code. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard output. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard error.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of <ref refid="class_pass" kindref="compound">Pass</ref> process that was scheduled and finished </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exitCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return code of a process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>output generated by process(if capturing was requested, empty
+             otherwise) </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>error output generated by process(if capturing was requested,
+             or error occurred) </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="258" column="16" bodyfile="src/pass.cpp" bodystart="606" bodyend="616"/>
+        <referencedby refid="class_imitate_pass_1aa0b75b53b2a2d62b0fbffbb5d2d7efe4" compoundref="imitatepass_8cpp" startline="995" endline="1023">ImitatePass::finished</referencedby>
+        <referencedby refid="class_pass_1a5d0cea4019f5c123fb4a4417de8d95b9" compoundref="pass_8cpp" startline="53" endline="86">Pass</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_pass_1a23d86a80c0e1772771f097062dc0ab7c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::handleProcessError</definition>
+        <argsstring>(PROCESS pid, int exitCode, const QString &amp;out, const QString &amp;err)</argsstring>
+        <name>handleProcessError</name>
+        <qualifiedname>Pass::handleProcessError</qualifiedname>
+        <param>
+          <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref></type>
+          <declname>pid</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>exitCode</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="262" column="8" bodyfile="src/pass.cpp" bodystart="618" bodyend="634"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a08f74d0bc2e7adf119c7bc171925f2c8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::handleGrepError</definition>
+        <argsstring>(int exitCode, const QString &amp;err)</argsstring>
+        <name>handleGrepError</name>
+        <qualifiedname>Pass::handleGrepError</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>exitCode</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="264" column="8" bodyfile="src/pass.cpp" bodystart="636" bodyend="643"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1aa7deb8fc813c6652b169d11bb687f613" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString Pass::formatInsertError</definition>
+        <argsstring>(const QString &amp;friendly, const QString &amp;err)</argsstring>
+        <name>formatInsertError</name>
+        <qualifiedname>Pass::formatInsertError</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>friendly</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="265" column="8" bodyfile="src/pass.cpp" bodystart="645" bodyend="656"/>
+      </memberdef>
+      <memberdef kind="function" id="class_pass_1a57b61261a84b79bb73b209b3511a87ff" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::emitProcessFinishedSignal</definition>
+        <argsstring>(PROCESS pid, const QString &amp;out, const QString &amp;err)</argsstring>
+        <name>emitProcessFinishedSignal</name>
+        <qualifiedname>Pass::emitProcessFinishedSignal</qualifiedname>
+        <param>
+          <type><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref></type>
+          <declname>pid</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+<para>Emit the appropriate finished signal for a completed subprocess. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Emits a specific Qt signal corresponding to the given process identifier; for grep results the stdout is parsed into a list of matches before emitting.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pid</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The process identifier indicating which finished signal to emit. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard output produced by the process. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard error produced by the process. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="267" column="8" bodyfile="src/pass.cpp" bodystart="668" bodyend="713"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_pass_1ad0afad0f75995803c1aa90d936e3db18" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::error</definition>
+        <argsstring>(QProcess::ProcessError)</argsstring>
+        <name>error</name>
+        <qualifiedname>Pass::error</qualifiedname>
+        <param>
+          <type>QProcess::ProcessError</type>
+        </param>
+        <briefdescription>
+<para>Emitted when a process error occurs. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="274" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a0345d3ffdb213234031e9c84fe8ca7c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::startingExecuteWrapper</definition>
+        <argsstring>()</argsstring>
+        <name>startingExecuteWrapper</name>
+        <qualifiedname>Pass::startingExecuteWrapper</qualifiedname>
+        <briefdescription>
+<para>Emitted before executing a command. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="278" column="8"/>
+        <referencedby refid="class_pass_1a5d0cea4019f5c123fb4a4417de8d95b9" compoundref="pass_8cpp" startline="53" endline="86">Pass</referencedby>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a404664f7d589a307c9223c373b2622c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::statusMsg</definition>
+        <argsstring>(const QString &amp;, int)</argsstring>
+        <name>statusMsg</name>
+        <qualifiedname>Pass::statusMsg</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+<para>Emit status message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>Message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>text. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>Timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>in ms. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="284" column="8"/>
+        <referencedby refid="class_imitate_pass_1a086365ec85674590afbd883df0b27a80" compoundref="imitatepass_8cpp" startline="687" endline="713">ImitatePass::createBackupCommit</referencedby>
+        <referencedby refid="class_imitate_pass_1af331446d163c31f1fca714646c0f6244" compoundref="imitatepass_8cpp" startline="728" endline="791">ImitatePass::reencryptPath</referencedby>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a0eafb54675479378ec98307f0e4fff65" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::critical</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>critical</name>
+        <qualifiedname>Pass::critical</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emit critical error. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error title. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="290" column="8"/>
+        <referencedby refid="class_imitate_pass_1a086365ec85674590afbd883df0b27a80" compoundref="imitatepass_8cpp" startline="687" endline="713">ImitatePass::createBackupCommit</referencedby>
+        <referencedby refid="class_pass_1a35b3cba623a22f41173670ec34ebb67c" compoundref="pass_8cpp" startline="139" endline="192">generatePassword</referencedby>
+        <referencedby refid="class_imitate_pass_1a6fe6b48df3fb04071c8c2c1d5c1d1206" compoundref="imitatepass_8cpp" startline="370" endline="415">ImitatePass::Init</referencedby>
+        <referencedby refid="class_imitate_pass_1a84de97293ca1a100b1e466b4a79ec601" compoundref="imitatepass_8cpp" startline="137" endline="176">ImitatePass::Insert</referencedby>
+        <referencedby refid="class_imitate_pass_1af331446d163c31f1fca714646c0f6244" compoundref="imitatepass_8cpp" startline="728" endline="791">ImitatePass::reencryptPath</referencedby>
+        <referencedby refid="class_imitate_pass_1a662922741c9302e7ff58690a2f35808c" compoundref="imitatepass_8cpp" startline="573" endline="681">ImitatePass::reencryptSingleFile</referencedby>
+        <referencedby refid="class_imitate_pass_1aa6163e2dd259c8f69d0cead7551b573a" compoundref="imitatepass_8cpp" startline="293" endline="324">ImitatePass::signGpgIdFile</referencedby>
+        <referencedby refid="class_imitate_pass_1a7af6102fa60b3267bd1e387e7cfd82af" compoundref="imitatepass_8cpp" startline="497" endline="513">ImitatePass::verifyGpgIdForDir</referencedby>
+        <referencedby refid="class_imitate_pass_1ae65aff95459cee83b5b999f5a83fcac1" compoundref="imitatepass_8cpp" startline="256" endline="278">ImitatePass::writeGpgIdFile</referencedby>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a9bb040e1a33322a27cd85d8a367ef24f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::processErrorExit</definition>
+        <argsstring>(int exitCode, const QString &amp;err)</argsstring>
+        <name>processErrorExit</name>
+        <qualifiedname>Pass::processErrorExit</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>exitCode</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>err</declname>
+        </param>
+        <briefdescription>
+<para>Emitted on process error exit. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="295" column="8"/>
+        <referencedby refid="class_password_dialog_1a2122f5d2737b70e5602a7bced9b5cf98" compoundref="passworddialog_8cpp" startline="46" endline="72">PasswordDialog::PasswordDialog</referencedby>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a6811d3de9b04450c59cf17d7ce9272a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedAny</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedAny</name>
+        <qualifiedname>Pass::finishedAny</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when any operation finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="300" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a52541582298af5b2707447e3a57f85bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedGitInit</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedGitInit</name>
+        <qualifiedname>Pass::finishedGitInit</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when Git init finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="304" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1ab6d3acbdce8a5bc579bef175c85382df" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedGitPull</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedGitPull</name>
+        <qualifiedname>Pass::finishedGitPull</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when Git pull finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="308" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1ab892bcacdbe3081f677e456a3a8ac328" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedGitPush</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedGitPush</name>
+        <qualifiedname>Pass::finishedGitPush</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when Git push finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="312" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a24cdfb567ab68940f2a823704e2ab1ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedShow</definition>
+        <argsstring>(const QString &amp;)</argsstring>
+        <name>finishedShow</name>
+        <qualifiedname>Pass::finishedShow</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when show finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="316" column="8"/>
+        <referencedby refid="class_password_dialog_1a61ddeb0b0a60558c150a6fbe35306c2e" compoundref="passworddialog_8cpp" startline="24" endline="38">PasswordDialog::PasswordDialog</referencedby>
+        <referencedby refid="class_password_dialog_1a2122f5d2737b70e5602a7bced9b5cf98" compoundref="passworddialog_8cpp" startline="46" endline="72">PasswordDialog::PasswordDialog</referencedby>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a8ca44f13c68a03c1e91fbbfee37388ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedOtpGenerate</definition>
+        <argsstring>(const QString &amp;)</argsstring>
+        <name>finishedOtpGenerate</name>
+        <qualifiedname>Pass::finishedOtpGenerate</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when OTP generation finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="320" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a71d8c179a7875dd2983de2aabff0a8cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedInsert</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedInsert</name>
+        <qualifiedname>Pass::finishedInsert</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when insert finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="324" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a263cc9ceb5269427237ea43267667197" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedRemove</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedRemove</name>
+        <qualifiedname>Pass::finishedRemove</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when remove finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="328" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a7a4c2bbb80372455e0d406fbc940e219" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedInit</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedInit</name>
+        <qualifiedname>Pass::finishedInit</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when init finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="332" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a3ca180cb5769aa87186474f7eda9e2a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedMove</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedMove</name>
+        <qualifiedname>Pass::finishedMove</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when move finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="336" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a22febea5d24676854f3dad24260df4d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedCopy</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedCopy</name>
+        <qualifiedname>Pass::finishedCopy</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when copy finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="340" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1abc6173e796622bf53878d7bd64861c7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedGenerate</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedGenerate</name>
+        <qualifiedname>Pass::finishedGenerate</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when generate finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="344" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1aeb0213d032e070ad788398328c0a080c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedGenerateGPGKeys</definition>
+        <argsstring>(const QString &amp;, const QString &amp;)</argsstring>
+        <name>finishedGenerateGPGKeys</name>
+        <qualifiedname>Pass::finishedGenerateGPGKeys</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+<para>Emitted when GPG key generation finishes. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="348" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_pass_1a74344f203b81f87b4d42a6281a176db4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Pass::finishedGrep</definition>
+        <argsstring>(const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</argsstring>
+        <name>finishedGrep</name>
+        <qualifiedname>Pass::finishedGrep</qualifiedname>
+        <param>
+          <type>const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+<para>Emitted when grep finishes with matching results. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/pass.h" line="352" column="8"/>
+        <referencedby refid="class_imitate_pass_1a7789a916aca076ad7ceaf4ef093239d3" compoundref="imitatepass_8cpp" startline="1099" endline="1167">ImitatePass::Grep</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Abstract base class for password store operations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_pass" kindref="compound">Pass</ref> provides an abstraction layer for password management, supporting both the native &apos;pass&apos; utility and gopass/imitation backends. It handles:<itemizedlist>
+<listitem><para>Password file operations (show, insert, remove, move, copy)</para>
+</listitem><listitem><para>GPG key management and Git integration</para>
+</listitem><listitem><para>OTP generation</para>
+</listitem><listitem><para>Random password generation</para>
+</listitem></itemizedlist>
+</para>
+<para>Subclasses must implement Git and password operations. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>ImitatePass</label>
+        <link refid="class_imitate_pass"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Pass</label>
+        <link refid="class_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="4">
+        <label>RealPass</label>
+        <link refid="class_real_pass"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>Executor</label>
+        <link refid="class_executor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Pass</label>
+        <link refid="class_pass"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>exec</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/pass.h" line="35" column="1" bodyfile="src/pass.h" bodystart="35" bodyend="353"/>
+    <listofallmembers>
+      <member refid="class_pass_1a4f63e4e86c7ffec6df333e466fb38c3b" prot="protected" virt="non-virtual"><scope>Pass</scope><name>boundedRandom</name></member>
+      <member refid="class_pass_1a1a41ce3d629b20902e9d14ff285c1f49" prot="public" virt="pure-virtual"><scope>Pass</scope><name>Copy</name></member>
+      <member refid="class_pass_1a0eafb54675479378ec98307f0e4fff65" prot="public" virt="non-virtual"><scope>Pass</scope><name>critical</name></member>
+      <member refid="class_pass_1a57b61261a84b79bb73b209b3511a87ff" prot="private" virt="non-virtual"><scope>Pass</scope><name>emitProcessFinishedSignal</name></member>
+      <member refid="class_pass_1abe8595bd553f84e7ccdb9f3d94144909" prot="private" virt="non-virtual"><scope>Pass</scope><name>env</name></member>
+      <member refid="class_pass_1ad0afad0f75995803c1aa90d936e3db18" prot="public" virt="non-virtual"><scope>Pass</scope><name>error</name></member>
+      <member refid="class_pass_1a903a833ade1109f9cb75e3bbeab8d0af" prot="protected" virt="non-virtual"><scope>Pass</scope><name>exec</name></member>
+      <member refid="class_pass_1a66f59138ffe856fd421410d9af9ddc62" prot="protected" virt="non-virtual"><scope>Pass</scope><name>executeWrapper</name></member>
+      <member refid="class_pass_1a924b4cd54e4b5e24fa42661b7eccec07" prot="protected" virt="virtual"><scope>Pass</scope><name>executeWrapper</name></member>
+      <member refid="class_pass_1ad51174f24ecdbc14a55e4588a34b8563" prot="protected" virt="virtual"><scope>Pass</scope><name>finished</name></member>
+      <member refid="class_pass_1a6811d3de9b04450c59cf17d7ce9272a5" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedAny</name></member>
+      <member refid="class_pass_1a22febea5d24676854f3dad24260df4d5" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedCopy</name></member>
+      <member refid="class_pass_1abc6173e796622bf53878d7bd64861c7c" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedGenerate</name></member>
+      <member refid="class_pass_1aeb0213d032e070ad788398328c0a080c" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedGenerateGPGKeys</name></member>
+      <member refid="class_pass_1a52541582298af5b2707447e3a57f85bf" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedGitInit</name></member>
+      <member refid="class_pass_1ab6d3acbdce8a5bc579bef175c85382df" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedGitPull</name></member>
+      <member refid="class_pass_1ab892bcacdbe3081f677e456a3a8ac328" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedGitPush</name></member>
+      <member refid="class_pass_1a74344f203b81f87b4d42a6281a176db4" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedGrep</name></member>
+      <member refid="class_pass_1a7a4c2bbb80372455e0d406fbc940e219" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedInit</name></member>
+      <member refid="class_pass_1a71d8c179a7875dd2983de2aabff0a8cb" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedInsert</name></member>
+      <member refid="class_pass_1a3ca180cb5769aa87186474f7eda9e2a5" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedMove</name></member>
+      <member refid="class_pass_1a8ca44f13c68a03c1e91fbbfee37388ed" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedOtpGenerate</name></member>
+      <member refid="class_pass_1a263cc9ceb5269427237ea43267667197" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedRemove</name></member>
+      <member refid="class_pass_1a24cdfb567ab68940f2a823704e2ab1ba" prot="public" virt="non-virtual"><scope>Pass</scope><name>finishedShow</name></member>
+      <member refid="class_pass_1aa7deb8fc813c6652b169d11bb687f613" prot="private" virt="non-virtual"><scope>Pass</scope><name>formatInsertError</name></member>
+      <member refid="class_pass_1a0c29f7bd4ca235d00d9dac6a37e14f4f" prot="public" virt="non-virtual"><scope>Pass</scope><name>GenerateGPGKeys</name></member>
+      <member refid="class_pass_1a35b3cba623a22f41173670ec34ebb67c" prot="public" virt="virtual"><scope>Pass</scope><name>generatePassword</name></member>
+      <member refid="class_pass_1aff660edce34d33f5a2adfa8c130470f0" prot="protected" virt="non-virtual"><scope>Pass</scope><name>generateRandomPassword</name></member>
+      <member refid="class_pass_1ae3284a937d0ca8ae2ea2d81ec556c37b" prot="public" virt="non-virtual"><scope>Pass</scope><name>getDefaultKeyTemplate</name></member>
+      <member refid="class_pass_1a7bab4c97e4a327cc34060a67c09959bf" prot="public" virt="non-virtual"><scope>Pass</scope><name>getGpgIdPath</name></member>
+      <member refid="class_pass_1a693825d2ad62813cf103860ef6211370" prot="public" virt="non-virtual"><scope>Pass</scope><name>getRecipientList</name></member>
+      <member refid="class_pass_1ae1f31c62b7117b99882625dbef654533" prot="public" virt="non-virtual"><scope>Pass</scope><name>getRecipientString</name></member>
+      <member refid="class_pass_1a26bec7c69e7c35ccb67f8057db90825e" prot="public" virt="pure-virtual"><scope>Pass</scope><name>GitInit</name></member>
+      <member refid="class_pass_1a30c3829a890d65d3e4ba90c12b1852e8" prot="public" virt="pure-virtual"><scope>Pass</scope><name>GitPull</name></member>
+      <member refid="class_pass_1a7a109d5c0a7f565398b7238c32bb6328" prot="public" virt="pure-virtual"><scope>Pass</scope><name>GitPull_b</name></member>
+      <member refid="class_pass_1a7b5fa97ca6f3795512ac7c10db5c8f09" prot="public" virt="pure-virtual"><scope>Pass</scope><name>GitPush</name></member>
+      <member refid="class_pass_1a4c2bca8a9a59a032adc68846055b056b" prot="public" virt="non-virtual"><scope>Pass</scope><name>gpgSupportsEd25519</name></member>
+      <member refid="class_pass_1aeb0ec5b8842c1c27e40dafc2ebcad509" prot="public" virt="pure-virtual"><scope>Pass</scope><name>Grep</name></member>
+      <member refid="class_pass_1a08f74d0bc2e7adf119c7bc171925f2c8" prot="private" virt="non-virtual"><scope>Pass</scope><name>handleGrepError</name></member>
+      <member refid="class_pass_1a23d86a80c0e1772771f097062dc0ab7c" prot="private" virt="non-virtual"><scope>Pass</scope><name>handleProcessError</name></member>
+      <member refid="class_pass_1aee98d184ed11013a9a9dc08d05fbb1a2" prot="public" virt="pure-virtual"><scope>Pass</scope><name>Init</name></member>
+      <member refid="class_pass_1a012c47a55b3cc3467ad0f013716f623a" prot="public" virt="non-virtual"><scope>Pass</scope><name>init</name></member>
+      <member refid="class_pass_1a86ad2005a6517f9c304a9e156755778c" prot="public" virt="pure-virtual"><scope>Pass</scope><name>Insert</name></member>
+      <member refid="class_pass_1a6ed6c10b07137f62e127b290ebd428a2" prot="public" virt="non-virtual"><scope>Pass</scope><name>listKeys</name></member>
+      <member refid="class_pass_1a170c0e1d359eb3f2d7b5f75f60082bd6" prot="public" virt="non-virtual"><scope>Pass</scope><name>listKeys</name></member>
+      <member refid="class_pass_1ab9dde6644865bd583dc09a52d17ffb49" prot="public" virt="pure-virtual"><scope>Pass</scope><name>Move</name></member>
+      <member refid="class_pass_1abfe228b7e546aeb0e33bb8102f2e7f19" prot="public" virt="pure-virtual"><scope>Pass</scope><name>OtpGenerate</name></member>
+      <member refid="class_pass_1a5d0cea4019f5c123fb4a4417de8d95b9" prot="public" virt="non-virtual"><scope>Pass</scope><name>Pass</name></member>
+      <member refid="class_pass_1a2e71b5174b4ef25a1e91d8c56177b772" prot="protected" virt="non-virtual"><scope>Pass</scope><name>PROCESS</name></member>
+      <member refid="class_pass_1a9bb040e1a33322a27cd85d8a367ef24f" prot="public" virt="non-virtual"><scope>Pass</scope><name>processErrorExit</name></member>
+      <member refid="class_pass_1a5aedb6df7aa57385eb19a78cdbd3e764" prot="public" virt="pure-virtual"><scope>Pass</scope><name>Remove</name></member>
+      <member refid="class_pass_1a6a9aa8dc4ff288ce256351b671533a84" prot="public" virt="non-virtual"><scope>Pass</scope><name>resolveGpgconfCommand</name></member>
+      <member refid="class_pass_1a4ecc5514ea969ceb06f439698bf6aa9a" prot="protected" virt="non-virtual"><scope>Pass</scope><name>setEnvVar</name></member>
+      <member refid="class_pass_1a6520ffa669cd7934091934b24593d99c" prot="public" virt="pure-virtual"><scope>Pass</scope><name>Show</name></member>
+      <member refid="class_pass_1a0345d3ffdb213234031e9c84fe8ca7c6" prot="public" virt="non-virtual"><scope>Pass</scope><name>startingExecuteWrapper</name></member>
+      <member refid="class_pass_1a404664f7d589a307c9223c373b2622c3" prot="public" virt="non-virtual"><scope>Pass</scope><name>statusMsg</name></member>
+      <member refid="class_pass_1ac679a086b289cdb9245906948ba0458a" prot="public" virt="non-virtual"><scope>Pass</scope><name>updateEnv</name></member>
+      <member refid="class_pass_1a056fe06a59546aa9539a60a9ba566546" prot="private" virt="non-virtual"><scope>Pass</scope><name>wrapperRunning</name></member>
+      <member refid="class_pass_1a9575bbed98a8dfb8a3f5a30c18d8bfcf" prot="public" virt="non-virtual"><scope>Pass</scope><name>~Pass</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_d4b2d0a48fe0d1d3271350935c41bea7" kind="dir">
+    <compoundname>tests/auto/model</compoundname>
+    <innerfile refid="tst__storemodel_8cpp">tst_storemodel.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="tests/auto/model/"/>
+  </compounddef>
+</doxygen>

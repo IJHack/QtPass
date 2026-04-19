@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="qpushbuttonasqrcode_8cpp" kind="file" language="C++">
+    <compoundname>qpushbuttonasqrcode.cpp</compoundname>
+    <includes refid="qpushbuttonasqrcode_8h" local="yes">qpushbuttonasqrcode.h</includes>
+    <includes local="no">QTimer</includes>
+    <includes local="no">utility</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/qpushbuttonasqrcode.cpp</label>
+        <link refid="qpushbuttonasqrcode_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>qpushbuttonasqrcode.h</label>
+        <link refid="qpushbuttonasqrcode_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QPushButton</label>
+      </node>
+      <node id="4">
+        <label>QTimer</label>
+      </node>
+      <node id="5">
+        <label>utility</label>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2018<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="qpushbuttonasqrcode_8h" kindref="compound">qpushbuttonasqrcode.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QTimer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;utility&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="class_q_push_button_as_q_r_code_1a8b9e33d9c6a605b6071267d0f5bd3c00" refkind="member"><highlight class="normal"><ref refid="class_q_push_button_as_q_r_code_1a8b9e33d9c6a605b6071267d0f5bd3c00" kindref="member">QPushButtonAsQRCode::QPushButtonAsQRCode</ref>(QString<sp/>textToCopy,<sp/>QWidget<sp/>*parent)</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>:<sp/>QPushButton(parent),<sp/>textToCopy(std::move(textToCopy)),</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>iconEdit(QIcon::fromTheme(</highlight><highlight class="stringliteral">&quot;qrcode&quot;</highlight><highlight class="normal">,<sp/>QIcon(</highlight><highlight class="stringliteral">&quot;:/icons/qrcode.svg&quot;</highlight><highlight class="normal">)))<sp/>{</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/>setIcon(iconEdit);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/>setForegroundRole(QPalette::ButtonText);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/>connect(</highlight><highlight class="keyword">this</highlight><highlight class="normal">,<sp/>&amp;QPushButton::clicked,<sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;QPushButtonAsQRCode::buttonClicked);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29" refid="class_q_push_button_as_q_r_code_1ac760ad4c81ab153edbe4ab0e6215aae4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_q_push_button_as_q_r_code_1ac760ad4c81ab153edbe4ab0e6215aae4" kindref="member">QPushButtonAsQRCode::getTextToCopy</ref>()<sp/>const<sp/>-&gt;<sp/>QString<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>textToCopy;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="class_q_push_button_as_q_r_code_1ac2d3260a757c28d04758c1901e5dbd40" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_q_push_button_as_q_r_code_1ac2d3260a757c28d04758c1901e5dbd40" kindref="member">QPushButtonAsQRCode::setTextToCopy</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;value)<sp/>{</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>textToCopy<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>QPushButtonAsQRCode::buttonClicked(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="comment">/*unused*/</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>emit<sp/><ref refid="class_q_push_button_as_q_r_code_1a347f41172463a60dae8c52461436e485" kindref="member">clicked</ref>(textToCopy);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="src/qpushbuttonasqrcode.cpp"/>
+  </compounddef>
+</doxygen>

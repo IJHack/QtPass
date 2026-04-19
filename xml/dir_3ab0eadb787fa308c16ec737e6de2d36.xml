@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_3ab0eadb787fa308c16ec737e6de2d36" kind="dir">
+    <compoundname>tests/auto/gpgkeystate</compoundname>
+    <innerfile refid="tst__gpgkeystate_8cpp">tst_gpgkeystate.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="tests/auto/gpgkeystate/"/>
+  </compounddef>
+</doxygen>

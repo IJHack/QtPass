@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="tst__filecontent_8cpp" kind="file" language="C++">
+    <compoundname>tst_filecontent.cpp</compoundname>
+    <includes local="no">QtTest</includes>
+    <includes refid="filecontent_8h" local="yes">../../../src/filecontent.h</includes>
+    <includes local="yes">tst_filecontent.moc</includes>
+    <incdepgraph>
+      <node id="3">
+        <label>../../../src/filecontent.h</label>
+        <link refid="filecontent_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>tests/auto/filecontent/tst_filecontent.cpp</label>
+        <link refid="tst__filecontent_8cpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>QList</label>
+      </node>
+      <node id="5">
+        <label>QString</label>
+      </node>
+      <node id="6">
+        <label>QStringList</label>
+      </node>
+      <node id="2">
+        <label>QtTest</label>
+      </node>
+      <node id="7">
+        <label>tst_filecontent.moc</label>
+      </node>
+    </incdepgraph>
+    <innerclass refid="classtst__filecontent" prot="public">tst_filecontent</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2026<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QtTest&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="filecontent_8h" kindref="compound">../../../src/filecontent.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="classtst__filecontent" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classtst__filecontent" kindref="compound">tst_filecontent</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject<sp/>{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>Q_SLOTS:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parsePlainPassword();</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parsePasswordWithNamedFields();</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseWithTemplateFields();</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseWithAllFields();</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getRemainingData();</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>getRemainingDataForDisplay();</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>namedValuesTakeValue();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>namedValuesTakeValueNotFound();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseEmptyContent();</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parsePasswordOnly();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseMultipleNamedFields();</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseMatchingTemplateFields();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseOtpauthHiddenLine();</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseColonInValue();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>parseTemplateFieldsCaseSensitive();</highlight></codeline>
+<codeline lineno="26"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parsePlainPassword()<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;my_secret_password&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><ref refid="class_file_content" kindref="compound">FileContent</ref><sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>QStringList(),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/>QVERIFY2(fc.<ref refid="class_file_content_1ac88e8096551d24a41fc0625a4d903139" kindref="member">getPassword</ref>()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;my_secret_password&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Password<sp/>should<sp/>match&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/>QVERIFY(fc.<ref refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kindref="member">getNamedValues</ref>().isEmpty());</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parsePasswordWithNamedFields()<sp/>{</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;secret123\nusername:<sp/>john\npassword:<sp/>doe&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/>QStringList<sp/>templateFields;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>templateFields,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>QVERIFY2(fc.<ref refid="class_file_content_1ac88e8096551d24a41fc0625a4d903139" kindref="member">getPassword</ref>()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;secret123&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Password<sp/>should<sp/>be<sp/>secret123&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>QVERIFY(fc.<ref refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kindref="member">getNamedValues</ref>().isEmpty());</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parseWithTemplateFields()<sp/>{</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;mypassword\nusername:<sp/>john@example.com\nurl:<sp/>https://example.com&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/>QStringList<sp/>templateFields<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;url&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>templateFields,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/>QVERIFY2(fc.<ref refid="class_file_content_1ac88e8096551d24a41fc0625a4d903139" kindref="member">getPassword</ref>()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;mypassword&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Password<sp/>should<sp/>be<sp/>mypassword&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>NamedValues<sp/>nv<sp/>=<sp/>fc.<ref refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kindref="member">getNamedValues</ref>();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>QVERIFY(nv.size()<sp/>==<sp/>2);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/>QVERIFY(nv[0].name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/>QVERIFY(nv[0].value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;john@example.com&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/>QVERIFY(nv[1].name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;url&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/>QVERIFY(nv[1].value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;https://example.com&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parseWithAllFields()<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;pass123\nusername:<sp/>admin\nnotes:<sp/>some<sp/>notes\ncustom:<sp/>value&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>QStringList<sp/>templateFields;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>templateFields,<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>QVERIFY2(fc.<ref refid="class_file_content_1ac88e8096551d24a41fc0625a4d903139" kindref="member">getPassword</ref>()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;pass123&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Password<sp/>should<sp/>be<sp/>pass123&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/>NamedValues<sp/>nv<sp/>=<sp/>fc.<ref refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kindref="member">getNamedValues</ref>();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>QVERIFY(nv.size()<sp/>==<sp/>3);</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>QVERIFY(nv[0].name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>QVERIFY(nv[0].value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;admin&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>QVERIFY(nv[1].name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;notes&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/>QVERIFY(nv[1].value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;some<sp/>notes&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>QVERIFY(nv[2].name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;custom&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>QVERIFY(nv[2].value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;value&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::getRemainingData()<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;secret\nfield1:<sp/>value1\nfield2:<sp/>value2\nextra:<sp/>data&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>QStringList<sp/>templateFields<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;field1&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>templateFields,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>QString<sp/>remaining<sp/>=<sp/>fc.<ref refid="class_file_content_1a845c61a8c0f52e5aa73953c9162dd47d" kindref="member">getRemainingData</ref>();</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>QVERIFY(remaining.contains(</highlight><highlight class="stringliteral">&quot;field2&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>QVERIFY(remaining.contains(</highlight><highlight class="stringliteral">&quot;extra&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::getRemainingDataForDisplay()<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;secret\nnotes:<sp/>some<sp/>notes\notpauth://totp/Secret:<sp/>SKI123456&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>QStringList<sp/>templateFields;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>templateFields,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>QString<sp/>display<sp/>=<sp/>fc.<ref refid="class_file_content_1ac38b9c211d6f62eb7420eecc66f935e8" kindref="member">getRemainingDataForDisplay</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>QVERIFY(display.contains(</highlight><highlight class="stringliteral">&quot;notes&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/>QVERIFY(!display.contains(</highlight><highlight class="stringliteral">&quot;otpauth&quot;</highlight><highlight class="normal">));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::namedValuesTakeValue()<sp/>{</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>NamedValues<sp/>nv<sp/>=<sp/>{{</highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;john&quot;</highlight><highlight class="normal">},<sp/>{</highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;secret&quot;</highlight><highlight class="normal">}};</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>QString<sp/>val<sp/>=<sp/>nv.<ref refid="class_named_values_1a427d280bd24b10d9a5b627b1fa4b5f4b" kindref="member">takeValue</ref>(</highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/>QVERIFY2(val<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;john&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>return<sp/>&apos;john&apos;&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/>val<sp/>=<sp/>nv.<ref refid="class_named_values_1a427d280bd24b10d9a5b627b1fa4b5f4b" kindref="member">takeValue</ref>(</highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/>QVERIFY2(val.isEmpty(),<sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>return<sp/>empty<sp/>after<sp/>taking&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::namedValuesTakeValueNotFound()<sp/>{</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>NamedValues<sp/>nv<sp/>=<sp/>{{</highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;john&quot;</highlight><highlight class="normal">}};</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/>QString<sp/>val<sp/>=<sp/>nv.<ref refid="class_named_values_1a427d280bd24b10d9a5b627b1fa4b5f4b" kindref="member">takeValue</ref>(</highlight><highlight class="stringliteral">&quot;nonexistent&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>QVERIFY2(val.isEmpty(),<sp/></highlight><highlight class="stringliteral">&quot;Should<sp/>return<sp/>empty<sp/>for<sp/>nonexistent<sp/>key&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parseEmptyContent()<sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(</highlight><highlight class="stringliteral">&quot;&quot;</highlight><highlight class="normal">,<sp/>QStringList(),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/>QVERIFY(fc.<ref refid="class_file_content_1ac88e8096551d24a41fc0625a4d903139" kindref="member">getPassword</ref>().isEmpty());</highlight></codeline>
+<codeline lineno="117"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parsePasswordOnly()<sp/>{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(</highlight><highlight class="stringliteral">&quot;single_line&quot;</highlight><highlight class="normal">,<sp/>QStringList(),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/>QVERIFY(fc.<ref refid="class_file_content_1ac88e8096551d24a41fc0625a4d903139" kindref="member">getPassword</ref>()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;single_line&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parseMultipleNamedFields()<sp/>{</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pass\nuser:<sp/>u1\nuser:<sp/>u2\nuser:<sp/>u3&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>QStringList<sp/>templateFields<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;user&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>templateFields,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/>QVERIFY(fc.<ref refid="class_file_content_1ac88e8096551d24a41fc0625a4d903139" kindref="member">getPassword</ref>()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;pass&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/>NamedValues<sp/>nv<sp/>=<sp/>fc.<ref refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kindref="member">getNamedValues</ref>();</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/>QVERIFY2(nv.size()<sp/>==<sp/>3,<sp/></highlight><highlight class="stringliteral">&quot;Expected<sp/>exactly<sp/>three<sp/>parsed<sp/>user<sp/>fields&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/>QVERIFY2(nv[0].name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;user&quot;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>nv[0].value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;u1&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;First<sp/>user<sp/>field<sp/>should<sp/>be<sp/>parsed<sp/>as<sp/>user:<sp/>u1&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/>QVERIFY2(nv[1].name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;user&quot;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>nv[1].value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;u2&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Second<sp/>user<sp/>field<sp/>should<sp/>be<sp/>parsed<sp/>as<sp/>user:<sp/>u2&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>QVERIFY2(nv[2].name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;user&quot;</highlight><highlight class="normal"><sp/>&amp;&amp;<sp/>nv[2].value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;u3&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;Third<sp/>user<sp/>field<sp/>should<sp/>be<sp/>parsed<sp/>as<sp/>user:<sp/>u3&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="137"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parseOtpauthHiddenLine()<sp/>{</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;secret\notpauth://totp/Example:alice@email?secret=key&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>QStringList(),<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>QString<sp/>expected<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;otpauth://totp/Example:alice@email?secret=key&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/>QVERIFY2(fc.<ref refid="class_file_content_1a845c61a8c0f52e5aa73953c9162dd47d" kindref="member">getRemainingData</ref>()<sp/>==<sp/>expected,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;otpauth<sp/>line<sp/>should<sp/>be<sp/>preserved<sp/>in<sp/>remaining<sp/>data&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/>QVERIFY(fc.<ref refid="class_file_content_1ac38b9c211d6f62eb7420eecc66f935e8" kindref="member">getRemainingDataForDisplay</ref>().isEmpty());</highlight></codeline>
+<codeline lineno="146"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parseMatchingTemplateFields()<sp/>{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;secret123\nusername:<sp/>john\npassword:<sp/>doe&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>QStringList<sp/>templateFields<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>templateFields,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>QVERIFY2(fc.<ref refid="class_file_content_1ac88e8096551d24a41fc0625a4d903139" kindref="member">getPassword</ref>()<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;secret123&quot;</highlight><highlight class="normal">,<sp/></highlight><highlight class="stringliteral">&quot;Password<sp/>should<sp/>be<sp/>secret123&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>NamedValues<sp/>nv<sp/>=<sp/>fc.<ref refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kindref="member">getNamedValues</ref>();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>QVERIFY(nv.size()<sp/>==<sp/>2);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/>QVERIFY(nv[0].name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;username&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>QVERIFY(nv[0].value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;john&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>QVERIFY(nv[1].name<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;password&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>QVERIFY(nv[1].value<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;doe&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="159"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parseColonInValue()<sp/>{</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pass\nurl:<sp/>https://example.com:8080/path&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/>QStringList<sp/>templateFields<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;url&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>templateFields,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/>NamedValues<sp/>nv<sp/>=<sp/>fc.<ref refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kindref="member">getNamedValues</ref>();</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/>QVERIFY(nv.size()<sp/>==<sp/>1);</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/>QString<sp/>urlValue<sp/>=<sp/>nv.<ref refid="class_named_values_1a427d280bd24b10d9a5b627b1fa4b5f4b" kindref="member">takeValue</ref>(</highlight><highlight class="stringliteral">&quot;url&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>QVERIFY2(urlValue<sp/>==<sp/></highlight><highlight class="stringliteral">&quot;https://example.com:8080/path&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;url<sp/>value<sp/>should<sp/>match<sp/>full<sp/>URL<sp/>with<sp/>port&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tst_filecontent::parseTemplateFieldsCaseSensitive()<sp/>{</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>QString<sp/>content<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;pass\nUser:<sp/>value&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/>QStringList<sp/>templateFields<sp/>=<sp/>{</highlight><highlight class="stringliteral">&quot;user&quot;</highlight><highlight class="normal">};</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/>FileContent<sp/>fc<sp/>=<sp/><ref refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" kindref="member">FileContent::parse</ref>(content,<sp/>templateFields,<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/>NamedValues<sp/>nv<sp/>=<sp/>fc.<ref refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kindref="member">getNamedValues</ref>();</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/>QVERIFY(nv.isEmpty());</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/>QVERIFY2(fc.<ref refid="class_file_content_1a845c61a8c0f52e5aa73953c9162dd47d" kindref="member">getRemainingData</ref>().contains(</highlight><highlight class="stringliteral">&quot;User:<sp/>value&quot;</highlight><highlight class="normal">),</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="stringliteral">&quot;unmatched<sp/>case<sp/>should<sp/>be<sp/>in<sp/>remaining<sp/>data&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal">QTEST_MAIN(<ref refid="classtst__filecontent" kindref="compound">tst_filecontent</ref>)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;tst_filecontent.moc&quot;</highlight></codeline>
+    </programlisting>
+    <location file="tests/auto/filecontent/tst_filecontent.cpp"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="helpers_8h" kind="file" language="C++">
+    <compoundname>helpers.h</compoundname>
+    <includedby refid="filecontent_8cpp" local="yes">src/filecontent.cpp</includedby>
+    <includedby refid="pass_8cpp" local="yes">src/pass.cpp</includedby>
+    <includedby refid="passworddialog_8cpp" local="yes">src/passworddialog.cpp</includedby>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/filecontent.cpp</label>
+        <link refid="filecontent_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/helpers.h</label>
+        <link refid="helpers_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/pass.cpp</label>
+        <link refid="pass_8cpp"/>
+      </node>
+      <node id="4">
+        <label>src/passworddialog.cpp</label>
+        <link refid="passworddialog_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="helpers_8h_1adc90de3a8181fb745eeea1b76cfd2ed7" prot="public" static="no">
+        <name>AS_CONST</name>
+        <param><defname>x</defname></param>
+        <initializer>qAsConst(x)</initializer>
+        <briefdescription>
+<para>Cross-platform const_cast for range-based for loops. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides std::as_const (C++17) or qAsConst (older) for safe iteration over containers that might be modified. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/helpers.h" line="20" column="10" bodyfile="src/helpers.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="class_pass_1a6ed6c10b07137f62e127b290ebd428a2" compoundref="pass_8cpp" startline="438" endline="453">Pass::listKeys</referencedby>
+        <referencedby refid="class_file_content_1addf22b7136ee26d2f14bb77dc49c1510" compoundref="filecontent_8cpp" startline="24" endline="56">FileContent::parse</referencedby>
+        <referencedby refid="class_password_dialog_1a2beae0dab7b339ce55d7f2bebe80a172" compoundref="passworddialog_8cpp" startline="139" endline="164">PasswordDialog::setPassword</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Utility macros for <ref refid="class_qt_pass" kindref="compound">QtPass</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2026<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_HELPERS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_HELPERS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>__cplusplus<sp/>&gt;=<sp/>201703L</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AS_CONST(x)<sp/>std::as_const(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="helpers_8h_1adc90de3a8181fb745eeea1b76cfd2ed7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>AS_CONST(x)<sp/>qAsConst(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_HELPERS_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/helpers.h"/>
+  </compounddef>
+</doxygen>

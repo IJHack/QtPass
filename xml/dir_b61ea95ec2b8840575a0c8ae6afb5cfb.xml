@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="dir_b61ea95ec2b8840575a0c8ae6afb5cfb" kind="dir">
+    <compoundname>tests/auto/integration</compoundname>
+    <innerfile refid="tst__integration_8cpp">tst_integration.cpp</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="tests/auto/integration/"/>
+  </compounddef>
+</doxygen>

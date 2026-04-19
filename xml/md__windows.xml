@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="md__windows" kind="page">
+    <compoundname>md__windows</compoundname>
+    <title>Windows Guide</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> builds on Windows using MSVC, qmake and nmake.</para>
+<para>MinGW is not supported with nmake.</para>
+<para><heading level="1">Install <ref refid="class_qt_pass" kindref="compound">QtPass</ref></heading>
+</para>
+<para><heading level="2">Using Chocolatey (recommended)</heading>
+</para>
+<para>Run in <bold>Administrator PowerShell</bold>:</para>
+<para><programlisting filename=".powershell"><codeline><highlight class="normal">Set-ExecutionPolicy<sp/>Bypass<sp/>-Scope<sp/>Process<sp/>-Force;<sp/>[System.Net.ServicePointManager]::SecurityProtocol<sp/>=<sp/>[System.Net.ServicePointManager]::SecurityProtocol<sp/>-bor<sp/>3072;<sp/>iex<sp/>((New-Object<sp/>System.Net.WebClient).DownloadString(&apos;https://community.chocolatey.org/install.ps1&apos;))</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">choco<sp/>install<sp/>vcredist140<sp/>-y</highlight></codeline>
+<codeline><highlight class="normal">choco<sp/>install<sp/>qtpass<sp/>-y</highlight></codeline>
+</programlisting></para>
+<para><heading level="2">Or download from releases</heading>
+</para>
+<para>Download the latest <computeroutput>.exe</computeroutput> installer from <ulink url="https://github.com/IJHack/QtPass/releases">GitHub Releases</ulink></para>
+<para><heading level="1">Install GPG</heading>
+</para>
+<para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> requires GPG for encryption. Install <ulink url="https://www.gpg4win.org/">Gpg4win</ulink>.</para>
+<para>Key generation can take a long time (especially RSA 4096-bit keys) - this is normal.</para>
+<para><heading level="1">Building from Source</heading>
+</para>
+<para><heading level="2">Step 1: Install dependencies</heading>
+</para>
+<para>Run in <bold>Administrator PowerShell</bold>:</para>
+<para><programlisting filename=".powershell"><codeline><highlight class="normal">choco<sp/>install<sp/>-y<sp/>git<sp/>python<sp/>visualstudio2022buildtools<sp/>visualstudio2022-workload-vctools</highlight></codeline>
+</programlisting></para>
+<para><heading level="2">Step 2: Install Qt</heading>
+</para>
+<para>Install an <bold>MSVC build of Qt</bold> (not MinGW).</para>
+<para>Do not use <computeroutput>mingw_64</computeroutput>. It will not work with <computeroutput>nmake</computeroutput>.</para>
+<para>Run in <bold>normal PowerShell</bold>:</para>
+<para><programlisting filename=".powershell"><codeline><highlight class="normal">py<sp/>-m<sp/>pip<sp/>install<sp/>--user<sp/>-U<sp/>aqtinstall</highlight></codeline>
+<codeline><highlight class="normal">py<sp/>-m<sp/>aqt<sp/>install-qt<sp/>-O<sp/>C:\Qt<sp/>windows<sp/>desktop<sp/>6.8.0<sp/>win64_msvc2022_64</highlight></codeline>
+</programlisting></para>
+<para><heading level="2">Step 3: Open a shell with MSVC environment</heading>
+</para>
+<para>Open a <bold>Developer Command Prompt for VS 2022</bold> or run:</para>
+<para><programlisting filename=".cmd"><codeline><highlight class="normal">&quot;%ProgramFiles(x86)%\Microsoft<sp/>Visual<sp/>Studio\2022\BuildTools\Common7\Tools\VsDevCmd.bat&quot;<sp/>-arch=amd64<sp/>-host_arch=amd64</highlight></codeline>
+</programlisting></para>
+<para>Then set:</para>
+<para><programlisting filename=".cmd"><codeline><highlight class="normal">set<sp/>PATH=C:\Qt\6.8.0\msvc2022_64\bin;C:\Program<sp/>Files\Git\bin;%PATH%</highlight></codeline>
+<codeline><highlight class="normal">set<sp/>QMAKESPEC=</highlight></codeline>
+<codeline><highlight class="normal">set<sp/>QTDIR=</highlight></codeline>
+</programlisting></para>
+<para><heading level="2">Step 4: Clone and build</heading>
+</para>
+<para><programlisting filename=".cmd"><codeline><highlight class="normal">git<sp/>clone<sp/>https://github.com/IJHack/QtPass.git</highlight></codeline>
+<codeline><highlight class="normal">cd<sp/>QtPass</highlight></codeline>
+</programlisting></para>
+<para>If you previously built with another Qt version or toolchain:</para>
+<para><programlisting filename=".cmd"><codeline><highlight class="normal">del<sp/>.qmake.stash</highlight></codeline>
+</programlisting></para>
+<para>Then build:</para>
+<para><programlisting filename=".cmd"><codeline><highlight class="normal">qmake<sp/>-spec<sp/>win32-msvc</highlight></codeline>
+<codeline><highlight class="normal">nmake</highlight></codeline>
+<codeline><highlight class="normal">nmake<sp/>check<sp/>TESTARGS=&quot;--platform<sp/>offscreen&quot;</highlight></codeline>
+</programlisting></para>
+<para><heading level="1">Notes</heading>
+</para>
+<para><itemizedlist>
+<listitem><para>qmake must come from <computeroutput>msvc2022_64</computeroutput>, not <computeroutput>mingw_64</computeroutput></para>
+</listitem><listitem><para>nmake requires the MSVC environment (<computeroutput>VsDevCmd.bat</computeroutput>)</para>
+</listitem><listitem><para>tests expect <computeroutput>bash</computeroutput> (provided by Git for Windows)</para>
+</listitem></itemizedlist>
+</para>
+<para><heading level="1">First Run</heading>
+</para>
+<para><orderedlist>
+<listitem><para>Launch <ref refid="class_qt_pass" kindref="compound">QtPass</ref></para>
+</listitem><listitem><para>Click &quot;Autodetect&quot; to find GPG and Git</para>
+</listitem><listitem><para>Set your password store location (default: <computeroutput>APPDATA%\password-store</computeroutput>)</para>
+</listitem><listitem><para>Or select an existing <computeroutput>pass</computeroutput> store folder</para>
+</listitem></orderedlist>
+</para>
+<para><heading level="1">Configure GPG Key</heading>
+</para>
+<para><orderedlist>
+<listitem><para>Go to <bold>Config → User</bold> to select your GPG key</para>
+</listitem><listitem><para>If using for the first time, generate a key with <bold>Config → Generate GPG key</bold></para>
+</listitem></orderedlist>
+</para>
+<para><heading level="1">Initialize Password Store (if new)</heading>
+</para>
+<para><orderedlist>
+<listitem><para>Click <bold>File → Initialize</bold></para>
+</listitem><listitem><para>Select your GPG key(s) for encryption</para>
+</listitem><listitem><para>Your <computeroutput>.gpg-id</computeroutput> file will be created</para>
+</listitem></orderedlist>
+</para>
+<para><heading level="1">Troubleshooting</heading>
+</para>
+<para><table rows="9" cols="2"><row>
+<entry thead="yes"><para>Issue  </para>
+</entry><entry thead="yes"><para>Solution  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;GnuPG not found&quot;  </para>
+</entry><entry thead="no"><para>Install <ulink url="https://www.gpg4win.org/">Gpg4win</ulink>, restart <ref refid="class_qt_pass" kindref="compound">QtPass</ref>, or set path manually in Config  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>&quot;Signature does not exist&quot;  </para>
+</entry><entry thead="no"><para>Ensure your GPG key is in the <computeroutput>.gpg-id</computeroutput> file via <bold>Config → Users</bold>  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Git not working  </para>
+</entry><entry thead="no"><para>Use <ulink url="https://github.com/GitCredentialManager/git-credential-manager">Git Credential Manager</ulink> for HTTPS authentication  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>App doesn&apos;t start  </para>
+</entry><entry thead="no"><para>Install <computeroutput>vcredist140</computeroutput> (Visual C++ Redistributable)  </para>
+</entry></row>
+<row>
+<entry thead="no"><para><computeroutput>QMAKE_MSC_VER</computeroutput> isn&apos;t set  </para>
+</entry><entry thead="no"><para>delete <computeroutput>.qmake.stash</computeroutput> and rerun qmake  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>nmake fails with Unix commands (<computeroutput>test</computeroutput>, <computeroutput>mkdir -p</computeroutput>)  </para>
+</entry><entry thead="no"><para>Wrong Qt variant installed (MinGW instead of MSVC) - reinstall using MSVC Qt build  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>Should find bash in PATH  </para>
+</entry><entry thead="no"><para>ensure <computeroutput>C:\Program Files\Git\bin</computeroutput> is on PATH  </para>
+</entry></row>
+<row>
+<entry thead="no"><para>cl not found  </para>
+</entry><entry thead="no"><para>MSVC environment not loaded - run VsDevCmd.bat  </para>
+</entry></row>
+</table>
+</para>
+<para><heading level="2">Build fails with weird errors</heading>
+</para>
+<para>Clean and reconfigure:</para>
+<para><programlisting filename=".cmd"><codeline><highlight class="normal">del<sp/>.qmake.stash</highlight></codeline>
+<codeline><highlight class="normal">nmake<sp/>distclean</highlight></codeline>
+<codeline><highlight class="normal">qmake</highlight></codeline>
+</programlisting> </para>
+    </detaileddescription>
+    <location file="Windows.md"/>
+  </compounddef>
+</doxygen>

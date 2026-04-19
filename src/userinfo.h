@@ -6,6 +6,10 @@
 #include <QDateTime>
 #include <QString>
 
+/**
+ * @struct UserInfo
+ * @brief Stores GPG key info including validity, creation date, and more.
+ */
 struct UserInfo {
   UserInfo() : validity('-'), have_secret(false), enabled(false) {}
 

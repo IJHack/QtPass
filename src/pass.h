@@ -14,6 +14,10 @@
 #include <cassert>
 #include <map>
 
+/**
+ * @struct ResolvedGpgconfCommand
+ * @brief Holds a resolved gpgconf executable path and its arguments.
+ */
 struct ResolvedGpgconfCommand {
   QString program;
   QStringList arguments;

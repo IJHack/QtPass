@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classtst__executor" kind="class" language="C++" prot="public">
+    <compoundname>tst_executor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="classtst__executor_1a89aaed19d3a9d969bbb37316c91f53ba" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingEcho</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingEcho</name>
+        <qualifiedname>tst_executor::executeBlockingEcho</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="14" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="38" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1ad5e0eb0ea12c121bd62eeb54923fe4f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingWithArgs</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingWithArgs</name>
+        <qualifiedname>tst_executor::executeBlockingWithArgs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="15" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="45" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a54eb552fc3b51ddb5e25c4a7e5357226" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingWithInput</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingWithInput</name>
+        <qualifiedname>tst_executor::executeBlockingWithInput</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="16" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="53" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a3d682fd8aeb67dad703567feb805c51d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingExitCode</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingExitCode</name>
+        <qualifiedname>tst_executor::executeBlockingExitCode</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="17" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="61" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1ad71e99d1ef76d746cf8afed7df164d56" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingStderr</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingStderr</name>
+        <qualifiedname>tst_executor::executeBlockingStderr</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="18" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="67" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a938cf1648cc9f30a966fd22d54495a72" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingEmptyArgs</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingEmptyArgs</name>
+        <qualifiedname>tst_executor::executeBlockingEmptyArgs</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="19" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="75" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a49fe6f4eb402c7e1b67963be5c869f16" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingEchoMultiple</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingEchoMultiple</name>
+        <qualifiedname>tst_executor::executeBlockingEchoMultiple</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="20" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="81" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a1b4a335eb36826c5d83d92e727fa47d4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingSpecialChars</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingSpecialChars</name>
+        <qualifiedname>tst_executor::executeBlockingSpecialChars</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="21" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="90" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1aeec957b3dbe9fab8096162e112bc5d23" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingWithEnv</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingWithEnv</name>
+        <qualifiedname>tst_executor::executeBlockingWithEnv</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="22" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="101" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a4630d2bd55208a8cb19e44e010a83c24" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingWithEnvEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingWithEnvEmpty</name>
+        <qualifiedname>tst_executor::executeBlockingWithEnvEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="23" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="110" bodyend="120"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a8ebc63fb86f1977d80cf31cc6776f926" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingWithEnvSetsVariable</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingWithEnvSetsVariable</name>
+        <qualifiedname>tst_executor::executeBlockingWithEnvSetsVariable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="24" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="122" bodyend="132"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1ac6fae5e905873607a055e8406cf1e165" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingTwoArgOverload</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingTwoArgOverload</name>
+        <qualifiedname>tst_executor::executeBlockingTwoArgOverload</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="25" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="134" bodyend="144"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a7d750fb4a20f1aa57560789586a9fd6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingConstQStringRef</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingConstQStringRef</name>
+        <qualifiedname>tst_executor::executeBlockingConstQStringRef</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="26" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="146" bodyend="156"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1adda8ff847f42143e4004c22e7792cb4f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingNotFound</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingNotFound</name>
+        <qualifiedname>tst_executor::executeBlockingNotFound</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="28" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="160" bodyend="165"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1ac1e65431bbd4921c9df246b17f6a4ab0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingGpgVersion</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingGpgVersion</name>
+        <qualifiedname>tst_executor::executeBlockingGpgVersion</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="29" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="177" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a137c7550b5504a10a7e4159d4cfb9a2d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::gpgSupportsEd25519</definition>
+        <argsstring>()</argsstring>
+        <name>gpgSupportsEd25519</name>
+        <qualifiedname>tst_executor::gpgSupportsEd25519</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="30" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="188" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a3d594b28d5a3ba7154e49697b8e78222" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::getDefaultKeyTemplate</definition>
+        <argsstring>()</argsstring>
+        <name>getDefaultKeyTemplate</name>
+        <qualifiedname>tst_executor::getDefaultKeyTemplate</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="31" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="208" bodyend="213"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a8d1c2385d9a505bed3828f46f0d1891f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingGpgKillAgent</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingGpgKillAgent</name>
+        <qualifiedname>tst_executor::executeBlockingGpgKillAgent</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="32" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="215" bodyend="228"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1a7c4e68f6dd0d10c325acb0d2620270a1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::resolveGpgconfCommand</definition>
+        <argsstring>()</argsstring>
+        <name>resolveGpgconfCommand</name>
+        <qualifiedname>tst_executor::resolveGpgconfCommand</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="33" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="230" bodyend="294"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__executor_1aaee4d0e039fe2c683cac7370fde1ac9a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_executor::executeBlockingWithEnvNotFound</definition>
+        <argsstring>()</argsstring>
+        <name>executeBlockingWithEnvNotFound</name>
+        <qualifiedname>tst_executor::executeBlockingWithEnvNotFound</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/executor/tst_executor.cpp" line="34" column="8" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="167" bodyend="175"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>tst_executor</label>
+        <link refid="classtst__executor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>tst_executor</label>
+        <link refid="classtst__executor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="tests/auto/executor/tst_executor.cpp" line="9" column="1" bodyfile="tests/auto/executor/tst_executor.cpp" bodystart="9" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classtst__executor_1a7d750fb4a20f1aa57560789586a9fd6f" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingConstQStringRef</name></member>
+      <member refid="classtst__executor_1a89aaed19d3a9d969bbb37316c91f53ba" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingEcho</name></member>
+      <member refid="classtst__executor_1a49fe6f4eb402c7e1b67963be5c869f16" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingEchoMultiple</name></member>
+      <member refid="classtst__executor_1a938cf1648cc9f30a966fd22d54495a72" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingEmptyArgs</name></member>
+      <member refid="classtst__executor_1a3d682fd8aeb67dad703567feb805c51d" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingExitCode</name></member>
+      <member refid="classtst__executor_1a8d1c2385d9a505bed3828f46f0d1891f" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingGpgKillAgent</name></member>
+      <member refid="classtst__executor_1ac1e65431bbd4921c9df246b17f6a4ab0" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingGpgVersion</name></member>
+      <member refid="classtst__executor_1adda8ff847f42143e4004c22e7792cb4f" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingNotFound</name></member>
+      <member refid="classtst__executor_1a1b4a335eb36826c5d83d92e727fa47d4" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingSpecialChars</name></member>
+      <member refid="classtst__executor_1ad71e99d1ef76d746cf8afed7df164d56" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingStderr</name></member>
+      <member refid="classtst__executor_1ac6fae5e905873607a055e8406cf1e165" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingTwoArgOverload</name></member>
+      <member refid="classtst__executor_1ad5e0eb0ea12c121bd62eeb54923fe4f2" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingWithArgs</name></member>
+      <member refid="classtst__executor_1aeec957b3dbe9fab8096162e112bc5d23" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingWithEnv</name></member>
+      <member refid="classtst__executor_1a4630d2bd55208a8cb19e44e010a83c24" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingWithEnvEmpty</name></member>
+      <member refid="classtst__executor_1aaee4d0e039fe2c683cac7370fde1ac9a" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingWithEnvNotFound</name></member>
+      <member refid="classtst__executor_1a8ebc63fb86f1977d80cf31cc6776f926" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingWithEnvSetsVariable</name></member>
+      <member refid="classtst__executor_1a54eb552fc3b51ddb5e25c4a7e5357226" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>executeBlockingWithInput</name></member>
+      <member refid="classtst__executor_1a3d594b28d5a3ba7154e49697b8e78222" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>getDefaultKeyTemplate</name></member>
+      <member refid="classtst__executor_1a137c7550b5504a10a7e4159d4cfb9a2d" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>gpgSupportsEd25519</name></member>
+      <member refid="classtst__executor_1a7c4e68f6dd0d10c325acb0d2620270a1" prot="private" virt="non-virtual"><scope>tst_executor</scope><name>resolveGpgconfCommand</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

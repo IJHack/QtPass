@@ -1,0 +1,433 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="qtpass_8h" kind="file" language="C++">
+    <compoundname>qtpass.h</compoundname>
+    <includes local="no">QDialog</includes>
+    <includes local="no">QMimeData</includes>
+    <includes local="no">QObject</includes>
+    <includes local="no">QPixmap</includes>
+    <includes local="no">QProcess</includes>
+    <includes local="no">QTimer</includes>
+    <includedby refid="mainwindow_8cpp" local="yes">src/mainwindow.cpp</includedby>
+    <includedby refid="qtpass_8cpp" local="yes">src/qtpass.cpp</includedby>
+    <includedby refid="tst__ui_8cpp" local="yes">tests/auto/ui/tst_ui.cpp</includedby>
+    <includedby refid="tst__util_8cpp" local="yes">tests/auto/util/tst_util.cpp</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/qtpass.h</label>
+        <link refid="qtpass_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QDialog</label>
+      </node>
+      <node id="3">
+        <label>QMimeData</label>
+      </node>
+      <node id="4">
+        <label>QObject</label>
+      </node>
+      <node id="5">
+        <label>QPixmap</label>
+      </node>
+      <node id="6">
+        <label>QProcess</label>
+      </node>
+      <node id="7">
+        <label>QTimer</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="3">
+        <label>src/qtpass.cpp</label>
+        <link refid="qtpass_8cpp"/>
+      </node>
+      <node id="1">
+        <label>src/qtpass.h</label>
+        <link refid="qtpass_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>tests/auto/ui/tst_ui.cpp</label>
+        <link refid="tst__ui_8cpp"/>
+      </node>
+      <node id="5">
+        <label>tests/auto/util/tst_util.cpp</label>
+        <link refid="tst__util_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_qt_pass" prot="public">QtPass</innerclass>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="qtpass_8h_1ad02159f3c84f6ec8d7535395bdb55d99" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QMimeData *</type>
+        <definition>QMimeData * buildClipboardMimeData</definition>
+        <argsstring>(const QString &amp;text)</argsstring>
+        <name>buildClipboardMimeData</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Build clipboard MIME data with platform-specific security hints. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Construct a <ref refid="class_qt_pass" kindref="compound">QtPass</ref> instance associated with the given main window. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mainWindow</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the application&apos;s <ref refid="class_main_window" kindref="compound">MainWindow</ref> used for UI interactions. Destroy the <ref refid="class_qt_pass" kindref="compound">QtPass</ref> instance and perform necessary cleanup. Initialize internal state and connections required for <ref refid="class_qt_pass" kindref="compound">QtPass</ref> operation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if initialization succeeded, <computeroutput>false</computeroutput> otherwise. Update the tracked clipped text value. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Primary text to store as clipped content. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional additional output text used when computing the clipped value. Remove any stored clipped text value. Configure and start the timer that will clear the system clipboard after a delay. Return whether this instance was created in a fresh-start state. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><computeroutput>true</computeroutput> if in fresh-start state, <computeroutput>false</computeroutput> otherwise. Set the fresh-start state for this instance. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New fresh-start state value. Set up internal references and Qt connections related to the associated <ref refid="class_main_window" kindref="compound">MainWindow</ref>. Connect <ref refid="class_qt_pass" kindref="compound">QtPass</ref> handlers to the provided <ref refid="class_pass" kindref="compound">Pass</ref> instance&apos;s signals. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the <ref refid="class_pass" kindref="compound">Pass</ref> instance whose signals will be connected. Perform WebDAV mounting operations required by the application. Clear the system clipboard contents immediately. Copy the provided text into the system clipboard and trigger any clipboard lifecycle handling. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text to copy into the clipboard. Request display of the provided text as a QR code in the UI. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text to convert into a QR code for display. Create a modal dialog configured to display the given QR code image. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>image</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pixmap containing the rendered QR code. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Pointer to a QDialog configured to show the provided image. Handle errors reported by the internal QProcess instance. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>error</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The process error code emitted by QProcess. Handle an external process exiting with an error code and message. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exitCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Numeric exit code returned by the process. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Associated error or status message from the process. Handle completion of an external process and provide its stdout and stderr. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stdout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output captured from the process&apos;s standard output. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stderr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output captured from the process&apos;s standard error. React to changes in the pass store and update relevant UI/state. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arg1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First string parameter describing the change (context-specific). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arg2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second string parameter describing the change (context-specific). Handle completion of a &quot;pass show&quot; handler and process its output. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Output produced by the pass show handler. Initiate a Git push operation for the repository managed by the application. Handle completion of an insert operation and react to its outputs. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arg1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>First result string related to the insert operation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>arg2</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Second result string related to the insert operation. Handle completion of a key generation operation and its outputs. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard output produced during key generation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>p_errout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Standard error produced during key generation. Display the provided output string inside the application&apos;s text browser widget, optionally wrapping with prefix and postfix strings. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text to display in the text browser. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional prefix to prepend to the output before display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>postfix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional postfix to append to the output before display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Plain text to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QMimeData* - Ownership transferred to caller. Caller must delete or transfer to QClipboard::setMimeData which takes ownership.</para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Plain text to copy </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QMimeData with text and security hints </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="126" column="6" bodyfile="src/qtpass.cpp" bodystart="478" bodyend="494" declfile="src/qtpass.h" declline="126" declcolumn="6"/>
+        <referencedby refid="class_qt_pass_1acba134fb5281aedee11899a03976aa95" compoundref="qtpass_8cpp" startline="500" endline="516">QtPass::copyTextToClipboard</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="qtpass_8h_1a3c09484969938782ada78d86c565b534" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>QByteArray</type>
+        <definition>static QByteArray dwordBytes</definition>
+        <argsstring>(quint32 value)</argsstring>
+        <name>dwordBytes</name>
+        <param>
+          <type>quint32</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Convert quint32 to byte array for Windows clipboard formats. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- DWORD value </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QByteArray with raw bytes </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpass.h" line="133" column="20" bodyfile="src/qtpass.h" bodystart="133" bodyend="135"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2018<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_QTPASS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_QTPASS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDialog&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QMimeData&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QObject&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QPixmap&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QProcess&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QTimer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_main_window" kindref="compound">MainWindow</ref>;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_pass" kindref="compound">Pass</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="qtpass_8h_1ad02159f3c84f6ec8d7535395bdb55d99" kindref="member">buildClipboardMimeData</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;text)<sp/>-&gt;<sp/>QMimeData<sp/>*;</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">inline</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dwordBytes(quint32<sp/>value)<sp/>-&gt;<sp/>QByteArray<sp/>{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>QByteArray(</highlight><highlight class="keyword">reinterpret_cast&lt;</highlight><highlight class="keyword">const<sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal">(&amp;value),<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(value));</highlight></codeline>
+<codeline lineno="135"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="class_qt_pass" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_qt_pass_1aa9f6862ff8875c387423b462ac7f9cad" kindref="member">QtPass</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QObject<sp/>{</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><ref refid="class_qt_pass_1aa9f6862ff8875c387423b462ac7f9cad" kindref="member">QtPass</ref>(<ref refid="class_main_window" kindref="compound">MainWindow</ref><sp/>*mainWindow);</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><ref refid="class_qt_pass_1a70447af6f0e0540106a423a45dc27c99" kindref="member">~QtPass</ref>();</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_qt_pass_1ad0a4d7627e6303e412d4a832a8bad77c" kindref="member">init</ref>()<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_qt_pass_1a74adba9dd6915c9db50762279b62be89" kindref="member">setClippedText</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;p_output<sp/>=<sp/>QString());</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_qt_pass_1a00f9914078839b980f3d66ddbed61cab" kindref="member">clearClippedText</ref>();</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_qt_pass_1a24eb2c0a19143db0ba3a741c66881be6" kindref="member">setClipboardTimer</ref>();</highlight></codeline>
+<codeline lineno="148" refid="class_qt_pass_1a2ac40a69378a7085bebc633984ae6a57" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_qt_pass_1a2ac40a69378a7085bebc633984ae6a57" kindref="member">isFreshStart</ref>()<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;freshStart;<sp/>}</highlight></codeline>
+<codeline lineno="149" refid="class_qt_pass_1a5b63b7418723b400f0db2afa450f1199" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_qt_pass_1a5b63b7418723b400f0db2afa450f1199" kindref="member">setFreshStart</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>&amp;fs)<sp/>{<sp/>this-&gt;freshStart<sp/>=<sp/>fs;<sp/>}</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><ref refid="class_main_window" kindref="compound">MainWindow</ref><sp/>*m_mainWindow;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>QProcess<sp/>fusedav;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>QTimer<sp/>clearClipboardTimer;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/>QString<sp/>clippedText;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>freshStart;</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setMainWindow();</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>connectPassSignalHandlers(<ref refid="class_pass" kindref="compound">Pass</ref><sp/>*pass);</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>mountWebDav();</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal">signals:</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_qt_pass_1a3febdf740ba4d78a4149d7d7c3b9284e" kindref="member">clearClipboard</ref>();</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_qt_pass_1acba134fb5281aedee11899a03976aa95" kindref="member">copyTextToClipboard</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;text);</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_qt_pass_1aef5aaf0605c7681967995ede486590ef" kindref="member">showTextAsQRCode</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;text);</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QDialog<sp/>*<ref refid="class_qt_pass_1abd2dacf3e88b411ef39ec78f49bbdd2d" kindref="member">createQRCodePopup</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QPixmap<sp/>&amp;image);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>processError(QProcess::ProcessError);</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>processErrorExit(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitCode,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>processFinished(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;);</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>passStoreChanged(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>passShowHandlerFinished(QString<sp/>output);</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>doGitPush();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>finishedInsert(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;);</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>onKeyGenerationComplete(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;p_output,</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;p_errout);</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>showInTextBrowser(QString<sp/>output,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;prefix<sp/>=<sp/>QString(),</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;postfix<sp/>=<sp/>QString());</highlight></codeline>
+<codeline lineno="189"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_QTPASS_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/qtpass.h"/>
+  </compounddef>
+</doxygen>

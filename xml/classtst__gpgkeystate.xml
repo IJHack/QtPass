@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.16.1" xml:lang="en-US">
+  <compounddef id="classtst__gpgkeystate" kind="class" language="C++" prot="public">
+    <compoundname>tst_gpgkeystate</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="classtst__gpgkeystate_1abf82bfd87d153b83ea13c949241b6e87" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseMultiKeyPublic</definition>
+        <argsstring>()</argsstring>
+        <name>parseMultiKeyPublic</name>
+        <qualifiedname>tst_gpgkeystate::parseMultiKeyPublic</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="14" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="33" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1aa5f7bc8e84b11c1c86fdd04815df9a26" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseMultiKeyPublic_data</definition>
+        <argsstring>()</argsstring>
+        <name>parseMultiKeyPublic_data</name>
+        <qualifiedname>tst_gpgkeystate::parseMultiKeyPublic_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="15" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="60" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1a130c49b28bbf472105324c57f007e7da" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseSecretKeys</definition>
+        <argsstring>()</argsstring>
+        <name>parseSecretKeys</name>
+        <qualifiedname>tst_gpgkeystate::parseSecretKeys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="16" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="69" bodyend="94"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1a8bf84ca6aa7fb6b5db5934fda128ec20" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseSecretKeys_data</definition>
+        <argsstring>()</argsstring>
+        <name>parseSecretKeys_data</name>
+        <qualifiedname>tst_gpgkeystate::parseSecretKeys_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="17" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="96" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1ac974965dbf5d346e4ac346375377fd17" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseSingleKey</definition>
+        <argsstring>()</argsstring>
+        <name>parseSingleKey</name>
+        <qualifiedname>tst_gpgkeystate::parseSingleKey</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="18" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="107" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1a36510eb21794c41405d0f1b5a29f3114" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseSingleKey_data</definition>
+        <argsstring>()</argsstring>
+        <name>parseSingleKey_data</name>
+        <qualifiedname>tst_gpgkeystate::parseSingleKey_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="19" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="131" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1afb4cef1ac2f5bc2f0508b69b010e8cd4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseKeyRollover</definition>
+        <argsstring>()</argsstring>
+        <name>parseKeyRollover</name>
+        <qualifiedname>tst_gpgkeystate::parseKeyRollover</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="20" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="143" bodyend="163"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1a759cead3e39948a39eb4344cb3aa9db7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseKeyRollover_data</definition>
+        <argsstring>()</argsstring>
+        <name>parseKeyRollover_data</name>
+        <qualifiedname>tst_gpgkeystate::parseKeyRollover_data</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="21" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="165" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1a9ae841809ffa6fd2ace704218770164a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::classifyRecordTypes</definition>
+        <argsstring>()</argsstring>
+        <name>classifyRecordTypes</name>
+        <qualifiedname>tst_gpgkeystate::classifyRecordTypes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="22" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="174" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1a4edc206a738c41d83cd2805399ec6e3e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::classifyRecordEmpty</definition>
+        <argsstring>()</argsstring>
+        <name>classifyRecordEmpty</name>
+        <qualifiedname>tst_gpgkeystate::classifyRecordEmpty</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="23" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="193" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1a51d1613cb75d264b4554ff6c8e6077c5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::handlePubSecEmptyFields</definition>
+        <argsstring>()</argsstring>
+        <name>handlePubSecEmptyFields</name>
+        <qualifiedname>tst_gpgkeystate::handlePubSecEmptyFields</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="24" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="202" bodyend="224"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1a7f8f0840def4ecb18cabeba03b36359d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::handlePubSecShortList</definition>
+        <argsstring>()</argsstring>
+        <name>handlePubSecShortList</name>
+        <qualifiedname>tst_gpgkeystate::handlePubSecShortList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="25" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="226" bodyend="252"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1a010e92f4108ac463894185cc2d509b84" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::handleFprEdgeCases</definition>
+        <argsstring>()</argsstring>
+        <name>handleFprEdgeCases</name>
+        <qualifiedname>tst_gpgkeystate::handleFprEdgeCases</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="26" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="254" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1abad83e3756fdfcfb84bae31f62cd9f62" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::classifyRecordWithConstQString</definition>
+        <argsstring>()</argsstring>
+        <name>classifyRecordWithConstQString</name>
+        <qualifiedname>tst_gpgkeystate::classifyRecordWithConstQString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="27" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="287" bodyend="313"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1aedae02c4d609ffb371bd41fccf2dc002" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseGpgColonOutputWithGrpRecord</definition>
+        <argsstring>()</argsstring>
+        <name>parseGpgColonOutputWithGrpRecord</name>
+        <qualifiedname>tst_gpgkeystate::parseGpgColonOutputWithGrpRecord</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="28" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="315" bodyend="329"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1aceafa37065b2e962d2f48d875cab19ef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseGpgColonOutputUnknownRecordTypes</definition>
+        <argsstring>()</argsstring>
+        <name>parseGpgColonOutputUnknownRecordTypes</name>
+        <qualifiedname>tst_gpgkeystate::parseGpgColonOutputUnknownRecordTypes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="29" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="331" bodyend="347"/>
+      </memberdef>
+      <memberdef kind="slot" id="classtst__gpgkeystate_1a87a65dae9d8ada55445d86de16ed903e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void tst_gpgkeystate::parseGpgColonOutputAllPublicRecordTypes</definition>
+        <argsstring>()</argsstring>
+        <name>parseGpgColonOutputAllPublicRecordTypes</name>
+        <qualifiedname>tst_gpgkeystate::parseGpgColonOutputAllPublicRecordTypes</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="30" column="8" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="349" bodyend="367"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>tst_gpgkeystate</label>
+        <link refid="classtst__gpgkeystate"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+      <node id="1">
+        <label>tst_gpgkeystate</label>
+        <link refid="classtst__gpgkeystate"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" line="10" column="1" bodyfile="tests/auto/gpgkeystate/tst_gpgkeystate.cpp" bodystart="10" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classtst__gpgkeystate_1a4edc206a738c41d83cd2805399ec6e3e" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>classifyRecordEmpty</name></member>
+      <member refid="classtst__gpgkeystate_1a9ae841809ffa6fd2ace704218770164a" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>classifyRecordTypes</name></member>
+      <member refid="classtst__gpgkeystate_1abad83e3756fdfcfb84bae31f62cd9f62" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>classifyRecordWithConstQString</name></member>
+      <member refid="classtst__gpgkeystate_1a010e92f4108ac463894185cc2d509b84" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>handleFprEdgeCases</name></member>
+      <member refid="classtst__gpgkeystate_1a51d1613cb75d264b4554ff6c8e6077c5" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>handlePubSecEmptyFields</name></member>
+      <member refid="classtst__gpgkeystate_1a7f8f0840def4ecb18cabeba03b36359d" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>handlePubSecShortList</name></member>
+      <member refid="classtst__gpgkeystate_1a87a65dae9d8ada55445d86de16ed903e" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseGpgColonOutputAllPublicRecordTypes</name></member>
+      <member refid="classtst__gpgkeystate_1aceafa37065b2e962d2f48d875cab19ef" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseGpgColonOutputUnknownRecordTypes</name></member>
+      <member refid="classtst__gpgkeystate_1aedae02c4d609ffb371bd41fccf2dc002" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseGpgColonOutputWithGrpRecord</name></member>
+      <member refid="classtst__gpgkeystate_1afb4cef1ac2f5bc2f0508b69b010e8cd4" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseKeyRollover</name></member>
+      <member refid="classtst__gpgkeystate_1a759cead3e39948a39eb4344cb3aa9db7" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseKeyRollover_data</name></member>
+      <member refid="classtst__gpgkeystate_1abf82bfd87d153b83ea13c949241b6e87" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseMultiKeyPublic</name></member>
+      <member refid="classtst__gpgkeystate_1aa5f7bc8e84b11c1c86fdd04815df9a26" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseMultiKeyPublic_data</name></member>
+      <member refid="classtst__gpgkeystate_1a130c49b28bbf472105324c57f007e7da" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseSecretKeys</name></member>
+      <member refid="classtst__gpgkeystate_1a8bf84ca6aa7fb6b5db5934fda128ec20" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseSecretKeys_data</name></member>
+      <member refid="classtst__gpgkeystate_1ac974965dbf5d346e4ac346375377fd17" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseSingleKey</name></member>
+      <member refid="classtst__gpgkeystate_1a36510eb21794c41405d0f1b5a29f3114" prot="private" virt="non-virtual"><scope>tst_gpgkeystate</scope><name>parseSingleKey_data</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
