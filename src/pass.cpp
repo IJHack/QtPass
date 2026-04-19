@@ -500,8 +500,7 @@ auto gpgErrorMessage(const QString &err) -> QString {
         "Pass", "Encryption failed. Check that your GPG key is valid.");
 
   // Locale-dependent fallbacks
-  if (containsAnyCaseInsensitive(err, {QLatin1String("key has expired"),
-                                       QLatin1String("key expired")}))
+  if (containsAnyCaseInsensitive(err, {QLatin1String("key has expired")}))
     return QCoreApplication::translate(
         "Pass", "Encryption failed: GPG key has expired. Please renew or "
                 "replace it.");
