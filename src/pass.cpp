@@ -707,8 +707,10 @@ void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
 // key must include the trailing '=' (e.g. "FOO="); env.filter() does substring
 // matching so the '=' anchors the lookup to avoid collisions with longer names.
 void Pass::setEnvVar(const QString &key, const QString &value) {
-  Q_ASSERT(key.endsWith('='));
-  if (!key.endsWith('=')) {
+  const bool hasEq = key.endsWith('=');
+  Q_ASSERT_X(hasEq, "Pass::setEnvVar",
+             "called with malformed key (missing '=')");
+  if (!hasEq) {
     qWarning() << "Pass::setEnvVar called with malformed key (missing '='):"
                << key;
     return;
