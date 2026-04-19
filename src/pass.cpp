@@ -11,6 +11,7 @@
 #include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
+#include <algorithm>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -51,9 +52,10 @@ Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
       QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w"),
       QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")};
   const QString wslenvPrefix = QStringLiteral("WSLENV=");
-  auto it = std::find_if(env.begin(), env.end(), [&wslenvPrefix](const QString &s) {
-    return s.startsWith(wslenvPrefix);
-  });
+  auto it =
+      std::find_if(env.begin(), env.end(), [&wslenvPrefix](const QString &s) {
+        return s.startsWith(wslenvPrefix);
+      });
   if (it == env.end()) {
     env.append(wslenvPrefix + wslenvVars.join(':'));
   } else {
@@ -376,7 +378,7 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
     return {"gpgconf", {}};
   }
 
-  QString gpgconfPath = findGpgconfInGpgDir(first);
+  QString gpgconfPath = findGpgconfInGpgDir(gpgPath);
   if (!gpgconfPath.isEmpty()) {
     return {gpgconfPath, {}};
   }
@@ -501,7 +503,8 @@ auto gpgErrorMessage(const QString &err) -> QString {
         "Pass", "Encryption failed. Check that your GPG key is valid.");
 
   // Locale-dependent fallbacks
-  if (containsAnyCaseInsensitive(err, {QLatin1String("key has expired")}))
+  if (containsAnyCaseInsensitive(err, {QLatin1String("key has expired"),
+                                       QLatin1String("key expired")}))
     return QCoreApplication::translate(
         "Pass", "Encryption failed: GPG key has expired. Please renew or "
                 "replace it.");
