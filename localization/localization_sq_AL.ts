@@ -176,12 +176,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivizo kërkimin e përmbajtjes (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lejo kërkimin brenda përmbajtjes së skedarit me fjalëkalim. Kërkon deshifrimin e çdo skedari dhe mund të jetë i ngadaltë në dyqanet e mëdha.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Emri i profilit, i përdorur për të identifikuar këtë profil konfigurimi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="950"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Shtegu për në direktorinë e ruajtjes së fjalëkalimeve</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -367,12 +367,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Zgjidh marrësit për %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profili i ri</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="704"/>
@@ -771,47 +771,47 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kërko brenda përmbajtjes së fjalëkalimit (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivizimi i kërkimit të përmbajtjes</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivizo/çaktivizo modalitetin e kërkimit të përmbajtjes për të kërkuar brenda skedarëve të fjalëkalimeve</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Kërkim pa ndjeshmëri ndaj shkronjave të mëdha dhe të mëdha</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivizimi i pandjeshmërisë ndaj madhësive të mëdha dhe të mëdha</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivizo/çaktivizo kërkimin e përmbajtjes pa ndjeshmëri ndaj shkronjave të mëdha dhe të mëdha</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Përfundime</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -966,24 +966,24 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Duke kërkuar…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kërko përmbajtje (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuk u gjetën përputhje.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>U gjet %n përputhje në %1 hyrje.</numerusform>
+            <numerusform>U gjetën %n përputhje në %1 hyrje.</numerusform>
         </translation>
     </message>
     <message>
@@ -1149,25 +1149,25 @@ Të vazhdohet?</translation>
         <location filename="../src/pass.cpp" line="489"/>
         <location filename="../src/pass.cpp" line="508"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enkriptimi dështoi: Çelësi GPG ka skaduar. Ju lutemi ta rinovoni ose zëvendësoni atë.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="494"/>
         <location filename="../src/pass.cpp" line="513"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enkriptimi dështoi: Çelësi GPG është revokuar.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="498"/>
         <location filename="../src/pass.cpp" line="518"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enkriptimi dështoi: çelësi GPG i marrësit nuk u gjet ose është i pavlefshëm. Kontrolloni që ID-ja e çelësit në .gpg-id është e saktë dhe e importuar.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="502"/>
         <location filename="../src/pass.cpp" line="522"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enkriptimi dështoi. Kontrolloni që çelësi juaj GPG të jetë i vlefshëm.</translation>
     </message>
 </context>
 <context>
@@ -1332,7 +1332,7 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="402"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Të detyrohet mbishkrimi?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="403"/>
