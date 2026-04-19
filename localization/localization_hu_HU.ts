@@ -166,7 +166,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation>Path a jelszótár könyvtárba</translation>
+        <translation>Elérési út a jelszótár könyvtárához</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -419,12 +419,12 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="654"/>
         <source>Select recipients for %1</source>
-        <translation>Válassza ki a kedvezményezetteket %1</translation>
+        <translation>Válassza ki a(z) %1 címzettjeit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
         <source>New Profile</source>
-        <translation>Új Profil</translation>
+        <translation>Új profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="704"/>
@@ -1236,13 +1236,13 @@ Folytatja?</translation>
         <location filename="../src/pass.cpp" line="486"/>
         <location filename="../src/pass.cpp" line="505"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>A titkosítás kudarcot vallott: A GPG kulcs lejárt. Kérjük, újítsa meg vagy cserélje ki.</translation>
+        <translation>A titkosítás sikertelen: a GPG-kulcs lejárt. Kérjük, újítsa meg vagy cserélje ki.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="491"/>
         <location filename="../src/pass.cpp" line="510"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation>A titkosítás kudarcot vallott: A GPG kulcsot visszavonták.</translation>
+        <translation>A titkosítás sikertelen: a GPG-kulcsot visszavonták.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="495"/>
@@ -1254,7 +1254,7 @@ Folytatja?</translation>
         <location filename="../src/pass.cpp" line="499"/>
         <location filename="../src/pass.cpp" line="519"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>A titkosítás kudarcot vallott. Ellenőrizze, hogy a GPG kulcsa érvényes.</translation>
+        <translation>A titkosítás sikertelen. Ellenőrizze, hogy a GPG-kulcsa érvényes-e.</translation>
     </message>
 </context>
 <context>
