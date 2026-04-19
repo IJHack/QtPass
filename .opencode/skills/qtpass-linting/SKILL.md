@@ -132,7 +132,7 @@ Use `/** */` blocks with `@brief`, `@param`, `@return`:
 
 - **Unnamed parameters in declarations**: `void foo(int)` — name all parameters: `void foo(int count)`
 - **Orphaned doc blocks**: A `/** ... */` not immediately preceding its declaration is misattributed. Move the block directly above the declaration.
-- **Missing `@return`**: Required for every non-void function when `WARN_NO_PARAMDOC = YES`
+- **Missing `@return`**: Not enforced with current settings (`WARN_NO_PARAMDOC = NO`)
 - **Signals with unnamed params**: Qt signals also need named parameters and `@param` docs
 - **`@xyz` typos**: Doxygen treats unknown `@word` as commands — use `@brief Like` not `@like`
 
