@@ -561,7 +561,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Перевірте файлу підпису .gpgid!</translation>
+        <translation>Перевірте підпис файлу .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
