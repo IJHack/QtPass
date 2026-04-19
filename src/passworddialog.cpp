@@ -227,10 +227,10 @@ void PasswordDialog::setLength(int l) { ui->spinBox_pwdLength->setValue(l); }
 /**
  * @brief PasswordDialog::setPasswordCharTemplate
  * PasswordDialog::setPasswordCharTemplate chose the template style.
- * @param t
+ * @param templateIndex
  */
-void PasswordDialog::setPasswordCharTemplate(int t) {
-  ui->passwordTemplateSwitch->setCurrentIndex(t);
+void PasswordDialog::setPasswordCharTemplate(int templateIndex) {
+  ui->passwordTemplateSwitch->setCurrentIndex(templateIndex);
 }
 
 /**
