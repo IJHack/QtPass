@@ -460,7 +460,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="912"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Mappen% 1 verkar inte vara ett lösenordslager eller har ännu inte initialiserats.</translation>
+        <translation>Mappen %1 verkar inte vara ett lösenordslager eller har ännu inte initialiserats.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="436"/>
