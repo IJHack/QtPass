@@ -433,7 +433,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="874"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Хочете створити сховище паролів в % 1?</translation>
+        <translation>Хочете створити сховище паролів в %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="879"/>
