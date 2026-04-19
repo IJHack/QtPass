@@ -96,6 +96,56 @@ Check license headers and REUSE compliance:
 act push -W .github/workflows/reuse.yml
 ```
 
+## Doxygen Documentation Linting
+
+The CI enforces zero Doxygen warnings via `docs.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
+
+### Run Doxygen Locally
+
+```bash
+doxygen Doxyfile
+# Zero output = no warnings = CI will pass
+```
+
+### Key Doxyfile Settings
+
+| Setting            | Value                                                           | Why                                                    |
+| ------------------ | --------------------------------------------------------------- | ------------------------------------------------------ |
+| `FILE_PATTERNS`    | `*.h` only                                                      | Avoids "already documented" from duplicate `.cpp` docs |
+| `INPUT`            | `. main/main.cpp`                                               | Picks up `@mainpage` in `main.cpp` explicitly          |
+| `EXCLUDE`          | `CHANGELOG.md src/settingsconstants.h src/qprogressindicator.h` | Suppress noise from third-party / auto-generated files |
+| `EXCLUDE_PATTERNS` | `*/tests/*`                                                     | Test classes need no public API docs                   |
+| `EXTRACT_ALL`      | `NO`                                                            | Required for `WARN_NO_PARAMDOC` to fire                |
+| `WARN_NO_PARAMDOC` | `YES`                                                           | Flags missing `@param`/`@return` on all public symbols |
+| `WARN_AS_ERROR`    | `FAIL_ON_WARNINGS`                                              | CI fails on any warning                                |
+
+### Doxygen Comment Style
+
+Use `/** */` blocks with `@brief`, `@param`, `@return`:
+
+```cpp
+/**
+ * @brief Brief one-line description.
+ * @param name Description of parameter.
+ * @return Description of return value.
+ */
+```
+
+### Common Warning Causes
+
+- **Unnamed parameters in declarations**: `void foo(int)` — name all parameters: `void foo(int count)`
+- **Orphaned doc blocks**: A `/** ... */` not immediately preceding its declaration is misattributed. Move the block directly above the declaration.
+- **Missing `@return`**: Required for every non-void function when `WARN_NO_PARAMDOC = YES`
+- **Signals with unnamed params**: Qt signals also need named parameters and `@param` docs
+- **`@xyz` typos**: Doxygen treats unknown `@word` as commands — use `@brief Like` not `@like`
+
+### Coverage Report (optional)
+
+```bash
+pip install coverxygen
+python -m coverxygen --xml-dir xml/ --src-dir . --output coverage.info
+```
+
 ## Common Linters
 
 ### Gitleaks (Secret Detection)
@@ -176,7 +226,7 @@ Common diagnostics:
 npx prettier --write README.md
 npx prettier --write .github/workflows/*.yml
 npx prettier --write FAQ.md
-npx prettier --write .opencode/skills/*/SKILL.md
+npx prettier --write .claude/skills/*/SKILL.md
 ```
 
 ## Prettier Patterns

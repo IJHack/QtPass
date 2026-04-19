@@ -87,7 +87,7 @@ npx prettier --write README.md
 
 ```bash
 npx prettier --write <markdown-file>
-npx prettier --write .opencode/skills/*/SKILL.md
+npx prettier --write .claude/skills/*/SKILL.md
 ```
 
 ### YAML (prettier)
@@ -184,12 +184,38 @@ Keep CHANGELOG entries consistent:
 
 ### Doxygen Comments in Code
 
-When adding new public APIs:
+When adding new public APIs, every public symbol in a header needs a Doxygen doc block:
 
 ```cpp
 /**
- * @brief Brief description
- * @param param1 Description of first parameter
- * @return Description of return value
+ * @brief Brief description.
+ * @param param1 Description of first parameter.
+ * @return Description of return value.
  */
 ```
+
+The CI enforces **zero Doxygen warnings** via `docs.yml` + `WARN_AS_ERROR = FAIL_ON_WARNINGS`.
+
+#### Enforced Doxyfile settings
+
+| Setting            | Value              | Purpose                                           |
+| ------------------ | ------------------ | ------------------------------------------------- |
+| `FILE_PATTERNS`    | `*.h`              | Avoids duplicate warnings from `.cpp` docs        |
+| `EXTRACT_ALL`      | `NO`               | Enables `WARN_NO_PARAMDOC` to fire                |
+| `WARN_NO_PARAMDOC` | `YES`              | Requires `@param`/`@return` on all public symbols |
+| `WARN_AS_ERROR`    | `FAIL_ON_WARNINGS` | Fails CI on any undocumented symbol               |
+
+#### Run locally before pushing
+
+```bash
+doxygen Doxyfile
+# Any output = warning = CI will fail
+```
+
+#### Common doc mistakes that cause warnings
+
+- Unnamed parameters in header declarations — name every parameter
+- Orphaned `/** */` blocks not immediately above their declaration
+- Missing `@return` on non-void functions
+- Signals with unnamed parameters (Qt signals need docs too)
+- `@unknowncommand` typos in doc blocks
