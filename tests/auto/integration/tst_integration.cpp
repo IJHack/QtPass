@@ -156,6 +156,22 @@ class tst_integration : public QObject {
     return "finishedInsert not emitted (GPG may have hung or failed to start)";
   }
 
+  // Run a git config command and verify it succeeds.
+  static auto runGitConfig(QProcess &proc, const QString &gitExe,
+                           const QStringList &args) -> bool {
+    proc.start(gitExe, args);
+    if (!proc.waitForStarted()) {
+      return false;
+    }
+    if (!proc.waitForFinished()) {
+      return false;
+    }
+    if (proc.exitStatus() != QProcess::NormalExit || proc.exitCode() != 0) {
+      return false;
+    }
+    return true;
+  }
+
 private Q_SLOTS:
   void initTestCase();
   void cleanupTestCase();
@@ -167,6 +183,8 @@ private Q_SLOTS:
   void imitatePass_insertCopyAndShow();
   void imitatePass_insertAndRemove();
   void imitatePass_nestedDirectoryInsertAndShow();
+  void imitatePass_editExistingEntry();
+  void imitatePass_gitInitAndCommit();
 
   // RealPass backend (skipped if `pass` not installed)
   void realPass_insertAndShow();
@@ -479,6 +497,140 @@ void tst_integration::imitatePass_nestedDirectoryInsertAndShow() {
            "decrypted nested entry should contain the content");
 }
 
+namespace {
+// RAII guard to ensure QtPassSettings::setUseGit is restored on any exit path
+struct RestoreUseGit {
+  bool orig;
+  RestoreUseGit() : orig(QtPassSettings::isUseGit()) {}
+  ~RestoreUseGit() { QtPassSettings::setUseGit(orig); }
+};
+} // namespace
+
+void tst_integration::imitatePass_editExistingEntry() {
+  RestoreUseGit restoreUseGit;
+  QtPassSettings::setUseGit(false); // Ensure git is off for this test
+
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+
+  QtPassSettings::setPassStore(storeDir.path());
+
+  {
+    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    gpgId.write((m_keyFingerprint + "\n").toUtf8());
+  }
+
+  ImitatePass pass;
+  setupPass(pass);
+
+  // Insert initial entry
+  const QString entryName = QStringLiteral("editme");
+  const QString originalContent = QStringLiteral("original\n");
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(entryName, originalContent, false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  // Verify file exists
+  const QString gpgFile =
+      QDir::cleanPath(storeDir.path() + "/" + entryName + ".gpg");
+  QVERIFY2(QFile::exists(gpgFile), "encrypted file should exist");
+
+  // Edit (overwrite) the entry
+  const QString newContent = QStringLiteral("updated\npassword: newpass\n");
+  QSignalSpy editSpy(&pass, &Pass::finishedInsert);
+  pass.Insert(entryName, newContent, true);
+  QVERIFY2(waitForSignal(editSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  // Show the edited entry and verify content changed
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(entryName);
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
+
+  const QString decrypted = showSpy[0][0].toString();
+  QVERIFY2(decrypted.contains("updated"),
+           "decrypted should contain new content");
+  QVERIFY2(decrypted.contains("newpass"),
+           "decrypted should contain new password");
+  QVERIFY2(!decrypted.contains("original"),
+           "decrypted should NOT contain original content");
+}
+
+void tst_integration::imitatePass_gitInitAndCommit() {
+  const QString gitExe = QStandardPaths::findExecutable("git");
+  if (gitExe.isEmpty())
+    QSKIP("git not installed – skipping Git integration test");
+
+  RestoreUseGit restoreUseGit;
+
+  QTemporaryDir storeDir;
+  QVERIFY(storeDir.isValid());
+
+  QtPassSettings::setPassStore(storeDir.path());
+  QtPassSettings::setGitExecutable(gitExe);
+  QtPassSettings::setUseGit(true);
+
+  {
+    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+    gpgId.write((m_keyFingerprint + "\n").toUtf8());
+  }
+
+  QProcess gitInit;
+  gitInit.setWorkingDirectory(storeDir.path());
+  gitInit.start(gitExe, {"init"});
+  QVERIFY2(gitInit.waitForFinished(), "git init should complete");
+  QVERIFY2(gitInit.exitCode() == 0, "git init should succeed");
+
+  // Configure local git identity so ImitatePass commits succeed
+  QProcess gitConfig;
+  gitConfig.setWorkingDirectory(storeDir.path());
+  QVERIFY2(
+      runGitConfig(gitConfig, gitExe, {"config", "user.name", "Test User"}),
+      qPrintable(
+          QString("git config user.name failed: %1")
+              .arg(QString::fromUtf8(gitConfig.readAllStandardError()))));
+
+  QProcess gitConfigEmail;
+  gitConfigEmail.setWorkingDirectory(storeDir.path());
+  QVERIFY2(runGitConfig(gitConfigEmail, gitExe,
+                        {"config", "user.email", "test@example.com"}),
+           qPrintable(QString("git config user.email failed: %1")
+                          .arg(QString::fromUtf8(
+                              gitConfigEmail.readAllStandardError()))));
+
+  QProcess gitConfigSign;
+  gitConfigSign.setWorkingDirectory(storeDir.path());
+  QVERIFY2(runGitConfig(gitConfigSign, gitExe,
+                        {"config", "commit.gpgsign", "false"}),
+           qPrintable(QString("git config commit.gpgsign failed: %1")
+                          .arg(QString::fromUtf8(
+                              gitConfigSign.readAllStandardError()))));
+
+  ImitatePass pass;
+  setupPass(pass);
+
+  const QString entryName = QStringLiteral("gitentry");
+  const QString entryContent = QStringLiteral("secret\nurl: example.com\n");
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(entryName, entryContent, false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  QProcess gitLog;
+  gitLog.setWorkingDirectory(storeDir.path());
+  gitLog.start(gitExe, {"log", "--format=%s", "-1"});
+  QVERIFY2(gitLog.waitForFinished(), "git log should complete");
+  QVERIFY2(gitLog.exitCode() == 0, "git log should succeed");
+
+  const QString commitMsg = QString::fromUtf8(gitLog.readAll()).trimmed();
+  QVERIFY2(commitMsg.contains("gitentry"),
+           qPrintable(QString("commit message should mention gitentry: %1")
+                          .arg(commitMsg)));
+}
+
 // ---------------------------------------------------------------------------
 // RealPass tests
 // ---------------------------------------------------------------------------
@@ -576,15 +728,14 @@ void tst_integration::realPass_insertAndGrep() {
 // ---------------------------------------------------------------------------
 
 void tst_integration::imitatePass_otpGenerate() {
-  // Check for pass-otp extension.
+  const QString passExe = findPass();
+  if (passExe.isEmpty())
+    QSKIP("pass not installed – skipping OTP integration test");
+
   const bool hasOtp =
       QFile::exists("/usr/lib/password-store/extensions/otp.bash");
   if (!hasOtp)
     QSKIP("pass-otp extension not found – skipping OTP integration test");
-
-  const QString passExe = findPass();
-  if (passExe.isEmpty())
-    QSKIP("pass not installed – skipping OTP integration test");
 
   QTemporaryDir storeDir;
   QVERIFY(storeDir.isValid());
@@ -594,10 +745,11 @@ void tst_integration::imitatePass_otpGenerate() {
   QtPassSettings::setGpgExecutable(m_gpgExe);
   QtPassSettings::setUsePass(true);
 
-  QProcess initProc;
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();
   env.insert("GNUPGHOME", m_gnupgHome.path());
   env.insert("PASSWORD_STORE_DIR", storeDir.path());
+
+  QProcess initProc;
   initProc.setProcessEnvironment(env);
   initProc.start(passExe, {"init", m_keyFingerprint});
   QVERIFY2(initProc.waitForFinished(15000), "pass init timed out");
