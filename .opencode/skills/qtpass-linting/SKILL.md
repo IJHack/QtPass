@@ -235,7 +235,7 @@ Lints natural language in Markdown files. Requires textlint in the agent config:
 cd skills && npx textlint "*/SKILL.md"
 ```
 
-Auto-fix:
+Autofix:
 
 ```bash
 cd skills && npx textlint --fix "*/SKILL.md"
