@@ -794,13 +794,13 @@ auto Pass::boundedRandom(quint32 bound) -> quint32 {
   // Rejection-sampling threshold to avoid modulo bias:
   // In quint32 arithmetic, (1 + ~bound) wraps to (2^32 - bound), so
   // (1 + ~bound) % bound == 2^32 % bound.
-  // Values randval < max_mod_bound are rejected; accepted values produce a
-  // uniform distribution when reduced with (randval % bound).
-  const quint32 max_mod_bound = (1 + ~bound) % bound;
+  // Values randval < rejection_threshold are rejected; accepted values
+  // produce a uniform distribution when reduced with (randval % bound).
+  const quint32 rejection_threshold = (1 + ~bound) % bound;
 
   do {
     randval = QRandomGenerator::system()->generate();
-  } while (randval < max_mod_bound);
+  } while (randval < rejection_threshold);
 
   return randval % bound;
 }
