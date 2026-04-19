@@ -182,9 +182,11 @@ void tst_integration::initTestCase() {
   // Configure gpg-agent for headless/CI: allow loopback pinentry so GPG
   // never blocks waiting for a PIN dialog on systems without a pinentry GUI.
   {
-    const QByteArray agentPayload =
-        "allow-loopback-pinentry\ndefault-cache-ttl 300\npinentry-program "
-        "/usr/bin/pinentry-tty\n";
+    QByteArray agentPayload =
+        "allow-loopback-pinentry\ndefault-cache-ttl 300\n";
+#ifdef Q_OS_LINUX
+    agentPayload += "pinentry-program /usr/bin/pinentry-tty\n";
+#endif
     QFile agentConf(QDir::cleanPath(m_gnupgHome.path() + "/gpg-agent.conf"));
     QVERIFY2(
         agentConf.open(QIODevice::WriteOnly | QIODevice::Text),
@@ -537,10 +539,9 @@ void tst_integration::realPass_insertAndGrep() {
   QVERIFY2(waitForSignal(insertSpy, 20000), gpgInsertErrorMsg(insertErrorSpy));
 
   insertSpy.clear();
-  insertErrorSpy.clear();
   pass.Insert(QStringLiteral("email/outlook"),
               QStringLiteral("outlookpass\nurl: outlook.com\n"), false);
-  QVERIFY2(waitForSignal(insertSpy, 20000), "insert 2 not emitted");
+  QVERIFY2(waitForSignal(insertSpy, 20000), gpgInsertErrorMsg(insertErrorSpy));
 
   QSignalSpy grepSpy(&pass, &Pass::finishedGrep);
   pass.Grep(QStringLiteral("url"));
