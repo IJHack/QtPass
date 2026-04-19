@@ -1399,26 +1399,26 @@ Doorgaan?</translation>
         <translation>Kan wachtwoord niet genereren: er zijn geen tekens gekozen in de instellingen!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="455"/>
-        <location filename="../src/pass.cpp" line="476"/>
+        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="505"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Encryptie faalde: GPG-sleutel is verlopen. Vernieuwen of vervangen.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="460"/>
-        <location filename="../src/pass.cpp" line="481"/>
+        <location filename="../src/pass.cpp" line="491"/>
+        <location filename="../src/pass.cpp" line="510"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Encryptie faalde: GPG sleutel is ingetrokken.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="464"/>
-        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="495"/>
+        <location filename="../src/pass.cpp" line="515"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Encryptie faalde, ontvanger GPG-sleutel niet gevonden of ongeldig. Controleer dat de sleutel ID in .gpg-id klopt en geïmporteerd is.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="468"/>
-        <location filename="../src/pass.cpp" line="490"/>
+        <location filename="../src/pass.cpp" line="499"/>
+        <location filename="../src/pass.cpp" line="519"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Encryptie faalde. Controleer dat je GPG sleutel geldig is.</translation>
     </message>
@@ -1578,12 +1578,12 @@ Doorgaan?</translation>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="318"/>
+        <location filename="../src/storemodel.cpp" line="381"/>
         <source>force overwrite?</source>
         <translation>overschrijven afdwingen?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="319"/>
+        <location filename="../src/storemodel.cpp" line="382"/>
         <source>overwrite %1 with %2?</source>
         <translation>overschrijven van %1 door %2?</translation>
     </message>

@@ -1299,26 +1299,26 @@ Continua?</translation>
         <translation>Não foi possível gerar password. Não existe nenhum caracter para escolher do grupo especificado na configuração!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="455"/>
-        <location filename="../src/pass.cpp" line="476"/>
+        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="505"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>A criptografia falhou: a chave GPG expirou. Por favor, renove-a ou substitua-a.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="460"/>
-        <location filename="../src/pass.cpp" line="481"/>
+        <location filename="../src/pass.cpp" line="491"/>
+        <location filename="../src/pass.cpp" line="510"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>A criptografia falhou: a chave GPG foi revogada.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="464"/>
-        <location filename="../src/pass.cpp" line="486"/>
+        <location filename="../src/pass.cpp" line="495"/>
+        <location filename="../src/pass.cpp" line="515"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>A criptografia falhou: a chave GPG do destinatário não foi encontrada ou é inválida. Verifique se o ID da chave em .gpg-id está correto e foi importado.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="468"/>
-        <location filename="../src/pass.cpp" line="490"/>
+        <location filename="../src/pass.cpp" line="499"/>
+        <location filename="../src/pass.cpp" line="519"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>A criptografia falhou. Verifique se sua chave GPG é válida.</translation>
     </message>
@@ -1478,12 +1478,12 @@ Continua?</translation>
 <context>
     <name>StoreModel</name>
     <message>
-        <location filename="../src/storemodel.cpp" line="318"/>
+        <location filename="../src/storemodel.cpp" line="381"/>
         <source>force overwrite?</source>
         <translation>Forçar substituição?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="319"/>
+        <location filename="../src/storemodel.cpp" line="382"/>
         <source>overwrite %1 with %2?</source>
         <translation>Substituir %1 por %2?</translation>
     </message>
