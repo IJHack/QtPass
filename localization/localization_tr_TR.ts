@@ -435,7 +435,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="672"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="704"/>
