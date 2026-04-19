@@ -98,7 +98,7 @@ void PasswordDialog::on_createPasswordButton_clicked() {
       static_cast<unsigned int>(ui->spinBox_pwdLength->value()),
       m_passConfig.Characters[static_cast<PasswordConfiguration::characterSet>(
           ui->passwordTemplateSwitch->currentIndex())]);
-  if (newPass.length() > 0) {
+  if (!newPass.isEmpty()) {
     ui->lineEditPassword->setText(newPass);
   }
   ui->widget->setEnabled(true);
