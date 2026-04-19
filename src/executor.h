@@ -9,13 +9,74 @@
 
 /**
  * @class Executor
- * @brief Executes external commands used for password, git, and other
- * non-interactive operations.
+ * @brief Runs non-interactive external commands in FIFO order using a single QProcess.
  *
- * Uses a single QProcess and an internal FIFO queue to run requested commands
- * in order and emit completion or error signals for each request.
+ * Queues execution requests and emits per-request completion or error signals; supports optional stdin,
+ * configurable stdout/stderr capture, and per-request working directory and environment.
+ */
+
+/**
+ * @struct execQueueItem
+ * @brief Represents a single queued execution request.
+ *
+ * Contains caller-provided id, executable path, arguments, optional stdin data, stdout/stderr capture flags,
+ * and an optional working directory.
+ */
+
+/**
+ * @brief Return the environment passed to child processes.
+ * @return Environment as a list of "KEY=value" strings.
+ */
+
+/**
+ * @brief Emitted when a queued process finishes.
+ * @param id Identifier supplied with the original request.
+ * @param exitCode Process exit code.
+ * @param output Collected stdout (may be empty).
+ * @param errout Collected stderr (may be empty).
+ */
+
+/**
+ * @brief Emitted just before a process is started for the next queued request.
+ */
+
+/**
+ * @brief Emitted when a queued process finishes and is treated as an error.
+ * @param id Identifier supplied with the original request.
+ * @param exitCode Process exit code.
+ * @param output Collected stdout (may be empty).
+ * @param errout Collected stderr (may be empty).
  */
 class Executor : public QObject {
+  /**
+   * Represents a queued non-interactive process execution request.
+   *
+   * Holds all parameters required to start a single process from the executor's
+   * FIFO: caller-provided identifier, executable path, arguments, optional stdin
+   * data, flags controlling capture of stdout/stderr, and an optional working
+   * directory.
+   *
+   * Note: stderr is always collected when the process exits with a non-zero
+   * status, regardless of the `readStderr` flag.
+   *
+   * @struct execQueueItem
+   *
+   * @var int id
+   *      Caller-provided identifier for correlating completion/error signals.
+   * @var QString app
+   *      Executable path or program name to run.
+   * @var QStringList args
+   *      Command-line arguments passed to the executable.
+   * @var QString input
+   *      Text to write to the process stdin (empty when no input is required).
+   * @var bool readStdout
+   *      If `true`, stdout will be captured and emitted with completion.
+   * @var bool readStderr
+   *      If `true`, stderr will be captured and emitted with completion.
+   * @var QString workingDir
+   *      Working directory in which the process will be started (empty uses
+   *      the caller's current working directory).
+   */
   Q_OBJECT
 
   /**

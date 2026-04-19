@@ -43,6 +43,14 @@ static auto joinRemainingArgs(const QStringList &args, int start) -> QString {
   return args.mid(start).join(" ");
 }
 
+/**
+ * @brief Appends a suffix to a target string, inserting a separating space if the target is not empty.
+ *
+ * If `suffix` is empty, `target` is left unchanged.
+ *
+ * @param target String to append to; modified in place.
+ * @param suffix Suffix to append.
+ */
 static auto appendWithSpaceIfSuffixNotEmpty(QString &target,
                                             const QString &suffix) -> void {
   if (!suffix.isEmpty()) {

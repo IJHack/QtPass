@@ -12,7 +12,38 @@ class QMenu;
 
 /**
  * @class TrayIcon
- * @brief Handles the system tray icon and menu.
+ * @brief Manages a system tray icon, its context menu, and related actions for a main window.
+ */
+
+/**
+ * @brief Create a TrayIcon bound to a specific main window.
+ * @param parent Pointer to the QMainWindow that the tray icon will control.
+ */
+
+/**
+ * @brief Display a transient notification via the system tray icon.
+ * @param title Notification title text.
+ * @param msg Notification body text.
+ * @param time Display duration in milliseconds.
+ */
+
+/**
+ * @brief Show or hide the tray icon and its associated menu/actions.
+ * @param visible `true` to show the tray icon, `false` to hide it.
+ */
+
+/**
+ * @brief Indicates whether tray resources have been allocated and initialized.
+ * @returns `true` if tray resources are allocated and initialized, `false` otherwise.
+ */
+
+/**
+ * @brief Toggle the visibility of the associated main window.
+ */
+
+/**
+ * @brief Handle activation events from the system tray icon.
+ * @param reason Activation reason provided by QSystemTrayIcon.
  */
 class TrayIcon : public QWidget {
   Q_OBJECT

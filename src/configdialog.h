@@ -8,6 +8,20 @@
 
 #include <QDialog>
 
+/**
+ * Generated UI form structure for user information widgets created by Qt Designer.
+ *
+ * This forward-declared struct provides access to the form elements for user
+ * information dialogs/windows; the complete definition is produced by Qt's
+ * uic-generated header and included where the UI is instantiated.
+ */
+
+/**
+ * Forward declaration of the UI class for the configuration dialog.
+ *
+ * Represents the uic-generated UI type for ConfigDialog; the full definition
+ * is provided by the generated header included in the dialog implementation.
+ */
 namespace Ui {
 struct UserInfo;
 
