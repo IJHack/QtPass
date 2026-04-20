@@ -1291,12 +1291,12 @@ Continua?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprimento da senha inválido</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível gerar uma senha com comprimento zero.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
