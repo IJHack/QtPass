@@ -139,7 +139,7 @@ Use `/** */` blocks with `@brief`, `@param`, `@return`:
 
 ### Coverage Report (optional)
 
-Doxygen generates XML with `GENERATE_XML = YES` and `XML_OUTPUT = xml` in `Doxyfile`:
+Create a temporary Doxyfile override to enable XML for coverxygen (base Doxyfile may not have XML enabled):
 
 ```bash
 # Generate XML docs (required for coverxygen)
