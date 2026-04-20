@@ -30,6 +30,9 @@ static constexpr int TEST_SIGNAL_TIMEOUT_MS = 3000;
 static constexpr int DISTRIBUTION_MIN_PERCENT = 80;
 static constexpr int DISTRIBUTION_MAX_PERCENT = 120;
 static constexpr int PERCENT_BASE = 100;
+static constexpr int RANDOMNESS_TEST_SAMPLE_COUNT = 200;
+static constexpr int RANDOMNESS_TEST_PASSWORD_LENGTH = 32;
+static constexpr double CHI_SQUARE_CRITICAL_VALUE_DF9 = 25.0;
 
 /**
  * @brief The tst_util class is our first unit test
@@ -663,11 +666,12 @@ void tst_util::generateRandomPassword() {
   }
 
   // Keep total draws high enough for a stable sanity check while staying fast:
-  // 200 * 32 = 6400 generated characters. For a 4-character charset this yields
-  // an expected ~1600 occurrences per character, which is sufficient to detect
-  // obvious under/over-representation in this unit test.
-  const int samplePasswords = 200;
-  const int sampleLength = 32;
+  // RANDOMNESS_TEST_SAMPLE_COUNT * RANDOMNESS_TEST_PASSWORD_LENGTH = 6400
+  // generated characters. For a 4-character charset this yields an expected
+  // ~1600 occurrences per character, which is sufficient to detect obvious
+  // under/over-representation in this unit test.
+  const int samplePasswords = RANDOMNESS_TEST_SAMPLE_COUNT;
+  const int sampleLength = RANDOMNESS_TEST_PASSWORD_LENGTH;
   for (int i = 0; i < samplePasswords; ++i) {
     const QString candidate =
         pass.generatePassword(sampleLength, randomCharset);
@@ -734,12 +738,11 @@ void tst_util::boundedRandom() {
   // For 10 buckets, df = 9. The chi-square critical value at p = 0.995 is
   // about 23.59. We use 25.0 as a slightly more permissive threshold to
   // reduce false failures from random variation while still catching bias.
-  const double chi2Critical = 25.0;
-  QVERIFY2(chi2 < chi2Critical,
+  QVERIFY2(chi2 < CHI_SQUARE_CRITICAL_VALUE_DF9,
            qPrintable(
                QStringLiteral("Chi-square %1 exceeds critical value %2 (df=9)")
                    .arg(chi2)
-                   .arg(chi2Critical)));
+                   .arg(CHI_SQUARE_CRITICAL_VALUE_DF9)));
 }
 
 void tst_util::findBinaryInPath() {
@@ -2004,7 +2007,8 @@ void tst_util::grepImitatePassEmptyStoreEmitsEmpty() {
   QSignalSpy spy(&pass, &Pass::finishedGrep);
   pass.Grep(QStringLiteral("anything"));
   // Wait up to 3 s for the background thread to emit
-  QVERIFY(spy.wait(TEST_SIGNAL_TIMEOUT_MS));
+  QVERIFY2(spy.wait(TEST_SIGNAL_TIMEOUT_MS),
+           "Timed out waiting for Pass::finishedGrep signal");
   QCOMPARE(spy.count(), 1);
   const auto results = spy[0][0].value<GrepResults>();
   QVERIFY(results.isEmpty());
@@ -2020,7 +2024,8 @@ void tst_util::grepImitatePassInvalidRegexEmitsEmpty() {
   QSignalSpy spy(&pass, &Pass::finishedGrep);
   // An invalid regex (unmatched '[') must still emit an empty result
   pass.Grep(QStringLiteral("[invalid"));
-  QVERIFY(spy.wait(TEST_SIGNAL_TIMEOUT_MS));
+  QVERIFY2(spy.wait(TEST_SIGNAL_TIMEOUT_MS),
+           "Timed out waiting for Pass::finishedGrep signal");
   QCOMPARE(spy.count(), 1);
   const auto results = spy[0][0].value<GrepResults>();
   QVERIFY(results.isEmpty());
