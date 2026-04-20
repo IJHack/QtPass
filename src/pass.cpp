@@ -422,7 +422,10 @@ void Pass::GenerateGPGKeys(QString batch) {
     killArgs << "--kill";
     killArgs << "gpg-agent";
     // Use same environment as key generation to target correct gpg-agent
-    Executor::executeBlocking(env, resolvedGpgconf.program, killArgs);
+    if (Executor::executeBlocking(env, resolvedGpgconf.program, killArgs) !=
+        0) {
+      qWarning() << "Failed to kill gpg-agent";
+    }
   }
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},

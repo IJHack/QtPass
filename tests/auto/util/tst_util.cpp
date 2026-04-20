@@ -1479,7 +1479,7 @@ void tst_util::reencryptPathAbsolutePath() {
   QVERIFY2(tempDir.isValid(), "Temporary directory should be created");
 
   QString tempPath = tempDir.path();
-  QDir(tempPath).mkdir("testdir");
+  QVERIFY(QDir(tempPath).mkdir("testdir"));
   QString relativePathFromTemp = tempPath + "/testdir";
   QDir dir;
   QString result = QDir::cleanPath(QDir(relativePathFromTemp).absolutePath());

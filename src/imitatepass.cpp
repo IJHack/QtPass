@@ -1155,9 +1155,10 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
         Qt::QueuedConnection);
   };
 
-  QThread *thread = QThread::create([gpgExe, storeDir, env, rx, emitResults]() {
-    emitResults(grepScanStore(env, gpgExe, storeDir, rx));
-  });
+  QThread *thread = QThread::create(
+      [gpgExe, storeDir, env, rx, emitResults = std::move(emitResults)]() {
+        std::move(emitResults)(grepScanStore(env, gpgExe, storeDir, rx));
+      });
 
   m_grepThreads.append(thread);
   connect(thread, &QThread::finished, thread, &QObject::deleteLater);
