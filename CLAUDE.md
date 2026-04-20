@@ -76,8 +76,22 @@ Both inherit from `Pass` (`src/pass.h`), an abstract base exposing the password 
 
 **Signal/slot flow:** `MainWindow` calls `Pass` methods → `Pass` queues commands via `Executor` → `Executor` emits signals with stdout/stderr → `Pass` processes output and emits higher-level signals → `MainWindow` updates the UI.
 
+## Git Workflow
+
+```bash
+git checkout -b fix/description
+git commit -S -m "description"          # always sign commits
+git push -u origin fix/description
+gh pr create --title "..." --body "## Summary\n- ..."
+# Before merge: rebase onto main
+git pull --rebase origin main
+```
+
+When CodeRabbit/AI flags a PR issue: verify it, fix if real, push, comment with resolution. If false positive, explain and mark resolved.
+
 ## Key Conventions
 
+- Use `QCoreApplication::arguments()` instead of raw `argv[]` for CLI argument parsing
 - Wrap all user-facing strings with `tr()`
 - Use `QDir::cleanPath()` for cross-platform path normalization
 - Use `std::as_const()` instead of deprecated `qAsConst()` in Qt iterations
