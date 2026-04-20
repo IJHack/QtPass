@@ -84,7 +84,7 @@ git commit -S -m "description"          # always sign commits
 git push -u origin branch-name
 gh pr create --title "..." --body "## Summary\n- ..."
 # Before merge: rebase onto main
-git fetch origin && git pull origin main --rebase
+git pull --rebase origin main
 ```
 
 When CodeRabbit/AI flags a PR issue: verify it, fix if real, push, comment with resolution. If false positive, explain and mark resolved.
