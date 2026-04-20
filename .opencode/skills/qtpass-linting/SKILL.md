@@ -98,23 +98,24 @@ act push -W .github/workflows/reuse.yml
 
 ## Doxygen Documentation Linting
 
-The CI enforces zero Doxygen warnings via `docs.yml`. `WARN_AS_ERROR = YES` in `Doxyfile` causes the step to fail on any undocumented public symbol.
+The CI enforces zero Doxygen warnings via `docs.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
 
 ### Run Doxygen Locally
 
 ```bash
 doxygen Doxyfile
-# Zero output = no warnings = CI will pass
+# No warnings = CI will pass (progress output is normal with QUIET = NO)
 ```
 
 ### Enforced Doxyfile Settings
 
-| Setting            | Value            | Purpose                                           |
-| ------------------ | ---------------- | ------------------------------------------------- |
-| `FILE_PATTERNS`   | `*.cpp *.h *.md` | Includes cpp, header, and Markdown files          |
-| `EXTRACT_ALL`     | `NO`             | Required for `WARN_NO_PARAMDOC` to work           |
-| `WARN_NO_PARAMDOC`| `YES`            | Requires `@param`/`@return` on all public symbols |
-| `WARN_AS_ERROR`   | `YES`            | Fails CI on any warning                           |
+| Setting            | Value              | Purpose                                           |
+| ------------------ | ------------------ | ------------------------------------------------- |
+| `FILE_PATTERNS`    | `*.cpp *.h *.md`   | Includes cpp, header, and Markdown files          |
+| `EXTRACT_ALL`      | `NO`               | Required for `WARN_NO_PARAMDOC` to work           |
+| `WARN_NO_PARAMDOC` | `YES`              | Requires `@param`/`@return` on all public symbols |
+| `WARN_AS_ERROR`    | `FAIL_ON_WARNINGS` | Fails CI on any warning                           |
+| `QUIET`            | `NO`               | Progress output shown (not an error)              |
 
 ### Doxygen Comment Style
 
@@ -138,7 +139,16 @@ Use `/** */` blocks with `@brief`, `@param`, `@return`:
 
 ### Coverage Report (optional)
 
+Doxygen generates XML with `GENERATE_XML = YES` and `XML_OUTPUT = xml` in `Doxyfile`:
+
 ```bash
+# Generate XML docs (required for coverxygen)
+cp Doxyfile Doxyfile.xml
+echo "GENERATE_XML = YES" >> Doxyfile.xml
+echo "XML_OUTPUT = xml" >> Doxyfile.xml
+doxygen Doxyfile.xml
+
+# Install and run coverxygen
 pip install coverxygen
 python -m coverxygen --xml-dir xml/ --src-dir . --output coverage.info
 ```

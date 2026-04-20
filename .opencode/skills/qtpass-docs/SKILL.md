@@ -200,10 +200,10 @@ The CI enforces **zero Doxygen warnings** via `docs.yml`. `WARN_AS_ERROR = YES` 
 
 | Setting            | Value            | Purpose                                           |
 | ------------------ | ---------------- | ------------------------------------------------- |
-| `FILE_PATTERNS`   | `*.cpp *.h *.md` | Includes cpp, header, and Markdown files          |
-| `EXTRACT_ALL`     | `NO`             | Required for `WARN_NO_PARAMDOC` to work           |
-| `WARN_NO_PARAMDOC`| `YES`            | Requires `@param`/`@return` on all public symbols |
-| `WARN_AS_ERROR`   | `YES`            | Fails CI on any warning                           |
+| `FILE_PATTERNS`    | `*.cpp *.h *.md` | Includes cpp, header, and Markdown files          |
+| `EXTRACT_ALL`      | `NO`             | Required for `WARN_NO_PARAMDOC` to work           |
+| `WARN_NO_PARAMDOC` | `YES`            | Requires `@param`/`@return` on all public symbols |
+| `WARN_AS_ERROR`    | `YES`            | Fails CI on any warning                           |
 
 #### Run locally before pushing
 
