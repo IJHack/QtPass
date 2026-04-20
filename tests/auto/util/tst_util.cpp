@@ -32,7 +32,7 @@ static constexpr int DISTRIBUTION_MAX_PERCENT = 120;
 static constexpr int PERCENT_BASE = 100;
 static constexpr int RANDOMNESS_TEST_SAMPLE_COUNT = 200;
 static constexpr int RANDOMNESS_TEST_PASSWORD_LENGTH = 32;
-static constexpr double CHI_SQUARE_CRITICAL_VALUE_DF9 = 25.0;
+static constexpr double CHI_SQUARE_PERMISSIVE_THRESHOLD_DF9 = 25.0;
 
 /**
  * @brief The tst_util class is our first unit test
@@ -738,11 +738,12 @@ void tst_util::boundedRandom() {
   // For 10 buckets, df = 9. The chi-square critical value at p = 0.995 is
   // about 23.59. We use 25.0 as a slightly more permissive threshold to
   // reduce false failures from random variation while still catching bias.
-  QVERIFY2(chi2 < CHI_SQUARE_CRITICAL_VALUE_DF9,
-           qPrintable(
-               QStringLiteral("Chi-square %1 exceeds critical value %2 (df=9)")
-                   .arg(chi2)
-                   .arg(CHI_SQUARE_CRITICAL_VALUE_DF9)));
+  QVERIFY2(
+      chi2 < CHI_SQUARE_PERMISSIVE_THRESHOLD_DF9,
+      qPrintable(
+          QStringLiteral("Chi-square %1 exceeds permissive threshold %2 (df=9)")
+              .arg(chi2)
+              .arg(CHI_SQUARE_PERMISSIVE_THRESHOLD_DF9)));
 }
 
 void tst_util::findBinaryInPath() {
