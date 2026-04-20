@@ -98,23 +98,23 @@ act push -W .github/workflows/reuse.yml
 
 ## Doxygen Documentation Linting
 
-Doxygen runs in CI via `docs.yml` but does not enforce zero warnings (see actual settings below). It currently runs without checking exit codes.
+The CI enforces zero Doxygen warnings via `docs.yml`. `WARN_AS_ERROR = YES` in `Doxyfile` causes the step to fail on any undocumented public symbol.
 
 ### Run Doxygen Locally
 
 ```bash
 doxygen Doxyfile
-# Check for warnings; they won't fail CI
+# Zero output = no warnings = CI will pass
 ```
 
-### Current Doxyfile Settings
+### Enforced Doxyfile Settings
 
 | Setting            | Value            | Purpose                                           |
 | ------------------ | ---------------- | ------------------------------------------------- |
-| `FILE_PATTERNS`    | `*.cpp *.h *.md` | Includes cpp, header, and Markdown files          |
-| `EXTRACT_ALL`      | `YES`            | Extracts docs for all entities                    |
-| `WARN_NO_PARAMDOC` | `NO`             | Does not warn for missing parameter documentation |
-| `WARN_AS_ERROR`    | `NO`             | Doxygen warnings do not fail CI                   |
+| `FILE_PATTERNS`   | `*.cpp *.h *.md` | Includes cpp, header, and Markdown files          |
+| `EXTRACT_ALL`     | `NO`             | Required for `WARN_NO_PARAMDOC` to work           |
+| `WARN_NO_PARAMDOC`| `YES`            | Requires `@param`/`@return` on all public symbols |
+| `WARN_AS_ERROR`   | `YES`            | Fails CI on any warning                           |
 
 ### Doxygen Comment Style
 

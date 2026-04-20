@@ -194,28 +194,28 @@ When adding new public APIs, every public symbol in a header needs a Doxygen doc
  */
 ```
 
-Doxygen runs in CI via `docs.yml` but does not enforce zero warnings (see actual settings below).
+The CI enforces **zero Doxygen warnings** via `docs.yml`. `WARN_AS_ERROR = YES` in `Doxyfile` causes the step to fail on any undocumented public symbol.
 
-#### Current Doxyfile settings
+#### Enforced Doxyfile settings
 
 | Setting            | Value            | Purpose                                           |
 | ------------------ | ---------------- | ------------------------------------------------- |
-| `FILE_PATTERNS`    | `*.cpp *.h *.md` | Includes cpp, header, and Markdown files          |
-| `EXTRACT_ALL`      | `YES`            | Extracts docs for all entities                    |
-| `WARN_NO_PARAMDOC` | `NO`             | Does not warn for missing parameter documentation |
-| `WARN_AS_ERROR`    | `NO`             | Doxygen warnings do not fail CI                   |
+| `FILE_PATTERNS`   | `*.cpp *.h *.md` | Includes cpp, header, and Markdown files          |
+| `EXTRACT_ALL`     | `NO`             | Required for `WARN_NO_PARAMDOC` to work           |
+| `WARN_NO_PARAMDOC`| `YES`            | Requires `@param`/`@return` on all public symbols |
+| `WARN_AS_ERROR`   | `YES`            | Fails CI on any warning                           |
 
 #### Run locally before pushing
 
 ```bash
 doxygen Doxyfile
-# Check output for warnings (they won't fail CI)
+# Any output = warning = CI will fail
 ```
 
 #### Common doc mistakes that cause warnings
 
 - Unnamed parameters in header declarations — name every parameter
 - Orphaned `/** */` blocks not immediately above their declaration
-- Missing `@return` on non-void functions (recommended, not enforced with `WARN_NO_PARAMDOC = NO`)
+- Missing `@return` on non-void functions (required with `WARN_NO_PARAMDOC = YES`)
 - Signals with unnamed parameters (Qt signals need docs too)
 - `@unknowncommand` typos in doc blocks
