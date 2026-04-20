@@ -1,5 +1,37 @@
 # Changelog
 
+## [1.7.0](https://github.com/IJHack/QtPass/tree/v1.7.0) (2026-04-20)
+
+### Highlights
+
+- Qt 6.10 `beginFilterChange`/`endFilterChange` support
+- Spanish regional variants
+- More integration tests + CI GPG signing fix
+
+### New Features
+
+- Added Spanish regional variants (ES_AR, ES_EC, ES_MX, ES_UY)
+- Added integration tests for core workflows
+
+### Improvements
+
+- Qt 6.10 `beginFilterChange`/`endFilterChange` support [#1052](https://github.com/IJHack/QtPass/pull/1052)
+- CI GPG signing fix for more robust builds
+- Guard against out-of-bounds index in password character set [#1084](https://github.com/IJHack/QtPass/pull/1084)
+- WSL case-insensitive path handling [#1065](https://github.com/IJHack/QtPass/pull/1065)
+- Replace isDir/isFile bools with `ItemKind` enum in drag-and-drop [#1066](https://github.com/IJHack/QtPass/pull/1066)
+- Redundant `as_const` cleanup [#1063](https://github.com/IJHack/QtPass/pull/1063)
+- Reduced cyclomatic complexity in complex methods [#1055](https://github.com/IJHack/QtPass/pull/1055)
+- Extract `isGrepHeaderLine` helper in pass.cpp [#1073](https://github.com/IJHack/QtPass/pull/1073)
+- Rename single-letter parameters in `setLength`/`setPasswordCharTemplate` [#1086](https://github.com/IJHack/QtPass/pull/1086)
+- Doxygen style standardized across headers and main.cpp [#1087](https://github.com/IJHack/QtPass/pull/1087)
+- Stale `@todo` comments removed [#1081](https://github.com/IJHack/QtPass/pull/1081)
+- Skill documentation for OpenCode/Claude agents
+
+### Translations
+
+- Swedish, Turkish, Ukrainian, Spanish and more updated
+
 ## [1.6.0](https://github.com/IJHack/QtPass/tree/v1.6.0) (2026-04-13)
 
 ### Highlights
