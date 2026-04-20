@@ -679,9 +679,14 @@ void tst_util::generateRandomPassword() {
 
   const int totalChars = samplePasswords * sampleLength;
   const int expectedPerChar = totalChars / randomCharset.size();
-  // Use ±20% bounds instead of ±50% for stricter distribution check
-  const int minAllowed = expectedPerChar * 80 / 100;
-  const int maxAllowed = expectedPerChar * 120 / 100;
+  // Use ±20% bounds for stricter distribution check
+  constexpr int DISTRIBUTION_MIN_PERCENT = 80;
+  constexpr int DISTRIBUTION_MAX_PERCENT = 120;
+  constexpr int PERCENT_BASE = 100;
+  const int minAllowed =
+      expectedPerChar * DISTRIBUTION_MIN_PERCENT / PERCENT_BASE;
+  const int maxAllowed =
+      expectedPerChar * DISTRIBUTION_MAX_PERCENT / PERCENT_BASE;
   for (const QChar &ch : randomCharset) {
     const int count = frequencies.value(ch);
     QVERIFY2(
@@ -722,6 +727,9 @@ void tst_util::boundedRandom() {
     const double count = static_cast<double>(counts[i]);
     chi2 += (count - expected) * (count - expected) / expected;
   }
+  // For 10 buckets, df = 9. The chi-square critical value at p = 0.995 is
+  // about 23.59. We use 25.0 as a slightly more permissive threshold to
+  // reduce false failures from random variation while still catching bias.
   const double chi2Critical = 25.0;
   QVERIFY2(chi2 < chi2Critical,
            qPrintable(
@@ -1163,9 +1171,11 @@ void tst_util::isValidKeyIdWithEmail() {
 }
 
 void tst_util::isValidKeyIdInvalid() {
-  // MAX_KEY_ID_LENGTH = 40 comes from Util::isValidKeyId regex (8-40 hex chars)
-  constexpr int MAX_KEY_ID_LENGTH = 40;
-  constexpr int TOO_LONG_KEY_ID_LENGTH = MAX_KEY_ID_LENGTH + 1;
+  // NOTE: This test intentionally mirrors the current Util::isValidKeyId
+  // implementation limit (regex allows 8-40 hex chars). If that production
+  // limit changes, update this boundary accordingly.
+  constexpr int ASSUMED_MAX_KEY_ID_LENGTH = 40;
+  constexpr int TOO_LONG_KEY_ID_LENGTH = ASSUMED_MAX_KEY_ID_LENGTH + 1;
   QVERIFY(!Util::isValidKeyId(""));
   QVERIFY(!Util::isValidKeyId("short"));
   QVERIFY(!Util::isValidKeyId(QString(TOO_LONG_KEY_ID_LENGTH, 'a')));
