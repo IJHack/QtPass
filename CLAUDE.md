@@ -25,7 +25,7 @@ Qt 5.15 and Qt 6 are both supported (CI tests Qt 5.15 + Qt 6.8). The project use
 
 ## Testing
 
-Qt Test framework. Tests live in `tests/auto/` subdirectories: util, ui, model, settings, passwordconfig, filecontent, simpletransaction, gpgkeystate, executor, integration.
+Qt Test framework. Tests live in `tests/auto/` subdirectories: util, ui, model, settings, passwordconfig, filecontent, simpletransaction, gpgkeystate (all platforms); executor and integration are excluded on Windows per `tests/auto/auto.pro`.
 
 ```bash
 # Run all tests
