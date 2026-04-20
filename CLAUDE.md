@@ -21,7 +21,7 @@ make -j4
 make lcov
 ```
 
-Qt 5.12+ and Qt 6 are both supported. The project uses qmake with a subdirs layout: `src/` (library), `main/` (executable), `tests/` (unit tests), shared config in `qtpass.pri`.
+Qt 5.15 and Qt 6 are both supported (CI tests Qt 5.15 + Qt 6.8). The project uses qmake with a subdirs layout: `src/` (library), `main/` (executable), `tests/` (unit tests), shared config in `qtpass.pri`.
 
 ## Testing
 
@@ -58,12 +58,14 @@ act push -W .github/workflows/linter.yml -j build
 ## Architecture
 
 **Two-mode design:** QtPass operates in two modes controlled by `QtPassSettings`:
+
 - **RealPass** (`src/realpass.h`): delegates all operations to the `pass` CLI tool
 - **ImitatePass** (`src/imitatepass.h`): directly invokes `gpg2`/`git` when `pass` is unavailable
 
 Both inherit from `Pass` (`src/pass.h`), an abstract base exposing the password store API via Qt signals/slots.
 
 **Core classes:**
+
 - `MainWindow` — central UI orchestrator; owns the `Pass` instance and `StoreModel`
 - `Pass` / `RealPass` / `ImitatePass` — password store operations (add, edit, delete, copy, show, git)
 - `Executor` (`src/executor.h`) — FIFO queue for external process execution; all `gpg`/`git`/`pass` calls go through here
@@ -83,6 +85,17 @@ Both inherit from `Pass` (`src/pass.h`), an abstract base exposing the password 
 - Use `QPalette` colors instead of hardcoded values for theme-aware UI
 - Check for null from `screenAt()` before dereferencing
 - C++17 standard; SPDX license headers (`GPL-3.0-or-later`)
+
+## Doxygen
+
+CI enforces zero Doxygen warnings (`WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile`). Every public symbol in a header must have a `/** @brief ... */` doc block with `@param`/`@return` where applicable.
+
+```bash
+# Check locally — any output means CI will fail
+doxygen Doxyfile
+```
+
+Common pitfalls: unnamed parameters in declarations, orphaned doc blocks not immediately above their declaration, missing `@return` on non-void functions.
 
 ## Localization
 
