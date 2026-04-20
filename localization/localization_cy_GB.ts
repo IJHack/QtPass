@@ -1255,8 +1255,8 @@ Parhau?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="137"/>
-        <location filename="../main/main.cpp" line="141"/>
+        <location filename="../main/main.cpp" line="155"/>
+        <location filename="../main/main.cpp" line="159"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
