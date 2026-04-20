@@ -23,7 +23,8 @@ To add a new language:
 
 - Add your language code to `src/qtpass.pro` under TRANSLATIONS
 - If you have an existing build, run `make distclean` first (prevents stale generated files like `ui_*.h` from being included)
-- Run `qmake6` (or `qmake` if your Qt 6 installation exposes that name; run `qmake -v` to confirm it shows Qt version 6.x.x) to generate the translation files
+- Run `qmake6` (or `qmake` if your Qt 6 installation exposes that name; run `qmake -v` to confirm it shows Qt version 6.x.x) to prepare the build files
+- Run `lupdate src/qtpass.pro` (or the project's equivalent `make lupdate` target) to generate/update the translation `.ts` files
 - Edit the `.ts` file with Qt Linguist: `linguist localization/qtpass_xx_YY.ts`
 
 Qt Linguist has helpful [in-context translation options](https://doc.qt.io/qt-5/linguist-translators.html).
