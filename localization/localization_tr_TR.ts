@@ -1169,12 +1169,12 @@ Devam edilsin mi?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Geçersiz parola uzunluğu</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sıfır uzunlukta parola oluşturulamıyor.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
