@@ -26,7 +26,10 @@
 using GrepResults = QList<QPair<QString, QStringList>>;
 Q_DECLARE_METATYPE(GrepResults)
 
-static constexpr int GREP_TIMEOUT_MS = 3000;
+static constexpr int TEST_SIGNAL_TIMEOUT_MS = 3000;
+static constexpr int DISTRIBUTION_MIN_PERCENT = 80;
+static constexpr int DISTRIBUTION_MAX_PERCENT = 120;
+static constexpr int PERCENT_BASE = 100;
 
 /**
  * @brief The tst_util class is our first unit test
@@ -615,7 +618,7 @@ void tst_util::createGpgIdFileEmptyKeys() {
 }
 
 void tst_util::generateRandomPassword() {
-  SettingGuard<bool, QtPassSettings::setUsePwgen> pwgenGuard{
+  SettingGuard<bool, QtPassSettings::setUsePwgen> disablePwgenGuard{
       QtPassSettings::isUsePwgen(), false};
 
   ImitatePass pass;
@@ -680,9 +683,6 @@ void tst_util::generateRandomPassword() {
   const int totalChars = samplePasswords * sampleLength;
   const int expectedPerChar = totalChars / randomCharset.size();
   // Use ±20% bounds for stricter distribution check
-  constexpr int DISTRIBUTION_MIN_PERCENT = 80;
-  constexpr int DISTRIBUTION_MAX_PERCENT = 120;
-  constexpr int PERCENT_BASE = 100;
   const int minAllowed =
       expectedPerChar * DISTRIBUTION_MIN_PERCENT / PERCENT_BASE;
   const int maxAllowed =
@@ -702,7 +702,7 @@ void tst_util::generateRandomPassword() {
 }
 
 void tst_util::boundedRandom() {
-  SettingGuard<bool, QtPassSettings::setUsePwgen> pwgenGuard{
+  SettingGuard<bool, QtPassSettings::setUsePwgen> disablePwgenGuard{
       QtPassSettings::isUsePwgen(), false};
 
   ImitatePass pass;
@@ -1171,9 +1171,11 @@ void tst_util::isValidKeyIdWithEmail() {
 }
 
 void tst_util::isValidKeyIdInvalid() {
-  // NOTE: This test intentionally mirrors the current Util::isValidKeyId
-  // implementation limit (regex allows 8-40 hex chars). If that production
-  // limit changes, update this boundary accordingly.
+  // NOTE: 40 is intentional and derived from the current Util::isValidKeyId
+  // implementation detail: its key-id regex accepts 8-40 hexadecimal
+  // characters (optionally with a 0x prefix). This test verifies that a
+  // value just above that upper bound is rejected. If Util::isValidKeyId's
+  // accepted range changes, update this constant and the boundary test.
   constexpr int ASSUMED_MAX_KEY_ID_LENGTH = 40;
   constexpr int TOO_LONG_KEY_ID_LENGTH = ASSUMED_MAX_KEY_ID_LENGTH + 1;
   QVERIFY(!Util::isValidKeyId(""));
@@ -1994,7 +1996,7 @@ void tst_util::grepImitatePassEmptyStoreEmitsEmpty() {
   QSignalSpy spy(&pass, &Pass::finishedGrep);
   pass.Grep(QStringLiteral("anything"));
   // Wait up to 3 s for the background thread to emit
-  QVERIFY(spy.wait(GREP_TIMEOUT_MS));
+  QVERIFY(spy.wait(TEST_SIGNAL_TIMEOUT_MS));
   QCOMPARE(spy.count(), 1);
   const auto results = spy[0][0].value<GrepResults>();
   QVERIFY(results.isEmpty());
@@ -2010,7 +2012,7 @@ void tst_util::grepImitatePassInvalidRegexEmitsEmpty() {
   QSignalSpy spy(&pass, &Pass::finishedGrep);
   // An invalid regex (unmatched '[') must still emit an empty result
   pass.Grep(QStringLiteral("[invalid"));
-  QVERIFY(spy.wait(GREP_TIMEOUT_MS));
+  QVERIFY(spy.wait(TEST_SIGNAL_TIMEOUT_MS));
   QCOMPARE(spy.count(), 1);
   const auto results = spy[0][0].value<GrepResults>();
   QVERIFY(results.isEmpty());
