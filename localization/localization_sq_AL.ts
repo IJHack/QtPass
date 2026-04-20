@@ -1138,12 +1138,12 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Gjatësi e pavlefshme e fjalëkalimit</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuk mund të gjenerohet fjalëkalim me gjatësi zero.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>

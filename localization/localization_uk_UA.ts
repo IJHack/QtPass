@@ -1349,12 +1349,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Недійсна довжина пароля</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неможливо згенерувати пароль нульової довжини.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>

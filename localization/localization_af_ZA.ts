@@ -1348,12 +1348,12 @@ Gaan voort?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongeldige wagwoordlengte</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan nie wagwoord met nul lengte genereer nie.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>

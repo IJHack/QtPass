@@ -1380,12 +1380,12 @@ Continue?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid password length</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Can&apos;t generate password with zero length.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
