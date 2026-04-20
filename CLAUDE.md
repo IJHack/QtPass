@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## About QtPass
 
-QtPass is a multi-platform GUI for [pass](https://www.passwordstore.org/), the standard Unix password manager. It supports Linux, BSD, macOS, and Windows, using either the `pass` CLI tool or direct `gpg2`/`git` integration.
+QtPass is a multi-platform GUI for [pass](https://www.passwordstore.org/), the standard Unix password manager. It supports Linux, BSD, macOS, and Windows, using either the `pass` command-line tool or direct `gpg2`/`Git` integration.
 
 ## Build
 
@@ -59,7 +59,7 @@ act push -W .github/workflows/linter.yml -j build
 
 **Two-mode design:** QtPass operates in two modes controlled by `QtPassSettings`:
 
-- **RealPass** (`src/realpass.h`): delegates all operations to the `pass` CLI tool
+- **RealPass** (`src/realpass.h`): delegates all operations to the `pass` command-line tool
 - **ImitatePass** (`src/imitatepass.h`): directly invokes `gpg2`/`git` when `pass` is unavailable
 
 Both inherit from `Pass` (`src/pass.h`), an abstract base exposing the password store API via Qt signals/slots.
@@ -67,7 +67,7 @@ Both inherit from `Pass` (`src/pass.h`), an abstract base exposing the password 
 **Core classes:**
 
 - `MainWindow` — central UI orchestrator; owns the `Pass` instance and `StoreModel`
-- `Pass` / `RealPass` / `ImitatePass` — password store operations (add, edit, delete, copy, show, git)
+- `Pass` / `RealPass` / `ImitatePass` — password store operations (add, edit, delete, copy, show, Git)
 - `Executor` (`src/executor.h`) — FIFO queue for external process execution; all `gpg`/`git`/`pass` calls go through here
 - `StoreModel` (`src/storemodel.h`) — `QSortFilterProxyModel` wrapping `QFileSystemModel` for the password tree
 - `QtPassSettings` (`src/qtpasssettings.h`) — singleton managing all app configuration via `QSettings`
