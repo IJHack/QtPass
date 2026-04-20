@@ -6,12 +6,13 @@ Thank you for wanting to contribute to making QtPass awesome.
 
 ## Pull Request Process
 
-1. Ensure install or build dependencies and artifacts are not committed.
-2. When adding big new features or changes to the build tool, update the [README.md](README.md) to reflect those.
-3. Make sure you update all of the CI configs if needed. These run on every Pull Request.
-4. Increase the version numbers in relevant files when applicable.
+1. **Sign your commits** - All commits must be signed with GPG using `git commit -S -m "description"`.
+2. Ensure install or build dependencies and artifacts are not committed.
+3. When adding big new features or changes to the build tool, update the [README.md](README.md) to reflect those.
+4. Make sure you update all of the CI configs if needed. These run on every Pull Request.
+5. Increase the version numbers in relevant files when applicable.
    The versioning scheme we use is [SemVer](https://semver.org/).
-5. You may merge the Pull Request once you have the sign-off of one other developer, or if you
+6. You may merge the Pull Request once you have the sign-off of one other developer, or if you
    do not have permission to do that, you may request a reviewer to merge it for you.
 
 ## Translations
