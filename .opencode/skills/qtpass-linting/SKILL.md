@@ -132,7 +132,7 @@ Use `/** */` blocks with `@brief`, `@param`, `@return`:
 
 - **Unnamed parameters in declarations**: `void foo(int)` — name all parameters: `void foo(int count)`
 - **Orphaned doc blocks**: A `/** ... */` not immediately preceding its declaration is misattributed. Move the block directly above the declaration.
-- **Missing `@return`**: Not enforced with current settings (`WARN_NO_PARAMDOC = NO`)
+- **Missing `@return`**: Enforced with current settings (`WARN_NO_PARAMDOC = YES`) — include `@return` for non-void functions
 - **Signals with unnamed params**: Qt signals also need named parameters and `@param` docs
 - **`@xyz` typos**: Doxygen treats unknown `@word` as commands — use `@brief Like` not `@like`
 
@@ -223,7 +223,7 @@ Common diagnostics:
 npx prettier --write README.md
 npx prettier --write .github/workflows/*.yml
 npx prettier --write FAQ.md
-cd skills && npx prettier --write "*/SKILL.md"
+npx prettier --write ".opencode/skills/*/SKILL.md"
 ```
 
 ### textlint (Natural Language)
@@ -231,14 +231,14 @@ cd skills && npx prettier --write "*/SKILL.md"
 Lints natural language in Markdown files. Requires textlint in the agent config:
 
 ```bash
-# From .opencode/skills/ or .claude/skills/ folder
-cd skills && npx textlint "*/SKILL.md"
+# From .opencode/skills/ folder
+npx textlint ".opencode/skills/*/SKILL.md"
 ```
 
 Autofix:
 
 ```bash
-cd skills && npx textlint --fix "*/SKILL.md"
+npx textlint --fix ".opencode/skills/*/SKILL.md"
 ```
 
 ## Prettier Patterns

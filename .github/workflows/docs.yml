@@ -113,7 +113,7 @@ jobs:
 
       - name: Generate documentation
         if: steps.need_docs.outputs.run_docs == 'true'
-        run: doxygen || exit 1
+        run: doxygen
 
       - name: Install lcov
         if: steps.need_docs.outputs.run_docs == 'true'
