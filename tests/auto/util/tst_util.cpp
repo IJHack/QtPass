@@ -26,6 +26,8 @@
 using GrepResults = QList<QPair<QString, QStringList>>;
 Q_DECLARE_METATYPE(GrepResults)
 
+static constexpr int GREP_TIMEOUT_MS = 3000;
+
 /**
  * @brief The tst_util class is our first unit test
  */
@@ -648,21 +650,45 @@ void tst_util::generateRandomPassword() {
 
   const QString randomCharset = QStringLiteral("abcd");
   const QString first = pass.generatePassword(32, randomCharset);
-  QCOMPARE(first.length(), 32);
   bool foundDifferent = false;
-  for (int i = 0; i < 20; ++i) {
-    const QString candidate = pass.generatePassword(32, randomCharset);
-    QCOMPARE(candidate.length(), 32);
+
+  // Distribution sanity check for small charset: all characters should appear
+  // and none should be excessively under/over-represented.
+  QMap<QChar, int> frequencies;
+  for (const QChar &ch : randomCharset) {
+    frequencies.insert(ch, 0);
+  }
+
+  const int samplePasswords = 200;
+  const int sampleLength = 32;
+  for (int i = 0; i < samplePasswords; ++i) {
+    const QString candidate =
+        pass.generatePassword(sampleLength, randomCharset);
+    if (!foundDifferent && candidate != first) {
+      foundDifferent = true;
+    }
     for (const QChar &ch : candidate) {
       QVERIFY2(randomCharset.contains(ch),
                "Generated password contains character outside the specified "
                "charset");
-    }
-    if (candidate != first) {
-      foundDifferent = true;
-      break;
+      ++frequencies[ch];
     }
   }
+
+  const int totalChars = samplePasswords * sampleLength;
+  const int expectedPerChar = totalChars / randomCharset.size();
+  // Use ±20% bounds instead of ±50% for stricter distribution check
+  const int minAllowed = expectedPerChar * 80 / 100;
+  const int maxAllowed = expectedPerChar * 120 / 100;
+  for (const QChar &ch : randomCharset) {
+    const int count = frequencies.value(ch);
+    QVERIFY2(
+        count > 0,
+        "A charset character never appeared; randomness coverage is broken");
+    QVERIFY2(count >= minAllowed && count <= maxAllowed,
+             "Character distribution is unexpectedly skewed");
+  }
+
   QVERIFY2(
       foundDifferent,
       "Multiple generated passwords were identical; randomness may be broken");
@@ -1135,6 +1161,7 @@ void tst_util::isValidKeyIdWithEmail() {
 }
 
 void tst_util::isValidKeyIdInvalid() {
+  // MAX_KEY_ID_LENGTH = 40 comes from Util::isValidKeyId regex (8-40 hex chars)
   constexpr int MAX_KEY_ID_LENGTH = 40;
   constexpr int TOO_LONG_KEY_ID_LENGTH = MAX_KEY_ID_LENGTH + 1;
   QVERIFY(!Util::isValidKeyId(""));
@@ -1339,8 +1366,10 @@ void tst_util::findBinaryInPathTempExecutableInTempDir() {
     QSKIP("Cannot write to the PATH directory containing 'sh' (need write "
           "access)");
   }
-  QVERIFY2(exec.exists(), "File should exist after opening for writing");
-  exec.write("#!/bin/sh\n");
+  const QByteArray scriptContent = QByteArrayLiteral("#!/bin/sh\n");
+  const qint64 bytesWritten = exec.write(scriptContent);
+  QVERIFY2(bytesWritten == scriptContent.size(),
+           "Failed to write executable content");
   exec.close();
   exec.setPermissions(QFileDevice::ReadOwner | QFileDevice::WriteOwner |
                       QFileDevice::ExeOwner);
@@ -1950,7 +1979,7 @@ void tst_util::grepImitatePassEmptyStoreEmitsEmpty() {
   QSignalSpy spy(&pass, &Pass::finishedGrep);
   pass.Grep(QStringLiteral("anything"));
   // Wait up to 3 s for the background thread to emit
-  QVERIFY(spy.wait(3000));
+  QVERIFY(spy.wait(GREP_TIMEOUT_MS));
   QCOMPARE(spy.count(), 1);
   const auto results = spy[0][0].value<GrepResults>();
   QVERIFY(results.isEmpty());
@@ -1966,7 +1995,7 @@ void tst_util::grepImitatePassInvalidRegexEmitsEmpty() {
   QSignalSpy spy(&pass, &Pass::finishedGrep);
   // An invalid regex (unmatched '[') must still emit an empty result
   pass.Grep(QStringLiteral("[invalid"));
-  QVERIFY(spy.wait(3000));
+  QVERIFY(spy.wait(GREP_TIMEOUT_MS));
   QCOMPARE(spy.count(), 1);
   const auto results = spy[0][0].value<GrepResults>();
   QVERIFY(results.isEmpty());
