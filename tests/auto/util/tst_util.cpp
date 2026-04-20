@@ -901,6 +901,12 @@ void tst_util::userInfoCreatedAndExpiry() {
   ui.name = "Test User";
   ui.key_id = "ABCDEF12";
 
+  // Verify fields were set correctly
+  QVERIFY2(ui.name == QString("Test User"),
+           "UserInfo name field should be set.");
+  QVERIFY2(ui.key_id == QString("ABCDEF12"),
+           "UserInfo key_id field should be set.");
+
   QVERIFY(!ui.created.isValid());
   QVERIFY(!ui.expiry.isValid());
 
@@ -1129,9 +1135,11 @@ void tst_util::isValidKeyIdWithEmail() {
 }
 
 void tst_util::isValidKeyIdInvalid() {
+  constexpr int MAX_KEY_ID_LENGTH = 40;
+  constexpr int TOO_LONG_KEY_ID_LENGTH = MAX_KEY_ID_LENGTH + 1;
   QVERIFY(!Util::isValidKeyId(""));
   QVERIFY(!Util::isValidKeyId("short"));
-  QVERIFY(!Util::isValidKeyId(QString(41, 'a')));
+  QVERIFY(!Util::isValidKeyId(QString(TOO_LONG_KEY_ID_LENGTH, 'a')));
   QVERIFY(!Util::isValidKeyId("invalidchars!"));
   QVERIFY(!Util::isValidKeyId("space in key"));
 }
@@ -1321,8 +1329,9 @@ void tst_util::findBinaryInPathTempExecutableInTempDir() {
     QSKIP("Cannot find 'sh' to determine a writable PATH directory");
   }
   const QString pathDir = QFileInfo(shPath).absolutePath();
-  const QString uniqueName = QStringLiteral("qtpass_test_exec_") +
-                             QUuid::createUuid().toString(QUuid::WithoutBraces);
+  const QString uniqueName =
+      QStringLiteral("qtpass_test_exec_") +
+      QUuid::createUuid().toString().remove('{').remove('}');
   const QString uniquePath = pathDir + QDir::separator() + uniqueName;
 
   QFile exec(uniquePath);
