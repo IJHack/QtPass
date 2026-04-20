@@ -21,6 +21,7 @@ QtPass uses [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/) for tr
 To add a new language:
 
 - Add your language code to `src/qtpass.pro` under TRANSLATIONS
+- If you have an existing build, run `make distclean` first (prevents stale generated files like `ui_*.h` from being included)
 - Run `qmake6` to generate the translation files
 - Edit the `.ts` file with Qt Linguist: `linguist localization/qtpass_xx_YY.ts`
 
