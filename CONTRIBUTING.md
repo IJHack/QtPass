@@ -9,9 +9,9 @@ Thank you for wanting to contribute to making QtPass awesome.
 1. **Sign your commits** - All commits must be signed with GPG using `git commit -S -m "description"`.
 2. Ensure install or build dependencies and artifacts are not committed.
 3. When adding big new features or changes to the build tool, update the [README.md](README.md) to reflect those.
-4. Make sure you update all of the CI configs if needed. These run on every Pull Request.
+4. Make sure you update all the CI configs if needed. These run on every Pull Request.
 5. Increase the version numbers in relevant files when applicable.
-   The versioning scheme we use is [SemVer](https://semver.org/).
+   The versioning scheme we use is [PrideVer](https://pridever.org/).
 6. You may merge the Pull Request once you have the sign-off of one other developer, or if you
    do not have permission to do that, you may request a reviewer to merge it for you.
 
