@@ -65,7 +65,7 @@ doxygen Doxyfile
 # Or use project-specific docs command
 
 # View
-open html/index.html
+open docs/index.html
 ```
 
 ## Linting
@@ -127,8 +127,8 @@ Update:
 # Generate with doxygen
 doxygen Doxyfile
 
-# Output goes to docs/html/
-ls docs/html/index.html
+# Output goes to docs/
+ls docs/index.html
 ```
 
 ## Common Pitfalls
@@ -194,16 +194,16 @@ When adding new public APIs, every public symbol in a header needs a Doxygen doc
  */
 ```
 
-The CI enforces **zero Doxygen warnings** via `docs.yml`. `WARN_AS_ERROR = YES` in `Doxyfile` causes the step to fail on any undocumented public symbol.
+The CI enforces **zero Doxygen warnings** via `docs.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
 
 #### Enforced Doxyfile settings
 
-| Setting            | Value            | Purpose                                           |
-| ------------------ | ---------------- | ------------------------------------------------- |
-| `FILE_PATTERNS`    | `*.cpp *.h *.md` | Includes cpp, header, and Markdown files          |
-| `EXTRACT_ALL`      | `NO`             | Required for `WARN_NO_PARAMDOC` to work           |
-| `WARN_NO_PARAMDOC` | `YES`            | Requires `@param`/`@return` on all public symbols |
-| `WARN_AS_ERROR`    | `YES`            | Fails CI on any warning                           |
+| Setting            | Value              | Purpose                                           |
+| ------------------ | ------------------ | ------------------------------------------------- |
+| `FILE_PATTERNS`    | `*.cpp *.h *.md`   | Includes cpp, header, and Markdown files          |
+| `EXTRACT_ALL`      | `NO`               | Required for `WARN_NO_PARAMDOC` to work           |
+| `WARN_NO_PARAMDOC` | `YES`              | Requires `@param`/`@return` on all public symbols |
+| `WARN_AS_ERROR`    | `FAIL_ON_WARNINGS` | Fails CI on any warning                           |
 
 #### Run locally before pushing
 

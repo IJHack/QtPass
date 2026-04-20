@@ -206,20 +206,15 @@ for (const auto &user : m_userList) {
 for (int i = 0; i < m_userList.size(); ++i) {
     item->setData(Qt::UserRole, QVariant::fromValue(i));
 }
-```
 
-// Good - store index
-for (int i = 0; i < m_userList.size(); ++i) {
-item->setData(Qt::UserRole, QVariant::fromValue(i));
-}
 
 // Later, lookup by index
 bool success = false;
 const int index = item->data(Qt::UserRole).toInt(&success);
 if (success && index >= 0 && index < m_userList.size()) {
-m_userList[index].enabled = item->checkState() == Qt::Checked;
+    m_userList[index].enabled = item->checkState() == Qt::Checked;
 }
-}
+```
 
 ### Theme-Aware Colors
 
