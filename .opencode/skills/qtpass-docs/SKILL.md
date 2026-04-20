@@ -2,7 +2,6 @@
 name: qtpass-docs
 description: Documentation guide for QtPass - README, FAQ, localization
 license: GPL-3.0-or-later
-compatibility: opencode
 metadata:
   audience: developers
   workflow: documentation
@@ -88,7 +87,7 @@ npx prettier --write README.md
 
 ```bash
 npx prettier --write <markdown-file>
-npx prettier --write .opencode/skills/*/SKILL.md
+npx prettier --write "**/*/SKILL.md"
 ```
 
 ### YAML (prettier)
@@ -185,12 +184,38 @@ Keep CHANGELOG entries consistent:
 
 ### Doxygen Comments in Code
 
-When adding new public APIs:
+When adding new public APIs, every public symbol in a header needs a Doxygen doc block:
 
 ```cpp
 /**
- * @brief Brief description
- * @param param1 Description of first parameter
- * @return Description of return value
+ * @brief Brief description.
+ * @param param1 Description of first parameter.
+ * @return Description of return value.
  */
 ```
+
+The CI enforces **zero Doxygen warnings** via `docs.yml`. `WARN_AS_ERROR = YES` in `Doxyfile` causes the step to fail on any undocumented public symbol.
+
+#### Enforced Doxyfile settings
+
+| Setting            | Value            | Purpose                                           |
+| ------------------ | ---------------- | ------------------------------------------------- |
+| `FILE_PATTERNS`    | `*.cpp *.h *.md` | Includes cpp, header, and Markdown files          |
+| `EXTRACT_ALL`      | `NO`             | Required for `WARN_NO_PARAMDOC` to work           |
+| `WARN_NO_PARAMDOC` | `YES`            | Requires `@param`/`@return` on all public symbols |
+| `WARN_AS_ERROR`    | `YES`            | Fails CI on any warning                           |
+
+#### Run locally before pushing
+
+```bash
+doxygen Doxyfile
+# Any output = warning = CI will fail
+```
+
+#### Common doc mistakes that cause warnings
+
+- Unnamed parameters in header declarations — name every parameter
+- Orphaned `/** */` blocks not immediately above their declaration
+- Missing `@return` on non-void functions (required with `WARN_NO_PARAMDOC = YES`)
+- Signals with unnamed parameters (Qt signals need docs too)
+- `@unknowncommand` typos in doc blocks

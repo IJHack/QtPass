@@ -2,7 +2,6 @@
 name: qtpass-linting
 description: QtPass CI/CD workflow - run GitHub Actions locally with act, linters, formatters
 license: GPL-3.0-or-later
-compatibility: opencode
 metadata:
   audience: developers
   workflow: linting
@@ -97,6 +96,63 @@ Check license headers and REUSE compliance:
 act push -W .github/workflows/reuse.yml
 ```
 
+## Doxygen Documentation Linting
+
+The CI enforces zero Doxygen warnings via `docs.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
+
+### Run Doxygen Locally
+
+```bash
+doxygen Doxyfile
+# No warnings = CI will pass (progress output is normal with QUIET = NO)
+```
+
+### Enforced Doxyfile Settings
+
+| Setting            | Value              | Purpose                                           |
+| ------------------ | ------------------ | ------------------------------------------------- |
+| `FILE_PATTERNS`    | `*.cpp *.h *.md`   | Includes cpp, header, and Markdown files          |
+| `EXTRACT_ALL`      | `NO`               | Required for `WARN_NO_PARAMDOC` to work           |
+| `WARN_NO_PARAMDOC` | `YES`              | Requires `@param`/`@return` on all public symbols |
+| `WARN_AS_ERROR`    | `FAIL_ON_WARNINGS` | Fails CI on any warning                           |
+| `QUIET`            | `NO`               | Progress output shown (not an error)              |
+
+### Doxygen Comment Style
+
+Use `/** */` blocks with `@brief`, `@param`, `@return`:
+
+```cpp
+/**
+ * @brief Brief one-line description.
+ * @param name Description of parameter.
+ * @return Description of return value.
+ */
+```
+
+### Common Warning Causes
+
+- **Unnamed parameters in declarations**: `void foo(int)` — name all parameters: `void foo(int count)`
+- **Orphaned doc blocks**: A `/** ... */` not immediately preceding its declaration is misattributed. Move the block directly above the declaration.
+- **Missing `@return`**: Enforced with current settings (`WARN_NO_PARAMDOC = YES`) — include `@return` for non-void functions
+- **Signals with unnamed params**: Qt signals also need named parameters and `@param` docs
+- **`@xyz` typos**: Doxygen treats unknown `@word` as commands — use `@brief Like` not `@like`
+
+### Coverage Report (optional)
+
+Create a temporary Doxyfile override to enable XML for coverxygen (base Doxyfile may not have XML enabled):
+
+```bash
+# Generate XML docs (required for coverxygen)
+cp Doxyfile Doxyfile.xml
+echo "GENERATE_XML = YES" >> Doxyfile.xml
+echo "XML_OUTPUT = xml" >> Doxyfile.xml
+doxygen Doxyfile.xml
+
+# Install and run coverxygen
+pip install coverxygen
+python -m coverxygen --xml-dir xml/ --src-dir . --output coverage.info
+```
+
 ## Common Linters
 
 ### Gitleaks (Secret Detection)
@@ -177,7 +233,22 @@ Common diagnostics:
 npx prettier --write README.md
 npx prettier --write .github/workflows/*.yml
 npx prettier --write FAQ.md
-npx prettier --write .opencode/skills/*/SKILL.md
+npx prettier --write ".opencode/skills/*/SKILL.md"
+```
+
+### textlint (Natural Language)
+
+Lints natural language in Markdown files. Requires textlint in the agent config:
+
+```bash
+# From .opencode/skills/ folder
+npx textlint ".opencode/skills/*/SKILL.md"
+```
+
+Autofix:
+
+```bash
+npx textlint --fix ".opencode/skills/*/SKILL.md"
 ```
 
 ## Prettier Patterns

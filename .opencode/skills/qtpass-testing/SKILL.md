@@ -2,7 +2,6 @@
 name: qtpass-testing
 description: Comprehensive guide for QtPass unit testing with Qt Test
 license: GPL-3.0-or-later
-compatibility: opencode
 metadata:
   audience: developers
   workflow: testing
@@ -480,7 +479,7 @@ Formats: .md, .yml, .html, .css, .js, .json, etc.
 ```bash
 npx prettier --write <file>
 npx prettier --write .github/workflows/*.yml
-npx prettier --write .opencode/skills/*/SKILL.md
+npx prettier --write ".opencode/skills/*/SKILL.md"
 ```
 
 ### C++ (clang-format)

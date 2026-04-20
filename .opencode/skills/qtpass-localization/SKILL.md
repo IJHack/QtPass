@@ -2,7 +2,6 @@
 name: qtpass-localization
 description: QtPass localization workflow - translation files, updating, adding languages
 license: GPL-3.0-or-later
-compatibility: opencode
 metadata:
   audience: developers
   workflow: localization
@@ -22,7 +21,7 @@ Qt uses Qt Linguist (`.ts` files) for translations.
 ls localization/localization_*.ts
 ```
 
-Currently includes: af_ZA, ar_MA, bg_BG, ca_ES, cs_CZ, cy_GB, da_DK, de_DE, de_LU, el_GR, en_GB, en_US, es_ES, et_EE, fi_FI, fr_BE, fr_FR, fr_LU, gl_ES, he_IL, hr_HR, hu_HU, it_IT, ja_JP, ko_KR, lb_LU, nb_NO, nl_BE, nl_NL, pl_PL, pt_BR, pt_PT, ro_RO, ru_RU, si_LK, sk_SK, sq_AL, sr_Cyrl, sr_RS, sv_SE, ta_IN, tr_TR, uk_UA, zh_CN, zh_Hant
+Currently includes: af_ZA, ar_MA, bg_BG, ca_ES, cs_CZ, cy_GB, da_DK, de_DE, de_LU, el_GR, en_GB, en_US, es_ES, et_EE, fi_FI, fr_BE, fr_FR, fr_LU, gl_ES, he_IL, hr_HR, hu_HU, it_IT, ja_JP, ko_KR, lb_LU, nb_NO, nl_BE, nl_NL, pl_PL, pt_PT, ro_RO, ru_RU, sk_SK, sl_SI, sq_AL, sr_RS, sv_SE, ta, tr_TR, uk_UA, zh_CN, zh_Hant
 
 ## Updating Translations
 
@@ -154,7 +153,7 @@ QtPass uses system locale. To test:
 
 ```bash
 # Linux
-LANG=nl_NL.UTF-8 ./qtpass
+LANG=nl_NL ./qtpass
 
 # Or set in QtPass settings
 ```
@@ -230,38 +229,20 @@ When source strings change, translations are marked "unfinished" but may still a
 
 ### Merging Translation Conflicts
 
-When merging translation PRs that conflict, **avoid using wildcards** - `git checkout --theirs localization/*.ts` would discard ALL local changes in un-conflicted files.
-
-Instead, identify and resolve conflicted files explicitly:
+When merging translation PRs that conflict:
 
 ```bash
-# Use theirs strategy for conflicted .ts files (they're XML, prefer incoming)
-# 1) List conflicted translation files and review them:
-#    This returns full paths like: localization/localization_de.ts
-git diff --name-only --diff-filter=U -- localization/*.ts
-
-# 2) Resolve each intended file explicitly (repeat as needed):
-#    Use the exact paths from Step 1 - no additional prefix needed
-git checkout --theirs localization/localization_de.ts
-git checkout --theirs localization/localization_fr.ts
-
-# 3) Stage and commit:
-#    Again, use the exact paths from Step 1
-git add localization/localization_de.ts localization/localization_fr.ts
+# Use theirs strategy for .ts files (they're XML, prefer incoming)
+git checkout --theirs localization/localization_*.ts
+git add localization/
 git commit -m "Resolve merge conflict - use theirs for translations"
 ```
 
 ### Weblate vs Local Editing
 
-**Applies to:** `localization/**/*.ts`
-
-**Do not manually edit .ts files** - use Weblate for translations. Run `qmake6` after source changes.
-
-**Exception:** Only maintainer-approved, narrowly-scoped emergency fixes (e.g., urgent encoding regressions or review-requested typo fixes) may be edited directly. Approval must be obtained **before** editing. Record a short justification in the PR description (and optionally repeat in the commit message for traceability).
+QtPass uses Weblate for translations. Don't manually edit `.ts` files for translations - let Weblate handle it. Only run `qmake6` locally to update source references.
 
 ## Fixing Translation Issues in PRs
-
-> **Note:** Editing `localization/**/*.ts` files is only allowed under the maintainer-approved, narrowly-scoped emergency-fix exception. Obtain approval **before** editing. Justify in the PR description, then run `qmake6`. Use Weblate for normal translations.
 
 When static analysis flags translation issues (e.g., filename preservation):
 

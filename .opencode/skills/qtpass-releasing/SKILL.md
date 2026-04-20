@@ -2,7 +2,6 @@
 name: qtpass-releasing
 description: Release workflow for QtPass - versioning, builds, publishing
 license: GPL-3.0-or-later
-compatibility: opencode
 metadata:
   audience: developers
   workflow: release

@@ -26,6 +26,27 @@ To add a new language:
 
 Qt Linguist has helpful [in-context translation options](https://doc.qt.io/qt-5/linguist-translators.html).
 
+## Windows Developers: Symlink Setup
+
+This repository contains a symlink (`.claude` -> `.opencode`). Windows developers need to enable symlink support:
+
+**Option 1:** Enable Developer Mode on Windows 10+ (recommended)
+
+- Go to Settings > Update & Security > For developers
+- Enable "Developer Mode"
+
+**Option 2:** Configure Git to use symlinks
+
+```bash
+git config core.symlinks true
+```
+
+Set this before cloning the repository.
+
+**Warning:** Without symlink support enabled, `.claude` will be checked out as a regular text file containing the path ".opencode" instead of a proper symlink.
+
+**Troubleshooting:** After cloning, run `ls -l .claude` (Git Bash) or `dir .claude` (CMD) to verify it shows as a symlink, not a regular file. If it appears as a regular file, set `core.symlinks=true` in your Git config and then re-checkout the file or re-clone the repository to restore the proper symlink.
+
 ## Getting Help
 
 - Open an [issue](https://github.com/IJHack/QtPass/issues) for bugs or feature requests
