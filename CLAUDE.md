@@ -81,7 +81,7 @@ Both inherit from `Pass` (`src/pass.h`), an abstract base exposing the password 
 ```bash
 git checkout -b fix/description
 git commit -S -m "description"          # always sign commits
-git push -u origin branch-name
+git push -u origin fix/description
 gh pr create --title "..." --body "## Summary\n- ..."
 # Before merge: rebase onto main
 git pull --rebase origin main
