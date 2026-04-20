@@ -902,8 +902,10 @@ void tst_util::userInfoCreatedAndExpiry() {
   ui.key_id = "ABCDEF12";
 
   // Verify fields were set correctly
-  QVERIFY2(ui.name == "Test User", "UserInfo name field should be set.");
-  QVERIFY2(ui.key_id == "ABCDEF12", "UserInfo key_id field should be set.");
+  QVERIFY2(ui.name == QString("Test User"),
+           "UserInfo name field should be set.");
+  QVERIFY2(ui.key_id == QString("ABCDEF12"),
+           "UserInfo key_id field should be set.");
 
   QVERIFY(!ui.created.isValid());
   QVERIFY(!ui.expiry.isValid());
