@@ -1274,12 +1274,12 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogiltig lösenordslängd</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan inte generera lösenord med längden noll.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
@@ -1477,7 +1477,7 @@ Fortsätta?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tvinga överskrivning?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
