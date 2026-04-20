@@ -398,12 +398,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="653"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Odaberi primatelje za %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="671"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Novi profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="703"/>
@@ -984,7 +984,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
