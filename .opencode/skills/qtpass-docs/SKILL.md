@@ -87,7 +87,7 @@ npx prettier --write README.md
 
 ```bash
 npx prettier --write <markdown-file>
-npx prettier --write "{**/SKILL.md,.*/*/SKILL.md}"
+npx prettier --write "**/*/SKILL.md"
 ```
 
 ### YAML (prettier)

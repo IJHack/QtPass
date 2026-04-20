@@ -41,9 +41,11 @@ This repository contains a symlink (`.claude` -> `.opencode`). Windows developer
 git config core.symlinks true
 ```
 
+Set this before cloning the repository.
+
 **Warning:** Without symlink support enabled, `.claude` will be checked out as a regular text file containing the path ".opencode" instead of a proper symlink.
 
-**Troubleshooting:** After cloning, run `ls -l .claude` (Git Bash) or `dir .claude` (CMD) to verify it shows as a symlink, not a regular file.
+**Troubleshooting:** After cloning, run `ls -l .claude` (Git Bash) or `dir .claude` (CMD) to verify it shows as a symlink, not a regular file. If it appears as a regular file, set `core.symlinks=true` in your Git config and then re-checkout the file or re-clone the repository to restore the proper symlink.
 
 ## Getting Help
 
