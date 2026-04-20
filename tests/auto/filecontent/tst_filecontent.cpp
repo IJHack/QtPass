@@ -23,6 +23,10 @@ private Q_SLOTS:
   void parseOtpauthHiddenLine();
   void parseColonInValue();
   void parseTemplateFieldsCaseSensitive();
+  void parseMultiplePasswordLines();
+  void parseWhitespaceOnlyContent();
+  void parseOnlyNamedFields();
+  void parseTemplateFieldsWithEmptyValues();
 };
 
 void tst_filecontent::parsePlainPassword() {
@@ -177,6 +181,52 @@ void tst_filecontent::parseTemplateFieldsCaseSensitive() {
   QVERIFY(nv.isEmpty());
   QVERIFY2(fc.getRemainingData().contains("User: value"),
            "unmatched case should be in remaining data");
+}
+
+void tst_filecontent::parseMultiplePasswordLines() {
+  QString content = "first_password\nsecond_line";
+  FileContent fc = FileContent::parse(content, QStringList(), false);
+  QVERIFY2(fc.getPassword() == "first_password",
+           "first line should be password");
+  QVERIFY2(fc.getRemainingData().contains("second_line"),
+           "remaining should contain second line");
+}
+
+void tst_filecontent::parseWhitespaceOnlyContent() {
+  QString content = "   \n  \n  ";
+  FileContent fc = FileContent::parse(content, QStringList(), false);
+  QVERIFY2(fc.getPassword().trimmed().isEmpty(),
+           "whitespace-only first line should be trimmed to empty password");
+}
+
+void tst_filecontent::parseOnlyNamedFields() {
+  QString content = "url: https://example.com\nusername: test";
+  QStringList templateFields = {"url", "username"};
+  FileContent fc = FileContent::parse(content, templateFields, false);
+  QVERIFY2(fc.getPassword() == "url: https://example.com",
+           "first line becomes password even if it looks like named field");
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY2(
+      nv.size() == 1,
+      qPrintable(
+          QString("expected 1 named value (username), got %1").arg(nv.size())));
+}
+
+void tst_filecontent::parseTemplateFieldsWithEmptyValues() {
+  QString content = "secret\nurl: \nusername: ";
+  QStringList templateFields = {"url", "username"};
+  FileContent fc = FileContent::parse(content, templateFields, false);
+  QVERIFY2(fc.getPassword() == "secret", "password should be 'secret'");
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY2(nv.size() == 2, "should have 2 named values");
+  if (nv.size() >= 1) {
+    QVERIFY2(nv[0].name == "url", "first field should be url");
+    QVERIFY2(nv[0].value.isEmpty(), "url value should be empty");
+  }
+  if (nv.size() >= 2) {
+    QVERIFY2(nv[1].name == "username", "second field should be username");
+    QVERIFY2(nv[1].value.isEmpty(), "username value should be empty");
+  }
 }
 
 QTEST_MAIN(tst_filecontent)
