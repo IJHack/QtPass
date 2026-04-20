@@ -662,6 +662,10 @@ void tst_util::generateRandomPassword() {
     frequencies.insert(ch, 0);
   }
 
+  // Keep total draws high enough for a stable sanity check while staying fast:
+  // 200 * 32 = 6400 generated characters. For a 4-character charset this yields
+  // an expected ~1600 occurrences per character, which is sufficient to detect
+  // obvious under/over-representation in this unit test.
   const int samplePasswords = 200;
   const int sampleLength = 32;
   for (int i = 0; i < samplePasswords; ++i) {
@@ -1174,8 +1178,11 @@ void tst_util::isValidKeyIdInvalid() {
   // NOTE: 40 is intentional and derived from the current Util::isValidKeyId
   // implementation detail: its key-id regex accepts 8-40 hexadecimal
   // characters (optionally with a 0x prefix). This test verifies that a
-  // value just above that upper bound is rejected. If Util::isValidKeyId's
-  // accepted range changes, update this constant and the boundary test.
+  // value just above that upper bound is rejected.
+  //
+  // Keep boundary expectations aligned with production validation rules.
+  // This test checks that one character above the configured max is rejected.
+  // If Util::isValidKeyId's accepted range changes, update this constant.
   constexpr int ASSUMED_MAX_KEY_ID_LENGTH = 40;
   constexpr int TOO_LONG_KEY_ID_LENGTH = ASSUMED_MAX_KEY_ID_LENGTH + 1;
   QVERIFY(!Util::isValidKeyId(""));
@@ -1358,8 +1365,9 @@ void tst_util::findBinaryInPathResultContainsBinaryName() {
 }
 
 void tst_util::findBinaryInPathTempExecutableInTempDir() {
-  // Place a real executable in the same directory as "sh" (which is on the
-  // cached PATH) and verify findBinaryInPath locates it.
+  // Avoid writing into real system PATH directories from tests.
+  // A robust variant of this test requires refactoring Util::_env to allow
+  // test-time PATH injection before first use.
   //
   // This test is skipped in restricted environments where writing to the "sh"
   // directory is not allowed. An alternative approach (QTemporaryDir + PATH
