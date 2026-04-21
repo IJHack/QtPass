@@ -34,6 +34,15 @@
 using GrepResults = QList<QPair<QString, QStringList>>;
 Q_DECLARE_METATYPE(GrepResults)
 
+#define INIT_IMITATE_STORE_OR_FAIL(storeDir, pass)                             \
+  do {                                                                         \
+    /* Note: storeDir and pass must be lvalues (not parenthesized) because     \
+       initImitateStore takes non-const references. */                         \
+    QString _initImitateStoreErr = initImitateStore(storeDir, pass);           \
+    if (!_initImitateStoreErr.isEmpty())                                       \
+      QFAIL(qPrintable(_initImitateStoreErr));                                 \
+  } while (0)
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
@@ -147,6 +156,26 @@ class tst_integration : public QObject {
     pass.updateEnv();
   }
 
+  // Initialize a temporary pass store with an .gpg-id file and ImitatePass.
+  // Returns empty QString on success, or an error message on failure.
+  auto initImitateStore(QTemporaryDir &storeDir, ImitatePass &pass) -> QString {
+    if (!storeDir.isValid())
+      return QStringLiteral("temp dir invalid");
+    QtPassSettings::setPassStore(storeDir.path());
+    {
+      QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+      if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text))
+        return QStringLiteral("failed to open .gpg-id");
+      QByteArray payload = (m_keyFingerprint + "\n").toUtf8();
+      qint64 bytesWritten = gpgId.write(payload);
+      if (bytesWritten != payload.size())
+        return QStringLiteral("failed to write .gpg-id");
+    }
+    pass.init();
+    pass.updateEnv();
+    return QString();
+  }
+
   static auto gpgInsertErrorMsg(const QSignalSpy &errorSpy) -> QByteArray {
     if (errorSpy.count() > 0)
       return QString("GPG Insert error (rc=%1): %2")
@@ -184,7 +213,17 @@ private Q_SLOTS:
   void imitatePass_insertAndRemove();
   void imitatePass_nestedDirectoryInsertAndShow();
   void imitatePass_editExistingEntry();
+  void imitatePass_grepCaseInsensitive();
+  void imitatePass_specialCharactersInPassword();
+  void imitatePass_emptyPassword();
   void imitatePass_gitInitAndCommit();
+
+  // UTF-8 and unicode handling
+  void imitatePass_utf8Characters();
+
+  // Edge cases
+  void imitatePass_longPassword();
+  void imitatePass_multilineContent();
 
   // RealPass backend (skipped if `pass` not installed)
   void realPass_insertAndShow();
@@ -288,18 +327,8 @@ void tst_integration::cleanupTestCase() {
 
 void tst_integration::imitatePass_insertAndShow() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(storeDir.path() + "/.gpg-id");
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
 
   const QString entryName = QStringLiteral("test/password");
   const QString entryContent = QStringLiteral("hunter2\nuser: testuser\n");
@@ -330,18 +359,8 @@ void tst_integration::imitatePass_insertAndShow() {
 
 void tst_integration::imitatePass_insertAndGrep() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(storeDir.path() + "/.gpg-id");
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
 
   QVERIFY(QDir(storeDir.path()).mkpath("work"));
 
@@ -367,18 +386,8 @@ void tst_integration::imitatePass_insertAndGrep() {
 
 void tst_integration::imitatePass_insertMoveAndShow() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(storeDir.path() + "/.gpg-id");
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
@@ -403,18 +412,8 @@ void tst_integration::imitatePass_insertMoveAndShow() {
 
 void tst_integration::imitatePass_insertCopyAndShow() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(storeDir.path() + "/.gpg-id");
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
@@ -438,18 +437,8 @@ void tst_integration::imitatePass_insertCopyAndShow() {
 
 void tst_integration::imitatePass_insertAndRemove() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(storeDir.path() + "/.gpg-id");
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
@@ -466,18 +455,8 @@ void tst_integration::imitatePass_insertAndRemove() {
 
 void tst_integration::imitatePass_nestedDirectoryInsertAndShow() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(storeDir.path() + "/.gpg-id");
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
 
   QVERIFY(QDir(storeDir.path()).mkpath("level1/level2/level3"));
 
@@ -511,18 +490,8 @@ void tst_integration::imitatePass_editExistingEntry() {
   QtPassSettings::setUseGit(false); // Ensure git is off for this test
 
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
 
   // Insert initial entry
   const QString entryName = QStringLiteral("editme");
@@ -564,18 +533,12 @@ void tst_integration::imitatePass_gitInitAndCommit() {
 
   RestoreUseGit restoreUseGit;
 
-  QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
   QtPassSettings::setGitExecutable(gitExe);
   QtPassSettings::setUseGit(true);
 
-  {
-    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
 
   QProcess gitInit;
   gitInit.setWorkingDirectory(storeDir.path());
@@ -607,9 +570,6 @@ void tst_integration::imitatePass_gitInitAndCommit() {
            qPrintable(QString("git config commit.gpgsign failed: %1")
                           .arg(QString::fromUtf8(
                               gitConfigSign.readAllStandardError()))));
-
-  ImitatePass pass;
-  setupPass(pass);
 
   const QString entryName = QStringLiteral("gitentry");
   const QString entryContent = QStringLiteral("secret\nurl: example.com\n");
@@ -786,6 +746,182 @@ void tst_integration::imitatePass_otpGenerate() {
            qPrintable("OTP token should be 6 digits, got: " + token));
 
   QtPassSettings::setUsePass(false);
+}
+
+void tst_integration::imitatePass_grepCaseInsensitive() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  QVERIFY(QDir(storeDir.path()).mkpath("accounts"));
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("accounts/Google"),
+              QStringLiteral("pass123\nemail: user@google.com\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  insertSpy.clear();
+  insertErrorSpy.clear();
+  pass.Insert(QStringLiteral("accounts/Amazon"),
+              QStringLiteral("pass456\nemail: user@amazon.com\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  QSignalSpy grepSpy(&pass, &Pass::finishedGrep);
+  pass.Grep(QStringLiteral("USER"), true);
+  QVERIFY2(waitForSignal(grepSpy, 20000), "finishedGrep not emitted");
+
+  const auto results = grepSpy[0][0].value<GrepResults>();
+  QVERIFY2(results.size() == 2,
+           qPrintable(QStringLiteral("case-insensitive grep should find 2 "
+                                     "entries, got: %1")
+                          .arg(results.size())));
+
+  for (const auto &result : results) {
+    const QStringList lines = result.second;
+    bool hasEmail = false;
+    bool hasUser = false;
+    for (const QString &line : lines) {
+      if (line.toLower().contains("email:")) {
+        hasEmail = true;
+      }
+      if (line.toLower().contains("user")) {
+        hasUser = true;
+      }
+    }
+    QVERIFY2(
+        hasEmail,
+        qPrintable(QStringLiteral(
+                       "Result should contain 'email:' (case-insensitive): %1")
+                       .arg(result.first)));
+    QVERIFY2(
+        hasUser,
+        qPrintable(QStringLiteral(
+                       "Result should contain 'user' (case-insensitive): %1")
+                       .arg(result.first)));
+  }
+}
+
+void tst_integration::imitatePass_specialCharactersInPassword() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  const QString specialPw = QStringLiteral(
+      "p@ssw0rd!#$%^&*()\nurl: https://example.com\nuser: admin");
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("special"), specialPw, false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("special"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
+
+  const QString decrypted = showSpy[0][0].toString();
+  QVERIFY2(decrypted.contains("p@ssw0rd!#$%^&*()"),
+           "decrypted should contain special characters");
+  QVERIFY2(decrypted.contains("https://example.com"),
+           "decrypted should contain URL field");
+  QVERIFY2(decrypted.contains("user: admin"),
+           "decrypted should contain user field");
+}
+
+void tst_integration::imitatePass_emptyPassword() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("empty"), QStringLiteral("\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("empty"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
+
+  const QString decrypted = showSpy[0][0].toString();
+  QVERIFY2(
+      decrypted == "\n",
+      qPrintable(QString("empty password should be preserved as '\\n', got: %1")
+                     .arg(decrypted)));
+}
+
+void tst_integration::imitatePass_utf8Characters() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  const QString utf8Pw =
+      QString::fromUtf8("pässwörd\nurl: https://exämplë.com\nuser: ädmin");
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("utf8"), utf8Pw, false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("utf8"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
+
+  const QString decrypted = showSpy[0][0].toString();
+  QVERIFY2(
+      decrypted == utf8Pw,
+      qPrintable(
+          QString("UTF-8 content should match exactly, expected:\n%1\ngot:\n%2")
+              .arg(utf8Pw)
+              .arg(decrypted)));
+}
+
+void tst_integration::imitatePass_longPassword() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  const QString longPw = QString(500, 'x');
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("long"), longPw, false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("long"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
+
+  const QString decrypted = showSpy[0][0].toString();
+  QVERIFY2(
+      decrypted.length() == 500,
+      qPrintable(
+          QString(
+              "long password should be preserved, expected 500 chars, got: %1")
+              .arg(decrypted.length())));
+  QVERIFY2(decrypted == longPw,
+           "decrypted should match original long password");
+}
+
+void tst_integration::imitatePass_multilineContent() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  const QString multilinePw =
+      QStringLiteral("secret\nnote: line 1\nnote: line 2\nnote: line 3");
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("multiline"), multilinePw, false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  QSignalSpy showSpy(&pass, &Pass::finishedShow);
+  pass.Show(QStringLiteral("multiline"));
+  QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
+
+  const QString decrypted = showSpy[0][0].toString();
+  QVERIFY2(
+      decrypted == multilinePw,
+      qPrintable(QString("decrypted should match original multiline content, "
+                         "expected:\n%1\ngot:\n%2")
+                     .arg(multilinePw)
+                     .arg(decrypted)));
 }
 
 QTEST_MAIN(tst_integration)

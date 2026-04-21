@@ -13,6 +13,8 @@ private Q_SLOTS:
   void transactionAdd();
   void transactionIsOver();
   void nestedTransaction();
+  void transactionStartEndExplicit();
+  void transactionQueueOrder();
   void cleanupTestCase();
 };
 
@@ -44,6 +46,32 @@ void tst_simpletransaction::nestedTransaction() {
   QCOMPARE(passShowResult, Enums::PASS_SHOW);
   Enums::PROCESS gitPullResult = st.transactionIsOver(Enums::GIT_PULL);
   QCOMPARE(gitPullResult, Enums::GIT_PULL);
+}
+
+void tst_simpletransaction::transactionStartEndExplicit() {
+  simpleTransaction st;
+  st.transactionStart();
+  st.transactionAdd(Enums::PASS_INSERT);
+  st.transactionAdd(Enums::PASS_SHOW);
+  st.transactionEnd(Enums::PASS_SHOW);
+  Enums::PROCESS result = st.transactionIsOver(Enums::PASS_SHOW);
+  QVERIFY2(result == Enums::PASS_SHOW,
+           "transactionIsOver(PASS_SHOW) should return PASS_SHOW after end");
+}
+
+void tst_simpletransaction::transactionQueueOrder() {
+  simpleTransaction st;
+  st.transactionAdd(Enums::PASS_INSERT);
+  st.transactionAdd(Enums::PASS_REMOVE);
+  st.transactionAdd(Enums::PASS_SHOW);
+  Enums::PROCESS r1 = st.transactionIsOver(Enums::PASS_INSERT);
+  QVERIFY2(
+      r1 == Enums::PASS_INSERT,
+      "first item should complete immediately when no transaction started");
+  Enums::PROCESS r2 = st.transactionIsOver(Enums::PASS_REMOVE);
+  QVERIFY2(r2 == Enums::PASS_REMOVE, "PASS_REMOVE should complete second");
+  Enums::PROCESS r3 = st.transactionIsOver(Enums::PASS_SHOW);
+  QVERIFY2(r3 == Enums::PASS_SHOW, "PASS_SHOW should complete third");
 }
 
 void tst_simpletransaction::cleanupTestCase() {}
