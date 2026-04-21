@@ -309,12 +309,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="653"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sélectionnez les destinataires pour %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="671"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouveau profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="703"/>
@@ -477,12 +477,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Activer la recherche de contenu (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Permettre la recherche dans le contenu du fichier de mot de passe. Nécessite le décryptage de chaque fichier et peut être lent sur les grands magasins.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="702"/>
@@ -526,12 +526,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom de profil, utilisé pour identifier ce profil de configuration</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Chemin vers le répertoire de la boutique de mots de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -1096,47 +1096,47 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Recherche dans le contenu du mot de passe (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Bascule de recherche de contenu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Activer le mode de recherche de contenu pour rechercher dans les fichiers de mots de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Recherche insensible à la casse</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Lutte insensible aux cas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Activer/désactiver la recherche de contenu insensible à la casse</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Résultats</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -1176,24 +1176,24 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Recherche…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Contenu de la recherche (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun résultat trouvé.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n correspondance trouvée dans %1 entrée.</numerusform>
+            <numerusform>%n correspondances trouvées dans %1 entrées.</numerusform>
         </translation>
     </message>
     <message>
@@ -1308,12 +1308,12 @@ Continuer&#x202f;?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Longueur du mot de passe incorrecte</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de générer un mot de passe de longueur nulle.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
@@ -1329,25 +1329,25 @@ Continuer&#x202f;?</translation>
         <location filename="../src/pass.cpp" line="514"/>
         <location filename="../src/pass.cpp" line="533"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Échec du chiffrement&#xa0;: la clé GPG a expiré. Veuillez la renouveler ou la remplacer.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="519"/>
         <location filename="../src/pass.cpp" line="538"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Échec du chiffrement&#xa0;: la clé GPG a été révoquée.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="523"/>
         <location filename="../src/pass.cpp" line="543"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Échec du chiffrement&#xa0;: clé GPG du destinataire introuvable ou invalide. Vérifiez que l’identifiant de la clé dans le fichier .gpg-id est correct et a été importé.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="527"/>
         <location filename="../src/pass.cpp" line="547"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le chiffrement a échoué. Vérifiez que votre clé GPG est valide.</translation>
     </message>
 </context>
 <context>
@@ -1511,7 +1511,7 @@ Continuer&#x202f;?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Forcer l&apos;écrasement&#x202f;?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>

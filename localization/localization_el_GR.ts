@@ -176,12 +176,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Απαράδεκτη αναζήτηση περιεχομένου (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιτρέπει την αναζήτηση στο εσωτερικό των περιεχομένων αρχείων. Τα αιτήματα αποκρυπτογραφής κάθε αρχείου και μπορεί να είναι αργή σε μεγάλα καταστήματα.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Όνομα Προφίλ, που χρησιμοποιείται για τον εντοπισμό αυτού του προφίλ διαμόρφωσης</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="950"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Διαδρομή προς τον κατάλογο αποθήκευσης κωδικών πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -367,12 +367,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="653"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιλέξτε παραλήπτες για %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="671"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Νέο Προφίλ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="703"/>
@@ -775,47 +775,47 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναζήτηση στο περιεχόμενο κωδικού πρόσβασης (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Περιεχόμενο Αναζήτηση</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Εναλλαγή λειτουργίας αναζήτησης περιεχομένου για αναζήτηση μέσα σε αρχεία κωδικών πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναζήτηση χωρίς διάκριση πεζών-κεφαλαίων</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Εναλλαγή χωρίς διάκριση πεζών-κεφαλαίων</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Εναλλαγή αναζήτησης περιεχομένου χωρίς διάκριση πεζών-κεφαλαίων</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Αποτελέσματα</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -970,24 +970,24 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναζήτηση…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Αναζήτηση περιεχομένου (κανονική έκφραση)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν βρέθηκαν αντιστοιχίσεις.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Βρέθηκε %n ταίριασμα σε %1 καταχώρηση.</numerusform>
+            <numerusform>Βρέθηκαν %n αντιστοιχίες σε %1 καταχωρήσεις.</numerusform>
         </translation>
     </message>
     <message>
@@ -1142,12 +1142,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Μη έγκυρο μήκος κωδικού πρόσβασης</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Δεν είναι δυνατή η δημιουργία κωδικού πρόσβασης με μηδενικό μήκος.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
@@ -1163,25 +1163,25 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="514"/>
         <location filename="../src/pass.cpp" line="533"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η κρυπτογράφηση απέτυχε: Το κλειδί GPG έχει λήξει. Ανανεώστε το ή αντικαταστήστε το.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="519"/>
         <location filename="../src/pass.cpp" line="538"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η κρυπτογράφηση απέτυχε: Το κλειδί GPG έχει ανακληθεί.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="523"/>
         <location filename="../src/pass.cpp" line="543"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η κρυπτογράφηση απέτυχε: το κλειδί GPG του παραλήπτη δεν βρέθηκε ή είναι μη έγκυρο. Ελέγξτε ότι το αναγνωριστικό κλειδιού στο αρχείο .gpg-id είναι σωστό και έχει εισαχθεί.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="527"/>
         <location filename="../src/pass.cpp" line="547"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Η κρυπτογράφηση απέτυχε. Ελέγξτε ότι το κλειδί GPG είναι έγκυρο.</translation>
     </message>
 </context>
 <context>
@@ -1345,7 +1345,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Επιβολή αντικατάστασης;</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>

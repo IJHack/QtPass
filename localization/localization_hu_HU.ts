@@ -1225,12 +1225,12 @@ Folytatja?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Érvénytelen jelszóhossz</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nem lehet nulla hosszúságú jelszót generálni.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>

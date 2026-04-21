@@ -1301,12 +1301,12 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná délka hesla</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nelze vygenerovat heslo s nulovou délkou.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
