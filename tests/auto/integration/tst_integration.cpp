@@ -780,16 +780,24 @@ void tst_integration::imitatePass_grepCaseInsensitive() {
   for (const auto &result : results) {
     const QStringList lines = result.second;
     bool hasEmail = false;
+    bool hasUser = false;
     for (const QString &line : lines) {
       if (line.toLower().contains("email:")) {
         hasEmail = true;
-        break;
+      }
+      if (line.toLower().contains("user")) {
+        hasUser = true;
       }
     }
     QVERIFY2(
         hasEmail,
         qPrintable(QStringLiteral(
                        "Result should contain 'email:' (case-insensitive): %1")
+                       .arg(result.first)));
+    QVERIFY2(
+        hasUser,
+        qPrintable(QStringLiteral(
+                       "Result should contain 'user' (case-insensitive): %1")
                        .arg(result.first)));
   }
 }
