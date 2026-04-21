@@ -196,7 +196,7 @@ void tst_filecontent::parseWhitespaceOnlyContent() {
   QString content = "   \n  \n  ";
   FileContent fc = FileContent::parse(content, QStringList(), false);
   QVERIFY2(fc.getPassword().trimmed().isEmpty(),
-           "whitespace-only first line should be trimmed to empty password");
+           "FileContent::parse preserves whitespace; trimmed() is empty");
 }
 
 void tst_filecontent::parseOnlyNamedFields() {

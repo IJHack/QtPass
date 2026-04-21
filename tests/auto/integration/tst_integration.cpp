@@ -147,6 +147,19 @@ class tst_integration : public QObject {
     pass.updateEnv();
   }
 
+  // Initialize a temporary pass store with an .gpg-id file and ImitatePass.
+  void initImitateStore(QTemporaryDir &storeDir, ImitatePass &pass) {
+    QVERIFY(storeDir.isValid());
+    QtPassSettings::setPassStore(storeDir.path());
+    {
+      QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
+      QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+      gpgId.write((m_keyFingerprint + "\n").toUtf8());
+    }
+    pass.init();
+    pass.updateEnv();
+  }
+
   static auto gpgInsertErrorMsg(const QSignalSpy &errorSpy) -> QByteArray {
     if (errorSpy.count() > 0)
       return QString("GPG Insert error (rc=%1): %2")
@@ -800,18 +813,8 @@ void tst_integration::imitatePass_otpGenerate() {
 
 void tst_integration::imitatePass_grepCaseInsensitive() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  initImitateStore(storeDir, pass);
 
   QVERIFY(QDir(storeDir.path()).mkpath("accounts"));
 
@@ -856,18 +859,8 @@ void tst_integration::imitatePass_grepCaseInsensitive() {
 
 void tst_integration::imitatePass_specialCharactersInPassword() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  initImitateStore(storeDir, pass);
 
   const QString specialPw = QStringLiteral(
       "p@ssw0rd!#$%^&*()\nurl: https://example.com\nuser: admin");
@@ -891,18 +884,8 @@ void tst_integration::imitatePass_specialCharactersInPassword() {
 
 void tst_integration::imitatePass_emptyPassword() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  initImitateStore(storeDir, pass);
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
@@ -922,18 +905,8 @@ void tst_integration::imitatePass_emptyPassword() {
 
 void tst_integration::imitatePass_utf8Characters() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  initImitateStore(storeDir, pass);
 
   const QString utf8Pw =
       QString::fromUtf8("pässwörd\nurl: https://exämplë.com\nuser: ädmin");
@@ -957,18 +930,8 @@ void tst_integration::imitatePass_utf8Characters() {
 
 void tst_integration::imitatePass_longPassword() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  initImitateStore(storeDir, pass);
 
   const QString longPw = QString(500, 'x');
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
@@ -993,18 +956,8 @@ void tst_integration::imitatePass_longPassword() {
 
 void tst_integration::imitatePass_multilineContent() {
   QTemporaryDir storeDir;
-  QVERIFY(storeDir.isValid());
-
-  QtPassSettings::setPassStore(storeDir.path());
-
-  {
-    QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
-    QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-    gpgId.write((m_keyFingerprint + "\n").toUtf8());
-  }
-
   ImitatePass pass;
-  setupPass(pass);
+  initImitateStore(storeDir, pass);
 
   const QString multilinePw =
       QStringLiteral("secret\nnote: line 1\nnote: line 2\nnote: line 3");
