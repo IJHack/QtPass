@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git *)",
+      "Bash(npx prettier *)",
+      "Bash(gh pr *)",
+      "Bash(gh issue *)"
+    ]
+  }
+}
