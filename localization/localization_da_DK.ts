@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Aktivér indholdssøgning (pas grep)</translation>
+        <translation>Aktivér indholdssøgning (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
@@ -156,7 +156,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation>Log ind på adgangskodemappen</translation>
+        <translation>Sti til adgangskodeopbevaringsmappen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
