@@ -148,22 +148,23 @@ class tst_integration : public QObject {
   }
 
   // Initialize a temporary pass store with an .gpg-id file and ImitatePass.
-  void initImitateStore(QTemporaryDir &storeDir, ImitatePass &pass) {
-    QVERIFY(storeDir.isValid());
+  // Returns true on success, false on failure.
+  bool initImitateStore(QTemporaryDir &storeDir, ImitatePass &pass) {
+    if (!storeDir.isValid())
+      return false;
     QtPassSettings::setPassStore(storeDir.path());
     {
       QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
-      QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
+      if (!gpgId.open(QIODevice::WriteOnly | QIODevice::Text))
+        return false;
       QByteArray payload = (m_keyFingerprint + "\n").toUtf8();
       qint64 bytesWritten = gpgId.write(payload);
-      QVERIFY2(
-          bytesWritten == payload.size(),
-          qPrintable(QString("failed to write .gpg-id, wrote %1 of %2 bytes")
-                         .arg(bytesWritten)
-                         .arg(payload.size())));
+      if (bytesWritten != payload.size())
+        return false;
     }
     pass.init();
     pass.updateEnv();
+    return true;
   }
 
   static auto gpgInsertErrorMsg(const QSignalSpy &errorSpy) -> QByteArray {
@@ -318,7 +319,7 @@ void tst_integration::cleanupTestCase() {
 void tst_integration::imitatePass_insertAndShow() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   const QString entryName = QStringLiteral("test/password");
   const QString entryContent = QStringLiteral("hunter2\nuser: testuser\n");
@@ -350,7 +351,7 @@ void tst_integration::imitatePass_insertAndShow() {
 void tst_integration::imitatePass_insertAndGrep() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   QVERIFY(QDir(storeDir.path()).mkpath("work"));
 
@@ -377,7 +378,7 @@ void tst_integration::imitatePass_insertAndGrep() {
 void tst_integration::imitatePass_insertMoveAndShow() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
@@ -403,7 +404,7 @@ void tst_integration::imitatePass_insertMoveAndShow() {
 void tst_integration::imitatePass_insertCopyAndShow() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
@@ -428,7 +429,7 @@ void tst_integration::imitatePass_insertCopyAndShow() {
 void tst_integration::imitatePass_insertAndRemove() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
@@ -446,7 +447,7 @@ void tst_integration::imitatePass_insertAndRemove() {
 void tst_integration::imitatePass_nestedDirectoryInsertAndShow() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   QVERIFY(QDir(storeDir.path()).mkpath("level1/level2/level3"));
 
@@ -481,7 +482,7 @@ void tst_integration::imitatePass_editExistingEntry() {
 
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   // Insert initial entry
   const QString entryName = QStringLiteral("editme");
@@ -528,7 +529,7 @@ void tst_integration::imitatePass_gitInitAndCommit() {
 
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   QProcess gitInit;
   gitInit.setWorkingDirectory(storeDir.path());
@@ -741,7 +742,7 @@ void tst_integration::imitatePass_otpGenerate() {
 void tst_integration::imitatePass_grepCaseInsensitive() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   QVERIFY(QDir(storeDir.path()).mkpath("accounts"));
 
@@ -787,7 +788,7 @@ void tst_integration::imitatePass_grepCaseInsensitive() {
 void tst_integration::imitatePass_specialCharactersInPassword() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   const QString specialPw = QStringLiteral(
       "p@ssw0rd!#$%^&*()\nurl: https://example.com\nuser: admin");
@@ -812,7 +813,7 @@ void tst_integration::imitatePass_specialCharactersInPassword() {
 void tst_integration::imitatePass_emptyPassword() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
@@ -833,7 +834,7 @@ void tst_integration::imitatePass_emptyPassword() {
 void tst_integration::imitatePass_utf8Characters() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   const QString utf8Pw =
       QString::fromUtf8("pässwörd\nurl: https://exämplë.com\nuser: ädmin");
@@ -858,7 +859,7 @@ void tst_integration::imitatePass_utf8Characters() {
 void tst_integration::imitatePass_longPassword() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   const QString longPw = QString(500, 'x');
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
@@ -884,7 +885,7 @@ void tst_integration::imitatePass_longPassword() {
 void tst_integration::imitatePass_multilineContent() {
   QTemporaryDir storeDir;
   ImitatePass pass;
-  initImitateStore(storeDir, pass);
+  QVERIFY(initImitateStore(storeDir, pass));
 
   const QString multilinePw =
       QStringLiteral("secret\nnote: line 1\nnote: line 2\nnote: line 3");
