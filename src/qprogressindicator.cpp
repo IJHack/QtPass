@@ -108,7 +108,7 @@ void QProgressIndicator::paintEvent(QPaintEvent * /*event*/) {
 
   for (int i = 0; i < 12; ++i) {
     QColor color = m_color;
-    color.setAlphaF(int(1.0f - (i / 12.0f)));
+    color.setAlphaF(1.0f - (i / 12.0f));
     p.setPen(Qt::NoPen);
     p.setBrush(color);
     p.save();
