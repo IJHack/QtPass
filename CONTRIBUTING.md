@@ -21,7 +21,7 @@ QtPass uses [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/) for tr
 
 To add a new language:
 
-- Add your language code to `src/qtpass.pro` under TRANSLATIONS
+- Add your language code to `src/src.pro` under TRANSLATIONS
 - If you have an existing build, run `make distclean` first (prevents stale generated files like `ui_*.h` from being included)
 - Determine which qmake command your Qt 6 installation provides: run `qmake6 -v` (or `qmake -v` if `qmake6` is unavailable) and confirm it shows Qt version 6.2 or newer.
 - Run that same command (`qmake6` or `qmake`) to prepare the build files.
