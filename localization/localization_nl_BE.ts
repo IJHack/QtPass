@@ -32,7 +32,7 @@
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation>Secondes</translation>
+        <translation>Seconden</translation>
     </message>
     <message>
         <source>Password Behaviour:</source>
@@ -106,7 +106,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="371"/>
         <source>Alphabetical</source>
-        <translation>Alphabetisch</translation>
+        <translation>Alfabetisch</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="376"/>
@@ -1464,7 +1464,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation>Alphabetisch</translation>
+        <translation>Alfabetisch</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>

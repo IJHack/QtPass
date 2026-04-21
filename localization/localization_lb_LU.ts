@@ -132,7 +132,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
         <source>Exclude capital letters</source>
-        <translation>Kapitalbréiwer	Ausgeschloss</translation>
+        <translation>Kapitalbréiwer Ausgeschloss</translation>
     </message>
     <message>
         <source>Include special symbols </source>
