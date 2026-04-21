@@ -60,6 +60,10 @@ void tst_simpletransaction::transactionStartEndExplicit() {
   Enums::PROCESS result = st.transactionIsOver(Enums::PASS_SHOW);
   QVERIFY2(result == Enums::PASS_SHOW,
            "transactionIsOver(PASS_SHOW) should return PASS_SHOW after end");
+  Enums::PROCESS passInsertState = st.transactionIsOver(Enums::PASS_INSERT);
+  QVERIFY2(
+      passInsertState == Enums::INVALID,
+      "PASS_INSERT should not be in queue after transactionEnd(PASS_SHOW)");
 }
 
 void tst_simpletransaction::transactionQueueOrder() {
