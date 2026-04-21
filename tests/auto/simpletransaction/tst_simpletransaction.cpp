@@ -9,7 +9,7 @@ class tst_simpletransaction : public QObject {
   Q_OBJECT
 
 private Q_SLOTS:
-  void transactionStartEnd();
+  void transactionAddAndComplete();
   void transactionAdd();
   void transactionIsOver();
   void nestedTransaction();
@@ -17,7 +17,7 @@ private Q_SLOTS:
   void transactionQueueOrder();
 };
 
-void tst_simpletransaction::transactionStartEnd() {
+void tst_simpletransaction::transactionAddAndComplete() {
   simpleTransaction st;
   st.transactionAdd(Enums::PASS_SHOW);
   Enums::PROCESS result = st.transactionIsOver(Enums::PASS_SHOW);
@@ -27,8 +27,11 @@ void tst_simpletransaction::transactionStartEnd() {
 void tst_simpletransaction::transactionAdd() {
   simpleTransaction st;
   st.transactionAdd(Enums::PASS_SHOW);
-  Enums::PROCESS result = st.transactionIsOver(Enums::PASS_SHOW);
-  QVERIFY2(result == Enums::PASS_SHOW, "PASS_SHOW should be in transaction");
+  st.transactionAdd(Enums::PASS_REMOVE);
+  Enums::PROCESS first = st.transactionIsOver(Enums::PASS_SHOW);
+  Enums::PROCESS second = st.transactionIsOver(Enums::PASS_REMOVE);
+  QCOMPARE(first, Enums::PASS_SHOW);
+  QCOMPARE(second, Enums::PASS_REMOVE);
 }
 
 void tst_simpletransaction::transactionIsOver() {
