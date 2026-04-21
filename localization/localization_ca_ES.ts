@@ -1248,7 +1248,7 @@ p, li { white-space: pre-wrap; }
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation>
             <numerusform>S&apos;ha trobat %n coincidència a %1 entrada.</numerusform>
-            <numerusform>S&apos;han trobat %n coincidències a l&apos;entrada %1.</numerusform>
+            <numerusform>S&apos;han trobat %n coincidències a %1 entrades.</numerusform>
         </translation>
     </message>
     <message>
