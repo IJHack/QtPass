@@ -28,7 +28,7 @@ To add a new language:
 - Run `lupdate src/src.pro` to generate/update the translation `.ts` files
 - Edit the `.ts` file with Qt Linguist: `linguist localization/qtpass_xx_YY.ts`
 
-Qt Linguist has helpful [in-context translation options](https://doc.qt.io/qt-5/linguist-translators.html).
+Qt Linguist has helpful [in-context translation options](https://doc.qt.io/qt-6/linguist-translators.html).
 
 ## Windows Developers: Symlink Setup
 
