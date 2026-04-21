@@ -977,7 +977,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Skift mellem store og små bogstaver</translation>
+        <translation>Skift søgning uden forskel på store og små bogstaver</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
