@@ -53,10 +53,14 @@ void tst_simpletransaction::nestedTransaction() {
 
 void tst_simpletransaction::transactionStartEndExplicit() {
   simpleTransaction st;
-  st.transactionStart();
   st.transactionAdd(Enums::PASS_INSERT);
+  st.transactionStart();
   st.transactionAdd(Enums::PASS_SHOW);
   st.transactionEnd(Enums::PASS_SHOW);
+  Enums::PROCESS passInsertResult = st.transactionIsOver(Enums::PASS_INSERT);
+  QVERIFY2(
+      passInsertResult == Enums::PASS_INSERT,
+      "PASS_INSERT should still be in queue after transactionEnd(PASS_SHOW)");
   Enums::PROCESS result = st.transactionIsOver(Enums::PASS_SHOW);
   QVERIFY2(result == Enums::PASS_SHOW,
            "transactionIsOver(PASS_SHOW) should return PASS_SHOW after end");
