@@ -947,7 +947,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Søg inden for adgangskodeindhold (pas grep)</translation>
+        <translation>Søg inden for adgangskodeindhold (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -1247,8 +1247,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation>
-            <numerusform>Fandt %n resultat i %1 indtastning.</numerusform>
-            <numerusform>Fundet %n resultater i %1 indtastningen.</numerusform>
+            <numerusform>Fandt %n resultat i %1 indtastninger.</numerusform>
+            <numerusform>Fundt %n resultater i %1 indtastninger.</numerusform>
         </translation>
     </message>
     <message>
