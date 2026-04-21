@@ -1248,7 +1248,7 @@ p, li { white-space: pre-wrap; }
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation>
             <numerusform>Fandt %n resultat i %1 indtastninger.</numerusform>
-            <numerusform>Fundt %n resultater i %1 indtastninger.</numerusform>
+            <numerusform>Fandt %n resultater i %1 indtastninger.</numerusform>
         </translation>
     </message>
     <message>
