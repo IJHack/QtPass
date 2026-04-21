@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivér indholdssøgning (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tillad søgning i adgangskodefilers indhold. Kræver dekryptering af hver fil og kan være langsomt i store adgangskodelagre.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
@@ -151,12 +151,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Profilnavn, brugt til at identificere denne konfigurationsprofil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Sti til adgangskodeopbevaringsmappen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -398,12 +398,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="653"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vælg modtagere for %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="671"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="703"/>
@@ -947,47 +947,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Søg inden for adgangskodeindhold (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Søg efter indhold</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Skift indholdssøgningstilstand for at søge i adgangskodefiler</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Søgning uden forskel på store og små bogstaver</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Skift søgning uden forskel på store og små bogstaver</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Slå søgning i indhold til/fra, hvor der ikke skelnes mellem store og små bogstaver</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultater</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -1231,24 +1231,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Søgning…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Søg indhold (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen resultater fundet.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Fandt %n resultat i %1 indtastninger.</numerusform>
+            <numerusform>Fandt %n resultater i %1 indtastninger.</numerusform>
         </translation>
     </message>
     <message>
@@ -1348,12 +1348,12 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Ugyldig adgangskodelængde</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kan ikke generere en adgangskode med en længde på nul.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
@@ -1369,25 +1369,25 @@ Fortsætte?</translation>
         <location filename="../src/pass.cpp" line="511"/>
         <location filename="../src/pass.cpp" line="530"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptering mislykkedes: GPG-nøglen er udløbet. Forny eller erstat den venligst.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="516"/>
         <location filename="../src/pass.cpp" line="535"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptering mislykkedes: GPG-nøglen er blevet tilbagekaldt.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="520"/>
         <location filename="../src/pass.cpp" line="540"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptering mislykkedes: Modtagerens GPG-nøgle blev ikke fundet eller er ugyldig. Kontroller, at nøgle-ID&apos;et i .gpg-id er korrekt og importeret.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="524"/>
         <location filename="../src/pass.cpp" line="544"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptering mislykkedes. Kontroller, at din GPG-nøgle er gyldig.</translation>
     </message>
 </context>
 <context>
@@ -1551,7 +1551,7 @@ Fortsætte?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tving overskrivning?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
