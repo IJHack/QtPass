@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilita la cerca de contingut (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Permet la cerca dins del contingut dels fitxers de contrasenyes. Cal desxifrar tots els fitxers i pot ser lent en grans magatzems.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
@@ -151,12 +151,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nom del perfil, utilitzat per identificar aquest perfil de configuració</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Camí al directori d&apos;emmagatzematge de contrasenyes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -398,12 +398,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="653"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Selecciona els destinataris per a %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="671"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nou perfil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="703"/>
@@ -947,47 +947,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca dins del contingut de la contrasenya (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca de contingut activa/desactiva</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Activa el mode de cerca de contingut per cercar dins dels fitxers de contrasenyes</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca sense distinció entre majúscules i minúscules</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Insensible a majúscules i minúscules</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Activa/desactiva la cerca de contingut sense distinció entre majúscules i minúscules</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultats</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -1231,24 +1231,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Cercant…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerca contingut (expressió regular)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>No s&apos;han trobat coincidències.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>S&apos;ha trobat %n coincidència a %1 entrada.</numerusform>
+            <numerusform>S&apos;han trobat %n coincidències a l&apos;entrada %1.</numerusform>
         </translation>
     </message>
     <message>
@@ -1348,12 +1348,12 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud de la contrasenya no vàlida</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>No es pot generar una contrasenya amb longitud zero.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
@@ -1369,25 +1369,25 @@ Voleu continuar?</translation>
         <location filename="../src/pass.cpp" line="514"/>
         <location filename="../src/pass.cpp" line="533"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>El xifratge ha fallat: la clau GPG ha caducat. Si us plau, renoveu-la o substituïu-la.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="519"/>
         <location filename="../src/pass.cpp" line="538"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>El xifratge ha fallat: la clau GPG s&apos;ha revocat.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="523"/>
         <location filename="../src/pass.cpp" line="543"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>El xifratge ha fallat: no s&apos;ha trobat la clau GPG del destinatari o no és vàlida. Comproveu que l&apos;ID de la clau a .gpg-id sigui correcte i s&apos;hagi importat.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="527"/>
         <location filename="../src/pass.cpp" line="547"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>El xifratge ha fallat. Comproveu que la vostra clau GPG sigui vàlida.</translation>
     </message>
 </context>
 <context>
@@ -1551,7 +1551,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Voleu forçar la sobreescriptura?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
