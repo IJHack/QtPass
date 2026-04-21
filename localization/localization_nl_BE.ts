@@ -606,7 +606,7 @@ e-mail</translation>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Geen van de geheime ondertekeningssleutels is beschikbaar.
-U kan de gebruikerslijst niet aanpassen!</translation>
+U kunt de gebruikerslijst niet aanpassen!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -628,7 +628,7 @@ U kan de gebruikerslijst niet aanpassen!</translation>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Geen van de geselecteerde keys hebben een secret key beschikbaar.
-U kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
+U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
