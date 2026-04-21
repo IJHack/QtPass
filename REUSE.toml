@@ -31,13 +31,7 @@ SPDX-FileCopyrightText = "IJHack"
 SPDX-License-Identifier = "GFDL-1.3-or-later"
 
 [[annotations]]
-path = "src/qprogressindicator.cpp"
-precedence = "aggregate"
-SPDX-FileCopyrightText = ["2015 Anne Jan Brouwer", "2011 Morgan Leborgne"]
-SPDX-License-Identifier = "MIT"
-
-[[annotations]]
-path = "src/qprogressindicator.h"
+path = "src/qprogressindicator.*"
 precedence = "aggregate"
 SPDX-FileCopyrightText = ["2015 Anne Jan Brouwer", "2011 Morgan Leborgne"]
 SPDX-License-Identifier = "MIT"
