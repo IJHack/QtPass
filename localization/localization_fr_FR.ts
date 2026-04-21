@@ -389,7 +389,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="371"/>
         <source>Alphabetical</source>
-        <translation>Alphabetic</translation>
+        <translation>Alphabétique</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="376"/>
