@@ -423,7 +423,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="817"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Installeer GnuPG op u systeem.&lt;br&gt;Installeer &lt;strong&gt;gpg&lt;/strong&gt; via u favoriete package manager&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; op GnuPG.org</translation>
+<translation>Installeer GnuPG op uw systeem.&lt;br&gt;Installeer &lt;strong&gt;gpg&lt;/strong&gt; via uw favoriete package manager&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; op GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="871"/>
@@ -433,7 +433,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="872"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Wil u een password-store maken op %1?</translation>
+<translation>Wilt u een password-store maken op %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="877"/>
@@ -606,7 +606,7 @@ e-mail</translation>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Geen van de geheime ondertekeningssleutels is beschikbaar.
-U kan de gebruikerslijst niet aanpassen!</translation>
+U kunt de gebruikerslijst niet aanpassen!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -628,7 +628,7 @@ U kan de gebruikerslijst niet aanpassen!</translation>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Geen van de geselecteerde keys hebben een secret key beschikbaar.
-U kan nieuw toegevoegde wachtwoorden niet lezen!</translation>
+U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
@@ -1176,7 +1176,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="914"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Weet u zeker dat u %1%2 wil verwijderen?</translation>
+<translation>Weet u zeker dat u %1%2 wilt verwijderen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="913"/>
@@ -1430,7 +1430,7 @@ Doorgaan?</translation>
         <location filename="../src/pass.cpp" line="527"/>
         <location filename="../src/pass.cpp" line="547"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>Encryptie faalde. Controleer dat u GPG sleutel geldig is.</translation>
+<translation>Encryptie faalde. Controleer dat uw GPG sleutel geldig is.</translation>
     </message>
 </context>
 <context>

@@ -187,12 +187,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Galluogi chwilio am gynnwys (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Caniatáu chwilio y tu mewn i gynnwys ffeiliau cyfrinair. Mae angen dadgryptio pob ffeil a gall fod yn araf ar storfeydd mawr.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="945"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Enw proffil, a ddefnyddir i adnabod y proffil ffurfweddu hwn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="950"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Llwybr i&apos;r cyfeiriadur storio cyfrineiriau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>
@@ -426,12 +426,12 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="653"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Dewiswch dderbynwyr ar gyfer %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="671"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Proffil newydd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="703"/>
@@ -799,47 +799,47 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Chwilio y tu mewn i gynnwys cyfrinair (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Togl chwilio cynnwys</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Togglo modd chwilio cynnwys i chwilio y tu mewn i ffeiliau cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Chwilio nad yw&apos;n sensitif i fachau/llythrennau mawr</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Togl ansensitif i fachau/llythrennau bach</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Togglo chwiliad cynnwys sy&apos;n ansensitif i fach-lythrennau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Canlyniadau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -997,27 +997,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Yn chwilio…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Chwilio cynnwys (mynegiant rheolaidd)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ni chanfuwyd unrhyw gyfatebiaethau.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
+            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
+            <numerusform>Canfuwyd %n gyfatebiaeth mewn %1 cofnod.</numerusform>
+            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
+            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 o gofnodion.</numerusform>
         </translation>
     </message>
     <message>
@@ -1161,12 +1161,12 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Hyd cyfrinair annilys</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Methu cynhyrchu cyfrinair gyda hyd sero.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
@@ -1182,25 +1182,25 @@ Parhau?</translation>
         <location filename="../src/pass.cpp" line="514"/>
         <location filename="../src/pass.cpp" line="533"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Methodd amgryptio: Mae allwedd GPG wedi dod i ben. Adnewyddwch neu amnewidiwch hi.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="519"/>
         <location filename="../src/pass.cpp" line="538"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Methodd amgryptio: Mae allwedd GPG wedi&apos;i dirymu.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="523"/>
         <location filename="../src/pass.cpp" line="543"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Methodd amgryptio: ni chanfuwyd allwedd GPG y derbynnydd neu mae&apos;n annilys. Gwiriwch fod ID yr allwedd yn .gpg-id yn gywir ac wedi&apos;i fewnforio.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="527"/>
         <location filename="../src/pass.cpp" line="547"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Methodd amgryptio. Gwiriwch fod eich allwedd GPG yn ddilys.</translation>
     </message>
 </context>
 <context>
@@ -1364,7 +1364,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Gorfodi trosysgrifennu?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>

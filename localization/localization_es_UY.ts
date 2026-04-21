@@ -314,12 +314,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilitar la búsqueda de contenido (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Permite realizar búsquedas dentro del contenido de los archivos de contraseñas. Requiere descifrar cada archivo y puede ser lento en almacenes de gran tamaño.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
@@ -1106,24 +1106,24 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscando…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="701"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscar contenido (expresión regular)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="747"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encontraron coincidencias.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Se encontró %n coincidencia en %1 entrada.</numerusform>
+            <numerusform>Se encontraron %n coincidencias en %1 entradas.</numerusform>
         </translation>
     </message>
     <message>
@@ -1297,12 +1297,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Longitud de contraseña no válida</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>No se puede generar una contraseña de longitud cero.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
@@ -1500,7 +1500,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Forzar sobrescritura?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
