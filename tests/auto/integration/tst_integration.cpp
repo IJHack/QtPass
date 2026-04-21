@@ -36,9 +36,11 @@ Q_DECLARE_METATYPE(GrepResults)
 
 #define INIT_IMITATE_STORE_OR_FAIL(storeDir, pass)                             \
   do {                                                                         \
-    QString err = initImitateStore(storeDir, pass);                            \
-    if (!err.isEmpty())                                                        \
-      QFAIL(qPrintable(err));                                                  \
+    /* Note: storeDir and pass must be lvalues (not parenthesized) because     \
+       initImitateStore takes non-const references. */                         \
+    QString _initImitateStoreErr = initImitateStore(storeDir, pass);           \
+    if (!_initImitateStoreErr.isEmpty())                                       \
+      QFAIL(qPrintable(_initImitateStoreErr));                                 \
   } while (0)
 
 // ---------------------------------------------------------------------------
@@ -855,12 +857,12 @@ void tst_integration::imitatePass_utf8Characters() {
   QVERIFY2(waitForSignal(showSpy), "finishedShow not emitted");
 
   const QString decrypted = showSpy[0][0].toString();
-  QVERIFY2(decrypted.contains("pässwörd"),
-           "decrypted should contain UTF-8 password characters");
-  QVERIFY2(decrypted.contains("https://exämplë.com"),
-           "decrypted should contain UTF-8 URL");
-  QVERIFY2(decrypted.contains("ädmin"),
-           "decrypted should contain UTF-8 username");
+  QVERIFY2(
+      decrypted == utf8Pw,
+      qPrintable(
+          QString("UTF-8 content should match exactly, expected:\n%1\ngot:\n%2")
+              .arg(utf8Pw)
+              .arg(decrypted)));
 }
 
 void tst_integration::imitatePass_longPassword() {
