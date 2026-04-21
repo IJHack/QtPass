@@ -15,7 +15,6 @@ private Q_SLOTS:
   void nestedTransaction();
   void transactionStartEndExplicit();
   void transactionQueueOrder();
-  void cleanupTestCase();
 };
 
 void tst_simpletransaction::transactionStartEnd() {
@@ -28,7 +27,8 @@ void tst_simpletransaction::transactionStartEnd() {
 void tst_simpletransaction::transactionAdd() {
   simpleTransaction st;
   st.transactionAdd(Enums::PASS_SHOW);
-  st.transactionAdd(Enums::GIT_PULL);
+  Enums::PROCESS result = st.transactionIsOver(Enums::PASS_SHOW);
+  QVERIFY2(result == Enums::PASS_SHOW, "PASS_SHOW should be in transaction");
 }
 
 void tst_simpletransaction::transactionIsOver() {
@@ -73,8 +73,6 @@ void tst_simpletransaction::transactionQueueOrder() {
   Enums::PROCESS r3 = st.transactionIsOver(Enums::PASS_SHOW);
   QVERIFY2(r3 == Enums::PASS_SHOW, "PASS_SHOW should complete third");
 }
-
-void tst_simpletransaction::cleanupTestCase() {}
 
 QTEST_MAIN(tst_simpletransaction)
 #include "tst_simpletransaction.moc"
