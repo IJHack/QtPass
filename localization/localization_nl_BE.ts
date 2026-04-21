@@ -1176,7 +1176,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="914"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Weet u zeker dat u %1%2 wil verwijderen?</translation>
+        <translation>Weet u zeker dat u %1%2 wilt verwijderen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="913"/>
