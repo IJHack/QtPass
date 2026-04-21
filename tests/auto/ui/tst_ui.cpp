@@ -399,7 +399,7 @@ void tst_ui::progressIndicatorDefaultNotDisplayedWhenStopped() {
 
 void tst_ui::progressIndicatorDefaultColor() {
   QProgressIndicator indicator;
-  QCOMPARE(indicator.color(), QColor(Qt::black));
+  QVERIFY(!indicator.color().isValid());
 }
 
 void tst_ui::progressIndicatorStartAnimation() {
@@ -450,6 +450,8 @@ void tst_ui::progressIndicatorSetColor() {
   QColor red(Qt::red);
   indicator.setColor(red);
   QCOMPARE(indicator.color(), red);
+  indicator.setColor(QColor());
+  QVERIFY(!indicator.color().isValid());
 }
 
 void tst_ui::progressIndicatorSizeHint() {

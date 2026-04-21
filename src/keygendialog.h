@@ -4,6 +4,9 @@
 #define SRC_KEYGENDIALOG_H_
 
 #include <QDialog>
+#include <memory>
+
+#include "qprogressindicator.h"
 
 namespace Ui {
 class KeygenDialog;
@@ -47,6 +50,7 @@ private:
   void done(int r) override;
   void no_protection(bool enable);
   ConfigDialog *dialog;
+  std::unique_ptr<QProgressIndicator> m_progressIndicator;
 };
 
 #endif // SRC_KEYGENDIALOG_H_
