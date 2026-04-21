@@ -531,7 +531,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="953"/>
         <source>Path to the password store directory</source>
-        <translation>Chemin vers le répertoire de la boutique de mots de passe</translation>
+        <translation>Chemin d&apos;accès au répertoire de stockage des mots de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="958"/>

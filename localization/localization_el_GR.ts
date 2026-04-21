@@ -176,12 +176,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="592"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Απαράδεκτη αναζήτηση περιεχομένου (pass grep)</translation>
+        <translation>Ενεργοποίηση αναζήτησης περιεχομένου (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Επιτρέπει την αναζήτηση στο εσωτερικό των περιεχομένων αρχείων. Τα αιτήματα αποκρυπτογραφής κάθε αρχείου και μπορεί να είναι αργή σε μεγάλα καταστήματα.</translation>
+        <translation>Επιτρέπεται η αναζήτηση μέσα στα περιεχόμενα του αρχείου κωδικού πρόσβασης. Απαιτείται αποκρυπτογράφηση κάθε αρχείου και μπορεί να είναι αργή σε μεγάλα αποθηκευτικά μέσα.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="617"/>
