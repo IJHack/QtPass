@@ -136,7 +136,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="595"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Tillad at søge i adgangskodefil indhold. Kræver at dekryptere hver fil og kan være langsom på store butikker.</translation>
+        <translation>Tillad søgning i adgangskodefilers indhold. Kræver dekryptering af hver fil og kan være langsomt i store adgangskodelagre.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="769"/>
@@ -403,7 +403,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="671"/>
         <source>New Profile</source>
-        <translation>Ny Profil</translation>
+        <translation>Ny profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="703"/>
