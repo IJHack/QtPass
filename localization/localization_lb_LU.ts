@@ -1138,12 +1138,12 @@ Weider?</translation>
     <message>
         <location filename="../src/pass.cpp" line="142"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Ongülteg Passwuertlängt</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="143"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kann kee Passwuert mat enger Längt vun Null generéieren.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="186"/>
