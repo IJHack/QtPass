@@ -1430,7 +1430,7 @@ Doorgaan?</translation>
         <location filename="../src/pass.cpp" line="527"/>
         <location filename="../src/pass.cpp" line="547"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>Encryptie faalde. Controleer dat u GPG sleutel geldig is.</translation>
+        <translation>Encryptie faalde. Controleer dat uw GPG sleutel geldig is.</translation>
     </message>
 </context>
 <context>
