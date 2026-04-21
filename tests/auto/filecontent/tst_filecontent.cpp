@@ -188,8 +188,8 @@ void tst_filecontent::parseMultiplePasswordLines() {
   FileContent fc = FileContent::parse(content, QStringList(), false);
   QVERIFY2(fc.getPassword() == "first_password",
            "first line should be password");
-  QVERIFY2(fc.getRemainingData().contains("second_line"),
-           "remaining should contain second line");
+  QVERIFY2(fc.getRemainingData() == "second_line",
+           "remaining should be exactly second_line");
 }
 
 void tst_filecontent::parseWhitespaceOnlyContent() {
@@ -210,6 +210,10 @@ void tst_filecontent::parseOnlyNamedFields() {
       nv.size() == 1,
       qPrintable(
           QString("expected 1 named value (username), got %1").arg(nv.size())));
+  if (nv.size() == 1) {
+    QVERIFY2(nv[0].name == "username", "field name should be username");
+    QVERIFY2(nv[0].value == "test", "field value should be test");
+  }
 }
 
 void tst_filecontent::parseTemplateFieldsWithEmptyValues() {

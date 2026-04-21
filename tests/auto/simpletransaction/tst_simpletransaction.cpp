@@ -55,8 +55,8 @@ void tst_simpletransaction::transactionStartEndExplicit() {
   st.transactionAdd(Enums::PASS_SHOW);
   st.transactionEnd(Enums::PASS_SHOW);
   Enums::PROCESS result = st.transactionIsOver(Enums::PASS_SHOW);
-  QVERIFY2(result != Enums::INVALID,
-           "transaction should be complete after transactionEnd");
+  QVERIFY2(result == Enums::PASS_SHOW,
+           "transactionIsOver(PASS_SHOW) should return PASS_SHOW after end");
 }
 
 void tst_simpletransaction::transactionQueueOrder() {
@@ -68,6 +68,10 @@ void tst_simpletransaction::transactionQueueOrder() {
   QVERIFY2(
       r1 == Enums::PASS_INSERT,
       "first item should complete immediately when no transaction started");
+  Enums::PROCESS r2 = st.transactionIsOver(Enums::PASS_REMOVE);
+  QVERIFY2(r2 == Enums::PASS_REMOVE, "PASS_REMOVE should complete second");
+  Enums::PROCESS r3 = st.transactionIsOver(Enums::PASS_SHOW);
+  QVERIFY2(r3 == Enums::PASS_SHOW, "PASS_SHOW should complete third");
 }
 
 void tst_simpletransaction::cleanupTestCase() {}

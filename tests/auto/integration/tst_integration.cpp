@@ -154,7 +154,13 @@ class tst_integration : public QObject {
     {
       QFile gpgId(QDir::cleanPath(storeDir.path() + "/.gpg-id"));
       QVERIFY(gpgId.open(QIODevice::WriteOnly | QIODevice::Text));
-      gpgId.write((m_keyFingerprint + "\n").toUtf8());
+      QByteArray payload = (m_keyFingerprint + "\n").toUtf8();
+      qint64 bytesWritten = gpgId.write(payload);
+      QVERIFY2(
+          bytesWritten == payload.size(),
+          qPrintable(QString("failed to write .gpg-id, wrote %1 of %2 bytes")
+                         .arg(bytesWritten)
+                         .arg(payload.size())));
     }
     pass.init();
     pass.updateEnv();
