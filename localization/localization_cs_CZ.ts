@@ -1319,26 +1319,26 @@ Pokračovat?</translation>
         <translation>Nelze generovat heslo, v nastavení nebyla vybrána skladba znaků pro heslo!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="511"/>
-        <location filename="../src/pass.cpp" line="530"/>
+        <location filename="../src/pass.cpp" line="514"/>
+        <location filename="../src/pass.cpp" line="533"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Šifrování selhalo: platnost GPG klíče vypršela. Obnovte jej nebo jej nahraďte.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="516"/>
-        <location filename="../src/pass.cpp" line="535"/>
+        <location filename="../src/pass.cpp" line="519"/>
+        <location filename="../src/pass.cpp" line="538"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Šifrování selhalo: GPG klíč byl zrušen.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="520"/>
-        <location filename="../src/pass.cpp" line="540"/>
+        <location filename="../src/pass.cpp" line="523"/>
+        <location filename="../src/pass.cpp" line="543"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Šifrování selhalo: GPG klíč příjemce nebyl nalezen nebo je neplatný. Zkontrolujte, zda je ID klíče v .gpg-id správné a zda byl klíč importován.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="524"/>
-        <location filename="../src/pass.cpp" line="544"/>
+        <location filename="../src/pass.cpp" line="527"/>
+        <location filename="../src/pass.cpp" line="547"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Šifrování selhalo. Zkontrolujte, zda je váš GPG klíč platný.</translation>
     </message>

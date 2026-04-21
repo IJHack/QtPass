@@ -1116,26 +1116,26 @@ Continue?</source>
         <translation>لا يمكن توليد كلمة سر، لا يوجد شخصيات للاختيار من موقع في التشكيلة!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="511"/>
-        <location filename="../src/pass.cpp" line="530"/>
+        <location filename="../src/pass.cpp" line="514"/>
+        <location filename="../src/pass.cpp" line="533"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>فشل التشفير: انتهت صلاحية مفتاح GPG. يرجى تجديده أو استبداله.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="516"/>
-        <location filename="../src/pass.cpp" line="535"/>
+        <location filename="../src/pass.cpp" line="519"/>
+        <location filename="../src/pass.cpp" line="538"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>فشل التشفير: تم إلغاء مفتاح GPG.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="520"/>
-        <location filename="../src/pass.cpp" line="540"/>
+        <location filename="../src/pass.cpp" line="523"/>
+        <location filename="../src/pass.cpp" line="543"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>فشل التشفير: لم يتم العثور على مفتاح GPG الخاص بالمستلم أو أنه غير صالح. تحقق من صحة معرّف المفتاح في ملف .gpg-id ومن استيراده.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="524"/>
-        <location filename="../src/pass.cpp" line="544"/>
+        <location filename="../src/pass.cpp" line="527"/>
+        <location filename="../src/pass.cpp" line="547"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>فشلت عملية التشفير. يرجى التأكد من صحة مفتاح GPG الخاص بك.</translation>
     </message>

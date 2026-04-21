@@ -1366,26 +1366,26 @@ Gaan voort?</translation>
         <translation>Kan nie wagwoord genereer nie, daar is geen karakters om van te kies wat in die konfigurasie gestel is nie!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="511"/>
-        <location filename="../src/pass.cpp" line="530"/>
+        <location filename="../src/pass.cpp" line="514"/>
+        <location filename="../src/pass.cpp" line="533"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Enkripsie het misluk: GPG-sleutel het verval. Hernu of vervang dit asseblief.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="516"/>
-        <location filename="../src/pass.cpp" line="535"/>
+        <location filename="../src/pass.cpp" line="519"/>
+        <location filename="../src/pass.cpp" line="538"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Enkripsie het misluk: GPG-sleutel is herroep.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="520"/>
-        <location filename="../src/pass.cpp" line="540"/>
+        <location filename="../src/pass.cpp" line="523"/>
+        <location filename="../src/pass.cpp" line="543"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Enkripsie het misluk: ontvanger se GPG-sleutel nie gevind nie of is ongeldig. Kontroleer dat die sleutel-ID in .gpg-id korrek en ingevoer is.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="524"/>
-        <location filename="../src/pass.cpp" line="544"/>
+        <location filename="../src/pass.cpp" line="527"/>
+        <location filename="../src/pass.cpp" line="547"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Enkripsie het misluk. Maak seker dat jou GPG-sleutel geldig is.</translation>
     </message>

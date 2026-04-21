@@ -1156,26 +1156,26 @@ Të vazhdohet?</translation>
         <translation>Nuk mund të gjeneroni fjalëkalim, nuk ka karaktere për të zgjedhur nga konfigurimi!</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="511"/>
-        <location filename="../src/pass.cpp" line="530"/>
+        <location filename="../src/pass.cpp" line="514"/>
+        <location filename="../src/pass.cpp" line="533"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
         <translation>Enkriptimi dështoi: Çelësi GPG ka skaduar. Ju lutemi ta rinovoni ose zëvendësoni atë.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="516"/>
-        <location filename="../src/pass.cpp" line="535"/>
+        <location filename="../src/pass.cpp" line="519"/>
+        <location filename="../src/pass.cpp" line="538"/>
         <source>Encryption failed: GPG key has been revoked.</source>
         <translation>Enkriptimi dështoi: Çelësi GPG është revokuar.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="520"/>
-        <location filename="../src/pass.cpp" line="540"/>
+        <location filename="../src/pass.cpp" line="523"/>
+        <location filename="../src/pass.cpp" line="543"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
         <translation>Enkriptimi dështoi: çelësi GPG i marrësit nuk u gjet ose është i pavlefshëm. Kontrolloni që ID-ja e çelësit në .gpg-id është e saktë dhe e importuar.</translation>
     </message>
     <message>
-        <location filename="../src/pass.cpp" line="524"/>
-        <location filename="../src/pass.cpp" line="544"/>
+        <location filename="../src/pass.cpp" line="527"/>
+        <location filename="../src/pass.cpp" line="547"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
         <translation>Enkriptimi dështoi. Kontrolloni që çelësi juaj GPG të jetë i vlefshëm.</translation>
     </message>
