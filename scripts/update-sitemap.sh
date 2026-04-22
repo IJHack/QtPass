@@ -11,18 +11,22 @@ echo '<?xml version="1.0" encoding="UTF-8"?>
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">' > "$OUTPUT"
 
-for file in $(find . -name "*.html" -type f | grep -v "^./docs/" | sort); do
+for file in $(find . -name "*.html" -type f | sort); do
     path="${file#./}"
+    # Strip .html for clean URLs (unless index.html)
+    if [ "$path" != "index.html" ]; then
+        path="${path%.html}"
+    fi
     loc="$SITE/$path"
     # Use file mtime for lastmod
     mtime=$(date -r "$file" +"%Y-%m-%dT%H:%M:%S+00:00")
     priority="0.50"
     case "$path" in
-        index.html) priority="1.00" ;;
-        downloads.html|downloads) priority="0.90" ;;
-        changelog*.html) priority="0.80" ;;
-        getting-started.html|advanced.html|docs) priority="0.80" ;;
-        404.html) priority="0.10" ;;
+        index) priority="1.00" ;;
+        downloads) priority="0.90" ;;
+        changelog|changelog/*|old) priority="0.80" ;;
+        getting-started|advanced|docs) priority="0.80" ;;
+        404) priority="0.10" ;;
     esac
     echo "<url>
   <loc>$loc</loc>
