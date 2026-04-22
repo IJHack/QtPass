@@ -772,7 +772,7 @@ Expire-Date: 0
         <translation>Adres e-mail, który wpisano, jest niepoprawny.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Ta operacja może potrwać kilka minut.&lt;br /&gt;Musimy wygenerować dużo losowych bajtów. Dobrym pomysłem jest wykonanie innej czynności (pisanie na klawiaturze, poruszanie myszą, korzystanie z dysków) podczas generowania liczb pierwszych; daje to generatorowi liczb losowych większą szansę na uzyskanie wystarczającej entropii.</translation>
     </message>
@@ -1003,12 +1003,29 @@ Expire-Date: 0
         <translation>Nie znaleziono wyników.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation>
+        <translation type="vanished">
             <numerusform>Znaleziono %n wynik we wpisach: %1.</numerusform>
             <numerusform>Znaleziono %n wyniki we wpisach: %1.</numerusform>
             <numerusform>Znaleziono %n wyników we wpisach: %1.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="770"/>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

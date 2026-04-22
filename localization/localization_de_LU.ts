@@ -768,7 +768,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
         <translation>Die eingegebene Email Addresse ist ungültig.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Diese Operation kann einige Minuten dauern. &lt;br /&gt;Wir müssen eine Menge zufälliger Bytes generieren. Es ist eine gute Idee, eine andere Aktion durchzuführen (Typ auf der Tastatur, bewegen Sie die Maus, verwenden Sie die Festplatten) während der Prime-Generation; dies gibt dem Zufallsgenerator eine bessere Chance, genug Entropie zu gewinnen.</translation>
     </message>
@@ -1150,11 +1150,26 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
         <translation>Keine Treffer gefunden.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation>
+        <translation type="vanished">
             <numerusform>%n Treffer in %1 Eintrag gefunden.</numerusform>
             <numerusform>%n Treffern in %1 Einträgen gefunden.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="770"/>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

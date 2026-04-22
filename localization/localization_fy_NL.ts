@@ -832,7 +832,7 @@ Expire-Date: 0
         <translation>It e-postadres dat jo ynfierd hawwe is gjin jildich e-postadres.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Dizze operaasje kin inkele minuten duorje.&lt;br /&gt;Wy moatte in protte willekeurige bytes generearje. It is in goed idee om in oare aksje út te fieren (typen op it toetseboerd, de mûs bewege, de skiven brûke) tidens de primêre generaasje; dit jout de willekeurige getallengenerator in bettere kâns om genôch entropie te krijen.</translation>
     </message>
@@ -1153,6 +1153,14 @@ p, li { white-space: pre-wrap; }
         <source>Looking for: %1</source>
         <translation>Op syk nei: %1</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="770"/>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="856"/>
         <location filename="../src/mainwindow.cpp" line="1258"/>
@@ -1276,11 +1284,18 @@ p, li { white-space: pre-wrap; }
         <translation>Gjin oerienkomsten fûn.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation>
+        <translation type="vanished">
             <numerusform>%n oerienkomst fûn yn %1 yngong.</numerusform>
             <numerusform>%n oerienkomsten fûn yn %1 yngongen.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

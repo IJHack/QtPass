@@ -767,8 +767,8 @@ void MainWindow::onGrepFinished(
   ui->treeView->setVisible(false);
   ui->grepResultsList->setVisible(true);
   ui->statusBar->showMessage(
-      tr("Found %n match(es) in %1 entr(ies).", nullptr, totalLines)
-          .arg(results.size()),
+      tr("Found %n match(es)", nullptr, totalLines) + " " +
+          tr("in %n entr(ies).", nullptr, results.size()),
       3000);
   if (QtPassSettings::isUseAutoclearPanel())
     clearPanelTimer.start();

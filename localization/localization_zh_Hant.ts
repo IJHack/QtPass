@@ -768,7 +768,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>您輸入的電子郵件地址不是有效的電子郵件地址。</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>此操作可能需要幾分鐘。 &lt;br /&gt;我們需要產生大量的隨機位元組。在生成素數期間，最好執行一些其他操作（例如在鍵盤上輸入文字、移動滑鼠、使用磁碟）；這能讓隨機數產生器有更大的機會獲得足夠的熵。</translation>
     </message>
@@ -1089,6 +1089,13 @@ p, li { white-space: pre-wrap; }
         <source>Looking for: %1</source>
         <translation>尋找: %1</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="770"/>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="856"/>
         <location filename="../src/mainwindow.cpp" line="1258"/>
@@ -1212,8 +1219,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="770"/>
-        <source>Found %n match(es) in %1 entr(ies).</source>
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
         <translation type="unfinished">
             <numerusform></numerusform>
         </translation>
