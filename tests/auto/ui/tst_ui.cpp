@@ -268,14 +268,14 @@ void tst_ui::clipboardButtonSetAndGetRoundtrip() {
 
 void tst_ui::clipboardButtonClickEmitsSignal() {
   QPushButtonWithClipboard btn("test");
-  QSignalSpy spy(&btn, SIGNAL(clicked(QString)));
+  QSignalSpy spy(&btn, &QPushButtonWithClipboard::clicked);
   btn.click();
   QCOMPARE(spy.count(), 1);
 }
 
 void tst_ui::clipboardButtonClickSignalCarriesText() {
   QPushButtonWithClipboard btn("mytext");
-  QSignalSpy spy(&btn, SIGNAL(clicked(QString)));
+  QSignalSpy spy(&btn, &QPushButtonWithClipboard::clicked);
   btn.click();
   QCOMPARE(spy.count(), 1);
   QList<QVariant> args = spy.takeFirst();
@@ -285,7 +285,7 @@ void tst_ui::clipboardButtonClickSignalCarriesText() {
 void tst_ui::clipboardButtonClickAfterSetTextCarriesNewText() {
   QPushButtonWithClipboard btn("original");
   btn.setTextToCopy("changed");
-  QSignalSpy spy(&btn, SIGNAL(clicked(QString)));
+  QSignalSpy spy(&btn, &QPushButtonWithClipboard::clicked);
   btn.click();
   QCOMPARE(spy.count(), 1);
   QList<QVariant> args = spy.takeFirst();
