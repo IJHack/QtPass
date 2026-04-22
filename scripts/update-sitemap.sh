@@ -11,7 +11,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">' > "$OUTPUT"
 
-for file in $(find . -name "*.html" -type f | sort); do
+for file in $(find . -name "*.html" -type f | grep -v "^./build/" | sort); do
     path="${file#./}"
     # Strip .html for clean URLs (unless index.html)
     if [ "$path" != "index.html" ]; then
