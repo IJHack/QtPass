@@ -14,6 +14,8 @@ private Q_SLOTS:
   void transactionIsOver();
   void nestedTransaction();
   void transactionStartEndExplicit();
+  void transactionEndWithoutStart();
+  void transactionStartMultipleTimes();
   void transactionQueueOrder();
 };
 
@@ -64,6 +66,33 @@ void tst_simpletransaction::transactionStartEndExplicit() {
   Enums::PROCESS result = st.transactionIsOver(Enums::PASS_SHOW);
   QVERIFY2(result == Enums::PASS_SHOW,
            "transactionIsOver(PASS_SHOW) should return PASS_SHOW after end");
+}
+
+void tst_simpletransaction::transactionEndWithoutStart() {
+  simpleTransaction st;
+  st.transactionAdd(Enums::PASS_INSERT);
+  st.transactionEnd(Enums::PASS_INSERT);
+  Enums::PROCESS result = st.transactionIsOver(Enums::PASS_INSERT);
+  QVERIFY2(result == Enums::PASS_INSERT,
+           "transactionEnd without transactionStart should not break queue "
+           "completion");
+}
+
+void tst_simpletransaction::transactionStartMultipleTimes() {
+  simpleTransaction st;
+  st.transactionAdd(Enums::PASS_INSERT);
+  st.transactionStart();
+  st.transactionStart();
+  st.transactionAdd(Enums::PASS_SHOW);
+  st.transactionEnd(Enums::PASS_SHOW);
+
+  Enums::PROCESS first = st.transactionIsOver(Enums::PASS_INSERT);
+  QVERIFY2(first == Enums::PASS_INSERT,
+           "multiple transactionStart calls should not lose previously queued "
+           "items");
+  Enums::PROCESS second = st.transactionIsOver(Enums::PASS_SHOW);
+  QVERIFY2(second == Enums::PASS_SHOW,
+           "transaction should still complete after repeated transactionStart");
 }
 
 void tst_simpletransaction::transactionQueueOrder() {
