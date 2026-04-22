@@ -3190,9 +3190,9 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://qtpass.org/index.html</loc>
+  <loc>https://qtpass.org/</loc>
   <lastmod>2026-04-22T13:48:59+00:00</lastmod>
-  <priority>0.50</priority>
+  <priority>1.00</priority>
 </url>
 <url>
   <loc>https://qtpass.org/old</loc>
