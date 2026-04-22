@@ -9,6 +9,8 @@ const PRECACHE_URLS = [
   "/changelog.1.2.html",
   "/changelog.1.3.html",
   "/changelog.1.4.html",
+  "/changelog.1.5.html",
+  "/changelog.1.6.html",
   "/changelog.beta.html",
   "/changelog.html",
   "/changelog.old.html",
