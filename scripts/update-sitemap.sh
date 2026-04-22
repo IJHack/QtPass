@@ -21,17 +21,20 @@ for file in $(find . -name "*.html" -type f | grep -v "^./build/" | sort); do
     # Use file mtime for lastmod
     mtime=$(date -r "$file" +"%Y-%m-%dT%H:%M:%S+00:00")
     priority="0.50"
+    changefreq="monthly"
     case "$path" in
         index) priority="1.00" ;;
         downloads) priority="0.90" ;;
-        changelog|changelog/*|old) priority="0.80" ;;
-        getting-started|advanced|docs) priority="0.80" ;;
+        changelog|changelog/*) priority="0.80"; changefreq="weekly" ;;
+        getting-started|advanced) priority="0.80" ;;
+        docs/*) priority="0.30"; changefreq="yearly" ;;
         404) priority="0.10" ;;
     esac
     echo "<url>
   <loc>$loc</loc>
   <lastmod>$mtime</lastmod>
   <priority>$priority</priority>
+  <changefreq>$changefreq</changefreq>
 </url>" >> "$OUTPUT"
 done
 
