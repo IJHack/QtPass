@@ -1,21 +1,24 @@
 const CACHE_NAME = "qtpass::v1.7.0::static";
 
+// Cache-bust: include version in SW URL to force update
+const SW_VERSION = "?v1.7.0";
+
 const PRECACHE_URLS = [
   "/",
-  "/404.html",
-  "/getting-started.html",
-  "/advanced.html",
-  "/changelog.1.1.html",
-  "/changelog.1.2.html",
-  "/changelog.1.3.html",
-  "/changelog.1.4.html",
-  "/changelog.1.5.html",
-  "/changelog.1.6.html",
-  "/changelog.beta.html",
-  "/changelog.html",
-  "/changelog.old.html",
-  "/downloads.html",
-  "/index.html",
+  "/404",
+  "/advanced",
+  "/changelog",
+  "/changelog.1.1",
+  "/changelog.1.2",
+  "/changelog.1.3",
+  "/changelog.1.4",
+  "/changelog.1.5",
+  "/changelog.1.6",
+  "/changelog.beta",
+  "/changelog.old",
+  "/downloads",
+  "/getting-started",
+  "/old",
   "/stylesheets/pygment_trac.css",
   "/stylesheets/styles.css",
   "/javascripts/main.js",
