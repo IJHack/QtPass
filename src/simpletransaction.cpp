@@ -47,11 +47,11 @@ void simpleTransaction::transactionEnd(PROCESS pid) {
   dbg() << "END" << transactionDepth;
 #endif
   if (transactionDepth > 0) {
-    transactionDepth--;
-    if (transactionDepth == 0 && lastInTransaction != INVALID) {
+    if (lastInTransaction != INVALID) {
       transactionQueue.emplace(lastInTransaction, pid);
-      lastInTransaction = INVALID;
     }
+    transactionDepth--;
+    lastInTransaction = INVALID;
   }
 }
 
