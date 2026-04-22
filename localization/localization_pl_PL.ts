@@ -1044,19 +1044,19 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Znaleziono %n wynik</numerusform>
+            <numerusform>Znaleziono %n wyniki</numerusform>
+            <numerusform>Znaleziono %n wyników</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="771"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>w %n wpisie.</numerusform>
+            <numerusform>w %n wpisach.</numerusform>
+            <numerusform>w %n wpisach.</numerusform>
         </translation>
     </message>
     <message>
