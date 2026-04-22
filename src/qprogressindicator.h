@@ -141,9 +141,11 @@ public slots:
    */
   void setDisplayedWhenStopped(bool state);
 
-  /*! Sets the color of the components to the given color.
-      \sa color
-   */
+  /*! Sets the color of the component to the given color.
+         \param color The new color to use. Pass an invalid QColor to reset to
+     the palette fallback color.
+         \sa color
+      */
   void setColor(const QColor &color);
 
 protected:

@@ -19,7 +19,7 @@
  * @param parent
  */
 KeygenDialog::KeygenDialog(ConfigDialog *parent)
-    : QDialog(parent), ui(new Ui::KeygenDialog) {
+    : QDialog(parent), ui(new Ui::KeygenDialog), m_progressIndicator(nullptr) {
   ui->setupUi(this);
   dialog = parent;
 
@@ -187,9 +187,14 @@ void KeygenDialog::done(int r) {
     ui->checkBox->setEnabled(false);
     ui->plainTextEdit->setEnabled(false);
 
-    auto *pi = new QProgressIndicator();
-    pi->startAnimation();
-    pi->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    if (!m_progressIndicator) {
+      m_progressIndicator = std::make_unique<QProgressIndicator>();
+      m_progressIndicator->setParent(this);
+      m_progressIndicator->startAnimation();
+      m_progressIndicator->setSizePolicy(QSizePolicy::Expanding,
+                                         QSizePolicy::Expanding);
+      this->layout()->addWidget(m_progressIndicator.get());
+    }
 
     ui->frame->hide();
     ui->label->setText(
@@ -198,8 +203,6 @@ void KeygenDialog::done(int r) {
            "perform some other action (type on the keyboard, move the mouse, "
            "utilize the disks) during the prime generation; this gives the "
            "random number generator a better chance to gain enough entropy."));
-
-    this->layout()->addWidget(pi);
 
     this->show();
     dialog->genKey(ui->plainTextEdit->toPlainText(), this);

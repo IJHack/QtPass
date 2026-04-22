@@ -10,7 +10,7 @@
  */
 QProgressIndicator::QProgressIndicator(QWidget *parent)
     : QWidget(parent), m_angle(0), m_timerId(-1), m_delay(40),
-      m_displayedWhenStopped(false), m_color(Qt::black) {
+      m_displayedWhenStopped(false), m_color() {
   setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
   setFocusPolicy(Qt::NoFocus);
 }
@@ -107,8 +107,8 @@ void QProgressIndicator::paintEvent(QPaintEvent * /*event*/) {
   int capsuleRadius = capsuleWidth / 2;
 
   for (int i = 0; i < 12; ++i) {
-    QColor color = m_color;
-    color.setAlphaF(int(1.0f - (i / 12.0f)));
+    QColor color = m_color.isValid() ? m_color : palette().windowText().color();
+    color.setAlphaF(1.0f - (i / 12.0f));
     p.setPen(Qt::NoPen);
     p.setBrush(color);
     p.save();
