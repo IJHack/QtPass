@@ -708,7 +708,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>عنوان البريد الإلكتروني الذي كتبته ليس عنوان بريد إلكتروني صحيح.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>قد تستغرق هذه العملية بضع دقائق.&lt;br /&gt;نحتاج إلى توليد عدد كبير من البايتات العشوائية. من المستحسن القيام ببعض الأنشطة الأخرى (كالكتابة على لوحة المفاتيح، أو تحريك الفأرة، أو استخدام الأقراص) أثناء توليد الأعداد الأولية؛ فهذا يُعطي مولد الأرقام العشوائية فرصة أفضل لاكتساب مستوى كافٍ من العشوائية.</translation>
     </message>
@@ -935,15 +935,38 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>لم يتم العثور على نتائج.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation>
+        <translation type="vanished">
             <numerusform>تم العثور على %n تطابق في %1 مدخل.</numerusform>
             <numerusform>تم العثور على %n تطابق في %1 مدخل.</numerusform>
             <numerusform>تم العثور على %n تطابق في %1 مدخلاً.</numerusform>
             <numerusform>تم العثور على %n تطابق في %1 مدخلاً.</numerusform>
             <numerusform>تم العثور على %n تطابق في %1 مدخلاً.</numerusform>
             <numerusform>تم العثور على %n تطابق في %1 مدخلاً.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="770"/>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

@@ -800,7 +800,7 @@ Expire-Date: 0
         <translation>Die e-posadres wat u ingevoer het, is nie &apos;n geldige e-posadres nie.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Dit kan &apos;n paar minute duur. &lt;br /&gt; Ons moet baie willekeurige grepe opwek. Dit is &apos;n goeie idee om &apos;n ander aksie uit te voer (tik op die sleutelbord, beweeg die muis, gebruik die skywe) tydens die eerste generasie; dit gee die ewekansige getalgenerator &apos;n beter kans om genoeg entropie te kry.</translation>
     </message>
@@ -1121,6 +1121,14 @@ p, li { white-space: pre-wrap; }
         <source>Looking for: %1</source>
         <translation>Op soek na: %1</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="770"/>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="856"/>
         <location filename="../src/mainwindow.cpp" line="1258"/>
@@ -1244,11 +1252,18 @@ p, li { white-space: pre-wrap; }
         <translation>Geen ooreenstemmings gevind nie.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation>
+        <translation type="vanished">
             <numerusform>%n ooreenstemming in %1 inskrywing gevind.</numerusform>
             <numerusform>%n ooreenstemmings in %1 inskrywings gevind.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

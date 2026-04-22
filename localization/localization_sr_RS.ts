@@ -800,7 +800,7 @@ Expire-Date: 0
         <translation>Uneseni e-mail adresa nije važeći e-mail adresa.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Ova operacija može da traje nekoliko minuta.&lt;br /&gt;Potrebno je generisati veliki broj slučajnih bajtova. Takođe je dobro da izvršite neku drugu akciju (tipajte na tastaturi, pomičite mišem, koristite diske) tokom generisanja prostih brojeva; to omogućava generatore slučajnih brojeva bolju priliku da dobije dovoljno entropije.</translation>
     </message>
@@ -1121,6 +1121,15 @@ p, li { white-space: pre-wrap; }
         <source>Looking for: %1</source>
         <translation>Traži se: %1</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="770"/>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="856"/>
         <location filename="../src/mainwindow.cpp" line="1258"/>
@@ -1244,8 +1253,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="770"/>
-        <source>Found %n match(es) in %1 entr(ies).</source>
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>

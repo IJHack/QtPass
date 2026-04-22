@@ -744,7 +744,7 @@ Utløpsdato: 0
         <translation>Adressen du har skrevet inn er ikke en gyldig e-postadresse.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Denne operasjonen kan ta noen minutter.&lt;br /&gt;Vi må generere mange tilfeldige byte. Det er en god idé å utføre en annen handling (skriv på tastaturet, flytt musen, bruk diskene) under primtallsgenerering; dette gir generatoren for tilfeldige tall en bedre sjanse til å erverve seg nok entropi.</translation>
     </message>
@@ -983,7 +983,15 @@ Utløpsdato: 0
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
-        <source>Found %n match(es) in %1 entr(ies).</source>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>

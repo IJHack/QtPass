@@ -836,7 +836,7 @@ Expire-Date: 0
         <translation>Het emailadres dat u heeft ingevoerd is voldoet niet aan de email standaard.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Deze operatie kan enkele minuten duren.&lt;br /&gt;We moeten veel willekeurige bytes te genereren. Het is een goed idee om een andere actie uit te voeren (type op het toetsenbord, beweeg de muis, maak gebruik van de disks) tijdens de priemgetal generatie; dit geeft de random getalgenerator meer kans om voldoende entropie krijgen.</translation>
     </message>
@@ -1150,6 +1150,14 @@ p, li { white-space: pre-wrap; }
         <source>Looking for: %1</source>
         <translation>Op zoek naar: %1</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="770"/>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="856"/>
         <location filename="../src/mainwindow.cpp" line="1258"/>
@@ -1287,11 +1295,18 @@ p, li { white-space: pre-wrap; }
         <translation>Geen overeenkomsten gevonden.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation>
+        <translation type="vanished">
             <numerusform>%n overeenkomst gevonden in %1 item.</numerusform>
             <numerusform>%n overeenkomsten gevonden in %1 items.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>

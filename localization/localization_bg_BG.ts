@@ -768,7 +768,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>Въведеният имейл адрес не е валиден имейл адрес.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Тази операция може да отнеме няколко минути.&lt;br /&gt;Трябва да генерираме много случайни байтове. Добра идея е да извършим някакво друго действие (да пишем на клавиатурата, да движим мишката, да използваме дисковете) по време на генерирането на първични числа; това дава на генератора на случайни числа по-голям шанс да получи достатъчно ентропия.</translation>
     </message>
@@ -1089,6 +1089,14 @@ p, li { white-space: pre-wrap; }
         <source>Looking for: %1</source>
         <translation>Търси се:% 1</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="770"/>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="856"/>
         <location filename="../src/mainwindow.cpp" line="1258"/>
@@ -1212,8 +1220,8 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="770"/>
-        <source>Found %n match(es) in %1 entr(ies).</source>
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
         <translation type="unfinished">
             <numerusform></numerusform>
             <numerusform></numerusform>

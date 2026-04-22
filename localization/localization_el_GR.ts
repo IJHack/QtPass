@@ -744,7 +744,7 @@ Expire-Date: 0
         <translation>Η διεύθυνση ηλεκτρονικού ταχυδρομείου που πληκτρολογήσατε δεν είναι έγκυρη διεύθυνση ηλεκτρονικού ταχυδρομείου.</translation>
     </message>
     <message>
-        <location filename="../src/keygendialog.cpp" line="196"/>
+        <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
         <translation>Αυτή η λειτουργία μπορεί να διαρκέσει μερικά λεπτά. &lt;br /&gt; Πρέπει να δημιουργήσουμε πολλά τυχαία byte. Είναι καλή ιδέα να εκτελέσετε κάποια άλλη ενέργεια (πληκτρολογήστε το πληκτρολόγιο, μετακινήστε το ποντίκι, χρησιμοποιήστε τους δίσκους) κατά τη διάρκεια της πρώτης γενιάς. αυτό δίνει στην γεννήτρια τυχαίων αριθμών καλύτερη πιθανότητα να αποκτήσει αρκετή εντροπία.</translation>
     </message>
@@ -983,11 +983,26 @@ Expire-Date: 0
         <translation>Δεν βρέθηκαν αντιστοιχίσεις.</translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation>
+        <translation type="vanished">
             <numerusform>Βρέθηκε %n ταίριασμα σε %1 καταχώρηση.</numerusform>
             <numerusform>Βρέθηκαν %n αντιστοιχίες σε %1 καταχωρήσεις.</numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="770"/>
+        <source>Found %n match(es)</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
+        </translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../src/mainwindow.cpp" line="771"/>
+        <source>in %n entr(ies).</source>
+        <translation type="unfinished">
+            <numerusform></numerusform>
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
