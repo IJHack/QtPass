@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="gpgkeystate_8h" kind="file" language="C++">
+    <compoundname>gpgkeystate.h</compoundname>
+    <includes refid="userinfo_8h" local="yes">userinfo.h</includes>
+    <includes local="no">QList</includes>
+    <includes local="no">QString</includes>
+    <includes local="no">QStringList</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/gpgkeystate.h</label>
+        <link refid="gpgkeystate_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>userinfo.h</label>
+        <link refid="userinfo_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QDateTime</label>
+      </node>
+      <node id="5">
+        <label>QList</label>
+      </node>
+      <node id="4">
+        <label>QString</label>
+      </node>
+      <node id="6">
+        <label>QStringList</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>GpgRecordType</name>
+        <enumvalue id="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a88183b946cc5f0e8c96b2e66e1c74a7e" prot="public">
+          <name>Unknown</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314aa29bdd003ef6c0c34279807341f450f2" prot="public">
+          <name>Pub</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a2d5cc554c126edb041901fa7d79b558b" prot="public">
+          <name>Sec</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a43dc4c29d59c2c845bbb01ce770692f5" prot="public">
+          <name>Uid</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314ad9c8b6ee49fc11baca5fdda1a2957ad7" prot="public">
+          <name>Fpr</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314ae80155eceb940c89e2de63ad05868db2" prot="public">
+          <name>Sub</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314af700434ad8179b8a4eb0d625aa4181f5" prot="public">
+          <name>Ssb</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="gpgkeystate_8h_1a775e5ef64248fea2506a55dce8b08314a091f41cecca1c417dc7eb8ff9d76cee9" prot="public">
+          <name>Grp</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gpgkeystate.h" line="12" column="1" bodyfile="src/gpgkeystate.h" bodystart="12" bodyend="12"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="gpgkeystate_8h_1ad0639911b85a0cc4ad970d6eae3a7078" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>GpgRecordType</type>
+        <definition>GpgRecordType classifyRecord</definition>
+        <argsstring>(const QString &amp;record_type)</argsstring>
+        <name>classifyRecord</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>record_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gpgkeystate.h" line="14" column="15" declfile="src/gpgkeystate.h" declline="14" declcolumn="15"/>
+      </memberdef>
+      <memberdef kind="function" id="gpgkeystate_8h_1a72d30aad697116826b8f605e7b855a0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>QList&lt; <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &gt;</type>
+        <definition>QList&lt; UserInfo &gt; parseGpgColonOutput</definition>
+        <argsstring>(const QString &amp;output, bool secret)</argsstring>
+        <name>parseGpgColonOutput</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>secret</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gpgkeystate.h" line="16" column="7" declfile="src/gpgkeystate.h" declline="16" declcolumn="7"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2026<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_GPGKEYSTATE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_GPGKEYSTATE_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;userinfo.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStringList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/>GpgRecordType<sp/>{<sp/>Unknown,<sp/>Pub,<sp/>Sec,<sp/>Uid,<sp/>Fpr,<sp/>Sub,<sp/>Ssb,<sp/>Grp<sp/>};</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal">GpgRecordType<sp/>classifyRecord(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;record_type);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal">QList&lt;UserInfo&gt;<sp/>parseGpgColonOutput(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;output,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>secret);</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_GPGKEYSTATE_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/gpgkeystate.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_config_dialog" kind="class" language="C++" prot="public">
+    <compoundname>ConfigDialog</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
+    <includes refid="configdialog_8h" local="no">configdialog.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_config_dialog_1a5de66ac7a8a063efdd7c515b1e75e5f3" prot="private" static="no" mutable="no">
+        <type>QScopedPointer&lt; Ui::ConfigDialog &gt;</type>
+        <definition>QScopedPointer&lt;Ui::ConfigDialog&gt; ConfigDialog::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <qualifiedname>ConfigDialog::ui</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="169" column="18" bodyfile="src/configdialog.h" bodystart="169" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_config_dialog_1a76ff26d0cd88209998e803e6dbdb06df" prot="private" static="no" mutable="no">
+        <type><ref refid="class_main_window" kindref="compound">MainWindow</ref> *</type>
+        <definition>MainWindow* ConfigDialog::mainWindow</definition>
+        <argsstring></argsstring>
+        <name>mainWindow</name>
+        <qualifiedname>ConfigDialog::mainWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="195" column="14" bodyfile="src/configdialog.h" bodystart="195" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_config_dialog_1a815d6d8ddf1de9386427ddef691a02a1" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ConfigDialog::ConfigDialog</definition>
+        <argsstring>(MainWindow *parent)</argsstring>
+        <name>ConfigDialog</name>
+        <qualifiedname>ConfigDialog::ConfigDialog</qualifiedname>
+        <param>
+          <type><ref refid="class_main_window" kindref="compound">MainWindow</ref> *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para>Construct a <ref refid="class_config_dialog" kindref="compound">ConfigDialog</ref> associated with the given main window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The application&apos;s <ref refid="class_main_window" kindref="compound">MainWindow</ref>. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="37" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a1b7b022b97d128fb1f749c9190f20b4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ConfigDialog::~ConfigDialog</definition>
+        <argsstring>() override</argsstring>
+        <name>~ConfigDialog</name>
+        <qualifiedname>ConfigDialog::~ConfigDialog</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="38" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1af93386c7b55bd8ae35fda6f096d46eb6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::useSelection</definition>
+        <argsstring>(bool useSelection)</argsstring>
+        <name>useSelection</name>
+        <qualifiedname>ConfigDialog::useSelection</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useSelection</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable clipboard selection mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useSelection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable selection mode. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="44" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a56eaebf7e3e16da16fd6f1fdb44c9d91" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::useAutoclear</definition>
+        <argsstring>(bool useAutoclear)</argsstring>
+        <name>useAutoclear</name>
+        <qualifiedname>ConfigDialog::useAutoclear</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useAutoclear</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable autoclear of the clipboard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useAutoclear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable autoclear. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="50" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a5439c3bc35c849fbef4c9248ee9042d0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::useAutoclearPanel</definition>
+        <argsstring>(bool useAutoclearPanel)</argsstring>
+        <name>useAutoclearPanel</name>
+        <qualifiedname>ConfigDialog::useAutoclearPanel</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useAutoclearPanel</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable autoclear of the panel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useAutoclearPanel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable panel autoclear. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="56" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a0ae43a6dc241ebbf619f61171fbbd123" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto ConfigDialog::getProfiles</definition>
+        <argsstring>() -&gt; QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</argsstring>
+        <name>getProfiles</name>
+        <qualifiedname>ConfigDialog::getProfiles</qualifiedname>
+        <briefdescription>
+<para>Return all configured profiles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Hash of profile name to key-value settings map. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="62" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1ad5b80066591f19fdaaa06b7cb5ba7f15" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::wizard</definition>
+        <argsstring>()</argsstring>
+        <name>wizard</name>
+        <qualifiedname>ConfigDialog::wizard</qualifiedname>
+        <briefdescription>
+<para>Run the first-time setup wizard. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="67" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a99e19a79c9bfd47ee251487c6e766605" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::genKey</definition>
+        <argsstring>(const QString &amp;batch, QDialog *dialog)</argsstring>
+        <name>genKey</name>
+        <qualifiedname>ConfigDialog::genKey</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>batch</declname>
+        </param>
+        <param>
+          <type>QDialog *</type>
+          <declname>dialog</declname>
+        </param>
+        <briefdescription>
+<para>Start GPG key generation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>batch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPG batch parameter string. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dialog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parent dialog to return to after generation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="74" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1aac383b23ed9b34eb52918de2b10d9567" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::useTrayIcon</definition>
+        <argsstring>(bool useSystray)</argsstring>
+        <name>useTrayIcon</name>
+        <qualifiedname>ConfigDialog::useTrayIcon</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useSystray</declname>
+        </param>
+        <briefdescription>
+<para>Show or hide the system tray icon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useSystray</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable the tray icon. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="80" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a4dcec976dc9117924ed9c230e9683c9f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::useGit</definition>
+        <argsstring>(bool useGit)</argsstring>
+        <name>useGit</name>
+        <qualifiedname>ConfigDialog::useGit</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useGit</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable git integration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useGit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable git. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="86" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a2a395844557989cf343503e80b075ba0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::useOtp</definition>
+        <argsstring>(bool useOtp)</argsstring>
+        <name>useOtp</name>
+        <qualifiedname>ConfigDialog::useOtp</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useOtp</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable OTP support. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useOtp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable OTP. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="92" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a859c596a86c2ee90176c93d8c52f12a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::useGrepSearch</definition>
+        <argsstring>(bool useGrepSearch)</argsstring>
+        <name>useGrepSearch</name>
+        <qualifiedname>ConfigDialog::useGrepSearch</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useGrepSearch</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable grep content search. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useGrepSearch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable grep search. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="98" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a6dbe2089e9c89952aac994d4a359c3f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::useQrencode</definition>
+        <argsstring>(bool useQrencode)</argsstring>
+        <name>useQrencode</name>
+        <qualifiedname>ConfigDialog::useQrencode</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useQrencode</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable QR code display. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useQrencode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable qrencode. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="104" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a3d42b658f6b8436e9f6ca17059703c0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::setPwgenPath</definition>
+        <argsstring>(const QString &amp;path)</argsstring>
+        <name>setPwgenPath</name>
+        <qualifiedname>ConfigDialog::setPwgenPath</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Set the path to the pwgen executable. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to pwgen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="110" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1ac3ebb263a2b69e39c81217a6d8630995" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::usePwgen</definition>
+        <argsstring>(bool usePwgen)</argsstring>
+        <name>usePwgen</name>
+        <qualifiedname>ConfigDialog::usePwgen</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>usePwgen</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable pwgen-based password generation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>usePwgen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to use pwgen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="116" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a003ec5de7c29ced34f045f0843d2e95b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::setPasswordConfiguration</definition>
+        <argsstring>(const PasswordConfiguration &amp;config)</argsstring>
+        <name>setPasswordConfiguration</name>
+        <qualifiedname>ConfigDialog::setPasswordConfiguration</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_password_configuration" kindref="compound">PasswordConfiguration</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Apply a password configuration to the dialog controls. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Configuration to display. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="122" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a97c5f924a95b30f4d6a60df361c2b3ba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto ConfigDialog::getPasswordConfiguration</definition>
+        <argsstring>() -&gt; PasswordConfiguration</argsstring>
+        <name>getPasswordConfiguration</name>
+        <qualifiedname>ConfigDialog::getPasswordConfiguration</qualifiedname>
+        <briefdescription>
+<para>Read the current password configuration from the dialog controls. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current <ref refid="struct_password_configuration" kindref="compound">PasswordConfiguration</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="128" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a791fbb09740f62bff81c104ce61a0c1a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::useTemplate</definition>
+        <argsstring>(bool useTemplate)</argsstring>
+        <name>useTemplate</name>
+        <qualifiedname>ConfigDialog::useTemplate</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>useTemplate</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable password file templating. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useTemplate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable the template. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="134" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_config_dialog_1ad5f28221ebec0701bb56c43780a452b3" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::closeEvent</definition>
+        <argsstring>(QCloseEvent *event) override</argsstring>
+        <name>closeEvent</name>
+        <qualifiedname>ConfigDialog::closeEvent</qualifiedname>
+        <param>
+          <type>QCloseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Save settings and clean up on close. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The close event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="141" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_config_dialog_1abcea9914e341675611d83dff8b9b3163" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_accepted</definition>
+        <argsstring>()</argsstring>
+        <name>on_accepted</name>
+        <qualifiedname>ConfigDialog::on_accepted</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="144" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a6e92d229bd1e70a1f4e7e8976a469a6a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_autodetectButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_autodetectButton_clicked</name>
+        <qualifiedname>ConfigDialog::on_autodetectButton_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="145" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a2650ddbdc272cc7effb0541261a921f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_radioButtonNative_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_radioButtonNative_clicked</name>
+        <qualifiedname>ConfigDialog::on_radioButtonNative_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="146" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a4ed1aadd50231d08811bb5c5b0bcc0f2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_radioButtonPass_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_radioButtonPass_clicked</name>
+        <qualifiedname>ConfigDialog::on_radioButtonPass_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="147" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a1a52ca14165a03beea9340cbce56afd0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_toolButtonGit_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_toolButtonGit_clicked</name>
+        <qualifiedname>ConfigDialog::on_toolButtonGit_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="148" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1ab801a2b12893d85d8eafbe681ae27021" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_toolButtonGpg_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_toolButtonGpg_clicked</name>
+        <qualifiedname>ConfigDialog::on_toolButtonGpg_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="149" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a3c8eaa46778f3979272be6bbce64f91e" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_pushButtonGenerateKey_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_pushButtonGenerateKey_clicked</name>
+        <qualifiedname>ConfigDialog::on_pushButtonGenerateKey_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="150" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1ac22dcb9077296941812bdb51270fdac7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_toolButtonPwgen_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_toolButtonPwgen_clicked</name>
+        <qualifiedname>ConfigDialog::on_toolButtonPwgen_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="151" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a930e754343bae4fccbabe902323a537a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_toolButtonPass_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_toolButtonPass_clicked</name>
+        <qualifiedname>ConfigDialog::on_toolButtonPass_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="152" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a454d1350021aa2dc4f7224af944411a5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_toolButtonStore_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_toolButtonStore_clicked</name>
+        <qualifiedname>ConfigDialog::on_toolButtonStore_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="153" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1afc327eb70ad53971429cf3a0431040c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_comboBoxClipboard_activated</definition>
+        <argsstring>(int)</argsstring>
+        <name>on_comboBoxClipboard_activated</name>
+        <qualifiedname>ConfigDialog::on_comboBoxClipboard_activated</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="154" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a3c2493f751659bbb60cfae939ad7ff83" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_passwordCharTemplateSelector_activated</definition>
+        <argsstring>(int)</argsstring>
+        <name>on_passwordCharTemplateSelector_activated</name>
+        <qualifiedname>ConfigDialog::on_passwordCharTemplateSelector_activated</qualifiedname>
+        <param>
+          <type>int</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="155" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1ac002e1ead832154404e3edf6a41debfc" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_checkBoxSelection_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_checkBoxSelection_clicked</name>
+        <qualifiedname>ConfigDialog::on_checkBoxSelection_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="156" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a10ef2078234f8c76d10e30dbefff5380" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_checkBoxAutoclear_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_checkBoxAutoclear_clicked</name>
+        <qualifiedname>ConfigDialog::on_checkBoxAutoclear_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="157" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a40ca0e8a835360a92c58a758eb94144b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_checkBoxAutoclearPanel_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_checkBoxAutoclearPanel_clicked</name>
+        <qualifiedname>ConfigDialog::on_checkBoxAutoclearPanel_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="158" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1aecb3ede31edbc31bf9e295289f3cef15" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_addButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_addButton_clicked</name>
+        <qualifiedname>ConfigDialog::on_addButton_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="159" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a013a0a52437c29cb37ac47d73ed900a6" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_deleteButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_deleteButton_clicked</name>
+        <qualifiedname>ConfigDialog::on_deleteButton_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="160" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a785d6596aa5bebfb17cb65ed6238c648" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_profileTable_cellDoubleClicked</definition>
+        <argsstring>(int row, int column)</argsstring>
+        <name>on_profileTable_cellDoubleClicked</name>
+        <qualifiedname>ConfigDialog::on_profileTable_cellDoubleClicked</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>row</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="161" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a48e28d30f4a3edeeea9b1cb54f1f8f4f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_checkBoxUseTrayIcon_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_checkBoxUseTrayIcon_clicked</name>
+        <qualifiedname>ConfigDialog::on_checkBoxUseTrayIcon_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="162" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a96ca92ab55a5269a7d8615a137a877ac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_checkBoxUseGit_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_checkBoxUseGit_clicked</name>
+        <qualifiedname>ConfigDialog::on_checkBoxUseGit_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="163" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1a60f6395954c6e70c33ad3c6c42260e73" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_checkBoxUsePwgen_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_checkBoxUsePwgen_clicked</name>
+        <qualifiedname>ConfigDialog::on_checkBoxUsePwgen_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="164" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1afc4c9e5b5a57b3e057162cd8454aeb96" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::on_checkBoxUseTemplate_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_checkBoxUseTemplate_clicked</name>
+        <qualifiedname>ConfigDialog::on_checkBoxUseTemplate_clicked</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="165" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_config_dialog_1af474ad0e382063ac382053dd284f79be" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::onProfileTableItemChanged</definition>
+        <argsstring>(QTableWidgetItem *item)</argsstring>
+        <name>onProfileTableItemChanged</name>
+        <qualifiedname>ConfigDialog::onProfileTableItemChanged</qualifiedname>
+        <param>
+          <type>QTableWidgetItem *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="166" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_config_dialog_1a2aabd94adf217941b0d0f72df1b290ac" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto ConfigDialog::getSecretKeys</definition>
+        <argsstring>() -&gt; QStringList</argsstring>
+        <name>getSecretKeys</name>
+        <qualifiedname>ConfigDialog::getSecretKeys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="171" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a4a0bde52cacd0bcda1f76c3c117b0a46" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::setGitPath</definition>
+        <argsstring>(const QString &amp;)</argsstring>
+        <name>setGitPath</name>
+        <qualifiedname>ConfigDialog::setGitPath</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="173" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1afad9d376d13bc53350c00712f29ae660" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::setProfiles</definition>
+        <argsstring>(QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;, const QString &amp;)</argsstring>
+        <name>setProfiles</name>
+        <qualifiedname>ConfigDialog::setProfiles</qualifiedname>
+        <param>
+          <type>QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</type>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="174" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a7f3e2d9557dc842724d7754504e9ee0a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::usePass</definition>
+        <argsstring>(bool usePass)</argsstring>
+        <name>usePass</name>
+        <qualifiedname>ConfigDialog::usePass</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>usePass</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="175" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a93a014267e13ce2a518d6ff125bcb172" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::setGroupBoxState</definition>
+        <argsstring>()</argsstring>
+        <name>setGroupBoxState</name>
+        <qualifiedname>ConfigDialog::setGroupBoxState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="177" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a8ac46697f885118d2eb8773e22d28d85" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto ConfigDialog::selectExecutable</definition>
+        <argsstring>() -&gt; QString</argsstring>
+        <name>selectExecutable</name>
+        <qualifiedname>ConfigDialog::selectExecutable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="178" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1af46ecbc080ed3effc646a2776608bc03" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto ConfigDialog::selectFolder</definition>
+        <argsstring>() -&gt; QString</argsstring>
+        <name>selectFolder</name>
+        <qualifiedname>ConfigDialog::selectFolder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="179" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1aa8acc8fb6a7213f68c4dbe9dac733a6f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::criticalMessage</definition>
+        <argsstring>(const QString &amp;title, const QString &amp;text)</argsstring>
+        <name>criticalMessage</name>
+        <qualifiedname>ConfigDialog::criticalMessage</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="182" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a8561037d433d6bf1f6309c12c736415b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto ConfigDialog::isPassOtpAvailable</definition>
+        <argsstring>() -&gt; bool</argsstring>
+        <name>isPassOtpAvailable</name>
+        <qualifiedname>ConfigDialog::isPassOtpAvailable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="184" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a6d86adacb6e72afa9a46bd921afbc6df" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto ConfigDialog::isQrencodeAvailable</definition>
+        <argsstring>() -&gt; bool</argsstring>
+        <name>isQrencodeAvailable</name>
+        <qualifiedname>ConfigDialog::isQrencodeAvailable</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="185" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1adba67c942ef9700fab8d38adbf498188" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::validate</definition>
+        <argsstring>(QTableWidgetItem *item=nullptr)</argsstring>
+        <name>validate</name>
+        <qualifiedname>ConfigDialog::validate</qualifiedname>
+        <param>
+          <type>QTableWidgetItem *</type>
+          <declname>item</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="186" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a3e9e230897996d67178921ce4c56d9a8" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto ConfigDialog::checkGpgExistence</definition>
+        <argsstring>() -&gt; bool</argsstring>
+        <name>checkGpgExistence</name>
+        <qualifiedname>ConfigDialog::checkGpgExistence</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="188" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a40db2e36d9511872ae14a23027a7327f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto ConfigDialog::checkSecretKeys</definition>
+        <argsstring>() -&gt; bool</argsstring>
+        <name>checkSecretKeys</name>
+        <qualifiedname>ConfigDialog::checkSecretKeys</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="189" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1ab724d995ac3e3dabd626372977b69971" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto ConfigDialog::checkPasswordStore</definition>
+        <argsstring>() -&gt; bool</argsstring>
+        <name>checkPasswordStore</name>
+        <qualifiedname>ConfigDialog::checkPasswordStore</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="190" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1a708180c7084b140f86a53a8f3854cdb0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::handleGpgIdFile</definition>
+        <argsstring>()</argsstring>
+        <name>handleGpgIdFile</name>
+        <qualifiedname>ConfigDialog::handleGpgIdFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="191" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_config_dialog_1ad8d991a7f4c7325cdc21d31de416bd87" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ConfigDialog::initializeNewProfiles</definition>
+        <argsstring>(const QHash&lt; QString, QHash&lt; QString, QString &gt; &gt; &amp;existingProfiles)</argsstring>
+        <name>initializeNewProfiles</name>
+        <qualifiedname>ConfigDialog::initializeNewProfiles</qualifiedname>
+        <param>
+          <type>const QHash&lt; QString, QHash&lt; QString, QString &gt; &gt; &amp;</type>
+          <declname>existingProfiles</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/configdialog.h" line="192" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>The <ref refid="class_config_dialog" kindref="compound">ConfigDialog</ref> handles the configuration interface. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Presents controls for profiles, generation tools (pwgen/pass), GPG/git/OTP/qrencode integration, template handling, tray icon and autoclear options, and exposes methods to read and update those settings. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>ConfigDialog</label>
+        <link refid="class_config_dialog"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QDialog</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>ConfigDialog</label>
+        <link refid="class_config_dialog"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QDialog</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/configdialog.h" line="29" column="1" bodyfile="src/configdialog.h" bodystart="29" bodyend="196"/>
+    <listofallmembers>
+      <member refid="class_config_dialog_1a3e9e230897996d67178921ce4c56d9a8" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>checkGpgExistence</name></member>
+      <member refid="class_config_dialog_1ab724d995ac3e3dabd626372977b69971" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>checkPasswordStore</name></member>
+      <member refid="class_config_dialog_1a40db2e36d9511872ae14a23027a7327f" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>checkSecretKeys</name></member>
+      <member refid="class_config_dialog_1ad5f28221ebec0701bb56c43780a452b3" prot="protected" virt="non-virtual"><scope>ConfigDialog</scope><name>closeEvent</name></member>
+      <member refid="class_config_dialog_1a815d6d8ddf1de9386427ddef691a02a1" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>ConfigDialog</name></member>
+      <member refid="class_config_dialog_1aa8acc8fb6a7213f68c4dbe9dac733a6f" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>criticalMessage</name></member>
+      <member refid="class_config_dialog_1a99e19a79c9bfd47ee251487c6e766605" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>genKey</name></member>
+      <member refid="class_config_dialog_1a97c5f924a95b30f4d6a60df361c2b3ba" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>getPasswordConfiguration</name></member>
+      <member refid="class_config_dialog_1a0ae43a6dc241ebbf619f61171fbbd123" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>getProfiles</name></member>
+      <member refid="class_config_dialog_1a2aabd94adf217941b0d0f72df1b290ac" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>getSecretKeys</name></member>
+      <member refid="class_config_dialog_1a708180c7084b140f86a53a8f3854cdb0" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>handleGpgIdFile</name></member>
+      <member refid="class_config_dialog_1ad8d991a7f4c7325cdc21d31de416bd87" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>initializeNewProfiles</name></member>
+      <member refid="class_config_dialog_1a8561037d433d6bf1f6309c12c736415b" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>isPassOtpAvailable</name></member>
+      <member refid="class_config_dialog_1a6d86adacb6e72afa9a46bd921afbc6df" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>isQrencodeAvailable</name></member>
+      <member refid="class_config_dialog_1a76ff26d0cd88209998e803e6dbdb06df" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>mainWindow</name></member>
+      <member refid="class_config_dialog_1abcea9914e341675611d83dff8b9b3163" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_accepted</name></member>
+      <member refid="class_config_dialog_1aecb3ede31edbc31bf9e295289f3cef15" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_addButton_clicked</name></member>
+      <member refid="class_config_dialog_1a6e92d229bd1e70a1f4e7e8976a469a6a" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_autodetectButton_clicked</name></member>
+      <member refid="class_config_dialog_1a10ef2078234f8c76d10e30dbefff5380" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_checkBoxAutoclear_clicked</name></member>
+      <member refid="class_config_dialog_1a40ca0e8a835360a92c58a758eb94144b" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_checkBoxAutoclearPanel_clicked</name></member>
+      <member refid="class_config_dialog_1ac002e1ead832154404e3edf6a41debfc" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_checkBoxSelection_clicked</name></member>
+      <member refid="class_config_dialog_1a96ca92ab55a5269a7d8615a137a877ac" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_checkBoxUseGit_clicked</name></member>
+      <member refid="class_config_dialog_1a60f6395954c6e70c33ad3c6c42260e73" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_checkBoxUsePwgen_clicked</name></member>
+      <member refid="class_config_dialog_1afc4c9e5b5a57b3e057162cd8454aeb96" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_checkBoxUseTemplate_clicked</name></member>
+      <member refid="class_config_dialog_1a48e28d30f4a3edeeea9b1cb54f1f8f4f" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_checkBoxUseTrayIcon_clicked</name></member>
+      <member refid="class_config_dialog_1afc327eb70ad53971429cf3a0431040c0" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_comboBoxClipboard_activated</name></member>
+      <member refid="class_config_dialog_1a013a0a52437c29cb37ac47d73ed900a6" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_deleteButton_clicked</name></member>
+      <member refid="class_config_dialog_1a3c2493f751659bbb60cfae939ad7ff83" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_passwordCharTemplateSelector_activated</name></member>
+      <member refid="class_config_dialog_1a785d6596aa5bebfb17cb65ed6238c648" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_profileTable_cellDoubleClicked</name></member>
+      <member refid="class_config_dialog_1a3c8eaa46778f3979272be6bbce64f91e" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_pushButtonGenerateKey_clicked</name></member>
+      <member refid="class_config_dialog_1a2650ddbdc272cc7effb0541261a921f3" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_radioButtonNative_clicked</name></member>
+      <member refid="class_config_dialog_1a4ed1aadd50231d08811bb5c5b0bcc0f2" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_radioButtonPass_clicked</name></member>
+      <member refid="class_config_dialog_1a1a52ca14165a03beea9340cbce56afd0" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_toolButtonGit_clicked</name></member>
+      <member refid="class_config_dialog_1ab801a2b12893d85d8eafbe681ae27021" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_toolButtonGpg_clicked</name></member>
+      <member refid="class_config_dialog_1a930e754343bae4fccbabe902323a537a" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_toolButtonPass_clicked</name></member>
+      <member refid="class_config_dialog_1ac22dcb9077296941812bdb51270fdac7" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_toolButtonPwgen_clicked</name></member>
+      <member refid="class_config_dialog_1a454d1350021aa2dc4f7224af944411a5" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>on_toolButtonStore_clicked</name></member>
+      <member refid="class_config_dialog_1af474ad0e382063ac382053dd284f79be" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>onProfileTableItemChanged</name></member>
+      <member refid="class_config_dialog_1a8ac46697f885118d2eb8773e22d28d85" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>selectExecutable</name></member>
+      <member refid="class_config_dialog_1af46ecbc080ed3effc646a2776608bc03" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>selectFolder</name></member>
+      <member refid="class_config_dialog_1a4a0bde52cacd0bcda1f76c3c117b0a46" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>setGitPath</name></member>
+      <member refid="class_config_dialog_1a93a014267e13ce2a518d6ff125bcb172" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>setGroupBoxState</name></member>
+      <member refid="class_config_dialog_1a003ec5de7c29ced34f045f0843d2e95b" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>setPasswordConfiguration</name></member>
+      <member refid="class_config_dialog_1afad9d376d13bc53350c00712f29ae660" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>setProfiles</name></member>
+      <member refid="class_config_dialog_1a3d42b658f6b8436e9f6ca17059703c0a" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>setPwgenPath</name></member>
+      <member refid="class_config_dialog_1a5de66ac7a8a063efdd7c515b1e75e5f3" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>ui</name></member>
+      <member refid="class_config_dialog_1a56eaebf7e3e16da16fd6f1fdb44c9d91" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>useAutoclear</name></member>
+      <member refid="class_config_dialog_1a5439c3bc35c849fbef4c9248ee9042d0" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>useAutoclearPanel</name></member>
+      <member refid="class_config_dialog_1a4dcec976dc9117924ed9c230e9683c9f" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>useGit</name></member>
+      <member refid="class_config_dialog_1a859c596a86c2ee90176c93d8c52f12a7" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>useGrepSearch</name></member>
+      <member refid="class_config_dialog_1a2a395844557989cf343503e80b075ba0" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>useOtp</name></member>
+      <member refid="class_config_dialog_1a7f3e2d9557dc842724d7754504e9ee0a" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>usePass</name></member>
+      <member refid="class_config_dialog_1ac3ebb263a2b69e39c81217a6d8630995" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>usePwgen</name></member>
+      <member refid="class_config_dialog_1a6dbe2089e9c89952aac994d4a359c3f9" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>useQrencode</name></member>
+      <member refid="class_config_dialog_1af93386c7b55bd8ae35fda6f096d46eb6" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>useSelection</name></member>
+      <member refid="class_config_dialog_1a791fbb09740f62bff81c104ce61a0c1a" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>useTemplate</name></member>
+      <member refid="class_config_dialog_1aac383b23ed9b34eb52918de2b10d9567" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>useTrayIcon</name></member>
+      <member refid="class_config_dialog_1adba67c942ef9700fab8d38adbf498188" prot="private" virt="non-virtual"><scope>ConfigDialog</scope><name>validate</name></member>
+      <member refid="class_config_dialog_1ad5b80066591f19fdaaa06b7cb5ba7f15" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>wizard</name></member>
+      <member refid="class_config_dialog_1a1b7b022b97d128fb1f749c9190f20b4a" prot="public" virt="non-virtual"><scope>ConfigDialog</scope><name>~ConfigDialog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="imitatepass_8h" kind="file" language="C++">
+    <compoundname>imitatepass.h</compoundname>
+    <includes refid="pass_8h" local="yes">pass.h</includes>
+    <includes refid="simpletransaction_8h" local="yes">simpletransaction.h</includes>
+    <includedby refid="qtpasssettings_8h" local="yes">src/qtpasssettings.h</includedby>
+    <incdepgraph>
+      <node id="3">
+        <label>enums.h</label>
+        <link refid="enums_8h_source"/>
+      </node>
+      <node id="4">
+        <label>executor.h</label>
+        <link refid="executor_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/imitatepass.h</label>
+        <link refid="imitatepass_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>pass.h</label>
+        <link refid="pass_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>simpletransaction.h</label>
+        <link refid="simpletransaction_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>userinfo.h</label>
+        <link refid="userinfo_8h_source"/>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>QDateTime</label>
+      </node>
+      <node id="5">
+        <label>QObject</label>
+      </node>
+      <node id="6">
+        <label>QProcess</label>
+      </node>
+      <node id="7">
+        <label>QQueue</label>
+      </node>
+      <node id="10">
+        <label>QString</label>
+      </node>
+      <node id="11">
+        <label>QStringList</label>
+      </node>
+      <node id="12">
+        <label>cassert</label>
+      </node>
+      <node id="13">
+        <label>map</label>
+      </node>
+      <node id="15">
+        <label>queue</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="1">
+        <label>src/imitatepass.h</label>
+        <link refid="imitatepass_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>src/qtpasssettings.h</label>
+        <link refid="qtpasssettings_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_imitate_pass" prot="public">ImitatePass</innerclass>
+    <innerclass refid="class_imitate_pass_1_1transaction_helper" prot="public">ImitatePass::transactionHelper</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2016<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_IMITATEPASS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_IMITATEPASS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;pass.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;simpletransaction.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QRegularExpression;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QThread;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="class_imitate_pass" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_imitate_pass" kindref="compound">ImitatePass</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_pass" kindref="compound">Pass</ref>,<sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/><ref refid="classsimple_transaction" kindref="compound">simpleTransaction</ref><sp/>{</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">friend</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">tst_util;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="37" refid="class_imitate_pass_1a6ecaa7d53d661362511354e96572c240" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a6ecaa7d53d661362511354e96572c240" kindref="member">verifyGpgIdFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;file)<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="43" refid="class_imitate_pass_1a8740d9937714c8b6219d1857d7e2ff2c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a8740d9937714c8b6219d1857d7e2ff2c" kindref="member">removeDir</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;dirName)<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="49" refid="class_imitate_pass_1a607cc25575bf718f57333bb7854870b4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a607cc25575bf718f57333bb7854870b4" kindref="member">checkSigningKeys</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;signingKeys)<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="55" refid="class_imitate_pass_1ae65aff95459cee83b5b999f5a83fcac1" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1ae65aff95459cee83b5b999f5a83fcac1" kindref="member">writeGpgIdFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;gpgIdFile,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;UserInfo&gt;<sp/>&amp;users);</highlight></codeline>
+<codeline lineno="62" refid="class_imitate_pass_1aa6163e2dd259c8f69d0cead7551b573a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1aa6163e2dd259c8f69d0cead7551b573a" kindref="member">signGpgIdFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;gpgIdFile,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;signingKeys)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="71" refid="class_imitate_pass_1ae9547b23ef6e8c04b52f514218e50a5c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1ae9547b23ef6e8c04b52f514218e50a5c" kindref="member">gitAddGpgId</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;gpgIdFile,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;gpgIdSigFile,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>addFile,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>addSigFile);</highlight></codeline>
+<codeline lineno="80" refid="class_imitate_pass_1a7af6102fa60b3267bd1e387e7cfd82af" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a7af6102fa60b3267bd1e387e7cfd82af" kindref="member">verifyGpgIdForDir</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;file,<sp/>QStringList<sp/>&amp;gpgIdFilesVerified,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QStringList<sp/>&amp;gpgId)<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="86" refid="class_imitate_pass_1a086365ec85674590afbd883df0b27a80" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a086365ec85674590afbd883df0b27a80" kindref="member">createBackupCommit</ref>()<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="92" refid="class_imitate_pass_1aef532636a761beee3ecdd5dcedbfc834" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1aef532636a761beee3ecdd5dcedbfc834" kindref="member">getKeysFromFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;fileName)<sp/>-&gt;<sp/>QStringList;</highlight></codeline>
+<codeline lineno="99" refid="class_imitate_pass_1a662922741c9302e7ff58690a2f35808c" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a662922741c9302e7ff58690a2f35808c" kindref="member">reencryptSingleFile</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;fileName,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;recipients)<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="108" refid="class_imitate_pass_1adfd24194a7787a48b6eddbe8d31fc563" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1adfd24194a7787a48b6eddbe8d31fc563" kindref="member">resolveMoveDestination</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;dest,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>force)<sp/>-&gt;<sp/>QString;</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="118" refid="class_imitate_pass_1a94389a15db6c782715520aa6fbb13098" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a94389a15db6c782715520aa6fbb13098" kindref="member">executeMoveGit</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;destFile,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>force);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="class_imitate_pass_1afcfd84525f2dfd41b131f76c988010fb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1afcfd84525f2dfd41b131f76c988010fb" kindref="member">gitCommit</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;file,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;msg);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135" refid="class_imitate_pass_1a6f9682c6103b112a9aa844df7ef6a273" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a6f9682c6103b112a9aa844df7ef6a273" kindref="member">executeGit</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;args,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QString<sp/>input<sp/>=<sp/>QString(),<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStdout<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStderr<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="146" refid="class_imitate_pass_1a2ff555a9fdb035a15b0ea55ce2cb887a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a2ff555a9fdb035a15b0ea55ce2cb887a" kindref="member">executeGpg</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;args,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QString<sp/>input<sp/>=<sp/>QString(),<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStdout<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStderr<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="class_imitate_pass_1_1transaction_helper" refkind="compound"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_imitate_pass_1_1transaction_helper" kindref="compound">transactionHelper</ref><sp/>{</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classsimple_transaction" kindref="compound">simpleTransaction</ref><sp/>*m_transaction;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref><sp/>m_result;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="164" refid="class_imitate_pass_1_1transaction_helper_1ab37f5a0aff46fb0aa7ae9cc9cc17f38e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_imitate_pass_1_1transaction_helper_1ab37f5a0aff46fb0aa7ae9cc9cc17f38e" kindref="member">transactionHelper</ref>(<ref refid="classsimple_transaction" kindref="compound">simpleTransaction</ref><sp/>*trans,<sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref><sp/>result)</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>m_transaction(trans),<sp/>m_result(result)<sp/>{</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>m_transaction-&gt;<ref refid="classsimple_transaction_1aafd98f73dfc5352f307115cabc2a5ed4" kindref="member">transactionStart</ref>();</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="171" refid="class_imitate_pass_1_1transaction_helper_1aa359cfd5a9b65156dbca7b159cda9f2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_imitate_pass_1_1transaction_helper_1aa359cfd5a9b65156dbca7b159cda9f2b" kindref="member">~transactionHelper</ref>()<sp/>{<sp/>m_transaction-&gt;<ref refid="classsimple_transaction_1abd46863a44123f4422ec533effc2f262" kindref="member">transactionEnd</ref>(m_result);<sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="182" refid="class_imitate_pass_1aa0b75b53b2a2d62b0fbffbb5d2d7efe4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1aa0b75b53b2a2d62b0fbffbb5d2d7efe4" kindref="member">finished</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>exitCode,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;out,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;err)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="class_imitate_pass_1aa2ade77096c04fb94536d675bfaae8fe" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1aa2ade77096c04fb94536d675bfaae8fe" kindref="member">executeWrapper</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">PROCESS</ref><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal">,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;app,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;args,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>QString<sp/>input,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStdout<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>readStderr<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="202" refid="class_imitate_pass_1a64932bbae7860c2ee6bef6e3d6ed7bc6" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_imitate_pass_1a64932bbae7860c2ee6bef6e3d6ed7bc6" kindref="member">ImitatePass</ref>();</highlight></codeline>
+<codeline lineno="206" refid="class_imitate_pass_1a59c774bacec45aa06d10e22bc71f596e" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_imitate_pass_1a59c774bacec45aa06d10e22bc71f596e" kindref="member">~ImitatePass</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Git<sp/>operations</highlight></codeline>
+<codeline lineno="212" refid="class_imitate_pass_1a2bb2e83ad96efa7c111df54230e237bb" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a2bb2e83ad96efa7c111df54230e237bb" kindref="member">GitInit</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="216" refid="class_imitate_pass_1ab9f0103079ee01a263b70b95cd4aeced" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1ab9f0103079ee01a263b70b95cd4aeced" kindref="member">GitPull</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="220" refid="class_imitate_pass_1a5713b5c223fd522d0790debaa33cfbc2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a5713b5c223fd522d0790debaa33cfbc2" kindref="member">GitPull_b</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="224" refid="class_imitate_pass_1ae61b400e69fcc32c4a80b94fb52107b9" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1ae61b400e69fcc32c4a80b94fb52107b9" kindref="member">GitPush</ref>()<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Password<sp/>operations</highlight></codeline>
+<codeline lineno="231" refid="class_imitate_pass_1acfffcbf097c9d4615c01e064e335d65d" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1acfffcbf097c9d4615c01e064e335d65d" kindref="member">Show</ref>(QString<sp/>file)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="236" refid="class_imitate_pass_1a18eac6111a1d77a3f8ded93b7be16270" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a18eac6111a1d77a3f8ded93b7be16270" kindref="member">OtpGenerate</ref>(QString<sp/>file)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="243" refid="class_imitate_pass_1a84de97293ca1a100b1e466b4a79ec601" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a84de97293ca1a100b1e466b4a79ec601" kindref="member">Insert</ref>(QString<sp/>file,<sp/>QString<sp/>newValue,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>overwrite<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="249" refid="class_imitate_pass_1ab9cef44c64dae297da55e08266f1c1c5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1ab9cef44c64dae297da55e08266f1c1c5" kindref="member">Remove</ref>(QString<sp/>file,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>isDir<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="255" refid="class_imitate_pass_1a6fe6b48df3fb04071c8c2c1d5c1d1206" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a6fe6b48df3fb04071c8c2c1d5c1d1206" kindref="member">Init</ref>(QString<sp/>path,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QList&lt;UserInfo&gt;<sp/>&amp;users)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261" refid="class_imitate_pass_1af331446d163c31f1fca714646c0f6244" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1af331446d163c31f1fca714646c0f6244" kindref="member">reencryptPath</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;dir);</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal">signals:</highlight></codeline>
+<codeline lineno="267" refid="class_imitate_pass_1aecffecc95bd1c0281849dbfe11231e36" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1aecffecc95bd1c0281849dbfe11231e36" kindref="member">startReencryptPath</ref>();</highlight></codeline>
+<codeline lineno="271" refid="class_imitate_pass_1a9df2c7246a8686cf92c442c00dc55af7" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a9df2c7246a8686cf92c442c00dc55af7" kindref="member">endReencryptPath</ref>();</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Pass<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="281" refid="class_imitate_pass_1a9653850cc56714b9774221204339bbf2" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a9653850cc56714b9774221204339bbf2" kindref="member">Move</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>dest,</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>force<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="289" refid="class_imitate_pass_1a97538d83d4f6a583f840db0865e8609a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a97538d83d4f6a583f840db0865e8609a" kindref="member">Copy</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>src,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>dest,</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>force<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="301" refid="class_imitate_pass_1a7789a916aca076ad7ceaf4ef093239d3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_imitate_pass_1a7789a916aca076ad7ceaf4ef093239d3" kindref="member">Grep</ref>(QString<sp/>pattern,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>caseInsensitive<sp/>=<sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">)<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>m_grepSeq<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/>QList&lt;QThread<sp/>*&gt;<sp/>m_grepThreads;</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>grepMatchFile(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;env,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;gpgExe,</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;filePath,</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegularExpression<sp/>&amp;rx)<sp/>-&gt;<sp/>QStringList;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>grepScanStore(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;env,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;gpgExe,</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;storeDir,</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QRegularExpression<sp/>&amp;rx)</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>QList&lt;QPair&lt;QString,<sp/>QStringList&gt;&gt;;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_IMITATEPASS_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/imitatepass.h"/>
+  </compounddef>
+</doxygen>

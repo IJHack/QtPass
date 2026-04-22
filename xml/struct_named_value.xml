@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="struct_named_value" kind="struct" language="C++" prot="public">
+    <compoundname>NamedValue</compoundname>
+    <includes refid="filecontent_8h" local="no">filecontent.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_named_value_1a2c5db0fcfdabcee423cc74c6e5362867" prot="public" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString NamedValue::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>NamedValue::name</qualifiedname>
+        <briefdescription>
+<para>Field name (the part before the colon in &quot;name: value&quot;). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="18" column="11" bodyfile="src/filecontent.h" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_named_value_1a7e9785f69be8f0cce61f22113bbf725d" prot="public" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString NamedValue::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <qualifiedname>NamedValue::value</qualifiedname>
+        <briefdescription>
+<para>Field value (the part after the colon in &quot;name: value&quot;). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="22" column="11" bodyfile="src/filecontent.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A name/value pair parsed from a password file field. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/filecontent.h" line="14" column="1" bodyfile="src/filecontent.h" bodystart="14" bodyend="23"/>
+    <listofallmembers>
+      <member refid="struct_named_value_1a2c5db0fcfdabcee423cc74c6e5362867" prot="public" virt="non-virtual"><scope>NamedValue</scope><name>name</name></member>
+      <member refid="struct_named_value_1a7e9785f69be8f0cce61f22113bbf725d" prot="public" virt="non-virtual"><scope>NamedValue</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="storemodel_8h" kind="file" language="C++">
+    <compoundname>storemodel.h</compoundname>
+    <includes local="no">QFileInfo</includes>
+    <includes local="no">QSortFilterProxyModel</includes>
+    <includedby refid="mainwindow_8h" local="yes">src/mainwindow.h</includedby>
+    <includedby refid="util_8h" local="yes">src/util.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/storemodel.h</label>
+        <link refid="storemodel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QFileInfo</label>
+      </node>
+      <node id="3">
+        <label>QSortFilterProxyModel</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="3">
+        <label>main/main.cpp</label>
+        <link refid="main_8cpp_source"/>
+      </node>
+      <node id="2">
+        <label>src/mainwindow.h</label>
+        <link refid="mainwindow_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/storemodel.h</label>
+        <link refid="storemodel_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/util.h</label>
+        <link refid="util_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structdrag_and_drop_info_password_store" prot="public">dragAndDropInfoPasswordStore</innerclass>
+    <innerclass refid="class_store_model" prot="public">StoreModel</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2014<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_STOREMODEL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_STOREMODEL_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QFileInfo&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QSortFilterProxyModel&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">QFileSystemModel;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="structdrag_and_drop_info_password_store" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdrag_and_drop_info_password_store" kindref="compound">dragAndDropInfoPasswordStore</ref><sp/>{</highlight></codeline>
+<codeline lineno="30" refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">enum<sp/>class</highlight><highlight class="normal"><sp/><ref refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6" kindref="member">ItemKind</ref><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">Unknown</ref>,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6ae73cda510e8bb947f7e61089e5581494" kindref="member">Directory</ref>,<sp/></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6a0b27918290ff5323bea1e3b78a9cf04e" kindref="member">File</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36" refid="structdrag_and_drop_info_password_store_1ab4bf9c0e8d5cce80a689fd57b3b97541" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6" kindref="member">ItemKind</ref><sp/><ref refid="structdrag_and_drop_info_password_store_1ab4bf9c0e8d5cce80a689fd57b3b97541" kindref="member">kind</ref>{<ref refid="structdrag_and_drop_info_password_store_1a7a1b3ea381e0fa228467c6d29398d0f6a88183b946cc5f0e8c96b2e66e1c74a7e" kindref="member">ItemKind::Unknown</ref>};<sp/></highlight></codeline>
+<codeline lineno="37" refid="structdrag_and_drop_info_password_store_1ac3d6eb02633ddfd1a290cbaf27ca5390" refkind="member"><highlight class="normal"><sp/><sp/>QString<sp/><ref refid="structdrag_and_drop_info_password_store_1ac3d6eb02633ddfd1a290cbaf27ca5390" kindref="member">path</ref>;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="38"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="class_store_model" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_store_model" kindref="compound">StoreModel</ref><sp/>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>QSortFilterProxyModel<sp/>{</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/>QFileSystemModel<sp/>*fs;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/>QString<sp/>store;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>parseDropData(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QMimeData<sp/>*<ref refid="class_store_model_1a18097d60174b1d370e13d6a04ab7847f" kindref="member">data</ref>,</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structdrag_and_drop_info_password_store" kindref="compound">dragAndDropInfoPasswordStore</ref><sp/>*outInfo)<sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>executeDropAction(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structdrag_and_drop_info_password_store" kindref="compound">dragAndDropInfoPasswordStore</ref><sp/>&amp;info,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Qt::DropAction<sp/>action,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;parent)</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>handleDirDrop(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;cleanedSrc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFileInfo<sp/>&amp;destFileinfo,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFileInfo<sp/>&amp;srcFileInfo,<sp/>Qt::DropAction<sp/>action)</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>handleFileDrop(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;cleanedSrc,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;cleanedDest,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QFileInfo<sp/>&amp;destFileinfo,<sp/>Qt::DropAction<sp/>action)</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>handleFileToDirDrop(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;cleanedSrc,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;cleanedDest,<sp/>Qt::DropAction<sp/>action)</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>handleFileToFileDrop(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;cleanedSrc,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;cleanedDest,<sp/>Qt::DropAction<sp/>action)</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="69" refid="class_store_model_1a1d113aadab8e115cdd963f2246333664" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="class_store_model_1a1d113aadab8e115cdd963f2246333664" kindref="member">StoreModel</ref>();</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="class_store_model_1a02542fddfeea1874e849c0bb1d94f6c1" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_store_model_1a02542fddfeea1874e849c0bb1d94f6c1" kindref="member">filterAcceptsRow</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>source_row,</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;source_parent)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="class_store_model_1a3f87cb8b3ca0d20117f37386e4701691" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_store_model_1a3f87cb8b3ca0d20117f37386e4701691" kindref="member">showThis</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>-&gt;<sp/>bool;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93" refid="class_store_model_1a71787f93027b50575cfbdcbb1d8de071" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_store_model_1a71787f93027b50575cfbdcbb1d8de071" kindref="member">setModelAndStore</ref>(QFileSystemModel<sp/>*sourceModel,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;passStore);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="class_store_model_1a8578051e478ac18e32bb50bc9cb82ee8" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_store_model_1a8578051e478ac18e32bb50bc9cb82ee8" kindref="member">setStore</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;passStore);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="class_store_model_1a18097d60174b1d370e13d6a04ab7847f" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_store_model_1a18097d60174b1d370e13d6a04ab7847f" kindref="member">data</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;index,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>role)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>QVariant<sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="class_store_model_1adc8a200930127d54a13b2f15f5478445" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_store_model_1adc8a200930127d54a13b2f15f5478445" kindref="member">lessThan</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;source_left,</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QModelIndex<sp/>&amp;source_right)<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">override</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="class_store_model_1a0adadb60fe309f7f5dad9f27cec9b7d2" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_store_model_1a0adadb60fe309f7f5dad9f27cec9b7d2" kindref="member">getStore</ref>()<sp/>const<sp/>-&gt;<sp/>QString<sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>store;<sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>QAbstractItemModel<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="134" refid="class_store_model_1af6982f1562988c413ae9e95e87a713a1" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="class_store_model_1af6982f1562988c413ae9e95e87a713a1" kindref="member">supportedDropActions</ref>()<sp/>const<sp/>-&gt;<sp/>Qt::DropActions<sp/>override;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140" refid="class_store_model_1aa0d2f19f9d92f85e5a7696f747bd5648" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>auto<sp/><ref refid="class_store_model_1aa0d2f19f9d92f85e5a7696f747bd5648" kindref="member">supportedDragActions</ref>()<sp/>const<sp/>-&gt;<sp/>Qt::DropActions<sp/>override;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="class_store_model_1ab8ebcb53ce116b2ff658a6d49134531d" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>auto<sp/><ref refid="class_store_model_1ab8ebcb53ce116b2ff658a6d49134531d" kindref="member">flags</ref>(const<sp/>QModelIndex<sp/>&amp;index)<sp/>const</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>Qt::ItemFlags<sp/>override;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="class_store_model_1a40620d3b37bb04b06b999308bf2ee137" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>auto<sp/><ref refid="class_store_model_1a40620d3b37bb04b06b999308bf2ee137" kindref="member">mimeTypes</ref>()<sp/>const<sp/>-&gt;<sp/>QStringList<sp/>override;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="class_store_model_1a8a6c01f4d7883133d69730ceb1e97a09" refkind="member"><highlight class="normal"><sp/><sp/>[[nodiscard]]<sp/>auto<sp/><ref refid="class_store_model_1a8a6c01f4d7883133d69730ceb1e97a09" kindref="member">mimeData</ref>(const<sp/>QModelIndexList<sp/>&amp;indexes)<sp/>const</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/>QMimeData<sp/>*<sp/>override;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173" refid="class_store_model_1accf361cc9145306e3063f7b0be939476" refkind="member"><highlight class="normal"><sp/><sp/>auto<sp/><ref refid="class_store_model_1accf361cc9145306e3063f7b0be939476" kindref="member">canDropMimeData</ref>(const<sp/>QMimeData<sp/>*<ref refid="class_store_model_1a18097d60174b1d370e13d6a04ab7847f" kindref="member">data</ref>,<sp/>Qt::DropAction<sp/>action,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>column,<sp/>const<sp/>QModelIndex<sp/>&amp;parent)<sp/>const</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>override;</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186" refid="class_store_model_1a7eddcc6b50d64067e2ccf10c8ac82b8e" refkind="member"><highlight class="normal"><sp/><sp/>auto<sp/><ref refid="class_store_model_1a7eddcc6b50d64067e2ccf10c8ac82b8e" kindref="member">dropMimeData</ref>(const<sp/>QMimeData<sp/>*<ref refid="class_store_model_1a18097d60174b1d370e13d6a04ab7847f" kindref="member">data</ref>,<sp/>Qt::DropAction<sp/>action,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>row,</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>column,<sp/>const<sp/>QModelIndex<sp/>&amp;parent)<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>override;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_STOREMODEL_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/storemodel.h"/>
+  </compounddef>
+</doxygen>

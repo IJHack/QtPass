@@ -1,0 +1,22 @@
+digraph "Graphical Class Hierarchy"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node0 [id="Node000000",label="QObject",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node0 -> Node1 [id="edge8_Node000000_Node000001",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node1 [id="Node000001",label="Executor",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_executor.html",tooltip="Runs non-interactive external commands in FIFO order using a single QProcess."];
+  Node0 -> Node2 [id="edge9_Node000000_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Pass",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_pass.html",tooltip="Abstract base class for password store operations."];
+  Node2 -> Node3 [id="edge10_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="ImitatePass",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_imitate_pass.html",tooltip="Implementation that imitates 'pass' when the real tool is unavailable."];
+  Node2 -> Node5 [id="edge11_Node000002_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="RealPass",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_real_pass.html",tooltip="Implementation of Pass that wraps the 'pass' command-line tool."];
+  Node0 -> Node6 [id="edge12_Node000000_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="QtPass",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_qt_pass.html",tooltip="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP..."];
+  Node4 [id="Node000004",label="simpleTransaction",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classsimple_transaction.html",tooltip="Tracks a sequence of processes that should be treated as one atomic operation."];
+  Node4 -> Node3 [id="edge13_Node000004_Node000003",dir="back",color="firebrick4",style="solid",tooltip=" "];
+}

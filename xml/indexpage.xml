@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title>QtPass</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<sect1 id="index_1intro_sec">
+<title>Introduction</title>
+<para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> is a multi-platform GUI for pass, the standard unix password manager.</para>
+<para><ulink url="https://qtpass.org/">https://qtpass.org/</ulink></para>
+</sect1>
+<sect1 id="index_1install_sec">
+<title>Installation</title>
+<sect2 id="index_1dependencies">
+<title>Dependencies</title>
+<para><itemizedlist>
+<listitem><para><ref refid="class_qt_pass" kindref="compound">QtPass</ref> requires Qt 6.x or later (Qt 5.15 retained for legacy support).</para>
+</listitem><listitem><para>The Linguist package is required to compile the translations.</para>
+</listitem><listitem><para>For use of the fallback icons the SVG library is required.</para>
+</listitem></itemizedlist>
+</para>
+<para>At runtime the only real dependency is gpg2 but to make the most of it, you&apos;ll need git and pass too.</para>
+</sect2>
+<sect2 id="index_1source">
+<title>From source</title>
+<para>On most *nix systems all you need is:</para>
+<para><computeroutput>qmake6 &amp;&amp; make &amp;&amp; make install</computeroutput> (use <computeroutput>qmake</computeroutput> for Qt5 legacy builds) </para>
+</sect2>
+</sect1>
+    </detaileddescription>
+    <location file="main/main.cpp"/>
+  </compounddef>
+</doxygen>

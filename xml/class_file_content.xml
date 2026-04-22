@@ -1,0 +1,244 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_file_content" kind="class" language="C++" prot="public">
+    <compoundname>FileContent</compoundname>
+    <includes refid="filecontent_8h" local="no">filecontent.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_file_content_1a5c5035cd2054014d2ff2fdfbb7bb7dac" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString FileContent::password</definition>
+        <argsstring></argsstring>
+        <name>password</name>
+        <qualifiedname>FileContent::password</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="109" column="11" bodyfile="src/filecontent.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_content_1aabce3daaa0ff8a8af022128b3eb4f518" prot="private" static="no" mutable="no">
+        <type><ref refid="class_named_values" kindref="compound">NamedValues</ref></type>
+        <definition>NamedValues FileContent::namedValues</definition>
+        <argsstring></argsstring>
+        <name>namedValues</name>
+        <qualifiedname>FileContent::namedValues</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="110" column="15" bodyfile="src/filecontent.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_content_1a4a28534f84dee950888b5ff68a5a0cc2" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString FileContent::remainingData</definition>
+        <argsstring></argsstring>
+        <name>remainingData</name>
+        <qualifiedname>FileContent::remainingData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="111" column="11" bodyfile="src/filecontent.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_file_content_1ad581a32699afdbc00f52fe97e8585eef" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString FileContent::remainingDataDisplay</definition>
+        <argsstring></argsstring>
+        <name>remainingDataDisplay</name>
+        <qualifiedname>FileContent::remainingDataDisplay</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="111" column="25" bodyfile="src/filecontent.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_file_content_1af8c5c3b19e2f1244c5e83aa40521ebde" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto FileContent::parse</definition>
+        <argsstring>(const QString &amp;fileContent, const QStringList &amp;templateFields, bool allFields) -&gt; FileContent</argsstring>
+        <name>parse</name>
+        <qualifiedname>FileContent::parse</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>fileContent</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>templateFields</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>allFields</declname>
+        </param>
+        <briefdescription>
+<para>parse parses the given fileContent in a <ref refid="class_file_content" kindref="compound">FileContent</ref> object. The password is accessible through getPassword. The named value pairs (name: value) are parsed and depeding on the templateFields and allFields parameters accessible through getNamedValues, getRemainingData or getRemainingDataForDisplay. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>fileContent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the file content to parse.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>templateFields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the fields in the template. Fields in the template will always be in <ref refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kindref="member">getNamedValues()</ref> at the beginning of the list in the same order.</para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>allFields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>whether all fields should be considered as named values. If set to false only templateFields are returned in <ref refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" kindref="member">getNamedValues()</ref>.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="class_file_content" kindref="compound">FileContent</ref> instance with password, named values, and remaining data populated from the parsed input. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="78" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_file_content_1ac88e8096551d24a41fc0625a4d903139" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto FileContent::getPassword</definition>
+        <argsstring>() const -&gt; QString</argsstring>
+        <name>getPassword</name>
+        <qualifiedname>FileContent::getPassword</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the password from the parsed file. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="85" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto FileContent::getNamedValues</definition>
+        <argsstring>() const -&gt; NamedValues</argsstring>
+        <name>getNamedValues</name>
+        <qualifiedname>FileContent::getNamedValues</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the named values in the file in the order of appearence, with template values first. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="91" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_content_1a845c61a8c0f52e5aa73953c9162dd47d" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto FileContent::getRemainingData</definition>
+        <argsstring>() const -&gt; QString</argsstring>
+        <name>getRemainingData</name>
+        <qualifiedname>FileContent::getRemainingData</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>the data that is not the password and not in getNamedValues. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="96" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_file_content_1ac38b9c211d6f62eb7420eecc66f935e8" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto FileContent::getRemainingDataForDisplay</definition>
+        <argsstring>() const -&gt; QString</argsstring>
+        <name>getRemainingDataForDisplay</name>
+        <qualifiedname>FileContent::getRemainingDataForDisplay</qualifiedname>
+        <briefdescription>
+<para>Like getRemainingData but without data that should not be displayed (like a TOTP secret). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Remaining data string safe for display. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="103" column="9"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_file_content_1a18ff7f726f39b9f393b3f26b3c1ab4bd" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>FileContent::FileContent</definition>
+        <argsstring>(QString password, NamedValues namedValues, QString remainingData, QString remainingDataDisplay)</argsstring>
+        <name>FileContent</name>
+        <qualifiedname>FileContent::FileContent</qualifiedname>
+        <param>
+          <type>QString</type>
+          <declname>password</declname>
+        </param>
+        <param>
+          <type><ref refid="class_named_values" kindref="compound">NamedValues</ref></type>
+          <declname>namedValues</declname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>remainingData</declname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>remainingDataDisplay</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/filecontent.h" line="106" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Represents the parsed contents of a password file. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Splits the file into a password line, named key/value fields, and remaining data. Use <ref refid="class_file_content_1af8c5c3b19e2f1244c5e83aa40521ebde" kindref="member">FileContent::parse</ref> to construct an instance. </para>
+    </detaileddescription>
+    <location file="src/filecontent.h" line="57" column="1" bodyfile="src/filecontent.h" bodystart="57" bodyend="112"/>
+    <listofallmembers>
+      <member refid="class_file_content_1a18ff7f726f39b9f393b3f26b3c1ab4bd" prot="private" virt="non-virtual"><scope>FileContent</scope><name>FileContent</name></member>
+      <member refid="class_file_content_1a89393e371a598cb3e0d7d149dbc431b1" prot="public" virt="non-virtual"><scope>FileContent</scope><name>getNamedValues</name></member>
+      <member refid="class_file_content_1ac88e8096551d24a41fc0625a4d903139" prot="public" virt="non-virtual"><scope>FileContent</scope><name>getPassword</name></member>
+      <member refid="class_file_content_1a845c61a8c0f52e5aa73953c9162dd47d" prot="public" virt="non-virtual"><scope>FileContent</scope><name>getRemainingData</name></member>
+      <member refid="class_file_content_1ac38b9c211d6f62eb7420eecc66f935e8" prot="public" virt="non-virtual"><scope>FileContent</scope><name>getRemainingDataForDisplay</name></member>
+      <member refid="class_file_content_1aabce3daaa0ff8a8af022128b3eb4f518" prot="private" virt="non-virtual"><scope>FileContent</scope><name>namedValues</name></member>
+      <member refid="class_file_content_1af8c5c3b19e2f1244c5e83aa40521ebde" prot="public" virt="non-virtual"><scope>FileContent</scope><name>parse</name></member>
+      <member refid="class_file_content_1a5c5035cd2054014d2ff2fdfbb7bb7dac" prot="private" virt="non-virtual"><scope>FileContent</scope><name>password</name></member>
+      <member refid="class_file_content_1a4a28534f84dee950888b5ff68a5a0cc2" prot="private" virt="non-virtual"><scope>FileContent</scope><name>remainingData</name></member>
+      <member refid="class_file_content_1ad581a32699afdbc00f52fe97e8585eef" prot="private" virt="non-virtual"><scope>FileContent</scope><name>remainingDataDisplay</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,1036 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_executor" kind="class" language="C++" prot="public">
+    <compoundname>Executor</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QObject</basecompoundref>
+    <includes refid="executor_8h" local="no">executor.h</includes>
+    <innerclass refid="struct_executor_1_1exec_queue_item" prot="private">Executor::execQueueItem</innerclass>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_executor_1a4db05185b2bdf594b6a54c1dc826789f" prot="private" static="no" mutable="no">
+        <type>QQueue&lt; execQueueItem &gt;</type>
+        <definition>QQueue&lt;execQueueItem&gt; Executor::m_execQueue</definition>
+        <argsstring></argsstring>
+        <name>m_execQueue</name>
+        <qualifiedname>Executor::m_execQueue</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="61" column="10" bodyfile="src/executor.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_executor_1af165b60b2641b431ca57c506e5c5d9e8" prot="private" static="no" mutable="no">
+        <type>QProcess</type>
+        <definition>QProcess Executor::m_process</definition>
+        <argsstring></argsstring>
+        <name>m_process</name>
+        <qualifiedname>Executor::m_process</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="62" column="12" bodyfile="src/executor.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_executor_1abd923dfe9e21c7914d3973ef3d4ebefc" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Executor::running</definition>
+        <argsstring></argsstring>
+        <name>running</name>
+        <qualifiedname>Executor::running</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="63" column="8" bodyfile="src/executor.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_executor_1ae71c92047b8337f770294e84211d850f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::executeNext</definition>
+        <argsstring>()</argsstring>
+        <name>executeNext</name>
+        <qualifiedname>Executor::executeNext</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="64" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_executor_1a0e7d705c3e518123be1e08777191fc17" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::startProcess</definition>
+        <argsstring>(const QString &amp;app, const QStringList &amp;args)</argsstring>
+        <name>startProcess</name>
+        <qualifiedname>Executor::startProcess</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="65" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_executor_1aea4de9c7716c406fc0ac2eb2bc0fc825" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Executor::startProcessBlocking</definition>
+        <argsstring>(QProcess &amp;internal, const QString &amp;app, const QStringList &amp;args)</argsstring>
+        <name>startProcessBlocking</name>
+        <qualifiedname>Executor::startProcessBlocking</qualifiedname>
+        <param>
+          <type>QProcess &amp;</type>
+          <declname>internal</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="66" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_executor_1aa15bf32ce5a10a04dce8fe549247ac7d" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>Executor::Executor</definition>
+        <argsstring>(QObject *parent=nullptr)</argsstring>
+        <name>Executor</name>
+        <qualifiedname>Executor::Executor</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Construct an <ref refid="class_executor" kindref="compound">Executor</ref> with an optional parent QObject. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parent QObject, or nullptr for no parent. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="74" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_executor_1a7c4305c0af542f0174492badfdbfbc74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::execute</definition>
+        <argsstring>(int id, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</argsstring>
+        <name>execute</name>
+        <qualifiedname>Executor::execute</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStdout</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStderr</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Queue a command without stdin input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Caller-assigned process identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Executable path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStdout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to capture stdout. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStderr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to capture stderr. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="84" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_executor_1a490166ea519a8047e207da8d67f3c0d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::execute</definition>
+        <argsstring>(int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, bool readStdout, bool readStderr=true)</argsstring>
+        <name>execute</name>
+        <qualifiedname>Executor::execute</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>workDir</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStdout</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStderr</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Queue a command with an explicit working directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Caller-assigned process identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>workDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Working directory for the process. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Executable path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStdout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to capture stdout. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStderr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to capture stderr. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="96" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_executor_1aedd0216127ab9915112df45d9eaaccfe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::execute</definition>
+        <argsstring>(int id, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)</argsstring>
+        <name>execute</name>
+        <qualifiedname>Executor::execute</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>input</declname>
+          <defval>QString()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStdout</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStderr</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Queue a command with optional stdin input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Caller-assigned process identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Executable path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data to write to stdin. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStdout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to capture stdout. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStderr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to capture stderr. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="109" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_executor_1affda40d546db75d35f38db1ec1414bf7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::execute</definition>
+        <argsstring>(int id, const QString &amp;workDir, const QString &amp;app, const QStringList &amp;args, QString input=QString(), bool readStdout=false, bool readStderr=true)</argsstring>
+        <name>execute</name>
+        <qualifiedname>Executor::execute</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>workDir</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>input</declname>
+          <defval>QString()</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStdout</declname>
+          <defval>false</defval>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>readStderr</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Queue a command with working directory and optional stdin input. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Caller-assigned process identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>workDir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Working directory for the process. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Executable path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data to write to stdin. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStdout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to capture stdout. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>readStderr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to capture stderr. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="123" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_executor_1abbe0bc7b3fd09d84f2f04ddcc0bc095f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::setEnvironment</definition>
+        <argsstring>(const QStringList &amp;env)</argsstring>
+        <name>setEnvironment</name>
+        <qualifiedname>Executor::setEnvironment</qualifiedname>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>env</declname>
+        </param>
+        <briefdescription>
+<para>Set the environment passed to all child processes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>env</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Environment variable list in &quot;KEY=value&quot; format. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="171" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_executor_1a6f315e4938ca57158737cd4006458e74" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto Executor::environment</definition>
+        <argsstring>() const -&gt; QStringList</argsstring>
+        <name>environment</name>
+        <qualifiedname>Executor::environment</qualifiedname>
+        <briefdescription>
+<para>Return the environment passed to child processes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Environment as a list of &quot;KEY=value&quot; strings. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="176" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_executor_1aee160ee2ec954bdb58a3a38555536090" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto Executor::cancelNext</definition>
+        <argsstring>() -&gt; int</argsstring>
+        <name>cancelNext</name>
+        <qualifiedname>Executor::cancelNext</qualifiedname>
+        <briefdescription>
+<para>Cancel the next queued command without executing it. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The id of the cancelled command, or -1 if the queue was empty. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="182" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_executor_1acd16a6a2c0d0cb55406c99b72c9d299f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Executor::executeBlocking</definition>
+        <argsstring>(const QString &amp;app, const QStringList &amp;args, const QString &amp;input=QString(), QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</argsstring>
+        <name>executeBlocking</name>
+        <qualifiedname>Executor::executeBlocking</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>input</declname>
+          <defval>QString()</defval>
+        </param>
+        <param>
+          <type>QString *</type>
+          <declname>process_out</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>QString *</type>
+          <declname>process_err</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Run a command synchronously and return its exit code. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Executable path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Data to write to stdin. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>process_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, receives stdout output. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>process_err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, receives stderr output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Process exit code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="136" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_executor_1aec1ef83ae0df4b4a2773b5ad533c837e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Executor::executeBlocking</definition>
+        <argsstring>(const QString &amp;app, const QStringList &amp;args, QString *process_out, QString *process_err=nullptr) -&gt; int</argsstring>
+        <name>executeBlocking</name>
+        <qualifiedname>Executor::executeBlocking</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>QString *</type>
+          <declname>process_out</declname>
+        </param>
+        <param>
+          <type>QString *</type>
+          <declname>process_err</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Run a command synchronously capturing stdout and stderr. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Executable path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>process_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Receives stdout output. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>process_err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, receives stderr output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Process exit code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="149" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_executor_1a05a429f16a6a4c10f48928fedc58f502" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Executor::executeBlocking</definition>
+        <argsstring>(const QStringList &amp;env, const QString &amp;app, const QStringList &amp;args, QString *process_out=nullptr, QString *process_err=nullptr) -&gt; int</argsstring>
+        <name>executeBlocking</name>
+        <qualifiedname>Executor::executeBlocking</qualifiedname>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>env</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>app</declname>
+        </param>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>args</declname>
+        </param>
+        <param>
+          <type>QString *</type>
+          <declname>process_out</declname>
+          <defval>nullptr</defval>
+        </param>
+        <param>
+          <type>QString *</type>
+          <declname>process_err</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Run a command synchronously with a custom environment. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>env</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Environment variable list in &quot;KEY=value&quot; format. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>app</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Executable path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Command arguments. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>process_out</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, receives stdout output. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>process_err</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If non-null, receives stderr output. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Process exit code. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="162" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_executor_1a0410b6338ca33b6df0f3d783e94c8b20" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::finished</definition>
+        <argsstring>(int exitCode, QProcess::ExitStatus exitStatus)</argsstring>
+        <name>finished</name>
+        <qualifiedname>Executor::finished</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>exitCode</declname>
+        </param>
+        <param>
+          <type>QProcess::ExitStatus</type>
+          <declname>exitStatus</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="184" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_executor_1ace810a6d93c74dec7188038210c5a731" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::finished</definition>
+        <argsstring>(int id, int exitCode, const QString &amp;output, const QString &amp;errout)</argsstring>
+        <name>finished</name>
+        <qualifiedname>Executor::finished</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>exitCode</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>errout</declname>
+        </param>
+        <briefdescription>
+<para>finished signal that is emited when process finishes </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of the process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exitCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return code of the process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>stdout produced by the process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>errout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>stderr produced by the process </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="194" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_executor_1acfcfc18b0b973791530302eb8179e038" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::starting</definition>
+        <argsstring>()</argsstring>
+        <name>starting</name>
+        <qualifiedname>Executor::starting</qualifiedname>
+        <briefdescription>
+<para>starting signal that is emited when process starts </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="199" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_executor_1a9c450bcba881197a3e10eb1bf59b3a88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Executor::error</definition>
+        <argsstring>(int id, int exitCode, const QString &amp;output, const QString &amp;errout)</argsstring>
+        <name>error</name>
+        <qualifiedname>Executor::error</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>exitCode</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>output</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>errout</declname>
+        </param>
+        <briefdescription>
+<para>error signal that is emited when process finishes with an error </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>id of the process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>exitCode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>return code of the process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>stdout produced by the process </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>errout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>stderr produced by the process </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="209" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Runs non-interactive external commands in FIFO order using a single QProcess. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Queues execution requests and emits per-request completion or error signals; supports optional stdin, configurable stdout/stderr capture, and per-request working directory and environment. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>Executor</label>
+        <link refid="class_executor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>Executor</label>
+        <link refid="class_executor"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QObject</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/executor.h" line="20" column="1" bodyfile="src/executor.h" bodystart="20" bodyend="211"/>
+    <listofallmembers>
+      <member refid="class_executor_1aee160ee2ec954bdb58a3a38555536090" prot="public" virt="non-virtual"><scope>Executor</scope><name>cancelNext</name></member>
+      <member refid="class_executor_1a6f315e4938ca57158737cd4006458e74" prot="public" virt="non-virtual"><scope>Executor</scope><name>environment</name></member>
+      <member refid="class_executor_1a9c450bcba881197a3e10eb1bf59b3a88" prot="public" virt="non-virtual"><scope>Executor</scope><name>error</name></member>
+      <member refid="class_executor_1a7c4305c0af542f0174492badfdbfbc74" prot="public" virt="non-virtual"><scope>Executor</scope><name>execute</name></member>
+      <member refid="class_executor_1a490166ea519a8047e207da8d67f3c0d2" prot="public" virt="non-virtual"><scope>Executor</scope><name>execute</name></member>
+      <member refid="class_executor_1aedd0216127ab9915112df45d9eaaccfe" prot="public" virt="non-virtual"><scope>Executor</scope><name>execute</name></member>
+      <member refid="class_executor_1affda40d546db75d35f38db1ec1414bf7" prot="public" virt="non-virtual"><scope>Executor</scope><name>execute</name></member>
+      <member refid="class_executor_1acd16a6a2c0d0cb55406c99b72c9d299f" prot="public" virt="non-virtual"><scope>Executor</scope><name>executeBlocking</name></member>
+      <member refid="class_executor_1aec1ef83ae0df4b4a2773b5ad533c837e" prot="public" virt="non-virtual"><scope>Executor</scope><name>executeBlocking</name></member>
+      <member refid="class_executor_1a05a429f16a6a4c10f48928fedc58f502" prot="public" virt="non-virtual"><scope>Executor</scope><name>executeBlocking</name></member>
+      <member refid="class_executor_1ae71c92047b8337f770294e84211d850f" prot="private" virt="non-virtual"><scope>Executor</scope><name>executeNext</name></member>
+      <member refid="class_executor_1aa15bf32ce5a10a04dce8fe549247ac7d" prot="public" virt="non-virtual"><scope>Executor</scope><name>Executor</name></member>
+      <member refid="class_executor_1a0410b6338ca33b6df0f3d783e94c8b20" prot="private" virt="non-virtual"><scope>Executor</scope><name>finished</name></member>
+      <member refid="class_executor_1ace810a6d93c74dec7188038210c5a731" prot="public" virt="non-virtual"><scope>Executor</scope><name>finished</name></member>
+      <member refid="class_executor_1a4db05185b2bdf594b6a54c1dc826789f" prot="private" virt="non-virtual"><scope>Executor</scope><name>m_execQueue</name></member>
+      <member refid="class_executor_1af165b60b2641b431ca57c506e5c5d9e8" prot="private" virt="non-virtual"><scope>Executor</scope><name>m_process</name></member>
+      <member refid="class_executor_1abd923dfe9e21c7914d3973ef3d4ebefc" prot="private" virt="non-virtual"><scope>Executor</scope><name>running</name></member>
+      <member refid="class_executor_1abbe0bc7b3fd09d84f2f04ddcc0bc095f" prot="public" virt="non-virtual"><scope>Executor</scope><name>setEnvironment</name></member>
+      <member refid="class_executor_1acfcfc18b0b973791530302eb8179e038" prot="public" virt="non-virtual"><scope>Executor</scope><name>starting</name></member>
+      <member refid="class_executor_1a0e7d705c3e518123be1e08777191fc17" prot="private" virt="non-virtual"><scope>Executor</scope><name>startProcess</name></member>
+      <member refid="class_executor_1aea4de9c7716c406fc0ac2eb2bc0fc825" prot="private" virt="non-virtual"><scope>Executor</scope><name>startProcessBlocking</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

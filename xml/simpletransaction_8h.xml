@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="simpletransaction_8h" kind="file" language="C++">
+    <compoundname>simpletransaction.h</compoundname>
+    <includes refid="enums_8h" local="yes">enums.h</includes>
+    <includes local="no">queue</includes>
+    <includedby refid="imitatepass_8h" local="yes">src/imitatepass.h</includedby>
+    <incdepgraph>
+      <node id="2">
+        <label>enums.h</label>
+        <link refid="enums_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/simpletransaction.h</label>
+        <link refid="simpletransaction_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>queue</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/imitatepass.h</label>
+        <link refid="imitatepass_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>src/qtpasssettings.h</label>
+        <link refid="qtpasssettings_8h_source"/>
+      </node>
+      <node id="1">
+        <label>src/simpletransaction.h</label>
+        <link refid="simpletransaction_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classsimple_transaction" prot="public">simpleTransaction</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2017<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_SIMPLETRANSACTION_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_SIMPLETRANSACTION_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;enums.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;queue&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="classsimple_transaction" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classsimple_transaction" kindref="compound">simpleTransaction</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>transactionDepth;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref><sp/>lastInTransaction;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/>std::queue&lt;std::pair&lt;Enums::PROCESS,<sp/>Enums::PROCESS&gt;&gt;<sp/>transactionQueue;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="23" refid="classsimple_transaction_1ac798d38ad0b66f05cd58b5c9e9845491" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classsimple_transaction_1ac798d38ad0b66f05cd58b5c9e9845491" kindref="member">simpleTransaction</ref>()</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>:<sp/>transactionDepth(0),<sp/>lastInTransaction(<ref refid="namespace_enums" kindref="compound">Enums</ref>::INVALID)<sp/>{}</highlight></codeline>
+<codeline lineno="30" refid="classsimple_transaction_1aafd98f73dfc5352f307115cabc2a5ed4" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsimple_transaction_1aafd98f73dfc5352f307115cabc2a5ed4" kindref="member">transactionStart</ref>();</highlight></codeline>
+<codeline lineno="40" refid="classsimple_transaction_1ae50cf2a5a1691cbef223f130127bd327" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsimple_transaction_1ae50cf2a5a1691cbef223f130127bd327" kindref="member">transactionAdd</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref><sp/>process);</highlight></codeline>
+<codeline lineno="46" refid="classsimple_transaction_1abd46863a44123f4422ec533effc2f262" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classsimple_transaction_1abd46863a44123f4422ec533effc2f262" kindref="member">transactionEnd</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref><sp/>process);</highlight></codeline>
+<codeline lineno="55" refid="classsimple_transaction_1a64f6e432ff10bf083aec9040bfbee149" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="classsimple_transaction_1a64f6e432ff10bf083aec9040bfbee149" kindref="member">transactionIsOver</ref>(<ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref><sp/>current)<sp/>-&gt;<sp/><ref refid="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" kindref="member">Enums::PROCESS</ref>;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_SIMPLETRANSACTION_H_</highlight></codeline>
+    </programlisting>
+    <location file="src/simpletransaction.h"/>
+  </compounddef>
+</doxygen>

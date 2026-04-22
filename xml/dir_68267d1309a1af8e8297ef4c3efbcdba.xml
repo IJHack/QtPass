@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="dir_68267d1309a1af8e8297ef4c3efbcdba" kind="dir">
+    <compoundname>src</compoundname>
+    <innerfile refid="configdialog_8h">configdialog.h</innerfile>
+    <innerfile refid="debughelper_8h">debughelper.h</innerfile>
+    <innerfile refid="deselectabletreeview_8h">deselectabletreeview.h</innerfile>
+    <innerfile refid="enums_8h">enums.h</innerfile>
+    <innerfile refid="executor_8h">executor.h</innerfile>
+    <innerfile refid="filecontent_8h">filecontent.h</innerfile>
+    <innerfile refid="gpgkeystate_8h">gpgkeystate.h</innerfile>
+    <innerfile refid="gpgkeystate__p_8h">gpgkeystate_p.h</innerfile>
+    <innerfile refid="helpers_8h">helpers.h</innerfile>
+    <innerfile refid="imitatepass_8h">imitatepass.h</innerfile>
+    <innerfile refid="keygendialog_8h">keygendialog.h</innerfile>
+    <innerfile refid="mainwindow_8h">mainwindow.h</innerfile>
+    <innerfile refid="src_2moc__predefs_8h">moc_predefs.h</innerfile>
+    <innerfile refid="pass_8h">pass.h</innerfile>
+    <innerfile refid="passwordconfiguration_8h">passwordconfiguration.h</innerfile>
+    <innerfile refid="passworddialog_8h">passworddialog.h</innerfile>
+    <innerfile refid="profileinit_8h">profileinit.h</innerfile>
+    <innerfile refid="qpushbuttonasqrcode_8h">qpushbuttonasqrcode.h</innerfile>
+    <innerfile refid="qpushbuttonshowpassword_8h">qpushbuttonshowpassword.h</innerfile>
+    <innerfile refid="qpushbuttonwithclipboard_8h">qpushbuttonwithclipboard.h</innerfile>
+    <innerfile refid="qtpass_8h">qtpass.h</innerfile>
+    <innerfile refid="qtpasssettings_8h">qtpasssettings.h</innerfile>
+    <innerfile refid="realpass_8h">realpass.h</innerfile>
+    <innerfile refid="simpletransaction_8h">simpletransaction.h</innerfile>
+    <innerfile refid="singleapplication_8h">singleapplication.h</innerfile>
+    <innerfile refid="storemodel_8h">storemodel.h</innerfile>
+    <innerfile refid="trayicon_8h">trayicon.h</innerfile>
+    <innerfile refid="userinfo_8h">userinfo.h</innerfile>
+    <innerfile refid="usersdialog_8h">usersdialog.h</innerfile>
+    <innerfile refid="util_8h">util.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/"/>
+  </compounddef>
+</doxygen>

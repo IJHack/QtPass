@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="gpgkeystate__p_8h" kind="file" language="C++">
+    <compoundname>gpgkeystate_p.h</compoundname>
+    <includes refid="userinfo_8h" local="yes">userinfo.h</includes>
+    <includes local="no">QStringList</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/gpgkeystate_p.h</label>
+        <link refid="gpgkeystate__p_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>userinfo.h</label>
+        <link refid="userinfo_8h_source"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>QDateTime</label>
+      </node>
+      <node id="4">
+        <label>QString</label>
+      </node>
+      <node id="5">
+        <label>QStringList</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="func">
+      <memberdef kind="function" id="gpgkeystate__p_8h_1a10a7a502b6b816c2ad7d1d175d9f5a0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handlePubSecRecord</definition>
+        <argsstring>(const QStringList &amp;props, bool secret, UserInfo &amp;current_user)</argsstring>
+        <name>handlePubSecRecord</name>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>props</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>secret</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_user_info" kindref="compound">UserInfo</ref> &amp;</type>
+          <declname>current_user</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gpgkeystate_p.h" line="10" column="6" declfile="src/gpgkeystate_p.h" declline="10" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="gpgkeystate__p_8h_1ab4971658d9c682542957f596dc275178" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handleFprRecord</definition>
+        <argsstring>(const QStringList &amp;props, UserInfo &amp;current_user)</argsstring>
+        <name>handleFprRecord</name>
+        <param>
+          <type>const QStringList &amp;</type>
+          <declname>props</declname>
+        </param>
+        <param>
+          <type><ref refid="struct_user_info" kindref="compound">UserInfo</ref> &amp;</type>
+          <declname>current_user</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/gpgkeystate_p.h" line="12" column="6" declfile="src/gpgkeystate_p.h" declline="12" declcolumn="6"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2026<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_GPGKEYSTATE_P_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_GPGKEYSTATE_P_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;userinfo.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QStringList&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handlePubSecRecord(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;props,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>secret,</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="struct_user_info" kindref="compound">UserInfo</ref><sp/>&amp;current_user);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>handleFprRecord(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QStringList<sp/>&amp;props,<sp/><ref refid="struct_user_info" kindref="compound">UserInfo</ref><sp/>&amp;current_user);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_GPGKEYSTATE_P_H_</highlight></codeline>
+    </programlisting>
+    <location file="src/gpgkeystate_p.h"/>
+  </compounddef>
+</doxygen>

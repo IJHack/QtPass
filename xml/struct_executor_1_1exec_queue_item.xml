@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="struct_executor_1_1exec_queue_item" kind="struct" language="C++" prot="private">
+    <compoundname>Executor::execQueueItem</compoundname>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_executor_1_1exec_queue_item_1ac5aa98b0f5c30e598c2358d893c354f6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int Executor::execQueueItem::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <qualifiedname>Executor::execQueueItem::id</qualifiedname>
+        <briefdescription>
+<para>id identifier of process given by the caller </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="31" column="9" bodyfile="src/executor.h" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_executor_1_1exec_queue_item_1a6c14e3755868e8aac85f1bc6533079c1" prot="public" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Executor::execQueueItem::app</definition>
+        <argsstring></argsstring>
+        <name>app</name>
+        <qualifiedname>Executor::execQueueItem::app</qualifiedname>
+        <briefdescription>
+<para>app executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="35" column="13" bodyfile="src/executor.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_executor_1_1exec_queue_item_1a82dd9dc614f628fc6d321bc8aa1dce28" prot="public" static="no" mutable="no">
+        <type>QStringList</type>
+        <definition>QStringList Executor::execQueueItem::args</definition>
+        <argsstring></argsstring>
+        <name>args</name>
+        <qualifiedname>Executor::execQueueItem::args</qualifiedname>
+        <briefdescription>
+<para>args arguments for executable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="39" column="17" bodyfile="src/executor.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_executor_1_1exec_queue_item_1aeae02c2b8ce25b8f8cf69cec2a56632c" prot="public" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Executor::execQueueItem::input</definition>
+        <argsstring></argsstring>
+        <name>input</name>
+        <qualifiedname>Executor::execQueueItem::input</qualifiedname>
+        <briefdescription>
+<para>input data to write to stdin of process </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="43" column="13" bodyfile="src/executor.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_executor_1_1exec_queue_item_1a4fe58bc4fe9cd53718bfebb5479450ae" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Executor::execQueueItem::readStdout</definition>
+        <argsstring></argsstring>
+        <name>readStdout</name>
+        <qualifiedname>Executor::execQueueItem::readStdout</qualifiedname>
+        <briefdescription>
+<para>readStdout whether to read stdout </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="47" column="10" bodyfile="src/executor.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_executor_1_1exec_queue_item_1adf9dd74cf88d0457c236ab9edfb75325" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool Executor::execQueueItem::readStderr</definition>
+        <argsstring></argsstring>
+        <name>readStderr</name>
+        <qualifiedname>Executor::execQueueItem::readStderr</qualifiedname>
+        <briefdescription>
+<para>readStderr whether to read stderr it&apos;s read regardless of this setting in case of non-0 return value of process </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="53" column="10" bodyfile="src/executor.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_executor_1_1exec_queue_item_1a4d6d518a0c9e7d03c089a116ba5e880f" prot="public" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString Executor::execQueueItem::workingDir</definition>
+        <argsstring></argsstring>
+        <name>workingDir</name>
+        <qualifiedname>Executor::execQueueItem::workingDir</qualifiedname>
+        <briefdescription>
+<para>workingDir working directory in which the process will be started </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/executor.h" line="58" column="13" bodyfile="src/executor.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Execution queue item for non-interactive ordered execution. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/executor.h" line="27" column="3" bodyfile="src/executor.h" bodystart="27" bodyend="59"/>
+    <listofallmembers>
+      <member refid="struct_executor_1_1exec_queue_item_1a6c14e3755868e8aac85f1bc6533079c1" prot="public" virt="non-virtual"><scope>Executor::execQueueItem</scope><name>app</name></member>
+      <member refid="struct_executor_1_1exec_queue_item_1a82dd9dc614f628fc6d321bc8aa1dce28" prot="public" virt="non-virtual"><scope>Executor::execQueueItem</scope><name>args</name></member>
+      <member refid="struct_executor_1_1exec_queue_item_1ac5aa98b0f5c30e598c2358d893c354f6" prot="public" virt="non-virtual"><scope>Executor::execQueueItem</scope><name>id</name></member>
+      <member refid="struct_executor_1_1exec_queue_item_1aeae02c2b8ce25b8f8cf69cec2a56632c" prot="public" virt="non-virtual"><scope>Executor::execQueueItem</scope><name>input</name></member>
+      <member refid="struct_executor_1_1exec_queue_item_1adf9dd74cf88d0457c236ab9edfb75325" prot="public" virt="non-virtual"><scope>Executor::execQueueItem</scope><name>readStderr</name></member>
+      <member refid="struct_executor_1_1exec_queue_item_1a4fe58bc4fe9cd53718bfebb5479450ae" prot="public" virt="non-virtual"><scope>Executor::execQueueItem</scope><name>readStdout</name></member>
+      <member refid="struct_executor_1_1exec_queue_item_1a4d6d518a0c9e7d03c089a116ba5e880f" prot="public" virt="non-virtual"><scope>Executor::execQueueItem</scope><name>workingDir</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

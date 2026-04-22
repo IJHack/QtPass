@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="struct_user_info" kind="struct" language="C++" prot="public">
+    <compoundname>UserInfo</compoundname>
+    <includes refid="userinfo_8h" local="no">userinfo.h</includes>
+    <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_user_info_1acf06e7727153cca2cd8b4a912517a2bb" prot="public" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString UserInfo::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <qualifiedname>UserInfo::name</qualifiedname>
+        <briefdescription>
+<para>GPG user ID / full name. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="42" column="11" bodyfile="src/userinfo.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" prot="public" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString UserInfo::key_id</definition>
+        <argsstring></argsstring>
+        <name>key_id</name>
+        <qualifiedname>UserInfo::key_id</qualifiedname>
+        <briefdescription>
+<para>Hexadecimal representation of the GnuPG key identifier. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="46" column="11" bodyfile="src/userinfo.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char UserInfo::validity</definition>
+        <argsstring></argsstring>
+        <name>validity</name>
+        <qualifiedname>UserInfo::validity</qualifiedname>
+        <briefdescription>
+<para>GnuPG representation of validity. <ulink url="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</ulink>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="51" column="8" bodyfile="src/userinfo.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="struct_user_info_1a93677d46e6641eb4148c5f09ed5850a5" compoundref="userinfo_8h" startline="24" endline="26">fullyValid</referencedby>
+        <referencedby refid="struct_user_info_1a1bd803884a9f1fb8a954d891c14bf2fd" compoundref="userinfo_8h" startline="32" endline="32">marginallyValid</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UserInfo::have_secret</definition>
+        <argsstring></argsstring>
+        <name>have_secret</name>
+        <qualifiedname>UserInfo::have_secret</qualifiedname>
+        <briefdescription>
+<para>Whether secret key is available (can decrypt with this key). </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="55" column="8" bodyfile="src/userinfo.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_info_1a163a4e36d5d12cbfc3c13c60f33c5f1f" prot="public" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool UserInfo::enabled</definition>
+        <argsstring></argsstring>
+        <name>enabled</name>
+        <qualifiedname>UserInfo::enabled</qualifiedname>
+        <briefdescription>
+<para>Whether this user/key is enabled for normal use. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="59" column="8" bodyfile="src/userinfo.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_info_1af6b3e6dc6e34553f764e577d2994f5aa" prot="public" static="no" mutable="no">
+        <type>QDateTime</type>
+        <definition>QDateTime UserInfo::expiry</definition>
+        <argsstring></argsstring>
+        <name>expiry</name>
+        <qualifiedname>UserInfo::expiry</qualifiedname>
+        <briefdescription>
+<para>Date/time when key expires. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="63" column="13" bodyfile="src/userinfo.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="struct_user_info_1ac7919fbe53ce83369fc4bcfef8934ff6" prot="public" static="no" mutable="no">
+        <type>QDateTime</type>
+        <definition>QDateTime UserInfo::created</definition>
+        <argsstring></argsstring>
+        <name>created</name>
+        <qualifiedname>UserInfo::created</qualifiedname>
+        <briefdescription>
+<para>Date/time when key was created. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="67" column="13" bodyfile="src/userinfo.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="struct_user_info_1aebbc7aa95fa4142a0059e7dec61acefa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>UserInfo::UserInfo</definition>
+        <argsstring>()</argsstring>
+        <name>UserInfo</name>
+        <qualifiedname>UserInfo::UserInfo</qualifiedname>
+        <briefdescription>
+<para>Construct a <ref refid="struct_user_info" kindref="compound">UserInfo</ref> with default (invalid/disabled) state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="17" column="3" bodyfile="src/userinfo.h" bodystart="17" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="struct_user_info_1a93677d46e6641eb4148c5f09ed5850a5" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto UserInfo::fullyValid</definition>
+        <argsstring>() const -&gt; bool</argsstring>
+        <name>fullyValid</name>
+        <qualifiedname>UserInfo::fullyValid</qualifiedname>
+        <briefdescription>
+<para>Check full validity per GnuPG validity codes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true when validity is &apos;f&apos; or &apos;u&apos;. <ulink url="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="24" column="8" bodyfile="src/userinfo.h" bodystart="24" bodyend="26"/>
+        <references refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" compoundref="userinfo_8h" startline="51">validity</references>
+        <referencedby refid="struct_user_info_1aa5b7b2f037ffc50ade5b78f09599d43a" compoundref="userinfo_8h" startline="37" endline="37">isValid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_user_info_1a1bd803884a9f1fb8a954d891c14bf2fd" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto UserInfo::marginallyValid</definition>
+        <argsstring>() const -&gt; bool</argsstring>
+        <name>marginallyValid</name>
+        <qualifiedname>UserInfo::marginallyValid</qualifiedname>
+        <briefdescription>
+<para>Check marginal validity per GnuPG validity codes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true when validity is &apos;m&apos;. <ulink url="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</ulink> </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="32" column="8" bodyfile="src/userinfo.h" bodystart="32" bodyend="32"/>
+        <references refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" compoundref="userinfo_8h" startline="51">validity</references>
+        <referencedby refid="struct_user_info_1aa5b7b2f037ffc50ade5b78f09599d43a" compoundref="userinfo_8h" startline="37" endline="37">isValid</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="struct_user_info_1aa5b7b2f037ffc50ade5b78f09599d43a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto UserInfo::isValid</definition>
+        <argsstring>() const -&gt; bool</argsstring>
+        <name>isValid</name>
+        <qualifiedname>UserInfo::isValid</qualifiedname>
+        <briefdescription>
+<para>Check whether the key has any usable validity level. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true when <ref refid="struct_user_info_1a93677d46e6641eb4148c5f09ed5850a5" kindref="member">fullyValid()</ref> or <ref refid="struct_user_info_1a1bd803884a9f1fb8a954d891c14bf2fd" kindref="member">marginallyValid()</ref> is true. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/userinfo.h" line="37" column="8" bodyfile="src/userinfo.h" bodystart="37" bodyend="37"/>
+        <references refid="struct_user_info_1a93677d46e6641eb4148c5f09ed5850a5" compoundref="userinfo_8h" startline="24" endline="26">fullyValid</references>
+        <references refid="struct_user_info_1a1bd803884a9f1fb8a954d891c14bf2fd" compoundref="userinfo_8h" startline="32" endline="32">marginallyValid</references>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Stores GPG key info including validity, creation date, and more. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/userinfo.h" line="13" column="1" bodyfile="src/userinfo.h" bodystart="13" bodyend="68"/>
+    <listofallmembers>
+      <member refid="struct_user_info_1ac7919fbe53ce83369fc4bcfef8934ff6" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>created</name></member>
+      <member refid="struct_user_info_1a163a4e36d5d12cbfc3c13c60f33c5f1f" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>enabled</name></member>
+      <member refid="struct_user_info_1af6b3e6dc6e34553f764e577d2994f5aa" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>expiry</name></member>
+      <member refid="struct_user_info_1a93677d46e6641eb4148c5f09ed5850a5" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>fullyValid</name></member>
+      <member refid="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>have_secret</name></member>
+      <member refid="struct_user_info_1aa5b7b2f037ffc50ade5b78f09599d43a" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>isValid</name></member>
+      <member refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>key_id</name></member>
+      <member refid="struct_user_info_1a1bd803884a9f1fb8a954d891c14bf2fd" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>marginallyValid</name></member>
+      <member refid="struct_user_info_1acf06e7727153cca2cd8b4a912517a2bb" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>name</name></member>
+      <member refid="struct_user_info_1aebbc7aa95fa4142a0059e7dec61acefa" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>UserInfo</name></member>
+      <member refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" prot="public" virt="non-virtual"><scope>UserInfo</scope><name>validity</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_q_push_button_as_q_r_code" kind="class" language="C++" prot="public">
+    <compoundname>QPushButtonAsQRCode</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QPushButton</basecompoundref>
+    <includes refid="qpushbuttonasqrcode_8h" local="no">qpushbuttonasqrcode.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_q_push_button_as_q_r_code_1ab66dcc144fb8a7b51867c523a0d5018f" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString QPushButtonAsQRCode::textToCopy</definition>
+        <argsstring></argsstring>
+        <name>textToCopy</name>
+        <qualifiedname>QPushButtonAsQRCode::textToCopy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonasqrcode.h" line="47" column="11" bodyfile="src/qpushbuttonasqrcode.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_push_button_as_q_r_code_1a8e79f10b1a94893897a2fcb9cdf2c007" prot="private" static="no" mutable="no">
+        <type>QIcon</type>
+        <definition>QIcon QPushButtonAsQRCode::iconEdit</definition>
+        <argsstring></argsstring>
+        <name>iconEdit</name>
+        <qualifiedname>QPushButtonAsQRCode::iconEdit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonasqrcode.h" line="48" column="9" bodyfile="src/qpushbuttonasqrcode.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_push_button_as_q_r_code_1a8b9e33d9c6a605b6071267d0f5bd3c00" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QPushButtonAsQRCode::QPushButtonAsQRCode</definition>
+        <argsstring>(QString textToCopy=&quot;&quot;, QWidget *parent=nullptr)</argsstring>
+        <name>QPushButtonAsQRCode</name>
+        <qualifiedname>QPushButtonAsQRCode::QPushButtonAsQRCode</qualifiedname>
+        <param>
+          <type>QString</type>
+          <declname>textToCopy</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Construct a <ref refid="class_q_push_button_as_q_r_code" kindref="compound">QPushButtonAsQRCode</ref> with an optional initial text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>textToCopy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial text stored for QR-code use (may be empty). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional parent widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonasqrcode.h" line="22" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_push_button_as_q_r_code_1ac760ad4c81ab153edbe4ab0e6215aae4" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto QPushButtonAsQRCode::getTextToCopy</definition>
+        <argsstring>() const -&gt; QString</argsstring>
+        <name>getTextToCopy</name>
+        <qualifiedname>QPushButtonAsQRCode::getTextToCopy</qualifiedname>
+        <briefdescription>
+<para>Return the stored text used for QR-code actions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current stored text. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonasqrcode.h" line="29" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_push_button_as_q_r_code_1ac2d3260a757c28d04758c1901e5dbd40" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QPushButtonAsQRCode::setTextToCopy</definition>
+        <argsstring>(const QString &amp;value)</argsstring>
+        <name>setTextToCopy</name>
+        <qualifiedname>QPushButtonAsQRCode::setTextToCopy</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Update the stored text used for QR-code actions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>New text to store. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonasqrcode.h" line="34" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_q_push_button_as_q_r_code_1a63baaf712643365fe4ebf1a9084fceb8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QPushButtonAsQRCode::clicked</definition>
+        <argsstring>(const QString &amp;text)</argsstring>
+        <name>clicked</name>
+        <qualifiedname>QPushButtonAsQRCode::clicked</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Emitted when the button is activated with the current text payload. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stored text. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonasqrcode.h" line="41" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_q_push_button_as_q_r_code_1ac2fa1ba2acc046f5c2c4ad3a261873de" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QPushButtonAsQRCode::buttonClicked</definition>
+        <argsstring>(bool)</argsstring>
+        <name>buttonClicked</name>
+        <qualifiedname>QPushButtonAsQRCode::buttonClicked</qualifiedname>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonasqrcode.h" line="44" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>QPushButton that presents a text payload as a QR code action. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QPushButton</label>
+      </node>
+      <node id="1">
+        <label>QPushButtonAsQRCode</label>
+        <link refid="class_q_push_button_as_q_r_code"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QPushButton</label>
+      </node>
+      <node id="1">
+        <label>QPushButtonAsQRCode</label>
+        <link refid="class_q_push_button_as_q_r_code"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/qpushbuttonasqrcode.h" line="13" column="1" bodyfile="src/qpushbuttonasqrcode.h" bodystart="13" bodyend="49"/>
+    <listofallmembers>
+      <member refid="class_q_push_button_as_q_r_code_1ac2fa1ba2acc046f5c2c4ad3a261873de" prot="private" virt="non-virtual"><scope>QPushButtonAsQRCode</scope><name>buttonClicked</name></member>
+      <member refid="class_q_push_button_as_q_r_code_1a63baaf712643365fe4ebf1a9084fceb8" prot="public" virt="non-virtual"><scope>QPushButtonAsQRCode</scope><name>clicked</name></member>
+      <member refid="class_q_push_button_as_q_r_code_1ac760ad4c81ab153edbe4ab0e6215aae4" prot="public" virt="non-virtual"><scope>QPushButtonAsQRCode</scope><name>getTextToCopy</name></member>
+      <member refid="class_q_push_button_as_q_r_code_1a8e79f10b1a94893897a2fcb9cdf2c007" prot="private" virt="non-virtual"><scope>QPushButtonAsQRCode</scope><name>iconEdit</name></member>
+      <member refid="class_q_push_button_as_q_r_code_1a8b9e33d9c6a605b6071267d0f5bd3c00" prot="public" virt="non-virtual"><scope>QPushButtonAsQRCode</scope><name>QPushButtonAsQRCode</name></member>
+      <member refid="class_q_push_button_as_q_r_code_1ac2d3260a757c28d04758c1901e5dbd40" prot="public" virt="non-virtual"><scope>QPushButtonAsQRCode</scope><name>setTextToCopy</name></member>
+      <member refid="class_q_push_button_as_q_r_code_1ab66dcc144fb8a7b51867c523a0d5018f" prot="private" virt="non-virtual"><scope>QPushButtonAsQRCode</scope><name>textToCopy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,405 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_tray_icon" kind="class" language="C++" prot="public">
+    <compoundname>TrayIcon</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QWidget</basecompoundref>
+    <includes refid="trayicon_8h" local="no">trayicon.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_tray_icon_1ac3ed465c5410c76e723497cad352665d" prot="private" static="no" mutable="no">
+        <type>QAction *</type>
+        <definition>QAction* TrayIcon::showAction</definition>
+        <argsstring></argsstring>
+        <name>showAction</name>
+        <qualifiedname>TrayIcon::showAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="65" column="11" bodyfile="src/trayicon.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tray_icon_1a152f2344330d45e76e60f371e412f23c" prot="private" static="no" mutable="no">
+        <type>QAction *</type>
+        <definition>QAction* TrayIcon::hideAction</definition>
+        <argsstring></argsstring>
+        <name>hideAction</name>
+        <qualifiedname>TrayIcon::hideAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="66" column="11" bodyfile="src/trayicon.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tray_icon_1a93823602fd2ec7d5a42ba98a9d542c47" prot="private" static="no" mutable="no">
+        <type>QAction *</type>
+        <definition>QAction* TrayIcon::minimizeAction</definition>
+        <argsstring></argsstring>
+        <name>minimizeAction</name>
+        <qualifiedname>TrayIcon::minimizeAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="67" column="11" bodyfile="src/trayicon.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tray_icon_1a6eeb738d4e2274fb8becf21726455db3" prot="private" static="no" mutable="no">
+        <type>QAction *</type>
+        <definition>QAction* TrayIcon::maximizeAction</definition>
+        <argsstring></argsstring>
+        <name>maximizeAction</name>
+        <qualifiedname>TrayIcon::maximizeAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="68" column="11" bodyfile="src/trayicon.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tray_icon_1a4b668e37495a62aae4f185f8eba96192" prot="private" static="no" mutable="no">
+        <type>QAction *</type>
+        <definition>QAction* TrayIcon::restoreAction</definition>
+        <argsstring></argsstring>
+        <name>restoreAction</name>
+        <qualifiedname>TrayIcon::restoreAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="69" column="11" bodyfile="src/trayicon.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tray_icon_1aea292382f17c685d67845a448729de80" prot="private" static="no" mutable="no">
+        <type>QAction *</type>
+        <definition>QAction* TrayIcon::quitAction</definition>
+        <argsstring></argsstring>
+        <name>quitAction</name>
+        <qualifiedname>TrayIcon::quitAction</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="70" column="11" bodyfile="src/trayicon.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tray_icon_1a6863ce4e41778dc20d012f95660f35b9" prot="private" static="no" mutable="no">
+        <type>QSystemTrayIcon *</type>
+        <definition>QSystemTrayIcon* TrayIcon::sysTrayIcon</definition>
+        <argsstring></argsstring>
+        <name>sysTrayIcon</name>
+        <qualifiedname>TrayIcon::sysTrayIcon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="72" column="19" bodyfile="src/trayicon.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tray_icon_1a7fdcea2d29c8f9e9d51bff80c0f19d40" prot="private" static="no" mutable="no">
+        <type>QMenu *</type>
+        <definition>QMenu* TrayIcon::trayIconMenu</definition>
+        <argsstring></argsstring>
+        <name>trayIconMenu</name>
+        <qualifiedname>TrayIcon::trayIconMenu</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="73" column="9" bodyfile="src/trayicon.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tray_icon_1ab6f2699cd4f3b60009bf47fcea1bc6eb" prot="private" static="no" mutable="no">
+        <type>QMainWindow *</type>
+        <definition>QMainWindow* TrayIcon::parentwin</definition>
+        <argsstring></argsstring>
+        <name>parentwin</name>
+        <qualifiedname>TrayIcon::parentwin</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="74" column="15" bodyfile="src/trayicon.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_tray_icon_1a8de3c98e95df06a2b2981dafb283e518" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TrayIcon::isAllocated</definition>
+        <argsstring></argsstring>
+        <name>isAllocated</name>
+        <qualifiedname>TrayIcon::isAllocated</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="76" column="8" bodyfile="src/trayicon.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_tray_icon_1a587e1467cf97c27f4269f1c47c1e4ac5" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>TrayIcon::TrayIcon</definition>
+        <argsstring>(QMainWindow *parent)</argsstring>
+        <name>TrayIcon</name>
+        <qualifiedname>TrayIcon::TrayIcon</qualifiedname>
+        <param>
+          <type>QMainWindow *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para>Construct a <ref refid="class_tray_icon" kindref="compound">TrayIcon</ref> associated with the given main window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to the QMainWindow this tray icon controls. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="25" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tray_icon_1a40737136f8d85dad4a10ddb58619157a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TrayIcon::showMessage</definition>
+        <argsstring>(const QString &amp;title, const QString &amp;msg, int time)</argsstring>
+        <name>showMessage</name>
+        <qualifiedname>TrayIcon::showMessage</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>time</declname>
+        </param>
+        <briefdescription>
+<para>Display a transient notification message via the tray icon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Title text of the notification. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Body text of the notification. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>time</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Duration to display the notification in milliseconds. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="33" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tray_icon_1ab4cb316b0b39606fcb9b796cbed59bd1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TrayIcon::setVisible</definition>
+        <argsstring>(bool visible)</argsstring>
+        <name>setVisible</name>
+        <qualifiedname>TrayIcon::setVisible</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>visible</declname>
+        </param>
+        <briefdescription>
+<para>Show or hide the tray icon and its associated UI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>visible</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to make the tray icon visible, false to hide it. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="39" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tray_icon_1ac43b5d2538c69cfcf6399eb29b9ddb47" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto TrayIcon::getIsAllocated</definition>
+        <argsstring>() -&gt; bool</argsstring>
+        <name>getIsAllocated</name>
+        <qualifiedname>TrayIcon::getIsAllocated</qualifiedname>
+        <briefdescription>
+<para>Check whether tray resources have been allocated and initialized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if tray resources are allocated and initialized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="45" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_tray_icon_1a20f8b921d79beca21f6dcb98741d57fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TrayIcon::showHideParent</definition>
+        <argsstring>()</argsstring>
+        <name>showHideParent</name>
+        <qualifiedname>TrayIcon::showHideParent</qualifiedname>
+        <briefdescription>
+<para>Toggle the visibility of the associated main window. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="53" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_tray_icon_1a36c341a8b31884cd45060a92258e92b8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TrayIcon::iconActivated</definition>
+        <argsstring>(QSystemTrayIcon::ActivationReason reason)</argsstring>
+        <name>iconActivated</name>
+        <qualifiedname>TrayIcon::iconActivated</qualifiedname>
+        <param>
+          <type>QSystemTrayIcon::ActivationReason</type>
+          <declname>reason</declname>
+        </param>
+        <briefdescription>
+<para>Handle activation events from the system tray icon. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The activation reason provided by QSystemTrayIcon. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="59" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_tray_icon_1a2b5808f03a006945a8cfbd96c6f68f29" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TrayIcon::createActions</definition>
+        <argsstring>()</argsstring>
+        <name>createActions</name>
+        <qualifiedname>TrayIcon::createActions</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="62" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_tray_icon_1a937817b83e4f11e4f500608e3bc16e6b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TrayIcon::createTrayIcon</definition>
+        <argsstring>()</argsstring>
+        <name>createTrayIcon</name>
+        <qualifiedname>TrayIcon::createTrayIcon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/trayicon.h" line="63" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Handles the system tray icon and menu. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QWidget</label>
+      </node>
+      <node id="1">
+        <label>TrayIcon</label>
+        <link refid="class_tray_icon"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QWidget</label>
+      </node>
+      <node id="1">
+        <label>TrayIcon</label>
+        <link refid="class_tray_icon"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/trayicon.h" line="17" column="1" bodyfile="src/trayicon.h" bodystart="17" bodyend="77"/>
+    <listofallmembers>
+      <member refid="class_tray_icon_1a2b5808f03a006945a8cfbd96c6f68f29" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>createActions</name></member>
+      <member refid="class_tray_icon_1a937817b83e4f11e4f500608e3bc16e6b" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>createTrayIcon</name></member>
+      <member refid="class_tray_icon_1ac43b5d2538c69cfcf6399eb29b9ddb47" prot="public" virt="non-virtual"><scope>TrayIcon</scope><name>getIsAllocated</name></member>
+      <member refid="class_tray_icon_1a152f2344330d45e76e60f371e412f23c" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>hideAction</name></member>
+      <member refid="class_tray_icon_1a36c341a8b31884cd45060a92258e92b8" prot="public" virt="non-virtual"><scope>TrayIcon</scope><name>iconActivated</name></member>
+      <member refid="class_tray_icon_1a8de3c98e95df06a2b2981dafb283e518" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>isAllocated</name></member>
+      <member refid="class_tray_icon_1a6eeb738d4e2274fb8becf21726455db3" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>maximizeAction</name></member>
+      <member refid="class_tray_icon_1a93823602fd2ec7d5a42ba98a9d542c47" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>minimizeAction</name></member>
+      <member refid="class_tray_icon_1ab6f2699cd4f3b60009bf47fcea1bc6eb" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>parentwin</name></member>
+      <member refid="class_tray_icon_1aea292382f17c685d67845a448729de80" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>quitAction</name></member>
+      <member refid="class_tray_icon_1a4b668e37495a62aae4f185f8eba96192" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>restoreAction</name></member>
+      <member refid="class_tray_icon_1ab4cb316b0b39606fcb9b796cbed59bd1" prot="public" virt="non-virtual"><scope>TrayIcon</scope><name>setVisible</name></member>
+      <member refid="class_tray_icon_1ac3ed465c5410c76e723497cad352665d" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>showAction</name></member>
+      <member refid="class_tray_icon_1a20f8b921d79beca21f6dcb98741d57fc" prot="public" virt="non-virtual"><scope>TrayIcon</scope><name>showHideParent</name></member>
+      <member refid="class_tray_icon_1a40737136f8d85dad4a10ddb58619157a" prot="public" virt="non-virtual"><scope>TrayIcon</scope><name>showMessage</name></member>
+      <member refid="class_tray_icon_1a6863ce4e41778dc20d012f95660f35b9" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>sysTrayIcon</name></member>
+      <member refid="class_tray_icon_1a587e1467cf97c27f4269f1c47c1e4ac5" prot="public" virt="non-virtual"><scope>TrayIcon</scope><name>TrayIcon</name></member>
+      <member refid="class_tray_icon_1a7fdcea2d29c8f9e9d51bff80c0f19d40" prot="private" virt="non-virtual"><scope>TrayIcon</scope><name>trayIconMenu</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

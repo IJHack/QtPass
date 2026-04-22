@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="userinfo_8h" kind="file" language="C++">
+    <compoundname>userinfo.h</compoundname>
+    <includes local="no">QDateTime</includes>
+    <includes local="no">QString</includes>
+    <includedby refid="gpgkeystate_8h" local="yes">src/gpgkeystate.h</includedby>
+    <includedby refid="gpgkeystate__p_8h" local="yes">src/gpgkeystate_p.h</includedby>
+    <includedby refid="pass_8h" local="yes">src/pass.h</includedby>
+    <includedby refid="usersdialog_8h" local="yes">src/usersdialog.h</includedby>
+    <incdepgraph>
+      <node id="1">
+        <label>src/userinfo.h</label>
+        <link refid="userinfo_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QDateTime</label>
+      </node>
+      <node id="3">
+        <label>QString</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="2">
+        <label>src/gpgkeystate.h</label>
+        <link refid="gpgkeystate_8h_source"/>
+      </node>
+      <node id="3">
+        <label>src/gpgkeystate_p.h</label>
+        <link refid="gpgkeystate__p_8h_source"/>
+      </node>
+      <node id="5">
+        <label>src/imitatepass.h</label>
+        <link refid="imitatepass_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>src/pass.h</label>
+        <link refid="pass_8h_source"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>src/qtpasssettings.h</label>
+        <link refid="qtpasssettings_8h_source"/>
+      </node>
+      <node id="7">
+        <label>src/realpass.h</label>
+        <link refid="realpass_8h_source"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>src/userinfo.h</label>
+        <link refid="userinfo_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>src/usersdialog.h</label>
+        <link refid="usersdialog_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="struct_user_info" prot="public">UserInfo</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2015<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_USERINFO_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_USERINFO_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDateTime&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QString&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="struct_user_info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="struct_user_info" kindref="compound">UserInfo</ref><sp/>{</highlight></codeline>
+<codeline lineno="17" refid="struct_user_info_1aebbc7aa95fa4142a0059e7dec61acefa" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="struct_user_info_1aebbc7aa95fa4142a0059e7dec61acefa" kindref="member">UserInfo</ref>()<sp/>:<sp/><ref refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" kindref="member">validity</ref>(</highlight><highlight class="stringliteral">&apos;-&apos;</highlight><highlight class="normal">),<sp/><ref refid="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" kindref="member">have_secret</ref>(false),<sp/><ref refid="struct_user_info_1a163a4e36d5d12cbfc3c13c60f33c5f1f" kindref="member">enabled</ref>(false)<sp/>{}</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="struct_user_info_1a93677d46e6641eb4148c5f09ed5850a5" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="struct_user_info_1a93677d46e6641eb4148c5f09ed5850a5" kindref="member">fullyValid</ref>()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>(<ref refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" kindref="member">validity</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;f&apos;</highlight><highlight class="normal">)<sp/>||<sp/>(<ref refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" kindref="member">validity</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;u&apos;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32" refid="struct_user_info_1a1bd803884a9f1fb8a954d891c14bf2fd" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="struct_user_info_1a1bd803884a9f1fb8a954d891c14bf2fd" kindref="member">marginallyValid</ref>()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" kindref="member">validity</ref><sp/>==<sp/></highlight><highlight class="charliteral">&apos;m&apos;</highlight><highlight class="normal">;<sp/>}</highlight></codeline>
+<codeline lineno="37" refid="struct_user_info_1aa5b7b2f037ffc50ade5b78f09599d43a" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/><ref refid="struct_user_info_1aa5b7b2f037ffc50ade5b78f09599d43a" kindref="member">isValid</ref>()<sp/>const<sp/>-&gt;<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="struct_user_info_1a93677d46e6641eb4148c5f09ed5850a5" kindref="member">fullyValid</ref>()<sp/>||<sp/><ref refid="struct_user_info_1a1bd803884a9f1fb8a954d891c14bf2fd" kindref="member">marginallyValid</ref>();<sp/>}</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="struct_user_info_1acf06e7727153cca2cd8b4a912517a2bb" refkind="member"><highlight class="normal"><sp/><sp/>QString<sp/><ref refid="struct_user_info_1acf06e7727153cca2cd8b4a912517a2bb" kindref="member">name</ref>;</highlight></codeline>
+<codeline lineno="46" refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" refkind="member"><highlight class="normal"><sp/><sp/>QString<sp/><ref refid="struct_user_info_1a7ea1df76d75ada608ce5a641bd53f7e6" kindref="member">key_id</ref>;</highlight></codeline>
+<codeline lineno="51" refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/><ref refid="struct_user_info_1af09fb1cdf748f23cb6a74fa7e2972766" kindref="member">validity</ref>;</highlight></codeline>
+<codeline lineno="55" refid="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_user_info_1a0779dd42b6e6810c191b08b788ebaf99" kindref="member">have_secret</ref>;</highlight></codeline>
+<codeline lineno="59" refid="struct_user_info_1a163a4e36d5d12cbfc3c13c60f33c5f1f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="struct_user_info_1a163a4e36d5d12cbfc3c13c60f33c5f1f" kindref="member">enabled</ref>;</highlight></codeline>
+<codeline lineno="63" refid="struct_user_info_1af6b3e6dc6e34553f764e577d2994f5aa" refkind="member"><highlight class="normal"><sp/><sp/>QDateTime<sp/><ref refid="struct_user_info_1af6b3e6dc6e34553f764e577d2994f5aa" kindref="member">expiry</ref>;</highlight></codeline>
+<codeline lineno="67" refid="struct_user_info_1ac7919fbe53ce83369fc4bcfef8934ff6" refkind="member"><highlight class="normal"><sp/><sp/>QDateTime<sp/><ref refid="struct_user_info_1ac7919fbe53ce83369fc4bcfef8934ff6" kindref="member">created</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_USERINFO_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/userinfo.h"/>
+  </compounddef>
+</doxygen>

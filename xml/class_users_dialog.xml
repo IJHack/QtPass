@@ -1,0 +1,680 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_users_dialog" kind="class" language="C++" prot="public">
+    <compoundname>UsersDialog</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QDialog</basecompoundref>
+    <includes refid="usersdialog_8h" local="no">usersdialog.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_users_dialog_1a36e5b193b2150f5d58e1b77df5d01d8b" prot="private" static="no" mutable="no">
+        <type>Ui::UsersDialog *</type>
+        <definition>Ui::UsersDialog* UsersDialog::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <qualifiedname>UsersDialog::ui</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="78" column="19" bodyfile="src/usersdialog.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_users_dialog_1a50e207112771a8c69d73a326f8efb0e2" prot="private" static="no" mutable="no">
+        <type>QList&lt; <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &gt;</type>
+        <definition>QList&lt;UserInfo&gt; UsersDialog::m_userList</definition>
+        <argsstring></argsstring>
+        <name>m_userList</name>
+        <qualifiedname>UsersDialog::m_userList</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>List of available GPG users </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="79" column="9" bodyfile="src/usersdialog.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_users_dialog_1a486ab9a602907d6110dceaed9a7b3138" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString UsersDialog::m_dir</definition>
+        <argsstring></argsstring>
+        <name>m_dir</name>
+        <qualifiedname>UsersDialog::m_dir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Password store directory </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="80" column="11" bodyfile="src/usersdialog.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_users_dialog_1a50a8ee7a2dbd27672249f0c8d109beb8" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString UsersDialog::m_lastFilter</definition>
+        <argsstring></argsstring>
+        <name>m_lastFilter</name>
+        <qualifiedname>UsersDialog::m_lastFilter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Last filter text for caching </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="81" column="11" bodyfile="src/usersdialog.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_users_dialog_1a01126f883fe8cf0f351d340945af8552" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString UsersDialog::m_cachedPatternString</definition>
+        <argsstring></argsstring>
+        <name>m_cachedPatternString</name>
+        <qualifiedname>UsersDialog::m_cachedPatternString</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached pattern string </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="82" column="11" bodyfile="src/usersdialog.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_users_dialog_1a0b48f9c3f9f9ab0fd01598c00ab29216" prot="private" static="no" mutable="no">
+        <type>QRegularExpression</type>
+        <definition>QRegularExpression UsersDialog::m_cachedNameFilter</definition>
+        <argsstring></argsstring>
+        <name>m_cachedNameFilter</name>
+        <qualifiedname>UsersDialog::m_cachedNameFilter</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached regex filter </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="83" column="22" bodyfile="src/usersdialog.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_users_dialog_1a6d7caab10693c9c45c0089c931f5843b" prot="private" static="no" mutable="yes">
+        <type>QDateTime</type>
+        <definition>QDateTime UsersDialog::m_cachedCurrentDateTime</definition>
+        <argsstring></argsstring>
+        <name>m_cachedCurrentDateTime</name>
+        <qualifiedname>UsersDialog::m_cachedCurrentDateTime</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cached current date/time for expiry checks </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="84" column="21" bodyfile="src/usersdialog.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_users_dialog_1aa6d656c586c0469fe10e5a7055255c07" prot="private" static="no" mutable="yes">
+        <type>bool</type>
+        <definition>bool UsersDialog::m_cachedDateTimeValid</definition>
+        <argsstring></argsstring>
+        <name>m_cachedDateTimeValid</name>
+        <qualifiedname>UsersDialog::m_cachedDateTimeValid</qualifiedname>
+        <initializer>=
+      false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Whether cached date/time is valid </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="86" column="16" bodyfile="src/usersdialog.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_users_dialog_1ae6e0d6aeb3519a01c154a6f087c1d9fb" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UsersDialog::UsersDialog</definition>
+        <argsstring>(const QString &amp;dir, QWidget *parent=nullptr)</argsstring>
+        <name>UsersDialog</name>
+        <qualifiedname>UsersDialog::UsersDialog</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Construct users dialog. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Password store directory path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parent widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="37" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1a046728922f9ad9d2bf17ff64bf639d06" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>UsersDialog::~UsersDialog</definition>
+        <argsstring>() override</argsstring>
+        <name>~UsersDialog</name>
+        <qualifiedname>UsersDialog::~UsersDialog</qualifiedname>
+        <briefdescription>
+<para>Destructor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="41" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_users_dialog_1aa1630582c14afcef9ad80398752762a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::accept</definition>
+        <argsstring>() override</argsstring>
+        <name>accept</name>
+        <qualifiedname>UsersDialog::accept</qualifiedname>
+        <briefdescription>
+<para>Handle dialog acceptance. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="47" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_users_dialog_1ac1ca78f350c1f7655e0d32a1f1a07ba5" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::closeEvent</definition>
+        <argsstring>(QCloseEvent *event) override</argsstring>
+        <name>closeEvent</name>
+        <qualifiedname>UsersDialog::closeEvent</qualifiedname>
+        <param>
+          <type>QCloseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Handle close event. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Close event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="54" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1a2b8e6e8605111e43bab64328add16ddb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::keyPressEvent</definition>
+        <argsstring>(QKeyEvent *event) override</argsstring>
+        <name>keyPressEvent</name>
+        <qualifiedname>UsersDialog::keyPressEvent</qualifiedname>
+        <param>
+          <type>QKeyEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Handle key press. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Key event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="59" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_users_dialog_1a0a9df57e10de95c375523902b4bbdc5b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::itemChange</definition>
+        <argsstring>(QListWidgetItem *item)</argsstring>
+        <name>itemChange</name>
+        <qualifiedname>UsersDialog::itemChange</qualifiedname>
+        <param>
+          <type>QListWidgetItem *</type>
+          <declname>item</declname>
+        </param>
+        <briefdescription>
+<para>Handle user selection change. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Changed list item. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="66" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_users_dialog_1a20609c91440503dc7f84f26a43d01509" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::on_lineEdit_textChanged</definition>
+        <argsstring>(const QString &amp;filter)</argsstring>
+        <name>on_lineEdit_textChanged</name>
+        <qualifiedname>UsersDialog::on_lineEdit_textChanged</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>filter</declname>
+        </param>
+        <briefdescription>
+<para>Filter user list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filter text. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="71" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_users_dialog_1ae4d6d585d09d26213b5c1fe757974544" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::on_checkBox_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_checkBox_clicked</name>
+        <qualifiedname>UsersDialog::on_checkBox_clicked</qualifiedname>
+        <briefdescription>
+<para>Handle select all checkbox. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="75" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_users_dialog_1a72f07ae1b408688108f0855624c789d2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::restoreDialogState</definition>
+        <argsstring>()</argsstring>
+        <name>restoreDialogState</name>
+        <qualifiedname>UsersDialog::restoreDialogState</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="89" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1a56e762c68f4ae6faf7e50c227598e0f1" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::connectSignals</definition>
+        <argsstring>()</argsstring>
+        <name>connectSignals</name>
+        <qualifiedname>UsersDialog::connectSignals</qualifiedname>
+        <briefdescription>
+<para>Connect dialog signals. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="94" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1aeeb98a4267c9aaa8c8087d4fb3774565" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto UsersDialog::loadGpgKeys</definition>
+        <argsstring>() -&gt; bool</argsstring>
+        <name>loadGpgKeys</name>
+        <qualifiedname>UsersDialog::loadGpgKeys</qualifiedname>
+        <briefdescription>
+<para>Load GPG keys and determine secret key status. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if successful, false if keys could not be loaded. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="100" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1aae28ed1da1149c4e1d1685a6e4c9d3a2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::markSecretKeys</definition>
+        <argsstring>(QList&lt; UserInfo &gt; &amp;users)</argsstring>
+        <name>markSecretKeys</name>
+        <qualifiedname>UsersDialog::markSecretKeys</qualifiedname>
+        <param>
+          <type>QList&lt; <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &gt; &amp;</type>
+          <declname>users</declname>
+        </param>
+        <briefdescription>
+<para>Mark which keys have secret counterparts. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>users</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of users to mark. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="106" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1aa1508b1fe6dc8fba34257d72a1633a4b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::loadRecipients</definition>
+        <argsstring>()</argsstring>
+        <name>loadRecipients</name>
+        <qualifiedname>UsersDialog::loadRecipients</qualifiedname>
+        <briefdescription>
+<para>Load recipients and handle missing keys. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="111" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1a9742afa42c3edaec91f62ddcb116002d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::populateList</definition>
+        <argsstring>(const QString &amp;filter=QString())</argsstring>
+        <name>populateList</name>
+        <qualifiedname>UsersDialog::populateList</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>filter</declname>
+          <defval>QString()</defval>
+        </param>
+        <briefdescription>
+<para>Populate user list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional filter text. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="117" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1ad8f7dcefe8f44773b5931295c2e35833" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool UsersDialog::passesFilter</definition>
+        <argsstring>(const UserInfo &amp;user, const QString &amp;filter, const QRegularExpression &amp;nameFilter) const</argsstring>
+        <name>passesFilter</name>
+        <qualifiedname>UsersDialog::passesFilter</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &amp;</type>
+          <declname>user</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>filter</declname>
+        </param>
+        <param>
+          <type>const QRegularExpression &amp;</type>
+          <declname>nameFilter</declname>
+        </param>
+        <briefdescription>
+<para>Check if user passes filter. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User to check. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>filter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text filter. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nameFilter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Regex filter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if user passes. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="125" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1a248e650a6f68a40a4bd7ea10b5686106" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto UsersDialog::isUserExpired</definition>
+        <argsstring>(const UserInfo &amp;user) const -&gt; bool</argsstring>
+        <name>isUserExpired</name>
+        <qualifiedname>UsersDialog::isUserExpired</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &amp;</type>
+          <declname>user</declname>
+        </param>
+        <briefdescription>
+<para>Check if GPG key is expired. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User to check. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if key is expired. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="132" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1a7c4ef95e4ab5bfd72e93f5dbcf1be189" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>QString</type>
+        <definition>QString UsersDialog::buildUserText</definition>
+        <argsstring>(const UserInfo &amp;user) const</argsstring>
+        <name>buildUserText</name>
+        <qualifiedname>UsersDialog::buildUserText</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &amp;</type>
+          <declname>user</declname>
+        </param>
+        <briefdescription>
+<para>Build display text for user. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User info. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Formatted text. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="138" column="11"/>
+      </memberdef>
+      <memberdef kind="function" id="class_users_dialog_1a400f5ae49e827ac46e88be4ae2f7141d" prot="private" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsersDialog::applyUserStyling</definition>
+        <argsstring>(QListWidgetItem *item, const UserInfo &amp;user) const</argsstring>
+        <name>applyUserStyling</name>
+        <qualifiedname>UsersDialog::applyUserStyling</qualifiedname>
+        <param>
+          <type>QListWidgetItem *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>const <ref refid="struct_user_info" kindref="compound">UserInfo</ref> &amp;</type>
+          <declname>user</declname>
+        </param>
+        <briefdescription>
+<para>Apply visual styling to user item. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>item</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List item. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>user</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>User info. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/usersdialog.h" line="144" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Dialog for selecting GPG recipients for password encryption. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_users_dialog" kindref="compound">UsersDialog</ref> allows users to select which GPG keys to encrypt passwords to. It displays available keys, supports filtering, and shows key expiration status. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QDialog</label>
+      </node>
+      <node id="1">
+        <label>UsersDialog</label>
+        <link refid="class_users_dialog"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QDialog</label>
+      </node>
+      <node id="1">
+        <label>UsersDialog</label>
+        <link refid="class_users_dialog"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/usersdialog.h" line="28" column="1" bodyfile="src/usersdialog.h" bodystart="28" bodyend="145"/>
+    <listofallmembers>
+      <member refid="class_users_dialog_1aa1630582c14afcef9ad80398752762a4" prot="public" virt="non-virtual"><scope>UsersDialog</scope><name>accept</name></member>
+      <member refid="class_users_dialog_1a400f5ae49e827ac46e88be4ae2f7141d" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>applyUserStyling</name></member>
+      <member refid="class_users_dialog_1a7c4ef95e4ab5bfd72e93f5dbcf1be189" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>buildUserText</name></member>
+      <member refid="class_users_dialog_1ac1ca78f350c1f7655e0d32a1f1a07ba5" prot="protected" virt="non-virtual"><scope>UsersDialog</scope><name>closeEvent</name></member>
+      <member refid="class_users_dialog_1a56e762c68f4ae6faf7e50c227598e0f1" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>connectSignals</name></member>
+      <member refid="class_users_dialog_1a248e650a6f68a40a4bd7ea10b5686106" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>isUserExpired</name></member>
+      <member refid="class_users_dialog_1a0a9df57e10de95c375523902b4bbdc5b" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>itemChange</name></member>
+      <member refid="class_users_dialog_1a2b8e6e8605111e43bab64328add16ddb" prot="protected" virt="non-virtual"><scope>UsersDialog</scope><name>keyPressEvent</name></member>
+      <member refid="class_users_dialog_1aeeb98a4267c9aaa8c8087d4fb3774565" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>loadGpgKeys</name></member>
+      <member refid="class_users_dialog_1aa1508b1fe6dc8fba34257d72a1633a4b" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>loadRecipients</name></member>
+      <member refid="class_users_dialog_1a6d7caab10693c9c45c0089c931f5843b" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>m_cachedCurrentDateTime</name></member>
+      <member refid="class_users_dialog_1aa6d656c586c0469fe10e5a7055255c07" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>m_cachedDateTimeValid</name></member>
+      <member refid="class_users_dialog_1a0b48f9c3f9f9ab0fd01598c00ab29216" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>m_cachedNameFilter</name></member>
+      <member refid="class_users_dialog_1a01126f883fe8cf0f351d340945af8552" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>m_cachedPatternString</name></member>
+      <member refid="class_users_dialog_1a486ab9a602907d6110dceaed9a7b3138" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>m_dir</name></member>
+      <member refid="class_users_dialog_1a50a8ee7a2dbd27672249f0c8d109beb8" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>m_lastFilter</name></member>
+      <member refid="class_users_dialog_1a50e207112771a8c69d73a326f8efb0e2" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>m_userList</name></member>
+      <member refid="class_users_dialog_1aae28ed1da1149c4e1d1685a6e4c9d3a2" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>markSecretKeys</name></member>
+      <member refid="class_users_dialog_1ae4d6d585d09d26213b5c1fe757974544" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>on_checkBox_clicked</name></member>
+      <member refid="class_users_dialog_1a20609c91440503dc7f84f26a43d01509" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>on_lineEdit_textChanged</name></member>
+      <member refid="class_users_dialog_1ad8f7dcefe8f44773b5931295c2e35833" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>passesFilter</name></member>
+      <member refid="class_users_dialog_1a9742afa42c3edaec91f62ddcb116002d" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>populateList</name></member>
+      <member refid="class_users_dialog_1a72f07ae1b408688108f0855624c789d2" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>restoreDialogState</name></member>
+      <member refid="class_users_dialog_1a36e5b193b2150f5d58e1b77df5d01d8b" prot="private" virt="non-virtual"><scope>UsersDialog</scope><name>ui</name></member>
+      <member refid="class_users_dialog_1ae6e0d6aeb3519a01c154a6f087c1d9fb" prot="public" virt="non-virtual"><scope>UsersDialog</scope><name>UsersDialog</name></member>
+      <member refid="class_users_dialog_1a046728922f9ad9d2bf17ff64bf639d06" prot="public" virt="non-virtual"><scope>UsersDialog</scope><name>~UsersDialog</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

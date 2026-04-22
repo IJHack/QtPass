@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="debughelper_8h" kind="file" language="C++">
+    <compoundname>debughelper.h</compoundname>
+    <includes local="no">QDebug</includes>
+    <incdepgraph>
+      <node id="1">
+        <label>src/debughelper.h</label>
+        <link refid="debughelper_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QDebug</label>
+      </node>
+    </incdepgraph>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" prot="public" static="no">
+        <name>dbg</name>
+        <param></param>
+        <initializer>qDebug() &lt;&lt; __FILE__ &quot;:&quot; &lt;&lt; __LINE__</initializer>
+        <briefdescription>
+<para>Simple debug macro that includes file and line number. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Usage: <ref refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" kindref="member">dbg()</ref> &lt;&lt; &quot;message&quot;; Output: &quot;filename.cpp:123 message&quot;</para>
+<para>Only available in debug builds. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/debughelper.h" line="21" column="9" bodyfile="src/debughelper.h" bodystart="21" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Debug utilities for <ref refid="class_qt_pass" kindref="compound">QtPass</ref>. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>SPDX-FileCopyrightText:<sp/>2016<sp/>Anne<sp/>Jan<sp/>Brouwer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//<sp/>SPDX-License-Identifier:<sp/>GPL-3.0-or-later</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>SRC_DEBUGHELPER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_DEBUGHELPER_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QDebug&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="debughelper_8h_1a1b089898deebf895757ee5e095615ec7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>dbg()<sp/>qDebug()<sp/>&lt;&lt;<sp/>__FILE__<sp/>&quot;:&quot;<sp/>&lt;&lt;<sp/>__LINE__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>SRC_DEBUGHELPER_H_</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="src/debughelper.h"/>
+  </compounddef>
+</doxygen>

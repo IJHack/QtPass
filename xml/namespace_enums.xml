@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="namespace_enums" kind="namespace" language="C++">
+    <compoundname>Enums</compoundname>
+    <sectiondef kind="enum">
+      <memberdef kind="enum" id="namespace_enums_1aa36f045555e72e4d536b48aac12ee52d" prot="public" static="no" strong="no">
+        <type></type>
+        <name>clipBoardType</name>
+        <qualifiedname>Enums::clipBoardType</qualifiedname>
+        <enumvalue id="namespace_enums_1aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef" prot="public">
+          <name>CLIPBOARD_NEVER</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Never automatically copy to clipboard </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1aa36f045555e72e4d536b48aac12ee52da00dc0ed766a614a278d3f392089c814e" prot="public">
+          <name>CLIPBOARD_ALWAYS</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Always copy to clipboard after showing </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1aa36f045555e72e4d536b48aac12ee52daf4f60eefd26af9c92962895d9a55ae2b" prot="public">
+          <name>CLIPBOARD_ON_DEMAND</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Copy only when user explicitly requests </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Defines when to copy passwords to clipboard. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/enums.h" line="16" column="1" bodyfile="src/enums.h" bodystart="16" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="enum" id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69" prot="public" static="no" strong="no">
+        <type></type>
+        <name>PROCESS</name>
+        <qualifiedname>Enums::PROCESS</qualifiedname>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a34410c90c94276b18d07de603edc6c48" prot="public">
+          <name>GIT_INIT</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Initialize Git repository </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ab846e1c0e4150201778c04b246f42189" prot="public">
+          <name>GIT_ADD</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Git add command </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a9e7d6596768289de311da8b360536556" prot="public">
+          <name>GIT_COMMIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Git commit </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aadb94bb5187ca22b697e5576f46a6e36" prot="public">
+          <name>GIT_RM</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Git remove </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ae056b4c0e719ac27298e551b5d2585e4" prot="public">
+          <name>GIT_PULL</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Git pull </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ae9f6db885f59f7594cb420d7b4ed5c40" prot="public">
+          <name>GIT_PUSH</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Git push </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69aaf94f232b7f4c8682729d11aa19855f9" prot="public">
+          <name>PASS_SHOW</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ref refid="class_pass" kindref="compound">Pass</ref> show - decrypt password file </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a2bd1f466dbc7acf275c15b4ebdc92ebf" prot="public">
+          <name>PASS_INSERT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ref refid="class_pass" kindref="compound">Pass</ref> insert - create/update password </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a914992f89d2834c13c7978905a1f3684" prot="public">
+          <name>PASS_REMOVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ref refid="class_pass" kindref="compound">Pass</ref> remove - delete password </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a03ecd1c73f11705f3a0d14e775001a06" prot="public">
+          <name>PASS_INIT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para><ref refid="class_pass" kindref="compound">Pass</ref> init - initialize store </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a8c1e49dd6a89933e17a3377e9833b55c" prot="public">
+          <name>GPG_GENKEYS</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>GPG key generation </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a4ceeee5cb90c49b2b875bc30c4d21bd0" prot="public">
+          <name>PASS_MOVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Move password file </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a3f804bcfb97b78f571463617e3359728" prot="public">
+          <name>PASS_COPY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Copy password file </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a66871faf2cc3342fb01bc0292b209376" prot="public">
+          <name>GIT_MOVE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Git move/rename </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a93624be701ea8876c5aecb6e7139442a" prot="public">
+          <name>GIT_COPY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Git copy </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a1e9c7d5b4afba75021e17b2e2e799bac" prot="public">
+          <name>PASS_OTP_GENERATE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Generate OTP code </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a705ae598082cb55d56dde08f43dfe8db" prot="public">
+          <name>PASS_GREP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Search inside password content </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e" prot="public">
+          <name>PROCESS_COUNT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Total number of process types </para>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="namespace_enums_1ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023" prot="public">
+          <name>INVALID</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Invalid/unknown process </para>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Identifies different subprocess operations used in <ref refid="class_qt_pass" kindref="compound">QtPass</ref>. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/enums.h" line="26" column="1" bodyfile="src/enums.h" bodystart="26" bodyend="46"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Enumerators for <ref refid="class_qt_pass" kindref="compound">QtPass</ref> configuration and runtime operations. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/enums.h" line="7" column="1"/>
+  </compounddef>
+</doxygen>

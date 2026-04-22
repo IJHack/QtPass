@@ -1,0 +1,1824 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_main_window" kind="class" language="C++" prot="public">
+    <compoundname>MainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+    <includes refid="mainwindow_8h" local="no">mainwindow.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_main_window_1ae772473e8fa0047f5db5bcb410dc88a1" prot="private" static="no" mutable="no">
+        <type><ref refid="class_qt_pass" kindref="compound">QtPass</ref> *</type>
+        <definition>QtPass* MainWindow::m_qtPass</definition>
+        <argsstring></argsstring>
+        <name>m_qtPass</name>
+        <qualifiedname>MainWindow::m_qtPass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="256" column="10" bodyfile="src/mainwindow.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a9df5005557a207e799dbe45333adac74" prot="private" static="no" mutable="no">
+        <type>QScopedPointer&lt; Ui::MainWindow &gt;</type>
+        <definition>QScopedPointer&lt;Ui::MainWindow&gt; MainWindow::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <qualifiedname>MainWindow::ui</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="257" column="18" bodyfile="src/mainwindow.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a560a81fad6d7a17c2b1f46755ca700fe" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MainWindow::m_grepMode</definition>
+        <argsstring></argsstring>
+        <name>m_grepMode</name>
+        <qualifiedname>MainWindow::m_grepMode</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="258" column="8" bodyfile="src/mainwindow.h" bodystart="258" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a32707fc245288047cedac53da045ca7f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MainWindow::m_grepBusy</definition>
+        <argsstring></argsstring>
+        <name>m_grepBusy</name>
+        <qualifiedname>MainWindow::m_grepBusy</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="259" column="8" bodyfile="src/mainwindow.h" bodystart="259" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1af947f68a3f5d59ac8b2afe51c6e10950" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool MainWindow::m_grepCancelled</definition>
+        <argsstring></argsstring>
+        <name>m_grepCancelled</name>
+        <qualifiedname>MainWindow::m_grepCancelled</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="260" column="8" bodyfile="src/mainwindow.h" bodystart="260" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a3e1ab9920e8d9ebdebd74743e4b24353" prot="private" static="no" mutable="no">
+        <type>QFileSystemModel</type>
+        <definition>QFileSystemModel MainWindow::model</definition>
+        <argsstring></argsstring>
+        <name>model</name>
+        <qualifiedname>MainWindow::model</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="261" column="20" bodyfile="src/mainwindow.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a8bc09b350f76be1008a0b6ec417e80a4" prot="private" static="no" mutable="no">
+        <type><ref refid="class_store_model" kindref="compound">StoreModel</ref></type>
+        <definition>StoreModel MainWindow::proxyModel</definition>
+        <argsstring></argsstring>
+        <name>proxyModel</name>
+        <qualifiedname>MainWindow::proxyModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="262" column="14" bodyfile="src/mainwindow.h" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a66a9d5894a1e71cf76ba491755c946d2" prot="private" static="no" mutable="no">
+        <type>QScopedPointer&lt; QItemSelectionModel &gt;</type>
+        <definition>QScopedPointer&lt;QItemSelectionModel&gt; MainWindow::selectionModel</definition>
+        <argsstring></argsstring>
+        <name>selectionModel</name>
+        <qualifiedname>MainWindow::selectionModel</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="263" column="18" bodyfile="src/mainwindow.h" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a7428919d42945d4b83863ca4219f38ac" prot="private" static="no" mutable="no">
+        <type>QTimer</type>
+        <definition>QTimer MainWindow::clearPanelTimer</definition>
+        <argsstring></argsstring>
+        <name>clearPanelTimer</name>
+        <qualifiedname>MainWindow::clearPanelTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="264" column="10" bodyfile="src/mainwindow.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a3707d5edf6ae13711a525bb03044eb29" prot="private" static="no" mutable="no">
+        <type>QTimer</type>
+        <definition>QTimer MainWindow::searchTimer</definition>
+        <argsstring></argsstring>
+        <name>searchTimer</name>
+        <qualifiedname>MainWindow::searchTimer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="264" column="26" bodyfile="src/mainwindow.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1abe50b9d4d552efc920574ccd735ad5a7" prot="private" static="no" mutable="no">
+        <type>QDialog *</type>
+        <definition>QDialog* MainWindow::keygen</definition>
+        <argsstring></argsstring>
+        <name>keygen</name>
+        <qualifiedname>MainWindow::keygen</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="265" column="11" bodyfile="src/mainwindow.h" bodystart="265" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a0e9dd617cca11ee0e5289b5931e701bf" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString MainWindow::currentDir</definition>
+        <argsstring></argsstring>
+        <name>currentDir</name>
+        <qualifiedname>MainWindow::currentDir</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="266" column="11" bodyfile="src/mainwindow.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1ab0a61daeb571586ac7f2efdf402f5991" prot="private" static="no" mutable="no">
+        <type><ref refid="class_tray_icon" kindref="compound">TrayIcon</ref> *</type>
+        <definition>TrayIcon* MainWindow::tray</definition>
+        <argsstring></argsstring>
+        <name>tray</name>
+        <qualifiedname>MainWindow::tray</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="267" column="12" bodyfile="src/mainwindow.h" bodystart="267" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_main_window_1a52e97245b2f88492071e639395c4a15a" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::MainWindow</definition>
+        <argsstring>(const QString &amp;searchText=QString(), QWidget *parent=nullptr)</argsstring>
+        <name>MainWindow</name>
+        <qualifiedname>MainWindow::MainWindow</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>searchText</declname>
+          <defval>QString()</defval>
+        </param>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Construct the main window. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>searchText</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial search text to populate the search field. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional parent widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="54" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a1f7d2c56410fc1bfa135bb907d43313f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::~MainWindow</definition>
+        <argsstring>() override</argsstring>
+        <name>~MainWindow</name>
+        <qualifiedname>MainWindow::~MainWindow</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="56" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a9630f0fe0e0941a7996d68014f837ed5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::restoreWindow</definition>
+        <argsstring>()</argsstring>
+        <name>restoreWindow</name>
+        <qualifiedname>MainWindow::restoreWindow</qualifiedname>
+        <briefdescription>
+<para>Restore window geometry and state from saved settings. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="61" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a8737aac54ea6a935210f9a35ac914aa7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::generateKeyPair</definition>
+        <argsstring>(const QString &amp;batch, QDialog *dialog)</argsstring>
+        <name>generateKeyPair</name>
+        <qualifiedname>MainWindow::generateKeyPair</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>batch</declname>
+        </param>
+        <param>
+          <type>QDialog *</type>
+          <declname>dialog</declname>
+        </param>
+        <briefdescription>
+<para>Open the GPG key generation dialog. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>batch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPG batch parameter string. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>dialog</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog to store as the active keygen dialog; it is kept as activeKeygenDialog and represents the UI used during generation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="69" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a056b66175a3d3ffc3146535726bb4e50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::userDialog</definition>
+        <argsstring>(const QString &amp;dir=&quot;&quot;)</argsstring>
+        <name>userDialog</name>
+        <qualifiedname>MainWindow::userDialog</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>dir</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <briefdescription>
+<para>Open the user/recipient management dialog. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dir</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Directory for which to manage recipients. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="75" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1aeb8091ab5531144b76c1fbb0d63deb56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::config</definition>
+        <argsstring>()</argsstring>
+        <name>config</name>
+        <qualifiedname>MainWindow::config</qualifiedname>
+        <briefdescription>
+<para>Open the configuration dialog. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="80" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ac240119ea67a770e5d997a5aa0fe47a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::setUiElementsEnabled</definition>
+        <argsstring>(bool state)</argsstring>
+        <name>setUiElementsEnabled</name>
+        <qualifiedname>MainWindow::setUiElementsEnabled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>state</declname>
+        </param>
+        <briefdescription>
+<para>Enable or disable the main UI elements. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>state</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable, false to disable. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="86" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1aae7cd7af04cedf4a17ede44bffafec89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::flashText</definition>
+        <argsstring>(const QString &amp;text, const bool isError, const bool isHtml=false)</argsstring>
+        <name>flashText</name>
+        <qualifiedname>MainWindow::flashText</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isError</declname>
+        </param>
+        <param>
+          <type>const bool</type>
+          <declname>isHtml</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Display a transient message in the text panel. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message text to display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isError</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to style the message as an error. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>isHtml</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true if text contains HTML markup. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="94" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1acc66dda09963fdddea9716163293ddda" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto MainWindow::getCurrentTreeViewIndex</definition>
+        <argsstring>() -&gt; QModelIndex</argsstring>
+        <name>getCurrentTreeViewIndex</name>
+        <qualifiedname>MainWindow::getCurrentTreeViewIndex</qualifiedname>
+        <briefdescription>
+<para>Return the currently selected index in the tree view. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Current QModelIndex. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="101" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ae5b8c234b3175974bc135317232d1e1c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto MainWindow::getKeygenDialog</definition>
+        <argsstring>() -&gt; QDialog *</argsstring>
+        <name>getKeygenDialog</name>
+        <qualifiedname>MainWindow::getKeygenDialog</qualifiedname>
+        <briefdescription>
+<para>Return the active key generation dialog, if any. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the keygen QDialog, or nullptr. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="107" column="8" bodyfile="src/mainwindow.h" bodystart="107" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ad2a9b38617b357d8fa42744c00a26fcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::cleanKeygenDialog</definition>
+        <argsstring>()</argsstring>
+        <name>cleanKeygenDialog</name>
+        <qualifiedname>MainWindow::cleanKeygenDialog</qualifiedname>
+        <briefdescription>
+<para>Destroy and clear the key generation dialog. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="112" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_main_window_1a05fb9d72c044aa3bb7d187b994704e2f" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::closeEvent</definition>
+        <argsstring>(QCloseEvent *event) override</argsstring>
+        <name>closeEvent</name>
+        <qualifiedname>MainWindow::closeEvent</qualifiedname>
+        <param>
+          <type>QCloseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Save window state and geometry on close. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The close event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="119" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a55ae3e0d4303334ccabae0a5050cfd88" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::keyPressEvent</definition>
+        <argsstring>(QKeyEvent *event) override</argsstring>
+        <name>keyPressEvent</name>
+        <qualifiedname>MainWindow::keyPressEvent</qualifiedname>
+        <param>
+          <type>QKeyEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Handle keyboard shortcuts. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The key press event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="124" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a416ae2140ac1aa9f03a6279316abdcad" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::changeEvent</definition>
+        <argsstring>(QEvent *event) override</argsstring>
+        <name>changeEvent</name>
+        <qualifiedname>MainWindow::changeEvent</qualifiedname>
+        <param>
+          <type>QEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>React to language or window state changes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The change event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="129" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1aa07eb275a856e189c141fde5b69a7166" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto MainWindow::eventFilter</definition>
+        <argsstring>(QObject *obj, QEvent *event) -&gt; bool override</argsstring>
+        <name>eventFilter</name>
+        <qualifiedname>MainWindow::eventFilter</qualifiedname>
+        <param>
+          <type>QObject *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>QEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>Filter events from watched objects. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>obj</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The object that received the event. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The event to filter. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the event was consumed. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="136" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_main_window_1a7e1ae254673e36410d4b3a73e1e8ec8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::passShowHandlerFinished</definition>
+        <argsstring>(const QString &amp;output)</argsstring>
+        <name>passShowHandlerFinished</name>
+        <qualifiedname>MainWindow::passShowHandlerFinished</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+<para>Emitted when the pass show handler has finished decrypting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Decrypted password file content. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="143" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_main_window_1a3c5e045f6f13c0c6054ff4d4cdb58498" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::passGitInitNeeded</definition>
+        <argsstring>()</argsstring>
+        <name>passGitInitNeeded</name>
+        <qualifiedname>MainWindow::passGitInitNeeded</qualifiedname>
+        <briefdescription>
+<para>Emitted when a Git init is required for the current store. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="147" column="8"/>
+      </memberdef>
+      <memberdef kind="signal" id="class_main_window_1a7e72f32612c2436ff4756c5c25b6b4ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::generateGPGKeyPair</definition>
+        <argsstring>(const QString &amp;batch)</argsstring>
+        <name>generateGPGKeyPair</name>
+        <qualifiedname>MainWindow::generateGPGKeyPair</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>batch</declname>
+        </param>
+        <briefdescription>
+<para>Emitted to trigger GPG key pair generation. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>batch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>GPG batch parameter string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="152" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_main_window_1ad4cf3e2c819cac398728a82f1cf05f3e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::deselect</definition>
+        <argsstring>()</argsstring>
+        <name>deselect</name>
+        <qualifiedname>MainWindow::deselect</qualifiedname>
+        <briefdescription>
+<para>Clear the current tree view selection. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="158" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a4fad7c4dec11ceaebcb8a0141280ba4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::messageAvailable</definition>
+        <argsstring>(const QString &amp;message)</argsstring>
+        <name>messageAvailable</name>
+        <qualifiedname>MainWindow::messageAvailable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Handle an incoming inter-process message (single-instance mode). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message string received from another instance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="164" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a8719b3a133e95915dd72b244db1e49bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::critical</definition>
+        <argsstring>(const QString &amp;title, const QString &amp;msg)</argsstring>
+        <name>critical</name>
+        <qualifiedname>MainWindow::critical</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>title</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Display a critical error dialog. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>title</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog title. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Error message body. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="171" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a3550b28be1344cf5c012af794dce8c64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::executeWrapperStarted</definition>
+        <argsstring>()</argsstring>
+        <name>executeWrapperStarted</name>
+        <qualifiedname>MainWindow::executeWrapperStarted</qualifiedname>
+        <briefdescription>
+<para>Slot called when an external process wrapper has started. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="176" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a69f4a122336a6fc3875fc94741e4d1cf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::showStatusMessage</definition>
+        <argsstring>(const QString &amp;msg, int timeout=2000)</argsstring>
+        <name>showStatusMessage</name>
+        <qualifiedname>MainWindow::showStatusMessage</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>msg</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout</declname>
+          <defval>2000</defval>
+        </param>
+        <briefdescription>
+<para>Show a message in the status bar for the given duration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>msg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message to display. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Duration in milliseconds (default 2000). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="183" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a35dcbf29b9cfe87b6f7d597b7abba480" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::passShowHandler</definition>
+        <argsstring>(const QString &amp;output)</argsstring>
+        <name>passShowHandler</name>
+        <qualifiedname>MainWindow::passShowHandler</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+<para>Handle output from the pass show command. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Decrypted password file content. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="189" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ad138cb03123dbf06fe8a118ea057412d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::passOtpHandler</definition>
+        <argsstring>(const QString &amp;output)</argsstring>
+        <name>passOtpHandler</name>
+        <qualifiedname>MainWindow::passOtpHandler</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>output</declname>
+        </param>
+        <briefdescription>
+<para>Handle output from the pass OTP command. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>output</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>OTP output string. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="195" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a270b5f2701f275c3de734f4150a3d897" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::onGrepFinished</definition>
+        <argsstring>(const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;results)</argsstring>
+        <name>onGrepFinished</name>
+        <qualifiedname>MainWindow::onGrepFinished</qualifiedname>
+        <param>
+          <type>const QList&lt; QPair&lt; QString, QStringList &gt; &gt; &amp;</type>
+          <declname>results</declname>
+        </param>
+        <briefdescription>
+<para>Handle results from a completed grep search. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>results</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>List of file/match pairs from the grep operation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="201" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a6961588ebf3c0640200e0cfa920af3be" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::onPush</definition>
+        <argsstring>()</argsstring>
+        <name>onPush</name>
+        <qualifiedname>MainWindow::onPush</qualifiedname>
+        <briefdescription>
+<para>Trigger a git push operation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="206" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1adc7d4b2b210efab401f0b14641f80464" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_treeView_clicked</definition>
+        <argsstring>(const QModelIndex &amp;index)</argsstring>
+        <name>on_treeView_clicked</name>
+        <qualifiedname>MainWindow::on_treeView_clicked</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+<para>Handle a click on an item in the tree view. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The model index that was clicked. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="212" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a02ec9927bda826675653c0af916c8f33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::startReencryptPath</definition>
+        <argsstring>()</argsstring>
+        <name>startReencryptPath</name>
+        <qualifiedname>MainWindow::startReencryptPath</qualifiedname>
+        <briefdescription>
+<para>Begin a re-encryption pass on the current path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="217" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a201fc73a7db0d404e8fd49f818696eba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::endReencryptPath</definition>
+        <argsstring>()</argsstring>
+        <name>endReencryptPath</name>
+        <qualifiedname>MainWindow::endReencryptPath</qualifiedname>
+        <briefdescription>
+<para>Finish a re-encryption pass on the current path. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="222" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_main_window_1a7390a38fa0f78bcd05f797c70a959ac5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_grepButton_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_grepButton_toggled</name>
+        <qualifiedname>MainWindow::on_grepButton_toggled</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="225" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a7cb8cceb6798c42b16f050462c37650f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_grepResultsList_itemClicked</definition>
+        <argsstring>(QTreeWidgetItem *item, int column)</argsstring>
+        <name>on_grepResultsList_itemClicked</name>
+        <qualifiedname>MainWindow::on_grepResultsList_itemClicked</qualifiedname>
+        <param>
+          <type>QTreeWidgetItem *</type>
+          <declname>item</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="226" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a03b4f9d80c2f9e80c9e4acfa72346554" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::addPassword</definition>
+        <argsstring>()</argsstring>
+        <name>addPassword</name>
+        <qualifiedname>MainWindow::addPassword</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="227" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a43847693f774d77737aa23aa4a1ac272" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::addFolder</definition>
+        <argsstring>()</argsstring>
+        <name>addFolder</name>
+        <qualifiedname>MainWindow::addFolder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="228" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a9480c0a26284df09cf4d595b0d1952fe" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::onEdit</definition>
+        <argsstring>()</argsstring>
+        <name>onEdit</name>
+        <qualifiedname>MainWindow::onEdit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="229" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a3f29a7235acf922406190b6477167a80" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::onDelete</definition>
+        <argsstring>()</argsstring>
+        <name>onDelete</name>
+        <qualifiedname>MainWindow::onDelete</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="230" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a974b178baf718f5f5fe81d391aa666d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::onOtp</definition>
+        <argsstring>()</argsstring>
+        <name>onOtp</name>
+        <qualifiedname>MainWindow::onOtp</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="231" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ad1f26db71fe29fdea3b1cd36bfc9c8d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::onUpdate</definition>
+        <argsstring>(bool block=false)</argsstring>
+        <name>onUpdate</name>
+        <qualifiedname>MainWindow::onUpdate</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>block</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="232" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ae65d3d151c79c84cedefbe6999ae89f3" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::onUsers</definition>
+        <argsstring>()</argsstring>
+        <name>onUsers</name>
+        <qualifiedname>MainWindow::onUsers</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="233" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a1a9f8db082fd90bdd667e5b7ebca8f44" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::onConfig</definition>
+        <argsstring>()</argsstring>
+        <name>onConfig</name>
+        <qualifiedname>MainWindow::onConfig</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="234" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a5a951938ec2d2a1e10579cd1f2889439" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_treeView_doubleClicked</definition>
+        <argsstring>(const QModelIndex &amp;index)</argsstring>
+        <name>on_treeView_doubleClicked</name>
+        <qualifiedname>MainWindow::on_treeView_doubleClicked</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="235" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1abf59e43f7b3141fb5c25565c92e3abdb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::clearPanel</definition>
+        <argsstring>(bool notify=true)</argsstring>
+        <name>clearPanel</name>
+        <qualifiedname>MainWindow::clearPanel</qualifiedname>
+        <param>
+          <type>bool</type>
+          <declname>notify</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="236" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1af679b5f4773b48738fc67c5d5179751d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_lineEdit_textChanged</definition>
+        <argsstring>(const QString &amp;arg1)</argsstring>
+        <name>on_lineEdit_textChanged</name>
+        <qualifiedname>MainWindow::on_lineEdit_textChanged</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="237" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a6ed67aa63c63c4867166cb21115d64f7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_lineEdit_returnPressed</definition>
+        <argsstring>()</argsstring>
+        <name>on_lineEdit_returnPressed</name>
+        <qualifiedname>MainWindow::on_lineEdit_returnPressed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="238" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aba5c7672bd97eaa3f86e1db73a9da286" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_profileBox_currentTextChanged</definition>
+        <argsstring>(const QString &amp;)</argsstring>
+        <name>on_profileBox_currentTextChanged</name>
+        <qualifiedname>MainWindow::on_profileBox_currentTextChanged</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="242" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a856c67c50c07ca0b0f4c81b818a0f742" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::showContextMenu</definition>
+        <argsstring>(const QPoint &amp;pos)</argsstring>
+        <name>showContextMenu</name>
+        <qualifiedname>MainWindow::showContextMenu</qualifiedname>
+        <param>
+          <type>const QPoint &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="244" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a98a902aa097483416e0bebf9fd5ce860" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::showBrowserContextMenu</definition>
+        <argsstring>(const QPoint &amp;pos)</argsstring>
+        <name>showBrowserContextMenu</name>
+        <qualifiedname>MainWindow::showBrowserContextMenu</qualifiedname>
+        <param>
+          <type>const QPoint &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="245" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aa6db15fe86b6fa20bec8f0298ff9a595" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::openFolder</definition>
+        <argsstring>()</argsstring>
+        <name>openFolder</name>
+        <qualifiedname>MainWindow::openFolder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="246" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a0e788394d24c96b5c2e35126f0c2cc1a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::renameFolder</definition>
+        <argsstring>()</argsstring>
+        <name>renameFolder</name>
+        <qualifiedname>MainWindow::renameFolder</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="247" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a20827510d49857c719ad689075438d09" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::editPassword</definition>
+        <argsstring>(const QString &amp;)</argsstring>
+        <name>editPassword</name>
+        <qualifiedname>MainWindow::editPassword</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="248" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1af58bd54fe790497dd1d8793619c94661" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::renamePassword</definition>
+        <argsstring>()</argsstring>
+        <name>renamePassword</name>
+        <qualifiedname>MainWindow::renamePassword</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="249" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a6ba35e7bf11ebd5236990a00daa079d7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::focusInput</definition>
+        <argsstring>()</argsstring>
+        <name>focusInput</name>
+        <qualifiedname>MainWindow::focusInput</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="250" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a5389ebc0c173ffa3d38ead9b48a16cbb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::copyPasswordFromTreeview</definition>
+        <argsstring>()</argsstring>
+        <name>copyPasswordFromTreeview</name>
+        <qualifiedname>MainWindow::copyPasswordFromTreeview</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="251" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a2e3cdf69adc857095ff39f3d84c0c848" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::passwordFromFileToClipboard</definition>
+        <argsstring>(const QString &amp;text)</argsstring>
+        <name>passwordFromFileToClipboard</name>
+        <qualifiedname>MainWindow::passwordFromFileToClipboard</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="252" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a661b52ed29bc2ff2b16d973c8306fdca" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::onTimeoutSearch</definition>
+        <argsstring>()</argsstring>
+        <name>onTimeoutSearch</name>
+        <qualifiedname>MainWindow::onTimeoutSearch</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="253" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_main_window_1a1ea53c7a8b5941564ac8e94ed18abe7a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::initToolBarButtons</definition>
+        <argsstring>()</argsstring>
+        <name>initToolBarButtons</name>
+        <qualifiedname>MainWindow::initToolBarButtons</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="269" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ab03270fd7d6947737a5e3d57684c8547" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::initStatusBar</definition>
+        <argsstring>()</argsstring>
+        <name>initStatusBar</name>
+        <qualifiedname>MainWindow::initStatusBar</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="270" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a154d6f626586344f44a46bf9a5c52c2c" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::updateText</definition>
+        <argsstring>()</argsstring>
+        <name>updateText</name>
+        <qualifiedname>MainWindow::updateText</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="272" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a7491c2974ab54018ac9a7d1738a4f654" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::selectFirstFile</definition>
+        <argsstring>()</argsstring>
+        <name>selectFirstFile</name>
+        <qualifiedname>MainWindow::selectFirstFile</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="273" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ae9a674e42e112906d72b37ede211ca4d" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto MainWindow::firstFile</definition>
+        <argsstring>(QModelIndex parentIndex) -&gt; QModelIndex</argsstring>
+        <name>firstFile</name>
+        <qualifiedname>MainWindow::firstFile</qualifiedname>
+        <param>
+          <type>QModelIndex</type>
+          <declname>parentIndex</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="274" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a85cec615546547f3cc85f1e5ab0df594" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto MainWindow::getFile</definition>
+        <argsstring>(const QModelIndex &amp;, bool) -&gt; QString</argsstring>
+        <name>getFile</name>
+        <qualifiedname>MainWindow::getFile</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="275" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a3ebba5c6981eeebef8e40aa5135c8ecb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::setPassword</definition>
+        <argsstring>(const QString &amp;, bool isNew=true)</argsstring>
+        <name>setPassword</name>
+        <qualifiedname>MainWindow::setPassword</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>isNew</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="276" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a91bfea12c6549f4eb243b4d41a1e3895" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::updateProfileBox</definition>
+        <argsstring>()</argsstring>
+        <name>updateProfileBox</name>
+        <qualifiedname>MainWindow::updateProfileBox</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="278" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1aac6a34d508898a862807dc2512e6b659" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::initTrayIcon</definition>
+        <argsstring>()</argsstring>
+        <name>initTrayIcon</name>
+        <qualifiedname>MainWindow::initTrayIcon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="279" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ae6cd4b4efa51da309090b9c394ae5a57" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::destroyTrayIcon</definition>
+        <argsstring>()</argsstring>
+        <name>destroyTrayIcon</name>
+        <qualifiedname>MainWindow::destroyTrayIcon</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="280" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a1cba9669e738b5cdd8076bf7a6ec1eab" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::clearTemplateWidgets</definition>
+        <argsstring>()</argsstring>
+        <name>clearTemplateWidgets</name>
+        <qualifiedname>MainWindow::clearTemplateWidgets</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="281" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a7cf82cedc4d5f790a8ed0bb4fadbbb16" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::reencryptPath</definition>
+        <argsstring>(const QString &amp;dir)</argsstring>
+        <name>reencryptPath</name>
+        <qualifiedname>MainWindow::reencryptPath</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>dir</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="282" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1af4b6b032c63a043ed8afbb720723dc56" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::addToGridLayout</definition>
+        <argsstring>(int position, const QString &amp;field, const QString &amp;value)</argsstring>
+        <name>addToGridLayout</name>
+        <qualifiedname>MainWindow::addToGridLayout</qualifiedname>
+        <param>
+          <type>int</type>
+          <declname>position</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>field</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="283" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ac5705aca84795de049d9a0f0a0d5e3fb" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::applyTextBrowserSettings</definition>
+        <argsstring>()</argsstring>
+        <name>applyTextBrowserSettings</name>
+        <qualifiedname>MainWindow::applyTextBrowserSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="286" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a8c981247a44bc74f5152c312c15a8a79" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::applyWindowFlagsSettings</definition>
+        <argsstring>()</argsstring>
+        <name>applyWindowFlagsSettings</name>
+        <qualifiedname>MainWindow::applyWindowFlagsSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="287" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a7afd2bb118cb0c01ac50344edb6660d5" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::updateGitButtonVisibility</definition>
+        <argsstring>()</argsstring>
+        <name>updateGitButtonVisibility</name>
+        <qualifiedname>MainWindow::updateGitButtonVisibility</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="289" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a4cbb48928fc0724e08fbf19d884f6545" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::updateOtpButtonVisibility</definition>
+        <argsstring>()</argsstring>
+        <name>updateOtpButtonVisibility</name>
+        <qualifiedname>MainWindow::updateOtpButtonVisibility</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="290" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a45b0da2bbc51131497c2b47ff2168200" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::updateGrepButtonVisibility</definition>
+        <argsstring>()</argsstring>
+        <name>updateGrepButtonVisibility</name>
+        <qualifiedname>MainWindow::updateGrepButtonVisibility</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="291" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a7d82616c59adef47e09adf3a9005ff94" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::enableGitButtons</definition>
+        <argsstring>(const bool &amp;)</argsstring>
+        <name>enableGitButtons</name>
+        <qualifiedname>MainWindow::enableGitButtons</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/mainwindow.h" line="292" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Main application window orchestrating UI, user interactions, and external process handlers. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Provides the central interface for managing items, folders, passwords, and OTPs; coordinates UI components (toolbars, panels, dialogs, status/tray), selection and navigation in the underlying file/store models, and lifecycle interactions with external handlers (e.g., pass, Git, GPG key generation, OTP). </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QMainWindow</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/mainwindow.h" line="45" column="1" bodyfile="src/mainwindow.h" bodystart="45" bodyend="293"/>
+    <listofallmembers>
+      <member refid="class_main_window_1a43847693f774d77737aa23aa4a1ac272" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>addFolder</name></member>
+      <member refid="class_main_window_1a03b4f9d80c2f9e80c9e4acfa72346554" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>addPassword</name></member>
+      <member refid="class_main_window_1af4b6b032c63a043ed8afbb720723dc56" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>addToGridLayout</name></member>
+      <member refid="class_main_window_1ac5705aca84795de049d9a0f0a0d5e3fb" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>applyTextBrowserSettings</name></member>
+      <member refid="class_main_window_1a8c981247a44bc74f5152c312c15a8a79" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>applyWindowFlagsSettings</name></member>
+      <member refid="class_main_window_1a416ae2140ac1aa9f03a6279316abdcad" prot="protected" virt="non-virtual"><scope>MainWindow</scope><name>changeEvent</name></member>
+      <member refid="class_main_window_1ad2a9b38617b357d8fa42744c00a26fcf" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>cleanKeygenDialog</name></member>
+      <member refid="class_main_window_1abf59e43f7b3141fb5c25565c92e3abdb" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>clearPanel</name></member>
+      <member refid="class_main_window_1a7428919d42945d4b83863ca4219f38ac" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>clearPanelTimer</name></member>
+      <member refid="class_main_window_1a1cba9669e738b5cdd8076bf7a6ec1eab" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>clearTemplateWidgets</name></member>
+      <member refid="class_main_window_1a05fb9d72c044aa3bb7d187b994704e2f" prot="protected" virt="non-virtual"><scope>MainWindow</scope><name>closeEvent</name></member>
+      <member refid="class_main_window_1aeb8091ab5531144b76c1fbb0d63deb56" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>config</name></member>
+      <member refid="class_main_window_1a5389ebc0c173ffa3d38ead9b48a16cbb" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>copyPasswordFromTreeview</name></member>
+      <member refid="class_main_window_1a8719b3a133e95915dd72b244db1e49bf" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>critical</name></member>
+      <member refid="class_main_window_1a0e9dd617cca11ee0e5289b5931e701bf" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>currentDir</name></member>
+      <member refid="class_main_window_1ad4cf3e2c819cac398728a82f1cf05f3e" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>deselect</name></member>
+      <member refid="class_main_window_1ae6cd4b4efa51da309090b9c394ae5a57" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>destroyTrayIcon</name></member>
+      <member refid="class_main_window_1a20827510d49857c719ad689075438d09" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>editPassword</name></member>
+      <member refid="class_main_window_1a7d82616c59adef47e09adf3a9005ff94" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>enableGitButtons</name></member>
+      <member refid="class_main_window_1a201fc73a7db0d404e8fd49f818696eba" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>endReencryptPath</name></member>
+      <member refid="class_main_window_1aa07eb275a856e189c141fde5b69a7166" prot="protected" virt="non-virtual"><scope>MainWindow</scope><name>eventFilter</name></member>
+      <member refid="class_main_window_1a3550b28be1344cf5c012af794dce8c64" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>executeWrapperStarted</name></member>
+      <member refid="class_main_window_1ae9a674e42e112906d72b37ede211ca4d" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>firstFile</name></member>
+      <member refid="class_main_window_1aae7cd7af04cedf4a17ede44bffafec89" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>flashText</name></member>
+      <member refid="class_main_window_1a6ba35e7bf11ebd5236990a00daa079d7" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>focusInput</name></member>
+      <member refid="class_main_window_1a7e72f32612c2436ff4756c5c25b6b4ec" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>generateGPGKeyPair</name></member>
+      <member refid="class_main_window_1a8737aac54ea6a935210f9a35ac914aa7" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>generateKeyPair</name></member>
+      <member refid="class_main_window_1acc66dda09963fdddea9716163293ddda" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>getCurrentTreeViewIndex</name></member>
+      <member refid="class_main_window_1a85cec615546547f3cc85f1e5ab0df594" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>getFile</name></member>
+      <member refid="class_main_window_1ae5b8c234b3175974bc135317232d1e1c" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>getKeygenDialog</name></member>
+      <member refid="class_main_window_1ab03270fd7d6947737a5e3d57684c8547" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>initStatusBar</name></member>
+      <member refid="class_main_window_1a1ea53c7a8b5941564ac8e94ed18abe7a" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>initToolBarButtons</name></member>
+      <member refid="class_main_window_1aac6a34d508898a862807dc2512e6b659" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>initTrayIcon</name></member>
+      <member refid="class_main_window_1abe50b9d4d552efc920574ccd735ad5a7" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>keygen</name></member>
+      <member refid="class_main_window_1a55ae3e0d4303334ccabae0a5050cfd88" prot="protected" virt="non-virtual"><scope>MainWindow</scope><name>keyPressEvent</name></member>
+      <member refid="class_main_window_1a32707fc245288047cedac53da045ca7f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>m_grepBusy</name></member>
+      <member refid="class_main_window_1af947f68a3f5d59ac8b2afe51c6e10950" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>m_grepCancelled</name></member>
+      <member refid="class_main_window_1a560a81fad6d7a17c2b1f46755ca700fe" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>m_grepMode</name></member>
+      <member refid="class_main_window_1ae772473e8fa0047f5db5bcb410dc88a1" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>m_qtPass</name></member>
+      <member refid="class_main_window_1a52e97245b2f88492071e639395c4a15a" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>MainWindow</name></member>
+      <member refid="class_main_window_1a4fad7c4dec11ceaebcb8a0141280ba4b" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>messageAvailable</name></member>
+      <member refid="class_main_window_1a3e1ab9920e8d9ebdebd74743e4b24353" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>model</name></member>
+      <member refid="class_main_window_1a7390a38fa0f78bcd05f797c70a959ac5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_grepButton_toggled</name></member>
+      <member refid="class_main_window_1a7cb8cceb6798c42b16f050462c37650f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_grepResultsList_itemClicked</name></member>
+      <member refid="class_main_window_1a6ed67aa63c63c4867166cb21115d64f7" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_lineEdit_returnPressed</name></member>
+      <member refid="class_main_window_1af679b5f4773b48738fc67c5d5179751d" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_lineEdit_textChanged</name></member>
+      <member refid="class_main_window_1aba5c7672bd97eaa3f86e1db73a9da286" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_profileBox_currentTextChanged</name></member>
+      <member refid="class_main_window_1adc7d4b2b210efab401f0b14641f80464" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>on_treeView_clicked</name></member>
+      <member refid="class_main_window_1a5a951938ec2d2a1e10579cd1f2889439" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_treeView_doubleClicked</name></member>
+      <member refid="class_main_window_1a1a9f8db082fd90bdd667e5b7ebca8f44" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>onConfig</name></member>
+      <member refid="class_main_window_1a3f29a7235acf922406190b6477167a80" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>onDelete</name></member>
+      <member refid="class_main_window_1a9480c0a26284df09cf4d595b0d1952fe" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>onEdit</name></member>
+      <member refid="class_main_window_1a270b5f2701f275c3de734f4150a3d897" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>onGrepFinished</name></member>
+      <member refid="class_main_window_1a974b178baf718f5f5fe81d391aa666d7" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>onOtp</name></member>
+      <member refid="class_main_window_1a6961588ebf3c0640200e0cfa920af3be" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>onPush</name></member>
+      <member refid="class_main_window_1a661b52ed29bc2ff2b16d973c8306fdca" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>onTimeoutSearch</name></member>
+      <member refid="class_main_window_1ad1f26db71fe29fdea3b1cd36bfc9c8d5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>onUpdate</name></member>
+      <member refid="class_main_window_1ae65d3d151c79c84cedefbe6999ae89f3" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>onUsers</name></member>
+      <member refid="class_main_window_1aa6db15fe86b6fa20bec8f0298ff9a595" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>openFolder</name></member>
+      <member refid="class_main_window_1a3c5e045f6f13c0c6054ff4d4cdb58498" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>passGitInitNeeded</name></member>
+      <member refid="class_main_window_1ad138cb03123dbf06fe8a118ea057412d" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>passOtpHandler</name></member>
+      <member refid="class_main_window_1a35dcbf29b9cfe87b6f7d597b7abba480" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>passShowHandler</name></member>
+      <member refid="class_main_window_1a7e1ae254673e36410d4b3a73e1e8ec8e" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>passShowHandlerFinished</name></member>
+      <member refid="class_main_window_1a2e3cdf69adc857095ff39f3d84c0c848" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>passwordFromFileToClipboard</name></member>
+      <member refid="class_main_window_1a8bc09b350f76be1008a0b6ec417e80a4" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>proxyModel</name></member>
+      <member refid="class_main_window_1a7cf82cedc4d5f790a8ed0bb4fadbbb16" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>reencryptPath</name></member>
+      <member refid="class_main_window_1a0e788394d24c96b5c2e35126f0c2cc1a" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>renameFolder</name></member>
+      <member refid="class_main_window_1af58bd54fe790497dd1d8793619c94661" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>renamePassword</name></member>
+      <member refid="class_main_window_1a9630f0fe0e0941a7996d68014f837ed5" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>restoreWindow</name></member>
+      <member refid="class_main_window_1a3707d5edf6ae13711a525bb03044eb29" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>searchTimer</name></member>
+      <member refid="class_main_window_1a7491c2974ab54018ac9a7d1738a4f654" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>selectFirstFile</name></member>
+      <member refid="class_main_window_1a66a9d5894a1e71cf76ba491755c946d2" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>selectionModel</name></member>
+      <member refid="class_main_window_1a3ebba5c6981eeebef8e40aa5135c8ecb" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>setPassword</name></member>
+      <member refid="class_main_window_1ac240119ea67a770e5d997a5aa0fe47a3" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>setUiElementsEnabled</name></member>
+      <member refid="class_main_window_1a98a902aa097483416e0bebf9fd5ce860" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>showBrowserContextMenu</name></member>
+      <member refid="class_main_window_1a856c67c50c07ca0b0f4c81b818a0f742" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>showContextMenu</name></member>
+      <member refid="class_main_window_1a69f4a122336a6fc3875fc94741e4d1cf" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>showStatusMessage</name></member>
+      <member refid="class_main_window_1a02ec9927bda826675653c0af916c8f33" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>startReencryptPath</name></member>
+      <member refid="class_main_window_1ab0a61daeb571586ac7f2efdf402f5991" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>tray</name></member>
+      <member refid="class_main_window_1a9df5005557a207e799dbe45333adac74" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ui</name></member>
+      <member refid="class_main_window_1a7afd2bb118cb0c01ac50344edb6660d5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>updateGitButtonVisibility</name></member>
+      <member refid="class_main_window_1a45b0da2bbc51131497c2b47ff2168200" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>updateGrepButtonVisibility</name></member>
+      <member refid="class_main_window_1a4cbb48928fc0724e08fbf19d884f6545" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>updateOtpButtonVisibility</name></member>
+      <member refid="class_main_window_1a91bfea12c6549f4eb243b4d41a1e3895" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>updateProfileBox</name></member>
+      <member refid="class_main_window_1a154d6f626586344f44a46bf9a5c52c2c" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>updateText</name></member>
+      <member refid="class_main_window_1a056b66175a3d3ffc3146535726bb4e50" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>userDialog</name></member>
+      <member refid="class_main_window_1a1f7d2c56410fc1bfa135bb907d43313f" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>~MainWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

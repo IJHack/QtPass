@@ -1,0 +1,247 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_q_push_button_with_clipboard" kind="class" language="C++" prot="public">
+    <compoundname>QPushButtonWithClipboard</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QPushButton</basecompoundref>
+    <includes refid="qpushbuttonwithclipboard_8h" local="no">qpushbuttonwithclipboard.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_q_push_button_with_clipboard_1ae496ba137d74cd4c645fbc809efa2be4" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString QPushButtonWithClipboard::textToCopy</definition>
+        <argsstring></argsstring>
+        <name>textToCopy</name>
+        <qualifiedname>QPushButtonWithClipboard::textToCopy</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonwithclipboard.h" line="48" column="11" bodyfile="src/qpushbuttonwithclipboard.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_push_button_with_clipboard_1adbdd9cd9cc2a5af533f81e17057bda48" prot="private" static="no" mutable="no">
+        <type>QIcon</type>
+        <definition>QIcon QPushButtonWithClipboard::iconEdit</definition>
+        <argsstring></argsstring>
+        <name>iconEdit</name>
+        <qualifiedname>QPushButtonWithClipboard::iconEdit</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonwithclipboard.h" line="49" column="9" bodyfile="src/qpushbuttonwithclipboard.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_q_push_button_with_clipboard_1ab6e4e5f78a314a40ae4a059c9cd1208e" prot="private" static="no" mutable="no">
+        <type>QIcon</type>
+        <definition>QIcon QPushButtonWithClipboard::iconEditPushed</definition>
+        <argsstring></argsstring>
+        <name>iconEditPushed</name>
+        <qualifiedname>QPushButtonWithClipboard::iconEditPushed</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonwithclipboard.h" line="50" column="9" bodyfile="src/qpushbuttonwithclipboard.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_q_push_button_with_clipboard_1a9fcd74d855d552598d1ebf4910f53666" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QPushButtonWithClipboard::QPushButtonWithClipboard</definition>
+        <argsstring>(QString textToCopy=&quot;&quot;, QWidget *parent=nullptr)</argsstring>
+        <name>QPushButtonWithClipboard</name>
+        <qualifiedname>QPushButtonWithClipboard::QPushButtonWithClipboard</qualifiedname>
+        <param>
+          <type>QString</type>
+          <declname>textToCopy</declname>
+          <defval>&quot;&quot;</defval>
+        </param>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>nullptr</defval>
+        </param>
+        <briefdescription>
+<para>Construct a <ref refid="class_q_push_button_with_clipboard" kindref="compound">QPushButtonWithClipboard</ref> with an optional initial text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>textToCopy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Initial text to store and emit on activation. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Optional parent widget. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonwithclipboard.h" line="22" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_push_button_with_clipboard_1ab3e53e28b6caaa7276eec98432020cff" prot="public" static="no" const="yes" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto QPushButtonWithClipboard::getTextToCopy</definition>
+        <argsstring>() const -&gt; QString</argsstring>
+        <name>getTextToCopy</name>
+        <qualifiedname>QPushButtonWithClipboard::getTextToCopy</qualifiedname>
+        <briefdescription>
+<para>Return the stored text used for copying. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The current stored text. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonwithclipboard.h" line="29" column="9"/>
+      </memberdef>
+      <memberdef kind="function" id="class_q_push_button_with_clipboard_1a37c9946fb4910d41ab047c2a2b1a2ca8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QPushButtonWithClipboard::setTextToCopy</definition>
+        <argsstring>(const QString &amp;value)</argsstring>
+        <name>setTextToCopy</name>
+        <qualifiedname>QPushButtonWithClipboard::setTextToCopy</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Update the stored text used for copying. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new text to store. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonwithclipboard.h" line="34" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_q_push_button_with_clipboard_1a14c2e48aa665e500839ef2a3222e995a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QPushButtonWithClipboard::clicked</definition>
+        <argsstring>(const QString &amp;text)</argsstring>
+        <name>clicked</name>
+        <qualifiedname>QPushButtonWithClipboard::clicked</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>text</declname>
+        </param>
+        <briefdescription>
+<para>Emitted when the button is activated with the stored text. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>text</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The stored text associated with this button. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonwithclipboard.h" line="41" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_q_push_button_with_clipboard_1a54c897f5d3d52aafb69bf34f64c2d037" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QPushButtonWithClipboard::changeIconDefault</definition>
+        <argsstring>()</argsstring>
+        <name>changeIconDefault</name>
+        <qualifiedname>QPushButtonWithClipboard::changeIconDefault</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonwithclipboard.h" line="44" column="8"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_q_push_button_with_clipboard_1a0aa34402ab183aa5bf72e0113b60536b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void QPushButtonWithClipboard::buttonClicked</definition>
+        <argsstring>(bool)</argsstring>
+        <name>buttonClicked</name>
+        <qualifiedname>QPushButtonWithClipboard::buttonClicked</qualifiedname>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qpushbuttonwithclipboard.h" line="45" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>QPushButton that stores a text payload and emits it when activated. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QPushButton</label>
+      </node>
+      <node id="1">
+        <label>QPushButtonWithClipboard</label>
+        <link refid="class_q_push_button_with_clipboard"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QPushButton</label>
+      </node>
+      <node id="1">
+        <label>QPushButtonWithClipboard</label>
+        <link refid="class_q_push_button_with_clipboard"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/qpushbuttonwithclipboard.h" line="13" column="1" bodyfile="src/qpushbuttonwithclipboard.h" bodystart="13" bodyend="51"/>
+    <listofallmembers>
+      <member refid="class_q_push_button_with_clipboard_1a0aa34402ab183aa5bf72e0113b60536b" prot="private" virt="non-virtual"><scope>QPushButtonWithClipboard</scope><name>buttonClicked</name></member>
+      <member refid="class_q_push_button_with_clipboard_1a54c897f5d3d52aafb69bf34f64c2d037" prot="private" virt="non-virtual"><scope>QPushButtonWithClipboard</scope><name>changeIconDefault</name></member>
+      <member refid="class_q_push_button_with_clipboard_1a14c2e48aa665e500839ef2a3222e995a" prot="public" virt="non-virtual"><scope>QPushButtonWithClipboard</scope><name>clicked</name></member>
+      <member refid="class_q_push_button_with_clipboard_1ab3e53e28b6caaa7276eec98432020cff" prot="public" virt="non-virtual"><scope>QPushButtonWithClipboard</scope><name>getTextToCopy</name></member>
+      <member refid="class_q_push_button_with_clipboard_1adbdd9cd9cc2a5af533f81e17057bda48" prot="private" virt="non-virtual"><scope>QPushButtonWithClipboard</scope><name>iconEdit</name></member>
+      <member refid="class_q_push_button_with_clipboard_1ab6e4e5f78a314a40ae4a059c9cd1208e" prot="private" virt="non-virtual"><scope>QPushButtonWithClipboard</scope><name>iconEditPushed</name></member>
+      <member refid="class_q_push_button_with_clipboard_1a9fcd74d855d552598d1ebf4910f53666" prot="public" virt="non-virtual"><scope>QPushButtonWithClipboard</scope><name>QPushButtonWithClipboard</name></member>
+      <member refid="class_q_push_button_with_clipboard_1a37c9946fb4910d41ab047c2a2b1a2ca8" prot="public" virt="non-virtual"><scope>QPushButtonWithClipboard</scope><name>setTextToCopy</name></member>
+      <member refid="class_q_push_button_with_clipboard_1ae496ba137d74cd4c645fbc809efa2be4" prot="private" virt="non-virtual"><scope>QPushButtonWithClipboard</scope><name>textToCopy</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

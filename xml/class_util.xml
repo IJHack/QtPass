@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_util" kind="class" language="C++" prot="public">
+    <compoundname>Util</compoundname>
+    <includes refid="util_8h" local="no">util.h</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_util_1a6f14f16322c96b174b357bbad4b66b67" prot="private" static="yes" mutable="no">
+        <type>QProcessEnvironment</type>
+        <definition>QProcessEnvironment Util::_env</definition>
+        <argsstring></argsstring>
+        <name>_env</name>
+        <qualifiedname>Util::_env</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="96" column="30" bodyfile="src/util.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_util_1aeccb471a23085461c3c79f24f7f82e2c" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool Util::_envInitialised</definition>
+        <argsstring></argsstring>
+        <name>_envInitialised</name>
+        <qualifiedname>Util::_envInitialised</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="97" column="15" bodyfile="src/util.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_util_1aa93547aecfd166a3e0eac955370cc05c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Util::findBinaryInPath</definition>
+        <argsstring>(const QString &amp;binary) -&gt; QString</argsstring>
+        <name>findBinaryInPath</name>
+        <qualifiedname>Util::findBinaryInPath</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>binary</declname>
+        </param>
+        <briefdescription>
+<para>Locate an executable by searching the process PATH and (on Windows) falling back to WSL. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>binary</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Executable name or relative path to locate (e.g., &quot;gpg&quot; or &quot;pass&quot;). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QString Absolute path to the executable if found, empty QString otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="30" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_util_1abfddcff8c37fbb33e86605e4fb7250db" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Util::findPasswordStore</definition>
+        <argsstring>() -&gt; QString</argsstring>
+        <name>findPasswordStore</name>
+        <qualifiedname>Util::findPasswordStore</qualifiedname>
+        <briefdescription>
+<para>Locate the password store directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>QString Path to the password store, always ends with native directory separator. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="36" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_util_1ab23a1afdcad63df9101660fd6e53b763" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Util::normalizeFolderPath</definition>
+        <argsstring>(const QString &amp;path) -&gt; QString</argsstring>
+        <name>normalizeFolderPath</name>
+        <qualifiedname>Util::normalizeFolderPath</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Ensure a folder path always ends with the native directory separator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The folder path to normalize. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QString Path with trailing separator added if missing. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="43" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_util_1af67c5e8a8475d367aad069275251558d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Util::configIsValid</definition>
+        <argsstring>() -&gt; bool</argsstring>
+        <name>configIsValid</name>
+        <qualifiedname>Util::configIsValid</qualifiedname>
+        <briefdescription>
+<para>Verify that the required configuration is complete. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>bool <computeroutput>true</computeroutput> if the password store&apos;s <computeroutput>.gpg-id</computeroutput> exists AND the configured executable (pass or gpg, depending on settings) exists or is a WSL wrapper; <computeroutput>false</computeroutput> otherwise. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="50" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_util_1a43035d8b47eb0a01bb0274e800cd8ef0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Util::getDir</definition>
+        <argsstring>(const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const StoreModel &amp;storeModel) -&gt; QString</argsstring>
+        <name>getDir</name>
+        <qualifiedname>Util::getDir</qualifiedname>
+        <param>
+          <type>const QModelIndex &amp;</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>forPass</declname>
+        </param>
+        <param>
+          <type>const QFileSystemModel &amp;</type>
+          <declname>model</declname>
+        </param>
+        <param>
+          <type>const <ref refid="class_store_model" kindref="compound">StoreModel</ref> &amp;</type>
+          <declname>storeModel</declname>
+        </param>
+        <briefdescription>
+<para>Get the selected folder path, either relative to the configured pass store or absolute. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Model index selecting the file or folder. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>forPass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If true, return the path relative to the pass store; otherwise return an absolute path. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>model</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filesystem model used to resolve the index. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>storeModel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_store_model" kindref="compound">StoreModel</ref> used to map view indexes to the filesystem model. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>QString Folder path that always ends with the native directory separator. Returns an empty string when <computeroutput>index</computeroutput> is invalid and <computeroutput>forPass</computeroutput> is true; otherwise returns the pass store root. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="64" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_util_1a8ed01cfd3773e5b0034089f2f952a030" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Util::endsWithGpg</definition>
+        <argsstring>() -&gt; const QRegularExpression &amp;</argsstring>
+        <name>endsWithGpg</name>
+        <qualifiedname>Util::endsWithGpg</qualifiedname>
+        <briefdescription>
+<para>Returns a regex to match .gpg file extensions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to static regex </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="71" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_util_1a73aa66df403921fb49c57548f83490bc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Util::protocolRegex</definition>
+        <argsstring>() -&gt; const QRegularExpression &amp;</argsstring>
+        <name>protocolRegex</name>
+        <qualifiedname>Util::protocolRegex</qualifiedname>
+        <briefdescription>
+<para>Returns a regex to match URL protocols. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to static regex </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="76" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_util_1a0ba6ef4e4542287d5b257252728d1aa4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Util::newLinesRegex</definition>
+        <argsstring>() -&gt; const QRegularExpression &amp;</argsstring>
+        <name>newLinesRegex</name>
+        <qualifiedname>Util::newLinesRegex</qualifiedname>
+        <briefdescription>
+<para>Returns a regex to match newline characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Reference to static regex </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="81" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_util_1a7a6dcbde6840aab13f34a83a4ce9f3c1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto Util::isValidKeyId</definition>
+        <argsstring>(const QString &amp;keyId) -&gt; bool</argsstring>
+        <name>isValidKeyId</name>
+        <qualifiedname>Util::isValidKeyId</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>keyId</declname>
+        </param>
+        <briefdescription>
+<para>Check if a string looks like a valid GPG key ID. Accepts: </para>
+        </briefdescription>
+        <detaileddescription>
+<para><itemizedlist>
+<listitem><para>Key IDs: 8-40 hex characters (0-9, A-F, a-f), optional 0x prefix</para>
+</listitem><listitem><para>Emails: any string containing @ (e.g., <ulink url="mailto:user@domain.org">user@domain.org</ulink>, <ulink url="mailto:user@domain.org">user@domain.org</ulink>)</para>
+</listitem><listitem><para>Special prefixes: leading @, /, #, or &amp; (any content after prefix) <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>keyId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The string to validate. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the key ID format is valid, false otherwise. </para>
+</simplesect>
+</para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="92" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_util_1a96360d48607679bb4bc5017d11397140" prot="private" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void Util::initialiseEnvironment</definition>
+        <argsstring>()</argsstring>
+        <name>initialiseEnvironment</name>
+        <qualifiedname>Util::initialiseEnvironment</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/util.h" line="95" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Some static utilities to be used elsewhere. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="src/util.h" line="20" column="1" bodyfile="src/util.h" bodystart="20" bodyend="98"/>
+    <listofallmembers>
+      <member refid="class_util_1a6f14f16322c96b174b357bbad4b66b67" prot="private" virt="non-virtual"><scope>Util</scope><name>_env</name></member>
+      <member refid="class_util_1aeccb471a23085461c3c79f24f7f82e2c" prot="private" virt="non-virtual"><scope>Util</scope><name>_envInitialised</name></member>
+      <member refid="class_util_1af67c5e8a8475d367aad069275251558d" prot="public" virt="non-virtual"><scope>Util</scope><name>configIsValid</name></member>
+      <member refid="class_util_1a8ed01cfd3773e5b0034089f2f952a030" prot="public" virt="non-virtual"><scope>Util</scope><name>endsWithGpg</name></member>
+      <member refid="class_util_1aa93547aecfd166a3e0eac955370cc05c" prot="public" virt="non-virtual"><scope>Util</scope><name>findBinaryInPath</name></member>
+      <member refid="class_util_1abfddcff8c37fbb33e86605e4fb7250db" prot="public" virt="non-virtual"><scope>Util</scope><name>findPasswordStore</name></member>
+      <member refid="class_util_1a43035d8b47eb0a01bb0274e800cd8ef0" prot="public" virt="non-virtual"><scope>Util</scope><name>getDir</name></member>
+      <member refid="class_util_1a96360d48607679bb4bc5017d11397140" prot="private" virt="non-virtual"><scope>Util</scope><name>initialiseEnvironment</name></member>
+      <member refid="class_util_1a7a6dcbde6840aab13f34a83a4ce9f3c1" prot="public" virt="non-virtual"><scope>Util</scope><name>isValidKeyId</name></member>
+      <member refid="class_util_1a0ba6ef4e4542287d5b257252728d1aa4" prot="public" virt="non-virtual"><scope>Util</scope><name>newLinesRegex</name></member>
+      <member refid="class_util_1ab23a1afdcad63df9101660fd6e53b763" prot="public" virt="non-virtual"><scope>Util</scope><name>normalizeFolderPath</name></member>
+      <member refid="class_util_1a73aa66df403921fb49c57548f83490bc" prot="public" virt="non-virtual"><scope>Util</scope><name>protocolRegex</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,277 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_single_application" kind="class" language="C++" prot="public">
+    <compoundname>SingleApplication</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QApplication</basecompoundref>
+    <includes refid="singleapplication_8h" local="no">singleapplication.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_single_application_1a1101486283e5f1580c02f8e1562f195f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool SingleApplication::_isRunning</definition>
+        <argsstring></argsstring>
+        <name>_isRunning</name>
+        <qualifiedname>SingleApplication::_isRunning</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singleapplication.h" line="54" column="8" bodyfile="src/singleapplication.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_single_application_1a796b973c0f8cbb128b557bbd9c048010" prot="private" static="no" mutable="no">
+        <type>QString</type>
+        <definition>QString SingleApplication::_uniqueKey</definition>
+        <argsstring></argsstring>
+        <name>_uniqueKey</name>
+        <qualifiedname>SingleApplication::_uniqueKey</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singleapplication.h" line="55" column="11" bodyfile="src/singleapplication.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_single_application_1a049e4d9a1ee8290afef91106c402cdda" prot="private" static="no" mutable="no">
+        <type>QSharedMemory</type>
+        <definition>QSharedMemory SingleApplication::sharedMemory</definition>
+        <argsstring></argsstring>
+        <name>sharedMemory</name>
+        <qualifiedname>SingleApplication::sharedMemory</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singleapplication.h" line="56" column="17" bodyfile="src/singleapplication.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_single_application_1a4893f9017498cae49ff2bb6db7f777f7" prot="private" static="no" mutable="no">
+        <type>QScopedPointer&lt; QLocalServer &gt;</type>
+        <definition>QScopedPointer&lt;QLocalServer&gt; SingleApplication::localServer</definition>
+        <argsstring></argsstring>
+        <name>localServer</name>
+        <qualifiedname>SingleApplication::localServer</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singleapplication.h" line="57" column="18" bodyfile="src/singleapplication.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_single_application_1a7fe3d993e578290d1ecd2033d7d5e0d9" prot="private" static="yes" mutable="no">
+        <type>const int</type>
+        <definition>const int SingleApplication::timeout</definition>
+        <argsstring></argsstring>
+        <name>timeout</name>
+        <qualifiedname>SingleApplication::timeout</qualifiedname>
+        <initializer>= 1000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singleapplication.h" line="59" column="20" bodyfile="src/singleapplication.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_single_application_1a55e5986206cf99fe05d33169d9eb71f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>SingleApplication::SingleApplication</definition>
+        <argsstring>(int &amp;argc, char *argv[], QString uniqueKey)</argsstring>
+        <name>SingleApplication</name>
+        <qualifiedname>SingleApplication::SingleApplication</qualifiedname>
+        <param>
+          <type>int &amp;</type>
+          <declname>argc</declname>
+        </param>
+        <param>
+          <type>char *</type>
+          <declname>argv</declname>
+          <array>[]</array>
+        </param>
+        <param>
+          <type>QString</type>
+          <declname>uniqueKey</declname>
+        </param>
+        <briefdescription>
+<para>Construct a <ref refid="class_single_application" kindref="compound">SingleApplication</ref> with a unique instance key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>argc</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to program argc forwarded to QApplication. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>argv</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Program argv forwarded to QApplication. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uniqueKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Key used to identify and scope the single instance. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singleapplication.h" line="27" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_single_application_1a9408850aec7bca2e43e386f35ed780f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto SingleApplication::isRunning</definition>
+        <argsstring>() -&gt; bool</argsstring>
+        <name>isRunning</name>
+        <qualifiedname>SingleApplication::isRunning</qualifiedname>
+        <briefdescription>
+<para>Query whether another instance is already running. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>true if another instance with the same key is running. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singleapplication.h" line="32" column="8"/>
+      </memberdef>
+      <memberdef kind="function" id="class_single_application_1ad63149f60ac6676dda4397a90116e351" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto SingleApplication::sendMessage</definition>
+        <argsstring>(const QString &amp;message) -&gt; bool</argsstring>
+        <name>sendMessage</name>
+        <qualifiedname>SingleApplication::sendMessage</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>Send a message to the running instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Text to deliver (typically forwarded command-line args). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the message was successfully delivered. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singleapplication.h" line="38" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_single_application_1a3257ffeb5c48de33e6ded14902c9f238" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SingleApplication::receiveMessage</definition>
+        <argsstring>()</argsstring>
+        <name>receiveMessage</name>
+        <qualifiedname>SingleApplication::receiveMessage</qualifiedname>
+        <briefdescription>
+<para>Slot invoked when an incoming IPC message arrives. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singleapplication.h" line="44" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_single_application_1ab893aad585d0cc3ee82659709a6a069b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SingleApplication::messageAvailable</definition>
+        <argsstring>(const QString &amp;message)</argsstring>
+        <name>messageAvailable</name>
+        <qualifiedname>SingleApplication::messageAvailable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+<para>messageAvailable notification from commandline </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>message</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>args sent to qtpass executable </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/singleapplication.h" line="51" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>QApplication subclass enforcing single-instance behavior via IPC. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Detects whether another instance with the same unique key is running and enables forwarding messages (e.g., command-line arguments) to it. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QApplication</label>
+      </node>
+      <node id="1">
+        <label>SingleApplication</label>
+        <link refid="class_single_application"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QApplication</label>
+      </node>
+      <node id="1">
+        <label>SingleApplication</label>
+        <link refid="class_single_application"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/singleapplication.h" line="17" column="1" bodyfile="src/singleapplication.h" bodystart="17" bodyend="60"/>
+    <listofallmembers>
+      <member refid="class_single_application_1a1101486283e5f1580c02f8e1562f195f" prot="private" virt="non-virtual"><scope>SingleApplication</scope><name>_isRunning</name></member>
+      <member refid="class_single_application_1a796b973c0f8cbb128b557bbd9c048010" prot="private" virt="non-virtual"><scope>SingleApplication</scope><name>_uniqueKey</name></member>
+      <member refid="class_single_application_1a9408850aec7bca2e43e386f35ed780f4" prot="public" virt="non-virtual"><scope>SingleApplication</scope><name>isRunning</name></member>
+      <member refid="class_single_application_1a4893f9017498cae49ff2bb6db7f777f7" prot="private" virt="non-virtual"><scope>SingleApplication</scope><name>localServer</name></member>
+      <member refid="class_single_application_1ab893aad585d0cc3ee82659709a6a069b" prot="public" virt="non-virtual"><scope>SingleApplication</scope><name>messageAvailable</name></member>
+      <member refid="class_single_application_1a3257ffeb5c48de33e6ded14902c9f238" prot="public" virt="non-virtual"><scope>SingleApplication</scope><name>receiveMessage</name></member>
+      <member refid="class_single_application_1ad63149f60ac6676dda4397a90116e351" prot="public" virt="non-virtual"><scope>SingleApplication</scope><name>sendMessage</name></member>
+      <member refid="class_single_application_1a049e4d9a1ee8290afef91106c402cdda" prot="private" virt="non-virtual"><scope>SingleApplication</scope><name>sharedMemory</name></member>
+      <member refid="class_single_application_1a55e5986206cf99fe05d33169d9eb71f5" prot="public" virt="non-virtual"><scope>SingleApplication</scope><name>SingleApplication</name></member>
+      <member refid="class_single_application_1a7fe3d993e578290d1ecd2033d7d5e0d9" prot="private" virt="non-virtual"><scope>SingleApplication</scope><name>timeout</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

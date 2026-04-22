@@ -1,0 +1,3986 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_qt_pass_settings" kind="class" language="C++" prot="public">
+    <compoundname>QtPassSettings</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QSettings</basecompoundref>
+    <includes refid="qtpasssettings_8h" local="no">qtpasssettings.h</includes>
+    <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="class_qt_pass_settings_1a182a8c7e9d3fc5738da9c9c67ea7a743" prot="private" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool QtPassSettings::initialized</definition>
+        <argsstring></argsstring>
+        <name>initialized</name>
+        <qualifiedname>QtPassSettings::initialized</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="50" column="15" bodyfile="src/qtpasssettings.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_pass_settings_1a91e257076ea2e64c46b79c17478cf21f" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_qt_pass_settings" kindref="compound">QtPassSettings</ref> *</type>
+        <definition>QtPassSettings* QtPassSettings::m_instance</definition>
+        <argsstring></argsstring>
+        <name>m_instance</name>
+        <qualifiedname>QtPassSettings::m_instance</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="51" column="25" bodyfile="src/qtpasssettings.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_pass_settings_1a1d2d8bac960f72a7d705e4552a2847a7" prot="private" static="yes" mutable="no">
+        <type><ref refid="class_pass" kindref="compound">Pass</ref> *</type>
+        <definition>Pass* QtPassSettings::pass</definition>
+        <argsstring></argsstring>
+        <name>pass</name>
+        <qualifiedname>QtPassSettings::pass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="53" column="15" bodyfile="src/qtpasssettings.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_pass_settings_1a6c265c10e44d1a8e8b3f6c01190a14ba" prot="private" static="yes" mutable="no">
+        <type>QScopedPointer&lt; <ref refid="class_real_pass" kindref="compound">RealPass</ref> &gt;</type>
+        <definition>QScopedPointer&lt;RealPass&gt; QtPassSettings::realPass</definition>
+        <argsstring></argsstring>
+        <name>realPass</name>
+        <qualifiedname>QtPassSettings::realPass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="54" column="25" bodyfile="src/qtpasssettings.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_qt_pass_settings_1a20c590b894da81c8c928348c1ac2fcd4" prot="private" static="yes" mutable="no">
+        <type>QScopedPointer&lt; <ref refid="class_imitate_pass" kindref="compound">ImitatePass</ref> &gt;</type>
+        <definition>QScopedPointer&lt;ImitatePass&gt; QtPassSettings::imitatePass</definition>
+        <argsstring></argsstring>
+        <name>imitatePass</name>
+        <qualifiedname>QtPassSettings::imitatePass</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="55" column="25" bodyfile="src/qtpasssettings.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_qt_pass_settings_1acf70027402216485ed1ee1a36fb55cf0" prot="private" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QtPassSettings::QtPassSettings</definition>
+        <argsstring>()</argsstring>
+        <name>QtPassSettings</name>
+        <qualifiedname>QtPassSettings::QtPassSettings</qualifiedname>
+        <briefdescription>
+<para>Private default constructor to enforce singleton usage and prevent direct instantiation. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="41" column="12"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ad7bcd850d6cb2b8046e2d8deb4822639" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QtPassSettings::QtPassSettings</definition>
+        <argsstring>(const QString &amp;organization, const QSettings::Format format)</argsstring>
+        <name>QtPassSettings</name>
+        <qualifiedname>QtPassSettings::QtPassSettings</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>organization</declname>
+        </param>
+        <param>
+          <type>const QSettings::Format</type>
+          <declname>format</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="43" column="3" bodyfile="src/qtpasssettings.h" bodystart="43" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1adceeba713360a20aa915923caedb9806" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>QtPassSettings::QtPassSettings</definition>
+        <argsstring>(const QString &amp;organization, const QString &amp;application)</argsstring>
+        <name>QtPassSettings</name>
+        <qualifiedname>QtPassSettings::QtPassSettings</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>organization</declname>
+        </param>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>application</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="45" column="3" bodyfile="src/qtpasssettings.h" bodystart="45" bodyend="46"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a59e8e3f711ac35bbee6e2f7b54b583d9" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>QtPassSettings::~QtPassSettings</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~QtPassSettings</name>
+        <qualifiedname>QtPassSettings::~QtPassSettings</qualifiedname>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="48" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="class_qt_pass_settings_1a3d38816e907ea2ea01842a8ab488260c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getInstance</definition>
+        <argsstring>() -&gt; QtPassSettings *</argsstring>
+        <name>getInstance</name>
+        <qualifiedname>QtPassSettings::getInstance</qualifiedname>
+        <briefdescription>
+<para>Get the singleton instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to the <ref refid="class_qt_pass_settings" kindref="compound">QtPassSettings</ref> instance. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="62" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a6f238c4845f87423bcd4cedbf12fc390" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getVersion</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getVersion</name>
+        <qualifiedname>QtPassSettings::getVersion</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get saved application version. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if no version saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Application version string. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="70" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a03ae30049a0011939ca6e15dad4426d5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setVersion</definition>
+        <argsstring>(const QString &amp;version)</argsstring>
+        <name>setVersion</name>
+        <qualifiedname>QtPassSettings::setVersion</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>version</declname>
+        </param>
+        <briefdescription>
+<para>Save application version. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>version</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Version string to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="76" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a9919a3d64fe7ebad42799b113af93799" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getGeometry</definition>
+        <argsstring>(const QByteArray &amp;defaultValue=QVariant().toByteArray()) -&gt; QByteArray</argsstring>
+        <name>getGeometry</name>
+        <qualifiedname>QtPassSettings::getGeometry</qualifiedname>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toByteArray()</defval>
+        </param>
+        <briefdescription>
+<para>Get saved window geometry. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Byte array returned if no geometry saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Window geometry as QByteArray. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="84" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a78c4b9888e34244fed364ca2072459f5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setGeometry</definition>
+        <argsstring>(const QByteArray &amp;geometry)</argsstring>
+        <name>setGeometry</name>
+        <qualifiedname>QtPassSettings::setGeometry</qualifiedname>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>geometry</declname>
+        </param>
+        <briefdescription>
+<para>Save window geometry. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>geometry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window geometry to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="90" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a7815c25281a1bdf768c0d27cd237cab4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getSavestate</definition>
+        <argsstring>(const QByteArray &amp;defaultValue=QVariant().toByteArray()) -&gt; QByteArray</argsstring>
+        <name>getSavestate</name>
+        <qualifiedname>QtPassSettings::getSavestate</qualifiedname>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toByteArray()</defval>
+        </param>
+        <briefdescription>
+<para>Get saved window state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Byte array returned if no state saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Window state as QByteArray. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="98" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a1c215f68a785e07d0bf01dc7f26f1605" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setSavestate</definition>
+        <argsstring>(const QByteArray &amp;saveState)</argsstring>
+        <name>setSavestate</name>
+        <qualifiedname>QtPassSettings::setSavestate</qualifiedname>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>saveState</declname>
+        </param>
+        <briefdescription>
+<para>Save window state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>saveState</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window state to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="104" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aac019a48331738da3b5d343330990b6f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getPos</definition>
+        <argsstring>(const QPoint &amp;defaultValue=QVariant().toPoint()) -&gt; QPoint</argsstring>
+        <name>getPos</name>
+        <qualifiedname>QtPassSettings::getPos</qualifiedname>
+        <param>
+          <type>const QPoint &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toPoint()</defval>
+        </param>
+        <briefdescription>
+<para>Get saved window position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point returned if no position saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Window position as QPoint. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="111" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aefc7bfc4e75cd0dba5d72503bf07f762" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setPos</definition>
+        <argsstring>(const QPoint &amp;pos)</argsstring>
+        <name>setPos</name>
+        <qualifiedname>QtPassSettings::setPos</qualifiedname>
+        <param>
+          <type>const QPoint &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Save window position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window position to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="117" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a2250c3d54340c0dbfbaae2a6bbb5b6d7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getSize</definition>
+        <argsstring>(const QSize &amp;defaultValue=QVariant().toSize()) -&gt; QSize</argsstring>
+        <name>getSize</name>
+        <qualifiedname>QtPassSettings::getSize</qualifiedname>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toSize()</defval>
+        </param>
+        <briefdescription>
+<para>Get saved window size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size returned if no size saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Window size as QSize. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="124" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a4e77ad087cfd568eff6a8ac95f59f48b" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setSize</definition>
+        <argsstring>(const QSize &amp;size)</argsstring>
+        <name>setSize</name>
+        <qualifiedname>QtPassSettings::setSize</qualifiedname>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Save window size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Window size to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="129" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a30ec7de5247d54b2196854cb1077ccdf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isMaximized</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isMaximized</name>
+        <qualifiedname>QtPassSettings::isMaximized</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get maximized state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if window is maximized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="136" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a55a473b77fe0450ce08e19544d495c6f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setMaximized</definition>
+        <argsstring>(const bool &amp;maximized)</argsstring>
+        <name>setMaximized</name>
+        <qualifiedname>QtPassSettings::setMaximized</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>maximized</declname>
+        </param>
+        <briefdescription>
+<para>Save maximized state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>maximized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximized state to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="142" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a41481e1e44a7db8f1bae4371017dd023" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getDialogGeometry</definition>
+        <argsstring>(const QString &amp;key, const QByteArray &amp;defaultValue=QVariant().toByteArray()) -&gt; QByteArray</argsstring>
+        <name>getDialogGeometry</name>
+        <qualifiedname>QtPassSettings::getDialogGeometry</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toByteArray()</defval>
+        </param>
+        <briefdescription>
+<para>Get saved dialog geometry. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog identifier (e.g., &quot;usersDialog&quot;). </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Byte array returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Dialog geometry as QByteArray. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="152" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a0e743a38e3bcb3d4244c8b8047ab077d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setDialogGeometry</definition>
+        <argsstring>(const QString &amp;key, const QByteArray &amp;geometry)</argsstring>
+        <name>setDialogGeometry</name>
+        <qualifiedname>QtPassSettings::setDialogGeometry</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const QByteArray &amp;</type>
+          <declname>geometry</declname>
+        </param>
+        <briefdescription>
+<para>Save dialog geometry. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>geometry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog geometry to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="160" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a16bbe6462ac8bbf26bc057ff65cd9028" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getDialogPos</definition>
+        <argsstring>(const QString &amp;key, const QPoint &amp;defaultValue=QVariant().toPoint()) -&gt; QPoint</argsstring>
+        <name>getDialogPos</name>
+        <qualifiedname>QtPassSettings::getDialogPos</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const QPoint &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toPoint()</defval>
+        </param>
+        <briefdescription>
+<para>Get saved dialog position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Point returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Dialog position as QPoint. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="168" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a5e08e0e0a4cffd1b36c69c5cb0dbac97" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setDialogPos</definition>
+        <argsstring>(const QString &amp;key, const QPoint &amp;pos)</argsstring>
+        <name>setDialogPos</name>
+        <qualifiedname>QtPassSettings::setDialogPos</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const QPoint &amp;</type>
+          <declname>pos</declname>
+        </param>
+        <briefdescription>
+<para>Save dialog position. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog position to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="176" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a556d04858217dd5165fa7c91e8de1edf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getDialogSize</definition>
+        <argsstring>(const QString &amp;key, const QSize &amp;defaultValue=QVariant().toSize()) -&gt; QSize</argsstring>
+        <name>getDialogSize</name>
+        <qualifiedname>QtPassSettings::getDialogSize</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toSize()</defval>
+        </param>
+        <briefdescription>
+<para>Get saved dialog size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Size returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Dialog size as QSize. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="184" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ac61ed3fb421e32608a25889cbba5a17f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setDialogSize</definition>
+        <argsstring>(const QString &amp;key, const QSize &amp;size)</argsstring>
+        <name>setDialogSize</name>
+        <qualifiedname>QtPassSettings::setDialogSize</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const QSize &amp;</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Save dialog size. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog size to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="192" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1add630c087ff82264697fe6619f1a3be1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isDialogMaximized</definition>
+        <argsstring>(const QString &amp;key, const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isDialogMaximized</name>
+        <qualifiedname>QtPassSettings::isDialogMaximized</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get dialog maximized state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if dialog is maximized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="200" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a74255fb520598be4800eda9c5f4cf0c5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setDialogMaximized</definition>
+        <argsstring>(const QString &amp;key, const bool &amp;maximized)</argsstring>
+        <name>setDialogMaximized</name>
+        <qualifiedname>QtPassSettings::setDialogMaximized</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>key</declname>
+        </param>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>maximized</declname>
+        </param>
+        <briefdescription>
+<para>Save dialog maximized state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>key</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Dialog identifier. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>maximized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Maximized state to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="208" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aa2bb9d901d72cba879280b34f6f95399" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUsePass</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUsePass</name>
+        <qualifiedname>QtPassSettings::isUsePass</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get whether to use pass (true) or GPG (false). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved (defaults to false). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if using pass, false if using GPG. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="216" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1abfe9f251d4037975f3f42c2322159bb3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUsePass</definition>
+        <argsstring>(const bool &amp;usePass)</argsstring>
+        <name>setUsePass</name>
+        <qualifiedname>QtPassSettings::setUsePass</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>usePass</declname>
+        </param>
+        <briefdescription>
+<para>Save use pass setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>usePass</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to use pass, false for GPG. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="221" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a003c48cf1fe61f172e3252e88815f0f3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getClipBoardTypeRaw</definition>
+        <argsstring>(const Enums::clipBoardType &amp;defaultValue=Enums::CLIPBOARD_NEVER) -&gt; int</argsstring>
+        <name>getClipBoardTypeRaw</name>
+        <qualifiedname>QtPassSettings::getClipBoardTypeRaw</qualifiedname>
+        <param>
+          <type>const <ref refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52d" kindref="member">Enums::clipBoardType</ref> &amp;</type>
+          <declname>defaultValue</declname>
+          <defval><ref refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef" kindref="member">Enums::CLIPBOARD_NEVER</ref></defval>
+        </param>
+        <briefdescription>
+<para>Get clipboard type preference. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Default value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Clipboard type as <ref refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52d" kindref="member">Enums::clipBoardType</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="228" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a14599d5904d2e158de03c16494db8edd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getClipBoardType</definition>
+        <argsstring>(const Enums::clipBoardType &amp;defaultValue=Enums::CLIPBOARD_NEVER) -&gt; Enums::clipBoardType</argsstring>
+        <name>getClipBoardType</name>
+        <qualifiedname>QtPassSettings::getClipBoardType</qualifiedname>
+        <param>
+          <type>const <ref refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52d" kindref="member">Enums::clipBoardType</ref> &amp;</type>
+          <declname>defaultValue</declname>
+          <defval><ref refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef" kindref="member">Enums::CLIPBOARD_NEVER</ref></defval>
+        </param>
+        <briefdescription>
+<para>Get clipboard type as enum. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Default value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Clipboard type as <ref refid="namespace_enums_1aa36f045555e72e4d536b48aac12ee52d" kindref="member">Enums::clipBoardType</ref>. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="235" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1acea381df2014ac07e6c52b89167d41a2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setClipBoardType</definition>
+        <argsstring>(const int &amp;clipBoardType)</argsstring>
+        <name>setClipBoardType</name>
+        <qualifiedname>QtPassSettings::setClipBoardType</qualifiedname>
+        <param>
+          <type>const int &amp;</type>
+          <declname>clipBoardType</declname>
+        </param>
+        <briefdescription>
+<para>Save clipboard type. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>clipBoardType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Clipboard type to save. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="242" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a3790763f4ab618afebbdf70479fddc90" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseSelection</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseSelection</name>
+        <qualifiedname>QtPassSettings::isUseSelection</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get whether to use selection (X11) for clipboard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if using selection. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="250" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a73fc1b25736040e0a00e8c1f757a4c78" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseSelection</definition>
+        <argsstring>(const bool &amp;useSelection)</argsstring>
+        <name>setUseSelection</name>
+        <qualifiedname>QtPassSettings::setUseSelection</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useSelection</declname>
+        </param>
+        <briefdescription>
+<para>Save use selection setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useSelection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to use selection. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="256" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ae5f7bd28913f3407227eaccef087b8ee" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseAutoclear</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseAutoclear</name>
+        <qualifiedname>QtPassSettings::isUseAutoclear</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get whether to use autoclear for clipboard. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if autoclear is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="263" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ab83fcae2cbd44c990f039057ce1aa598" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseAutoclear</definition>
+        <argsstring>(const bool &amp;useAutoclear)</argsstring>
+        <name>setUseAutoclear</name>
+        <qualifiedname>QtPassSettings::setUseAutoclear</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useAutoclear</declname>
+        </param>
+        <briefdescription>
+<para>Save use autoclear setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useAutoclear</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable autoclear. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="269" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ae18fe9b401aac964c72e7d7711283afe" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getAutoclearSeconds</definition>
+        <argsstring>(const int &amp;defaultValue=QVariant().toInt()) -&gt; int</argsstring>
+        <name>getAutoclearSeconds</name>
+        <qualifiedname>QtPassSettings::getAutoclearSeconds</qualifiedname>
+        <param>
+          <type>const int &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toInt()</defval>
+        </param>
+        <briefdescription>
+<para>Get autoclear delay in seconds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Seconds before clipboard is cleared. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="276" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1af80acc9e9f0e993a993c36e8092dd3fd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setAutoclearSeconds</definition>
+        <argsstring>(const int &amp;autoClearSeconds)</argsstring>
+        <name>setAutoclearSeconds</name>
+        <qualifiedname>QtPassSettings::setAutoclearSeconds</qualifiedname>
+        <param>
+          <type>const int &amp;</type>
+          <declname>autoClearSeconds</declname>
+        </param>
+        <briefdescription>
+<para>Save autoclear seconds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>autoClearSeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Seconds to wait before clearing. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="282" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a8e220d21a77ee74af6b6f0d59c959ece" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseAutoclearPanel</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseAutoclearPanel</name>
+        <qualifiedname>QtPassSettings::isUseAutoclearPanel</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get whether to use panel autoclear. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if panel autoclear is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="290" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ad3d0bc0f401ceeb25e9718a44ff7690d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseAutoclearPanel</definition>
+        <argsstring>(const bool &amp;useAutoclearPanel)</argsstring>
+        <name>setUseAutoclearPanel</name>
+        <qualifiedname>QtPassSettings::setUseAutoclearPanel</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useAutoclearPanel</declname>
+        </param>
+        <briefdescription>
+<para>Save use autoclear panel setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useAutoclearPanel</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to enable panel autoclear. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="295" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a61d77f033cb243df921f36bd2ad7cfe9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getAutoclearPanelSeconds</definition>
+        <argsstring>(const int &amp;defaultValue=QVariant().toInt()) -&gt; int</argsstring>
+        <name>getAutoclearPanelSeconds</name>
+        <qualifiedname>QtPassSettings::getAutoclearPanelSeconds</qualifiedname>
+        <param>
+          <type>const int &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toInt()</defval>
+        </param>
+        <briefdescription>
+<para>Get panel autoclear delay in seconds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Integer returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Seconds before panel is cleared. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="303" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ae813a84084ac256a2bbeee3502a17439" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setAutoclearPanelSeconds</definition>
+        <argsstring>(const int &amp;autoClearPanelSeconds)</argsstring>
+        <name>setAutoclearPanelSeconds</name>
+        <qualifiedname>QtPassSettings::setAutoclearPanelSeconds</qualifiedname>
+        <param>
+          <type>const int &amp;</type>
+          <declname>autoClearPanelSeconds</declname>
+        </param>
+        <briefdescription>
+<para>Save panel autoclear seconds. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>autoClearPanelSeconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Seconds to wait before clearing panel. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="308" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aa2717890f1a1de284179379539e6b977" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isHidePassword</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isHidePassword</name>
+        <qualifiedname>QtPassSettings::isHidePassword</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get whether to hide password in UI. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if password is hidden. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="315" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ace82c94af00fba9fd49c32d4f2574e60" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setHidePassword</definition>
+        <argsstring>(const bool &amp;hidePassword)</argsstring>
+        <name>setHidePassword</name>
+        <qualifiedname>QtPassSettings::setHidePassword</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>hidePassword</declname>
+        </param>
+        <briefdescription>
+<para>Save hide password setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hidePassword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to hide password. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="321" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a3da81eb987a51e298064626536f16177" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isHideContent</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isHideContent</name>
+        <qualifiedname>QtPassSettings::isHideContent</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get whether to hide content (password + username). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if content is hidden. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="328" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aceb109460c1dcdb6a72e7164a7528090" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setHideContent</definition>
+        <argsstring>(const bool &amp;hideContent)</argsstring>
+        <name>setHideContent</name>
+        <qualifiedname>QtPassSettings::setHideContent</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>hideContent</declname>
+        </param>
+        <briefdescription>
+<para>Save hide content setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hideContent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to hide content. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="334" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a93c5d0d81756c6ede0c7302160b1bc0a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseMonospace</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseMonospace</name>
+        <qualifiedname>QtPassSettings::isUseMonospace</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get whether to use monospace font. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if using monospace font. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="341" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a2836f4fbe0d6374d72ea6d631e89b0fa" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseMonospace</definition>
+        <argsstring>(const bool &amp;useMonospace)</argsstring>
+        <name>setUseMonospace</name>
+        <qualifiedname>QtPassSettings::setUseMonospace</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useMonospace</declname>
+        </param>
+        <briefdescription>
+<para>Save use monospace setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useMonospace</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to use monospace font. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="347" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a56ab62f0a13f16445c13003883a57452" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isDisplayAsIs</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isDisplayAsIs</name>
+        <qualifiedname>QtPassSettings::isDisplayAsIs</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get whether to display password as-is (no modification). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if displaying as-is. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="354" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ad1ed6b000b859ca9747f8646c987a99f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setDisplayAsIs</definition>
+        <argsstring>(const bool &amp;displayAsIs)</argsstring>
+        <name>setDisplayAsIs</name>
+        <qualifiedname>QtPassSettings::setDisplayAsIs</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>displayAsIs</declname>
+        </param>
+        <briefdescription>
+<para>Save display as-is setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>displayAsIs</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to display unmodified. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="360" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ad7c28aad5a5873051fa38a9abf95127f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isNoLineWrapping</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isNoLineWrapping</name>
+        <qualifiedname>QtPassSettings::isNoLineWrapping</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get whether to disable line wrapping. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if line wrapping disabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="367" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ac463092fe55a3f66a87305b70bcce2c1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setNoLineWrapping</definition>
+        <argsstring>(const bool &amp;noLineWrapping)</argsstring>
+        <name>setNoLineWrapping</name>
+        <qualifiedname>QtPassSettings::setNoLineWrapping</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>noLineWrapping</declname>
+        </param>
+        <briefdescription>
+<para>Save no line wrapping setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>noLineWrapping</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to disable wrapping. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="373" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ad1b27f9ca2bbbe85cfa361ecfdc3f9ac" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isAddGPGId</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isAddGPGId</name>
+        <qualifiedname>QtPassSettings::isAddGPGId</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Get whether to auto-add GPG ID when receiving files. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Boolean returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if auto-adding is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="380" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ae6ebfef6950f26ab7db56ffc68f2e1bc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setAddGPGId</definition>
+        <argsstring>(const bool &amp;addGPGId)</argsstring>
+        <name>setAddGPGId</name>
+        <qualifiedname>QtPassSettings::setAddGPGId</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>addGPGId</declname>
+        </param>
+        <briefdescription>
+<para>Save add GPG ID setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>addGPGId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>true to auto-add GPG IDs. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="386" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a0de322eb0b4907a730325e4008c0b4b6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getPassStore</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getPassStore</name>
+        <qualifiedname>QtPassSettings::getPassStore</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get password store directory path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Path to password store. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="394" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a87ce0a9a9a6510a621e6429f2d090862" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setPassStore</definition>
+        <argsstring>(const QString &amp;passStore)</argsstring>
+        <name>setPassStore</name>
+        <qualifiedname>QtPassSettings::setPassStore</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>passStore</declname>
+        </param>
+        <briefdescription>
+<para>Save password store path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>passStore</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to password store. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="400" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aea7b7a38dd11a0f2bf4aa43c2756b9af" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getPassSigningKey</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getPassSigningKey</name>
+        <qualifiedname>QtPassSettings::getPassSigningKey</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get GPG signing key for pass. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>GPG key ID. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="408" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aa38dc1b1104a378ab3f862063d9604b7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setPassSigningKey</definition>
+        <argsstring>(const QString &amp;passSigningKey)</argsstring>
+        <name>setPassSigningKey</name>
+        <qualifiedname>QtPassSettings::setPassSigningKey</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>passSigningKey</declname>
+        </param>
+        <briefdescription>
+<para>Save GPG signing key. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>passSigningKey</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Key ID to use for signing. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="414" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1accde18f59a051107c85755993fcefdac" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::initExecutables</definition>
+        <argsstring>()</argsstring>
+        <name>initExecutables</name>
+        <qualifiedname>QtPassSettings::initExecutables</qualifiedname>
+        <briefdescription>
+<para>Initialize executable paths by auto-detecting them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="420" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a1bedf6d09f7ed13de785940d77c92f14" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getPassExecutable</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getPassExecutable</name>
+        <qualifiedname>QtPassSettings::getPassExecutable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get pass executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Path to pass executable. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="427" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ab97129498f8b41e600f205611dab3bcf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setPassExecutable</definition>
+        <argsstring>(const QString &amp;passExecutable)</argsstring>
+        <name>setPassExecutable</name>
+        <qualifiedname>QtPassSettings::setPassExecutable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>passExecutable</declname>
+        </param>
+        <briefdescription>
+<para>Save pass executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>passExecutable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to pass. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="433" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a97ccce4e0d62fa0afa4f901a0c0b5a95" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getGitExecutable</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getGitExecutable</name>
+        <qualifiedname>QtPassSettings::getGitExecutable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get git executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Path to git executable. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="441" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a0dbc45500e3af30d01e54dc5705490b2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setGitExecutable</definition>
+        <argsstring>(const QString &amp;gitExecutable)</argsstring>
+        <name>setGitExecutable</name>
+        <qualifiedname>QtPassSettings::setGitExecutable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>gitExecutable</declname>
+        </param>
+        <briefdescription>
+<para>Save git executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gitExecutable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to git. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="447" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1abaecefd0015e15cc55824e9093c10ded" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getGpgExecutable</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getGpgExecutable</name>
+        <qualifiedname>QtPassSettings::getGpgExecutable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get GPG executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Path to GPG executable. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="455" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a3a571496209e6069bcbd76483fb5be95" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setGpgExecutable</definition>
+        <argsstring>(const QString &amp;gpgExecutable)</argsstring>
+        <name>setGpgExecutable</name>
+        <qualifiedname>QtPassSettings::setGpgExecutable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>gpgExecutable</declname>
+        </param>
+        <briefdescription>
+<para>Save GPG executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>gpgExecutable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to GPG executable. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="461" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a5561c5e69521ab0e690fc09074270fcc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getPwgenExecutable</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getPwgenExecutable</name>
+        <qualifiedname>QtPassSettings::getPwgenExecutable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get pwgen executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Path to pwgen executable. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="469" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a2748b280aa2b1871f97e3ffdad9029a4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setPwgenExecutable</definition>
+        <argsstring>(const QString &amp;pwgenExecutable)</argsstring>
+        <name>setPwgenExecutable</name>
+        <qualifiedname>QtPassSettings::setPwgenExecutable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>pwgenExecutable</declname>
+        </param>
+        <briefdescription>
+<para>Save pwgen executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pwgenExecutable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to pwgen. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="475" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a4a80fa156c1a6e2f0365ed643af1190c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getGpgHome</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getGpgHome</name>
+        <qualifiedname>QtPassSettings::getGpgHome</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get GPG home directory. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Path to the GPG home directory. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="482" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a15e5619edfc478765e728fac1bb9c6cf" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseWebDav</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseWebDav</name>
+        <qualifiedname>QtPassSettings::isUseWebDav</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether WebDAV integration is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if WebDAV is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="490" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a6fc0c2783408100c4c3ca0923e868ae5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseWebDav</definition>
+        <argsstring>(const bool &amp;useWebDav)</argsstring>
+        <name>setUseWebDav</name>
+        <qualifiedname>QtPassSettings::setUseWebDav</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useWebDav</declname>
+        </param>
+        <briefdescription>
+<para>Save WebDAV integration flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useWebDav</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to enable WebDAV. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="496" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a2e558fcadd77cae52a46138d119e10c2" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getWebDavUrl</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getWebDavUrl</name>
+        <qualifiedname>QtPassSettings::getWebDavUrl</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get WebDAV URL. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>WebDAV URL. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="503" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a211af4caf2bd5626dcc9d763061d1556" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setWebDavUrl</definition>
+        <argsstring>(const QString &amp;webDavUrl)</argsstring>
+        <name>setWebDavUrl</name>
+        <qualifiedname>QtPassSettings::setWebDavUrl</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>webDavUrl</declname>
+        </param>
+        <briefdescription>
+<para>Save WebDAV URL. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>webDavUrl</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>WebDAV URL. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="509" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a6668924f1b7aaf965b2a07dcf95b4bc0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getWebDavUser</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getWebDavUser</name>
+        <qualifiedname>QtPassSettings::getWebDavUser</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get WebDAV username. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>WebDAV username. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="516" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aaefaf5812c3428a6c9a894b5909e0829" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setWebDavUser</definition>
+        <argsstring>(const QString &amp;webDavUser)</argsstring>
+        <name>setWebDavUser</name>
+        <qualifiedname>QtPassSettings::setWebDavUser</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>webDavUser</declname>
+        </param>
+        <briefdescription>
+<para>Save WebDAV username. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>webDavUser</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>WebDAV username. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="522" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ac0d690c3f037f5c5cecc12be8716457f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getWebDavPassword</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getWebDavPassword</name>
+        <qualifiedname>QtPassSettings::getWebDavPassword</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get WebDAV password. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>WebDAV password. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="530" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aa633927e61af95b7a4e6429de7c93bb1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setWebDavPassword</definition>
+        <argsstring>(const QString &amp;webDavPassword)</argsstring>
+        <name>setWebDavPassword</name>
+        <qualifiedname>QtPassSettings::setWebDavPassword</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>webDavPassword</declname>
+        </param>
+        <briefdescription>
+<para>Save WebDAV password. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>webDavPassword</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>WebDAV password. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="536" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1af2548c1c64c4daccdc1df6f505935588" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getProfile</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getProfile</name>
+        <qualifiedname>QtPassSettings::getProfile</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get active profile name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Active profile name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="543" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a5026be84cffcec3cc08f53c1d45c78bd" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setProfile</definition>
+        <argsstring>(const QString &amp;profile)</argsstring>
+        <name>setProfile</name>
+        <qualifiedname>QtPassSettings::setProfile</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>profile</declname>
+        </param>
+        <briefdescription>
+<para>Save active profile name. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>profile</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Profile name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="549" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a0bd97a8df7fb91cf461b5a1c57940710" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseGit</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseGit</name>
+        <qualifiedname>QtPassSettings::isUseGit</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether Git integration is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if Git integration is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="556" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a47382b2f52a69ee4e162548d95594081" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseGit</definition>
+        <argsstring>(const bool &amp;useGit)</argsstring>
+        <name>setUseGit</name>
+        <qualifiedname>QtPassSettings::setUseGit</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useGit</declname>
+        </param>
+        <briefdescription>
+<para>Save Git integration flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useGit</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to enable Git integration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="561" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a48f32603dae06c6a513bcad0de85301c" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseGrepSearch</definition>
+        <argsstring>(const bool &amp;defaultValue=false) -&gt; bool</argsstring>
+        <name>isUseGrepSearch</name>
+        <qualifiedname>QtPassSettings::isUseGrepSearch</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>false</defval>
+        </param>
+        <briefdescription>
+<para>Check whether content search (pass grep) is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved (defaults to false). </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if grep search is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="568" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a7a0d28963fa3b2d6768af6dea983b556" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseGrepSearch</definition>
+        <argsstring>(const bool &amp;useGrepSearch)</argsstring>
+        <name>setUseGrepSearch</name>
+        <qualifiedname>QtPassSettings::setUseGrepSearch</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useGrepSearch</declname>
+        </param>
+        <briefdescription>
+<para>Save content search flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useGrepSearch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to enable grep search. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="573" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a4f37675f0f13d6765677a525d787d059" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseOtp</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseOtp</name>
+        <qualifiedname>QtPassSettings::isUseOtp</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether OTP support is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if OTP support is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="580" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ab93d706903bec188ae4440ddd2f4d223" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseOtp</definition>
+        <argsstring>(const bool &amp;useOtp)</argsstring>
+        <name>setUseOtp</name>
+        <qualifiedname>QtPassSettings::setUseOtp</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useOtp</declname>
+        </param>
+        <briefdescription>
+<para>Save OTP support flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useOtp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to enable OTP support. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="585" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a995d2a5d9cbcefc3fd107407a99269a3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseQrencode</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseQrencode</name>
+        <qualifiedname>QtPassSettings::isUseQrencode</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether qrencode support is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if qrencode support is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="592" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a82215f2a9aba3021352284b113640335" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseQrencode</definition>
+        <argsstring>(const bool &amp;useQrencode)</argsstring>
+        <name>setUseQrencode</name>
+        <qualifiedname>QtPassSettings::setUseQrencode</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useQrencode</declname>
+        </param>
+        <briefdescription>
+<para>Save qrencode support flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useQrencode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to enable qrencode support. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="598" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1af02cbeee00274dab6db15b0ee406afe1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getQrencodeExecutable</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getQrencodeExecutable</name>
+        <qualifiedname>QtPassSettings::getQrencodeExecutable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get qrencode executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Path to qrencode executable. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="606" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a245a6070294e235080db309cbdd9c5db" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setQrencodeExecutable</definition>
+        <argsstring>(const QString &amp;qrencodeExecutable)</argsstring>
+        <name>setQrencodeExecutable</name>
+        <qualifiedname>QtPassSettings::setQrencodeExecutable</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>qrencodeExecutable</declname>
+        </param>
+        <briefdescription>
+<para>Save qrencode executable path. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>qrencodeExecutable</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Path to qrencode executable. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="612" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a30e0d71d6dbe01b9bbeac9795f96cb8e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUsePwgen</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUsePwgen</name>
+        <qualifiedname>QtPassSettings::isUsePwgen</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether pwgen support is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if pwgen support is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="619" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a1a9ed8c969e58b7e1c2264c37f9d3d0a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUsePwgen</definition>
+        <argsstring>(const bool &amp;usePwgen)</argsstring>
+        <name>setUsePwgen</name>
+        <qualifiedname>QtPassSettings::setUsePwgen</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>usePwgen</declname>
+        </param>
+        <briefdescription>
+<para>Save pwgen support flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>usePwgen</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to enable pwgen support. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="625" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a9e57a15f56c8bb5c2ee756ddd3a4f4c9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isAvoidCapitals</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isAvoidCapitals</name>
+        <qualifiedname>QtPassSettings::isAvoidCapitals</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether uppercase characters should be avoided. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if uppercase characters are avoided. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="632" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a894eea7726ecfc7c0386c67ab58188ae" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setAvoidCapitals</definition>
+        <argsstring>(const bool &amp;avoidCapitals)</argsstring>
+        <name>setAvoidCapitals</name>
+        <qualifiedname>QtPassSettings::setAvoidCapitals</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>avoidCapitals</declname>
+        </param>
+        <briefdescription>
+<para>Save uppercase avoidance flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>avoidCapitals</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether uppercase characters should be avoided. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="638" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a9228ebce725e3eee1d9e14fa8806e55d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isAvoidNumbers</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isAvoidNumbers</name>
+        <qualifiedname>QtPassSettings::isAvoidNumbers</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether numeric characters should be avoided. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if numeric characters are avoided. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="645" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a9888c6fafb0371ef5e6626b07d0cf556" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setAvoidNumbers</definition>
+        <argsstring>(const bool &amp;avoidNumbers)</argsstring>
+        <name>setAvoidNumbers</name>
+        <qualifiedname>QtPassSettings::setAvoidNumbers</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>avoidNumbers</declname>
+        </param>
+        <briefdescription>
+<para>Save numeric avoidance flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>avoidNumbers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether numeric characters should be avoided. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="651" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a9439fbb331e7ba518955d8922c422f60" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isLessRandom</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isLessRandom</name>
+        <qualifiedname>QtPassSettings::isLessRandom</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether less random password generation is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if less random generation is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="658" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a1faa8fe4f45dd738e66089e7ed35027a" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setLessRandom</definition>
+        <argsstring>(const bool &amp;lessRandom)</argsstring>
+        <name>setLessRandom</name>
+        <qualifiedname>QtPassSettings::setLessRandom</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>lessRandom</declname>
+        </param>
+        <briefdescription>
+<para>Save less-random generation flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lessRandom</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether less-random generation is enabled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="664" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a67c4c20b37ebd85dafe373e40c0ec765" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseSymbols</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseSymbols</name>
+        <qualifiedname>QtPassSettings::isUseSymbols</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether symbol characters are enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if symbol characters are enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="671" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ab0e0d315f619d3499527dbe46b62d4ac" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseSymbols</definition>
+        <argsstring>(const bool &amp;useSymbols)</argsstring>
+        <name>setUseSymbols</name>
+        <qualifiedname>QtPassSettings::setUseSymbols</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useSymbols</declname>
+        </param>
+        <briefdescription>
+<para>Save symbol usage flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useSymbols</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether symbol characters are enabled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="677" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a5ea4fd4cf00b38267cfa34b5b585de40" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getPasswordConfiguration</definition>
+        <argsstring>() -&gt; PasswordConfiguration</argsstring>
+        <name>getPasswordConfiguration</name>
+        <qualifiedname>QtPassSettings::getPasswordConfiguration</qualifiedname>
+        <briefdescription>
+<para>Get complete password generation configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Password generation configuration. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="683" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ab1e9c485895f971636a1110a972f1288" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setPasswordConfiguration</definition>
+        <argsstring>(const PasswordConfiguration &amp;config)</argsstring>
+        <name>setPasswordConfiguration</name>
+        <qualifiedname>QtPassSettings::setPasswordConfiguration</qualifiedname>
+        <param>
+          <type>const <ref refid="struct_password_configuration" kindref="compound">PasswordConfiguration</ref> &amp;</type>
+          <declname>config</declname>
+        </param>
+        <briefdescription>
+<para>Save complete password generation configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>config</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Password generation configuration. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="688" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ad1e8288a84eb20bf1578b8756ce2a59e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setPasswordLength</definition>
+        <argsstring>(const int &amp;passwordLength)</argsstring>
+        <name>setPasswordLength</name>
+        <qualifiedname>QtPassSettings::setPasswordLength</qualifiedname>
+        <param>
+          <type>const int &amp;</type>
+          <declname>passwordLength</declname>
+        </param>
+        <briefdescription>
+<para>Save password length setting. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>passwordLength</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Password length. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="693" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a00f38fb14aa44ad2d8bd7cfe252df035" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setPasswordCharsSelection</definition>
+        <argsstring>(const int &amp;passwordCharsSelection)</argsstring>
+        <name>setPasswordCharsSelection</name>
+        <qualifiedname>QtPassSettings::setPasswordCharsSelection</qualifiedname>
+        <param>
+          <type>const int &amp;</type>
+          <declname>passwordCharsSelection</declname>
+        </param>
+        <briefdescription>
+<para>Save password character selection mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>passwordCharsSelection</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Password character selection mode. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="698" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a1694c5680b0a74330742f94dfcdc1377" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setPasswordChars</definition>
+        <argsstring>(const QString &amp;passwordChars)</argsstring>
+        <name>setPasswordChars</name>
+        <qualifiedname>QtPassSettings::setPasswordChars</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>passwordChars</declname>
+        </param>
+        <briefdescription>
+<para>Save custom password characters. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>passwordChars</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Custom characters used for password generation. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="703" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a80743b992d167a19aca4643f031a987d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseTrayIcon</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseTrayIcon</name>
+        <qualifiedname>QtPassSettings::isUseTrayIcon</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether tray icon support is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if tray icon support is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="710" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1acb60cb13c897918325db41df48dc2f6f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseTrayIcon</definition>
+        <argsstring>(const bool &amp;useTrayIcon)</argsstring>
+        <name>setUseTrayIcon</name>
+        <qualifiedname>QtPassSettings::setUseTrayIcon</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useTrayIcon</declname>
+        </param>
+        <briefdescription>
+<para>Save tray icon support flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useTrayIcon</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether tray icon support is enabled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="716" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a1772cf257c6fc26421e6b70a4680687f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isHideOnClose</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isHideOnClose</name>
+        <qualifiedname>QtPassSettings::isHideOnClose</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether closing the window hides the application. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if close action hides the application. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="723" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ae8c4250fa4faac6ebb92fc730782e23d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setHideOnClose</definition>
+        <argsstring>(const bool &amp;hideOnClose)</argsstring>
+        <name>setHideOnClose</name>
+        <qualifiedname>QtPassSettings::setHideOnClose</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>hideOnClose</declname>
+        </param>
+        <briefdescription>
+<para>Save hide-on-close flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hideOnClose</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether close action should hide the application. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="729" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1af13aa67fbd0f721bdd12c60bd155f8ba" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isStartMinimized</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isStartMinimized</name>
+        <qualifiedname>QtPassSettings::isStartMinimized</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether application should start minimized. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if application should start minimized. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="736" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aa3a29ba7e6d807dde9595f0df71b9e30" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setStartMinimized</definition>
+        <argsstring>(const bool &amp;startMinimized)</argsstring>
+        <name>setStartMinimized</name>
+        <qualifiedname>QtPassSettings::setStartMinimized</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>startMinimized</declname>
+        </param>
+        <briefdescription>
+<para>Save start-minimized flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>startMinimized</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether application should start minimized. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="742" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aff8eb58a6814a95f12c4369f0187ab97" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isAlwaysOnTop</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isAlwaysOnTop</name>
+        <qualifiedname>QtPassSettings::isAlwaysOnTop</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether main window should stay always on top. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if always-on-top is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="749" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a3d679e9875fb99c71927fd20fc365e89" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setAlwaysOnTop</definition>
+        <argsstring>(const bool &amp;alwaysOnTop)</argsstring>
+        <name>setAlwaysOnTop</name>
+        <qualifiedname>QtPassSettings::setAlwaysOnTop</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>alwaysOnTop</declname>
+        </param>
+        <briefdescription>
+<para>Save always-on-top flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alwaysOnTop</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether always-on-top should be enabled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="755" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a2af4067e86bb990a202ec6b70f074471" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isAutoPull</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isAutoPull</name>
+        <qualifiedname>QtPassSettings::isAutoPull</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether automatic pull is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if automatic pull is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="762" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1af5811e35f2ded2bd3884ed52987f1056" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setAutoPull</definition>
+        <argsstring>(const bool &amp;autoPull)</argsstring>
+        <name>setAutoPull</name>
+        <qualifiedname>QtPassSettings::setAutoPull</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>autoPull</declname>
+        </param>
+        <briefdescription>
+<para>Save automatic pull flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>autoPull</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether automatic pull should be enabled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="768" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a2df5530ff5930281eff264172535d4f6" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isAutoPush</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isAutoPush</name>
+        <qualifiedname>QtPassSettings::isAutoPush</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether automatic push is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if automatic push is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="775" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1af8467fdea8f1d1936ca3bc12836b9a34" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setAutoPush</definition>
+        <argsstring>(const bool &amp;autoPush)</argsstring>
+        <name>setAutoPush</name>
+        <qualifiedname>QtPassSettings::setAutoPush</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>autoPush</declname>
+        </param>
+        <briefdescription>
+<para>Save automatic push flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>autoPush</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether automatic push should be enabled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="781" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a233704c2fda184f2eb1f8f784a305fee" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getPassTemplate</definition>
+        <argsstring>(const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</argsstring>
+        <name>getPassTemplate</name>
+        <qualifiedname>QtPassSettings::getPassTemplate</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toString()</defval>
+        </param>
+        <briefdescription>
+<para>Get pass entry template. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>String returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para><ref refid="class_pass" kindref="compound">Pass</ref> template. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="789" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a3b6e49641ba7f6a62864c0ec29892aa0" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setPassTemplate</definition>
+        <argsstring>(const QString &amp;passTemplate)</argsstring>
+        <name>setPassTemplate</name>
+        <qualifiedname>QtPassSettings::setPassTemplate</qualifiedname>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>passTemplate</declname>
+        </param>
+        <briefdescription>
+<para>Save pass entry template. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>passTemplate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="class_pass" kindref="compound">Pass</ref> template. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="795" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a84d0b5e30a064a537160328efc19d2f3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isUseTemplate</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isUseTemplate</name>
+        <qualifiedname>QtPassSettings::isUseTemplate</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether template usage is enabled. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if template usage is enabled. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="802" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a1ec95713fc36405bf6b7cdc5eebeb768" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setUseTemplate</definition>
+        <argsstring>(const bool &amp;useTemplate)</argsstring>
+        <name>setUseTemplate</name>
+        <qualifiedname>QtPassSettings::setUseTemplate</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>useTemplate</declname>
+        </param>
+        <briefdescription>
+<para>Save template usage flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>useTemplate</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether template usage should be enabled. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="808" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a3812c424de85c27064210f588ddc25a1" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::isTemplateAllFields</definition>
+        <argsstring>(const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</argsstring>
+        <name>isTemplateAllFields</name>
+        <qualifiedname>QtPassSettings::isTemplateAllFields</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>defaultValue</declname>
+          <defval>QVariant().toBool()</defval>
+        </param>
+        <briefdescription>
+<para>Check whether template applies to all fields. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>defaultValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value returned if not saved. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if template applies to all fields. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="816" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a27bbbe29e23e1aab60f088c8b45e1370" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setTemplateAllFields</definition>
+        <argsstring>(const bool &amp;templateAllFields)</argsstring>
+        <name>setTemplateAllFields</name>
+        <qualifiedname>QtPassSettings::setTemplateAllFields</qualifiedname>
+        <param>
+          <type>const bool &amp;</type>
+          <declname>templateAllFields</declname>
+        </param>
+        <briefdescription>
+<para>Save template-all-fields flag. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>templateAllFields</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether template should apply to all fields. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="821" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a4b87c146ea2c5980a2d0101dfeccc2d9" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getProfiles</definition>
+        <argsstring>() -&gt; QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</argsstring>
+        <name>getProfiles</name>
+        <qualifiedname>QtPassSettings::getProfiles</qualifiedname>
+        <briefdescription>
+<para>Get all configured profiles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Profile map keyed by profile name. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="827" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1aa73a4ae99c8c7e68208d3d81cf113dbc" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QtPassSettings::setProfiles</definition>
+        <argsstring>(const QHash&lt; QString, QHash&lt; QString, QString &gt; &gt; &amp;profiles)</argsstring>
+        <name>setProfiles</name>
+        <qualifiedname>QtPassSettings::setProfiles</qualifiedname>
+        <param>
+          <type>const QHash&lt; QString, QHash&lt; QString, QString &gt; &gt; &amp;</type>
+          <declname>profiles</declname>
+        </param>
+        <briefdescription>
+<para>Save all configured profiles. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>profiles</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Profile map keyed by profile name. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="833" column="3"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ae0abe010de1e0e023e23639717f9f7e5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getPass</definition>
+        <argsstring>() -&gt; Pass *</argsstring>
+        <name>getPass</name>
+        <qualifiedname>QtPassSettings::getPass</qualifiedname>
+        <briefdescription>
+<para>Get currently active pass backend instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to pass backend. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="839" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1ac52b7ef718ee01e521d4e07d07a08e31" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getRealPass</definition>
+        <argsstring>() -&gt; RealPass *</argsstring>
+        <name>getRealPass</name>
+        <qualifiedname>QtPassSettings::getRealPass</qualifiedname>
+        <briefdescription>
+<para>Get real pass backend instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to real pass backend. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="844" column="15"/>
+      </memberdef>
+      <memberdef kind="function" id="class_qt_pass_settings_1a9d6e6cd009f6fa307d9fccd821fd45ad" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>static auto QtPassSettings::getImitatePass</definition>
+        <argsstring>() -&gt; ImitatePass *</argsstring>
+        <name>getImitatePass</name>
+        <qualifiedname>QtPassSettings::getImitatePass</qualifiedname>
+        <briefdescription>
+<para>Get imitate pass backend instance. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>Pointer to imitate pass backend. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/qtpasssettings.h" line="849" column="15"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Singleton that stores <ref refid="class_qt_pass" kindref="compound">QtPass</ref> settings, handles persistence and defaults. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="class_qt_pass_settings" kindref="compound">QtPassSettings</ref> manages all application configuration including:<itemizedlist>
+<listitem><para>Window geometry (position, size, maximized state)</para>
+</listitem><listitem><para>Password store configuration (path, GPG settings)</para>
+</listitem><listitem><para>Executable paths (pass, git, gpg, pwgen)</para>
+</listitem><listitem><para>UI preferences (clipboard, autoclear, display options)</para>
+</listitem><listitem><para>gopass configuration</para>
+</listitem></itemizedlist>
+</para>
+<para>Uses QSettings for persistence with a singleton pattern. All getters accept a default value returned when setting is not yet saved. </para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="2">
+        <label>QSettings</label>
+      </node>
+      <node id="1">
+        <label>QtPassSettings</label>
+        <link refid="class_qt_pass_settings"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="2">
+        <label>QSettings</label>
+      </node>
+      <node id="1">
+        <label>QtPassSettings</label>
+        <link refid="class_qt_pass_settings"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="src/qtpasssettings.h" line="35" column="1" bodyfile="src/qtpasssettings.h" bodystart="35" bodyend="850"/>
+    <listofallmembers>
+      <member refid="class_qt_pass_settings_1a61d77f033cb243df921f36bd2ad7cfe9" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getAutoclearPanelSeconds</name></member>
+      <member refid="class_qt_pass_settings_1ae18fe9b401aac964c72e7d7711283afe" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getAutoclearSeconds</name></member>
+      <member refid="class_qt_pass_settings_1a14599d5904d2e158de03c16494db8edd" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getClipBoardType</name></member>
+      <member refid="class_qt_pass_settings_1a003c48cf1fe61f172e3252e88815f0f3" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getClipBoardTypeRaw</name></member>
+      <member refid="class_qt_pass_settings_1a41481e1e44a7db8f1bae4371017dd023" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getDialogGeometry</name></member>
+      <member refid="class_qt_pass_settings_1a16bbe6462ac8bbf26bc057ff65cd9028" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getDialogPos</name></member>
+      <member refid="class_qt_pass_settings_1a556d04858217dd5165fa7c91e8de1edf" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getDialogSize</name></member>
+      <member refid="class_qt_pass_settings_1a9919a3d64fe7ebad42799b113af93799" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getGeometry</name></member>
+      <member refid="class_qt_pass_settings_1a97ccce4e0d62fa0afa4f901a0c0b5a95" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getGitExecutable</name></member>
+      <member refid="class_qt_pass_settings_1abaecefd0015e15cc55824e9093c10ded" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getGpgExecutable</name></member>
+      <member refid="class_qt_pass_settings_1a4a80fa156c1a6e2f0365ed643af1190c" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getGpgHome</name></member>
+      <member refid="class_qt_pass_settings_1a9d6e6cd009f6fa307d9fccd821fd45ad" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getImitatePass</name></member>
+      <member refid="class_qt_pass_settings_1a3d38816e907ea2ea01842a8ab488260c" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getInstance</name></member>
+      <member refid="class_qt_pass_settings_1ae0abe010de1e0e023e23639717f9f7e5" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getPass</name></member>
+      <member refid="class_qt_pass_settings_1a1bedf6d09f7ed13de785940d77c92f14" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getPassExecutable</name></member>
+      <member refid="class_qt_pass_settings_1aea7b7a38dd11a0f2bf4aa43c2756b9af" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getPassSigningKey</name></member>
+      <member refid="class_qt_pass_settings_1a0de322eb0b4907a730325e4008c0b4b6" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getPassStore</name></member>
+      <member refid="class_qt_pass_settings_1a233704c2fda184f2eb1f8f784a305fee" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getPassTemplate</name></member>
+      <member refid="class_qt_pass_settings_1a5ea4fd4cf00b38267cfa34b5b585de40" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getPasswordConfiguration</name></member>
+      <member refid="class_qt_pass_settings_1aac019a48331738da3b5d343330990b6f" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getPos</name></member>
+      <member refid="class_qt_pass_settings_1af2548c1c64c4daccdc1df6f505935588" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getProfile</name></member>
+      <member refid="class_qt_pass_settings_1a4b87c146ea2c5980a2d0101dfeccc2d9" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getProfiles</name></member>
+      <member refid="class_qt_pass_settings_1a5561c5e69521ab0e690fc09074270fcc" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getPwgenExecutable</name></member>
+      <member refid="class_qt_pass_settings_1af02cbeee00274dab6db15b0ee406afe1" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getQrencodeExecutable</name></member>
+      <member refid="class_qt_pass_settings_1ac52b7ef718ee01e521d4e07d07a08e31" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getRealPass</name></member>
+      <member refid="class_qt_pass_settings_1a7815c25281a1bdf768c0d27cd237cab4" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getSavestate</name></member>
+      <member refid="class_qt_pass_settings_1a2250c3d54340c0dbfbaae2a6bbb5b6d7" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getSize</name></member>
+      <member refid="class_qt_pass_settings_1a6f238c4845f87423bcd4cedbf12fc390" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getVersion</name></member>
+      <member refid="class_qt_pass_settings_1ac0d690c3f037f5c5cecc12be8716457f" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getWebDavPassword</name></member>
+      <member refid="class_qt_pass_settings_1a2e558fcadd77cae52a46138d119e10c2" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getWebDavUrl</name></member>
+      <member refid="class_qt_pass_settings_1a6668924f1b7aaf965b2a07dcf95b4bc0" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>getWebDavUser</name></member>
+      <member refid="class_qt_pass_settings_1a20c590b894da81c8c928348c1ac2fcd4" prot="private" virt="non-virtual"><scope>QtPassSettings</scope><name>imitatePass</name></member>
+      <member refid="class_qt_pass_settings_1accde18f59a051107c85755993fcefdac" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>initExecutables</name></member>
+      <member refid="class_qt_pass_settings_1a182a8c7e9d3fc5738da9c9c67ea7a743" prot="private" virt="non-virtual"><scope>QtPassSettings</scope><name>initialized</name></member>
+      <member refid="class_qt_pass_settings_1ad1b27f9ca2bbbe85cfa361ecfdc3f9ac" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isAddGPGId</name></member>
+      <member refid="class_qt_pass_settings_1aff8eb58a6814a95f12c4369f0187ab97" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isAlwaysOnTop</name></member>
+      <member refid="class_qt_pass_settings_1a2af4067e86bb990a202ec6b70f074471" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isAutoPull</name></member>
+      <member refid="class_qt_pass_settings_1a2df5530ff5930281eff264172535d4f6" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isAutoPush</name></member>
+      <member refid="class_qt_pass_settings_1a9e57a15f56c8bb5c2ee756ddd3a4f4c9" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isAvoidCapitals</name></member>
+      <member refid="class_qt_pass_settings_1a9228ebce725e3eee1d9e14fa8806e55d" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isAvoidNumbers</name></member>
+      <member refid="class_qt_pass_settings_1add630c087ff82264697fe6619f1a3be1" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isDialogMaximized</name></member>
+      <member refid="class_qt_pass_settings_1a56ab62f0a13f16445c13003883a57452" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isDisplayAsIs</name></member>
+      <member refid="class_qt_pass_settings_1a3da81eb987a51e298064626536f16177" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isHideContent</name></member>
+      <member refid="class_qt_pass_settings_1a1772cf257c6fc26421e6b70a4680687f" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isHideOnClose</name></member>
+      <member refid="class_qt_pass_settings_1aa2717890f1a1de284179379539e6b977" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isHidePassword</name></member>
+      <member refid="class_qt_pass_settings_1a9439fbb331e7ba518955d8922c422f60" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isLessRandom</name></member>
+      <member refid="class_qt_pass_settings_1a30ec7de5247d54b2196854cb1077ccdf" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isMaximized</name></member>
+      <member refid="class_qt_pass_settings_1ad7c28aad5a5873051fa38a9abf95127f" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isNoLineWrapping</name></member>
+      <member refid="class_qt_pass_settings_1af13aa67fbd0f721bdd12c60bd155f8ba" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isStartMinimized</name></member>
+      <member refid="class_qt_pass_settings_1a3812c424de85c27064210f588ddc25a1" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isTemplateAllFields</name></member>
+      <member refid="class_qt_pass_settings_1ae5f7bd28913f3407227eaccef087b8ee" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseAutoclear</name></member>
+      <member refid="class_qt_pass_settings_1a8e220d21a77ee74af6b6f0d59c959ece" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseAutoclearPanel</name></member>
+      <member refid="class_qt_pass_settings_1a0bd97a8df7fb91cf461b5a1c57940710" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseGit</name></member>
+      <member refid="class_qt_pass_settings_1a48f32603dae06c6a513bcad0de85301c" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseGrepSearch</name></member>
+      <member refid="class_qt_pass_settings_1a93c5d0d81756c6ede0c7302160b1bc0a" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseMonospace</name></member>
+      <member refid="class_qt_pass_settings_1a4f37675f0f13d6765677a525d787d059" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseOtp</name></member>
+      <member refid="class_qt_pass_settings_1aa2bb9d901d72cba879280b34f6f95399" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUsePass</name></member>
+      <member refid="class_qt_pass_settings_1a30e0d71d6dbe01b9bbeac9795f96cb8e" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUsePwgen</name></member>
+      <member refid="class_qt_pass_settings_1a995d2a5d9cbcefc3fd107407a99269a3" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseQrencode</name></member>
+      <member refid="class_qt_pass_settings_1a3790763f4ab618afebbdf70479fddc90" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseSelection</name></member>
+      <member refid="class_qt_pass_settings_1a67c4c20b37ebd85dafe373e40c0ec765" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseSymbols</name></member>
+      <member refid="class_qt_pass_settings_1a84d0b5e30a064a537160328efc19d2f3" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseTemplate</name></member>
+      <member refid="class_qt_pass_settings_1a80743b992d167a19aca4643f031a987d" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseTrayIcon</name></member>
+      <member refid="class_qt_pass_settings_1a15e5619edfc478765e728fac1bb9c6cf" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>isUseWebDav</name></member>
+      <member refid="class_qt_pass_settings_1a91e257076ea2e64c46b79c17478cf21f" prot="private" virt="non-virtual"><scope>QtPassSettings</scope><name>m_instance</name></member>
+      <member refid="class_qt_pass_settings_1a1d2d8bac960f72a7d705e4552a2847a7" prot="private" virt="non-virtual"><scope>QtPassSettings</scope><name>pass</name></member>
+      <member refid="class_qt_pass_settings_1acf70027402216485ed1ee1a36fb55cf0" prot="private" virt="non-virtual"><scope>QtPassSettings</scope><name>QtPassSettings</name></member>
+      <member refid="class_qt_pass_settings_1ad7bcd850d6cb2b8046e2d8deb4822639" prot="private" virt="non-virtual"><scope>QtPassSettings</scope><name>QtPassSettings</name></member>
+      <member refid="class_qt_pass_settings_1adceeba713360a20aa915923caedb9806" prot="private" virt="non-virtual"><scope>QtPassSettings</scope><name>QtPassSettings</name></member>
+      <member refid="class_qt_pass_settings_1a6c265c10e44d1a8e8b3f6c01190a14ba" prot="private" virt="non-virtual"><scope>QtPassSettings</scope><name>realPass</name></member>
+      <member refid="class_qt_pass_settings_1ae6ebfef6950f26ab7db56ffc68f2e1bc" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setAddGPGId</name></member>
+      <member refid="class_qt_pass_settings_1a3d679e9875fb99c71927fd20fc365e89" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setAlwaysOnTop</name></member>
+      <member refid="class_qt_pass_settings_1ae813a84084ac256a2bbeee3502a17439" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setAutoclearPanelSeconds</name></member>
+      <member refid="class_qt_pass_settings_1af80acc9e9f0e993a993c36e8092dd3fd" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setAutoclearSeconds</name></member>
+      <member refid="class_qt_pass_settings_1af5811e35f2ded2bd3884ed52987f1056" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setAutoPull</name></member>
+      <member refid="class_qt_pass_settings_1af8467fdea8f1d1936ca3bc12836b9a34" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setAutoPush</name></member>
+      <member refid="class_qt_pass_settings_1a894eea7726ecfc7c0386c67ab58188ae" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setAvoidCapitals</name></member>
+      <member refid="class_qt_pass_settings_1a9888c6fafb0371ef5e6626b07d0cf556" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setAvoidNumbers</name></member>
+      <member refid="class_qt_pass_settings_1acea381df2014ac07e6c52b89167d41a2" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setClipBoardType</name></member>
+      <member refid="class_qt_pass_settings_1a0e743a38e3bcb3d4244c8b8047ab077d" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setDialogGeometry</name></member>
+      <member refid="class_qt_pass_settings_1a74255fb520598be4800eda9c5f4cf0c5" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setDialogMaximized</name></member>
+      <member refid="class_qt_pass_settings_1a5e08e0e0a4cffd1b36c69c5cb0dbac97" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setDialogPos</name></member>
+      <member refid="class_qt_pass_settings_1ac61ed3fb421e32608a25889cbba5a17f" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setDialogSize</name></member>
+      <member refid="class_qt_pass_settings_1ad1ed6b000b859ca9747f8646c987a99f" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setDisplayAsIs</name></member>
+      <member refid="class_qt_pass_settings_1a78c4b9888e34244fed364ca2072459f5" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setGeometry</name></member>
+      <member refid="class_qt_pass_settings_1a0dbc45500e3af30d01e54dc5705490b2" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setGitExecutable</name></member>
+      <member refid="class_qt_pass_settings_1a3a571496209e6069bcbd76483fb5be95" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setGpgExecutable</name></member>
+      <member refid="class_qt_pass_settings_1aceb109460c1dcdb6a72e7164a7528090" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setHideContent</name></member>
+      <member refid="class_qt_pass_settings_1ae8c4250fa4faac6ebb92fc730782e23d" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setHideOnClose</name></member>
+      <member refid="class_qt_pass_settings_1ace82c94af00fba9fd49c32d4f2574e60" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setHidePassword</name></member>
+      <member refid="class_qt_pass_settings_1a1faa8fe4f45dd738e66089e7ed35027a" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setLessRandom</name></member>
+      <member refid="class_qt_pass_settings_1a55a473b77fe0450ce08e19544d495c6f" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setMaximized</name></member>
+      <member refid="class_qt_pass_settings_1ac463092fe55a3f66a87305b70bcce2c1" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setNoLineWrapping</name></member>
+      <member refid="class_qt_pass_settings_1ab97129498f8b41e600f205611dab3bcf" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setPassExecutable</name></member>
+      <member refid="class_qt_pass_settings_1aa38dc1b1104a378ab3f862063d9604b7" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setPassSigningKey</name></member>
+      <member refid="class_qt_pass_settings_1a87ce0a9a9a6510a621e6429f2d090862" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setPassStore</name></member>
+      <member refid="class_qt_pass_settings_1a3b6e49641ba7f6a62864c0ec29892aa0" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setPassTemplate</name></member>
+      <member refid="class_qt_pass_settings_1a1694c5680b0a74330742f94dfcdc1377" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setPasswordChars</name></member>
+      <member refid="class_qt_pass_settings_1a00f38fb14aa44ad2d8bd7cfe252df035" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setPasswordCharsSelection</name></member>
+      <member refid="class_qt_pass_settings_1ab1e9c485895f971636a1110a972f1288" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setPasswordConfiguration</name></member>
+      <member refid="class_qt_pass_settings_1ad1e8288a84eb20bf1578b8756ce2a59e" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setPasswordLength</name></member>
+      <member refid="class_qt_pass_settings_1aefc7bfc4e75cd0dba5d72503bf07f762" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setPos</name></member>
+      <member refid="class_qt_pass_settings_1a5026be84cffcec3cc08f53c1d45c78bd" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setProfile</name></member>
+      <member refid="class_qt_pass_settings_1aa73a4ae99c8c7e68208d3d81cf113dbc" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setProfiles</name></member>
+      <member refid="class_qt_pass_settings_1a2748b280aa2b1871f97e3ffdad9029a4" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setPwgenExecutable</name></member>
+      <member refid="class_qt_pass_settings_1a245a6070294e235080db309cbdd9c5db" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setQrencodeExecutable</name></member>
+      <member refid="class_qt_pass_settings_1a1c215f68a785e07d0bf01dc7f26f1605" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setSavestate</name></member>
+      <member refid="class_qt_pass_settings_1a4e77ad087cfd568eff6a8ac95f59f48b" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setSize</name></member>
+      <member refid="class_qt_pass_settings_1aa3a29ba7e6d807dde9595f0df71b9e30" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setStartMinimized</name></member>
+      <member refid="class_qt_pass_settings_1a27bbbe29e23e1aab60f088c8b45e1370" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setTemplateAllFields</name></member>
+      <member refid="class_qt_pass_settings_1ab83fcae2cbd44c990f039057ce1aa598" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseAutoclear</name></member>
+      <member refid="class_qt_pass_settings_1ad3d0bc0f401ceeb25e9718a44ff7690d" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseAutoclearPanel</name></member>
+      <member refid="class_qt_pass_settings_1a47382b2f52a69ee4e162548d95594081" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseGit</name></member>
+      <member refid="class_qt_pass_settings_1a7a0d28963fa3b2d6768af6dea983b556" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseGrepSearch</name></member>
+      <member refid="class_qt_pass_settings_1a2836f4fbe0d6374d72ea6d631e89b0fa" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseMonospace</name></member>
+      <member refid="class_qt_pass_settings_1ab93d706903bec188ae4440ddd2f4d223" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseOtp</name></member>
+      <member refid="class_qt_pass_settings_1abfe9f251d4037975f3f42c2322159bb3" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUsePass</name></member>
+      <member refid="class_qt_pass_settings_1a1a9ed8c969e58b7e1c2264c37f9d3d0a" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUsePwgen</name></member>
+      <member refid="class_qt_pass_settings_1a82215f2a9aba3021352284b113640335" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseQrencode</name></member>
+      <member refid="class_qt_pass_settings_1a73fc1b25736040e0a00e8c1f757a4c78" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseSelection</name></member>
+      <member refid="class_qt_pass_settings_1ab0e0d315f619d3499527dbe46b62d4ac" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseSymbols</name></member>
+      <member refid="class_qt_pass_settings_1a1ec95713fc36405bf6b7cdc5eebeb768" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseTemplate</name></member>
+      <member refid="class_qt_pass_settings_1acb60cb13c897918325db41df48dc2f6f" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseTrayIcon</name></member>
+      <member refid="class_qt_pass_settings_1a6fc0c2783408100c4c3ca0923e868ae5" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setUseWebDav</name></member>
+      <member refid="class_qt_pass_settings_1a03ae30049a0011939ca6e15dad4426d5" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setVersion</name></member>
+      <member refid="class_qt_pass_settings_1aa633927e61af95b7a4e6429de7c93bb1" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setWebDavPassword</name></member>
+      <member refid="class_qt_pass_settings_1a211af4caf2bd5626dcc9d763061d1556" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setWebDavUrl</name></member>
+      <member refid="class_qt_pass_settings_1aaefaf5812c3428a6c9a894b5909e0829" prot="public" virt="non-virtual"><scope>QtPassSettings</scope><name>setWebDavUser</name></member>
+      <member refid="class_qt_pass_settings_1a59e8e3f711ac35bbee6e2f7b54b583d9" prot="private" virt="non-virtual"><scope>QtPassSettings</scope><name>~QtPassSettings</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.9.8" xml:lang="en-US">
+  <compounddef id="class_deselectable_tree_view" kind="class" language="C++" prot="public">
+    <compoundname>DeselectableTreeView</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">QTreeView</basecompoundref>
+    <includes refid="deselectabletreeview_8h" local="no">deselectabletreeview.h</includes>
+    <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_deselectable_tree_view_1a25d7d24dddf49ee15ef1b0870fa293f8" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool DeselectableTreeView::doubleClickHappened</definition>
+        <argsstring></argsstring>
+        <name>doubleClickHappened</name>
+        <qualifiedname>DeselectableTreeView::doubleClickHappened</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/deselectabletreeview.h" line="70" column="8" bodyfile="src/deselectabletreeview.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_deselectable_tree_view_1a72e3ccd9a689aeb6273def627bc40783" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool DeselectableTreeView::clickSelected</definition>
+        <argsstring></argsstring>
+        <name>clickSelected</name>
+        <qualifiedname>DeselectableTreeView::clickSelected</qualifiedname>
+        <initializer>= false</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/deselectabletreeview.h" line="71" column="8" bodyfile="src/deselectabletreeview.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_deselectable_tree_view_1a78b4bc9a59d8db8531a1e270a7793b26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DeselectableTreeView::DeselectableTreeView</definition>
+        <argsstring>(QWidget *parent)</argsstring>
+        <name>DeselectableTreeView</name>
+        <qualifiedname>DeselectableTreeView::DeselectableTreeView</qualifiedname>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+        </param>
+        <briefdescription>
+<para><ref refid="class_deselectable_tree_view" kindref="compound">DeselectableTreeView</ref> standard constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/deselectabletreeview.h" line="57" column="3" bodyfile="src/deselectabletreeview.h" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="class_deselectable_tree_view_1aeae99d030001a2ed590a8abfe31c462b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>DeselectableTreeView::~DeselectableTreeView</definition>
+        <argsstring>() override=default</argsstring>
+        <name>~DeselectableTreeView</name>
+        <qualifiedname>DeselectableTreeView::~DeselectableTreeView</qualifiedname>
+        <briefdescription>
+<para>~DeselectableTreeView standard destructor </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/deselectabletreeview.h" line="61" column="3"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_deselectable_tree_view_1ac28685648d7a31e19e52882e218346c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DeselectableTreeView::emptyClicked</definition>
+        <argsstring>()</argsstring>
+        <name>emptyClicked</name>
+        <qualifiedname>DeselectableTreeView::emptyClicked</qualifiedname>
+        <briefdescription>
+<para>emptyClicked event </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/deselectabletreeview.h" line="67" column="8"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_deselectable_tree_view_1abfcdd23266bf6bcd318eeb25aac40ea7" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DeselectableTreeView::mousePressEvent</definition>
+        <argsstring>(QMouseEvent *event) override</argsstring>
+        <name>mousePressEvent</name>
+        <qualifiedname>DeselectableTreeView::mousePressEvent</qualifiedname>
+        <param>
+          <type>QMouseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>mousePressEvent registers if the field was pre-selected </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/deselectabletreeview.h" line="77" column="8" bodyfile="src/deselectabletreeview.h" bodystart="77" bodyend="80"/>
+      </memberdef>
+      <memberdef kind="function" id="class_deselectable_tree_view_1a0209e85dea0f1cf67c70c9545500eca5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DeselectableTreeView::mouseReleaseEvent</definition>
+        <argsstring>(QMouseEvent *event) override</argsstring>
+        <name>mouseReleaseEvent</name>
+        <qualifiedname>DeselectableTreeView::mouseReleaseEvent</qualifiedname>
+        <param>
+          <type>QMouseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>mouseReleaseEvent now deselects on click on empty space </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/deselectabletreeview.h" line="86" column="8" bodyfile="src/deselectabletreeview.h" bodystart="86" bodyend="108"/>
+      </memberdef>
+      <memberdef kind="function" id="class_deselectable_tree_view_1a3e29a7d444e39f91c52b83a920791a8d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DeselectableTreeView::mouseDoubleClickEvent</definition>
+        <argsstring>(QMouseEvent *event) override</argsstring>
+        <name>mouseDoubleClickEvent</name>
+        <qualifiedname>DeselectableTreeView::mouseDoubleClickEvent</qualifiedname>
+        <param>
+          <type>QMouseEvent *</type>
+          <declname>event</declname>
+        </param>
+        <briefdescription>
+<para>mouseDoubleClickEvent </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="src/deselectabletreeview.h" line="114" column="8" bodyfile="src/deselectabletreeview.h" bodystart="114" bodyend="117"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A QTreeView subclass that clears selection and emits a signal when the user clicks an empty area or clicks a selected item in empty space.</para>
+<para>The view tracks press/release sequences to distinguish single- from double-clicks and only clears selection for qualifying single-clicks. Construct a <ref refid="class_deselectable_tree_view" kindref="compound">DeselectableTreeView</ref>. <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>parent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parent widget forwarded to QTreeView. Default destructor. Emitted after the view clears its selection in response to a qualifying click on empty space or on an already-selected item. Record whether the item under the press position was selected. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mouse press event containing the press position. Clear selection and emit <ref refid="class_deselectable_tree_view_1ac28685648d7a31e19e52882e218346c4" kindref="member">emptyClicked()</ref> when a qualifying single-click releases over empty space or over a selected item; otherwise, handle the release normally. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mouse release event containing the release position. Mark that a double-click occurred and handle the double-click normally. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>event</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Mouse double-click event. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>DeselectableTreeView</label>
+        <link refid="class_deselectable_tree_view"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QTreeView</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="1">
+        <label>DeselectableTreeView</label>
+        <link refid="class_deselectable_tree_view"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>QTreeView</label>
+      </node>
+    </collaborationgraph>
+    <location file="src/deselectabletreeview.h" line="49" column="1" bodyfile="src/deselectabletreeview.h" bodystart="49" bodyend="118"/>
+    <listofallmembers>
+      <member refid="class_deselectable_tree_view_1a72e3ccd9a689aeb6273def627bc40783" prot="private" virt="non-virtual"><scope>DeselectableTreeView</scope><name>clickSelected</name></member>
+      <member refid="class_deselectable_tree_view_1a78b4bc9a59d8db8531a1e270a7793b26" prot="public" virt="non-virtual"><scope>DeselectableTreeView</scope><name>DeselectableTreeView</name></member>
+      <member refid="class_deselectable_tree_view_1a25d7d24dddf49ee15ef1b0870fa293f8" prot="private" virt="non-virtual"><scope>DeselectableTreeView</scope><name>doubleClickHappened</name></member>
+      <member refid="class_deselectable_tree_view_1ac28685648d7a31e19e52882e218346c4" prot="public" virt="non-virtual"><scope>DeselectableTreeView</scope><name>emptyClicked</name></member>
+      <member refid="class_deselectable_tree_view_1a3e29a7d444e39f91c52b83a920791a8d" prot="private" virt="non-virtual"><scope>DeselectableTreeView</scope><name>mouseDoubleClickEvent</name></member>
+      <member refid="class_deselectable_tree_view_1abfcdd23266bf6bcd318eeb25aac40ea7" prot="private" virt="non-virtual"><scope>DeselectableTreeView</scope><name>mousePressEvent</name></member>
+      <member refid="class_deselectable_tree_view_1a0209e85dea0f1cf67c70c9545500eca5" prot="private" virt="non-virtual"><scope>DeselectableTreeView</scope><name>mouseReleaseEvent</name></member>
+      <member refid="class_deselectable_tree_view_1aeae99d030001a2ed590a8abfe31c462b" prot="public" virt="non-virtual"><scope>DeselectableTreeView</scope><name>~DeselectableTreeView</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

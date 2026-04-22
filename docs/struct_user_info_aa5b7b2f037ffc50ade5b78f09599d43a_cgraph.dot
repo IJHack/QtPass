@@ -1,0 +1,14 @@
+digraph "UserInfo::isValid"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="UserInfo::isValid",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Check whether the key has any usable validity level."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="UserInfo::fullyValid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5",tooltip="Check full validity per GnuPG validity codes."];
+  Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="UserInfo::marginallyValid",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$struct_user_info.html#a1bd803884a9f1fb8a954d891c14bf2fd",tooltip="Check marginal validity per GnuPG validity codes."];
+}
