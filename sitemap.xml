@@ -6,7 +6,7 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
   <loc>https://qtpass.org/</loc>
-  <lastmod>2023-09-11T19:48:23+00:00</lastmod>
+  <lastmod>2026-04-22T11:48:23+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
@@ -21,7 +21,7 @@
 </url>
 <url>
   <loc>https://qtpass.org/changelog</loc>
-  <lastmod>2023-09-11T19:48:23+00:00</lastmod>
+  <lastmod>2026-04-22T12:48:23+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
@@ -47,6 +47,21 @@
 <url>
   <loc>https://qtpass.org/docs/md__c_h_a_n_g_e_l_o_g.html</loc>
   <lastmod>2023-09-22T16:21:26+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/changelog.1.6</loc>
+  <lastmod>2026-04-21T19:48:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/changelog.1.5</loc>
+  <lastmod>2026-04-21T19:48:22+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://qtpass.org/changelog.1.4</loc>
+  <lastmod>2026-04-21T19:48:22+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
