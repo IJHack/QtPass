@@ -1,4 +1,4 @@
-const CACHE_NAME = "qtpass::v1.6.0::static";
+const CACHE_NAME = "qtpass::v1.7.0::static";
 
 const PRECACHE_URLS = [
   "/",

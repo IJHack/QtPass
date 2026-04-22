@@ -155,7 +155,7 @@
     <div class="background"></div>
     <div class="wrapper">
       <header>
-        <h1>QtPass <small>1.7</small></h1>
+        <h1>QtPass <small>1.6</small></h1>
         <p>
           <a
             title="QtPass GUI for pass, the standard UNIX password manager"
@@ -208,27 +208,208 @@
       </header>
       <section>
         <h2>
-          <a id="v1.7.0" class="anchor" href="#v1.7.0" aria-hidden="true"
+          <a id="v1.6.0" class="anchor" href="#v1.6.0" aria-hidden="true"
             ><span class="octicon octicon-link"></span></a
-          >v1.7.0
+          >v1.6.0 Spring is in the air
         </h2>
 
         <h3>Highlights</h3>
         <ul>
-          <li>Spanish regional variants support (ES_AR, ES_EC, ES_MX, ES_UY)</li>
-          <li>Qt 6.10 beginFilterChange/endFilterChange support</li>
-          <li>Integration tests for core workflows</li>
-          <li>Various bug fixes and code quality improvements</li>
+          <li>
+            Auto-detect git in existing password-store
+            <a
+              href="https://github.com/IJHack/QtPass/pull/804"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/804/hovercard"
+              >#804</a
+            >
+          </li>
+          <li>
+            Use ed25519 for GPG key generation when available
+            <a
+              href="https://github.com/IJHack/QtPass/pull/790"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/790/hovercard"
+              >#790</a
+            >
+          </li>
+          <li>
+            Improved GPG key parsing with new <code>gpgkeystate</code> module
+          </li>
         </ul>
-
+        <h3>New Features</h3>
+        <ul>
+          <li>Added auto-detect git in existing password-store</li>
+          <li>Use ed25519 (ECC) for GPG key generation when GPG supports it</li>
+          <li>Added compile_commands.json generation script for IDE tooling</li>
+        </ul>
+        <h3>Improvements</h3>
+        <ul>
+          <li>
+            Improved GPG key parsing with new <code>gpgkeystate</code> module
+            <a
+              href="https://github.com/IJHack/QtPass/pull/979"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/979/hovercard"
+              >#979</a
+            >
+          </li>
+          <li>Improved WSL path handling for gpgconf resolution</li>
+          <li>
+            Re-encryption security improvements
+            <a
+              href="https://github.com/IJHack/QtPass/issues/815"
+              data-hovercard-type="issue"
+              data-hovercard-url="/IJHack/QtPass/issues/815/hovercard"
+              >#815</a
+            >
+          </li>
+          <li>
+            Kill stale GPG agents before key generation
+            <a
+              href="https://github.com/IJHack/QtPass/issues/815"
+              data-hovercard-type="issue"
+              data-hovercard-url="/IJHack/QtPass/issues/815/hovercard"
+              >#815</a
+            >
+          </li>
+          <li>
+            Consolidated release scripts into <code>scripts/</code> folder
+          </li>
+          <li>
+            UsersDialog performance optimizations
+            <a
+              href="https://github.com/IJHack/QtPass/pull/977"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/977/hovercard"
+              >#977</a
+            >
+          </li>
+        </ul>
         <h3>Bug Fixes</h3>
         <ul>
-          <li>Guard against out-of-bounds index in password character set</li>
-          <li>WSL case-insensitive path handling improvements</li>
+          <li>Fixed path separator check in gpgconf resolution</li>
+          <li>
+            Fixed .gpg-id path construction for cross-platform
+            <a
+              href="https://github.com/IJHack/QtPass/issues/780"
+              data-hovercard-type="issue"
+              data-hovercard-url="/IJHack/QtPass/issues/780/hovercard"
+              >#780</a
+            >
+          </li>
+          <li>Fixed re-encryption security issues</li>
+          <li>
+            Fixed GPG key generation timeout handling
+            <a
+              href="https://github.com/IJHack/QtPass/issues/815"
+              data-hovercard-type="issue"
+              data-hovercard-url="/IJHack/QtPass/issues/815/hovercard"
+              >#815</a
+            >
+          </li>
+          <li>
+            Fixed clipboard history password exclusion
+            <a
+              href="https://github.com/IJHack/QtPass/pull/970"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/970/hovercard"
+              >#970</a
+            >
+          </li>
+          <li>
+            Fixed transparent context menu in dark mode
+            <a
+              href="https://github.com/IJHack/QtPass/pull/967"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/967/hovercard"
+              >#967</a
+            >
+          </li>
+          <li>
+            Fixed window positioning with window manager
+            <a
+              href="https://github.com/IJHack/QtPass/pull/947"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/947/hovercard"
+              >#947</a
+            >
+          </li>
+          <li>
+            Fixed theme colors for button icons
+            <a
+              href="https://github.com/IJHack/QtPass/pull/949"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/949/hovercard"
+              >#949</a
+            >
+          </li>
+          <li>
+            Fixed hardcoded black text in dark mode
+            <a
+              href="https://github.com/IJHack/QtPass/pull/946"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/946/hovercard"
+              >#946</a
+            >
+          </li>
         </ul>
-
+        <h3>Testing</h3>
+        <ul>
+          <li>
+            Added <code>gpgkeystate</code> test suite (8 test suites total)
+            <a
+              href="https://github.com/IJHack/QtPass/pull/979"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/979/hovercard"
+              >#979</a
+            >
+          </li>
+          <li>Added GPG colon output fixtures</li>
+          <li>
+            Improved test assertions and coverage
+            <a
+              href="https://github.com/IJHack/QtPass/pull/978"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/978/hovercard"
+              >#978</a
+            >,
+            <a
+              href="https://github.com/IJHack/QtPass/pull/981"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/981/hovercard"
+              >#981</a
+            >,
+            <a
+              href="https://github.com/IJHack/QtPass/pull/982"
+              data-hovercard-type="pull_request"
+              data-hovercard-url="/IJHack/QtPass/pull/982/hovercard"
+              >#982</a
+            >
+          </li>
+        </ul>
+        <h3>Documentation &amp; Maintenance</h3>
+        <ul>
+          <li>Added AGENTS.md for AI agent guidance</li>
+          <li>Added security policy (SECURITY.md)</li>
+          <li>Extensive doxygen documentation improvements</li>
+          <li>CI/CD improvements and optimizations</li>
+        </ul>
+        <h3>Localization</h3>
+        <ul>
+          <li>Updated translations via Weblate</li>
+        </ul>
+        <h3>Release, CI and Maintenance</h3>
+        <ul>
+          <li>
+            Consolidated release scripts into <code>scripts/</code> folder
+          </li>
+          <li>Added compile_commands.json generation script</li>
+          <li>Extensive code quality improvements via AI-assisted review</li>
+          <li>CI/CD workflow optimizations</li>
+        </ul>
         <p>
-          <a href="https://github.com/IJHack/QtPass/compare/v1.6.0...v1.7.0"
+          <a href="https://github.com/IJHack/QtPass/compare/v1.5.1...v1.6.0"
             >Full Changelog</a
           >
         </p>
@@ -247,6 +428,11 @@
           <li>
             <a title="Changes in master" href="/docs/md__c_h_a_n_g_e_l_o_g.html"
               >Current Change Log</a
+            >
+          </li>
+          <li>
+            <a title="Changes in 1.7" href="/changelog"
+              >Changelog of 1.7 releases</a
             >
           </li>
           <li>
