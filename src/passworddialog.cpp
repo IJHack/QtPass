@@ -137,8 +137,10 @@ void PasswordDialog::on_rejected() { setPassword(QString()); }
  * @param password
  */
 void PasswordDialog::setPassword(const QString &password) {
-  FileContent fileContent = FileContent::parse(
-      password, m_templating ? m_fields : QStringList(), m_allFields);
+  // Always parse all fields as editable so users can edit any field in the
+  // password file. This fixes issue #132 where users couldn't edit
+  // fields without toggling the "Show all fields templated" setting.
+  FileContent fileContent = FileContent::parse(password, m_fields, true);
   ui->lineEditPassword->setText(fileContent.getPassword());
 
   QWidget *previous = ui->checkBoxShow;
