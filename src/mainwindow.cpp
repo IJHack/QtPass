@@ -850,6 +850,8 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
     if (!templates.isEmpty()) {
       QString defaultTemplate = Util::getFolderTemplate(folder, storePath);
       d.setAvailableTemplates(templates, defaultTemplate);
+      new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_T), &d,
+                    [&d]() { d.cycleTemplate(); });
     }
   }
 
