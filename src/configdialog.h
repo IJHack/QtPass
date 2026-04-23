@@ -166,6 +166,7 @@ private slots:
   void onProfileTableItemChanged(QTableWidgetItem *item);
 
 private:
+  void updateProfileStatus(int row);
   QScopedPointer<Ui::ConfigDialog> ui;
 
   auto getSecretKeys() -> QStringList;
