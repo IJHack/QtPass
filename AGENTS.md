@@ -81,14 +81,19 @@ Use `QSaveFile` for atomic writes to prevent corruption:
 
 ```cpp
 QSaveFile file(path);
-file.open(QIODevice::WriteOnly);
+if (!file.open(QIODevice::WriteOnly)) {
+    return false;  // open failed, nothing to commit
+}
 QTextStream out(&file);
 out << content;
 out.flush();
-if (out.status() == QTextStream::Ok) {
-    file.commit();  // Only commits if write succeeded
+if (out.status() != QTextStream::Ok) {
+    return false;  // QSaveFile is discarded on destruction
 }
+return file.commit();  // commit() returns false if the rename failed
 ```
+
+See `Util::writeTemplates` in `src/util.cpp` for the canonical pattern.
 
 ### Context Menu Pattern
 
@@ -196,17 +201,20 @@ Per-folder `.default_template` contains just the template name.
 When checking for `.gpg-id`, walk up parent directories:
 
 ```cpp
-QString gpgIdPath = dir;
-while (QDir::cleanPath(gpgIdPath) != QDir::cleanPath(storeRoot)) {
-    if (QFile(gpgIdPath + "/.gpg-id").exists()) {
-        return gpgIdPath + "/.gpg-id";
+QDir dirObj(dir);
+while (dirObj.exists() && dirObj.absolutePath().startsWith(storeRoot)) {
+    if (QFile(dirObj.absoluteFilePath(".gpg-id")).exists()) {
+        return dirObj.absoluteFilePath(".gpg-id");
     }
-    if (!QDir(gpgIdPath).cdUp()) break;
-    gpgIdPath = QDir(gpgIdPath).path();
+    if (!dirObj.cdUp()) break;  // hit filesystem root
 }
 ```
 
-This supports nested folder inheritance.
+`cdUp()` must be called on a persistent `QDir` — calling it on a temporary
+(`QDir(path).cdUp()`) discards the result and the loop never advances.
+
+See `Pass::getGpgIdPath` in `src/pass.cpp` for the canonical implementation;
+this pattern supports nested folder inheritance.
 
 ## Handling AI Findings
 
