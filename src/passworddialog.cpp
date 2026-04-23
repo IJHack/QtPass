@@ -200,6 +200,13 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   }
   templateLines.clear();
 
+  // Defensively remove all rows tracked in otherLines to prevent accumulation
+  // when cycling templates or applying new templates after setPassword
+  for (QLineEdit *line : std::as_const(otherLines)) {
+    ui->formLayout->removeRow(line);
+  }
+  otherLines.clear();
+
   if (m_templating) {
     QWidget *previous = ui->checkBoxShow;
     for (const QString &field : std::as_const(m_fields)) {
