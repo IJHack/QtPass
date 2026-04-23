@@ -1231,9 +1231,37 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     if (fileOrFolder.isDir()) {
       QString dirPath = QDir::cleanPath(
           Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel));
-      QAction *reencrypt = contextMenu.addAction(tr("Re-encrypt"));
+
+      QMenu *shareMenu = new QMenu(tr("Share"), &contextMenu);
+      contextMenu.addMenu(shareMenu);
+
+      QString gpgIdPath = Pass::getGpgIdPath(dirPath);
+      bool gpgIdExists = !gpgIdPath.isEmpty() && QFile(gpgIdPath).exists();
+
+      QString exePath = QtPassSettings::isUsePass()
+                            ? QtPassSettings::getPassExecutable()
+                            : QtPassSettings::getGpgExecutable();
+      bool gpgAvailable = !exePath.isEmpty() && (exePath.startsWith("wsl ") ||
+                                                 QFile(exePath).exists());
+
+      QAction *reencrypt = shareMenu->addAction(tr("Re-encrypt all passwords"));
+      reencrypt->setEnabled(gpgIdExists && gpgAvailable);
       connect(reencrypt, &QAction::triggered, this,
               [this, dirPath]() { reencryptPath(dirPath); });
+
+      QAction *exportKey = shareMenu->addAction(tr("Export my public key..."));
+      exportKey->setEnabled(gpgAvailable);
+      connect(exportKey, &QAction::triggered, this,
+              &MainWindow::exportPublicKey);
+
+      QAction *addRecipientAction =
+          shareMenu->addAction(tr("Add recipient..."));
+      addRecipientAction->setEnabled(gpgIdExists && gpgAvailable);
+      connect(addRecipientAction, &QAction::triggered, this,
+              [this, dirPath]() { addRecipient(dirPath); });
+
+      QAction *shareHelp = shareMenu->addAction(tr("What is this?"));
+      connect(shareHelp, &QAction::triggered, this, &MainWindow::showShareHelp);
     }
   }
   contextMenu.exec(globalPos);
@@ -1538,6 +1566,69 @@ void MainWindow::startReencryptPath() {
  * @brief MainWindow::endReencryptPath re-enable ui elements
  */
 void MainWindow::endReencryptPath() { setUiElementsEnabled(true); }
+
+/**
+ * @brief MainWindow::exportPublicKey export current user's public key
+ * Shows instructions to export key via command line
+ * TODO: Wire to real gpg export via Executor - see issue #422
+ */
+void MainWindow::exportPublicKey() {
+  QString identity = QtPassSettings::getPassSigningKey();
+  if (identity.isEmpty()) {
+    identity = "<your-key-id>";
+  }
+  identity = identity.toHtmlEscaped();
+  QMessageBox::information(
+      this, tr("Export Public Key"),
+      tr("<h3>Export Your Public Key</h3>"
+         "<p>To export your public GPG key, run this in terminal:</p>"
+         "<pre>gpg --armor --export --output my_key.asc %1</pre>"
+         "<p>Then send the file to your teammates.</p>"
+         "<p>Your key ID: You can find it in QtPass Settings &gt; GPG "
+         "keys.</p>")
+          .arg(identity));
+}
+
+/**
+ * @brief MainWindow::addRecipient add a new recipient's public key
+ * @param dir Directory path
+ */
+void MainWindow::addRecipient(const QString &dir) {
+  QString gpgIdPath = Pass::getGpgIdPath(dir).toHtmlEscaped();
+  QMessageBox::information(
+      this, tr("Add Recipient"),
+      tr("<h3>Add Recipient</h3>"
+         "<p>To add a teammate's public key:</p>"
+         "<ol>"
+         "<li>Save their public key as a .asc file</li>"
+         "<li>Copy the key text</li>"
+         "<li>Open %1</li>"
+         "<li>Add the new key ID to the file</li>"
+         "<li>Re-encrypt passwords to share with them</li>"
+         "</ol>"
+         "<p>Use the full fingerprint to ensure accuracy.</p>")
+          .arg(gpgIdPath));
+}
+
+/**
+ * @brief MainWindow::showShareHelp show help about GPG sharing
+ */
+void MainWindow::showShareHelp() {
+  QMessageBox::information(
+      this, tr("Sharing Passwords with GPG"),
+      tr("<h3>Sharing Passwords with GPG</h3>"
+         "<p>To share passwords with other users:</p>"
+         "<ol>"
+         "<li><b>Export your public key</b> and send it to teammates</li>"
+         "<li><b>Import teammates' public keys</b> to their own folders</li>"
+         "<li><b>Re-encrypt passwords</b> so all recipients can decrypt "
+         "them</li>"
+         "</ol>"
+         "<p>Only people who have a matching secret key can decrypt the "
+         "passwords.</p>"
+         "<p><b>Tip:</b> Use the same GPG key for all shared folders.</p>"
+         "<p>See the FAQ for more details.</p>"));
+}
 
 void MainWindow::updateGitButtonVisibility() {
   if (!QtPassSettings::isUseGit() ||

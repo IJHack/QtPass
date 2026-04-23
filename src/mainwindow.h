@@ -280,6 +280,10 @@ private:
   void destroyTrayIcon();
   void clearTemplateWidgets();
   void reencryptPath(const QString &dir);
+  void exportPublicKey();
+  void addRecipient(const QString &dir);
+  void showShareHelp();
+
   void addToGridLayout(int position, const QString &field,
                        const QString &value);
 
