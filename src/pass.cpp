@@ -786,8 +786,15 @@ auto Pass::getGpgIdPath(const QString &for_file) -> QString {
                          ? normalizedFile
                          : passStore + "/" + normalizedFile;
   QDir gpgIdDir(QFileInfo(fullPath).absoluteDir());
+  QString cleanPassStore = QDir::cleanPath(passStore);
+  QString sep = QDir::separator();
   bool found = false;
-  while (gpgIdDir.exists() && gpgIdDir.absolutePath().startsWith(passStore)) {
+  while (gpgIdDir.exists()) {
+    QString currentPath = QDir::cleanPath(gpgIdDir.absolutePath());
+    if (currentPath != cleanPassStore &&
+        !currentPath.startsWith(cleanPassStore + sep)) {
+      break;
+    }
     if (QFile(gpgIdDir.absoluteFilePath(".gpg-id")).exists()) {
       found = true;
       break;
