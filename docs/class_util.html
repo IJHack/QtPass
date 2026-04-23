@@ -105,6 +105,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0ba6ef4e4542287d5b257252728d1aa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match newline characters.  <br /></td></tr>
 <tr class="memitem:a7a6dcbde6840aab13f34a83a4ce9f3c1" id="r_a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7a6dcbde6840aab13f34a83a4ce9f3c1">isValidKeyId</a> (const QString &amp;keyId) -&gt; bool</td></tr>
 <tr class="memdesc:a7a6dcbde6840aab13f34a83a4ce9f3c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a string looks like a valid GPG key ID. Accepts:  <br /></td></tr>
+<tr class="memitem:a652a0bcdb06266e7df43521d950a5cc3" id="r_a652a0bcdb06266e7df43521d950a5cc3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a652a0bcdb06266e7df43521d950a5cc3">readTemplates</a> (const QString &amp;storePath) -&gt; QHash&lt; QString, QStringList &gt;</td></tr>
+<tr class="memdesc:a652a0bcdb06266e7df43521d950a5cc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read templates from .templates file in password store.  <br /></td></tr>
+<tr class="memitem:aa0c3bc2c8ac287693db38b9231904c37" id="r_aa0c3bc2c8ac287693db38b9231904c37"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa0c3bc2c8ac287693db38b9231904c37">writeTemplates</a> (const QString &amp;storePath, const QHash&lt; QString, QStringList &gt; &amp;templates) -&gt; bool</td></tr>
+<tr class="memdesc:aa0c3bc2c8ac287693db38b9231904c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write templates to .templates file in password store.  <br /></td></tr>
+<tr class="memitem:a6210b70947cabf0ae3621077bd4ceaf0" id="r_a6210b70947cabf0ae3621077bd4ceaf0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6210b70947cabf0ae3621077bd4ceaf0">getFolderTemplate</a> (const QString &amp;folderPath, const QString &amp;storePath) -&gt; QString</td></tr>
+<tr class="memdesc:a6210b70947cabf0ae3621077bd4ceaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get default template for a folder. Looks in folder, then parent folders up to root.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
@@ -280,6 +286,45 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a6210b70947cabf0ae3621077bd4ceaf0" name="a6210b70947cabf0ae3621077bd4ceaf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6210b70947cabf0ae3621077bd4ceaf0">&#9670;&#160;</a></span>getFolderTemplate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::getFolderTemplate </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>folderPath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storePath</em></span>&#160;) -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get default template for a folder. Looks in folder, then parent folders up to root. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">folderPath</td><td>Path to folder. </td></tr>
+    <tr><td class="paramname">storePath</td><td>Path to password store root. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Template name or empty if none found. </dd></dl>
+
+</div>
+</div>
 <a id="a7a6dcbde6840aab13f34a83a4ce9f3c1" name="a7a6dcbde6840aab13f34a83a4ce9f3c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a6dcbde6840aab13f34a83a4ce9f3c1">&#9670;&#160;</a></span>isValidKeyId()</h2>
 
@@ -406,6 +451,79 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Returns a regex to match URL protocols. </p>
 <dl class="section return"><dt>Returns</dt><dd>Reference to static regex </dd></dl>
+
+</div>
+</div>
+<a id="a652a0bcdb06266e7df43521d950a5cc3" name="a652a0bcdb06266e7df43521d950a5cc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a652a0bcdb06266e7df43521d950a5cc3">&#9670;&#160;</a></span>readTemplates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::readTemplates </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storePath</em></span></td><td>)</td>
+          <td> -&gt;  QHash&lt; QString, QStringList &gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read templates from .templates file in password store. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">storePath</td><td>Path to password store root. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Hash of template name to field list. </dd></dl>
+
+</div>
+</div>
+<a id="aa0c3bc2c8ac287693db38b9231904c37" name="aa0c3bc2c8ac287693db38b9231904c37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0c3bc2c8ac287693db38b9231904c37">&#9670;&#160;</a></span>writeTemplates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::writeTemplates </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storePath</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QHash&lt; QString, QStringList &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>templates</em></span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Write templates to .templates file in password store. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">storePath</td><td>Path to password store root. </td></tr>
+    <tr><td class="paramname">templates</td><td>Hash of template name to field list. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if write succeeded. </dd></dl>
 
 </div>
 </div>
