@@ -272,9 +272,9 @@ void PasswordDialog::setAvailableTemplates(
  * @param templateName Name of template to apply.
  */
 void PasswordDialog::applyTemplate(const QString &templateName) {
-  m_currentTemplateName = templateName;
   auto it = m_availableTemplates.constFind(templateName);
   if (it != m_availableTemplates.constEnd()) {
+    m_currentTemplateName = templateName;
     QString fields = it.value().join("\n");
     setTemplate(fields, true);
   }
