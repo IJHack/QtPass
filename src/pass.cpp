@@ -620,6 +620,8 @@ void Pass::finished(int id, int exitCode, const QString &out,
 
 void Pass::handleProcessError(PROCESS pid, int exitCode, const QString &out,
                               const QString &err) {
+  Q_UNUSED(out);
+
   if (pid == PASS_GREP) {
     handleGrepError(exitCode, err);
     return;
