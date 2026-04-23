@@ -279,7 +279,7 @@
 - Update minimum Qt version [\#527](https://github.com/IJHack/QtPass/pull/527) ([cmol](https://github.com/cmol))
 - Fix blurry icons when fractional scaling is enabled [\#526](https://github.com/IJHack/QtPass/pull/526) ([mthw0](https://github.com/mthw0))
 - Spelling: Git pull, Git push [\#516](https://github.com/IJHack/QtPass/pull/516) ([comradekingu](https://github.com/comradekingu))
-- Enable ubuntu, windows and macOS based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
+- Enable Ubuntu, windows and macOS based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
 - Enable out-of-source build [\#503](https://github.com/IJHack/QtPass/pull/503) ([boppybibbles](https://github.com/boppybibbles))
 - Use new stable version of `install-qt-action`. [\#502](https://github.com/IJHack/QtPass/pull/502) ([boppybibbles](https://github.com/boppybibbles))
 - Don't base pass-otp availability decision on hardcoded /usr/lib [\#499](https://github.com/IJHack/QtPass/pull/499) ([nh2](https://github.com/nh2))
@@ -371,7 +371,7 @@
 - How to clean up the app [\#429](https://github.com/IJHack/QtPass/issues/429)
 - LAN sync request [\#427](https://github.com/IJHack/QtPass/issues/427)
 - Profiles can not be removed [\#415](https://github.com/IJHack/QtPass/issues/415)
-- Compilation error in \(K\)ubuntu 16.04.5 with sources tar.gz from version 1.2.3 [\#408](https://github.com/IJHack/QtPass/issues/408)
+- Compilation error in \(K\)Ubuntu 16.04.5 with sources tar.gz from version 1.2.3 [\#408](https://github.com/IJHack/QtPass/issues/408)
 - Prevent from removing whole password-store directory and hidden directories and files [\#400](https://github.com/IJHack/QtPass/issues/400)
 - Version information string/s [\#398](https://github.com/IJHack/QtPass/issues/398)
 - We should select a C++ std too [\#372](https://github.com/IJHack/QtPass/issues/372)
@@ -548,7 +548,7 @@
 
 - Extract static library and separate main function [\#324](https://github.com/IJHack/QtPass/pull/324) ([tezeb](https://github.com/tezeb))
 - galego actualizado [\#323](https://github.com/IJHack/QtPass/pull/323) ([xmgz](https://github.com/xmgz))
-- Add sftp, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
+- Add SFTP, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
 - Ignore cmdline arguments if -session is used. [\#321](https://github.com/IJHack/QtPass/pull/321) ([Achimh3011](https://github.com/Achimh3011))
 - Finished French translation \(and proof-read the already translated strings\). [\#311](https://github.com/IJHack/QtPass/pull/311) ([Marcool04](https://github.com/Marcool04))
 - Once again, code coverage [\#305](https://github.com/IJHack/QtPass/pull/305) ([tezeb](https://github.com/tezeb))
@@ -721,7 +721,7 @@
 
 - Remove outdated Debian packaging [\#165](https://github.com/IJHack/QtPass/issues/165)
 - Same name for file and folder [\#159](https://github.com/IJHack/QtPass/issues/159)
-- Icons don't work on nixos [\#157](https://github.com/IJHack/QtPass/issues/157)
+- Icons don't work on NixOS [\#157](https://github.com/IJHack/QtPass/issues/157)
 - gpg: Sorry, we are in batchmode - can't get input [\#151](https://github.com/IJHack/QtPass/issues/151)
 
 **Merged pull requests:**
@@ -975,7 +975,7 @@
 
 **Closed issues:**
 
-- compiling qtpass on ubuntu 15.04 - fails due to newer qmake version [\#43](https://github.com/IJHack/QtPass/issues/43)
+- compiling qtpass on Ubuntu 15.04 - fails due to newer qmake version [\#43](https://github.com/IJHack/QtPass/issues/43)
 - QProcess::start: Process is already running [\#40](https://github.com/IJHack/QtPass/issues/40)
 - Extra line breaks seem to be added to the \(HTML\) output [\#39](https://github.com/IJHack/QtPass/issues/39)
 - Missing develop branch and release testing [\#38](https://github.com/IJHack/QtPass/issues/38)

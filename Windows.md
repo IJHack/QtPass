@@ -121,7 +121,7 @@ nmake check TESTARGS="--platform offscreen"
 | App doesn't start                                   | Install `vcredist140` (Visual C++ Redistributable)                                                                    |
 | `QMAKE_MSC_VER` isn't set                           | delete `.qmake.stash` and rerun qmake                                                                                 |
 | nmake fails with Unix commands (`test`, `mkdir -p`) | Wrong Qt variant installed (MinGW instead of MSVC) - reinstall using MSVC Qt build                                    |
-| Should find bash in PATH                            | ensure `C:\Program Files\Git\bin` is on PATH                                                                          |
+| Should find Bash in PATH                            | ensure `C:\Program Files\Git\bin` is on PATH                                                                          |
 | cl not found                                        | MSVC environment not loaded - run VsDevCmd.bat                                                                        |
 
 ### Build fails with weird errors
