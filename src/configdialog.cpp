@@ -649,7 +649,7 @@ void ConfigDialog::initializeNewProfiles(
               QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
         continue;
       }
-      if (!dir.mkpath(cleanPath)) {
+      if (!QDir().mkpath(cleanPath)) {
         QMessageBox::warning(
             this, tr("Error"),
             tr("Could not create profile directory: %1").arg(cleanPath));
