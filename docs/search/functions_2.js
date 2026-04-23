@@ -16,5 +16,6 @@ var searchData=
   ['copytexttoclipboard_13',['copyTextToClipboard',['../class_qt_pass.html#acba134fb5281aedee11899a03976aa95',1,'QtPass']]],
   ['createbackupcommit_14',['createBackupCommit',['../class_imitate_pass.html#a086365ec85674590afbd883df0b27a80',1,'ImitatePass']]],
   ['createqrcodepopup_15',['createQRCodePopup',['../class_qt_pass.html#a87eca9145118d654cf0e87fe3f2b7a7d',1,'QtPass']]],
-  ['critical_16',['critical',['../class_main_window.html#a8719b3a133e95915dd72b244db1e49bf',1,'MainWindow::critical()'],['../class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9',1,'Pass::critical()']]]
+  ['critical_16',['critical',['../class_main_window.html#a8719b3a133e95915dd72b244db1e49bf',1,'MainWindow::critical()'],['../class_pass.html#adbe1f9ea5212ad3dc80b6c5d581f78c9',1,'Pass::critical()']]],
+  ['cycletemplate_17',['cycleTemplate',['../class_password_dialog.html#a3be525fe15b6af1939dad714e3244733',1,'PasswordDialog']]]
 ];
