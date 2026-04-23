@@ -297,10 +297,12 @@ void PasswordDialog::cycleTemplate() {
   std::sort(names.begin(), names.end());
 
   int currentIdx = names.indexOf(m_currentTemplateName);
+  int nextIdx;
   if (currentIdx < 0) {
-    currentIdx = 0;
+    nextIdx = 0;
+  } else {
+    nextIdx = (currentIdx + 1) % names.size();
   }
-  int nextIdx = (currentIdx + 1) % names.size();
   applyTemplate(names.at(nextIdx));
 }
 
