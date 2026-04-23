@@ -526,11 +526,10 @@ void tst_settings::profileGitOptions() {
   QVERIFY(!QtPassSettings::getProfileAutoPush(profileName, true));
   QVERIFY(!QtPassSettings::getProfileAutoPull(profileName, true));
 
-  // Clean up test profile from QSettings
-  QSettings qtSettings;
-  qtSettings.beginGroup("profile");
-  qtSettings.remove(profileName);
-  qtSettings.endGroup();
+  // Clean up test profile from settings
+  QtPassSettings::getInstance()->beginGroup("profile");
+  QtPassSettings::getInstance()->remove(profileName);
+  QtPassSettings::getInstance()->endGroup();
 }
 
 void tst_settings::setAndGetProfileDefault() {

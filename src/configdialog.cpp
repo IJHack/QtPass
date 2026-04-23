@@ -98,14 +98,13 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     ui->checkBoxUseQrencode->setToolTip(tr("qrencode needs to be installed"));
   }
 
-  setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
-  setPwgenPath(QtPassSettings::getPwgenExecutable());
-  setPasswordConfiguration(QtPassSettings::getPasswordConfiguration());
-
   usePass(QtPassSettings::isUsePass());
   useAutoclear(QtPassSettings::isUseAutoclear());
   useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
   useTrayIcon(QtPassSettings::isUseTrayIcon());
+
+  setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
+
   useGit(QtPassSettings::isUseGit());
 
   useOtp(QtPassSettings::isUseOtp());
@@ -145,6 +144,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
 
   connect(ui->profileTable, &QTableWidget::itemChanged, this,
           &ConfigDialog::onProfileTableItemChanged);
+  connect(ui->profileTable, &QTableWidget::itemSelectionChanged, this,
+          &ConfigDialog::onProfileTableSelectionChanged);
   connect(this, &ConfigDialog::accepted, this, &ConfigDialog::on_accepted);
 }
 
@@ -286,8 +287,6 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setPassTemplate(ui->plainTextEditTemplate->toPlainText());
   QtPassSettings::setTemplateAllFields(
       ui->checkBoxTemplateAllFields->isChecked());
-  QtPassSettings::setAutoPush(ui->checkBoxAutoPush->isChecked());
-  QtPassSettings::setAutoPull(ui->checkBoxAutoPull->isChecked());
   QtPassSettings::setAlwaysOnTop(ui->checkBoxAlwaysOnTop->isChecked());
 
   QtPassSettings::setVersion(VERSION);
@@ -606,9 +605,15 @@ void ConfigDialog::loadGitSettingsForProfile(
 
     // Load profile-specific git settings if set, otherwise use global settings
     if (!useGitStr.isEmpty()) {
-      ui->checkBoxUseGit->setChecked(useGitStr == "true");
-      ui->checkBoxAutoPush->setChecked(autoPushStr == "true");
-      ui->checkBoxAutoPull->setChecked(autoPullStr == "true");
+      useGit(useGitStr == "true");
+      ui->checkBoxAutoPush->setEnabled(ui->checkBoxUseGit->isChecked());
+      ui->checkBoxAutoPull->setEnabled(ui->checkBoxUseGit->isChecked());
+      if (autoPushStr == "true" || autoPushStr == "false") {
+        ui->checkBoxAutoPush->setChecked(autoPushStr == "true");
+      }
+      if (autoPullStr == "true" || autoPullStr == "false") {
+        ui->checkBoxAutoPull->setChecked(autoPullStr == "true");
+      }
     }
     // If not set (empty), leave global settings as-is for migration
   }
@@ -626,6 +631,10 @@ auto ConfigDialog::getProfiles() -> QHash<QString, QHash<QString, QString>> {
     selectedProfile =
         ui->profileTable->item(selected.first()->row(), 0)->text();
   }
+
+  // Fetch existing profiles to preserve git settings for non-selected profiles
+  QHash<QString, QHash<QString, QString>> existingProfiles =
+      QtPassSettings::getProfiles();
 
   QHash<QString, QHash<QString, QString>> profiles;
   // Check?
@@ -651,6 +660,19 @@ auto ConfigDialog::getProfiles() -> QHash<QString, QHash<QString, QString>> {
             ui->checkBoxAutoPush->isChecked() ? "true" : "false";
         profile["autoPull"] =
             ui->checkBoxAutoPull->isChecked() ? "true" : "false";
+      } else if (existingProfiles.contains(item->text())) {
+        // Preserve existing git settings for non-selected profiles
+        const QHash<QString, QString> &existing =
+            existingProfiles.value(item->text());
+        if (existing.contains("useGit")) {
+          profile["useGit"] = existing.value("useGit");
+        }
+        if (existing.contains("autoPush")) {
+          profile["autoPush"] = existing.value("autoPush");
+        }
+        if (existing.contains("autoPull")) {
+          profile["autoPull"] = existing.value("autoPull");
+        }
       }
       profiles.insert(item->text(), profile);
     }
@@ -717,7 +739,12 @@ void ConfigDialog::initializeNewProfiles(
     usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
     const int result = usersDialog.exec();
 
-    if (result == QDialog::Accepted && ui->checkBoxUseGit->isChecked()) {
+    // Use per-profile useGit setting, falling back to global if not set
+    QString useGitStr = newProfiles.value(name).value("useGit");
+    bool useGit =
+        useGitStr.isEmpty() ? QtPassSettings::isUseGit() : useGitStr == "true";
+
+    if (result == QDialog::Accepted && useGit) {
       QtPassSettings::getPass()->GitInit();
     }
 
@@ -1191,6 +1218,22 @@ void ConfigDialog::on_checkBoxUseTemplate_clicked() {
 void ConfigDialog::onProfileTableItemChanged(QTableWidgetItem *item) {
   validate(item);
   updateProfileStatus(item ? item->row() : -1);
+}
+
+void ConfigDialog::onProfileTableSelectionChanged() {
+  QList<QTableWidgetItem *> selected = ui->profileTable->selectedItems();
+  if (selected.isEmpty()) {
+    return;
+  }
+  QTableWidgetItem *nameItem =
+      ui->profileTable->item(selected.first()->row(), 0);
+  if (nameItem == nullptr) {
+    return;
+  }
+  QString profileName = nameItem->text();
+  QHash<QString, QHash<QString, QString>> profiles =
+      QtPassSettings::getProfiles();
+  loadGitSettingsForProfile(profileName, profiles);
 }
 
 /**
