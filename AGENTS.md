@@ -101,7 +101,7 @@ Right-click menus in Qt use parented menus for automatic cleanup:
 
 ```cpp
 QMenu contextMenu(this);
-QMenu *subMenu = new QMenu("Share", &contextMenu);  // Parented to contextMenu
+QMenu *subMenu = new QMenu(tr("Share"), &contextMenu);  // Parented to contextMenu
 contextMenu.addMenu(subMenu);
 // Both menus destroyed when contextMenu.exec() returns
 ```
@@ -136,9 +136,9 @@ connect(action, SIGNAL(triggered()), SLOT(myMethod()));
 
 Git operations are handled in `ImitatePass`:
 
-- `executeGit(GIT_ADD, {path})` stages files
+- `executeGit(GIT_ADD, {"add", pgit(file)})` stages files
 - `gitCommit(file, message)` commits with message
-- Use `QtPassSettings::isUseGit()` to check if Git is enabled
+- Always check `QtPassSettings::isUseGit()` before invoking `executeGit`
 
 ### Qt Version Compatibility
 
