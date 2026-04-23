@@ -13,7 +13,9 @@
 
 #include "util.h"
 #include <QDir>
+#include <QFile>
 #include <QFileInfo>
+#include <QTextStream>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #else
@@ -298,4 +300,97 @@ auto Util::isValidKeyId(const QString &keyId) -> bool {
   }
 
   return hexKeyIdRegex.match(normalized).hasMatch();
+}
+
+/**
+ * @brief Read templates from .templates file in password store.
+ * @param storePath Path to password store root.
+ * @return Hash of template name to field list.
+ */
+auto Util::readTemplates(const QString &storePath)
+    -> QHash<QString, QStringList> {
+  QHash<QString, QStringList> result;
+  QFile file(QDir(storePath).filePath(".templates"));
+  if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+    return result;
+  }
+  QTextStream in(&file);
+  QString currentSection;
+  QStringList currentFields;
+  while (!in.atEnd()) {
+    QString line = in.readLine().trimmed();
+    if (line.startsWith('[') && line.endsWith(']')) {
+      if (!currentSection.isEmpty()) {
+        result.insert(currentSection, currentFields);
+      }
+      currentSection = line.mid(1, line.length() - 2);
+      currentFields.clear();
+    } else if (!line.isEmpty() && !line.startsWith('#')) {
+      currentFields.append(line);
+    }
+  }
+  if (!currentSection.isEmpty()) {
+    result.insert(currentSection, currentFields);
+  }
+  file.close();
+  return result;
+}
+
+/**
+ * @brief Write templates to .templates file in password store.
+ * @param storePath Path to password store root.
+ * @param templates Hash of template name to field list.
+ * @return true if write succeeded.
+ */
+auto Util::writeTemplates(const QString &storePath,
+                          const QHash<QString, QStringList> &templates)
+    -> bool {
+  QFile file(QDir(storePath).filePath(".templates"));
+  if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+    return false;
+  }
+  QTextStream out(&file);
+  out << "# QtPass templates configuration\n";
+  out << "# Format: INI-style with [template_name] sections,\n";
+  out << "# followed by field names (one per line)\n\n";
+  for (auto it = templates.constKeyValueBegin();
+       it != templates.constKeyValueEnd(); ++it) {
+    out << "[" << it->first << "]\n";
+    for (const QString &field : it->second) {
+      out << field << "\n";
+    }
+    out << "\n";
+  }
+  file.close();
+  return true;
+}
+
+/**
+ * @brief Get default template for a folder.
+ * Looks in folder, then parent folders up to root.
+ * @param folderPath Path to folder.
+ * @param storePath Path to password store root.
+ * @return Template name or empty if none found.
+ */
+auto Util::getFolderTemplate(const QString &folderPath,
+                             const QString &storePath) -> QString {
+  QDir dir(folderPath);
+  while (dir.exists(".default_template")) {
+    QFile file(dir.filePath(".default_template"));
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+      QTextStream in(&file);
+      QString templateName = in.readLine().trimmed();
+      file.close();
+      if (!templateName.isEmpty() && !templateName.startsWith('#')) {
+        return templateName;
+      }
+    }
+    if (dir.absolutePath() == storePath) {
+      break;
+    }
+    if (!dir.cdUp()) {
+      break;
+    }
+  }
+  return QString();
 }
