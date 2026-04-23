@@ -7,7 +7,9 @@
 #include "passwordconfiguration.h"
 #include "qtpasssettings.h"
 #include "ui_passworddialog.h"
+#include "util.h"
 
+#include <QHash>
 #include <QLabel>
 #include <QLineEdit>
 #include <utility>
@@ -234,6 +236,29 @@ void PasswordDialog::setPasswordCharTemplate(int templateIndex) {
 void PasswordDialog::usePwgen(bool usePwgen) {
   ui->passwordTemplateSwitch->setDisabled(usePwgen);
   ui->label_characterset->setDisabled(usePwgen);
+}
+
+/**
+ * @brief Set available templates from .templates file and apply default.
+ * @param templates Hash of template name to field list.
+ * @param defaultTemplate Name of default template to select.
+ */
+void PasswordDialog::setAvailableTemplates(
+    const QHash<QString, QStringList> &templates,
+    const QString &defaultTemplate) {
+  QStringList templateNames = templates.keys();
+  if (templateNames.isEmpty()) {
+    return;
+  }
+  QString selected = defaultTemplate;
+  if (!templateNames.contains(selected)) {
+    selected = templateNames.first();
+  }
+  auto it = templates.constFind(selected);
+  if (it != templates.constEnd()) {
+    QString fields = it.value().join("\n");
+    setTemplate(fields, true);
+  }
 }
 
 /**

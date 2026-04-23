@@ -79,6 +79,14 @@ public:
    */
   void usePwgen(bool usePwgen);
 
+  /**
+   * @brief Set the available templates from .templates file.
+   * @param templates Hash of template name to field list.
+   * @param defaultTemplate Name of default template to select.
+   */
+  void setAvailableTemplates(const QHash<QString, QStringList> &templates,
+                             const QString &defaultTemplate);
+
 public slots:
   /**
    * @brief Populate the dialog's password field from pass show output.
