@@ -582,9 +582,35 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
           n, 2, new QTableWidgetItem(i.value().value("signingKey")));
       if (i.key() == currentProfile) {
         ui->profileTable->selectRow(n);
+        // Load git settings for current profile
+        loadGitSettingsForProfile(currentProfile, profiles);
       }
     }
     ++n;
+  }
+}
+
+/**
+ * @brief Load git settings for a specific profile.
+ * @param profileName The profile name.
+ * @param profiles The profiles hash containing git settings.
+ */
+void ConfigDialog::loadGitSettingsForProfile(
+    const QString &profileName,
+    const QHash<QString, QHash<QString, QString>> &profiles) {
+  if (profiles.contains(profileName)) {
+    const QHash<QString, QString> &profile = profiles.value(profileName);
+    QString useGitStr = profile.value("useGit");
+    QString autoPushStr = profile.value("autoPush");
+    QString autoPullStr = profile.value("autoPull");
+
+    // Load profile-specific git settings if set, otherwise use global settings
+    if (!useGitStr.isEmpty()) {
+      ui->checkBoxUseGit->setChecked(useGitStr == "true");
+      ui->checkBoxAutoPush->setChecked(autoPushStr == "true");
+      ui->checkBoxAutoPull->setChecked(autoPullStr == "true");
+    }
+    // If not set (empty), leave global settings as-is for migration
   }
 }
 
@@ -608,6 +634,12 @@ auto ConfigDialog::getProfiles() -> QHash<QString, QHash<QString, QString>> {
       if (nullptr != signingKeyItem) {
         profile["signingKey"] = signingKeyItem->text();
       }
+      // Save git settings from current UI state
+      profile["useGit"] = ui->checkBoxUseGit->isChecked() ? "true" : "false";
+      profile["autoPush"] =
+          ui->checkBoxAutoPush->isChecked() ? "true" : "false";
+      profile["autoPull"] =
+          ui->checkBoxAutoPull->isChecked() ? "true" : "false";
       profiles.insert(item->text(), profile);
     }
   }

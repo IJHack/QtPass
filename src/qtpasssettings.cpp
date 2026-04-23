@@ -124,6 +124,9 @@ auto QtPassSettings::getProfiles() -> QHash<QString, QHash<QString, QString>> {
       QHash<QString, QString> profile;
       profile.insert("path", getInstance()->value(key).toString());
       profile.insert("signingKey", "");
+      profile.insert("useGit", "");
+      profile.insert("autoPush", "");
+      profile.insert("autoPull", "");
       profiles.insert(key, profile);
     }
   }
@@ -135,7 +138,12 @@ auto QtPassSettings::getProfiles() -> QHash<QString, QHash<QString, QString>> {
     profile.insert("path", getInstance()->value(group + "/path").toString());
     profile.insert("signingKey",
                    getInstance()->value(group + "/signingKey").toString());
-    // profiles.insert(group, getInstance()->value(group).toString());
+    profile.insert("useGit",
+                   getInstance()->value(group + "/useGit").toString());
+    profile.insert("autoPush",
+                   getInstance()->value(group + "/autoPush").toString());
+    profile.insert("autoPull",
+                   getInstance()->value(group + "/autoPull").toString());
     profiles.insert(group, profile);
   }
 
@@ -163,6 +171,9 @@ void QtPassSettings::setProfiles(
     getInstance()->setValue(i.key() + "/path", i.value().value("path"));
     getInstance()->setValue(i.key() + "/signingKey",
                             i.value().value("signingKey"));
+    getInstance()->setValue(i.key() + "/useGit", i.value().value("useGit"));
+    getInstance()->setValue(i.key() + "/autoPush", i.value().value("autoPush"));
+    getInstance()->setValue(i.key() + "/autoPull", i.value().value("autoPull"));
   }
 
   getInstance()->endGroup();
@@ -577,6 +588,87 @@ auto QtPassSettings::getProfile(const QString &defaultValue) -> QString {
 }
 void QtPassSettings::setProfile(const QString &profile) {
   getInstance()->setValue(SettingsConstants::profile, profile);
+}
+
+/**
+ * @brief Gets the useGit setting for a specific profile.
+ * @param profileName The profile name.
+ * @param defaultValue The default value if not set.
+ * @return The useGit setting for the profile.
+ */
+auto QtPassSettings::getProfileUseGit(const QString &profileName,
+                                      const bool &defaultValue) -> bool {
+  getInstance()->beginGroup(SettingsConstants::profile);
+  bool value =
+      getInstance()->value(profileName + "/useGit", defaultValue).toBool();
+  getInstance()->endGroup();
+  return value;
+}
+
+/**
+ * @brief Sets the useGit setting for a specific profile.
+ * @param profileName The profile name.
+ * @param useGit The useGit value to set.
+ */
+void QtPassSettings::setProfileUseGit(const QString &profileName,
+                                      const bool &useGit) {
+  getInstance()->beginGroup(SettingsConstants::profile);
+  getInstance()->setValue(profileName + "/useGit", useGit);
+  getInstance()->endGroup();
+}
+
+/**
+ * @brief Gets the autoPush setting for a specific profile.
+ * @param profileName The profile name.
+ * @param defaultValue The default value if not set.
+ * @return The autoPush setting for the profile.
+ */
+auto QtPassSettings::getProfileAutoPush(const QString &profileName,
+                                        const bool &defaultValue) -> bool {
+  getInstance()->beginGroup(SettingsConstants::profile);
+  bool value =
+      getInstance()->value(profileName + "/autoPush", defaultValue).toBool();
+  getInstance()->endGroup();
+  return value;
+}
+
+/**
+ * @brief Sets the autoPush setting for a specific profile.
+ * @param profileName The profile name.
+ * @param autoPush The autoPush value to set.
+ */
+void QtPassSettings::setProfileAutoPush(const QString &profileName,
+                                        const bool &autoPush) {
+  getInstance()->beginGroup(SettingsConstants::profile);
+  getInstance()->setValue(profileName + "/autoPush", autoPush);
+  getInstance()->endGroup();
+}
+
+/**
+ * @brief Gets the autoPull setting for a specific profile.
+ * @param profileName The profile name.
+ * @param defaultValue The default value if not set.
+ * @return The autoPull setting for the profile.
+ */
+auto QtPassSettings::getProfileAutoPull(const QString &profileName,
+                                        const bool &defaultValue) -> bool {
+  getInstance()->beginGroup(SettingsConstants::profile);
+  bool value =
+      getInstance()->value(profileName + "/autoPull", defaultValue).toBool();
+  getInstance()->endGroup();
+  return value;
+}
+
+/**
+ * @brief Sets the autoPull setting for a specific profile.
+ * @param profileName The profile name.
+ * @param autoPull The autoPull value to set.
+ */
+void QtPassSettings::setProfileAutoPull(const QString &profileName,
+                                        const bool &autoPull) {
+  getInstance()->beginGroup(SettingsConstants::profile);
+  getInstance()->setValue(profileName + "/autoPull", autoPull);
+  getInstance()->endGroup();
 }
 
 /**

@@ -167,6 +167,9 @@ private slots:
 
 private:
   void updateProfileStatus(int row);
+  void loadGitSettingsForProfile(
+      const QString &profileName,
+      const QHash<QString, QHash<QString, QString>> &profiles);
   QScopedPointer<Ui::ConfigDialog> ui;
 
   auto getSecretKeys() -> QStringList;
