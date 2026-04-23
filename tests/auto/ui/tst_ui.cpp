@@ -105,24 +105,6 @@ void tst_ui::contentRemainsSame() {
   d->setTemplate("name", true);
   d->setPass(input);
   QCOMPARE(d->getPassword(), input);
-
-  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
-  d->setTemplate("", false);
-  d->templateAll(true);
-  d->setPass(input);
-  QCOMPARE(d->getPassword(), input);
-
-  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
-  d->setTemplate("", true);
-  d->templateAll(true);
-  d->setPass(input);
-  QCOMPARE(d->getPassword(), input);
-
-  d.reset(new PasswordDialog(PasswordConfiguration{}, nullptr));
-  d->setTemplate("name", true);
-  d->templateAll(true);
-  d->setPass(input);
-  QCOMPARE(d->getPassword(), input);
 }
 
 void tst_ui::initTestCase() {}

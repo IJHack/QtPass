@@ -26,7 +26,6 @@ PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
     : QDialog(parent), ui(new Ui::PasswordDialog),
       m_passConfig(std::move(passConfig)) {
   m_templating = false;
-  m_allFields = false;
   m_isNew = false;
 
   ui->setupUi(this);
@@ -58,7 +57,6 @@ PasswordDialog::PasswordDialog(QString file, const bool &isNew, QWidget *parent)
   usePwgen(QtPassSettings::isUsePwgen());
   setTemplate(QtPassSettings::getPassTemplate(),
               QtPassSettings::isUseTemplate());
-  templateAll(QtPassSettings::isTemplateAllFields());
 
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
@@ -137,8 +135,10 @@ void PasswordDialog::on_rejected() { setPassword(QString()); }
  * @param password
  */
 void PasswordDialog::setPassword(const QString &password) {
-  FileContent fileContent = FileContent::parse(
-      password, m_templating ? m_fields : QStringList(), m_allFields);
+  // Always parse all fields as editable so users can edit any field in the
+  // password file. This fixes issue #132 where users couldn't edit
+  // fields without toggling the "Show all fields templated" setting.
+  FileContent fileContent = FileContent::parse(password, m_fields, true);
   ui->lineEditPassword->setText(fileContent.getPassword());
 
   QWidget *previous = ui->checkBoxShow;
@@ -206,15 +206,6 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
       previous = line;
     }
   }
-}
-
-/**
- * @brief PasswordDialog::templateAll basic setter for use in
- * PasswordDialog::setPassword templating all tokenisable lines.
- * @param templateAll
- */
-void PasswordDialog::templateAll(bool templateAll) {
-  m_allFields = templateAll;
 }
 
 /**
