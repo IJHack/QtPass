@@ -12,9 +12,11 @@
  */
 
 #include "util.h"
+#include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QSaveFile>
 #include <QTextStream>
 #include <algorithm>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
@@ -333,7 +335,7 @@ auto Util::readTemplates(const QString &storePath)
       if (!currentSection.isEmpty() && !skipInvalidSection) {
         result.insert(currentSection, currentFields);
       }
-      currentSection = line.mid(1, line.length() - 2);
+      currentSection = line.mid(1, line.length() - 2).trimmed();
       if (currentSection.isEmpty()) {
         qWarning()
             << "Empty template section in .templates file, ignoring fields";
@@ -363,11 +365,11 @@ auto Util::readTemplates(const QString &storePath)
 auto Util::writeTemplates(const QString &storePath,
                           const QHash<QString, QStringList> &templates)
     -> bool {
-  QFile file(QDir(storePath).filePath(".templates"));
-  if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
+  QSaveFile saveFile(QDir(storePath).filePath(".templates"));
+  if (!saveFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
     return false;
   }
-  QTextStream out(&file);
+  QTextStream out(&saveFile);
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
   out.setEncoding(QStringConverter::Utf8);
 #else
@@ -386,8 +388,11 @@ auto Util::writeTemplates(const QString &storePath,
     }
     out << "\n";
   }
-  file.close();
-  return true;
+  out.flush();
+  if (out.status() != QTextStream::Ok) {
+    return false;
+  }
+  return saveFile.commit();
 }
 
 /**
@@ -399,8 +404,10 @@ auto Util::writeTemplates(const QString &storePath,
  */
 auto Util::getFolderTemplate(const QString &folderPath,
                              const QString &storePath) -> QString {
+  QDir storeDir(storePath);
+  QString cleanStoreAbs = QDir::cleanPath(storeDir.absolutePath());
+  QString sep = QDir::separator();
   QDir dir(folderPath);
-  QString cleanStore = QDir::cleanPath(storePath);
   while (true) {
     if (dir.exists(".default_template")) {
       QFile file(dir.filePath(".default_template"));
@@ -419,7 +426,10 @@ auto Util::getFolderTemplate(const QString &folderPath,
       }
     }
     QString currentPath = QDir::cleanPath(dir.absolutePath());
-    if (currentPath == cleanStore) {
+    if (currentPath == cleanStoreAbs) {
+      break;
+    }
+    if (!currentPath.startsWith(cleanStoreAbs + sep)) {
       break;
     }
     if (!dir.cdUp()) {
