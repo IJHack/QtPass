@@ -203,11 +203,10 @@ When checking for `.gpg-id`, walk up parent directories:
 ```cpp
 QDir dirObj(dir);
 QString cleanStoreRoot = QDir::cleanPath(QDir::fromNativeSeparators(storeRoot));
-QString sep = QDir::separator();
 while (dirObj.exists()) {
     QString currentPath = QDir::cleanPath(dirObj.absolutePath());
     if (currentPath != cleanStoreRoot &&
-        !currentPath.startsWith(cleanStoreRoot + sep)) {
+        !currentPath.startsWith(cleanStoreRoot + "/")) {
         break;  // outside store boundary
     }
     if (QFile(dirObj.absoluteFilePath(".gpg-id")).exists()) {
@@ -221,9 +220,11 @@ while (dirObj.exists()) {
 (`QDir(path).cdUp()`) discards the result and the loop never advances.
 
 The boundary check uses `QDir::cleanPath()` on both paths to prevent sibling-path
-attacks (e.g., `/home/user/.password-store2` should not match
-`/home/user/.password-store`). The comparison allows equality or a proper prefix
-with separator enforcement.
+matches (e.g., `/home/user/.password-store2` should not match
+`/home/user/.password-store`). The literal `"/"` is correct here because
+`QDir::cleanPath()` always normalises to forward slashes — using
+`QDir::separator()` would silently break the comparison on Windows where it
+returns `\\`.
 
 See `Pass::getGpgIdPath` in `src/pass.cpp` for the canonical implementation;
 this pattern supports nested folder inheritance.
