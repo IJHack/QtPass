@@ -164,6 +164,7 @@ private slots:
   void on_checkBoxUsePwgen_clicked();
   void on_checkBoxUseTemplate_clicked();
   void onProfileTableItemChanged(QTableWidgetItem *item);
+  void updateProfileStatus(int row);
 
 private:
   QScopedPointer<Ui::ConfigDialog> ui;

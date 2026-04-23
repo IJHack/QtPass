@@ -678,6 +678,7 @@ void ConfigDialog::on_addButton_clicked() {
   ui->profileTable->item(n, 0)->setSelected(true);
 
   validate();
+  updateProfileStatus(n);
 }
 
 /**
@@ -718,6 +719,7 @@ void ConfigDialog::on_deleteButton_clicked() {
   }
 
   validate();
+  updateProfileStatus(-1);
 }
 
 /**
@@ -1115,8 +1117,42 @@ void ConfigDialog::on_checkBoxUseTemplate_clicked() {
       ui->checkBoxUseTemplate->isChecked());
 }
 
+/**
+ * @brief Update status bar with profile preview for given row.
+ * @param row The row index to preview, or -1 to clear.
+ */
+void ConfigDialog::updateProfileStatus(int row) {
+  if (row < 0 || row >= ui->profileTable->rowCount()) {
+    ui->statusLabel->setText(QString());
+    return;
+  }
+
+  QTableWidgetItem *nameItem = ui->profileTable->item(row, 0);
+  QTableWidgetItem *pathItem = ui->profileTable->item(row, 1);
+
+  QString statusMessage;
+  if (nameItem && !nameItem->text().isEmpty() && pathItem &&
+      !pathItem->text().isEmpty()) {
+    QDir dir(QDir::cleanPath(pathItem->text()));
+    if (!dir.exists()) {
+      statusMessage = tr("New profile: %1 at %2")
+                          .arg(nameItem->text())
+                          .arg(QDir::cleanPath(pathItem->text()));
+    } else {
+      statusMessage = tr("Profile: %1 at %2")
+                          .arg(nameItem->text())
+                          .arg(QDir::cleanPath(pathItem->text()));
+    }
+  } else {
+    statusMessage = tr("Fill in all required fields");
+  }
+
+  ui->statusLabel->setText(statusMessage);
+}
+
 void ConfigDialog::onProfileTableItemChanged(QTableWidgetItem *item) {
   validate(item);
+  updateProfileStatus(item ? item->row() : -1);
 }
 
 /**
