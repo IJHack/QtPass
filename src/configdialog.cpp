@@ -636,20 +636,40 @@ void ConfigDialog::initializeNewProfiles(
       continue;
     }
 
-    // This is a new profile - check if needs initialization
-    // needsInit returns false for non-existent directories
-    if (!ProfileInit::needsInit(path)) {
+    // This is a new profile - create directory if needed and initialize
+    // Note: needsInit returns false for non-existent directories, so we
+    // must create the directory first.
+    QString cleanPath = QDir::cleanPath(path);
+    QDir dir(cleanPath);
+    if (!dir.exists()) {
+      if (QMessageBox::question(
+              this, tr("Create profile directory?"),
+              tr("Would you like to create a password store at %1?")
+                  .arg(cleanPath),
+              QMessageBox::Yes | QMessageBox::No) != QMessageBox::Yes) {
+        continue;
+      }
+      if (!dir.mkpath(cleanPath)) {
+        QMessageBox::warning(
+            this, tr("Error"),
+            tr("Could not create profile directory: %1").arg(cleanPath));
+        continue;
+      }
+    }
+
+    // Now check if initialization is needed (directory exists with no .gpg-id)
+    if (!ProfileInit::needsInit(cleanPath)) {
       continue;
     }
 
     // Temporarily switch the active store so pass/git init operate on
     // the new profile's directory rather than the currently-saved one.
     const QString prevStore = QtPassSettings::getPassStore();
-    QtPassSettings::setPassStore(path);
+    QtPassSettings::setPassStore(cleanPath);
 
     // Show user selection dialog for GPG recipients
     // UsersDialog will run pass init when accepted
-    UsersDialog usersDialog(path, this);
+    UsersDialog usersDialog(cleanPath, this);
     usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
     const int result = usersDialog.exec();
 
