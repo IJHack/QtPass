@@ -90,6 +90,31 @@ public:
    * @return true if the key ID format is valid, false otherwise.
    */
   static auto isValidKeyId(const QString &keyId) -> bool;
+  /**
+   * @brief Read templates from .templates file in password store.
+   * @param storePath Path to password store root.
+   * @return Hash of template name to field list.
+   */
+  static auto readTemplates(const QString &storePath)
+      -> QHash<QString, QStringList>;
+  /**
+   * @brief Write templates to .templates file in password store.
+   * @param storePath Path to password store root.
+   * @param templates Hash of template name to field list.
+   * @return true if write succeeded.
+   */
+  static auto writeTemplates(const QString &storePath,
+                             const QHash<QString, QStringList> &templates)
+      -> bool;
+  /**
+   * @brief Get default template for a folder.
+   * Looks in folder, then parent folders up to root.
+   * @param folderPath Path to folder.
+   * @param storePath Path to password store root.
+   * @return Template name or empty if none found.
+   */
+  static auto getFolderTemplate(const QString &folderPath,
+                                const QString &storePath) -> QString;
 
 private:
   static void initialiseEnvironment();
