@@ -598,10 +598,10 @@ void QtPassSettings::setProfile(const QString &profile) {
  */
 auto QtPassSettings::getProfileUseGit(const QString &profileName,
                                       const bool &defaultValue) -> bool {
-  QString stored = getInstance()
-                       ->value(SettingsConstants::profile + "/" + profileName +
-                               "/useGit")
-                       .toString();
+  QString stored =
+      getInstance()
+          ->value(SettingsConstants::profile + "/" + profileName + "/useGit")
+          .toString();
   // If empty or not set, return default (migration-friendly fallback)
   if (stored.isEmpty()) {
     return defaultValue;
@@ -629,10 +629,10 @@ void QtPassSettings::setProfileUseGit(const QString &profileName,
  */
 auto QtPassSettings::getProfileAutoPush(const QString &profileName,
                                         const bool &defaultValue) -> bool {
-  QString stored = getInstance()
-                       ->value(SettingsConstants::profile + "/" + profileName +
-                               "/autoPush")
-                       .toString();
+  QString stored =
+      getInstance()
+          ->value(SettingsConstants::profile + "/" + profileName + "/autoPush")
+          .toString();
   if (stored.isEmpty()) {
     return defaultValue;
   }
@@ -659,10 +659,10 @@ void QtPassSettings::setProfileAutoPush(const QString &profileName,
  */
 auto QtPassSettings::getProfileAutoPull(const QString &profileName,
                                         const bool &defaultValue) -> bool {
-  QString stored = getInstance()
-                       ->value(SettingsConstants::profile + "/" + profileName +
-                               "/autoPull")
-                       .toString();
+  QString stored =
+      getInstance()
+          ->value(SettingsConstants::profile + "/" + profileName + "/autoPull")
+          .toString();
   if (stored.isEmpty()) {
     return defaultValue;
   }
