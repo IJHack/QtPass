@@ -568,6 +568,9 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
     // remove weird "" key value pairs
   }
 
+  // Cache profiles for use in onProfileTableSelectionChanged
+  m_profiles = profiles;
+
   ui->profileTable->setRowCount(profiles.count());
   QHashIterator<QString, QHash<QString, QString>> i(profiles);
   int n = 0;
@@ -582,7 +585,7 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
       if (i.key() == currentProfile) {
         ui->profileTable->selectRow(n);
         // Load git settings for current profile
-        loadGitSettingsForProfile(currentProfile, profiles);
+        loadGitSettingsForProfile(currentProfile, m_profiles);
       }
     }
     ++n;
@@ -632,9 +635,8 @@ auto ConfigDialog::getProfiles() -> QHash<QString, QHash<QString, QString>> {
         ui->profileTable->item(selected.first()->row(), 0)->text();
   }
 
-  // Fetch existing profiles to preserve git settings for non-selected profiles
-  QHash<QString, QHash<QString, QString>> existingProfiles =
-      QtPassSettings::getProfiles();
+  // Use cached m_profiles to preserve git settings for non-selected profiles
+  QHash<QString, QHash<QString, QString>> existingProfiles = m_profiles;
 
   QHash<QString, QHash<QString, QString>> profiles;
   // Check?
@@ -677,6 +679,8 @@ auto ConfigDialog::getProfiles() -> QHash<QString, QHash<QString, QString>> {
       profiles.insert(item->text(), profile);
     }
   }
+  // Update cache with current in-dialog state
+  m_profiles = profiles;
   return profiles;
 }
 
@@ -1231,9 +1235,7 @@ void ConfigDialog::onProfileTableSelectionChanged() {
     return;
   }
   QString profileName = nameItem->text();
-  QHash<QString, QHash<QString, QString>> profiles =
-      QtPassSettings::getProfiles();
-  loadGitSettingsForProfile(profileName, profiles);
+  loadGitSettingsForProfile(profileName, m_profiles);
 }
 
 /**

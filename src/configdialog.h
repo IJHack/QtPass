@@ -198,6 +198,7 @@ private:
       const QHash<QString, QHash<QString, QString>> &existingProfiles);
 
   MainWindow *mainWindow;
+  QHash<QString, QHash<QString, QString>> m_profiles;
 };
 
 #endif // SRC_CONFIGDIALOG_H_

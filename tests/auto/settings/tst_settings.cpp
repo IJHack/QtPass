@@ -75,6 +75,12 @@ void tst_settings::initTestCase() {
 }
 
 void tst_settings::cleanupTestCase() {
+  // Clean up test profiles that may have been created during tests
+  // This ensures cleanup happens even if individual tests abort on QVERIFY
+  QtPassSettings::getInstance()->beginGroup("profile");
+  QtPassSettings::getInstance()->remove("test-git-profile");
+  QtPassSettings::getInstance()->endGroup();
+
   // Restore original settings after all tests
   // This ensures make check doesn't change user's live config
   if (m_isPortableMode && !m_settingsBackupPath.isEmpty()) {
@@ -526,10 +532,7 @@ void tst_settings::profileGitOptions() {
   QVERIFY(!QtPassSettings::getProfileAutoPush(profileName, true));
   QVERIFY(!QtPassSettings::getProfileAutoPull(profileName, true));
 
-  // Clean up test profile from settings
-  QtPassSettings::getInstance()->beginGroup("profile");
-  QtPassSettings::getInstance()->remove(profileName);
-  QtPassSettings::getInstance()->endGroup();
+  // Cleanup moved to cleanupTestCase() to ensure it runs even on test failure
 }
 
 void tst_settings::setAndGetProfileDefault() {
