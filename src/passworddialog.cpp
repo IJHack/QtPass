@@ -13,6 +13,7 @@
 #include <QHash>
 #include <QLabel>
 #include <QLineEdit>
+#include <QShortcut>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -193,6 +194,11 @@ auto PasswordDialog::getPassword() -> QString {
 void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   m_fields = rawFields.split('\n');
   m_templating = useTemplate;
+
+  for (QLineEdit *line : std::as_const(templateLines)) {
+    ui->formLayout->removeWidget(line);
+    line->deleteLater();
+  }
   templateLines.clear();
 
   if (m_templating) {
@@ -202,8 +208,9 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
         continue;
       }
       auto *line = new QLineEdit();
+      auto *label = new QLabel(field);
       line->setObjectName(field);
-      ui->formLayout->addRow(new QLabel(field), line);
+      ui->formLayout->addRow(label, line);
       setTabOrder(previous, line);
       templateLines.append(line);
       previous = line;
@@ -247,6 +254,7 @@ void PasswordDialog::usePwgen(bool usePwgen) {
 void PasswordDialog::setAvailableTemplates(
     const QHash<QString, QStringList> &templates,
     const QString &defaultTemplate) {
+  m_availableTemplates = templates;
   QStringList templateNames = templates.keys();
   if (templateNames.isEmpty()) {
     return;
@@ -256,11 +264,38 @@ void PasswordDialog::setAvailableTemplates(
   if (!templateNames.contains(selected)) {
     selected = templateNames.first();
   }
-  auto it = templates.constFind(selected);
-  if (it != templates.constEnd()) {
+  applyTemplate(selected);
+}
+
+/**
+ * @brief Apply a template by name.
+ * @param templateName Name of template to apply.
+ */
+void PasswordDialog::applyTemplate(const QString &templateName) {
+  m_currentTemplateName = templateName;
+  auto it = m_availableTemplates.constFind(templateName);
+  if (it != m_availableTemplates.constEnd()) {
     QString fields = it.value().join("\n");
     setTemplate(fields, true);
   }
+}
+
+/**
+ * @brief Cycle to next template (Ctrl+T).
+ */
+void PasswordDialog::cycleTemplate() {
+  if (m_availableTemplates.isEmpty()) {
+    return;
+  }
+  QStringList names = m_availableTemplates.keys();
+  std::sort(names.begin(), names.end());
+
+  int currentIdx = names.indexOf(m_currentTemplateName);
+  if (currentIdx < 0) {
+    currentIdx = 0;
+  }
+  int nextIdx = (currentIdx + 1) % names.size();
+  applyTemplate(names.at(nextIdx));
 }
 
 /**

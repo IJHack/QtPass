@@ -89,6 +89,11 @@ public:
 
 public slots:
   /**
+   * @brief Cycle to next template (Ctrl+T).
+   */
+  void cycleTemplate();
+
+  /**
    * @brief Populate the dialog's password field from pass show output.
    * @param output Output from the pass show command.
    */
@@ -109,6 +114,10 @@ private:
   bool m_isNew;
   QList<QLineEdit *> templateLines;
   QList<QLineEdit *> otherLines;
+  QHash<QString, QStringList> m_availableTemplates;
+  QString m_currentTemplateName;
+
+  void applyTemplate(const QString &templateName);
 };
 
 #endif // SRC_PASSWORDDIALOG_H_
