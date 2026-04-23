@@ -133,7 +133,7 @@ Git operations are handled in `ImitatePass`:
 
 - `executeGit(GIT_ADD, {path})` stages files
 - `gitCommit(file, message)` commits with message
-- Use `QtPassSettings::isUseGit()` to check if git is enabled
+- Use `QtPassSettings::isUseGit()` to check if Git is enabled
 
 ### Qt Version Compatibility
 
