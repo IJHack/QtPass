@@ -164,9 +164,13 @@ private slots:
   void on_checkBoxUsePwgen_clicked();
   void on_checkBoxUseTemplate_clicked();
   void onProfileTableItemChanged(QTableWidgetItem *item);
+  void onProfileTableSelectionChanged();
 
 private:
   void updateProfileStatus(int row);
+  void loadGitSettingsForProfile(
+      const QString &profileName,
+      const QHash<QString, QHash<QString, QString>> &profiles);
   QScopedPointer<Ui::ConfigDialog> ui;
 
   auto getSecretKeys() -> QStringList;
@@ -194,6 +198,7 @@ private:
       const QHash<QString, QHash<QString, QString>> &existingProfiles);
 
   MainWindow *mainWindow;
+  QHash<QString, QHash<QString, QString>> m_profiles;
 };
 
 #endif // SRC_CONFIGDIALOG_H_

@@ -549,6 +549,56 @@ public:
   static void setProfile(const QString &profile);
 
   /**
+   * @brief Get Git setting for a specific profile.
+   * @param profileName Name of the profile.
+   * @param defaultValue Value if not set.
+   * @return Git setting for profile.
+   */
+  static auto getProfileUseGit(const QString &profileName,
+                               const bool &defaultValue = QVariant().toBool())
+      -> bool;
+  /**
+   * @brief Set Git setting for a specific profile.
+   * @param profileName Name of the profile.
+   * @param useGit Git setting value.
+   */
+  static void setProfileUseGit(const QString &profileName, const bool &useGit);
+
+  /**
+   * @brief Get autoPush setting for a specific profile.
+   * @param profileName Name of the profile.
+   * @param defaultValue Value if not set.
+   * @return autoPush setting for profile.
+   */
+  static auto getProfileAutoPush(const QString &profileName,
+                                 const bool &defaultValue = QVariant().toBool())
+      -> bool;
+  /**
+   * @brief Set autoPush setting for a specific profile.
+   * @param profileName Name of the profile.
+   * @param autoPush autoPush setting value.
+   */
+  static void setProfileAutoPush(const QString &profileName,
+                                 const bool &autoPush);
+
+  /**
+   * @brief Get autoPull setting for a specific profile.
+   * @param profileName Name of the profile.
+   * @param defaultValue Value if not set.
+   * @return autoPull setting for profile.
+   */
+  static auto getProfileAutoPull(const QString &profileName,
+                                 const bool &defaultValue = QVariant().toBool())
+      -> bool;
+  /**
+   * @brief Set autoPull setting for a specific profile.
+   * @param profileName Name of the profile.
+   * @param autoPull autoPull setting value.
+   */
+  static void setProfileAutoPull(const QString &profileName,
+                                 const bool &autoPull);
+
+  /**
    * @brief Check whether Git integration is enabled.
    * @param defaultValue Value returned if not saved.
    * @return True if Git integration is enabled.

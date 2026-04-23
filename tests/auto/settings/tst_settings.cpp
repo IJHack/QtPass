@@ -44,6 +44,7 @@ private Q_SLOTS:
   void setAndGetPasswordCharsSelection();
   void setAndGetPasswordChars();
   void setAndGetMultipleProfiles();
+  void profileGitOptions();
   void setAndGetProfileDefault();
 
 private:
@@ -74,6 +75,12 @@ void tst_settings::initTestCase() {
 }
 
 void tst_settings::cleanupTestCase() {
+  // Clean up test profiles that may have been created during tests
+  // This ensures cleanup happens even if individual tests abort on QVERIFY
+  QtPassSettings::getInstance()->beginGroup("profile");
+  QtPassSettings::getInstance()->remove("test-git-profile");
+  QtPassSettings::getInstance()->endGroup();
+
   // Restore original settings after all tests
   // This ensures make check doesn't change user's live config
   if (m_isPortableMode && !m_settingsBackupPath.isEmpty()) {
@@ -492,6 +499,40 @@ void tst_settings::setAndGetMultipleProfiles() {
   QVERIFY(readProfiles.contains("profile2"));
   QVERIFY(readProfiles["profile1"].contains("path"));
   QVERIFY(readProfiles["profile2"].contains("path"));
+  // Verify new git options are in profile (issue #112)
+  QVERIFY(readProfiles["profile1"].contains("useGit"));
+  QVERIFY(readProfiles["profile1"].contains("autoPush"));
+  QVERIFY(readProfiles["profile1"].contains("autoPull"));
+}
+
+void tst_settings::profileGitOptions() {
+  const QString profileName = "test-git-profile";
+
+  // Initially should return defaults
+  QVERIFY(!QtPassSettings::getProfileAutoPush(profileName, false));
+  QVERIFY(!QtPassSettings::getProfileAutoPull(profileName, false));
+  QVERIFY(!QtPassSettings::getProfileUseGit(profileName, false));
+
+  // Set values
+  QtPassSettings::setProfileUseGit(profileName, true);
+  QtPassSettings::setProfileAutoPush(profileName, true);
+  QtPassSettings::setProfileAutoPull(profileName, true);
+
+  // Verify values persisted
+  QVERIFY(QtPassSettings::getProfileUseGit(profileName, false));
+  QVERIFY(QtPassSettings::getProfileAutoPush(profileName, false));
+  QVERIFY(QtPassSettings::getProfileAutoPull(profileName, false));
+
+  // Reset to false
+  QtPassSettings::setProfileUseGit(profileName, false);
+  QtPassSettings::setProfileAutoPush(profileName, false);
+  QtPassSettings::setProfileAutoPull(profileName, false);
+
+  QVERIFY(!QtPassSettings::getProfileUseGit(profileName, true));
+  QVERIFY(!QtPassSettings::getProfileAutoPush(profileName, true));
+  QVERIFY(!QtPassSettings::getProfileAutoPull(profileName, true));
+
+  // Cleanup moved to cleanupTestCase() to ensure it runs even on test failure
 }
 
 void tst_settings::setAndGetProfileDefault() {
