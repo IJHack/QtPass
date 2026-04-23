@@ -1182,16 +1182,16 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es)</source>
         <translation>
-            <numerusform>Hittade %n matchni(ng)</numerusform>
-            <numerusform>Hittade %n matchning(ar)</numerusform>
+            <numerusform>Hittade %n träff</numerusform>
+            <numerusform>Hittade %n träffar</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="771"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>i %n po(st).</numerusform>
-            <numerusform>i %n post(er).</numerusform>
+            <numerusform>i %n post.</numerusform>
+            <numerusform>i %n poster.</numerusform>
         </translation>
     </message>
     <message>
