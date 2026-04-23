@@ -1181,17 +1181,17 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="770"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Hittade %n träff</numerusform>
+            <numerusform>Hittade %n träffar</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="771"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>i %n post.</numerusform>
+            <numerusform>i %n poster.</numerusform>
         </translation>
     </message>
     <message>
