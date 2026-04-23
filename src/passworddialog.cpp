@@ -250,6 +250,7 @@ void PasswordDialog::setAvailableTemplates(
   if (templateNames.isEmpty()) {
     return;
   }
+  std::sort(templateNames.begin(), templateNames.end());
   QString selected = defaultTemplate;
   if (!templateNames.contains(selected)) {
     selected = templateNames.first();

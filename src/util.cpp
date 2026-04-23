@@ -315,6 +315,11 @@ auto Util::readTemplates(const QString &storePath)
     return result;
   }
   QTextStream in(&file);
+#ifdef QT_VERSION_LT_6_0
+  in.setCodec("UTF-8");
+#else
+  in.setEncoding(QStringConverter::Utf8);
+#endif
   QString currentSection;
   QStringList currentFields;
   while (!in.atEnd()) {
@@ -324,6 +329,11 @@ auto Util::readTemplates(const QString &storePath)
         result.insert(currentSection, currentFields);
       }
       currentSection = line.mid(1, line.length() - 2);
+      if (currentSection.isEmpty()) {
+        qWarning() << "Empty template section in .templates file";
+        currentSection.clear();
+        currentFields.clear();
+      }
       currentFields.clear();
     } else if (!line.isEmpty() && !line.startsWith('#')) {
       currentFields.append(line);
@@ -350,13 +360,20 @@ auto Util::writeTemplates(const QString &storePath,
     return false;
   }
   QTextStream out(&file);
+#ifdef QT_VERSION_LT_6_0
+  out.setCodec("UTF-8");
+#else
+  out.setEncoding(QStringConverter::Utf8);
+#endif
   out << "# QtPass templates configuration\n";
   out << "# Format: INI-style with [template_name] sections,\n";
   out << "# followed by field names (one per line)\n\n";
-  for (auto it = templates.constKeyValueBegin();
-       it != templates.constKeyValueEnd(); ++it) {
-    out << "[" << it->first << "]\n";
-    for (const QString &field : it->second) {
+
+  QStringList sortedKeys = templates.keys();
+  std::sort(sortedKeys.begin(), sortedKeys.end());
+  for (const QString &key : sortedKeys) {
+    out << "[" << key << "]\n";
+    for (const QString &field : templates.value(key)) {
       out << field << "\n";
     }
     out << "\n";
@@ -375,17 +392,26 @@ auto Util::writeTemplates(const QString &storePath,
 auto Util::getFolderTemplate(const QString &folderPath,
                              const QString &storePath) -> QString {
   QDir dir(folderPath);
-  while (dir.exists(".default_template")) {
-    QFile file(dir.filePath(".default_template"));
-    if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-      QTextStream in(&file);
-      QString templateName = in.readLine().trimmed();
-      file.close();
-      if (!templateName.isEmpty() && !templateName.startsWith('#')) {
-        return templateName;
+  QString cleanStore = QDir::cleanPath(storePath);
+  while (true) {
+    if (dir.exists(".default_template")) {
+      QFile file(dir.filePath(".default_template"));
+      if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        QTextStream in(&file);
+#ifdef QT_VERSION_LT_6_0
+        in.setCodec("UTF-8");
+#else
+        in.setEncoding(QStringConverter::Utf8);
+#endif
+        QString templateName = in.readLine().trimmed();
+        file.close();
+        if (!templateName.isEmpty() && !templateName.startsWith('#')) {
+          return templateName;
+        }
       }
     }
-    if (dir.absolutePath() == storePath) {
+    QString currentPath = QDir::cleanPath(dir.absolutePath());
+    if (currentPath == cleanStore) {
       break;
     }
     if (!dir.cdUp()) {
