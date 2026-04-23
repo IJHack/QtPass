@@ -44,6 +44,7 @@ private Q_SLOTS:
   void setAndGetPasswordCharsSelection();
   void setAndGetPasswordChars();
   void setAndGetMultipleProfiles();
+  void profileGitOptions();
   void setAndGetProfileDefault();
 
 private:
@@ -492,6 +493,44 @@ void tst_settings::setAndGetMultipleProfiles() {
   QVERIFY(readProfiles.contains("profile2"));
   QVERIFY(readProfiles["profile1"].contains("path"));
   QVERIFY(readProfiles["profile2"].contains("path"));
+  // Verify new git options are in profile (issue #112)
+  QVERIFY(readProfiles["profile1"].contains("useGit"));
+  QVERIFY(readProfiles["profile1"].contains("autoPush"));
+  QVERIFY(readProfiles["profile1"].contains("autoPull"));
+}
+
+void tst_settings::profileGitOptions() {
+  const QString profileName = "test-git-profile";
+
+  // Initially should return defaults
+  QVERIFY(!QtPassSettings::getProfileAutoPush(profileName, false));
+  QVERIFY(!QtPassSettings::getProfileAutoPull(profileName, false));
+  QVERIFY(!QtPassSettings::getProfileUseGit(profileName, false));
+
+  // Set values
+  QtPassSettings::setProfileUseGit(profileName, true);
+  QtPassSettings::setProfileAutoPush(profileName, true);
+  QtPassSettings::setProfileAutoPull(profileName, true);
+
+  // Verify values persisted
+  QVERIFY(QtPassSettings::getProfileUseGit(profileName, false));
+  QVERIFY(QtPassSettings::getProfileAutoPush(profileName, false));
+  QVERIFY(QtPassSettings::getProfileAutoPull(profileName, false));
+
+  // Reset to false
+  QtPassSettings::setProfileUseGit(profileName, false);
+  QtPassSettings::setProfileAutoPush(profileName, false);
+  QtPassSettings::setProfileAutoPull(profileName, false);
+
+  QVERIFY(!QtPassSettings::getProfileUseGit(profileName, true));
+  QVERIFY(!QtPassSettings::getProfileAutoPush(profileName, true));
+  QVERIFY(!QtPassSettings::getProfileAutoPull(profileName, true));
+
+  // Clean up test profile from QSettings
+  QSettings qtSettings;
+  qtSettings.beginGroup("profile");
+  qtSettings.remove(profileName);
+  qtSettings.endGroup();
 }
 
 void tst_settings::setAndGetProfileDefault() {

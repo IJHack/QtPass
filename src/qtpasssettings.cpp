@@ -599,10 +599,13 @@ void QtPassSettings::setProfile(const QString &profile) {
 auto QtPassSettings::getProfileUseGit(const QString &profileName,
                                       const bool &defaultValue) -> bool {
   getInstance()->beginGroup(SettingsConstants::profile);
-  bool value =
-      getInstance()->value(profileName + "/useGit", defaultValue).toBool();
+  QString stored = getInstance()->value(profileName + "/useGit").toString();
   getInstance()->endGroup();
-  return value;
+  // If empty or not set, return default (migration-friendly fallback)
+  if (stored.isEmpty()) {
+    return defaultValue;
+  }
+  return stored == "true";
 }
 
 /**
@@ -613,7 +616,7 @@ auto QtPassSettings::getProfileUseGit(const QString &profileName,
 void QtPassSettings::setProfileUseGit(const QString &profileName,
                                       const bool &useGit) {
   getInstance()->beginGroup(SettingsConstants::profile);
-  getInstance()->setValue(profileName + "/useGit", useGit);
+  getInstance()->setValue(profileName + "/useGit", useGit ? "true" : "false");
   getInstance()->endGroup();
 }
 
@@ -626,10 +629,12 @@ void QtPassSettings::setProfileUseGit(const QString &profileName,
 auto QtPassSettings::getProfileAutoPush(const QString &profileName,
                                         const bool &defaultValue) -> bool {
   getInstance()->beginGroup(SettingsConstants::profile);
-  bool value =
-      getInstance()->value(profileName + "/autoPush", defaultValue).toBool();
+  QString stored = getInstance()->value(profileName + "/autoPush").toString();
   getInstance()->endGroup();
-  return value;
+  if (stored.isEmpty()) {
+    return defaultValue;
+  }
+  return stored == "true";
 }
 
 /**
@@ -640,7 +645,8 @@ auto QtPassSettings::getProfileAutoPush(const QString &profileName,
 void QtPassSettings::setProfileAutoPush(const QString &profileName,
                                         const bool &autoPush) {
   getInstance()->beginGroup(SettingsConstants::profile);
-  getInstance()->setValue(profileName + "/autoPush", autoPush);
+  getInstance()->setValue(profileName + "/autoPush",
+                          autoPush ? "true" : "false");
   getInstance()->endGroup();
 }
 
@@ -653,10 +659,12 @@ void QtPassSettings::setProfileAutoPush(const QString &profileName,
 auto QtPassSettings::getProfileAutoPull(const QString &profileName,
                                         const bool &defaultValue) -> bool {
   getInstance()->beginGroup(SettingsConstants::profile);
-  bool value =
-      getInstance()->value(profileName + "/autoPull", defaultValue).toBool();
+  QString stored = getInstance()->value(profileName + "/autoPull").toString();
   getInstance()->endGroup();
-  return value;
+  if (stored.isEmpty()) {
+    return defaultValue;
+  }
+  return stored == "true";
 }
 
 /**
@@ -667,7 +675,8 @@ auto QtPassSettings::getProfileAutoPull(const QString &profileName,
 void QtPassSettings::setProfileAutoPull(const QString &profileName,
                                         const bool &autoPull) {
   getInstance()->beginGroup(SettingsConstants::profile);
-  getInstance()->setValue(profileName + "/autoPull", autoPull);
+  getInstance()->setValue(profileName + "/autoPull",
+                          autoPull ? "true" : "false");
   getInstance()->endGroup();
 }
 
