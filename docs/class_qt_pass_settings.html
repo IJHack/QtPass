@@ -244,6 +244,18 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:af2548c1c64c4daccdc1df6f505935588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get active profile name.  <br /></td></tr>
 <tr class="memitem:a5026be84cffcec3cc08f53c1d45c78bd" id="r_a5026be84cffcec3cc08f53c1d45c78bd"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a5026be84cffcec3cc08f53c1d45c78bd">setProfile</a> (const QString &amp;profile)</td></tr>
 <tr class="memdesc:a5026be84cffcec3cc08f53c1d45c78bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save active profile name.  <br /></td></tr>
+<tr class="memitem:ae68f51e4cf8ebfc810709bcc6c54e53e" id="r_ae68f51e4cf8ebfc810709bcc6c54e53e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae68f51e4cf8ebfc810709bcc6c54e53e">getProfileUseGit</a> (const QString &amp;profileName, const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
+<tr class="memdesc:ae68f51e4cf8ebfc810709bcc6c54e53e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Git setting for a specific profile.  <br /></td></tr>
+<tr class="memitem:ac6577f850d148b93dc8b017b157a4691" id="r_ac6577f850d148b93dc8b017b157a4691"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac6577f850d148b93dc8b017b157a4691">setProfileUseGit</a> (const QString &amp;profileName, const bool &amp;useGit)</td></tr>
+<tr class="memdesc:ac6577f850d148b93dc8b017b157a4691"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set Git setting for a specific profile.  <br /></td></tr>
+<tr class="memitem:a12f86b82fe7a1b82932380e3b3879c28" id="r_a12f86b82fe7a1b82932380e3b3879c28"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a12f86b82fe7a1b82932380e3b3879c28">getProfileAutoPush</a> (const QString &amp;profileName, const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
+<tr class="memdesc:a12f86b82fe7a1b82932380e3b3879c28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get autoPush setting for a specific profile.  <br /></td></tr>
+<tr class="memitem:ab82dc021964ffab0359d7b00b558a013" id="r_ab82dc021964ffab0359d7b00b558a013"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab82dc021964ffab0359d7b00b558a013">setProfileAutoPush</a> (const QString &amp;profileName, const bool &amp;autoPush)</td></tr>
+<tr class="memdesc:ab82dc021964ffab0359d7b00b558a013"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set autoPush setting for a specific profile.  <br /></td></tr>
+<tr class="memitem:ad84dc3c7392e57b196a7cba8dd8d8211" id="r_ad84dc3c7392e57b196a7cba8dd8d8211"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad84dc3c7392e57b196a7cba8dd8d8211">getProfileAutoPull</a> (const QString &amp;profileName, const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
+<tr class="memdesc:ad84dc3c7392e57b196a7cba8dd8d8211"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get autoPull setting for a specific profile.  <br /></td></tr>
+<tr class="memitem:a94de46ed1f605d75652caaa80b31b05d" id="r_a94de46ed1f605d75652caaa80b31b05d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a94de46ed1f605d75652caaa80b31b05d">setProfileAutoPull</a> (const QString &amp;profileName, const bool &amp;autoPull)</td></tr>
+<tr class="memdesc:a94de46ed1f605d75652caaa80b31b05d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set autoPull setting for a specific profile.  <br /></td></tr>
 <tr class="memitem:a0bd97a8df7fb91cf461b5a1c57940710" id="r_a0bd97a8df7fb91cf461b5a1c57940710"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0bd97a8df7fb91cf461b5a1c57940710">isUseGit</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
 <tr class="memdesc:a0bd97a8df7fb91cf461b5a1c57940710"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether Git integration is enabled.  <br /></td></tr>
 <tr class="memitem:a47382b2f52a69ee4e162548d95594081" id="r_a47382b2f52a69ee4e162548d95594081"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a47382b2f52a69ee4e162548d95594081">setUseGit</a> (const bool &amp;useGit)</td></tr>
@@ -1059,6 +1071,84 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 </div>
 </div>
+<a id="ad84dc3c7392e57b196a7cba8dd8d8211" name="ad84dc3c7392e57b196a7cba8dd8d8211"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84dc3c7392e57b196a7cba8dd8d8211">&#9670;&#160;</a></span>getProfileAutoPull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto QtPassSettings::getProfileAutoPull </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>profileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get autoPull setting for a specific profile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profileName</td><td>Name of the profile. </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>Value if not set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>autoPull setting for profile. </dd></dl>
+
+</div>
+</div>
+<a id="a12f86b82fe7a1b82932380e3b3879c28" name="a12f86b82fe7a1b82932380e3b3879c28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a12f86b82fe7a1b82932380e3b3879c28">&#9670;&#160;</a></span>getProfileAutoPush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto QtPassSettings::getProfileAutoPush </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>profileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get autoPush setting for a specific profile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profileName</td><td>Name of the profile. </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>Value if not set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>autoPush setting for profile. </dd></dl>
+
+</div>
+</div>
 <a id="a4b87c146ea2c5980a2d0101dfeccc2d9" name="a4b87c146ea2c5980a2d0101dfeccc2d9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4b87c146ea2c5980a2d0101dfeccc2d9">&#9670;&#160;</a></span>getProfiles()</h2>
 
@@ -1084,6 +1174,45 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 <p>Get all configured profiles. </p>
 <dl class="section return"><dt>Returns</dt><dd>Profile map keyed by profile name. </dd></dl>
+
+</div>
+</div>
+<a id="ae68f51e4cf8ebfc810709bcc6c54e53e" name="ae68f51e4cf8ebfc810709bcc6c54e53e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae68f51e4cf8ebfc810709bcc6c54e53e">&#9670;&#160;</a></span>getProfileUseGit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto QtPassSettings::getProfileUseGit </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>profileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span>&#160;) -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get Git setting for a specific profile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profileName</td><td>Name of the profile. </td></tr>
+    <tr><td class="paramname">defaultValue</td><td>Value if not set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Git setting for profile. </dd></dl>
 
 </div>
 </div>
@@ -3521,6 +3650,82 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 </div>
 </div>
+<a id="a94de46ed1f605d75652caaa80b31b05d" name="a94de46ed1f605d75652caaa80b31b05d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94de46ed1f605d75652caaa80b31b05d">&#9670;&#160;</a></span>setProfileAutoPull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPassSettings::setProfileAutoPull </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>profileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>autoPull</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set autoPull setting for a specific profile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profileName</td><td>Name of the profile. </td></tr>
+    <tr><td class="paramname">autoPull</td><td>autoPull setting value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab82dc021964ffab0359d7b00b558a013" name="ab82dc021964ffab0359d7b00b558a013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab82dc021964ffab0359d7b00b558a013">&#9670;&#160;</a></span>setProfileAutoPush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPassSettings::setProfileAutoPush </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>profileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>autoPush</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set autoPush setting for a specific profile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profileName</td><td>Name of the profile. </td></tr>
+    <tr><td class="paramname">autoPush</td><td>autoPush setting value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aa73a4ae99c8c7e68208d3d81cf113dbc" name="aa73a4ae99c8c7e68208d3d81cf113dbc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa73a4ae99c8c7e68208d3d81cf113dbc">&#9670;&#160;</a></span>setProfiles()</h2>
 
@@ -3548,6 +3753,44 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">profiles</td><td>Profile map keyed by profile name. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ac6577f850d148b93dc8b017b157a4691" name="ac6577f850d148b93dc8b017b157a4691"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6577f850d148b93dc8b017b157a4691">&#9670;&#160;</a></span>setProfileUseGit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPassSettings::setProfileUseGit </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>profileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>useGit</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set Git setting for a specific profile. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">profileName</td><td>Name of the profile. </td></tr>
+    <tr><td class="paramname">useGit</td><td>Git setting value. </td></tr>
   </table>
   </dd>
 </dl>
