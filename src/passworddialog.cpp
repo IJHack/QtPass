@@ -196,8 +196,7 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   m_templating = useTemplate;
 
   for (QLineEdit *line : std::as_const(templateLines)) {
-    ui->formLayout->removeWidget(line);
-    line->deleteLater();
+    ui->formLayout->removeRow(line);
   }
   templateLines.clear();
 
