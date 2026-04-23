@@ -15,7 +15,9 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QStringConverter>
 #include <QTextStream>
+#include <algorithm>
 #ifdef Q_OS_WIN
 #include <windows.h>
 #else

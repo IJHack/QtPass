@@ -8,6 +8,7 @@
 #include "qtpasssettings.h"
 #include "ui_passworddialog.h"
 #include "util.h"
+#include <algorithm>
 
 #include <QHash>
 #include <QLabel>
