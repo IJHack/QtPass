@@ -80,9 +80,9 @@ public:
   void usePwgen(bool usePwgen);
 
   /**
-   * @brief Set the available templates from .templates file.
+   * @brief Set available templates from file and select default.
    * @param templates Hash of template name to field list.
-   * @param defaultTemplate Name of default template to select.
+   * @param defaultTemplate Name of default template.
    */
   void setAvailableTemplates(const QHash<QString, QStringList> &templates,
                              const QString &defaultTemplate);

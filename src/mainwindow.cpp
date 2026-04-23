@@ -839,6 +839,20 @@ auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {
 void MainWindow::setPassword(const QString &file, bool isNew) {
   PasswordDialog d(file, isNew, this);
 
+  if (isNew) {
+    QString storePath = QtPassSettings::getPassStore();
+    QString folder =
+        Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
+    if (folder.isEmpty()) {
+      folder = storePath;
+    }
+    QHash<QString, QStringList> templates = Util::readTemplates(storePath);
+    if (!templates.isEmpty()) {
+      QString defaultTemplate = Util::getFolderTemplate(folder, storePath);
+      d.setAvailableTemplates(templates, defaultTemplate);
+    }
+  }
+
   if (!d.exec()) {
     ui->treeView->setFocus();
   }
