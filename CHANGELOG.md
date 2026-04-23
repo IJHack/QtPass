@@ -279,7 +279,7 @@
 - Update minimum Qt version [\#527](https://github.com/IJHack/QtPass/pull/527) ([cmol](https://github.com/cmol))
 - Fix blurry icons when fractional scaling is enabled [\#526](https://github.com/IJHack/QtPass/pull/526) ([mthw0](https://github.com/mthw0))
 - Spelling: Git pull, Git push [\#516](https://github.com/IJHack/QtPass/pull/516) ([comradekingu](https://github.com/comradekingu))
-- Enable Ubuntu, windows and macOS based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
+- Enable Ubuntu, Windows and macOS based builds for CI [\#508](https://github.com/IJHack/QtPass/pull/508) ([boppybibbles](https://github.com/boppybibbles))
 - Enable out-of-source build [\#503](https://github.com/IJHack/QtPass/pull/503) ([boppybibbles](https://github.com/boppybibbles))
 - Use new stable version of `install-qt-action`. [\#502](https://github.com/IJHack/QtPass/pull/502) ([boppybibbles](https://github.com/boppybibbles))
 - Don't base pass-otp availability decision on hardcoded /usr/lib [\#499](https://github.com/IJHack/QtPass/pull/499) ([nh2](https://github.com/nh2))
@@ -548,7 +548,7 @@
 
 - Extract static library and separate main function [\#324](https://github.com/IJHack/QtPass/pull/324) ([tezeb](https://github.com/tezeb))
 - galego actualizado [\#323](https://github.com/IJHack/QtPass/pull/323) ([xmgz](https://github.com/xmgz))
-- Add SFTP, ftps, webdav and webdavs as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
+- Add SFTP, FTPS, WebDAV and WebDAVS as supported links [\#322](https://github.com/IJHack/QtPass/pull/322) ([cgonzalez](https://github.com/cgonzalez))
 - Ignore cmdline arguments if -session is used. [\#321](https://github.com/IJHack/QtPass/pull/321) ([Achimh3011](https://github.com/Achimh3011))
 - Finished French translation \(and proof-read the already translated strings\). [\#311](https://github.com/IJHack/QtPass/pull/311) ([Marcool04](https://github.com/Marcool04))
 - Once again, code coverage [\#305](https://github.com/IJHack/QtPass/pull/305) ([tezeb](https://github.com/tezeb))

@@ -57,4 +57,4 @@ node_modules
 docs
 opencode.json
 .opencode/package-lock.json
-.opencode/settings.local.json
+.opencode/*.local.json
