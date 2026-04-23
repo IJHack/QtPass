@@ -1241,10 +1241,8 @@ void MainWindow::showContextMenu(const QPoint &pos) {
       QString exePath = QtPassSettings::isUsePass()
                             ? QtPassSettings::getPassExecutable()
                             : QtPassSettings::getGpgExecutable();
-      bool gpgAvailable =
-          QtPassSettings::isUsePass()
-              ? QFile::exists(exePath) || exePath.startsWith("/mnt")
-              : !QtPassSettings::getGpgExecutable().isEmpty();
+      bool gpgAvailable = !exePath.isEmpty() && (exePath.startsWith("wsl ") ||
+                                                 QFile(exePath).exists());
 
       QAction *reencrypt = shareMenu->addAction(tr("Re-encrypt all passwords"));
       reencrypt->setEnabled(gpgIdExists && gpgAvailable);
@@ -1577,7 +1575,7 @@ void MainWindow::endReencryptPath() { setUiElementsEnabled(true); }
 void MainWindow::exportPublicKey() {
   QString identity = QtPassSettings::getPassSigningKey();
   if (identity.isEmpty()) {
-    identity = "user@qtpass.org";
+    identity = "<your-key-id>";
   }
   identity = identity.toHtmlEscaped();
   QMessageBox::information(
