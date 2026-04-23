@@ -62,12 +62,6 @@ public:
   void setTemplate(const QString &rawFields, bool useTemplate);
 
   /**
-   * @brief Enable or disable applying the template to all applicable fields.
-   * @param templateAll true to apply templating to all fields.
-   */
-  void templateAll(bool templateAll);
-
-  /**
    * @brief Set the desired password length shown in the dialog.
    * @param length Desired password length.
    */
@@ -104,7 +98,6 @@ private:
   QStringList m_fields;
   QString m_file;
   bool m_templating{};
-  bool m_allFields{};
   bool m_isNew;
   QList<QLineEdit *> templateLines;
   QList<QLineEdit *> otherLines;

@@ -26,7 +26,6 @@ PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
     : QDialog(parent), ui(new Ui::PasswordDialog),
       m_passConfig(std::move(passConfig)) {
   m_templating = false;
-  m_allFields = false;
   m_isNew = false;
 
   ui->setupUi(this);
@@ -58,7 +57,6 @@ PasswordDialog::PasswordDialog(QString file, const bool &isNew, QWidget *parent)
   usePwgen(QtPassSettings::isUsePwgen());
   setTemplate(QtPassSettings::getPassTemplate(),
               QtPassSettings::isUseTemplate());
-  templateAll(QtPassSettings::isTemplateAllFields());
 
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
@@ -208,15 +206,6 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
       previous = line;
     }
   }
-}
-
-/**
- * @brief PasswordDialog::templateAll basic setter for use in
- * PasswordDialog::setPassword templating all tokenisable lines.
- * @param templateAll
- */
-void PasswordDialog::templateAll(bool templateAll) {
-  m_allFields = templateAll;
 }
 
 /**
