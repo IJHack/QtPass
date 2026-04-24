@@ -508,6 +508,12 @@ void tst_settings::setAndGetMultipleProfiles() {
   QVERIFY(readProfiles["profile1"].contains("useGit"));
   QVERIFY(readProfiles["profile1"].contains("autoPush"));
   QVERIFY(readProfiles["profile1"].contains("autoPull"));
+  QVERIFY2(!readProfiles["profile1"].value("useGit").toInt(),
+           "useGit should default to false");
+  QVERIFY2(!readProfiles["profile1"].value("autoPush").toInt(),
+           "autoPush should default to false");
+  QVERIFY2(!readProfiles["profile1"].value("autoPull").toInt(),
+           "autoPull should default to false");
 }
 
 void tst_settings::profileGitOptions() {
