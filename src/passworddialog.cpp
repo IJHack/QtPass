@@ -148,17 +148,17 @@ void PasswordDialog::setPassword(const QString &password) {
   QWidget *previous = ui->checkBoxShow;
   // first set templated values
   NamedValues namedValues = fileContent.getNamedValues();
-  for (QLineEdit *line : AS_CONST(m_templateLines)) {
+  for (QLineEdit *line : std::as_const(m_templateLines)) {
     line->setText(namedValues.takeValue(line->objectName()));
     previous = line;
   }
   // show remaining values (if there are)
   // Remove previously created dynamic widgets to prevent duplicates and leaks
-  for (QLineEdit *line : AS_CONST(m_otherLines)) {
+  for (QLineEdit *line : std::as_const(m_otherLines)) {
     ui->formLayout->removeRow(line);
   }
   m_otherLines.clear();
-  for (const NamedValue &nv : AS_CONST(namedValues)) {
+  for (const NamedValue &nv : std::as_const(namedValues)) {
     auto *line = new QLineEdit();
     line->setObjectName(nv.name);
     line->setText(nv.value);
