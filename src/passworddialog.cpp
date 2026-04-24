@@ -180,7 +180,7 @@ auto PasswordDialog::getPassword() -> QString {
   QString passFile = ui->lineEditPassword->text() + "\n";
   QList<QLineEdit *> allLines(m_templateLines);
   allLines.append(m_otherLines);
-  for (QLineEdit *line : allLines) {
+  for (QLineEdit *line : std::as_const(allLines)) {
     QString text = line->text();
     if (text.isEmpty()) {
       continue;
