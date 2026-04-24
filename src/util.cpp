@@ -12,6 +12,7 @@
  */
 
 #include "util.h"
+#include "executor.h"
 #include <QDebug>
 #include <QDir>
 #include <QFile>

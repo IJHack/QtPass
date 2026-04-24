@@ -148,19 +148,19 @@ void PasswordDialog::setPassword(const QString &password) {
   QWidget *previous = ui->checkBoxShow;
   // first set templated values
   NamedValues namedValues = fileContent.getNamedValues();
-  for (QLineEdit *line : AS_CONST(templateLines)) {
+  for (QLineEdit *line : AS_CONST(m_templateLines)) {
     line->setText(namedValues.takeValue(line->objectName()));
     previous = line;
   }
   // show remaining values (if there are)
-  otherLines.clear();
+  m_otherLines.clear();
   for (const NamedValue &nv : AS_CONST(namedValues)) {
     auto *line = new QLineEdit();
     line->setObjectName(nv.name);
     line->setText(nv.value);
     ui->formLayout->addRow(new QLabel(nv.name), line);
     setTabOrder(previous, line);
-    otherLines.append(line);
+    m_otherLines.append(line);
     previous = line;
   }
 
@@ -174,8 +174,8 @@ void PasswordDialog::setPassword(const QString &password) {
  */
 auto PasswordDialog::getPassword() -> QString {
   QString passFile = ui->lineEditPassword->text() + "\n";
-  QList<QLineEdit *> allLines(templateLines);
-  allLines.append(otherLines);
+  QList<QLineEdit *> allLines(m_templateLines);
+  allLines.append(m_otherLines);
   for (QLineEdit *line : allLines) {
     QString text = line->text();
     if (text.isEmpty()) {
@@ -195,17 +195,17 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
   m_fields = rawFields.split('\n');
   m_templating = useTemplate;
 
-  for (QLineEdit *line : std::as_const(templateLines)) {
+  for (QLineEdit *line : std::as_const(m_templateLines)) {
     ui->formLayout->removeRow(line);
   }
-  templateLines.clear();
+  m_templateLines.clear();
 
-  // Defensively remove all rows tracked in otherLines to prevent accumulation
+  // Defensively remove all rows tracked in m_otherLines to prevent accumulation
   // when cycling templates or applying new templates after setPassword
-  for (QLineEdit *line : std::as_const(otherLines)) {
+  for (QLineEdit *line : std::as_const(m_otherLines)) {
     ui->formLayout->removeRow(line);
   }
-  otherLines.clear();
+  m_otherLines.clear();
 
   if (m_templating) {
     QWidget *previous = ui->checkBoxShow;
@@ -218,7 +218,7 @@ void PasswordDialog::setTemplate(const QString &rawFields, bool useTemplate) {
       line->setObjectName(field);
       ui->formLayout->addRow(label, line);
       setTabOrder(previous, line);
-      templateLines.append(line);
+      m_templateLines.append(line);
       previous = line;
     }
   }

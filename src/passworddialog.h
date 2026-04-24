@@ -111,9 +111,9 @@ private:
   QStringList m_fields;
   QString m_file;
   bool m_templating{};
-  bool m_isNew;
-  QList<QLineEdit *> templateLines;
-  QList<QLineEdit *> otherLines;
+  bool m_isNew{};
+  QList<QLineEdit *> m_templateLines;
+  QList<QLineEdit *> m_otherLines;
   QHash<QString, QStringList> m_availableTemplates;
   QString m_currentTemplateName;
 
