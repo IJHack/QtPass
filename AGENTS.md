@@ -221,10 +221,10 @@ while (dirObj.exists()) {
 
 The boundary check uses `QDir::cleanPath()` on both paths to prevent sibling-path
 matches (e.g., `/home/user/.password-store2` should not match
-`/home/user/.password-store`). The literal `"/"` is correct here because
-`QDir::cleanPath()` always normalises to forward slashes — using
-`QDir::separator()` would silently break the comparison on Windows where it
-returns `\\`.
+`/home/user/.password-store`). The literal `"/"` is correct here because, in Qt,
+`QDir::cleanPath()` normalises path separators to forward slashes on all
+platforms — using `QDir::separator()` would silently break the comparison on
+Windows where it returns `\\`.
 
 See `Pass::getGpgIdPath` in `src/pass.cpp` for the canonical implementation;
 this pattern supports nested folder inheritance.
