@@ -252,7 +252,8 @@ npx -p textlint -p textlint-rule-terminology textlint --rule terminology \
   *.md scripts/*.md .github/**/*.md .opencode/skills/*/SKILL.md
 
 # Auto-fix
-npx -p textlint -p textlint-rule-terminology textlint --rule terminology --fix <files>
+npx -p textlint -p textlint-rule-terminology textlint --rule terminology --fix \
+  *.md scripts/*.md .github/**/*.md .opencode/skills/*/SKILL.md
 ```
 
 **Important:** Super-linter only lints the files **changed in the PR**, so

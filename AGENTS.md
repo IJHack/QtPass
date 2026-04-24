@@ -313,11 +313,16 @@ for (const auto &profile : profiles) {
     setUseGit(profile.useGit);  // Side effects!
 }
 
-// Good - set values directly, apply side effects once
-for (const auto &profile : profiles) {
-    ui->checkBoxUseGit->setChecked(profile.useGit);
+// Good - collect values in loop, apply side effects once for selected profile
+int selectedProfileIndex = getSelectedProfileIndex();
+for (int i = 0; i < profiles.size(); ++i) {
+    if (i == selectedProfileIndex) {
+        ui->checkBoxUseGit->setChecked(profiles[i].useGit);
+    }
 }
-useGit(profile.useGit);  // Single side effect after loop
+if (selectedProfileIndex >= 0 && selectedProfileIndex < profiles.size()) {
+    useGit(profiles[selectedProfileIndex].useGit);  // Single side effect after loop
+}
 ```
 
 ## Handling AI Findings
