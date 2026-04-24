@@ -68,9 +68,12 @@ void tst_settings::initTestCase() {
     QVERIFY(QFile::copy(settingsFile, m_settingsBackupPath));
   } else {
     m_settingsBackupPath.clear();
-    // On non-portable mode, warn but continue (tests may modify registry)
-    qWarning()
-        << "Non-portable mode detected. Tests may modify registry settings.";
+    // No qtpass.ini next to the binary, so QSettings writes to per-user storage
+    // (e.g. the Windows registry). Automatic backup/restore is only safe in
+    // portable mode, so persistent user settings may be modified by this run.
+    qWarning() << tr("Non-portable mode detected: tests may modify persistent "
+                     "user settings (e.g. Windows registry). For an isolated "
+                     "run, drop a qtpass.ini next to the test binary.");
   }
 }
 
@@ -239,6 +242,8 @@ void tst_settings::boolRoundTrip() {
   for (const auto &s : boolSettings) {
     if (setting == s.name) {
       s.setter(testValue);
+      // Pass !testValue as the getter's default so a missing/unstored value
+      // would surface as a mismatch instead of silently equalling testValue.
       QVERIFY2(s.getter(!testValue) == testValue,
                qPrintable(QString("%1 should be %2, got %3")
                               .arg(setting)

@@ -33,10 +33,26 @@ using Enums::PASS_REMOVE;
 using Enums::PASS_SHOW;
 
 namespace {
+/**
+ * @brief Returns a non-empty charset value, using a fallback when needed.
+ * @param input Preferred charset value.
+ * @param fallback Charset to use when @p input is empty.
+ * @return @p input if it is not empty; otherwise @p fallback.
+ */
 auto fallbackCharset(const QString &input, const QString &fallback) -> QString {
   return input.isEmpty() ? fallback : input;
 }
 
+/**
+ * @brief Resolve the effective password character set from configuration.
+ *
+ * Uses the selected charset index from @p passConfig when it is within range;
+ * otherwise falls back to the ALLCHARS entry. If the resolved charset string
+ * is empty, falls back again to the ALLCHARS value.
+ *
+ * @param passConfig Password generation configuration.
+ * @return Non-empty charset string to use for password generation.
+ */
 auto effectiveCharset(const PasswordConfiguration &passConfig) -> QString {
   int sel = passConfig.selected;
   if (sel < 0 || sel >= PasswordConfiguration::CHARSETS_COUNT)
@@ -245,6 +261,16 @@ QString Pass::getDefaultKeyTemplate() {
 }
 
 namespace {
+/**
+ * @brief Resolve a candidate gpgconf path from the trailing WSL path segment.
+ *
+ * Takes the directory portion of @p lastPart (separated by '/' or '\\') and
+ * appends "gpgconf"; if no separator is present, returns the bare executable
+ * name "gpgconf".
+ *
+ * @param lastPart Path fragment that may contain a directory and executable.
+ * @return Full path ending in "gpgconf", or "gpgconf" as a fallback.
+ */
 auto resolveWslGpgconfPath(const QString &lastPart) -> QString {
   int lastSep = lastPart.lastIndexOf('/');
   if (lastSep < 0) {
@@ -478,6 +504,12 @@ auto Pass::listKeys(const QString &keystring, bool secret) -> QList<UserInfo> {
  */
 namespace {
 
+/**
+ * @brief Checks if @p str contains any of the @p patterns (case-sensitive).
+ * @param str String to search in.
+ * @param patterns Patterns to search for.
+ * @return true if any pattern is found, false otherwise.
+ */
 auto containsAny(const QString &str, const QStringList &patterns) -> bool {
   for (const QString &p : patterns) {
     if (str.contains(p)) {
@@ -551,10 +583,18 @@ auto gpgErrorMessage(const QString &err) -> QString {
 }
 
 namespace {
+/**
+ * @brief Determine whether a line from `pass grep` output is an entry header.
+ *
+ * Detects the ANSI blue escape (\x1B[94m) emitted by `pass grep`; as a
+ * plain-text fallback, treats a non-indented line ending in ':' as a header.
+ *
+ * @param rawLine Original unmodified output line (with any ANSI codes).
+ * @param trimmedLine The line after surrounding whitespace has been stripped.
+ * @return true if the line is an entry header; otherwise false.
+ */
 auto isGrepHeaderLine(const QString &rawLine, const QString &trimmedLine)
     -> bool {
-  // ANSI-colored header starts with the blue escape; plain-text fallback:
-  // a non-indented line ending with ':' (pass grep format without color)
   return rawLine.startsWith(QStringLiteral("\x1B[94m")) ||
          (!rawLine.startsWith(' ') && !rawLine.startsWith('\t') &&
           trimmedLine.endsWith(':'));
