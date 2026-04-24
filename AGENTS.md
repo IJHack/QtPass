@@ -245,7 +245,7 @@ QtPassSettings::setProfileAutoPull(profileName, false);
 
 In ConfigDialog, use `QtPassSettings::getProfiles()` to get all profiles, and
 `setProfiles()` to save. The `getProfiles()`/`setProfiles()` cycle preserves
-git settings for non-selected profiles:
+Git settings for non-selected profiles:
 
 ```cpp
 // Load profiles into dialog
