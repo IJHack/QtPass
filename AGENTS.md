@@ -42,6 +42,9 @@ clang-format --style=file -i <source-file>
 
 - **Create branch:** `git checkout -b fix/description`
 - **Commit (always sign):** `git commit -S -m "description"`
+  - Prerequisite: configure Git commit signing (GPG or SSH signing key) before using `-S`.
+  - Verify signing works: `git commit -S --allow-empty -m "test signed commit"` (then reset if needed).
+  - If signing fails, set up your signing key and Git `user.signingkey`/signing format, then retry.
 - **Push:** `git push -u origin branch-name`
 - **Create PR:** `gh pr create --title "description" --body "## Summary\n- details"`
 - **Update with main before merging:**
