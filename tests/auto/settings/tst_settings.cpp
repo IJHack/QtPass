@@ -71,9 +71,9 @@ void tst_settings::initTestCase() {
     // No qtpass.ini next to the binary, so QSettings writes to per-user storage
     // (e.g. the Windows registry). Automatic backup/restore is only safe in
     // portable mode, so persistent user settings may be modified by this run.
-    qWarning() << "Non-portable mode detected: tests may modify persistent "
-                  "user settings (e.g. Windows registry). For an isolated "
-                  "run, drop a qtpass.ini next to the test binary.";
+    qWarning() << tr("Non-portable mode detected: tests may modify persistent "
+                     "user settings (e.g. Windows registry). For an isolated "
+                     "run, drop a qtpass.ini next to the test binary.");
   }
 }
 
