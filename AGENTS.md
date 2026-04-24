@@ -53,7 +53,7 @@ clang-format --style=file -i <source-file>
 
 ## Key Conventions
 
-- Use `QCoreApplication::arguments()` instead of raw `argv[]` for CLI parsing
+- Use `QCoreApplication::arguments()` instead of raw `argv[]` for CLI parsing (for proper Unicode handling and cross-platform consistency)
 - Use `QDir::cleanPath()` for cross-platform path normalization
 - Check for null from `screenAt()` before dereferencing
 - Use `tr()` for all user-facing strings
