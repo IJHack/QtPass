@@ -56,9 +56,9 @@ void tst_settings::initTestCase() {
   // Check for portable mode (qtpass.ini in app directory)
   // Only backup/restore settings file in portable mode
   // On non-portable (registry on Windows), we cannot safely backup
-  QString portable_ini =
+  QString portableIni =
       QCoreApplication::applicationDirPath() + QDir::separator() + "qtpass.ini";
-  m_isPortableMode = QFile::exists(portable_ini);
+  m_isPortableMode = QFile::exists(portableIni);
 
   if (m_isPortableMode) {
     QtPassSettings::getInstance()->sync();

@@ -40,8 +40,7 @@
  * @param parent pointer
  */
 MainWindow::MainWindow(const QString &searchText, QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), keygen(nullptr),
-      tray(nullptr) {
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
 #ifdef __APPLE__
   // extra treatment for mac os
   // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
@@ -213,8 +212,10 @@ auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
 }
 
 void MainWindow::cleanKeygenDialog() {
-  this->keygen->close();
-  this->keygen = nullptr;
+  if (this->keygenDialog != nullptr) {
+    this->keygenDialog->close();
+  }
+  this->keygenDialog = nullptr;
 }
 
 /**
@@ -296,7 +297,7 @@ void MainWindow::config() {
   }
 
   if (m_qtPass->isFreshStart()) {
-    d->wizard(); //  does shit
+    d->wizard(); // run initial setup wizard for first-time configuration
   }
   if (d->exec()) {
     if (d->result() == QDialog::Accepted) {
@@ -1009,7 +1010,7 @@ void MainWindow::messageAvailable(const QString &message) {
  * @param keygenWindow
  */
 void MainWindow::generateKeyPair(const QString &batch, QDialog *keygenWindow) {
-  keygen = keygenWindow;
+  keygenDialog = keygenWindow;
   emit generateGPGKeyPair(batch);
 }
 
@@ -1100,6 +1101,7 @@ void MainWindow::initTrayIcon() {
 #ifdef QT_DEBUG
     dbg() << "Allocating tray icon failed.";
 #endif
+    return;
   }
 
   if (!tray->getIsAllocated()) {
