@@ -71,9 +71,9 @@ void tst_settings::initTestCase() {
     // No qtpass.ini next to the binary, so QSettings writes to per-user storage
     // (e.g. the Windows registry). Automatic backup/restore is only safe in
     // portable mode, so persistent user settings may be modified by this run.
-    qWarning() << tr("Non-portable mode detected: tests may modify persistent "
-                     "user settings (e.g. Windows registry). For an isolated "
-                     "run, drop a qtpass.ini next to the test binary.");
+    qWarning() << "Non-portable mode detected: tests may modify persistent "
+                  "user settings (e.g. Windows registry). For an isolated "
+                  "run, drop a qtpass.ini next to the test binary.";
   }
 }
 
@@ -508,6 +508,14 @@ void tst_settings::setAndGetMultipleProfiles() {
   QVERIFY(readProfiles["profile1"].contains("useGit"));
   QVERIFY(readProfiles["profile1"].contains("autoPush"));
   QVERIFY(readProfiles["profile1"].contains("autoPull"));
+  // Verify git options default to empty (unset) - compare QString directly
+  // instead of toInt() which treats "true" as 0
+  QVERIFY2(readProfiles["profile1"].value("useGit").isEmpty(),
+           "useGit should default to empty");
+  QVERIFY2(readProfiles["profile1"].value("autoPush").isEmpty(),
+           "autoPush should default to empty");
+  QVERIFY2(readProfiles["profile1"].value("autoPull").isEmpty(),
+           "autoPull should default to empty");
 }
 
 void tst_settings::profileGitOptions() {
