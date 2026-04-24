@@ -313,15 +313,22 @@ for (const auto &profile : profiles) {
     setUseGit(profile.useGit);  // Side effects!
 }
 
-// Good - collect values in loop, apply side effects once for selected profile
+// Good - direct access to selected profile, apply side effects once
 int selectedProfileIndex = getSelectedProfileIndex();
-for (int i = 0; i < profiles.size(); ++i) {
-    if (i == selectedProfileIndex) {
-        ui->checkBoxUseGit->setChecked(profiles[i].useGit);
-    }
-}
 if (selectedProfileIndex >= 0 && selectedProfileIndex < profiles.size()) {
-    useGit(profiles[selectedProfileIndex].useGit);  // Single side effect after loop
+    ui->checkBoxUseGit->setChecked(profiles[selectedProfileIndex].useGit);
+    useGit(profiles[selectedProfileIndex].useGit);
+}
+
+// Or, if you need to collect profiles first:
+QVector<ProfileConfig> collectedProfiles;
+for (const auto &profile : profiles) {
+    collectedProfiles.append(profile);  // Collect into m_profiles or local container
+}
+int selectedProfileIndex = getSelectedProfileIndex();
+if (selectedProfileIndex >= 0 && selectedProfileIndex < collectedProfiles.size()) {
+    ui->checkBoxUseGit->setChecked(collectedProfiles[selectedProfileIndex].useGit);
+    useGit(collectedProfiles[selectedProfileIndex].useGit);
 }
 ```
 
