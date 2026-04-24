@@ -248,8 +248,8 @@ rules found" — load the rule explicitly via `-p`:
 npx -p textlint -p textlint-rule-terminology textlint --rule terminology AGENTS.md
 
 # Lint every Markdown file in the repo (catches latent errors super-linter misses)
-npx -p textlint -p textlint-rule-terminology textlint --rule terminology \
-  *.md scripts/*.md .github/**/*.md .opencode/skills/*/SKILL.md
+find . -name '*.md' -not -path '*/node_modules/*' | \
+  xargs npx -p textlint -p textlint-rule-terminology textlint --rule terminology
 
 # Auto-fix
 npx -p textlint -p textlint-rule-terminology textlint --rule terminology --fix <files>
