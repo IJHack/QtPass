@@ -229,6 +229,76 @@ returns `\\`.
 See `Pass::getGpgIdPath` in `src/pass.cpp` for the canonical implementation;
 this pattern supports nested folder inheritance.
 
+### Profile Git Settings
+
+Git options (useGit, autoPush, autoPull) are stored per-profile:
+
+```cpp
+QString useGitStr = QtPassSettings::getProfileUseGit(profileName, false);
+QtPassSettings::setProfileUseGit(profileName, true);
+QtPassSettings::setProfileAutoPush(profileName, true);
+QtPassSettings::setProfileAutoPull(profileName, false);
+```
+
+In ConfigDialog, use `getProfiles()`/`setProfiles()` to preserve non-selected profile settings:
+
+```cpp
+setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
+QtPassSettings::setProfiles(getProfiles());
+```
+
+### QSettings Singleton Pattern
+
+QtPass uses `QtPassSettings::getInstance()` instead of raw `QSettings`:
+
+```cpp
+QtPassSettings::getInstance()->setValue("key", value);
+QtPassSettings::getInstance()->beginGroup("profile");
+QtPassSettings::getInstance()->remove(profileName);
+QtPassSettings::getInstance()->endGroup();
+```
+
+Always match the settings backend used by QtPass in tests.
+
+### MainWindow Add Entry Pattern
+
+```cpp
+void MainWindow::addPasswordEntry() {
+    PasswordDialog passDialog(this);
+    QString templateName = Util::getFolderTemplate(currentDir, storePath);
+    QHash<QString, QStringList> templates = Util::readTemplates(storePath);
+    passDialog.setAvailableTemplates(templates, templateName);
+    passDialog.exec();
+}
+```
+
+### ConfigDialog Profile Table Selection
+
+```cpp
+void ConfigDialog::onProfileTableSelectionChanged() {
+    QList<QTableWidgetItem *> selected = ui->profileTable->selectedItems();
+    if (selected.isEmpty()) return;
+    QString profileName = ui->profileTable->item(selected.first()->row(), 0)->text();
+    loadGitSettingsForProfile(profileName, m_profiles);
+}
+```
+
+Cache profiles in `m_profiles` member and update on `getProfiles()`.
+
+### Avoid Setter Side Effects in Loops
+
+```cpp
+// Bad - triggers update logic for each profile
+for (const auto &profile : profiles) {
+    setUseGit(profile.useGit);  // Side effects!
+}
+// Good
+for (const auto &profile : profiles) {
+    ui->checkBoxUseGit->setChecked(profile.useGit);
+}
+useGit(selected.useGit);
+```
+
 ## Handling AI Findings
 
 When CodeRabbit/CodeAnt AI flags issues in PRs:
