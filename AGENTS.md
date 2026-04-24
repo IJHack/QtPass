@@ -234,7 +234,7 @@ this pattern supports nested folder inheritance.
 Git options (useGit, autoPush, autoPull) are stored per-profile:
 
 ```cpp
-QString useGitStr = QtPassSettings::getProfileUseGit(profileName, false);
+bool useGit = QtPassSettings::getProfileUseGit(profileName, false);
 QtPassSettings::setProfileUseGit(profileName, true);
 QtPassSettings::setProfileAutoPush(profileName, true);
 QtPassSettings::setProfileAutoPull(profileName, false);
@@ -263,12 +263,22 @@ Always match the settings backend used by QtPass in tests.
 ### MainWindow Add Entry Pattern
 
 ```cpp
-void MainWindow::addPasswordEntry() {
-    PasswordDialog passDialog(this);
-    QString templateName = Util::getFolderTemplate(currentDir, storePath);
-    QHash<QString, QStringList> templates = Util::readTemplates(storePath);
-    passDialog.setAvailableTemplates(templates, templateName);
-    passDialog.exec();
+void MainWindow::addPassword() {
+    bool ok;
+    QString dir =
+        Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel);
+    QString file =
+        QInputDialog::getText(this, tr("New file"),
+                              tr("New password file: \n(Will be placed in %1 )")
+                                  .arg(QtPassSettings::getPassStore() +
+                                       Util::getDir(ui->treeView->currentIndex(),
+                                                    true, model, proxyModel)),
+                              QLineEdit::Normal, "", &ok);
+    if (!ok || file.isEmpty()) {
+        return;
+    }
+    file = dir + file;
+    setPassword(file);
 }
 ```
 
