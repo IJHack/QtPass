@@ -153,6 +153,10 @@ void PasswordDialog::setPassword(const QString &password) {
     previous = line;
   }
   // show remaining values (if there are)
+  // Remove previously created dynamic widgets to prevent duplicates and leaks
+  for (QLineEdit *line : AS_CONST(m_otherLines)) {
+    ui->formLayout->removeRow(line);
+  }
   m_otherLines.clear();
   for (const NamedValue &nv : AS_CONST(namedValues)) {
     auto *line = new QLineEdit();

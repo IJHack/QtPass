@@ -262,9 +262,9 @@ private:
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
   QTimer clearPanelTimer, searchTimer;
-  QDialog *keygenDialog;
+  QDialog *keygenDialog{};
   QString currentDir;
-  TrayIcon *tray;
+  TrayIcon *tray{};
 
   void initToolBarButtons();
   void initStatusBar();

@@ -40,8 +40,7 @@
  * @param parent pointer
  */
 MainWindow::MainWindow(const QString &searchText, QWidget *parent)
-    : QMainWindow(parent), ui(new Ui::MainWindow), keygenDialog(nullptr),
-      tray(nullptr) {
+    : QMainWindow(parent), ui(new Ui::MainWindow) {
 #ifdef __APPLE__
   // extra treatment for mac os
   // see http://doc.qt.io/qt-5/qkeysequence.html#qt_set_sequence_auto_mnemonic
