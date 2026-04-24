@@ -60,6 +60,277 @@ clang-format --style=file -i <source-file>
 - Store indices, not pointers, in Qt::UserRole data
 - Use `QPalette` colors instead of hardcoded values for theme-aware UI
 - Use `std::as_const()` instead of deprecated `qAsConst()` for Qt iterations
+- Use `QT_VERSION_CHECK(6,0,0)` for Qt5/Qt6 compatibility
+
+## Niche Knowledge
+
+### GPG Key Inheritance
+
+`Pass::getGpgIdPath(dir)` walks up parent directories to find `.gpg-id`:
+
+```cpp
+QString gpgIdPath = Pass::getGpgIdPath(folderPath);
+bool exists = QFile(gpgIdPath).exists();
+```
+
+This allows folders to inherit recipients from parent directories.
+
+### Atomic File Writes
+
+Use `QSaveFile` for atomic writes to prevent corruption:
+
+```cpp
+QSaveFile file(path);
+if (!file.open(QIODevice::WriteOnly)) {
+    return false;  // open failed, nothing to commit
+}
+QTextStream out(&file);
+out << content;
+out.flush();
+if (out.status() != QTextStream::Ok) {
+    return false;  // QSaveFile is discarded on destruction
+}
+return file.commit();  // commit() returns false if the rename failed
+```
+
+See `Util::writeTemplates` in `src/util.cpp` for the canonical pattern.
+
+### Context Menu Pattern
+
+Right-click menus in Qt use parented menus for automatic cleanup:
+
+```cpp
+QMenu contextMenu(this);
+QMenu *subMenu = new QMenu(tr("Share"), &contextMenu);  // Parented to contextMenu
+contextMenu.addMenu(subMenu);
+// Both menus destroyed when contextMenu.exec() returns
+```
+
+### HTML in QMessageBox
+
+Always escape user input when embedding in HTML messages:
+
+```cpp
+QString path = userInput.toHtmlEscaped();
+QMessageBox::information(this, title, tr("<p>Path: %1</p>").arg(path));
+```
+
+### Signal Connections with Lambdas
+
+When connecting dialog signals, prefer lambdas or member functions over SLOT():
+
+```cpp
+// Good - compile-time checked
+connect(action, &QAction::triggered, this, &MainWindow::myMethod);
+
+// Good - explicit captures
+connect(action, &QAction::triggered, this, [this, dirPath]() {
+    myMethod(dirPath);
+});
+
+// Avoid - runtime string matching
+connect(action, SIGNAL(triggered()), SLOT(myMethod()));
+```
+
+### Git Workflow in QtPass
+
+Git operations are handled in `ImitatePass`:
+
+- `executeGit(GIT_ADD, {"add", pgit(file)})` stages files
+- `gitCommit(file, message)` commits with message
+- Always check `QtPassSettings::isUseGit()` before invoking `executeGit`
+
+### Qt Version Compatibility
+
+```cpp
+#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
+    stream.setEncoding(QStringConverter::Utf8);
+#else
+    stream.setCodec("UTF-8");
+#endif
+```
+
+### Testing Patterns
+
+**Test file fixtures** are in `tests/fixtures/`:
+
+```bash
+ls tests/fixtures/
+# gpg-colons-multi-key.txt
+# gpg-colons-public.txt
+# gpg-colons-secret.txt
+```
+
+These contain real GPG `--with-colons` output for deterministic testing.
+
+**Avoid tautology assertions:**
+
+```cpp
+// Bad - always true
+QVERIFY(profiles.isEmpty() || !profiles.isEmpty());
+
+// Good - meaningful check
+QVERIFY2(store.isEmpty() || store.startsWith("/"), "Pass store should be empty or a plausible path");
+```
+
+### Gitleaks-Safe Test Values
+
+- DON'T: "ABC123DEF456", "sk-xxx", real API keys
+- DO: "testkey123", "/usr/bin/pass", "example.com"
+
+### Template File Format
+
+Templates use INI-style format:
+
+```ini
+[Login]
+username
+password
+url
+
+[SSH]
+username
+key_path
+key_type
+```
+
+Per-folder `.default_template` contains just the template name.
+
+### Path Walking for .gpg-id
+
+When checking for `.gpg-id`, walk up parent directories:
+
+```cpp
+QDir dirObj(dir);
+QString cleanStoreRoot = QDir::cleanPath(QDir::fromNativeSeparators(storeRoot));
+while (dirObj.exists()) {
+    QString currentPath = QDir::cleanPath(dirObj.absolutePath());
+    if (currentPath != cleanStoreRoot &&
+        !currentPath.startsWith(cleanStoreRoot + "/")) {
+        break;  // outside store boundary
+    }
+    if (QFile(dirObj.absoluteFilePath(".gpg-id")).exists()) {
+        return dirObj.absoluteFilePath(".gpg-id");
+    }
+    if (!dirObj.cdUp()) break;  // hit filesystem root
+}
+```
+
+`cdUp()` must be called on a persistent `QDir` — calling it on a temporary
+(`QDir(path).cdUp()`) discards the result and the loop never advances.
+
+The boundary check uses `QDir::cleanPath()` on both paths to prevent sibling-path
+matches (e.g., `/home/user/.password-store2` should not match
+`/home/user/.password-store`). The literal `"/"` is correct here because
+`QDir::cleanPath()` always normalises to forward slashes — using
+`QDir::separator()` would silently break the comparison on Windows where it
+returns `\\`.
+
+See `Pass::getGpgIdPath` in `src/pass.cpp` for the canonical implementation;
+this pattern supports nested folder inheritance.
+
+### Profile Git Settings
+
+Git options (useGit, autoPush, autoPull) are now stored per-profile:
+
+```cpp
+// Get profile git settings
+QString useGitStr = QtPassSettings::getProfileUseGit(profileName, false);
+
+// Set profile git settings
+QtPassSettings::setProfileUseGit(profileName, true);
+QtPassSettings::setProfileAutoPush(profileName, true);
+QtPassSettings::setProfileAutoPull(profileName, false);
+```
+
+In ConfigDialog, use `QtPassSettings::getProfiles()` to get all profiles, and
+`setProfiles()` to save. The `getProfiles()`/`setProfiles()` cycle preserves
+Git settings for non-selected profiles:
+
+```cpp
+// Load profiles into dialog
+setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
+
+// Save profiles from dialog (preserves non-selected git settings)
+QtPassSettings::setProfiles(getProfiles());
+```
+
+### QSettings Singleton Pattern
+
+QtPass uses `QtPassSettings::getInstance()` instead of raw `QSettings`:
+
+```cpp
+// Good - uses singleton
+QtPassSettings::getInstance()->setValue("key", value);
+
+// Test cleanup - also use singleton
+QtPassSettings::getInstance()->beginGroup("profile");
+QtPassSettings::getInstance()->remove(profileName);
+QtPassSettings::getInstance()->endGroup();
+```
+
+Always match the settings backend used by QtPass in tests.
+
+### MainWindow Add Entry Pattern
+
+When adding new password entries, call `setTemplate()` on the dialog:
+
+```cpp
+void MainWindow::addPasswordEntry() {
+    PasswordDialog passDialog(this);
+    // Check for per-folder template
+    QString templateName = Util::getFolderTemplate(currentDir, storePath);
+    QHash<QString, QStringList> templates = Util::readTemplates(storePath);
+    passDialog.setAvailableTemplates(templates, templateName);
+    passDialog.exec();
+}
+```
+
+### ConfigDialog Profile Table Selection
+
+When handling profile table selection changes:
+
+```cpp
+void ConfigDialog::onProfileTableSelectionChanged() {
+    QList<QTableWidgetItem *> selected = ui->profileTable->selectedItems();
+    if (selected.isEmpty()) return;
+
+    QString profileName = ui->profileTable->item(selected.first()->row(), 0)->text();
+    // Use cached m_profiles for in-dialog state
+    loadGitSettingsForProfile(profileName, m_profiles);
+}
+```
+
+Cache profiles in `m_profiles` member variable and update on `getProfiles()`.
+
+### Avoid Setter Side Effects in Loops
+
+When loading settings, avoid calling setters that trigger side effects inside loops:
+
+```cpp
+// Bad - triggers update logic for each profile
+for (const auto &profile : profiles) {
+    setUseGit(profile.useGit);  // Side effects!
+}
+
+// Good - direct access to selected profile, apply side effects once
+int selectedProfileIndex = getSelectedProfileIndex();
+if (selectedProfileIndex >= 0 && selectedProfileIndex < profiles.size()) {
+    ui->checkBoxUseGit->setChecked(profiles[selectedProfileIndex].useGit);
+    useGit(profiles[selectedProfileIndex].useGit);
+}
+
+// Or, if you need to collect profiles first:
+QVector<ProfileConfig> collectedProfiles;
+for (const auto &profile : profiles) {
+    collectedProfiles.append(profile);  // Collect into m_profiles or local container
+}
+int selectedProfileIndex = getSelectedProfileIndex();
+if (selectedProfileIndex >= 0 && selectedProfileIndex < collectedProfiles.size()) {
+    ui->checkBoxUseGit->setChecked(collectedProfiles[selectedProfileIndex].useGit);
+    useGit(collectedProfiles[selectedProfileIndex].useGit);
+}
+```
 
 ## Handling AI Findings
 

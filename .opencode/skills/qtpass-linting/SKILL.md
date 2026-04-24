@@ -238,18 +238,29 @@ npx prettier --write ".opencode/skills/*/SKILL.md"
 
 ### textlint (Natural Language)
 
-Lints natural language in Markdown files. Requires textlint in the agent config:
+Super-linter's NATURAL_LANGUAGE check runs textlint with `textlint-rule-terminology`
+(canonical capitalisation: `Git`, `Ubuntu`, `SFTP`, `NixOS`, `Bash`, …). The
+repository has no textlint config, so plain `npx textlint` errors with "No
+rules found" — load the rule explicitly via `-p`:
 
 ```bash
-# From .opencode/skills/ folder
-npx textlint ".opencode/skills/*/SKILL.md"
+# Lint a specific file
+npx -p textlint -p textlint-rule-terminology textlint --rule terminology AGENTS.md
+
+# Lint every Markdown file in the repo (catches latent errors super-linter misses)
+npx -p textlint -p textlint-rule-terminology textlint --rule terminology \
+  *.md scripts/*.md .github/**/*.md .opencode/skills/*/SKILL.md
+
+# Auto-fix
+npx -p textlint -p textlint-rule-terminology textlint --rule terminology --fix \
+  *.md scripts/*.md .github/**/*.md .opencode/skills/*/SKILL.md
 ```
 
-Autofix:
-
-```bash
-npx textlint --fix ".opencode/skills/*/SKILL.md"
-```
+**Important:** Super-linter only lints the files **changed in the PR**, so
+terminology errors in untouched Markdown files sit latent and only blow up when
+someone next edits that file. When fixing one terminology error, sweep the
+whole tree with the second command above and clean up any other hits in the
+same PR.
 
 ## Prettier Patterns
 
