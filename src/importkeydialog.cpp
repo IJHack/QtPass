@@ -20,7 +20,7 @@
 static const QRegularExpression
     IMPORT_OK_RE(QStringLiteral(R"(\[GNUPG:\] IMPORT_OK \d+ ([0-9A-Fa-f]+))"));
 static const QRegularExpression
-    IMPORTED_RE(QStringLiteral(R"(\[GNUPG:\] IMPORTED ([0-9A-Fa-f]+))"));
+    IMPORTED_RE(QStringLiteral(R"(\[GNUPG:\] IMPORTED ([0-9A-Fa-f]{16}))"));
 // Fallback for the human-readable (English-locale) line.
 static const QRegularExpression KEY_IMPORTED_FALLBACK(
     QStringLiteral(R"(gpg: key ([0-9A-Fa-f]{40}|[0-9A-Fa-f]{16}):.*imported)"));
