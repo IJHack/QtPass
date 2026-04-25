@@ -1178,7 +1178,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1602"/>
         <source>&lt;h3&gt;Add Recipient&lt;/h3&gt;&lt;p&gt;To add a teammate&apos;s public key:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Save their public key as a .asc file&lt;/li&gt;&lt;li&gt;Copy the key text&lt;/li&gt;&lt;li&gt;Open %1&lt;/li&gt;&lt;li&gt;Add the new key ID to the file&lt;/li&gt;&lt;li&gt;Re-encrypt passwords to share with them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Use the full fingerprint to ensure accuracy.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Alıcı Ekle&lt;/h3&gt;&lt;p&gt;Bir takım arkadaşınızın açık anahtarını eklemek için:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Açık anahtarını .asc dosyası olarak kaydedin&lt;/li&gt;&lt;li&gt;Anahtar metnini kopyalayın&lt;/li&gt;&lt;li&gt;%1 dosyasını açın&lt;/li&gt;&lt;li&gt;Dosyaya yeni anahtar kimliğini ekleyin&lt;/li&gt;&lt;li&gt;Onlarla paylaşmak için parolaları yeniden şifreleyin&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Doğruluğu sağlamak için tam parmak izini kullanın.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
