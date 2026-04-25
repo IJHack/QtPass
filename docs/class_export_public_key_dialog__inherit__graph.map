@@ -1,0 +1,5 @@
+<map id="ExportPublicKeyDialog" name="ExportPublicKeyDialog">
+<area shape="rect" id="Node000001" title="Dialog showing an ASCII&#45;armored public GPG key for sharing." alt="" coords="5,79,175,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="53,5,127,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,44,93,79,87,79,87,44"/>
+</map>

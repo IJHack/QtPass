@@ -1,9 +1,9 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" title=" " alt="" coords="5,55,112,80"/>
 <area shape="rect" id="Node000001" href="$class_q_push_button_as_q_r_code.html" title="QPushButton that presents a text payload as a QR code action." alt="" coords="174,5,349,31"/>
-<area shape="poly" id="edge14_Node000000_Node000001" title=" " alt="" coords="122,49,159,39,206,28,207,33,161,45,124,54"/>
+<area shape="poly" id="edge15_Node000000_Node000001" title=" " alt="" coords="122,49,159,39,206,28,207,33,161,45,124,54"/>
 <area shape="rect" id="Node000002" href="$class_q_push_button_show_password.html" title="QPushButton that toggles visibility of an associated QLineEdit." alt="" coords="160,55,363,80"/>
-<area shape="poly" id="edge15_Node000000_Node000002" title=" " alt="" coords="126,65,160,65,160,70,126,70"/>
+<area shape="poly" id="edge16_Node000000_Node000002" title=" " alt="" coords="126,65,160,65,160,70,126,70"/>
 <area shape="rect" id="Node000003" href="$class_q_push_button_with_clipboard.html" title="QPushButton that stores a text payload and emits it when activated." alt="" coords="162,104,361,129"/>
-<area shape="poly" id="edge16_Node000000_Node000003" title=" " alt="" coords="125,81,209,101,208,107,124,86"/>
+<area shape="poly" id="edge17_Node000000_Node000003" title=" " alt="" coords="125,81,209,101,208,107,124,86"/>
 </map>
