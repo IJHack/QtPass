@@ -1138,7 +1138,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1237"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Paylaş</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1249"/>
