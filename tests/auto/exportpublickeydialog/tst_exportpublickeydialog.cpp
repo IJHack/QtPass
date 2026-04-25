@@ -36,7 +36,10 @@ void tst_exportpublickeydialog::sanitizeKeyId_data() {
   QTest::newRow("dash-and-underscore-allowed")
       << QStringLiteral("DEAD_BEEF-1234") << QStringLiteral("DEAD_BEEF-1234");
   QTest::newRow("leading-whitespace")
-      << QStringLiteral("   DEADBEEF") << QString();
+      << QStringLiteral("   DEADBEEF") << QStringLiteral("DEADBEEF");
+  QTest::newRow("tab-separated")
+      << QStringLiteral("DEADBEEF\tFEEDFACE") << QStringLiteral("DEADBEEF");
+  QTest::newRow("only-whitespace") << QStringLiteral("  \t\n ") << QString();
 }
 
 void tst_exportpublickeydialog::sanitizeKeyId() {

@@ -46,8 +46,13 @@ ExportPublicKeyDialog::~ExportPublicKeyDialog() { delete ui; }
  */
 auto ExportPublicKeyDialog::sanitizeKeyIdForFilename(const QString &keyId)
     -> QString {
-  QString token = keyId.section(QChar(' '), 0, 0);
+  static const QRegularExpression whitespace(QStringLiteral("\\s+"));
   static const QRegularExpression unsafeChars(QStringLiteral("[^A-Za-z0-9_-]"));
+  const QStringList tokens = keyId.split(whitespace, Qt::SkipEmptyParts);
+  if (tokens.isEmpty()) {
+    return QString();
+  }
+  QString token = tokens.first();
   token.remove(unsafeChars);
   return token;
 }
