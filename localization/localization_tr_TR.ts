@@ -1183,7 +1183,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG ile Parola Paylaşımı</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1621"/>
