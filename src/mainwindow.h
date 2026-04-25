@@ -164,6 +164,13 @@ public slots:
   void messageAvailable(const QString &message);
 
   /**
+   * @brief Handle generic process output for display in output panel.
+   * @param output Process output text.
+   * @param isError true if output should be styled as error (red).
+   */
+  void onProcessOutput(const QString &output, bool isError);
+
+  /**
    * @brief Display a critical error dialog.
    * @param title Dialog title.
    * @param msg Error message body.
@@ -224,6 +231,7 @@ public slots:
 private slots:
   void on_grepButton_toggled(bool checked);
   void on_grepResultsList_itemClicked(QTreeWidgetItem *item, int column);
+  void on_clearOutputButton_clicked();
   void addPassword();
   void addFolder();
   void onEdit();
@@ -258,6 +266,9 @@ private:
   bool m_grepMode = false;
   bool m_grepBusy = false;
   bool m_grepCancelled = false;
+  bool m_autoScroll = true;
+  int m_outputCounter = 0;
+  static constexpr int MaxOutputLines = 1000;
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
@@ -294,6 +305,10 @@ private:
   void updateOtpButtonVisibility();
   void updateGrepButtonVisibility();
   void enableGitButtons(const bool &);
+
+  void appendProcessOutput(const QString &output, bool isError);
+  void updateProcessOutputVisibility();
+  void limitOutputLines();
 };
 
 #endif // SRC_MAINWINDOW_H_

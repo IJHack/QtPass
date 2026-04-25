@@ -871,6 +871,18 @@ public:
   static void setTemplateAllFields(const bool &templateAllFields);
 
   /**
+   * @brief Get showProcessOutput setting.
+   * @param defaultValue Default value if not set.
+   * @return Whether process output should be displayed.
+   */
+  static auto isShowProcessOutput(const bool &defaultValue = false) -> bool;
+  /**
+   * @brief Save showProcessOutput setting.
+   * @param showProcessOutput Whether to show process output.
+   */
+  static void setShowProcessOutput(const bool &showProcessOutput);
+
+  /**
    * @brief Get all configured profiles.
    * @return Profile map keyed by profile name.
    */

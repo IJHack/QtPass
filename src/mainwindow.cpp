@@ -30,7 +30,9 @@
 #include <QLabel>
 #include <QMenu>
 #include <QMessageBox>
+#include <QScrollBar>
 #include <QShortcut>
+#include <QTextCursor>
 #include <QTimer>
 #include <QTreeWidget>
 #include <utility>
@@ -121,6 +123,25 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   initToolBarButtons();
   initStatusBar();
 
+  connect(QtPassSettings::getPass(), &Pass::finishedAny, this,
+          [this](const QString &out, const QString &err) {
+            QString output = out;
+            if (!err.isEmpty()) {
+              if (!output.isEmpty())
+                output += "\n";
+              output += err;
+            }
+            onProcessOutput(output, !err.isEmpty());
+          });
+
+  connect(ui->processOutputEdit->verticalScrollBar(),
+          &QScrollBar::sliderPressed, this, [this]() { m_autoScroll = false; });
+  connect(ui->processOutputEdit->verticalScrollBar(), &QScrollBar::valueChanged,
+          this, [this]() {
+            auto *sb = ui->processOutputEdit->verticalScrollBar();
+            m_autoScroll = sb->value() >= sb->maximum();
+          });
+
   ui->lineEdit->setClearButtonEnabled(true);
   updateGrepButtonVisibility();
 
@@ -207,6 +228,11 @@ void MainWindow::initStatusBar() {
   auto *logoApp = new QLabel(statusBar());
   logoApp->setPixmap(logo);
   statusBar()->addPermanentWidget(logoApp);
+
+  ui->processOutputWidget->setParent(statusBar());
+  statusBar()->addPermanentWidget(ui->processOutputWidget);
+
+  updateProcessOutputVisibility();
 }
 
 auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
@@ -1690,4 +1716,53 @@ void MainWindow::enableGitButtons(const bool &state) {
  */
 void MainWindow::critical(const QString &title, const QString &msg) {
   QMessageBox::critical(this, title, msg);
+}
+
+void MainWindow::appendProcessOutput(const QString &output, bool isError) {
+  if (!QtPassSettings::isShowProcessOutput()) {
+    return;
+  }
+
+  m_outputCounter++;
+  QString lineNumber = QString::number(m_outputCounter);
+  QString coloredOutput = isError ? QString("<span style=\"color: red;\">")
+                                  : QString("<span style=\"color: black;\">");
+  coloredOutput += lineNumber + ": " + output.toHtmlEscaped() + "</span><br>";
+
+  ui->processOutputEdit->append(coloredOutput);
+  limitOutputLines();
+
+  if (m_autoScroll) {
+    ui->processOutputEdit->moveCursor(QTextCursor::End);
+  }
+
+  if (!ui->processOutputWidget->isVisible()) {
+    ui->processOutputWidget->setVisible(true);
+  }
+}
+
+void MainWindow::onProcessOutput(const QString &output, bool isError) {
+  appendProcessOutput(output, isError);
+}
+
+void MainWindow::updateProcessOutputVisibility() {
+  ui->processOutputWidget->setVisible(QtPassSettings::isShowProcessOutput());
+}
+
+void MainWindow::limitOutputLines() {
+  QTextDocument *doc = ui->processOutputEdit->document();
+  while (doc->blockCount() > MaxOutputLines) {
+    QTextCursor cursor(doc);
+    cursor.movePosition(QTextCursor::Start);
+    cursor.select(QTextCursor::BlockUnderCursor);
+    cursor.removeSelectedText();
+    if (!cursor.atEnd()) {
+      cursor.deleteChar();
+    }
+  }
+}
+
+void MainWindow::on_clearOutputButton_clicked() {
+  ui->processOutputEdit->clear();
+  m_outputCounter = 0;
 }

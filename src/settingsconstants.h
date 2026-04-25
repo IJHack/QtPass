@@ -75,6 +75,7 @@ public:
   static const QString passTemplate;
   static const QString useTemplate;
   static const QString templateAllFields;
+  static const QString showProcessOutput;
   static const QString clipBoardType;
 
 private:

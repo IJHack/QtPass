@@ -885,6 +885,16 @@ void QtPassSettings::setTemplateAllFields(const bool &templateAllFields) {
                           templateAllFields);
 }
 
+auto QtPassSettings::isShowProcessOutput(const bool &defaultValue) -> bool {
+  return getInstance()
+      ->value(SettingsConstants::showProcessOutput, defaultValue)
+      .toBool();
+}
+void QtPassSettings::setShowProcessOutput(const bool &showProcessOutput) {
+  getInstance()->setValue(SettingsConstants::showProcessOutput,
+                          showProcessOutput);
+}
+
 auto QtPassSettings::getRealPass() -> RealPass * {
   if (realPass.isNull()) {
     realPass.reset(new RealPass());
