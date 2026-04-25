@@ -78,6 +78,16 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="importKeyButton">
+       <property name="text">
+        <string>Import key...</string>
+       </property>
+       <property name="toolTip">
+        <string>Import a GPG key from file or clipboard</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
@@ -107,6 +117,8 @@ Red entries are not valid, you will not be able to encrypt to these.</string>
  </widget>
  <tabstops>
   <tabstop>lineEdit</tabstop>
+  <tabstop>checkBox</tabstop>
+  <tabstop>importKeyButton</tabstop>
   <tabstop>listWidget</tabstop>
  </tabstops>
  <resources>

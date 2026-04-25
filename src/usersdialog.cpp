@@ -1,17 +1,20 @@
 // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "usersdialog.h"
+#include "importkeydialog.h"
 #include "qtpasssettings.h"
 #include "ui_usersdialog.h"
 #include <QApplication>
 #include <QCloseEvent>
 #include <QDateTime>
 #include <QKeyEvent>
+#include <QLineEdit>
+#include <QListWidget>
 #include <QMessageBox>
 #include <QRegularExpression>
 #include <QSet>
+#include <QSignalBlocker>
 #include <QWidget>
-#include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -44,6 +47,8 @@ void UsersDialog::connectSignals() {
   connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
   connect(ui->listWidget, &QListWidget::itemChanged, this,
           &UsersDialog::itemChange);
+  // importKeyButton is wired via Qt's automatic on_<name>_<signal> mechanism
+  // already triggered by setupUi().
 
   ui->lineEdit->setClearButtonEnabled(true);
 }
@@ -350,3 +355,60 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
  * @brief UsersDialog::on_checkBox_clicked filtering.
  */
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
+
+void UsersDialog::on_importKeyButton_clicked() {
+  ImportKeyDialog dialog(this);
+  if (dialog.exec() != QDialog::Accepted) {
+    return;
+  }
+
+  // dialog.exec() == Accepted is only reachable after a successful import
+  // (see ImportKeyDialog::importFromString), so importedKeyId() is non-empty
+  // by construction. Guard anyway: an empty value would make the
+  // bidirectional endsWith() below match the first listed key.
+  const QString importedKey = dialog.importedKeyId();
+  if (importedKey.isEmpty()) {
+    return;
+  }
+
+  if (!loadGpgKeys()) {
+    return;
+  }
+
+  // Clear the filter so the just-imported key is visible. setText("") still
+  // emits textChanged once, so don't double-populate.
+  {
+    const QSignalBlocker blocker(ui->lineEdit);
+    ui->lineEdit->clear();
+  }
+  populateList(QString());
+
+  // Match against the user's stored key_id, not the visible item text.
+  // gpg can return a 16-char long key id (IMPORTED status line) or a
+  // 40-char fingerprint (IMPORT_OK status line); compare both directions
+  // so a long-id match works against a fingerprint hit and vice versa.
+  for (int i = 0; i < ui->listWidget->count(); ++i) {
+    QListWidgetItem *item = ui->listWidget->item(i);
+    if (item == nullptr) {
+      continue;
+    }
+    bool ok = false;
+    const int idx = item->data(Qt::UserRole).toInt(&ok);
+    if (!ok || idx < 0 || idx >= m_userList.size()) {
+      continue;
+    }
+    const QString &keyId = m_userList[idx].key_id;
+    if (keyId.isEmpty()) {
+      continue;
+    }
+    // Only perform endsWith checks when the suffix being matched is at least
+    // 16 chars to avoid false positives with short IDs.
+    if ((keyId.length() >= 16 &&
+         importedKey.endsWith(keyId, Qt::CaseInsensitive)) ||
+        (importedKey.length() >= 16 &&
+         keyId.endsWith(importedKey, Qt::CaseInsensitive))) {
+      ui->listWidget->setCurrentItem(item);
+      break;
+    }
+  }
+}

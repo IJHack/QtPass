@@ -73,6 +73,10 @@ private slots:
    * @brief Handle select all checkbox.
    */
   void on_checkBox_clicked();
+  /**
+   * @brief Import a GPG key and refresh the list.
+   */
+  void on_importKeyButton_clicked();
 
 private:
   Ui::UsersDialog *ui;
