@@ -134,7 +134,11 @@ bool ImportKeyDialog::importFromString(const QString &input) {
 }
 
 auto ImportKeyDialog::parseGpgImportOutput(const QString &output) -> QString {
+#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   const QStringList lines = output.split('\n', Qt::SkipEmptyParts);
+#else
+  const QStringList lines = output.split('\n', QString::SkipEmptyParts);
+#endif
   // Prefer locale-independent status output. IMPORT_OK gives a full
   // fingerprint; IMPORTED gives a (long) key id. Try both before falling
   // back to the English-only human-readable line.
