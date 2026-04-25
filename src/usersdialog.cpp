@@ -364,8 +364,12 @@ void UsersDialog::on_importKeyButton_clicked() {
 
   // dialog.exec() == Accepted is only reachable after a successful import
   // (see ImportKeyDialog::importFromString), so importedKeyId() is non-empty
-  // by construction here.
+  // by construction. Guard anyway: an empty value would make the
+  // bidirectional endsWith() below match the first listed key.
   const QString importedKey = dialog.importedKeyId();
+  if (importedKey.isEmpty()) {
+    return;
+  }
 
   if (!loadGpgKeys()) {
     return;

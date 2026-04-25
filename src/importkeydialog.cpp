@@ -60,12 +60,14 @@ void ImportKeyDialog::on_fileButton_clicked() {
   // would lose bytes through UTF-8 conversion. Reject anything that doesn't
   // start with the PGP armor header.
   if (!bytes.trimmed().startsWith("-----BEGIN PGP")) {
+    // Message body is rich text (uses <code>/<b>); escape the path so any
+    // characters in it cannot reach the HTML subset Qt renders.
     QMessageBox::warning(
         this, tr("Import Key"),
         tr("%1 does not look like an ASCII-armored GPG key. Convert it with "
            "<code>gpg --armor --export</code> first, or paste the armored "
            "block via <b>From Clipboard</b>.")
-            .arg(fileName));
+            .arg(fileName.toHtmlEscaped()));
     return;
   }
 
