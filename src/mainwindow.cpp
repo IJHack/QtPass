@@ -1741,7 +1741,12 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError) {
 
   QStringList lines = output.split('\n', Qt::SkipEmptyParts);
   for (QString &line : lines) {
-    line = line.trimmed();
+    // Right-trim only: remove trailing CR and whitespace, preserve leading
+    // indentation
+    line.remove('\r');
+    while (!line.isEmpty() && line.back().isSpace()) {
+      line.chop(1);
+    }
     if (line.isEmpty()) {
       continue;
     }
