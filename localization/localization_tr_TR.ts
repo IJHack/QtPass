@@ -430,7 +430,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="716"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil dizini oluşturulsun mu?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="717"/>
