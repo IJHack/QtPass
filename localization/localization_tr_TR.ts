@@ -1163,27 +1163,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1584"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Açık Anahtarı Dışa Aktar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1585"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;To export your public GPG key, run this in terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc %1&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;&lt;p&gt;Your key ID: You can find it in QtPass Settings &amp;gt; GPG keys.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Açık Anahtarınızı Dışa Aktarın&lt;/h3&gt;&lt;p&gt;Açık GPG anahtarınızı dışa aktarmak için terminalde şu komutu çalıştırın:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc %1&lt;/pre&gt;&lt;p&gt;Ardından dosyayı takım arkadaşlarınıza gönderin.&lt;/p&gt;&lt;p&gt;Anahtar kimliğiniz: Bunu QtPass Ayarları &amp;gt; GPG anahtarları bölümünde bulabilirsiniz.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1601"/>
         <source>Add Recipient</source>
-        <translation type="unfinished"></translation>
+        <translation>Alıcı Ekle</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1602"/>
         <source>&lt;h3&gt;Add Recipient&lt;/h3&gt;&lt;p&gt;To add a teammate&apos;s public key:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Save their public key as a .asc file&lt;/li&gt;&lt;li&gt;Copy the key text&lt;/li&gt;&lt;li&gt;Open %1&lt;/li&gt;&lt;li&gt;Add the new key ID to the file&lt;/li&gt;&lt;li&gt;Re-encrypt passwords to share with them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Use the full fingerprint to ensure accuracy.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Alıcı Ekle&lt;/h3&gt;&lt;p&gt;Bir takım arkadaşınızın açık anahtarını eklemek için:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;Açık anahtarını .asc dosyası olarak kaydedin&lt;/li&gt;&lt;li&gt;Anahtar metnini kopyalayın&lt;/li&gt;&lt;li&gt;%1 dosyasını açın&lt;/li&gt;&lt;li&gt;Dosyaya yeni anahtar kimliğini ekleyin&lt;/li&gt;&lt;li&gt;Onlarla paylaşmak için parolaları yeniden şifreleyin&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Doğruluğu sağlamak için tam parmak izini kullanın.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1620"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG ile Parola Paylaşımı</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1621"/>
