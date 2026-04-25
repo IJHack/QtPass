@@ -134,24 +134,28 @@ bool ImportKeyDialog::importFromString(const QString &input) {
 }
 
 auto ImportKeyDialog::parseGpgImportOutput(const QString &output) -> QString {
-#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
   const QStringList lines = output.split('\n', Qt::SkipEmptyParts);
-#else
-  const QStringList lines = output.split('\n', QString::SkipEmptyParts);
-#endif
-  // Prefer locale-independent status output. IMPORT_OK gives a full
-  // fingerprint; IMPORTED gives a (long) key id. Try both before falling
-  // back to the English-only human-readable line.
+  // The order here is the priority order: prefer the locale-independent
+  // status lines over the English human-readable line, and within the
+  // status lines prefer IMPORT_OK (full fingerprint) over IMPORTED
+  // (long key id). Each regex is scanned across every line before we
+  // fall through to the next regex; the per-line ordering of gpg's
+  // output (which emits IMPORTED before IMPORT_OK) must not pick the
+  // weaker identifier.
   for (const QString &line : lines) {
-    QRegularExpressionMatch match = IMPORT_OK_RE.match(line);
+    const QRegularExpressionMatch match = IMPORT_OK_RE.match(line);
     if (match.hasMatch()) {
       return match.captured(1);
     }
-    match = IMPORTED_RE.match(line);
+  }
+  for (const QString &line : lines) {
+    const QRegularExpressionMatch match = IMPORTED_RE.match(line);
     if (match.hasMatch()) {
       return match.captured(1);
     }
-    match = KEY_IMPORTED_FALLBACK.match(line);
+  }
+  for (const QString &line : lines) {
+    const QRegularExpressionMatch match = KEY_IMPORTED_FALLBACK.match(line);
     if (match.hasMatch()) {
       return match.captured(1);
     }
