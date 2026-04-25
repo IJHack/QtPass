@@ -324,6 +324,13 @@ signals:
    */
   void finishedAny(const QString &out, const QString &err);
   /**
+   * @brief Emitted when any operation finishes with process ID for filtering.
+   * @param out Standard output from the process.
+   * @param err Standard error from the process.
+   * @param pid Process identifier for filtering/display.
+   */
+  void finishedAnyWithPid(const QString &out, const QString &err, int pid);
+  /**
    * @brief Emitted when Git init finishes.
    * @param out Standard output.
    * @param err Standard error.

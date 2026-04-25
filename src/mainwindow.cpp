@@ -7,6 +7,7 @@
 #endif
 
 #include "configdialog.h"
+#include "enums.h"
 #include "executor.h"
 #include "exportpublickeydialog.h"
 #include "filecontent.h"
@@ -123,8 +124,11 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   initToolBarButtons();
   initStatusBar();
 
-  connect(QtPassSettings::getPass(), &Pass::finishedAny, this,
-          [this](const QString &out, const QString &err) {
+  connect(QtPassSettings::getPass(), &Pass::finishedAnyWithPid, this,
+          [this](const QString &out, const QString &err, int pid) {
+            if (pid == Enums::PASS_SHOW || pid == Enums::PASS_OTP_GENERATE) {
+              return;
+            }
             if (!out.isEmpty()) {
               onProcessOutput(out, false);
             }
