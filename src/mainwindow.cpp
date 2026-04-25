@@ -1595,10 +1595,12 @@ void MainWindow::exportPublicKey() {
   if (gpgExe.isEmpty()) {
     gpgExe = QStringLiteral("gpg");
   }
+  QStringList args = {"--armor", "--export"};
+  args.append(identity.split(' ', Qt::SkipEmptyParts));
   QString stdOut;
   QString stdErr;
-  int exitCode = Executor::executeBlocking(
-      gpgExe, {"--armor", "--export", identity}, QString(), &stdOut, &stdErr);
+  int exitCode =
+      Executor::executeBlocking(gpgExe, args, QString(), &stdOut, &stdErr);
   if (exitCode != 0 || stdOut.isEmpty()) {
     QMessageBox::warning(this, tr("Export Public Key"),
                          tr("Could not export public key for %1.\n\n%2")

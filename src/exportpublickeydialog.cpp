@@ -1,15 +1,16 @@
-// SPDX-FileCopyrightText: YYYY Anne Jan Brouwer
+// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "exportpublickeydialog.h"
 #include "ui_exportpublickeydialog.h"
 
 #include <QApplication>
 #include <QClipboard>
-#include <QFile>
 #include <QFileDialog>
 #include <QFontDatabase>
 #include <QMessageBox>
+#include <QSaveFile>
 #include <QTextStream>
+#include <QTimer>
 
 /**
  * @brief ExportPublicKeyDialog::ExportPublicKeyDialog populate the dialog
@@ -27,6 +28,7 @@ ExportPublicKeyDialog::ExportPublicKeyDialog(const QString &keyId,
   ui->plainTextEdit->setFont(
       QFontDatabase::systemFont(QFontDatabase::FixedFont));
   ui->plainTextEdit->setPlainText(armoredKey);
+  m_copyButtonOriginalText = ui->copyButton->text();
 }
 
 /**
@@ -36,10 +38,15 @@ ExportPublicKeyDialog::~ExportPublicKeyDialog() { delete ui; }
 
 /**
  * @brief ExportPublicKeyDialog::on_copyButton_clicked copy the armored key
- *        text to the system clipboard.
+ *        text to the system clipboard and briefly relabel the button so the
+ *        user gets visible feedback.
  */
 void ExportPublicKeyDialog::on_copyButton_clicked() {
   QApplication::clipboard()->setText(ui->plainTextEdit->toPlainText());
+  ui->copyButton->setText(tr("Copied!"));
+  QTimer::singleShot(1500, this, [this]() {
+    ui->copyButton->setText(m_copyButtonOriginalText);
+  });
 }
 
 /**
@@ -56,12 +63,19 @@ void ExportPublicKeyDialog::on_saveButton_clicked() {
   if (fileName.isEmpty()) {
     return;
   }
-  QFile file(fileName);
+  QSaveFile file(fileName);
   if (!file.open(QIODevice::WriteOnly | QIODevice::Text)) {
     QMessageBox::warning(this, tr("Save Public Key"),
-                         tr("Could not open %1 for writing.").arg(fileName));
+                         tr("Could not open %1 for writing: %2")
+                             .arg(fileName, file.errorString()));
     return;
   }
   QTextStream out(&file);
   out << ui->plainTextEdit->toPlainText();
+  out.flush();
+  if (out.status() != QTextStream::Ok || !file.commit()) {
+    QMessageBox::warning(
+        this, tr("Save Public Key"),
+        tr("Could not write to %1: %2").arg(fileName, file.errorString()));
+  }
 }

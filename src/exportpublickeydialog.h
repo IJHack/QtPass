@@ -1,4 +1,4 @@
-// SPDX-FileCopyrightText: YYYY Anne Jan Brouwer
+// SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #ifndef SRC_EXPORTPUBLICKEYDIALOG_H_
 #define SRC_EXPORTPUBLICKEYDIALOG_H_
@@ -47,6 +47,7 @@ private slots:
 private:
   Ui::ExportPublicKeyDialog *ui;
   QString m_keyId;
+  QString m_copyButtonOriginalText;
 };
 
 #endif // SRC_EXPORTPUBLICKEYDIALOG_H_
