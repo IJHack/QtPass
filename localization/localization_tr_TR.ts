@@ -1143,7 +1143,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm parolaları yeniden şifrele</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1254"/>
