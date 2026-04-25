@@ -1188,7 +1188,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1621"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; to their own folders&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;GPG ile Parola Paylaşımı&lt;/h3&gt;&lt;p&gt;Parolaları diğer kullanıcılarla paylaşmak için:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Açık anahtarınızı dışa aktarın&lt;/b&gt; ve takım arkadaşlarınıza gönderin&lt;/li&gt;&lt;li&gt;&lt;b&gt;Takım arkadaşlarınızın açık anahtarlarını içe aktarın&lt;/b&gt; ve kendi klasörlerine ekleyin&lt;/li&gt;&lt;li&gt;&lt;b&gt;Parolaları yeniden şifreleyin&lt;/b&gt; böylece tüm alıcılar parolaları çözebilir&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Parolaları yalnızca eşleşen bir gizli anahtara sahip kişiler çözebilir.&lt;/p&gt;&lt;p&gt;&lt;b&gt;İpucu:&lt;/b&gt; Tüm paylaşılan klasörler için aynı GPG anahtarını kullanın.&lt;/p&gt;&lt;p&gt;Daha fazla ayrıntı için SSS&apos;ye bakın.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
