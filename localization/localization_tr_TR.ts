@@ -521,7 +521,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>Profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil: %1, konum: %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1268"/>
