@@ -715,7 +715,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Şablon içeriği GPG versiyonuna göre belirlenecektir.</translation>
+        <translation>Şablon içeriği GPG sürümüne göre belirlenecektir.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1061,8 +1061,8 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="771"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n eşleşme bulundu</numerusform>
         </translation>
     </message>
     <message numerus="yes">
@@ -1148,17 +1148,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1254"/>
         <source>Export my public key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Açık anahtarımı dışa aktar...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Add recipient...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alıcı ekle...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1265"/>
         <source>What is this?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu nedir?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1584"/>
