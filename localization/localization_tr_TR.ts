@@ -1168,7 +1168,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1585"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;To export your public GPG key, run this in terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc %1&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;&lt;p&gt;Your key ID: You can find it in QtPass Settings &amp;gt; GPG keys.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Açık Anahtarınızı Dışa Aktarın&lt;/h3&gt;&lt;p&gt;Açık GPG anahtarınızı dışa aktarmak için terminalde şu komutu çalıştırın:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc %1&lt;/pre&gt;&lt;p&gt;Ardından dosyayı takım arkadaşlarınıza gönderin.&lt;/p&gt;&lt;p&gt;Anahtar kimliğiniz: Bunu QtPass Ayarları &amp;gt; GPG anahtarları bölümünde bulabilirsiniz.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1601"/>
