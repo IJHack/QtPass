@@ -33,6 +33,15 @@ public:
                                  QWidget *parent = nullptr);
   ~ExportPublicKeyDialog() override;
 
+  /**
+   * @brief Reduce a key identifier to a filesystem-safe token.
+   * @param keyId Raw identifier, possibly containing whitespace-separated
+   *              IDs or characters not valid in a filename.
+   * @return The first whitespace-separated token of keyId with anything
+   *         outside [A-Za-z0-9_-] stripped. Empty if no characters survive.
+   */
+  static auto sanitizeKeyIdForFilename(const QString &keyId) -> QString;
+
 private slots:
   /**
    * @brief Copy the armored key text to the system clipboard.

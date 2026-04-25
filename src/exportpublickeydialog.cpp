@@ -38,6 +38,21 @@ ExportPublicKeyDialog::ExportPublicKeyDialog(const QString &keyId,
 ExportPublicKeyDialog::~ExportPublicKeyDialog() { delete ui; }
 
 /**
+ * @brief ExportPublicKeyDialog::sanitizeKeyIdForFilename keep only the
+ *        first whitespace-separated token of keyId and strip any character
+ *        that is not in [A-Za-z0-9_-].
+ * @param keyId Raw identifier (possibly multi-key, possibly user-supplied).
+ * @return Filename-safe token, empty if no characters survive.
+ */
+auto ExportPublicKeyDialog::sanitizeKeyIdForFilename(const QString &keyId)
+    -> QString {
+  QString token = keyId.section(QChar(' '), 0, 0);
+  static const QRegularExpression unsafeChars(QStringLiteral("[^A-Za-z0-9_-]"));
+  token.remove(unsafeChars);
+  return token;
+}
+
+/**
  * @brief ExportPublicKeyDialog::on_copyButton_clicked copy the armored key
  *        text to the system clipboard and briefly relabel the button so the
  *        user gets visible feedback.
@@ -55,12 +70,7 @@ void ExportPublicKeyDialog::on_copyButton_clicked() {
  *        destination and write the armored key to that file.
  */
 void ExportPublicKeyDialog::on_saveButton_clicked() {
-  // m_keyId may hold space-separated key IDs and is settings-controlled, so
-  // strip it down to the first whitespace token and keep only filename-safe
-  // characters before suggesting it as the default save name.
-  QString safeKeyId = m_keyId.section(QChar(' '), 0, 0);
-  static const QRegularExpression unsafeChars(QStringLiteral("[^A-Za-z0-9_-]"));
-  safeKeyId.remove(unsafeChars);
+  QString safeKeyId = sanitizeKeyIdForFilename(m_keyId);
   QString defaultName = safeKeyId.isEmpty()
                             ? QStringLiteral("public_key.asc")
                             : QStringLiteral("%1.asc").arg(safeKeyId);
