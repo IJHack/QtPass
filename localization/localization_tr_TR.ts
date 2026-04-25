@@ -1158,7 +1158,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1265"/>
         <source>What is this?</source>
-        <translation type="unfinished"></translation>
+        <translation>Bu nedir?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1584"/>
