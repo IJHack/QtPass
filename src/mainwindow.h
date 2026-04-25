@@ -168,7 +168,7 @@ public slots:
    * @param output Process output text.
    * @param isError true if output should be styled as error (red).
    */
-  void onProcessOutput(const QString &output, bool isError);
+  void onProcessOutput(const QString &output, bool isError, int pid = -1);
 
   /**
    * @brief Display a critical error dialog.
@@ -307,9 +307,11 @@ private:
   void updateGrepButtonVisibility();
   void enableGitButtons(const bool &);
 
-  void appendProcessOutput(const QString &output, bool isError);
+  void appendProcessOutput(const QString &output, bool isError, int pid = -1);
   void updateProcessOutputVisibility();
   void limitOutputLines();
+
+  auto getProcessName(int pid) -> QString;
 };
 
 #endif // SRC_MAINWINDOW_H_

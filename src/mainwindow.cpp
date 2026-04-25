@@ -130,10 +130,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
               return;
             }
             if (!out.isEmpty()) {
-              onProcessOutput(out, false);
+              onProcessOutput(out, false, pid);
             }
             if (!err.isEmpty()) {
-              onProcessOutput(err, true);
+              onProcessOutput(err, true, pid);
             }
           });
 
@@ -1725,7 +1725,8 @@ void MainWindow::critical(const QString &title, const QString &msg) {
   QMessageBox::critical(this, title, msg);
 }
 
-void MainWindow::appendProcessOutput(const QString &output, bool isError) {
+void MainWindow::appendProcessOutput(const QString &output, bool isError,
+                                     int pid) {
   if (!QtPassSettings::isShowProcessOutput()) {
     return;
   }
@@ -1763,8 +1764,43 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError) {
   }
 }
 
-void MainWindow::onProcessOutput(const QString &output, bool isError) {
-  appendProcessOutput(output, isError);
+void MainWindow::onProcessOutput(const QString &output, bool isError, int pid) {
+  QString cmdName = getProcessName(pid);
+  appendProcessOutput(cmdName.isEmpty() ? output : cmdName + ": " + output,
+                      isError);
+}
+
+auto MainWindow::getProcessName(int pid) -> QString {
+  switch (pid) {
+  case Enums::GIT_INIT:
+    return "git init";
+  case Enums::GIT_ADD:
+    return "git add";
+  case Enums::GIT_COMMIT:
+    return "git commit";
+  case Enums::GIT_RM:
+    return "git rm";
+  case Enums::GIT_PULL:
+    return "git pull";
+  case Enums::GIT_PUSH:
+    return "git push";
+  case Enums::PASS_INSERT:
+    return "pass insert";
+  case Enums::PASS_REMOVE:
+    return "pass rm";
+  case Enums::PASS_INIT:
+    return "pass init";
+  case Enums::PASS_MOVE:
+    return "pass mv";
+  case Enums::PASS_COPY:
+    return "pass cp";
+  case Enums::PASS_GREP:
+    return "pass grep";
+  case Enums::GPG_GENKEYS:
+    return "gpg --gen-key";
+  default:
+    return QString();
+  }
 }
 
 void MainWindow::updateProcessOutputVisibility() {
