@@ -8,6 +8,7 @@
 #include <QFileDialog>
 #include <QFontDatabase>
 #include <QMessageBox>
+#include <QRegularExpression>
 #include <QSaveFile>
 #include <QTextStream>
 #include <QTimer>
@@ -54,9 +55,15 @@ void ExportPublicKeyDialog::on_copyButton_clicked() {
  *        destination and write the armored key to that file.
  */
 void ExportPublicKeyDialog::on_saveButton_clicked() {
-  QString defaultName = m_keyId.isEmpty()
+  // m_keyId may hold space-separated key IDs and is settings-controlled, so
+  // strip it down to the first whitespace token and keep only filename-safe
+  // characters before suggesting it as the default save name.
+  QString safeKeyId = m_keyId.section(QChar(' '), 0, 0);
+  static const QRegularExpression unsafeChars(QStringLiteral("[^A-Za-z0-9_-]"));
+  safeKeyId.remove(unsafeChars);
+  QString defaultName = safeKeyId.isEmpty()
                             ? QStringLiteral("public_key.asc")
-                            : QStringLiteral("%1.asc").arg(m_keyId);
+                            : QStringLiteral("%1.asc").arg(safeKeyId);
   QString fileName = QFileDialog::getSaveFileName(
       this, tr("Save Public Key"), defaultName,
       tr("ASCII-armored key (*.asc);;All files (*)"));
