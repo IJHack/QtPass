@@ -456,6 +456,10 @@ void MainWindow::executeWrapperStarted() {
   ui->textBrowser->clear();
   setUiElementsEnabled(false);
   clearPanelTimer.stop();
+  m_processOutputShownForCurrentCommand = false;
+  if (QtPassSettings::isShowProcessOutput()) {
+    ui->processOutputWidget->setVisible(true);
+  }
 }
 
 /**
@@ -1749,8 +1753,9 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError) {
     ui->processOutputEdit->moveCursor(QTextCursor::End);
   }
 
-  if (!ui->processOutputWidget->isVisible()) {
+  if (!m_processOutputShownForCurrentCommand) {
     ui->processOutputWidget->setVisible(true);
+    m_processOutputShownForCurrentCommand = true;
   }
 }
 
@@ -1764,15 +1769,15 @@ void MainWindow::updateProcessOutputVisibility() {
 
 void MainWindow::limitOutputLines() {
   QTextDocument *doc = ui->processOutputEdit->document();
-  while (doc->blockCount() > MaxOutputLines) {
-    QTextCursor cursor(doc);
-    cursor.movePosition(QTextCursor::Start);
-    cursor.select(QTextCursor::BlockUnderCursor);
-    cursor.removeSelectedText();
-    if (!cursor.atEnd()) {
-      cursor.deleteChar();
-    }
+  int excess = doc->blockCount() - MaxOutputLines;
+  if (excess <= 0) {
+    return;
   }
+
+  QTextCursor cursor(doc);
+  cursor.movePosition(QTextCursor::Start);
+  cursor.movePosition(QTextCursor::NextBlock, QTextCursor::KeepAnchor, excess);
+  cursor.removeSelectedText();
 }
 
 void MainWindow::on_clearOutputButton_clicked() {
