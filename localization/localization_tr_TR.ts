@@ -1148,7 +1148,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1254"/>
         <source>Export my public key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Açık anahtarımı dışa aktar...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1260"/>
