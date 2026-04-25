@@ -430,17 +430,17 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="716"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil dizini oluşturulsun mu?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="717"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 konumunda bir parola deposu oluşturmak ister misiniz?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="725"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil dizini oluşturulamadı: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="743"/>
@@ -516,12 +516,12 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1259"/>
         <source>New profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni profil: %1, konum: %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>Profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil: %1, konum: %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1268"/>
