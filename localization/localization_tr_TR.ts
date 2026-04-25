@@ -1061,8 +1061,8 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="771"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n eşleşme bulundu</numerusform>
         </translation>
     </message>
     <message numerus="yes">
