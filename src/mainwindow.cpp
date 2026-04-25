@@ -228,7 +228,6 @@ void MainWindow::initStatusBar() {
   logoApp->setPixmap(logo);
   statusBar()->addPermanentWidget(logoApp);
 
-  ui->processOutputWidget->setParent(statusBar());
   statusBar()->addPermanentWidget(ui->processOutputWidget);
 
   updateProcessOutputVisibility();
