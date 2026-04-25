@@ -1,15 +1,19 @@
 // SPDX-FileCopyrightText: 2015 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "usersdialog.h"
+#include "importkeydialog.h"
 #include "qtpasssettings.h"
 #include "ui_usersdialog.h"
 #include <QApplication>
 #include <QCloseEvent>
 #include <QDateTime>
 #include <QKeyEvent>
+#include <QLineEdit>
+#include <QListWidget>
 #include <QMessageBox>
 #include <QRegularExpression>
 #include <QSet>
+#include <QSignalBlocker>
 #include <QWidget>
 #include <utility>
 
@@ -44,6 +48,8 @@ void UsersDialog::connectSignals() {
   connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
   connect(ui->listWidget, &QListWidget::itemChanged, this,
           &UsersDialog::itemChange);
+  connect(ui->importKeyButton, &QPushButton::clicked, this,
+          &UsersDialog::on_importKeyButton_clicked);
 
   ui->lineEdit->setClearButtonEnabled(true);
 }
@@ -350,3 +356,33 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
  * @brief UsersDialog::on_checkBox_clicked filtering.
  */
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
+
+void UsersDialog::on_importKeyButton_clicked() {
+  ImportKeyDialog dialog(this);
+  if (dialog.exec() != QDialog::Accepted) {
+    return;
+  }
+
+  QString fingerprint = dialog.importedKeyFingerprint();
+  if (fingerprint.isEmpty()) {
+    QMessageBox::warning(this, tr("Import Key"),
+                        tr("No key was imported. Please use the Import "
+                           "button to import a key."));
+    return;
+  }
+
+  if (!loadGpgKeys()) {
+    return;
+  }
+
+  ui->lineEdit->clear();
+  populateList(QString());
+
+  for (int i = 0; i < ui->listWidget->count(); ++i) {
+    QListWidgetItem *item = ui->listWidget->item(i);
+    if (item && item->text().contains(fingerprint)) {
+      ui->listWidget->setCurrentItem(item);
+      break;
+    }
+  }
+}

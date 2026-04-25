@@ -70,6 +70,7 @@ SOURCES   += mainwindow.cpp \
              trayicon.cpp \
              passworddialog.cpp \
              exportpublickeydialog.cpp \
+             importkeydialog.cpp \
              qprogressindicator.cpp \
              qpushbuttonwithclipboard.cpp \
              qpushbuttonasqrcode.cpp \
@@ -95,6 +96,7 @@ HEADERS   += mainwindow.h \
              trayicon.h \
              passworddialog.h \
              exportpublickeydialog.h \
+             importkeydialog.h \
              qprogressindicator.h \
              deselectabletreeview.h \
              qpushbuttonwithclipboard.h \
@@ -121,7 +123,8 @@ FORMS     += mainwindow.ui \
              usersdialog.ui \
              keygendialog.ui \
              passworddialog.ui \
-             exportpublickeydialog.ui
+             exportpublickeydialog.ui \
+             importkeydialog.ui
 
 !nosingleapp {
     SOURCES += singleapplication.cpp

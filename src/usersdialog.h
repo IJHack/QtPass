@@ -74,6 +74,12 @@ private slots:
    */
   void on_checkBox_clicked();
 
+private slots:
+  /**
+   * @brief Import a GPG key and refresh the list.
+   */
+  void on_importKeyButton_clicked();
+
 private:
   Ui::UsersDialog *ui;
   QList<UserInfo> m_userList;            /**< List of available GPG users */
