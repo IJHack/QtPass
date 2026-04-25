@@ -516,7 +516,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1259"/>
         <source>New profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Yeni profil: %1, konum: %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
