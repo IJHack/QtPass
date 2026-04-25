@@ -1,15 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
 <area shape="rect" id="Node000000" title=" " alt="" coords="5,55,80,80"/>
 <area shape="rect" id="Node000001" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="159,5,237,31"/>
-<area shape="poly" id="edge9_Node000000_Node000001" title=" " alt="" coords="92,49,158,28,159,33,94,54"/>
+<area shape="poly" id="edge10_Node000000_Node000001" title=" " alt="" coords="92,49,158,28,159,33,94,54"/>
 <area shape="rect" id="Node000002" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="173,55,223,80"/>
-<area shape="poly" id="edge10_Node000000_Node000002" title=" " alt="" coords="94,65,173,65,173,70,94,70"/>
+<area shape="poly" id="edge11_Node000000_Node000002" title=" " alt="" coords="94,65,173,65,173,70,94,70"/>
 <area shape="rect" id="Node000006" href="$class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application&#45;level operations for the QtP..." alt="" coords="165,104,231,129"/>
-<area shape="poly" id="edge13_Node000000_Node000006" title=" " alt="" coords="94,81,165,104,164,109,93,86"/>
+<area shape="poly" id="edge14_Node000000_Node000006" title=" " alt="" coords="94,81,165,104,164,109,93,86"/>
 <area shape="rect" id="Node000003" href="$class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable." alt="" coords="316,128,415,153"/>
-<area shape="poly" id="edge11_Node000002_Node000003" title=" " alt="" coords="238,77,269,89,343,126,340,130,267,94,236,82"/>
+<area shape="poly" id="edge12_Node000002_Node000003" title=" " alt="" coords="238,77,269,89,343,126,340,130,267,94,236,82"/>
 <area shape="rect" id="Node000005" href="$class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command&#45;line tool." alt="" coords="325,55,405,80"/>
-<area shape="poly" id="edge12_Node000002_Node000005" title=" " alt="" coords="237,65,325,65,325,70,237,70"/>
+<area shape="poly" id="edge13_Node000002_Node000005" title=" " alt="" coords="237,65,325,65,325,70,237,70"/>
 <area shape="rect" id="Node000004" href="$classsimple_transaction.html" title="Tracks a sequence of processes that should be treated as one atomic operation." alt="" coords="128,153,268,179"/>
-<area shape="poly" id="edge14_Node000004_Node000003" title=" " alt="" coords="281,151,316,145,316,151,282,156"/>
+<area shape="poly" id="edge15_Node000004_Node000003" title=" " alt="" coords="281,151,316,145,316,151,282,156"/>
 </map>

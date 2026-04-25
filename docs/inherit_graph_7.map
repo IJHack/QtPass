@@ -1,13 +1,15 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,104,80,129"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,129,80,155"/>
 <area shape="rect" id="Node000001" href="$class_config_dialog.html" title="The ConfigDialog handles the configuration interface." alt="" coords="160,5,265,31"/>
-<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="63,92,91,65,127,40,159,27,161,31,129,44,95,69,66,96"/>
+<area shape="poly" id="edge2_Node000000_Node000001" title=" " alt="" coords="56,116,85,77,105,57,127,40,159,25,161,30,129,44,108,61,89,80,60,119"/>
 <area shape="rect" id="Node000002" href="$class_export_public_key_dialog.html" title="Dialog showing an ASCII&#45;armored public GPG key for sharing." alt="" coords="128,55,297,80"/>
-<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="93,99,127,89,166,77,168,83,129,94,94,104"/>
-<area shape="rect" id="Node000003" href="$class_keygen_dialog.html" title="Handles GPG keypair generation." alt="" coords="157,104,269,129"/>
-<area shape="poly" id="edge4_Node000000_Node000003" title=" " alt="" coords="94,114,157,114,157,119,94,119"/>
-<area shape="rect" id="Node000004" href="$class_password_dialog.html" title="Dialog for inserting and editing passwords, optionally using templates." alt="" coords="150,153,275,179"/>
-<area shape="poly" id="edge5_Node000000_Node000004" title=" " alt="" coords="94,129,169,151,167,156,93,134"/>
-<area shape="rect" id="Node000005" href="$class_users_dialog.html" title="Dialog for selecting GPG recipients for password encryption." alt="" coords="162,203,263,228"/>
-<area shape="poly" id="edge6_Node000000_Node000005" title=" " alt="" coords="66,137,95,164,129,188,163,202,161,207,127,192,92,168,63,141"/>
+<area shape="poly" id="edge3_Node000000_Node000002" title=" " alt="" coords="72,119,127,89,158,78,160,83,129,94,75,124"/>
+<area shape="rect" id="Node000003" href="$class_import_key_dialog.html" title="Dialog for importing GPG keys from file or clipboard." alt="" coords="147,104,278,129"/>
+<area shape="poly" id="edge4_Node000000_Node000003" title=" " alt="" coords="93,132,147,124,147,129,94,137"/>
+<area shape="rect" id="Node000004" href="$class_keygen_dialog.html" title="Handles GPG keypair generation." alt="" coords="157,153,269,179"/>
+<area shape="poly" id="edge5_Node000000_Node000004" title=" " alt="" coords="94,147,157,156,156,161,94,152"/>
+<area shape="rect" id="Node000005" href="$class_password_dialog.html" title="Dialog for inserting and editing passwords, optionally using templates." alt="" coords="150,203,275,228"/>
+<area shape="poly" id="edge6_Node000000_Node000005" title=" " alt="" coords="76,160,129,188,164,200,162,205,127,192,74,164"/>
+<area shape="rect" id="Node000006" href="$class_users_dialog.html" title="Dialog for selecting GPG recipients for password encryption." alt="" coords="162,252,263,277"/>
+<area shape="poly" id="edge7_Node000000_Node000006" title=" " alt="" coords="61,165,90,202,129,237,163,252,161,257,127,242,86,206,57,168"/>
 </map>
