@@ -526,7 +526,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1268"/>
         <source>Fill in all required fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerekli tüm alanları doldurun</translation>
     </message>
 </context>
 <context>
@@ -1068,8 +1068,8 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="772"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n girdi içinde.</numerusform>
         </translation>
     </message>
     <message>
@@ -1138,12 +1138,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1237"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Paylaş</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1249"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Tüm parolaları yeniden şifrele</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1254"/>
