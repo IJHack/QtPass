@@ -329,7 +329,8 @@ signals:
    * @param err Standard error from the process.
    * @param pid Process identifier for filtering/display.
    */
-  void finishedAnyWithPid(const QString &out, const QString &err, int pid);
+  void finishedAnyWithPid(const QString &out, const QString &err,
+                          Enums::PROCESS pid);
   /**
    * @brief Emitted when Git init finishes.
    * @param out Standard output.

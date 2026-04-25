@@ -3,6 +3,7 @@
 #ifndef SRC_MAINWINDOW_H_
 #define SRC_MAINWINDOW_H_
 
+#include "enums.h"
 #include "storemodel.h"
 
 #include <QFileSystemModel>
@@ -167,8 +168,11 @@ public slots:
    * @brief Handle generic process output for display in output panel.
    * @param output Process output text.
    * @param isError true if output should be styled as error (red).
+   * @param pid Identifier of the originating subprocess (for the label
+   *            prefix); defaults to Enums::INVALID for unlabelled output.
    */
-  void onProcessOutput(const QString &output, bool isError, int pid = -1);
+  void onProcessOutput(const QString &output, bool isError,
+                       Enums::PROCESS pid = Enums::INVALID);
 
   /**
    * @brief Display a critical error dialog.
@@ -307,11 +311,11 @@ private:
   void updateGrepButtonVisibility();
   void enableGitButtons(const bool &);
 
-  void appendProcessOutput(const QString &output, bool isError, int pid = -1);
+  void appendProcessOutput(const QString &output, bool isError);
   void updateProcessOutputVisibility();
   void limitOutputLines();
 
-  auto getProcessName(int pid) -> QString;
+  static auto getProcessName(Enums::PROCESS pid) -> QString;
 };
 
 #endif // SRC_MAINWINDOW_H_

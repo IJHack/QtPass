@@ -125,8 +125,17 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   initStatusBar();
 
   connect(QtPassSettings::getPass(), &Pass::finishedAnyWithPid, this,
-          [this](const QString &out, const QString &err, int pid) {
-            if (pid == Enums::PASS_SHOW || pid == Enums::PASS_OTP_GENERATE) {
+          [this](const QString &out, const QString &err, Enums::PROCESS pid) {
+            // Never route potentially-secret output through the panel:
+            // - PASS_SHOW / PASS_OTP_GENERATE go via dedicated signals to
+            //   the main text browser (which clears on a timer).
+            // - PASS_GREP returns lines from password files; #252 must
+            //   not leak those into a long-lived panel.
+            // - PASS_INSERT's stdin is the password; stdout normally
+            //   carries gpg/git progress only, but exclude defensively
+            //   in case a future code path uses --echo or similar.
+            if (pid == Enums::PASS_SHOW || pid == Enums::PASS_OTP_GENERATE ||
+                pid == Enums::PASS_GREP || pid == Enums::PASS_INSERT) {
               return;
             }
             if (!out.isEmpty()) {
@@ -1725,8 +1734,7 @@ void MainWindow::critical(const QString &title, const QString &msg) {
   QMessageBox::critical(this, title, msg);
 }
 
-void MainWindow::appendProcessOutput(const QString &output, bool isError,
-                                     int pid) {
+void MainWindow::appendProcessOutput(const QString &output, bool isError) {
   if (!QtPassSettings::isShowProcessOutput()) {
     return;
   }
@@ -1764,43 +1772,54 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError,
   }
 }
 
-void MainWindow::onProcessOutput(const QString &output, bool isError, int pid) {
-  QString cmdName = getProcessName(pid);
+void MainWindow::onProcessOutput(const QString &output, bool isError,
+                                 Enums::PROCESS pid) {
+  const QString cmdName = getProcessName(pid);
   appendProcessOutput(cmdName.isEmpty() ? output : cmdName + ": " + output,
                       isError);
 }
 
-auto MainWindow::getProcessName(int pid) -> QString {
+auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
+  // Literal command names — intentionally not translated, since they refer
+  // to actual shell commands the user could run to reproduce the action.
   switch (pid) {
   case Enums::GIT_INIT:
-    return "git init";
+    return QStringLiteral("git init"); // no-tr
   case Enums::GIT_ADD:
-    return "git add";
+    return QStringLiteral("git add"); // no-tr
   case Enums::GIT_COMMIT:
-    return "git commit";
+    return QStringLiteral("git commit"); // no-tr
   case Enums::GIT_RM:
-    return "git rm";
+    return QStringLiteral("git rm"); // no-tr
   case Enums::GIT_PULL:
-    return "git pull";
+    return QStringLiteral("git pull"); // no-tr
   case Enums::GIT_PUSH:
-    return "git push";
+    return QStringLiteral("git push"); // no-tr
+  case Enums::GIT_MOVE:
+    return QStringLiteral("git mv"); // no-tr
+  case Enums::GIT_COPY:
+    return QStringLiteral("git cp"); // no-tr
   case Enums::PASS_INSERT:
-    return "pass insert";
+    return QStringLiteral("pass insert"); // no-tr
   case Enums::PASS_REMOVE:
-    return "pass rm";
+    return QStringLiteral("pass rm"); // no-tr
   case Enums::PASS_INIT:
-    return "pass init";
+    return QStringLiteral("pass init"); // no-tr
   case Enums::PASS_MOVE:
-    return "pass mv";
+    return QStringLiteral("pass mv"); // no-tr
   case Enums::PASS_COPY:
-    return "pass cp";
+    return QStringLiteral("pass cp"); // no-tr
   case Enums::PASS_GREP:
-    return "pass grep";
+    return QStringLiteral("pass grep"); // no-tr
   case Enums::GPG_GENKEYS:
-    return "gpg --gen-key";
-  default:
-    return QString();
+    return QStringLiteral("gpg --gen-key"); // no-tr
+  case Enums::PASS_SHOW:
+  case Enums::PASS_OTP_GENERATE:
+  case Enums::PROCESS_COUNT:
+  case Enums::INVALID:
+    break;
   }
+  return QString();
 }
 
 void MainWindow::updateProcessOutputVisibility() {

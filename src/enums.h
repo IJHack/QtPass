@@ -3,6 +3,8 @@
 #ifndef SRC_ENUMS_H_
 #define SRC_ENUMS_H_
 
+#include <QMetaType>
+
 /**
  * @namespace Enums
  * @brief Enumerators for QtPass configuration and runtime operations.
@@ -46,5 +48,7 @@ enum PROCESS {
 };
 
 } // namespace Enums
+
+Q_DECLARE_METATYPE(Enums::PROCESS)
 
 #endif // SRC_ENUMS_H_
