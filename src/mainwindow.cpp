@@ -7,6 +7,8 @@
 #endif
 
 #include "configdialog.h"
+#include "executor.h"
+#include "exportpublickeydialog.h"
 #include "filecontent.h"
 #include "passworddialog.h"
 #include "qpushbuttonasqrcode.h"
@@ -1570,46 +1572,57 @@ void MainWindow::startReencryptPath() {
 void MainWindow::endReencryptPath() { setUiElementsEnabled(true); }
 
 /**
- * @brief MainWindow::exportPublicKey export current user's public key
- * Shows instructions to export key via command line
- * TODO: Wire to real gpg export via Executor - see issue #422
+ * @brief MainWindow::exportPublicKey export the configured signing key in
+ *        ASCII-armored form via gpg and show it in ExportPublicKeyDialog.
+ *
+ * Falls back to a help dialog when no signing key is configured or gpg is
+ * unavailable, so the user still gets actionable guidance.
  */
 void MainWindow::exportPublicKey() {
   QString identity = QtPassSettings::getPassSigningKey();
   if (identity.isEmpty()) {
-    identity = "<your-key-id>";
+    QMessageBox::information(
+        this, tr("Export Public Key"),
+        tr("<h3>Export Your Public Key</h3>"
+           "<p>No signing key is configured. Set one in QtPass Settings "
+           "&gt; GPG keys, or run this in a terminal:</p>"
+           "<pre>gpg --armor --export --output my_key.asc &lt;your-key-id"
+           "&gt;</pre>"
+           "<p>Then send the file to your teammates.</p>"));
+    return;
   }
-  identity = identity.toHtmlEscaped();
-  QMessageBox::information(
-      this, tr("Export Public Key"),
-      tr("<h3>Export Your Public Key</h3>"
-         "<p>To export your public GPG key, run this in terminal:</p>"
-         "<pre>gpg --armor --export --output my_key.asc %1</pre>"
-         "<p>Then send the file to your teammates.</p>"
-         "<p>Your key ID: You can find it in QtPass Settings &gt; GPG "
-         "keys.</p>")
-          .arg(identity));
+  QString gpgExe = QtPassSettings::getGpgExecutable();
+  if (gpgExe.isEmpty()) {
+    gpgExe = QStringLiteral("gpg");
+  }
+  QString stdOut;
+  QString stdErr;
+  int exitCode = Executor::executeBlocking(
+      gpgExe, {"--armor", "--export", identity}, QString(), &stdOut, &stdErr);
+  if (exitCode != 0 || stdOut.isEmpty()) {
+    QMessageBox::warning(this, tr("Export Public Key"),
+                         tr("Could not export public key for %1.\n\n%2")
+                             .arg(identity, stdErr.isEmpty()
+                                                ? tr("No output from gpg.")
+                                                : stdErr));
+    return;
+  }
+  ExportPublicKeyDialog dialog(identity, stdOut, this);
+  dialog.exec();
 }
 
 /**
- * @brief MainWindow::addRecipient add a new recipient's public key
- * @param dir Directory path
+ * @brief MainWindow::addRecipient open the recipient management dialog for
+ *        the supplied directory.
+ * @param dir Folder whose .gpg-id should be edited.
+ *
+ * Delegates to UsersDialog so users can tick/untick keys from their
+ * keyring as recipients of the folder; importing a foreign key into the
+ * keyring still has to happen via gpg (or QtPass settings) first.
  */
 void MainWindow::addRecipient(const QString &dir) {
-  QString gpgIdPath = Pass::getGpgIdPath(dir).toHtmlEscaped();
-  QMessageBox::information(
-      this, tr("Add Recipient"),
-      tr("<h3>Add Recipient</h3>"
-         "<p>To add a teammate's public key:</p>"
-         "<ol>"
-         "<li>Save their public key as a .asc file</li>"
-         "<li>Copy the key text</li>"
-         "<li>Open %1</li>"
-         "<li>Add the new key ID to the file</li>"
-         "<li>Re-encrypt passwords to share with them</li>"
-         "</ol>"
-         "<p>Use the full fingerprint to ensure accuracy.</p>")
-          .arg(gpgIdPath));
+  UsersDialog d(dir, this);
+  d.exec();
 }
 
 /**
