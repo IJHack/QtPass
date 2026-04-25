@@ -125,13 +125,12 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   connect(QtPassSettings::getPass(), &Pass::finishedAny, this,
           [this](const QString &out, const QString &err) {
-            QString output = out;
-            if (!err.isEmpty()) {
-              if (!output.isEmpty())
-                output += "\n";
-              output += err;
+            if (!out.isEmpty()) {
+              onProcessOutput(out, false);
             }
-            onProcessOutput(output, !err.isEmpty());
+            if (!err.isEmpty()) {
+              onProcessOutput(err, true);
+            }
           });
 
   connect(ui->processOutputEdit->verticalScrollBar(),
@@ -351,6 +350,7 @@ void MainWindow::config() {
       updateGitButtonVisibility();
       updateOtpButtonVisibility();
       updateGrepButtonVisibility();
+      updateProcessOutputVisibility();
       if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
         initTrayIcon();
       } else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
@@ -1723,13 +1723,27 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError) {
     return;
   }
 
-  m_outputCounter++;
-  QString lineNumber = QString::number(m_outputCounter);
-  QString coloredOutput = isError ? QString("<span style=\"color: red;\">")
-                                  : QString("<span style=\"color: black;\">");
-  coloredOutput += lineNumber + ": " + output.toHtmlEscaped() + "</span><br>";
+  QStringList lines = output.split('\n', Qt::SkipEmptyParts);
+  for (QString &line : lines) {
+    line = line.trimmed();
+    if (line.isEmpty()) {
+      continue;
+    }
 
-  ui->processOutputEdit->append(coloredOutput);
+    m_outputCounter++;
+    QString lineNumber = QString::number(m_outputCounter);
+
+    QColor textColor =
+        isError ? QColor(Qt::red)
+                : ui->processOutputEdit->palette().color(QPalette::Text);
+    QString colorHex = textColor.name();
+    QString coloredOutput =
+        QString("<span style=\"color: %1;\">%2: %3</span>")
+            .arg(colorHex, lineNumber, line.toHtmlEscaped());
+
+    ui->processOutputEdit->append(coloredOutput);
+  }
+
   limitOutputLines();
 
   if (m_autoScroll) {
@@ -1765,4 +1779,6 @@ void MainWindow::limitOutputLines() {
 void MainWindow::on_clearOutputButton_clicked() {
   ui->processOutputEdit->clear();
   m_outputCounter = 0;
+  m_autoScroll = true;
+  ui->processOutputEdit->moveCursor(QTextCursor::End);
 }
