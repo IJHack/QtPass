@@ -23,7 +23,7 @@ static const QRegularExpression
     IMPORTED_RE(QStringLiteral(R"(\[GNUPG:\] IMPORTED ([0-9A-Fa-f]+))"));
 // Fallback for the human-readable (English-locale) line.
 static const QRegularExpression KEY_IMPORTED_FALLBACK(
-    QStringLiteral(R"(gpg: key ([0-9A-Fa-f]+):.*imported)"));
+    QStringLiteral(R"(gpg: key ([0-9A-Fa-f]{40}|[0-9A-Fa-f]{16}):.*imported)"));
 
 ImportKeyDialog::ImportKeyDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::ImportKeyDialog) {
@@ -114,7 +114,7 @@ bool ImportKeyDialog::importFromString(const QString &input) {
   int result = Executor::executeBlocking(gpgExe, args, input, &stdOut, &stdErr);
 
   if (result != 0) {
-    showError(tr("GPG import failed:\n%1").arg(stdErr));
+    showError(tr("GPG import failed:\n%1").arg(stdErr.toHtmlEscaped()));
     return false;
   }
 

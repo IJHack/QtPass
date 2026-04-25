@@ -401,8 +401,12 @@ void UsersDialog::on_importKeyButton_clicked() {
     if (keyId.isEmpty()) {
       continue;
     }
-    if (importedKey.endsWith(keyId, Qt::CaseInsensitive) ||
-        keyId.endsWith(importedKey, Qt::CaseInsensitive)) {
+    // Only perform endsWith checks when the suffix being matched is at least
+    // 16 chars to avoid false positives with short IDs.
+    if ((keyId.length() >= 16 &&
+         importedKey.endsWith(keyId, Qt::CaseInsensitive)) ||
+        (importedKey.length() >= 16 &&
+         keyId.endsWith(importedKey, Qt::CaseInsensitive))) {
       ui->listWidget->setCurrentItem(item);
       break;
     }
