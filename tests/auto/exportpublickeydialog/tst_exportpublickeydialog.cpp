@@ -73,12 +73,17 @@ void tst_exportpublickeydialog::plainTextEditShowsArmoredKey() {
 }
 
 void tst_exportpublickeydialog::copyButtonCopiesToClipboardAndRelabels() {
-  // QClipboard may not be available on every CI platform; skip cleanly when
-  // it isn't rather than failing.
+  // QClipboard may not be functional on every CI platform (e.g., minimal QPA);
+  // perform a round-trip test to verify clipboard capability before proceeding.
   QClipboard *clipboard = QApplication::clipboard();
-  if (clipboard == nullptr) {
-    QSKIP("No clipboard available on this platform");
+  const QString originalClipboard = clipboard->text();
+  const QString probeString = QStringLiteral("__qtpass_clipboard_probe__");
+  clipboard->setText(probeString);
+  if (clipboard->text() != probeString) {
+    clipboard->setText(originalClipboard); // restore
+    QSKIP("Clipboard is not functional on this platform");
   }
+  clipboard->setText(originalClipboard); // restore
 
   const QString armored = QStringLiteral("clipboard-test-payload");
   ExportPublicKeyDialog dialog(QStringLiteral("DEADBEEF"), armored);
