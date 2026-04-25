@@ -73,8 +73,6 @@ private slots:
    * @brief Handle select all checkbox.
    */
   void on_checkBox_clicked();
-
-private slots:
   /**
    * @brief Import a GPG key and refresh the list.
    */

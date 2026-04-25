@@ -15,7 +15,6 @@
 #include <QSet>
 #include <QSignalBlocker>
 #include <QWidget>
-#include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -48,8 +47,8 @@ void UsersDialog::connectSignals() {
   connect(ui->buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
   connect(ui->listWidget, &QListWidget::itemChanged, this,
           &UsersDialog::itemChange);
-  connect(ui->importKeyButton, &QPushButton::clicked, this,
-          &UsersDialog::on_importKeyButton_clicked);
+  // importKeyButton is wired via Qt's automatic on_<name>_<signal> mechanism
+  // already triggered by setupUi().
 
   ui->lineEdit->setClearButtonEnabled(true);
 }
@@ -363,24 +362,43 @@ void UsersDialog::on_importKeyButton_clicked() {
     return;
   }
 
-  QString fingerprint = dialog.importedKeyFingerprint();
-  if (fingerprint.isEmpty()) {
-    QMessageBox::warning(this, tr("Import Key"),
-                        tr("No key was imported. Please use the Import "
-                           "button to import a key."));
-    return;
-  }
+  // dialog.exec() == Accepted is only reachable after a successful import
+  // (see ImportKeyDialog::importFromString), so importedKeyId() is non-empty
+  // by construction here.
+  const QString importedKey = dialog.importedKeyId();
 
   if (!loadGpgKeys()) {
     return;
   }
 
-  ui->lineEdit->clear();
+  // Clear the filter so the just-imported key is visible. setText("") still
+  // emits textChanged once, so don't double-populate.
+  {
+    const QSignalBlocker blocker(ui->lineEdit);
+    ui->lineEdit->clear();
+  }
   populateList(QString());
 
+  // Match against the user's stored key_id, not the visible item text.
+  // gpg can return a 16-char long key id (IMPORTED status line) or a
+  // 40-char fingerprint (IMPORT_OK status line); compare both directions
+  // so a long-id match works against a fingerprint hit and vice versa.
   for (int i = 0; i < ui->listWidget->count(); ++i) {
     QListWidgetItem *item = ui->listWidget->item(i);
-    if (item && item->text().contains(fingerprint)) {
+    if (item == nullptr) {
+      continue;
+    }
+    bool ok = false;
+    const int idx = item->data(Qt::UserRole).toInt(&ok);
+    if (!ok || idx < 0 || idx >= m_userList.size()) {
+      continue;
+    }
+    const QString &keyId = m_userList[idx].key_id;
+    if (keyId.isEmpty()) {
+      continue;
+    }
+    if (importedKey.endsWith(keyId, Qt::CaseInsensitive) ||
+        keyId.endsWith(importedKey, Qt::CaseInsensitive)) {
       ui->listWidget->setCurrentItem(item);
       break;
     }

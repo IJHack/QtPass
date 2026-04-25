@@ -30,14 +30,20 @@ public:
 
   /**
    * @brief Get the imported key id on success.
-   * @return The imported key id, or empty if import failed.
+   * @return The imported key id (or fingerprint when GnuPG status output
+   *         provides one), or empty if import failed.
    */
-  QString importedKeyFingerprint() const;
+  auto importedKeyId() const -> QString;
 
   /**
-   * @brief Parse GPG import output to extract key id.
-   * @param output Output from gpg --import command.
-   * @return The imported key id, or empty if not found.
+   * @brief Parse GPG import output to extract a key id or fingerprint.
+   *
+   * Prefers locale-independent status lines (\c [GNUPG:] IMPORT_OK and
+   * \c [GNUPG:] IMPORTED) when present, then falls back to the
+   * human-readable \c "gpg: key ...: imported" line (English locale only).
+   *
+   * @param output Combined stdout/stderr from `gpg --import --status-fd 1`.
+   * @return The imported key id or fingerprint, or empty if not found.
    */
   static auto parseGpgImportOutput(const QString &output) -> QString;
 

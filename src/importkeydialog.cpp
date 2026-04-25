@@ -15,31 +15,32 @@
 #include <QRegularExpression>
 #include <QString>
 
+// Locale-independent: gpg's machine-readable status output via --status-fd 1.
+// See doc/DETAILS in the GnuPG source for IMPORT_OK / IMPORTED grammar.
 static const QRegularExpression
-    KEY_IMPORTED_EXACT(QStringLiteral(R"(gpg: key ([0-9A-Fa-f]+): imported)"));
-static const QRegularExpression KEY_IMPORTED_GENERAL(
+    IMPORT_OK_RE(QStringLiteral(R"(\[GNUPG:\] IMPORT_OK \d+ ([0-9A-Fa-f]+))"));
+static const QRegularExpression
+    IMPORTED_RE(QStringLiteral(R"(\[GNUPG:\] IMPORTED ([0-9A-Fa-f]+))"));
+// Fallback for the human-readable (English-locale) line.
+static const QRegularExpression KEY_IMPORTED_FALLBACK(
     QStringLiteral(R"(gpg: key ([0-9A-Fa-f]+):.*imported)"));
 
 ImportKeyDialog::ImportKeyDialog(QWidget *parent)
     : QDialog(parent), ui(new Ui::ImportKeyDialog) {
   ui->setupUi(this);
-
-  ui->inputTextEdit->setPlaceholderText(
-      tr("Paste an ASCII-armored GPG key here..."));
-
   ui->importButton->setEnabled(false);
 }
 
 ImportKeyDialog::~ImportKeyDialog() = default;
 
-QString ImportKeyDialog::importedKeyFingerprint() const {
+auto ImportKeyDialog::importedKeyId() const -> QString {
   return m_importedKeyId;
 }
 
 void ImportKeyDialog::on_fileButton_clicked() {
   const QString fileName = QFileDialog::getOpenFileName(
       this, tr("Import GPG Key"), QString(),
-      tr("GPG Key Files") + " (*.asc *.key);;" + tr("All Files") + " (*)");
+      tr("ASCII-armored GPG key") + " (*.asc);;" + tr("All Files") + " (*)");
 
   if (fileName.isEmpty()) {
     return;
@@ -52,16 +53,33 @@ void ImportKeyDialog::on_fileButton_clicked() {
     return;
   }
 
-  QByteArray bytes = file.readAll();
+  const QByteArray bytes = file.readAll();
   file.close();
+
+  // Only ASCII-armored content is shown in the text edit; binary keyrings
+  // would lose bytes through UTF-8 conversion. Reject anything that doesn't
+  // start with the PGP armor header.
+  if (!bytes.trimmed().startsWith("-----BEGIN PGP")) {
+    QMessageBox::warning(
+        this, tr("Import Key"),
+        tr("%1 does not look like an ASCII-armored GPG key. Convert it with "
+           "<code>gpg --armor --export</code> first, or paste the armored "
+           "block via <b>From Clipboard</b>.")
+            .arg(fileName));
+    return;
+  }
 
   ui->inputTextEdit->setPlainText(QString::fromUtf8(bytes));
 }
 
 void ImportKeyDialog::on_pasteButton_clicked() {
-  QClipboard *clipboard = QApplication::clipboard();
+  const QClipboard *clipboard = QApplication::clipboard();
   const QString text = clipboard->text();
-
+  if (text.isEmpty()) {
+    // Don't wipe whatever the user already typed/loaded for an empty
+    // clipboard.
+    return;
+  }
   ui->inputTextEdit->setPlainText(text);
 }
 
@@ -113,14 +131,25 @@ bool ImportKeyDialog::importFromString(const QString &input) {
   return true;
 }
 
-QString ImportKeyDialog::parseGpgImportOutput(const QString &output) {
+auto ImportKeyDialog::parseGpgImportOutput(const QString &output) -> QString {
   const QStringList lines = output.split('\n', Qt::SkipEmptyParts);
+  // Prefer locale-independent status output. IMPORT_OK gives a full
+  // fingerprint; IMPORTED gives a (long) key id. Try both before falling
+  // back to the English-only human-readable line.
   for (const QString &line : lines) {
-    QRegularExpressionMatch match = KEY_IMPORTED_EXACT.match(line);
+    const QRegularExpressionMatch match = IMPORT_OK_RE.match(line);
     if (match.hasMatch()) {
       return match.captured(1);
     }
-    match = KEY_IMPORTED_GENERAL.match(line);
+  }
+  for (const QString &line : lines) {
+    const QRegularExpressionMatch match = IMPORTED_RE.match(line);
+    if (match.hasMatch()) {
+      return match.captured(1);
+    }
+  }
+  for (const QString &line : lines) {
+    const QRegularExpressionMatch match = KEY_IMPORTED_FALLBACK.match(line);
     if (match.hasMatch()) {
       return match.captured(1);
     }
