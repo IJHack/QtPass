@@ -440,7 +440,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="725"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil dizini oluşturulamadı: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="743"/>
