@@ -1,11 +1,8 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
-<<<<<<< HEAD
-=======
 #include <QApplication>
 #include <QClipboard>
 #include <QPlainTextEdit>
->>>>>>> 7d69f59e5 (CodeRabbit Generated Unit Tests: Add unit tests)
 #include <QPushButton>
 #include <QtTest>
 
@@ -21,10 +18,6 @@ private Q_SLOTS:
   void parseGpgImportOutputPrefersImportOkOverImported();
   void initialKeyIdEmpty();
   void importButtonStartsDisabled();
-<<<<<<< HEAD
-=======
-
-  // Additional tests
   void parseGpgImportOutputMixedCaseFingerprint();
   void parseGpgImportOutputMultiDigitReasonCode();
   void parseGpgImportOutputImportedNoEmail();
@@ -37,7 +30,6 @@ private Q_SLOTS:
   void importButtonEnabledAfterTextInput();
   void importButtonDisabledForWhitespaceOnlyInput();
   void pasteButtonSetsTextFromClipboard();
->>>>>>> 7d69f59e5 (CodeRabbit Generated Unit Tests: Add unit tests)
 };
 
 void tst_importkeydialog::parseGpgImportOutput_data() {
@@ -87,7 +79,7 @@ void tst_importkeydialog::parseGpgImportOutput_data() {
                         "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB\n")
       << QStringLiteral("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
 
-QTest::newRow("import_ok_with_zero_reason")
+  QTest::newRow("import_ok_with_zero_reason")
       << QStringLiteral("[GNUPG:] IMPORT_OK 0 "
                         "DEADBEEFCAFE0123DEADBEEFCAFE0123DEADBEEF\n")
       << QStringLiteral("DEADBEEFCAFE0123DEADBEEFCAFE0123DEADBEEF");
@@ -150,8 +142,6 @@ void tst_importkeydialog::importButtonStartsDisabled() {
   QVERIFY(!button->isEnabled());
 }
 
-<<<<<<< HEAD
-=======
 // ---------------------------------------------------------------------------
 // Additional tests
 // ---------------------------------------------------------------------------
@@ -176,8 +166,7 @@ void tst_importkeydialog::parseGpgImportOutputMultiDigitReasonCode() {
 
 void tst_importkeydialog::parseGpgImportOutputImportedNoEmail() {
   // IMPORTED lines do not always carry a user-id after the key id.
-  const QString output =
-      QStringLiteral("[GNUPG:] IMPORTED DEADBEEFCAFE0123\n");
+  const QString output = QStringLiteral("[GNUPG:] IMPORTED DEADBEEFCAFE0123\n");
   QCOMPARE(ImportKeyDialog::parseGpgImportOutput(output),
            QStringLiteral("DEADBEEFCAFE0123"));
 }
@@ -213,8 +202,7 @@ void tst_importkeydialog::
 
   // 32 hex chars: does NOT match (not 16 or 40)
   QTest::newRow("32_chars_no_match")
-      << QStringLiteral(
-             "gpg: key DEADBEEFCAFE0123DEADBEEFCAFE0123: imported\n")
+      << QStringLiteral("gpg: key DEADBEEFCAFE0123DEADBEEFCAFE0123: imported\n")
       << QString();
 }
 
@@ -241,8 +229,8 @@ void tst_importkeydialog::parseGpgImportOutputWhitespaceOnly() {
 void tst_importkeydialog::parseGpgImportOutputImportResWithoutImportOk() {
   // IMPORT_RES without a preceding IMPORT_OK/IMPORTED should return empty
   // rather than attempting to extract anything from the summary line.
-  const QString output = QStringLiteral(
-      "[GNUPG:] IMPORT_RES 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0\n");
+  const QString output =
+      QStringLiteral("[GNUPG:] IMPORT_RES 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0\n");
   QVERIFY(ImportKeyDialog::parseGpgImportOutput(output).isEmpty());
 }
 
@@ -309,6 +297,5 @@ void tst_importkeydialog::pasteButtonSetsTextFromClipboard() {
   clipboard->setText(originalClipboard);
 }
 
->>>>>>> 7d69f59e5 (CodeRabbit Generated Unit Tests: Add unit tests)
 QTEST_MAIN(tst_importkeydialog)
 #include "tst_importkeydialog.moc"
