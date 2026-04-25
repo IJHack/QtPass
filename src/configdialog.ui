@@ -232,22 +232,22 @@
              </property>
             </widget>
            </item>
-<item>
-             <widget class="QCheckBox" name="checkBoxNoLineWrapping">
-              <property name="text">
-               <string>No line wrapping</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QCheckBox" name="checkBoxShowProcessOutput">
-              <property name="text">
-               <string>Show process output</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_9">
+           <item>
+            <widget class="QCheckBox" name="checkBoxNoLineWrapping">
+             <property name="text">
+              <string>No line wrapping</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="checkBoxShowProcessOutput">
+             <property name="text">
+              <string>Show process output</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_9">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>

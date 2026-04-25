@@ -1807,7 +1807,13 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
   case Enums::GIT_MOVE:
     return QStringLiteral("git mv"); // no-tr
   case Enums::GIT_COPY:
-    return QStringLiteral("git cp"); // no-tr
+    // The underlying invocation is `git cp` (a git-extras subcommand) but
+    // most users don't have git-extras installed, so showing that as the
+    // label would be unactionable. Use `git add` instead — it's the
+    // closest reproducible step a stock-git user would take to stage the
+    // copied file; the subsequent commit shows separately under
+    // GIT_COMMIT.
+    return QStringLiteral("git add"); // no-tr
   case Enums::PASS_INSERT:
     return QStringLiteral("pass insert"); // no-tr
   case Enums::PASS_REMOVE:
