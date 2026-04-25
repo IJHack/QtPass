@@ -12,5 +12,7 @@ INCLUDEPATH += ../../../src
 
 win32 {
     RC_FILE = ../../../windows.rc
+    # Keep linker command size manageable on Windows toolchains.
+    # This limit avoids command-line/linker object count constraints.
     QMAKE_LINK_OBJECT_MAX=24
 }
