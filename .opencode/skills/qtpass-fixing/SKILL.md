@@ -169,7 +169,7 @@ Use "cannot" instead of "can't" for formal consistency:
 
 ### Copyright Year in SPDX Headers
 
-Use the actual year the file was created — never a placeholder, never a year range. Repo convention is a single literal year (the existing files are 2014/2015/2016/2018/2020/2026, all real years; PR #1162 review explicitly flagged `YYYY` placeholders).
+Use the actual year the file was created — never a placeholder, never a year range. Repository convention is a single literal year (the existing files are 2014/2015/2016/2018/2020/2026, all real years; PR #1162 review explicitly flagged `YYYY` placeholders).
 
 ```cpp
 // Bad — placeholder; reviewers will ask for a real year
