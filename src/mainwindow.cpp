@@ -1734,7 +1734,8 @@ void MainWindow::critical(const QString &title, const QString &msg) {
   QMessageBox::critical(this, title, msg);
 }
 
-void MainWindow::appendProcessOutput(const QString &output, bool isError) {
+void MainWindow::appendProcessOutput(const QString &output, bool isError,
+                                     const QString &linePrefix) {
   if (!QtPassSettings::isShowProcessOutput()) {
     return;
   }
@@ -1758,9 +1759,14 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError) {
         isError ? QColor(Qt::red)
                 : ui->processOutputEdit->palette().color(QPalette::Text);
     QString colorHex = textColor.name();
+    // Apply the optional prefix per line so multi-line output stays
+    // attributed to its command (e.g. all 3 lines of a `git push` show
+    // "git push: ..." rather than only the first).
+    QString prefixed =
+        linePrefix.isEmpty() ? line : linePrefix + QStringLiteral(": ") + line;
     QString coloredOutput =
         QString("<span style=\"color: %1;\">%2: %3</span>")
-            .arg(colorHex, lineNumber, line.toHtmlEscaped());
+            .arg(colorHex, lineNumber, prefixed.toHtmlEscaped());
 
     ui->processOutputEdit->append(coloredOutput);
   }
@@ -1779,9 +1785,7 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError) {
 
 void MainWindow::onProcessOutput(const QString &output, bool isError,
                                  Enums::PROCESS pid) {
-  const QString cmdName = getProcessName(pid);
-  appendProcessOutput(cmdName.isEmpty() ? output : cmdName + ": " + output,
-                      isError);
+  appendProcessOutput(output, isError, getProcessName(pid));
 }
 
 auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {

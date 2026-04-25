@@ -311,7 +311,8 @@ private:
   void updateGrepButtonVisibility();
   void enableGitButtons(const bool &);
 
-  void appendProcessOutput(const QString &output, bool isError);
+  void appendProcessOutput(const QString &output, bool isError,
+                           const QString &linePrefix = QString());
   void updateProcessOutputVisibility();
   void limitOutputLines();
 
