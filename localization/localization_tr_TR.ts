@@ -435,7 +435,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="717"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 konumunda bir parola deposu oluşturmak ister misiniz?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="725"/>
