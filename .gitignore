@@ -35,6 +35,7 @@ tests/auto/simpletransaction/tst_simpletransaction
 tests/auto/filecontent/tst_filecontent
 tests/auto/gpgkeystate/tst_gpgkeystate
 tests/auto/integration/tst_integration
+tests/auto/exportpublickeydialog/tst_exportpublickeydialog
 **/*.gc*
 *.bak
 README.c*
