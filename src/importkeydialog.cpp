@@ -143,19 +143,15 @@ auto ImportKeyDialog::parseGpgImportOutput(const QString &output) -> QString {
   // fingerprint; IMPORTED gives a (long) key id. Try both before falling
   // back to the English-only human-readable line.
   for (const QString &line : lines) {
-    const QRegularExpressionMatch match = IMPORT_OK_RE.match(line);
+    QRegularExpressionMatch match = IMPORT_OK_RE.match(line);
     if (match.hasMatch()) {
       return match.captured(1);
     }
-  }
-  for (const QString &line : lines) {
-    const QRegularExpressionMatch match = IMPORTED_RE.match(line);
+    match = IMPORTED_RE.match(line);
     if (match.hasMatch()) {
       return match.captured(1);
     }
-  }
-  for (const QString &line : lines) {
-    const QRegularExpressionMatch match = KEY_IMPORTED_FALLBACK.match(line);
+    match = KEY_IMPORTED_FALLBACK.match(line);
     if (match.hasMatch()) {
       return match.captured(1);
     }
