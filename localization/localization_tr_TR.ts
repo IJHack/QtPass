@@ -715,7 +715,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Şablon içeriği GPG versiyonuna göre belirlenecektir.</translation>
+        <translation>Şablon içeriği GPG sürümüne göre belirlenecektir.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
