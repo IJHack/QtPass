@@ -526,7 +526,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1268"/>
         <source>Fill in all required fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Gerekli tüm alanları doldurun</translation>
     </message>
 </context>
 <context>
