@@ -1153,7 +1153,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1260"/>
         <source>Add recipient...</source>
-        <translation type="unfinished"></translation>
+        <translation>Alıcı ekle...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1265"/>
