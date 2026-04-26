@@ -19,7 +19,7 @@ gh pr checks <PR_NUMBER>
 gh pr view <PR_NUMBER> --json state,mergeable
 
 # View PR comments
-gh api repos/<owner>/<repo>/pulls/<PR_NUMBER>/comments
+gh api repos/IJHack/QtPass/pulls/<PR_NUMBER>/comments
 ```
 
 ## Creating Branches
