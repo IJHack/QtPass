@@ -85,4 +85,7 @@ const QString SettingsConstants::passTemplate = "passTemplate";
 const QString SettingsConstants::useTemplate = "useTemplate";
 const QString SettingsConstants::templateAllFields = "templateAllFields";
 const QString SettingsConstants::showProcessOutput = "showProcessOutput";
+// actual persisted legacy key (capital B, lowercase t); keep unchanged for
+// backward compatibility with existing user settings - QtPassSettings reads
+// this key
 const QString SettingsConstants::clipBoardType = "clipBoardType";
