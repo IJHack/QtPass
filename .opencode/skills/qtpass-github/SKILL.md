@@ -299,9 +299,9 @@ gh run view <RUN_ID> --job <JOB_NAME> --log
 When branch is behind main and has conflicts:
 
 ```bash
-# Fetch and rebase
-git fetch upstream
+# Checkout, fetch, and rebase
 git checkout <branch>
+git fetch upstream
 git rebase upstream/main
 
 # Resolve conflicts in editor, then:
