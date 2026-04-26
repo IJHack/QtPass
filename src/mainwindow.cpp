@@ -469,7 +469,6 @@ void MainWindow::executeWrapperStarted() {
   ui->textBrowser->clear();
   setUiElementsEnabled(false);
   clearPanelTimer.stop();
-  m_processOutputShownForCurrentCommand = false;
   if (QtPassSettings::isShowProcessOutput()) {
     ui->processOutputWidget->setVisible(true);
   }
@@ -1776,11 +1775,6 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError,
   if (m_autoScroll) {
     ui->processOutputEdit->moveCursor(QTextCursor::End);
   }
-
-  if (!m_processOutputShownForCurrentCommand) {
-    ui->processOutputWidget->setVisible(true);
-    m_processOutputShownForCurrentCommand = true;
-  }
 }
 
 void MainWindow::onProcessOutput(const QString &output, bool isError,
@@ -1814,7 +1808,7 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
     // copied file; the subsequent commit shows separately under
     // GIT_COMMIT.
     return QStringLiteral("git add"); // no-tr
-  case Enums::PASS_INSERT:
+  case Enums::PASS_INSERT: // Unreachable: filtered by finishedAnyWithPid (lines 137-140)
     return QStringLiteral("pass insert"); // no-tr
   case Enums::PASS_REMOVE:
     return QStringLiteral("pass rm"); // no-tr

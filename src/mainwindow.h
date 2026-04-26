@@ -271,7 +271,6 @@ private:
   bool m_grepBusy = false;
   bool m_grepCancelled = false;
   bool m_autoScroll = true;
-  bool m_processOutputShownForCurrentCommand = false;
   int m_outputCounter = 0;
   static constexpr int MaxOutputLines = 1000;
   QFileSystemModel model;
