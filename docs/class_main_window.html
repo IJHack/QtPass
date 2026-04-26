@@ -178,6 +178,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a55ae3e0d4303334ccabae0a5050cfd88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle keyboard shortcuts.  <br /></td></tr>
 <tr class="memitem:a416ae2140ac1aa9f03a6279316abdcad" id="r_a416ae2140ac1aa9f03a6279316abdcad"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a416ae2140ac1aa9f03a6279316abdcad">changeEvent</a> (QEvent *event) override</td></tr>
 <tr class="memdesc:a416ae2140ac1aa9f03a6279316abdcad"><td class="mdescLeft">&#160;</td><td class="mdescRight">React to language or window state changes.  <br /></td></tr>
+<tr class="memitem:a3febb9ef08a8e0f7fc00848ea540a899" id="r_a3febb9ef08a8e0f7fc00848ea540a899"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3febb9ef08a8e0f7fc00848ea540a899">showEvent</a> (QShowEvent *event) override</td></tr>
+<tr class="memdesc:a3febb9ef08a8e0f7fc00848ea540a899"><td class="mdescLeft">&#160;</td><td class="mdescRight">First-show hook used to focus the search input once the window is actually mapped (avoids races with timers fired before show).  <br /></td></tr>
 <tr class="memitem:aa07eb275a856e189c141fde5b69a7166" id="r_aa07eb275a856e189c141fde5b69a7166"><td class="memItemLeft">auto&#160;</td><td class="memItemRight"><a class="el" href="#aa07eb275a856e189c141fde5b69a7166">eventFilter</a> (QObject *obj, QEvent *event) -&gt; bool override</td></tr>
 <tr class="memdesc:aa07eb275a856e189c141fde5b69a7166"><td class="mdescLeft">&#160;</td><td class="mdescRight">Filter events from watched objects.  <br /></td></tr>
 </table>
@@ -824,6 +826,39 @@ Protected Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">state</td><td>true to enable, false to disable. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3febb9ef08a8e0f7fc00848ea540a899" name="a3febb9ef08a8e0f7fc00848ea540a899"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3febb9ef08a8e0f7fc00848ea540a899">&#9670;&#160;</a></span>showEvent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::showEvent </td>
+          <td>(</td>
+          <td class="paramtype">QShowEvent *</td>          <td class="paramname"><span class="paramname"><em>event</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>First-show hook used to focus the search input once the window is actually mapped (avoids races with timers fired before show). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">event</td><td>The show event. </td></tr>
   </table>
   </dd>
 </dl>
