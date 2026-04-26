@@ -1829,6 +1829,10 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
     return QStringLiteral("git pull"); // no-tr
   case Enums::GIT_PUSH:
     return QStringLiteral("git push"); // no-tr
+  case Enums::GIT_MOVE:
+    return QStringLiteral("git mv"); // no-tr
+  case Enums::GIT_COPY:
+    return QStringLiteral("git cp"); // no-tr
   case Enums::PASS_INSERT:
     return QStringLiteral("pass insert"); // no-tr
   case Enums::PASS_REMOVE:
@@ -1875,6 +1879,8 @@ auto MainWindow::isSensitiveProcess(Enums::PROCESS pid) -> bool {
   case Enums::GIT_RM:
   case Enums::GIT_PULL:
   case Enums::GIT_PUSH:
+  case Enums::GIT_MOVE:
+  case Enums::GIT_COPY:
   case Enums::PASS_REMOVE:
   case Enums::PASS_INIT:
   case Enums::PASS_MOVE:
