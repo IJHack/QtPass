@@ -53,8 +53,8 @@ git remote add upstream https://github.com/IJHack/QtPass.git
 git fetch upstream
 git pull upstream main --rebase
 
-# Force push if needed
-git push -f
+# Force push if needed (safer)
+git push --force-with-lease origin <branch>
 ```
 
 This prevents "branch is out-of-date with base branch" errors.
@@ -108,7 +108,7 @@ gh pr merge <PR_NUMBER> --squash --auto --delete-branch
 
 **Avoid force pushing to shared branches**
 
-Only force push to feature branches when absolutely necessary (e.g., resolving merge conflicts, cleaning up commits). If you must force push, use `--force-with-lease` instead of `--force`:
+Only force push to feature branches when absolutely necessary (e.g., resolving merge conflicts, cleaning up commits). Prefer `--force-with-lease` over `-f` because it fails if someone else pushed to the branch, preventing accidental overwrites of others' work. Never use `-f` or `--force` on main or shared branches:
 
 ```bash
 # Safe force push (recommended)
@@ -308,8 +308,8 @@ git rebase upstream/main
 git add <resolved-files>
 git rebase --continue
 
-# Force push (since we rewrote history)
-git push -f
+# Force push (since we rewrote history; safer)
+git push --force-with-lease origin <branch>
 ```
 
 ## Fork Workflow
@@ -338,7 +338,7 @@ Note: When working with forks, use `myfork` for pushing and `upstream` for synci
 ```bash
 git checkout <branch-name>
 git pull upstream main --rebase
-git push -f
+git push --force-with-lease origin <branch-name>
 ```
 
 ### Merge Failed
@@ -474,5 +474,5 @@ act push -W .github/workflows/linter.yml -j build
 git fetch upstream
 git checkout <branch>
 git pull upstream main --rebase
-git push -f
+git push --force-with-lease origin <branch>
 ```
