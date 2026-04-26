@@ -1,6 +1,6 @@
 !include(../auto.pri) { error("Couldn't find the auto.pri file!") }
 
-SOURCES += tst_integration.cpp \
+SOURCES += tst_integration.cpp
 
 LIBS = -L"$$OUT_PWD/../../../src/$(OBJECTS_DIR)" -lqtpass $$LIBS
 clang|gcc:PRE_TARGETDEPS += "$$OUT_PWD/../../../src/$(OBJECTS_DIR)/libqtpass.a"
