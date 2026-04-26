@@ -19,7 +19,7 @@ BuildRequires: qt5-linguist
 BuildRequires: desktop-file-utils
 BuildRequires: xdg-utils
 Requires: pass
-Requires: qt5-qtbase
+Requires: qt6-qtbase
 
 %description
 QtPass is a GUI for pass, the standard unix password manager.
