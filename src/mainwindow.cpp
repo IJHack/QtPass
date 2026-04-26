@@ -161,14 +161,21 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   setUiElementsEnabled(true);
 
-  QTimer::singleShot(10, this, SLOT(focusInput()));
-
   ui->lineEdit->setText(searchText);
 
   if (!m_qtPass->init()) {
     // no working config so this should just quit
     QApplication::quit();
+    return;
   }
+
+  // Schedule the initial focus pulse only after init() has returned. init()
+  // can run a nested event loop (e.g. ConfigDialog::wizard for first-run
+  // setup), and a timer scheduled before that loop would fire focusInput()
+  // against a not-yet-shown window — QLineEdit::selectAll then crashes
+  // inside Qt because the widget hasn't been parented into a visible
+  // top-level yet.
+  QTimer::singleShot(10, this, SLOT(focusInput()));
 }
 
 MainWindow::~MainWindow() { delete m_qtPass; }
