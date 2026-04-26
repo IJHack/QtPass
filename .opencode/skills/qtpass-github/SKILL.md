@@ -472,7 +472,6 @@ Before merging a PR:
 act push -W .github/workflows/linter.yml -j build
 
 # Update with latest main before merging
-git fetch upstream
 git checkout <branch>
 git pull upstream main --rebase
 git push --force-with-lease <push-remote> <branch>
