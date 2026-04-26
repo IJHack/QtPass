@@ -146,14 +146,14 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
             }
           });
 
-  connect(ui->processOutputEdit->verticalScrollBar(),
-          &QScrollBar::sliderPressed, this, [this]() {
-            auto *sb = ui->processOutputEdit->verticalScrollBar();
+  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::sliderPressed,
+          this, [this]() {
+            auto *sb = m_processOutputEdit->verticalScrollBar();
             m_autoScroll = sb->value() >= sb->maximum();
           });
-  connect(ui->processOutputEdit->verticalScrollBar(), &QScrollBar::valueChanged,
+  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::valueChanged,
           this, [this]() {
-            auto *sb = ui->processOutputEdit->verticalScrollBar();
+            auto *sb = m_processOutputEdit->verticalScrollBar();
             m_autoScroll = sb->value() >= sb->maximum();
           });
 
@@ -304,9 +304,37 @@ void MainWindow::initStatusBar() {
   logoApp->setPixmap(logo);
   statusBar()->addPermanentWidget(logoApp);
 
-  statusBar()->addPermanentWidget(ui->processOutputWidget);
-
-  updateProcessOutputVisibility();
+  // Build the process-output panel programmatically rather than from .ui:
+  // QMainWindow's uic only places its top-level children into the
+  // centralWidget / statusBar / menuBar / toolBars / dock-widget slots.
+  // Defining processOutputWidget at that level in the .ui leaves it
+  // unplaced and obscuring centralWidget; nesting it inside centralWidget
+  // and reparenting on the fly works but leaves a residual empty grid
+  // slot below the main content. Owning the construction here keeps the
+  // widget's lifetime tied to the status bar from the start.
+  m_processOutputWidget = new QWidget(statusBar());
+  m_processOutputWidget->setObjectName(QStringLiteral("processOutputWidget"));
+  auto *outputLayout = new QHBoxLayout(m_processOutputWidget);
+  outputLayout->setObjectName(QStringLiteral("processOutputLayout"));
+  outputLayout->setContentsMargins(0, 0, 0, 0);
+  m_clearOutputButton = new QToolButton(m_processOutputWidget);
+  m_clearOutputButton->setObjectName(QStringLiteral("clearOutputButton"));
+  m_clearOutputButton->setText(tr("Clear"));
+  m_clearOutputButton->setToolTip(tr("Clear output"));
+  outputLayout->addWidget(m_clearOutputButton);
+  m_processOutputEdit = new QTextEdit(m_processOutputWidget);
+  m_processOutputEdit->setObjectName(QStringLiteral("processOutputEdit"));
+  m_processOutputEdit->setReadOnly(true);
+  m_processOutputEdit->setAcceptRichText(false);
+  m_processOutputEdit->setMinimumSize(0, 80);
+  m_processOutputEdit->setMaximumSize(QWIDGETSIZE_MAX, 150);
+  outputLayout->addWidget(m_processOutputEdit);
+  // Hide before adding so the status bar doesn't pre-allocate the panel's
+  // 80 px minimum height when the user has the option turned off.
+  m_processOutputWidget->setVisible(QtPassSettings::isShowProcessOutput());
+  statusBar()->addPermanentWidget(m_processOutputWidget);
+  connect(m_clearOutputButton, &QToolButton::clicked, this,
+          &MainWindow::on_clearOutputButton_clicked);
 }
 
 auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
@@ -533,7 +561,7 @@ void MainWindow::executeWrapperStarted() {
   setUiElementsEnabled(false);
   clearPanelTimer.stop();
   if (QtPassSettings::isShowProcessOutput()) {
-    ui->processOutputWidget->setVisible(true);
+    m_processOutputWidget->setVisible(true);
   }
 }
 
@@ -1830,7 +1858,7 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError,
 
     QColor textColor =
         isError ? QColor(Qt::red)
-                : ui->processOutputEdit->palette().color(QPalette::Text);
+                : m_processOutputEdit->palette().color(QPalette::Text);
     QString colorHex = textColor.name();
     // Apply the optional prefix per line so multi-line output stays
     // attributed to its command (e.g. all 3 lines of a `git push` show
@@ -1841,14 +1869,14 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError,
         QString("<span style=\"color: %1;\">%2: %3</span>")
             .arg(colorHex, lineNumber, prefixed.toHtmlEscaped());
 
-    ui->processOutputEdit->append(coloredOutput);
+    m_processOutputEdit->append(coloredOutput);
   }
 
   limitOutputLines();
 
   if (m_autoScroll) {
-    ui->processOutputEdit->verticalScrollBar()->setValue(
-        ui->processOutputEdit->verticalScrollBar()->maximum());
+    m_processOutputEdit->verticalScrollBar()->setValue(
+        m_processOutputEdit->verticalScrollBar()->maximum());
   }
 }
 
@@ -1962,7 +1990,7 @@ auto MainWindow::isSensitiveProcess(Enums::PROCESS pid) -> bool {
  * showProcessOutput setting.
  */
 void MainWindow::updateProcessOutputVisibility() {
-  ui->processOutputWidget->setVisible(QtPassSettings::isShowProcessOutput());
+  m_processOutputWidget->setVisible(QtPassSettings::isShowProcessOutput());
 }
 
 /**
@@ -1972,7 +2000,7 @@ void MainWindow::updateProcessOutputVisibility() {
  * Called after each append to prevent unbounded growth.
  */
 void MainWindow::limitOutputLines() {
-  QTextDocument *doc = ui->processOutputEdit->document();
+  QTextDocument *doc = m_processOutputEdit->document();
   int excess = doc->blockCount() - MaxOutputLines;
   if (excess <= 0) {
     return;
@@ -1990,7 +2018,7 @@ void MainWindow::limitOutputLines() {
  * Clears all output, resets the line counter, and re-enables auto-scroll.
  */
 void MainWindow::on_clearOutputButton_clicked() {
-  ui->processOutputEdit->clear();
+  m_processOutputEdit->clear();
   m_outputCounter = 0;
   m_autoScroll = true;
 }

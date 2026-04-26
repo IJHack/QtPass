@@ -28,6 +28,8 @@ class MainWindow;
 }
 
 class QDialog;
+class QTextEdit;
+class QToolButton;
 class QTreeWidgetItem;
 class QtPass;
 class TrayIcon;
@@ -280,6 +282,14 @@ private:
   bool m_autoScroll = true;
   int m_outputCounter = 0;
   static constexpr int MaxOutputLines = 1000;
+  // The process output panel lives in the status bar (created in
+  // initStatusBar()); it isn't part of the .ui because uic places its
+  // QMainWindow children in centralWidget/statusBar/etc. slots only —
+  // a sibling widget at the QMainWindow level isn't laid out and ends
+  // up obscuring the centralWidget. See #1192 for the symptom.
+  QWidget *m_processOutputWidget = nullptr;
+  QTextEdit *m_processOutputEdit = nullptr;
+  QToolButton *m_clearOutputButton = nullptr;
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
