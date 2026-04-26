@@ -199,7 +199,7 @@ gh pr view <PR_NUMBER> --json comments
 gh api repos/<owner>/<repo>/pulls/<PR_NUMBER>/comments
 
 # Get all issue comments via API
-gh api repos/IJHack/QtPass/issues/<ISSUE_NUMBER>/comments
+gh api repos/<owner>/<repo>/issues/<ISSUE_NUMBER>/comments
 ```
 
 ## Answering User Questions
@@ -362,7 +362,7 @@ When PR shows "All comments must be resolved" but you've fixed the issues:
 **1. Identify unresolved threads via GraphQL:**
 
 ```bash
-gh api graphql -f query='{ repository(owner: "<owner>", name: "<repo>") { pullRequest(number: <PR_NUMBER>) { id reviewThreads(first: 20) { nodes { id isResolved } } } } }' | jq -r '.data.repository.pullRequest.reviewThreads.nodes[] | "\(.id) \(.isResolved)"'
+gh api graphql -f query='{ repository(owner: "<owner>", name: "<repo>") { pullRequest(number: <pr_number>) { id reviewThreads(first: 20) { nodes { id isResolved } } } } }' | jq -r '.data.repository.pullRequest.reviewThreads.nodes[] | "\(.id) \(.isResolved)"'
 ```
 
 **2. Resolve threads programmatically:**
