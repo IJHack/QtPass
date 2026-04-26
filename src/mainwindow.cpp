@@ -1786,7 +1786,8 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError,
   limitOutputLines();
 
   if (m_autoScroll) {
-    ui->processOutputEdit->moveCursor(QTextCursor::End);
+    ui->processOutputEdit->verticalScrollBar()->setValue(
+        ui->processOutputEdit->verticalScrollBar()->maximum());
   }
 }
 
@@ -1925,12 +1926,10 @@ void MainWindow::limitOutputLines() {
 /**
  * @brief Clears the process output panel.
  *
- * Clears all output, resets the line counter, re-enables auto-scroll,
- * and moves the cursor to the end for subsequent appends.
+ * Clears all output, resets the line counter, and re-enables auto-scroll.
  */
 void MainWindow::on_clearOutputButton_clicked() {
   ui->processOutputEdit->clear();
   m_outputCounter = 0;
   m_autoScroll = true;
-  ui->processOutputEdit->moveCursor(QTextCursor::End);
 }

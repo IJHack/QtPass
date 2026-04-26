@@ -712,8 +712,17 @@ auto Pass::formatInsertError(const QString &friendly, const QString &err)
  */
 void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
                                      const QString &err) {
-  emit finishedAny(out, err);
-  emit finishedAnyWithPid(out, err, pid);
+  switch (pid) {
+  case PASS_SHOW:
+  case PASS_OTP_GENERATE:
+  case PASS_GREP:
+  case PASS_INSERT:
+    break;
+  default:
+    emit finishedAny(out, err);
+    emit finishedAnyWithPid(out, err, pid);
+    break;
+  }
 
   switch (pid) {
   case GIT_INIT:
