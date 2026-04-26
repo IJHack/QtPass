@@ -199,7 +199,7 @@ gh pr view <PR_NUMBER> --json comments
 gh api repos/<owner>/<repo>/pulls/<PR_NUMBER>/comments
 
 # Get all issue comments via API
-gh api repos/<owner>/<repo>/issues/<ISSUE_NUMBER>/comments
+gh api repos/IJHack/QtPass/issues/<ISSUE_NUMBER>/comments
 ```
 
 ## Answering User Questions
