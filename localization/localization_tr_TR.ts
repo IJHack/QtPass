@@ -409,7 +409,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
         <source>qrencode needs to be installed</source>
-        <translation>qrencode yüklenmesi gerekir</translation>
+        <translation>qrencode yüklü olması gerekir</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
@@ -435,17 +435,17 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation>Profil dizini oluşturulsun mu?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>%1 konumunda bir parola deposu oluşturmak ister misiniz?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation>Profil dizini oluşturulamadı: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
@@ -521,17 +521,17 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation>Yeni profil: %1, konum: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation>Profil: %1, konum: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Gerekli tüm alanları doldurun</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -853,7 +853,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Şablon içeriği GPG sürümüne göre belirlenecektir.</translation>
+        <translation>Şablon içeriği GPG versiyonuna göre belirlenecektir.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1209,15 +1209,15 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="816"/>
         <source>Found %n match(es)</source>
-        <translation>
-            <numerusform>%n eşleşme bulundu</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="817"/>
         <source>in %n entr(ies).</source>
-        <translation>
-            <numerusform>%n girdi içinde.</numerusform>
+        <translation type="unfinished">
+            <numerusform></numerusform>
         </translation>
     </message>
     <message>
