@@ -377,7 +377,7 @@ gh api graphql -f query="mutation { resolveReviewThread(input: {threadId: \"$THR
 
 ```bash
 # Submit a COMMENT review (not APPROVE if it's your own PR)
-gh api "repos/<OWNER>/<REPO>/pulls/<PR_NUMBER>/reviews" -X POST -f "body"="All issues addressed in recent commits" -f "event"="COMMENT"
+gh api "repos/<owner>/<repo>/pulls/<pr_number>/reviews" -X POST -f "body"="All issues addressed in recent commits" -f "event"="COMMENT"
 ```
 
 **4. Common causes:**
