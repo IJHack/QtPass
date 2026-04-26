@@ -340,7 +340,7 @@ When PR shows "All comments must be resolved" but you've fixed the issues:
 **1. Identify unresolved threads via GraphQL:**
 
 ```bash
-gh api graphql -f query='{ repository(owner: "OWNER", name: "REPO") { pullRequest(number: N) { id reviewThreads(first: 20) { nodes { id isResolved } } } } }' | jq -r '.data.repository.pullRequest.reviewThreads.nodes[] | "\(.id) \(.isResolved)"'
+gh api graphql -f query='{ repository(owner: "OWNER", name: "REPO") { pullRequest(number: <PR_NUMBER>) { id reviewThreads(first: 20) { nodes { id isResolved } } } } }' | jq -r '.data.repository.pullRequest.reviewThreads.nodes[] | "\(.id) \(.isResolved)"'
 ```
 
 **2. Resolve threads programmatically:**
