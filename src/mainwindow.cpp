@@ -29,6 +29,7 @@
 #include <QFileInfo>
 #include <QInputDialog>
 #include <QLabel>
+#include <QLineEdit>
 #include <QMenu>
 #include <QMessageBox>
 #include <QScrollBar>
@@ -169,13 +170,13 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
     return;
   }
 
-  // Schedule the initial focus pulse only after init() has returned. init()
-  // can run a nested event loop (e.g. ConfigDialog::wizard for first-run
-  // setup), and a timer scheduled before that loop would fire focusInput()
-  // against a not-yet-shown window — QLineEdit::selectAll then crashes
-  // inside Qt because the widget hasn't been parented into a visible
-  // top-level yet.
-  QTimer::singleShot(10, this, SLOT(focusInput()));
+  // Initial focus is handled in showEvent() once the window is actually
+  // mapped. Scheduling it here via a 10 ms QTimer was racy: if the timer
+  // fires while the window has not yet been realised — e.g. an
+  // ActivationChange queued by main()'s `activateWindow()` call before
+  // `show()`, or a nested QDialog::exec() inside init() — the
+  // QLineEdit's internal text engine hasn't been wired up and
+  // selectAll() segfaults inside Qt (see #1187, #1188).
 }
 
 MainWindow::~MainWindow() { delete m_qtPass; }
@@ -187,11 +188,30 @@ MainWindow::~MainWindow() { delete m_qtPass; }
  * compiled with SINGLE_APP=1 (default).
  */
 void MainWindow::focusInput() {
-  if (!ui || !ui->lineEdit || !ui->lineEdit->isVisible()) {
+  // Resolve the QLineEdit through the live widget tree rather than the
+  // cached `ui->lineEdit` pointer.
+  //
+  // On a fresh-config first launch the constructor calls
+  // `m_qtPass->init()` → `MainWindow::config()`, and `config()`'s
+  // `applyWindowFlagsSettings()` does `setWindowFlags(...)` + `show()`
+  // on the main window. `setWindowFlags` on a top-level widget rebuilds
+  // the native window via `setParent(nullptr, flags)`; under Qt 6.11
+  // we observed the QLineEdit attached to the centralWidget gets
+  // destroyed in that rebuild while `ui->lineEdit` still holds its old
+  // address — leading to a SIGSEGV inside `QWidget::testAttribute`
+  // (called from `QLineEdit::isVisible` / `selectAll`). `findChild<>()`
+  // walks the current hierarchy and returns null cleanly when the
+  // widget is gone, so `focusInput` becomes a safe no-op instead of a
+  // use-after-free.
+  if (!isVisible()) {
     return;
   }
-  ui->lineEdit->selectAll();
-  ui->lineEdit->setFocus();
+  QLineEdit *lineEdit = findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  if (lineEdit == nullptr || !lineEdit->isVisible()) {
+    return;
+  }
+  lineEdit->selectAll();
+  lineEdit->setFocus();
 }
 
 /**
@@ -200,11 +220,36 @@ void MainWindow::focusInput() {
  */
 void MainWindow::changeEvent(QEvent *event) {
   QWidget::changeEvent(event);
-  if (event->type() == QEvent::ActivationChange) {
-    if (isActiveWindow()) {
-      focusInput();
-    }
+  if (event->type() == QEvent::ActivationChange && isActiveWindow() &&
+      isVisible()) {
+    // Defer one event-loop tick so the synchronous activation dispatch
+    // chain (`QApplicationPrivate::setActiveWindow` → `notify_helper`)
+    // unwinds before we touch widget state — calling `focusInput()`
+    // inline from this stack has segfaulted in past iterations because
+    // mid-rebuild ui state isn't fully wired up yet.
+    QMetaObject::invokeMethod(this, &MainWindow::focusInput,
+                              Qt::QueuedConnection);
   }
+}
+
+/**
+ * @brief First-show hook: run the initial focusInput() pulse once the
+ *        window is actually mapped. The widget's internal data is fully
+ *        initialised by this point, so QLineEdit::selectAll() is safe.
+ * @param event Show event passed to the base class.
+ */
+void MainWindow::showEvent(QShowEvent *event) {
+  QMainWindow::showEvent(event);
+  if (m_initialShowDone) {
+    return;
+  }
+  m_initialShowDone = true;
+  // Defer one event loop tick so the X11/Wayland map round-trip can
+  // complete before we read widget visibility. Calling focusInput()
+  // directly here was crashing inside QWidget::testAttribute on first
+  // run.
+  QMetaObject::invokeMethod(this, &MainWindow::focusInput,
+                            Qt::QueuedConnection);
 }
 
 /**
