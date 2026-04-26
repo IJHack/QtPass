@@ -712,6 +712,29 @@ auto Pass::formatInsertError(const QString &friendly, const QString &err)
  */
 void Pass::emitProcessFinishedSignal(PROCESS pid, const QString &out,
                                      const QString &err) {
+  /**
+   * @brief Filter sensitive commands to prevent password leakage.
+   *
+   * Sensitive commands (PASS_SHOW, etc.) output plaintext passwords or
+   * searchable content that should not be exposed to any UI listener.
+   *
+   * Using a default branch: if new PASS_* values are added, they
+   * default to NOT leaking (safe by default). Making this
+   * exhaustive would require updating here for every new
+   * command and risk silent password leakage if forgotten.
+   */
+  switch (pid) {
+  case PASS_SHOW:
+  case PASS_OTP_GENERATE:
+  case PASS_GREP:
+  case PASS_INSERT:
+    break;
+  default:
+    emit finishedAny(out, err);
+    emit finishedAnyWithPid(out, err, pid);
+    break;
+  }
+
   switch (pid) {
   case GIT_INIT:
     emit finishedGitInit(out, err);

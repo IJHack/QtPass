@@ -3,6 +3,7 @@
 #ifndef SRC_MAINWINDOW_H_
 #define SRC_MAINWINDOW_H_
 
+#include "enums.h"
 #include "storemodel.h"
 
 #include <QFileSystemModel>
@@ -164,6 +165,16 @@ public slots:
   void messageAvailable(const QString &message);
 
   /**
+   * @brief Handle generic process output for display in output panel.
+   * @param output Process output text.
+   * @param isError true if output should be styled as error (red).
+   * @param pid Identifier of the originating subprocess (for the label
+   *            prefix); defaults to Enums::INVALID for unlabelled output.
+   */
+  void onProcessOutput(const QString &output, bool isError,
+                       Enums::PROCESS pid = Enums::INVALID);
+
+  /**
    * @brief Display a critical error dialog.
    * @param title Dialog title.
    * @param msg Error message body.
@@ -224,6 +235,7 @@ public slots:
 private slots:
   void on_grepButton_toggled(bool checked);
   void on_grepResultsList_itemClicked(QTreeWidgetItem *item, int column);
+  void on_clearOutputButton_clicked();
   void addPassword();
   void addFolder();
   void onEdit();
@@ -258,6 +270,9 @@ private:
   bool m_grepMode = false;
   bool m_grepBusy = false;
   bool m_grepCancelled = false;
+  bool m_autoScroll = true;
+  int m_outputCounter = 0;
+  static constexpr int MaxOutputLines = 1000;
   QFileSystemModel model;
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
@@ -294,6 +309,14 @@ private:
   void updateOtpButtonVisibility();
   void updateGrepButtonVisibility();
   void enableGitButtons(const bool &);
+
+  void appendProcessOutput(const QString &output, bool isError,
+                           const QString &linePrefix = QString());
+  void updateProcessOutputVisibility();
+  void limitOutputLines();
+
+  static auto getProcessName(Enums::PROCESS pid) -> QString;
+  static auto isSensitiveProcess(Enums::PROCESS pid) -> bool;
 };
 
 #endif // SRC_MAINWINDOW_H_

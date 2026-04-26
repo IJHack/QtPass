@@ -77,6 +77,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->plainTextEditTemplate->setPlainText(QtPassSettings::getPassTemplate());
   ui->checkBoxTemplateAllFields->setChecked(
       QtPassSettings::isTemplateAllFields());
+  ui->checkBoxShowProcessOutput->setChecked(
+      QtPassSettings::isShowProcessOutput());
   ui->checkBoxAutoPull->setChecked(QtPassSettings::isAutoPull());
   ui->checkBoxAutoPush->setChecked(QtPassSettings::isAutoPush());
   ui->checkBoxAlwaysOnTop->setChecked(QtPassSettings::isAlwaysOnTop());
@@ -287,6 +289,8 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setPassTemplate(ui->plainTextEditTemplate->toPlainText());
   QtPassSettings::setTemplateAllFields(
       ui->checkBoxTemplateAllFields->isChecked());
+  QtPassSettings::setShowProcessOutput(
+      ui->checkBoxShowProcessOutput->isChecked());
   QtPassSettings::setAlwaysOnTop(ui->checkBoxAlwaysOnTop->isChecked());
 
   QtPassSettings::setVersion(VERSION);

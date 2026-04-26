@@ -7,6 +7,7 @@
 #endif
 
 #include "configdialog.h"
+#include "enums.h"
 #include "executor.h"
 #include "exportpublickeydialog.h"
 #include "filecontent.h"
@@ -30,7 +31,9 @@
 #include <QLabel>
 #include <QMenu>
 #include <QMessageBox>
+#include <QScrollBar>
 #include <QShortcut>
+#include <QTextCursor>
 #include <QTimer>
 #include <QTreeWidget>
 #include <utility>
@@ -121,6 +124,38 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
   initToolBarButtons();
   initStatusBar();
 
+  connect(QtPassSettings::getPass(), &Pass::finishedAnyWithPid, this,
+          [this](const QString &out, const QString &err, Enums::PROCESS pid) {
+            // Never route potentially-secret output through the panel:
+            // - PASS_SHOW / PASS_OTP_GENERATE go via dedicated signals to
+            //   the main text browser (which clears on a timer).
+            // - PASS_GREP returns lines from password files; #252 must
+            //   not leak those into a long-lived panel.
+            // - PASS_INSERT's stdin is the password; stdout normally
+            //   carries gpg/git progress only, but exclude defensively
+            //   in case a future code path uses --echo or similar.
+            if (isSensitiveProcess(pid)) {
+              return;
+            }
+            if (!out.isEmpty()) {
+              onProcessOutput(out, false, pid);
+            }
+            if (!err.isEmpty()) {
+              onProcessOutput(err, true, pid);
+            }
+          });
+
+  connect(ui->processOutputEdit->verticalScrollBar(),
+          &QScrollBar::sliderPressed, this, [this]() {
+            auto *sb = ui->processOutputEdit->verticalScrollBar();
+            m_autoScroll = sb->value() >= sb->maximum();
+          });
+  connect(ui->processOutputEdit->verticalScrollBar(), &QScrollBar::valueChanged,
+          this, [this]() {
+            auto *sb = ui->processOutputEdit->verticalScrollBar();
+            m_autoScroll = sb->value() >= sb->maximum();
+          });
+
   ui->lineEdit->setClearButtonEnabled(true);
   updateGrepButtonVisibility();
 
@@ -207,6 +242,10 @@ void MainWindow::initStatusBar() {
   auto *logoApp = new QLabel(statusBar());
   logoApp->setPixmap(logo);
   statusBar()->addPermanentWidget(logoApp);
+
+  statusBar()->addPermanentWidget(ui->processOutputWidget);
+
+  updateProcessOutputVisibility();
 }
 
 auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
@@ -325,6 +364,7 @@ void MainWindow::config() {
       updateGitButtonVisibility();
       updateOtpButtonVisibility();
       updateGrepButtonVisibility();
+      updateProcessOutputVisibility();
       if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
         initTrayIcon();
       } else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
@@ -431,6 +471,9 @@ void MainWindow::executeWrapperStarted() {
   ui->textBrowser->clear();
   setUiElementsEnabled(false);
   clearPanelTimer.stop();
+  if (QtPassSettings::isShowProcessOutput()) {
+    ui->processOutputWidget->setVisible(true);
+  }
 }
 
 /**
@@ -1690,4 +1733,203 @@ void MainWindow::enableGitButtons(const bool &state) {
  */
 void MainWindow::critical(const QString &title, const QString &msg) {
   QMessageBox::critical(this, title, msg);
+}
+
+/**
+ * @brief Appends processed command output to the output panel.
+ *
+ * Appends text to the process output text edit, with per-line numbering,
+ * optional command prefix, and color coding for errors vs. success.
+ * Handles auto-scrolling and line limits.
+ *
+ * @param output The raw output text from the command.
+ * @param isError true if this is error output (stderr).
+ * @param linePrefix Optional command name to prefix each line with.
+ */
+void MainWindow::appendProcessOutput(const QString &output, bool isError,
+                                     const QString &linePrefix) {
+  if (!QtPassSettings::isShowProcessOutput()) {
+    return;
+  }
+
+  QStringList lines = output.split('\n', Qt::SkipEmptyParts);
+  for (QString &line : lines) {
+    // Right-trim only: remove trailing CR and whitespace, preserve leading
+    // indentation
+    line.remove('\r');
+    while (!line.isEmpty() && line.back().isSpace()) {
+      line.chop(1);
+    }
+    if (line.isEmpty()) {
+      continue;
+    }
+
+    m_outputCounter++;
+    QString lineNumber = QString::number(m_outputCounter);
+
+    QColor textColor =
+        isError ? QColor(Qt::red)
+                : ui->processOutputEdit->palette().color(QPalette::Text);
+    QString colorHex = textColor.name();
+    // Apply the optional prefix per line so multi-line output stays
+    // attributed to its command (e.g. all 3 lines of a `git push` show
+    // "git push: ..." rather than only the first).
+    QString prefixed =
+        linePrefix.isEmpty() ? line : linePrefix + QStringLiteral(": ") + line;
+    QString coloredOutput =
+        QString("<span style=\"color: %1;\">%2: %3</span>")
+            .arg(colorHex, lineNumber, prefixed.toHtmlEscaped());
+
+    ui->processOutputEdit->append(coloredOutput);
+  }
+
+  limitOutputLines();
+
+  if (m_autoScroll) {
+    ui->processOutputEdit->verticalScrollBar()->setValue(
+        ui->processOutputEdit->verticalScrollBar()->maximum());
+  }
+}
+
+/**
+ * @brief Handles process output from the Pass executor.
+ *
+ * Called when any non-sensitive process completes. Filters out password-
+ * related commands (pass show, insert, etc.) and delegates to
+ * appendProcessOutput.
+ *
+ * @param output The stdout/stderr text from the process.
+ * @param isError true if this is error output (stderr).
+ * @param pid The process ID identifying which command ran.
+ */
+void MainWindow::onProcessOutput(const QString &output, bool isError,
+                                 Enums::PROCESS pid) {
+  appendProcessOutput(output, isError, getProcessName(pid));
+}
+
+/**
+ * @brief Maps a process ID to its human-readable command name.
+ *
+ * Returns static strings for git/pass commands that appear in output.
+ * Password-related commands return empty (they are filtered).
+ *
+ * @param pid The process ID to look up.
+ * @return QString with command name, or empty if filtered.
+ */
+auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
+  switch (pid) {
+  case Enums::GIT_INIT:
+    return QStringLiteral("git init"); // no-tr
+  case Enums::GIT_ADD:
+    return QStringLiteral("git add"); // no-tr
+  case Enums::GIT_COMMIT:
+    return QStringLiteral("git commit"); // no-tr
+  case Enums::GIT_RM:
+    return QStringLiteral("git rm"); // no-tr
+  case Enums::GIT_PULL:
+    return QStringLiteral("git pull"); // no-tr
+  case Enums::GIT_PUSH:
+    return QStringLiteral("git push"); // no-tr
+  case Enums::GIT_MOVE:
+    return QStringLiteral("git mv"); // no-tr
+  case Enums::GIT_COPY:
+    return QStringLiteral("git cp"); // no-tr
+  case Enums::PASS_INSERT:
+    return QStringLiteral("pass insert"); // no-tr
+  case Enums::PASS_REMOVE:
+    return QStringLiteral("pass rm"); // no-tr
+  case Enums::PASS_INIT:
+    return QStringLiteral("pass init"); // no-tr
+  case Enums::PASS_MOVE:
+    return QStringLiteral("pass mv"); // no-tr
+  case Enums::PASS_COPY:
+    return QStringLiteral("pass cp"); // no-tr
+  case Enums::PASS_GREP:
+    return QStringLiteral("pass grep"); // no-tr
+  case Enums::GPG_GENKEYS:
+    return QStringLiteral("gpg --gen-key"); // no-tr
+  case Enums::PASS_SHOW:
+  case Enums::PASS_OTP_GENERATE:
+  case Enums::PROCESS_COUNT:
+  case Enums::INVALID:
+    break;
+  }
+  return QString();
+}
+
+/**
+ * @brief Checks if a process ID represents a sensitive operation whose
+ * output should not be shown in the process output panel.
+ *
+ * Password-related commands (pass show, OTP generate, grep, insert)
+ * display their output in other UI areas, so we skip them here.
+ *
+ * @param pid The process ID to check.
+ * @return true if the process is sensitive and should be filtered.
+ */
+auto MainWindow::isSensitiveProcess(Enums::PROCESS pid) -> bool {
+  switch (pid) {
+  case Enums::PASS_SHOW:
+  case Enums::PASS_OTP_GENERATE:
+  case Enums::PASS_GREP:
+  case Enums::PASS_INSERT:
+    return true;
+  case Enums::GIT_INIT:
+  case Enums::GIT_ADD:
+  case Enums::GIT_COMMIT:
+  case Enums::GIT_RM:
+  case Enums::GIT_PULL:
+  case Enums::GIT_PUSH:
+  case Enums::GIT_MOVE:
+  case Enums::GIT_COPY:
+  case Enums::PASS_REMOVE:
+  case Enums::PASS_INIT:
+  case Enums::PASS_MOVE:
+  case Enums::PASS_COPY:
+  case Enums::GPG_GENKEYS:
+  case Enums::PROCESS_COUNT:
+  case Enums::INVALID:
+    break;
+  }
+  return false;
+}
+
+/**
+ * @brief Updates the visibility of the process output panel.
+ *
+ * Shows or hides the process output widget based on the user's
+ * showProcessOutput setting.
+ */
+void MainWindow::updateProcessOutputVisibility() {
+  ui->processOutputWidget->setVisible(QtPassSettings::isShowProcessOutput());
+}
+
+/**
+ * @brief Limits the output panel to max lines, trimming old excess.
+ *
+ * Removes the oldest lines when the document exceeds MaxOutputLines (1000).
+ * Called after each append to prevent unbounded growth.
+ */
+void MainWindow::limitOutputLines() {
+  QTextDocument *doc = ui->processOutputEdit->document();
+  int excess = doc->blockCount() - MaxOutputLines;
+  if (excess <= 0) {
+    return;
+  }
+
+  QTextCursor cursor(doc);
+  cursor.movePosition(QTextCursor::Start);
+  cursor.movePosition(QTextCursor::NextBlock, QTextCursor::KeepAnchor, excess);
+  cursor.removeSelectedText();
+}
+
+/**
+ * @brief Clears the process output panel.
+ *
+ * Clears all output, resets the line counter, and re-enables auto-scroll.
+ */
+void MainWindow::on_clearOutputButton_clicked() {
+  ui->processOutputEdit->clear();
+  m_outputCounter = 0;
+  m_autoScroll = true;
 }
