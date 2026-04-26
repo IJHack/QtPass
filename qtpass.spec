@@ -1,25 +1,25 @@
 # This is an initial attempt to create a RPM spec file for qtpass. Tested on Fedora 23.
-# Replace the Version number with the current version number (at the time of writing 1.0.5.1) 
-# Check qtpass.pro for the current version. 
+# Replace the Version number with the current version number (at the time of writing 1.0.5.1)
+# Check qtpass.pro for the current version.
 # After that
 #  tar cvfz qtpass-1.5.1.tar.gz qtpass-1.5.1
 #  rpmbuild -tb qtpass-1.5.1.tar.gz
 # This should probably be part of a release process.
 
-Name: qtpass		
+Name: qtpass
 Version: 1.7.0
 Release: 2%{?dist}
-Summary: QtPass is a multi-platform GUI for pass, the standard unix password manager.	
+Summary: QtPass is a multi-platform GUI for pass, the standard unix password manager.
 License: GPLv3
-URL:	https://qtpass.org/	
+URL:	https://qtpass.org/
 Source0: %{name}-%{version}.tar.gz
 
 BuildRequires: qt5-qtbase-devel
 BuildRequires: qt5-linguist
 BuildRequires: desktop-file-utils
 BuildRequires: xdg-utils
-Requires: pass	
-Requires: qt5-qtbase	
+Requires: pass
+Requires: qt5-qtbase
 
 %description
 QtPass is a GUI for pass, the standard unix password manager.
