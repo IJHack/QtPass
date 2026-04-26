@@ -78,8 +78,8 @@ public:
   static const QString showProcessOutput;
   static const QString clipBoardType;
 
-private:
-  explicit SettingsConstants();
+  // Static-only namespace-like class — instantiation is meaningless.
+  SettingsConstants() = delete;
 };
 
 #endif // SRC_SETTINGSCONSTANTS_H_

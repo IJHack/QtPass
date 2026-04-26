@@ -5,6 +5,7 @@
 #include <QLabel>
 #include <QPlainTextEdit>
 #include <QPushButton>
+#include <QScopeGuard>
 #include <QtTest>
 
 #include "../../../src/exportpublickeydialog.h"
@@ -77,13 +78,16 @@ void tst_exportpublickeydialog::copyButtonCopiesToClipboardAndRelabels() {
   // perform a round-trip test to verify clipboard capability before proceeding.
   QClipboard *clipboard = QApplication::clipboard();
   const QString originalClipboard = clipboard->text();
+  // RAII restore so the user's clipboard is reset on every exit path
+  // (early QSKIP, normal completion, or QVERIFY/QCOMPARE failure).
+  const auto restoreClipboard = qScopeGuard([clipboard, originalClipboard]() {
+    clipboard->setText(originalClipboard);
+  });
   const QString probeString = QStringLiteral("__qtpass_clipboard_probe__");
   clipboard->setText(probeString);
   if (clipboard->text() != probeString) {
-    clipboard->setText(originalClipboard); // restore
     QSKIP("Clipboard is not functional on this platform");
   }
-  clipboard->setText(originalClipboard); // restore
 
   const QString armored = QStringLiteral("clipboard-test-payload");
   ExportPublicKeyDialog dialog(QStringLiteral("DEADBEEF"), armored);
@@ -92,10 +96,7 @@ void tst_exportpublickeydialog::copyButtonCopiesToClipboardAndRelabels() {
   const QString originalText = button->text();
   QVERIFY(!originalText.isEmpty());
 
-  // Trigger the click handler directly to avoid relying on event delivery
-  // and the platform's window manager.
-  QMetaObject::invokeMethod(&dialog, "on_copyButton_clicked",
-                            Qt::DirectConnection);
+  button->click();
 
   QCOMPARE(clipboard->text(), armored);
   QCOMPARE(button->text(), QStringLiteral("Copied!"));

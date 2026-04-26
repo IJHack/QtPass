@@ -15,5 +15,5 @@ win32 {
     # Keep linker command size manageable on Windows toolchains.
     # 24 is a conservative cap chosen to stay below Windows linker
     # command-line/object-list limits across supported toolchains.
-    QMAKE_LINK_OBJECT_MAX=24
+    QMAKE_LINK_OBJECT_MAX = 24
 }

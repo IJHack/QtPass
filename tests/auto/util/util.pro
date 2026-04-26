@@ -16,7 +16,7 @@ INCLUDEPATH += ../../../src
 win32 {
 	RC_FILE = ../../../windows.rc     
 #	temporary workaround for QTBUG-6453
-	QMAKE_LINK_OBJECT_MAX=24
+	QMAKE_LINK_OBJECT_MAX = 24
 #	setting this may also work, but I can't find appropriate value right now
 #	QMAKE_LINK_OBJECT_SCRIPT = 
 }
