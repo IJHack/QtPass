@@ -49,8 +49,7 @@ gh pr create --base main --title "Fix" --body "Fixes #issue"
 ```bash
 # If upstream remote is not set, add it (one-time setup):
 git remote add upstream https://github.com/IJHack/QtPass.git
-# Fetch and rebase on main
-git fetch upstream
+# Fetch (via pull) and rebase on main
 git pull upstream main --rebase
 
 # Force push if needed (safer)
