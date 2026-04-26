@@ -107,6 +107,8 @@ void&#160;</td><td class="memItemRight"><b>deselect</b> ()</td></tr>
 <tr class="memdesc:ad4cf3e2c819cac398728a82f1cf05f3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the current tree view selection. <br /></td></tr>
 <tr class="memitem:a4fad7c4dec11ceaebcb8a0141280ba4b" id="r_a4fad7c4dec11ceaebcb8a0141280ba4b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4fad7c4dec11ceaebcb8a0141280ba4b">messageAvailable</a> (const QString &amp;message)</td></tr>
 <tr class="memdesc:a4fad7c4dec11ceaebcb8a0141280ba4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an incoming inter-process message (single-instance mode).  <br /></td></tr>
+<tr class="memitem:ad84f015fe7d94961af6fcfc26532e33c" id="r_ad84f015fe7d94961af6fcfc26532e33c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ad84f015fe7d94961af6fcfc26532e33c">onProcessOutput</a> (const QString &amp;output, bool isError, <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a> pid=<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a>)</td></tr>
+<tr class="memdesc:ad84f015fe7d94961af6fcfc26532e33c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle generic process output for display in output panel.  <br /></td></tr>
 <tr class="memitem:a8719b3a133e95915dd72b244db1e49bf" id="r_a8719b3a133e95915dd72b244db1e49bf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a8719b3a133e95915dd72b244db1e49bf">critical</a> (const QString &amp;title, const QString &amp;msg)</td></tr>
 <tr class="memdesc:a8719b3a133e95915dd72b244db1e49bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display a critical error dialog.  <br /></td></tr>
 <tr class="memitem:a3550b28be1344cf5c012af794dce8c64" id="r_a3550b28be1344cf5c012af794dce8c64"><td class="memItemLeft"><a id="a3550b28be1344cf5c012af794dce8c64" name="a3550b28be1344cf5c012af794dce8c64"></a>
@@ -183,7 +185,7 @@ Protected Member Functions</h2></td></tr>
 <div class="textblock"><p>Main application window orchestrating UI, user interactions, and external process handlers. </p>
 <p>Provides the central interface for managing items, folders, passwords, and OTPs; coordinates UI components (toolbars, panels, dialogs, status/tray), selection and navigation in the underlying file/store models, and lifecycle interactions with external handlers (e.g., pass, Git, GPG key generation, OTP). </p>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00045">45</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00046">46</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 </div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a52e97245b2f88492071e639395c4a15a" name="a52e97245b2f88492071e639395c4a15a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a52e97245b2f88492071e639395c4a15a">&#9670;&#160;</a></span>MainWindow()</h2>
@@ -524,7 +526,7 @@ Protected Member Functions</h2></td></tr>
 <p>Return the active key generation dialog, if any. </p>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the keygen QDialog, or nullptr. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00107">107</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="mainwindow_8h_source.html#l00108">108</a> of file <a class="el" href="mainwindow_8h_source.html">mainwindow.h</a>.</p>
 
 </div>
 </div>
@@ -654,6 +656,50 @@ Protected Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">results</td><td>List of file/match pairs from the grep operation. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad84f015fe7d94961af6fcfc26532e33c" name="ad84f015fe7d94961af6fcfc26532e33c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad84f015fe7d94961af6fcfc26532e33c">&#9670;&#160;</a></span>onProcessOutput</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MainWindow::onProcessOutput </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>output</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isError</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">Enums::PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>pid</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel slot">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Handle generic process output for display in output panel. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">output</td><td>Process output text. </td></tr>
+    <tr><td class="paramname">isError</td><td>true if output should be styled as error (red). </td></tr>
+    <tr><td class="paramname">pid</td><td>Identifier of the originating subprocess (for the label prefix); defaults to <a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69a9da0f55eca9ec763c75e98268dcbd023">Enums::INVALID</a> for unlabelled output. </td></tr>
   </table>
   </dd>
 </dl>

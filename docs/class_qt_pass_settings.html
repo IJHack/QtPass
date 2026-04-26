@@ -342,6 +342,10 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:a3812c424de85c27064210f588ddc25a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether template applies to all fields.  <br /></td></tr>
 <tr class="memitem:a27bbbe29e23e1aab60f088c8b45e1370" id="r_a27bbbe29e23e1aab60f088c8b45e1370"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a27bbbe29e23e1aab60f088c8b45e1370">setTemplateAllFields</a> (const bool &amp;templateAllFields)</td></tr>
 <tr class="memdesc:a27bbbe29e23e1aab60f088c8b45e1370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save template-all-fields flag.  <br /></td></tr>
+<tr class="memitem:a86f9ccbb490cdcc4ffb3fcd6a2112def" id="r_a86f9ccbb490cdcc4ffb3fcd6a2112def"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a86f9ccbb490cdcc4ffb3fcd6a2112def">isShowProcessOutput</a> (const bool &amp;defaultValue=false) -&gt; bool</td></tr>
+<tr class="memdesc:a86f9ccbb490cdcc4ffb3fcd6a2112def"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get showProcessOutput setting.  <br /></td></tr>
+<tr class="memitem:a9f1204659d0f8caecc7f5c0897d9543d" id="r_a9f1204659d0f8caecc7f5c0897d9543d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a9f1204659d0f8caecc7f5c0897d9543d">setShowProcessOutput</a> (const bool &amp;showProcessOutput)</td></tr>
+<tr class="memdesc:a9f1204659d0f8caecc7f5c0897d9543d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save showProcessOutput setting.  <br /></td></tr>
 <tr class="memitem:a4b87c146ea2c5980a2d0101dfeccc2d9" id="r_a4b87c146ea2c5980a2d0101dfeccc2d9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4b87c146ea2c5980a2d0101dfeccc2d9">getProfiles</a> () -&gt; QHash&lt; QString, QHash&lt; QString, QString &gt; &gt;</td></tr>
 <tr class="memdesc:a4b87c146ea2c5980a2d0101dfeccc2d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all configured profiles.  <br /></td></tr>
 <tr class="memitem:aa73a4ae99c8c7e68208d3d81cf113dbc" id="r_aa73a4ae99c8c7e68208d3d81cf113dbc"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aa73a4ae99c8c7e68208d3d81cf113dbc">setProfiles</a> (const QHash&lt; QString, QHash&lt; QString, QString &gt; &gt; &amp;profiles)</td></tr>
@@ -1994,6 +1998,40 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if line wrapping disabled. </dd></dl>
+
+</div>
+</div>
+<a id="a86f9ccbb490cdcc4ffb3fcd6a2112def" name="a86f9ccbb490cdcc4ffb3fcd6a2112def"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86f9ccbb490cdcc4ffb3fcd6a2112def">&#9670;&#160;</a></span>isShowProcessOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto QtPassSettings::isShowProcessOutput </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span></td><td>)</td>
+          <td> -&gt;  bool</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get showProcessOutput setting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultValue</td><td>Default value if not set. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whether process output should be displayed. </dd></dl>
 
 </div>
 </div>
@@ -3890,6 +3928,39 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">saveState</td><td>Window state to save. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9f1204659d0f8caecc7f5c0897d9543d" name="a9f1204659d0f8caecc7f5c0897d9543d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f1204659d0f8caecc7f5c0897d9543d">&#9670;&#160;</a></span>setShowProcessOutput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPassSettings::setShowProcessOutput </td>
+          <td>(</td>
+          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>showProcessOutput</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Save showProcessOutput setting. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">showProcessOutput</td><td>Whether to show process output. </td></tr>
   </table>
   </dd>
 </dl>
