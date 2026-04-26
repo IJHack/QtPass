@@ -187,6 +187,9 @@ MainWindow::~MainWindow() { delete m_qtPass; }
  * compiled with SINGLE_APP=1 (default).
  */
 void MainWindow::focusInput() {
+  if (!ui->lineEdit || !ui->lineEdit->isVisible()) {
+    return;
+  }
   ui->lineEdit->selectAll();
   ui->lineEdit->setFocus();
 }
@@ -1045,6 +1048,8 @@ void MainWindow::onUsers() {
  * @param message
  */
 void MainWindow::messageAvailable(const QString &message) {
+  show();
+  raise();
   if (message.isEmpty()) {
     focusInput();
   } else {
@@ -1052,8 +1057,6 @@ void MainWindow::messageAvailable(const QString &message) {
     ui->lineEdit->setText(message);
     on_lineEdit_returnPressed();
   }
-  show();
-  raise();
 }
 
 /**
