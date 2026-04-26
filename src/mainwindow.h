@@ -316,6 +316,7 @@ private:
   void limitOutputLines();
 
   static auto getProcessName(Enums::PROCESS pid) -> QString;
+  static auto isSensitiveProcess(Enums::PROCESS pid) -> bool;
 };
 
 #endif // SRC_MAINWINDOW_H_

@@ -134,8 +134,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
             // - PASS_INSERT's stdin is the password; stdout normally
             //   carries gpg/git progress only, but exclude defensively
             //   in case a future code path uses --echo or similar.
-            if (pid == Enums::PASS_SHOW || pid == Enums::PASS_OTP_GENERATE ||
-                pid == Enums::PASS_GREP || pid == Enums::PASS_INSERT) {
+            if (isSensitiveProcess(pid)) {
               return;
             }
             if (!out.isEmpty()) {
@@ -147,7 +146,10 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
           });
 
   connect(ui->processOutputEdit->verticalScrollBar(),
-          &QScrollBar::sliderPressed, this, [this]() { m_autoScroll = false; });
+          &QScrollBar::sliderPressed, this, [this]() {
+            auto *sb = ui->processOutputEdit->verticalScrollBar();
+            m_autoScroll = sb->value() >= sb->maximum();
+          });
   connect(ui->processOutputEdit->verticalScrollBar(), &QScrollBar::valueChanged,
           this, [this]() {
             auto *sb = ui->processOutputEdit->verticalScrollBar();
@@ -1733,6 +1735,17 @@ void MainWindow::critical(const QString &title, const QString &msg) {
   QMessageBox::critical(this, title, msg);
 }
 
+/**
+ * @brief Appends processed command output to the output panel.
+ *
+ * Appends text to the process output text edit, with per-line numbering,
+ * optional command prefix, and color coding for errors vs. success.
+ * Handles auto-scrolling and line limits.
+ *
+ * @param output The raw output text from the command.
+ * @param isError true if this is error output (stderr).
+ * @param linePrefix Optional command name to prefix each line with.
+ */
 void MainWindow::appendProcessOutput(const QString &output, bool isError,
                                      const QString &linePrefix) {
   if (!QtPassSettings::isShowProcessOutput()) {
@@ -1777,14 +1790,32 @@ void MainWindow::appendProcessOutput(const QString &output, bool isError,
   }
 }
 
+/**
+ * @brief Handles process output from the Pass executor.
+ *
+ * Called when any non-sensitive process completes. Filters out password-
+ * related commands (pass show, insert, etc.) and delegates to
+ * appendProcessOutput.
+ *
+ * @param output The stdout/stderr text from the process.
+ * @param isError true if this is error output (stderr).
+ * @param pid The process ID identifying which command ran.
+ */
 void MainWindow::onProcessOutput(const QString &output, bool isError,
                                  Enums::PROCESS pid) {
   appendProcessOutput(output, isError, getProcessName(pid));
 }
 
+/**
+ * @brief Maps a process ID to its human-readable command name.
+ *
+ * Returns static strings for git/pass commands that appear in output.
+ * Password-related commands return empty (they are filtered).
+ *
+ * @param pid The process ID to look up.
+ * @return QString with command name, or empty if filtered.
+ */
 auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
-  // Literal command names — intentionally not translated, since they refer
-  // to actual shell commands the user could run to reproduce the action.
   switch (pid) {
   case Enums::GIT_INIT:
     return QStringLiteral("git init"); // no-tr
@@ -1798,17 +1829,7 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
     return QStringLiteral("git pull"); // no-tr
   case Enums::GIT_PUSH:
     return QStringLiteral("git push"); // no-tr
-  case Enums::GIT_MOVE:
-    return QStringLiteral("git mv"); // no-tr
-  case Enums::GIT_COPY:
-    // The underlying invocation is `git cp` (a git-extras subcommand) but
-    // most users don't have git-extras installed, so showing that as the
-    // label would be unactionable. Use `git add` instead — it's the
-    // closest reproducible step a stock-git user would take to stage the
-    // copied file; the subsequent commit shows separately under
-    // GIT_COMMIT.
-    return QStringLiteral("git add"); // no-tr
-  case Enums::PASS_INSERT: // Unreachable: filtered by finishedAnyWithPid (lines 137-140)
+  case Enums::PASS_INSERT:
     return QStringLiteral("pass insert"); // no-tr
   case Enums::PASS_REMOVE:
     return QStringLiteral("pass rm"); // no-tr
@@ -1831,10 +1852,57 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
   return QString();
 }
 
+/**
+ * @brief Checks if a process ID represents a sensitive operation whose
+ * output should not be shown in the process output panel.
+ *
+ * Password-related commands (pass show, OTP generate, grep, insert)
+ * display their output in other UI areas, so we skip them here.
+ *
+ * @param pid The process ID to check.
+ * @return true if the process is sensitive and should be filtered.
+ */
+auto MainWindow::isSensitiveProcess(Enums::PROCESS pid) -> bool {
+  switch (pid) {
+  case Enums::PASS_SHOW:
+  case Enums::PASS_OTP_GENERATE:
+  case Enums::PASS_GREP:
+  case Enums::PASS_INSERT:
+    return true;
+  case Enums::GIT_INIT:
+  case Enums::GIT_ADD:
+  case Enums::GIT_COMMIT:
+  case Enums::GIT_RM:
+  case Enums::GIT_PULL:
+  case Enums::GIT_PUSH:
+  case Enums::PASS_REMOVE:
+  case Enums::PASS_INIT:
+  case Enums::PASS_MOVE:
+  case Enums::PASS_COPY:
+  case Enums::GPG_GENKEYS:
+  case Enums::PROCESS_COUNT:
+  case Enums::INVALID:
+    break;
+  }
+  return false;
+}
+
+/**
+ * @brief Updates the visibility of the process output panel.
+ *
+ * Shows or hides the process output widget based on the user's
+ * showProcessOutput setting.
+ */
 void MainWindow::updateProcessOutputVisibility() {
   ui->processOutputWidget->setVisible(QtPassSettings::isShowProcessOutput());
 }
 
+/**
+ * @brief Limits the output panel to max lines, trimming old excess.
+ *
+ * Removes the oldest lines when the document exceeds MaxOutputLines (1000).
+ * Called after each append to prevent unbounded growth.
+ */
 void MainWindow::limitOutputLines() {
   QTextDocument *doc = ui->processOutputEdit->document();
   int excess = doc->blockCount() - MaxOutputLines;
@@ -1848,6 +1916,12 @@ void MainWindow::limitOutputLines() {
   cursor.removeSelectedText();
 }
 
+/**
+ * @brief Clears the process output panel.
+ *
+ * Clears all output, resets the line counter, re-enables auto-scroll,
+ * and moves the cursor to the end for subsequent appends.
+ */
 void MainWindow::on_clearOutputButton_clicked() {
   ui->processOutputEdit->clear();
   m_outputCounter = 0;
