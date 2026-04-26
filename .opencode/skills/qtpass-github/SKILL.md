@@ -369,7 +369,8 @@ gh api graphql -f query='{ repository(owner: "<owner>", name: "<repo>") { pullRe
 
 ```bash
 # Get thread IDs and resolve them
-THREAD_ID="PRRT_xxx"
+# Use an unresolved thread ID from step 1 output (format typically starts with PRRT_)
+THREAD_ID="PRRT_FROM_STEP_1"
 gh api graphql -f query="mutation { resolveReviewThread(input: {threadId: \"$THREAD_ID\"}) { thread { isResolved } } }"
 ```
 
