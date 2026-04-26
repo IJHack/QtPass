@@ -4,6 +4,7 @@
 #include <QClipboard>
 #include <QPlainTextEdit>
 #include <QPushButton>
+#include <QScopeGuard>
 #include <QtTest>
 
 #include "../../../src/importkeydialog.h"
@@ -270,31 +271,33 @@ void tst_importkeydialog::pasteButtonSetsTextFromClipboard() {
   // Verify clipboard round-trip capability before proceeding.
   QClipboard *clipboard = QApplication::clipboard();
   const QString originalClipboard = clipboard->text();
+  // RAII restore so the user's clipboard is reset on every exit path
+  // (early QSKIP, normal completion, or QVERIFY/QCOMPARE failure).
+  const auto restoreClipboard = qScopeGuard([clipboard, originalClipboard]() {
+    clipboard->setText(originalClipboard);
+  });
   const QString probe = QStringLiteral("__qtpass_clipboard_probe__");
   clipboard->setText(probe);
   if (clipboard->text() != probe) {
-    clipboard->setText(originalClipboard);
     QSKIP("Clipboard is not functional on this platform");
   }
-  clipboard->setText(originalClipboard);
 
   ImportKeyDialog dialog;
   auto *edit =
       dialog.findChild<QPlainTextEdit *>(QStringLiteral("inputTextEdit"));
   QVERIFY(edit != nullptr);
+  auto *pasteButton =
+      dialog.findChild<QPushButton *>(QStringLiteral("pasteButton"));
+  QVERIFY(pasteButton != nullptr);
 
   const QString payload =
       QStringLiteral("-----BEGIN PGP PUBLIC KEY BLOCK-----\nABC\n"
                      "-----END PGP PUBLIC KEY BLOCK-----\n");
   clipboard->setText(payload);
 
-  QMetaObject::invokeMethod(&dialog, "on_pasteButton_clicked",
-                            Qt::DirectConnection);
+  pasteButton->click();
 
   QCOMPARE(edit->toPlainText(), payload);
-
-  // Restore clipboard
-  clipboard->setText(originalClipboard);
 }
 
 QTEST_MAIN(tst_importkeydialog)

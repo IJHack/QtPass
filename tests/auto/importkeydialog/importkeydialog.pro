@@ -14,5 +14,5 @@ INCLUDEPATH += ../../../src
 
 win32 {
     RC_FILE = ../../../windows.rc
-    QMAKE_LINK_OBJECT_MAX=24
+    QMAKE_LINK_OBJECT_MAX = 24
 }

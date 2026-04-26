@@ -8,8 +8,6 @@
  * This class contains static const QString members that define the keys
  * used for storing and retrieving application settings.
  */
-SettingsConstants::SettingsConstants() = default;
-
 const QString SettingsConstants::version = "version";
 const QString SettingsConstants::groupMainwindow = "mainwindow";
 const QString SettingsConstants::geometry =
