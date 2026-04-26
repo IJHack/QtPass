@@ -212,6 +212,11 @@ void MainWindow::focusInput() {
   }
   lineEdit->selectAll();
   lineEdit->setFocus();
+  // Only mark the first-show focus pulse as done once it's actually
+  // landed; setting it eagerly in showEvent() would consume the
+  // one-shot if focusInput returned early (mid-rebuild widget state)
+  // and we'd never retry.
+  m_initialShowDone = true;
 }
 
 /**
@@ -243,11 +248,12 @@ void MainWindow::showEvent(QShowEvent *event) {
   if (m_initialShowDone) {
     return;
   }
-  m_initialShowDone = true;
-  // Defer one event loop tick so the X11/Wayland map round-trip can
-  // complete before we read widget visibility. Calling focusInput()
-  // directly here was crashing inside QWidget::testAttribute on first
-  // run.
+  // Queue the focus pulse for the next event-loop tick so the platform
+  // map round-trip and any pending widget rebuilds (e.g. setWindowFlags
+  // from the config wizard path) settle before we look up the line
+  // edit. The `m_initialShowDone` latch is set inside focusInput()
+  // *after* it actually focuses, so a transient failed lookup just
+  // re-queues on the next show rather than silently dropping.
   QMetaObject::invokeMethod(this, &MainWindow::focusInput,
                             Qt::QueuedConnection);
 }
