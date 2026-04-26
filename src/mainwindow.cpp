@@ -187,7 +187,7 @@ MainWindow::~MainWindow() { delete m_qtPass; }
  * compiled with SINGLE_APP=1 (default).
  */
 void MainWindow::focusInput() {
-  if (!ui->lineEdit || !ui->lineEdit->isVisible()) {
+  if (!ui || !ui->lineEdit || !ui->lineEdit->isVisible()) {
     return;
   }
   ui->lineEdit->selectAll();
