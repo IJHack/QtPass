@@ -129,6 +129,12 @@ protected:
    */
   void changeEvent(QEvent *event) override;
   /**
+   * @brief First-show hook used to focus the search input once the window
+   *        is actually mapped (avoids races with timers fired before show).
+   * @param event The show event.
+   */
+  void showEvent(QShowEvent *event) override;
+  /**
    * @brief Filter events from watched objects.
    * @param obj The object that received the event.
    * @param event The event to filter.
@@ -270,6 +276,7 @@ private:
   bool m_grepMode = false;
   bool m_grepBusy = false;
   bool m_grepCancelled = false;
+  bool m_initialShowDone = false;
   bool m_autoScroll = true;
   int m_outputCounter = 0;
   static constexpr int MaxOutputLines = 1000;
