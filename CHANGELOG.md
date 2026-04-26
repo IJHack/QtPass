@@ -82,6 +82,8 @@
 
 ## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
 
+- Added process output panel in main window status bar [#252](https://github.com/IJHack/QtPass/issues/252), [#1172](https://github.com/IJHack/QtPass/pull/1172)
+
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.7.0...HEAD)
 
 ## [1.5.1](https://github.com/IJHack/QtPass/tree/v1.5.1) (2026-03-22)
