@@ -54,7 +54,7 @@ git fetch upstream
 git pull upstream main --rebase
 
 # Force push if needed (safer)
-git push --force-with-lease origin <branch>
+git push --force-with-lease <push-remote> <branch>
 ```
 
 This prevents "branch is out-of-date with base branch" errors.
@@ -112,7 +112,7 @@ Only force push to feature branches when absolutely necessary (e.g., resolving m
 
 ```bash
 # Safe force push (recommended)
-git push --force-with-lease origin <branch>
+git push --force-with-lease <push-remote> <branch>
 
 # Never use on main or shared branches
 git push --force origin main  # AVOID THIS
@@ -309,7 +309,7 @@ git add <resolved-files>
 git rebase --continue
 
 # Force push (since we rewrote history; safer)
-git push --force-with-lease origin <branch>
+git push --force-with-lease <push-remote> <branch>
 ```
 
 ## Fork Workflow
@@ -338,7 +338,7 @@ Note: When working with forks, use `myfork` for pushing and `upstream` for synci
 ```bash
 git checkout <branch-name>
 git pull upstream main --rebase
-git push --force-with-lease origin <branch-name>
+git push --force-with-lease <push-remote> <branch-name>
 ```
 
 ### Merge Failed
@@ -474,5 +474,5 @@ act push -W .github/workflows/linter.yml -j build
 git fetch upstream
 git checkout <branch>
 git pull upstream main --rebase
-git push --force-with-lease origin <branch>
+git push --force-with-lease <push-remote> <branch>
 ```
