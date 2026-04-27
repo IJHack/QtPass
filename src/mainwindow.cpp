@@ -151,24 +151,6 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
             }
           });
 
-  // Hysteresis: while the user is actively dragging the slider, don't
-  // touch m_autoScroll on every tick — a brief overshoot at maximum
-  // would silently re-arm auto-scroll without an explicit release. Only
-  // commit on slider release. Wheel/keyboard scroll never sets
-  // isSliderDown(), so they still update immediately.
-  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::valueChanged,
-          this, [this]() {
-            auto *sb = m_processOutputEdit->verticalScrollBar();
-            if (sb->isSliderDown())
-              return;
-            m_autoScroll = sb->value() >= sb->maximum();
-          });
-  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::sliderReleased,
-          this, [this]() {
-            auto *sb = m_processOutputEdit->verticalScrollBar();
-            m_autoScroll = sb->value() >= sb->maximum();
-          });
-
   ui->lineEdit->setClearButtonEnabled(true);
   updateGrepButtonVisibility();
 
@@ -344,8 +326,6 @@ void MainWindow::initProcessOutputPanel() {
   m_processOutputEdit->setObjectName(QStringLiteral("processOutputEdit"));
   m_processOutputEdit->setReadOnly(true);
   m_processOutputEdit->setAcceptRichText(false);
-  m_processOutputEdit->setMinimumSize(0, 80);
-  m_processOutputEdit->setMaximumSize(QWIDGETSIZE_MAX, 150);
   outputLayout->addWidget(m_processOutputEdit);
 
   m_processOutputDock = new QDockWidget(tr("Process Output"), this);
@@ -355,11 +335,35 @@ void MainWindow::initProcessOutputPanel() {
   m_processOutputDock->setAllowedAreas(Qt::BottomDockWidgetArea |
                                        Qt::TopDockWidgetArea);
   m_processOutputDock->setWidget(m_processOutputWidget);
-  m_processOutputDock->setVisible(QtPassSettings::isShowProcessOutput());
   addDockWidget(Qt::BottomDockWidgetArea, m_processOutputDock);
+  // setVisible after addDockWidget so our explicit preference wins
+  // even if QMainWindow applies any cached state when the dock is
+  // attached. restoreWindow() runs before this method (it's called
+  // from the QtPass ctor, which is constructed at the top of the
+  // MainWindow ctor), so the saved layout has already been processed
+  // by the time we get here.
+  m_processOutputDock->setVisible(QtPassSettings::isShowProcessOutput());
 
   connect(m_clearOutputButton, &QToolButton::clicked, this,
           &MainWindow::on_clearOutputButton_clicked);
+
+  // Hysteresis: while the user is actively dragging the slider, don't
+  // touch m_autoScroll on every tick — a brief overshoot at maximum
+  // would silently re-arm auto-scroll without an explicit release. Only
+  // commit on slider release. Wheel/keyboard scroll never sets
+  // isSliderDown(), so they still update immediately.
+  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::valueChanged,
+          this, [this]() {
+            auto *sb = m_processOutputEdit->verticalScrollBar();
+            if (sb->isSliderDown())
+              return;
+            m_autoScroll = sb->value() >= sb->maximum();
+          });
+  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::sliderReleased,
+          this, [this]() {
+            auto *sb = m_processOutputEdit->verticalScrollBar();
+            m_autoScroll = sb->value() >= sb->maximum();
+          });
 }
 
 auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
