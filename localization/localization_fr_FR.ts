@@ -1933,7 +1933,7 @@ Continuer&#x202f;?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&amp;Spectacle</translation>
+        <translation>&amp;Afficher</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
@@ -1953,7 +1953,7 @@ Continuer&#x202f;?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp;Restoration</translation>
+        <translation>&amp;Restaurer</translation>
     </message>
 </context>
 <context>

@@ -466,7 +466,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation>Selecciona recipients para %1</translation>
+        <translation>Selecciona destinatarios para %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
@@ -1390,7 +1390,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation>¿Qué es esto pues?</translation>
+        <translation>¿Qué es esto?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
