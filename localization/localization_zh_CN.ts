@@ -636,7 +636,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>ASCII 保护的密钥 (*.asc);;所有文件 (*)</translation>
+        <translation>ASCII-armored 密钥 (*.asc);;所有文件 (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -801,7 +801,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>从文件导入 GPG 公钥或在下方粘贴。公钥应该是 ASCII 保护的格式。</translation>
+        <translation>从文件导入 GPG 公钥或在下方粘贴。公钥应该是 ASCII-armored 格式。</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -816,7 +816,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>在此处粘贴 ASCII 保护的 GPG key…</translation>
+        <translation>在此处粘贴 ASCII-armored GPG 密钥…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -826,7 +826,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII 保护的 GPG key</translation>
+        <translation>ASCII-armored GPG 密钥</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -849,7 +849,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 看上去不像 ASCII 保护的 GPG key。先用 &lt;code&gt;gpg --armor --export&lt;/code&gt; 转换它，或通过 &lt;b&gt;从剪贴板&lt;/b&gt; 粘贴保护的文本块。</translation>
+        <translation>%1 看上去不像 ASCII-armored GPG 密钥。先用 &lt;code&gt;gpg --armor --export&lt;/code&gt; 转换它，或通过 &lt;b&gt;从剪贴板&lt;/b&gt; 粘贴ASCII-armored 文本块。</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>

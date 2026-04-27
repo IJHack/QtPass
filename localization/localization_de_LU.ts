@@ -632,7 +632,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>ASCII-codierter Schlüssel (*.asc);;Alle Dateien (*)</translation>
+        <translation>ASCII-armored Schlüssel (*.asc);;Alle Dateien (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -797,7 +797,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importieren Sie einen öffentlichen GPG-Schlüssel aus einer Datei oder fügen Sie ihn unten ein. Der Schlüssel sollte im ASCII-codierten Format vorliegen.</translation>
+        <translation>Importieren Sie einen öffentlichen GPG-Schlüssel aus einer Datei oder fügen Sie ihn unten ein. Der Schlüssel sollte im ASCII-armored Format vorliegen.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -812,7 +812,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Fügen Sie hier einen ASCII-codierten GPG-Schlüssel ein…</translation>
+        <translation>Fügen Sie hier einen ASCII-armored GPG-Schlüssel ein…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -822,7 +822,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII-codierter GPG-Schlüssel</translation>
+        <translation>ASCII-armored GPG-Schlüssel</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -845,7 +845,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 sieht nicht wie ein ASCII-codierter GPG-Schlüssel aus. Konvertieren Sie ihn zuerst mit &lt;code&gt;gpg --armor --export&lt;/code&gt; oder fügen Sie den codierten Block über &lt;b&gt;Aus Zwischenablage&lt;/b&gt; ein.</translation>
+        <translation>%1 sieht nicht wie ein ASCII-armored GPG-Schlüssel aus. Konvertieren Sie ihn zuerst mit &lt;code&gt;gpg --armor --export&lt;/code&gt; oder fügen Sie den ASCII-armored Block über &lt;b&gt;Aus Zwischenablage&lt;/b&gt; ein.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>

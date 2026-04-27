@@ -636,7 +636,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>ASCII-gecodeerde sleutel (*.asc);;Alle bestanden (*)</translation>
+        <translation>ASCII-armored sleutel (*.asc);;Alle bestanden (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>

@@ -576,7 +576,7 @@ e-posta</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>ASCII korumalı anahtar (*.asc);;Tüm dosyalar (*)</translation>
+        <translation>ASCII-armored anahtar (*.asc);;Tüm dosyalar (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -756,7 +756,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>ASCII formatında bir GPG anahtarını buraya yapıştırın...</translation>
+        <translation>ASCII-armored bir GPG anahtarını buraya yapıştırın...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -766,7 +766,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII zırhlı GPG anahtarı</translation>
+        <translation>ASCII-armored GPG anahtarı</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -789,7 +789,7 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1, ASCII korumalı bir GPG anahtarı gibi görünmüyor. Önce &lt;code&gt;gpg --armor --export&lt;/code&gt; komutuyla dönüştürün veya korumalı bloğu &lt;b&gt;Panodan&lt;/b&gt; yapıştırın.</translation>
+        <translation>%1, ASCII-armored bir GPG anahtarı gibi görünmüyor. Önce &lt;code&gt;gpg --armor --export&lt;/code&gt; komutuyla dönüştürün veya ASCII-armored bloğu &lt;b&gt;Panodan&lt;/b&gt; yapıştırın.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
