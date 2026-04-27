@@ -1681,7 +1681,7 @@ Doorgaan?</translation>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation>Encryptie mislukt: GPG sleutel is ingetrokken.</translation>
+        <translation>Encryptie mislukt: GPG-sleutel is ingetrokken.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
@@ -1693,7 +1693,7 @@ Doorgaan?</translation>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>Encryptie mislukt. Controleer dat je GPG sleutel geldig is.</translation>
+        <translation>Encryptie mislukt. Controleer dat je GPG-sleutel geldig is.</translation>
     </message>
 </context>
 <context>
@@ -1978,7 +1978,7 @@ Rode inzendingen zijn niet geldig, je zult niet in staat zijn om te coderen voor
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Kan geen lijst met beschikbare gpg-sleutels ophalen</translation>
+        <translation>Kan geen lijst met beschikbare GPG-sleutels ophalen</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
