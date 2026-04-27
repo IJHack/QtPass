@@ -855,7 +855,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation>GPG import faalde:
+        <translation>GPG import mislukt:
 %1</translation>
     </message>
     <message>
@@ -1602,7 +1602,7 @@ Doorgaan?</translation>
         <location filename="../src/mainwindow.cpp" line="1746"/>
         <location filename="../src/mainwindow.cpp" line="1766"/>
         <source>Export Public Key</source>
-        <translation>Exporteer de pubieke sleutel</translation>
+        <translation>Exporteer de publieke sleutel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
@@ -1675,25 +1675,25 @@ Doorgaan?</translation>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>Encryptie faalde: GPG-sleutel is verlopen. Vernieuwen of vervangen.</translation>
+        <translation>Encryptie mislukt: GPG-sleutel is verlopen. Vernieuwen of vervangen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation>Encryptie faalde: GPG sleutel is ingetrokken.</translation>
+        <translation>Encryptie mislukt: GPG sleutel is ingetrokken.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Encryptie faalde, ontvanger GPG-sleutel niet gevonden of ongeldig. Controleer dat de sleutel ID in .gpg-id klopt en geïmporteerd is.</translation>
+        <translation>Encryptie mislukt, ontvanger GPG-sleutel niet gevonden of ongeldig. Controleer dat de sleutel ID in .gpg-id klopt en geïmporteerd is.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>Encryptie faalde. Controleer dat je GPG sleutel geldig is.</translation>
+        <translation>Encryptie mislukt. Controleer dat je GPG sleutel geldig is.</translation>
     </message>
 </context>
 <context>
