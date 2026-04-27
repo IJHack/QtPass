@@ -1,7 +1,9 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QDataStream>
 #include <QDir>
 #include <QFileSystemModel>
+#include <QMimeData>
 #include <QtTest>
 
 #include "../../../src/storemodel.h"
@@ -16,6 +18,17 @@ private Q_SLOTS:
   void flagsWithInvalidIndex();
   void mimeTypes();
   void mimeData();
+  void mimeDataRoundTripFile();
+  void mimeDataRoundTripDirectory();
+  void mimeDataDeserializeUnknownKind();
+  void canDropNullData();
+  void canDropWrongMimeType();
+  void canDropEmptyEncodedData();
+  void canDropColumnGreaterThanZero();
+  void canDropDirOnDir();
+  void canDropFileOnDir();
+  void canDropFileOnFile();
+  void canDropDirOnFile();
   void lessThan();
   void lessThanDirsFirst();
   void supportedDropActions();
@@ -266,6 +279,177 @@ void tst_storemodel::filterRegularExpression() {
   sm.setFilterRegularExpression(QRegularExpression("test"));
   QRegularExpression result = sm.filterRegularExpression();
   QVERIFY2(result.pattern() == "test", "Filter should match test");
+}
+
+namespace {
+auto makeMimeData(dragAndDropInfoPasswordStore::ItemKind kind,
+                  const QString &path) -> QMimeData * {
+  dragAndDropInfoPasswordStore info;
+  info.kind = kind;
+  info.path = path;
+
+  QByteArray encoded;
+  QDataStream stream(&encoded, QIODevice::WriteOnly);
+  stream << info;
+
+  auto *mime = new QMimeData;
+  mime->setData("application/vnd+qtpass.dragAndDropInfoPasswordStore", encoded);
+  return mime;
+}
+
+struct DropFixture {
+  QTemporaryDir tempDir;
+  QFileSystemModel fsm;
+  StoreModel sm;
+  QString filePath;
+  QString folderPath;
+
+  DropFixture() {
+    QFile f(tempDir.path() + "/file.gpg");
+    [[maybe_unused]] const bool fileOpened = f.open(QFile::WriteOnly);
+    Q_ASSERT(fileOpened);
+    f.close();
+    filePath = tempDir.path() + "/file.gpg";
+
+    [[maybe_unused]] const bool folderCreated =
+        QDir(tempDir.path()).mkdir("folder");
+    Q_ASSERT(folderCreated);
+    folderPath = tempDir.path() + "/folder";
+
+    fsm.setRootPath(tempDir.path());
+    sm.setModelAndStore(&fsm, tempDir.path());
+
+    // QFileSystemModel populates rows asynchronously; spin until both
+    // entries are visible to the proxy before exercising drop logic.
+    QTRY_VERIFY(fsm.index(filePath).isValid());
+    QTRY_VERIFY(fsm.index(folderPath).isValid());
+  }
+
+  [[nodiscard]] auto fileProxy() const -> QModelIndex {
+    return sm.mapFromSource(fsm.index(filePath));
+  }
+  [[nodiscard]] auto folderProxy() const -> QModelIndex {
+    return sm.mapFromSource(fsm.index(folderPath));
+  }
+};
+} // namespace
+
+void tst_storemodel::mimeDataRoundTripFile() {
+  dragAndDropInfoPasswordStore in;
+  in.kind = dragAndDropInfoPasswordStore::ItemKind::File;
+  in.path = "/path/to/file.gpg";
+
+  QByteArray buf;
+  QDataStream out(&buf, QIODevice::WriteOnly);
+  out << in;
+
+  dragAndDropInfoPasswordStore back;
+  QDataStream stream(&buf, QIODevice::ReadOnly);
+  stream >> back;
+
+  QCOMPARE(back.kind, dragAndDropInfoPasswordStore::ItemKind::File);
+  QCOMPARE(back.path, in.path);
+}
+
+void tst_storemodel::mimeDataRoundTripDirectory() {
+  dragAndDropInfoPasswordStore in;
+  in.kind = dragAndDropInfoPasswordStore::ItemKind::Directory;
+  in.path = "/path/to/folder";
+
+  QByteArray buf;
+  QDataStream out(&buf, QIODevice::WriteOnly);
+  out << in;
+
+  dragAndDropInfoPasswordStore back;
+  QDataStream stream(&buf, QIODevice::ReadOnly);
+  stream >> back;
+
+  QCOMPARE(back.kind, dragAndDropInfoPasswordStore::ItemKind::Directory);
+  QCOMPARE(back.path, in.path);
+}
+
+void tst_storemodel::mimeDataDeserializeUnknownKind() {
+  // An on-the-wire kind byte that doesn't map to File or Directory must
+  // resolve to ItemKind::Unknown rather than aliasing onto a real kind.
+  QByteArray buf;
+  QDataStream out(&buf, QIODevice::WriteOnly);
+  out << static_cast<quint8>(99) << QString("/some/path");
+
+  dragAndDropInfoPasswordStore back;
+  QDataStream stream(&buf, QIODevice::ReadOnly);
+  stream >> back;
+
+  QCOMPARE(back.kind, dragAndDropInfoPasswordStore::ItemKind::Unknown);
+  QCOMPARE(back.path, QString("/some/path"));
+}
+
+void tst_storemodel::canDropNullData() {
+  DropFixture fx;
+  QVERIFY(
+      !fx.sm.canDropMimeData(nullptr, Qt::MoveAction, 0, 0, fx.folderProxy()));
+}
+
+void tst_storemodel::canDropWrongMimeType() {
+  DropFixture fx;
+  QMimeData mime;
+  mime.setText("not the right format");
+  QVERIFY(
+      !fx.sm.canDropMimeData(&mime, Qt::MoveAction, 0, 0, fx.folderProxy()));
+}
+
+void tst_storemodel::canDropEmptyEncodedData() {
+  DropFixture fx;
+  QMimeData mime;
+  mime.setData("application/vnd+qtpass.dragAndDropInfoPasswordStore",
+               QByteArray());
+  QVERIFY(
+      !fx.sm.canDropMimeData(&mime, Qt::MoveAction, 0, 0, fx.folderProxy()));
+}
+
+void tst_storemodel::canDropColumnGreaterThanZero() {
+  DropFixture fx;
+  QScopedPointer<QMimeData> mime(
+      makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File, fx.filePath));
+  // The first column is the only meaningful drop target in a file
+  // browser; secondary columns (size/date/etc.) must reject drops.
+  QVERIFY(!fx.sm.canDropMimeData(mime.data(), Qt::MoveAction, 0, 1,
+                                 fx.folderProxy()));
+}
+
+void tst_storemodel::canDropDirOnDir() {
+  DropFixture fx;
+  QScopedPointer<QMimeData> mime(makeMimeData(
+      dragAndDropInfoPasswordStore::ItemKind::Directory, fx.folderPath));
+  QVERIFY(fx.sm.canDropMimeData(mime.data(), Qt::MoveAction, 0, 0,
+                                fx.folderProxy()));
+}
+
+void tst_storemodel::canDropFileOnDir() {
+  DropFixture fx;
+  QScopedPointer<QMimeData> mime(
+      makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File, fx.filePath));
+  QVERIFY(fx.sm.canDropMimeData(mime.data(), Qt::MoveAction, 0, 0,
+                                fx.folderProxy()));
+}
+
+void tst_storemodel::canDropFileOnFile() {
+  // file-on-file is allowed at the canDrop layer; dropMimeData() then
+  // surfaces an overwrite confirmation dialog before the actual move.
+  DropFixture fx;
+  QScopedPointer<QMimeData> mime(
+      makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File, fx.filePath));
+  QVERIFY(
+      fx.sm.canDropMimeData(mime.data(), Qt::MoveAction, 0, 0, fx.fileProxy()));
+}
+
+void tst_storemodel::canDropDirOnFile() {
+  // The one combination explicitly disallowed by the #239 spec: a
+  // folder dropped onto a file has no sensible interpretation.
+  DropFixture fx;
+  QScopedPointer<QMimeData> mime(makeMimeData(
+      dragAndDropInfoPasswordStore::ItemKind::Directory, fx.folderPath));
+  QVERIFY(!fx.sm.canDropMimeData(mime.data(), Qt::MoveAction, 0, 0,
+                                 fx.fileProxy()));
 }
 
 QTEST_MAIN(tst_storemodel)

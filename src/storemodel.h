@@ -37,6 +37,30 @@ struct dragAndDropInfoPasswordStore {
   QString path;                     /**< Full path to the dragged item */
 };
 
+class QDataStream;
+
+/**
+ * @brief Serialize a dragAndDropInfoPasswordStore for the QtPass MIME type.
+ * @param out Stream to write to.
+ * @param info Drag/drop info to serialize.
+ * @return The same stream, for chaining.
+ */
+auto operator<<(QDataStream &out, const dragAndDropInfoPasswordStore &info)
+    -> QDataStream &;
+
+/**
+ * @brief Deserialize a dragAndDropInfoPasswordStore from the QtPass MIME type.
+ *
+ * Unrecognised kind bytes resolve to ItemKind::Unknown rather than being
+ * rejected, so a future protocol bump remains decode-safe.
+ *
+ * @param in Stream to read from.
+ * @param info Drag/drop info to populate.
+ * @return The same stream, for chaining.
+ */
+auto operator>>(QDataStream &in, dragAndDropInfoPasswordStore &info)
+    -> QDataStream &;
+
 class StoreModel : public QSortFilterProxyModel {
   Q_OBJECT
 
