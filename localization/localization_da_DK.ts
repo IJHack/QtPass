@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>Vis procesudgang</translation>
+        <translation>Vis procesoutput</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
