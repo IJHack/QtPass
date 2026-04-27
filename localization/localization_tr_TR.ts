@@ -409,7 +409,7 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
         <source>qrencode needs to be installed</source>
-        <translation>qrencode yüklü olması gerekir</translation>
+        <translation>qrencode&apos;nin yüklü olması gerekir</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
