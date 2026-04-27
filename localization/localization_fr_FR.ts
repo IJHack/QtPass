@@ -5,27 +5,33 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
+        <location filename="../src/ui_configdialog.h" line="897"/>
         <source>Configuration</source>
         <translation>Configuration</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
+        <location filename="../src/ui_configdialog.h" line="946"/>
         <source>Settings</source>
         <translation>Paramètres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
+        <location filename="../src/ui_configdialog.h" line="898"/>
         <source>Clipboard behaviour:</source>
         <translation>Gestion du presse-papiers :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
+        <location filename="../src/ui_configdialog.h" line="900"/>
         <source>Autoclear after:</source>
         <translation>Supprimer après :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
+        <location filename="../src/ui_configdialog.h" line="901"/>
+        <location filename="../src/ui_configdialog.h" line="906"/>
         <source>Seconds</source>
         <translation>Secondes</translation>
     </message>
@@ -35,61 +41,73 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
+        <location filename="../src/ui_configdialog.h" line="903"/>
         <source>Hide content</source>
         <translation>Cacher le contenu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
+        <location filename="../src/ui_configdialog.h" line="904"/>
         <source>Hide password</source>
         <translation>Masquer le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
+        <location filename="../src/ui_configdialog.h" line="905"/>
         <source>Autoclear panel after:</source>
         <translation>Effacer automatiquement le panneau après :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
+        <location filename="../src/ui_configdialog.h" line="907"/>
         <source>Use a monospace font</source>
         <translation>Utiliser une police monospacée</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
+        <location filename="../src/ui_configdialog.h" line="908"/>
         <source>Display the files content as-is</source>
         <translation>Afficher le contenu des fichiers tel quel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
+        <location filename="../src/ui_configdialog.h" line="909"/>
         <source>No line wrapping</source>
         <translation>Aucune rupture de ligne</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
+        <location filename="../src/ui_configdialog.h" line="910"/>
         <source>Show process output</source>
-        <translation>Afficher la sortie du processus</translation>
+        <translation>Afficher la sortie des processus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
+        <location filename="../src/ui_configdialog.h" line="911"/>
         <source>Password Generation:</source>
         <translation>Génération des mots de passe :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
+        <location filename="../src/ui_configdialog.h" line="912"/>
         <source>Password Length:</source>
         <translation>Longueur du mot de passe :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
+        <location filename="../src/ui_configdialog.h" line="913"/>
         <source>Characters</source>
         <translation>Caractères</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
+        <location filename="../src/ui_configdialog.h" line="914"/>
         <source>Use characters:</source>
         <translation>Utiliser les caractères suivants :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
+        <location filename="../src/ui_configdialog.h" line="923"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
@@ -99,6 +117,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
+        <location filename="../src/ui_configdialog.h" line="925"/>
         <source>Exclude capital letters</source>
         <translation>Exclure les majuscules</translation>
     </message>
@@ -108,16 +127,19 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
+        <location filename="../src/ui_configdialog.h" line="927"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Générer des mots de passe plus facile à mémoriser, mais moins sécurisés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
+        <location filename="../src/ui_configdialog.h" line="928"/>
         <source>Exclude numbers</source>
         <translation>Exclure les chiffres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
+        <location filename="../src/ui_configdialog.h" line="929"/>
         <source>Git:</source>
         <translation>Git :</translation>
     </message>
@@ -127,56 +149,67 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
+        <location filename="../src/ui_configdialog.h" line="931"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Ajouter automatiquement les fichiers .gpg-id</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
+        <location filename="../src/ui_configdialog.h" line="932"/>
         <source>Automatically push</source>
         <translation>Pousser automatiquement</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
+        <location filename="../src/ui_configdialog.h" line="933"/>
         <source>Automatically pull</source>
         <translation>Récupérer automatiquement</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
+        <location filename="../src/ui_configdialog.h" line="941"/>
         <source>System:</source>
         <translation>Système :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/ui_configdialog.h" line="942"/>
         <source>Use TrayIcon</source>
         <translation>Utiliser l&apos;icône dans la barre des tâches</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
+        <location filename="../src/ui_configdialog.h" line="943"/>
         <source>Start minimized</source>
         <translation>Démarrer avec la fenêtre réduite</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
+        <location filename="../src/ui_configdialog.h" line="944"/>
         <source>Hide on close</source>
         <translation>Cacher à la fermeture</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
+        <location filename="../src/ui_configdialog.h" line="945"/>
         <source>Always on top</source>
         <translation>Toujours au dessus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
+        <location filename="../src/ui_configdialog.h" line="966"/>
         <source>Programs</source>
         <translation>Programmes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
+        <location filename="../src/ui_configdialog.h" line="947"/>
         <source>Select password storage program:</source>
         <translation>Sélectionner le programme de stockage des mots de passe :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
+        <location filename="../src/ui_configdialog.h" line="984"/>
         <source>Current path</source>
         <translation>Chemin actuel</translation>
     </message>
@@ -186,11 +219,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
+        <location filename="../src/ui_configdialog.h" line="949"/>
         <source>&amp;Use pass</source>
         <translation>Utiliser le logiciel &amp;pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
+        <location filename="../src/ui_configdialog.h" line="950"/>
         <source>Native</source>
         <translation>Natif</translation>
     </message>
@@ -212,11 +247,13 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
+        <location filename="../src/ui_configdialog.h" line="961"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="827"/>
+        <location filename="../src/ui_configdialog.h" line="962"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
@@ -226,26 +263,31 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
+        <location filename="../src/ui_configdialog.h" line="986"/>
         <source>Profiles</source>
         <translation>Profils</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="949"/>
+        <location filename="../src/ui_configdialog.h" line="968"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
+        <location filename="../src/ui_configdialog.h" line="973"/>
         <source>Path</source>
         <translation>Chemin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/ui_configdialog.h" line="982"/>
         <source>Add</source>
         <translation>Ajouter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="993"/>
+        <location filename="../src/ui_configdialog.h" line="983"/>
         <source>Delete</source>
         <translation>Supprimer</translation>
     </message>
@@ -255,6 +297,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
+        <location filename="../src/ui_configdialog.h" line="996"/>
         <source>Template</source>
         <translation>Template</translation>
     </message>
@@ -264,16 +307,19 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
+        <location filename="../src/ui_configdialog.h" line="988"/>
         <source>Use template</source>
         <translation>Utiliser un template</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
+        <location filename="../src/ui_configdialog.h" line="990"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Afficher toutes les lignes commençant par un mot suivi de deux-points comme champs de mot de passe, pas seulement celles listées</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
+        <location filename="../src/ui_configdialog.h" line="992"/>
         <source>Show all fields templated</source>
         <translation>Afficher tous les champs du modèle</translation>
     </message>
@@ -287,6 +333,7 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
+        <location filename="../src/ui_configdialog.h" line="997"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
@@ -314,17 +361,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation>Créer un répertoire de profil&#x202f;?</translation>
+        <translation>Créer le dossier de profil ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Voulez-vous créer un magasin de mots de passe dans %1&#x202f;?</translation>
+        <translation>Voulez-vous créer un magasin de mots de passe dans %1 ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation>Impossible de créer un répertoire de profil&#xa0;: %1</translation>
+        <translation>Impossible de créer le dossier de profil : %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
@@ -390,55 +437,63 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation>Nouveau profil&#xa0;: %1 à %2</translation>
+        <translation>Nouveau profil : %1 à %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation>Profil&#xa0;: %1 à %2</translation>
+        <translation>Profil : %1 à %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Remplir tous les champs requis</translation>
+        <translation>Veuillez remplir tous les champs requis.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
+        <location filename="../src/ui_configdialog.h" line="899"/>
         <source>Use primary selection</source>
         <translation>Utiliser la sélection principale</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
+        <location filename="../src/ui_configdialog.h" line="902"/>
         <source>Content panel behaviour:</source>
         <translation>Comportement du panneau de contenu :</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
+        <location filename="../src/ui_configdialog.h" line="921"/>
         <source>Select character set for password generation</source>
         <translation>Sélectionnez l&apos;ensemble de caractères pour la génération de mots de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
+        <location filename="../src/ui_configdialog.h" line="915"/>
         <source>All Characters</source>
         <translation>Tous les caractères</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
+        <location filename="../src/ui_configdialog.h" line="916"/>
         <source>Alphabetical</source>
         <translation>Alphabétique</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
+        <location filename="../src/ui_configdialog.h" line="917"/>
         <source>Alphanumerical</source>
         <translation>Alphanumérique</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
+        <location filename="../src/ui_configdialog.h" line="918"/>
         <source>Custom</source>
         <translation>Personnalisé</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
+        <location filename="../src/ui_configdialog.h" line="934"/>
         <source>Extensions:</source>
         <translation>Extensions:</translation>
     </message>
@@ -452,11 +507,13 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
+        <location filename="../src/ui_configdialog.h" line="964"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
+        <location filename="../src/ui_configdialog.h" line="965"/>
         <source>Autodetect</source>
         <translation>Détection automatique</translation>
     </message>
@@ -487,46 +544,55 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
+        <location filename="../src/ui_configdialog.h" line="924"/>
         <source>Use PWGen</source>
         <translation>Utiliser PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
+        <location filename="../src/ui_configdialog.h" line="926"/>
         <source>Include special symbols</source>
         <translation>Inclure des symboles spéciaux</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
+        <location filename="../src/ui_configdialog.h" line="930"/>
         <source>Use Git</source>
         <translation>Utiliser Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
+        <location filename="../src/ui_configdialog.h" line="935"/>
         <source>Use QRencode</source>
         <translation>Utiliser QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
+        <location filename="../src/ui_configdialog.h" line="936"/>
         <source>Use pass-otp extension</source>
         <translation>Utiliser l&apos;extension pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
+        <location filename="../src/ui_configdialog.h" line="937"/>
         <source>Enable content search (pass grep)</source>
         <translation>Activer la recherche de contenu (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
+        <location filename="../src/ui_configdialog.h" line="939"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Permettre la recherche dans le contenu du fichier de mot de passe. Nécessite le décryptage de chaque fichier et peut être lent sur les grands magasins.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
+        <location filename="../src/ui_configdialog.h" line="948"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Git/GPG Nati&amp;ve</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/ui_configdialog.h" line="951"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
@@ -536,56 +602,71 @@ email</translation>
         <location filename="../src/configdialog.ui" line="806"/>
         <location filename="../src/configdialog.ui" line="837"/>
         <location filename="../src/configdialog.ui" line="1015"/>
+        <location filename="../src/ui_configdialog.h" line="952"/>
+        <location filename="../src/ui_configdialog.h" line="953"/>
+        <location filename="../src/ui_configdialog.h" line="960"/>
+        <location filename="../src/ui_configdialog.h" line="963"/>
+        <location filename="../src/ui_configdialog.h" line="985"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
+        <location filename="../src/ui_configdialog.h" line="954"/>
         <source>Generate</source>
         <translation>Générer</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
+        <location filename="../src/ui_configdialog.h" line="956"/>
         <source>Generate GPG key pair</source>
         <translation>Générer une paire de clés GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
+        <location filename="../src/ui_configdialog.h" line="958"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
+        <location filename="../src/ui_configdialog.h" line="959"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
+        <location filename="../src/ui_configdialog.h" line="970"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Nom de profil, utilisé pour identifier ce profil de configuration</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
+        <location filename="../src/ui_configdialog.h" line="975"/>
         <source>Path to the password store directory</source>
         <translation>Chemin d&apos;accès au répertoire de stockage des mots de passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
+        <location filename="../src/ui_configdialog.h" line="978"/>
         <source>Signing Key</source>
         <translation>Clé de signature</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
+        <location filename="../src/ui_configdialog.h" line="980"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Facultatif&#xa0;: clé GPG pour signer des fichiers .gpg-id pour vérification de l&apos;intégrité. Laisser vide à moins que vous n&apos;ayez besoin de protéger la liste d&apos;utilisateurs contre manipulation.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
+        <location filename="../src/ui_configdialog.h" line="987"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Les templates ajoutent des champs supplémentaires dans le dialogue de génération de mot de passe et dans la vue du mot de passe.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
+        <location filename="../src/ui_configdialog.h" line="993"/>
         <source>login
 URL
 e-mail</source>
@@ -598,23 +679,27 @@ e-mail</translation>
     <name>ExportPublicKeyDialog</name>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="99"/>
         <source>Export Public Key</source>
-        <translation>Exporter la clef publique</translation>
+        <translation>Exporter la clé publique</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="100"/>
         <source>Public key</source>
         <translation>Clé publique</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="101"/>
         <source>Copy to Clipboard</source>
         <translation>Copier dans le presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="102"/>
         <source>Save to File...</source>
-        <translation>Enregistrer sous...</translation>
+        <translation>Enregistrer dans un fichier…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -624,29 +709,29 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation>Copié&#x202f;!</translation>
+        <translation>Copié !</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Sauvegarder la clé publique</translation>
+        <translation>Enregistrer la clé publique</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>Touche ASCII (*.asc);; Tous les fichiers (*)</translation>
+        <translation>Clé au format ASCII-armored (*.asc);;Tous les fichiers (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation>Impossible d&apos;ouvrir %1 en écriture&#xa0;: %2</translation>
+        <translation>Impossible d&apos;ouvrir %1 en écriture : %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>Impossible d&apos;écrire dans %1&#xa0;: %2</translation>
+        <translation>Impossible d&apos;écrire dans %1 : %2</translation>
     </message>
 </context>
 <context>
@@ -795,38 +880,44 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
+        <location filename="../src/ui_importkeydialog.h" line="120"/>
         <source>Import GPG Key</source>
-        <translation>Importer la clé GPG</translation>
+        <translation>Importer une clé GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
+        <location filename="../src/ui_importkeydialog.h" line="121"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importer une clé publique GPG à partir du fichier ou coller ci-dessous. La clé devrait être en format ASCII.</translation>
+        <translation>Importez une clé publique GPG depuis un fichier ou collez-la ci-dessous. La clé doit être au format ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
+        <location filename="../src/ui_importkeydialog.h" line="122"/>
         <source>From File...</source>
-        <translation>De File...</translation>
+        <translation>Depuis un fichier…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
+        <location filename="../src/ui_importkeydialog.h" line="123"/>
         <source>From Clipboard</source>
         <translation>Du presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
+        <location filename="../src/ui_importkeydialog.h" line="124"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Coller une clé GPG ASCII...</translation>
+        <translation>Collez ici une clé GPG au format ASCII-armored…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
+        <location filename="../src/ui_importkeydialog.h" line="125"/>
         <source>Import</source>
         <translation>Importer</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>Clé GPG ASCII</translation>
+        <translation>Clé GPG au format ASCII-armored</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -844,75 +935,84 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation>Impossible d&apos;ouvrir le fichier&#xa0;: %1</translation>
+        <translation>Impossible d&apos;ouvrir le fichier : %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 ne ressemble pas à une clé GPG ASCII-armée. Convertissez-le avec &lt;code&gt;gpg --armor --export&lt;/code&gt; en premier, ou collez le bloc blindé via &lt;b&gt;De Clipboard&lt;/b&gt;.</translation>
+        <translation>%1 ne ressemble pas à une clé GPG au format ASCII-armored. Convertissez-la d&apos;abord avec &lt;code&gt;gpg --armor --export&lt;/code&gt;, ou collez le bloc armored via &lt;b&gt;Du presse-papiers&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation>Échec de l&apos;importation de GPG&#xa0;:
+        <translation>Échec de l&apos;import GPG :
 %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Impossible d&apos;analyser l&apos;identifiant de clé importé à partir de la sortie GPG.</translation>
+        <translation>Impossible d&apos;extraire l&apos;identifiant de la clé importée depuis la sortie GPG.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Clé importée avec succès&#xa0;: %1</translation>
+        <translation>Clé importée avec succès : %1</translation>
     </message>
 </context>
 <context>
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
+        <location filename="../src/ui_keygendialog.h" line="230"/>
         <source>Generate GnuPG keypair</source>
         <translation>Générer une nouvelle paire de clés GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
+        <location filename="../src/ui_keygendialog.h" line="231"/>
         <source>Generate a new key pair</source>
         <translation>Générer une nouvelle paire de clés</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
+        <location filename="../src/ui_keygendialog.h" line="234"/>
         <source>Passphrase</source>
         <translation>Phrase de passe</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
+        <location filename="../src/ui_keygendialog.h" line="232"/>
         <source>Email</source>
         <translation>Courriel</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
+        <location filename="../src/ui_keygendialog.h" line="233"/>
         <source>Name</source>
         <translation>Nom</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
+        <location filename="../src/ui_keygendialog.h" line="235"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Il n&apos;y a pas de limite de taille sur une phrase de passe, et cette dernière doit être choisie méticuleusement. D&apos;un point de vue sécurité, la phrase de passe qui permet de déverrouiller votre clé privée GnuPG est le point faible du système (comme tous les autres systèmes à base de clés asymétriques), car c&apos;est la dernière protection qu&apos;il reste si quelqu&apos;un met la main sur votre clé privée.&lt;br/&gt;Idéalement, la phrase de passe ne devrait pas utiliser de mots provenant du dictionnaire, et devrait contenir des majuscules, minuscules, et des caractères non alpha-numériques.&lt;br/&gt;Une bonne phrase de passe est cruciale à l&apos;utilisation en toute sécurité de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
+        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Repeat pass</source>
         <translation>Répéter le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
+        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>Expert</source>
         <translation>Expert</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
+        <location filename="../src/ui_keygendialog.h" line="238"/>
         <source>Template contents will be set based on GPG version.</source>
         <translation>Le contenu du modèle sera basé sur la version GPG.</translation>
     </message>
@@ -950,6 +1050,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
+        <location filename="../src/ui_keygendialog.h" line="239"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Pour les options avancées, veuillez consulter le &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manuel GnuPG&lt;/a&gt;</translation>
     </message>
@@ -983,6 +1084,7 @@ Expire-Date: 0
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
+        <location filename="../src/ui_mainwindow.h" line="307"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
@@ -994,6 +1096,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
         <location filename="../src/mainwindow.cpp" line="1380"/>
+        <location filename="../src/ui_mainwindow.h" line="319"/>
+        <location filename="../src/ui_mainwindow.h" line="321"/>
         <source>Edit</source>
         <translation>Modifier</translation>
     </message>
@@ -1001,6 +1105,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
         <location filename="../src/mainwindow.cpp" line="1394"/>
+        <location filename="../src/ui_mainwindow.h" line="323"/>
+        <location filename="../src/ui_mainwindow.h" line="325"/>
         <source>Delete</source>
         <translation>Supprimer</translation>
     </message>
@@ -1010,6 +1116,7 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
+        <location filename="../src/ui_mainwindow.h" line="334"/>
         <source>Push</source>
         <translation>Pousser</translation>
     </message>
@@ -1019,42 +1126,50 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="433"/>
+        <location filename="../src/ui_mainwindow.h" line="338"/>
         <source>Update</source>
         <translation>Mettre à jour</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="444"/>
+        <location filename="../src/ui_mainwindow.h" line="344"/>
         <source>Manage who can read password in folder</source>
         <translation>Gérer qui peut lire les mots de passe dans le dossier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1374"/>
+        <location filename="../src/ui_mainwindow.h" line="342"/>
         <source>Users</source>
         <translation>Utilisateurs</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="428"/>
+        <location filename="../src/ui_mainwindow.h" line="336"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="436"/>
+        <location filename="../src/ui_mainwindow.h" line="340"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
+        <location filename="../src/ui_mainwindow.h" line="348"/>
         <source>Configuration</source>
         <translation>Configuration</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="449"/>
+        <location filename="../src/ui_mainwindow.h" line="346"/>
         <source>Config</source>
         <translation>Config</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
+        <location filename="../src/ui_mainwindow.h" line="375"/>
         <source>Welcome to QtPass</source>
         <translation>Bienvenue sur QtPass</translation>
     </message>
@@ -1062,6 +1177,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="700"/>
         <location filename="../src/mainwindow.cpp" line="883"/>
+        <location filename="../src/ui_mainwindow.h" line="352"/>
         <source>Search Password</source>
         <translation>Chercher un mot de passe</translation>
     </message>
@@ -1184,8 +1300,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation>
-            <numerusform>Trouvé %n match</numerusform>
-            <numerusform>Trouvée %n correspondances</numerusform>
+            <numerusform>%n correspondance trouvée</numerusform>
+            <numerusform>%n correspondances trouvées</numerusform>
         </translation>
     </message>
     <message>
@@ -1245,6 +1361,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="390"/>
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1372"/>
+        <location filename="../src/ui_mainwindow.h" line="315"/>
+        <location filename="../src/ui_mainwindow.h" line="317"/>
         <source>Add folder</source>
         <translation>Ajouter un dossier</translation>
     </message>
@@ -1252,6 +1370,8 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
+        <location filename="../src/ui_mainwindow.h" line="308"/>
+        <location filename="../src/ui_mainwindow.h" line="310"/>
         <source>Add password</source>
         <translation>Ajouter un mot de passe</translation>
     </message>
@@ -1268,58 +1388,68 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
+        <location filename="../src/ui_mainwindow.h" line="350"/>
         <source>Select profile</source>
         <translation>Sélectionner un profil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
+        <location filename="../src/ui_mainwindow.h" line="354"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Recherche dans le contenu du mot de passe (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
+        <location filename="../src/ui_mainwindow.h" line="356"/>
         <source>⌕</source>
         <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
+        <location filename="../src/ui_mainwindow.h" line="358"/>
         <source>Content search toggle</source>
         <translation>Bascule de recherche de contenu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
+        <location filename="../src/ui_mainwindow.h" line="361"/>
         <source>Toggle content search mode to search inside password files</source>
         <translation>Activer le mode de recherche de contenu pour rechercher dans les fichiers de mots de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
+        <location filename="../src/ui_mainwindow.h" line="364"/>
         <source>Case-insensitive search</source>
         <translation>Recherche insensible à la casse</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
+        <location filename="../src/ui_mainwindow.h" line="366"/>
         <source>Aa</source>
         <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
+        <location filename="../src/ui_mainwindow.h" line="368"/>
         <source>Case-insensitive toggle</source>
         <translation>Lutte insensible aux cas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
+        <location filename="../src/ui_mainwindow.h" line="371"/>
         <source>Toggle case-insensitive content search</source>
         <translation>Activer/désactiver la recherche de contenu insensible à la casse</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
+        <location filename="../src/ui_mainwindow.h" line="374"/>
         <source>Results</source>
         <translation>Résultats</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation>Effacer les résultats</translation>
+        <translation>Effacer la sortie</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
@@ -1328,21 +1458,25 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
+        <location filename="../src/ui_mainwindow.h" line="313"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
+        <location filename="../src/ui_mainwindow.h" line="327"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
+        <location filename="../src/ui_mainwindow.h" line="329"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Générer OTP et copier au presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
+        <location filename="../src/ui_mainwindow.h" line="332"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
@@ -1428,7 +1562,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation>Sortie du processus</translation>
+        <translation>Sortie des processus</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
@@ -1438,22 +1572,22 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Réencrypter les mots de passe</translation>
+        <translation>Re-chiffrer tous les mots de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation>Exporter ma clé publique...</translation>
+        <translation>Exporter ma clé publique…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation>Ajouter un destinataire...</translation>
+        <translation>Ajouter un destinataire…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation>Qu&apos;est-ce que c&apos;est&#x202f;?</translation>
+        <translation>Qu&apos;est-ce que c&apos;est ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
@@ -1516,18 +1650,18 @@ Cette opération peut écraser plusieurs fichiers et ne peut pas être facilemen
 Continuer&#x202f;?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
-        <source>Export Public Key</source>
-        <translation>Exporter la clef publique</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Exportez votre clé publique&lt;/h3&gt;&lt;p&gt;Aucune clé de signature n&apos;est configurée. Configurez-en une dans les paramètres QtPass &gt; Clés GPG, ou exécutez la commande suivante dans un terminal&#xa0;:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;votre-identifiant-de-clé&amp;gt;&lt;/pre&gt;&lt;p&gt;Envoyez ensuite le fichier à vos coéquipiers.&lt;/p&gt;</translation>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <source>Export Public Key</source>
+        <translation>Exporter la clé publique</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
+        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Exporter votre clé publique&lt;/h3&gt;&lt;p&gt;Aucune clé de signature n&apos;est configurée. Définissez-en une dans les paramètres QtPass &amp;gt; Clés GPG, ou exécutez cette commande dans un terminal :&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;votre-id-de-clé&amp;gt;&lt;/pre&gt;&lt;p&gt;Envoyez ensuite le fichier à vos coéquipiers.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1536,30 +1670,31 @@ Continuer&#x202f;?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>Aucune sortie de gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Partage des mots de passe avec GPG</translation>
+        <translation>Partager des mots de passe avec GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Partager des mots de passe avec GPG&lt;/h3&gt;&lt;p&gt;Pour partager des mots de passe avec d&apos;autres utilisateurs&#xa0;:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportez votre clé publique&lt;/b&gt; et envoyez-la à vos coéquipiers&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importez les clés publiques de vos coéquipiers&lt;/b&gt; dans votre trousseau GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Rechiffrez les mots de passe&lt;/b&gt; afin que tous les destinataires puissent les déchiffrer&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Seules les personnes possédant la même clé secrète peuvent déchiffrer les mots de passe.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Conseil&#xa0;:&lt;/b&gt; Utilisez la même clé GPG pour tous les dossiers partagés.&lt;/p&gt;&lt;p&gt;Consultez la FAQ pour plus de détails.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Partager des mots de passe avec GPG&lt;/h3&gt;&lt;p&gt;Pour partager des mots de passe avec d&apos;autres utilisateurs :&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportez votre clé publique&lt;/b&gt; et envoyez-la à vos coéquipiers&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importez les clés publiques des coéquipiers&lt;/b&gt; dans votre trousseau GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-chiffrez les mots de passe&lt;/b&gt; afin que tous les destinataires puissent les déchiffrer&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Seules les personnes disposant d&apos;une clé secrète correspondante peuvent déchiffrer les mots de passe.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Astuce :&lt;/b&gt; utilisez la même clé GPG pour tous les dossiers partagés.&lt;/p&gt;&lt;p&gt;Consultez la FAQ pour plus de détails.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
+        <location filename="../src/ui_mainwindow.h" line="376"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass est une interface graphique pour &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, le gestionnaire de mots de passe standard unix.&lt;/p&gt;.
-&lt;p&gt;S&apos;il vous plaît rapporter tout &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problèmes &lt;/a&gt; que vous pourriez avoir avec ce logiciel.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;&gt;Documentation
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;CodeSource&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;QtPass est une interface graphique pour &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, le gestionnaire de mots de passe standard sous unix.&lt;/p&gt;
+&lt;p&gt;Veuillez signaler tout &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problème&lt;/a&gt; que vous pourriez rencontrer avec ce logiciel.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Code source&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1614,46 +1749,56 @@ Continuer&#x202f;?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
+        <location filename="../src/ui_passworddialog.h" line="174"/>
+        <location filename="../src/ui_passworddialog.h" line="176"/>
         <source>Password</source>
         <translation>Mot de passe</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
+        <location filename="../src/ui_passworddialog.h" line="177"/>
         <source>Generate</source>
         <translation>Générer</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
+        <location filename="../src/ui_passworddialog.h" line="178"/>
         <source>Show password</source>
         <translation>Afficher le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
+        <location filename="../src/ui_passworddialog.h" line="179"/>
         <source>Character Set:</source>
         <translation>Ensemble de caractères:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
+        <location filename="../src/ui_passworddialog.h" line="180"/>
         <source>All Characters</source>
         <translation>Tous les caractères</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
+        <location filename="../src/ui_passworddialog.h" line="181"/>
         <source>Alphabetical</source>
         <translation>Alphabétique</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
+        <location filename="../src/ui_passworddialog.h" line="182"/>
         <source>Alphanumerical</source>
         <translation>Alphanumérique</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
+        <location filename="../src/ui_passworddialog.h" line="183"/>
         <source>Custom</source>
         <translation>Personnalisé</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
+        <location filename="../src/ui_passworddialog.h" line="185"/>
         <source>Length:</source>
         <translation>Longueur :</translation>
     </message>
@@ -1815,11 +1960,13 @@ Continuer&#x202f;?</translation>
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
+        <location filename="../src/ui_usersdialog.h" line="111"/>
         <source>Read access users</source>
         <translation>Utilisateurs avec droit de lecture</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
+        <location filename="../src/ui_usersdialog.h" line="112"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1833,11 +1980,13 @@ Les entrées en rouge ne sont pas valides, vous ne pourrez pas chiffrer vers cel
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
+        <location filename="../src/ui_usersdialog.h" line="119"/>
         <source>Import key...</source>
-        <translation>Importer une clé...</translation>
+        <translation>Importer une clé…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
+        <location filename="../src/ui_usersdialog.h" line="121"/>
         <source>Import a GPG key from file or clipboard</source>
         <translation>Importer une clé GPG depuis un fichier ou le presse-papiers</translation>
     </message>
@@ -1853,6 +2002,7 @@ Les entrées rouges ne sont pas valides, vous ne pourrez pas les utiliser pour l
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
+        <location filename="../src/ui_usersdialog.h" line="117"/>
         <source>Search for users</source>
         <translation>Rechercher parmi les utilisateurs</translation>
     </message>
@@ -1872,6 +2022,7 @@ Les entrées en rouge ne sont pas marquées comme étant de confiance dans GnuPG
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
+        <location filename="../src/ui_usersdialog.h" line="118"/>
         <source>Show unusable keys</source>
         <translation>Afficher les clés inutilisables</translation>
     </message>

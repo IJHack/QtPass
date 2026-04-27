@@ -56,6 +56,10 @@ TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
                     ../localization/localization_fi_FI.ts \
                     ../localization/localization_uk_UA.ts \
                     ../localization/localization_ta_IN.ts \
+                    ../localization/localization_id_ID.ts \
+                    ../localization/localization_lt_LT.ts \
+                    ../localization/localization_lv_LV.ts \
+                    ../localization/localization_sl_SI.ts \
                     ../localization/localization_zh_Hant.ts
 
 CONFIG += lrelease embed_translations
