@@ -769,7 +769,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importa una clave pública GPG desde un archivo o pégala a continuación. La clave debe estar en formato ASCII-armored.</translation>
+        <translation>Importá una clave pública GPG desde un archivo o pegala a continuación. La clave debe estar en formato ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -784,7 +784,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Pegue aquí una clave GPG ASCII-armored...</translation>
+        <translation>Pegá aquí una clave GPG ASCII-armored…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -817,7 +817,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 no parece una clave GPG ASCII-armored. Conviértala primero con &lt;code&gt;gpg --armor --export&lt;/code&gt; o pegue el bloque ASCII-armored mediante &lt;b&gt;Desde el portapapeles&lt;/b&gt;.</translation>
+        <translation>%1 no parece una clave GPG ASCII-armored. Convertila primero con &lt;code&gt;gpg --armor --export&lt;/code&gt; o pegá el bloque ASCII-armored mediante &lt;b&gt;Desde el portapapeles&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
