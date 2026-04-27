@@ -684,29 +684,29 @@ e-mail</translation>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <location filename="../src/ui_exportpublickeydialog.h" line="100"/>
         <source>Public key</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffentlicher Schlüssel</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <location filename="../src/ui_exportpublickeydialog.h" line="101"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>In Zwischenablage kopieren</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <location filename="../src/ui_exportpublickeydialog.h" line="102"/>
         <source>Save to File...</source>
-        <translation type="unfinished"></translation>
+        <translation>In Datei speichern …</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Öffentlicher Schlüssel für %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiert!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
@@ -1597,7 +1597,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation>
-            <numerusform>%n Treffer gefunden</numerusform>
+            <numerusform>Ein Treffer gefunden</numerusform>
             <numerusform>%n Treffer gefunden</numerusform>
         </translation>
     </message>

@@ -361,17 +361,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished"></translation>
+        <translation>Créer le dossier de profil ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Voulez-vous créer un magasin de mots de passe dans %1 ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de créer le dossier de profil : %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
@@ -681,35 +681,35 @@ e-mail</translation>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <location filename="../src/ui_exportpublickeydialog.h" line="99"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter la clé publique</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <location filename="../src/ui_exportpublickeydialog.h" line="100"/>
         <source>Public key</source>
-        <translation type="unfinished"></translation>
+        <translation>Clé publique</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <location filename="../src/ui_exportpublickeydialog.h" line="101"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copier dans le presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <location filename="../src/ui_exportpublickeydialog.h" line="102"/>
         <source>Save to File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Enregistrer dans un fichier…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Clé publique pour %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished"></translation>
+        <translation>Copié !</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
@@ -1567,27 +1567,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Partager</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Re-chiffrer tous les mots de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter ma clé publique…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajouter un destinataire…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation type="unfinished"></translation>
+        <translation>Qu&apos;est-ce que c&apos;est ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
@@ -1653,29 +1653,31 @@ Continuer&#x202f;?</translation>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Exporter la clé publique</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Exporter votre clé publique&lt;/h3&gt;&lt;p&gt;Aucune clé de signature n&apos;est configurée. Définissez-en une dans les paramètres QtPass &amp;gt; Clés GPG, ou exécutez cette commande dans un terminal :&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;votre-id-de-clé&amp;gt;&lt;/pre&gt;&lt;p&gt;Envoyez ensuite le fichier à vos coéquipiers.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;exporter la clé publique pour %1.
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucune sortie de gpg.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Partager des mots de passe avec GPG</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
