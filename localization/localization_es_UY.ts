@@ -1385,7 +1385,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation>Agregar destinatario...</translation>
+        <translation>Añadir destinatario...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>

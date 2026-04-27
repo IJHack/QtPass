@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Habilita búsqueda de contenido (pass grep)</translation>
+        <translation>Habilitar búsqueda de contenido (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
@@ -1385,7 +1385,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation>Agregar destinatario...</translation>
+        <translation>Añadir destinatario...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
