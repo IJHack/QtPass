@@ -801,7 +801,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importeer een GPG-publieke sleutel vanuit een bestand of plak deze hieronder. De sleutel moet in ASCII-formaat zijn.</translation>
+        <translation>Importeer een publieke GPG-sleutel uit een bestand of plak deze hieronder. De sleutel moet ASCII-armored zijn.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -811,12 +811,12 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation>Van Klembord</translation>
+        <translation>Van klembord</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Plak hier een GPG-sleutel in ASCII-formaat...</translation>
+        <translation>Plak hier een ASCII-armored GPG-sleutel...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -826,7 +826,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII-gepantserde GPG-sleutel</translation>
+        <translation>ASCII-armored GPG-sleutel</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -849,7 +849,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 lijkt niet op een ASCII-gepantserde GPG-sleutel. Converteer deze eerst met &lt;code&gt;gpg --armor --export&lt;/code&gt; of plak het gepantserde blok via &lt;b&gt;Vanuit klembord&lt;/b&gt;.</translation>
+        <translation>%1 lijkt niet op een ASCII-armored GPG-sleutel. Converteer deze eerst met &lt;code&gt;gpg --armor --export&lt;/code&gt; of plak het gepantserde blok via &lt;b&gt;Van klembord&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -1597,19 +1597,19 @@ Doorgaan?</translation>
         <location filename="../src/mainwindow.cpp" line="1628"/>
         <location filename="../src/mainwindow.cpp" line="1648"/>
         <source>Export Public Key</source>
-        <translation>Exporteer de openbare sleutel</translation>
+        <translation>Exporteer de pubieke sleutel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1629"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Exporteer uw openbare sleutel&lt;/h3&gt;&lt;p&gt;Er is geen ondertekeningssleutel geconfigureerd. Stel er een in bij QtPass-instellingen &gt; GPG-sleutels, of voer dit uit in een terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;uw-sleutel-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Stuur het bestand vervolgens naar uw teamgenoten.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Exporteer je publieke sleutel&lt;/h3&gt;&lt;p&gt;Er is geen ondertekeningssleutel geconfigureerd. Stel er een in bij QtPass-instellingen &gt; GPG-sleutels, of voer dit uit in een terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jouw-sleutel-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Stuur het bestand vervolgens naar je teamgenoten.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1649"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation>Kon de openbare sleutel voor %1 niet exporteren.
+        <translation>Kon de publieke sleutel voor %1 niet exporteren.
 
 %2</translation>
     </message>
@@ -1626,7 +1626,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1679"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; to their own folders&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Wachtwoorden delen met GPG&lt;/h3&gt;&lt;p&gt;Om wachtwoorden met andere gebruikers te delen:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporteer uw openbare sleutel&lt;/b&gt; en stuur deze naar teamleden&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importeer de openbare sleutels van teamleden&lt;/b&gt; naar hun eigen mappen&lt;/li&gt;&lt;li&gt;&lt;b&gt;Versleutel de wachtwoorden opnieuw&lt;/b&gt; zodat alle ontvangers ze kunnen ontsleutelen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Alleen personen met een overeenkomende geheime sleutel kunnen de wachtwoorden ontsleutelen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Gebruik dezelfde GPG-sleutel voor alle gedeelde mappen.&lt;/p&gt;&lt;p&gt;Zie de FAQ voor meer informatie.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Wachtwoorden delen met GPG&lt;/h3&gt;&lt;p&gt;Om wachtwoorden met andere gebruikers te delen:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporteer je publieke sleutel&lt;/b&gt; en stuur deze naar teamleden&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importeer de publieke sleutels van teamleden&lt;/b&gt; naar hun eigen mappen&lt;/li&gt;&lt;li&gt;&lt;b&gt;Versleutel de wachtwoorden opnieuw&lt;/b&gt; zodat alle ontvangers ze kunnen ontsleutelen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Alleen personen met een overeenkomende geheime sleutel kunnen de wachtwoorden ontsleutelen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Gebruik dezelfde GPG-sleutel voor alle gedeelde mappen.&lt;/p&gt;&lt;p&gt;Zie de FAQ voor meer informatie.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -1750,7 +1750,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Nieuwe gpg-sleutelbos genereren</translation>
+        <translation>Nieuw gpg-sleutelpaar genereren</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
