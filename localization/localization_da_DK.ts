@@ -610,7 +610,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Gem til Fil...</translation>
+        <translation>Gem til fil...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
