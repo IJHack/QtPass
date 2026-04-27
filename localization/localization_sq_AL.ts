@@ -1668,7 +1668,7 @@ Hyrjet e kuqe nuk janë të vlefshme, nuk do të jeni në gjendje të enkriptoni
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Importo një çelës GPG nga skedari ose nga e papastra</translation>
+        <translation>Importo një çelës GPG nga skedari ose nga Tabela e kopjimit</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.

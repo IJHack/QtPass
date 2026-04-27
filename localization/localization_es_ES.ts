@@ -320,7 +320,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Habilita búsqueda de contenido (pass grep)</translation>
+        <translation>Habilitar búsqueda de contenido (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
@@ -769,7 +769,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importa una clave pública GPG desde un archivo o pégala a continuación. La clave debe estar en formato ASCII-armored.</translation>
+        <translation>Importe una clave pública GPG desde un archivo o péguela a continuación. La clave debe estar en formato ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -1253,7 +1253,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Búsqueda ignorar mayúsculas</translation>
+        <translation>Ignorar mayúsculas en la búsqueda</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
