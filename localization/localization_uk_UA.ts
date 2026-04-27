@@ -797,7 +797,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Імпортуйте відкритий ключ GPG з файлу або вставте його нижче. Ключ має бути у форматі ASCII-броньований.</translation>
+        <translation>Імпортуйте відкритий ключ GPG з файлу або вставте його нижче. Ключ має бути в ASCII-броньованому форматі.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -812,7 +812,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Вставте сюди ключ GPG з ASCII-захисним кодуванням...</translation>
+        <translation>Вставте сюди ключ GPG з ASCII-броньований кодуванням...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -822,7 +822,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>Ключ GPG з ASCII-броньованим кодуванням</translation>
+        <translation>Ключ GPG з ASCII-броньований кодуванням</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -845,7 +845,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 не схожий на GPG-ключ із захистом ASCII. Спочатку конвертуйте його за допомогою &lt;code&gt;gpg --armor --export&lt;/code&gt; або вставте блок із захистом за допомогою &lt;b&gt;З буфера обміну&lt;/b&gt;.</translation>
+        <translation>%1 не схожий на GPG-ключ із ASCII-броньований. Спочатку конвертуйте його за допомогою &lt;code&gt;gpg --armor --export&lt;/code&gt; або вставте блок із захистом за допомогою &lt;b&gt;З буфера обміну&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -1476,7 +1476,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1294"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Перешифруйте всі паролі</translation>
+        <translation>Перешифрувати всі паролі</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1299"/>
@@ -1534,7 +1534,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1584"/>
         <source>Re-encrypt passwords</source>
-        <translation>Перешифруйте паролі</translation>
+        <translation>Перешифрувати паролі</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1585"/>
