@@ -636,7 +636,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>ASCII 保护的密钥（*.asc）;; 所有文件（*）</translation>
+        <translation>ASCII 保护的密钥 (*.asc);;所有文件 (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
