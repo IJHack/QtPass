@@ -586,7 +586,7 @@ e-posta</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>%1&apos;i yazmak için açamadı: %2</translation>
+        <translation>%1&apos;e yazılamadı: %2</translation>
     </message>
 </context>
 <context>
