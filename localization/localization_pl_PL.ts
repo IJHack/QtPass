@@ -1127,7 +1127,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Dane wyjściowe procesu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="501"/>
@@ -1334,7 +1334,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Udostępnianie haseł za pomocą GPG&lt;/h3&gt;&lt;p&gt;Aby udostępnić hasła innym użytkownikom:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;wyeksportuj swój klucz publiczny&lt;/b&gt; i wyślij go członkom zespołu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Zaimportuj klucze publiczne członków zespołu&lt;/b&gt; do swojego pęku kluczy GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ponownie zaszyfruj hasła&lt;/b&gt;, aby wszyscy odbiorcy mogli je odszyfrować&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Tylko osoby z pasującym kluczem tajnym mogą odszyfrować hasła.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Wskazówka:&lt;/b&gt; użyj tego samego klucza GPG dla wszystkich folderów współdzielonych.&lt;/p&gt;&lt;p&gt;Więcej informacji znajdziesz w sekcji FAQ.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; to their own folders&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
