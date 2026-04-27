@@ -108,7 +108,7 @@ public:
    * @brief Return the active key generation dialog, if any.
    * @return Pointer to the keygen QDialog, or nullptr.
    */
-  auto getKeygenDialog() -> QDialog * { return keygenDialog; }
+  auto getKeygenDialog() -> QDialog * { return m_keygenDialog; }
 
   /**
    * @brief Destroy and clear the key generation dialog.
@@ -297,9 +297,9 @@ private:
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
   QTimer clearPanelTimer, searchTimer;
-  QDialog *keygenDialog{};
-  QString currentDir;
-  TrayIcon *tray{};
+  QDialog *m_keygenDialog{};
+  QString m_currentDir;
+  TrayIcon *m_tray{};
 
   void initToolBarButtons();
   void initStatusBar();
