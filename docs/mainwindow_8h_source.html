@@ -141,7 +141,7 @@ $(function() {
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="class_main_window.html#acc66dda09963fdddea9716163293ddda">  105</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#acc66dda09963fdddea9716163293ddda">getCurrentTreeViewIndex</a>() -&gt; QModelIndex;</div>
 <div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_main_window.html#ae5b8c234b3175974bc135317232d1e1c">  111</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#ae5b8c234b3175974bc135317232d1e1c">getKeygenDialog</a>() -&gt; QDialog * { <span class="keywordflow">return</span> keygenDialog; }</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="class_main_window.html#ae5b8c234b3175974bc135317232d1e1c">  111</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_main_window.html#ae5b8c234b3175974bc135317232d1e1c">getKeygenDialog</a>() -&gt; QDialog * { <span class="keywordflow">return</span> m_keygenDialog; }</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span></div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_main_window.html#ad2a9b38617b357d8fa42744c00a26fcf">  116</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_main_window.html#ad2a9b38617b357d8fa42744c00a26fcf">cleanKeygenDialog</a>();</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
@@ -241,9 +241,9 @@ $(function() {
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  <a class="code hl_class" href="class_store_model.html">StoreModel</a> proxyModel;</div>
 <div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  QScopedPointer&lt;QItemSelectionModel&gt; selectionModel;</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>  QTimer clearPanelTimer, searchTimer;</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  QDialog *keygenDialog{};</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  QString currentDir;</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <a class="code hl_class" href="class_tray_icon.html">TrayIcon</a> *tray{};</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>  QDialog *m_keygenDialog{};</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  QString m_currentDir;</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <a class="code hl_class" href="class_tray_icon.html">TrayIcon</a> *m_tray{};</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
 <div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  <span class="keywordtype">void</span> initToolBarButtons();</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  <span class="keywordtype">void</span> initStatusBar();</div>
