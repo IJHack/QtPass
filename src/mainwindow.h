@@ -108,7 +108,7 @@ public:
    * @brief Return the active key generation dialog, if any.
    * @return Pointer to the keygen QDialog, or nullptr.
    */
-  auto getKeygenDialog() -> QDialog * { return this->keygenDialog; }
+  auto getKeygenDialog() -> QDialog * { return keygenDialog; }
 
   /**
    * @brief Destroy and clear the key generation dialog.
