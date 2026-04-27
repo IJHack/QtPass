@@ -518,7 +518,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Permettre la recherche dans le contenu du fichier de mot de passe. Nécessite le décryptage de chaque fichier et peut être lent sur les grands magasins.</translation>
+        <translation>Permettre la recherche dans le contenu du fichier de mot de passe. Nécessite le déchiffrement de chaque fichier et peut être lent sur les grands magasins.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
@@ -1374,7 +1374,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation>Contenu de la recherche (regex)</translation>
+        <translation>Rechercher dans le contenu (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>

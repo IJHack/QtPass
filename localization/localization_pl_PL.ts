@@ -785,7 +785,7 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 nie wygląda jak klucz GPG w formacie ASCII-armored. Najpierw przekonwertuj go za pomocą polecenia &lt;code&gt;gpg --armor --export&lt;/code&gt; lub wklej pancerny blok za pomocą funkcji &lt;b&gt;Ze schowka&lt;/b&gt;.</translation>
+        <translation>%1 nie wygląda jak klucz GPG w formacie ASCII-armored. Najpierw przekonwertuj go za pomocą polecenia &lt;code&gt;gpg --armor --export&lt;/code&gt; lub wklej blok ASCII-armored za pomocą funkcji &lt;b&gt;Ze schowka&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
