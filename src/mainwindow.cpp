@@ -371,10 +371,10 @@ auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
 }
 
 void MainWindow::cleanKeygenDialog() {
-  if (this->keygenDialog != nullptr) {
-    this->keygenDialog->close();
+  if (keygenDialog != nullptr) {
+    keygenDialog->close();
   }
-  this->keygenDialog = nullptr;
+  keygenDialog = nullptr;
 }
 
 /**
@@ -1711,9 +1711,10 @@ void MainWindow::reencryptPath(const QString &dir) {
   if (ret != QMessageBox::Yes)
     return;
 
-  // Prevent double execution - use same method as startReencryptPath
-  setUiElementsEnabled(false);
-  ui->treeView->setDisabled(true);
+  // Disable preemptively. ImitatePass::reencryptPath emits
+  // startReencryptPath asynchronously and the slot would re-run this,
+  // but setEnabled(false) is idempotent so the duplicate is harmless.
+  startReencryptPath();
 
   QtPassSettings::getImitatePass()->reencryptPath(
       QDir::cleanPath(QDir(dir).absolutePath()));
@@ -1951,6 +1952,10 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
   case Enums::GIT_MOVE:
     return QStringLiteral("git mv"); // no-tr
   case Enums::GIT_COPY:
+    // ImitatePass::Copy literally invokes `git cp` (a git-extras
+    // subcommand), so the label matches what's run. Stock-git users
+    // without git-extras will see the underlying "'cp' is not a git
+    // command" failure surfaced in the process output panel.
     return QStringLiteral("git cp"); // no-tr
   case Enums::PASS_INSERT:
     return QStringLiteral("pass insert"); // no-tr
