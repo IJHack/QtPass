@@ -371,10 +371,10 @@ auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
 }
 
 void MainWindow::cleanKeygenDialog() {
-  if (keygenDialog != nullptr) {
-    keygenDialog->close();
+  if (m_keygenDialog != nullptr) {
+    m_keygenDialog->close();
   }
-  keygenDialog = nullptr;
+  m_keygenDialog = nullptr;
 }
 
 /**
@@ -483,9 +483,9 @@ void MainWindow::config() {
       updateOtpButtonVisibility();
       updateGrepButtonVisibility();
       updateProcessOutputVisibility();
-      if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
+      if (QtPassSettings::isUseTrayIcon() && m_tray == nullptr) {
         initTrayIcon();
-      } else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
+      } else if (!QtPassSettings::isUseTrayIcon() && m_tray != nullptr) {
         destroyTrayIcon();
       }
     }
@@ -542,7 +542,7 @@ auto MainWindow::getFile(const QModelIndex &index, bool forPass) -> QString {
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
-  currentDir =
+  m_currentDir =
       Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
   // Clear any previously cached clipped text before showing new password
   m_qtPass->clearClippedText();
@@ -575,7 +575,7 @@ void MainWindow::on_treeView_doubleClicked(const QModelIndex &index) {
  * @brief MainWindow::deselect clear the selection, password and copy buffer
  */
 void MainWindow::deselect() {
-  currentDir = "";
+  m_currentDir = "";
   m_qtPass->clearClipboard();
   ui->treeView->clearSelection();
   ui->actionEdit->setEnabled(false);
@@ -757,13 +757,13 @@ void MainWindow::restoreWindow() {
     show();
   }
 
-  if (QtPassSettings::isUseTrayIcon() && tray == nullptr) {
+  if (QtPassSettings::isUseTrayIcon() && m_tray == nullptr) {
     initTrayIcon();
     if (QtPassSettings::isStartMinimized()) {
       // since we are still in constructor, can't directly hide
       QTimer::singleShot(10, this, SLOT(hide()));
     }
-  } else if (!QtPassSettings::isUseTrayIcon() && tray != nullptr) {
+  } else if (!QtPassSettings::isUseTrayIcon() && m_tray != nullptr) {
     destroyTrayIcon();
   }
 }
@@ -1129,7 +1129,7 @@ void MainWindow::onEdit() {
  */
 void MainWindow::userDialog(const QString &dir) {
   if (!dir.isEmpty()) {
-    currentDir = dir;
+    m_currentDir = dir;
   }
   onUsers();
 }
@@ -1141,9 +1141,9 @@ void MainWindow::userDialog(const QString &dir) {
  */
 void MainWindow::onUsers() {
   QString dir =
-      currentDir.isEmpty()
+      m_currentDir.isEmpty()
           ? Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel)
-          : currentDir;
+          : m_currentDir;
 
   UsersDialog d(dir, this);
   if (!d.exec()) {
@@ -1173,7 +1173,7 @@ void MainWindow::messageAvailable(const QString &message) {
  * @param keygenWindow
  */
 void MainWindow::generateKeyPair(const QString &batch, QDialog *keygenWindow) {
-  keygenDialog = keygenWindow;
+  m_keygenDialog = keygenWindow;
   emit generateGPGKeyPair(batch);
 }
 
@@ -1257,17 +1257,17 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
  * it
  */
 void MainWindow::initTrayIcon() {
-  this->tray = new TrayIcon(this);
+  m_tray = new TrayIcon(this);
   // Setup tray icon
 
-  if (tray == nullptr) {
+  if (m_tray == nullptr) {
 #ifdef QT_DEBUG
     dbg() << "Allocating tray icon failed.";
 #endif
     return;
   }
 
-  if (!tray->getIsAllocated()) {
+  if (!m_tray->getIsAllocated()) {
     destroyTrayIcon();
   }
 }
@@ -1276,8 +1276,8 @@ void MainWindow::initTrayIcon() {
  * @brief MainWindow::destroyTrayIcon remove that pesky tray icon
  */
 void MainWindow::destroyTrayIcon() {
-  delete this->tray;
-  tray = nullptr;
+  delete m_tray;
+  m_tray = nullptr;
 }
 
 /**
@@ -1354,7 +1354,7 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     ui->treeView->clearSelection();
     ui->actionDelete->setEnabled(false);
     ui->actionEdit->setEnabled(false);
-    currentDir = "";
+    m_currentDir = "";
     selected = false;
   }
 
