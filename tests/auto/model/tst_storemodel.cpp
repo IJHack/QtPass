@@ -306,14 +306,13 @@ struct DropFixture {
 
   DropFixture() {
     QFile f(tempDir.path() + "/file.gpg");
-    [[maybe_unused]] const bool fileOpened = f.open(QFile::WriteOnly);
-    Q_ASSERT(fileOpened);
+    const bool fileOpened = f.open(QFile::WriteOnly);
+    QVERIFY2(fileOpened, "QFile::open failed creating temp file.gpg");
     f.close();
     filePath = tempDir.path() + "/file.gpg";
 
-    [[maybe_unused]] const bool folderCreated =
-        QDir(tempDir.path()).mkdir("folder");
-    Q_ASSERT(folderCreated);
+    const bool folderCreated = QDir(tempDir.path()).mkdir("folder");
+    QVERIFY2(folderCreated, "QDir::mkdir failed creating folder");
     folderPath = tempDir.path() + "/folder";
 
     fsm.setRootPath(tempDir.path());
