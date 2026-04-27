@@ -1769,7 +1769,7 @@ void MainWindow::showShareHelp() {
          "<p>To share passwords with other users:</p>"
          "<ol>"
          "<li><b>Export your public key</b> and send it to teammates</li>"
-         "<li><b>Import teammates' public keys</b> to their own folders</li>"
+         "<li><b>Import teammates' public keys</b> into your GPG keyring</li>"
          "<li><b>Re-encrypt passwords</b> so all recipients can decrypt "
          "them</li>"
          "</ol>"
