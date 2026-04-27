@@ -867,7 +867,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No hay límite en la longitud de una frase de contraseña, y debe ser elegido con cuidado. Desde la perspectiva de la seguridad, la contraseña para desbloquear la clave privada es uno de los puntos más débiles en GnuPG (y otros sistemas de clave pública de cifrado también), ya que es la única protección que tiene si otro individuo obtiene su clave privada. &lt;br/&gt;Idealmente, la frase de contraseña no debe usar palabras de un diccionario y se debe mezclar los caracteres alfabéticos con caracteres no alfabéticos.&lt;br/&gt;Una buena frase de contraseña es crucial para el uso seguro de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;No hay límite en la longitud de una frase de contraseña, y debe ser elegida con cuidado. Desde la perspectiva de la seguridad, la contraseña para desbloquear la clave privada es uno de los puntos más débiles en GnuPG (y otros sistemas de clave pública de cifrado también), ya que es la única protección que tiene si otro individuo obtiene su clave privada. &lt;br/&gt;Idealmente, la frase de contraseña no debe usar palabras de un diccionario y se debe mezclar los caracteres alfabéticos con caracteres no alfabéticos.&lt;br/&gt;Una buena frase de contraseña es crucial para el uso seguro de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -919,7 +919,7 @@ Fecha: 0
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Para las opciones avanzadas revisan el &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual de GnuPG&lt;/a&gt;</translation>
+        <translation>Para las opciones avanzadas, consulte el &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual de GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -976,7 +976,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Esta operación puede demorar algunos minutos.&lt;br /&gt;Es necesario generar muchos bytes aleatorios. Es buena idea efectuar alguna otra acción (escribir en el teclado, mover el ratón, utilizar los discos…) durante la generación de primas; esto brinda al generador de números aleatorios una mayor oportunidad de ganar la entropía suficiente.</translation>
+        <translation>Esta operación puede demorar algunos minutos.&lt;br /&gt;Es necesario generar muchos bytes aleatorios. Es buena idea efectuar alguna otra acción (escribir en el teclado, mover el ratón, utilizar los discos…) durante la generación de números primos; esto brinda al generador de números aleatorios una mayor oportunidad de ganar la entropía suficiente.</translation>
     </message>
 </context>
 <context>
@@ -1523,7 +1523,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Modo de búsqueda del contenido para buscar limas de contraseña del interior</translation>
+        <translation>Alternar el modo de búsqueda de contenido para buscar dentro de los archivos de contraseñas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
