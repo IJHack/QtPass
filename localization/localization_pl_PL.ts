@@ -1305,7 +1305,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1629"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Eksportuj swój klucz publiczny&lt;/h3&gt;&lt;p&gt;Nie skonfigurowano klucza podpisu. Ustaw go w Ustawienia QtPass &amp;gt; Klucze GPG lub uruchom to polecenie w terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output mój_klucz.asc &amp;lt;twój-klucz-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Następnie wyślij plik członkom zespołu.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Eksportuj swój klucz publiczny&lt;/h3&gt;&lt;p&gt;Nie skonfigurowano klucza podpisu. Ustaw go w Ustawienia QtPass &amp;gt; Klucze GPG lub uruchom to polecenie w terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;twój-klucz-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Następnie wyślij plik członkom zespołu.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1649"/>
