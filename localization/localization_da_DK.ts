@@ -797,7 +797,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importer en offentlig GPG-nøgle fra en fil, eller indsæt den nedenfor. Nøglen skal være i ASCII-format med pansret båndbredde.</translation>
+        <translation>Importer en offentlig GPG-nøgle fra en fil, eller indsæt den nedenfor. Nøglen skal være i ASCII-armeret format.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -817,7 +817,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation>Importere</translation>
+        <translation>Importer</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
