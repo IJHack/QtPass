@@ -408,7 +408,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished">Wilt u een password-store maken op %1?</translation>
+        <translation>Wilt u een password-store maken op %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
@@ -609,7 +609,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished">Kopiëren naar klembord</translation>
+        <translation>Kopiëren naar klembord</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
