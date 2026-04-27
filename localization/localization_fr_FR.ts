@@ -636,7 +636,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>Touche ASCII (*.asc)&#x202f;;; Tous les fichiers (*)</translation>
+        <translation>Touche ASCII (*.asc);; Tous les fichiers (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -1531,7 +1531,7 @@ Continuer&#x202f;?</translation>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation>Impossible d&amp;apos;exporter la clé publique pour %1.
+        <translation>Impossible d&apos;exporter la clé publique pour %1.
 
 %2</translation>
     </message>
