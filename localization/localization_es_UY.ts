@@ -1375,7 +1375,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Volvé a cifrar todas las contraseñas</translation>
+        <translation>Volver a cifrar todas las contraseñas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>

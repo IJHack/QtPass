@@ -456,7 +456,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>¿Desea crear un almacén de contraseñas en %1?</translation>
+        <translation>¿Querés crear un almacén de contraseñas en %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
@@ -466,7 +466,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation>Selecciona destinatarios para %1</translation>
+        <translation>Seleccioná destinatarios para %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
@@ -496,7 +496,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Rellene todos los campos obligatorios</translation>
+        <translation>Completá todos los campos obligatorios</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -1375,7 +1375,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Vuelva a cifrar todas las contraseñas</translation>
+        <translation>Volver a cifrar todas las contraseñas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
@@ -1577,7 +1577,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>El cifrado falló: La clave GPG ha expirado. Por favor renueve o reemplacelo.</translation>
+        <translation>El cifrado falló: La clave GPG ha expirado. Por favor renueve o reemplácela.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>

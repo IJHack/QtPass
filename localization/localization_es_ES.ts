@@ -1409,7 +1409,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Vuelva a encriptar todas las contraseñas</translation>
+        <translation>Volver a cifrar todas las contraseñas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
@@ -1459,7 +1459,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Compartir contraseñas con GPG&lt;/h3&gt;&lt;p&gt;Para compartir contraseñas con otros usuarios:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporta tu clave pública&lt;/b&gt; y envíala a tus compañeros de equipo&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importa las claves públicas de tus compañeros de equipo&lt;/b&gt; a tu llavero GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Vuelve a encriptar las contraseñas&lt;/b&gt; para que todos los destinatarios puedan descifrarlas&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Solo las personas que tengan una clave secreta coincidente pueden descifrar las contraseñas.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Consejo:&lt;/b&gt; Usa la misma clave GPG para todas las carpetas compartidas.&lt;/p&gt;&lt;p&gt;Consulta las preguntas frecuentes para obtener más detalles.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Compartir contraseñas con GPG&lt;/h3&gt;&lt;p&gt;Para compartir contraseñas con otros usuarios:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporta tu clave pública&lt;/b&gt; y envíala a tus compañeros de equipo&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importa las claves públicas de tus compañeros de equipo&lt;/b&gt; a tu llavero GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Volver a cifrar las contraseñas&lt;/b&gt; para que todos los destinatarios puedan descifrarlas&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Solo las personas que tengan una clave secreta coincidente pueden descifrar las contraseñas.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Consejo:&lt;/b&gt; Usa la misma clave GPG para todas las carpetas compartidas.&lt;/p&gt;&lt;p&gt;Consulta las preguntas frecuentes para obtener más detalles.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -1570,7 +1570,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>El cifrado falló: La clave GPG ha expirado. Por favor renueve o reemplacelo.</translation>
+        <translation>El cifrado falló: La clave GPG ha expirado. Por favor renueve o reemplácela.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
@@ -1588,7 +1588,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>La cifración falló. Comprueba que tu llave GPG es válida.</translation>
+        <translation>El cifrado falló. Compruebe que su clave GPG es válida.</translation>
     </message>
 </context>
 <context>
@@ -1752,7 +1752,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation>¿Quieres forzar la sobrescritura?</translation>
+        <translation>¿Quiere forzar la sobrescritura?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>

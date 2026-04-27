@@ -751,7 +751,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation>Nga e papastra</translation>
+        <translation>Nga Tabela e kopjimit</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -789,13 +789,14 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nuk duket si një çelës GPG ASCII-armored. Konvertoje fillimisht me &lt;code&gt;gpg --armor --export&lt;/code&gt;, ose ngjit blokun ASCII-armored përmes &lt;b&gt;Nga Tabela e kopjimit&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Importimi GPG dështoi:
+%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
