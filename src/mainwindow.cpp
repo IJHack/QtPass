@@ -26,7 +26,9 @@
 #include <QDesktopServices>
 #include <QDialog>
 #include <QDirIterator>
+#include <QDockWidget>
 #include <QFileInfo>
+#include <QHBoxLayout>
 #include <QInputDialog>
 #include <QLabel>
 #include <QLineEdit>
@@ -35,7 +37,9 @@
 #include <QScrollBar>
 #include <QShortcut>
 #include <QTextCursor>
+#include <QTextEdit>
 #include <QTimer>
+#include <QToolButton>
 #include <QTreeWidget>
 #include <utility>
 
@@ -124,6 +128,7 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   initToolBarButtons();
   initStatusBar();
+  initProcessOutputPanel();
 
   connect(QtPassSettings::getPass(), &Pass::finishedAnyWithPid, this,
           [this](const QString &out, const QString &err, Enums::PROCESS pid) {
@@ -146,12 +151,19 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
             }
           });
 
-  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::sliderPressed,
+  // Hysteresis: while the user is actively dragging the slider, don't
+  // touch m_autoScroll on every tick — a brief overshoot at maximum
+  // would silently re-arm auto-scroll without an explicit release. Only
+  // commit on slider release. Wheel/keyboard scroll never sets
+  // isSliderDown(), so they still update immediately.
+  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::valueChanged,
           this, [this]() {
             auto *sb = m_processOutputEdit->verticalScrollBar();
+            if (sb->isSliderDown())
+              return;
             m_autoScroll = sb->value() >= sb->maximum();
           });
-  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::valueChanged,
+  connect(m_processOutputEdit->verticalScrollBar(), &QScrollBar::sliderReleased,
           this, [this]() {
             auto *sb = m_processOutputEdit->verticalScrollBar();
             m_autoScroll = sb->value() >= sb->maximum();
@@ -303,16 +315,22 @@ void MainWindow::initStatusBar() {
   auto *logoApp = new QLabel(statusBar());
   logoApp->setPixmap(logo);
   statusBar()->addPermanentWidget(logoApp);
+}
 
-  // Build the process-output panel programmatically rather than from .ui:
-  // QMainWindow's uic only places its top-level children into the
-  // centralWidget / statusBar / menuBar / toolBars / dock-widget slots.
-  // Defining processOutputWidget at that level in the .ui leaves it
-  // unplaced and obscuring centralWidget; nesting it inside centralWidget
-  // and reparenting on the fly works but leaves a residual empty grid
-  // slot below the main content. Owning the construction here keeps the
-  // widget's lifetime tied to the status bar from the start.
-  m_processOutputWidget = new QWidget(statusBar());
+/**
+ * @brief Build the process-output panel as a bottom QDockWidget.
+ *
+ * The panel is constructed programmatically rather than declared in
+ * mainwindow.ui: uic only places QMainWindow's top-level children into
+ * the centralWidget / statusBar / menuBar / toolBars / dock-widget
+ * slots, and the previous home (statusBar()->addPermanentWidget()) made
+ * an 80–150 px tall QTextEdit sit inside what is otherwise a thin
+ * status row. A QDockWidget at the bottom dock area is the conventional
+ * place for an IDE-style output console, and it gives users
+ * detach/move for free.
+ */
+void MainWindow::initProcessOutputPanel() {
+  m_processOutputWidget = new QWidget;
   m_processOutputWidget->setObjectName(QStringLiteral("processOutputWidget"));
   auto *outputLayout = new QHBoxLayout(m_processOutputWidget);
   outputLayout->setObjectName(QStringLiteral("processOutputLayout"));
@@ -329,10 +347,17 @@ void MainWindow::initStatusBar() {
   m_processOutputEdit->setMinimumSize(0, 80);
   m_processOutputEdit->setMaximumSize(QWIDGETSIZE_MAX, 150);
   outputLayout->addWidget(m_processOutputEdit);
-  // Hide before adding so the status bar doesn't pre-allocate the panel's
-  // 80 px minimum height when the user has the option turned off.
-  m_processOutputWidget->setVisible(QtPassSettings::isShowProcessOutput());
-  statusBar()->addPermanentWidget(m_processOutputWidget);
+
+  m_processOutputDock = new QDockWidget(tr("Process Output"), this);
+  m_processOutputDock->setObjectName(QStringLiteral("processOutputDock"));
+  m_processOutputDock->setFeatures(QDockWidget::DockWidgetMovable |
+                                   QDockWidget::DockWidgetFloatable);
+  m_processOutputDock->setAllowedAreas(Qt::BottomDockWidgetArea |
+                                       Qt::TopDockWidgetArea);
+  m_processOutputDock->setWidget(m_processOutputWidget);
+  m_processOutputDock->setVisible(QtPassSettings::isShowProcessOutput());
+  addDockWidget(Qt::BottomDockWidgetArea, m_processOutputDock);
+
   connect(m_clearOutputButton, &QToolButton::clicked, this,
           &MainWindow::on_clearOutputButton_clicked);
 }
@@ -561,7 +586,7 @@ void MainWindow::executeWrapperStarted() {
   setUiElementsEnabled(false);
   clearPanelTimer.stop();
   if (QtPassSettings::isShowProcessOutput()) {
-    m_processOutputWidget->setVisible(true);
+    m_processOutputDock->setVisible(true);
   }
 }
 
@@ -1990,7 +2015,7 @@ auto MainWindow::isSensitiveProcess(Enums::PROCESS pid) -> bool {
  * showProcessOutput setting.
  */
 void MainWindow::updateProcessOutputVisibility() {
-  m_processOutputWidget->setVisible(QtPassSettings::isShowProcessOutput());
+  m_processOutputDock->setVisible(QtPassSettings::isShowProcessOutput());
 }
 
 /**
