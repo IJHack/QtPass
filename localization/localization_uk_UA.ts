@@ -479,12 +479,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation>Новий профіль: %1 о %2</translation>
+        <translation>Новий профіль: %1 у %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation>Профіль: %1 о %2</translation>
+        <translation>Профіль: %1 y %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
@@ -1167,7 +1167,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="346"/>
         <source>Clear output</source>
-        <translation>Чіткий вихід</translation>
+        <translation>Очистити результати</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="349"/>
@@ -1562,7 +1562,7 @@ Continue?</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1629"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Експорт вашого відкритого ключа&lt;/h3&gt;&lt;p&gt;Ключ підпису не налаштовано. Встановіть його в налаштуваннях QtPass &gt; Ключі GPG або виконайте це в терміналі:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc %lt;ідентифікатор-вашего-ключа&amp;gt;&lt;/pre&gt;&lt;p&gt;Потім надішліть файл своїм товаришам по команді.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Експорт вашого відкритого ключа&lt;/h3&gt;&lt;p&gt;Ключ підпису не налаштовано. Встановіть його в налаштуваннях QtPass &gt; Ключі GPG або виконайте це в терміналі:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;ідентифікатор-вашого-ключа&amp;gt;&lt;/pre&gt;&lt;p&gt;Потім надішліть файл своїм товаришам по команді.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1649"/>
