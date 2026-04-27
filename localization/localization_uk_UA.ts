@@ -1444,7 +1444,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="817"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>у записі %n.</numerusform>
+            <numerusform>у %n записі.</numerusform>
             <numerusform>у %n записах.</numerusform>
             <numerusform>у %n записах.</numerusform>
         </translation>
