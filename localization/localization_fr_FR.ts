@@ -930,7 +930,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer la clé</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
@@ -1691,10 +1691,10 @@ Continuer&#x202f;?</translation>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass est une interface graphique pour &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, le gestionnaire de mots de passe standard unix.&lt;/p&gt;.
-&lt;p&gt;S&apos;il vous plaît rapporter tout &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problèmes &lt;/a&gt; que vous pourriez avoir avec ce logiciel.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;&gt;Documentation
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;CodeSource&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;QtPass est une interface graphique pour &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, le gestionnaire de mots de passe standard sous unix.&lt;/p&gt;
+&lt;p&gt;Veuillez signaler tout &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problème&lt;/a&gt; que vous pourriez rencontrer avec ce logiciel.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Code source&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
