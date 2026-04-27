@@ -408,7 +408,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Wilt u een password-store maken op %1?</translation>
+        <translation>Wilt u een wachtwoordopslag maken op %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
@@ -1510,12 +1510,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1282"/>
         <source>Share</source>
-        <translation>Deel</translation>
+        <translation>Delen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1294"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Wachtwoorden herversleutelen</translation>
+        <translation>Alle wachtwoorden herversleutelen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1299"/>
