@@ -403,7 +403,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation>Profile map aanmaken?</translation>
+        <translation>Profielmap aanmaken?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
@@ -413,7 +413,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation>Kon profiel map niet aanmaken: %1</translation>
+        <translation>Kon profielmap niet aanmaken: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
@@ -821,7 +821,7 @@ Je kan nieuw toegevoegde wachtwoorden niet uitlezen!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation>Invoeren</translation>
+        <translation>Importeren</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
