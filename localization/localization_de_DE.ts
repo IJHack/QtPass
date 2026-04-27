@@ -446,7 +446,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Füllen Sie alle erforderlichen Felder aus.</translation>
+        <translation>Füllen Sie alle erforderlichen Felder aus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>

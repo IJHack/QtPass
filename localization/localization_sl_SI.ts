@@ -7,13 +7,13 @@
         <location filename="../src/configdialog.ui" line="20"/>
         <location filename="../src/ui_configdialog.h" line="897"/>
         <source>Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfiguracija</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
         <location filename="../src/ui_configdialog.h" line="946"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Nastavitve</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
