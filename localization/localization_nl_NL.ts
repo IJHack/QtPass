@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>Toon verwerking</translation>
+        <translation>Toon de procesuitvoer</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
