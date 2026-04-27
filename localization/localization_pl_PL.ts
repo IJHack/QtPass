@@ -965,8 +965,8 @@ Expire-Date: 0
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
-        <location filename="../src/mainwindow.cpp" line="582"/>
-        <location filename="../src/mainwindow.cpp" line="765"/>
+        <location filename="../src/mainwindow.cpp" line="700"/>
+        <location filename="../src/mainwindow.cpp" line="883"/>
         <source>Search Password</source>
         <translation>Wyszukaj hasło</translation>
     </message>
@@ -1021,164 +1021,169 @@ Expire-Date: 0
         <translation>Witamy w QtPass</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="346"/>
+        <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
         <translation>Wyczyść dane wyjściowe</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="349"/>
+        <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
         <translation>Wyczyść</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="415"/>
-        <location filename="../src/mainwindow.ui" line="418"/>
-        <location filename="../src/mainwindow.cpp" line="1255"/>
+        <location filename="../src/mainwindow.ui" line="379"/>
+        <location filename="../src/mainwindow.ui" line="382"/>
+        <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
         <translation>Dodaj hasło</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="421"/>
+        <location filename="../src/mainwindow.ui" line="385"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="426"/>
-        <location filename="../src/mainwindow.ui" line="429"/>
-        <location filename="../src/mainwindow.cpp" line="1254"/>
+        <location filename="../src/mainwindow.ui" line="390"/>
+        <location filename="../src/mainwindow.ui" line="393"/>
+        <location filename="../src/mainwindow.cpp" line="1372"/>
         <source>Add folder</source>
         <translation>Dodaj folder</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="434"/>
-        <location filename="../src/mainwindow.ui" line="437"/>
-        <location filename="../src/mainwindow.cpp" line="1262"/>
+        <location filename="../src/mainwindow.ui" line="398"/>
+        <location filename="../src/mainwindow.ui" line="401"/>
+        <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Edit</source>
         <translation>Edytuj</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="442"/>
-        <location filename="../src/mainwindow.ui" line="445"/>
-        <location filename="../src/mainwindow.cpp" line="1276"/>
+        <location filename="../src/mainwindow.ui" line="406"/>
+        <location filename="../src/mainwindow.ui" line="409"/>
+        <location filename="../src/mainwindow.cpp" line="1394"/>
         <source>Delete</source>
         <translation>Usuń</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="450"/>
+        <location filename="../src/mainwindow.ui" line="414"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="453"/>
+        <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Wygeneruj OTP i dodaj do schowka</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="456"/>
+        <location filename="../src/mainwindow.ui" line="420"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="461"/>
+        <location filename="../src/mainwindow.ui" line="425"/>
         <source>Push</source>
         <translation>Push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="464"/>
+        <location filename="../src/mainwindow.ui" line="428"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="472"/>
+        <location filename="../src/mainwindow.ui" line="436"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="469"/>
+        <location filename="../src/mainwindow.ui" line="433"/>
         <source>Update</source>
         <translation>Zaaktualizuj</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="477"/>
-        <location filename="../src/mainwindow.cpp" line="1256"/>
+        <location filename="../src/mainwindow.ui" line="441"/>
+        <location filename="../src/mainwindow.cpp" line="1374"/>
         <source>Users</source>
         <translation>Użytkownicy</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="480"/>
+        <location filename="../src/mainwindow.ui" line="444"/>
         <source>Manage who can read password in folder</source>
         <translation>Zarządzaj, kto może odczytać hasło w folderze</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="485"/>
+        <location filename="../src/mainwindow.ui" line="449"/>
         <source>Config</source>
         <translation>Konfiguracja</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="488"/>
+        <location filename="../src/mainwindow.ui" line="452"/>
         <source>Configuration</source>
         <translation>Konfiguracja</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="238"/>
+        <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Welcome to QtPass %1</source>
         <translation>Witamy w QtPass %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="383"/>
-        <location filename="../src/mainwindow.cpp" line="396"/>
+        <location filename="../src/mainwindow.cpp" line="331"/>
+        <source>Process Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="501"/>
+        <location filename="../src/mainwindow.cpp" line="514"/>
         <source>Updating password-store</source>
         <translation>Aktualizowanie magazynu haseł</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="507"/>
-        <location filename="../src/mainwindow.cpp" line="806"/>
+        <location filename="../src/mainwindow.cpp" line="625"/>
+        <location filename="../src/mainwindow.cpp" line="924"/>
         <source>Content hidden</source>
         <translation>Zawartość ukryta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="511"/>
-        <location filename="../src/mainwindow.cpp" line="1523"/>
+        <location filename="../src/mainwindow.cpp" line="629"/>
+        <location filename="../src/mainwindow.cpp" line="1641"/>
         <source>Password</source>
         <translation>Hasło</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="548"/>
+        <location filename="../src/mainwindow.cpp" line="666"/>
         <source>OTP Code</source>
         <translation>Kod OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="550"/>
+        <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
         <translation>Kod OTP skopiowano do schowka</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="552"/>
+        <location filename="../src/mainwindow.cpp" line="670"/>
         <source>No OTP code found in this password entry</source>
         <translation>W tym wpisie hasła nie znaleziono kodu OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="586"/>
+        <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
         <translation>Hasło i zawartość ukryta</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="666"/>
+        <location filename="../src/mainwindow.cpp" line="784"/>
         <source>Looking for: %1</source>
         <translation>Szukanie: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="716"/>
+        <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
         <translation>Wyszukiwanie…</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="747"/>
+        <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
         <translation>Wyszukaj zawartość (wyrażenie regularne)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="793"/>
+        <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
         <translation>Nie znaleziono wyników.</translation>
     </message>
@@ -1191,7 +1196,7 @@ Expire-Date: 0
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="816"/>
+        <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Znaleziono %n wynik</numerusform>
@@ -1200,7 +1205,7 @@ Expire-Date: 0
         </translation>
     </message>
     <message numerus="yes">
-        <location filename="../src/mainwindow.cpp" line="817"/>
+        <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
             <numerusform>w %n wpisie.</numerusform>
@@ -1209,106 +1214,106 @@ Expire-Date: 0
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="918"/>
-        <location filename="../src/mainwindow.cpp" line="1349"/>
+        <location filename="../src/mainwindow.cpp" line="1036"/>
+        <location filename="../src/mainwindow.cpp" line="1467"/>
         <source>New file</source>
         <translation>Nowy plik</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="919"/>
+        <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Nowy plik hasła: 
 (Zostanie dodane do %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="956"/>
+        <location filename="../src/mainwindow.cpp" line="1074"/>
         <source> and the whole content?</source>
         <translation> i cała treść?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="966"/>
+        <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> i cała treść? &lt;br&gt;&lt;strong&gt;Uwaga: znajdują się niespodziewane pliki w danym folderze, sprawdź je przed kontynuacją.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="975"/>
+        <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
         <translation>Usunąć folder?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="975"/>
+        <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
         <translation>Usunąć hasło?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="976"/>
+        <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Czy na pewno chcesz usunąć %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="996"/>
+        <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>No password selected for OTP generation</source>
         <translation>Nie wybrano hasła do wygenerowania OTP</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1124"/>
+        <location filename="../src/mainwindow.cpp" line="1242"/>
         <source>Profile changed to %1</source>
         <translation>Profil zmienony na %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1253"/>
+        <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>Open folder with file manager</source>
         <translation>Otwórz folder w menedżerze plików</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1268"/>
+        <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
         <translation>Zmień nazwe folderu</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1272"/>
+        <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
         <translation>Zmień nazwe hasła</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1282"/>
+        <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
         <translation>Udostępnij</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1294"/>
+        <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
         <translation>Ponownie zaszyfruj wszystkie hasła</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1299"/>
+        <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
         <translation>Eksportuj mój klucz publiczny...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1305"/>
+        <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
         <translation>Dodaj odbiorcę...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1310"/>
+        <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
         <translation>Co to jest?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1628"/>
-        <location filename="../src/mainwindow.cpp" line="1648"/>
+        <location filename="../src/mainwindow.cpp" line="1746"/>
+        <location filename="../src/mainwindow.cpp" line="1766"/>
         <source>Export Public Key</source>
         <translation>Eksportuj klucz publiczny</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1629"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Eksportuj swój klucz publiczny&lt;/h3&gt;&lt;p&gt;Nie skonfigurowano klucza podpisu. Ustaw go w Ustawienia QtPass &amp;gt; Klucze GPG lub uruchom to polecenie w terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;twój-klucz-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Następnie wyślij plik członkom zespołu.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1649"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1317,76 +1322,80 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1651"/>
+        <location filename="../src/mainwindow.cpp" line="1769"/>
         <source>No output from gpg.</source>
         <translation>Brak danych wyjściowych z GPG.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1678"/>
+        <location filename="../src/mainwindow.cpp" line="1796"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Udostępnianie haseł za pomocą GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1679"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; to their own folders&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Udostępnianie haseł za pomocą GPG&lt;/h3&gt;&lt;p&gt;Aby udostępnić hasła innym użytkownikom:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Wyeksportuj swój klucz publiczny&lt;/b&gt; i wyślij go członkom zespołu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Zaimportuj klucze publiczne członków zespołu&lt;/b&gt; do ich folderów&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ponownie zaszyfruj hasła&lt;/b&gt;, aby wszyscy odbiorcy mogli je odszyfrować&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Tylko osoby z pasującym kluczem tajnym mogą odszyfrować hasła.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Wskazówka:&lt;/b&gt; użyj tego samego klucza GPG dla wszystkich folderów współdzielonych.&lt;/p&gt;&lt;p&gt;Więcej informacji znajdziesz w sekcji FAQ.&lt;/p&gt;</translation>
+        <translation type="vanished">&lt;h3&gt;Udostępnianie haseł za pomocą GPG&lt;/h3&gt;&lt;p&gt;Aby udostępnić hasła innym użytkownikom:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Wyeksportuj swój klucz publiczny&lt;/b&gt; i wyślij go członkom zespołu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Zaimportuj klucze publiczne członków zespołu&lt;/b&gt; do ich folderów&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ponownie zaszyfruj hasła&lt;/b&gt;, aby wszyscy odbiorcy mogli je odszyfrować&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Tylko osoby z pasującym kluczem tajnym mogą odszyfrować hasła.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Wskazówka:&lt;/b&gt; użyj tego samego klucza GPG dla wszystkich folderów współdzielonych.&lt;/p&gt;&lt;p&gt;Więcej informacji znajdziesz w sekcji FAQ.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
         <translation type="vanished">Zaszyfruj ponownie</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1350"/>
+        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Nowy folder: 
 (Zostanie dodany do %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1360"/>
-        <location filename="../src/mainwindow.cpp" line="1369"/>
-        <location filename="../src/mainwindow.cpp" line="1578"/>
+        <location filename="../src/mainwindow.cpp" line="1478"/>
+        <location filename="../src/mainwindow.cpp" line="1487"/>
+        <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Error</source>
         <translation>Błąd</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1361"/>
+        <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
         <translation>Nie udało się utworzyć folderu: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1370"/>
+        <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Nie udało się utworzyć pliku .gpg-id w: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1392"/>
-        <location filename="../src/mainwindow.cpp" line="1428"/>
+        <location filename="../src/mainwindow.cpp" line="1510"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename file</source>
         <translation>Zmień nazwe pliku</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1392"/>
+        <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
         <translation>Zmień nazwe folderu na: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1428"/>
+        <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
         <translation>Zmień nazwę pliku na: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1579"/>
+        <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Directory does not exist: %1</source>
         <translation>Katalog nie istnieje: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1584"/>
+        <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
         <translation>Ponowne szyfrowanie haseł</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1585"/>
+        <location filename="../src/mainwindow.cpp" line="1703"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
