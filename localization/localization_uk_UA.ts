@@ -403,7 +403,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation>Створити каталог профілів?</translation>
+        <translation>Створити каталог профілю?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
@@ -484,7 +484,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation>Профіль: %1 y %2</translation>
+        <translation>Профіль: %1 у %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
