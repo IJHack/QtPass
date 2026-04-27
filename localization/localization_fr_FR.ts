@@ -66,7 +66,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>Affichage de la sortie du process</translation>
+        <translation>Afficher la sortie du processus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
@@ -609,12 +609,12 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>Copier</translation>
+        <translation>Copier dans le presse-papiers</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Enregistrer vers...</translation>
+        <translation>Enregistrer sous...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -641,12 +641,12 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation>Ne pouvait pas ouvrir %1 pour l&apos;écriture&#xa0;: %2</translation>
+        <translation>Impossible d&apos;ouvrir %1 en écriture&#xa0;: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>Ne peut pas écrire à %1&#xa0;: %2</translation>
+        <translation>Impossible d&apos;écrire dans %1&#xa0;: %2</translation>
     </message>
 </context>
 <context>
@@ -855,7 +855,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation>L &apos; importation de GPG a échoué&#xa0;:
+        <translation>Échec de l&apos;importation de GPG&#xa0;:
 %1</translation>
     </message>
     <message>
@@ -1531,14 +1531,14 @@ Continuer&#x202f;?</translation>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation>Ne pourrait pas exporter la clé publique pour %1.
+        <translation>Impossible d&amp;apos;exporter la clé publique pour %1.
 
 %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1769"/>
         <source>No output from gpg.</source>
-        <translation>Pas de sortie de gpg.</translation>
+        <translation>Aucune sortie de gpg.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1796"/>
@@ -1839,7 +1839,7 @@ Les entrées en rouge ne sont pas valides, vous ne pourrez pas chiffrer vers cel
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Importer une clé GPG à partir du fichier ou du presse-papier</translation>
+        <translation>Importer une clé GPG depuis un fichier ou le presse-papiers</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
