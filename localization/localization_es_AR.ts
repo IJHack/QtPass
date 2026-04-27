@@ -1468,7 +1468,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Exporta tu clave pública&lt;/h3&gt;&lt;p&gt;No hay ninguna clave de firma configurada. Configura una en la configuración de QtPass &gt; Claves GPG, o ejecuta esto en una terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;tu-id-de-clave&amp;gt;&lt;/pre&gt;&lt;p&gt;Luego envía el archivo a tus compañeros de equipo.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Exporta tu clave pública&lt;/h3&gt;&lt;p&gt;No hay ninguna clave de firma configurada. Configura una en la configuración de QtPass &gt; Claves GPG, o ejecuta esto en una terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Luego envía el archivo a tus compañeros de equipo.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>

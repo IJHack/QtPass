@@ -1485,7 +1485,7 @@ Fortfahren?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Ihren öffentlichen Schlüssel exportieren&lt;/h3&gt;&lt;p&gt;Es ist kein Signaturschlüssel konfiguriert. Legen Sie einen in den QtPass-Einstellungen &amp;gt; GPG-Schlüssel fest oder führen Sie folgenden Befehl in einem Terminal aus:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;ihre-Schlüssel-ID&amp;gt;&lt;/pre&gt;&lt;p&gt;Senden Sie die Datei anschließend an Ihre Teammitglieder.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Ihren öffentlichen Schlüssel exportieren&lt;/h3&gt;&lt;p&gt;Es ist kein Signaturschlüssel konfiguriert. Legen Sie einen in den QtPass-Einstellungen &amp;gt; GPG-Schlüssel fest oder führen Sie folgenden Befehl in einem Terminal aus:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Senden Sie die Datei anschließend an Ihre Teammitglieder.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
