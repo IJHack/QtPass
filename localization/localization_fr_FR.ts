@@ -319,7 +319,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Voulez-vous créer un magasin de mots de passe dans %1&#x202f;?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
@@ -599,7 +599,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Exporter la clef publique</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
@@ -614,7 +614,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&amp;Enregistrer vers...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -844,7 +844,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Impossible d&apos;ouvrir le fichier&#xa0;: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
@@ -1319,7 +1319,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Effacer les résultats</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
@@ -1428,7 +1428,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sortie du processus&#xa0;:</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
@@ -1448,7 +1448,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation type="unfinished">Ajouter le destinataire...</translation>
+        <translation type="unfinished">Ajouter un destinataire</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
@@ -1519,7 +1519,7 @@ Continuer&#x202f;?</translation>
         <location filename="../src/mainwindow.cpp" line="1746"/>
         <location filename="../src/mainwindow.cpp" line="1766"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Exporter la clef publique</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
