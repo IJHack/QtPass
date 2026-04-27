@@ -1304,7 +1304,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Lutte insensible aux cas</translation>
+        <translation>Insensible à la casse</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>

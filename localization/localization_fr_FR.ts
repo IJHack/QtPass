@@ -1432,7 +1432,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="152"/>
         <location filename="../src/ui_mainwindow.h" line="368"/>
         <source>Case-insensitive toggle</source>
-        <translation>Lutte insensible aux cas</translation>
+        <translation>Insensible à la casse</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
