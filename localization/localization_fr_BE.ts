@@ -1412,12 +1412,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
-        <translation>Impossible de créer le dossier : %1</translation>
+        <translation>Renommer le dossier</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation>Échec de la création du fichier .gpg-id dans : %1</translation>
+        <translation>Renommer le mot de passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
