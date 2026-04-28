@@ -604,7 +604,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation>Publieke sleutel</translation>
+        <translation>Openbare sleutel</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
@@ -619,7 +619,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>Publieke sleutel voor %1</translation>
+        <translation>Openbare sleutel voor %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
@@ -631,7 +631,7 @@ e-mail</translation>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Bewaarenbare sleutel op</translation>
+        <translation>Bewaar openbare sleutel</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
@@ -801,7 +801,7 @@ U kunt nieuw toegevoegde wachtwoorden niet lezen!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importeer een publieke GPG-sleutel uit een bestand of plak deze hieronder. De sleutel moet ASCII-armored zijn.</translation>
+        <translation>Importeer een openbare GPG-sleutel uit een bestand of plak deze hieronder. De sleutel moet ASCII-armored zijn.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
