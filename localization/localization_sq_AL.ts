@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation>Sjellja e Clipboard:</translation>
+        <translation>Sjellja e klipboardit:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -196,7 +196,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation>Përdorni ikonë e trayit</translation>
+        <translation>Përdorni ikonën e trayit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
@@ -432,7 +432,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Dëshiron të krijosh një password-store në% 1?</translation>
+        <translation>Dëshiron të krijosh një password-store në %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
@@ -549,7 +549,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>Kopjo në Tabelën e kopjimit</translation>
+        <translation>Kopjo në klipboard</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -751,7 +751,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation>Nga Tabela e kopjimit</translation>
+        <translation>Nga klipboardi</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -789,7 +789,7 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 nuk duket si një çelës GPG ASCII-armored. Konvertoje fillimisht me &lt;code&gt;gpg --armor --export&lt;/code&gt;, ose ngjit blokun ASCII-armored përmes &lt;b&gt;Nga Tabela e kopjimit&lt;/b&gt;.</translation>
+        <translation>%1 nuk duket si një çelës GPG ASCII-armored. Konvertoje fillimisht me &lt;code&gt;gpg --armor --export&lt;/code&gt;, ose ngjit blokun ASCII-armored përmes &lt;b&gt;Nga klipboardi&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -1131,7 +1131,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
-        <translation>Kodi OTP u kopjua në kujtesën e përkohshme</translation>
+        <translation>Kodi OTP u kopjua në klipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
@@ -1584,12 +1584,12 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation>Clipboard nuk është pastruar</translation>
+        <translation>Klipboardi nuk është pastruar</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
         <source>Copied to clipboard</source>
-        <translation>Kopjuar në clipboard</translation>
+        <translation>Kopjuar në klipboard</translation>
     </message>
 </context>
 <context>
@@ -1670,7 +1670,7 @@ Hyrjet e kuqe nuk janë të vlefshme, nuk do të jeni në gjendje të enkriptoni
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Importo një çelës GPG nga skedari ose nga Tabela e kopjimit</translation>
+        <translation>Importo një çelës GPG nga skedari ose nga klipboardi</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
