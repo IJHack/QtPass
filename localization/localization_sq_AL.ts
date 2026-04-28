@@ -539,32 +539,32 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporto çelësin publik</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation type="unfinished"></translation>
+        <translation>Çelësi publik</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopjo në Tabelën e kopjimit</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruaj në skedar…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Çelësi publik për %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished"></translation>
+        <translation>U kopjua!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
@@ -1173,17 +1173,17 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>U gjet %n përputhje</numerusform>
+            <numerusform>U gjetën %n përputhje</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>në %n hyrje.</numerusform>
+            <numerusform>në %n hyrje.</numerusform>
         </translation>
     </message>
     <message>
@@ -1278,34 +1278,36 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="1746"/>
         <location filename="../src/mainwindow.cpp" line="1766"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporto çelësin publik</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Eksportoni çelësin tuaj publik&lt;/h3&gt;&lt;p&gt;Nuk është konfiguruar asnjë çelës nënshkrimi. Caktoni një te Cilësimet e QtPass &amp;gt; Çelësat GPG, ose ekzekutoni këtë në një terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Pastaj dërgojini skedarin anëtarëve të ekipit tuaj.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Çelësi publik për %1 nuk u eksportua dot.
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1769"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nuk ka dalje nga gpg.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1796"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Ndarja e fjalëkalimeve me GPG</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Ndarja e fjalëkalimeve me GPG&lt;/h3&gt;&lt;p&gt;Për të ndarë fjalëkalime me përdorues të tjerë:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportoni çelësin tuaj publik&lt;/b&gt; dhe dërgojeni te anëtarët e ekipit&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importoni çelësat publikë të anëtarëve të ekipit&lt;/b&gt; në keyring-un tuaj GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Rikriptojini fjalëkalimet&lt;/b&gt; që të gjithë marrësit të mund t&apos;i dekriptojnë&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Vetëm personat që kanë një çelës të fshehtë të përputhshëm mund t&apos;i dekriptojnë fjalëkalimet.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Këshillë:&lt;/b&gt; Përdorni të njëjtin çelës GPG për të gjitha dosjet e ndara.&lt;/p&gt;&lt;p&gt;Shihni FAQ për më shumë detaje.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
