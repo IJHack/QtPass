@@ -77,7 +77,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>Mostra l'output del processo</translation>
+        <translation>Mostra l&apos;output del processo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
@@ -142,7 +142,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Consente di cercare all'interno dei file delle password. Richiede la decifratura di ogni file e può essere lento su archivi grandi.</translation>
+        <translation>Consente di cercare all&apos;interno dei file delle password. Richiede la decifratura di ogni file e può essere lento su archivi grandi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -162,7 +162,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>Path to the password store directory</source>
-        <translation>Percorso della directory dell'archivio password</translation>
+        <translation>Percorso della directory dell&apos;archivio password</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
@@ -500,7 +500,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Compila tutti i campi obbligatori.</translation>
+        <translation>Compila tutti i campi obbligatori</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
@@ -858,7 +858,7 @@ Non sarai in grado di decifrare nessuna delle nuove password create.</translatio
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Impossibile leggere l'ID della chiave importata dall'output di GPG.</translation>
+        <translation>Impossibile leggere l&apos;ID della chiave importata dall&apos;output di GPG.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
@@ -1118,7 +1118,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Attiva/disattiva la modalità di ricerca nel contenuto per cercare all'interno dei file delle password</translation>
+        <translation>Attiva/disattiva la modalità di ricerca nel contenuto per cercare all&apos;interno dei file delle password</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
@@ -1525,7 +1525,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation>Cos'è questo?</translation>
+        <translation>Cos&apos;è questo?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1746"/>
@@ -1676,7 +1676,7 @@ Continuare?</translation>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Cifratura non riuscita: chiave GPG del destinatario non trovata o non valida. Verifica che l'ID della chiave in .gpg-id sia corretto e importato.</translation>
+        <translation>Cifratura non riuscita: chiave GPG del destinatario non trovata o non valida. Verifica che l&apos;ID della chiave in .gpg-id sia corretto e importato.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
