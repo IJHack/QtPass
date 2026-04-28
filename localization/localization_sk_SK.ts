@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation type="unfinished"></translation>
+        <translation>Zobraziť výstup procesu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
@@ -136,12 +136,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Povoliť vyhľadávanie v obsahu (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Umožní vyhľadávanie v obsahu súborov hesiel. Vyžaduje dešifrovanie každého súboru a môže byť pomalé pri veľkých úložiskách.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Názov profilu, používaný na identifikáciu tohto konfiguračného profilu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Cesta k adresáru úložiska hesiel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
@@ -403,27 +403,27 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vytvoriť adresár profilu?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Chcete vytvoriť úložisko hesiel v %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa vytvoriť adresár profilu: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyberte príjemcov pre %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
@@ -479,17 +479,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nový profil: %1 v %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil: %1 v %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyplňte všetky povinné polia.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
@@ -595,54 +595,54 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportovať verejný kľúč</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation type="unfinished"></translation>
+        <translation>Verejný kľúč</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopírovať do schránky</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložiť do súboru…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Verejný kľúč pre %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished"></translation>
+        <translation>Skopírované!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Uložiť verejný kľúč</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kľúč ASCII-armored (*.asc);;Všetky súbory (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa otvoriť %1 na zápis: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa zapisovať do %1: %2</translation>
     </message>
 </context>
 <context>
@@ -792,42 +792,42 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Importovať kľúč GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importujte verejný kľúč GPG zo súboru alebo ho vložte nižšie. Kľúč musí byť vo formáte ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Zo súboru…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Zo schránky</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation type="unfinished"></translation>
+        <translation>Vložte sem kľúč GPG vo formáte ASCII-armored…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importovať</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation type="unfinished"></translation>
+        <translation>Kľúč GPG ASCII-armored</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Všetky súbory</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -835,33 +835,34 @@ Nebudete môcť dešifrovať žiadne novo pridané heslá!</translation>
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Importovať kľúč</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nepodarilo sa otvoriť súbor: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 nevyzerá ako kľúč GPG vo formáte ASCII-armored. Najprv ho preveďte príkazom &lt;code&gt;gpg --armor --export&lt;/code&gt;, alebo vložte ASCII-armored blok cez &lt;b&gt;Zo schránky&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Import GPG zlyhal:
+%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Identifikátor importovaného kľúča sa nepodarilo načítať z výstupu GPG.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kľúč úspešne importovaný: %1</translation>
     </message>
 </context>
 <context>
@@ -1148,47 +1149,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hľadať v obsahu hesla (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Prepínač vyhľadávania v obsahu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Prepnúť režim vyhľadávania v obsahu na hľadanie v súboroch hesiel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyhľadávanie bez rozlišovania veľkých a malých písmen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Prepínač rozlišovania veľkých a malých písmen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Prepnúť vyhľadávanie v obsahu bez rozlišovania veľkých a malých písmen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Výsledky</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -1198,12 +1199,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazať výstup</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Vymazať</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
@@ -1335,10 +1336,10 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>Nájdená %n zhoda</numerusform>
+            <numerusform>Nájdené %n zhody</numerusform>
+            <numerusform>Nájdených %n zhôd</numerusform>
         </translation>
     </message>
     <message>
@@ -1441,7 +1442,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Výstup procesu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
@@ -1456,25 +1457,25 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Vyhľadávanie…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hľadať v obsahu (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žiadne zhody.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>v %n zázname.</numerusform>
+            <numerusform>v %n záznamoch.</numerusform>
+            <numerusform>v %n záznamoch.</numerusform>
         </translation>
     </message>
     <message>
@@ -1495,60 +1496,62 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdieľať</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Znovu zašifrovať všetky heslá</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportovať môj verejný kľúč…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation type="unfinished"></translation>
+        <translation>Pridať príjemcu…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation type="unfinished"></translation>
+        <translation>Čo je to?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1746"/>
         <location filename="../src/mainwindow.cpp" line="1766"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportovať verejný kľúč</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Exportovať váš verejný kľúč&lt;/h3&gt;&lt;p&gt;Nie je nakonfigurovaný žiadny podpisový kľúč. Nastavte ho v Nastaveniach QtPass &amp;gt; kľúče GPG, alebo spustite v termináli:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Potom súbor pošlite svojim spolutímom.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Verejný kľúč pre %1 sa nepodarilo exportovať.
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1769"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished"></translation>
+        <translation>Žiadny výstup z gpg.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1796"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Zdieľanie hesiel pomocou GPG</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Zdieľanie hesiel pomocou GPG&lt;/h3&gt;&lt;p&gt;Na zdieľanie hesiel s ostatnými používateľmi:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportujte svoj verejný kľúč&lt;/b&gt; a pošlite ho spolutímom&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importujte verejné kľúče spolutímov&lt;/b&gt; do svojho zväzku kľúčov GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Znovu zašifrujte heslá&lt;/b&gt;, aby ich všetci príjemcovia mohli dešifrovať&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Heslá môžu dešifrovať len osoby s príslušným tajným kľúčom.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Pre všetky zdieľané priečinky používajte rovnaký kľúč GPG.&lt;/p&gt;&lt;p&gt;Ďalšie podrobnosti nájdete v častých otázkach.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -1631,12 +1634,12 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Neplatná dĺžka hesla</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Heslo s nulovou dĺžkou sa nedá vygenerovať.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
@@ -1652,25 +1655,25 @@ Pokračovať?</translation>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šifrovanie zlyhalo: kľúč GPG vypršal. Obnovte alebo vymeňte kľúč.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šifrovanie zlyhalo: kľúč GPG bol odvolaný.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šifrovanie zlyhalo: kľúč GPG príjemcu sa nenašiel alebo je neplatný. Skontrolujte, či identifikátor kľúča v .gpg-id je správny a importovaný.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šifrovanie zlyhalo. Skontrolujte, či je váš kľúč GPG platný.</translation>
     </message>
 </context>
 <context>
@@ -1834,7 +1837,7 @@ Pokračovať?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vynútiť prepísanie?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
@@ -1898,12 +1901,12 @@ Modré položky majú dostupný tajný kľúč, vyberte jednu z nich, aby ste mo
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importovať kľúč…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Importovať kľúč GPG zo súboru alebo schránky</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
