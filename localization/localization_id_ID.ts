@@ -255,7 +255,7 @@
         <location filename="../src/configdialog.ui" line="643"/>
         <location filename="../src/ui_configdialog.h" line="943"/>
         <source>Start minimized</source>
-        <translation>Mulai dalam keadaan minimal</translation>
+        <translation>Mulai dalam keadaan diminimalkan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
