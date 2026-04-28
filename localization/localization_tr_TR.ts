@@ -795,17 +795,18 @@ Yeni eklenen parolaların hiçbirinin şifresini çözemeyeceksiniz!</translatio
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG içe aktarımı başarısız:
+%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation type="unfinished"></translation>
+        <translation>İçe aktarılan anahtar kimliği GPG çıktısından ayrıştırılamadı.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Anahtar başarıyla içe aktarıldı: %1</translation>
     </message>
 </context>
 <context>
@@ -1033,12 +1034,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation type="unfinished"></translation>
+        <translation>Çıktıyı temizle</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Temizle</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
@@ -1145,7 +1146,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation type="unfinished"></translation>
+        <translation>İşlem çıktısı</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="501"/>
@@ -1214,15 +1215,15 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n eşleşme bulundu</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n girdide.</numerusform>
         </translation>
     </message>
     <message>
@@ -1322,24 +1323,26 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Genel Anahtarınızı Dışa Aktarın&lt;/h3&gt;&lt;p&gt;Yapılandırılmış bir imzalama anahtarı yok. QtPass Ayarları &amp;gt; GPG anahtarları içinden bir tane ayarlayın veya bunu bir terminalde çalıştırın:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ardından dosyayı takım arkadaşlarınıza gönderin.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 için genel anahtar dışa aktarılamadı.
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1769"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished"></translation>
+        <translation>gpg&apos;den çıktı yok.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;GPG ile Parolaları Paylaşma&lt;/h3&gt;&lt;p&gt;Diğer kullanıcılarla parolaları paylaşmak için:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Genel anahtarınızı dışa aktarın&lt;/b&gt; ve takım arkadaşlarınıza gönderin&lt;/li&gt;&lt;li&gt;&lt;b&gt;Takım arkadaşlarınızın genel anahtarlarını içe aktarın&lt;/b&gt; GPG anahtarlık halkanıza&lt;/li&gt;&lt;li&gt;&lt;b&gt;Parolaları yeniden şifreleyin&lt;/b&gt; böylece tüm alıcılar şifresini çözebilir&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Yalnızca eşleşen gizli anahtara sahip kişiler parolaların şifresini çözebilir.&lt;/p&gt;&lt;p&gt;&lt;b&gt;İpucu:&lt;/b&gt; Tüm paylaşılan klasörler için aynı GPG anahtarını kullanın.&lt;/p&gt;&lt;p&gt;Daha fazla ayrıntı için SSS sayfasına bakın.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;To export your public GPG key, run this in terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc %1&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;&lt;p&gt;Your key ID: You can find it in QtPass Settings &amp;gt; GPG keys.&lt;/p&gt;</source>
@@ -1726,12 +1729,12 @@ Kırmızı girdiler geçerli değildir; bunlara şifreleme yapamazsınız.</tran
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Anahtar içe aktar…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Dosyadan veya panodan bir GPG anahtarı içe aktar</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
