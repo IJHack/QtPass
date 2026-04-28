@@ -509,7 +509,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>需要安装 Pass OTP 扩展</translation>
+        <translation>需要安裝 Pass OTP 擴展</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
@@ -544,7 +544,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Use pass-otp extension</source>
-        <translation>使用 pass-otp 扩展</translation>
+        <translation>使用 pass-otp 擴展</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
@@ -1366,7 +1366,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>新資料夾r: 
+        <translation>新資料夾: 
 (會被放置在 %1 )</translation>
     </message>
     <message>
