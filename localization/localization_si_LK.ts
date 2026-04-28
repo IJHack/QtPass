@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>ජනනය කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
@@ -262,7 +262,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
         <source>Programs</source>
-        <translation type="unfinished"></translation>
+        <translation>වැඩසටහන්</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
@@ -316,17 +316,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation>පැතිකඩ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="949"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>නම</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
         <source>Path</source>
-        <translation type="unfinished"></translation>
+        <translation>මාර්ගය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="993"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>මකන්න</translation>
     </message>
     <message>
         <source>Current password-store</source>
@@ -459,7 +459,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="728"/>
         <location filename="../src/configdialog.cpp" line="985"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>දෝෂය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
@@ -880,12 +880,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>විද්‍යුත් තැපෑල</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
-        <translation type="unfinished"></translation>
+        <translation>නම</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
@@ -954,14 +954,14 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/mainwindow.ui" line="401"/>
         <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation>සංස්කරණය</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
         <location filename="../src/mainwindow.cpp" line="1394"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>මකන්න</translation>
     </message>
     <message>
         <source>git push</source>
@@ -1027,7 +1027,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="433"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>යාවත්කාල කරන්න</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1049,7 +1049,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1374"/>
         <source>Users</source>
-        <translation type="unfinished"></translation>
+        <translation>පරිශීලකයින්</translation>
     </message>
     <message>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -1105,7 +1105,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
@@ -1135,7 +1135,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>හිස් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
@@ -1215,7 +1215,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="629"/>
         <location filename="../src/mainwindow.cpp" line="1641"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>මුරපදය</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="666"/>
@@ -1483,7 +1483,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1487"/>
         <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Error</source>
-        <translation type="unfinished"></translation>
+        <translation>දෝෂය</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
@@ -1594,12 +1594,12 @@ Continue?</source>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>මුරපදය</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>ජනනය කරන්න</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
