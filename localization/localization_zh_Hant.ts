@@ -218,7 +218,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically push</source>
-        <translation>自動</translation>
+        <translation>自動推送</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
