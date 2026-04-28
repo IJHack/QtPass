@@ -413,7 +413,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation>No s'ha pogut crear el directori del perfil: %1</translation>
+        <translation>No s&apos;ha pogut crear el directori del perfil: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
@@ -489,7 +489,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Empleneu tots els camps obligatoris.</translation>
+        <translation>Empleneu tots els camps obligatoris</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
@@ -637,12 +637,12 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation>No s'ha pogut obrir %1 per escriure: %2</translation>
+        <translation>No s&apos;ha pogut obrir %1 per escriure: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>No s'ha pogut escriure a %1: %2</translation>
+        <translation>No s&apos;ha pogut escriure a %1: %2</translation>
     </message>
 </context>
 <context>
@@ -797,12 +797,12 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importeu una clau pública GPG des d'un fitxer o enganxeu-la a continuació. La clau ha d'estar en format ASCII-armored.</translation>
+        <translation>Importeu una clau pública GPG des d&apos;un fitxer o enganxeu-la a continuació. La clau ha d&apos;estar en format ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Des d'un fitxer…</translation>
+        <translation>Des d&apos;un fitxer…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -840,7 +840,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation>No s'ha pogut obrir el fitxer: %1</translation>
+        <translation>No s&apos;ha pogut obrir el fitxer: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
@@ -857,7 +857,7 @@ Probablement no podreu desxifrar les contrasenyes afegides recentment!</translat
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>No s'ha pogut llegir l'identificador de la clau importada de la sortida de GPG.</translation>
+        <translation>No s&apos;ha pogut llegir l&apos;identificador de la clau importada de la sortida de GPG.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
@@ -1305,8 +1305,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation>
-            <numerusform>S'ha trobat %n coincidència</numerusform>
-            <numerusform>S'han trobat %n coincidències</numerusform>
+            <numerusform>S&apos;ha trobat %n coincidència</numerusform>
+            <numerusform>S&apos;han trobat %n coincidències</numerusform>
         </translation>
     </message>
     <message>
@@ -1564,14 +1564,14 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Exporteu la vostra clau pública&lt;/h3&gt;&lt;p&gt;No hi ha cap clau de signatura configurada. Definiu-ne una a Configuració de QtPass &amp;gt; Claus GPG, o executeu aquesta ordre en un terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Després envieu el fitxer als vostres companys d'equip.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Exporteu la vostra clau pública&lt;/h3&gt;&lt;p&gt;No hi ha cap clau de signatura configurada. Definiu-ne una a Configuració de QtPass &amp;gt; Claus GPG, o executeu aquesta ordre en un terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Després envieu el fitxer als vostres companys d&apos;equip.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation>No s'ha pogut exportar la clau pública de %1.
+        <translation>No s&apos;ha pogut exportar la clau pública de %1.
 
 %2</translation>
     </message>
@@ -1588,7 +1588,7 @@ Voleu continuar?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Compartir contrasenyes amb GPG&lt;/h3&gt;&lt;p&gt;Per compartir contrasenyes amb altres usuaris:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporteu la vostra clau pública&lt;/b&gt; i envieu-la als companys d'equip&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importeu les claus públiques dels companys&lt;/b&gt; al vostre clauer GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Torneu a xifrar les contrasenyes&lt;/b&gt; perquè tots els destinataris les puguin desxifrar&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Només les persones amb una clau secreta coincident poden desxifrar les contrasenyes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Consell:&lt;/b&gt; Utilitzeu la mateixa clau GPG per a totes les carpetes compartides.&lt;/p&gt;&lt;p&gt;Consulteu les PMF per a més detalls.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Compartir contrasenyes amb GPG&lt;/h3&gt;&lt;p&gt;Per compartir contrasenyes amb altres usuaris:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporteu la vostra clau pública&lt;/b&gt; i envieu-la als companys d&apos;equip&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importeu les claus públiques dels companys&lt;/b&gt; al vostre clauer GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Torneu a xifrar les contrasenyes&lt;/b&gt; perquè tots els destinataris les puguin desxifrar&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Només les persones amb una clau secreta coincident poden desxifrar les contrasenyes.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Consell:&lt;/b&gt; Utilitzeu la mateixa clau GPG per a totes les carpetes compartides.&lt;/p&gt;&lt;p&gt;Consulteu les PMF per a més detalls.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -1879,7 +1879,7 @@ Les entrades vermelles no són vàlides; no podreu xifrar-les.</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Importa una clau GPG des d'un fitxer o del porta-retalls</translation>
+        <translation>Importa una clau GPG des d&apos;un fitxer o del porta-retalls</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
