@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN">
+<TS version="2.1" language="zh_Hant">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -433,7 +433,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
         <source>No profile selected to delete</source>
-        <translation>未选择要删除的配置文件</translation>
+        <translation>未選擇要刪除的設定檔</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
@@ -464,17 +464,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>在：%1 处创建密码存储失败</translation>
+        <translation>在 %1 建立密碼儲存庫失敗</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
         <source>Password store not initialised</source>
-        <translation>密码存储未初始化</translation>
+        <translation>密碼儲存庫未初始化</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>该文件夹%1似乎不是一个密码存储或尚未初始化。</translation>
+        <translation>該資料夾 %1 似乎不是密碼儲存庫或尚未初始化。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
@@ -504,7 +504,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation>系统托盘不可用</translation>
+        <translation>系統托盤不可用</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
@@ -573,12 +573,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
         <source>PWGen</source>
-        <translation>生成密码</translation>
+        <translation>生成密碼</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>模板添加额外字段，用于密码生成对话框和密码视图。</translation>
+        <translation>範本可在密碼產生對話框與密碼檢視中加入額外欄位。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
@@ -910,7 +910,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>模板内容将根据 GPG 版本设置。</translation>
+        <translation>範本內容將根據 GPG 版本設定。</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
@@ -1341,7 +1341,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1242"/>
         <source>Profile changed to %1</source>
-        <translation>配置文件已更改为 %1</translation>
+        <translation>設定檔已更改為 %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
