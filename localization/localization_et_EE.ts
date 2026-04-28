@@ -1835,7 +1835,7 @@ Jätkata?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation>Kas sundida ülekirjutamine?</translation>
+        <translation>Kas sundida ülekirjutamist?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>

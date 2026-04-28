@@ -1183,7 +1183,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Conmutador de distinción de maiúsculas</translation>
+        <translation>Conmutador para ignorar maiúsculas e minúsculas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>

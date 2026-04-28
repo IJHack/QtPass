@@ -1147,7 +1147,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Comutator pentru diferențierea majusculelor</translation>
+        <translation>Comutator pentru insensibilitate la majuscule</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
