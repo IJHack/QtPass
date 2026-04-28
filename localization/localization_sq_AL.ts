@@ -226,7 +226,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation>&amp; Përdorni kalimin(pass)</translation>
+        <translation>&amp;Përdorni kalimin(pass)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
@@ -341,7 +341,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>Pass OTP extension duhet të instalohet</translation>
+        <translation>Zgjatimi Pass OTP duhet të instalohet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
@@ -488,12 +488,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Use pass-otp extension</source>
-        <translation>Përdorni extension pass-otp</translation>
+        <translation>Përdorni zgjatimin pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Natyral Git/GPG</translation>
+        <translation>Vendas Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -814,12 +814,12 @@ Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar ris
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Gjeneroni GnuPG kyçet çift</translation>
+        <translation>Gjeneroni çiftin e çelësave GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Gjeneroni një palë të re kyçe</translation>
+        <translation>Gjeneroni një palë të re çelësash</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -1503,7 +1503,7 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Duke gjeneruar çiftin e kyçave të GPG-së</translation>
+        <translation>Duke gjeneruar çiftin e çelësave të GPG-së</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
