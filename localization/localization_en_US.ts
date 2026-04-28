@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished"></translation>
+        <translation>Use a monospace font</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
