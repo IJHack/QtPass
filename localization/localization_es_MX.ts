@@ -38,7 +38,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>Añadir ficheros .gpg-id automáticamente</translation>
+        <translation>Agregar archivos .gpg-id automáticamente</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -120,7 +120,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
         <source>Add</source>
-        <translation>Añadir</translation>
+        <translation>Agregar</translation>
     </message>
     <message>
         <source>Current password-store</source>
@@ -456,7 +456,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>¿Desea crear un almacén de contraseñas en %1?</translation>
+        <translation>¿Quieres crear un almacén de contraseñas en %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
@@ -496,7 +496,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Rellene todos los campos obligatorios</translation>
+        <translation>Rellena todos los campos obligatorios</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -784,7 +784,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Pegue aquí una clave GPG ASCII-armored...</translation>
+        <translation>Pega aquí una clave GPG ASCII-armored…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -817,7 +817,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 no parece una clave GPG ASCII-armored. Conviértala primero con &lt;code&gt;gpg --armor --export&lt;/code&gt; o pegue el bloque ASCII-armored mediante &lt;b&gt;Desde el portapapeles&lt;/b&gt;.</translation>
+        <translation>%1 no parece una clave GPG ASCII-armored. Conviértela primero con &lt;code&gt;gpg --armor --export&lt;/code&gt; o pega el bloque ASCII-armored mediante &lt;b&gt;Desde el portapapeles&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -988,7 +988,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Add</source>
-        <translation type="vanished">Añadir</translation>
+        <translation type="vanished">Agregar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
@@ -1135,14 +1135,14 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1372"/>
         <source>Add folder</source>
-        <translation>Añadir carpeta</translation>
+        <translation>Agregar carpeta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
-        <translation>Añadir contraseña</translation>
+        <translation>Agregar contraseña</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
@@ -1385,7 +1385,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation>Añadir destinatario...</translation>
+        <translation>Agregar destinatario...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
@@ -1577,7 +1577,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>El cifrado falló: La clave GPG ha expirado. Por favor, renueve o reemplace la clave.</translation>
+        <translation>El cifrado falló: La clave GPG ha expirado. Por favor, renueva o reemplaza la clave.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
@@ -1589,13 +1589,13 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Error de cifrado: no se encontró la clave GPG del destinatario o esta no es válida. Compruebe que el ID de la clave en .gpg-id sea correcto y se haya importado.</translation>
+        <translation>Error de cifrado: no se encontró la clave GPG del destinatario o esta no es válida. Comprueba que el ID de la clave en .gpg-id sea correcto y se haya importado.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>El cifrado falló. Compruebe que su clave GPG sea válida.</translation>
+        <translation>El cifrado falló. Comprueba que tu clave GPG sea válida.</translation>
     </message>
 </context>
 <context>

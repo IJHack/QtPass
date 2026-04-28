@@ -220,7 +220,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>Mostrar el contenido de los archivos tal cual</translation>
+        <translation>Mostrar el contenido de los ficheros tal cual</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
@@ -325,7 +325,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Permite buscar dentro del contenido de los archivos de contraseñas. Requiere descifrar cada archivo y puede ser lento en almacenes grandes.</translation>
+        <translation>Permite buscar dentro del contenido de los ficheros de contraseñas. Requiere descifrar cada fichero y puede ser lento en almacenes grandes.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
@@ -380,7 +380,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Opcional: Clave GPG para firmar archivos .gpg-id para la verificación de integridad. Déjelo en blanco a menos que necesite proteger la lista de usuarios contra manipulaciones.</translation>
+        <translation>Opcional: Clave GPG para firmar ficheros .gpg-id para la verificación de integridad. Déjelo en blanco a menos que necesite proteger la lista de usuarios contra manipulaciones.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
@@ -582,7 +582,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Guardar en archivo...</translation>
+        <translation>Guardar en fichero...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -604,7 +604,7 @@ dirección de correo</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>Clave ASCII-armored (*.asc);;Todos los archivos (*)</translation>
+        <translation>Clave ASCII-armored (*.asc);;Todos los ficheros (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -624,7 +624,7 @@ dirección de correo</translation>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation>¡Comprueba la firma del archivo .gpgid!</translation>
+        <translation>¡Comprueba la firma del fichero .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -643,7 +643,7 @@ dirección de correo</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>No se pudo leer la clave de cifrado por utilizar; falta el archivo .gpg-id o no es válido.</translation>
+        <translation>No se pudo leer la clave de cifrado por utilizar; falta el fichero .gpg-id o no es válido.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -750,7 +750,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Cifrado repetido completado: %1 archivos cifrados de nuevo</translation>
+        <translation>Cifrado repetido completado: %1 ficheros cifrados de nuevo</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
@@ -769,12 +769,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importe una clave pública GPG desde un archivo o péguela a continuación. La clave debe estar en formato ASCII-armored.</translation>
+        <translation>Importe una clave pública GPG desde un fichero o péguela a continuación. La clave debe estar en formato ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Desde archivo...</translation>
+        <translation>Desde fichero...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
@@ -799,7 +799,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation>Todos los archivos</translation>
+        <translation>Todos los ficheros</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -812,7 +812,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation>No se pudo abrir el archivo: %1</translation>
+        <translation>No se pudo abrir el fichero: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
@@ -1238,7 +1238,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Activar/desactivar el modo de búsqueda de contenido para buscar dentro de los archivos de contraseñas</translation>
+        <translation>Activar/desactivar el modo de búsqueda de contenido para buscar dentro de los ficheros de contraseñas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
@@ -1368,7 +1368,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>Nuevo archivo de contraseñas:
+        <translation>Nuevo fichero de contraseñas:
 (Se colocará en %1)</translation>
     </message>
     <message>
@@ -1379,7 +1379,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> y todo el contenido? &lt;br&gt;&lt;strong&gt;Atención: hay archivos inesperados en la carpeta indicada. Revíselos antes de continuar.&lt;/strong&gt;</translation>
+        <translation> y todo el contenido? &lt;br&gt;&lt;strong&gt;Atención: hay ficheros inesperados en la carpeta indicada. Revíselos antes de continuar.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
@@ -1389,7 +1389,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>Open folder with file manager</source>
-        <translation>Abrir carpeta con gestor de archivos</translation>
+        <translation>Abrir carpeta con gestor de ficheros</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
@@ -1435,7 +1435,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Exporte su clave pública&lt;/h3&gt;&lt;p&gt;No hay ninguna clave de firma configurada. Configure una en la configuración de QtPass &gt; Claves GPG, o ejecute esto en una terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Luego envíe el archivo a sus compañeros de equipo.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Exporte su clave pública&lt;/h3&gt;&lt;p&gt;No hay ninguna clave de firma configurada. Configure una en la configuración de QtPass &gt; Claves GPG, o ejecute esto en una terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Luego envíe el fichero a sus compañeros de equipo.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
@@ -1487,13 +1487,13 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>No se pudo crear el archivo .gpg-id en: %1</translation>
+        <translation>No se pudo crear el fichero .gpg-id en: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename file</source>
-        <translation>Cambiar nombre de archivo</translation>
+        <translation>Cambiar nombre de fichero</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
@@ -1503,7 +1503,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation>Cambiar nombre de archivo a: </translation>
+        <translation>Cambiar nombre de fichero a: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
@@ -1526,9 +1526,9 @@ This may rewrite many files and cannot be undone easily.
 Continue?</source>
         <translation>¿Volver a cifrar todas las contraseñas en %1?
 
-Esto volverá a cifrar TODOS los archivos de contraseñas de esta carpeta utilizando los destinatarios definidos en .gpg-id.
+Esto volverá a cifrar TODOS los ficheros de contraseñas de esta carpeta utilizando los destinatarios definidos en .gpg-id.
 
-Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
+Esto puede sobrescribir muchos ficheros y no se puede deshacer fácilmente.
 
 ¿Continuar?</translation>
     </message>
@@ -1808,7 +1808,7 @@ Blue entries have a secret key available, select one of these to be able to decr
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation>Seleccione qué usuarios podrán descifrar las contraseñas almacenadas en esta carpeta.
-Nota: Los archivos existentes no se modificarán y conservarán los permisos anteriores hasta que los edite.
+Nota: Los ficheros existentes no se modificarán y conservarán los permisos anteriores hasta que los edite.
 Las entradas en azul tienen una clave secreta disponible; seleccione una para poder descifrar.
 Las entradas en negro tienen una clave de cifrado disponible y es de confianza; seleccione una para permitir que otros usuarios descifren.
 Las entradas en rojo no son válidas; no podrá cifrar con ellas.</translation>
@@ -1821,7 +1821,7 @@ Las entradas en rojo no son válidas; no podrá cifrar con ellas.</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Importar una clave GPG desde un archivo o el portapapeles</translation>
+        <translation>Importar una clave GPG desde un fichero o el portapapeles</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
@@ -1829,7 +1829,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation type="vanished">Elija qué usuarios pueden descifrar las contraseñas almacenadas en esta carpeta.
-Nota: no se modificarán los archivos existentes; estos retendrán los permisos antiguos hasta que los edite.
+Nota: no se modificarán los ficheros existentes; estos retendrán los permisos antiguos hasta que los edite.
 Las entradas azules cuentan con una clave secreta; seleccione una de estas para poder descifrar.
 Las entradas rojas no son válidas: no podrá descifrarlas.</translation>
     </message>
@@ -1844,7 +1844,7 @@ Note: Existing files will not be modified and retain the old permissions until y
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
         <translation type="vanished">Seleccione los usuarios que deben ser capaces de descifrar las contraseñas almacenadas en esta carpeta.
-Nota: Los archivos existentes no se modificarán y los viejos permisos se mantienen hasta que se editen.
+Nota: Los ficheros existentes no se modificarán y los viejos permisos se mantienen hasta que se editen.
 Entradas azules tienen una clave secreta disponible, seleccione uno de estos para poder descifrar.
 Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</translation>
     </message>
