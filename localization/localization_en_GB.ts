@@ -489,7 +489,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Fill in all required fields.</translation>
+        <translation>Fill in all required fields</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
