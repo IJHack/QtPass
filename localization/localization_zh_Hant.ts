@@ -489,7 +489,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>請填寫所有必填欄位。</translation>
+        <translation>請填寫所有必填欄位</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
