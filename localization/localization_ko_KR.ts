@@ -489,7 +489,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>모든 필수 필드를 입력하십시오.</translation>
+        <translation>모든 필수 필드를 입력하십시오</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
