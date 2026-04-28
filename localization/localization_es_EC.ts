@@ -149,12 +149,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation>¿Quieres crear un almacén de contraseñas?</translation>
+        <translation>¿Desea crear un almacén de contraseñas?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>¿Quieres crear un almacén de contraseñas en %1?</translation>
+        <translation>¿Desea crear un almacén de contraseñas en %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
@@ -1172,7 +1172,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation>¿Quieres eliminar la contraseña?</translation>
+        <translation>¿Desea eliminar la contraseña?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -1181,7 +1181,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation>¿Quieres eliminar la carpeta?</translation>
+        <translation>¿Desea eliminar la carpeta?</translation>
     </message>
     <message>
         <source>Selected password file does not exist, not able to edit</source>
@@ -1759,12 +1759,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation>¿Quieres forzar la sobrescritura?</translation>
+        <translation>¿Quiere forzar la sobrescritura?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation>¿Quieres sobrescribir %1 con %2?</translation>
+        <translation>¿Quiere sobrescribir %1 con %2?</translation>
     </message>
 </context>
 <context>

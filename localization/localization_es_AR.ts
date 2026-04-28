@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
         <source>Select character set for password generation</source>
-        <translation>Seleccione un juego de caracteres para la generación de contraseñas</translation>
+        <translation>Seleccioná un juego de caracteres para la generación de contraseñas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
@@ -340,7 +340,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
         <source>Select password storage program:</source>
-        <translation>Seleccione el programa de almacenamiento de contraseñas:</translation>
+        <translation>Seleccioná el programa de almacenamiento de contraseñas:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -1211,7 +1211,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>Seleccione un perfil</translation>
+        <translation>Seleccioná un perfil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
@@ -1589,13 +1589,13 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Error de cifrado: no se encontró la clave GPG del destinatario o esta no es válida. Compruebe que el ID de la clave en .gpg-id sea correcto y se haya importado.</translation>
+        <translation>Error de cifrado: no se encontró la clave GPG del destinatario o esta no es válida. Comprobá que el ID de la clave en .gpg-id sea correcto y se haya importado.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>El cifrado falló. Compruebe que su clave GPG sea válida.</translation>
+        <translation>El cifrado falló. Comprobá que tu clave GPG sea válida.</translation>
     </message>
 </context>
 <context>
