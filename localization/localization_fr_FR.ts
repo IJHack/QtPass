@@ -123,7 +123,7 @@
     </message>
     <message>
         <source>Include special symbols </source>
-        <translation type="vanished">Utiliser des symbôles spéciaux </translation>
+        <translation type="vanished">Utiliser des symboles spéciaux </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
@@ -396,7 +396,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
         <source>GnuPG not found</source>
-        <translation>GnuPG n&apos;as pas été trouvé</translation>
+        <translation>GnuPG n&apos;a pas été trouvé</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
@@ -432,7 +432,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Le dossier %1 ne semble pas être un magasin de mots de passe ou n&apos;as pas encore été initialisé.</translation>
+        <translation>Le dossier %1 ne semble pas être un magasin de mots de passe ou n&apos;a pas encore été initialisé.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
