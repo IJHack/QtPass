@@ -540,7 +540,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>S&apos;il vous plaît installer GnuPG sur votre système. &lt;br&gt;Installer &lt;strong&gt;Ubuntu&lt;/strong&gt; du Microsoft Store&lt;br&gt;ou &apos;a href&apos;&quot;https://www.gnupg.org/download/#sec-1-2&quot; &apos;download&lt;/a&gt; il from GnuPG.org</translation>
+        <translation>Veuillez installer GnuPG sur votre système.&lt;br&gt;Installez &lt;strong&gt;Ubuntu&lt;/strong&gt; depuis le Microsoft Store&lt;br&gt;ou &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;téléchargez-le&lt;/a&gt; depuis GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -1432,7 +1432,7 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="152"/>
         <location filename="../src/ui_mainwindow.h" line="368"/>
         <source>Case-insensitive toggle</source>
-        <translation>Lutte insensible aux cas</translation>
+        <translation>Insensible à la casse</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
@@ -1658,7 +1658,7 @@ Continuer&#x202f;?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Exporter votre clé publique&lt;/h3&gt;&lt;p&gt;Aucune clé de signature n&apos;est configurée. Définissez-en une dans les paramètres QtPass &amp;gt; Clés GPG, ou exécutez cette commande dans un terminal :&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;votre-id-de-clé&amp;gt;&lt;/pre&gt;&lt;p&gt;Envoyez ensuite le fichier à vos coéquipiers.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Exporter votre clé publique&lt;/h3&gt;&lt;p&gt;Aucune clé de signature n&apos;est configurée. Définissez-en une dans les paramètres QtPass &amp;gt; Clés GPG, ou exécutez cette commande dans un terminal :&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Envoyez ensuite le fichier à vos coéquipiers.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
@@ -1933,7 +1933,7 @@ Continuer&#x202f;?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&amp;Spectacle</translation>
+        <translation>&amp;Afficher</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
@@ -1953,7 +1953,7 @@ Continuer&#x202f;?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp;Restoration</translation>
+        <translation>&amp;Restaurer</translation>
     </message>
 </context>
 <context>

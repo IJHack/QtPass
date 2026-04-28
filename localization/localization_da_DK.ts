@@ -632,7 +632,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>ASCII-armeret nøgle (*.asc);;Alle filer (*)</translation>
+        <translation>ASCII-armored nøgle (*.asc);;Alle filer (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -797,7 +797,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importer en offentlig GPG-nøgle fra en fil, eller indsæt den nedenfor. Nøglen skal være i ASCII-armeret format.</translation>
+        <translation>Importer en offentlig GPG-nøgle fra en fil, eller indsæt den nedenfor. Nøglen skal være i ASCII-armored format.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -812,7 +812,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Indsæt en ASCII-armeret GPG-nøgle her...</translation>
+        <translation>Indsæt en ASCII-armored GPG-nøgle her...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -822,7 +822,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII-armeret GPG-nøgle</translation>
+        <translation>ASCII-armored GPG-nøgle</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -845,7 +845,7 @@ Du vil ikke være i stand til at dekryptere nogen nye tilføjede kodeord!</trans
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 ligner ikke en ASCII-armeret GPG-nøgle. Konverter den først med &lt;code&gt;gpg --armor --export&lt;/code&gt;, eller indsæt den armerede blok via &lt;b&gt;Fra udklipsholder&lt;/b&gt;.</translation>
+        <translation>%1 ligner ikke en ASCII-armored GPG-nøgle. Konverter den først med &lt;code&gt;gpg --armor --export&lt;/code&gt;, eller indsæt den ASCII-armored blok via &lt;b&gt;Fra udklipsholder&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
