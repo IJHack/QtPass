@@ -685,7 +685,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation>L&apos;échec de signer %1.</translation>
+        <translation>Échec de la signature de %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
@@ -1731,12 +1731,12 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation>GPG clé paire génération échouée</translation>
+        <translation>Échec de la génération de la paire de clés GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
         <source>GPG key pair generated successfully</source>
-        <translation>GPG clé paire générée avec succès</translation>
+        <translation>Paire de clés GPG générée avec succès</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
