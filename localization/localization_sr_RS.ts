@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Korisiti font iste širine</translation>
+        <translation>Koristiti font iste širine</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
         <source>Include special symbols</source>
-        <translation>Uključi specijanle simbole</translation>
+        <translation>Uključi specijalne simbole</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -659,7 +659,7 @@ e-pošta</translation>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>Postpis za %1 nije ispravan.</translation>
+        <translation>Potpis za %1 nije ispravan.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="149"/>
@@ -714,7 +714,7 @@ Nećete moći da menjate listu korisnika!</translation>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Nijedan od odabranih ključeva ima dostupan tajni ključ.
+        <translation>Nijedan od odabranih ključeva nema dostupan tajni ključ.
 Nećete moći da dekriptujete nove dodate lozinke!</translation>
     </message>
     <message>
