@@ -38,7 +38,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>Añadir ficheros .gpg-id automáticamente</translation>
+        <translation>Agregar archivos .gpg-id automáticamente</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -120,7 +120,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
         <source>Add</source>
-        <translation>Añadir</translation>
+        <translation>Agregar</translation>
     </message>
     <message>
         <source>Current password-store</source>
@@ -988,7 +988,7 @@ Expire-Date: 0
     </message>
     <message>
         <source>Add</source>
-        <translation type="vanished">Añadir</translation>
+        <translation type="vanished">Agregar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
@@ -1135,14 +1135,14 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1372"/>
         <source>Add folder</source>
-        <translation>Añadir carpeta</translation>
+        <translation>Agregar carpeta</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
-        <translation>Añadir contraseña</translation>
+        <translation>Agregar contraseña</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
@@ -1385,7 +1385,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation>Añadir destinatario...</translation>
+        <translation>Agregar destinatario...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
