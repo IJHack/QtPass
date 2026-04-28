@@ -149,12 +149,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation>¿Desea crear un almacén de contraseñas?</translation>
+        <translation>¿Quieres crear un almacén de contraseñas?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>¿Desea crear un almacén de contraseñas en %1?</translation>
+        <translation>¿Quieres crear un almacén de contraseñas en %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
@@ -456,7 +456,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>¿Desea crear un almacén de contraseñas en %1?</translation>
+        <translation>¿Quieres crear un almacén de contraseñas en %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
@@ -466,7 +466,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation>Seleccione destinatarios para %1</translation>
+        <translation>Selecciona destinatarios para %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
@@ -496,7 +496,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Rellene todos los campos obligatorios</translation>
+        <translation>Rellena todos los campos obligatorios</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -769,7 +769,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importe una clave pública GPG desde un archivo o péguela a continuación. La clave debe estar en formato ASCII-armored.</translation>
+        <translation>Importa una clave pública GPG desde un archivo o pégala a continuación. La clave debe estar en formato ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -784,7 +784,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Pegue aquí una clave GPG ASCII-armored...</translation>
+        <translation>Pega aquí una clave GPG ASCII-armored…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -817,7 +817,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 no parece una clave GPG ASCII-armored. Conviértala primero con &lt;code&gt;gpg --armor --export&lt;/code&gt; o pegue el bloque ASCII-armored mediante &lt;b&gt;Desde el portapapeles&lt;/b&gt;.</translation>
+        <translation>%1 no parece una clave GPG ASCII-armored. Conviértela primero con &lt;code&gt;gpg --armor --export&lt;/code&gt; o pega el bloque ASCII-armored mediante &lt;b&gt;Desde el portapapeles&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -1172,7 +1172,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation>¿Desea eliminar la contraseña?</translation>
+        <translation>¿Quieres eliminar la contraseña?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -1181,7 +1181,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation>¿Desea eliminar la carpeta?</translation>
+        <translation>¿Quieres eliminar la carpeta?</translation>
     </message>
     <message>
         <source>Selected password file does not exist, not able to edit</source>
@@ -1468,7 +1468,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Exporte su clave pública&lt;/h3&gt;&lt;p&gt;No hay ninguna clave de firma configurada. Configure una en Ajustes de QtPass &gt; Claves GPG, o ejecute esto en una terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Luego envíe el archivo a sus compañeros de equipo.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Exporta tu clave pública&lt;/h3&gt;&lt;p&gt;No hay ninguna clave de firma configurada. Configura una en Ajustes de QtPass &gt; Claves GPG, o ejecuta esto en una terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Luego envía el archivo a tus compañeros de equipo.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
@@ -1492,7 +1492,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Compartir contraseñas con GPG&lt;/h3&gt;&lt;p&gt;Para compartir contraseñas con otros usuarios:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporte su clave pública&lt;/b&gt; y envíela a sus compañeros de equipo&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importe las claves públicas de sus compañeros de equipo&lt;/b&gt; a su llavero GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Vuelva a cifrar las contraseñas&lt;/b&gt; para que todos los destinatarios puedan descifrarlas&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Solo las personas que tengan una clave secreta coincidente pueden descifrar las contraseñas.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Consejo:&lt;/b&gt; Use la misma clave GPG para todas las carpetas compartidas.&lt;/p&gt;&lt;p&gt;Consulte las preguntas frecuentes para obtener más detalles.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Compartir contraseñas con GPG&lt;/h3&gt;&lt;p&gt;Para compartir contraseñas con otros usuarios:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporta tu clave pública&lt;/b&gt; y envíala a tus compañeros de equipo&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importa las claves públicas de tus compañeros de equipo&lt;/b&gt; a tu llavero GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Vuelve a cifrar las contraseñas&lt;/b&gt; para que todos los destinatarios puedan descifrarlas&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Solo las personas que tengan una clave secreta coincidente pueden descifrar las contraseñas.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Consejo:&lt;/b&gt; Usa la misma clave GPG para todas las carpetas compartidas.&lt;/p&gt;&lt;p&gt;Consulta las preguntas frecuentes para obtener más detalles.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -1577,7 +1577,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>El cifrado falló: La clave GPG ha expirado. Por favor, renueve o reemplace la clave.</translation>
+        <translation>El cifrado falló: La clave GPG ha expirado. Por favor, renueva o reemplaza la clave.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
@@ -1589,13 +1589,13 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Error de cifrado: no se encontró la clave GPG del destinatario o esta no es válida. Compruebe que el ID de la clave en .gpg-id sea correcto y se haya importado.</translation>
+        <translation>Error de cifrado: no se encontró la clave GPG del destinatario o esta no es válida. Comprueba que el ID de la clave en .gpg-id sea correcto y se haya importado.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>El cifrado falló. Compruebe que su clave GPG sea válida.</translation>
+        <translation>El cifrado falló. Comprueba que tu clave GPG sea válida.</translation>
     </message>
 </context>
 <context>
@@ -1764,7 +1764,7 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation>¿Quiere sobrescribir %1 con %2?</translation>
+        <translation>¿Quieres sobrescribir %1 con %2?</translation>
     </message>
 </context>
 <context>
