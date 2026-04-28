@@ -817,7 +817,7 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 ser inte ut som en ASCII-bepansrad GPG-nyckel. Konvertera den med &lt;code&gt;gpg --armor --export&lt;/code&gt; först,eller klistra in det pansrade blocket via &lt;b&gt;Från urklipp&lt;/b&gt;.</translation>
+        <translation>%1 ser inte ut som en ASCII-bepansrad GPG-nyckel. Konvertera den med &lt;code&gt;gpg --armor --export&lt;/code&gt; först, eller klistra in det pansrade blocket via &lt;b&gt;Från urklipp&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
