@@ -166,12 +166,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically push</source>
-        <translation>Automatically push</translation>
+        <translation>Shty automatikisht</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation>Automatically pull</translation>
+        <translation>Tërhiq automatikisht</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
@@ -231,7 +231,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
         <source>Native</source>
-        <translation>Native</translation>
+        <translation>Vendase</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
         <source>Path</source>
-        <translation>Path</translation>
+        <translation>Shtegu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
@@ -493,7 +493,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Native Git/GPG</translation>
+        <translation>Natyral Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -1049,7 +1049,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
         <source>Push</source>
-        <translation>Push</translation>
+        <translation>Shty</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="428"/>
