@@ -393,7 +393,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
         <source>No profile selected</source>
-        <translation>Falha ao criar o armazenamento de palavras-passe em: %1</translation>
+        <translation>Nenhum perfil selecionado</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>

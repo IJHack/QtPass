@@ -474,7 +474,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Изглежда, че папката% 1 не е хранилище за пароли или все още не е инициализирана.</translation>
+        <translation>Изглежда, че папката %1 не е хранилище за пароли или все още не е инициализирана.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
@@ -752,7 +752,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Повторно криптиране от папка% 1</translation>
+        <translation>Повторно криптиране от папка %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
@@ -1156,7 +1156,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Добре дошли в QtPass% 1</translation>
+        <translation>Добре дошли в QtPass %1</translation>
     </message>
     <message>
         <source>Add Password</source>
@@ -1267,7 +1267,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
         <source>Looking for: %1</source>
-        <translation>Търси се:% 1</translation>
+        <translation>Търси се: %1</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
@@ -1342,7 +1342,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1242"/>
         <source>Profile changed to %1</source>
-        <translation>Профилът е променен на% 1</translation>
+        <translation>Профилът е променен на %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
@@ -1368,7 +1368,7 @@ p, li { white-space: pre-wrap; }
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Нова папка: 
-(Ще бъде поставен в% 1 )</translation>
+(Ще бъде поставен в %1 )</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -1776,7 +1776,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation>да се презапише ли% 1 с% 2?</translation>
+        <translation>да се презапише ли %1 с %2?</translation>
     </message>
 </context>
 <context>
