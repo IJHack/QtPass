@@ -489,7 +489,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Täida kõik kohustuslikud väljad.</translation>
+        <translation>Täida kõik kohustuslikud väljad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
@@ -1472,8 +1472,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>%n kirjes.</numerusform>
-            <numerusform>%n kirjes.</numerusform>
+            <numerusform>%n kirje.</numerusform>
+            <numerusform>%n kirjet.</numerusform>
         </translation>
     </message>
     <message>
