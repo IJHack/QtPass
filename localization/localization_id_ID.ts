@@ -608,7 +608,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Isi semua kolom yang wajib.</translation>
+        <translation>Isi semua kolom yang wajib</translation>
     </message>
 </context>
 <context>
