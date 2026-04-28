@@ -199,7 +199,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
         <source>Exclude numbers</source>
-        <translation>Poissulje numerot</translation>
+        <translation>Poissulkea numerot</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
@@ -1452,12 +1452,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
-        <translation>Uudelleennimeä kansio</translation>
+        <translation>Nimeä kansio uudelleen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation>Uudelleennimeä salasana</translation>
+        <translation>Nimeä salasana uudelleen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
@@ -1544,17 +1544,17 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename file</source>
-        <translation>Uudelleennimeä tiedosto</translation>
+        <translation>Nimeä tiedosto uudelleen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
-        <translation>Uudelleennimeä kansio seuraavaksi: </translation>
+        <translation>Nimeä kansio uudelleen seuraavaksi: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation>Uudelleennimeä tiedosto seuraavaksi: </translation>
+        <translation>Nimeä tiedosto uudelleen seuraavaksi: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
