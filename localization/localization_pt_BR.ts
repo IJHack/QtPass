@@ -82,7 +82,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation>Cumprimento da senha:</translation>
+        <translation>Comprimento da senha:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
@@ -1638,7 +1638,7 @@ Continua?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation>Cumprimento:</translation>
+        <translation>Comprimento:</translation>
     </message>
 </context>
 <context>

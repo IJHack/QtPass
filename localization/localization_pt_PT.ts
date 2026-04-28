@@ -82,7 +82,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation>Cumprimento da palavra-passe:</translation>
+        <translation>Comprimento da palavra-passe:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
@@ -162,7 +162,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Opcional: Chave GPG para assinar ficheiros .gpg-id para verificação de integridade. Deixe vazio a menos que você precise proteger a lista de utilizadores de adulteração.</translation>
+        <translation>Opcional: Chave GPG para assinar ficheiros .gpg-id para verificação de integridade. Deixe vazio a menos que necessite proteger a lista de utilizadores de adulteração.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
@@ -249,7 +249,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
         <source>Select password storage program:</source>
-        <translation>Selecionar programa para armazenar passwords:</translation>
+        <translation>Selecionar programa para armazenar palavras-passe:</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
@@ -651,7 +651,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Não foi possível ler a chave de encriptação a ser utilizada, o ficheiro gpg-id não existe ou é inválido.</translation>
+        <translation>Não foi possível ler a chave de cifragem a ser utilizada, o ficheiro .gpg-id não existe ou é inválido.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -673,7 +673,7 @@ e-mail</translation>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Nenhuma das chaves secretas de assinatura está disponível. 
-Você não poderá alterar a lista de utilizadores!</translation>
+Não poderá alterar a lista de utilizadores!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -695,13 +695,13 @@ Você não poderá alterar a lista de utilizadores!</translation>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation>Nenhuma das chaves selecionadas tem uma chave secreta disponível.
-Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</translation>
+Não conseguirá decifrar nenhuma das passwords, recentemente adicionadas!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>Falha na reencriptação</translation>
+        <translation>Falha na recifragem</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
@@ -722,17 +722,17 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Não foi possível inspecionar o estado do git. A reencriptação foi abortada.</translation>
+        <translation>Não foi possível inspecionar o estado do git. A recifragem foi abortada.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>A reencriptação foi abortada porque não foi possível criar uma cópia de segurança git.</translation>
+        <translation>A recifragem foi abortada porque não foi possível criar uma cópia de segurança git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Re-encriptar a partir da pasta %1</translation>
+        <translation>Recifrar a partir da pasta %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
@@ -753,17 +753,17 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Falha ao reencriptar %1</translation>
+        <translation>Falha ao recifrar %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Recriptografia concluída: %1 bem-sucedida, %2 falhou</translation>
+        <translation>Recifragem concluída: %1 bem-sucedida, %2 falhou</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Recriptografia concluída: %1 ficheiros recriptografados</translation>
+        <translation>Recifragem concluída: %1 ficheiros re-cifrados</translation>
     </message>
 </context>
 <context>
@@ -875,7 +875,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Não existe um limite no tamanho da passphrase e a mesma deve ser escolhida com cuidado. Na perspectiva de segurança, a passphrase para desbloquar a chave privada, é um dos pontos mais fracos do GnuPG (e também de outros sistemas de encriptação que usam chaves publicas) visto que é a unica proteção que tem, se alguem tem acesso à sua chave privada. &lt;br/&gt;Idealmente, a passphrase não deve ter palavras do dicionário e deve utilizar caracteres especiais e alfanuméricos.&lt;br/&gt;Uma boa passphrase é crucial para assegurar um uso seguro do GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Não existe um limite no tamanho da passphrase e a mesma deve ser escolhida com cuidado. Na perspectiva de segurança, a passphrase para desbloquear a chave privada, é um dos pontos mais fracos do GnuPG (e também de outros sistemas de cifragem que usam chaves públicas) visto que é a única proteção que tem, se alguém tem acesso à sua chave privada. &lt;br/&gt;Idealmente, a passphrase não deve ter palavras do dicionário e deve utilizar caracteres especiais e alfanuméricos.&lt;br/&gt;Uma boa passphrase é crucial para assegurar um uso seguro do GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -920,7 +920,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Esta operação pode demorar alguns minutos.&lt;br /&gt;É necessário gerar muitos bytes aleatórios. É aconselhado efetuar outras açőes (escrever no teclado, utilizar o rato, escrever ou ler dos discos) durante a criaçao da semente utilizada na encriptação; esta operação permite que o gerador de números aleatórios, gere entropia suficiente.</translation>
+        <translation>Esta operação pode demorar alguns minutos.&lt;br /&gt;É necessário gerar muitos bytes aleatórios. É aconselhado efetuar outras ações (escrever no teclado, utilizar o rato, escrever ou ler dos discos) durante a criação da semente utilizada na cifragem; esta operação permite que o gerador de números aleatórios, gere entropia suficiente.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1507,7 +1507,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>Re-encriptar palavras-passe</translation>
+        <translation>Recifrar palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
@@ -1518,11 +1518,11 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Reencriptar todas as palavras-passe em %1?
+        <translation>Recifrar todas as palavras-passe em %1?
 
-Isso irá criptografar todos os ficheiros de palavra-passe nesta pasta usando os destinatários atuais definidos em .gpg-id.
+Isto irá cifrar todos os ficheiros de palavra-passe nesta pasta usando os destinatários atuais definidos em .gpg-id.
 
-Isso pode reescrever muitos ficheiros e não pode ser desfeito facilmente.
+Isto pode reescrever muitos ficheiros e não pode ser desfeito facilmente.
 
 Continua?</translation>
     </message>
@@ -1631,7 +1631,7 @@ Continua?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation>Cumprimento:</translation>
+        <translation>Comprimento:</translation>
     </message>
 </context>
 <context>
@@ -1801,11 +1801,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Selecione quais utilizadores devem ser capazes de descriptografar palavras-passe armazenadas nesta pasta.
-Nota: Ficheiros existentes não serão modificados e manterão as permissões antigas até você editá-los.
-Entradas azuis têm uma chave secreta disponível, selecione uma dessas para poder descriptografar.
-Entradas pretas têm uma chave de criptografia disponível e é confiável, selecione uma dessas para permitir que outras pessoas descriptografem.
-Entradas vermelhas não são válidas, você não poderá criptografar para essas.</translation>
+        <translation>Selecione quais utilizadores devem ser capazes de decifrar palavras-passe armazenadas nesta pasta.
+Nota: Ficheiros existentes não serão modificados e manterão as permissões antigas até os editar.
+Entradas azuis têm uma chave secreta disponível, selecione uma dessas para poder decifrar.
+Entradas pretas têm uma chave de cifragem disponível e é confiável, selecione uma dessas para permitir que outras pessoas decifrem.
+Entradas vermelhas não são válidas, não poderá cifrar para essas.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
