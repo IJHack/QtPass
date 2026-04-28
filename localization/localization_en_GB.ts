@@ -1830,7 +1830,7 @@ Continue?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
         <source>Copied to clipboard</source>
-        <translation>copied to clipboard</translation>
+        <translation>Copied to clipboard</translation>
     </message>
 </context>
 <context>

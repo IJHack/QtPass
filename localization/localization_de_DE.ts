@@ -579,7 +579,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="602"/>
         <location filename="../src/ui_configdialog.h" line="939"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Lassen Sie die Suche innerhalb der Passwortdatei Inhalte. Erfordert die Entschlüsselung jeder Datei und kann auf großen Geschäften langsam sein.</translation>
+        <translation>Ermöglicht die Suche innerhalb der Inhalte von Passwortdateien. Erfordert das Entschlüsseln jeder Datei und kann bei großen Passwortspeichern langsam sein.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>

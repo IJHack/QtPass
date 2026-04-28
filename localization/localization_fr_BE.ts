@@ -787,7 +787,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Recryptage terminée&#xa0;: %1 fichiers ré-encryptés</translation>
+        <translation>Recryptage terminé&#xa0;: %1 fichiers ré-encryptés</translation>
     </message>
 </context>
 <context>
@@ -1731,12 +1731,12 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation>GPG clé paire génération échouée</translation>
+        <translation>Échec de la génération de la paire de clés GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
         <source>GPG key pair generated successfully</source>
-        <translation>GPG clé paire générée avec succès</translation>
+        <translation>Paire de clés GPG générée avec succès</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>

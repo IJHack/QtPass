@@ -116,7 +116,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
         <source>Alphanumerical</source>
-        <translation>Alphanumeriek</translation>
+        <translation>Alfanumeriek</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
@@ -141,7 +141,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Staan zoeken in wachtwoord inhoud. Verzoeken om elk dossier te ontcijferen en kunnen traag zijn op grote winkels.</translation>
+        <translation>Maakt het mogelijk om te zoeken in de inhoud van wachtwoordbestanden. Vereist het ontcijferen van elk bestand en kan traag zijn bij grote opslaglocaties.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -1728,7 +1728,7 @@ Doorgaan?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation>Alphanumeriek</translation>
+        <translation>Alfanumeriek</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>

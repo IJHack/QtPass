@@ -1883,7 +1883,7 @@ Continuer&#x202f;?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation>Échec de la génération de la paire de clés GPG échouée</translation>
+        <translation>Échec de la génération de la paire de clés GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
