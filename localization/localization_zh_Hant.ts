@@ -1115,7 +1115,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>大小寫區分切換</translation>
+        <translation>不區分大小寫切換</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
