@@ -132,7 +132,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
         <source>Current path</source>
-        <translation>Pathi aktual</translation>
+        <translation>Shtegu aktual</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
@@ -226,7 +226,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;Përdorni kalimin(pass)</translation>
+        <translation>&amp;Përdorni kalimin (pass)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
@@ -412,12 +412,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. &lt;br&gt; Instaloni &lt;strong&gt; Ubuntu &lt;/strong&gt; nga Microsoft Store për ta marrë. &lt;br&gt; Nëse tashmë e keni bërë një gjë të tillë, sigurohuni që e keni filluar një herë dhe klikoni &quot;Autodetect&quot; në dialogun tjetër.</translation>
+        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj.&lt;br&gt;Instaloni &lt;strong&gt;Ubuntu&lt;/strong&gt; nga Microsoft Store për ta marrë.&lt;br&gt;Nëse tashmë e keni bërë një gjë të tillë, sigurohuni që e keni filluar një herë dhe klikoni &quot;Autodetect&quot; në dialogun tjetër.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. Instaloni &lt;strong&gt; Ubuntu &lt;/strong&gt; nga Microsoft Store &lt;br&gt; ose &lt;a href = &quot;https://www.gnupg.org/download/#sec-1-2 &quot;&gt; shkarkoni &lt;/a&gt; nga GnuPG.org</translation>
+        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj.&lt;br&gt;Instaloni &lt;strong&gt;Ubuntu&lt;/strong&gt; nga Microsoft Store&lt;br&gt;ose &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;shkarkoni&lt;/a&gt; nga GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
@@ -911,7 +911,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Adresa e emailit që keni vendosur nuk është e vlefshme .</translation>
+        <translation>Adresa e emailit që keni vendosur nuk është e vlefshme.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
