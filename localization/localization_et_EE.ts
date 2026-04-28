@@ -549,7 +549,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Kasuta oma Git/GPG-lahendust</translation>
+        <translation>&amp;Kasuta oma Git/GPG-lahendust</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>

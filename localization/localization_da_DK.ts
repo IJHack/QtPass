@@ -549,7 +549,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Git/GPG direkte</translation>
+        <translation>Git/GPG &amp;direkte</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>

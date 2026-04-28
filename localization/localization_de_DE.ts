@@ -585,7 +585,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="709"/>
         <location filename="../src/ui_configdialog.h" line="948"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Selbst installieres Git/GPG</translation>
+        <translation>&amp;Selbst installieres Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>

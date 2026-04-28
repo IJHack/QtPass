@@ -549,7 +549,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>原生 Git/GPG</translation>
+        <translation>(&amp;V) 原生 Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -1782,7 +1782,7 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>%顯示</translation>
+        <translation>(&amp;S) 顯示</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>

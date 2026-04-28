@@ -276,7 +276,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation>&amp; பாச் பயன்படுத்தவும்</translation>
+        <translation>(&amp;U) பாச் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
@@ -549,7 +549,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>சொந்த அறிவிலி/சிபிசி</translation>
+        <translation>(&amp;V) சொந்த Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -1848,27 +1848,27 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&amp; காட்டு</translation>
+        <translation>(&amp;S) காட்டு</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation>&amp; மறை</translation>
+        <translation>(&amp;H) மறை</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>Mi &amp; Nimize</translation>
+        <translation>(&amp;N) Minimize</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>Ma &amp; ximize</translation>
+        <translation>(&amp;X) Maximize</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp; மீட்டமை</translation>
+        <translation>(&amp;R) மீட்டமை</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
