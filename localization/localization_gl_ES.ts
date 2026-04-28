@@ -493,7 +493,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Git/GPG nativos</translation>
+        <translation>Git/GPG &amp;nativos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>

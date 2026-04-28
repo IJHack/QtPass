@@ -1838,7 +1838,7 @@ Continuați?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>restaurați</translation>
+        <translation>&amp;restaurați</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>

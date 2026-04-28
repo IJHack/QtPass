@@ -258,7 +258,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation>Utilizar pass</translation>
+        <translation>&amp;Utilizar pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>

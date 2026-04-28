@@ -549,7 +549,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Natiivi Git/GPG</translation>
+        <translation>&amp;Natiivi Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -1826,17 +1826,17 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>Pienennä</translation>
+        <translation>P&amp;ienennä</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>Suurenna</translation>
+        <translation>&amp;Suurenna</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>Palauta</translation>
+        <translation>P&amp;alauta</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
