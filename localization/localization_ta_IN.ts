@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation type="unfinished"></translation>
+        <translation>செயலாக்க வெளியீட்டைக் காட்டு</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
@@ -136,12 +136,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>உள்ளடக்கத் தேடலை இயக்கு (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>கடவுச்சொல் கோப்பு உள்ளடக்கத்திற்குள் தேடுவதை அனுமதிக்கிறது. ஒவ்வொரு கோப்பையும் டிக்ரிப்ட் செய்ய வேண்டும், பெரிய சேமிப்புகளில் மெதுவாக இருக்கலாம்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>சுயவிவரப் பெயர், இந்த உள்ளமைவு சுயவிவரத்தை அடையாளம் காண பயன்படுகிறது</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>கடவுச்சொல் சேமிப்பு கோப்பகத்திற்கான பாதை</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
@@ -403,27 +403,27 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished"></translation>
+        <translation>சுயவிவரக் கோப்பகத்தை உருவாக்கவா?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 இல் கடவுச்சொல் சேமிப்பை உருவாக்க விரும்புகிறீர்களா?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>சுயவிவரக் கோப்பகத்தை உருவாக்க முடியவில்லை: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 க்கான பெறுநர்களைத் தேர்ந்தெடுக்கவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>புதிய சுயவிவரம்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
@@ -479,17 +479,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>புதிய சுயவிவரம்: %1, %2 இல்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>சுயவிவரம்: %1, %2 இல்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation type="unfinished"></translation>
+        <translation>தேவையான அனைத்து புலங்களையும் நிரப்பவும்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
@@ -595,54 +595,54 @@ e-mail</source>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>பொதுச் சாவியை ஏற்றுமதி செய்</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation type="unfinished"></translation>
+        <translation>பொதுச் சாவி</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>கிளிப்போர்டுக்கு நகலெடு</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்பில் சேமி…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 க்கான பொதுச் சாவி</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished"></translation>
+        <translation>நகலெடுக்கப்பட்டது!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>பொதுச் சாவியை சேமி</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII-armored சாவி (*.asc);;அனைத்து கோப்புகள் (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>எழுதுவதற்கு %1 ஐ திறக்க முடியவில்லை: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 இல் எழுத முடியவில்லை: %2</translation>
     </message>
 </context>
 <context>
@@ -792,42 +792,42 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG சாவியை இறக்குமதி செய்</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்பிலிருந்து GPG பொதுச் சாவியை இறக்குமதி செய்யவும், அல்லது கீழே ஒட்டவும். சாவி ASCII-armored வடிவத்தில் இருக்க வேண்டும்.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்பிலிருந்து…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>கிளிப்போர்டிலிருந்து</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation type="unfinished"></translation>
+        <translation>இங்கே ASCII-armored GPG சாவியை ஒட்டவும்…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>இறக்குமதி</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII-armored GPG சாவி</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>அனைத்து கோப்புகள்</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -835,33 +835,34 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation type="unfinished"></translation>
+        <translation>சாவியை இறக்குமதி செய்</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்பைத் திறக்க முடியவில்லை: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ASCII-armored GPG சாவியாகத் தோன்றவில்லை. முதலில் &lt;code&gt;gpg --armor --export&lt;/code&gt; கட்டளையால் மாற்றவும், அல்லது armored தொகுதியை &lt;b&gt;கிளிப்போர்டிலிருந்து&lt;/b&gt; வழியாக ஒட்டவும்.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG இறக்குமதி தோல்வியடைந்தது:
+%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG வெளியீட்டிலிருந்து இறக்குமதி செய்யப்பட்ட சாவி ஐடியை பகுக்க முடியவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>சாவி வெற்றிகரமாக இறக்குமதி செய்யப்பட்டது: %1</translation>
     </message>
 </context>
 <context>
@@ -1148,47 +1149,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>கடவுச்சொல் உள்ளடக்கத்திற்குள் தேடு (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>உள்ளடக்கத் தேடல் மாற்று</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>கடவுச்சொல் கோப்புகளுக்குள் தேட உள்ளடக்கத் தேடல் முறையை மாற்று</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>சிறிய/பெரிய எழுத்தைப் பிரித்தறியாத தேடல்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>சிறிய/பெரிய எழுத்து மாற்று</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>சிறிய/பெரிய எழுத்தைப் பிரித்தறியாத உள்ளடக்கத் தேடலை மாற்று</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>முடிவுகள்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -1198,12 +1199,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation type="unfinished"></translation>
+        <translation>வெளியீட்டை அழி</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>அழி</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
@@ -1335,9 +1336,9 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n பொருத்தம் கிடைத்தது</numerusform>
+            <numerusform>%n பொருத்தங்கள் கிடைத்தன</numerusform>
         </translation>
     </message>
     <message>
@@ -1440,7 +1441,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation type="unfinished"></translation>
+        <translation>செயலாக்க வெளியீடு</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
@@ -1455,24 +1456,24 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>தேடுகிறது…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>உள்ளடக்கத்தைத் தேடு (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>பொருத்தங்கள் எதுவும் கிடைக்கவில்லை.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n உள்ளீட்டில்.</numerusform>
+            <numerusform>%n உள்ளீடுகளில்.</numerusform>
         </translation>
     </message>
     <message>
@@ -1493,60 +1494,62 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>பகிர்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>அனைத்து கடவுச்சொற்களையும் மீண்டும் என்க்ரிப்ட் செய்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation type="unfinished"></translation>
+        <translation>எனது பொதுச் சாவியை ஏற்றுமதி செய்…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation type="unfinished"></translation>
+        <translation>பெறுநரைச் சேர்…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation type="unfinished"></translation>
+        <translation>இது என்ன?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1746"/>
         <location filename="../src/mainwindow.cpp" line="1766"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>பொதுச் சாவியை ஏற்றுமதி செய்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;உங்கள் பொதுச் சாவியை ஏற்றுமதி செய்யுங்கள்&lt;/h3&gt;&lt;p&gt;கையெழுத்திட எந்தச் சாவியும் அமைக்கப்படவில்லை. QtPass அமைப்புகள் &amp;gt; GPG சாவிகள் இல் ஒன்றை அமைக்கவும், அல்லது முனையத்தில் இதை இயக்கவும்:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;பின்னர் கோப்பை உங்கள் குழு உறுப்பினர்களுக்கு அனுப்பவும்.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 க்கான பொதுச் சாவியை ஏற்றுமதி செய்ய முடியவில்லை.
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1769"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished"></translation>
+        <translation>gpg இலிருந்து வெளியீடு இல்லை.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1796"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG உடன் கடவுச்சொற்களைப் பகிர்தல்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;GPG உடன் கடவுச்சொற்களைப் பகிர்தல்&lt;/h3&gt;&lt;p&gt;மற்ற பயனர்களுடன் கடவுச்சொற்களைப் பகிர:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;உங்கள் பொதுச் சாவியை ஏற்றுமதி செய்து&lt;/b&gt; குழு உறுப்பினர்களுக்கு அனுப்பவும்&lt;/li&gt;&lt;li&gt;&lt;b&gt;குழு உறுப்பினர்களின் பொதுச் சாவிகளை இறக்குமதி செய்து&lt;/b&gt; உங்கள் GPG சாவித்தொகுப்பில் சேர்க்கவும்&lt;/li&gt;&lt;li&gt;&lt;b&gt;கடவுச்சொற்களை மீண்டும் என்க்ரிப்ட் செய்யவும்&lt;/b&gt;, இதனால் அனைத்து பெறுநர்களும் டிக்ரிப்ட் செய்ய முடியும்&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;பொருந்தும் ரகசிய சாவியை வைத்திருக்கும் நபர்களால் மட்டுமே கடவுச்சொற்களை டிக்ரிப்ட் செய்ய முடியும்.&lt;/p&gt;&lt;p&gt;&lt;b&gt;குறிப்பு:&lt;/b&gt; அனைத்து பகிரப்பட்ட கோப்புறைகளுக்கும் ஒரே GPG சாவியைப் பயன்படுத்தவும்.&lt;/p&gt;&lt;p&gt;மேலும் விவரங்களுக்கு FAQ ஐப் பார்க்கவும்.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -1629,12 +1632,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>தவறான கடவுச்சொல் நீளம்</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>பூஜ்ய நீளக் கடவுச்சொல்லை உருவாக்க முடியாது.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
@@ -1650,25 +1653,25 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>என்க்ரிப்ஷன் தோல்வியடைந்தது: GPG சாவியின் காலாவதி ஆகிவிட்டது. சாவியைப் புதுப்பிக்கவும் அல்லது மாற்றவும்.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>என்க்ரிப்ஷன் தோல்வியடைந்தது: GPG சாவி ரத்து செய்யப்பட்டுள்ளது.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>என்க்ரிப்ஷன் தோல்வியடைந்தது: பெறுநரின் GPG சாவி கிடைக்கவில்லை அல்லது தவறானது. .gpg-id இல் உள்ள சாவி ஐடி சரியானது மற்றும் இறக்குமதி செய்யப்பட்டுள்ளதா எனச் சரிபார்க்கவும்.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>என்க்ரிப்ஷன் தோல்வியடைந்தது. உங்கள் GPG சாவி செல்லுபடியாகுமா எனச் சரிபார்க்கவும்.</translation>
     </message>
 </context>
 <context>
@@ -1832,7 +1835,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>வலுக்கட்டாயமாக மேலெழுதவா?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
@@ -1896,12 +1899,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation type="unfinished"></translation>
+        <translation>சாவியை இறக்குமதி செய்…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>கோப்பு அல்லது கிளிப்போர்டிலிருந்து GPG சாவியை இறக்குமதி செய்</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.

@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation type="unfinished"></translation>
+        <translation>顯示處理程序輸出</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
@@ -136,12 +136,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>啟用內容搜尋 (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>允許在密碼檔案的內容中搜尋。需要解密每個檔案，在大型儲存庫上可能會很慢。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -156,12 +156,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>設定檔名稱，用來識別此設定檔</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>密碼儲存庫目錄的路徑</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
@@ -403,27 +403,27 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished"></translation>
+        <translation>要建立設定檔目錄嗎？</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>您要在 %1 建立密碼儲存庫嗎？</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>無法建立設定檔目錄：%1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>選擇 %1 的接收者</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>新增設定檔</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
@@ -479,17 +479,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>新增設定檔：%1 於 %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>設定檔：%1 於 %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation type="unfinished"></translation>
+        <translation>請填寫所有必填欄位。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
@@ -595,54 +595,54 @@ e-mail</source>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>匯出公開金鑰</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation type="unfinished"></translation>
+        <translation>公開金鑰</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>複製到剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存到檔案…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 的公開金鑰</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished"></translation>
+        <translation>已複製！</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>儲存公開金鑰</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII-armored 金鑰 (*.asc);;所有檔案 (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>無法開啟 %1 以寫入：%2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>無法寫入 %1：%2</translation>
     </message>
 </context>
 <context>
@@ -792,42 +792,42 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation type="unfinished"></translation>
+        <translation>匯入 GPG 金鑰</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation type="unfinished"></translation>
+        <translation>從檔案匯入 GPG 公開金鑰，或將其貼到下方。金鑰應為 ASCII-armored 格式。</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation type="unfinished"></translation>
+        <translation>從檔案…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>從剪貼簿</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation type="unfinished"></translation>
+        <translation>在此貼上 ASCII-armored GPG 金鑰…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>匯入</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII-armored GPG 金鑰</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>所有檔案</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -835,33 +835,34 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation type="unfinished"></translation>
+        <translation>匯入金鑰</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>無法開啟檔案：%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 看起來不像是 ASCII-armored GPG 金鑰。請先使用 &lt;code&gt;gpg --armor --export&lt;/code&gt; 進行轉換，或透過 &lt;b&gt;從剪貼簿&lt;/b&gt; 貼上 armored 區塊。</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG 匯入失敗：
+%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation type="unfinished"></translation>
+        <translation>無法從 GPG 輸出解析匯入的金鑰 ID。</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>已成功匯入金鑰：%1</translation>
     </message>
 </context>
 <context>
@@ -1084,47 +1085,47 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>在密碼內容中搜尋 (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>內容搜尋切換</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>切換內容搜尋模式，以在密碼檔案中搜尋</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>不區分大小寫的搜尋</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>大小寫區分切換</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>切換不區分大小寫的內容搜尋</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>結果</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
@@ -1134,12 +1135,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation type="unfinished"></translation>
+        <translation>清除輸出</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>清除</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
@@ -1271,8 +1272,8 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>找到 %n 個符合項目</numerusform>
         </translation>
     </message>
     <message>
@@ -1375,7 +1376,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation type="unfinished"></translation>
+        <translation>處理程序輸出</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
@@ -1390,23 +1391,23 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>搜尋中…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>搜尋內容 (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>找不到符合項目。</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>於 %n 個項目中。</numerusform>
         </translation>
     </message>
     <message>
@@ -1427,60 +1428,62 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>共享</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>重新加密所有密碼</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation type="unfinished"></translation>
+        <translation>匯出我的公開金鑰…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation type="unfinished"></translation>
+        <translation>新增接收者…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation type="unfinished"></translation>
+        <translation>這是什麼？</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1746"/>
         <location filename="../src/mainwindow.cpp" line="1766"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>匯出公開金鑰</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;匯出您的公開金鑰&lt;/h3&gt;&lt;p&gt;尚未設定簽名金鑰。請在 QtPass 設定 &amp;gt; GPG 金鑰 中設定，或在終端機執行：&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;然後將檔案傳送給您的團隊成員。&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>無法匯出 %1 的公開金鑰。
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1769"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished"></translation>
+        <translation>gpg 沒有輸出。</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1796"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>使用 GPG 共享密碼</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;使用 GPG 共享密碼&lt;/h3&gt;&lt;p&gt;與其他使用者共享密碼：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;匯出您的公開金鑰&lt;/b&gt; 並傳送給團隊成員&lt;/li&gt;&lt;li&gt;&lt;b&gt;匯入團隊成員的公開金鑰&lt;/b&gt; 到您的 GPG 金鑰圈&lt;/li&gt;&lt;li&gt;&lt;b&gt;重新加密密碼&lt;/b&gt; 以便所有接收者都能解密&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;只有擁有對應私鑰的人才能解密密碼。&lt;/p&gt;&lt;p&gt;&lt;b&gt;提示：&lt;/b&gt; 對所有共享資料夾使用相同的 GPG 金鑰。&lt;/p&gt;&lt;p&gt;詳細請參閱常見問題。&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -1563,12 +1566,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>無效的密碼長度</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>無法產生長度為零的密碼。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
@@ -1584,25 +1587,25 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>加密失敗：GPG 金鑰已過期。請更新或替換金鑰。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>加密失敗：GPG 金鑰已被吊銷。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>加密失敗：找不到接收者的 GPG 金鑰或金鑰無效。請確認 .gpg-id 中的金鑰 ID 正確且已匯入。</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>加密失敗。請確認您的 GPG 金鑰有效。</translation>
     </message>
 </context>
 <context>
@@ -1766,7 +1769,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>強制覆寫嗎？</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
@@ -1835,12 +1838,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation type="unfinished"></translation>
+        <translation>匯入金鑰…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>從檔案或剪貼簿匯入 GPG 金鑰</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
