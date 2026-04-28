@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Utiliser une police monospaced</translation>
+        <translation>Utiliser une police monospacée</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
