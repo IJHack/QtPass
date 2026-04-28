@@ -255,7 +255,7 @@
         <location filename="../src/configdialog.ui" line="643"/>
         <location filename="../src/ui_configdialog.h" line="943"/>
         <source>Start minimized</source>
-        <translation>Mulai dalam keadaan minimal</translation>
+        <translation>Mulai dalam keadaan diminimalkan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
@@ -608,7 +608,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Isi semua kolom yang wajib.</translation>
+        <translation>Isi semua kolom yang wajib</translation>
     </message>
 </context>
 <context>

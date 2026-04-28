@@ -1171,7 +1171,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.ui" line="449"/>
         <location filename="../src/ui_mainwindow.h" line="346"/>
         <source>Config</source>
-        <translation>Konfig.</translation>
+        <translation>Konfig</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>

@@ -489,7 +489,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>தேவையான அனைத்து புலங்களையும் நிரப்பவும்.</translation>
+        <translation>தேவையான அனைத்து புலங்களையும் நிரப்பவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>

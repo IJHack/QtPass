@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation>Autoclear na:</translation>
+        <translation>Outomaties skoonmaak na:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Autoclear paneel na:</translation>
+        <translation>Outomaties paneel skoonmaak na:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
@@ -489,7 +489,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Vul al die vereiste velde in.</translation>
+        <translation>Vul al die vereiste velde in</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>

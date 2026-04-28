@@ -520,7 +520,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Töltse ki az összes kötelező mezőt.</translation>
+        <translation>Töltse ki az összes kötelező mezőt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>

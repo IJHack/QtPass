@@ -489,7 +489,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Vyplňte všetky povinné polia.</translation>
+        <translation>Vyplňte všetky povinné polia</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>

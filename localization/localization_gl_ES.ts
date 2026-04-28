@@ -468,7 +468,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Enche todos os campos obrigatorios.</translation>
+        <translation>Enche todos os campos obrigatorios</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>

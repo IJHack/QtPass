@@ -464,7 +464,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>املأ جميع الحقول المطلوبة.</translation>
+        <translation>املأ جميع الحقول المطلوبة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -1146,7 +1146,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>في %n إدخالات</numerusform>
+            <numerusform>في %n إدخالات.</numerusform>
             <numerusform>في إدخال واحد.</numerusform>
             <numerusform>في إدخالين.</numerusform>
             <numerusform>في %n إدخالات.</numerusform>
