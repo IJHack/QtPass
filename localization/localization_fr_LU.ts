@@ -425,7 +425,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
         <source>Alphabetical</source>
-        <translation>Alphabetic</translation>
+        <translation>Alphabétique</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
@@ -746,7 +746,7 @@ Vous ne serez pas en mesure de déchiffrer les mots de passe nouvellement ajout�
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Il n&apos;a pas pu inspecter l&apos;état du git. Le chiffrement a été annulé.</translation>
+        <translation>Impossible d&apos;inspecter l&apos;état du git. Le re-chiffrement a été annulé.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
