@@ -605,7 +605,7 @@ URL
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>Копирај у привремену меморију</translation>
+        <translation>Копирај у међуспремник</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -807,7 +807,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation>Из привремене меморије</translation>
+        <translation>Из међуспремника</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -845,7 +845,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 не изгледа као GPG кључ у ASCII-armored формату. Прво га конвертујте командом &lt;code&gt;gpg --armor --export&lt;/code&gt;, или налепите ASCII-armored блок преко &lt;b&gt;Из привремене меморије&lt;/b&gt;.</translation>
+        <translation>%1 не изгледа као GPG кључ у ASCII-armored формату. Прво га конвертујте командом &lt;code&gt;gpg --armor --export&lt;/code&gt;, или налепите ASCII-armored блок преко &lt;b&gt;Из међуспремника&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -1879,7 +1879,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Увези GPG кључ из датотеке или привремене меморије</translation>
+        <translation>Увези GPG кључ из датотеке или међуспремника</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
