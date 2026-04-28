@@ -72,7 +72,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation type="unfinished"></translation>
+        <translation>Mostrar saída do processo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
@@ -127,12 +127,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Activar pesquisa de conteúdos (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Permitir pesquisa dentro do conteúdo dos ficheiros de palavras-passe. Requer decifrar cada ficheiro e pode ser lento em armazéns grandes.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -147,12 +147,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome do perfil, usado para identificar este perfil de configuração</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Caminho para a directoria do armazém de palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
@@ -162,7 +162,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Opcional: Chave GPG para assinar arquivos .gpg-id para verificação de integridade. Deixe vazio a menos que você precise proteger a lista de usuários de adulteração.</translation>
+        <translation>Opcional: Chave GPG para assinar ficheiros .gpg-id para verificação de integridade. Deixe vazio a menos que você precise proteger a lista de utilizadores de adulteração.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
@@ -368,27 +368,27 @@
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished"></translation>
+        <translation>Criar directoria do perfil?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Deseja criar um armazém de palavras-passe em %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível criar a directoria do perfil: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar destinatários para %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo perfil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
@@ -444,17 +444,17 @@
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Novo perfil: %1 em %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Perfil: %1 em %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Preencha todos os campos obrigatórios.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
@@ -575,54 +575,54 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar chave pública</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation type="unfinished"></translation>
+        <translation>Chave pública</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar para a área de transferência</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar em ficheiro…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chave pública de %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiada!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar chave pública</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>Chave ASCII-armored (*.asc);;Todos os ficheiros (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível abrir %1 para escrita: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível escrever em %1: %2</translation>
     </message>
 </context>
 <context>
@@ -632,7 +632,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Verifique a assinatura do arquivo .gpgid!</translation>
+        <translation>Verifique a assinatura do ficheiro .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -673,7 +673,7 @@ e-mail</translation>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
         <translation>Nenhuma das chaves secretas de assinatura está disponível. 
-Você não poderá alterar a lista de usuários!</translation>
+Você não poderá alterar a lista de utilizadores!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -763,7 +763,7 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Recriptografia concluída: %1 arquivos recriptografados</translation>
+        <translation>Recriptografia concluída: %1 ficheiros recriptografados</translation>
     </message>
 </context>
 <context>
@@ -772,42 +772,42 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar chave GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importe uma chave pública GPG a partir de um ficheiro ou cole-a abaixo. A chave deve estar em formato ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Do ficheiro…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Da área de transferência</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation type="unfinished"></translation>
+        <translation>Cole aqui uma chave GPG ASCII-armored…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation type="unfinished"></translation>
+        <translation>Chave GPG ASCII-armored</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Todos os ficheiros</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -815,33 +815,34 @@ Não conseguirá desencriptar nenhuma das passwords, recentemente adicionadas!</
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar chave</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível abrir o ficheiro: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 não parece uma chave GPG ASCII-armored. Converta-a primeiro com &lt;code&gt;gpg --armor --export&lt;/code&gt;, ou cole o bloco ASCII-armored via &lt;b&gt;Da área de transferência&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>A importação GPG falhou:
+%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível extrair o identificador da chave importada da saída do GPG.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Chave importada com sucesso: %1</translation>
     </message>
 </context>
 <context>
@@ -1160,9 +1161,9 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>%n correspondência encontrada</numerusform>
+            <numerusform>%n correspondências encontradas</numerusform>
         </translation>
     </message>
     <message>
@@ -1191,7 +1192,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Saída do processo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
@@ -1261,57 +1262,57 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pesquisar dentro do conteúdo da palavra-passe (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Comutar pesquisa de conteúdos</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"></translation>
+        <translation>Comutar modo de pesquisa de conteúdos para pesquisar dentro dos ficheiros de palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"></translation>
+        <translation>Pesquisa não sensível a maiúsculas/minúsculas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"></translation>
+        <translation>Comutar sensibilidade a maiúsculas/minúsculas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation>Comutar pesquisa de conteúdos não sensível a maiúsculas/minúsculas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpar saída</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Limpar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -1346,29 +1347,29 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Nenhum código OTP encontrado nesta entrada de senha</translation>
+        <translation>Nenhum código OTP encontrado nesta entrada de palavra-passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>A pesquisar…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pesquisar conteúdo (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Nenhuma correspondência encontrada.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+        <translation>
+            <numerusform>em %n entrada.</numerusform>
+            <numerusform>em %n entradas.</numerusform>
         </translation>
     </message>
     <message>
@@ -1384,7 +1385,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>No password selected for OTP generation</source>
-        <translation>Nenhuma senha selecionada para geração OTP</translation>
+        <translation>Nenhuma palavra-passe selecionada para geração OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
@@ -1404,60 +1405,62 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Partilhar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Cifrar novamente todas as palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar a minha chave pública…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation type="unfinished"></translation>
+        <translation>Adicionar destinatário…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation type="unfinished"></translation>
+        <translation>O que é isto?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1746"/>
         <location filename="../src/mainwindow.cpp" line="1766"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportar chave pública</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Exportar a sua chave pública&lt;/h3&gt;&lt;p&gt;Não está configurada nenhuma chave de assinatura. Defina uma em Definições do QtPass &amp;gt; chaves GPG, ou execute o seguinte num terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;De seguida envie o ficheiro aos seus colegas de equipa.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Não foi possível exportar a chave pública de %1.
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1769"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sem saída do gpg.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1796"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Partilhar palavras-passe com GPG</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Partilhar palavras-passe com GPG&lt;/h3&gt;&lt;p&gt;Para partilhar palavras-passe com outros utilizadores:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporte a sua chave pública&lt;/b&gt; e envie-a aos seus colegas de equipa&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importe as chaves públicas dos colegas de equipa&lt;/b&gt; para o seu chaveiro GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Cifre novamente as palavras-passe&lt;/b&gt; para que todos os destinatários as possam decifrar&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Apenas pessoas com uma chave secreta correspondente podem decifrar as palavras-passe.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Sugestão:&lt;/b&gt; Use a mesma chave GPG para todas as pastas partilhadas.&lt;/p&gt;&lt;p&gt;Consulte as FAQ para mais detalhes.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -1504,7 +1507,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>Re-encriptar senhas</translation>
+        <translation>Re-encriptar palavras-passe</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
@@ -1515,11 +1518,11 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Reencriptar todas as senhas em %1?
+        <translation>Reencriptar todas as palavras-passe em %1?
 
-Isso irá criptografar todos os arquivos de senha nesta pasta usando os destinatários atuais definidos em .gpg-id.
+Isso irá criptografar todos os ficheiros de palavra-passe nesta pasta usando os destinatários atuais definidos em .gpg-id.
 
-Isso pode reescrever muitos arquivos e não pode ser desfeito facilmente.
+Isso pode reescrever muitos ficheiros e não pode ser desfeito facilmente.
 
 Continua?</translation>
     </message>
@@ -1540,12 +1543,12 @@ Continua?</translation>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation type="unfinished"></translation>
+        <translation>Comprimento de palavra-passe inválido</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished"></translation>
+        <translation>Não é possível gerar uma palavra-passe de comprimento zero.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
@@ -1561,25 +1564,25 @@ Continua?</translation>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished"></translation>
+        <translation>A cifragem falhou: a chave GPG expirou. Por favor renove ou substitua a chave.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished"></translation>
+        <translation>A cifragem falhou: a chave GPG foi revogada.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished"></translation>
+        <translation>A cifragem falhou: chave GPG do destinatário não encontrada ou inválida. Verifique que o ID da chave em .gpg-id está correcto e foi importado.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>A cifragem falhou. Verifique que a sua chave GPG é válida.</translation>
     </message>
 </context>
 <context>
@@ -1743,7 +1746,7 @@ Continua?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished"></translation>
+        <translation>Forçar substituição?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
@@ -1798,8 +1801,8 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Selecione quais usuários devem ser capazes de descriptografar senhas armazenadas nesta pasta.
-Nota: Arquivos existentes não serão modificados e manterão as permissões antigas até você editá-los.
+        <translation>Selecione quais utilizadores devem ser capazes de descriptografar palavras-passe armazenadas nesta pasta.
+Nota: Ficheiros existentes não serão modificados e manterão as permissões antigas até você editá-los.
 Entradas azuis têm uma chave secreta disponível, selecione uma dessas para poder descriptografar.
 Entradas pretas têm uma chave de criptografia disponível e é confiável, selecione uma dessas para permitir que outras pessoas descriptografem.
 Entradas vermelhas não são válidas, você não poderá criptografar para essas.</translation>
@@ -1807,12 +1810,12 @@ Entradas vermelhas não são válidas, você não poderá criptografar para essa
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar chave…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Importar uma chave GPG de ficheiro ou da área de transferência</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
