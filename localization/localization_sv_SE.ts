@@ -244,7 +244,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation type="unfinished"></translation>
+        <translation>Visa processutdata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
@@ -435,17 +435,17 @@
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished"></translation>
+        <translation>Skapa profil katalog?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vill du skapa ett lösenordsarkiv på %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte skapa profil katalog: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
@@ -486,17 +486,17 @@
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Ny profil: %1 på %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Profil: %1 på %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Fyll i alla obligatoriska fält</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -567,54 +567,54 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportera publik nyckel</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation type="unfinished"></translation>
+        <translation>Publik nyckel</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera till urklipp</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Spara till fil...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Publik nyckel för %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopierad!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Spara publik nyckel</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII-bepansrad nyckel (*.asc);;Alla filer (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte öppna %1 för skrivning: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte skriva till %1: %2</translation>
     </message>
 </context>
 <context>
@@ -764,42 +764,42 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera GPG nyckel</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera en offentlig GPG-nyckel från en fil eller klistra in den nedan. Nyckeln ska vara i ASCII-format med pansarfunktion.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation type="unfinished"></translation>
+        <translation>Från fil...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Från urklipp</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation type="unfinished"></translation>
+        <translation>Klistra in en ASCII-bepansrad GPG-nyckel här...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation type="unfinished"></translation>
+        <translation>ASCII-bepansrad GPG-nyckel</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation type="unfinished"></translation>
+        <translation>Alla filer</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -807,33 +807,34 @@ Du kommer inte att kunna avkryptera några nyligen tillagda lösenord!</translat
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera nyckel</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte öppna fil: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 ser inte ut som en ASCII-bepansrad GPG-nyckel. Konvertera den med&lt;code&gt;gpg --armor --export&lt;/code&gt; först,eller klistra in det pansrade blocket via &lt;b&gt;Från urklipp&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished"></translation>
+        <translation>GPG importering misslyckades:
+%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte analysera importerad nyckel-ID från GPG-utdata.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Nyckeln har importerats: %1</translation>
     </message>
 </context>
 <context>
@@ -1128,7 +1129,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Processutdata</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
@@ -1254,12 +1255,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation type="unfinished"></translation>
+        <translation>Rensa utdata</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Rensa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -1391,27 +1392,27 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation type="unfinished"></translation>
+        <translation>Dela</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished"></translation>
+        <translation>Kryptera alla lösenord igen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportera min publika nyckel...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägg till mottagare...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vad är det här?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
@@ -1484,34 +1485,36 @@ Fortsätta?</translation>
         <location filename="../src/mainwindow.cpp" line="1746"/>
         <location filename="../src/mainwindow.cpp" line="1766"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation>Exportera publik nyckel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Exportera din publika nyckel&lt;/h3&gt;&lt;p&gt;Ingen signeringsnyckel är konfigurerad. Ställ in en i QtPass-inställningar &gt; GPG-nycklar, eller kör detta i en terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;ditt-nyckel-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Skicka sedan filen till dina lagkamrater.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Kunde inte exportera publik nyckel för %1.
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1769"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen utdata från gpg.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1796"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
+        <translation>Dela lösenord med GPG</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;h3&gt;Dela lösenord med GPG&lt;/h3&gt;&lt;p&gt;för att dela lösenord med andra användare:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportera din publika nyckel&lt;/b&gt; och skicka den till lagkamraterna&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importera lagkamraternas offentliga nycklar&lt;/b&gt; till din GPG nyckelring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Kryptera lösenord på nytt&lt;/b&gt; så att alla mottagare kan dekryptera dem&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Endast personer som har en matchande hemliga nyckeln kan dekryptera lösenorden.&lt;/p&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tips:&lt;/b&gt; Använd samma GPG-nyckel för alla delade mappar.&lt;/p&gt;&lt;p&gt;Se FAQ för mer detaljer.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -1797,12 +1800,12 @@ Röda poster är inte giltiga, du kommer inte att kunna kryptera till dessa.</tr
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera nyckel...</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Importera en GPG-nyckel från fil eller urklipp</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
