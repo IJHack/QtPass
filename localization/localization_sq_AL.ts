@@ -468,7 +468,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Plotëso të gjitha fushat e kërkuara.</translation>
+        <translation>Plotëso të gjitha fushat e kërkuara</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
