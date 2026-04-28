@@ -754,7 +754,7 @@ Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Új titkosítás a (z)% 1 mappából</translation>
+        <translation>Új titkosítás a (z) %1 mappából</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="757"/>
