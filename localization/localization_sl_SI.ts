@@ -611,7 +611,7 @@ e-pošta</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Ni bilo mogoče prebrati ključa zaštečila za uporabo, datoteka .gpg-id je manjša ali neveljavna.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -621,7 +621,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Ni bilo mogoče odpreti datoteke .gpg-id za pisanje.</translation>
+        <translation>Napaka pri odpiranju datoteke .gpg-id za pisanje.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
@@ -666,7 +666,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Zamenjava %1 ni uspela. Izvorna datoteka je bila obnovljena.</translation>
+        <translation>Zamenjava %1 ni uspela. Izvirno je bilo obnovljeno.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
@@ -708,7 +708,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Ni bilo mogoče preveriti datoteke .gpg-id imenika.</translation>
+        <translation>Ni bilo mogoče preveriti .gpg-id za imenik.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
@@ -797,7 +797,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Niste lahko prepoznali IDa vnosnega ključa iz GPG izida.</translation>
+        <translation>Niste lahko prepoznali IDa vnosnega ključa iz GPG izhoda.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
