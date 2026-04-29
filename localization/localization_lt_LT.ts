@@ -535,7 +535,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation>Eksportuoti viešąjį klaidų raktą</translation>
+        <translation>Eksportuoti viešąjį raktą</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
