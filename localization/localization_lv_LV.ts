@@ -1327,7 +1327,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
-        <translation>gpg nav radušies iespējams izvade.</translation>
+        <translation>Nav gpg izvades.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
