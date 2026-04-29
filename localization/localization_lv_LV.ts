@@ -1350,7 +1350,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation>Nepieciešama paroles generācija ar garumu 0 nevar būt pietiekami liela.</translation>
+        <translation>Nevar ģenerēt paroli ar nulles garumu.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
@@ -1450,7 +1450,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>GPG īstenošanas atpakaļ pārvalde</translation>
+        <translation>GPG atslēgu pāra ģenerēšana</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
@@ -1526,12 +1526,12 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard cleared</source>
-        <translation>Iekrētāja lekts ir atvērts</translation>
+        <translation>Starpliktuve notīrīta</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation>Iekrētāja lekts nav atvērts</translation>
+        <translation>Starpliktuve nav notīrīta</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
@@ -1623,7 +1623,7 @@ Sarkanie ieraksti nav derīgi; jūs nevarēsiet tos šifrēt.</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Ieimportējiet GPG atslēgu no faila vai leņķītāja</translation>
+        <translation>Ieimportējiet GPG atslēgu no faila vai starpliktuves</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
