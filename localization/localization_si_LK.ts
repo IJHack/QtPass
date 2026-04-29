@@ -331,7 +331,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
         <source>Add</source>
-        <translation>Add</translation>
+        <translation type="unfinished">එකතු කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="993"/>
@@ -669,7 +669,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Encryption කණගුම් ඉන්දිරිපත් කළ හෝ .gpg-id කාලියක් විස්තර සහ විලාසිතයි නමුත් ඉන්දිරිපත් කළ හෝ .gpg-id කාලියක් සහ විලාසිතයි.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -805,7 +805,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation type="unfinished">ක්‍රියාකලපතම් සහිත කණ්ඩායම් හෝ ඉන්න වේදීමට</translation>
+        <translation type="unfinished">පිටපත්පුවරුවෙන්</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -843,7 +843,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 කිසිදුව වාර්තා නොකරන්නේ GPG සමඟ හෝ ASCII සමජය. ඉහළ පෙන්වියි &lt;code&gt;gpg --armor --export&lt;/code&gt;, එක්සර කරන්න මත හෝ ඉගෙන ලබා ගැනීමට පවතුන්න &lt;b&gt;Clipboard&lt;/b&gt;.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -1193,7 +1193,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="501"/>
         <location filename="../src/mainwindow.cpp" line="514"/>
         <source>Updating password-store</source>
-        <translation>password-store රසිපොලීමට</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Can not edit</source>
