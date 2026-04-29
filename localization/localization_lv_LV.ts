@@ -1613,7 +1613,7 @@ Sarkanie ieraksti nav derīgi; jūs nevarēsiet tos šifrēt.</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>Pārskatiet neizmantojamus klauzulē</translation>
+        <translation>Rādīt neizmantojamas atslēgas</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
