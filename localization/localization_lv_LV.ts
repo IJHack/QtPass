@@ -1205,7 +1205,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
-        <translation>Pārdodiet tukšu</translation>
+        <translation>Pārdēvēt mapi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
