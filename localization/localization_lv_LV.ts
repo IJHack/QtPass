@@ -687,7 +687,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>Atjauninājums tika atstupts, jo neizdevās izveidot Git rezervēto kopiju.</translation>
+        <translation>Atjauninājums tika atcelts, jo neizdevās izveidot Git rezervēto kopiju.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
