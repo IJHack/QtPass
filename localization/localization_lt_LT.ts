@@ -737,7 +737,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Įrašykite GPG viešojo kodo ASCII-armoruoto formata, arba iškelsite jį čia... Tai turėtų būti ASCII-armoruotas GPG kodas.</translation>
+        <translation>Importuokite GPG viešąjį raktą iš failo arba įklijuokite jį žemiau. Raktas turi būti ASCII šarvuoto formato.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
