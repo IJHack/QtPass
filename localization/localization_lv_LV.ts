@@ -1516,7 +1516,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation>GPG īpašuma pārvalde izveide nedarbojas</translation>
+        <translation>GPG atslēgu pāra ģenerēšana neizdevās</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
