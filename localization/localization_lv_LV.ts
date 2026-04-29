@@ -452,7 +452,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation>Izvēlieties saņēmējus par %1</translation>
+        <translation>Izvēlieties saņēmējus priekš %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
