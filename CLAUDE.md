@@ -113,7 +113,13 @@ Common pitfalls: unnamed parameters in declarations, orphaned doc blocks not imm
 
 ## Localization
 
-Translation files are `.ts` files in `localization/`. Do **not** edit them manually — translations are managed via Weblate. After changing source strings, run `qmake6` to update translation source references.
+Translation files are `.ts` files in `localization/`. Translations are normally managed via [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/), but direct `.ts` edits are appropriate for:
+
+- Fixing reviewer-flagged bugs (placeholder mismatches like `% 1` vs `%1`, broken HTML tags, made-up words from MT, mixed-script artifacts).
+- Batch corrections suggested by native-speaker reviewers on a PR.
+- Filling empty entries with best-effort translations marked `type="unfinished"` for Weblate to refine.
+
+After changing **source** strings (English in code), run `qmake6` to refresh translation source references; that step is purely mechanical and affects every locale file.
 
 ## Skills
 
@@ -123,6 +129,7 @@ Specialized skills are available for common workflows:
 - `qtpass-testing` — Qt Test structure and patterns
 - `qtpass-linting` — CI/CD and formatters
 - `qtpass-localization` — translation workflow
+- `qtpass-localization-audit` — structural audit of `.ts` files (placeholders, HTML balance, mnemonics, mixed-script)
 - `qtpass-github` — PRs, issues, merging
 - `qtpass-releasing` — release process
 - `qtpass-docs` — documentation guide
