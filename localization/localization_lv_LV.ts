@@ -436,7 +436,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Vai vēlaties izveidot paroļu krātuvi vietā %1?</translation>
+        <translation>Vai vēlaties izveidot paroļu glabātuvi vietā %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
@@ -492,27 +492,27 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation>Izveidot paroļu krātuvi?</translation>
+        <translation>Izveidot paroļu glabātuvi?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Vai vēlaties izveidot paroļu krātuvi vietā %1?</translation>
+        <translation>Vai vēlaties izveidot paroļu glabātuvi vietā %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Neizdevās izveidot paroļu krātuvi vietā: %1</translation>
+        <translation>Neizdevās izveidot paroļu glabātuvi vietā: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
         <source>Password store not initialised</source>
-        <translation>Paroļu krātuve nav inicializēta</translation>
+        <translation>Paroļu glabātuve nav inicializēta</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Mape %1 nešķiet paroles krātuve vai arī tā vēl nav inicializēta.</translation>
+        <translation>Mape %1 nešķiet paroles glabātuve vai arī tā vēl nav inicializēta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
@@ -698,7 +698,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/imitatepass.cpp" line="732"/>
         <location filename="../src/imitatepass.cpp" line="787"/>
         <source>Updating password-store</source>
-        <translation>Paroļu krātuves atjaunināšana</translation>
+        <translation>Paroļu glabātuves atjaunināšana</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="757"/>
@@ -1076,7 +1076,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/mainwindow.cpp" line="501"/>
         <location filename="../src/mainwindow.cpp" line="514"/>
         <source>Updating password-store</source>
-        <translation>Paroles pārvaldīšanas atjauninājums</translation>
+        <translation>Paroļu glabātuves atjaunināšana</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="625"/>
