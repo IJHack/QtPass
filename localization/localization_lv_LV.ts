@@ -436,7 +436,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Vai vēlaties izveidot paroļu krātuvi pie %1?</translation>
+        <translation>Vai vēlaties izveidot paroļu krātuvi vietā %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
@@ -762,7 +762,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII apdrošināts GPG atslēgs</translation>
+        <translation>ASCII apdrošināts GPG atslēga</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -1327,7 +1327,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
-        <translation>gpg nav radušies iespējams izvade.</translation>
+        <translation>Nav gpg izvades.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
