@@ -512,7 +512,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Plikoje %1 nėra slaptažodžių saugykla arba ji dar nebuvo inicijuota.</translation>
+        <translation>Aplanke %1 nėra slaptažodžių saugykla arba ji dar nebuvo inicijuota.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
