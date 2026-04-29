@@ -1531,7 +1531,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation>Iekrētāja lekts nav atvērts</translation>
+        <translation>Starpliktuve nav notīrīta</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
