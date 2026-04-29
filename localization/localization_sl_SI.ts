@@ -415,7 +415,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation>Vsi vnosi morajo biti kopirani v območje kopiranja</translation>
+        <translation>Vedno kopiraj v odložišče</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
@@ -643,7 +643,7 @@ Ne morete razšifriral novih dodanih gesel!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation>Napačno podpisano %1.</translation>
+        <translation>Podpisovanje %1 ni uspelo.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
