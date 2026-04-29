@@ -390,7 +390,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versija </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
@@ -835,7 +835,6 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translatorcomment>TODO(lv_LV): Security-critical text translated; please review wording with a native Latvian translator.</translatorcomment>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Paroles frāzes garumam nav ierobežojuma, un tā ir rūpīgi jāizvēlas. No drošības viedokļa paroles frāze privātās atslēgas atbloķēšanai ir viens no vājākajiem punktiem GnuPG (kā arī citās publiskās atslēgas šifrēšanas sistēmās), jo tā ir vienīgā aizsardzība, ja cita persona iegūst jūsu privāto atslēgu. &lt;br/&gt;Ideālā gadījumā paroles frāzē nevajadzētu izmantot vārdnīcas vārdus, un tajā vajadzētu kombinēt gan lielos un mazos burtus, gan arī izmantot ar burtiem nesaistītas rakstzīmes.&lt;br/&gt;Laba paroles frāze ir būtiska drošai GnuPG lietošanai.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
