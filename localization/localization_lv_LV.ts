@@ -841,7 +841,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Atgriezt paroli</translation>
+        <translation>Atkārtot paroli</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
