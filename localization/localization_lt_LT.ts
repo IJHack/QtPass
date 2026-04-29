@@ -436,7 +436,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Ar norite sukurti slaptažodžių saugykla %1?</translation>
+        <translation>Ar norite sukurti slaptažodžių saugyklą %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
