@@ -512,7 +512,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Mape %1 nešķiet paroles glabātuve vai arī tā vēl nav inicializēta.</translation>
+        <translation>Mape %1 neizskatās paroles glabātuve vai arī tā vēl nav inicializēta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
