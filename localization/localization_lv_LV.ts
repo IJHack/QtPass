@@ -436,7 +436,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Vai vēlaties izveidot paroļu krātuvi pie %1?</translation>
+        <translation>Vai vēlaties izveidot paroļu krātuvi vietā %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
