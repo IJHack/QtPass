@@ -507,7 +507,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
         <source>Password store not initialised</source>
-        <translation>Paroļu krātuve nav inicializēta</translation>
+        <translation>Paroļu glabātuve nav inicializēta</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
