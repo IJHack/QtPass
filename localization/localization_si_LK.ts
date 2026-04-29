@@ -443,7 +443,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -519,12 +519,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">ක්මා ග்னුපි පිරුනී දෙව අපේෂත සරල අතුරு යන මුරපද ඔබ පිරුනී. &lt;br&gt; ඔබ ග்னුපි පිරුනී අපේෂත සරල අතුරு යන මුරපද ඔබ ග்னුපි පිරුනී. &lt;br&gt; ඔබ ඇල් අල එක සමඟ ඔබ ග்னුපි පිරුනී, ඔබ ග்னුපි පිරුනී අපේෂත සරල අතුරு යන මුරපද ඔබ ග்னුපි පිරුනී. &lt;br&gt; ඇක සමඟ ඔබ ග்னුපි පිරුනී, ඔබ ග்னුපි පිරුනී අපේෂත සරල අතුරு යන මුරපද ඔබ ග்னුපි පිරුනී.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -585,7 +585,7 @@ email</translation>
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished">ලෝක සංකේත එක සමඟ ඔබ ග்னුපි පිරුනී. &lt;br&gt; ඇක සමඟ ඔබ ග்னුපි පිරුනී අපේෂත සරල අතුරு යන මුරපද ඔබ ග்னුපි පිරුනී.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -635,7 +635,7 @@ e-mail</source>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation type="unfinished">වෙනත් පුර්‍රමිජ වේදීමට ඉස්ථත්‍ර කල හෝ ඉස්ථත්‍ර කළමනාකරණය කරන්න: %2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
@@ -820,7 +820,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation type="unfinished">ASCII-armෙරුවල අගය සහ GPG key</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -849,7 +849,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished">GPG කණ්ඩායම හරහා නිසදූ</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
@@ -892,7 +892,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">ක්සා ප්රත වෙන්න දි මුරපද ගැ අඩ එක ලංකෙ ද ඇත, එය සා ගැ න්ට මුරපද ගැ අඩ ඒ ආ ප්රත උප න ඇ ය ස එ ම ල ද ඇ ත, එ ය ග අ ප ත උ න ඇ ය ස ඒ ආ ප්රත උප න ඇ ය ස එ ම ල ද ඇ ත, අ ග අ ප ත උ න ඇ ය ස ඒ ආ ප්රත උප න ඇ ය ස එ ම ල ද ඇ ත, අ ග අ ප ත උ න ඇ ය ස ඒ ආ ප්රත උප න ඇ ය ස එ ම ල ද ඇ ත</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -912,7 +912,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished">කාලය මුරපද විස්ට ආකාර නොී අතුරு ග்ஞුප ග்ஞුප මුරපද වிதන්න ල ඇත. ග்ஞුප ග்ஞුප මුරපද සියලු උපාංග හරහා ඒවා සමමුහුර්ත කරන්න.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
@@ -937,7 +937,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished">විද්‍යාලය කරන වේතනයක් නමුත් කටයු屉ීම කළ හැක. ඉස්ථව පිජිම් කරන වේතනය සහ ශ්‍රාණික සුදෙලීම, මොර් ඉවත් කරන හැක. එය වේතනය ශ්‍රාණික සහංගුල වෙනස් කළ හැක, ඉස්ථව පිජිම් කරන වේතනය ශ්‍රාණික සහංගුල වෙනස් කළ හැක. ඉස්ථව පිජිම් කරන වේතනය ශ්‍රාණික සහංගුල වෙනස් කළ හැක. ඉස්ථව පිජිම් කරන වේතනය ශ්‍රාණික සහංගුල වෙනස් කළ හැක.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1536,7 +1536,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">මෙහි හාරුම් කණගින් ඉස්ථත්‍‍ර කරන්න නවක්‍රමය සහ .gpg-id ශේෂීය පාදුරිය විසඳොල්ලා කරන්න.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
