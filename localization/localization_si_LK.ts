@@ -237,7 +237,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
         <source>System:</source>
-        <translation type="unfinished">ද්‍රයත්ව කණ්ඩායම</translation>
+        <translation>ද්‍රයත්ව කණ්ඩායම:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
@@ -854,7 +854,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation type="unfinished">GPG විශාල කරන ගැනීමට ඉංග්‍රීසි ප්‍රතික්‍රියාව කළ හෝ එය වෙනස් කලේදුමට ඉංග්‍රීසි ප්‍රතික්‍රියාව කළ</translation>
+        <translation>GPG විශාල කරන ගැනීමට ඉංග්‍රීසි ප්‍රතික්‍රියාව කළ හෝ එය වෙනස් කලේදුමට ඉංග්‍රීසි ප්‍රතික්‍රියාව කළ.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
@@ -907,7 +907,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished">ගුප්ගෝර් සමඟ කොටස් පවත්නය කරන්න</translation>
+        <translation>ගුප්ගෝර් සමඟ කොටස් පවත්නය කරන්න.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
@@ -922,17 +922,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished">සමඟ්‍යන්තර විශාලයක් කොටස් සහ හෝ ඉතිහාසයක් විශාලයක් සමඟ්‍යන්තර විශාලයක් කොටස් නැව්ද</translation>
+        <translation>සමඟ්‍යන්තර විශාලයක් කොටස් සහ හෝ ඉතිහාසයක් විශාලයක් සමඟ්‍යන්තර විශාලයක් කොටස් නැව්ද.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation type="unfinished">විශාල හෝ හෝ සමඟ්‍යන්තර විශාලයක් කොටස් සහ හෝ ඉතිහාසයක් විශාලයක් සමඟ්‍යන්තර විශාලයක් කොටස් නැව්ද</translation>
+        <translation>වි-තැපෑල වලංගු නොවේ</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished">වෙනස් කරන විදුලි අඩංගය නැත</translation>
+        <translation>වෙනස් කරන විදුලි අඩංගය නැත.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
@@ -1404,9 +1404,9 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform>%n එකට වැඩි</numerusform>
-            <numerusform>%n එකක් වැඩි</numerusform>
+        <translation>
+            <numerusform>%n එකට වැඩි.</numerusform>
+            <numerusform>%n එකක් වැඩි.</numerusform>
         </translation>
     </message>
     <message>
