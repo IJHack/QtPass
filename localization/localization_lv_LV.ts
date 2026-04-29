@@ -1160,7 +1160,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Jaunais paroles faila nosaukums: 
-(%1) tiks ielabots šajā pārrakstījumā</translation>
+(Tiks ievietots %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
