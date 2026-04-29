@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Dodatno: GPG ključ za podpisanje datotek .gpg-id za overitev intaktnosti. Ostavite prazno, ce ne potrebujete zaščititi popisa uporabnikov od manipulacij.</translation>
+        <translation>Dodatno: GPG ključ za podpisanje datotek .gpg-id za overitev intaktnosti. Ostavite prazno, če ne potrebujete zaščititi popisa uporabnikov od manipulacij.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
         <source>Current path</source>
-        <translation>Trenutni pot</translation>
+        <translation>Trenutna pot</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
@@ -395,7 +395,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation>Sistemski izdelki ni na voljo</translation>
+        <translation>Sistemska vrstica ni na voljo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
@@ -410,7 +410,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
         <source>No Clipboard</source>
-        <translation>Niste načrtali območja kopiranja</translation>
+        <translation>Brez odložišča</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
@@ -426,7 +426,7 @@ e-pošta</translation>
         <location filename="../src/configdialog.cpp" line="210"/>
         <location filename="../src/configdialog.cpp" line="226"/>
         <source>This field is required</source>
-        <translation>Ta polja je obvezno</translation>
+        <translation>To polje je obvezno</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
@@ -1604,12 +1604,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation>Prenesi ključ...</translation>
+        <translation>Uvozi ključ...</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Prenesi GPG ključ iz datoteke ali obrezja</translation>
+        <translation>Uvozi GPG ključ iz datoteke ali odložišča</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
