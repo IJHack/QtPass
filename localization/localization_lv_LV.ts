@@ -1220,7 +1220,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Atšifrēt visus pasūtījumus</translation>
+        <translation>Pāršifrēt visas paroles</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
