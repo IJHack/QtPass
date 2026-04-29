@@ -815,7 +815,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished">Sukurti naują raktų porą</translation>
+        <translation>Sukurti naują raktų porą</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -830,17 +830,17 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation type="unfinished">Slaptafrazė</translation>
+        <translation>Slaptafrazė</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Slaptafrazės ilgis nėra ribojamas, ir ji turi būti kruopščiai pasirinkta. Saugumo požiūriu slaptafrazė privačiajam raktui atrakinti yra viena silpniausių vietų GnuPG (ir kitose viešojo rakto šifravimo sistemose), nes tai vienintelė apsauga, kurią turite, jei kitas asmuo gauna jūsų privatųjį raktą. &lt;br/&gt;Idealiu atveju slaptafrazėje neturėtų būti naudojami žodyno žodžiai, ji turėtų maišyti raidžių registrą bei naudoti ne raidinius simbolius.&lt;br/&gt;Gera slaptafrazė yra būtina saugiam GnuPG naudojimui.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Slaptafrazės ilgis nėra ribojamas, ir ji turi būti kruopščiai pasirinkta. Saugumo požiūriu slaptafrazė privačiajam raktui atrakinti yra viena silpniausių vietų GnuPG (ir kitose viešojo rakto šifravimo sistemose), nes tai vienintelė apsauga, kurią turite, jei kitas asmuo gauna jūsų privatųjį raktą. &lt;br/&gt;Idealiu atveju slaptafrazėje neturėtų būti naudojami žodyno žodžiai, ji turėtų maišyti raidžių registrą bei naudoti ne raidinius simbolius.&lt;br/&gt;Gera slaptafrazė yra būtina saugiam GnuPG naudojimui.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished">Pakartoti slaptafrazę</translation>
+        <translation>Pakartoti slaptafrazę</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -855,7 +855,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished">Eksperto parinktims peržiūrėkite &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG vadovą&lt;/a&gt;</translation>
+        <translation>Eksperto parinktims peržiūrėkite &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG vadovą&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
