@@ -599,13 +599,13 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>%1 pabaiga yra nelegali.</translation>
+        <translation>%1 parašas yra neteisingas.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="149"/>
         <location filename="../src/imitatepass.cpp" line="598"/>
         <source>Can not edit</source>
-        <translation>Nepavyks redaguoti</translation>
+        <translation>Negalima redaguoti</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
@@ -638,7 +638,7 @@ Negalėsite iššifruoti jokių naujai pridėtų slaptažodžių!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
         <source>GPG signing failed!</source>
-        <translation>Nepavyko GPG pripildymas!</translation>
+        <translation>GPG pasirašymas nepavyko!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
@@ -648,7 +648,7 @@ Negalėsite iššifruoti jokių naujai pridėtų slaptažodžių!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation>Ne yra sertifikavimo raktas!</translation>
+        <translation>Nėra pasirašymo rakto!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
@@ -661,7 +661,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>Atkryptimas nepavyko</translation>
+        <translation>Pakartotinis šifravimas nepavyko</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
