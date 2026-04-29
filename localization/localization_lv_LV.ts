@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">Opsīcīgs: GPG ciprs, lai saskarnētu .gpg-id failus ar integritātes pārbaudu. Lai nekavētu, lūdzu, ļaujiet tās tukšas</translation>
+        <translation>Opsīcīgs: GPG ciprs, lai saskarnētu .gpg-id failus ar integritātes pārbaudu. Lai nekavētu, lūdzu, ļaujiet tās tukšas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -632,7 +632,8 @@ e-pasts</translation>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished">Nav pieejami jebkura salīdzinoši tālu atslēgas. Jūs nevarat dekriptēt jebkuru jauno ierosināto paroli!</translation>
+        <translation>Nav pieejami jebkura salīdzinoši tālu atslēgas.
+Jūs nevarat dekriptēt jebkuru jauno ierosināto paroli!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -736,7 +737,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation type="unfinished">Ielieciet GPG publisku paroli no faila vai ievadiet to šeit. Paroles jābūt ASCII armored formāta</translation>
+        <translation>Ielieciet GPG publisku paroli no faila vai ievadiet to šeit. Paroles jābūt ASCII armored formāta.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -914,17 +915,17 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"> saturu meklēšanas modra atlases</translation>
+        <translation>Saturu meklēšanas modra atlases</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"> Pārslēdziet saturu meklēšanas režīmu, lai meklētu paroles failos</translation>
+        <translation>Pārslēdziet saturu meklēšanas režīmu, lai meklētu paroles failos</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"> Neuzdumbības meklējums</translation>
+        <translation>Neuzdumbības meklējums</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -934,7 +935,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"> Neuzdumbības meklējuma modra atlases</translation>
+        <translation>Neuzdumbības meklējuma modra atlases</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
@@ -1078,7 +1079,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/mainwindow.cpp" line="625"/>
         <location filename="../src/mainwindow.cpp" line="924"/>
         <source>Content hidden</source>
-        <translation type="unfinished"> saturu sakņa ir sakņa</translation>
+        <translation>Saturu sakņa ir sakņa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="629"/>
@@ -1139,9 +1140,9 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>no %n ieraksta</numerusform>
-            <numerusform>no %n ierakstiem</numerusform>
-            <numerusform>no %n ierakstiem</numerusform>
+            <numerusform>no %n ieraksta.</numerusform>
+            <numerusform>no %n ierakstiem.</numerusform>
+            <numerusform>no %n ierakstiem.</numerusform>
         </translation>
     </message>
     <message>
@@ -1265,12 +1266,12 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished">Pārveidot mapi uz:</translation>
+        <translation>Pārveidot mapi uz: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation type="unfinished">Pārveidot failu uz:</translation>
+        <translation>Pārveidot failu uz: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
@@ -1309,7 +1310,9 @@ Continue?</source>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished">Nepieciešama publiska šifrēšanas funkcija, %1. %2</translation>
+        <translation>Nepieciešama publiska šifrēšanas funkcija, %1. 
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
@@ -1347,7 +1350,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished">Nevar generēt paroli, nav iestatīto konfigurācijā noteiktajās rakstzīmju sarakstā izvēlētos</translation>
+        <translation>Nevar generēt paroli, nav iestatīto konfigurācijā noteiktajās rakstzīmju sarakstā izvēlētos!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
@@ -1443,7 +1446,8 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Nepieciešama telpa WebDAV:</translation>
+        <translation>Nepieciešama telpa WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
@@ -1453,19 +1457,21 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">Ievadiet WebDAV piekurušanas paroli</translation>
+        <translation>Ievadiet WebDAV piekurušanas paroli:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">Fusedav neizdevās beigt darbu</translation>
+        <translation>Fusedav neizdevās beigt darbu
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Nevarēja sākt fusedav, lai saistītu WebDAV:</translation>
+        <translation>Nevarēja sākt fusedav, lai saistītu WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="275"/>
