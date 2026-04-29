@@ -81,7 +81,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
         <source>Password Generation:</source>
-        <translation>පදම් අභිප්‍රායනය:</translation>
+        <translation>මුරපද ජනනය:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
@@ -116,7 +116,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
         <source>Alphanumerical</source>
-        <translation>අක්ෂර කාර්යත්වය අත් පද්ධතිය</translation>
+        <translation>අකුරු සංඛ්‍යාත්මක</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
@@ -151,12 +151,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
         <source>Generate GPG key pair</source>
-        <translation>GPG කිරීම් අඩංගු මෙයින් ඉලවත් කරන්න</translation>
+        <translation>GPG යතුරු යුගලය ජනනය කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation>පාදක් විසින් සමීපරාජා කළ ඇත, එය මෙම සැකසුම පාදකයේ විවිධත්වයට පිළිබඳව භාවිතා කරනු ලැබේ</translation>
+        <translation>පැතිකඩ නම, මෙම වින්‍යාස පැතිකඩ හඳුනා ගැනීමට භාවිතා කරයි</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>වැදගත්: නොසුවත් සූදානමකි, GPG කිරීම් මෙහෙයුම් දේශීයත් විවිධත්වයට නොසුවත් සූදානමකි. .gpg-id කිරීම් මෙහෙයුම් දේශීයත් විවිධත්වයට නොසුවත් සූදානමකි, එහි පරාජය කළ ලැබේ බැවින් මෙය දොර නොගන්න.</translation>
+        <translation>විකල්පය: අඛණ්ඩතාව තහවුරු කිරීම සඳහා .gpg-id ගොනු අත්සන් කිරීමට GPG යතුරක්. පරිශීලක ලැයිස්තුව වෙනස් කිරීමෙන් ආරක්ෂා කිරීමට අවශ්‍ය නොවේ නම් මෙය හිස්ව තබන්න.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
