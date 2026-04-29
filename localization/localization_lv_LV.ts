@@ -916,7 +916,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Saturu meklēšanas modra atlases</translation>
+        <translation>Satura meklēšanas pārslēgšana</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
