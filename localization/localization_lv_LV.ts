@@ -677,7 +677,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Backup commit failed</source>
-        <translation>Dublējuma kommita izveide neizdevās</translation>
+        <translation>Dublējuma komita izveide neizdevās</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
