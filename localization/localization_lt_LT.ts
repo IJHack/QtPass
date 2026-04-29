@@ -410,7 +410,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
         <source>No Clipboard</source>
-        <translation>Ne klaviatūros kopija</translation>
+        <translation>Nėra iškarpinės</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
