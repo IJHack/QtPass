@@ -376,7 +376,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
         <source>Show all fields templated</source>
-        <translation>Parādiet visus formu laukus</translation>
+        <translation>Rādīt visus veidņu laukus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
