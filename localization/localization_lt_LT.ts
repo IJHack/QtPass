@@ -692,7 +692,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Iš katalogo %1 atsikratymas iš naujo</translation>
+        <translation>Pakartotinis šifravimas iš aplanko %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
