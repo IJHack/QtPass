@@ -415,7 +415,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation>Visada kopijuokite į klaviatūros kopių</translation>
+        <translation>Visada kopijuoti į iškarpinę</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
