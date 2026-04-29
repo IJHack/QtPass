@@ -785,7 +785,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 nav izskatījies kā ASCII armūta GPG paraksts. Pirmkārt pārveidojam to ar &lt;code&gt;gpg --armor --export&lt;/code&gt;, vai ievietojam uzglabāto bloku no &lt;b&gt;Kopējo leņķi&lt;/b&gt;.</translation>
+        <translation>%1 neizskatās pēc ASCII-armored GPG atslēgas. Vispirms pārveidojiet to ar &lt;code&gt;gpg --armor --export&lt;/code&gt; vai ielīmējiet armored bloku no &lt;b&gt;starpliktuves&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -906,7 +906,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Piedāvājiet meklēšanu par paroles saturam (pass grep)</translation>
+        <translation>Meklēt paroles saturā (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -1544,7 +1544,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation>Ierobežot pārprotībām?</translation>
+        <translation>Vai piespiedu pārrakstīt?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
@@ -1633,12 +1633,12 @@ Sarkanie ieraksti nav derīgi; jūs nevarēsiet tos šifrēt.</translation>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished">Nevarēja iegūt pieejamo GPG atslēgu sarakstu</translation>
+        <translation>Nevarēja iegūt pieejamo GPG atslēgu sarakstu</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Atslēga nav atrasta atslēgu saišķī</translation>
+        <translation>Atslēga nav atrasta atslēgu saišķī</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
