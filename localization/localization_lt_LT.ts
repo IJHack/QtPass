@@ -410,17 +410,17 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
         <source>No Clipboard</source>
-        <translation>Ne klaviatūros kopija</translation>
+        <translation>Nėra iškarpinės</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation>Visada kopijuokite į klaviatūros kopių</translation>
+        <translation>Visada kopijuoti į iškarpinę</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Atsakomybė prieigos kopijuoti</translation>
+        <translation>Kopijuoti į iškarpinę pagal poreikį</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
@@ -462,7 +462,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
         <source>No profile selected</source>
-        <translation>Nepraeista profilio pasirinkimas</translation>
+        <translation>Nepasirinktas profilis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
@@ -535,7 +535,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation>Eksportuoti viešąjį klaidų raktą</translation>
+        <translation>Eksportuoti viešąjį raktą</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
