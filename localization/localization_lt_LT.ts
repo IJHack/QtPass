@@ -880,7 +880,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Ši operacija gali priimti kelias minutes.&lt;br /&gt;Mes turime generuoti daug atvirkščių duomenų. Geriausia būtų atlikti kai kurią kitą veiksmą (klasėje, perkeliant mygtuką, naudojant diskus) prieš priminio generavimą; tai padeda atvirkštiniui skaičiuotojui gauti pakankamai entropijos.</translation>
+        <translation>Ši operacija gali užtrukti kelias minutes.&lt;br /&gt;Reikia sugeneruoti daug atsitiktinių baitų. Geriausia atlikti kitas veiklas (rašyti klaviatūra, judinti pelę, naudoti diskus) pirminių skaičių generavimo metu; tai padeda atsitiktinių skaičių generatoriui surinkti pakankamai entropijos.</translation>
     </message>
 </context>
 <context>
