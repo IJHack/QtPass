@@ -570,7 +570,7 @@ e-mail</source>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished">ASCII armirani ključ (*.asc) ;;;Vse datoteke (*)</translation>
+        <translation type="unfinished">ASCII armirani ključ (*.asc);;Vse datoteke (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -1298,7 +1298,7 @@ Continue?</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Izvozi vaš javni ključ&lt;/h3&gt;&lt;p&gt;Ni nastavljen potrdilni ključ. Nastavite ga v nastavitvah QtPass &gt; Ključe GPG, ali izvedite to v terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;vaš-kljuc-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ta potem pošljite datoteko svojim timovcem.&lt;/p&gt;},{</translation>
+        <translation type="unfinished">&lt;h3&gt;Izvozi vaš javni ključ&lt;/h3&gt;&lt;p&gt;Ni nastavljen potrdilni ključ. Nastavite ga v nastavitvah QtPass &gt; Ključe GPG, ali izvedite to v terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;vaš-kljuc-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ta potem pošljite datoteko svojim timovcem.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
@@ -1425,7 +1425,7 @@ Continue?</source>
         <location filename="../main/main.cpp" line="155"/>
         <location filename="../main/main.cpp" line="159"/>
         <source>LTR</source>
-        <translation type="unfinished">LTZ</translation>
+        <translation type="unfinished">LTR</translation>
     </message>
 </context>
 <context>
@@ -1461,7 +1461,7 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Niste lahko začeli z启动fusedav da bi se povezali z WebDAV:</translation>
+        <translation type="unfinished">Ni bilo mogoče zagnati fusedav za povezavo z WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="275"/>
