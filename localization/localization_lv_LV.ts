@@ -841,7 +841,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Atgriezt paroli</translation>
+        <translation>Atkārtot paroli</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
@@ -1403,12 +1403,12 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation>Parole atstāt</translation>
+        <translation>Rādīt paroli</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation>Zīmes iekārta:</translation>
+        <translation>Rakstzīmju kopa:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
@@ -1516,12 +1516,12 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation>GPG īpašuma pārvalde izveide nedarbojas</translation>
+        <translation>GPG atslēgu pāra ģenerēšana neizdevās</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
         <source>GPG key pair generated successfully</source>
-        <translation>GPG īpašuma pārvalde ir veiksmīgi izveidota</translation>
+        <translation>GPG atslēgu pāris veiksmīgi ģenerēts</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
