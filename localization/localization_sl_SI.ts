@@ -286,7 +286,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
         <source>Pass</source>
-        <translation type="unfinished">Število</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="827"/>
@@ -383,7 +383,9 @@
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished">Login URL e-mail</translation>
+        <translation type="unfinished">prijava
+URL
+e-pošta</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
