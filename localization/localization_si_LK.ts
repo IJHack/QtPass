@@ -66,7 +66,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>මුලින්ම කොටසේ අභාගවල තහවුරු කරන්න</translation>
+        <translation>ගොනු අන්තර්ගතය මුල් අයුරින් ම පෙන්වන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
