@@ -611,7 +611,7 @@ e-pošta</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Ni bilo mogoče prebrati ključa zaštečila za uporabo, datoteka .gpg-id je manjša ali neveljavna.</translation>
+        <translation>Ni bilo mogoče prebrati ključa šifriranja za uporabo, datoteka .gpg-id manjka ali je neveljavna.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
