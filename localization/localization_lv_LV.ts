@@ -1350,7 +1350,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation>Nepieciešama paroles generācija ar garumu 0 nevar būt pietiekami liela.</translation>
+        <translation>Nevar ģenerēt paroli ar nulles garumu.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
