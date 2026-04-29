@@ -1128,7 +1128,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation>Nėra atitinkamų raktinių.</translation>
+        <translation>Nerasta atitikmenų.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
