@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation>කොපියා ප්‍රකාශනය:</translation>
+        <translation>පිටපත් පුවරුව හැසිරීම:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>පැටෙන් සඳහා අතුසා කිරීම:</translation>
+        <translation>පැනලය ස්වයංක්‍රීයව මකා දැමීම:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
@@ -66,17 +66,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>මුලින්ම කොටසේ අභාගවල තහවුරු කරන්න</translation>
+        <translation>ගොනු අන්තර්ගතය මුල් අයුරින් ම පෙන්වන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>පිළිබඳ පත්‍ර තම්පුකරණය අසලේ</translation>
+        <translation>පේළි එතීම අක්‍රිය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>විශේෂෙන කොටසේ අභාගවල පිළිබඳ මූල්‍ය සාර්ථකතාව විශේෂණ කරන්න</translation>
+        <translation>ක්‍රියාවලි ප්‍රතිදානය පෙන්වන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
