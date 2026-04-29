@@ -1303,7 +1303,7 @@ Continue?</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Izvozi vaš javni ključ&lt;/h3&gt;&lt;p&gt;Ni nastavljen potrdilni ključ. Nastavite ga v nastavitvah QtPass &gt; Ključe GPG, ali izvedite to v terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;vaš-kljuc-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ta potem pošljite datoteko svojim timovcem.&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;h3&gt;Izvozi vaš javni ključ&lt;/h3&gt;&lt;p&gt;Ni nastavljen ključ za podpisovanje. Nastavite ga v nastavitvah QtPass &gt; Ključe GPG, ali izvedite to v terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;vaš-kljuc-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ta potem pošljite datoteko svojim timovcem.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
@@ -1529,12 +1529,12 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation type="unfinished">Zmagovalni prepiši?</translation>
+        <translation type="unfinished">Vsiljeno prepisati?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished">Prepiši %1 z %2?</translation>
+        <translation type="unfinished">prepisati %1 z %2?</translation>
     </message>
 </context>
 <context>
