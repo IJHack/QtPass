@@ -775,7 +775,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation>Įrašyti Klaidinį</translation>
+        <translation>Importuoti raktą</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
