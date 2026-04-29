@@ -555,7 +555,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>%1 užduoties viešasis raktas</translation>
+        <translation>%1 viešasis raktas</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
