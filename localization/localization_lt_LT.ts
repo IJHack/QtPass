@@ -1632,7 +1632,7 @@ Raudonos eilutės netinkamos, jūs negalėsite jų užšifruoti.</translation>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished">Nepavyko gauti pasiekiamų GPG raktų sąrašo</translation>
+        <translation>Nepavyko gauti pasiekiamų GPG raktų sąrašo</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
