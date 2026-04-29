@@ -718,7 +718,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Atšifravimas baigtas: %1 sėkmingai, %2 nebuvo</translation>
+        <translation>Pakartotinis šifravimas baigtas: %1 sėkmingai, %2 nepavyko</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
