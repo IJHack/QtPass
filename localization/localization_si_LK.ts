@@ -494,7 +494,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">විද්‍යුත් වේලාගතකරණය ලෙස</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
@@ -519,7 +519,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">ඔබගේ මුරපද වල GnuPG කිරීම් ගබඩා කරන්න.&lt;br&gt;Microsoft පෙබේ එක් තෝරා ලැයිස්තුවූ Microsoft Store වල &lt;strong&gt;Ubuntu&lt;/strong&gt; කිරීම් ගබඩා කරන්න.&lt;br&gt;මෙම කිරීම් අයිතිකරණය කරලා, සහ පසුව මගිනෝ දිalog යුතු කොට එබැවින් &quot;Autodetect&quot; අඩු කරන්න.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
@@ -630,7 +630,7 @@ e-mail</source>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished">ASCII-armored කළමනාකරණය (*.asc);;විšeල්බීම සහිත ඉස්ථත්‍ර කළමනාකරණය (*)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -1142,7 +1142,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="700"/>
         <location filename="../src/mainwindow.cpp" line="883"/>
         <source>Search Password</source>
-        <translation type="unfinished">පස්sword පිළිබඳතා කරන්න</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>qtpass</source>
