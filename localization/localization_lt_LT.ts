@@ -666,7 +666,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Nepavyko pakeisti %1. Išprastas atsargumas buvo atgriežtas.</translation>
+        <translation>Nepavyko pakeisti %1. Originalas buvo atkurtas.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
