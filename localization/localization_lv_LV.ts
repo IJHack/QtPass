@@ -1109,7 +1109,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
-        <translation>Parole un saturu salietusi</translation>
+        <translation>Parole un saturs paslēpts</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
