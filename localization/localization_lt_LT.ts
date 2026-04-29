@@ -371,7 +371,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished">Rodyti visus eilutes pradėjusias žodį sekantį koloną kaip laukus slaptažodžio laukais, ne tik pateiktas.</translation>
+        <translation>Rodyti visus eilutes pradėjusias žodį sekantį koloną kaip laukus slaptažodžio laukais, ne tik pateiktas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
@@ -789,7 +789,8 @@ You will not be able to change the user list!</source>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished">GPG import nepavyko: %1</translation>
+        <translation>GPG import nepavyko:
+%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
@@ -1233,7 +1234,8 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">Naujas aplankas: &amp; (%1)</translation>
+        <translation>Naujas aplankas:
+(Bus patalpintas %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
