@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Opsizionalus: GPG raktas, naudojamasis patikrinimui .gpg-id failų integriteto. Leiskite tuščią, jei nereikia apsaugoti vartotojo sąrašo nuo pakeitimo.</translation>
+        <translation>Opsionalus: GPG raktas, naudojamasis patikrinimui .gpg-id failų integriteto. Leiskite tuščią, jei nereikia apsaugoti vartotojo sąrašo nuo pakeitimo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
         <source>Current path</source>
-        <translation>Tiesioginis keli</translation>
+        <translation>Tiesioginis kelias</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
@@ -361,7 +361,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Šablonai pridėja papildomus laukus slaptažodžio generavimo dialogo ir slaptažodžio rodyklėje.</translation>
+        <translation>Šablonai prideda papildomus laukus slaptažodžio generavimo dialogo ir slaptažodžio rodyklėje.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
@@ -371,7 +371,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Rodyti visus eilutes pradėjusias žodį sekantį koloną kaip laukus slaptažodžio laukais, ne tik pateiktas</translation>
+        <translation>Rodyti visas eilutes, pradedančias žodžiu, po kurio eina dvitaškis, kaip slaptažodžio laukus, ne tik išvardytas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
@@ -400,7 +400,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>Įdiegimas OTP atidarymo eilutės reikalingas</translation>
+        <translation>Reikia įdiegti Pass OTP plėtinį</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
