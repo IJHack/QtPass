@@ -197,7 +197,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Leidėjai ieškoti į slaptažodžių failo turinį. Reikalauja atvirkštinių krypties kiekvienam failui ir gali būti lėtas dideliuose saugykluose.</translation>
+        <translation>Leidžia ieškoti slaptažodžių failo turinyje. Reikalauja iššifruoti kiekvieną failą ir gali būti lėta didelėse saugyklose.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
         <source>Generate GPG key pair</source>
-        <translation>Sukurti GPG raktų paryškinimą</translation>
+        <translation>Sukurti GPG raktų porą</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
@@ -286,7 +286,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
         <source>Pass</source>
-        <translation>Parole</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="827"/>
@@ -316,7 +316,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation>Profilio pavadinimas, naudojamas identifikuoti šią konfigūracijos profilių</translation>
+        <translation>Profilio pavadinimas, naudojamas identifikuoti šį konfigūracijos profilį</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
@@ -331,7 +331,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Signing Key</source>
-        <translation>Pirmaisinių žymėjimo raktas</translation>
+        <translation>Pasirašymo raktas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
