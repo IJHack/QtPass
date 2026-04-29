@@ -1098,7 +1098,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">OTP kodas nukopijuotas į iškarpinę</translation>
+        <translation>OTP kodas nukopijuotas į iškarpinę</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
