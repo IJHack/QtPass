@@ -1135,9 +1135,9 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
         <source>Found %n match(es)</source>
         <translation>
             <numerusform>Izraženo %n ustreznico</numerusform>
-            <numerusform>Izrašeno %n ustreznice</numerusform>
-            <numerusform>Izrašenih %n ustreznic</numerusform>
-            <numerusform>Izrašenih %n ustreznica</numerusform>
+            <numerusform>Izraženo %n ustreznice</numerusform>
+            <numerusform>Izraženih %n ustreznic</numerusform>
+            <numerusform>Izraženih %n ustreznica</numerusform>
         </translation>
     </message>
     <message numerus="yes">
