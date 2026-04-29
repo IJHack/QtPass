@@ -1544,7 +1544,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation>Ierobežot pārprotībām?</translation>
+        <translation>Vai piespiedu pārrakstīt?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
