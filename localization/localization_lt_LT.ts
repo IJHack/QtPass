@@ -611,7 +611,7 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Nebuvo galimybės nustatyti šifravimo raktą, .gpg-id failas trūksta ar yra neteisingas.</translation>
+        <translation>Nepavyko nuskaityti naudojamo šifravimo rakto, .gpg-id failas trūksta arba yra neteisingas.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
