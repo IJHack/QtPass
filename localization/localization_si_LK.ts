@@ -76,7 +76,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>විශේෂෙන කොටසේ අභාගවල පිළිබඳ මූල්‍ය සාර්ථකතාව විශේෂණ කරන්න</translation>
+        <translation>ක්‍රියාවලි ප්‍රතිදානය පෙන්වන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
