@@ -492,7 +492,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation>Sukurti slaptažodžių saugykla?</translation>
+        <translation>Sukurti slaptažodžių saugyklą?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
