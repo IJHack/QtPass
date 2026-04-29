@@ -383,7 +383,9 @@
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished">įrėšimo URL el. pašto adresas</translation>
+        <translation type="unfinished">prisijungimas
+URL
+el. paštas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
