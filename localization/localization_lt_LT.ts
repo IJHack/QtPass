@@ -687,7 +687,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>Atsikratymas iš naujo buvo atsisakytas, nes negalėjo sukurti Git atsildimo.</translation>
+        <translation>Pakartotinis šifravimas buvo nutrauktas, nes nepavyko sukurti Git atsarginės kopijos.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
