@@ -395,7 +395,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation type="unfinished">Sistemos dėklas nepasiekiamas</translation>
+        <translation>Sistemos dėklas nepasiekiamas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
@@ -477,17 +477,17 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store, kad jį gautumėte.&lt;br&gt;Jei jau tai padarėte, įsitikinkite, kad kartą jį paleidote, ir&lt;br&gt;kitame dialogo lange spustelėkite &quot;Autodetect&quot;.</translation>
+        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store, kad jį gautumėte.&lt;br&gt;Jei jau tai padarėte, įsitikinkite, kad kartą jį paleidote, ir&lt;br&gt;kitame dialogo lange spustelėkite &quot;Autodetect&quot;.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store&lt;br&gt;arba &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;atsisiųskite&lt;/a&gt; jį iš GnuPG.org</translation>
+        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store&lt;br&gt;arba &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;atsisiųskite&lt;/a&gt; jį iš GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;gpg&lt;/strong&gt; naudodami mėgstamą paketų valdymo sistemą&lt;br&gt;arba &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;atsisiųskite&lt;/a&gt; jį iš GnuPG.org</translation>
+        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;gpg&lt;/strong&gt; naudodami mėgstamą paketų valdymo sistemą&lt;br&gt;arba &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;atsisiųskite&lt;/a&gt; jį iš GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -611,7 +611,7 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Nebuvo galimybė nustatyti šifravimo raktą, .gpg-id failas trūksta ar yra neteisingas.</translation>
+        <translation>Nebuvo galimybės nustatyti šifravimo raktą, .gpg-id failas trūksta ar yra neteisingas.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
