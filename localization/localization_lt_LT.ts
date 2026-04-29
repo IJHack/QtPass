@@ -682,7 +682,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Nepavyko inspektuoti Git būsenos. Priešininkų šifravimas buvo atsisakytas.</translation>
+        <translation>Nepavyko inspektuoti Git būsenos. Pakartotinis šifravimas buvo atsisakytas.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
