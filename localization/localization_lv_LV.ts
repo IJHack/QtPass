@@ -492,7 +492,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation>Izveidot paroļu krātuvi?</translation>
+        <translation>Izveidot paroļu glabātuvi?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
