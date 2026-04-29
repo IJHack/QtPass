@@ -316,7 +316,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation>Profila vārds, izmantots identificēt šo konfigurācijas profiļu</translation>
+        <translation>Profila vārds, izmantots šī konfigurācijas profila identificēšanai</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
@@ -512,7 +512,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Krājuma pārvaldības katalogs %1 nav parast, vai tā darbība vēl nav ieviesta.</translation>
+        <translation>Mape %1 nešķiet paroles krātuve vai arī tā vēl nav inicializēta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
@@ -632,8 +632,8 @@ e-pasts</translation>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Nav pieejami jebkura salīdzinoši tālu atslēgas.
-Jūs nevarat dekriptēt jebkuru jauno ierosināto paroli!</translation>
+        <translation>Nevienai no izvēlētajām atslēgām nav pieejama slepenā atslēga.
+Jūs nevarēsiet atšifrēt nevienu no jaunpievienotajām parolēm!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -671,7 +671,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>Izveidojam atvērtu kopkopu</translation>
+        <translation>Izveidojam dublējuma kommitu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
@@ -682,7 +682,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Nevarēja pārbaudīt Git stāvokli. Pārencēšana tika atcelta.</translation>
+        <translation>Nevarēja pārbaudīt Git stāvokli. Pārešifrēšana tika atcelta.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
