@@ -1450,7 +1450,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>GPG īstenošanas atpakaļ pārvalde</translation>
+        <translation>GPG atslēgu pāra ģenerēšana</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
