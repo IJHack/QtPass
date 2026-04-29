@@ -390,7 +390,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version</translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versija </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
@@ -958,7 +958,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass yra grafinė sąsaja, skirta &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standartinei Unix slaptažodžių tvarkyklei.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass yra grafinė sąsaja, skirta &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standartinei Unix slaptažodžių tvarkyklei.&lt;/p&gt;
 &lt;p&gt;Praneškite apie bet kokias &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemas&lt;/a&gt;, kurias galite turėti su šia programine įranga.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Pirminis kodas&lt;/a&gt;&lt;/p&gt;</translation>
@@ -1319,7 +1319,7 @@ Tęsti?</translation>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished">Nepavyko eksportuoti viešojo rakto %1.
+        <translation>Nepavyko eksportuoti viešojo rakto %1.
 
 %2</translation>
     </message>
@@ -1598,7 +1598,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Pasirinkite, kurie naudotojai turėtų turėti galimybę iššifruoti šiame aplanke saugomus slaptažodžius.
+        <translation>Pasirinkite, kurie naudotojai turėtų turėti galimybę iššifruoti šiame aplanke saugomus slaptažodžius.
 Pastaba: esami failai nebus pakeisti ir išlaikys senus leidimus, kol jų neredaguosite.
 Mėlynos eilutės turi prieinamą slaptąjį raktą — pasirinkite vieną iš jų, kad galėtumėte iššifruoti.
 Juodos eilutės turi prieinamą šifravimo raktą ir jis yra patikimas — pasirinkite vieną iš jų, kad leistumėte kitiems iššifruoti.
@@ -1627,7 +1627,7 @@ Raudonos eilutės netinkamos, jūs negalėsite jų užšifruoti.</translation>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation type="unfinished">Trūksta raktų sąrašo</translation>
+        <translation>Trūksta raktų sąrašo</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
