@@ -71,7 +71,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>පිළිබඳ පත්‍ර තම්පුකරණය අසලේ</translation>
+        <translation>පේළි එතීම අක්‍රිය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
