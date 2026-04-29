@@ -1654,7 +1654,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Ustvarjanje para ključev GPG</translation>
+        <translation>GPG යතුරු යුගලය ජනනය කරමින්</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
