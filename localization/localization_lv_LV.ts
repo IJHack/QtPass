@@ -762,7 +762,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII apdrošināts GPG atslēgs</translation>
+        <translation>ASCII apdrošināts GPG atslēga</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
