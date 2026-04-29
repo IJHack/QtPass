@@ -351,7 +351,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
         <source>Current path</source>
-        <translation>Tiesioginis kelias</translation>
+        <translation>Dabartinis kelias</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
@@ -752,7 +752,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Įrašykite čia ASCII-armoruotą GPG raktą...</translation>
+        <translation>Įklijuokite čia ASCII-armoruotą GPG raktą...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -802,7 +802,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Sėkmingai įimportavo šifrą: %1</translation>
+        <translation>Sėkmingai įimportavo raktą: %1</translation>
     </message>
 </context>
 <context>
@@ -1284,7 +1284,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>Atsifraukykite slaptažodžius</translation>
+        <translation>Iš naujo užšifruokite slaptažodžius</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
@@ -1307,7 +1307,7 @@ Tęsti?</translation>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation>Eksportuoti viešąjį klaidiną</translation>
+        <translation>Eksportuoti viešąjį raktą</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
