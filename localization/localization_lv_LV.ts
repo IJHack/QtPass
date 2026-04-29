@@ -671,7 +671,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>Izveidojam dublējuma kommitu</translation>
+        <translation>Izveidojam dublējuma komitu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
