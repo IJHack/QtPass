@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Opsionalus: GPG raktas, naudojamasis patikrinimui .gpg-id failų integriteto. Leiskite tuščią, jei nereikia apsaugoti vartotojo sąrašo nuo pakeitimo.</translation>
+        <translation>Neprivaloma: GPG raktas, naudojamas .gpg-id failų vientisumui tikrinti. Palikite tuščią, jei nereikia apsaugoti vartotojų sąrašo nuo pakeitimų.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
