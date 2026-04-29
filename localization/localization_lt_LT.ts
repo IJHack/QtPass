@@ -677,7 +677,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Backup commit failed</source>
-        <translation>Ataskaitos priėmimo įrašas nepavyko</translation>
+        <translation>Atsarginio įrašo įvykdymas nepavyko</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
