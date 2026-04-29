@@ -663,7 +663,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="149"/>
         <location filename="../src/imitatepass.cpp" line="598"/>
         <source>Can not edit</source>
-        <translation>Ni mogoče urejati</translation>
+        <translation>සංස්කරණය කළ නොහැක</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
