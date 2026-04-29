@@ -965,7 +965,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Strādāt ar avotu</translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="390"/>
@@ -1001,7 +1001,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Strkl+F7</translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
@@ -1125,19 +1125,19 @@ You will not be able to change the user list!</source>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
-            <numerusform>Atroda %n atbilstošu(i) vienumu</numerusform>
-            <numerusform>Atrodas %n atbilstošus vienējumus</numerusform>
-            <numerusform>Atrodas %n atbilstošiem vienējumiem</numerusform>
+        <translation>
+            <numerusform>Atrasts %n atbilstošs vienums</numerusform>
+            <numerusform>Atrastas %n atbilstoši vienumi</numerusform>
+            <numerusform>Atrasti %n atbilstoši vienumu</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform>Izskatās %n iespēju</numerusform>
-            <numerusform>Izskatās %n iespējas</numerusform>
-            <numerusform>Izskatās %n iespējamām iespējām</numerusform>
+        <translation>
+            <numerusform>no %n ieraksta</numerusform>
+            <numerusform>no %n ierakstiem</numerusform>
+            <numerusform>no %n ierakstiem</numerusform>
         </translation>
     </message>
     <message>

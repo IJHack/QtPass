@@ -965,7 +965,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Atidaryti</translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="390"/>
@@ -991,7 +991,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
         <source>OTP</source>
-        <translation type="unfinished">OTV</translation>
+        <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
@@ -1001,7 +1001,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Kontroliuoti</translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
@@ -1134,10 +1134,10 @@ You will not be able to change the user list!</source>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform>Rodo %n atitikmus(</numerusform>
-            <numerusform>Rodo %n atitikimus(</numerusform>
-            <numerusform>Rodo %n atitikmių(</numerusform>
+        <translation>
+            <numerusform>Rodo %n atitikmus</numerusform>
+            <numerusform>Rodo %n atitikimus</numerusform>
+            <numerusform>Rodo %n atitikmių</numerusform>
         </translation>
     </message>
     <message>
@@ -1423,7 +1423,7 @@ Continue?</source>
         <location filename="../main/main.cpp" line="155"/>
         <location filename="../main/main.cpp" line="159"/>
         <source>LTR</source>
-        <translation type="unfinished">LTU</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
