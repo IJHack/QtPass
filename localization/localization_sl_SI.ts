@@ -708,7 +708,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Ni bilo mogoče preveriti datoteke .gpg-id imenika.</translation>
+        <translation>Ni bilo mogoče preveriti .gpg-id za imenik.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
