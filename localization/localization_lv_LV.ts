@@ -936,7 +936,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Neuzdumbības meklējuma modra atlases</translation>
+        <translation>Reģistrnejutīga meklējuma pārslēgšana</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
