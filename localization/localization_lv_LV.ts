@@ -1005,7 +1005,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Izveidot OTP un kopiēt uz iespiednes</translation>
+        <translation>Izveidot OTP un kopiēt uz starpliktuves</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
