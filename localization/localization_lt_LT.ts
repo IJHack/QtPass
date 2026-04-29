@@ -420,7 +420,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Atsakomybė prieigos kopijuoti</translation>
+        <translation>Kopijuoti į iškarpinę pagal poreikį</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
