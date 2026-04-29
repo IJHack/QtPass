@@ -395,7 +395,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation type="unfinished">Sistēmas paplāte nav pieejama</translation>
+        <translation>Sistēmas paplāte nav pieejama</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
@@ -472,22 +472,22 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished">GnuPG nav atrasts</translation>
+        <translation>GnuPG nav atrasts</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lūdzu, instalējiet GnuPG savā sistēmā.&lt;br&gt;Lai to iegūtu, instalējiet &lt;strong&gt;Ubuntu&lt;/strong&gt; no Microsoft Store.&lt;br&gt;Ja to jau izdarījāt, pārliecinieties, ka to vismaz vienu reizi palaidāt, un&lt;br&gt;nākamajā dialoglodziņā noklikšķiniet uz &quot;Autodetect&quot;.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Lūdzu, instalējiet GnuPG savā sistēmā.&lt;br&gt;Instalējiet &lt;strong&gt;Ubuntu&lt;/strong&gt; no Microsoft Store&lt;br&gt;vai &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lejupielādējiet&lt;/a&gt; to no GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation>Lūdzu, instalējiet GnuPG savā sistēmā.&lt;br&gt;Instalējiet &lt;strong&gt;gpg&lt;/strong&gt;, izmantojot savu iecienīto pakotņu pārvaldnieku,&lt;br&gt;vai &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lejupielādējiet&lt;/a&gt; to no GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
