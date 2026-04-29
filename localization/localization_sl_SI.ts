@@ -252,7 +252,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
         <source>Git</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
@@ -286,7 +286,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
         <source>Pass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="827"/>
@@ -296,7 +296,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
@@ -390,7 +390,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; različica </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
@@ -415,12 +415,12 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation>Vsi vnos morajo biti kopirani v območje kopiranja</translation>
+        <translation>Vedno kopiraj v odložišče</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Na zahtevanje kopiranje v notranjega uredila</translation>
+        <translation>Kopiranje v odložišče na zahtevo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
@@ -477,17 +477,17 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prosimo, namestite GnuPG na svoj sistem.&lt;br&gt;Namestite &lt;strong&gt;Ubuntu&lt;/strong&gt; iz Microsoft Store, da ga dobite.&lt;br&gt;Če ste to že storili, se prepričajte, da ste ga vsaj enkrat zagnali, in&lt;br&gt;v naslednjem pogovornem oknu kliknite &quot;Autodetect&quot;.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prosimo, namestite GnuPG na svoj sistem.&lt;br&gt;Namestite &lt;strong&gt;Ubuntu&lt;/strong&gt; iz Microsoft Store&lt;br&gt;ali ga &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;prenesite&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prosimo, namestite GnuPG na svoj sistem.&lt;br&gt;Namestite &lt;strong&gt;gpg&lt;/strong&gt; s priljubljenim upravljalnikom paketov&lt;br&gt;ali ga &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;prenesite&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -567,7 +567,7 @@ e-pošta</translation>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Shrni javni ključ</translation>
+        <translation>Shrani javni ključ</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
@@ -605,7 +605,7 @@ e-pošta</translation>
         <location filename="../src/imitatepass.cpp" line="149"/>
         <location filename="../src/imitatepass.cpp" line="598"/>
         <source>Can not edit</source>
-        <translation>Niste lahko urejeni</translation>
+        <translation>Ni mogoče urejati</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
@@ -643,7 +643,7 @@ Ne morete razšifriral novih dodanih gesel!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation>Napacno podpisano %1.</translation>
+        <translation>Podpisovanje %1 ni uspelo.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
@@ -835,7 +835,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dolžina geselske fraze ni omejena, izbrati pa jo je treba skrbno. Z varnostnega vidika je geselska fraza za odklep zasebnega ključa ena najšibkejših točk v GnuPG (in drugih sistemih za šifriranje z javnim ključem), saj je edina zaščita, ki jo imate, če drug posameznik dobi vaš zasebni ključ. &lt;br/&gt;Idealno geselska fraza ne bi smela uporabljati besed iz slovarja in bi morala mešati velike in male črke ter uporabljati nečrkovne znake.&lt;br/&gt;Dobra geselska fraza je ključnega pomena za varno uporabo GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -855,7 +855,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Za napredne možnosti glejte &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG priročnik&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
@@ -880,7 +880,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ta postopek lahko traja nekaj minut.&lt;br /&gt;Ustvariti moramo veliko naključnih bajtov. Med ustvarjanjem praštevil priporočamo izvajanje drugih dejanj (tipkanje, premikanje miške, uporaba diskov); tako naključnemu generatorju omogočite več entropije.</translation>
     </message>
 </context>
 <context>
@@ -958,14 +958,17 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;QtPass je grafični vmesnik za &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardni Unix upravljalnik gesel.&lt;/p&gt;
+&lt;p&gt;Prosimo, prijavite morebitne &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;težave&lt;/a&gt; s to programsko opremo.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Izvorna koda&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dodaj geslo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -1168,22 +1171,22 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> in vso vsebino? &lt;br&gt;&lt;strong&gt;Pozor: v dani mapi so nepričakovane datoteke, pred nadaljevanjem jih preverite.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izbrišem mapo?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izbrišem geslo?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ali ste prepričani, da želite izbrisati %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
@@ -1233,13 +1236,14 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kaj je to?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nova mapa: 
+(Postavljena bo v %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
@@ -1251,33 +1255,33 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mape ni bilo mogoče ustvariti: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Datoteke .gpg-id ni bilo mogoče ustvariti v: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Preimenuj datoteko</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Preimenuj mapo v: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Preimenuj datoteko v: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Imenik ne obstaja: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
@@ -1293,7 +1297,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ponovno šifriraj vsa gesla v %1?
+
+To bo ponovno šifriralo VSE datoteke gesel v tej mapi z uporabo trenutnih prejemnikov, opredeljenih v .gpg-id.
+
+To lahko prepiše veliko datotek in tega ni mogoče enostavno razveljaviti.
+
+Nadaljujem?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
@@ -1328,7 +1338,7 @@ Continue?</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;Skupna raba gesel z GPG&lt;/h3&gt;&lt;p&gt;Za skupno rabo gesel z drugimi uporabniki:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Izvozite svoj javni ključ&lt;/b&gt; in ga pošljite članom ekipe&lt;/li&gt;&lt;li&gt;&lt;b&gt;Uvozite javne ključe članov ekipe&lt;/b&gt; v svoj obesek za GPG ključe&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ponovno šifrirajte gesla&lt;/b&gt;, da jih lahko vsi prejemniki dešifrirajo&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Gesla lahko dešifrirajo samo osebe z ujemajočim zasebnim ključem.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Nasvet:&lt;/b&gt; Uporabljajte isti GPG ključ za vse skupne mape.&lt;/p&gt;&lt;p&gt;Več podrobnosti najdete v pogostih vprašanjih.&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1464,7 +1474,8 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">fusedav se je nepričakovano končal
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
@@ -1589,7 +1600,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Izberite, kateri uporabniki naj bi lahko dešifrirali gesla, shranjena v tej mapi.
+Opomba: obstoječe datoteke ne bodo spremenjene in bodo ohranile stara dovoljenja, dokler jih ne uredite.
+Modri vnosi imajo na voljo zasebni ključ — izberite enega od njih, da boste lahko dešifrirali.
+Črni vnosi imajo na voljo šifrirni ključ in je zaupan — izberite enega od njih, da omogočite drugim dešifriranje.
+Rdeči vnosi niso veljavni, šifriranje za te ne bo mogoče.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
@@ -1624,7 +1639,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ključa ni mogoče najti v obesku za ključe</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
