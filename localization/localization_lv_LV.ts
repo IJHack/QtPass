@@ -643,7 +643,7 @@ Jūs nevarēsiet atšifrēt nevienu no jaunpievienotajām parolēm!</translation
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished">Neizdevās parakstīt %1.</translation>
+        <translation>Neizdevās parakstīt %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
@@ -835,8 +835,8 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translatorcomment>TODO(lv_LV): Intentionally left untranslated for now; fallback to source text until reviewed by a Latvian translator.</translatorcomment>
-        <translation type="unfinished"></translation>
+        <translatorcomment>TODO(lv_LV): Security-critical text translated; please review wording with a native Latvian translator.</translatorcomment>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Paroles frāzes garumam nav ierobežojuma, un tā ir rūpīgi jāizvēlas. No drošības viedokļa paroles frāze privātās atslēgas atbloķēšanai ir viens no vājākajiem punktiem GnuPG (kā arī citās publiskās atslēgas šifrēšanas sistēmās), jo tā ir vienīgā aizsardzība, ja cita persona iegūst jūsu privāto atslēgu. &lt;br/&gt;Ideālā gadījumā paroles frāzē nevajadzētu izmantot vārdnīcas vārdus, un tajā vajadzētu kombinēt gan lielos un mazos burtus, gan arī izmantot ar burtiem nesaistītas rakstzīmes.&lt;br/&gt;Laba paroles frāze ir būtiska drošai GnuPG lietošanai.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -866,7 +866,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished">Nosaukumam jābūt vismaz 5 rakstzīmes garam.</translation>
+        <translation>Nosaukumam jābūt vismaz 5 rakstzīmes garam.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
@@ -881,7 +881,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation>Šī darbība var aizņemt dažas minūtes.&lt;br /&gt;Mums jāģenerē daudz nejaušu baitu. Pirmskaitļu ģenerēšanas laikā ieteicams veikt kādas citas darbības (rakstīt ar tastatūru, kustināt peli, izmantot diskus); tas dod nejaušo skaitļu ģeneratoram lielāku iespēju iegūt pietiekamu entropiju.</translation>
     </message>
 </context>
 <context>
@@ -941,7 +941,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished">Pārslēgt no reģistra neatkarīgu satura meklēšanu</translation>
+        <translation>Pārslēgt no reģistra neatkarīgu satura meklēšanu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
