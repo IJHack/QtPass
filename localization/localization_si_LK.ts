@@ -176,7 +176,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
         <source>Current path</source>
-        <translation>විස්තර දීම</translation>
+        <translation type="unfinished">වත්මන් මාර්ගය</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -218,17 +218,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically push</source>
-        <translation>සාමාන්‍ය සඳහා එලෙකුතු කරන්න</translation>
+        <translation type="unfinished">ස්වයංක්‍රීයව තල්ලු කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation>සාමාන්‍ය සඳහා පිහිටීම කරන්න</translation>
+        <translation type="unfinished">ස්වයංක්‍රීයව ලබා ගන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
         <source>Extensions:</source>
-        <translation>වැඩි මුදල්:</translation>
+        <translation type="unfinished">විස්තාරක:</translation>
     </message>
     <message>
         <source>Use pass otp extension</source>
@@ -237,7 +237,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
         <source>System:</source>
-        <translation>ද්‍රයත්ව කණ්ඩායම:</translation>
+        <translation type="unfinished">පද්ධතිය:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
