@@ -545,7 +545,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>Iekopyēt īpašuma leņķī</translation>
+        <translation>Kopēt starpliktuvē</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -599,7 +599,7 @@ e-pasts</translation>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>Segnojums par %1 ir neierast.</translation>
+        <translation>Paraksts par %1 ir nederīgs.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="149"/>
@@ -611,7 +611,7 @@ e-pasts</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Nepieciešama šifrēšanas koda atsauces faila piekļuve nav iespējama, .gpg-id faila trūkums vai neierast.</translation>
+        <translation>Nepieciešama šifrēšanas koda atsauces faila piekļuve nav iespējama, .gpg-id fails trūkst vai ir nederīgs.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -1648,12 +1648,12 @@ Sarkanie ieraksti nav derīgi; jūs nevarēsiet tos šifrēt.</translation>
     <message>
         <location filename="../src/usersdialog.cpp" line="336"/>
         <source>[EXPIRED] </source>
-        <translation>[IETRUŠTS] </translation>
+        <translation>[BEIDZIES] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[PARTIAL] </source>
-        <translation>[PĀRZĪMĒTS] </translation>
+        <translation>[DAĻĒJS] </translation>
     </message>
 </context>
 </TS>
