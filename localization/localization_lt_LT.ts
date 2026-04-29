@@ -1004,7 +1004,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Sukurti OTP ir išsaugoti į leidimų lankstumą</translation>
+        <translation>Sukurti OTP ir nukopijuoti į iškarpinę</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
