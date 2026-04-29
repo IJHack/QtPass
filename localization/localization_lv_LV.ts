@@ -1526,7 +1526,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard cleared</source>
-        <translation>Iekrētāja lekts ir atvērts</translation>
+        <translation>Starpliktuve notīrīta</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
