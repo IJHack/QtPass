@@ -1671,7 +1671,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Vnesite geslo za povezavo z WebDAV:</translation>
+        <translation>WebDAV වෙත සම්බන්ධ වීමට මුරපදය ඇතුළත් කරන්න:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
