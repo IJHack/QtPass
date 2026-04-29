@@ -361,7 +361,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Šablonai prideda papildomus laukus slaptažodžio generavimo dialogo ir slaptažodžio rodyklėje.</translation>
+        <translation>Šablonai prideda papildomus laukus slaptažodžio generavimo dialogo ir slaptažodžio rodinyje.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
@@ -477,7 +477,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store, kad jį gautumėte.&lt;br&gt;Jei jau tai padarėte, įsitikinkite, kad kartą jį paleidote, ir&lt;br&gt;kitame dialogo lange spustelėkite &quot;Autodetect&quot;.</translation>
+        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store, kad jį gautumėte.&lt;br&gt;Jei jau tai padarėte, įsitikinkite, kad kartą jį paleidote, ir&lt;br&gt;kitame dialogo lange spustelėkite &quot;Automatiškai aptikti&quot;.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
@@ -1344,7 +1344,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation>Neteisinga slaptažodžio ilgį</translation>
+        <translation>Neteisingas slaptažodžio ilgis</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
@@ -1407,7 +1407,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation>Raktų skaičiavimo sistema:</translation>
+        <translation>Simbolių rinkinys:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
@@ -1449,7 +1449,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Sukurti GPG atidarymo parą</translation>
+        <translation>Sukurti GPG raktų porą</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
