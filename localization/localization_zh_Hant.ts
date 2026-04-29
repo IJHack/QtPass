@@ -276,7 +276,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;使用pass</translation>
+        <translation>(&amp;U) 使用pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
@@ -1787,27 +1787,27 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation>&amp;隱藏</translation>
+        <translation>(&amp;H) 隱藏</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>最小化(&amp;N)</translation>
+        <translation>(&amp;N) 最小化</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>最大化(&amp;X)</translation>
+        <translation>(&amp;X) 最大化</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp;恢復</translation>
+        <translation>(&amp;R) 恢復</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation>&amp;退出</translation>
+        <translation>(&amp;Q) 退出</translation>
     </message>
 </context>
 <context>
