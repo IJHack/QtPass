@@ -1295,7 +1295,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">Iš naujo užšifruoti visus slaptažodžius aplanke %1?
+        <translation>Iš naujo užšifruoti visus slaptažodžius aplanke %1?
 
 Tai iš naujo užšifruos VISUS slaptažodžių failus šiame aplanke naudojant dabartinius gavėjus, apibrėžtus .gpg-id.
 
