@@ -1408,7 +1408,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation>Zīmes iekārta:</translation>
+        <translation>Rakstzīmju kopa:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
