@@ -1041,7 +1041,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="444"/>
         <source>Manage who can read password in folder</source>
-        <translation>Pārvaldīt, kuri var lasīt paroli piederumā</translation>
+        <translation>Pārvaldīt, kuri var lasīt paroli mapē</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="449"/>
