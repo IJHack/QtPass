@@ -1113,7 +1113,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished">Ieškoma: %1</translation>
+        <translation>Ieškoma: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
