@@ -403,7 +403,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished">ප෗දන්නු කිරීමේ දIRECTORY විසඳීමට නොහැක?</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
@@ -1298,7 +1298,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Ali ste prepričani, da želite izbrisati %1%2?</translation>
+        <translation>ඔබට ඇත්තටම %1%2 සකල කිරීමට අවශ්‍යද?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
@@ -1875,17 +1875,17 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="333"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">සමානතා ප්‍රකාශනය</translation>
+        <translation type="unfinished">[සමානතා ප්‍රකාශනය] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="336"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">පෙරිවේදුණු</translation>
+        <translation type="unfinished">[පෙරිවේදුණු] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">භාවිතා කළමනාකරණය</translation>
+        <translation type="unfinished">[භාවිතා කළමනාකරණය] </translation>
     </message>
 </context>
 </TS>
