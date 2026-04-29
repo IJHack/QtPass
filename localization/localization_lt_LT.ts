@@ -1274,7 +1274,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation type="unfinished">Pervadinti failą į: </translation>
+        <translation>Pervadinti failą į: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
