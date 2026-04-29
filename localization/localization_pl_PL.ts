@@ -1324,7 +1324,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
-        <translation>Brak danych wyjściowych z GPG.</translation>
+        <translation>Brak danych wyjściowych z gpg.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
