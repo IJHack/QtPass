@@ -802,7 +802,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Sėkmingai įimportavo šifrą: %1</translation>
+        <translation>Sėkmingai įimportavo raktą: %1</translation>
     </message>
 </context>
 <context>
