@@ -797,7 +797,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Niste lahko prepoznali IDa vnosnega ključa iz GPG izida.</translation>
+        <translation>Niste lahko prepoznali IDa vnosnega ključa iz GPG izhoda.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
