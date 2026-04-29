@@ -1108,7 +1108,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
-        <translation type="unfinished">Slaptažodis ir turinys paslėpti</translation>
+        <translation>Slaptažodis ir turinys paslėpti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
