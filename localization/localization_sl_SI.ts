@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Dodatno: GPG ključ za podpisanje datotek .gpg-id za overitev intaktnosti. Ostavite prazno, če ne potrebujete zaščititi popisa uporabnikov od manipulacij.</translation>
+        <translation>Neobvezno: GPG ključ za podpisovanje datotek .gpg-id za preverjanje integritete. Pustite prazno, razen če morate preprečiti nepooblaščeno spreminjanje seznamov uporabnikov.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -512,7 +512,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Zaščitno mesto %1 ne glede na to, da je geslo-zaporedje ali še ni inicializirano.</translation>
+        <translation>Mapa %1 očitno ni shramba gesel ali pa še ni bila inicializirana.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
@@ -621,7 +621,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Napakljivo pri odpravi .gpg-id za napiševanje.</translation>
+        <translation>Ni bilo mogoče odpreti datoteke .gpg-id za pisanje.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
@@ -666,7 +666,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Napacno je bil zamijenjen %1. Izvorno se je obnovilo.</translation>
+        <translation>Zamenjava %1 ni uspela. Izvorna datoteka je bila obnovljena.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
@@ -708,7 +708,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Nismo lahko preverili .gpg-id za kataložno naročilo.</translation>
+        <translation>Ni bilo mogoče preveriti datoteke .gpg-id imenika.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
@@ -802,7 +802,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Uspesno je bil pripravljen ključ: %1</translation>
+        <translation>Uspešno uvožen ključ: %1</translation>
     </message>
 </context>
 <context>
@@ -905,7 +905,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Prešetite v geselskih podrobnostih (pass grep)</translation>
+        <translation>Iskanje znotraj vsebine gesel (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -915,17 +915,17 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Pretraga vsebine preklop</translation>
+        <translation>Preklop iskanja po vsebini</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Preklop na rešetko za pretrago unovčenih gesel v datotekah</translation>
+        <translation>Preklopi način iskanja, da se išče znotraj datotek z gesli</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation>Nepoštovanje velikosti črkalja pretraga</translation>
+        <translation>Iskanje brez razlikovanja velikosti črk</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -935,12 +935,12 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Preklop na nepoštovanje velikosti črkalja</translation>
+        <translation>Preklop razlikovanja velikosti črk</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation>Preni razliko veljivosti veljavnosti vsebine</translation>
+        <translation>Preklopi iskanje po vsebini brez razlikovanja velikosti črk</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
@@ -1001,7 +1001,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Generiraj OTP in kopiraj v območje za preskuševanje</translation>
+        <translation>Generiraj OTP in kopiraj v odložišče</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
@@ -1299,19 +1299,19 @@ Continue?</source>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation>Izvozi javno kljubico</translation>
+        <translation>Izvozi javni ključ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Izvozi vaš javni ključ&lt;/h3&gt;&lt;p&gt;Ni nastavljen ključ za podpisovanje. Nastavite ga v nastavitvah QtPass &gt; Ključe GPG, ali izvedite to v terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;vaš-kljuc-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ta potem pošljite datoteko svojim timovcem.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Izvozite svoj javni ključ&lt;/h3&gt;&lt;p&gt;Ključ za podpisovanje ni nastavljen. Nastavite ga v Nastavitvah QtPass &amp;gt; Ključi GPG ali zaženite to v terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;vaš-id-ključa&amp;gt;&lt;/pre&gt;&lt;p&gt;Nato datoteko pošljite svojim sodelavcem.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation>Niste lahko izvošili javnega ključa za %1. 
+        <translation>Ni bilo mogoče izvoziti javnega ključa za %1.
 
 %2</translation>
     </message>
@@ -1441,13 +1441,13 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Generiranje GPG klicove parove</translation>
+        <translation>Generiranje GPG para ključev</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Napacno povezovanje z WebDAV:
+        <translation>Neuspešna povezava z WebDAV:
 </translation>
     </message>
     <message>
@@ -1516,12 +1516,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard cleared</source>
-        <translation>Izdelano je obnovljeno vsebino uredilaškega panelja</translation>
+        <translation>Odložišče izpraznjeno</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation>Niste izdelali obnovitve vsebine uredilaškega panelja</translation>
+        <translation>Odložišče ni izpraznjeno</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
@@ -1594,12 +1594,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation>Pretražuj uporabnike</translation>
+        <translation>Iskanje uporabnikov</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>Prikaži nepolne ključev</translation>
+        <translation>Prikaži neuporabne ključe</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
