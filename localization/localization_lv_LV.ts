@@ -692,7 +692,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Atjaunināšana no paroles kataloga %1</translation>
+        <translation>Pāršifrēšana no paroles kataloga %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
