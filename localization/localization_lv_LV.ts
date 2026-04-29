@@ -1359,7 +1359,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Nevar generēt paroli, nav iestatīto konfigurācijā noteiktajās rakstzīmju sarakstā izvēlētos!</translation>
+        <translation>Nevar ģenerēt paroli, jo konfigurācijā nav norādītas rakstzīmes, no kurām izvēlēties!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
