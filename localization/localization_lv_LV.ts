@@ -737,7 +737,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importējiet GPG publisko atslēgu no faila vai ielīmējiet to zemāk. Atslēgai jābūt ASCII-armored formātā.</translation>
+        <translation>Importējiet GPG publisko atslēgu no faila vai ielīmējiet to zemāk. Atslēgai jābūt ASCII armor-formātā.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -752,7 +752,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Ievietojiet ASCII apdrošinātu GPG atslēgu šeit...</translation>
+        <translation>Ievietojiet ASCII armor-formātā esošu GPG atslēgu šeit...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -762,7 +762,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII apdrošināts GPG atslēga</translation>
+        <translation>GPG atslēga ASCII armor-formātā</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -785,7 +785,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 neizskatās pēc ASCII-armored GPG atslēgas. Vispirms pārveidojiet to ar &lt;code&gt;gpg --armor --export&lt;/code&gt; vai ielīmējiet armored bloku no &lt;b&gt;starpliktuves&lt;/b&gt;.</translation>
+        <translation>%1 neizskatās pēc ASCII armor-formātā GPG atslēgas. Vispirms pārveidojiet to ar &lt;code&gt;gpg --armor --export&lt;/code&gt; vai ielīmējiet ASCII armor-formātā bloku no &lt;b&gt;starpliktuves&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
