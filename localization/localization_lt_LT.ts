@@ -591,7 +591,7 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="141"/>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpgid file signature!</source>
+        <source>Check .gpg-id file signature!</source>
         <translation>Peržiūrėti .gpgid failo parašą!</translation>
     </message>
     <message>
@@ -752,7 +752,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Įklijuokite čia ASCII-armoruotą GPG raktą...</translation>
+        <translation>Įklijuokite čia ASCII šarvuotą GPG raktą...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -762,7 +762,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII-armoruotas GPG kodas</translation>
+        <translation>ASCII šarvuotas GPG raktas</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -785,7 +785,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 neatrodo kaip ASCII-armoruotas GPG raktas. Pirmiausia konvertuokite jį naudodami &lt;code&gt;gpg --armor --export&lt;/code&gt;, arba įklijuokite armoruotą bloką per &lt;b&gt;Iš iškarpinės&lt;/b&gt;.</translation>
+        <translation>%1 neatrodo kaip ASCII šarvuotas GPG raktas. Pirmiausia konvertuokite jį naudodami &lt;code&gt;gpg --armor --export&lt;/code&gt;, arba įklijuokite šarvuotą bloką per &lt;b&gt;Iš iškarpinės&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -802,7 +802,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Sėkmingai įimportavo raktą: %1</translation>
+        <translation>Sėkmingai importavo raktą: %1</translation>
     </message>
 </context>
 <context>
