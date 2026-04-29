@@ -592,7 +592,7 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpg-id file signature!</source>
-        <translation>Peržiūrėti .gpgid failo parašą!</translation>
+        <translation>Peržiūrėti .gpg-id failo parašą!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
