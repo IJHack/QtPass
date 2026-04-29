@@ -1280,7 +1280,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Directory does not exist: %1</source>
-        <translation>Mērķtiecības kataloga neeksistē: %1</translation>
+        <translation>Katalogs neeksistē: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
