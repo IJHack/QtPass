@@ -950,7 +950,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Welcome to QtPass</source>
-        <translation>Sveiki atsiunte, QtPass</translation>
+        <translation>Sveiki atvykę, QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
