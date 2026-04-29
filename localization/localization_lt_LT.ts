@@ -1269,7 +1269,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished">Pervadinti aplanką į: </translation>
+        <translation>Pervadinti aplanką į: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
