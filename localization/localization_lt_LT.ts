@@ -1224,7 +1224,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation type="unfinished">Eksportuoti mano viešąjį raktą...</translation>
+        <translation>Eksportuoti mano viešąjį raktą...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
