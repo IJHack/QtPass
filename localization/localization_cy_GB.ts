@@ -560,14 +560,14 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation>Wedi'i gopïo!</translation>
+        <translation>Wedi&apos;i gopïo!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Cadw'r allwedd gyhoeddus</translation>
+        <translation>Cadw&apos;r allwedd gyhoeddus</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
@@ -737,7 +737,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Mewnforiwch allwedd gyhoeddus GPG o ffeil neu gludwch hi isod. Dylai'r allwedd fod ar ffurf ASCII-armored.</translation>
+        <translation>Mewnforiwch allwedd gyhoeddus GPG o ffeil neu gludwch hi isod. Dylai&apos;r allwedd fod ar ffurf ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -747,7 +747,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation>O'r clipfwrdd</translation>
+        <translation>O&apos;r clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
@@ -785,7 +785,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>Nid yw %1 yn edrych fel allwedd GPG ASCII-armored. Trosiwch hi'n gyntaf gyda &lt;code&gt;gpg --armor --export&lt;/code&gt;, neu gludwch y bloc ASCII-armored drwy &lt;b&gt;O'r clipfwrdd&lt;/b&gt;.</translation>
+        <translation>Nid yw %1 yn edrych fel allwedd GPG ASCII-armored. Trosiwch hi&apos;n gyntaf gyda &lt;code&gt;gpg --armor --export&lt;/code&gt;, neu gludwch y bloc ASCII-armored drwy &lt;b&gt;O&apos;r clipfwrdd&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -802,7 +802,7 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Allwedd wedi'i mewnforio'n llwyddiannus: %1</translation>
+        <translation>Allwedd wedi&apos;i mewnforio&apos;n llwyddiannus: %1</translation>
     </message>
 </context>
 <context>
@@ -1030,7 +1030,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation>Clirio'r allbwn</translation>
+        <translation>Clirio&apos;r allbwn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
@@ -1315,39 +1315,39 @@ Expire-Date: 0
         <translation>Beth yw hwn?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
-        <source>Export Public Key</source>
-        <translation>Allforio'r allwedd gyhoeddus</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Allforio'ch allwedd gyhoeddus&lt;/h3&gt;&lt;p&gt;Nid oes allwedd lofnodi wedi'i ffurfweddu. Gosodwch un yn Gosodiadau QtPass &amp;gt; allweddi GPG, neu rhedwch hwn mewn terfynell:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Yna anfonwch y ffeil at aelodau eich tîm.&lt;/p&gt;</translation>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <source>Export Public Key</source>
+        <translation>Allforio&apos;r allwedd gyhoeddus</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
+        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Allforio&apos;ch allwedd gyhoeddus&lt;/h3&gt;&lt;p&gt;Nid oes allwedd lofnodi wedi&apos;i ffurfweddu. Gosodwch un yn Gosodiadau QtPass &amp;gt; allweddi GPG, neu rhedwch hwn mewn terfynell:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Yna anfonwch y ffeil at aelodau eich tîm.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation>Methwyd allforio'r allwedd gyhoeddus ar gyfer %1.
+        <translation>Methwyd allforio&apos;r allwedd gyhoeddus ar gyfer %1.
 
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>Dim allbwn gan gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Rhannu cyfrineiriau gyda GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Rhannu cyfrineiriau gyda GPG&lt;/h3&gt;&lt;p&gt;I rannu cyfrineiriau gyda defnyddwyr eraill:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Allforiwch eich allwedd gyhoeddus&lt;/b&gt; ac anfonwch hi at aelodau eich tîm&lt;/li&gt;&lt;li&gt;&lt;b&gt;Mewnforiwch allweddi cyhoeddus aelodau eich tîm&lt;/b&gt; i'ch allweddell GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ail-amgryptiwch y cyfrineiriau&lt;/b&gt; fel y gall pob derbynnydd eu dadgryptio&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Dim ond pobl sydd ag allwedd gyfrinachol gyfatebol sy'n gallu dadgryptio'r cyfrineiriau.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Awgrym:&lt;/b&gt; Defnyddiwch yr un allwedd GPG ar gyfer pob ffolder a rennir.&lt;/p&gt;&lt;p&gt;Gweler y Cwestiynau Cyffredin am ragor o fanylion.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Rhannu cyfrineiriau gyda GPG&lt;/h3&gt;&lt;p&gt;I rannu cyfrineiriau gyda defnyddwyr eraill:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Allforiwch eich allwedd gyhoeddus&lt;/b&gt; ac anfonwch hi at aelodau eich tîm&lt;/li&gt;&lt;li&gt;&lt;b&gt;Mewnforiwch allweddi cyhoeddus aelodau eich tîm&lt;/b&gt; i&apos;ch allweddell GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ail-amgryptiwch y cyfrineiriau&lt;/b&gt; fel y gall pob derbynnydd eu dadgryptio&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Dim ond pobl sydd ag allwedd gyfrinachol gyfatebol sy&apos;n gallu dadgryptio&apos;r cyfrineiriau.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Awgrym:&lt;/b&gt; Defnyddiwch yr un allwedd GPG ar gyfer pob ffolder a rennir.&lt;/p&gt;&lt;p&gt;Gweler y Cwestiynau Cyffredin am ragor o fanylion.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -1718,7 +1718,7 @@ Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Mewnforio allwedd GPG o ffeil neu o'r clipfwrdd</translation>
+        <translation>Mewnforio allwedd GPG o ffeil neu o&apos;r clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>

@@ -1275,18 +1275,18 @@ Expire-Date: 0
         <translation>Wat ass dat?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>Ëffentleche Schlëssel exportéieren</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Ären ëffentleche Schlëssel exportéieren&lt;/h3&gt;&lt;p&gt;Et ass kee Signaturschlëssel konfiguréiert. Setzt een an de QtPass-Astellungen &amp;gt; GPG-Schlësselen, oder lafft Folgendes an engem Terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Dann schéckt d&apos;Datei un Är Teammemberen.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1295,17 +1295,17 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>Keng Ausgab vum gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Passwierder mat GPG deelen</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Passwierder mat GPG deelen&lt;/h3&gt;&lt;p&gt;Fir Passwierder mat anere Benotzer ze deelen:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportéiert Ären ëffentleche Schlëssel&lt;/b&gt; an schéckt en un Är Teammemberen&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importéiert d&apos;ëffentlech Schlësselen vun Ären Teammemberen&lt;/b&gt; an Äre GPG-Schlësselbond&lt;/li&gt;&lt;li&gt;&lt;b&gt;Verschlësselt d&apos;Passwierder nei&lt;/b&gt; sou datt all Empfänger se entschlësselen kann&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Nëmme Persounen mat engem passende geheime Schlëssel kënnen d&apos;Passwierder entschlësselen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Benotzt deeselwechte GPG-Schlëssel fir all gedeelt Dossieren.&lt;/p&gt;&lt;p&gt;Kuckt d&apos;FAQ fir méi Detailer.&lt;/p&gt;</translation>
     </message>

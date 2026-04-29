@@ -1243,18 +1243,18 @@ You will not be able to decrypt any newly added passwords!</source>
         <translation>ما هذا؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>تصدير المفتاح العمومي</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;صدّر مفتاحك العمومي&lt;/h3&gt;&lt;p&gt;لم يتم إعداد أي مفتاح توقيع. حدد واحداً في إعدادات QtPass &amp;gt; مفاتيح GPG، أو شغّل ما يلي في الطرفية:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;ثم أرسل الملف إلى أعضاء فريقك.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1263,17 +1263,17 @@ You will not be able to decrypt any newly added passwords!</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>لا توجد مخرجات من gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>مشاركة كلمات السر باستخدام GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;مشاركة كلمات السر باستخدام GPG&lt;/h3&gt;&lt;p&gt;لمشاركة كلمات السر مع المستخدمين الآخرين:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;صدّر مفتاحك العمومي&lt;/b&gt; وأرسله إلى أعضاء الفريق&lt;/li&gt;&lt;li&gt;&lt;b&gt;استورد المفاتيح العمومية لأعضاء الفريق&lt;/b&gt; إلى حلقة مفاتيح GPG الخاصة بك&lt;/li&gt;&lt;li&gt;&lt;b&gt;أعد تشفير كلمات السر&lt;/b&gt; حتى يتمكن جميع المستلمين من فك تشفيرها&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;فقط الأشخاص الذين لديهم مفتاح سري مطابق يمكنهم فك تشفير كلمات السر.&lt;/p&gt;&lt;p&gt;&lt;b&gt;نصيحة:&lt;/b&gt; استخدم نفس مفتاح GPG لجميع المجلدات المشتركة.&lt;/p&gt;&lt;p&gt;انظر الأسئلة الشائعة لمزيد من التفاصيل.&lt;/p&gt;</translation>
     </message>

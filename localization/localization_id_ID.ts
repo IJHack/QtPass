@@ -5,303 +5,252 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
-        <location filename="../src/ui_configdialog.h" line="897"/>
         <source>Configuration</source>
         <translation>Konfigurasi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
-        <location filename="../src/ui_configdialog.h" line="946"/>
         <source>Settings</source>
         <translation>Pengaturan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
-        <location filename="../src/ui_configdialog.h" line="898"/>
         <source>Clipboard behaviour:</source>
         <translation>Perilaku clipboard:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
-        <location filename="../src/ui_configdialog.h" line="899"/>
         <source>Use primary selection</source>
         <translation>Gunakan seleksi utama</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
-        <location filename="../src/ui_configdialog.h" line="900"/>
         <source>Autoclear after:</source>
         <translation>Bersihkan otomatis setelah:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
-        <location filename="../src/ui_configdialog.h" line="901"/>
-        <location filename="../src/ui_configdialog.h" line="906"/>
         <source>Seconds</source>
         <translation>Detik</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
-        <location filename="../src/ui_configdialog.h" line="902"/>
         <source>Content panel behaviour:</source>
         <translation>Perilaku panel konten:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
-        <location filename="../src/ui_configdialog.h" line="903"/>
         <source>Hide content</source>
         <translation>Sembunyikan konten</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
-        <location filename="../src/ui_configdialog.h" line="904"/>
         <source>Hide password</source>
         <translation>Sembunyikan kata sandi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
-        <location filename="../src/ui_configdialog.h" line="905"/>
         <source>Autoclear panel after:</source>
         <translation>Bersihkan panel otomatis setelah:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
-        <location filename="../src/ui_configdialog.h" line="907"/>
         <source>Use a monospace font</source>
         <translation>Gunakan font monospace</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
-        <location filename="../src/ui_configdialog.h" line="908"/>
         <source>Display the files content as-is</source>
         <translation>Tampilkan konten berkas apa adanya</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
-        <location filename="../src/ui_configdialog.h" line="909"/>
         <source>No line wrapping</source>
         <translation>Tanpa pembungkusan baris</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
-        <location filename="../src/ui_configdialog.h" line="910"/>
         <source>Show process output</source>
         <translation>Tampilkan keluaran proses</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
-        <location filename="../src/ui_configdialog.h" line="911"/>
         <source>Password Generation:</source>
         <translation>Pembuatan Kata Sandi:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
-        <location filename="../src/ui_configdialog.h" line="912"/>
         <source>Password Length:</source>
         <translation>Panjang Kata Sandi:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
-        <location filename="../src/ui_configdialog.h" line="913"/>
         <source>Characters</source>
         <translation>Karakter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
-        <location filename="../src/ui_configdialog.h" line="914"/>
         <source>Use characters:</source>
         <translation>Gunakan karakter:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
-        <location filename="../src/ui_configdialog.h" line="921"/>
         <source>Select character set for password generation</source>
         <translation>Pilih kumpulan karakter untuk pembuatan kata sandi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
-        <location filename="../src/ui_configdialog.h" line="915"/>
         <source>All Characters</source>
         <translation>Semua Karakter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
-        <location filename="../src/ui_configdialog.h" line="916"/>
         <source>Alphabetical</source>
         <translation>Alfabetis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
-        <location filename="../src/ui_configdialog.h" line="917"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerik</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
-        <location filename="../src/ui_configdialog.h" line="918"/>
         <source>Custom</source>
         <translation>Kustom</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
-        <location filename="../src/ui_configdialog.h" line="923"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
-        <location filename="../src/ui_configdialog.h" line="924"/>
         <source>Use PWGen</source>
         <translation>Gunakan PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
-        <location filename="../src/ui_configdialog.h" line="925"/>
         <source>Exclude capital letters</source>
         <translation>Kecualikan huruf kapital</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
-        <location filename="../src/ui_configdialog.h" line="926"/>
         <source>Include special symbols</source>
         <translation>Sertakan simbol khusus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
-        <location filename="../src/ui_configdialog.h" line="927"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Hasilkan kata sandi yang mudah diingat tetapi kurang aman</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
-        <location filename="../src/ui_configdialog.h" line="928"/>
         <source>Exclude numbers</source>
         <translation>Kecualikan angka</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
-        <location filename="../src/ui_configdialog.h" line="929"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
-        <location filename="../src/ui_configdialog.h" line="930"/>
         <source>Use Git</source>
         <translation>Gunakan Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
-        <location filename="../src/ui_configdialog.h" line="931"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Tambahkan berkas .gpg-id otomatis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
-        <location filename="../src/ui_configdialog.h" line="932"/>
         <source>Automatically push</source>
         <translation>Push otomatis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
-        <location filename="../src/ui_configdialog.h" line="933"/>
         <source>Automatically pull</source>
         <translation>Pull otomatis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
-        <location filename="../src/ui_configdialog.h" line="934"/>
         <source>Extensions:</source>
         <translation>Ekstensi:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
-        <location filename="../src/ui_configdialog.h" line="935"/>
         <source>Use QRencode</source>
         <translation>Gunakan QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
-        <location filename="../src/ui_configdialog.h" line="936"/>
         <source>Use pass-otp extension</source>
         <translation>Gunakan ekstensi pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
-        <location filename="../src/ui_configdialog.h" line="937"/>
         <source>Enable content search (pass grep)</source>
         <translation>Aktifkan pencarian konten (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
-        <location filename="../src/ui_configdialog.h" line="939"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Izinkan pencarian di dalam isi berkas kata sandi. Membutuhkan dekripsi setiap berkas dan bisa lambat pada penyimpanan besar.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
-        <location filename="../src/ui_configdialog.h" line="941"/>
         <source>System:</source>
         <translation>Sistem:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
-        <location filename="../src/ui_configdialog.h" line="942"/>
         <source>Use TrayIcon</source>
         <translation>Gunakan TrayIcon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
-        <location filename="../src/ui_configdialog.h" line="943"/>
         <source>Start minimized</source>
         <translation>Mulai dalam keadaan diminimalkan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
-        <location filename="../src/ui_configdialog.h" line="944"/>
         <source>Hide on close</source>
         <translation>Sembunyikan saat ditutup</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
-        <location filename="../src/ui_configdialog.h" line="945"/>
         <source>Always on top</source>
         <translation>Selalu di atas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
-        <location filename="../src/ui_configdialog.h" line="966"/>
         <source>Programs</source>
         <translation>Program</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
-        <location filename="../src/ui_configdialog.h" line="947"/>
         <source>Select password storage program:</source>
         <translation>Pilih program penyimpanan kata sandi:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
-        <location filename="../src/ui_configdialog.h" line="948"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Nati&amp;ve Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
-        <location filename="../src/ui_configdialog.h" line="949"/>
         <source>&amp;Use pass</source>
         <translation>&amp;Gunakan pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
-        <location filename="../src/ui_configdialog.h" line="950"/>
         <source>Native</source>
         <translation>Native</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
-        <location filename="../src/ui_configdialog.h" line="951"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
@@ -311,155 +260,126 @@
         <location filename="../src/configdialog.ui" line="806"/>
         <location filename="../src/configdialog.ui" line="837"/>
         <location filename="../src/configdialog.ui" line="1015"/>
-        <location filename="../src/ui_configdialog.h" line="952"/>
-        <location filename="../src/ui_configdialog.h" line="953"/>
-        <location filename="../src/ui_configdialog.h" line="960"/>
-        <location filename="../src/ui_configdialog.h" line="963"/>
-        <location filename="../src/ui_configdialog.h" line="985"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
-        <location filename="../src/ui_configdialog.h" line="954"/>
         <source>Generate</source>
         <translation>Buat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
-        <location filename="../src/ui_configdialog.h" line="956"/>
         <source>Generate GPG key pair</source>
         <translation>Buat pasangan kunci GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
-        <location filename="../src/ui_configdialog.h" line="958"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
-        <location filename="../src/ui_configdialog.h" line="959"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
-        <location filename="../src/ui_configdialog.h" line="961"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="827"/>
-        <location filename="../src/ui_configdialog.h" line="962"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
-        <location filename="../src/ui_configdialog.h" line="964"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
-        <location filename="../src/ui_configdialog.h" line="965"/>
         <source>Autodetect</source>
         <translation>Deteksi otomatis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
-        <location filename="../src/ui_configdialog.h" line="986"/>
         <source>Profiles</source>
         <translation>Profil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="949"/>
-        <location filename="../src/ui_configdialog.h" line="968"/>
         <source>Name</source>
         <translation>Nama</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
-        <location filename="../src/ui_configdialog.h" line="970"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Nama profil, digunakan untuk mengidentifikasi profil konfigurasi ini</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
-        <location filename="../src/ui_configdialog.h" line="973"/>
         <source>Path</source>
         <translation>Jalur</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
-        <location filename="../src/ui_configdialog.h" line="975"/>
         <source>Path to the password store directory</source>
         <translation>Jalur ke direktori penyimpanan kata sandi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
-        <location filename="../src/ui_configdialog.h" line="978"/>
         <source>Signing Key</source>
         <translation>Kunci Penandatangan</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
-        <location filename="../src/ui_configdialog.h" line="980"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Opsional: kunci GPG untuk menandatangani berkas .gpg-id untuk verifikasi integritas. Biarkan kosong kecuali Anda perlu melindungi daftar pengguna dari manipulasi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
-        <location filename="../src/ui_configdialog.h" line="982"/>
         <source>Add</source>
         <translation>Tambah</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="993"/>
-        <location filename="../src/ui_configdialog.h" line="983"/>
         <source>Delete</source>
         <translation>Hapus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
-        <location filename="../src/ui_configdialog.h" line="984"/>
         <source>Current path</source>
         <translation>Jalur saat ini</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
-        <location filename="../src/ui_configdialog.h" line="996"/>
         <source>Template</source>
         <translation>Template</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
-        <location filename="../src/ui_configdialog.h" line="987"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Template menambahkan kolom tambahan pada dialog pembuatan kata sandi dan pada tampilan kata sandi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
-        <location filename="../src/ui_configdialog.h" line="988"/>
         <source>Use template</source>
         <translation>Gunakan template</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
-        <location filename="../src/ui_configdialog.h" line="990"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Tampilkan semua baris yang dimulai dengan kata diikuti titik dua sebagai kolom dalam kolom kata sandi, bukan hanya yang terdaftar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
-        <location filename="../src/ui_configdialog.h" line="992"/>
         <source>Show all fields templated</source>
         <translation>Tampilkan semua kolom dengan template</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
-        <location filename="../src/ui_configdialog.h" line="993"/>
         <source>login
 URL
 e-mail</source>
@@ -469,7 +389,6 @@ email</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
-        <location filename="../src/ui_configdialog.h" line="997"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versi </translation>
     </message>
@@ -615,25 +534,21 @@ email</translation>
     <name>ExportPublicKeyDialog</name>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="99"/>
         <source>Export Public Key</source>
         <translation>Ekspor Kunci Publik</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="100"/>
         <source>Public key</source>
         <translation>Kunci publik</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="101"/>
         <source>Copy to Clipboard</source>
         <translation>Salin ke Clipboard</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
-        <location filename="../src/ui_exportpublickeydialog.h" line="102"/>
         <source>Save to File...</source>
         <translation>Simpan ke Berkas…</translation>
     </message>
@@ -816,37 +731,31 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
-        <location filename="../src/ui_importkeydialog.h" line="120"/>
         <source>Import GPG Key</source>
         <translation>Impor Kunci GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
-        <location filename="../src/ui_importkeydialog.h" line="121"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
         <translation>Impor kunci publik GPG dari berkas atau tempel di bawah. Kunci harus dalam format ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
-        <location filename="../src/ui_importkeydialog.h" line="122"/>
         <source>From File...</source>
         <translation>Dari Berkas…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
-        <location filename="../src/ui_importkeydialog.h" line="123"/>
         <source>From Clipboard</source>
         <translation>Dari Clipboard</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
-        <location filename="../src/ui_importkeydialog.h" line="124"/>
         <source>Paste an ASCII-armored GPG key here...</source>
         <translation>Tempel kunci GPG ASCII-armored di sini…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
-        <location filename="../src/ui_importkeydialog.h" line="125"/>
         <source>Import</source>
         <translation>Impor</translation>
     </message>
@@ -900,61 +809,51 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
-        <location filename="../src/ui_keygendialog.h" line="230"/>
         <source>Generate GnuPG keypair</source>
         <translation>Buat pasangan kunci GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
-        <location filename="../src/ui_keygendialog.h" line="231"/>
         <source>Generate a new key pair</source>
         <translation>Buat pasangan kunci baru</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
-        <location filename="../src/ui_keygendialog.h" line="232"/>
         <source>Email</source>
         <translation>Email</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
-        <location filename="../src/ui_keygendialog.h" line="233"/>
         <source>Name</source>
         <translation>Nama</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
-        <location filename="../src/ui_keygendialog.h" line="234"/>
         <source>Passphrase</source>
         <translation>Passphrase</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
-        <location filename="../src/ui_keygendialog.h" line="235"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tidak ada batas panjang passphrase, dan passphrase harus dipilih dengan hati-hati. Dari sisi keamanan, passphrase untuk membuka kunci privat adalah salah satu titik terlemah di GnuPG (dan sistem enkripsi kunci publik lain) karena passphrase adalah satu-satunya perlindungan yang Anda miliki jika orang lain mendapatkan kunci privat Anda. &lt;br/&gt;Idealnya passphrase tidak menggunakan kata-kata dari kamus dan menggabungkan huruf besar/kecil serta karakter non-alfabet.&lt;br/&gt;Passphrase yang baik sangat penting untuk penggunaan GnuPG yang aman.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
-        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Repeat pass</source>
         <translation>Ulangi passphrase</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
-        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>Expert</source>
         <translation>Pakar</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
-        <location filename="../src/ui_keygendialog.h" line="238"/>
         <source>Template contents will be set based on GPG version.</source>
         <translation>Konten template akan diatur berdasarkan versi GPG.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
-        <location filename="../src/ui_keygendialog.h" line="239"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Untuk opsi pakar, lihat &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual GnuPG&lt;/a&gt;</translation>
     </message>
@@ -988,13 +887,11 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
-        <location filename="../src/ui_mainwindow.h" line="307"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
-        <location filename="../src/ui_mainwindow.h" line="350"/>
         <source>Select profile</source>
         <translation>Pilih profil</translation>
     </message>
@@ -1002,73 +899,61 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="700"/>
         <location filename="../src/mainwindow.cpp" line="883"/>
-        <location filename="../src/ui_mainwindow.h" line="352"/>
         <source>Search Password</source>
         <translation>Cari Kata Sandi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
-        <location filename="../src/ui_mainwindow.h" line="354"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Cari di dalam konten kata sandi (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
-        <location filename="../src/ui_mainwindow.h" line="356"/>
         <source>⌕</source>
         <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
-        <location filename="../src/ui_mainwindow.h" line="358"/>
         <source>Content search toggle</source>
         <translation>Alihkan pencarian konten</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
-        <location filename="../src/ui_mainwindow.h" line="361"/>
         <source>Toggle content search mode to search inside password files</source>
         <translation>Alihkan mode pencarian konten untuk mencari di dalam berkas kata sandi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
-        <location filename="../src/ui_mainwindow.h" line="364"/>
         <source>Case-insensitive search</source>
         <translation>Pencarian tidak peka huruf besar/kecil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
-        <location filename="../src/ui_mainwindow.h" line="366"/>
         <source>Aa</source>
         <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
-        <location filename="../src/ui_mainwindow.h" line="368"/>
         <source>Case-insensitive toggle</source>
         <translation>Alihkan kepekaan huruf besar/kecil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
-        <location filename="../src/ui_mainwindow.h" line="371"/>
         <source>Toggle case-insensitive content search</source>
         <translation>Alihkan pencarian konten yang tidak peka huruf besar/kecil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
-        <location filename="../src/ui_mainwindow.h" line="374"/>
         <source>Results</source>
         <translation>Hasil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
-        <location filename="../src/ui_mainwindow.h" line="375"/>
         <source>Welcome to QtPass</source>
         <translation>Selamat datang di QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
-        <location filename="../src/ui_mainwindow.h" line="376"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -1082,14 +967,11 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
-        <location filename="../src/ui_mainwindow.h" line="308"/>
-        <location filename="../src/ui_mainwindow.h" line="310"/>
         <source>Add password</source>
         <translation>Tambah kata sandi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
-        <location filename="../src/ui_mainwindow.h" line="313"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
@@ -1097,8 +979,6 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <location filename="../src/mainwindow.ui" line="390"/>
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1372"/>
-        <location filename="../src/ui_mainwindow.h" line="315"/>
-        <location filename="../src/ui_mainwindow.h" line="317"/>
         <source>Add folder</source>
         <translation>Tambah folder</translation>
     </message>
@@ -1106,8 +986,6 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
         <location filename="../src/mainwindow.cpp" line="1380"/>
-        <location filename="../src/ui_mainwindow.h" line="319"/>
-        <location filename="../src/ui_mainwindow.h" line="321"/>
         <source>Edit</source>
         <translation>Edit</translation>
     </message>
@@ -1115,75 +993,62 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
         <location filename="../src/mainwindow.cpp" line="1394"/>
-        <location filename="../src/ui_mainwindow.h" line="323"/>
-        <location filename="../src/ui_mainwindow.h" line="325"/>
         <source>Delete</source>
         <translation>Hapus</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
-        <location filename="../src/ui_mainwindow.h" line="327"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
-        <location filename="../src/ui_mainwindow.h" line="329"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Buat OTP dan salin ke clipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
-        <location filename="../src/ui_mainwindow.h" line="332"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
-        <location filename="../src/ui_mainwindow.h" line="334"/>
         <source>Push</source>
         <translation>Push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="428"/>
-        <location filename="../src/ui_mainwindow.h" line="336"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="433"/>
-        <location filename="../src/ui_mainwindow.h" line="338"/>
         <source>Update</source>
         <translation>Perbarui</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="436"/>
-        <location filename="../src/ui_mainwindow.h" line="340"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1374"/>
-        <location filename="../src/ui_mainwindow.h" line="342"/>
         <source>Users</source>
         <translation>Pengguna</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="444"/>
-        <location filename="../src/ui_mainwindow.h" line="344"/>
         <source>Manage who can read password in folder</source>
         <translation>Kelola siapa yang dapat membaca kata sandi dalam folder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="449"/>
-        <location filename="../src/ui_mainwindow.h" line="346"/>
         <source>Config</source>
         <translation>Konfigurasi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
-        <location filename="../src/ui_mainwindow.h" line="348"/>
         <source>Configuration</source>
         <translation>Konfigurasi</translation>
     </message>
@@ -1522,56 +1387,46 @@ Lanjutkan?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
-        <location filename="../src/ui_passworddialog.h" line="174"/>
-        <location filename="../src/ui_passworddialog.h" line="176"/>
         <source>Password</source>
         <translation>Kata sandi</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
-        <location filename="../src/ui_passworddialog.h" line="177"/>
         <source>Generate</source>
         <translation>Buat</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
-        <location filename="../src/ui_passworddialog.h" line="178"/>
         <source>Show password</source>
         <translation>Tampilkan kata sandi</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
-        <location filename="../src/ui_passworddialog.h" line="179"/>
         <source>Character Set:</source>
         <translation>Kumpulan Karakter:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
-        <location filename="../src/ui_passworddialog.h" line="180"/>
         <source>All Characters</source>
         <translation>Semua Karakter</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
-        <location filename="../src/ui_passworddialog.h" line="181"/>
         <source>Alphabetical</source>
         <translation>Alfabetis</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
-        <location filename="../src/ui_passworddialog.h" line="182"/>
         <source>Alphanumerical</source>
         <translation>Alfanumerik</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
-        <location filename="../src/ui_passworddialog.h" line="183"/>
         <source>Custom</source>
         <translation>Kustom</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
-        <location filename="../src/ui_passworddialog.h" line="185"/>
         <source>Length:</source>
         <translation>Panjang:</translation>
     </message>
@@ -1729,13 +1584,11 @@ Lanjutkan?</translation>
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
-        <location filename="../src/ui_usersdialog.h" line="111"/>
         <source>Read access users</source>
         <translation>Pengguna dengan akses baca</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
-        <location filename="../src/ui_usersdialog.h" line="112"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1749,25 +1602,21 @@ Entri merah tidak valid, Anda tidak akan dapat mengenkripsi ke entri ini.</trans
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
-        <location filename="../src/ui_usersdialog.h" line="117"/>
         <source>Search for users</source>
         <translation>Cari pengguna</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
-        <location filename="../src/ui_usersdialog.h" line="118"/>
         <source>Show unusable keys</source>
         <translation>Tampilkan kunci yang tidak dapat digunakan</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
-        <location filename="../src/ui_usersdialog.h" line="119"/>
         <source>Import key...</source>
         <translation>Impor kunci…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
-        <location filename="../src/ui_usersdialog.h" line="121"/>
         <source>Import a GPG key from file or clipboard</source>
         <translation>Impor kunci GPG dari berkas atau clipboard</translation>
     </message>

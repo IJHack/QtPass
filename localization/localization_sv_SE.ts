@@ -1482,18 +1482,18 @@ Detta kan skriva om många filer och kan inte enkelt ångras.
 Fortsätta?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>Exportera publik nyckel</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Exportera din publika nyckel&lt;/h3&gt;&lt;p&gt;Ingen signeringsnyckel är konfigurerad. Ställ in en i QtPass-inställningar &gt; GPG-nycklar, eller kör detta i en terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;ditt-nyckel-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Skicka sedan filen till dina lagkamrater.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1502,17 +1502,17 @@ Fortsätta?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>Ingen utdata från gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Dela lösenord med GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Dela lösenord med GPG&lt;/h3&gt;&lt;p&gt;för att dela lösenord med andra användare:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportera din publika nyckel&lt;/b&gt; och skicka den till lagkamraterna&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importera lagkamraternas offentliga nycklar&lt;/b&gt; till din GPG nyckelring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Kryptera lösenord på nytt&lt;/b&gt; så att alla mottagare kan dekryptera dem&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Endast personer som har en matchande hemliga nyckeln kan dekryptera lösenorden.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tips:&lt;/b&gt; Använd samma GPG-nyckel för alla delade mappar.&lt;/p&gt;&lt;p&gt;Se FAQ för mer detaljer.&lt;/p&gt;</translation>
     </message>

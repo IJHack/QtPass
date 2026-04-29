@@ -1511,18 +1511,18 @@ Tato akce může přepsat mnoho souborů a nelze ji snadno vrátit zpět.
 Pokračovat?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>Exportovat veřejný klíč</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Exportujte svůj veřejný klíč&lt;/h3&gt;&lt;p&gt;Není nakonfigurován žádný podpisový klíč. Nastavte jej v Nastavení QtPass &amp;gt; klíče GPG, nebo spusťte v terminálu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Poté soubor pošlete členům svého týmu.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1531,17 +1531,17 @@ Pokračovat?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>Žádný výstup od gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Sdílení hesel pomocí GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Sdílení hesel pomocí GPG&lt;/h3&gt;&lt;p&gt;Pro sdílení hesel s ostatními uživateli:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportujte svůj veřejný klíč&lt;/b&gt; a pošlete jej členům týmu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importujte veřejné klíče členů týmu&lt;/b&gt; do svého klíčového kruhu GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Znovu zašifrujte hesla&lt;/b&gt;, aby je všichni příjemci mohli dešifrovat&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Hesla mohou dešifrovat pouze osoby s odpovídajícím tajným klíčem.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Pro všechny sdílené složky používejte stejný klíč GPG.&lt;/p&gt;&lt;p&gt;Další podrobnosti najdete v častých dotazech.&lt;/p&gt;</translation>
     </message>

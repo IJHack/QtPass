@@ -1499,18 +1499,18 @@ Isso pode reescrever muitos arquivos e não pode ser desfeito facilmente.
 Continua?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>Exportar chave pública</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Exportar sua chave pública&lt;/h3&gt;&lt;p&gt;Nenhuma chave de assinatura está configurada. Defina uma em Configurações do QtPass &amp;gt; chaves GPG, ou execute o seguinte em um terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Em seguida, envie o arquivo aos seus colegas de equipe.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1519,17 +1519,17 @@ Continua?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>Sem saída do gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Compartilhando senhas com GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Compartilhando senhas com GPG&lt;/h3&gt;&lt;p&gt;Para compartilhar senhas com outros usuários:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporte sua chave pública&lt;/b&gt; e envie-a aos seus colegas de equipe&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importe as chaves públicas dos colegas de equipe&lt;/b&gt; para o seu chaveiro GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Recriptografe as senhas&lt;/b&gt; para que todos os destinatários possam descriptografá-las&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Apenas pessoas com uma chave secreta correspondente podem descriptografar as senhas.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Dica:&lt;/b&gt; Use a mesma chave GPG para todas as pastas compartilhadas.&lt;/p&gt;&lt;p&gt;Consulte as FAQ para mais detalhes.&lt;/p&gt;</translation>
     </message>

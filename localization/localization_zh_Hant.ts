@@ -1451,18 +1451,18 @@ p, li { white-space: pre-wrap; }
         <translation>這是什麼？</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>匯出公開金鑰</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;匯出您的公開金鑰&lt;/h3&gt;&lt;p&gt;尚未設定簽名金鑰。請在 QtPass 設定 &amp;gt; GPG 金鑰 中設定，或在終端機執行：&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;然後將檔案傳送給您的團隊成員。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1471,17 +1471,17 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>gpg 沒有輸出。</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>使用 GPG 共享密碼</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;使用 GPG 共享密碼&lt;/h3&gt;&lt;p&gt;與其他使用者共享密碼：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;匯出您的公開金鑰&lt;/b&gt; 並傳送給團隊成員&lt;/li&gt;&lt;li&gt;&lt;b&gt;匯入團隊成員的公開金鑰&lt;/b&gt; 到您的 GPG 金鑰圈&lt;/li&gt;&lt;li&gt;&lt;b&gt;重新加密密碼&lt;/b&gt; 以便所有接收者都能解密&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;只有擁有對應私鑰的人才能解密密碼。&lt;/p&gt;&lt;p&gt;&lt;b&gt;提示：&lt;/b&gt; 對所有共享資料夾使用相同的 GPG 金鑰。&lt;/p&gt;&lt;p&gt;詳細請參閱常見問題。&lt;/p&gt;</translation>
     </message>

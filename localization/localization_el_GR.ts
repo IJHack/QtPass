@@ -1279,18 +1279,18 @@ Expire-Date: 0
         <translation>Τι είναι αυτό;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>Εξαγωγή δημόσιου κλειδιού</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Εξαγωγή του δημόσιου κλειδιού σας&lt;/h3&gt;&lt;p&gt;Δεν έχει διαμορφωθεί κλειδί υπογραφής. Ορίστε ένα στις Ρυθμίσεις QtPass &amp;gt; Κλειδιά GPG, ή εκτελέστε σε τερματικό:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Στη συνέχεια στείλτε το αρχείο στα μέλη της ομάδας σας.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1299,17 +1299,17 @@ Expire-Date: 0
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>Καμία έξοδος από το gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Κοινή χρήση κωδικών με GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Κοινή χρήση κωδικών με GPG&lt;/h3&gt;&lt;p&gt;Για να μοιραστείτε κωδικούς με άλλους χρήστες:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Εξαγάγετε το δημόσιο κλειδί σας&lt;/b&gt; και στείλτε το στα μέλη της ομάδας σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Εισαγάγετε τα δημόσια κλειδιά των μελών της ομάδας&lt;/b&gt; στην κλειδοθήκη GPG σας&lt;/li&gt;&lt;li&gt;&lt;b&gt;Επανακρυπτογραφήστε τους κωδικούς&lt;/b&gt; ώστε όλοι οι παραλήπτες να μπορούν να τους αποκρυπτογραφήσουν&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Μόνο τα άτομα με αντίστοιχο μυστικό κλειδί μπορούν να αποκρυπτογραφήσουν τους κωδικούς.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Συμβουλή:&lt;/b&gt; Χρησιμοποιήστε το ίδιο κλειδί GPG για όλους τους κοινόχρηστους φακέλους.&lt;/p&gt;&lt;p&gt;Δείτε τις Συχνές Ερωτήσεις για περισσότερες λεπτομέρειες.&lt;/p&gt;</translation>
     </message>

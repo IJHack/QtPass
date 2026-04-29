@@ -1447,18 +1447,18 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">මෙය කිසියේ?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation type="unfinished">ප්‍රාදේශ කණගමකයන් ප්‍රිසිජත්වය</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;මුරපද පූලික් කළමනාව සැයීඩ කිරීම&lt;/h3&gt;&lt;p&gt;සංකේතන මුරපදය ඇති නොහැක. QtPass ආක්‍රමණ සාධක කළමනාව &amp;gt; GPG මුරපද තෝරාගෙන කරන්න, සහිත එය terminal යුතු පහසුවේ අඩංගු කරන්න:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;මෙය සමානුපාතීකරණය කරන්න එවකට පිහිටන.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1467,17 +1467,17 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation type="unfinished">gpg වෙත පසුබැල් ලෝගයක් ඇති නොහැක.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation type="unfinished">GPG සමඟ මුරපද පූලික් කළමනාව</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation type="unfinished">&lt;h3&gt;GPG සමඟ මුරපද පූලික් කළමනාව&lt;/h3&gt;&lt;p&gt;තාගේ මුරපද පූලික් කළමනාව:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;මුරපද පූලික් කළමනාව&lt;/b&gt; සහ එය එකට පිහිටන.&lt;/li&gt;&lt;li&gt;&lt;b&gt;තාගේ මුරපද පූලික් කළමනාව&lt;/b&gt; GPG මුරපද සංකීර්ණයට තෝරාගෙන කරන්න.&lt;/li&gt;&lt;li&gt;&lt;b&gt;මුරපද පූලික් කළමනාව&lt;/b&gt; සඳහා මුත්‍ය ලෝගයක් තොරව නොමැත පිහිටන.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;මුත්‍ය ලෝගයක් තොරව ඇති මාදින්වීමක් සඳහා මුරපද පූලික් කළමනාව දැයේ.&lt;/p&gt;&lt;p&gt;&lt;b&gt;තොරතම:&lt;/b&gt; එකට පසුගෙන සාමාන්‍ය මුරපද පූලික් කළමනාවක් නොවේ.&lt;/p&gt;&lt;p&gt;FAQ වෙත තොරතම දැනගන්න.&lt;/p&gt;</translation>
     </message>

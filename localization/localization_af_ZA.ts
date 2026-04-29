@@ -1556,18 +1556,18 @@ Dit kan baie lêers herskryf en kan nie maklik ongedaan gemaak word nie.
 Gaan voort?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>Voer openbare sleutel uit</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Voer jou openbare sleutel uit&lt;/h3&gt;&lt;p&gt;Geen tekensleutel is opgestel nie. Stel een in onder QtPass-instellings &amp;gt; GPG-sleutels, of voer dit uit in &apos;n terminaal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Stuur dan die lêer aan jou spanmaats.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1576,17 +1576,17 @@ Gaan voort?</translation>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>Geen uitset van gpg nie.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Wagwoorde deel met GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Wagwoorde deel met GPG&lt;/h3&gt;&lt;p&gt;Om wagwoorde met ander gebruikers te deel:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Voer jou openbare sleutel uit&lt;/b&gt; en stuur dit aan jou spanmaats&lt;/li&gt;&lt;li&gt;&lt;b&gt;Voer die openbare sleutels van jou spanmaats in&lt;/b&gt; in jou GPG-sleutelring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Hersleutel die wagwoorde&lt;/b&gt; sodat alle ontvangers dit kan ontsleutel&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Slegs mense met &apos;n ooreenstemmende geheime sleutel kan die wagwoorde ontsleutel.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Wenk:&lt;/b&gt; Gebruik dieselfde GPG-sleutel vir alle gedeelde gidse.&lt;/p&gt;&lt;p&gt;Sien die FAQ vir meer besonderhede.&lt;/p&gt;</translation>
     </message>

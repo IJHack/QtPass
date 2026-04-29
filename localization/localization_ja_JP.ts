@@ -1482,18 +1482,18 @@ p, li { white-space: pre-wrap; }
         <translation>これは何ですか？</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>公開鍵をエクスポート</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;公開鍵をエクスポート&lt;/h3&gt;&lt;p&gt;署名鍵が設定されていません。QtPass の設定 &amp;gt; GPG 鍵 で設定するか、ターミナルで次を実行してください:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;その後、ファイルをチームメンバーに送ってください。&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1502,17 +1502,17 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>gpg からの出力がありません。</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>GPG でパスワードを共有</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;GPG でパスワードを共有&lt;/h3&gt;&lt;p&gt;他のユーザーとパスワードを共有するには:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;自分の公開鍵をエクスポート&lt;/b&gt;してチームメンバーに送る&lt;/li&gt;&lt;li&gt;&lt;b&gt;チームメンバーの公開鍵をインポート&lt;/b&gt;して GPG 鍵束に追加する&lt;/li&gt;&lt;li&gt;&lt;b&gt;パスワードを再暗号化&lt;/b&gt;して、すべての受信者が復号できるようにする&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;対応する秘密鍵を持っている人だけがパスワードを復号できます。&lt;/p&gt;&lt;p&gt;&lt;b&gt;ヒント:&lt;/b&gt; 共有フォルダーすべてに同じ GPG 鍵を使用してください。&lt;/p&gt;&lt;p&gt;詳細は FAQ を参照してください。&lt;/p&gt;</translation>
     </message>

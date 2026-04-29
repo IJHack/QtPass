@@ -1453,18 +1453,18 @@ p, li { white-space: pre-wrap; }
         <translation>Какво е това?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>Изнасяне на публичен ключ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Изнасяне на вашия публичен ключ&lt;/h3&gt;&lt;p&gt;Не е настроен ключ за подписване. Задайте го в Настройки на QtPass &amp;gt; GPG ключове, или изпълнете това в терминал:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;След това изпратете файла на колегите си.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1473,17 +1473,17 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>Няма изход от gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Споделяне на пароли чрез GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Споделяне на пароли чрез GPG&lt;/h3&gt;&lt;p&gt;За да споделяте пароли с други потребители:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Изнесете своя публичен ключ&lt;/b&gt; и го изпратете на колегите си&lt;/li&gt;&lt;li&gt;&lt;b&gt;Внесете публичните ключове на колегите си&lt;/b&gt; в своя GPG ключодържател&lt;/li&gt;&lt;li&gt;&lt;b&gt;Криптирайте паролите наново&lt;/b&gt;, така че всички получатели да могат да ги декриптират&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Само хора със съответен таен ключ могат да декриптират паролите.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Съвет:&lt;/b&gt; Използвайте един и същ GPG ключ за всички споделени папки.&lt;/p&gt;&lt;p&gt;Вижте ЧЗВ за повече подробности.&lt;/p&gt;</translation>
     </message>

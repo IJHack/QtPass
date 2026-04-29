@@ -1485,18 +1485,18 @@ p, li { white-space: pre-wrap; }
         <translation>Mikä tämä on?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1746"/>
-        <location filename="../src/mainwindow.cpp" line="1766"/>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
         <translation>Vie julkinen avain</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Vie julkinen avaimesi&lt;/h3&gt;&lt;p&gt;Allekirjoitusavainta ei ole määritetty. Aseta sellainen kohdassa QtPass-asetukset &amp;gt; GPG-avaimet, tai suorita seuraava komento päätteessä:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Lähetä sen jälkeen tiedosto tiimisi jäsenille.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1505,17 +1505,17 @@ p, li { white-space: pre-wrap; }
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1769"/>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
         <translation>gpg ei tuottanut tulostetta.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1796"/>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Salasanojen jakaminen GPG:llä</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Salasanojen jakaminen GPG:llä&lt;/h3&gt;&lt;p&gt;Salasanojen jakamiseen muiden käyttäjien kanssa:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Vie julkinen avaimesi&lt;/b&gt; ja lähetä se tiimisi jäsenille&lt;/li&gt;&lt;li&gt;&lt;b&gt;Tuo tiimin jäsenten julkiset avaimet&lt;/b&gt; GPG-avainnippuusi&lt;/li&gt;&lt;li&gt;&lt;b&gt;Salaa salasanat uudelleen&lt;/b&gt; jotta kaikki vastaanottajat voivat purkaa salauksen&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Vain henkilöt, joilla on vastaava salainen avain, voivat purkaa salasanojen salauksen.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vinkki:&lt;/b&gt; Käytä samaa GPG-avainta kaikissa jaetuissa kansioissa.&lt;/p&gt;&lt;p&gt;Lisätietoja löydät UKK-osiosta.&lt;/p&gt;</translation>
     </message>
