@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Za-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z0-1-2-3-4-5-6-7-8-9</translation>
+        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -1285,7 +1285,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">Ši operacija atsifraukys visus slaptažodžių failus šioje kataloge naudojant dabartinės gpg-id definicijas.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
@@ -1303,7 +1303,7 @@ Continue?</source>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished">Nepavyko eksportuoti viešojo slaptažodžio %1.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>

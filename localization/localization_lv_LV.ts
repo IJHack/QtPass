@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdeļš0123456789</translation>
+        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -640,7 +640,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished">Nepieciešama pārvaldības šifrēšanas atcelšana.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
@@ -662,7 +662,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">Nepieciešama pārmainījuma atcelšana. Ievades versija ir atgriežas.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
@@ -830,7 +830,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">Parole nav robežu attiecībā uz tā garumu un tās jāuzdara atcerēties. Paroles, kas tiek izmantotas, lai atvieglosiet parakstu, ir viena no slabošākajām punktām GnuPG (un citām publiskās īpašuma kriptogrāfijas sistēmām), jo tā ir vienīgais drošības līdzeklis, ja citā individs iegūst jūsu parakstu. Ideāli, parole nekad netiek izmantota vārdiem no vārda atlases un tos jāizmanto ar abu burtu formātiem kā arī nēburtu burtiem. Laba parole ir svarīga GnuPG drošajam izmantošanai.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -875,7 +875,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished">Šī darbība varētu uzsākt dažas minūtes. Mums ir jāgenerē daudz atvainotajiem bīnkiem. Labs iespējams veids, kā uzlabot šo procesu, ir veikt citus darbības (klēpīt klavierē, pārvietot muskuļus, izmantot diski) durvīšu generēšanas laikā; tas palīdz radīt vairāk entropijas.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1160,7 +1160,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished">Atgādinājums: Jāņem vērošanas faili atbildešajā katalogā, pirms turpināt.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
@@ -1243,12 +1243,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">Nepieciešams izveidot katalogu: </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Nepieciešams izveidot .gpg-id failu: </translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
@@ -1285,7 +1285,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">Šis veiksma atšifrē visus šī pārtikas failus, izmantojot attiecīgo atsūtītāju no .gpg-id.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
@@ -1318,7 +1318,7 @@ Continue?</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Paroļu kopīgums ar GPG&lt;/h3&gt;&lt;p&gt;Lai kopīgtu paroļus citām lietotājvaldībām:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Iešķiriet publikas šifrēšanas funkciju&lt;/b&gt; un nosūtiet to komandam&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importējiet savu komandas publiskās šifrēšanas funkcijas&lt;/b&gt; GPG klīnu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Pāršifrējiet paroļus&lt;/b&gt;, lai visi saņēmēji varētu to atšifrēt&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Tālākajiem var atšifrēt tikai tiem, kas ir iespējami arī ar privāto šifrēšanas funkciju.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Izmantojiet vienu GPG klīnu visām kopīgās mapēs.&lt;/p&gt;&lt;p&gt;Pārbaudiet FAQ, lai saņemtu vairāk informācijas.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1527,7 +1527,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished">pārprotībā ar %2?</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
