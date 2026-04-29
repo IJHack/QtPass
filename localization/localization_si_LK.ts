@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation>මුදල් සඳහා අතුසා කිරීම:</translation>
+        <translation>ස්වයංක්‍රීයව මකා දමන්නේ පසු:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation>විශේෂ්ඤන පැටෙන් තක්ෂණය:</translation>
+        <translation>අන්තර්ගත පැනලයේ හැසිරීම:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
@@ -51,7 +51,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation>පදගත් කළ ලෝග්‍රීම</translation>
+        <translation>මුරපදය සඟවන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>මෝනොසාපූර්ව ක්‍රියාකාරී සැලක්කයක් භාවිතා කිරීම</translation>
+        <translation>මොනෝස්පේස් අකුරු රටාව භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -237,7 +237,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
         <source>System:</source>
-        <translation type="unfinished">ද්‍රයත්ව කණ්ඩායම</translation>
+        <translation>ද්‍රයත්ව කණ්ඩායම</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
