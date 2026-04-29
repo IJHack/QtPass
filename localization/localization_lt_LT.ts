@@ -492,7 +492,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation>Sukurti slaptažodžių saugykla?</translation>
+        <translation>Sukurti slaptažodžių saugyklą?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
@@ -621,7 +621,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Nepavyko atidaryti .gpg-id dėl rašymo.</translation>
+        <translation>Nepavyko atidaryti .gpg-id rašymui.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
@@ -677,17 +677,17 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Backup commit failed</source>
-        <translation>Ataskaitos priėmimo įrašas nepavyko</translation>
+        <translation>Atsarginio įrašo įvykdymas nepavyko</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Nepavyko inspektuoti Git būsenos. Priešininkų šifravimas buvo atsisakytas.</translation>
+        <translation>Nepavyko inspektuoti Git būsenos. Pakartotinis šifravimas buvo atsisakytas.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>Atsikratymas iš naujo buvo atsisakytas, nes negalėjo sukurti Git atsildimo.</translation>
+        <translation>Pakartotinis šifravimas buvo nutrauktas, nes nepavyko sukurti Git atsarginės kopijos.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
