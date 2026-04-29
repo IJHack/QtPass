@@ -797,7 +797,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Nepavyko išgauti įimportuoto langelio ID iš GPG atsiradimų.</translation>
+        <translation>Nepavyko išgauti importuoto rakto ID iš GPG išvesties.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
