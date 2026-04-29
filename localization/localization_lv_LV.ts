@@ -436,7 +436,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Vai vēlaties izveidot paroles pārvaldības vietas %1?</translation>
+        <translation>Vai vēlaties izveidot paroļu krātuvi %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
@@ -492,12 +492,12 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation>Izveidot paroles pārvaldības krājumu?</translation>
+        <translation>Izveidot paroļu krātuvi?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Vēlaties izveidot paroles pārvaldības krājumu %1?</translation>
+        <translation>Vēlaties izveidot paroļu krātuvi %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
@@ -648,7 +648,7 @@ Jūs nevarat dekriptēt jebkuru jauno ierosināto paroli!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation>Nav pieejamās pārvaldības šifrēšanas atcelšanas virknes!</translation>
+        <translation>Nav parakstīšanas atslēgas!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
@@ -677,12 +677,12 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Backup commit failed</source>
-        <translation>Atvērtā kopkopu izveide nedarbojas</translation>
+        <translation>Dublējuma kommita izveide neizdevās</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Nevarēja pārbaudīt Git būtošanu. Pārencēšana tika atcelta.</translation>
+        <translation>Nevarēja pārbaudīt Git stāvokli. Pārencēšana tika atcelta.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
@@ -1196,7 +1196,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>Open folder with file manager</source>
-        <translation>Atvirkšķirto pārtikas krāsu atvērt ar faila pārvaldību</translation>
+        <translation>Atvērt mapi failu pārvaldniekā</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
