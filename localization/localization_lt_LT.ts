@@ -671,7 +671,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>Sukurti ataskaitos priėmimo įrašą</translation>
+        <translation>Kuriamas atsarginis commit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
