@@ -86,7 +86,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation>පදම් ප්‍රකාශනය:</translation>
+        <translation>මුරපද දිග:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
@@ -96,12 +96,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
         <source>Use characters:</source>
-        <translation>විශේෂෙන කොටසේ සංකීර්ණ අකුරෝත්තේ භාවිතය:</translation>
+        <translation>අක්ෂර භාවිතා කරන්න:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
         <source>Select character set for password generation</source>
-        <translation>සියලු අක්ෂර සාධන කිරීමට වෙනුවේ අක්ෂර පද්ධතිය සැශීල්ඩීම</translation>
+        <translation>මුරපද උත්පාදනය සඳහා අක්ෂර කට්ටලය තෝරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
@@ -131,12 +131,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
         <source>Include special symbols</source>
-        <translation>සඳහා සංඛ්‍යානු කරන්න</translation>
+        <translation>විශේෂ සංකේත ඇතුළත් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation>විශේෂතාකාර අඩංගු විශේෂ්‍ය පොලීසිය කිරීම (pass grep)</translation>
+        <translation>අන්තර්ගත සෙවුම සක්‍රීය කරන්න (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
