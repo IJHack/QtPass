@@ -555,7 +555,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>%1 užduoties viešasis raktas</translation>
+        <translation>%1 viešasis raktas</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
@@ -611,7 +611,7 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Nebuvo galimybės nustatyti šifravimo raktą, .gpg-id failas trūksta ar yra neteisingas.</translation>
+        <translation>Nepavyko nuskaityti naudojamo šifravimo rakto, .gpg-id failas trūksta arba yra neteisingas.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -626,7 +626,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Check selected users!</source>
-        <translation>Pabandykite patikrinti pasirinktus vartotojus!</translation>
+        <translation>Patikrinkite pasirinktus vartotojus!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="275"/>
@@ -666,12 +666,12 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Nepavyko pakeisti %1. Išprastas atsargumas buvo atgriežtas.</translation>
+        <translation>Nepavyko pakeisti %1. Originalas buvo atkurtas.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>Sukurti ataskaitos priėmimo įrašą</translation>
+        <translation>Kuriamas atsarginis commit</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
