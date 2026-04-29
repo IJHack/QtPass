@@ -958,7 +958,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass yra grafinė sąsaja, skirta &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standartinei Unix slaptažodžių tvarkyklei.&lt;/p&gt;
+        <translation>&lt;p&gt;QtPass yra grafinė sąsaja, skirta &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standartinei Unix slaptažodžių tvarkyklei.&lt;/p&gt;
 &lt;p&gt;Praneškite apie bet kokias &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemas&lt;/a&gt;, kurias galite turėti su šia programine įranga.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Pirminis kodas&lt;/a&gt;&lt;/p&gt;</translation>
