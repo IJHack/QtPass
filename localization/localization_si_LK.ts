@@ -563,7 +563,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="837"/>
         <location filename="../src/configdialog.ui" line="1015"/>
         <source>…</source>
-        <translation type="unfinished">#…</translation>
+        <translation type="unfinished">…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
@@ -1743,7 +1743,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
         <source>Copied to clipboard</source>
-        <translation>copied to clipboard</translation>
+        <translation type="unfinished">පිටපත්පුවරුවට පිටපත් කරන ලදී</translation>
     </message>
 </context>
 <context>
