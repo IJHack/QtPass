@@ -905,7 +905,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Paieška įslėpiama slaptažodžio turinį (pass grep)</translation>
+        <translation>Ieškoti slaptažodžio turinyje (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -915,7 +915,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Turinimo paieškos peržiūra</translation>
+        <translation>Turinio paieškos perjungimas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
@@ -1004,7 +1004,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Sukurti OTP ir išsaugoti į leidimų lankstumą</translation>
+        <translation>Sukurti OTP ir nukopijuoti į iškarpinę</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
@@ -1128,7 +1128,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation>Nėra atitinkamų raktinių.</translation>
+        <translation>Nerasta atitikmenų.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
@@ -1169,7 +1169,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> ir viso turinio? &lt;br&gt;&lt;strong&gt;Pamoka: Atmintyje yra neprevartėjami failai, patikrinkite jie prieš tęsti.&lt;/strong&gt;</translation>
+        <translation> ir viso turinio? &lt;br&gt;&lt;strong&gt;Dėmesio: aplanke yra netikėti failai, patikrinkite juos prieš tęsdami.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
