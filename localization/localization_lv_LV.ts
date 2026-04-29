@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Opsīcīgs: GPG ciprs, lai saskarnētu .gpg-id failus ar integritātes pārbaudu. Lai nekavētu, lūdzu, ļaujiet tās tukšas.</translation>
+        <translation>Neobligāts: GPG atslēga .gpg-id failu parakstīšanai integritātes pārbaudei. Atstājiet to tukšu, ja vien nevēlaties aizsargāt lietotāju sarakstu no viltošanas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -351,7 +351,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
         <source>Current path</source>
-        <translation>Tālākais ceļš</translation>
+        <translation>Pašreizējais ceļš</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
@@ -361,17 +361,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Aplūkojuma un paroles skaidrojuma laikā tiek pievienoti papildu laukumi, kuri palīdz veidot paroli un tā pārskatīšanai.</translation>
+        <translation>Veidnes pievieno papildu laukus paroļu ģenerēšanas dialogā un paroļu skatā.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
         <source>Use template</source>
-        <translation>Izmantojam šablonu</translation>
+        <translation>Izmantot veidni</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Pārskatīsim visas līnijas, kas sākas ar vārdu un tāpēc ir sekotās no zīmes ar colonu, kā laukumi paroles laukos, ne tikai paskaidroto</translation>
+        <translation>Rādīt visas rindas, kas sākas ar vārdu, kam seko kols, kā laukus paroļu failos, ne tikai uzskaitītos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
