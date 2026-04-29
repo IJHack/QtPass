@@ -462,7 +462,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
         <source>No profile selected</source>
-        <translation>Nepraeista profilio pasirinkimas</translation>
+        <translation>Nepasirinktas profilis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
