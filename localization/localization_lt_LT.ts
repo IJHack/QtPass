@@ -477,7 +477,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store, kad jį gautumėte.&lt;br&gt;Jei jau tai padarėte, įsitikinkite, kad kartą jį paleidote, ir&lt;br&gt;kitame dialogo lange spustelėkite &quot;Autodetect&quot;.</translation>
+        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store, kad jį gautumėte.&lt;br&gt;Jei jau tai padarėte, įsitikinkite, kad kartą jį paleidote, ir&lt;br&gt;kitame dialogo lange spustelėkite &quot;Autodetect&quot;.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
