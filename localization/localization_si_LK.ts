@@ -377,7 +377,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished">QtPass වැසුනු ම්වොරූන්: </translation>
+        <translation type="unfinished">&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; වැසුනු ම්වොරූන්: </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
