@@ -630,7 +630,7 @@ e-mail</source>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished">ASCII-armored කළමනාකරණය ( *.asc );;විšeල්බීම සහිත ඉස්ථත්‍ර කළමනාකරණය</translation>
+        <translation type="unfinished">ASCII-armored කළමනාකරණය (*.asc);;විšeල්බීම සහිත ඉස්ථත්‍ර කළමනාකරණය (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
