@@ -436,7 +436,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Vai vēlaties izveidot paroļu krātuvi %1?</translation>
+        <translation>Vai vēlaties izveidot paroļu krātuvi pie %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
@@ -497,7 +497,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Vai vēlaties izveidot paroļu krātuvi %1?</translation>
+        <translation>Vai vēlaties izveidot paroļu krātuvi vietā %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
@@ -1467,7 +1467,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Ievadiet WebDAV piekurušanas paroli:</translation>
+        <translation>Ievadiet WebDAV piekļūšanas paroli:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
