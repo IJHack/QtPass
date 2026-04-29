@@ -830,7 +830,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation type="unfinished">Slaptafrazė</translation>
+        <translation>Slaptafrazė</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
