@@ -457,7 +457,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
         <source>New Profile</source>
-        <translation type="unfinished"> naujas profilis</translation>
+        <translation>Naujas profilis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
@@ -632,7 +632,8 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished">Niekas iš pasirinkto krypčių turi paslėptąją kryptį, jums negalės atkurti bet kokios naujai pridėtų slaptažodžio.</translation>
+        <translation>Nė vienas iš pasirinktų raktų neturi slapto rakto.
+Negalėsite iššifruoti jokių naujai pridėtų slaptažodžių!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -653,7 +654,8 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">Ne visi tajumiški sertifikavimo raktai yra prieinami. Jums bus neįmanoma keisti vartotojo sąrašą!</translation>
+        <translation>Nė vienas iš slaptų pasirašymo raktų nėra pasiekiamas.
+Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
@@ -1123,7 +1125,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation type="unfinished">Nėra atitinkamų raktinių</translation>
+        <translation>Nėra atitinkamų raktinių.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
@@ -1138,9 +1140,9 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>Rodo %n atitikmus</numerusform>
-            <numerusform>Rodo %n atitikimus</numerusform>
-            <numerusform>Rodo %n atitikmių</numerusform>
+            <numerusform>rodo %n atitikmus.</numerusform>
+            <numerusform>rodo %n atitikimus.</numerusform>
+            <numerusform>rodo %n atitikmių.</numerusform>
         </translation>
     </message>
     <message>
@@ -1153,7 +1155,8 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">(%1 įrašomas)</translation>
+        <translation>Naujas slaptažodžių failas:
+(Bus patalpintas %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
@@ -1441,7 +1444,8 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Netika prieigos prisijungimas prie WebDAV:</translation>
+        <translation>Netika prieigos prisijungimas prie WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
@@ -1457,13 +1461,15 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">Fusedav išeina nekonsultuojant</translation>
+        <translation>Fusedav išeina nekonsultuojant
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Nepavyko paleisti fusedav, norėdami susisiekti su WebDAV:</translation>
+        <translation>Nepavyko paleisti fusedav, norėdami susisiekti su WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="275"/>
@@ -1586,7 +1592,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation type="unfinished"> ieikite vartotojus</translation>
+        <translation>Leškoti vartotojų</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
@@ -1631,17 +1637,17 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="333"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">Nevalidu</translation>
+        <translation>[NEGALIOJA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="336"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[Išpuolę]</translation>
+        <translation>[GALIOJIMAS NEBEGALIOJA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[Raktinis]</translation>
+        <translation>[DALINIS] </translation>
     </message>
 </context>
 </TS>
