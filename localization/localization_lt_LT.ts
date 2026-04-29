@@ -840,7 +840,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation type="unfinished">Pakartoti slaptažodį</translation>
+        <translation type="unfinished">Pakartoti slaptafrazę</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
