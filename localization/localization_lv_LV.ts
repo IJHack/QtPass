@@ -1521,7 +1521,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
         <source>GPG key pair generated successfully</source>
-        <translation>GPG īpašuma pārvalde ir veiksmīgi izveidota</translation>
+        <translation>GPG atslēgu pāris veiksmīgi ģenerēts</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
