@@ -1677,7 +1677,7 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>Fusedav se je nepričakovano zaprl
+        <translation>fusedav අනපේක්ෂිත ලෙස ඉවත්විය
 </translation>
     </message>
     <message>
