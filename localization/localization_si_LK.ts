@@ -443,7 +443,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">කරුණාකර ඔබගේ පද්ධතියේ GnuPG ස්ථාපනය කරන්න.&lt;br&gt;ඔබගේ ප්‍රියතම පැකේජ කළමනාකරු භාවිතයෙන් &lt;strong&gt;gpg&lt;/strong&gt; ස්ථාපනය කරන්න&lt;br&gt;හෝ GnuPG.org වෙතින් එය &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;බාගත කරන්න&lt;/a&gt;</translation>
+        <translation>කරුණාකර ඔබේ පද්ධතියේ GnuPG ස්ථාපනය කරන්න.&lt;br&gt;ඔබේ ප්‍රියතම පැකේජ කළමනාකරු භාවිතයෙන් &lt;strong&gt;gpg&lt;/strong&gt; ස්ථාපනය කරන්න&lt;br&gt;නැතහොත් GnuPG.org වෙතින් &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;බාගන්න&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -519,12 +519,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">කරුණාකර ඔබගේ පද්ධතියේ GnuPG ස්ථාපනය කරන්න.&lt;br&gt;එය ලබා ගැනීමට Microsoft Store වෙතින් &lt;strong&gt;Ubuntu&lt;/strong&gt; ස්ථාපනය කරන්න.&lt;br&gt;ඔබ දැනටමත් එසේ කර ඇත්නම්, එය වරක් ආරම්භ කර ඇති බව තහවුරු කරගන්න සහ&lt;br&gt;ඊළඟ සංවාද කොටුවේ &quot;Autodetect&quot; ක්ලික් කරන්න.</translation>
+        <translation>කරුණාකර ඔබේ පද්ධතියේ GnuPG ස්ථාපනය කරන්න.&lt;br&gt;එය ලබා ගැනීමට Microsoft Store වෙතින් &lt;strong&gt;Ubuntu&lt;/strong&gt; ස්ථාපනය කරන්න.&lt;br&gt;ඔබ දැනටමත් එසේ කර ඇත්නම්, ඔබ එය එක් වරක් ආරම්භ කර ඇති බවට වග බලා ගන්න, ඊළඟ සංවාදයේදී &quot;ස්වයංක්‍රීයව හඳුනාගැනීම&quot; ක්ලික් කරන්න.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">කරුණාකර ඔබගේ පද්ධතියේ GnuPG ස්ථාපනය කරන්න.&lt;br&gt;Microsoft Store වෙතින් &lt;strong&gt;Ubuntu&lt;/strong&gt; ස්ථාපනය කරන්න&lt;br&gt;හෝ GnuPG.org වෙතින් එය &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;බාගත කරන්න&lt;/a&gt;</translation>
+        <translation>කරුණාකර ඔබේ පද්ධතියේ GnuPG ස්ථාපනය කරන්න.&lt;br&gt;Microsoft Store වෙතින් &lt;strong&gt;Ubuntu&lt;/strong&gt; ස්ථාපනය කරන්න&lt;br&gt;නැතහොත් GnuPG.org වෙතින් &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;බාගන්න&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -637,7 +637,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation type="unfinished">ලිවීම සඳහා %1 විවෘත කළ නොහැක: %2</translation>
+        <translation>ලිවීම සඳහා %1 විවෘත කළ නොහැකි විය: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
@@ -671,7 +671,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished">භාවිතා කිරීමට සංකේතන යතුර කියවිය නොහැක, .gpg-id ගොනුව නොමැත හෝ අවලංගුයි.</translation>
+        <translation>භාවිතා කිරීමට සංකේතාංකන යතුර කියවිය නොහැකි විය, .gpg-id ගොනුව අස්ථානගත වී ඇත හෝ අවලංගුය.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -758,7 +758,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="732"/>
         <location filename="../src/imitatepass.cpp" line="787"/>
         <source>Updating password-store</source>
-        <translation type="unfinished">මුරපද ගබඩාව යාවත්කාලීන කරමින්</translation>
+        <translation>මුරපද ගබඩාව යාවත්කාලීන කරමින්</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="757"/>
@@ -822,7 +822,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation type="unfinished">ASCII-armored GPG යතුර</translation>
+        <translation>ASCII-සන්නද්ධ GPG යතුර</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -845,13 +845,13 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 ASCII-armored GPG යතුරක් ලෙස නොපෙනේ. පළමුව &lt;code&gt;gpg --armor --export&lt;/code&gt; සමඟ එය පරිවර්තනය කරන්න, හෝ &lt;b&gt;පිටපත්පුවරුවෙන්&lt;/b&gt; armored බ්ලොක් අලවන්න.</translation>
+        <translation>%1 ASCII-සන්නද්ධ GPG යතුරක් ලෙස නොපෙනේ. එය මුලින්ම &lt;code&gt;gpg --armor --export&lt;/code&gt; සමඟ පරිවර්තනය කරන්න, නැතහොත් &lt;b&gt;ක්ලිප්බෝඩ් එකෙන්&lt;/b&gt; හරහා සන්නද්ධ බ්ලොක් එක අලවන්න.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished">GPG ආයාතය අසාර්ථක විය:
+        <translation>GPG ආයාතය අසාර්ථක විය:
 %1</translation>
     </message>
     <message>
@@ -895,7 +895,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;මුරපද වාක්‍ය ඛණ්ඩයක දිගට සීමාවක් නොමැත, එය ප්‍රවේශමෙන් තෝරා ගත යුතුය. ආරක්ෂාව දෘෂ්ටිකෝණයෙන් බැලූ විට, පුද්ගලික යතුර අගුළු හැරීමේ මුරපද වාක්‍ය ඛණ්ඩය GnuPG (සහ අනෙකුත් පොදු යතුරු සංකේතන පද්ධතිවල ද) ඇති දුර්වලම ස්ථානයකි, මන්ද වෙනත් පුද්ගලයෙකු ඔබේ පුද්ගලික යතුර ලබා ගන්නේ නම් එයයි ඔබට ඇති එකම ආරක්ෂාව. &lt;br/&gt;පරමාදර්ශීව, මුරපද වාක්‍ය ඛණ්ඩයේ ශබ්දකෝෂයකින් වචන භාවිතා නොකළ යුතු අතර අකාරාදී අක්ෂරවල විශාල-කුඩා මිශ්‍ර කළ යුතු අතර අකාරාදී නොවන අක්ෂර ද භාවිතා කළ යුතුය.&lt;br/&gt;හොඳ මුරපද වාක්‍ය ඛණ්ඩයක් GnuPG ආරක්ෂිත භාවිතයට අත්‍යවශ්‍ය වේ.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;මුරපදයක දිග සඳහා සීමාවක් නොමැති අතර, එය ප්‍රවේශමෙන් තෝරා ගත යුතුය. ආරක්ෂාව පිළිබඳ දෘෂ්ටි කෝණයෙන්, පුද්ගලික යතුර අගුළු ඇරීමට මුරපදය GnuPG හි (සහ අනෙකුත් පොදු යතුරු සංකේතාංකන පද්ධතිවල) දුර්වලම ලක්ෂ්‍යයකි, මන්ද එය වෙනත් පුද්ගලයෙකුට ඔබේ පුද්ගලික යතුර ලැබුනහොත් ඔබට ඇති එකම ආරක්ෂාවයි. &lt;br/&gt;ඉතා මැනවින්, මුරපදය ශබ්දකෝෂයකින් වචන භාවිතා නොකළ යුතු අතර අකාරාදී අක්ෂරවල නඩුව මෙන්ම අකාරාදී නොවන අක්ෂර භාවිතා කළ යුතුය.&lt;br/&gt;GnuPG හි ආරක්ෂිත භාවිතය සඳහා හොඳ මුරපදයක් ඉතා වැදගත් වේ.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -915,7 +915,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished">විශේෂඥ විකල්ප සඳහා &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG අත්පොත&lt;/a&gt; බලන්න</translation>
+        <translation>විශේෂඥ විකල්ප සඳහා &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG අත්පොත&lt;/a&gt; පරීක්ෂා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
@@ -940,7 +940,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished">මෙම මෙහෙයුමට මිනිත්තු කිහිපයක් ගත විය හැක.&lt;br /&gt;අපට අහඹු බයිට් රාශියක් ජනනය කිරීමට අවශ්‍යයි. ප්‍රාථමික ජනනය අතරතුර වෙනත් ක්‍රියාවක් (යතුරුපුවරුවේ ටයිප් කිරීම, මූසිකය චලනය කිරීම, තැටි භාවිතා කිරීම) කිරීම හොඳ අදහසකි; මෙය අහඹු සංඛ්‍යා උත්පාදකයට ප්‍රමාණවත් අහඹුතාවයක් ලබා ගැනීමට හොඳ අවස්ථාවක් ලබා දේ.</translation>
+        <translation>මෙම මෙහෙයුමට මිනිත්තු කිහිපයක් ගත විය හැක.&lt;br /&gt;අපි අහඹු බයිට් ගොඩක් ජනනය කළ යුතුයි. ප්‍රමුඛ උත්පාදනය අතරතුර වෙනත් ක්‍රියාවක් (යතුරුපුවරුවේ ටයිප් කිරීම, මූසිකය චලනය කිරීම, තැටි භාවිතා කිරීම) සිදු කිරීම හොඳ අදහසකි; මෙය අහඹු සංඛ්‍යා උත්පාදක යන්ත්‍රයට ප්‍රමාණවත් එන්ට්‍රොපිය ලබා ගැනීමට වඩා හොඳ අවස්ථාවක් ලබා දෙයි.</translation>
     </message>
 </context>
 <context>
@@ -1196,7 +1196,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="501"/>
         <location filename="../src/mainwindow.cpp" line="514"/>
         <source>Updating password-store</source>
-        <translation type="unfinished">මුරපද ගබඩාව යාවත්කාලීන කරමින්</translation>
+        <translation>මුරපද ගබඩාව යාවත්කාලීන කරමින්</translation>
     </message>
     <message>
         <source>Can not edit</source>
@@ -1272,7 +1272,7 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>%n සිදුකරන ක්‍රියාව</numerusform>
             <numerusform>%n සිදුකරන ක්‍රියාවන්</numerusform>
         </translation>
@@ -1539,7 +1539,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">%1 හි සියලු මුරපද නැවත සංකේතනය කරන්නද?
+        <translation>%1 හි සියලු මුරපද නැවත සංකේතනය කරන්නද?
 
 මෙය .gpg-id හි දැක්වෙන වර්තමාන ලැබුම්කරුවන් භාවිතා කරමින් මෙම ෆෝල්ඩරයේ ඇති සියලුම මුරපද ගොනු නැවත සංකේතනය කරයි.
 
@@ -1553,10 +1553,10 @@ Continue?</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;QtPass යනු සම්මත Unix මුරපද කළමනාකරු වන &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; සඳහා වන GUI එකකි.&lt;/p&gt;
-&lt;p&gt;මෙම මෘදුකාංගය සමඟ ඔබට ඇතිවන කිසියම් &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;ගැටළු&lt;/a&gt; කරුණාකර වාර්තා කරන්න.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;ලේඛනගත කිරීම&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;මූලකේතය&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;QtPass යනු සම්මත unix මුරපද කළමනාකරු වන &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; සඳහා GUI එකකි.&lt;/p&gt;
+&lt;p&gt;මෙම මෘදුකාංගය සමඟ ඔබට ඇති විය හැකි ඕනෑම &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;ගැටලුවක්&lt;/a&gt; වාර්තා කරන්න.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;ලේඛනකරණය&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1755,7 +1755,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">පිටපත්පුවරුවට පිටපත් කරන ලදී</translation>
+        <translation>පසුරු පුවරුවට පිටපත් කරන ලදී</translation>
     </message>
 </context>
 <context>
@@ -1818,11 +1818,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">මෙම ෆෝල්ඩරයේ ගබඩා කර ඇති මුරපද විකේතනය කිරීමට හැකි විය යුතු පරිශීලකයන් තෝරන්න.
-සටහන: පවතින ගොනු වෙනස් නොකෙරෙන අතර, ඔබ ඒවා සංස්කරණය කරන තෙක් පැරණි අවසර තබා ගනී.
-නිල් ඇතුළත් කිරීම්වලට රහස් යතුරක් තිබේ — විකේතනය කිරීමට හැකි වීමට ඒවායින් එකක් තෝරන්න.
-කළු ඇතුළත් කිරීම්වලට සංකේතන යතුරක් ඇත සහ එය විශ්වාසදායකයි — අන් අයට විකේතනය කිරීමට ඉඩ දීමට ඒවායින් එකක් තෝරන්න.
-රතු ඇතුළත් කිරීම් වලංගු නොවේ, ඔබට ඒවාට සංකේතනය කළ නොහැක.</translation>
+        <translation>මෙම ෆෝල්ඩරයේ ගබඩා කර ඇති මුරපද විකේතනය කිරීමට හැකි විය යුතු පරිශීලකයින් තෝරන්න.
+සටහන: පවතින ගොනු වෙනස් නොකරනු ඇති අතර, ඔබ ඒවා සංස්කරණය කරන තෙක් පැරණි අවසරයන් රඳවා ගනු ඇත.
+නිල් ඇතුළත් කිරීම් වල රහස් යතුරක් ඇත, විකේතනය කිරීමට හැකි වීමට මේවායින් එකක් තෝරන්න.
+කළු ඇතුළත් කිරීම් වල සංකේතාංකන යතුරක් ඇති අතර එය විශ්වාසදායකය, අනෙක් අයට විකේතනය කිරීමට ඉඩ දීමට මේවායින් එකක් තෝරන්න.
+රතු ඇතුළත් කිරීම් වලංගු නොවේ, ඔබට මේවාට සංකේතනය කිරීමට නොහැකි වනු ඇත.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
