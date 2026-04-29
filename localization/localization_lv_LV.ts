@@ -916,7 +916,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Saturu meklēšanas modra atlases</translation>
+        <translation>Satura meklēšanas pārslēgšana</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
@@ -926,7 +926,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation>Neuzdumbības meklējums</translation>
+        <translation>Reģistrnejutīgs meklējums</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -936,7 +936,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Neuzdumbības meklējuma modra atlases</translation>
+        <translation>Reģistrnejutīga meklējuma pārslēgšana</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
@@ -1124,7 +1124,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation>Iešķrināt saturu (regex)</translation>
+        <translation>Meklēt saturu (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
@@ -1280,7 +1280,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Directory does not exist: %1</source>
-        <translation>Mērķtiecības kataloga neeksistē: %1</translation>
+        <translation>Katalogs neeksistē: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
