@@ -502,7 +502,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Neizdevās izveidot paroļu krātuvi vietā: %1</translation>
+        <translation>Neizdevās izveidot paroļu glabātuvi vietā: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
