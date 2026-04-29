@@ -1627,7 +1627,7 @@ Raudonos eilutės netinkamos, jūs negalėsite jų užšifruoti.</translation>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation type="unfinished">Trūksta raktų sąrašo</translation>
+        <translation>Trūksta raktų sąrašo</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
