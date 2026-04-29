@@ -752,7 +752,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Įrašykite čia ASCII-armoruotą GPG kodo...</translation>
+        <translation>Įrašykite čia ASCII-armoruotą GPG raktą...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
