@@ -540,12 +540,12 @@ el. paštas</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation>Viešasis klaida</translation>
+        <translation>Viešasis raktas</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>Kopijuoti į leidėją</translation>
+        <translation>Kopijuoti į iškarpinę</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -555,7 +555,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>%1 užduoties viešasis žymas</translation>
+        <translation>%1 užduoties viešasis raktas</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
@@ -567,12 +567,12 @@ el. paštas</translation>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Išsaugoti Viešąją Žymę</translation>
+        <translation>Išsaugoti Viešąjį Raktą</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>ASCII armūtoji žymė (*.asc);;Visi failai (*)</translation>
+        <translation>ASCII šarvuotas raktas (*.asc);;Visi failai (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
