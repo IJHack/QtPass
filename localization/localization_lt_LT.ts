@@ -621,7 +621,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Nepavyko atidaryti .gpg-id dėl rašymo.</translation>
+        <translation>Nepavyko atidaryti .gpg-id rašymui.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
