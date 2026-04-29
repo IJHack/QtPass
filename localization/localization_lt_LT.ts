@@ -1319,7 +1319,7 @@ Tęsti?</translation>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished">Nepavyko eksportuoti viešojo rakto %1.
+        <translation>Nepavyko eksportuoti viešojo rakto %1.
 
 %2</translation>
     </message>
