@@ -1633,7 +1633,7 @@ Sarkanie ieraksti nav derīgi; jūs nevarēsiet tos šifrēt.</translation>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished">Nevarēja iegūt pieejamo GPG atslēgu sarakstu</translation>
+        <translation>Nevarēja iegūt pieejamo GPG atslēgu sarakstu</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
