@@ -1472,7 +1472,7 @@ Turpināt?</translation>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>Fusedav neizdevās beigt darbu
+        <translation>Fusedav neparedzēti izbeidzās
 </translation>
     </message>
     <message>
