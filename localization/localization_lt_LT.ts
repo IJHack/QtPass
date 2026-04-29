@@ -1229,7 +1229,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation type="unfinished">Pridėti gavėją...</translation>
+        <translation>Pridėti gavėją...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
