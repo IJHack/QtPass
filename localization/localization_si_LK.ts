@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>පැටෙන් සඳහා අතුසා කිරීම:</translation>
+        <translation>පැනලය ස්වයංක්‍රීයව මකා දැමීම:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
