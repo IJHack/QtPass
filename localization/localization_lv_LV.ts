@@ -951,7 +951,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished">Laipni lūdzam QtPass</translation>
+        <translation>Laipni lūdzam QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -959,7 +959,10 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;p&gt;QtPass ir grafiskā saskarne priekš &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standarta Unix paroļu pārvaldnieka.&lt;/p&gt;
+&lt;p&gt;Lūdzu, ziņojiet par jebkādām &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problēmām&lt;/a&gt;, ar kurām saskaraties, lietojot šo programmatūru.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentācija&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Pirmkods&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
@@ -1167,7 +1170,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation> un visu saturu? &lt;br&gt;&lt;strong&gt;Uzmanību: norādītajā mapē ir neparedzēti faili, pārbaudiet tos pirms turpināt.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
@@ -1251,12 +1254,12 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">Neizdevās izveidot mapi: %1</translation>
+        <translation>Neizdevās izveidot mapi: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">Neizdevās izveidot .gpg-id failu: %1</translation>
+        <translation>Neizdevās izveidot .gpg-id failu: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
