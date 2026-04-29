@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation>කොපියා ප්‍රකාශනය:</translation>
+        <translation>පිටපත් පුවරුව හැසිරීම:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
