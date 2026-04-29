@@ -512,7 +512,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Mape %1 nešķiet paroles glabātuve vai arī tā vēl nav inicializēta.</translation>
+        <translation>Mape %1 neizskatās paroles glabātuve vai arī tā vēl nav inicializēta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
@@ -708,7 +708,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Nevarēja pārbaudīt .gpg-id virkni katalogā.</translation>
+        <translation>Nevarēja pārbaudīt .gpg-id failu katalogā.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
@@ -1359,7 +1359,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Nevar generēt paroli, nav iestatīto konfigurācijā noteiktajās rakstzīmju sarakstā izvēlētos!</translation>
+        <translation>Nevar ģenerēt paroli, jo konfigurācijā nav norādītas rakstzīmes, no kurām izvēlēties!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
@@ -1472,7 +1472,7 @@ Turpināt?</translation>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>Fusedav neizdevās beigt darbu
+        <translation>Fusedav neparedzēti izbeidzās
 </translation>
     </message>
     <message>
