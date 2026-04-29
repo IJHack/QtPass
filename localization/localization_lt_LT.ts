@@ -351,7 +351,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
         <source>Current path</source>
-        <translation>Tiesioginis kelias</translation>
+        <translation>Dabartinis kelias</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
