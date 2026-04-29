@@ -1219,7 +1219,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished">Iš naujo užšifruoti visus slaptažodžius</translation>
+        <translation>Iš naujo užšifruoti visus slaptažodžius</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
