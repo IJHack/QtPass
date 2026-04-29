@@ -906,7 +906,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Piedāvājiet meklēšanu par paroles saturam (pass grep)</translation>
+        <translation>Meklēt paroles saturā (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
