@@ -1623,7 +1623,7 @@ Sarkanie ieraksti nav derīgi; jūs nevarēsiet tos šifrēt.</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Ieimportējiet GPG atslēgu no faila vai leņķītāja</translation>
+        <translation>Ieimportējiet GPG atslēgu no faila vai starpliktuves</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
