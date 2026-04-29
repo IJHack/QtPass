@@ -1225,7 +1225,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation>Eksportējiet manu publikāciju...</translation>
+        <translation>Eksportēt manu publisko atslēgu...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
