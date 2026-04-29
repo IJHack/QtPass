@@ -410,7 +410,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
         <source>No Clipboard</source>
-        <translation>Nav klipbordas</translation>
+        <translation>Nav starpliktuves</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
@@ -567,7 +567,7 @@ e-pasts</translation>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Saglabājiet publisku vārdu</translation>
+        <translation>Saglabājiet publisko atslēgu</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
@@ -592,7 +592,7 @@ e-pasts</translation>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Pārbaudīt .gpgid faila segnojumu!</translation>
+        <translation>Pārbaudīt .gpgid faila parakstu!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -661,7 +661,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>Atgriezenais šifrēšana neplānojas</translation>
+        <translation>Atkārtota šifrēšana neizdevās</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
@@ -737,7 +737,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Ielieciet GPG publisku paroli no faila vai ievadiet to šeit. Paroles jābūt ASCII armored formāta.</translation>
+        <translation>Importējiet GPG publisko atslēgu no faila vai ielīmējiet to zemāk. Atslēgai jābūt ASCII-armored formātā.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
