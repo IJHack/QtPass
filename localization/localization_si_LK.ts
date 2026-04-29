@@ -443,7 +443,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -524,7 +524,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -549,7 +549,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished">නට්‍රිකාල් ගිත්/GPG</translation>
+        <translation type="unfinished">(&amp;V) නට්‍රිකාල් ගිත්/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -779,7 +779,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">%1 හෝදුරු ඉතිහාසයක් සමඟ කළ වැඩියන්න, %1 ශූන් කළ වැඩියන්න</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1533,7 +1533,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">වෙනත් මුරපද කල සංකේතය හාම්කර ඉතිහසීම කරන්න එය වෙනත් මුරපද කල සංකේතය ශූන් හා .gpg-id හෝ සමමුහුර්ත කරන්න.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -1761,22 +1761,22 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation type="unfinished">විශ්ලේසිය</translation>
+        <translation type="unfinished">(&amp;S) විශ්ලේසිය</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished">කඩන්න</translation>
+        <translation type="unfinished">(&amp;H) කඩන්න</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished">මැරිණීම</translation>
+        <translation type="unfinished">(&amp;N) මැරිණීම</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished">මුද්‍රණ</translation>
+        <translation type="unfinished">(&amp;X) මුද්‍රණ</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
