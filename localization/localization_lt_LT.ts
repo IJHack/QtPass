@@ -1284,7 +1284,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>Atsifraukykite slaptažodžius</translation>
+        <translation>Iš naujo užšifruokite slaptažodžius</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
