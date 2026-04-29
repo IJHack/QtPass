@@ -578,7 +578,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished">සැක්ලොව සහ ප්‍රතිබදු විනෝදයෙන් කණ්ඩායම කළ හැක, එහි විස්තර කරන සැක්ලොව</translation>
+        <translation>මුරපද උත්පාදන සංවාදයේදී සහ මුරපද දර්ශනයේදී සැකිලි අමතර ක්ෂේත්‍ර එක් කරයි.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
