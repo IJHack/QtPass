@@ -296,7 +296,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
@@ -390,12 +390,12 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sistēmas paplāte nav pieejama</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
@@ -472,7 +472,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GnuPG nav atrasts</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
@@ -643,7 +643,7 @@ Jūs nevarat dekriptēt jebkuru jauno ierosināto paroli!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neizdevās parakstīt %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
@@ -666,7 +666,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neizdevās aizstāt %1. Oriģināls ir atjaunots.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
@@ -860,17 +860,17 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nederīgs nosaukums</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nosaukumam jābūt vismaz 5 rakstzīmes garam.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation>Nevalids e-pasta adrese</translation>
+        <translation>Nederīga e-pasta adrese</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
@@ -940,7 +940,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pārslēgt no reģistra neatkarīgu satura meklēšanu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
@@ -950,7 +950,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Laipni lūdzam QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -965,7 +965,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pievienot paroli</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -1250,12 +1250,12 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neizdevās izveidot mapi: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Neizdevās izveidot .gpg-id failu: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
@@ -1335,7 +1335,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation>Neplatība paroles garuma dēļ</translation>
+        <translation>Nederīgs paroles garums</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
@@ -1432,7 +1432,7 @@ Continue?</source>
         <location filename="../main/main.cpp" line="155"/>
         <location filename="../main/main.cpp" line="159"/>
         <source>LTR</source>
-        <translation type="unfinished"></translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -1539,7 +1539,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">pārrakstīt %1 ar %2?</translation>
     </message>
 </context>
 <context>
@@ -1618,32 +1618,32 @@ Sarkanie ieraksti nav derīgi; jūs nevarēsiet tos šifrēt.</translation>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atslēgu saraksts trūkst</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nevarēja iegūt pieejamo GPG atslēgu sarakstu</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Atslēga nav atrasta atslēgu saišķī</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
         <source>created</source>
-        <translation type="unfinished"></translation>
+        <translation>izveidots</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="310"/>
         <source>expires</source>
-        <translation type="unfinished"></translation>
+        <translation>beidzas</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="333"/>
         <source>[INVALID] </source>
-        <translation type="unfinished"></translation>
+        <translation>[NEDERĪGS] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="336"/>
