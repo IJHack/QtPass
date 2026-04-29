@@ -400,7 +400,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>Pass OTP uzstādes jāinstalē</translation>
+        <translation>Pass OTP paplašinājums jāinstalē</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
@@ -415,12 +415,12 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation>Visur kopēt uz īpašuma koplēdzinājumu</translation>
+        <translation>Vienmēr kopēt uz starpliktuvi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Piemērota kopējuma uzklāšana</translation>
+        <translation>Pēc pieprasījuma kopēt uz starpliktuvi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
@@ -502,7 +502,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Nepieciešama krājuma izveide no %1 neplānojas</translation>
+        <translation>Neizdevās izveidot paroļu krātuvi vietā: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
@@ -555,7 +555,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>%1 parakstīšanas vārds</translation>
+        <translation>Publiskā atslēga lietotājam %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
