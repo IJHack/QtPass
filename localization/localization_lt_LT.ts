@@ -762,7 +762,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII-armoruotas GPG kodas</translation>
+        <translation>ASCII šarvuotas GPG raktas</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
