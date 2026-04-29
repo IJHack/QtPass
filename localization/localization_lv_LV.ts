@@ -791,7 +791,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation>GPG importēšana nedarbojusies:
+        <translation>GPG importēšana neizdevās:
 %1</translation>
     </message>
     <message>
