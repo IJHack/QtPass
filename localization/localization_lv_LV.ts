@@ -1638,7 +1638,7 @@ Sarkanie ieraksti nav derīgi; jūs nevarēsiet tos šifrēt.</translation>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">Atslēga nav atrasta atslēgu saišķī</translation>
+        <translation>Atslēga nav atrasta atslēgu saišķī</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
