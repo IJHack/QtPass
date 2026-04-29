@@ -611,7 +611,7 @@ e-pasts</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Nepieciešama šifrēšanas koda atsauces faila piekļuve nav iespējama, .gpg-id fails trūkst vai ir nederīgs.</translation>
+        <translation>Nevarēja nolasīt šifrēšanas atslēgu izmantošanai, .gpg-id fails trūkst vai ir nederīgs.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -621,7 +621,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Nepieciešama ierobežošana, lai atvērtu .gpg-id failu uzrakstīšanai.</translation>
+        <translation>Neizdevās atvērt .gpg-id failu rakstīšanai.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
@@ -713,7 +713,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Nepieciešama atšifrēšana %1 neplānojusies</translation>
+        <translation>Neizdevās atkārtoti šifrēt %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
@@ -780,7 +780,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation>Nepieciešama faila atvēršana: %1</translation>
+        <translation>Nevarēja atvērt failu: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
@@ -797,7 +797,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Nepieciešama ievades paraksta identifikācijas atpazīšana no GPG izvada.</translation>
+        <translation>Nevarēja parsēt importētās atslēgas id no GPG izvada.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
@@ -1095,7 +1095,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
-        <translation>OTP kods iekopēts uz klipbordu</translation>
+        <translation>OTP kods kopēts starpliktuvē</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
@@ -1298,7 +1298,7 @@ Continue?</source>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation>Eksportēt publisku vārdu</translation>
+        <translation>Eksportēt publisko atslēgu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
@@ -1310,7 +1310,7 @@ Continue?</source>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation>Nepieciešama publiska šifrēšanas funkcija, %1. 
+        <translation>Nevarēja eksportēt publisko atslēgu lietotājam %1.
 
 %2</translation>
     </message>
@@ -1446,7 +1446,7 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Nepieciešama telpa WebDAV:
+        <translation>Neizdevās savienoties ar WebDAV:
 </translation>
     </message>
     <message>
@@ -1526,7 +1526,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
         <source>Copied to clipboard</source>
-        <translation>Iekopēts uz klipbordu</translation>
+        <translation>Kopēts starpliktuvē</translation>
     </message>
 </context>
 <context>
