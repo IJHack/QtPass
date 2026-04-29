@@ -950,7 +950,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Welcome to QtPass</source>
-        <translation>Sveiki atsiunte, QtPass</translation>
+        <translation>Sveiki atvykę, QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -1098,7 +1098,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">OTP kodas nukopijuotas į iškarpinę</translation>
+        <translation>OTP kodas nukopijuotas į iškarpinę</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
@@ -1108,12 +1108,12 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
-        <translation type="unfinished">Slaptažodis ir turinys paslėpti</translation>
+        <translation>Slaptažodis ir turinys paslėpti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
         <source>Looking for: %1</source>
-        <translation type="unfinished">Ieškoma: %1</translation>
+        <translation>Ieškoma: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
@@ -1209,7 +1209,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation type="unfinished">Pervadinti slaptažodį</translation>
+        <translation>Pervadinti slaptažodį</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
