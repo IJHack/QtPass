@@ -1209,7 +1209,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation type="unfinished">Pervadinti slaptažodį</translation>
+        <translation>Pervadinti slaptažodį</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
