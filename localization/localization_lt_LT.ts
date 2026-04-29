@@ -915,7 +915,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Turinimo paieškos peržiūra</translation>
+        <translation>Turinio paieškos perjungimas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
