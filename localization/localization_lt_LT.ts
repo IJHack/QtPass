@@ -815,7 +815,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished">Sukurti naują raktų porą</translation>
+        <translation>Sukurti naują raktų porą</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
