@@ -577,7 +577,7 @@ e-pasts</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation>Nevarat atvērt %1 uz rakstīšanas: %2</translation>
+        <translation>Nevarēja atvērt %1 rakstīšanai: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
@@ -638,7 +638,7 @@ Jūs nevarēsiet atšifrēt nevienu no jaunpievienotajām parolēm!</translation
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
         <source>GPG signing failed!</source>
-        <translation>GPG pārvaldīšana nedarbojas!</translation>
+        <translation>GPG parakstīšana neizdevās!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
@@ -692,18 +692,18 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Atjaunināšana no pārdeves kataloga %1</translation>
+        <translation>Atjaunināšana no paroles kataloga %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
         <location filename="../src/imitatepass.cpp" line="787"/>
         <source>Updating password-store</source>
-        <translation>Paroles skaitļu atjaunošana</translation>
+        <translation>Paroļu krātuves atjaunināšana</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="757"/>
         <source>GPG ID verification failed</source>
-        <translation>GPG ID pārbaude nesasniedzējusi</translation>
+        <translation>GPG ID pārbaude neizdevās</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
