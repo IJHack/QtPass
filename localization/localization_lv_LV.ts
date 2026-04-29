@@ -708,7 +708,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Nevarēja pārbaudīt .gpg-id virkni katalogā.</translation>
+        <translation>Nevarēja pārbaudīt .gpg-id failu katalogā.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
