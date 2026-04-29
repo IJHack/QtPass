@@ -197,7 +197,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished">Dovolite pretrago v sadržju geselske datoteke. Zahteva dešifriranje vsake datoteke in lahko na velikih bazi podatkov je težko.</translation>
+        <translation type="unfinished">Dovoli iskanje po vsebini datotek z gesli. Zahteva dešifriranje vsake datoteke in je lahko počasno pri velikih bazah podatkov.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">Generiraj GPG ključno paro</translation>
+        <translation type="unfinished">Ustvari GPG ključno paro</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
@@ -316,7 +316,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished">Profilno ime, uporabljan za identifikacijo ta konfiguracijski profil</translation>
+        <translation type="unfinished">Profilno ime, uporabljeno za identifikacijo tega konfiguracijskega profila</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
@@ -326,12 +326,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished">Pot do zbiralne datoteke gesel</translation>
+        <translation type="unfinished">Pot do mape shrambe gesel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Signing Key</source>
-        <translation type="unfinished">Podpisna ključ</translation>
+        <translation type="unfinished">Podpisni ključ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
