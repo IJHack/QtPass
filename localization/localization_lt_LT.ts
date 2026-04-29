@@ -395,7 +395,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation type="unfinished">Sistemos dėklas nepasiekiamas</translation>
+        <translation>Sistemos dėklas nepasiekiamas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
