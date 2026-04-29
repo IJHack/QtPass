@@ -626,7 +626,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Check selected users!</source>
-        <translation>Pabandykite patikrinti pasirinktus vartotojus!</translation>
+        <translation>Patikrinkite pasirinktus vartotojus!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="275"/>
