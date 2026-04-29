@@ -1467,7 +1467,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Ievadiet WebDAV piekurušanas paroli:</translation>
+        <translation>Ievadiet WebDAV piekļūšanas paroli:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
