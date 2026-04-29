@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">A-Zabcdefgijklmnopqrstuvwxyz0123456789</translation>
+        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -830,7 +830,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">Nima se omejitev na dolžino gesla, in bi moralo biti izboljšano izbereno. Iz tehga pogleda varnosti je geslo za odpravo tajne ključev ena najslabočlanjenih točk v GnuPG (in drugih sistemov številnega klicanja) zaradi tega, da je ta ta najboljši način za varno variranje tvojega tajnega ključa, če se druga oseba pridobi tvoj tajni ključ. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -875,7 +875,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished">Ta operacija lahko potrebuje nekaj minut. Potrebujemo generirati veliko naloženih bajtov. Je dobro ideja izvesti nekaj drugega (tipa na klavišnici, premika kota miške, uporabo diskov) tukaj; to daje nasprostom številnemu generatorju boljšo priložnost za zdobitev dovoljenega entropija.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1287,7 +1287,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">To bo ponovno zašifriralo vse gesli v tem mapi uporabljajoč trenutne odjemalce definirane v .gpg-id.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
@@ -1320,7 +1320,7 @@ Continue?</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Deljenje gesel z GPG&lt;/h3&gt;&lt;p&gt;Za delavo gesel med drugimi uporabniki:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Izvozi javni ključ&lt;/b&gt; in ga pošlji svojim kolegicam&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ustvarite vnos za javne ključe&lt;/b&gt; vašega GPG zbirka&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ponovno šifrirajte gesla&lt;/b&gt;, da bi vsi odzivi bili lahko razšifrvali&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Ta je izvedba možna le za tiste, ki imajo enak tajni ključ.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Ponos:&lt;/b&gt; Uporabite isto GPG ključ za vse delene mreže.&lt;/p&gt;&lt;p&gt;Poglejte FAQ za dodatne informacije.</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
