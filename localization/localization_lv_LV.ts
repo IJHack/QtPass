@@ -791,7 +791,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation>GPG importēšana nedarbojusies:
+        <translation>GPG importēšana neizdevās:
 %1</translation>
     </message>
     <message>
@@ -1109,7 +1109,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
-        <translation>Parole un saturu salietusi</translation>
+        <translation>Parole un saturs paslēpts</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
@@ -1613,7 +1613,7 @@ Sarkanie ieraksti nav derīgi; jūs nevarēsiet tos šifrēt.</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>Pārskatiet neizmantojamus klauzulē</translation>
+        <translation>Rādīt neizmantojamas atslēgas</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
