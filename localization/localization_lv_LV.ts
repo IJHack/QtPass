@@ -36,7 +36,7 @@
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
-        <source>Content panel behaviour:</source>
+        <source>Content panel behavior:</source>
         <translation>Satura paneļa uzvedība:</translation>
     </message>
     <message>
