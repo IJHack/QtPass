@@ -592,7 +592,7 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpg-id file signature!</source>
-        <translation>Peržiūrėti .gpgid failo parašą!</translation>
+        <translation>Peržiūrėti .gpg-id failo parašą!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -1219,17 +1219,17 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation type="unfinished">Iš naujo užšifruoti visus slaptažodžius</translation>
+        <translation>Iš naujo užšifruoti visus slaptažodžius</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation type="unfinished">Eksportuoti mano viešąjį raktą...</translation>
+        <translation>Eksportuoti mano viešąjį raktą...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation type="unfinished">Pridėti gavėją...</translation>
+        <translation>Pridėti gavėją...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
@@ -1264,7 +1264,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename file</source>
-        <translation type="unfinished">Pervadinti failą</translation>
+        <translation>Pervadinti failą</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
