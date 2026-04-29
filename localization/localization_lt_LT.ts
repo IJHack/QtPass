@@ -692,7 +692,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Iš katalogo %1 atsikratymas iš naujo</translation>
+        <translation>Pakartotinis šifravimas iš aplanko %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
@@ -713,17 +713,17 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Nepavyko atšifravimo %1</translation>
+        <translation>Nepavyko iš naujo užšifruoti %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Atšifravimas baigtas: %1 sėkmingai, %2 nebuvo</translation>
+        <translation>Pakartotinis šifravimas baigtas: %1 sėkmingai, %2 nepavyko</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Atšifravimas baigtas: %1 failų atšifravimas</translation>
+        <translation>Pakartotinis šifravimas baigtas: %1 failai iš naujo užšifruoti</translation>
     </message>
 </context>
 <context>
@@ -880,7 +880,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Ši operacija gali priimti kelias minutes.&lt;br /&gt;Mes turime generuoti daug atvirkščių duomenų. Geriausia būtų atlikti kai kurią kitą veiksmą (klasėje, perkeliant mygtuką, naudojant diskus) prieš priminio generavimą; tai padeda atvirkštiniui skaičiuotojui gauti pakankamai entropijos.</translation>
+        <translation>Ši operacija gali užtrukti kelias minutes.&lt;br /&gt;Reikia sugeneruoti daug atsitiktinių baitų. Geriausia atlikti kitas veiklas (rašyti klaviatūra, judinti pelę, naudoti diskus) pirminių skaičių generavimo metu; tai padeda atsitiktinių skaičių generatoriui surinkti pakankamai entropijos.</translation>
     </message>
 </context>
 <context>
