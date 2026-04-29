@@ -261,7 +261,7 @@
         <location filename="../src/configdialog.ui" line="837"/>
         <location filename="../src/configdialog.ui" line="1015"/>
         <source>…</source>
-        <translation type="unfinished">...</translation>
+        <translation type="unfinished">…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -383,7 +383,9 @@
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished">Ienākuma līnija</translation>
+        <translation type="unfinished">lietotājvārds
+URL
+e-pasts</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>

@@ -996,7 +996,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished">Sukurti OTV ir išsaugoti į leidimų lankstumą</translation>
+        <translation type="unfinished">Sukurti OTP ir išsaugoti į leidimų lankstumą</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
