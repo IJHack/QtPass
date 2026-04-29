@@ -197,7 +197,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Izveidot meklējumu parādījumos parādījuma faila saturā. Šajā procesā ir nepieciešama atvieglošana katras failas un var būt ātruma jautājumiem lielās datu iekšējās pārvaldībās.</translation>
+        <translation>Atļaut meklēt paroļu failu saturā. Nepieciešams atšifrēt katru failu, un lielās glabātuvēs tas var būt lēni.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
         <source>Generate GPG key pair</source>
-        <translation>Izveidot GPG atbilstošu pārslēgšanas paaudzi</translation>
+        <translation>Izveidot GPG atslēgu pāri</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
@@ -301,7 +301,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
         <source>Autodetect</source>
-        <translation>Automātiskais atdzesēšana</translation>
+        <translation>Automātiskā noteikšana</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
@@ -326,12 +326,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>Path to the password store directory</source>
-        <translation>Pateiksmes uz paroles pārvaldes kataloga</translation>
+        <translation>Ceļš uz paroļu glabātuves katalogu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Signing Key</source>
-        <translation>Saglabāšanas ciprs</translation>
+        <translation>Parakstīšanas atslēga</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
