@@ -1646,7 +1646,7 @@ Continue?</source>
         <location filename="../main/main.cpp" line="155"/>
         <location filename="../main/main.cpp" line="159"/>
         <source>LTR</source>
-        <translation type="unfinished">ltr</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
