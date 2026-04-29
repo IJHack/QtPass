@@ -802,7 +802,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Piemaksu veikts: %1</translation>
+        <translation>Veiksmīgi importēta atslēga: %1</translation>
     </message>
 </context>
 <context>
@@ -815,7 +815,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Izveidot jaunu parakstu pārvaldi</translation>
+        <translation>Izveidot jaunu atslēgu pāri</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -1056,7 +1056,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Vidējās QtPass %1</translation>
+        <translation>Laipni lūdzam QtPass %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
@@ -1071,7 +1071,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation>Izlaiduma iespēja</translation>
+        <translation>Procesa izvade</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="501"/>
@@ -1083,7 +1083,7 @@ Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
         <location filename="../src/mainwindow.cpp" line="625"/>
         <location filename="../src/mainwindow.cpp" line="924"/>
         <source>Content hidden</source>
-        <translation>Saturu sakņa ir sakņa</translation>
+        <translation>Saturs paslēpts</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="629"/>
