@@ -371,7 +371,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished">Prikaži vse vrstice, ki se zacnijo s besedom sledeno z &apos;:&apos; kot polja v pogledu gesel, ne le tiste, ki so navedene.</translation>
+        <translation>Prikaži vse vrstice, ki se zacnijo s besedom sledeno z &apos;:&apos; kot polja v pogledu gesel, ne le tiste, ki so navedene</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
@@ -632,7 +632,8 @@ e-pošta</translation>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished">Ni bilo na voljo žetonov z tajnim ključom med izbranimi. Ne morete razšifriral novih dodanih gesel!</translation>
+        <translation>Ni bilo na voljo žetonov z tajnim ključom med izbranimi.
+Ne morete razšifriral novih dodanih gesel!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -1139,11 +1140,11 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
-            <numerusform>V %n vstavki</numerusform>
-            <numerusform>V %n vstavkih</numerusform>
-            <numerusform>V %n vstavkah</numerusform>
-            <numerusform>V %n vstavkah.</numerusform>
+        <translation>
+            <numerusform>v %n vstavki.</numerusform>
+            <numerusform>v %n vstavkih.</numerusform>
+            <numerusform>v %n vstavkah.</numerusform>
+            <numerusform>v %n vstavkah.</numerusform>
         </translation>
     </message>
     <message>
@@ -1310,12 +1311,14 @@ Continue?</source>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished">Niste lahko izvošili javnega ključa za %1. %2</translation>
+        <translation>Niste lahko izvošili javnega ključa za %1. 
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished">GPG ni proizvedel nobenega izida.</translation>
+        <translation>gpg ni proizvedel nobenega izida.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
@@ -1444,7 +1447,8 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Napacno povezovanje z WebDAV:</translation>
+        <translation>Napacno povezovanje z WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
@@ -1466,7 +1470,8 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Ni bilo mogoče zagnati fusedav za povezavo z WebDAV:</translation>
+        <translation>Ni bilo mogoče zagnati fusedav za povezavo z WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="275"/>
@@ -1609,7 +1614,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation type="unfinished">Seznam dostopnih GPG kljucev manjša</translation>
+        <translation>Manjka seznam ključev</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
