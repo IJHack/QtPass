@@ -713,7 +713,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Nepavyko atšifravimo %1</translation>
+        <translation>Nepavyko iš naujo užšifruoti %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
