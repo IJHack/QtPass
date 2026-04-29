@@ -1660,7 +1660,7 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Povezava z WebDAV ni uspela:
+        <translation>WebDAV වෙත සම්බන්ධ වීමට අසමත් විය:
 </translation>
     </message>
     <message>
