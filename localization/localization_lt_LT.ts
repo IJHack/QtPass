@@ -737,7 +737,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Įrašykite GPG viešojo kodo ASCII-armoruoto formata, arba iškelsite jį čia... Tai turėtų būti ASCII-armoruotas GPG kodas.</translation>
+        <translation>Importuokite GPG viešąjį raktą iš failo arba įklijuokite jį žemiau. Raktas turi būti ASCII šarvuoto formato.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -752,7 +752,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Įrašykite čia ASCII-armoruotą GPG kodo...</translation>
+        <translation>Įrašykite čia ASCII-armoruotą GPG raktą...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
@@ -775,7 +775,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation>Įrašyti Klaidinį</translation>
+        <translation>Importuoti raktą</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
@@ -785,7 +785,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 nėra atrodo ASCII užšifruotu GPG langeliu. Pirmiausia pakeiskite jį naudodami &lt;code&gt;gpg --armor --export&lt;/code&gt;, arba iškelsite užšifruotą bloku &lt;b&gt;Iš įrašimo&lt;/b&gt;.</translation>
+        <translation>%1 neatrodo kaip ASCII-armoruotas GPG raktas. Pirmiausia konvertuokite jį naudodami &lt;code&gt;gpg --armor --export&lt;/code&gt;, arba įklijuokite armoruotą bloką per &lt;b&gt;Iš iškarpinės&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -797,7 +797,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Nepavyko išgauti įimportuoto langelio ID iš GPG atsiradimų.</translation>
+        <translation>Nepavyko išgauti importuoto rakto ID iš GPG išvesties.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
