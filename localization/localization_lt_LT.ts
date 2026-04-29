@@ -1307,7 +1307,7 @@ Tęsti?</translation>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation>Eksportuoti viešąjį klaidiną</translation>
+        <translation>Eksportuoti viešąjį raktą</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
