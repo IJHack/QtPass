@@ -905,7 +905,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Paieška įslėpiama slaptažodžio turinį (pass grep)</translation>
+        <translation>Ieškoti slaptažodžio turinyje (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
