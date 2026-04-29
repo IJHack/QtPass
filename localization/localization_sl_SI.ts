@@ -621,7 +621,7 @@ e-pošta</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Ni bilo mogoče odpreti datoteke .gpg-id za pisanje.</translation>
+        <translation>Napaka pri odpiranju datoteke .gpg-id za pisanje.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
