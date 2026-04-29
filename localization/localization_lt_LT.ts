@@ -477,17 +477,17 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store, kad jį gautumėte.&lt;br&gt;Jei jau tai padarėte, įsitikinkite, kad kartą jį paleidote, ir&lt;br&gt;kitame dialogo lange spustelėkite &quot;Autodetect&quot;.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store&lt;br&gt;arba &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;atsisiųskite&lt;/a&gt; jį iš GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;gpg&lt;/strong&gt; naudodami mėgstamą paketų valdymo sistemą&lt;br&gt;arba &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;atsisiųskite&lt;/a&gt; jį iš GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -835,7 +835,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Slaptafrazės ilgis nėra ribojamas, ir ji turi būti kruopščiai pasirinkta. Saugumo požiūriu slaptafrazė privačiajam raktui atrakinti yra viena silpniausių vietų GnuPG (ir kitose viešojo rakto šifravimo sistemose), nes tai vienintelė apsauga, kurią turite, jei kitas asmuo gauna jūsų privatųjį raktą. &lt;br/&gt;Idealiu atveju slaptafrazėje neturėtų būti naudojami žodyno žodžiai, ji turėtų maišyti raidžių registrą bei naudoti ne raidinius simbolius.&lt;br/&gt;Gera slaptafrazė yra būtina saugiam GnuPG naudojimui.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -855,7 +855,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Eksperto parinktims peržiūrėkite &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG vadovą&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
@@ -958,7 +958,10 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;QtPass yra grafinė sąsaja, skirta &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standartinei Unix slaptažodžių tvarkyklei.&lt;/p&gt;
+&lt;p&gt;Praneškite apie bet kokias &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemas&lt;/a&gt;, kurias galite turėti su šia programine įranga.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Pirminis kodas&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
@@ -1292,7 +1295,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iš naujo užšifruoti visus slaptažodžius aplanke %1?
+
+Tai iš naujo užšifruos VISUS slaptažodžių failus šiame aplanke naudojant dabartinius gavėjus, apibrėžtus .gpg-id.
+
+Tai gali perrašyti daug failų ir negali būti lengvai atšaukta.
+
+Tęsti?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
@@ -1303,7 +1312,7 @@ Continue?</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;Eksportuokite savo viešąjį raktą&lt;/h3&gt;&lt;p&gt;Nesukonfigūruotas pasirašymo raktas. Nustatykite jį QtPass Nustatymai &amp;gt; GPG raktai arba paleiskite tai terminale:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsų-rakto-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tada nusiųskite failą savo komandos nariams.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
@@ -1589,7 +1598,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirinkite, kurie naudotojai turėtų turėti galimybę iššifruoti šiame aplanke saugomus slaptažodžius.
+Pastaba: esami failai nebus pakeisti ir išlaikys senus leidimus, kol jų neredaguosite.
+Mėlynos eilutės turi prieinamą slaptąjį raktą — pasirinkite vieną iš jų, kad galėtumėte iššifruoti.
+Juodos eilutės turi prieinamą šifravimo raktą ir jis yra patikimas — pasirinkite vieną iš jų, kad leistumėte kitiems iššifruoti.
+Raudonos eilutės netinkamos, jūs negalėsite jų užšifruoti.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
