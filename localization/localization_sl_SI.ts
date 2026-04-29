@@ -666,7 +666,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Zamenjava %1 ni uspela. Izvorna datoteka je bila obnovljena.</translation>
+        <translation>Napačno je bil zamijenjen %1. Izvorno se je obnovilo.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
