@@ -663,7 +663,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="149"/>
         <location filename="../src/imitatepass.cpp" line="598"/>
         <source>Can not edit</source>
-        <translation>Ni mogoče urejati</translation>
+        <translation>සංස්කරණය කළ නොහැක</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
@@ -1184,7 +1184,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="vanished">Failed to start fusedav to connect WebDAV:
+        <translation type="vanished">WebDAV වෙත සම්බන්ධ වීමට fusedav ආරම්භ කිරීමට අසමත් විය:
 </translation>
     </message>
     <message>
@@ -1224,11 +1224,11 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Clipboard cleared</source>
-        <translation type="vanished">Clipboard cleared</translation>
+        <translation type="vanished">පිටපත්පුවරුව හිස් කරන ලදී</translation>
     </message>
     <message>
         <source>Clipboard not cleared</source>
-        <translation type="vanished">Clipboard not cleared</translation>
+        <translation type="vanished">පිටපත්පුවරුව හිස් කරන්නට නොහැකි විය</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
@@ -1328,7 +1328,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <source>Key not found in keyring</source>
-        <translation type="vanished">Key not found in keyring</translation>
+        <translation type="vanished">යතුරු පොකුරෙහි යතුර හමු නොවීය</translation>
     </message>
     <message>
         <source>Generating GPG key pair</source>
@@ -1654,13 +1654,13 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Ustvarjanje para ključev GPG</translation>
+        <translation>GPG යතුරු යුගලය ජනනය කරමින්</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Povezava z WebDAV ni uspela:
+        <translation>WebDAV වෙත සම්බන්ධ වීමට අසමත් විය:
 </translation>
     </message>
     <message>
@@ -1671,20 +1671,20 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Vnesite geslo za povezavo z WebDAV:</translation>
+        <translation>WebDAV වෙත සම්බන්ධ වීමට මුරපදය ඇතුළත් කරන්න:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>Fusedav se je nepričakovano zaprl
+        <translation>fusedav අනපේක්ෂිත ලෙස ඉවත්විය
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Zagon programa fusedav za povezavo z WebDAV ni uspel:
+        <translation>WebDAV වෙත සම්බන්ධ වීමට fusedav ආරම්භ කිරීමට අසමත් විය:
 </translation>
     </message>
     <message>
@@ -1730,12 +1730,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard cleared</source>
-        <translation>Odložišče je počiščeno</translation>
+        <translation>පිටපත්පුවරුව හිස් කරන ලදී</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation>Odložišče ni bilo počiščeno</translation>
+        <translation>පිටපත්පුවරුව හිස් කරන්නට නොහැකි විය</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
@@ -1860,7 +1860,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation>Ključa ni bilo mogoče najti v obesku za ključe</translation>
+        <translation>යතුරු පොකුරෙහි යතුර හමු නොවීය</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
