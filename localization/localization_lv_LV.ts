@@ -1403,7 +1403,7 @@ Turpināt?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation>Parole atstāt</translation>
+        <translation>Rādīt paroli</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
