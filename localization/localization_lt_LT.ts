@@ -1598,7 +1598,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Pasirinkite, kurie naudotojai turėtų turėti galimybę iššifruoti šiame aplanke saugomus slaptažodžius.
+        <translation>Pasirinkite, kurie naudotojai turėtų turėti galimybę iššifruoti šiame aplanke saugomus slaptažodžius.
 Pastaba: esami failai nebus pakeisti ir išlaikys senus leidimus, kol jų neredaguosite.
 Mėlynos eilutės turi prieinamą slaptąjį raktą — pasirinkite vieną iš jų, kad galėtumėte iššifruoti.
 Juodos eilutės turi prieinamą šifravimo raktą ir jis yra patikimas — pasirinkite vieną iš jų, kad leistumėte kitiems iššifruoti.
