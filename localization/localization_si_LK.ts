@@ -81,12 +81,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
         <source>Password Generation:</source>
-        <translation type="unfinished">පදම් අභිප්‍රායනය</translation>
+        <translation>පදම් අභිප්‍රායනය:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation type="unfinished">පදම් ප්‍රකාශනය</translation>
+        <translation>පදම් ප්‍රකාශනය:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
         <source>Use characters:</source>
-        <translation type="unfinished">විශේෂෙන කොටසේ සංකීර්ණ අකුරෝත්තේ භාවිතය</translation>
+        <translation>විශේෂෙන කොටසේ සංකීර්ණ අකුරෝත්තේ භාවිතය:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
@@ -166,7 +166,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Signing Key</source>
-        <translation type="unfinished">සංකේතන කිරීම් කළ වූ GPG කිරීම්</translation>
+        <translation>අත්සන් කිරීමේ යතුර</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
@@ -204,7 +204,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
         <source>Git:</source>
-        <translation type="unfinished">ගිත්</translation>
+        <translation>ගිත්:</translation>
     </message>
     <message>
         <source>Use git</source>
@@ -408,7 +408,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished">මුරපද පහත මූලකයේ නව කළමනා භාවිතා කිරීමට එක් කෙරිණි? %1</translation>
+        <translation>මුරපද පහත මූලකයේ නව කළමනා භාවිතා කිරීමට එක් කෙරිණි %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
@@ -474,7 +474,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished">%1 දිග මුරපද කළමනාවක් සංකේතනය කර නැත හෝ ඇසුරක්ෂිත නොහැක</translation>
+        <translation>%1 දිග මුරපද කළමනාවක් සංකේතනය කර නැත හෝ ඇසුරක්ෂිත නොහැක.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
@@ -578,7 +578,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation type="unfinished">සැක්ලොව සහ ප්‍රතිබදු විනෝදයෙන් කණ්ඩායම කළ හැක, එහි විස්තර කරන සැක්ලොව</translation>
+        <translation>මුරපද උත්පාදන සංවාදයේදී සහ මුරපද දර්ශනයේදී සැකිලි අමතර ක්ෂේත්‍ර එක් කරයි.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
@@ -608,7 +608,7 @@ e-mail</source>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation type="unfinished">ගොඩයට සිටෙන්දී</translation>
+        <translation>ගොඩයට සිටෙන්දී...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
@@ -618,7 +618,7 @@ e-mail</source>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished">ප්‍රතිඵල ලබා ගත</translation>
+        <translation>ප්‍රතිඵල ලබා ගත!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
@@ -650,7 +650,7 @@ e-mail</source>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished">.ග්‍රාපින් සංකේතය කිවමද?</translation>
+        <translation>.ග්‍රාපින් සංකේතය කිවමද!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -674,7 +674,7 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
         <source>GPG signing failed!</source>
-        <translation type="unfinished">GPG සංකේතනය පවුල් හැබීම්</translation>
+        <translation>GPG සංකේතනය පවුල් හැබීම්!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
@@ -684,18 +684,19 @@ e-mail</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation type="unfinished">ගියාල්ල කණ්ඩායම හෝදුරුවක් ඉස්ථතා කළ නොහැක.</translation>
+        <translation>ගියාල්ල කණ්ඩායම හෝදුරුවක් ඉස්ථතා කළ නොහැක!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">ගියාල්ල සමඟ ඉස්ථතා කරන පවුල්ල කණ්ඩායම හෝදුරුවක් ඉස්ථතා කළ නොහැක. එය මගින් පවුල්ල කණ්ඩායම හෝදුරුව විස්තර කරන සහ ඉස්ථතා කළ හැකිය.</translation>
+        <translation>ගියාල්ල සමඟ ඉස්ථතා කරන පවුල්ල කණ්ඩායම හෝදුරුවක් ඉස්ථතා කළ නොහැක.
+එය මගින් පවුල්ල කණ්ඩායම හෝදුරුව විස්තර කරන සහ ඉස්ථතා කළ හැකිය!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
-        <translation type="unfinished">පරිගණක කළ හැකිය වීමට නොහැක.</translation>
+        <translation>පරිගණක කළ හැකිය වීමට නොහැක</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
@@ -711,18 +712,19 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished">සමහර වේදාංගල කණ්ඩායමක් නැවත කළ ලදී. ඔබට පිරිමිත කොටස හෝ ඉන්නා කණ්ඩායම සහකර කළ වේදාංගල කණ්ඩායම ශැබා හැකි වන ඉතිහාසයක් සොයා ඇත.</translation>
+        <translation>තෝරාගත් යතුරු කිසිවක් රහස් යතුරක් නොමැත.
+ඔබට අලුතින් එකතු කරන ලද කිසිදු මුරපදයක් විකේතනය කිරීමට නොහැකි වනු ඇත!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">වෙනස් කරන වේදාංගල ශැබා හැකි වේදාංගල සමහර නැත.</translation>
+        <translation>වෙනස් කරන වේදාංගල ශැබා හැකි වේදාංගල සමහර නැත</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">%1 විස්තරයක් නැව්මට කනෑම හෝදාගනිය ලබා ගතුවේ</translation>
+        <translation>%1 විස්තරයක් නැව්මට කනෑම හෝදාගනිය ලබා ගතුවේ.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
@@ -738,7 +740,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">Git වශයෙන් කණ්ඩායමක් නැව්මට හෝදාගනිය</translation>
+        <translation>Git වශයෙන් කණ්ඩායමක් නැව්මට හෝදාගනිය.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
@@ -764,7 +766,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">දෙරින් ඉතිහාසයක් සමඟ .gpg-id කියල වැඩියන්න</translation>
+        <translation>දෙරින් ඉතිහාසයක් සමඟ .gpg-id කියල වැඩියන්න.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
@@ -1362,7 +1364,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">මාක් මුරපද: (%1 විට ඇතුළු කූඩන්වෙන් පහසුගත හැක)</translation>
+        <translation>නව ෆෝල්ඩරය:
+(%1 හි ස්ථානගත කෙරේ)</translation>
     </message>
     <message>
         <source>Copied to clipboard</source>
@@ -1396,7 +1399,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation type="unfinished">මෙහි අඩංගු පත්කරුවන් සැකපළාගැනීමට කොටසක් ඇති නැත</translation>
+        <translation>මෙහි අඩංගු පත්කරුවන් සැකපළාගැනීමට කොටසක් ඇති නැත.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
@@ -1439,7 +1442,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation type="unfinished">ගැනීම් පහතට ඇතිවෙනු මුරපදයක් කළ</translation>
+        <translation>ගැනීම් පහතට ඇතිවෙනු මුරපදයක් කළ...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
@@ -1479,7 +1482,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;GPG සමඟ මුරපද පූලික් කළමනාව&lt;/h3&gt;&lt;p&gt;තාගේ මුරපද පූලික් කළමනාව:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;මුරපද පූලික් කළමනාව&lt;/b&gt; සහ එය එකට පිහිටන.&lt;/li&gt;&lt;li&gt;&lt;b&gt;තාගේ මුරපද පූලික් කළමනාව&lt;/b&gt; GPG මුරපද සංකීර්ණයට තෝරාගෙන කරන්න.&lt;/li&gt;&lt;li&gt;&lt;b&gt;මුරපද පූලික් කළමනාව&lt;/b&gt; සඳහා මුත්‍ය ලෝගයක් තොරව නොමැත පිහිටන.&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;මුත්‍ය ලෝගයක් තොරව ඇති මාදින්වීමක් සඳහා මුරපද පූලික් කළමනාව දැයේ.&lt;/p&gt;&lt;p&gt;&lt;b&gt;තොරතම:&lt;/b&gt; එකට පසුගෙන සාමාන්‍ය මුරපද පූලික් කළමනාවක් නොවේ.&lt;/p&gt;&lt;p&gt;FAQ වෙත තොරතම දැනගන්න.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;GPG සමඟ මුරපද බෙදා ගැනීම&lt;/h3&gt;&lt;p&gt;වෙනත් පරිශීලකයින් සමඟ මුරපද බෙදා ගැනීමට:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ඔබේ පොදු යතුර අපනයනය කරන්න&lt;/b&gt; සහ එය කණ්ඩායම් සාමාජිකයින්ට යවන්න&lt;/li&gt;&lt;li&gt;&lt;b&gt;කණ්ඩායමේ සාමාජිකයින්ගේ පොදු යතුරු ඔබේ GPG යතුරු වළල්ලට ආයාත කරන්න&lt;/b&gt;&lt;/li&gt;&lt;li&gt;&lt;b&gt;සියලුම ලබන්නන්ට ඒවා විකේතනය කළ හැකි වන පරිදි නැවත සංකේතනය කරන්න&lt;/b&gt;&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;ගැළපෙන රහස් යතුරක් ඇති පුද්ගලයින්ට පමණක් මුරපද විකේතනය කළ හැකිය.&lt;/p&gt;&lt;p&gt;&lt;b&gt;ඉඟිය:&lt;/b&gt; සියලුම බෙදාගත් ෆෝල්ඩර සඳහා එකම GPG යතුර භාවිතා කරන්න.&lt;/p&gt;&lt;p&gt;වැඩි විස්තර සඳහා නිතර අසන ප්‍රශ්න බලන්න.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
@@ -1554,7 +1557,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished">සැකසිම් කෙලින් පහත සංකීර්ණයක් නොවේ</translation>
+        <translation>සැකසිම් කෙලින් පහත සංකීර්ණයක් නොවේ.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
@@ -1564,7 +1567,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished">මුරපද සකසීමට කිසිවී කාර්තර් ලෙස පහනු ඇත</translation>
+        <translation>මුරපද සකසීමට කිසිවී කාර්තර් ලෙස පහනු ඇත!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
@@ -1612,7 +1615,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation type="unfinished">කර්‍යාසිංහල සැමති</translation>
+        <translation>කර්‍යාසිංහල සැමති:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
@@ -1637,7 +1640,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation type="unfinished">වෙතගත් කළමනාකරු</translation>
+        <translation>වෙතගත් කළමනාකරු:</translation>
     </message>
 </context>
 <context>
@@ -1813,7 +1816,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation type="unfinished">පිටුව ඉස්‍රාල්‍ය</translation>
+        <translation>පිටුව ඉස්‍රාල්‍ය...</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>

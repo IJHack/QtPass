@@ -336,7 +336,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">Opsīcīgs: GPG ciprs, lai saskarnētu .gpg-id failus ar integritātes pārbaudu. Lai nekavētu, lūdzu, ļaujiet tās tukšas</translation>
+        <translation>Opsīcīgs: GPG ciprs, lai saskarnētu .gpg-id failus ar integritātes pārbaudu. Lai nekavētu, lūdzu, ļaujiet tās tukšas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -371,7 +371,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished">Pārskatīsim visas līnijas, kas sākas ar vārdu un tāpēc ir sekotās no zīmes ar colonu, kā laukumi paroles laukos, ne tikai paskaidroto.</translation>
+        <translation>Pārskatīsim visas līnijas, kas sākas ar vārdu un tāpēc ir sekotās no zīmes ar colonu, kā laukumi paroles laukos, ne tikai paskaidroto</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
@@ -632,7 +632,8 @@ e-pasts</translation>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished">Nav pieejami jebkura salīdzinoši tālu atslēgas. Jūs nevarat dekriptēt jebkuru jauno ierosināto paroli!</translation>
+        <translation>Nav pieejami jebkura salīdzinoši tālu atslēgas.
+Jūs nevarat dekriptēt jebkuru jauno ierosināto paroli!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -647,19 +648,20 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation type="unfinished">Nav pieejamās pārvaldības šifrēšanas atcelšanas virknes.</translation>
+        <translation>Nav pieejamās pārvaldības šifrēšanas atcelšanas virknes!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">Nav pieejamu privāto pārvaldības šifrēšanas atcelšanas virkni, jūs nevarat mainīt lietotāja sarakstu.</translation>
+        <translation>Neviena no slepenajām parakstīšanas atslēgām nav pieejama.
+Jūs nevarēsiet mainīt lietotāju sarakstu!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">Atgriezenais šifrēšana neplānojas.</translation>
+        <translation>Atgriezenais šifrēšana neplānojas</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
@@ -735,7 +737,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation type="unfinished">Ielieciet GPG publisku paroli no faila vai ievadiet to šeit. Paroles jābūt ASCII armored formāta</translation>
+        <translation>Ielieciet GPG publisku paroli no faila vai ievadiet to šeit. Paroles jābūt ASCII armored formāta.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -789,7 +791,8 @@ You will not be able to change the user list!</source>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished">GPG importēšana nedarbojusies: %1</translation>
+        <translation>GPG importēšana nedarbojusies:
+%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
@@ -912,17 +915,17 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished"> saturu meklēšanas modra atlases</translation>
+        <translation>Saturu meklēšanas modra atlases</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished"> Pārslēdziet saturu meklēšanas režīmu, lai meklētu paroles failos</translation>
+        <translation>Pārslēdziet saturu meklēšanas režīmu, lai meklētu paroles failos</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation type="unfinished"> Neuzdumbības meklējums</translation>
+        <translation>Neuzdumbības meklējums</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -932,7 +935,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished"> Neuzdumbības meklējuma modra atlases</translation>
+        <translation>Neuzdumbības meklējuma modra atlases</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
@@ -1076,7 +1079,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="625"/>
         <location filename="../src/mainwindow.cpp" line="924"/>
         <source>Content hidden</source>
-        <translation type="unfinished"> saturu sakņa ir sakņa</translation>
+        <translation>Saturu sakņa ir sakņa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="629"/>
@@ -1137,9 +1140,9 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>no %n ieraksta</numerusform>
-            <numerusform>no %n ierakstiem</numerusform>
-            <numerusform>no %n ierakstiem</numerusform>
+            <numerusform>no %n ieraksta.</numerusform>
+            <numerusform>no %n ierakstiem.</numerusform>
+            <numerusform>no %n ierakstiem.</numerusform>
         </translation>
     </message>
     <message>
@@ -1152,12 +1155,13 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">Jaunais paroles faila nosaukums: (%1) tiks ielabots šajā pārrakstījumā</translation>
+        <translation>Jaunais paroles faila nosaukums: 
+(%1) tiks ielabots šajā pārrakstījumā</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
         <source> and the whole content?</source>
-        <translation type="unfinished">Un visu saturu?</translation>
+        <translation> Un visu saturu?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
@@ -1233,7 +1237,8 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished">(Izveidoties uz %1)</translation>
+        <translation>Jauna mape:
+(Tiks ievietota mapē %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
@@ -1261,12 +1266,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
-        <translation type="unfinished">Pārveidot mapi uz:</translation>
+        <translation>Pārveidot mapi uz: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation type="unfinished">Pārveidot failu uz:</translation>
+        <translation>Pārveidot failu uz: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
@@ -1305,7 +1310,9 @@ Continue?</source>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished">Nepieciešama publiska šifrēšanas funkcija, %1. %2</translation>
+        <translation>Nepieciešama publiska šifrēšanas funkcija, %1. 
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
@@ -1333,7 +1340,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation type="unfinished">Nepieciešama paroles generācija ar garumu 0 nevar būt pietiekami liela</translation>
+        <translation>Nepieciešama paroles generācija ar garumu 0 nevar būt pietiekami liela.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
@@ -1343,7 +1350,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished">Nevar generēt paroli, nav iestatīto konfigurācijā noteiktajās rakstzīmju sarakstā izvēlētos</translation>
+        <translation>Nevar generēt paroli, nav iestatīto konfigurācijā noteiktajās rakstzīmju sarakstā izvēlētos!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
@@ -1439,7 +1446,8 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation type="unfinished">Nepieciešama telpa WebDAV:</translation>
+        <translation>Nepieciešama telpa WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
@@ -1449,19 +1457,21 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation type="unfinished">Ievadiet WebDAV piekurušanas paroli</translation>
+        <translation>Ievadiet WebDAV piekurušanas paroli:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">Fusedav neizdevās beigt darbu</translation>
+        <translation>Fusedav neizdevās beigt darbu
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">Nevarēja sākt fusedav, lai saistītu WebDAV:</translation>
+        <translation>Nevarēja sākt fusedav, lai saistītu WebDAV:
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="275"/>
@@ -1579,7 +1589,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Izvēlieties, kuriem lietotājiem būtu iespēja atkrist šifrēto paroli šajā mapē. Uzsirežģījumus: esošos failus neizmaišsiet un saglabājiet vecas piezīmes līdz jūs to rediģēt. Zila ievades ir iespējams izmantot tajā, kas ir salīdzinājuma klauzulis, izvēlieties vienu no šiem, lai varētu atkrist. Melna ievade ir droša un jūs to varat uztvert, izvēlieties vienu no šiem, lai citi cilvēki varētu atkrist. Rubīna ievades nav derīgas, jums nebūs iespējams šifrēt uz šādiem.</translation>
+        <translation>Atlasiet, kuriem lietotājiem vajadzētu būt iespējai atšifrēt šajā mapē saglabātās paroles.
+Piezīme. Esošie faili netiks modificēti un saglabās vecās atļaujas, līdz tos rediģēsiet.
+Zilajiem ierakstiem ir pieejama slepena atslēga; atlasiet vienu no tiem, lai varētu atšifrēt.
+Melnajiem ierakstiem ir pieejama šifrēšanas atslēga, un tā ir uzticama; atlasiet vienu no tiem, lai ļautu citiem lietotājiem atšifrēt.
+Sarkanie ieraksti nav derīgi; jūs nevarēsiet tos šifrēt.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
