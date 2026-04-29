@@ -436,7 +436,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Ar norite sukurti slaptažodžių saugykla %1?</translation>
+        <translation>Ar norite sukurti slaptažodžių saugyklą %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
@@ -497,7 +497,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Ar norėtumėte sukurti slaptažodžių saugykla %1?</translation>
+        <translation>Ar norėtumėte sukurti slaptažodžių saugyklą %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
@@ -512,7 +512,7 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Plikoje %1 nėra slaptažodžių saugykla arba ji dar nebuvo inicijuota.</translation>
+        <translation>Aplanke %1 nėra slaptažodžių saugykla arba ji dar nebuvo inicijuota.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
@@ -592,7 +592,7 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Peržiūrėti .gpgid failo pabaigą!</translation>
+        <translation>Peržiūrėti .gpgid failo parašą!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
