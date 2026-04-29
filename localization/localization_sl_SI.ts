@@ -611,7 +611,7 @@ e-pošta</translation>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Ni bilo mogoče prebrati ključa šifriranja za uporabo, datoteka .gpg-id manjka ali je neveljavna.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -666,7 +666,7 @@ Ne boste mogli spremeniti seznama uporabnikov!</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Napačno je bil zamijenjen %1. Izvorno se je obnovilo.</translation>
+        <translation>Zamenjava %1 ni uspela. Izvirno je bilo obnovljeno.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
