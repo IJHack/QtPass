@@ -568,7 +568,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
         <source>GPG</source>
-        <translation>ග්‍රාජික ප්‍රතිබදු</translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
