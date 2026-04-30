@@ -398,7 +398,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="210"/>
         <location filename="../src/configdialog.cpp" line="226"/>
         <source>This field is required</source>
-        <translation>මෙම තූක්කය අවශ්‍ය</translation>
+        <translation>මෙම ක්ෂේත්‍රය අවශ්‍ය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
@@ -469,22 +469,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
         <source>Password store not initialised</source>
-        <translation>මුරපද කළමනාව සංකේතනය කර නැත</translation>
+        <translation>මුරපද ගබඩාව ආරම්භ වී නැත</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>%1 දිග මුරපද කළමනාවක් සංකේතනය කර නැත හෝ ඇසුරක්ෂිත නොහැක.</translation>
+        <translation>%1 ෆෝල්ඩරය මුරපද ගබඩාවක් ලෙස නොපෙනේ හෝ තවම ආරම්භ කර නොමැත.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation>%2 වෙලාවේ %1 අගය පළමු කළ ඇත</translation>
+        <translation>%2 හි %1 නව පැතිකඩ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation>ප්‍රායෝගිකතා: %1 පවුල්ලේ %2</translation>
+        <translation>පැතිකඩ: %2 හි %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
