@@ -187,6 +187,7 @@ void TestLocale::loadIsIdempotent() {
   // probing the LTR/RTL pivot string from main.cpp.
   const auto loadAndCheck = [&translator](const QString &locale,
                                           const QString &expectedLTR) {
+    qInfo("loadAndCheck(%s)", qUtf8Printable(locale));
     const bool loaded = translator.load(
         QLocale(locale), QStringLiteral("localization"), QStringLiteral("_"),
         QStringLiteral(":/localization"), QStringLiteral(".qm"));
@@ -202,6 +203,7 @@ void TestLocale::loadIsIdempotent() {
   // Probe with an unknown locale and verify the prior LTR/RTL value is gone.
   const auto loadUnknownAndCheckCleared =
       [&translator](const QString &locale, const QString &staleLTR) {
+        qInfo("loadUnknownAndCheckCleared(%s)", qUtf8Printable(locale));
         const bool loaded = translator.load(
             QLocale(locale), QStringLiteral("localization"),
             QStringLiteral("_"), QStringLiteral(":/localization"),
