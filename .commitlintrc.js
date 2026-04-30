@@ -9,12 +9,8 @@ module.exports = {
   // proper conventional message at merge time, but commitlint runs on
   // each individual commit in the PR range and would otherwise fail.
   ignores: [
-    function (commit) {
-      return commit.indexOf("Translated using Weblate") === 0;
-    },
-    function (commit) {
-      return commit.indexOf("Translation update from Weblate") === 0;
-    },
+    (commit) => commit.startsWith("Translated using Weblate"),
+    (commit) => commit.startsWith("Translation update from Weblate"),
   ],
 
   rules: {
