@@ -1168,7 +1168,8 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>نئی پاس ورڈ فائل:
+(یہ %1 میں رکھی جائے گی)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
@@ -1249,7 +1250,8 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>نیا فولڈر:
+(یہ %1 میں رکھا جائے گا)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
