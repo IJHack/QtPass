@@ -676,7 +676,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
         <source>GPG signing failed!</source>
-        <translation>GPG සංකේතනය පවුල් හැබීම්!</translation>
+        <translation>GPG අත්සන් කිරීම අසාර්ථකයි!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
