@@ -529,7 +529,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
         <source>Use PWGen</source>
-        <translation>PWGen විජිතයන්ට කරන්න</translation>
+        <translation>PWGen භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
