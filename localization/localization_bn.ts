@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation>ক্লিপবোর্ড আচরণ:</translation>
+        <translation type="unfinished">ক্লিপবোর্ড আচরণ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -26,13 +26,13 @@
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation>স্বয়ংক্রিয় মুছে ফেলার সময়:</translation>
+        <translation type="unfinished">স্বয়ংক্রিয় মুছে ফেলার সময়:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation>সেকেন্ড</translation>
+        <translation type="unfinished">সেকেন্ড</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
@@ -331,12 +331,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Signing Key</source>
-        <translation type="unfinished">সাক্ষরণ বিন্যাস</translation>
+        <translation type="unfinished">সাক্ষর কী</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">বজায় রাখতে প্রয়োজন হলেই ক্লিয়েন্টের তালিকা থেকে মন্তব্য করার জন্য .gpg-id ফাইলগুলোকে সাক্ষর করতে GPG বিন্যাস দিন (বজায় রাখা অপশনযোগ্য)</translation>
+        <translation type="unfinished">ঐচ্ছিক: .gpg-id ফাইলগুলি অখণ্ডতা যাচাইয়ের জন্য স্বাক্ষর করতে GPG কী। ব্যবহারকারীর তালিকা টেম্পারিং থেকে রক্ষা করার প্রয়োজন না হলে খালি রাখুন।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -426,7 +426,7 @@ URL
         <location filename="../src/configdialog.cpp" line="210"/>
         <location filename="../src/configdialog.cpp" line="226"/>
         <source>This field is required</source>
-        <translation type="unfinished">এই বাস্তবায়নটি প্রয়োজন</translation>
+        <translation type="unfinished">এই ক্ষেত্রটি আবশ্যক</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
@@ -507,7 +507,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
         <source>Password store not initialised</source>
-        <translation type="unfinished">পাসওয়ার্ড-স্টোর অনুপস্থিত ছিল</translation>
+        <translation type="unfinished">পাসওয়ার্ড স্টোর শুরু করা হয়নি</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
@@ -527,7 +527,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation type="unfinished">সমস্ত প্রয়োজনীয় কক্ষে মাল্টি আইনতা</translation>
+        <translation type="unfinished">সমস্ত আবশ্যিক ক্ষেত্র পূরণ করুন</translation>
     </message>
 </context>
 <context>
@@ -611,17 +611,17 @@ URL
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished">.gpg-id ফাইল অপযোগী বা থেকে এক্সিড়িশন কী পড়তে পারা যায় না, ফাইল অস্তিত্ব করছে না বা অক্ষম।</translation>
+        <translation type="unfinished">এনক্রিপশন কী পড়া যায়নি, .gpg-id ফাইল অনুপস্থিত বা অবৈধ।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
-        <translation type="unfinished">আপডেট করা হতে পারছে না</translation>
+        <translation type="unfinished">আপডেট করা যাচ্ছে না</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation type="unfinished">.gpg-id লিখার জন্য খোলা হতে ব্যর্থ হয়েছে.</translation>
+        <translation type="unfinished">.gpg-id লেখার জন্য খোলা ব্যর্থ হয়েছে।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
@@ -632,7 +632,8 @@ URL
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished">মনেকর্তা অনুসারে কোনও সেক্রেট কিউই উপলব্ধ নেই। নতুন যোগদান করা পাসওয়ার্ডগুলি অ্যাডভাইস করা যাবে না!</translation>
+        <translation type="unfinished">নির্বাচিত কোনো কী-এর গোপন কী উপলব্ধ নেই।
+আপনি নতুন যুক্ত করা পাসওয়ার্ডগুলি ডিক্রিপ্ট করতে পারবেন না!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -653,39 +654,40 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation type="unfinished">কোনও গুপ্ত সাইনিং কি উপলব্ধ নেই। আপনি ব্যবহারকারী তালিকা পরিবর্তন করতে পারবেন না!</translation>
+        <translation type="unfinished">কোনো গোপন সাক্ষর কী উপলব্ধ নেই।
+আপনি ব্যবহারকারী তালিকা পরিবর্তন করতে পারবেন না!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">পুনরায় অ্যাপ্রিকশন ব্যবহার করা সমাধান হলো</translation>
+        <translation type="unfinished">পুনরায় এনক্রিপশন ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation type="unfinished">প্রথমত: %1 অসফলভাবে পরিবর্তিত হয়নি। মূলটি ফিরে আসছে।</translation>
+        <translation type="unfinished">%1 প্রতিস্থাপন করতে ব্যর্থ। মূলটি পুনরুদ্ধার করা হয়েছে।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation type="unfinished">ব্যাকপাস কমিট তৈরি করা</translation>
+        <translation type="unfinished">ব্যাকআপ কমিট তৈরি করা হচ্ছে</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Backup commit failed</source>
-        <translation type="unfinished">ব্যাকপাস কমিট ব্যবহার করা অসফলভাবে হয়েছে</translation>
+        <translation type="unfinished">ব্যাকআপ কমিট ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">গিট স্টাটাস পরীক্ষা করতে ব্যবহৃত হতে পারলো। আবার এনক্রিপশনটি অবরোদ্ধ হয়ে গেল।</translation>
+        <translation type="unfinished">গিট স্ট্যাটাস পরীক্ষা করা যায়নি। পুনরায় এনক্রিপশন বাতিল করা হয়েছে।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">এনক্রিপশনটি অবরোদ্ধ হয়ে গেল কারণ একটি গিট ব্যাকআপ তৈরী করা সম্ভব নয়।</translation>
+        <translation type="unfinished">পুনরায় এনক্রিপশন বাতিল করা হয়েছে কারণ একটি গিট ব্যাকআপ তৈরি করা যায়নি।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
@@ -706,7 +708,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">এই ফাইলের .gpg-id পরীক্ষা করতে ব্যবহার করা যায়নি</translation>
+        <translation type="unfinished">ডিরেক্টরির জন্য .gpg-id যাচাই করা যায়নি।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
@@ -783,13 +785,14 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished">%1 এটি একটি ASCII-রূপান্তিত GPG কী দেখতে পারে। প্রথমে &lt;code&gt;gpg --armor --export&lt;/code&gt; ব্যবহার করে এটি রূপান্তর করুন, অথবা &lt;b&gt;Clipboard থেকে পাঠিয়ে&lt;/b&gt; আকৃতি বদলাতে লিখুন।</translation>
+        <translation type="unfinished">%1 একটি বৈধ ASCII-আর্মার্ড GPG কী-এর মতো দেখাচ্ছে না। নিশ্চিত করুন যে কী &lt;code&gt;-----BEGIN PGP PUBLIC KEY BLOCK-----&lt;/code&gt; দিয়ে শুরু হয়। আরও তথ্যের জন্য &lt;b&gt;gpg --armor --export &lt;i&gt;keyid&lt;/i&gt;&lt;/b&gt; দেখুন।</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation type="unfinished">GPG ইমপর্ট সফল হয়নি: %1</translation>
+        <translation type="unfinished">GPG ইমপর্ট সফল হয়নি:
+%1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
@@ -907,7 +910,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished">🔎</translation>
+        <translation type="unfinished">⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
@@ -927,7 +930,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished">aa</translation>
+        <translation type="unfinished">Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
