@@ -484,7 +484,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation>ප්‍රායෝගිකතා: %1 පවුල්ලේ %2</translation>
+        <translation>පැතිකඩ: %1 හි %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
