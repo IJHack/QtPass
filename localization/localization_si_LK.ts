@@ -499,22 +499,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
         <source>Autodetect</source>
-        <translation>ආයශෝප කළමනාකරණය</translation>
+        <translation>ස්වයංක්‍රීය හඳුනාගැනීම</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation>මුරපද මතක් සඳහා පවතී නැත</translation>
+        <translation>පද්ධති තැටිය ලබා ගත නොහැක</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>Pass OTP කිරීම් ගබඩා කළ ලදී</translation>
+        <translation>Pass OTP විස්තාරකය ස්ථාපනය කළ යුතුය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
         <source>qrencode needs to be installed</source>
-        <translation>qrencode කිරීම් ගබඩා කළ ලදී</translation>
+        <translation>qrencode ස්ථාපනය කළ යුතුය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
@@ -600,7 +600,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation>පවුල කළමනාකරණ</translation>
+        <translation>පොදු යතුර</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
