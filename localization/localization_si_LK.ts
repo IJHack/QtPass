@@ -742,7 +742,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Git වශයෙන් කණ්ඩායමක් නැව්මට හෝදාගනිය.</translation>
+        <translation>Git තත්ත්වය පරීක්ෂා කළ නොහැකි විය. නැවත සංකේතනය කිරීම අත්හිටුවන ලදී.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
