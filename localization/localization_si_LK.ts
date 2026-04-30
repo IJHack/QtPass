@@ -499,7 +499,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
         <source>Autodetect</source>
-        <translation>ආයශෝප කළමනාකරණය</translation>
+        <translation>ස්වයංක්‍රීය හඳුනාගැනීම</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
