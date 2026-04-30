@@ -671,13 +671,6 @@ e-mail</translation>
         <translation>Non se pode editar</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="141"/>
-        <location filename="../src/imitatepass.cpp" line="319"/>
-        <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpgid file signature!</source>
-        <translation>Comproba o ficheiro de sinatura .gpgid!</translation>
-    </message>
-    <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
@@ -716,6 +709,13 @@ Non poderás cambiar a lista de usuarias!</translation>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
         <translation>Non se puido actualizar</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="141"/>
+        <location filename="../src/imitatepass.cpp" line="319"/>
+        <location filename="../src/imitatepass.cpp" line="505"/>
+        <source>Check .gpg-id file signature!</source>
+        <translation>Comproba o ficheiro de sinatura .gpg-id!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>

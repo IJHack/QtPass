@@ -591,7 +591,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="141"/>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpgid file signature!</source>
+        <source>Check .gpg-id file signature!</source>
         <translation>امضای فایل .gpg-id را بررسی کنید!</translation>
     </message>
     <message>
@@ -1152,9 +1152,20 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
+        <source>New password file: 
+(Will be placed in %1 )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>New password file:
 (Will be placed in %1 )</source>
-        <translation>فایل رمز عبور جدید:
+        <translation type="vanished">فایل رمز عبور جدید:
 (در %1 قرار خواهد گرفت)</translation>
     </message>
     <message>
@@ -1233,10 +1244,9 @@ You will not be able to change the user list!</source>
         <translation>این چیست؟</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation>پوشه جدید:
+        <translation type="vanished">پوشه جدید:
 (در %1 قرار خواهد گرفت)</translation>
     </message>
     <message>

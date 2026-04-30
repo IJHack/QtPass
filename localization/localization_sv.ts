@@ -620,13 +620,6 @@ e-mail</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="141"/>
-        <location filename="../src/imitatepass.cpp" line="319"/>
-        <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpgid file signature!</source>
-        <translation>Kontrollera .gpgid-filsignatur!</translation>
-    </message>
-    <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
@@ -671,6 +664,13 @@ Du kommer inte att kunna ändra användarlista!</translation>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
         <translation>Kan inte uppdatera</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="141"/>
+        <location filename="../src/imitatepass.cpp" line="319"/>
+        <location filename="../src/imitatepass.cpp" line="505"/>
+        <source>Check .gpg-id file signature!</source>
+        <translation>Kontrollera .gpg-id-filsignatur!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>

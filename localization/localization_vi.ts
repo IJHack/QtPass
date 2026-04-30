@@ -591,8 +591,8 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="141"/>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpgid file signature!</source>
-        <translation>Kiểm tra chữ ký tệp .gpgid!</translation>
+        <source>Check .gpg-id file signature!</source>
+        <translation>Kiểm tra chữ ký tệp .gpg-id!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -1152,9 +1152,20 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
+        <source>New password file: 
+(Will be placed in %1 )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>New password file:
 (Will be placed in %1 )</source>
-        <translation>Tệp mật khẩu mới:
+        <translation type="vanished">Tệp mật khẩu mới:
 (Sẽ được đặt trong %1 )</translation>
     </message>
     <message>
@@ -1233,10 +1244,9 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <translation>Đây là gì?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation>Thư mục mới:
+        <translation type="vanished">Thư mục mới:
 (Sẽ được đặt trong %1 )</translation>
     </message>
     <message>

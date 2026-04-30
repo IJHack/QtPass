@@ -648,13 +648,6 @@ e-mail</source>
 <context>
     <name>ImitatePass</name>
     <message>
-        <location filename="../src/imitatepass.cpp" line="141"/>
-        <location filename="../src/imitatepass.cpp" line="319"/>
-        <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpgid file signature!</source>
-        <translation>檢查.gpgid檔案簽名！</translation>
-    </message>
-    <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
@@ -699,6 +692,13 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
         <translation>無法更新</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="141"/>
+        <location filename="../src/imitatepass.cpp" line="319"/>
+        <location filename="../src/imitatepass.cpp" line="505"/>
+        <source>Check .gpg-id file signature!</source>
+        <translation>檢查.gpg-id檔案簽名！</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>

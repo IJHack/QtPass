@@ -656,13 +656,6 @@ e-mail</translation>
         <translation>Nem lehet szerkeszteni</translation>
     </message>
     <message>
-        <location filename="../src/imitatepass.cpp" line="141"/>
-        <location filename="../src/imitatepass.cpp" line="319"/>
-        <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpgid file signature!</source>
-        <translation>Ellenőrizd a .gpgid fájl aláírását!</translation>
-    </message>
-    <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
@@ -701,6 +694,13 @@ A felhasználói listát nem fogja tudni módosítani!</translation>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
         <translation>Nem frissíthető</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="141"/>
+        <location filename="../src/imitatepass.cpp" line="319"/>
+        <location filename="../src/imitatepass.cpp" line="505"/>
+        <source>Check .gpg-id file signature!</source>
+        <translation>Ellenőrizd a .gpg-id fájl aláírását!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
