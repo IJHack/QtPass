@@ -464,7 +464,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>මුරපද කළමනාව %1 එක සැකසි නොහැක</translation>
+        <translation>%1 ස්ථානයේ මුරපද ගබඩාව සෑදීමට අසමත් විය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
