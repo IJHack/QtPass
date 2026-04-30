@@ -681,7 +681,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation>%1 හෝදුරුවක් ඉස්ථතා කළ නොහැක.</translation>
+        <translation>%1 අත්සන් කිරීම අසාර්ථක විය.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
