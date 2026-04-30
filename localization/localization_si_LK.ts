@@ -359,7 +359,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>ගැටළුවක් දී කිරීමේ පසුව සංකීර්ණයක් මත තෝල ලේන් මූලික පාත්වය කිරීමට අවසන් කරන්න, සහ පැති දෙකක් මත තෝල ලේන් නොකිරීමට</translation>
+        <translation type="unfinished">ලැයිස්තුගත කර ඇති ඒවා පමණක් නොව, වචනයකින් ආරම්භ වී එයට පසු කොලනයක් (:) ඇති සියලු පේළි මුරපද ක්ෂේත්‍ර ලෙස පෙන්වන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
@@ -377,12 +377,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; වැසුනු ම්වොරූන්: </translation>
+        <translation type="unfinished">&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; අනුවාදය </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
         <source>No Clipboard</source>
-        <translation>කොපියා මුරවල</translation>
+        <translation type="unfinished">පසුරු පුවරුවක් නැත</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
@@ -403,12 +403,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation>පුර්ගන් සිටින පොලීස් හැකිදෙන විද්‍යාත්මක කණ්ඩායම කරන්න?</translation>
+        <translation type="unfinished">පැතිකඩ නාමාවලිය සෑදීමට අවශ්‍යද?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>මුරපද පහත මූලකයේ නව කළමනා භාවිතා කිරීමට එක් කෙරිණි %1?</translation>
+        <translation type="unfinished">ඔබට %1 හි මුරපද ගබඩාවක් සාදීමට අවශ්‍යද?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
