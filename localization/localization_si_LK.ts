@@ -642,7 +642,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>සමහරකින් කොටස කරන්න: %1: %2</translation>
+        <translation>%1 වෙත ලියීමට නොහැකි විය: %2</translation>
     </message>
 </context>
 <context>
