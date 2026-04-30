@@ -242,22 +242,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation>තේයිරීම සඳහා පොට්ලා කිරීම</translation>
+        <translation type="unfinished">පද්ධති තැටි අයිකනය භාවිත කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
         <source>Start minimized</source>
-        <translation>මුද්‍රණ කළේ මැතිවරන් තෙරිම</translation>
+        <translation type="unfinished">අවම කළ තත්ත්වයෙන් ආරම්භ කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation>වන පිටුවක් වඩා කරන්න</translation>
+        <translation type="unfinished">වසා දමන විට සඟවන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
         <source>Always on top</source>
-        <translation>මීටරු තොප් සහිත</translation>
+        <translation type="unfinished">සෑමවිටම ඉහළින්</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
@@ -267,7 +267,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
         <source>Select password storage program:</source>
-        <translation>සැයුම් පදනමක් කාර්ය කරන්න:</translation>
+        <translation type="unfinished">මුරපද ගබඩා කිරීමේ වැඩසටහන තෝරන්න:</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
