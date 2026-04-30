@@ -144,11 +144,17 @@ auto main(int argc, char *argv[]) -> int {
   QCoreApplication::setApplicationName("QtPass");
   QCoreApplication::setApplicationVersion(VERSION);
 
-  // Setup and load translator for localization
+  // Setup and load translator for localization.
+  //
+  // Use the QLocale-aware load() overload so Qt walks the user's preferred
+  // language list (e.g. ar_MA -> ar, da_DK -> da) automatically. The previous
+  // single-filename form returned false on the first miss and left the app
+  // untranslated whenever the system locale carried a country suffix that
+  // didn't match any .qm file verbatim.
   QTranslator translator;
-  QString locale = QLocale::system().name();
-  if (translator.load(
-          QString(":localization/localization_%1.qm").arg(locale))) {
+  if (translator.load(QLocale::system(), QStringLiteral("localization"),
+                      QStringLiteral("_"), QStringLiteral(":/localization"),
+                      QStringLiteral(".qm"))) {
 #if SINGLE_APP
     SingleApplication::installTranslator(&translator);
     SingleApplication::setLayoutDirection(
