@@ -509,7 +509,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>Pass OTP කිරීම් ගබඩා කළ ලදී</translation>
+        <translation>Pass OTP විස්තාරකය ස්ථාපනය කළ යුතුය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
