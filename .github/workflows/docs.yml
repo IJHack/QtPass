@@ -18,10 +18,10 @@ jobs:
       tests: ${{ steps.filter.outputs.tests }}
       docs: ${{ steps.filter.outputs.docs }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
         with:
           persist-credentials: false
-      - uses: dorny/paths-filter@v4
+      - uses: dorny/paths-filter@v4.0.1
         id: filter
         with:
           base: main
@@ -67,14 +67,14 @@ jobs:
         if: steps.need_docs.outputs.run_docs != 'true'
         run: echo "No relevant changes - skipping docs and coverage"
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
         if: steps.need_docs.outputs.run_docs == 'true'
         with:
           persist-credentials: false
 
       - name: Install Qt
         if: steps.need_docs.outputs.run_docs == 'true'
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@v4.3.1
 
       - name: Install Doxygen
         if: steps.need_docs.outputs.run_docs == 'true'
@@ -142,7 +142,7 @@ jobs:
 
       - name: Upload coverage to Codecov
         if: steps.need_docs.outputs.run_docs == 'true' && !cancelled()
-        uses: codecov/codecov-action@v6
+        uses: codecov/codecov-action@v6.0.0
         with:
           files: ./docs/coverage/.lcov.total
           flags: qtpass
@@ -153,7 +153,7 @@ jobs:
 
       - name: Upload test results to Codecov
         if: steps.need_docs.outputs.run_docs == 'true' && !cancelled()
-        uses: codecov/codecov-action@v6
+        uses: codecov/codecov-action@v6.0.0
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: "tests/auto/*/qtpass.junit.xml"
@@ -162,7 +162,7 @@ jobs:
 
       - name: Upload coverage to Coveralls
         if: steps.need_docs.outputs.run_docs == 'true' && !cancelled()
-        uses: coverallsapp/github-action@v2
+        uses: coverallsapp/github-action@v2.3.7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           files: ./docs/coverage/.lcov.total
@@ -171,7 +171,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         if: steps.need_docs.outputs.run_docs == 'true' && github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: peaceiris/actions-gh-pages@v4
+        uses: peaceiris/actions-gh-pages@v4.0.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages

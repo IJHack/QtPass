@@ -19,10 +19,10 @@ jobs:
       src: ${{ steps.filter.outputs.src }}
       tests: ${{ steps.filter.outputs.tests }}
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
         with:
           persist-credentials: false
-      - uses: dorny/paths-filter@v4
+      - uses: dorny/paths-filter@v4.0.1
         id: filter
         with:
           base: main
@@ -73,26 +73,26 @@ jobs:
 
       - name: Checkout repository
         if: steps.need_analysis.outputs.run_analysis == 'true'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v6.0.2
         with:
           persist-credentials: false
 
       - name: Initialize CodeQL
         if: steps.need_analysis.outputs.run_analysis == 'true'
-        uses: github/codeql-action/init@v4
+        uses: github/codeql-action/init@v4.35.2
         with:
           languages: ${{ matrix.language }}
 
       - name: Install Qt
         if: steps.need_analysis.outputs.run_analysis == 'true'
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@v4.3.1
 
       - name: Autobuild
         if: steps.need_analysis.outputs.run_analysis == 'true'
-        uses: github/codeql-action/autobuild@v4
+        uses: github/codeql-action/autobuild@v4.35.2
 
       - name: Perform CodeQL Analysis
         if: steps.need_analysis.outputs.run_analysis == 'true'
-        uses: github/codeql-action/analyze@v4
+        uses: github/codeql-action/analyze@v4.35.2
         with:
           category: "/language:${{matrix.language}}"

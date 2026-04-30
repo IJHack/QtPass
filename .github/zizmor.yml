@@ -1,0 +1,11 @@
+# zizmor configuration — see https://docs.zizmor.sh/configuration/
+#
+# We pin every `uses:` to a specific version tag (v8.6.0, v6.0.2, ...) and
+# rely on dependabot for upgrades. zizmor's default policy for unpinned-uses
+# requires SHA pinning; we relax it to ref-pin so version-tag pins are
+# accepted as sufficient.
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        "*": ref-pin
