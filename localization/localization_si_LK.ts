@@ -698,7 +698,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
-        <translation>පරිගණක කළ හැකිය වීමට නොහැක</translation>
+        <translation>යාවත්කාලීන කළ නොහැක</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
