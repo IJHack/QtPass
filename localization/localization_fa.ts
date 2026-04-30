@@ -52,7 +52,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>پانل خودکار پس از:</translation>
+        <translation>پاک‌سازی خودکار پنل پس از:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
