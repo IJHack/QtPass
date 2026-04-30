@@ -187,16 +187,14 @@ void TestLocale::loadIsIdempotent() {
   // probing the LTR/RTL pivot string from main.cpp.
   const auto loadAndCheck = [&translator](const QString &locale,
                                           const QString &expectedLTR) {
+    qInfo("loadAndCheck(%s)", qUtf8Printable(locale));
     const bool loaded = translator.load(
         QLocale(locale), QStringLiteral("localization"), QStringLiteral("_"),
         QStringLiteral(":/localization"), QStringLiteral(".qm"));
     QVERIFY2(loaded,
              qUtf8Printable(QStringLiteral("load(%1) failed").arg(locale)));
     const QString got = translator.translate("QObject", "LTR");
-    QVERIFY2(got == expectedLTR,
-             qUtf8Printable(QStringLiteral("after load(%1): tr(\"LTR\") "
-                                           "expected %2 but got %3")
-                                .arg(locale, expectedLTR, got)));
+    QCOMPARE(got, expectedLTR);
   };
 
   // Negative case: per QTranslator's contract ("The previous translation is
@@ -205,6 +203,7 @@ void TestLocale::loadIsIdempotent() {
   // Probe with an unknown locale and verify the prior LTR/RTL value is gone.
   const auto loadUnknownAndCheckCleared =
       [&translator](const QString &locale, const QString &staleLTR) {
+        qInfo("loadUnknownAndCheckCleared(%s)", qUtf8Printable(locale));
         const bool loaded = translator.load(
             QLocale(locale), QStringLiteral("localization"),
             QStringLiteral("_"), QStringLiteral(":/localization"),
@@ -213,10 +212,11 @@ void TestLocale::loadIsIdempotent() {
                                                         "succeeded")
                                              .arg(locale)));
         const QString got = translator.translate("QObject", "LTR");
-        QVERIFY2(got != staleLTR,
-                 qUtf8Printable(QStringLiteral("after failed load(%1): stale "
-                                               "translation %2 remained active")
-                                    .arg(locale, staleLTR)));
+        // QVERIFY rather than QCOMPARE_NE — the latter is Qt 6.4+ only and
+        // this suite still runs on Qt 5.15. The qInfo() above identifies
+        // the locale; the values are short enough that QVERIFY's output
+        // ("'got != staleLTR' returned FALSE") is enough to debug.
+        QVERIFY(got != staleLTR);
       };
 
   loadAndCheck("ar_MA", "RTL");                // falls back to ar (RTL)
