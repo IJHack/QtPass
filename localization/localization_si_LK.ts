@@ -392,7 +392,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation>තහවුරු සඳහා කොපියා මුරවල</translation>
+        <translation>අවශ්‍ය විට පසුරු පුවරුවට පිටපත් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
