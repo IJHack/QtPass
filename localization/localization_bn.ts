@@ -281,17 +281,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
         <source>PWGen</source>
-        <translation type="unfinished">পাসওয়ার্ড গенারেটর</translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
         <source>Pass</source>
-        <translation type="unfinished">পাসওয়ার্ড</translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="827"/>
         <source>pass</source>
-        <translation type="unfinished">পাসওয়ার্ড</translation>
+        <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
@@ -1621,7 +1621,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation type="unfinished">কিউই রিংয়ে কোনো বাইট পাওয়া যায় নি</translation>
+        <translation>কী কী-রিং-এ পাওয়া যায়নি</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
