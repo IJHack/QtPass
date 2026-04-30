@@ -544,7 +544,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Use pass-otp extension</source>
-        <translation>ප්‍රතිඵල කණගම සැකසුවන් ඉදාහරණය</translation>
+        <translation>pass-otp දිගුව භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
