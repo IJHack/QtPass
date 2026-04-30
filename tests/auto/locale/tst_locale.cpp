@@ -193,10 +193,7 @@ void TestLocale::loadIsIdempotent() {
     QVERIFY2(loaded,
              qUtf8Printable(QStringLiteral("load(%1) failed").arg(locale)));
     const QString got = translator.translate("QObject", "LTR");
-    QVERIFY2(got == expectedLTR,
-             qUtf8Printable(QStringLiteral("after load(%1): tr(\"LTR\") "
-                                           "expected %2 but got %3")
-                                .arg(locale, expectedLTR, got)));
+    QCOMPARE(got, expectedLTR);
   };
 
   // Negative case: per QTranslator's contract ("The previous translation is
