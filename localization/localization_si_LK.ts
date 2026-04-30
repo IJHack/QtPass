@@ -534,7 +534,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
         <source>Use Git</source>
-        <translation>Git පවුල්කමක් කරන්න</translation>
+        <translation>Git භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
