@@ -591,8 +591,8 @@ barua pepe</translation>
         <location filename="../src/imitatepass.cpp" line="141"/>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpgid file signature!</source>
-        <translation>Angalia saini ya faili ya .gpgid!</translation>
+        <source>Check .gpg-id file signature!</source>
+        <translation>Angalia saini ya faili ya .gpg-id!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -1156,7 +1156,20 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file:
 (Will be placed in %1 )</source>
-        <translation>Faili mpya ya nenosiri:
+        <translation type="unfinished">Faili jipya la nenosiri:
+(Itawekwa katika %1 )</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <source>New Folder:
+(Will be placed in %1 )</source>
+        <translation type="unfinished">Folda Mpya:
+(Itawekwa katika %1 )</translation>
+    </message>
+    <message>
+        <source>New password file:
+(Will be placed in %1 )</source>
+        <translation type="vanished">Faili mpya ya nenosiri:
 (Itawekwa katika %1 )</translation>
     </message>
     <message>
@@ -1235,10 +1248,9 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <translation>Hii ni nini?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation>Folda Mpya:
+        <translation type="vanished">Folda Mpya:
 (Itawekwa katika %1 )</translation>
     </message>
     <message>

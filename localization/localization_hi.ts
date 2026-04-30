@@ -591,8 +591,8 @@ URL
         <location filename="../src/imitatepass.cpp" line="141"/>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpgid file signature!</source>
-        <translation>.gpgid फ़ाइल हस्ताक्षर जांचें!</translation>
+        <source>Check .gpg-id file signature!</source>
+        <translation>.gpg-id फ़ाइल हस्ताक्षर जांचें!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -1156,7 +1156,20 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file:
 (Will be placed in %1 )</source>
-        <translation>नई पासवर्ड फ़ाइल:
+        <translation type="unfinished">नया पासवर्ड फ़ाइल:
+(यह %1 में रखा जाएगा)</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <source>New Folder:
+(Will be placed in %1 )</source>
+        <translation type="unfinished">नया फ़ोल्डर:
+(यह %1 में रखा जाएगा)</translation>
+    </message>
+    <message>
+        <source>New password file:
+(Will be placed in %1 )</source>
+        <translation type="vanished">नई पासवर्ड फ़ाइल:
 (%1 में रखी जाएगी)</translation>
     </message>
     <message>
@@ -1235,10 +1248,9 @@ You will not be able to change the user list!</source>
         <translation>यह क्या है?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation>नया फ़ोल्डर:
+        <translation type="vanished">नया फ़ोल्डर:
 (%1 में रखा जाएगा)</translation>
     </message>
     <message>

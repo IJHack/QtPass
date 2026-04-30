@@ -138,7 +138,7 @@ void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   file = file + ".gpg";
   QString gpgIdPath = Pass::getGpgIdPath(file);
   if (!verifyGpgIdFile(gpgIdPath)) {
-    emit critical(tr("Check .gpgid file signature!"),
+    emit critical(tr("Check .gpg-id file signature!"),
                   tr("Signature for %1 is invalid.").arg(gpgIdPath));
     return;
   }
@@ -284,7 +284,7 @@ void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
  * std::cout << result << std::endl; // Expected output: true if signing and
  * verification succeed
  *
- * @param QString &gpgIdFile - Path to the .gpgid file to be signed.
+ * @param QString &gpgIdFile - Path to the .gpg-id file to be signed.
  * @param QStringList &signingKeys - List of signing keys; only the first key is
  * used.
  * @return bool - True if the file was signed and its signature verified
@@ -316,7 +316,7 @@ auto ImitatePass::signGpgIdFile(const QString &gpgIdFile,
     return false;
   }
   if (!verifyGpgIdFile(gpgIdFile)) {
-    emit critical(tr("Check .gpgid file signature!"),
+    emit critical(tr("Check .gpg-id file signature!"),
                   tr("Signature for %1 is invalid.").arg(gpgIdFile));
     return false;
   }
@@ -502,7 +502,7 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
     return true;
   }
   if (!verifyGpgIdFile(gpgIdPath)) {
-    emit critical(tr("Check .gpgid file signature!"),
+    emit critical(tr("Check .gpg-id file signature!"),
                   tr("Signature for %1 is invalid.").arg(gpgIdPath));
     return false;
   }

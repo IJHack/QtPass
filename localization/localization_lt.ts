@@ -588,15 +588,11 @@ el. paštas</translation>
 <context>
     <name>ImitatePass</name>
     <message>
-        <source>Check .gpg-id file signature!</source>
-        <translation type="vanished">Peržiūrėti .gpg-id failo parašą!</translation>
-    </message>
-    <message>
         <location filename="../src/imitatepass.cpp" line="141"/>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpgid file signature!</source>
-        <translation>Patikrinkite .gpgid failo parašą!</translation>
+        <source>Check .gpg-id file signature!</source>
+        <translation>Patikrinkite .gpg-id failo parašą!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
