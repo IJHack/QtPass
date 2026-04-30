@@ -3,6 +3,16 @@ coverage:
   ignore:
     - tests/*
     - src/qrc_*.cpp
+  project:
+    default:
+      # Coverage on this codebase fluctuates run-to-run because
+      # integration tests hit different paths depending on runner
+      # state (GPG keyring, test fixture race conditions, async
+      # signal timing). Observed delta on PRs that don't touch src/
+      # at all has been ~0.05% (2-3 lines of ~5k instrumented).
+      # 0.2% gives a 4x buffer for variance peaks while still
+      # catching real regressions of ~10+ lines.
+      threshold: 0.2%
   patch:
     default:
       target: 0%
