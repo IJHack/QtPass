@@ -433,7 +433,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
         <source>No profile selected to delete</source>
-        <translation>මෙහි නොවැල්සුන් සායනය කර ඇත එක මුරපද අක්ෂර රජයට පහළ කිරීමට නොහැක</translation>
+        <translation>මකා දැමීමට පැතිකඩක් තෝරා නොමැත</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
