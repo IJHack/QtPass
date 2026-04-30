@@ -659,7 +659,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>%1 හෝ ඉස්ථත්‍රයෙහි සංකේතය විලාසිතයි.</translation>
+        <translation>%1 සඳහා අත්සන අවලංගුය.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="149"/>
