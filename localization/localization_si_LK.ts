@@ -620,7 +620,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation>ප්‍රතිඵල ලබා ගත!</translation>
+        <translation>පිටපත් කරන ලදී!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
