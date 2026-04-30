@@ -1,103 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="pl_PL">
+<TS version="2.1" language="gl">
 <context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Konfiguracja</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="46"/>
-        <source>Settings</source>
-        <translation>Opcje</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="72"/>
-        <source>Clipboard behaviour:</source>
-        <translation>Zachowanie schowka:</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="91"/>
-        <source>Use primary selection</source>
-        <translation>Użyj wyboru podstawowego</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="98"/>
-        <source>Autoclear after:</source>
-        <translation>Automatyczne czyszczenie po:</translation>
+        <translation>Axustes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation>Sekundy</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="147"/>
-        <source>Content panel behaviour:</source>
-        <translation>Zachowanie panelu zawartości:</translation>
+        <translation>Segundos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide content</source>
-        <translation>Schowaj zawartość</translation>
+        <translation>Ocultar contido</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation>Ukryj hasło</translation>
+        <translation>Ocultar contrasinal</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="740"/>
+        <source>Native</source>
+        <translation>Nativo</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="vanished">...</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="816"/>
+        <source>Pass</source>
+        <translation>Pass</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="46"/>
+        <source>Settings</source>
+        <translation>Axustes</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="72"/>
+        <source>Clipboard behaviour:</source>
+        <translation>Comportamento do portapapeis:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="91"/>
+        <source>Use primary selection</source>
+        <translation>Usar selección primaria</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="98"/>
+        <source>Autoclear after:</source>
+        <translation>Autolimpar após:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="147"/>
+        <source>Content panel behaviour:</source>
+        <translation>Comportamento do panel de contido:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Automatycznie wyczyść panel po:</translation>
+        <translation>Autolimpar panel após:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
         <source>Password Generation:</source>
-        <translation>Generowanie hasła:</translation>
+        <translation>Xerar Contrasinal:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation>Długość hasła:</translation>
+        <translation>Lonxitude do contrasinal:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
         <source>Characters</source>
-        <translation>Znaki</translation>
+        <translation>Caracteres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
         <source>Use characters:</source>
-        <translation>Użyj znaków:</translation>
+        <translation>Usar caracteres:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
         <source>Select character set for password generation</source>
-        <translation>Wybierz zestaw znaków do generowania hasła</translation>
+        <translation>Elixe o conxunto de caracteres para a creación do contrasinal</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
         <source>All Characters</source>
-        <translation>Wszystkie znaki</translation>
+        <translation>Tódolos caracteres</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
         <source>Alphabetical</source>
-        <translation>Alfabetycznie</translation>
+        <translation>Alfabéticos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
         <source>Alphanumerical</source>
-        <translation>Alfanumerycznie</translation>
+        <translation>Alfanuméricos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
         <source>Custom</source>
-        <translation>Niestandardowe</translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
@@ -107,47 +121,47 @@
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
         <source>Include special symbols</source>
-        <translation>Uwzględnij symbole specjalne</translation>
+        <translation>Incluír símbolos especiais</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
         <source>Current path</source>
-        <translation>Obecna ścieżka</translation>
+        <translation>Ruta actual</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
-        <translation>Wyklucz wielkie litery</translation>
+        <translation>Excluír maiúsculas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Użyj czcionki o stałej szerokości znaków</translation>
+        <translation>Usar letra monoespazo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>Wyświetl zawartość pliku</translation>
+        <translation>Mostrar o contido do ficheiro tal como é</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>Nie zawijaj linii</translation>
+        <translation>Sen axustes de liña</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>Pokaż dane wyjściowe procesu</translation>
+        <translation>Mostrar a saída do proceso</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Generuj łatwe do zapamiętania, lecz mniej bezpieczne hasła</translation>
+        <translation>Crear contrasinais fáciles de lembrar pero menos seguros</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
         <source>Exclude numbers</source>
-        <translation>Z wyłączeniem liczb</translation>
+        <translation>Excluír números</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
@@ -157,92 +171,82 @@
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>Automatycznie dodaj pliki .gpg-id</translation>
+        <translation>Engadir automáticamente ficheiros .gpg-id</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically push</source>
-        <translation>Automatyczne „push”</translation>
+        <translation>Push automático</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation>Automatyczne „pull”</translation>
+        <translation>Pull automático</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
         <source>Extensions:</source>
-        <translation>Rozszerzenia:</translation>
+        <translation>Extensións:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Włącz wyszukiwanie zawartości (pass grep)</translation>
+        <translation>Activar a busca no contido (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Zezwalaj na przeszukiwanie zawartości plików z hasłami. Wymaga odszyfrowania każdego pliku i może być powolne w przypadku dużych baz danych.</translation>
+        <translation>Permite buscar dentro do contido dos ficheiros de contrasinais. Require descifrar cada ficheiro e pode ser lento en almacéns grandes.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
         <source>System:</source>
-        <translation>System:</translation>
+        <translation>Sistema:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation>Użyj ikony w zasobniku systemowym</translation>
+        <translation>Usar icona na bandexa</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
         <source>Start minimized</source>
-        <translation>Uruchom zminimalizowany</translation>
+        <translation>Iniciar minimizada</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation>Ukryj przy zamknięciu</translation>
+        <translation>Agochar ao pechar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
         <source>Always on top</source>
-        <translation>Zawsze na wierzchu</translation>
+        <translation>Sempre enriba</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
         <source>Programs</source>
-        <translation>Programy</translation>
+        <translation>Programas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
         <source>Select password storage program:</source>
-        <translation>Wybierz program do przechowywania haseł:</translation>
+        <translation>Elixir o programa de almacenaxe de contrasinais:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;Użyj pass</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="740"/>
-        <source>Native</source>
-        <translation>Natywny</translation>
+        <translation>&amp;Usar pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
         <source>Generate</source>
-        <translation>Wygeneruj</translation>
+        <translation>Crear</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
         <source>Generate GPG key pair</source>
-        <translation>Wygeneruj parę kluczy GPG</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="816"/>
-        <source>Pass</source>
-        <translation>Pass</translation>
+        <translation>Crear par de claves GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="827"/>
@@ -257,239 +261,239 @@
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
         <source>Autodetect</source>
-        <translation>Automatycznie wykryj</translation>
+        <translation>Detección automática</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
         <source>Profiles</source>
-        <translation>Profile</translation>
+        <translation>Perfís</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="949"/>
         <source>Name</source>
-        <translation>Nazwa</translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation>Nazwa profilu służąca do identyfikacji tego profilu konfiguracji</translation>
+        <translation>Nome do perfil, usado para identificar este perfil de configuración</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
         <source>Path</source>
-        <translation>Ścieżka</translation>
+        <translation>Ruta</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>Path to the password store directory</source>
-        <translation>Ścieżka do katalogu przechowującego hasła</translation>
+        <translation>Ruta ao directorio do almacén de contrasinais</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Signing Key</source>
-        <translation>Klucz podpisujący</translation>
+        <translation>Clave de sinatura</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Opcjonalnie: klucz GPG do podpisywania plików .gpg-id w celu weryfikacji integralności. Pozostaw puste, chyba że chcesz chronić listę użytkowników przed manipulacją.</translation>
+        <translation>Optativo: clave GPG para asinar ficheiros .gpg-id para a verificación de integridade. Deixar baleiro a non ser que precises protexer a lista de usuarios das manipulacións.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
         <source>Add</source>
-        <translation>Dodaj</translation>
+        <translation>Engadir</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="993"/>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
         <source>Template</source>
-        <translation>Szablon</translation>
+        <translation>Modelo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
         <source>Use template</source>
-        <translation>Użyj szablonu</translation>
+        <translation>Usar modelo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Pokaż wszystkie linie zaczynające się słowem i kończące dwukropkiem jako pola w polach haseł, zamiast listy</translation>
+        <translation>Mostra todas as liñas que comecen cunha palabra seguida por dous puntos como campos nos campos de contrasinal, non só os listados</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
         <source>Show all fields templated</source>
-        <translation>Pokaż wszystkie pola z szablonu</translation>
+        <translation>Mostra tódolos campos dos modelos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>Wersja &lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
+        <translation>Versión &lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation>Tacka systemowa nie jest dostępna</translation>
+        <translation>Non está dispoñible icona no sistema</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>Rozszerzenie OTP musi być zainstalowane</translation>
+        <translation>É preciso instalar a extensión Pass OTP</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
         <source>qrencode needs to be installed</source>
-        <translation>qrencode musi być zainstalowane</translation>
+        <translation>É preciso instalar qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
         <source>No Clipboard</source>
-        <translation>Bez schowka</translation>
+        <translation>Sen Portapapeis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation>Zawsze kopiuj do schowka</translation>
+        <translation>Copiar sempre ao portapapeis</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Kopiuj do schowka na żądanie</translation>
+        <translation>Copiar ao portapapeis cando se solicite</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
         <location filename="../src/configdialog.cpp" line="226"/>
         <source>This field is required</source>
-        <translation>To pole jest wymagane</translation>
+        <translation>Este campo é obrigatorio</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation>Utworzyć katalog profili?</translation>
+        <translation>Crear o directorio do perfil?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Czy chcesz utworzyć magazyn haseł w %1?</translation>
+        <translation>Queres crear un almacén de contrasinais en %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation>Nie można utworzyć katalogu profilu: %1</translation>
+        <translation>Non se puido crear o directorio do perfil: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation>Wybierz odbiorców dla %1</translation>
+        <translation>Selecciona os destinatarios para %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
         <source>New Profile</source>
-        <translation>Nowy profil</translation>
+        <translation>Novo perfil</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
         <source>No profile selected</source>
-        <translation>Nie wybrano profilu</translation>
+        <translation>Sen perfil seleccionado</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
         <source>No profile selected to delete</source>
-        <translation>Nie wybrano profilu do usunięcia</translation>
+        <translation>Non hai perfil seleccionado para eliminar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
         <source>GnuPG not found</source>
-        <translation>Nie znaleziono GnuPG</translation>
+        <translation>Non se atopa GnuPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;Ubuntu&lt;/strong&gt; z Microsoft Store.&lt;br&gt;Jeśli już to zrobiłeś, upewnij się, że uruchomiłeś system raz i&lt;br&gt;kliknij „Automatycznie wykryj” w następnym oknie dialogowym.</translation>
+        <translation>Instala GnuPG no teu sistema.&lt;br&gt;Instala &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store para obtelo.&lt;br&gt;Se xa o fixeches, asegúrate de que está activo e &lt;br&gt;preme en &quot;Autodetectar&quot; na seguinte xanela.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;Ubuntu&lt;/strong&gt; z Microsoft Store&lt;br&gt;lub &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;zainstaluj&lt;/a&gt; z GnuPG.org</translation>
+        <translation>Instala GnuPG no teu sistema.&lt;br&gt;Instala &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store&lt;br&gt;ou podes &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descargar&lt;/a&gt; desde GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;gpg&lt;/strong&gt; używając twojego ulubionego menedżera proramów&lt;br&gt;lub &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;zainstaluj&lt;/a&gt; z GnuPG.org</translation>
+        <translation>Instala GnuPG no teu sistema. &lt;b&gt;Instala &lt;strong&gt;gpg&lt;/strong&gt; usando o teu xestor de paquetes&lt;br&gt;ou &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descargao&lt;/a&gt; desde GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation>Stworzyć magazyn haseł?</translation>
+        <translation>Crear password-store?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>Czy chciałbyś stworzyć magazyn haseł w %1?</translation>
+        <translation>Queres crear unha password-store en %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
         <location filename="../src/configdialog.cpp" line="985"/>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Nie udało się utworzyć magazynu haseł w: %1</translation>
+        <translation>Fallo ao crear password-store en: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
         <source>Password store not initialised</source>
-        <translation>Magazyn haseł nie został zainicjowany</translation>
+        <translation>Password-store non inicializada</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Folder %1 nie posiada magazynu haseł lub jeszcze nie jest zainicjowany.</translation>
+        <translation>O cartafol %1 non semella ser unha password-store ou aínda non se inicializou.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation>Nowy profil: %1 w %2</translation>
+        <translation>Novo perfil: %1 en %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation>Profil: %1 w %2</translation>
+        <translation>Perfil: %1 en %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Wypełnij wszystkie wymagane pola</translation>
+        <translation>Enche todos os campos obrigatorios</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
         <source>Use PWGen</source>
-        <translation>Użyj PWGen</translation>
+        <translation>Usar PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
         <source>Use Git</source>
-        <translation>Użyj Git</translation>
+        <translation>Usar Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
         <source>Use QRencode</source>
-        <translation>Uzyj QRencode</translation>
+        <translation>Usar QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Use pass-otp extension</source>
-        <translation>Użyj rozszerzenia pass-otp</translation>
+        <translation>Usar extensión pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>Naty&amp;wny Git/GPG</translation>
+        <translation>Git/GPG &amp;nativos</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -518,16 +522,83 @@
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Szablony dodają dodatkowe pola w oknie dialogowym generowania hasła oraz w widoku hasła.</translation>
+        <translation>Os modelos engaden campos extra nos cadros de diálogo de creación de contrasinais e na vista de contrasinais.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
         <source>login
 URL
 e-mail</source>
-        <translation>login
+        <translation>identificador
 URL
 e-mail</translation>
+    </message>
+</context>
+<context>
+    <name>Dialog</name>
+    <message>
+        <source>Configuration</source>
+        <translation type="vanished">Axustes</translation>
+    </message>
+    <message>
+        <source>Pass</source>
+        <translation type="vanished">Pass</translation>
+    </message>
+    <message>
+        <source>...</source>
+        <translation type="vanished">...</translation>
+    </message>
+    <message>
+        <source>Executable pass</source>
+        <translation type="vanished">Executable pass</translation>
+    </message>
+    <message>
+        <source>Native</source>
+        <translation type="vanished">Nativo</translation>
+    </message>
+    <message>
+        <source>Executable git</source>
+        <translation type="vanished">Executable git</translation>
+    </message>
+    <message>
+        <source>Executable gpg</source>
+        <translation type="vanished">Executable gpg</translation>
+    </message>
+    <message>
+        <source>Native git/gpg</source>
+        <translation type="vanished">git/gpg nativo</translation>
+    </message>
+    <message>
+        <source>Use pass</source>
+        <translation type="vanished">Usar pass</translation>
+    </message>
+    <message>
+        <source>Other</source>
+        <translation type="vanished">Outros</translation>
+    </message>
+    <message>
+        <source>Folder password-store</source>
+        <translation type="vanished">Cartafol da password-store</translation>
+    </message>
+    <message>
+        <source>Clipboard</source>
+        <translation type="vanished">Portapapeis</translation>
+    </message>
+    <message>
+        <source>Autoclear</source>
+        <translation type="vanished">Limpado automático</translation>
+    </message>
+    <message>
+        <source>Seconds</source>
+        <translation type="vanished">Segundos</translation>
+    </message>
+    <message>
+        <source>Hide password</source>
+        <translation type="vanished">Ocultar contrasinal</translation>
+    </message>
+    <message>
+        <source>Hide content</source>
+        <translation type="vanished">Ocultar contido</translation>
     </message>
 </context>
 <context>
@@ -535,195 +606,195 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation>Eksportuj klucz publiczny</translation>
+        <translation>Exportar chave pública</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation>Klucz publiczny</translation>
+        <translation>Chave pública</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>Skopiuj do schowka</translation>
+        <translation>Copiar ao portapapeis</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Zapisz do pliku...</translation>
+        <translation>Gardar no ficheiro…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>Klucz publiczny dla %1</translation>
+        <translation>Chave pública de %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation>Skopiowano!</translation>
+        <translation>Copiado!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Zapisz klucz publiczny</translation>
+        <translation>Gardar a chave pública</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>Klucz ASCII-armored (*.asc);;Wszystkie pliki (*)</translation>
+        <translation>Chave ASCII-armored (*.asc);;Todos os ficheiros (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation>Nie można otworzyć %1 do zapisu: %2</translation>
+        <translation>Non se puido abrir %1 para escritura: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>Nie można zapisać do %1: %2</translation>
+        <translation>Non se puido escribir en %1: %2</translation>
     </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
+        <location filename="../src/imitatepass.cpp" line="732"/>
+        <location filename="../src/imitatepass.cpp" line="787"/>
+        <source>Updating password-store</source>
+        <translation>Actualizando password-store</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="149"/>
+        <location filename="../src/imitatepass.cpp" line="598"/>
+        <source>Can not edit</source>
+        <translation>Non se pode editar</translation>
+    </message>
+    <message>
         <location filename="../src/imitatepass.cpp" line="141"/>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Sprawdź podpis pliku .gpgid!</translation>
+        <translation>Comproba o ficheiro de sinatura .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>Podpis %1 jest nieprawidłowy.</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="149"/>
-        <location filename="../src/imitatepass.cpp" line="598"/>
-        <source>Can not edit</source>
-        <translation>Nie można edytować</translation>
+        <translation>A sinatura para %1 non é válida.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Nie można było odczytać klucza szyfrowania, plik .gpg-id nie istnieje lub jest niepoprawny.</translation>
+        <translation>Non se pode ler a chave de cifrado utilizada, non hai ficheiro gpg-id ou non é válido.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
         <source>GPG signing failed!</source>
-        <translation>Podpisanie GPG się nie powiodło!</translation>
+        <translation>Fallou a sinatura GPG!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation>Nie udało się podpisać %1.</translation>
+        <translation>Fallou a sinatura de %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation>Brak klucza podpisu!</translation>
+        <translation>Sen chave de sinatura!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Żaden z tajnych kluczy podpisu nie jest dostępny.
-Nie będzie można zmienić listy użytkowników!</translation>
+        <translation>Non está dispoñible ningunha das claves secretas para sinatura.
+Non poderás cambiar a lista de usuarias!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
-        <translation>Nie można było zaaktualizować</translation>
+        <translation>Non se puido actualizar</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Nie udało się otworzyć pliku .gpg-id w trybie zapisywania.</translation>
+        <translation>Fallo ao abrir .gpg-id para escritura.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Check selected users!</source>
-        <translation>Sprawdź wybranych użytkowników!</translation>
+        <translation>Marca os usuarios seleccionados!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Żaden z zaznaczonych kluczy nie ma dostępnego tajnego klucza.
-Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
+        <translation>Ningunha das claves elexidas ten unha clave secreta dispoñible.
+Non poderás descifrar ningún dos novos contrasinais engadidos!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>Ponowne szyfrowanie się nie powiodło</translation>
+        <translation>Fallou a re-cifraxe</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Nie udało się zastąpić %1. Oryginał został przywrócony.</translation>
+        <translation>Fallou a substitución de %1. Restableceuse o orixinal.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>Tworzenie zatwierdzenia kopii zapasowej</translation>
+        <translation>Creando commit da copia de apoio</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Backup commit failed</source>
-        <translation>Nie udało się zatwierdzić kopii zapasowej</translation>
+        <translation>Fallou o commit da copia de apoio</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Nie można sprawdzić statusu git. Ponowne szyfrowanie zostało przerwane.</translation>
+        <translation>Non se puido comprobar o estado en git. Desbotouse a re-cifraxe.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>Ponowne szyfrowanie zostało przerwane, ponieważ nie udało się utworzyć kopii zapasowej git.</translation>
+        <translation>A re-cifraxe cancelouse porque non se puido crear unha copia de apoio git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Ponowne szyfrowanie z folderu %1</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="732"/>
-        <location filename="../src/imitatepass.cpp" line="787"/>
-        <source>Updating password-store</source>
-        <translation>Aktualizowanie magazynu haseł</translation>
+        <translation>Volver a cifrar desde cartafol %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="757"/>
         <source>GPG ID verification failed</source>
-        <translation>Weryfikacja identyfikatora GPG się nie powiodła</translation>
+        <translation>Fallou a verificación do ID GPG</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Nie można zweryfikować pliku .gpg-id dla katalogu.</translation>
+        <translation>Non se puido verificar o .gpg-id do directorio.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Nie udało się ponownie zaszyfrować %1</translation>
+        <translation>Fallou a re-cifraxe de %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Ponowne szyfrowanie zakończone. Powiodło się: %1. Nie powiodło się: %2</translation>
+        <translation>Re-cifraxe completada: %1 con éxito, %2 con fallos</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Ponowne szyfrowanie ukończone. Ponownie zaszyfrowane pliki: %1</translation>
+        <translation>Completouse a re-cifraxe: %1 ficheiros re-cifrados</translation>
     </message>
 </context>
 <context>
@@ -732,42 +803,42 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation>Importuj klucz GPG</translation>
+        <translation>Importar chave GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Zaimportuj klucz publiczny GPG z pliku lub wklej go poniżej. Klucz powinien być w formacie ASCII-armored.</translation>
+        <translation>Importa unha chave pública GPG dun ficheiro ou pégaa abaixo. A chave debe estar en formato ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Z pliku...</translation>
+        <translation>Desde ficheiro…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation>Ze schowka</translation>
+        <translation>Desde o portapapeis</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Wklej tutaj klucz GPG w formacie ASCII-armored...</translation>
+        <translation>Pega aquí unha chave GPG en formato ASCII-armored…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation>Importuj</translation>
+        <translation>Importar</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>Klucz GPG w formacie ASCII-armored</translation>
+        <translation>Chave GPG ASCII-armored</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation>Wszystkie pliki</translation>
+        <translation>Todos os ficheiros</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -775,34 +846,34 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation>Importuj klucz</translation>
+        <translation>Importar chave</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation>Nie można otworzyć pliku: %1</translation>
+        <translation>Non se puido abrir o ficheiro: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 nie wygląda jak klucz GPG w formacie ASCII-armored. Najpierw przekonwertuj go za pomocą polecenia &lt;code&gt;gpg --armor --export&lt;/code&gt; lub wklej blok ASCII-armored za pomocą funkcji &lt;b&gt;Ze schowka&lt;/b&gt;.</translation>
+        <translation>%1 non parece unha chave GPG en formato ASCII-armored. Convértea primeiro con &lt;code&gt;gpg --armor --export&lt;/code&gt;, ou pega o bloque ASCII-armored a través de &lt;b&gt;Desde o portapapeis&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation>Nieudany import GPG:
+        <translation>Fallou a importación de GPG:
 %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Nie można przeanalizować zaimportowanego identyfikatora klucza z danych wyjściowych GPG.</translation>
+        <translation>Non se puido ler o ID da chave importada da saída de GPG.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Klucz zaimportowany pomyślnie: %1</translation>
+        <translation>Chave importada con éxito: %1</translation>
     </message>
 </context>
 <context>
@@ -810,47 +881,47 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Generuj pare kluczy GnuPG</translation>
+        <translation>Crear par de claves GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Generuj nową pare kluczy</translation>
+        <translation>Crear novo par de claves</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>E-mail</translation>
+        <translation>Email</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
-        <translation>Nazwa</translation>
+        <translation>Nome</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation>Hasło</translation>
+        <translation>Frase de paso</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Długość hasła jest nieograniczona i należy je starannie dobrać. Z punktu widzenia bezpieczeństwa hasło do odblokowania klucza prywatnego jest jednym z najsłabszych punktów GnuPG (i innych systemów szyfrowania kluczem publicznym), ponieważ stanowi jedyne zabezpieczenie w przypadku, gdy inna osoba uzyska dostęp do klucza prywatnego. &lt;br/&gt;W idealnym przypadku hasło nie powinno zawierać słów ze słownika, a jedynie litery i znaki spoza alfabetu.&lt;br/&gt;Dobre hasło jest kluczem do bezpiecznego korzystania z GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Non existe límite para a lonxitude da frase de apso, e debes elexila poñendo coidado. Desde o plano da seguridade, a frase de paso desbloquea a chave privada e é un dos puntos máis febles en GnuPG (e outros sistemas de cifrado con chave pública) porque é a única protección que tes se outra persoa obtén a túa chave privada.&lt;br/&gt;Idealmente, a frase de paso debería non usar palabras de diccionario e misturar maiúsculas e minúsculas con caracteres non alfabéticos.&lt;br/&gt;Unha boa frase de paso é crítica para un uso seguro de GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Powtórz hasło</translation>
+        <translation>Repetir pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation>Zaawansowane</translation>
+        <translation>Experto</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Zawartość szablonu zostanie ustawiona na podstawie wersji GPG.</translation>
+        <translation>O contido do modelo vaise establecer en función da versión GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -868,19 +939,19 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="vanished"># Generator kluczy GPG QtPass
+        <translation type="vanished">#           Xerador de chave QtPass GPG
 #
-# pierwsza wersja testowa, proszę o komentarz
+#      primeira versión de proba, por favor comenta
 #
-%echo Generowanie domyślnego klucza
-Klucz-typ: RSA
-Podklucz-typ: RSA
-Nazwa-rzeczywista:
-Nazwa-komentarz: QtPass
-Nazwa-e-mail:
-Data wygaśnięcia: 0
+%echo Creando chave por defecto
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
 %no-protection
-# Zatwierdź tutaj, abyśmy mogli później wyświetlić „done” :-)
+# Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</translation>
     </message>
@@ -900,11 +971,11 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="vanished">#           QtPass GPG key generator
+        <translation type="vanished">#           Xerador de chaves QtPass GPG
 #
-#      first test version please comment
+#      primerira versión de proba, por favor, comenta
 #
-%echo Generating a default key
+%echo Creando chave por defecto
 Key-Type: default
 Subkey-Type: default
 Name-Real:
@@ -919,61 +990,170 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Ustawienia zaawansowane można znaleźć w &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;podręczniku GnuPG&lt;/a&gt;</translation>
+        <translation>Para opcións de experto mira o &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;manual GnuPG&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
-        <translation>Niepoprawna nazwa</translation>
+        <translation>Nome non válido</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>Nazwa musi mieć co najmniej 5 znaków.</translation>
+        <translation>O nome debe ter máis de 4 caracteres.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation>Niepoprawny e-mail</translation>
+        <translation>Email non válido</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Adres e-mail, który wpisano, jest niepoprawny.</translation>
+        <translation>O email que escribiches non é un enderezo válido de email.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Ta operacja może potrwać kilka minut.&lt;br /&gt;Musimy wygenerować dużo losowych bajtów. Dobrym pomysłem jest wykonanie innej czynności (pisanie na klawiaturze, poruszanie myszą, korzystanie z dysków) podczas generowania liczb pierwszych; daje to generatorowi liczb losowych większą szansę na uzyskanie wystarczającej entropii.</translation>
+        <translation>Esta operación podería demorar varios minutos.&lt;br /&gt;Temos que crear un bo número de bytes aleatorios. É boa idea facer algunha outra cousa mentras (escribir no teclado, mover o rato, usar os discos duros) para crear o número primo; esto proporciona máis entropía para o creador de números aleatorios.</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <source>Copied to clipboard</source>
-        <translation type="vanished">skopiowany do schowka</translation>
-    </message>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="428"/>
+        <source>Git push</source>
+        <translation>Git push</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="433"/>
+        <source>Update</source>
+        <translation>Actualizar</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="436"/>
+        <source>Git pull</source>
+        <translation>Git pull</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="452"/>
+        <source>Configuration</source>
+        <translation>Axustes</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="449"/>
+        <source>Config</source>
+        <translation>Axustes</translation>
+    </message>
+    <message>
+        <source>X</source>
+        <translation type="vanished">X</translation>
+    </message>
+    <message>
+        <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Helvetica Neue DeskInterface&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:25.6px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; color:#333333;&quot;&gt;QtPass is a gui for &lt;/span&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:x-large; font-weight:600; color:#333333;&quot;&gt;ALPHA release&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:x-large; font-weight:600; color:#333333;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:x-large; font-weight:600; color:#333333;&quot;&gt;TODO&lt;/span&gt;&lt;/p&gt;
+&lt;ol style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; color:#333333;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;edit&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; color:#333333;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;insert&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; color:#333333;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;gpg-id management&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; color:#333333;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:25.6px;&quot;&gt;&lt;a href=&quot;http://ijhack.github.io/qtpass/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:25.6px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Source code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation type="vanished">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;.Helvetica Neue DeskInterface&apos;; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:25.6px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; color:#333333;&quot;&gt;QtPass is a gui for &lt;/span&gt;&lt;a href=&quot;http://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;pass&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:x-large; font-weight:600; color:#333333;&quot;&gt;ALPHA release&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:x-large; font-weight:600; color:#333333;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:x-large; font-weight:600; color:#333333;&quot;&gt;TODO&lt;/span&gt;&lt;/p&gt;
+&lt;ol style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; color:#333333;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;edit&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; color:#333333;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;insert&lt;/span&gt;&lt;/li&gt;
+&lt;li style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; color:#333333;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:16px;&quot;&gt;gpg-id management&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; color:#333333;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:16px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:25.6px;&quot;&gt;&lt;a href=&quot;http://ijhack.github.io/qtpass/&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Documentation&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:25.6px;&quot;&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;&lt;span style=&quot; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; font-size:16px; text-decoration: underline; color:#4183c4; background-color:transparent;&quot;&gt;Source code&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:&apos;Helvetica Neue,Helvetica,Segoe UI,Arial,freesans,sans-serif&apos;; color:#333333;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <source>qtpass</source>
+        <translation type="vanished">qtpass</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="501"/>
+        <location filename="../src/mainwindow.cpp" line="514"/>
+        <source>Updating password-store</source>
+        <translation>Actualizando password-store</translation>
+    </message>
+    <message>
+        <source>Clipboard cleared</source>
+        <translation type="vanished">Portapapeis baleiro</translation>
+    </message>
+    <message>
+        <source>Password copied to clipboard</source>
+        <translation type="vanished">Contrasinal copiado ao portapapeis</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="625"/>
+        <location filename="../src/mainwindow.cpp" line="924"/>
+        <source>Content hidden</source>
+        <translation>Contido oculto</translation>
+    </message>
+    <message>
+        <source>QProcess::FailedToStart</source>
+        <translation type="vanished">QProcess::Fallou o inicio</translation>
+    </message>
+    <message>
+        <source>QProcess::Crashed</source>
+        <translation type="vanished">QProcess::Fallou</translation>
+    </message>
+    <message>
+        <source>QProcess::Timedout</source>
+        <translation type="vanished">QProcess::Caducou</translation>
+    </message>
+    <message>
+        <source>QProcess::ReadError</source>
+        <translation type="vanished">QProcess::Erro de lectura</translation>
+    </message>
+    <message>
+        <source>QProcess::WriteError</source>
+        <translation type="vanished">QProcess::Erro de escritura</translation>
+    </message>
+    <message>
+        <source>QProcess::UnknownError</source>
+        <translation type="vanished">QProcess::Erro descoñecido</translation>
+    </message>
+    <message>
+        <source>Looking for: </source>
+        <translation type="vanished">Buscando: </translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>Wybierz profil</translation>
+        <translation>Elixir perfil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="700"/>
         <location filename="../src/mainwindow.cpp" line="883"/>
         <source>Search Password</source>
-        <translation>Wyszukaj hasło</translation>
+        <translation>Buscar contrasinal</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Wyszukaj w zawartości hasła (pass grep)</translation>
+        <translation>Buscar no contido dos contrasinais (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -983,17 +1163,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Przełącznik wyszukiwania zawartości</translation>
+        <translation>Conmutador de busca no contido</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Przełącz tryb wyszukiwania zawartości, aby wyszukiwać w plikach haseł</translation>
+        <translation>Conmutar o modo de busca no contido para buscar dentro dos ficheiros de contrasinais</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation>Wyszukiwanie bez uwzględniania wielkości liter</translation>
+        <translation>Busca sen distinción de maiúsculas e minúsculas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -1003,39 +1183,39 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Przełącznik ignorowania wielkości liter</translation>
+        <translation>Conmutador para ignorar maiúsculas e minúsculas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation>Przełącz wyszukiwanie zawartości bez uwzględniania wielkości liter</translation>
+        <translation>Conmutar a busca no contido sen distinción de maiúsculas e minúsculas</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation>Wyniki</translation>
+        <translation>Resultados</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Welcome to QtPass</source>
-        <translation>Witamy w QtPass</translation>
+        <translation>Benvido a QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation>Wyczyść dane wyjściowe</translation>
+        <translation>Limpar a saída</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation>Wyczyść</translation>
+        <translation>Limpar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
-        <translation>Dodaj hasło</translation>
+        <translation>Engadir contrasinal</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -1047,21 +1227,21 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1372"/>
         <source>Add folder</source>
-        <translation>Dodaj folder</translation>
+        <translation>Engadir cartafol</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
         <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Edit</source>
-        <translation>Edytuj</translation>
+        <translation>Editar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
         <location filename="../src/mainwindow.cpp" line="1394"/>
         <source>Delete</source>
-        <translation>Usuń</translation>
+        <translation>Eliminar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
@@ -1071,7 +1251,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Wygeneruj OTP i dodaj do schowka</translation>
+        <translation>Crear OTP e copialo ao portapapeis</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
@@ -1084,315 +1264,264 @@ Expire-Date: 0
         <translation>Push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="428"/>
-        <source>Git push</source>
-        <translation>Git push</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="436"/>
-        <source>Git pull</source>
-        <translation>Git pull</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="433"/>
-        <source>Update</source>
-        <translation>Zaaktualizuj</translation>
-    </message>
-    <message>
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1374"/>
         <source>Users</source>
-        <translation>Użytkownicy</translation>
+        <translation>Usuarios</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="444"/>
         <source>Manage who can read password in folder</source>
-        <translation>Zarządzaj, kto może odczytać hasło w folderze</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="449"/>
-        <source>Config</source>
-        <translation>Konfiguracja</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="452"/>
-        <source>Configuration</source>
-        <translation>Konfiguracja</translation>
+        <translation>Xestionar quen pode ler o contrasinal do cartafol</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Witamy w QtPass %1</translation>
+        <translation>Benvida a QtPass %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation>Dane wyjściowe procesu</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="501"/>
-        <location filename="../src/mainwindow.cpp" line="514"/>
-        <source>Updating password-store</source>
-        <translation>Aktualizowanie magazynu haseł</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="625"/>
-        <location filename="../src/mainwindow.cpp" line="924"/>
-        <source>Content hidden</source>
-        <translation>Zawartość ukryta</translation>
+        <translation>Saída do proceso</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="629"/>
         <location filename="../src/mainwindow.cpp" line="1641"/>
         <source>Password</source>
-        <translation>Hasło</translation>
+        <translation>Contrasinal</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="666"/>
         <source>OTP Code</source>
-        <translation>Kod OTP</translation>
+        <translation>Código OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
-        <translation>Kod OTP skopiowano do schowka</translation>
+        <translation>Copiouse o OTP ao portapapeis</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>No OTP code found in this password entry</source>
-        <translation>W tym wpisie hasła nie znaleziono kodu OTP</translation>
+        <translation>Non se atopa código OTP para esta entrada de contrasinal</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
-        <translation>Hasło i zawartość ukryta</translation>
+        <translation>Contrasinal e contido oculto</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
         <source>Looking for: %1</source>
-        <translation>Szukanie: %1</translation>
+        <translation>Buscando: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
-        <translation>Wyszukiwanie…</translation>
+        <translation>Buscando…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation>Wyszukaj zawartość (wyrażenie regularne)</translation>
+        <translation>Buscar no contido (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation>Nie znaleziono wyników.</translation>
-    </message>
-    <message numerus="yes">
-        <source>Found %n match(es) in %1 entr(ies).</source>
-        <translation type="vanished">
-            <numerusform>Znaleziono %n wynik we wpisach: %1.</numerusform>
-            <numerusform>Znaleziono %n wyniki we wpisach: %1.</numerusform>
-            <numerusform>Znaleziono %n wyników we wpisach: %1.</numerusform>
-        </translation>
+        <translation>Non se atoparon coincidencias.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation>
-            <numerusform>Znaleziono %n wynik</numerusform>
-            <numerusform>Znaleziono %n wyniki</numerusform>
-            <numerusform>Znaleziono %n wyników</numerusform>
+            <numerusform>Atopouse %n coincidencia</numerusform>
+            <numerusform>Atopáronse %n coincidencias</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>w %n wpisie.</numerusform>
-            <numerusform>w %n wpisach.</numerusform>
-            <numerusform>w %n wpisach.</numerusform>
+            <numerusform>en %n entrada.</numerusform>
+            <numerusform>en %n entradas.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <location filename="../src/mainwindow.cpp" line="1467"/>
         <source>New file</source>
-        <translation>Nowy plik</translation>
+        <translation>Novo ficheiro</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>Nowy plik hasła: 
-(Zostanie dodane do %1 )</translation>
+        <translation>Novo ficheiro de contrasinal: 
+(situarase en %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
         <source> and the whole content?</source>
-        <translation> i cała treść?</translation>
+        <translation> e o contido completo?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> i cała treść? &lt;br&gt;&lt;strong&gt;Uwaga: znajdują się niespodziewane pliki w danym folderze, sprawdź je przed kontynuacją.&lt;/strong&gt;</translation>
+        <translation> e o contido completo? &lt;br&gt;&lt;strong&gt;Aviso: hai ficheiros non agardados no cartafol indicado, comprobao antes de continuar.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation>Usunąć folder?</translation>
+        <translation>Eliminar cartafol?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation>Usunąć hasło?</translation>
+        <translation>Eliminar contrasinal?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Czy na pewno chcesz usunąć %1%2?</translation>
+        <translation>Tes a certeza de querer eliminar %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>No password selected for OTP generation</source>
-        <translation>Nie wybrano hasła do wygenerowania OTP</translation>
+        <translation>Sen contrasinal seleccionado para crear o OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1242"/>
         <source>Profile changed to %1</source>
-        <translation>Profil zmienony na %1</translation>
+        <translation>Cambio de perfil a %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>Open folder with file manager</source>
-        <translation>Otwórz folder w menedżerze plików</translation>
+        <translation>Abrir cartafol co xestor de ficheiros</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
-        <translation>Zmień nazwe folderu</translation>
+        <translation>Cambiar nome ao cartafol</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation>Zmień nazwe hasła</translation>
+        <translation>Cambiar nome ao contrasinal</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation>Udostępnij</translation>
+        <translation>Compartir</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Ponownie zaszyfruj wszystkie hasła</translation>
+        <translation>Cifrar de novo todos os contrasinais</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation>Eksportuj mój klucz publiczny...</translation>
+        <translation>Exportar a miña chave pública…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation>Dodaj odbiorcę...</translation>
+        <translation>Engadir destinatario…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation>Co to jest?</translation>
+        <translation>Que é isto?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation>Eksportuj klucz publiczny</translation>
+        <translation>Exportar chave pública</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Eksportuj swój klucz publiczny&lt;/h3&gt;&lt;p&gt;Nie skonfigurowano klucza podpisu. Ustaw go w Ustawienia QtPass &amp;gt; Klucze GPG lub uruchom to polecenie w terminalu:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Następnie wyślij plik członkom zespołu.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Exporta a túa chave pública&lt;/h3&gt;&lt;p&gt;Non hai ningunha chave de sinatura configurada. Configura unha en Axustes de QtPass &amp;gt; chaves GPG, ou executa isto nun terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Logo envía o ficheiro aos teus compañeiros de equipo.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation>Nie można wyeksportować klucza publicznego dla %1.
+        <translation>Non se puido exportar a chave pública de %1.
 
 %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
-        <translation>Brak danych wyjściowych z gpg.</translation>
+        <translation>Sen saída de gpg.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Udostępnianie haseł za pomocą GPG</translation>
+        <translation>Compartir contrasinais con GPG</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Udostępnianie haseł za pomocą GPG&lt;/h3&gt;&lt;p&gt;Aby udostępnić hasła innym użytkownikom:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;wyeksportuj swój klucz publiczny&lt;/b&gt; i wyślij go członkom zespołu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Zaimportuj klucze publiczne członków zespołu&lt;/b&gt; do swojego pęku kluczy GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ponownie zaszyfruj hasła&lt;/b&gt;, aby wszyscy odbiorcy mogli je odszyfrować&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Tylko osoby z pasującym kluczem tajnym mogą odszyfrować hasła.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Wskazówka:&lt;/b&gt; użyj tego samego klucza GPG dla wszystkich folderów współdzielonych.&lt;/p&gt;&lt;p&gt;Więcej informacji znajdziesz w sekcji FAQ.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; to their own folders&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="vanished">&lt;h3&gt;Udostępnianie haseł za pomocą GPG&lt;/h3&gt;&lt;p&gt;Aby udostępnić hasła innym użytkownikom:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Wyeksportuj swój klucz publiczny&lt;/b&gt; i wyślij go członkom zespołu&lt;/li&gt;&lt;li&gt;&lt;b&gt;Zaimportuj klucze publiczne członków zespołu&lt;/b&gt; do ich folderów&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ponownie zaszyfruj hasła&lt;/b&gt;, aby wszyscy odbiorcy mogli je odszyfrować&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Tylko osoby z pasującym kluczem tajnym mogą odszyfrować hasła.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Wskazówka:&lt;/b&gt; użyj tego samego klucza GPG dla wszystkich folderów współdzielonych.&lt;/p&gt;&lt;p&gt;Więcej informacji znajdziesz w sekcji FAQ.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Compartir contrasinais con GPG&lt;/h3&gt;&lt;p&gt;Para compartir contrasinais con outros usuarios:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exporta a túa chave pública&lt;/b&gt; e envíaa aos compañeiros de equipo&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importa as chaves públicas dos compañeiros&lt;/b&gt; ao teu chaveiro GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Cifra de novo os contrasinais&lt;/b&gt; para que todos os destinatarios poidan descifralos&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Só as persoas que teñan unha chave secreta correspondente poden descifrar os contrasinais.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Suxestión:&lt;/b&gt; Usa a mesma chave GPG para todos os cartafoles compartidos.&lt;/p&gt;&lt;p&gt;Consulta as preguntas frecuentes para máis detalles.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
-        <translation type="vanished">Zaszyfruj ponownie</translation>
+        <translation type="vanished">Volver cifrar</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Nowy folder: 
-(Zostanie dodany do %1 )</translation>
+        <translation>Novo cartafol: 
+(situarase en %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
         <location filename="../src/mainwindow.cpp" line="1487"/>
         <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Error</source>
-        <translation>Błąd</translation>
+        <translation>Erro</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation>Nie udało się utworzyć folderu: %1</translation>
+        <translation>Fallou a creación do cartafol: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Nie udało się utworzyć pliku .gpg-id w: %1</translation>
+        <translation>Fallo ao crear o ficheiro .gpg-id en: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename file</source>
-        <translation>Zmień nazwe pliku</translation>
+        <translation>Cambiar nome ao ficheiro</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
-        <translation>Zmień nazwe folderu na: </translation>
+        <translation>Novo nome do cartafol: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation>Zmień nazwę pliku na: </translation>
+        <translation>Novo nome do ficheiro: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Directory does not exist: %1</source>
-        <translation>Katalog nie istnieje: %1</translation>
+        <translation>O directorio non existe: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>Ponowne szyfrowanie haseł</translation>
+        <translation>Volver cifrar os contrasinais</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
@@ -1403,13 +1532,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Zaszyfrować ponownie wszystkie hasła w&#xa0;%1?
+        <translation>Volver cifrar todos os contrasinais en %1?
 
-Spowoduje to ponowne zaszyfrowanie WSZYSTKICH plików haseł w&#xa0;tym folderze, używając bieżących odbiorców zdefiniowanych w&#xa0;pliku .gpg-id.
+Isto volverá cifrar TODOS os ficheiros de contrasinais deste cartafol usando os destinatarios actuais definidos en .gpg-id.
 
-Może to spowodować nadpisanie wielu plików i&#xa0;nie można tego łatwo cofnąć.
+Isto pode reescribir moitos ficheiros e non se pode desfacer facilmente.
 
-Kontynuować?</translation>
+Continuar?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -1417,10 +1546,10 @@ Kontynuować?</translation>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass to graficzny interfejs użytkownika dla &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standardowego menedżera haseł w systemach uniksowych.&lt;/p&gt;
-&lt;p&gt;Prosze zgłaszać jakiekolwiek &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemy&lt;/a&gt; z programem.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacja&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Kod źródłowy&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt;QtPass é unha interface gráfica para &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, o xestor de contrasinais estándar de unix.&lt;/p&gt;
+&lt;p&gt;Por favor, informa de calquera &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problema&lt;/a&gt; que atopes neste software.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentación&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Código fonte&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1428,46 +1557,46 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation>Nieprawidłowa długość hasła</translation>
+        <translation>Lonxitude do contrasinal non válida</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation>Nie można wygenerować hasła o zerowej długości.</translation>
+        <translation>Non se pode xerar un contrasinal de lonxitude cero.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
         <source>No characters chosen</source>
-        <translation>Brak wybranych znaków</translation>
+        <translation>Non hai caracteres seleccionados</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Nie można wygenerować hasła, nie zostały wybrane żadne zestawy znaki w konfiguracji!</translation>
+        <translation>Non se puido crear o contrasinal, non hai caracteres entre os que elixir na configuración!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>Szyfrowanie nie powiodło się: klucz GPG wygasł. Należy go odnowić lub wymienić.</translation>
+        <translation>Fallou o cifrado: a chave GPG caducou. Renóvaa ou substitúea.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation>Szyfrowanie nie powiodło się: klucz GPG został unieważniony.</translation>
+        <translation>Fallou o cifrado: a chave GPG foi revogada.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Szyfrowanie nie powiodło się: klucz GPG odbiorcy nie został znaleziony lub jest nieprawidłowy. Sprawdź, czy identyfikator klucza w pliku .gpg-id jest poprawny i zaimportuj go.</translation>
+        <translation>Fallou o cifrado: non se atopou ou non é válida a chave GPG do destinatario. Comproba que o ID da chave en .gpg-id sexa correcto e estea importado.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>Szyfrowanie nie powiodło się. Sprawdź, czy klucz GPG jest prawidłowy.</translation>
+        <translation>Fallou o cifrado. Comproba que a túa chave GPG sexa válida.</translation>
     </message>
 </context>
 <context>
@@ -1476,47 +1605,47 @@ Kontynuować?</translation>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation>Hasło</translation>
+        <translation>Contrasinal</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation>Wygeneruj</translation>
+        <translation>Crear</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation>Pokaż hasło</translation>
+        <translation>Mostrar contrasinal</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation>Zestaw znaków:</translation>
+        <translation>Conxunto de caracteres:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation>Wszystkie znaki</translation>
+        <translation>Tódolos caracteres</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation>Alfabetyczne</translation>
+        <translation>Alfabéticos</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation>Alfanumeryczne</translation>
+        <translation>Alfanuméricos</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation>Niestandardowe</translation>
+        <translation>Personalizado</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation>Długość:</translation>
+        <translation>Lonxitude:</translation>
     </message>
 </context>
 <context>
@@ -1531,112 +1660,112 @@ Kontynuować?</translation>
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="512"/>
-        <source>Copied to clipboard</source>
-        <translation>Skopiowano do schowka</translation>
+        <location filename="../src/qtpass.cpp" line="275"/>
+        <source>QProcess::FailedToStart</source>
+        <translation>QProcess::Fallou o inicio</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="278"/>
+        <source>QProcess::Crashed</source>
+        <translation>QProcess::Fallou</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="281"/>
+        <source>QProcess::Timedout</source>
+        <translation>QProcess::Caducou</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="284"/>
+        <source>QProcess::ReadError</source>
+        <translation>QProcess::Erro de lectura</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="287"/>
+        <source>QProcess::WriteError</source>
+        <translation>QProcess::Erro de escritura</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="290"/>
+        <source>QProcess::UnknownError</source>
+        <translation>QProcess::Erro descoñecido</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="465"/>
+        <source>Clipboard cleared</source>
+        <translation>Portapapeis baleiro</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Generowanie pary kluczy GPG</translation>
+        <translation>Creando par de claves GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Nie udało się połączyć z WebDAV:
+        <translation>Fallou a conexión WebDAV:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>QtPass WebDAV password</source>
-        <translation>Hasło WebDAV QtPass</translation>
+        <translation>Contrasinal QtPass WebDAV</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Podaj hasło do połączenia się z WebDAV:</translation>
+        <translation>Escribe o contrasinal para conectar a WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav niespodziewanie wyłączył się
+        <translation>fusedav pechou inesperadamente
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Nie udało się uruchomić fusedav w celu połączenia z WebDAV:
+        <translation>Fallou o inicio de fusedav para conectar con WebDAV:
 </translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="275"/>
-        <source>QProcess::FailedToStart</source>
-        <translation>QPRocess::FailedToStart</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="278"/>
-        <source>QProcess::Crashed</source>
-        <translation>QProcess::Crashed</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="281"/>
-        <source>QProcess::Timedout</source>
-        <translation>QProcess::Timedout</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="284"/>
-        <source>QProcess::ReadError</source>
-        <translation>QProcess::ReadError</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="287"/>
-        <source>QProcess::WriteError</source>
-        <translation>QProcess::WriteError</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="290"/>
-        <source>QProcess::UnknownError</source>
-        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation>Nie udało się wygenerować pary kluczy GPG</translation>
+        <translation>Fallou a creación do par de claves GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
         <source>GPG key pair generated successfully</source>
-        <translation>Udało się wygenerować parę kluczy GPG</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="465"/>
-        <source>Clipboard cleared</source>
-        <translation>Schowek został wyczyszczony</translation>
+        <translation>Creouse correctamente o par de claves GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation>Schowek nie został wyczyszczony</translation>
+        <translation>Portapapeis non está baleiro</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="512"/>
+        <source>Copied to clipboard</source>
+        <translation>Copiado ao portapapeis</translation>
     </message>
 </context>
 <context>
     <name>StoreModel</name>
     <message>
         <source>force overwrite?</source>
-        <translation type="vanished">wymuś nadpisanie?</translation>
+        <translation type="vanished">forzar sobrescritura?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation>Wymusić nadpisanie?</translation>
+        <translation>Forzar a sobrescritura?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation>nadpisać %1 przez %2?</translation>
+        <translation>sobrescribir %1 con %2?</translation>
     </message>
 </context>
 <context>
@@ -1644,32 +1773,32 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&amp;Pokaż</translation>
+        <translation>&amp;Mostrar</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation>&amp;Ukryj</translation>
+        <translation>&amp;Agochar</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>Mi&amp;nimalizuj</translation>
+        <translation>Mi&amp;nimizar</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>Ma&amp;ksymalizuj</translation>
+        <translation>Má&amp;ximizar</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp;Przywróć</translation>
+        <translation>&amp;Restablecer</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Wyjdź</translation>
+        <translation>&amp;Sair</translation>
     </message>
 </context>
 <context>
@@ -1677,17 +1806,17 @@ Kontynuować?</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>Użytkownicy z dostępem do odczytu</translation>
+        <translation>Usuarios con acceso de lectura</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="vanished">Wybierz użytkowników, którzy powinni móc odszyfrowywać hasła przechowywane w tym folderze.
-Uwaga: istniejące pliki nie zostaną zmodyfikowane i zachowają stare uprawnienia, dopóki ich nie edytujesz.
-Wpisy niebieskie mają dostępny klucz tajny, wybierz jeden z nich, aby móc odszyfrować.
-Wpisy czerwone są nieprawidłowe, nie będziesz w stanie ich zaszyfrować.</translation>
+        <translation type="vanished">Elixe que usuarios poderás descifrar os contrasinais gardados neste cartafol.
+Nota: os ficheiros existentes non serán modificados, e reteñen os permisos antigos ata que os edites.
+As entradas en azul dispoñen de chave segreda dispoñible, elixe unha desta para poder descifrar.
+As entradas en vermello non son válidas, non poderás cifrar con elas.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1696,71 +1825,71 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Wybierz użytkowników, którzy powinni mieć możliwość odszyfrowywania haseł zapisanych w tym folderze.
-Uwaga: istniejące pliki nie zostaną zmodyfikowane i zachowają stare uprawnienia do momentu ich edycji.
-Wpisy oznaczone kolorem niebieskim mają dostępny klucz tajny. Wybierz jeden z nich, aby móc je odszyfrować.
-Wpisy oznaczone kolorem czarnym mają dostępny i zaufany klucz szyfrujący. Wybierz jeden z nich, aby umożliwić innym osobom odszyfrowanie.
-Wpisy oznaczone kolorem czerwonym są nieprawidłowe i nie będzie można ich zaszyfrować.</translation>
+        <translation>Selecciona que usuarias van poder descifrar os contrasinais gardados neste cartafol.
+Nota: os ficheiros existentes non se van modificar, e van reter os permisos ate que os edites.
+As entradas de cor azul teñen a clave secreta dispoñible, elixe unha delas para poder descifrar.
+As entradas en cor negra teñen unha clave para cifraxe dispoñible e de confianza, elixe unha destas claves para permitir a outras persoas descifrar.
+As entradas en cor vermella non son válidas, non poderás cifrar con elas.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation>Szukaj użytkowników</translation>
+        <translation>Buscar usuarios</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>Pokaż nieużywalne klucze</translation>
+        <translation>Mostrar claves non válidas</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation>Importuj klucz...</translation>
+        <translation>Importar chave…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Importuj klucz GPG z pliku lub schowka</translation>
+        <translation>Importar unha chave GPG desde ficheiro ou portapapeis</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation>Brak listy kluczy</translation>
+        <translation>Non hai lista de claves</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Nie można pobrać listy dostępnych kluczy GPG</translation>
+        <translation>Non se puido obter a lista de claves GPG dispoñibles</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation>Klucz nie został znaleziony w breloku</translation>
+        <translation>Non se atopan claves no anel de claves</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
         <source>created</source>
-        <translation>stworzono</translation>
+        <translation>creada</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="310"/>
         <source>expires</source>
-        <translation>traci ważność</translation>
+        <translation>caduca</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="333"/>
         <source>[INVALID] </source>
-        <translation>[NIEWAŻNY] </translation>
+        <translation>[NON VÁLIDA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="336"/>
         <source>[EXPIRED] </source>
-        <translation>[WYGASŁY] </translation>
+        <translation>[CADUCADA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[PARTIAL] </source>
-        <translation>[CZĘŚCIOWY] </translation>
+        <translation>[PARCIAL] </translation>
     </message>
 </context>
 </TS>

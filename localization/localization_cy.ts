@@ -1,123 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="lt_LT">
+<TS version="2.1" language="cy">
 <context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Konfigūracija</translation>
+        <translation>Ffurfweddiad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
-        <translation>Nustatymai</translation>
+        <translation>Gosodiadau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation>Iškarpinės veikimas:</translation>
+        <translation>Ymddygiad y Clipfwrdd:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
         <source>Use primary selection</source>
-        <translation>Naudoti pirminį pasirinkimą</translation>
+        <translation>Defnyddiwch ddetholiad cynradd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation>Automatiškai išvalyti po:</translation>
+        <translation>Autoclear ar ôl:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation>Sekundės</translation>
+        <translation>Eiliadau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation>Turinio skydelio veikimas:</translation>
+        <translation>Ymddygiad panel cynnwys:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide content</source>
-        <translation>Slėpti turinį</translation>
+        <translation>Cuddio&apos;r cynnwys</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation>Slėpti slaptažodį</translation>
+        <translation>Cuddio&apos;r cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Automatiškai išvalyti skydelį po:</translation>
+        <translation>Panel autoclear ar ôl:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Naudoti vienodo pločio šriftą</translation>
+        <translation>Defnyddiwch ffont monospace</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>Rodyti failo turinį kaip yra</translation>
+        <translation>Arddangos cynnwys y ffeiliau fel y mae</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>Be eilučių laužymo</translation>
+        <translation>Dim lapio llinell</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>Rodyti proceso išvestį</translation>
+        <translation>Dangos allbwn y broses</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
         <source>Password Generation:</source>
-        <translation>Slaptažodžio generavimas:</translation>
+        <translation>Cynhyrchu Cyfrinair:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation>Slaptažodžio ilgis:</translation>
+        <translation>Hyd Cyfrinair:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
         <source>Characters</source>
-        <translation>Simboliai</translation>
+        <translation>Cymeriadau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
         <source>Use characters:</source>
-        <translation>Naudoti simbolius:</translation>
+        <translation>Defnyddiwch gymeriadau:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
         <source>Select character set for password generation</source>
-        <translation>Pasirinkti simbolių rinkinį slaptažodžio generavimui</translation>
+        <translation>Dewis set nodau ar gyfer cynhyrchu cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
         <source>All Characters</source>
-        <translation>Visi simboliai</translation>
+        <translation>Pob Cymeriad</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
         <source>Alphabetical</source>
-        <translation>Abėcėliniai</translation>
+        <translation>Nhrefn yr wyddor</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
         <source>Alphanumerical</source>
-        <translation>Raidiniai-skaitiniai</translation>
+        <translation>Alffaniwmerig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
         <source>Custom</source>
-        <translation>Pasirinktinis</translation>
+        <translation>Personol</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
@@ -127,27 +127,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
         <source>Use PWGen</source>
-        <translation>Naudoti PWGen</translation>
+        <translation>Defnyddio PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
-        <translation>Neįtraukti didžiųjų raidžių</translation>
+        <translation>Peidiwch â chynnwys priflythrennau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
         <source>Include special symbols</source>
-        <translation>Įtraukti specialius simbolius</translation>
+        <translation>Cynnwys symbolau arbennig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Generuoti lengvai įsimenamus, bet mažiau saugius slaptažodžius</translation>
+        <translation>Cynhyrchu cyfrineiriau hawdd i gof ond llai diogel</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
         <source>Exclude numbers</source>
-        <translation>Neįtraukti skaitmenų</translation>
+        <translation>Eithrio rhifau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
@@ -157,97 +157,97 @@
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
         <source>Use Git</source>
-        <translation>Naudoti Git</translation>
+        <translation>Defnyddio Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>Automatiškai pridėti .gpg-id failus</translation>
+        <translation>Ychwanegwch ffeiliau .gpg-id yn awtomatig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically push</source>
-        <translation>Automatiškai siųsti (push)</translation>
+        <translation>Gwthio&apos;n awtomatig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation>Automatiškai gauti (pull)</translation>
+        <translation>Tynnu&apos;n awtomatig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
         <source>Extensions:</source>
-        <translation>Plėtiniai:</translation>
+        <translation>Estyniadau:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
         <source>Use QRencode</source>
-        <translation>Naudoti QRencode</translation>
+        <translation>Defnyddio QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Use pass-otp extension</source>
-        <translation>Naudoti pass-otp plėtinį</translation>
+        <translation>Defnyddio estyniad pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Įjungti turinio paiešką (pass grep)</translation>
+        <translation>Galluogi chwilio am gynnwys (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Leidžia ieškoti slaptažodžių failo turinyje. Reikalauja iššifruoti kiekvieną failą ir gali būti lėta didelėse saugyklose.</translation>
+        <translation>Caniatáu chwilio y tu mewn i gynnwys ffeiliau cyfrinair. Mae angen dadgryptio pob ffeil a gall fod yn araf ar storfeydd mawr.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
         <source>System:</source>
-        <translation>Sistema:</translation>
+        <translation>System:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation>Naudoti dėklo piktogramą</translation>
+        <translation>Defnyddiwch eicon Hambwrdd System</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
         <source>Start minimized</source>
-        <translation>Paleisti sumažinta</translation>
+        <translation>Dechrau lleihau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation>Slėpti uždarant</translation>
+        <translation>Cuddio ar gau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
         <source>Always on top</source>
-        <translation>Visada viršuje</translation>
+        <translation>Bob amser ar ben</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
         <source>Programs</source>
-        <translation>Programos</translation>
+        <translation>Rhaglenni</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
         <source>Select password storage program:</source>
-        <translation>Pasirinkti slaptažodžių saugojimo programą:</translation>
+        <translation>Dewis rhaglen storio cyfrinair:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>&amp;Vietinis Git/GPG</translation>
+        <translation>&amp;Brodorol Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;Naudoti pass</translation>
+        <translation>&amp;Defnydd pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
         <source>Native</source>
-        <translation>Vietinis</translation>
+        <translation>Brodorol</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -266,12 +266,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
         <source>Generate</source>
-        <translation>Generuoti</translation>
+        <translation>Gynhyrchu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
         <source>Generate GPG key pair</source>
-        <translation>Sukurti GPG raktų porą</translation>
+        <translation>Cynhyrchu pâr allweddi GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
@@ -286,7 +286,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
         <source>Pass</source>
-        <translation>pass</translation>
+        <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="827"/>
@@ -301,233 +301,233 @@
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
         <source>Autodetect</source>
-        <translation>Automatinis nustatymas</translation>
+        <translation>Canfod awtomatig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
         <source>Profiles</source>
-        <translation>Profiliai</translation>
+        <translation>Proffiliau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="949"/>
         <source>Name</source>
-        <translation>Vardas</translation>
+        <translation>Enw</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation>Profilio pavadinimas, naudojamas identifikuoti šį konfigūracijos profilį</translation>
+        <translation>Enw proffil, a ddefnyddir i adnabod y proffil ffurfweddu hwn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
         <source>Path</source>
-        <translation>Kelias</translation>
+        <translation>Llwybr</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>Path to the password store directory</source>
-        <translation>Slaptažodžių saugyklos katalogo kelias</translation>
+        <translation>Llwybr i&apos;r cyfeiriadur storio cyfrineiriau</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Signing Key</source>
-        <translation>Pasirašymo raktas</translation>
+        <translation>Allwedd Lofnodi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Neprivaloma: GPG raktas, naudojamas .gpg-id failų vientisumui tikrinti. Palikite tuščią, jei nereikia apsaugoti vartotojų sąrašo nuo pakeitimų.</translation>
+        <translation>Dewisol: Allwedd GPG i lofnodi ffeiliau .gpg-id ar gyfer gwirio cyfanrwydd. Gadewch yn wag oni bai bod angen i chi amddiffyn y rhestr defnyddwyr rhag cael ei halogi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
         <source>Add</source>
-        <translation>Pridėti</translation>
+        <translation>Ychwanegu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="993"/>
         <source>Delete</source>
-        <translation>Ištrinti</translation>
+        <translation>Dileu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
         <source>Current path</source>
-        <translation>Dabartinis kelias</translation>
+        <translation>Llwybr presennol</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
         <source>Template</source>
-        <translation>Šablonas</translation>
+        <translation>Templed</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Šablonai prideda papildomus laukus slaptažodžio generavimo dialogo ir slaptažodžio rodinyje.</translation>
+        <translation>Mae templedi yn ychwanegu meysydd ychwanegol yn y ddeialog cynhyrchu cyfrinair, ac yn y golwg cyfrinair.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
         <source>Use template</source>
-        <translation>Naudoti šabloną</translation>
+        <translation>Defnyddio templed</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Rodyti visas eilutes, pradedančias žodžiu, po kurio eina dvitaškis, kaip slaptažodžio laukus, ne tik išvardytas</translation>
+        <translation>Dangos pob llinell sy&apos;n dechrau gyda gair a ddilynir gan colon fel meysydd mewn meysydd cyfrinair, nid yn unig y rhai rhestredig</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
         <source>Show all fields templated</source>
-        <translation>Rodyti visus šablonų laukus</translation>
+        <translation>Dangos pob maes a templwyd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
         <source>login
 URL
 e-mail</source>
-        <translation>prisijungimas
+        <translation>login
 URL
-el. paštas</translation>
+e-mail</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versija </translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; fersiwn </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation>Sistemos dėklas nepasiekiamas</translation>
+        <translation>Dydy cafn cysawd ddim ar gael</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>Reikia įdiegti Pass OTP plėtinį</translation>
+        <translation>Mae angen gosod estyniad Pass OTP</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
         <source>qrencode needs to be installed</source>
-        <translation>Reikia įdiegti qrencode</translation>
+        <translation>Mae angen gosod qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
         <source>No Clipboard</source>
-        <translation>Nėra iškarpinės</translation>
+        <translation>Dim Clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation>Visada kopijuoti į iškarpinę</translation>
+        <translation>Copïo i&apos;r Clipfwrdd bob tro</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Kopijuoti į iškarpinę pagal poreikį</translation>
+        <translation>Copi ar alw i&apos;r Clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
         <location filename="../src/configdialog.cpp" line="226"/>
         <source>This field is required</source>
-        <translation>Šis laukas yra reikalingas</translation>
+        <translation>Mae&apos;r maes hwn yn ofynnol</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation>Sukurti profilio katalogą?</translation>
+        <translation>Creu cyfeiriadur proffil?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Ar norite sukurti slaptažodžių saugyklą %1?</translation>
+        <translation>Hoffech chi greu storfa gyfrineiriau yn %1?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="729"/>
+        <source>Could not create profile directory: %1</source>
+        <translation>Methwyd creu cyfeiriadur proffil: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="747"/>
+        <source>Select recipients for %1</source>
+        <translation>Dewiswch dderbynwyr ar gyfer %1</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="773"/>
+        <source>New Profile</source>
+        <translation>Proffil newydd</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="810"/>
+        <source>No profile selected</source>
+        <translation>Dim proffil wedi&apos;i ddewis</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="811"/>
+        <source>No profile selected to delete</source>
+        <translation>Dim proffil wedi&apos;i ddewis i&apos;w ddileu</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="911"/>
+        <source>GnuPG not found</source>
+        <translation>Heb ganfod GnuPG</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="914"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
+        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; Ubuntu &lt;/strong&gt; o&apos;r Microsoft Store i&apos;w gael. &lt;br&gt; Os gwnaethoch hynny eisoes, gwnewch yn siŵr eich bod wedi ei gychwyn unwaith a &lt;br&gt; cliciwch &quot;Autodetect&quot; yn yr ymgom nesaf.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="919"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; Ubuntu &lt;/strong&gt; o Microsoft Store &lt;br&gt; or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; lawrlwytho &lt;/a&gt; hi o GnuPG.org</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="925"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; GPG &lt;/strong&gt; gan ddefnyddio eich hoff rheolwr pecyn &lt;br&gt; neu &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lawrlwytho &lt;/a&gt; hi o GnuPG.org</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="979"/>
+        <source>Create password-store?</source>
+        <translation>Creu siop cyfrinair?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="980"/>
+        <source>Would you like to create a password-store at %1?</source>
+        <translation>Hoffech chi greu siop-gyfrinair yn %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
         <location filename="../src/configdialog.cpp" line="985"/>
         <source>Error</source>
-        <translation>Klaida</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
-        <source>Could not create profile directory: %1</source>
-        <translation>Nepavyko sukurti profilio katalogo: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="747"/>
-        <source>Select recipients for %1</source>
-        <translation>Pasirinkite gavėjus %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="773"/>
-        <source>New Profile</source>
-        <translation>Naujas profilis</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="810"/>
-        <source>No profile selected</source>
-        <translation>Nepasirinktas profilis</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="811"/>
-        <source>No profile selected to delete</source>
-        <translation>Nepasirinktas profilis ištrinimui</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="911"/>
-        <source>GnuPG not found</source>
-        <translation>GnuPG nėra rasta</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="914"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store, kad jį gautumėte.&lt;br&gt;Jei jau tai padarėte, įsitikinkite, kad kartą jį paleidote, ir&lt;br&gt;kitame dialogo lange spustelėkite &quot;Automatiškai aptikti&quot;.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="919"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store&lt;br&gt;arba &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;atsisiųskite&lt;/a&gt; jį iš GnuPG.org</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="925"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;gpg&lt;/strong&gt; naudodami mėgstamą paketų valdymo sistemą&lt;br&gt;arba &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;atsisiųskite&lt;/a&gt; jį iš GnuPG.org</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="979"/>
-        <source>Create password-store?</source>
-        <translation>Sukurti slaptažodžių saugyklą?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="980"/>
-        <source>Would you like to create a password-store at %1?</source>
-        <translation>Ar norėtumėte sukurti slaptažodžių saugyklą %1?</translation>
+        <translation>Gwall</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Nepavyko sukurti slaptažodžių saugyklos: %1</translation>
+        <translation>Methwyd creu storfa-gyfrinair yn: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
         <source>Password store not initialised</source>
-        <translation>Slaptažodžių saugykla neinicializuota</translation>
+        <translation>Storfa cyfrinair heb ei ymgychwyn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Aplanke %1 nėra slaptažodžių saugykla arba ji dar nebuvo inicijuota.</translation>
+        <translation>Nid yw&apos;r ffolder %1 yn ymddangos fel storfa cyfrinair neu nid yw wedi&apos;i ymgychwyn eto.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation>Naujas profilis: %1 at %2</translation>
+        <translation>Proffil newydd: %1 yn %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation>Profilis: %1 at %2</translation>
+        <translation>Proffil: %1 yn %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>Įrašykite visus reikiamus laukus</translation>
+        <translation>Llenwch yr holl feysydd gofynnol</translation>
     </message>
 </context>
 <context>
@@ -535,54 +535,54 @@ el. paštas</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation>Eksportuoti viešąjį raktą</translation>
+        <translation>Allforio Allwedd Gyhoeddus</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation>Viešasis raktas</translation>
+        <translation>Allwedd gyhoeddus</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>Kopijuoti į iškarpinę</translation>
+        <translation>Copïo i&apos;r clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Išsaugoti į failą...</translation>
+        <translation>Cadw i Ffeil...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>%1 viešasis raktas</translation>
+        <translation>Allwedd gyhoeddus ar gyfer %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation>Nukopijuota!</translation>
+        <translation>Wedi&apos;i gopïo!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Išsaugoti Viešąjį Raktą</translation>
+        <translation>Cadw&apos;r allwedd gyhoeddus</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>ASCII šarvuotas raktas (*.asc);;Visi failai (*)</translation>
+        <translation>Allwedd ASCII-armored (*.asc);;Pob ffeil (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation>Nepavyko atidaryti %1 rašymui: %2</translation>
+        <translation>Methwyd agor %1 i ysgrifennu iddo: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>Nepavyko rašyti į %1: %2</translation>
+        <translation>Methwyd ysgrifennu i %1: %2</translation>
     </message>
 </context>
 <context>
@@ -591,139 +591,139 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="141"/>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpg-id file signature!</source>
-        <translation>Peržiūrėti .gpg-id failo parašą!</translation>
+        <source>Check .gpgid file signature!</source>
+        <translation>Gwiriwch llofnod y ffeil .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>%1 parašas yra neteisingas.</translation>
+        <translation>Llofnod %1 yn annilys.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="149"/>
         <location filename="../src/imitatepass.cpp" line="598"/>
         <source>Can not edit</source>
-        <translation>Negalima redaguoti</translation>
+        <translation>Methu golygu</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Nepavyko nuskaityti naudojamo šifravimo rakto, .gpg-id failas trūksta arba yra neteisingas.</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="260"/>
-        <source>Cannot update</source>
-        <translation>Nepavyko atnaujinti</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="261"/>
-        <source>Failed to open .gpg-id for writing.</source>
-        <translation>Nepavyko atidaryti .gpg-id rašymui.</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="274"/>
-        <source>Check selected users!</source>
-        <translation>Patikrinkite pasirinktus vartotojus!</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="275"/>
-        <source>None of the selected keys have a secret key available.
-You will not be able to decrypt any newly added passwords!</source>
-        <translation>Nė vienas iš pasirinktų raktų neturi slapto rakto.
-Negalėsite iššifruoti jokių naujai pridėtų slaptažodžių!</translation>
+        <translation>Methwyd darllen allwedd amgryptio i&apos;w ddefnyddio, .gpg-id File ar goll neu annilys.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
         <source>GPG signing failed!</source>
-        <translation>GPG pasirašymas nepavyko!</translation>
+        <translation>Methodd llofnodi GPG!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation>Nepavyko sertifikuoti %1.</translation>
+        <translation>Methwyd llofnodi %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation>Nėra pasirašymo rakto!</translation>
+        <translation>Dim allwedd lofnodi!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Nė vienas iš slaptų pasirašymo raktų nėra pasiekiamas.
-Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
+        <translation>Nid oes yr un o&apos;r allweddi lofnodi cyfrinachol ar gael.
+Ni fyddwch yn gallu newid y rhestr defnyddwyr!</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="260"/>
+        <source>Cannot update</source>
+        <translation>Methu diweddaru</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="261"/>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation>Methwyd agor .gpg-id ar gyfer ysgrifennu.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="274"/>
+        <source>Check selected users!</source>
+        <translation>Gwirio&apos;r defnyddwyr a ddewiswyd!</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="275"/>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation>Does dim allwedd gyfrinachol ar gael gan yr un o&apos;r bysellau a ddewiswyd.
+Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>Pakartotinis šifravimas nepavyko</translation>
+        <translation>Methodd ail-amgryptio</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Nepavyko pakeisti %1. Originalas buvo atkurtas.</translation>
+        <translation>Methwyd disodli %1. Mae&apos;r gwreiddiol wedi&apos;i adfer.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>Kuriamas atsarginis commit</translation>
+        <translation>Creu ymrwymiad wrth gefn</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Backup commit failed</source>
-        <translation>Atsarginio įrašo įvykdymas nepavyko</translation>
+        <translation>Methodd yr ymrwymiad wrth gefn</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Nepavyko inspektuoti Git būsenos. Pakartotinis šifravimas buvo atsisakytas.</translation>
+        <translation>Methwyd archwilio statws git. Cafodd yr ail-amgryptio ei atal.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>Pakartotinis šifravimas buvo nutrauktas, nes nepavyko sukurti Git atsarginės kopijos.</translation>
+        <translation>Cafodd yr ail-amgryptio ei atal oherwydd na ellid creu copi wrth gefn git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Pakartotinis šifravimas iš aplanko %1</translation>
+        <translation>Ail-amgryptio o blygell %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
         <location filename="../src/imitatepass.cpp" line="787"/>
         <source>Updating password-store</source>
-        <translation>Atnaujinimas slaptažodžių saugykloje</translation>
+        <translation>Diweddaru&apos;r siop cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="757"/>
         <source>GPG ID verification failed</source>
-        <translation>Nepavyko patvirtinti GPG ID</translation>
+        <translation>Methodd dilysu ID GPG</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Nepavyko patikrinti .gpg-id katalogui.</translation>
+        <translation>Methwyd gwirio .gpg-id ar gyfer y cyfeiriadur.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Nepavyko iš naujo užšifruoti %1</translation>
+        <translation>Methwyd ail-amgryptio %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Pakartotinis šifravimas baigtas: %1 sėkmingai, %2 nepavyko</translation>
+        <translation>Ail-amgryptio wedi&apos;i gwblhau: llwyddodd %1, methodd %2</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Pakartotinis šifravimas baigtas: %1 failai iš naujo užšifruoti</translation>
+        <translation>Ail-amgryptio wedi&apos;i gwblhau: %1 ffeil wedi&apos;u hail-amgryptio</translation>
     </message>
 </context>
 <context>
@@ -732,42 +732,42 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation>Importuoti GPG raktą</translation>
+        <translation>Mewnforio allwedd GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importuokite GPG viešąjį raktą iš failo arba įklijuokite jį žemiau. Raktas turi būti ASCII šarvuoto formato.</translation>
+        <translation>Mewnforiwch allwedd gyhoeddus GPG o ffeil neu gludwch hi isod. Dylai&apos;r allwedd fod ar ffurf ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Iš failo...</translation>
+        <translation>O ffeil…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation>Iš iškarpinės</translation>
+        <translation>O&apos;r clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Įklijuokite čia ASCII šarvuotą GPG raktą...</translation>
+        <translation>Gludwch allwedd GPG ASCII-armored yma…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation>Importuoti</translation>
+        <translation>Mewnforio</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII šarvuotas GPG raktas</translation>
+        <translation>Allwedd GPG ASCII-armored</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation>Visi failai</translation>
+        <translation>Pob ffeil</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -775,34 +775,34 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation>Importuoti raktą</translation>
+        <translation>Mewnforio allwedd</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation>Nepavyko atverti failo: %1</translation>
+        <translation>Methwyd agor y ffeil: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 neatrodo kaip ASCII šarvuotas GPG raktas. Pirmiausia konvertuokite jį naudodami &lt;code&gt;gpg --armor --export&lt;/code&gt;, arba įklijuokite šarvuotą bloką per &lt;b&gt;Iš iškarpinės&lt;/b&gt;.</translation>
+        <translation>Nid yw %1 yn edrych fel allwedd GPG ASCII-armored. Trosiwch hi&apos;n gyntaf gyda &lt;code&gt;gpg --armor --export&lt;/code&gt;, neu gludwch y bloc ASCII-armored drwy &lt;b&gt;O&apos;r clipfwrdd&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation>GPG import nepavyko:
+        <translation>Methwyd y mewnforio GPG:
 %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Nepavyko išgauti importuoto rakto ID iš GPG išvesties.</translation>
+        <translation>Methwyd darllen ID yr allwedd a fewnforiwyd o allbwn GPG.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Sėkmingai importavo raktą: %1</translation>
+        <translation>Allwedd wedi&apos;i mewnforio&apos;n llwyddiannus: %1</translation>
     </message>
 </context>
 <context>
@@ -810,77 +810,141 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Generuoti GnuPG raktų porą</translation>
+        <translation>Cynhyrchu GnuPG keypair</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Sukurti naują raktų porą</translation>
+        <translation>Cynhyrchu pâr allweddol newydd</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>El. paštas</translation>
+        <translation>E-bost</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
-        <translation>Vardas</translation>
+        <translation>Enw</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation>Slaptafrazė</translation>
+        <translation>Ymadrodd cyfrin</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Slaptafrazės ilgis nėra ribojamas, ir ji turi būti kruopščiai pasirinkta. Saugumo požiūriu slaptafrazė privačiajam raktui atrakinti yra viena silpniausių vietų GnuPG (ir kitose viešojo rakto šifravimo sistemose), nes tai vienintelė apsauga, kurią turite, jei kitas asmuo gauna jūsų privatųjį raktą. &lt;br/&gt;Idealiu atveju slaptafrazėje neturėtų būti naudojami žodyno žodžiai, ji turėtų maišyti raidžių registrą bei naudoti ne raidinius simbolius.&lt;br/&gt;Gera slaptafrazė yra būtina saugiam GnuPG naudojimui.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; nid oes terfyn ar hyd ymadrodd cyfrin, a dylid ei ddewis yn ofalus. O safbwynt diogelwch, yr ymadrodd cyfrin i ddatgloi&apos;r allwedd breifat yw un o&apos;r pwyntiau gwannaf yn GnuPG (a systemau amgryptio allweddol cyhoeddus eraill hefyd) gan mai dyma&apos;r unig amddiffyniad sydd gennych os yw unigolyn arall yn cael eich allwedd breifat. &lt;br/&gt; yn ddelfrydol, ni ddylai&apos;r ymadrodd cyfrin ddefnyddio geiriau o eiriadur a dylai gymysgu&apos;r achos o gymeriadau yn nhrefn yr wyddor yn ogystal â defnyddio nodau nad ydynt yn yr wyddor. &lt;br/&gt; Mae Cyfrin-ymadrodd da yn hanfodol i&apos;r defnydd diogel o GnuPG. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Pakartoti slaptafrazę</translation>
+        <translation>Ailadrodd pass</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation>Ekspertas</translation>
+        <translation>Arbenigol</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Šablono turinys nustatytas pagal GPG versiją.</translation>
+        <translation>Bydd cynnwys y templed yn cael ei osod yn seiliedig ar fersiwn GPG.</translation>
+    </message>
+    <message>
+        <source>#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</source>
+        <translation type="vanished">#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: RSA
+Subkey-Type: RSA
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</translation>
+    </message>
+    <message>
+        <source>#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: default
+Subkey-Type: default
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</source>
+        <translation type="vanished">#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: default
+Subkey-Type: default
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Eksperto parinktims peržiūrėkite &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG vadovą&lt;/a&gt;</translation>
+        <translation>Ar gyfer dewisiadau arbenigol edrychwch ar y &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; GnuPG manual &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
-        <translation>Nelegalus vardas</translation>
+        <translation>Enw annilys</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>Vardas turi būti bent 5 simboliais ilgas.</translation>
+        <translation>Rhaid i&apos;r enw fod o leiaf 5 nod o hyd.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation>Neteisingas el. pašto adresas</translation>
+        <translation>E-bost annilys</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Įrašytas el. pašto adresas nėra teisingas.</translation>
+        <translation>Dydy&apos;r cyfeiriad e-bost deipioch chi ddim yn gyfeiriad e-bost dilys.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Ši operacija gali užtrukti kelias minutes.&lt;br /&gt;Reikia sugeneruoti daug atsitiktinių baitų. Geriausia atlikti kitas veiklas (rašyti klaviatūra, judinti pelę, naudoti diskus) pirminių skaičių generavimo metu; tai padeda atsitiktinių skaičių generatoriui surinkti pakankamai entropijos.</translation>
+        <translation>Gall y llawdriniaeth hon gymryd rhai munudau. &lt;br /&gt; Mae angen i ni gynhyrchu llawer o bytes ar hap. Mae&apos;n syniad da cyflawni rhyw weithred arall (teipiwch ar y bysellfwrdd, symud y llygoden, defnyddio&apos;r disgiau) yn ystod y brif genhedlaeth; mae hyn yn rhoi gwell cyfle i&apos;r generadur rhif ar hap ennill digon o entropi.</translation>
     </message>
 </context>
 <context>
@@ -893,19 +957,19 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>Pasirinkite profilį</translation>
+        <translation>Dewis proffil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="700"/>
         <location filename="../src/mainwindow.cpp" line="883"/>
         <source>Search Password</source>
-        <translation>Ieškoti slaptažodžio</translation>
+        <translation>Cyfrinair chwilio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Ieškoti slaptažodžio turinyje (pass grep)</translation>
+        <translation>Chwilio y tu mewn i gynnwys cyfrinair (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -915,17 +979,17 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Turinio paieškos perjungimas</translation>
+        <translation>Togl chwilio cynnwys</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Peržiūrėti turinio paiešką, kad ieškotumėte slaptažodžių failuose</translation>
+        <translation>Togglo modd chwilio cynnwys i chwilio y tu mewn i ffeiliau cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation>Neatskirantis rašybos būdo paieška</translation>
+        <translation>Chwilio nad yw&apos;n sensitif i fachau/llythrennau mawr</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -935,22 +999,22 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Neatskirantis rašybos būdo peržiūra</translation>
+        <translation>Togl ansensitif i fachau/llythrennau bach</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation>Perjungti nelyginius ir lyginius turinio paieškos rezultatus</translation>
+        <translation>Togglo chwiliad cynnwys sy&apos;n ansensitif i fach-lythrennau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation>Rezultatai</translation>
+        <translation>Canlyniadau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Welcome to QtPass</source>
-        <translation>Sveiki atvykę, QtPass</translation>
+        <translation>Croeso i QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -958,17 +1022,27 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass yra grafinė sąsaja, skirta &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standartinei Unix slaptažodžių tvarkyklei.&lt;/p&gt;
-&lt;p&gt;Praneškite apie bet kokias &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemas&lt;/a&gt;, kurias galite turėti su šia programine įranga.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Pirminis kodas&lt;/a&gt;&lt;/p&gt;</translation>
+        <translation>&lt;p&gt; Mae QtPass yn GUI ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pasio &lt;/a&gt;, y rheolwr cyfrinair safonol unix. &lt;/p&gt;
+&lt;p&gt; Rhowch wybod am unrhyw faterion &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; &lt;/a&gt; a allai fod gennych gyda&apos;r feddalwedd hon. &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dogfennaeth &lt;/a&gt; &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Cod Ffynhonnell &lt;/a&gt; &lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="323"/>
+        <source>Clear output</source>
+        <translation>Clirio&apos;r allbwn</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="322"/>
+        <source>Clear</source>
+        <translation>Clirio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
-        <translation>Pridėti slaptažodį</translation>
+        <translation>Ychwanegu cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -980,21 +1054,21 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1372"/>
         <source>Add folder</source>
-        <translation>Pridėti katalogą</translation>
+        <translation>Ychwanegu plygell</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
         <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Edit</source>
-        <translation>Redaguoti</translation>
+        <translation>Golygu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
         <location filename="../src/mainwindow.cpp" line="1394"/>
         <source>Delete</source>
-        <translation>Ištrinti</translation>
+        <translation>Dileu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
@@ -1004,7 +1078,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Sukurti OTP ir nukopijuoti į iškarpinę</translation>
+        <translation>Cynhyrchu OTP a chopïo i&apos;r Clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
@@ -1014,277 +1088,320 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
         <source>Push</source>
-        <translation>Siųsti</translation>
+        <translation>Gwthio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="428"/>
         <source>Git push</source>
-        <translation>Git siuntimas</translation>
+        <translation>Git gwthio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="433"/>
         <source>Update</source>
-        <translation>Atnaujinti</translation>
+        <translation>Diweddaru</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="436"/>
         <source>Git pull</source>
-        <translation>Git gavimas</translation>
+        <translation>Git tynnu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1374"/>
         <source>Users</source>
-        <translation>Vartotojai</translation>
+        <translation>Defnyddwyr</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="444"/>
         <source>Manage who can read password in folder</source>
-        <translation>Valdyti, kurie gali skaityti slaptažodį kataloge</translation>
+        <translation>Rheoli pwy all ddarllen cyfrinair mewn ffolder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="449"/>
         <source>Config</source>
-        <translation>Konfig</translation>
+        <translation>Ffurfweddu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
         <source>Configuration</source>
-        <translation>Konfigūracija</translation>
+        <translation>Ffurfweddiad</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Sveikiname su QtPass %1</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="322"/>
-        <source>Clear</source>
-        <translation>Išvalyti</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="323"/>
-        <source>Clear output</source>
-        <translation>Išvalyti išvestį</translation>
+        <translation>Croeso i QtPass %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation>Išvesties procesas</translation>
+        <translation>Allbwn y broses</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="501"/>
         <location filename="../src/mainwindow.cpp" line="514"/>
         <source>Updating password-store</source>
-        <translation>Atnaujinama slaptažodžių saugykla</translation>
+        <translation>Diweddaru&apos;r siop cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="625"/>
         <location filename="../src/mainwindow.cpp" line="924"/>
         <source>Content hidden</source>
-        <translation>Turinys užkrytas</translation>
+        <translation>Cynnwys wedi&apos;i guddio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="629"/>
         <location filename="../src/mainwindow.cpp" line="1641"/>
         <source>Password</source>
-        <translation>Slaptažodis</translation>
+        <translation>Cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="666"/>
         <source>OTP Code</source>
-        <translation>OTP kodas</translation>
+        <translation>Cod OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
-        <translation>OTP kodas nukopijuotas į iškarpinę</translation>
+        <translation>Cod OTP wedi&apos;i gopïo i&apos;r clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Nėra OTP kodų šio slaptažodžio įrašyje</translation>
+        <translation>Ni chanfuwyd cod OTP yn y cofnod cyfrinair hwn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
-        <translation>Slaptažodis ir turinys paslėpti</translation>
+        <translation>Cyfrinair a chynnwys wedi&apos;i guddio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
         <source>Looking for: %1</source>
-        <translation>Ieškoma: %1</translation>
+        <translation>Wrthi&apos;n chwilio am: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
-        <translation>Ieškoma…</translation>
+        <translation>Yn chwilio…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation>Paieškos turinį (regex)</translation>
+        <translation>Chwilio cynnwys (mynegiant rheolaidd)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation>Nerasta atitikmenų.</translation>
+        <translation>Ni chanfuwyd unrhyw gyfatebiaethau.</translation>
+    </message>
+    <message numerus="yes">
+        <source>Found %n match(es) in %1 entr(ies).</source>
+        <translation type="vanished">
+            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
+            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
+            <numerusform>Canfuwyd %n gyfatebiaeth mewn %1 cofnod.</numerusform>
+            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
+            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 o gofnodion.</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation>
-            <numerusform>Rasta %n atitikmuo(s)</numerusform>
-            <numerusform>Rastos %n atitikmės</numerusform>
-            <numerusform>Rastos %n atitikmių</numerusform>
+            <numerusform>Ni chanfuwyd cyfatebiad</numerusform>
+            <numerusform>Canfuwyd 1 cyfatebiad</numerusform>
+            <numerusform>Canfuwyd 2 gyfatebiad</numerusform>
+            <numerusform>Canfuwyd %n chyfatebiad</numerusform>
+            <numerusform>Canfuwyd %n cyfatebiad</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>rodo %n atitikmus.</numerusform>
-            <numerusform>rodo %n atitikimus.</numerusform>
-            <numerusform>rodo %n atitikmių.</numerusform>
+            <numerusform>mewn dim cofnod.</numerusform>
+            <numerusform>mewn 1 cofnod.</numerusform>
+            <numerusform>mewn 2 gofnod.</numerusform>
+            <numerusform>mewn %n chofnod.</numerusform>
+            <numerusform>mewn %n cofnod.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <location filename="../src/mainwindow.cpp" line="1467"/>
         <source>New file</source>
-        <translation>Naujas failas</translation>
+        <translation>Ffeil newydd</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>Naujas slaptažodžių failas:
-(Bus patalpintas %1)</translation>
+        <translation>Ffeil cyfrinair newydd: 
+(Bydd yn cael ei roi yn %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
         <source> and the whole content?</source>
-        <translation> ir visą turinį?</translation>
+        <translation> a&apos;r holl gynnwys?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> ir viso turinio? &lt;br&gt;&lt;strong&gt;Dėmesio: aplanke yra netikėti failai, patikrinkite juos prieš tęsdami.&lt;/strong&gt;</translation>
+        <translation> a&apos;r holl gynnwys? &lt;br&gt; &lt;strong&gt; sylw: Mae ffeiliau annisgwyl yn y ffolder a roddir, gwiriwch nhw cyn parhau. &lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation>Trinti aplanką?</translation>
+        <translation>Dileu plygell?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation>Trinti slaptažodį?</translation>
+        <translation>Dileu cyfrinair?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Ar tikrai norite trinti %1%2?</translation>
+        <translation>Ydych chi&apos;n siŵr eich bod am ddileu %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>No password selected for OTP generation</source>
-        <translation>Nėra pasirinkto slaptažodžio dėl OTP gavimo</translation>
+        <translation>Dim cyfrinair wedi&apos;i ddewis ar gyfer cynhyrchu OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1242"/>
         <source>Profile changed to %1</source>
-        <translation>Profilis pakeistas į %1</translation>
+        <translation>Wedi newid y proffil i %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>Open folder with file manager</source>
-        <translation>Atidarykite aplanką su failų valdymo programomu</translation>
+        <translation>Agor plygell gyda&apos;r rheolwr ffeiliau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
-        <translation>Pervadinti aplanką</translation>
+        <translation>Ailenwi plygell</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation>Pervadinti slaptažodį</translation>
+        <translation>Ailenwi&apos;r cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation>Bendrinti</translation>
+        <translation>Rhannu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Iš naujo užšifruoti visus slaptažodžius</translation>
+        <translation>Ail-amgryptio pob cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation>Eksportuoti mano viešąjį raktą...</translation>
+        <translation>Allforio fy allwedd gyhoeddus…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation>Pridėti gavėją...</translation>
+        <translation>Ychwanegu derbynnydd…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation>Ką tai yra?</translation>
+        <translation>Beth yw hwn?</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <source>Export Public Key</source>
+        <translation>Allforio&apos;r allwedd gyhoeddus</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
+        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Allforio&apos;ch allwedd gyhoeddus&lt;/h3&gt;&lt;p&gt;Nid oes allwedd lofnodi wedi&apos;i ffurfweddu. Gosodwch un yn Gosodiadau QtPass &amp;gt; allweddi GPG, neu rhedwch hwn mewn terfynell:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Yna anfonwch y ffeil at aelodau eich tîm.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
+        <source>Could not export public key for %1.
+
+%2</source>
+        <translation>Methwyd allforio&apos;r allwedd gyhoeddus ar gyfer %1.
+
+%2</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
+        <source>No output from gpg.</source>
+        <translation>Dim allbwn gan gpg.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <source>Sharing Passwords with GPG</source>
+        <translation>Rhannu cyfrineiriau gyda GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
+        <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Rhannu cyfrineiriau gyda GPG&lt;/h3&gt;&lt;p&gt;I rannu cyfrineiriau gyda defnyddwyr eraill:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Allforiwch eich allwedd gyhoeddus&lt;/b&gt; ac anfonwch hi at aelodau eich tîm&lt;/li&gt;&lt;li&gt;&lt;b&gt;Mewnforiwch allweddi cyhoeddus aelodau eich tîm&lt;/b&gt; i&apos;ch allweddell GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ail-amgryptiwch y cyfrineiriau&lt;/b&gt; fel y gall pob derbynnydd eu dadgryptio&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Dim ond pobl sydd ag allwedd gyfrinachol gyfatebol sy&apos;n gallu dadgryptio&apos;r cyfrineiriau.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Awgrym:&lt;/b&gt; Defnyddiwch yr un allwedd GPG ar gyfer pob ffolder a rennir.&lt;/p&gt;&lt;p&gt;Gweler y Cwestiynau Cyffredin am ragor o fanylion.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Re-encrypt</source>
+        <translation type="vanished">Ail-amgryptio</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Naujas aplankas:
-(Bus patalpintas %1)</translation>
+        <translation>Plygell newydd: 
+(Bydd yn cael ei roi yn %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
         <location filename="../src/mainwindow.cpp" line="1487"/>
         <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation>Gwall</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation>Nepavyko sukurti aplankio: %1</translation>
+        <translation>Methwyd creu ffolder: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Nepavyko sukurti .gpg-id failo: %1</translation>
+        <translation>Methwyd creu ffeil .gpg-id yn: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename file</source>
-        <translation>Pervadinti failą</translation>
+        <translation>Ailenwi ffeil</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
-        <translation>Pervadinti aplanką į: </translation>
+        <translation>Ailenwi plygell yn: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation>Pervadinti failą į: </translation>
+        <translation>Ailenwi ffeil i: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Directory does not exist: %1</source>
-        <translation>Aplanko nėra egzistuojančio: %1</translation>
+        <translation>Nid yw&apos;r cyfeiriadur yn bodoli: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>Iš naujo užšifruokite slaptažodžius</translation>
+        <translation>Ail-amgryptio cyfrineiriau</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
@@ -1295,48 +1412,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Iš naujo užšifruoti visus slaptažodžius aplanke %1?
+        <translation>Ail-amgryptio pob cyfrinair yn %1?
 
-Tai iš naujo užšifruos VISUS slaptažodžių failus šiame aplanke naudojant dabartinius gavėjus, apibrėžtus .gpg-id.
+Bydd hyn yn ail-amgryptio POB ffeil cyfrinair yn y ffolder hon gan ddefnyddio&apos;r derbynwyr cyfredol a ddiffinnir yn .gpg-id.
 
-Tai gali perrašyti daug failų ir negali būti lengvai atšaukta.
+Efallai y bydd hyn yn ailysgrifennu llawer o ffeiliau ac ni ellir ei ddadwneud yn hawdd.
 
-Tęsti?</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
-        <source>Export Public Key</source>
-        <translation>Eksportuoti viešąjį raktą</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1748"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Eksportuokite savo viešąjį raktą&lt;/h3&gt;&lt;p&gt;Nesukonfigūruotas pasirašymo raktas. Nustatykite jį QtPass Nustatymai &amp;gt; GPG raktai arba paleiskite tai terminale:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsų-rakto-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tada nusiųskite failą savo komandos nariams.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1768"/>
-        <source>Could not export public key for %1.
-
-%2</source>
-        <translation>Nepavyko eksportuoti viešojo rakto %1.
-
-%2</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1770"/>
-        <source>No output from gpg.</source>
-        <translation>gpg neturėjo išvesties.</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
-        <source>Sharing Passwords with GPG</source>
-        <translation>Slaptažodžių dalijimas su GPG</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1798"/>
-        <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Slaptažodžių dalijimas su GPG&lt;/h3&gt;&lt;p&gt;Paleiskite slaptažodžius kitoms asmenims:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportuokite savo viešąjį slaptažodį&lt;/b&gt; ir siųskite jį kompanijams&lt;/li&gt;&lt;li&gt;&lt;b&gt;Įeikite kompanijų viešus slaptažodžius&lt;/b&gt; į Jūsų GPG atmintį&lt;/li&gt;&lt;li&gt;&lt;b&gt;Papildomai šifruokite slaptažodžius&lt;/b&gt;, kad visi gavėjai galėtų jį dešifruoti&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Tik tiems, kurie turi atitinkamą privatus slaptažodį, galima dešifruoti slaptažodžius.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Puiki idėja:&lt;/b&gt; Naudojant vieną GPG slaptažodį visiems dalijamams katalogams.&lt;/p&gt;&lt;p&gt;Peržiūrėkite FAQ, kad gautumėte daugiau informacijos.&lt;/p&gt;</translation>
+Parhau?</translation>
     </message>
 </context>
 <context>
@@ -1344,46 +1426,46 @@ Tęsti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation>Neteisingas slaptažodžio ilgis</translation>
+        <translation>Hyd cyfrinair annilys</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation>Negalima sukurti slaptažodo su nuliu ilgiu.</translation>
+        <translation>Methu cynhyrchu cyfrinair gyda hyd sero.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
         <source>No characters chosen</source>
-        <translation>Nėra pasirinktų simbolių</translation>
+        <translation>Dim nodau wedi&apos;u dewis</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Negalima sukurti slaptažodo, nėra pasirinkamų simbolius konfigūracijos uždaryje!</translation>
+        <translation>Does dim modd creu cyfrinair, does dim nodau i&apos;w dewis o&apos;r set yn y cyfluniad!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>Šifravimas atlikės ne sėkmingai: GPG raktas išmatęs laiką. Prašome jį atnaujinti ar pakeisti.</translation>
+        <translation>Methodd amgryptio: Mae allwedd GPG wedi dod i ben. Adnewyddwch neu amnewidiwch hi.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation>Šifravimas atlikės ne sėkmingai: buvo atsisakytas GPG raktas.</translation>
+        <translation>Methodd amgryptio: Mae allwedd GPG wedi&apos;i dirymu.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Šifravimas atlikės ne sėkmingai: nėra arba neteisingas gavėjo GPG raktas. Patikrinkite, ar .gpg-id failuje yra teisinga ir įimportuota raktinė ID.</translation>
+        <translation>Methodd amgryptio: ni chanfuwyd allwedd GPG y derbynnydd neu mae&apos;n annilys. Gwiriwch fod ID yr allwedd yn .gpg-id yn gywir ac wedi&apos;i fewnforio.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>Šifravimas atlikės ne sėkmingai. Patikrinkite, ar Jūsų GPG raktas yra teisingas.</translation>
+        <translation>Methodd amgryptio. Gwiriwch fod eich allwedd GPG yn ddilys.</translation>
     </message>
 </context>
 <context>
@@ -1392,47 +1474,47 @@ Tęsti?</translation>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation>Slaptažodis</translation>
+        <translation>Cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation>Generuoti</translation>
+        <translation>Gynhyrchu</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation>Rodyti slaptažodį</translation>
+        <translation>Dangos cyfrinair</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation>Simbolių rinkinys:</translation>
+        <translation>Set nodau:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation>Visi simboliai</translation>
+        <translation>Pob Cymeriad</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation>Abėcėliniai</translation>
+        <translation>Nhrefn yr wyddor</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation>Raidiniai-skaitiniai</translation>
+        <translation>Alffaniwmerig</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation>Pasirinktinis</translation>
+        <translation>Personol</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation>Ilgis:</translation>
+        <translation>Hyd:</translation>
     </message>
 </context>
 <context>
@@ -1449,106 +1531,110 @@ Tęsti?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Sukurti GPG raktų porą</translation>
+        <translation>Cynhyrchu pâr allweddol GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Netika prieigos prisijungimas prie WebDAV:
+        <translation>Methwyd cysylltu WebDAV:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV slaptažodis</translation>
+        <translation>Cyfrinair QtPass WebDAV</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Įrašykite slaptažodį, kad prisijungtumėte prie WebDAV:</translation>
+        <translation>Rhowch gyfrinair i gysylltu â WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>Fusedav išeina nekonsultuojant
+        <translation>fusedav wedi gadael yn annisgwyl
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Nepavyko paleisti fusedav, norėdami susisiekti su WebDAV:
+        <translation>Wedi methu cychwyn fusedav i gysylltu WebDAV:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="275"/>
         <source>QProcess::FailedToStart</source>
-        <translation>QProcess::Nepavyko paleisti</translation>
+        <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="278"/>
         <source>QProcess::Crashed</source>
-        <translation>QProcess::Išnyko</translation>
+        <translation>QProcess::Crashed</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="281"/>
         <source>QProcess::Timedout</source>
-        <translation>Laikas ištekliai</translation>
+        <translation>QProcess::Timedout</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="284"/>
         <source>QProcess::ReadError</source>
-        <translation>Nepavyko skaityti</translation>
+        <translation>QProcess::ReadError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="287"/>
         <source>QProcess::WriteError</source>
-        <translation>Nepavyko rašyti</translation>
+        <translation>QProcess::WriteError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="290"/>
         <source>QProcess::UnknownError</source>
-        <translation>Nežinomas klaida</translation>
+        <translation>QProcess::UnknownError</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation>GPG raktų pusiaukūrimas atšaukė</translation>
+        <translation>Methodd cynhyrchu pâr allweddi GPG</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
         <source>GPG key pair generated successfully</source>
-        <translation>GPG raktų pusiaukūrimas sėkmingas</translation>
+        <translation>Pâr allweddi GPG wedi&apos;i gynhyrchu&apos;n llwyddiannus</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard cleared</source>
-        <translation>Iškurto kopijavimo langelio turinį</translation>
+        <translation>Cliriwyd y Clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation>Nekurto kopijavimo langelio turinį</translation>
+        <translation>Clipfwrdd heb ei glirio</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
         <source>Copied to clipboard</source>
-        <translation>Išsaugota į atmintį</translation>
+        <translation>Copïo i&apos;r Clipfwrdd</translation>
     </message>
 </context>
 <context>
     <name>StoreModel</name>
     <message>
+        <source>force overwrite?</source>
+        <translation type="vanished">gorfodi trosysgrifo?</translation>
+    </message>
+    <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation>Priversti pakeisti?</translation>
+        <translation>Gorfodi trosysgrifennu?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation>pakeisti %1 su %2?</translation>
+        <translation>trosysgrifo %1 gyda %2?</translation>
     </message>
 </context>
 <context>
@@ -1556,32 +1642,32 @@ Tęsti?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&amp;Rodyti</translation>
+        <translation>&amp;Dangos</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation>&amp;Slėpti</translation>
+        <translation>&amp;Cuddio</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>Su&amp;mažinti</translation>
+        <translation>&amp;Lleihau</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>Pa&amp;didinti</translation>
+        <translation>&amp;Uchafu</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp;Atkurti</translation>
+        <translation>&amp;Adfer</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Uždaryti</translation>
+        <translation>&amp;Cwffio</translation>
     </message>
 </context>
 <context>
@@ -1589,7 +1675,17 @@ Tęsti?</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>Peržiūros prieigos vartotojai</translation>
+        <translation>Darllen defnyddwyr mynediad</translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="vanished">Dewis pa ddefnyddwyr ddylai fod yn gallu dadgryptio cyfrineiriau sydd wedi&apos;u storio yn y ffolder hon.
+Nodyn: ni chaiff y ffeiliau presennol eu haddasu, a chadw&apos;r hen ganiatadau nes i chi eu golygu.
+Mae gan gofnodion glas Allwedd gyfrinachol ar gael, dewiswch un o&apos;r rhain i allu dadgryptio.
+Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1598,71 +1694,71 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Pasirinkite, kurie naudotojai turėtų turėti galimybę iššifruoti šiame aplanke saugomus slaptažodžius.
-Pastaba: esami failai nebus pakeisti ir išlaikys senus leidimus, kol jų neredaguosite.
-Mėlynos eilutės turi prieinamą slaptąjį raktą — pasirinkite vieną iš jų, kad galėtumėte iššifruoti.
-Juodos eilutės turi prieinamą šifravimo raktą ir jis yra patikimas — pasirinkite vieną iš jų, kad leistumėte kitiems iššifruoti.
-Raudonos eilutės netinkamos, jūs negalėsite jų užšifruoti.</translation>
+        <translation>Dewiswch pa ddefnyddwyr ddylai allu dadgryptio cyfrineiriau sydd wedi&apos;u storio yn y ffolder hon.
+Nodyn: Ni fydd ffeiliau presennol yn cael eu haddasu, a byddant yn cadw&apos;r hen ganiatâd nes i chi eu golygu.
+Mae gan gofnodion glas allwedd gyfrinachol ar gael, dewiswch un o&apos;r rhain i allu dadgryptio.
+Mae gan gofnodion du allwedd amgryptio ar gael ac mae&apos;n ddibynadwy, dewiswch un o&apos;r rhain i ganiatáu i bobl eraill ddadgryptio.
+Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation>Leškoti vartotojų</translation>
+        <translation>Chwilio am ddefnyddwyr</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>Rodyti nevartojamus raktus</translation>
+        <translation>Dangos bysellau na ellir eu</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation>Įrašyti raktą...</translation>
+        <translation>Mewnforio allwedd…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Įrašykite GPG raktą iš failo arba leidynio</translation>
+        <translation>Mewnforio allwedd GPG o ffeil neu o&apos;r clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation>Trūksta raktų sąrašo</translation>
+        <translation>Keylist ar goll</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Nepavyko gauti pasiekiamų GPG raktų sąrašo</translation>
+        <translation>Methwyd cyrchu rhestr o allweddi GPG sydd ar gael</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation>Nėra rasti šifravimo raktas</translation>
+        <translation>Bysell heb ei ganfod yn y cylch allweddi</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
         <source>created</source>
-        <translation>atsimena</translation>
+        <translation>creu</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="310"/>
         <source>expires</source>
-        <translation>Ištrintas</translation>
+        <translation>i ben</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="333"/>
         <source>[INVALID] </source>
-        <translation>[NEGALIOJA] </translation>
+        <translation>[ANNILYS] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="336"/>
         <source>[EXPIRED] </source>
-        <translation>[GALIOJIMAS NEBEGALIOJA] </translation>
+        <translation>[WEDI DOD I BEN] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[PARTIAL] </source>
-        <translation>[DALINIS] </translation>
+        <translation>[RHANNOL] </translation>
     </message>
 </context>
 </TS>

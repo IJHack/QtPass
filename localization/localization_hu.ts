@@ -1,123 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="cy_GB">
+<TS version="2.1" language="hu">
 <context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Ffurfweddiad</translation>
+        <translation>Konfiguráció</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="46"/>
-        <source>Settings</source>
-        <translation>Gosodiadau</translation>
+        <location filename="../src/configdialog.ui" line="816"/>
+        <source>Pass</source>
+        <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="72"/>
-        <source>Clipboard behaviour:</source>
-        <translation>Ymddygiad y Clipfwrdd:</translation>
+        <source>...</source>
+        <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="91"/>
-        <source>Use primary selection</source>
-        <translation>Defnyddiwch ddetholiad cynradd</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="98"/>
-        <source>Autoclear after:</source>
-        <translation>Autoclear ar ôl:</translation>
+        <location filename="../src/configdialog.ui" line="740"/>
+        <source>Native</source>
+        <translation>Natív</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation>Eiliadau</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="147"/>
-        <source>Content panel behaviour:</source>
-        <translation>Ymddygiad panel cynnwys:</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="159"/>
-        <source>Hide content</source>
-        <translation>Cuddio&apos;r cynnwys</translation>
+        <translation>Perc</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation>Cuddio&apos;r cyfrinair</translation>
+        <translation>Jelszó elrejtése</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="159"/>
+        <source>Hide content</source>
+        <translation>Oldal elrejtése</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="46"/>
+        <source>Settings</source>
+        <translation>Beállítások</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="72"/>
+        <source>Clipboard behaviour:</source>
+        <translation>Vágólap viselkedése:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="91"/>
+        <source>Use primary selection</source>
+        <translation>Elsődleges kijelölés használata</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="98"/>
+        <source>Autoclear after:</source>
+        <translation>Automatikus törlés:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="147"/>
+        <source>Content panel behaviour:</source>
+        <translation>A tartalompanel viselkedése:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Panel autoclear ar ôl:</translation>
+        <translation>Automatikus törlés panel után:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Defnyddiwch ffont monospace</translation>
+        <translation>Használjon monospace betűtípust</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>Arddangos cynnwys y ffeiliau fel y mae</translation>
+        <translation>A fájlok tartalmának megjelenítése jelenlegi állapotában</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>Dim lapio llinell</translation>
+        <translation>Nincs sortörés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>Dangos allbwn y broses</translation>
+        <translation>Folyamat kimenetének megjelenítése</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
         <source>Password Generation:</source>
-        <translation>Cynhyrchu Cyfrinair:</translation>
+        <translation>Jelszó generáló:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation>Hyd Cyfrinair:</translation>
+        <translation>Jelszó hosszúság:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
         <source>Characters</source>
-        <translation>Cymeriadau</translation>
+        <translation>Karakterek</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
         <source>Use characters:</source>
-        <translation>Defnyddiwch gymeriadau:</translation>
+        <translation>Karakterek használata:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
         <source>Select character set for password generation</source>
-        <translation>Dewis set nodau ar gyfer cynhyrchu cyfrinair</translation>
+        <translation>Válassza ki a karakterkészletet a jelszó generálásához</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
         <source>All Characters</source>
-        <translation>Pob Cymeriad</translation>
+        <translation>Összes karakter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
         <source>Alphabetical</source>
-        <translation>Nhrefn yr wyddor</translation>
+        <translation>Betűrendes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
         <source>Alphanumerical</source>
-        <translation>Alffaniwmerig</translation>
+        <translation>Alfanumerikus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
         <source>Custom</source>
-        <translation>Personol</translation>
+        <translation>Egyedi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
@@ -125,29 +139,77 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="443"/>
-        <source>Use PWGen</source>
-        <translation>Defnyddio PWGen</translation>
+        <location filename="../src/configdialog.ui" line="460"/>
+        <source>Include special symbols</source>
+        <translation>Speciális szimbólumok beillesztése</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="599"/>
+        <source>Enable content search (pass grep)</source>
+        <translation>Tartalomkeresés engedélyezése (pass grep)</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="602"/>
+        <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
+        <translation>Engedélyezze a keresést a jelszófájlok tartalmában. Minden fájl visszafejtését igényli, és nagy tárolók esetén lassú lehet.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="776"/>
+        <source>Generate</source>
+        <translation>Generálás</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="779"/>
+        <source>Generate GPG key pair</source>
+        <translation>GPG kulcspár generálása</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="952"/>
+        <source>Profile name, used to identify this configuration profile</source>
+        <translation>Profil neve, amely azonosítja ezt a konfigurációs profilt</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="960"/>
+        <source>Path to the password store directory</source>
+        <translation>Elérési út a jelszótár könyvtárához</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="965"/>
+        <source>Signing Key</source>
+        <translation>Aláírókulcs</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="968"/>
+        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
+        <translation>Opcionális: GPG kulcs a .gpg-id fájlok aláírásához az integritás ellenőrzéséhez. Hagyja üresen, kivéve, ha meg kell védenie a felhasználói listát a manipulációtól.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1008"/>
+        <source>Current path</source>
+        <translation>Jelenlegi útvonal</translation>
+    </message>
+    <message>
+        <source>Use pwgen</source>
+        <translation type="vanished">pwgen használata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
-        <translation>Peidiwch â chynnwys priflythrennau</translation>
+        <translation>Nagybetűk kizárása</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="460"/>
-        <source>Include special symbols</source>
-        <translation>Cynnwys symbolau arbennig</translation>
+        <source>Include special symbols </source>
+        <translation type="vanished">Speciális szimbólumok </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Cynhyrchu cyfrineiriau hawdd i gof ond llai diogel</translation>
+        <translation>Könnyen megjegyezhető, de kevésbé biztonságos jelszavak létrehozása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
         <source>Exclude numbers</source>
-        <translation>Eithrio rhifau</translation>
+        <translation>Számok kizárása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
@@ -155,99 +217,335 @@
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="505"/>
-        <source>Use Git</source>
-        <translation>Defnyddio Git</translation>
+        <source>Use git</source>
+        <translation type="vanished">Git használata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>Ychwanegwch ffeiliau .gpg-id yn awtomatig</translation>
+        <translation>.gpg-id fájlok automatikus hozzáadása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically push</source>
-        <translation>Gwthio&apos;n awtomatig</translation>
+        <translation>Automatikusan leküldés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation>Tynnu&apos;n awtomatig</translation>
+        <translation>Automatikus lekérés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
         <source>Extensions:</source>
-        <translation>Estyniadau:</translation>
+        <translation>Kiterjesztések:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="574"/>
-        <source>Use QRencode</source>
-        <translation>Defnyddio QRencode</translation>
+        <source>Use qrencode</source>
+        <translation type="vanished">Qrencode használata</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="588"/>
-        <source>Use pass-otp extension</source>
-        <translation>Defnyddio estyniad pass-otp</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="599"/>
-        <source>Enable content search (pass grep)</source>
-        <translation>Galluogi chwilio am gynnwys (pass grep)</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="602"/>
-        <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Caniatáu chwilio y tu mewn i gynnwys ffeiliau cyfrinair. Mae angen dadgryptio pob ffeil a gall fod yn araf ar storfeydd mawr.</translation>
+        <source>Use pass otp extension</source>
+        <translation type="vanished">Használja a pass OTP kiterjesztést</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
         <source>System:</source>
-        <translation>System:</translation>
+        <translation>Rendszer:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation>Defnyddiwch eicon Hambwrdd System</translation>
+        <translation>Használja a Rendszertálca ikont</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
         <source>Start minimized</source>
-        <translation>Dechrau lleihau</translation>
+        <translation>Kezdés minimalizálva</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation>Cuddio ar gau</translation>
+        <translation>Elrejtés bezárásakor</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
         <source>Always on top</source>
-        <translation>Bob amser ar ben</translation>
+        <translation>Mindig felül</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
         <source>Programs</source>
-        <translation>Rhaglenni</translation>
+        <translation>Programok</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
         <source>Select password storage program:</source>
-        <translation>Dewis rhaglen storio cyfrinair:</translation>
+        <translation>Jelszótároló program kiválasztása:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="709"/>
-        <source>Nati&amp;ve Git/GPG</source>
-        <translation>&amp;Brodorol Git/GPG</translation>
+        <source>Nati&amp;ve git/gpg</source>
+        <translation type="vanished">Native git/gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;Defnydd pass</translation>
+        <translation>&amp;pass használata</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="740"/>
-        <source>Native</source>
-        <translation>Brodorol</translation>
+        <source>git</source>
+        <translation type="vanished">git</translation>
+    </message>
+    <message>
+        <source>gpg</source>
+        <translation type="vanished">gpg</translation>
+    </message>
+    <message>
+        <source>pwgen</source>
+        <translation type="vanished">pwgen</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="827"/>
+        <source>pass</source>
+        <translation>pass</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="846"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="877"/>
+        <source>Autodetect</source>
+        <translation>Automatikus felismerés</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="900"/>
+        <source>Profiles</source>
+        <translation>Profilok</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="949"/>
+        <source>Name</source>
+        <translation>név</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="957"/>
+        <source>Path</source>
+        <translation>Elérési út</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="978"/>
+        <source>Add</source>
+        <translation>Hozzáadása</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="993"/>
+        <source>Delete</source>
+        <translation>Töröl</translation>
+    </message>
+    <message>
+        <source>Current password-store</source>
+        <translation type="vanished">Jelenlegi jelszótároló</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1028"/>
+        <source>Template</source>
+        <translation>Sablon</translation>
+    </message>
+    <message>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
+        <translation type="vanished">A sablonok további mezőket adnak hozzá a jelszó előállítási párbeszédpanelhez és a jelszó nézethez.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1058"/>
+        <source>Use template</source>
+        <translation>Sablonhasználat</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1065"/>
+        <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
+        <translation>Minden sor megjelenítése ami egy szóval kezdődik, amit egy kettőspont követ jelszómezőben, nem csak a felsoroltakban</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1068"/>
+        <source>Show all fields templated</source>
+        <translation>Az összes mező megjelenítése</translation>
+    </message>
+    <message>
+        <source>login
+url
+email</source>
+        <translation type="vanished">belépés
+url
+e-mail</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1095"/>
+        <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verzió </translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="68"/>
+        <source>System tray is not available</source>
+        <translation>A tálca nem érhető el</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="95"/>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation>A Pass OTP kiterjesztést telepíteni kell</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="100"/>
+        <source>qrencode needs to be installed</source>
+        <translation>A qrencode-t telepíteni kell</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="125"/>
+        <source>No Clipboard</source>
+        <translation>Nincs vágólap</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="126"/>
+        <source>Always copy to clipboard</source>
+        <translation>Mindig másolja a vágólapra</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="127"/>
+        <source>On-demand copy to clipboard</source>
+        <translation>Igény szerinti másolás a vágólapra</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="210"/>
+        <location filename="../src/configdialog.cpp" line="226"/>
+        <source>This field is required</source>
+        <translation>Ez a mező kötelező</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="720"/>
+        <source>Create profile directory?</source>
+        <translation>Profilkönyvtár létrehozása?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="721"/>
+        <source>Would you like to create a password store at %1?</source>
+        <translation>Létrehoz egy jelszótárolót itt: %1?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="729"/>
+        <source>Could not create profile directory: %1</source>
+        <translation>A profilkönyvtár nem hozható létre: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="747"/>
+        <source>Select recipients for %1</source>
+        <translation>Válassza ki a(z) %1 címzettjeit</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="773"/>
+        <source>New Profile</source>
+        <translation>Új profil</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="810"/>
+        <source>No profile selected</source>
+        <translation>Nincs kiválasztott profil</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="811"/>
+        <source>No profile selected to delete</source>
+        <translation>Nincs kijelölve törölhető profil</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="911"/>
+        <source>GnuPG not found</source>
+        <translation>A GnuPG nem található</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="914"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
+        <translation>Kérjük, telepítse a GnuPG-t a rendszerére.&lt;br&gt;Telepítse az &lt;strong&gt;Ubuntut&lt;/strong&gt; a Microsoft Store-ból a letöltéshez.&lt;br&gt;Ha már megtette, győződjön meg róla, hogy egyszer elindította, és&lt;br&gt;kattintson az „Automatikus észlelés” gombra a következő párbeszédpanelen.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="919"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation>Kérjük, telepítse a GnuPG-t a rendszerére.&lt;br&gt;Telepítse az &lt;strong&gt;Ubuntut&lt;/strong&gt; a Microsoft Store-ból&lt;br&gt;vagy &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;töltse le&lt;/a&gt; a GnuPG.org oldalról</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="925"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation>Telepítse a GnuPG-t a rendszerre. &lt;br&gt; telepítése &lt;strong&gt; GPG &lt;/strong&gt; segítségével kedvenc Package Manager &lt;br&gt; vagy &lt; a href = &quot;https://www.gnupg.org/download/#sec-1-2&quot; &gt; Letöltés &lt;/a&gt; ez-ból GnuPG.org</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="979"/>
+        <source>Create password-store?</source>
+        <translation>Jelszó-készlet létrehozása?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="980"/>
+        <source>Would you like to create a password-store at %1?</source>
+        <translation>Szeretne jelszótárolót létrehozni a (z) %1 helyen?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="728"/>
+        <location filename="../src/configdialog.cpp" line="985"/>
+        <source>Error</source>
+        <translation>Hiba</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="986"/>
+        <source>Failed to create password-store at: %1</source>
+        <translation>Nem sikerült létrehozni a jelszótárolót a következő címen: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1017"/>
+        <source>Password store not initialised</source>
+        <translation>A jelszótároló nem inicializálódott</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1018"/>
+        <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
+        <translation>A(z) %1 mappa nem tűnik jelszótárolónak, vagy még nincs inicializálva.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1263"/>
+        <source>New profile: %1 at %2</source>
+        <translation>Új profil: %1 itt: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1267"/>
+        <source>Profile: %1 at %2</source>
+        <translation>Profil: %1 itt: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1272"/>
+        <source>Fill in all required fields</source>
+        <translation>Töltse ki az összes kötelező mezőt</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="443"/>
+        <source>Use PWGen</source>
+        <translation>Használja a PWGen-t</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="505"/>
+        <source>Use Git</source>
+        <translation>Használj Gitet</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="574"/>
+        <source>Use QRencode</source>
+        <translation>QRencode használata</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="588"/>
+        <source>Use pass-otp extension</source>
+        <translation>Használja a pass-otp kiterjesztést</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="709"/>
+        <source>Nati&amp;ve Git/GPG</source>
+        <translation>Natí&amp;v Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -264,16 +562,6 @@
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="776"/>
-        <source>Generate</source>
-        <translation>Gynhyrchu</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="779"/>
-        <source>Generate GPG key pair</source>
-        <translation>Cynhyrchu pâr allweddi GPG</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="786"/>
         <source>GPG</source>
         <translation>GPG</translation>
@@ -284,99 +572,9 @@
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="816"/>
-        <source>Pass</source>
-        <translation>Pass</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="827"/>
-        <source>pass</source>
-        <translation>pass</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="846"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="877"/>
-        <source>Autodetect</source>
-        <translation>Canfod awtomatig</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="900"/>
-        <source>Profiles</source>
-        <translation>Proffiliau</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="949"/>
-        <source>Name</source>
-        <translation>Enw</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="952"/>
-        <source>Profile name, used to identify this configuration profile</source>
-        <translation>Enw proffil, a ddefnyddir i adnabod y proffil ffurfweddu hwn</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="957"/>
-        <source>Path</source>
-        <translation>Llwybr</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="960"/>
-        <source>Path to the password store directory</source>
-        <translation>Llwybr i&apos;r cyfeiriadur storio cyfrineiriau</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="965"/>
-        <source>Signing Key</source>
-        <translation>Allwedd Lofnodi</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="968"/>
-        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Dewisol: Allwedd GPG i lofnodi ffeiliau .gpg-id ar gyfer gwirio cyfanrwydd. Gadewch yn wag oni bai bod angen i chi amddiffyn y rhestr defnyddwyr rhag cael ei halogi.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="978"/>
-        <source>Add</source>
-        <translation>Ychwanegu</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="993"/>
-        <source>Delete</source>
-        <translation>Dileu</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1008"/>
-        <source>Current path</source>
-        <translation>Llwybr presennol</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1028"/>
-        <source>Template</source>
-        <translation>Templed</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Mae templedi yn ychwanegu meysydd ychwanegol yn y ddeialog cynhyrchu cyfrinair, ac yn y golwg cyfrinair.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1058"/>
-        <source>Use template</source>
-        <translation>Defnyddio templed</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1065"/>
-        <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Dangos pob llinell sy&apos;n dechrau gyda gair a ddilynir gan colon fel meysydd mewn meysydd cyfrinair, nid yn unig y rhai rhestredig</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1068"/>
-        <source>Show all fields templated</source>
-        <translation>Dangos pob maes a templwyd</translation>
+        <translation>A sablonok további mezőket adnak hozzá a jelszógenerálási párbeszédpanelen és a jelszó nézetben.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
@@ -387,343 +585,201 @@ e-mail</source>
 URL
 e-mail</translation>
     </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1095"/>
-        <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; fersiwn </translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="68"/>
-        <source>System tray is not available</source>
-        <translation>Dydy cafn cysawd ddim ar gael</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="95"/>
-        <source>Pass OTP extension needs to be installed</source>
-        <translation>Mae angen gosod estyniad Pass OTP</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="100"/>
-        <source>qrencode needs to be installed</source>
-        <translation>Mae angen gosod qrencode</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="125"/>
-        <source>No Clipboard</source>
-        <translation>Dim Clipfwrdd</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="126"/>
-        <source>Always copy to clipboard</source>
-        <translation>Copïo i&apos;r Clipfwrdd bob tro</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="127"/>
-        <source>On-demand copy to clipboard</source>
-        <translation>Copi ar alw i&apos;r Clipfwrdd</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="210"/>
-        <location filename="../src/configdialog.cpp" line="226"/>
-        <source>This field is required</source>
-        <translation>Mae&apos;r maes hwn yn ofynnol</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="720"/>
-        <source>Create profile directory?</source>
-        <translation>Creu cyfeiriadur proffil?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
-        <source>Would you like to create a password store at %1?</source>
-        <translation>Hoffech chi greu storfa gyfrineiriau yn %1?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
-        <source>Could not create profile directory: %1</source>
-        <translation>Methwyd creu cyfeiriadur proffil: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="747"/>
-        <source>Select recipients for %1</source>
-        <translation>Dewiswch dderbynwyr ar gyfer %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="773"/>
-        <source>New Profile</source>
-        <translation>Proffil newydd</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="810"/>
-        <source>No profile selected</source>
-        <translation>Dim proffil wedi&apos;i ddewis</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="811"/>
-        <source>No profile selected to delete</source>
-        <translation>Dim proffil wedi&apos;i ddewis i&apos;w ddileu</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="911"/>
-        <source>GnuPG not found</source>
-        <translation>Heb ganfod GnuPG</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="914"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; Ubuntu &lt;/strong&gt; o&apos;r Microsoft Store i&apos;w gael. &lt;br&gt; Os gwnaethoch hynny eisoes, gwnewch yn siŵr eich bod wedi ei gychwyn unwaith a &lt;br&gt; cliciwch &quot;Autodetect&quot; yn yr ymgom nesaf.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="919"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; Ubuntu &lt;/strong&gt; o Microsoft Store &lt;br&gt; or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; lawrlwytho &lt;/a&gt; hi o GnuPG.org</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="925"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; GPG &lt;/strong&gt; gan ddefnyddio eich hoff rheolwr pecyn &lt;br&gt; neu &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lawrlwytho &lt;/a&gt; hi o GnuPG.org</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="979"/>
-        <source>Create password-store?</source>
-        <translation>Creu siop cyfrinair?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="980"/>
-        <source>Would you like to create a password-store at %1?</source>
-        <translation>Hoffech chi greu siop-gyfrinair yn %1?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="728"/>
-        <location filename="../src/configdialog.cpp" line="985"/>
-        <source>Error</source>
-        <translation>Gwall</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="986"/>
-        <source>Failed to create password-store at: %1</source>
-        <translation>Methwyd creu storfa-gyfrinair yn: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1017"/>
-        <source>Password store not initialised</source>
-        <translation>Storfa cyfrinair heb ei ymgychwyn</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1018"/>
-        <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Nid yw&apos;r ffolder %1 yn ymddangos fel storfa cyfrinair neu nid yw wedi&apos;i ymgychwyn eto.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1263"/>
-        <source>New profile: %1 at %2</source>
-        <translation>Proffil newydd: %1 yn %2</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1267"/>
-        <source>Profile: %1 at %2</source>
-        <translation>Proffil: %1 yn %2</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1272"/>
-        <source>Fill in all required fields</source>
-        <translation>Llenwch yr holl feysydd gofynnol</translation>
-    </message>
 </context>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation>Allforio Allwedd Gyhoeddus</translation>
+        <translation>Nyilvános kulcs exportálása</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation>Allwedd gyhoeddus</translation>
+        <translation>Nyilvános kulcs</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>Copïo i&apos;r clipfwrdd</translation>
+        <translation>Másolás a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Cadw i Ffeil...</translation>
+        <translation>Mentés fájlba…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>Allwedd gyhoeddus ar gyfer %1</translation>
+        <translation>%1 nyilvános kulcsa</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation>Wedi&apos;i gopïo!</translation>
+        <translation>Másolva!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Cadw&apos;r allwedd gyhoeddus</translation>
+        <translation>Nyilvános kulcs mentése</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>Allwedd ASCII-armored (*.asc);;Pob ffeil (*)</translation>
+        <translation>ASCII-armored kulcs (*.asc);;Minden fájl (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation>Methwyd agor %1 i ysgrifennu iddo: %2</translation>
+        <translation>%1 nem nyitható meg írásra: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>Methwyd ysgrifennu i %1: %2</translation>
+        <translation>Nem sikerült írni ide: %1: %2</translation>
     </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
+        <location filename="../src/imitatepass.cpp" line="732"/>
+        <location filename="../src/imitatepass.cpp" line="787"/>
+        <source>Updating password-store</source>
+        <translation>Jelszó-tároló frissítése</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="149"/>
+        <location filename="../src/imitatepass.cpp" line="598"/>
+        <source>Can not edit</source>
+        <translation>Nem lehet szerkeszteni</translation>
+    </message>
+    <message>
         <location filename="../src/imitatepass.cpp" line="141"/>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Gwiriwch llofnod y ffeil .gpgid!</translation>
+        <translation>Ellenőrizd a .gpgid fájl aláírását!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>Llofnod %1 yn annilys.</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="149"/>
-        <location filename="../src/imitatepass.cpp" line="598"/>
-        <source>Can not edit</source>
-        <translation>Methu golygu</translation>
+        <translation>A(z) %1 aláírása érvénytelen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Methwyd darllen allwedd amgryptio i&apos;w ddefnyddio, .gpg-id File ar goll neu annilys.</translation>
+        <translation>Nem sikerült beolvasni a használandó titkosítási kulcsot, a .gpg-id fájl hiányzik vagy érvénytelen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
         <source>GPG signing failed!</source>
-        <translation>Methodd llofnodi GPG!</translation>
+        <translation>GPG aláírás sikertelen!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation>Methwyd llofnodi %1.</translation>
+        <translation>%1 aláírása sikertelen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation>Dim allwedd lofnodi!</translation>
+        <translation>Nincs aláíró kulcs!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Nid oes yr un o&apos;r allweddi lofnodi cyfrinachol ar gael.
-Ni fyddwch yn gallu newid y rhestr defnyddwyr!</translation>
+        <translation>Egyik titkos aláírókulcs sem érhető el.
+A felhasználói listát nem fogja tudni módosítani!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
-        <translation>Methu diweddaru</translation>
+        <translation>Nem frissíthető</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Methwyd agor .gpg-id ar gyfer ysgrifennu.</translation>
+        <translation>Nem sikerült megnyitni .gpg-id íráshoz.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Check selected users!</source>
-        <translation>Gwirio&apos;r defnyddwyr a ddewiswyd!</translation>
+        <translation>Kiválasztott felhasználók ellenőrzése!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Does dim allwedd gyfrinachol ar gael gan yr un o&apos;r bysellau a ddewiswyd.
-Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</translation>
+        <translation>A kiválasztott kulcsok egyikében sincs titkos kulcs.
+Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>Methodd ail-amgryptio</translation>
+        <translation>Az újratitkosítás sikertelen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Methwyd disodli %1. Mae&apos;r gwreiddiol wedi&apos;i adfer.</translation>
+        <translation>Nem sikerült lecserélni a(z) %1 fájlt. Az eredeti visszaállításra került.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>Creu ymrwymiad wrth gefn</translation>
+        <translation>Biztonsági mentés véglegesítése</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Backup commit failed</source>
-        <translation>Methodd yr ymrwymiad wrth gefn</translation>
+        <translation>A biztonsági mentés véglegesítése sikertelen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Methwyd archwilio statws git. Cafodd yr ail-amgryptio ei atal.</translation>
+        <translation>Nem sikerült ellenőrizni a git állapotát. Az újratitkosítás megszakítva.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>Cafodd yr ail-amgryptio ei atal oherwydd na ellid creu copi wrth gefn git.</translation>
+        <translation>Az újratitkosítás megszakadt, mert nem sikerült git biztonsági mentést létrehozni.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Ail-amgryptio o blygell %1</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="732"/>
-        <location filename="../src/imitatepass.cpp" line="787"/>
-        <source>Updating password-store</source>
-        <translation>Diweddaru&apos;r siop cyfrinair</translation>
+        <translation>Új titkosítás a (z) %1 mappából</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="757"/>
         <source>GPG ID verification failed</source>
-        <translation>Methodd dilysu ID GPG</translation>
+        <translation>GPG-azonosító ellenőrzése sikertelen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Methwyd gwirio .gpg-id ar gyfer y cyfeiriadur.</translation>
+        <translation>Nem sikerült ellenőrizni a könyvtár .gpg-id fájlját.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Methwyd ail-amgryptio %1</translation>
+        <translation>Nem sikerült újra titkosítani %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Ail-amgryptio wedi&apos;i gwblhau: llwyddodd %1, methodd %2</translation>
+        <translation>Újratitkosítás befejezve: %1 sikeres, %2 sikertelen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Ail-amgryptio wedi&apos;i gwblhau: %1 ffeil wedi&apos;u hail-amgryptio</translation>
+        <translation>Újratitkosítás befejezve: %1 fájl újratitkosítva</translation>
     </message>
 </context>
 <context>
@@ -732,42 +788,42 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation>Mewnforio allwedd GPG</translation>
+        <translation>GPG-kulcs importálása</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Mewnforiwch allwedd gyhoeddus GPG o ffeil neu gludwch hi isod. Dylai&apos;r allwedd fod ar ffurf ASCII-armored.</translation>
+        <translation>Importáljon egy GPG nyilvános kulcsot fájlból, vagy illessze be alább. A kulcsnak ASCII-armored formátumban kell lennie.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>O ffeil…</translation>
+        <translation>Fájlból…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation>O&apos;r clipfwrdd</translation>
+        <translation>Vágólapról</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Gludwch allwedd GPG ASCII-armored yma…</translation>
+        <translation>Illesszen be ide egy ASCII-armored GPG-kulcsot…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation>Mewnforio</translation>
+        <translation>Importálás</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>Allwedd GPG ASCII-armored</translation>
+        <translation>ASCII-armored GPG-kulcs</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation>Pob ffeil</translation>
+        <translation>Minden fájl</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -775,34 +831,34 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation>Mewnforio allwedd</translation>
+        <translation>Kulcs importálása</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation>Methwyd agor y ffeil: %1</translation>
+        <translation>A fájl nem nyitható meg: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>Nid yw %1 yn edrych fel allwedd GPG ASCII-armored. Trosiwch hi&apos;n gyntaf gyda &lt;code&gt;gpg --armor --export&lt;/code&gt;, neu gludwch y bloc ASCII-armored drwy &lt;b&gt;O&apos;r clipfwrdd&lt;/b&gt;.</translation>
+        <translation>%1 nem tűnik ASCII-armored GPG-kulcsnak. Először alakítsa át a &lt;code&gt;gpg --armor --export&lt;/code&gt; paranccsal, vagy illessze be az ASCII-armored blokkot a &lt;b&gt;Vágólapról&lt;/b&gt; lehetőséggel.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation>Methwyd y mewnforio GPG:
+        <translation>A GPG-importálás meghiúsult:
 %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Methwyd darllen ID yr allwedd a fewnforiwyd o allbwn GPG.</translation>
+        <translation>Az importált kulcs azonosítója nem olvasható ki a GPG kimenetéből.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Allwedd wedi&apos;i mewnforio&apos;n llwyddiannus: %1</translation>
+        <translation>Kulcs sikeresen importálva: %1</translation>
     </message>
 </context>
 <context>
@@ -810,79 +866,47 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Cynhyrchu GnuPG keypair</translation>
+        <translation>GnuPG kulcspár generálása</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Cynhyrchu pâr allweddol newydd</translation>
+        <translation>Új kulcspár létrehozása</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>E-bost</translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
-        <translation>Enw</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation>Ymadrodd cyfrin</translation>
+        <translation>Jelszó</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; nid oes terfyn ar hyd ymadrodd cyfrin, a dylid ei ddewis yn ofalus. O safbwynt diogelwch, yr ymadrodd cyfrin i ddatgloi&apos;r allwedd breifat yw un o&apos;r pwyntiau gwannaf yn GnuPG (a systemau amgryptio allweddol cyhoeddus eraill hefyd) gan mai dyma&apos;r unig amddiffyniad sydd gennych os yw unigolyn arall yn cael eich allwedd breifat. &lt;br/&gt; yn ddelfrydol, ni ddylai&apos;r ymadrodd cyfrin ddefnyddio geiriau o eiriadur a dylai gymysgu&apos;r achos o gymeriadau yn nhrefn yr wyddor yn ogystal â defnyddio nodau nad ydynt yn yr wyddor. &lt;br/&gt; Mae Cyfrin-ymadrodd da yn hanfodol i&apos;r defnydd diogel o GnuPG. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A jelszó hosszára nincs korlátozás, és gondosan kell megválasztani. Biztonsági szempontból a privát kulcs feloldására szolgáló jelszó a GnuPG (és más nyilvános kulcsú titkosító rendszerek) egyik leggyengébb pontja, mivel ez az egyetlen védelem, amivel rendelkezel, ha egy másik személy megszerzi a privát kulcsodat. &lt;br/&gt;Ideális esetben a jelszó nem tartalmazhat szótári szavakat, és keverednie kell benne az ábécé karaktereinek kis- és nagybetűivel, valamint nem ábécés karakterekkel is.&lt;br/&gt;Egy jó jelszó elengedhetetlen a GnuPG biztonságos használatához.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Ailadrodd pass</translation>
+        <translation>Ismételt menet</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation>Arbenigol</translation>
+        <translation>Profi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Bydd cynnwys y templed yn cael ei osod yn seiliedig ar fersiwn GPG.</translation>
-    </message>
-    <message>
-        <source>#           QtPass GPG key generator
-#
-#      first test version please comment
-#
-%echo Generating a default key
-Key-Type: RSA
-Subkey-Type: RSA
-Name-Real:
-Name-Comment: QtPass
-Name-Email:
-Expire-Date: 0
-%no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
-%commit
-%echo done</source>
-        <translation type="vanished">#           QtPass GPG key generator
-#
-#      first test version please comment
-#
-%echo Generating a default key
-Key-Type: RSA
-Subkey-Type: RSA
-Name-Real:
-Name-Comment: QtPass
-Name-Email:
-Expire-Date: 0
-%no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
-%commit
-%echo done</translation>
+        <translation>A sablon tartalma a GPG verzió alapján lesz beállítva.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -900,51 +924,51 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="vanished">#           QtPass GPG key generator
+        <translation type="vanished"># QtPass GPG kulcsgenerátor
 #
-#      first test version please comment
+# első tesztverzió, kérjük, kommentáld
 #
-%echo Generating a default key
-Key-Type: default
-Subkey-Type: default
-Name-Real:
-Name-Comment: QtPass
-Name-Email:
-Expire-Date: 0
-%no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
-%commit
-%echo done</translation>
+% echo Alapértelmezett kulcs generálása
+Key-Type: alapértelmezett
+Alkulcs típusa: alapértelmezett
+Név-Real:
+Név-megjegyzés: QtPass
+Név-E-mail:
+Lejárat-dátum: 0
+% No-védelem
+# Tegyen kötelezettséget itt, hogy később kinyomtassuk a &quot;kész&quot; -t :-)
+%elkövetni
+% visszhang kész</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Ar gyfer dewisiadau arbenigol edrychwch ar y &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; GnuPG manual &lt;/a&gt;</translation>
+        <translation>Szakértői lehetőségekért tekintse meg a &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG kézikönyvet&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
-        <translation>Enw annilys</translation>
+        <translation>Érvénytelen név</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>Rhaid i&apos;r enw fod o leiaf 5 nod o hyd.</translation>
+        <translation>A névnek legalább 5 karakter hosszúnak kell lennie.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation>E-bost annilys</translation>
+        <translation>Érvénytelen emailcím</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Dydy&apos;r cyfeiriad e-bost deipioch chi ddim yn gyfeiriad e-bost dilys.</translation>
+        <translation>A beírt e-mail cím nem érvényes e-mail cím.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Gall y llawdriniaeth hon gymryd rhai munudau. &lt;br /&gt; Mae angen i ni gynhyrchu llawer o bytes ar hap. Mae&apos;n syniad da cyflawni rhyw weithred arall (teipiwch ar y bysellfwrdd, symud y llygoden, defnyddio&apos;r disgiau) yn ystod y brif genhedlaeth; mae hyn yn rhoi gwell cyfle i&apos;r generadur rhif ar hap ennill digon o entropi.</translation>
+        <translation>Ez a művelet néhány percet vehet igénybe. &lt;br /&gt; Sok véletlen bájtot kell generálnunk. Jó ötlet, ha az első generálés során végezzünk más műveleteket is (írja be a billentyűzetet, mozgassa az egeret, használja a lemezeket); ez nagyobb esélyt ad a véletlenszám-generátor számára, hogy nagyobb legyen az entrópia.</translation>
     </message>
 </context>
 <context>
@@ -955,21 +979,94 @@ Expire-Date: 0
         <translation>QtPass</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="428"/>
+        <source>Git push</source>
+        <translation>Git push</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="433"/>
+        <source>Update</source>
+        <translation>Frissítés</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="436"/>
+        <source>Git pull</source>
+        <translation>Git pull</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="452"/>
+        <source>Configuration</source>
+        <translation>Konfiguráció</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="449"/>
+        <source>Config</source>
+        <translation>Konfig</translation>
+    </message>
+    <message>
+        <source>qtpass</source>
+        <translation type="vanished">qtpass</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="501"/>
+        <location filename="../src/mainwindow.cpp" line="514"/>
+        <source>Updating password-store</source>
+        <translation>Jelszó-tároló frissítése</translation>
+    </message>
+    <message>
+        <source>Clipboard cleared</source>
+        <translation type="vanished">Vágólap tiszta</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="625"/>
+        <location filename="../src/mainwindow.cpp" line="924"/>
+        <source>Content hidden</source>
+        <translation>Oldal elrejtve</translation>
+    </message>
+    <message>
+        <source>QProcess::FailedToStart</source>
+        <translation type="vanished">QProcess:NemIndultEl</translation>
+    </message>
+    <message>
+        <source>QProcess::Crashed</source>
+        <translation type="vanished">QProcess:Összeomlás</translation>
+    </message>
+    <message>
+        <source>QProcess::Timedout</source>
+        <translation type="vanished">QProcess:Időtúllépés</translation>
+    </message>
+    <message>
+        <source>QProcess::ReadError</source>
+        <translation type="vanished">QProcess:OlvasásiHiba</translation>
+    </message>
+    <message>
+        <source>QProcess::WriteError</source>
+        <translation type="vanished">IrásHiba</translation>
+    </message>
+    <message>
+        <source>QProcess::UnknownError</source>
+        <translation type="vanished">IsmeretlenHiba</translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="vanished">a vágólapra másolt</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>Dewis proffil</translation>
+        <translation>Válassza ki a profilt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="700"/>
         <location filename="../src/mainwindow.cpp" line="883"/>
         <source>Search Password</source>
-        <translation>Cyfrinair chwilio</translation>
+        <translation>Jelszó keresése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Chwilio y tu mewn i gynnwys cyfrinair (pass grep)</translation>
+        <translation>Keresés a jelszó tartalmában (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -979,17 +1076,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Togl chwilio cynnwys</translation>
+        <translation>Tartalomkeresés kapcsoló</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Togglo modd chwilio cynnwys i chwilio y tu mewn i ffeiliau cyfrinair</translation>
+        <translation>Tartalomkeresési mód be- és kikapcsolása jelszófájlokban való kereséshez</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation>Chwilio nad yw&apos;n sensitif i fachau/llythrennau mawr</translation>
+        <translation>Kis- és nagybetűre nem érzékeny keresés</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -999,50 +1096,39 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Togl ansensitif i fachau/llythrennau bach</translation>
+        <translation>Kis- és nagybetűre nem érzékeny váltás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation>Togglo chwiliad cynnwys sy&apos;n ansensitif i fach-lythrennau</translation>
+        <translation>Kis- és nagybetűket nem megkülönböztető tartalomkeresés be- és kikapcsolása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation>Canlyniadau</translation>
+        <translation>Eredmények</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Welcome to QtPass</source>
-        <translation>Croeso i QtPass</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="322"/>
-        <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
-&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt; Mae QtPass yn GUI ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pasio &lt;/a&gt;, y rheolwr cyfrinair safonol unix. &lt;/p&gt;
-&lt;p&gt; Rhowch wybod am unrhyw faterion &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; &lt;/a&gt; a allai fod gennych gyda&apos;r feddalwedd hon. &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dogfennaeth &lt;/a&gt; &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Cod Ffynhonnell &lt;/a&gt; &lt;/p&gt;</translation>
+        <translation>Üdvözöljük a QtPass-ban</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation>Clirio&apos;r allbwn</translation>
+        <translation>Kimenet törlése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation>Clirio</translation>
+        <translation>Törlés</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
-        <translation>Ychwanegu cyfrinair</translation>
+        <translation>Jelszóhozzáadás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -1054,21 +1140,21 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1372"/>
         <source>Add folder</source>
-        <translation>Ychwanegu plygell</translation>
+        <translation>Mappa hozzáadása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
         <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Edit</source>
-        <translation>Golygu</translation>
+        <translation>Szerkesztése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
         <location filename="../src/mainwindow.cpp" line="1394"/>
         <source>Delete</source>
-        <translation>Dileu</translation>
+        <translation>Töröl</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
@@ -1078,7 +1164,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Cynhyrchu OTP a chopïo i&apos;r Clipfwrdd</translation>
+        <translation>OTP generálása és másolás a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
@@ -1088,320 +1174,279 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
         <source>Push</source>
-        <translation>Gwthio</translation>
+        <translation>Feltöltés</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="428"/>
-        <source>Git push</source>
-        <translation>Git gwthio</translation>
+        <source>git push</source>
+        <translation type="vanished">git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="433"/>
-        <source>Update</source>
-        <translation>Diweddaru</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="436"/>
-        <source>Git pull</source>
-        <translation>Git tynnu</translation>
+        <source>git pull</source>
+        <translation type="vanished">git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1374"/>
         <source>Users</source>
-        <translation>Defnyddwyr</translation>
+        <translation>Felhasználók</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="444"/>
         <source>Manage who can read password in folder</source>
-        <translation>Rheoli pwy all ddarllen cyfrinair mewn ffolder</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="449"/>
-        <source>Config</source>
-        <translation>Ffurfweddu</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="452"/>
-        <source>Configuration</source>
-        <translation>Ffurfweddiad</translation>
+        <translation>Jelszó olvasásának engedélyezése a mappában</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Croeso i QtPass %1</translation>
+        <translation>Üdvözöljük a QtPass-ban %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation>Allbwn y broses</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="501"/>
-        <location filename="../src/mainwindow.cpp" line="514"/>
-        <source>Updating password-store</source>
-        <translation>Diweddaru&apos;r siop cyfrinair</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="625"/>
-        <location filename="../src/mainwindow.cpp" line="924"/>
-        <source>Content hidden</source>
-        <translation>Cynnwys wedi&apos;i guddio</translation>
+        <translation>Folyamat kimenete</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="629"/>
         <location filename="../src/mainwindow.cpp" line="1641"/>
         <source>Password</source>
-        <translation>Cyfrinair</translation>
+        <translation>Jelszó</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="666"/>
         <source>OTP Code</source>
-        <translation>Cod OTP</translation>
+        <translation>OTP kód</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
-        <translation>Cod OTP wedi&apos;i gopïo i&apos;r clipfwrdd</translation>
+        <translation>OTP kód másolva a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Ni chanfuwyd cod OTP yn y cofnod cyfrinair hwn</translation>
+        <translation>Nem található OTP kód ebben a jelszóbejegyzésben</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
-        <translation>Cyfrinair a chynnwys wedi&apos;i guddio</translation>
+        <translation>Jelszó és tartalom elrejtve</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
         <source>Looking for: %1</source>
-        <translation>Wrthi&apos;n chwilio am: %1</translation>
+        <translation>Keresés: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
-        <translation>Yn chwilio…</translation>
+        <translation>Keresés…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation>Chwilio cynnwys (mynegiant rheolaidd)</translation>
+        <translation>Tartalom keresése (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation>Ni chanfuwyd unrhyw gyfatebiaethau.</translation>
+        <translation>Nincs egyezés.</translation>
     </message>
     <message numerus="yes">
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation type="vanished">
-            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
-            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
-            <numerusform>Canfuwyd %n gyfatebiaeth mewn %1 cofnod.</numerusform>
-            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
-            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 o gofnodion.</numerusform>
+            <numerusform>Talált %n találat %1 bejegyzésben.</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation>
-            <numerusform>Ni chanfuwyd cyfatebiad</numerusform>
-            <numerusform>Canfuwyd 1 cyfatebiad</numerusform>
-            <numerusform>Canfuwyd 2 gyfatebiad</numerusform>
-            <numerusform>Canfuwyd %n chyfatebiad</numerusform>
-            <numerusform>Canfuwyd %n cyfatebiad</numerusform>
+            <numerusform>%n találat</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>mewn dim cofnod.</numerusform>
-            <numerusform>mewn 1 cofnod.</numerusform>
-            <numerusform>mewn 2 gofnod.</numerusform>
-            <numerusform>mewn %n chofnod.</numerusform>
-            <numerusform>mewn %n cofnod.</numerusform>
+            <numerusform>%n bejegyzésben.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <location filename="../src/mainwindow.cpp" line="1467"/>
         <source>New file</source>
-        <translation>Ffeil newydd</translation>
+        <translation>Új fájl</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>Ffeil cyfrinair newydd: 
-(Bydd yn cael ei roi yn %1)</translation>
+        <translation>Új jelszófájl:
+(A következő mappába kerül: %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
         <source> and the whole content?</source>
-        <translation> a&apos;r holl gynnwys?</translation>
+        <translation> és a teljes tartalom?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> a&apos;r holl gynnwys? &lt;br&gt; &lt;strong&gt; sylw: Mae ffeiliau annisgwyl yn y ffolder a roddir, gwiriwch nhw cyn parhau. &lt;/strong&gt;</translation>
+        <translation> és a teljes tartalom? &lt;br&gt;&lt;strong&gt;Figyelem: váratlan fájlok vannak a megadott mappában, ellenőrizze őket a folytatás előtt.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation>Dileu plygell?</translation>
+        <translation>Mappa törlése?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation>Dileu cyfrinair?</translation>
+        <translation>Jelszó törlése?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Ydych chi&apos;n siŵr eich bod am ddileu %1%2?</translation>
+        <translation>Biztosan törölni szeretnéd ezt: %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>No password selected for OTP generation</source>
-        <translation>Dim cyfrinair wedi&apos;i ddewis ar gyfer cynhyrchu OTP</translation>
+        <translation>Nincs kiválasztva jelszó az OTP generálásához</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1242"/>
         <source>Profile changed to %1</source>
-        <translation>Wedi newid y proffil i %1</translation>
+        <translation>Profil módosítva erre %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>Open folder with file manager</source>
-        <translation>Agor plygell gyda&apos;r rheolwr ffeiliau</translation>
+        <translation>Mappa megnyitása fájlkezelővel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
-        <translation>Ailenwi plygell</translation>
+        <translation>Mappa átnevezése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation>Ailenwi&apos;r cyfrinair</translation>
+        <translation>Jelszó átnevezése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation>Rhannu</translation>
+        <translation>Megosztás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Ail-amgryptio pob cyfrinair</translation>
+        <translation>Az összes jelszó újratitkosítása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation>Allforio fy allwedd gyhoeddus…</translation>
+        <translation>Saját nyilvános kulcs exportálása…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation>Ychwanegu derbynnydd…</translation>
+        <translation>Címzett hozzáadása…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation>Beth yw hwn?</translation>
+        <translation>Mi ez?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation>Allforio&apos;r allwedd gyhoeddus</translation>
+        <translation>Nyilvános kulcs exportálása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Allforio&apos;ch allwedd gyhoeddus&lt;/h3&gt;&lt;p&gt;Nid oes allwedd lofnodi wedi&apos;i ffurfweddu. Gosodwch un yn Gosodiadau QtPass &amp;gt; allweddi GPG, neu rhedwch hwn mewn terfynell:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Yna anfonwch y ffeil at aelodau eich tîm.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Exportálja a nyilvános kulcsát&lt;/h3&gt;&lt;p&gt;Nincs aláíró kulcs beállítva. Állítson be egyet a QtPass Beállítások &amp;gt; GPG-kulcsok menüpontban, vagy futtassa ezt egy terminálban:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ezután küldje el a fájlt a csapattagjainak.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation>Methwyd allforio&apos;r allwedd gyhoeddus ar gyfer %1.
+        <translation>%1 nyilvános kulcsa nem exportálható.
 
 %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
-        <translation>Dim allbwn gan gpg.</translation>
+        <translation>Nincs kimenet a gpg-től.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Rhannu cyfrineiriau gyda GPG</translation>
+        <translation>Jelszavak megosztása GPG-vel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Rhannu cyfrineiriau gyda GPG&lt;/h3&gt;&lt;p&gt;I rannu cyfrineiriau gyda defnyddwyr eraill:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Allforiwch eich allwedd gyhoeddus&lt;/b&gt; ac anfonwch hi at aelodau eich tîm&lt;/li&gt;&lt;li&gt;&lt;b&gt;Mewnforiwch allweddi cyhoeddus aelodau eich tîm&lt;/b&gt; i&apos;ch allweddell GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ail-amgryptiwch y cyfrineiriau&lt;/b&gt; fel y gall pob derbynnydd eu dadgryptio&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Dim ond pobl sydd ag allwedd gyfrinachol gyfatebol sy&apos;n gallu dadgryptio&apos;r cyfrineiriau.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Awgrym:&lt;/b&gt; Defnyddiwch yr un allwedd GPG ar gyfer pob ffolder a rennir.&lt;/p&gt;&lt;p&gt;Gweler y Cwestiynau Cyffredin am ragor o fanylion.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Jelszavak megosztása GPG-vel&lt;/h3&gt;&lt;p&gt;Jelszavak megosztása más felhasználókkal:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportálja a nyilvános kulcsát&lt;/b&gt; és küldje el a csapattagoknak&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importálja a csapattagok nyilvános kulcsait&lt;/b&gt; a GPG-kulcstartójába&lt;/li&gt;&lt;li&gt;&lt;b&gt;Titkosítsa újra a jelszavakat&lt;/b&gt;, hogy minden címzett vissza tudja fejteni&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Csak a megfelelő titkos kulccsal rendelkezők tudják visszafejteni a jelszavakat.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Használja ugyanazt a GPG-kulcsot minden megosztott mappához.&lt;/p&gt;&lt;p&gt;Lásd a GYIK-et a részletekért.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
-        <translation type="vanished">Ail-amgryptio</translation>
+        <translation type="vanished">Újra titkosítás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Plygell newydd: 
-(Bydd yn cael ei roi yn %1)</translation>
+        <translation>Új mappa:
+(A következő mappába kerül: %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
         <location filename="../src/mainwindow.cpp" line="1487"/>
         <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Error</source>
-        <translation>Gwall</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation>Methwyd creu ffolder: %1</translation>
+        <translation>Nem sikerült létrehozni a következő mappát: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Methwyd creu ffeil .gpg-id yn: %1</translation>
+        <translation>Nem sikerült létrehozni a .gpg-id fájlt itt: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename file</source>
-        <translation>Ailenwi ffeil</translation>
+        <translation>Fájl átnevezése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
-        <translation>Ailenwi plygell yn: </translation>
+        <translation>Mappa átnevezése erre: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation>Ailenwi ffeil i: </translation>
+        <translation>Fájl átnevezése erre: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Directory does not exist: %1</source>
-        <translation>Nid yw&apos;r cyfeiriadur yn bodoli: %1</translation>
+        <translation>A könyvtár nem létezik: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>Ail-amgryptio cyfrineiriau</translation>
+        <translation>Jelszavak újratitkosítása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
@@ -1412,13 +1457,24 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Ail-amgryptio pob cyfrinair yn %1?
+        <translation>Újra titkosítja az összes jelszót a(z) %1 mappában?
 
-Bydd hyn yn ail-amgryptio POB ffeil cyfrinair yn y ffolder hon gan ddefnyddio&apos;r derbynwyr cyfredol a ddiffinnir yn .gpg-id.
+Ez újra titkosítja az ÖSSZES jelszófájlt ebben a mappában a .gpg-id fájlban meghatározott jelenlegi címzettek használatával.
 
-Efallai y bydd hyn yn ailysgrifennu llawer o ffeiliau ac ni ellir ei ddadwneud yn hawdd.
+Ez sok fájlt átírhat, és nem lehet könnyen visszavonni.
 
-Parhau?</translation>
+Folytatja?</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="322"/>
+        <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
+&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
+        <translation>&lt;p&gt;A QtPass egy grafikus felhasználói felület a &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;passhoz&lt;/a&gt;, a szabványos unix jelszókezelőhöz.&lt;/p&gt;
+&lt;p&gt;Kérjük, jelentse a szoftverrel kapcsolatos esetleges &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problémákat&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentáció&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Forráskód&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1426,46 +1482,46 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation>Hyd cyfrinair annilys</translation>
+        <translation>Érvénytelen jelszóhossz</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation>Methu cynhyrchu cyfrinair gyda hyd sero.</translation>
+        <translation>Nem lehet nulla hosszúságú jelszót generálni.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
         <source>No characters chosen</source>
-        <translation>Dim nodau wedi&apos;u dewis</translation>
+        <translation>Nincsenek kiválasztott karakterek</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Does dim modd creu cyfrinair, does dim nodau i&apos;w dewis o&apos;r set yn y cyfluniad!</translation>
+        <translation>Nem sikerült jelszót generálni, nincsenek karakterek beállítva a konfigurációban!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>Methodd amgryptio: Mae allwedd GPG wedi dod i ben. Adnewyddwch neu amnewidiwch hi.</translation>
+        <translation>A titkosítás sikertelen: a GPG-kulcs lejárt. Kérjük, újítsa meg vagy cserélje ki.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation>Methodd amgryptio: Mae allwedd GPG wedi&apos;i dirymu.</translation>
+        <translation>A titkosítás sikertelen: a GPG-kulcsot visszavonták.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Methodd amgryptio: ni chanfuwyd allwedd GPG y derbynnydd neu mae&apos;n annilys. Gwiriwch fod ID yr allwedd yn .gpg-id yn gywir ac wedi&apos;i fewnforio.</translation>
+        <translation>A titkosítás sikertelen: a címzett GPG-kulcsa nem található vagy érvénytelen. Ellenőrizze, hogy a .gpg-id fájlban szereplő kulcsazonosító helyes-e, és importálva van-e.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>Methodd amgryptio. Gwiriwch fod eich allwedd GPG yn ddilys.</translation>
+        <translation>A titkosítás sikertelen. Ellenőrizze, hogy a GPG-kulcsa érvényes-e.</translation>
     </message>
 </context>
 <context>
@@ -1474,47 +1530,47 @@ Parhau?</translation>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation>Cyfrinair</translation>
+        <translation>Jelszó</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation>Gynhyrchu</translation>
+        <translation>Generálás</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation>Dangos cyfrinair</translation>
+        <translation>Jelszó megjelenítése</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation>Set nodau:</translation>
+        <translation>Karakterkészlet:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation>Pob Cymeriad</translation>
+        <translation>Összes karakter</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation>Nhrefn yr wyddor</translation>
+        <translation>Betűrendes</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation>Alffaniwmerig</translation>
+        <translation>Alfanumerikus</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation>Personol</translation>
+        <translation>Egyedi</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation>Hyd:</translation>
+        <translation>Hossz:</translation>
     </message>
 </context>
 <context>
@@ -1529,112 +1585,112 @@ Parhau?</translation>
 <context>
     <name>QtPass</name>
     <message>
+        <location filename="../src/qtpass.cpp" line="275"/>
+        <source>QProcess::FailedToStart</source>
+        <translation>QProcess:NemIndultEl</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="278"/>
+        <source>QProcess::Crashed</source>
+        <translation>QProcess:Összeomlás</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="281"/>
+        <source>QProcess::Timedout</source>
+        <translation>QProcess:Időtúllépés</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="284"/>
+        <source>QProcess::ReadError</source>
+        <translation>QProcess:OlvasásiHiba</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="287"/>
+        <source>QProcess::WriteError</source>
+        <translation>IrásHiba</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="290"/>
+        <source>QProcess::UnknownError</source>
+        <translation>IsmeretlenHiba</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="306"/>
+        <source>GPG key pair generation failed</source>
+        <translation>GPG kulcspár generálása sikertelen</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="380"/>
+        <source>GPG key pair generated successfully</source>
+        <translation>GPG kulcspár sikeresen generálva</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="465"/>
+        <source>Clipboard cleared</source>
+        <translation>Vágólap tiszta</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="512"/>
+        <source>Copied to clipboard</source>
+        <translation>a vágólapra másolt</translation>
+    </message>
+    <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Cynhyrchu pâr allweddol GPG</translation>
+        <translation>GPG kulcspár generálása</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Methwyd cysylltu WebDAV:
+        <translation>Sikertelen WebDAV-csatlakozás:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>QtPass WebDAV password</source>
-        <translation>Cyfrinair QtPass WebDAV</translation>
+        <translation>QtPass WebDAV jelszó</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Rhowch gyfrinair i gysylltu â WebDAV:</translation>
+        <translation>Írja be a jelszót a WebDAV-hoz való csatlakozáshoz:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav wedi gadael yn annisgwyl
+        <translation>A fusedav váratlanul kilépett
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Wedi methu cychwyn fusedav i gysylltu WebDAV:
+        <translation>Nem sikerült elindítani a fusedav-ot a WebDAV-hoz való csatlakozáshoz:
 </translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="275"/>
-        <source>QProcess::FailedToStart</source>
-        <translation>QProcess::FailedToStart</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="278"/>
-        <source>QProcess::Crashed</source>
-        <translation>QProcess::Crashed</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="281"/>
-        <source>QProcess::Timedout</source>
-        <translation>QProcess::Timedout</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="284"/>
-        <source>QProcess::ReadError</source>
-        <translation>QProcess::ReadError</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="287"/>
-        <source>QProcess::WriteError</source>
-        <translation>QProcess::WriteError</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="290"/>
-        <source>QProcess::UnknownError</source>
-        <translation>QProcess::UnknownError</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="306"/>
-        <source>GPG key pair generation failed</source>
-        <translation>Methodd cynhyrchu pâr allweddi GPG</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="380"/>
-        <source>GPG key pair generated successfully</source>
-        <translation>Pâr allweddi GPG wedi&apos;i gynhyrchu&apos;n llwyddiannus</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="465"/>
-        <source>Clipboard cleared</source>
-        <translation>Cliriwyd y Clipfwrdd</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation>Clipfwrdd heb ei glirio</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="512"/>
-        <source>Copied to clipboard</source>
-        <translation>Copïo i&apos;r Clipfwrdd</translation>
+        <translation>A vágólap nincs kiürítve</translation>
     </message>
 </context>
 <context>
     <name>StoreModel</name>
     <message>
         <source>force overwrite?</source>
-        <translation type="vanished">gorfodi trosysgrifo?</translation>
+        <translation type="vanished">kényszerített felülírás?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation>Gorfodi trosysgrifennu?</translation>
+        <translation>Kényszerített felülírás?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation>trosysgrifo %1 gyda %2?</translation>
+        <translation>felülírja a(z) %1 részt %2-vel?</translation>
     </message>
 </context>
 <context>
@@ -1642,32 +1698,32 @@ Parhau?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&amp;Dangos</translation>
+        <translation>&amp;Megmutat</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation>&amp;Cuddio</translation>
+        <translation>&amp;Elrejt</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>&amp;Lleihau</translation>
+        <translation>Mi&amp;nimalizálás</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>&amp;Uchafu</translation>
+        <translation>Ma&amp;ximalizálás</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp;Adfer</translation>
+        <translation>&amp;Visszaállítás</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Cwffio</translation>
+        <translation>&amp;Kilépés</translation>
     </message>
 </context>
 <context>
@@ -1675,17 +1731,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>Darllen defnyddwyr mynediad</translation>
-    </message>
-    <message>
-        <source>Select which users should be able to decrypt passwords stored in this folder.
-Note: Existing files will not be modified, and retain the old permissions until you edit them.
-Blue entries have a secret key available, select one of these to be able to decrypt.
-Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="vanished">Dewis pa ddefnyddwyr ddylai fod yn gallu dadgryptio cyfrineiriau sydd wedi&apos;u storio yn y ffolder hon.
-Nodyn: ni chaiff y ffeiliau presennol eu haddasu, a chadw&apos;r hen ganiatadau nes i chi eu golygu.
-Mae gan gofnodion glas Allwedd gyfrinachol ar gael, dewiswch un o&apos;r rhain i allu dadgryptio.
-Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</translation>
+        <translation>Olvasási hozzáférésű felhasználók</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1694,71 +1740,71 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Dewiswch pa ddefnyddwyr ddylai allu dadgryptio cyfrineiriau sydd wedi&apos;u storio yn y ffolder hon.
-Nodyn: Ni fydd ffeiliau presennol yn cael eu haddasu, a byddant yn cadw&apos;r hen ganiatâd nes i chi eu golygu.
-Mae gan gofnodion glas allwedd gyfrinachol ar gael, dewiswch un o&apos;r rhain i allu dadgryptio.
-Mae gan gofnodion du allwedd amgryptio ar gael ac mae&apos;n ddibynadwy, dewiswch un o&apos;r rhain i ganiatáu i bobl eraill ddadgryptio.
-Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</translation>
+        <translation>Válassza ki, hogy mely felhasználók tudják visszafejteni a mappában tárolt jelszavakat.
+Megjegyzés: A meglévő fájlok nem módosulnak, és a régi jogosultságok megmaradnak, amíg Ön nem szerkeszti őket.
+A kék bejegyzésekhez titkos kulcs tartozik, válasszon ki egyet a visszafejtéshez.
+A fekete bejegyzésekhez titkosító kulcs tartozik, és az megbízható, válasszon ki egyet, hogy mások is visszafejthessék.
+A piros bejegyzések érvénytelenek, nem fog tudni titkosítani velük.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation>Chwilio am ddefnyddwyr</translation>
+        <translation>Felhasználók keresése</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>Dangos bysellau na ellir eu</translation>
+        <translation>Nem használható kulcsok megjelenítése</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation>Mewnforio allwedd…</translation>
+        <translation>Kulcs importálása…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Mewnforio allwedd GPG o ffeil neu o&apos;r clipfwrdd</translation>
+        <translation>GPG-kulcs importálása fájlból vagy vágólapról</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation>Keylist ar goll</translation>
+        <translation>Hiányzó kulcslista</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Methwyd cyrchu rhestr o allweddi GPG sydd ar gael</translation>
+        <translation>Nem sikerült lekérni az elérhető GPG-kulcsok listáját</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation>Bysell heb ei ganfod yn y cylch allweddi</translation>
+        <translation>Kulcs nem található a kulcstartóban</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
         <source>created</source>
-        <translation>creu</translation>
+        <translation>létrehozva</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="310"/>
         <source>expires</source>
-        <translation>i ben</translation>
+        <translation>lejár</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="333"/>
         <source>[INVALID] </source>
-        <translation>[ANNILYS] </translation>
+        <translation>[ÉRVÉNYTELEN] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="336"/>
         <source>[EXPIRED] </source>
-        <translation>[WEDI DOD I BEN] </translation>
+        <translation>[LEJÁRT] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[PARTIAL] </source>
-        <translation>[RHANNOL] </translation>
+        <translation>[RÉSZLEGES] </translation>
     </message>
 </context>
 </TS>
