@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="ar_MA">
+<TS version="2.1" language="ar">
 <context>
     <name>ConfigDialog</name>
     <message>
@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation>اوتولير بعد:</translation>
+        <translation type="unfinished">مسح تلقائي بعد:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -52,7 +52,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>لوحه اوتوكلير بعد:</translation>
+        <translation type="unfinished">مسح اللوحة تلقائيا بعد:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
@@ -82,7 +82,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
         <source>All Characters</source>
-        <translation>جميع الشخصيات</translation>
+        <translation type="unfinished">جميع الأحرف</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>استعملوا شعار الفضاء الأحادي</translation>
+        <translation type="unfinished">استخدام خط ثابت العرض</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -202,7 +202,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation>اختبيء عن قرب</translation>
+        <translation type="unfinished">إخفاء عند الإغلاق</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
@@ -1433,7 +1433,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation>جميع الشخصيات</translation>
+        <translation type="unfinished">جميع الأحرف</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>

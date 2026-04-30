@@ -7,7 +7,7 @@ TARGET    = qtpass
 CONFIG += c++17 staticlib
 CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
 
-TRANSLATIONS    +=  ../localization/localization_ar_MA.ts \
+TRANSLATIONS    +=  ../localization/localization_ar.ts \
                     ../localization/localization_ca_ES.ts \
                     ../localization/localization_cs_CZ.ts \
                     ../localization/localization_da_DK.ts \
