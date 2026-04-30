@@ -600,7 +600,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation>පවුල කළමනාකරණ</translation>
+        <translation>පොදු යතුර</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
