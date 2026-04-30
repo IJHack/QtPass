@@ -10,9 +10,13 @@ OBJ_PATH += ../../../src/$(OBJECTS_DIR)
 VPATH += ../../../src
 INCLUDEPATH += ../../../src
 
-# Pull in the embedded .qm resource that src.pro generates so the test can
-# load translations the same way the running app does.
-RESOURCES += ../../../src/qmake_qmake_qm_files.qrc
+# Build and embed our own .qm files via lrelease so the test is independent
+# of src/src.pro's build state and works on every platform (the auto-generated
+# qmake_qmake_qm_files.qrc lives in src/'s build dir with absolute paths that
+# don't translate cleanly to a different build root, e.g. on Windows CI).
+TRANSLATIONS = $$files($$PWD/../../../localization/localization_*.ts)
+CONFIG += lrelease embed_translations
+QM_FILES_RESOURCE_PREFIX = /localization
 
 win32 {
     RC_FILE = ../../../windows.rc
