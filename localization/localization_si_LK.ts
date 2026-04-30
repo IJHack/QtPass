@@ -514,7 +514,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
         <source>qrencode needs to be installed</source>
-        <translation>qrencode කිරීම් ගබඩා කළ ලදී</translation>
+        <translation>qrencode ස්ථාපනය කළ යුතුය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
