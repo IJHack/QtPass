@@ -121,10 +121,10 @@ jobs:
       #   regexes match against workspace-relative paths instead of
       #   /github/workspace/-prefixed absolute paths.
       #
-      # zizmor config lives at zizmor.yaml at the repo root because that's
-      # super-linter's default discovery location. The GITHUB_*_CONFIG_FILE
-      # override didn't work — likely because GitHub Actions reserves the
-      # GITHUB_* namespace for vars set via $GITHUB_ENV.
+      # zizmor config lives at .github/linters/zizmor.yaml — super-linter v8
+      # discovers per-language config files under LINTER_RULES_PATH which
+      # defaults to .github/linters. Files at the repo root or in zizmor's
+      # own .github/zizmor.yml convention are NOT picked up.
       - if: steps.need_lint.outputs.run_lint == 'true'
         run: cat .github/super-linter.env >> "$GITHUB_ENV"
 
