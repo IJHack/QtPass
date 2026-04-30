@@ -108,6 +108,15 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      # super-linter.env is appended verbatim to $GITHUB_ENV which only
+      # accepts KEY=value lines — no comments, no blank lines. Keep that
+      # file pure; rationale for FILTER_REGEX_EXCLUDE etc. lives here.
+      #
+      # FILTER_REGEX_EXCLUDE=^localization/ skips translation files from
+      # codespell (it's not language-aware and flags valid Afrikaans/etc.
+      # words as English typos). The .codespellrc `skip` directive can't do
+      # this because super-linter passes individual files to codespell,
+      # bypassing its file-discovery layer.
       - if: steps.need_lint.outputs.run_lint == 'true'
         run: cat .github/super-linter.env >> "$GITHUB_ENV"
 
