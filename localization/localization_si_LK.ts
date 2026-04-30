@@ -469,7 +469,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
         <source>Password store not initialised</source>
-        <translation>මුරපද කළමනාව සංකේතනය කර නැත</translation>
+        <translation>මුරපද ගබඩාව සංකේතනය කර නැත</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
