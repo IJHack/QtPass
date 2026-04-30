@@ -418,7 +418,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation>%1 නොවැල්සුන් සායනය කරන්න</translation>
+        <translation>%1 සඳහා ලබන්නන් තෝරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
