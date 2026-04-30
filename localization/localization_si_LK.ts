@@ -489,7 +489,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>සම්බන්ධිත ක්‍රියාත්මක අංකන වෙනස් කරන</translation>
+        <translation>අවශ්‍ය සියලු ක්ෂේත්‍ර පුරවන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
