@@ -61,7 +61,13 @@ TRANSLATIONS    +=  ../localization/localization_ar.ts \
                     ../localization/localization_lt_LT.ts \
                     ../localization/localization_lv_LV.ts \
                     ../localization/localization_sl_SI.ts \
-                    ../localization/localization_zh_Hant.ts
+                    ../localization/localization_zh_Hant.ts \
+                    ../localization/localization_bn.ts \
+                    ../localization/localization_hi.ts \
+                    ../localization/localization_sw.ts \
+                    ../localization/localization_th.ts \
+                    ../localization/localization_ur.ts \
+                    ../localization/localization_vi.ts
 
 CONFIG += lrelease embed_translations
 QM_FILES_RESOURCE_PREFIX=/localization
