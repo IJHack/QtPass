@@ -22,6 +22,7 @@ TRANSLATIONS    +=  ../localization/localization_ar.ts \
                     ../localization/localization_es_AR.ts \
                     ../localization/localization_es_UY.ts \
                     ../localization/localization_et_EE.ts \
+                    ../localization/localization_fa.ts \
                     ../localization/localization_fr_BE.ts \
                     ../localization/localization_fr_FR.ts \
                     ../localization/localization_fr_LU.ts \
