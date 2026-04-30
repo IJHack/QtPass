@@ -94,7 +94,7 @@ When CodeRabbit/AI flags a PR issue: verify it, fix if real, push, comment with 
 - Use `QCoreApplication::arguments()` instead of raw `argv[]` for CLI argument parsing
 - Wrap all user-facing strings with `tr()`
 - Use `QDir::cleanPath()` for cross-platform path normalization
-- Use `std::as_const()` (project is C++17); `qAsConst()` is a legacy pre-C++17 fallback and should not be introduced in this codebase, including Qt 5.15 builds
+- Use `std::as_const()`; this repository enforces C++17 for all builds (including Qt 5.15), so `qAsConst()` is a legacy pre-C++17 fallback and must not be introduced
 - Store indices (not pointers) in `Qt::UserRole` data on model items
 - Use `QPalette` colors instead of hardcoded values for theme-aware UI
 - Check for null from `screenAt()` before dereferencing
