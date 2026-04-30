@@ -1308,7 +1308,7 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;Xuất khóa công khai của bạn&lt;/h3&gt;&lt;p&gt;Không có khóa ký nào được cấu hình. Đặt một khóa trong Cài đặt QtPass &amp;gt; Khóa GPG, hoặc chạy lệnh này trong terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;id-khóa-của-bạn&amp;gt;&lt;/pre&gt;&lt;p&gt;Sau đó gửi tệp cho đồng đội của bạn.&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;h3&gt;Xuất khóa công khai của bạn&lt;/h3&gt;&lt;p&gt;Không có khóa ký nào được cấu hình. Đặt một khóa trong Cài đặt QtPass &amp;gt; Khóa GPG, hoặc chạy lệnh này trong terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Sau đó gửi tệp cho đồng đội của bạn.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
