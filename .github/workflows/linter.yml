@@ -99,7 +99,7 @@ jobs:
 
       - name: Lint Code Base
         if: steps.need_lint.outputs.run_lint == 'true'
-        uses: github/super-linter@v7
+        uses: super-linter/super-linter@v8
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
