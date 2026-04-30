@@ -387,7 +387,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation>මෙහිදී කොපියා මුරවල</translation>
+        <translation>සෑම විටම පසුරු පුවරුවට පිටපත් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
