@@ -136,14 +136,22 @@ void TestLocale::loadUnknownLocale() {
 void TestLocale::layoutDirection_data() {
   QTest::addColumn<QString>("locale");
   QTest::addColumn<QString>("expected");
-  QTest::newRow("ar -> RTL") << "ar" << "RTL";
-  QTest::newRow("fa -> RTL") << "fa" << "RTL";
-  QTest::newRow("ur -> RTL") << "ur" << "RTL";
-  QTest::newRow("he -> RTL") << "he" << "RTL";
-  QTest::newRow("en_US -> LTR") << "en_US" << "LTR";
-  QTest::newRow("nl_NL -> LTR") << "nl_NL" << "LTR";
-  QTest::newRow("ja -> LTR") << "ja" << "LTR";
-  QTest::newRow("zh_CN -> LTR") << "zh_CN" << "LTR";
+  QTest::newRow("ar -> RTL") << "ar"
+                             << "RTL";
+  QTest::newRow("fa -> RTL") << "fa"
+                             << "RTL";
+  QTest::newRow("ur -> RTL") << "ur"
+                             << "RTL";
+  QTest::newRow("he -> RTL") << "he"
+                             << "RTL";
+  QTest::newRow("en_US -> LTR") << "en_US"
+                                << "LTR";
+  QTest::newRow("nl_NL -> LTR") << "nl_NL"
+                                << "LTR";
+  QTest::newRow("ja -> LTR") << "ja"
+                             << "LTR";
+  QTest::newRow("zh_CN -> LTR") << "zh_CN"
+                                << "LTR";
 }
 
 void TestLocale::layoutDirection() {
