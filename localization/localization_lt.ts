@@ -596,7 +596,7 @@ el. paštas</translation>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished">Patikrinkite .gpgid failo parašą!</translation>
+        <translation>Patikrinkite .gpgid failo parašą!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
