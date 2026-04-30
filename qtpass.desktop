@@ -36,4 +36,4 @@ Exec=qtpass
 Icon=qtpass-icon
 Terminal=false
 Categories=Security;Utility;
-Keywords=Password;Manager;QT;
+Keywords=Password;Manager;Qt;
