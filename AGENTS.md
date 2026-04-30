@@ -345,9 +345,15 @@ QtPass uses Qt Test framework. Test files are in `tests/auto/`.
 
 ## Localization
 
-QtPass uses Qt Linguist (`.ts` files) in `localization/`. Don't manually edit translations - Weblate handles that. Run `qmake6` after source changes to update translation source references.
+QtPass uses Qt Linguist (`.ts` files) in `localization/`. Translations are normally managed via [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/), but direct `.ts` edits are appropriate for:
 
-See `qtpass-localization` skill for details.
+- Fixing reviewer-flagged bugs (placeholder mismatches like `% 1` vs `%1`, broken HTML tags, made-up words from MT, mixed-script artifacts).
+- Batch corrections suggested by native-speaker reviewers on a PR.
+- Filling empty entries with best-effort translations marked `type="unfinished"` for Weblate to refine.
+
+After changing **source** strings (English in code), run `qmake6` to refresh translation source references; that step is purely mechanical and affects every locale file.
+
+See `qtpass-localization` skill for the workflow and `qtpass-localization-audit` skill for structural audits of `.ts` files.
 
 ## Skills
 
@@ -355,6 +361,7 @@ See `qtpass-localization` skill for details.
 - `qtpass-testing` - Qt Test framework and test structure
 - `qtpass-linting` - CI/CD and linters
 - `qtpass-localization` - Translation workflow
+- `qtpass-localization-audit` - Structural audit of `.ts` files (placeholders, HTML balance, mnemonics, mixed-script)
 - `qtpass-github` - PRs, issues, merging
 - `qtpass-releasing` - Release process
 - `qtpass-docs` - Documentation guide

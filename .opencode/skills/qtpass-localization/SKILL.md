@@ -17,11 +17,33 @@ Qt uses Qt Linguist (`.ts` files) for translations.
 
 ### Existing Languages
 
+Always re-derive the current list at the moment of work, since new locales land regularly:
+
 ```bash
-ls localization/localization_*.ts
+ls localization/localization_*.ts | sed 's|.*localization_||;s|\.ts$||'
 ```
 
-Currently includes: af_ZA, ar_MA, bg_BG, ca_ES, cs_CZ, cy_GB, da_DK, de_DE, de_LU, el_GR, en_GB, en_US, es_ES, et_EE, fi_FI, fr_BE, fr_FR, fr_LU, gl_ES, he_IL, hr_HR, hu_HU, it_IT, ja_JP, ko_KR, lb_LU, nb_NO, nl_BE, nl_NL, pl_PL, pt_PT, ro_RO, ru_RU, sk_SK, sl_SI, sq_AL, sr_RS, sv_SE, ta, tr_TR, uk_UA, zh_CN, zh_Hant
+Per-locale completion stats (finished / unfinished-with-text / empty):
+
+```bash
+python3 -c "
+import re, glob, os
+for f in sorted(glob.glob('localization/localization_*.ts')):
+    loc = os.path.basename(f).replace('localization_','').replace('.ts','')
+    content = open(f).read()
+    fin=ut=ue=0
+    for m in re.finditer(r'<translation([^>]*)>(.*?)</translation>', content, re.DOTALL):
+        a,b = m.group(1), m.group(2)
+        if 'vanished' in a: continue
+        if 'unfinished' in a:
+            if b.strip(): ut += 1
+            else: ue += 1
+        else: fin += 1
+    print(f'{loc:8s}  {fin:3d}/{fin+ut+ue}  ut={ut:3d}  empty={ue}')
+"
+```
+
+`unfinished-with-text` means a translation exists but is flagged for native-speaker review (Weblate convention).
 
 ## Updating Translations
 
@@ -240,7 +262,51 @@ git commit -m "Resolve merge conflict - use theirs for translations"
 
 ### Weblate vs Local Editing
 
-QtPass uses Weblate for translations. Don't manually edit `.ts` files for translations - let Weblate handle it. Only run `qmake6` locally to update source references.
+Translations are normally managed via [Weblate](https://hosted.weblate.org/projects/qtpass/qtpass/). However, **direct `.ts` edits are appropriate** for:
+
+- Fixing reviewer-flagged bugs (placeholder mismatches, broken HTML, made-up words, mixed-script artifacts).
+- Filling empty entries with best-effort translations marked `type="unfinished"` so Weblate native reviewers can refine them.
+- Batch corrections suggested in PR review by native speakers.
+- Standardising terminology across multiple strings (e.g., normalising `klipboard`/`klipbordas`/`Tabela e kopjimit` onto a single term).
+
+When in doubt, fix and mark `type="unfinished"` so Weblate review can iterate. Only run `qmake6` to update **source** strings (English) when code changes — that step is mechanical and affects every locale file.
+
+### Qt Mnemonic Conventions
+
+Qt UI strings use `&` (rendered as `&amp;` in `.ts` XML) before a letter to mark a keyboard accelerator (e.g., `&Quit` underlines Q so Alt+Q triggers it). Conventions per script family:
+
+- **Latin scripts** (de, fr, es, en, etc.): in-word `&Letter` — `&File`, `&Edit`, `&Quit`. Pick a non-conflicting letter; within a single menu, mnemonics must be unique.
+- **CJK scripts** (zh, ja, ko): parens-at-start `(&L) text` — `(&F) 文件`, `(&Q) 退出`. Don't rely on native characters as mnemonics.
+- **RTL scripts** (ar, he): either parens-at-start `(&L) text` (preferred for portability) or native-letter `&letter`.
+- **Cyrillic / Greek / Tamil / Sinhala**: not strictly defined; in-word native letters (`&Покажи`) work if the user's keyboard supports them, otherwise use `(&L) text` parens form.
+
+Preserve the source mnemonic letter in the translation when feasible, so the same shortcut works across locales. When this is not possible, choose a non-conflicting letter from the translated string.
+
+Audit for missing mnemonics:
+
+```bash
+python3 -c "
+import re, glob
+mnemonic_sources = {'&amp;Use pass','Nati&amp;ve Git/GPG','&amp;Show','&amp;Hide','&amp;Restore','&amp;Quit','Mi&amp;nimize','Ma&amp;ximize'}
+for f in sorted(glob.glob('localization/localization_*.ts')):
+    content = open(f).read()
+    for m in re.finditer(r'<message[^>]*>.*?<source>(.*?)</source>.*?<translation([^>]*)>(.*?)</translation>', content, re.DOTALL):
+        src,a,t = m.group(1), m.group(2), m.group(3)
+        if 'vanished' in a or src not in mnemonic_sources or not t.strip(): continue
+        if not re.search(r'&amp;[^\s&;]', t):
+            print(f'{f}: {src} -> {t}')
+"
+```
+
+## Reviewer-Iteration Workflow
+
+Translation review tends to come in batches of ~5 findings at a time (CodeRabbit, GitHub AI quality findings, native-speaker comments on PRs). Standard handling:
+
+1. **Verify each finding against current code** before fixing. Reviewer-supplied diffs may be against an older state — confirm the broken text actually exists in the latest `.ts`.
+2. **Fix only what's needed.** If a reviewer-suggested change is itself wrong (e.g., breaks Qt mnemonic conventions, reverses earlier-established terminology), reject with explanation.
+3. **Apply same-pattern fixes if found in passing.** When fixing one occurrence of a typo, search the file for sibling occurrences of the same MT-pattern. Document in commit message which were flagged vs which were proactive.
+4. **Run the audit script** (see `qtpass-localization-audit` skill) before pushing — placeholder format and HTML balance are non-obvious bugs that the reviewer's prose description may not catch.
+5. **Mark new translations `type="unfinished"`** unless a native speaker has confirmed them. Weblate finalises them on review.
 
 ## Fixing Translation Issues in PRs
 
