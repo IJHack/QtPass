@@ -21,8 +21,10 @@ jobs:
       icons: ${{ steps.filter.outputs.icons }}
       docs: ${{ steps.filter.outputs.docs }}
     steps:
-      - uses: actions/checkout@v6
-      - uses: dorny/paths-filter@v4
+      - uses: actions/checkout@v6.0.2
+        with:
+          persist-credentials: false
+      - uses: dorny/paths-filter@v4.0.1
         id: filter
         with:
           base: main
@@ -65,31 +67,40 @@ jobs:
         id: need_build
         shell: bash
         run: |
-          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.localization }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.icons }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.docs }}" == "true" ]] || \
+          if [[ "${NEEDS_CHANGES_OUTPUTS_SRC}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_QT}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_LOCALIZATION}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_ICONS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_DOCS}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]]; then
             echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_build=false" >> "$GITHUB_OUTPUT"
           fi
+        env:
+          NEEDS_CHANGES_OUTPUTS_SRC: ${{ needs.changes.outputs.src }}
+          NEEDS_CHANGES_OUTPUTS_TESTS: ${{ needs.changes.outputs.tests }}
+          NEEDS_CHANGES_OUTPUTS_QT: ${{ needs.changes.outputs.qt }}
+          NEEDS_CHANGES_OUTPUTS_LOCALIZATION: ${{ needs.changes.outputs.localization }}
+          NEEDS_CHANGES_OUTPUTS_ICONS: ${{ needs.changes.outputs.icons }}
+          NEEDS_CHANGES_OUTPUTS_DOCS: ${{ needs.changes.outputs.docs }}
 
       - name: No changes - skipping
         if: steps.need_build.outputs.run_build != 'true'
         run: echo "No relevant changes - skipping build"
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
         if: steps.need_build.outputs.run_build == 'true'
+        with:
+          persist-credentials: false
 
-      - uses: ilammy/msvc-dev-cmd@v1
+      - uses: ilammy/msvc-dev-cmd@v1.13.0
         if: steps.need_build.outputs.run_build == 'true'
 
       - name: Install Qt
         if: steps.need_build.outputs.run_build == 'true'
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@v4.3.1
         with:
           version: ${{ matrix.qt }}
 

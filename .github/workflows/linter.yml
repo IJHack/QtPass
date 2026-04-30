@@ -25,8 +25,10 @@ jobs:
       github: ${{ steps.filter.outputs.github }}
       localization: ${{ steps.filter.outputs.localization }}
     steps:
-      - uses: actions/checkout@v6
-      - uses: dorny/paths-filter@v4
+      - uses: actions/checkout@v6.0.2
+        with:
+          persist-credentials: false
+      - uses: dorny/paths-filter@v4.0.1
         id: filter
         with:
           base: main
@@ -68,21 +70,32 @@ jobs:
         id: need_lint
         shell: bash
         run: |
-          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.code }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.yaml }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.markdown }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.scripts }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.json }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.github }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.localization }}" == "true" ]] || \
+          if [[ "${NEEDS_CHANGES_OUTPUTS_SRC}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_CODE}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_QT}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_YAML}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_MARKDOWN}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_SCRIPTS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_JSON}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_GITHUB}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_LOCALIZATION}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]]; then
             echo "run_lint=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_lint=false" >> "$GITHUB_OUTPUT"
           fi
+        env:
+          NEEDS_CHANGES_OUTPUTS_SRC: ${{ needs.changes.outputs.src }}
+          NEEDS_CHANGES_OUTPUTS_TESTS: ${{ needs.changes.outputs.tests }}
+          NEEDS_CHANGES_OUTPUTS_CODE: ${{ needs.changes.outputs.code }}
+          NEEDS_CHANGES_OUTPUTS_QT: ${{ needs.changes.outputs.qt }}
+          NEEDS_CHANGES_OUTPUTS_YAML: ${{ needs.changes.outputs.yaml }}
+          NEEDS_CHANGES_OUTPUTS_MARKDOWN: ${{ needs.changes.outputs.markdown }}
+          NEEDS_CHANGES_OUTPUTS_SCRIPTS: ${{ needs.changes.outputs.scripts }}
+          NEEDS_CHANGES_OUTPUTS_JSON: ${{ needs.changes.outputs.json }}
+          NEEDS_CHANGES_OUTPUTS_GITHUB: ${{ needs.changes.outputs.github }}
+          NEEDS_CHANGES_OUTPUTS_LOCALIZATION: ${{ needs.changes.outputs.localization }}
 
       - name: No changes - skipping
         if: steps.need_lint.outputs.run_lint != 'true'
@@ -90,16 +103,34 @@ jobs:
 
       - name: Checkout Code
         if: steps.need_lint.outputs.run_lint == 'true'
-        uses: actions/checkout@v6
+        uses: actions/checkout@v6.0.2
         with:
           fetch-depth: 0
+          persist-credentials: false
 
+      # super-linter.env is appended verbatim to $GITHUB_ENV which only
+      # accepts KEY=value lines — no comments, no blank lines, alphabetical
+      # order (dotenv-linter rule). Rationale for the non-obvious vars:
+      #
+      # FILTER_REGEX_EXCLUDE=^localization/ — skips translation files from
+      #   all linters (codespell isn't language-aware and flags valid
+      #   Afrikaans/etc. words as English typos). The .codespellrc `skip`
+      #   directive can't do this because super-linter passes files
+      #   individually to codespell, bypassing its file-discovery layer.
+      # STRIP_DEFAULT_WORKSPACE_FOR_REGEX=true — make FILTER_REGEX_*
+      #   regexes match against workspace-relative paths instead of
+      #   /github/workspace/-prefixed absolute paths.
+      #
+      # zizmor config lives at .github/linters/zizmor.yaml — super-linter v8
+      # discovers per-language config files under LINTER_RULES_PATH which
+      # defaults to .github/linters. Files at the repo root or in zizmor's
+      # own .github/zizmor.yml convention are NOT picked up.
       - if: steps.need_lint.outputs.run_lint == 'true'
         run: cat .github/super-linter.env >> "$GITHUB_ENV"
 
       - name: Lint Code Base
         if: steps.need_lint.outputs.run_lint == 'true'
-        uses: github/super-linter@v7
+        uses: super-linter/super-linter@v8.6.0
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

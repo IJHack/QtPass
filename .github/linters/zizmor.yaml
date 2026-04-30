@@ -1,0 +1,20 @@
+# zizmor configuration — see https://docs.zizmor.sh/configuration/
+#
+# We pin every `uses:` to a specific version tag (v8.6.0, v6.0.2, ...) and
+# rely on dependabot for upgrades. zizmor's default policy for unpinned-uses
+# requires SHA pinning; we relax it to ref-pin so version-tag pins are
+# accepted as sufficient.
+rules:
+  unpinned-uses:
+    config:
+      policies:
+        "*": ref-pin
+  # secrets-outside-env wants every `${{ secrets.X }}` use to live inside a
+  # job with `environment: <name>` declared, so that environment-level
+  # approval gates and per-environment secret scoping can apply. Useful for
+  # large projects with deploy gates; overkill for a single-repo OSS app.
+  # Coverity + docs workflows reference COVERITY_SCAN_TOKEN / SECRET_KEY_*
+  # directly. Disable the audit rather than carry an empty environment for
+  # every secret-using job.
+  secrets-outside-env:
+    disable: true

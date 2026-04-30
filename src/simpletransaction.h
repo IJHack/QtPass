@@ -45,7 +45,7 @@ public:
    */
   void transactionEnd(Enums::PROCESS process);
   /**
-   * @brief transactionIsOver checks wheather currently finished process is last
+   * @brief transactionIsOver checks whether currently finished process is last
    *                          in current transaction
    *
    * @param current the process that just finished.

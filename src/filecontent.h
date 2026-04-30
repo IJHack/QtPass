@@ -59,7 +59,7 @@ public:
   /**
    * @brief parse parses the given fileContent in a FileContent object.
    * The password is accessible through getPassword.
-   * The named value pairs (name: value) are parsed and depeding on the
+   * The named value pairs (name: value) are parsed and depending on the
    * templateFields and allFields parameters accessible through getNamedValues,
    * getRemainingData or getRemainingDataForDisplay.
    *
@@ -85,7 +85,7 @@ public:
   [[nodiscard]] auto getPassword() const -> QString;
 
   /**
-   * @return the named values in the file in the order of appearence, with
+   * @return the named values in the file in the order of appearance, with
    * template values first.
    */
   [[nodiscard]] auto getNamedValues() const -> NamedValues;

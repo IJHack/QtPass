@@ -1,0 +1,12 @@
+[codespell]
+# Note: when super-linter runs codespell with explicit file arguments, the
+# `skip` directive below is ignored — file-level exclusions are done via
+# FILTER_REGEX_EXCLUDE in .github/super-linter.env. The skip is kept for
+# people running `codespell` locally without an explicit file list.
+skip = ./localization/*,./.git/*
+# fpr — gpg --fingerprint shorthand used in skill docs
+# ue — Python identifier (counter for unfinished+empty translation entries)
+# tru — gpg --with-colons "trust" column in test fixtures
+# doubleclick — Qt API name (QSystemTrayIcon::DoubleClick)
+# pre-selected — both forms valid; codespell prefers the closed compound
+ignore-words-list = fpr,ue,tru,doubleclick,pre-selected

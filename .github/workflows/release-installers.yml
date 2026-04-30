@@ -20,8 +20,10 @@ jobs:
       tests: ${{ steps.filter.outputs.tests }}
       qt: ${{ steps.filter.outputs.qt }}
     steps:
-      - uses: actions/checkout@v6
-      - uses: dorny/paths-filter@v4
+      - uses: actions/checkout@v6.0.2
+        with:
+          persist-credentials: false
+      - uses: dorny/paths-filter@v4.0.1
         id: filter
         with:
           base: main
@@ -47,27 +49,33 @@ jobs:
         id: need_build
         shell: bash
         run: |
-          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
+          if [[ "${NEEDS_CHANGES_OUTPUTS_SRC}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_QT}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]] || \
-             [[ "${{ github.ref }}" =~ ^refs/tags/v ]]; then
+             [[ "${GITHUB_REF}" =~ ^refs/tags/v ]]; then
             echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_build=false" >> "$GITHUB_OUTPUT"
           fi
+        env:
+          NEEDS_CHANGES_OUTPUTS_SRC: ${{ needs.changes.outputs.src }}
+          NEEDS_CHANGES_OUTPUTS_TESTS: ${{ needs.changes.outputs.tests }}
+          NEEDS_CHANGES_OUTPUTS_QT: ${{ needs.changes.outputs.qt }}
 
       - name: No changes - skipping
         if: steps.need_build.outputs.run_build != 'true'
         run: echo "No relevant changes - skipping Windows build"
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
+        if: steps.need_build.outputs.run_build == 'true'
+        with:
+          persist-credentials: false
+
+      - uses: ilammy/msvc-dev-cmd@v1.13.0
         if: steps.need_build.outputs.run_build == 'true'
 
-      - uses: ilammy/msvc-dev-cmd@v1
-        if: steps.need_build.outputs.run_build == 'true'
-
-      - uses: jurplel/install-qt-action@v4
+      - uses: jurplel/install-qt-action@v4.3.1
         if: steps.need_build.outputs.run_build == 'true'
 
       - name: Install Inno Setup
@@ -117,11 +125,13 @@ jobs:
 
           windeployqt --release --dir dist\qtpass dist\qtpass\qtpass.exe
 
-          iscc "/DMyAppVersion=${{ steps.version.outputs.version }}" qtpass.iss
+          iscc "/DMyAppVersion=$env:STEPS_VERSION_OUTPUTS_VERSION" qtpass.iss
+        env:
+          STEPS_VERSION_OUTPUTS_VERSION: ${{ steps.version.outputs.version }}
 
       - name: Upload installer artifact
         if: steps.need_build.outputs.run_build == 'true'
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v7.0.1
         with:
           name: qtpass-windows-installer-${{ steps.version.outputs.version }}
           path: Output/qtpass-*.exe
@@ -134,24 +144,30 @@ jobs:
         id: need_build
         shell: bash
         run: |
-          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
+          if [[ "${NEEDS_CHANGES_OUTPUTS_SRC}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_QT}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]] || \
-             [[ "${{ github.ref }}" =~ ^refs/tags/v ]]; then
+             [[ "${GITHUB_REF}" =~ ^refs/tags/v ]]; then
             echo "run_build=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_build=false" >> "$GITHUB_OUTPUT"
           fi
+        env:
+          NEEDS_CHANGES_OUTPUTS_SRC: ${{ needs.changes.outputs.src }}
+          NEEDS_CHANGES_OUTPUTS_TESTS: ${{ needs.changes.outputs.tests }}
+          NEEDS_CHANGES_OUTPUTS_QT: ${{ needs.changes.outputs.qt }}
 
       - name: No changes - skipping
         if: steps.need_build.outputs.run_build != 'true'
         run: echo "No relevant changes - skipping macOS build"
 
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v6.0.2
         if: steps.need_build.outputs.run_build == 'true'
+        with:
+          persist-credentials: false
 
-      - uses: jurplel/install-qt-action@v4
+      - uses: jurplel/install-qt-action@v4.3.1
         if: steps.need_build.outputs.run_build == 'true'
 
       - name: Install dmg helper
@@ -197,12 +213,14 @@ jobs:
 
           macdeployqt "$APP_PATH"
 
-          DMG_NAME="QtPass-${{ steps.version.outputs.version }}.dmg"
+          DMG_NAME="QtPass-${STEPS_VERSION_OUTPUTS_VERSION}.dmg"
           create-dmg "$DMG_NAME" "$APP_PATH"
+        env:
+          STEPS_VERSION_OUTPUTS_VERSION: ${{ steps.version.outputs.version }}
 
       - name: Upload dmg artifact
         if: steps.need_build.outputs.run_build == 'true'
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v7.0.1
         with:
           name: qtpass-macos-dmg-${{ steps.version.outputs.version }}
           path: QtPass-*.dmg

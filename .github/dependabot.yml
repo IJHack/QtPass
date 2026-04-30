@@ -6,6 +6,12 @@ updates:
     schedule:
       interval: "weekly"
 
+    # Wait 7 days after a new action release before opening an update PR.
+    # Mitigates malicious-release attacks (e.g. tj-actions/changed-files
+    # incident) by giving time for compromise reports to surface.
+    cooldown:
+      default-days: 7
+
     commit-message:
       prefix: "ci"
 

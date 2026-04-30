@@ -28,7 +28,7 @@ SingleApplication::SingleApplication(int &argc, char *argv[], QString uniqueKey)
 #endif
       return;
     }
-    // create local server and listen to incomming messages from other
+    // create local server and listen to incoming messages from other
     // instances.
     localServer.reset(new QLocalServer(this));
     connect(localServer.data(), &QLocalServer::newConnection, this,
@@ -60,7 +60,7 @@ void SingleApplication::receiveMessage() {
 // public functions.
 /**
  * @brief SingleApplication::isRunning is there already a QtPass instance
- * running, to check wether to be server or client.
+ * running, to check whether to be server or client.
  * @return
  */
 auto SingleApplication::isRunning() -> bool { return _isRunning; }
