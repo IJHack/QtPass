@@ -1,3 +1,4 @@
+---
 version: "{build}"
 
 image: Visual Studio 2022

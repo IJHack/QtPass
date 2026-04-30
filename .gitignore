@@ -63,3 +63,4 @@ docs
 opencode.json
 .opencode/package-lock.json
 .opencode/*.local.json
+.opencode/scheduled_tasks.lock

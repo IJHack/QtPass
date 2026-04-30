@@ -2,7 +2,15 @@
 extends: default
 
 rules:
-  # 80 chars should be enough, but don't fail if a line is longer
+  # 160 chars to comfortably accommodate long shell one-liners and URLs in
+  # workflows (yamllint default of 80 is conservative for the wide-screen era).
   line-length:
-    max: 120
+    max: 160
+    level: warning
+
+  # GitHub Actions workflows use `on:` as a key, which yamllint's truthy rule
+  # would otherwise flag as ambiguous boolean ("on" being a YAML 1.1 truthy
+  # alias). check-keys: false scopes the rule to *values* only.
+  truthy:
+    check-keys: false
     level: warning
