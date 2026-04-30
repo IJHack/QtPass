@@ -935,7 +935,7 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation type="unfinished">Kipengele cha kujali herufi kubwa na ndogo</translation>
+        <translation type="unfinished">Geuza isiyojali herufi kubwa na ndogo</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
