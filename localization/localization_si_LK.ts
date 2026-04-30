@@ -438,7 +438,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
         <source>GnuPG not found</source>
-        <translation>GnuPG ඉක්මන් වේදාවෙයි</translation>
+        <translation>GnuPG සොයාගත නොහැකි විය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
