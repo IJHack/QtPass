@@ -686,7 +686,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation>ගියාල්ල කණ්ඩායම හෝදුරුවක් ඉස්ථතා කළ නොහැක!</translation>
+        <translation>අත්සන් කිරීම සඳහා යතුරක් නොමැත!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
