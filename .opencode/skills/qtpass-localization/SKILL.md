@@ -159,7 +159,9 @@ Use the `xx_YY` form only when the translation is genuinely region-specific (Bra
    # -> Updating 'localization/localization_<lang>.ts'...
    ```
 
-4. Translate strings via Qt Linguist or hand-edit the `.ts` XML, then push for Weblate to track.
+4. After confirming the file is populated with `type="unfinished"` entries, translators must fill each entry with a best-effort translation (keeping `type="unfinished"`) before opening a PR. This applies to files registered via `TRANSLATIONS +=` in `src/src.pro`. Entries must not be left empty so the repository localization rule ("Fill empty translation entries with best-effort translations marked `type=\"unfinished\"`") is enforced.
+
+5. Translate strings via Qt Linguist or hand-edit the `.ts` XML, then push for Weblate to track.
 
 ### Worked example
 
