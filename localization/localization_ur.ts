@@ -1154,15 +1154,17 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
-        <source>New password file: 
+        <source>New password file:
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نئی پاس ورڈ فائل:
+(یہ %1 میں رکھی جائے گی)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
-        <source>New Folder: 
+        <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">نیا فولڈر:
+(یہ %1 میں رکھا جائے گا)</translation>
     </message>
     <message>
         <source>New password file:

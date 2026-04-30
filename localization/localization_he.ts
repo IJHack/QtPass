@@ -639,7 +639,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpg-id file signature!</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">בדוק את חתימת קובץ .gpg-id!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>

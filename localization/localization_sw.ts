@@ -1154,15 +1154,17 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
-        <source>New password file: 
+        <source>New password file:
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Faili jipya la nenosiri:
+(Itawekwa katika %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
-        <source>New Folder: 
+        <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Folda Mpya:
+(Itawekwa katika %1 )</translation>
     </message>
     <message>
         <source>New password file:
