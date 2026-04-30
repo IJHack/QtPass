@@ -37,6 +37,9 @@ tests/auto/gpgkeystate/tst_gpgkeystate
 tests/auto/integration/tst_integration
 tests/auto/exportpublickeydialog/tst_exportpublickeydialog
 tests/auto/importkeydialog/tst_importkeydialog
+tests/auto/locale/tst_locale
+tests/auto/locale/.qm/
+tests/auto/locale/qmake_qmake_qm_files.qrc
 **/*.gc*
 *.bak
 README.c*
