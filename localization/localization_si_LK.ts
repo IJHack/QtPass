@@ -708,7 +708,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Check selected users!</source>
-        <translation>වෙනස් කරන විශේෂ කලුතුරුවන් ඉගෙනකියි!</translation>
+        <translation>තෝරාගත් පරිශීලකයන් පරීක්ෂා කරන්න!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="275"/>
