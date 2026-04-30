@@ -632,7 +632,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>කාලිස් වරගය ( *.asc );;වෙනත් කළමනාකරණය ( *)</translation>
+        <translation>ASCII-ආමර් කළ යතුර (*.asc);;සියලු ගොනු (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -642,7 +642,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>සමහරකින් කොටස කරන්න: %1: %2</translation>
+        <translation>%1 වෙත ලියීමට නොහැකි විය: %2</translation>
     </message>
 </context>
 <context>
@@ -726,12 +726,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>%1 විස්තරයක් නැව්මට කනෑම හෝදාගනිය ලබා ගතුවේ.</translation>
+        <translation>%1 ප්‍රතිස්ථාපනය කිරීමට අසමත් විය. මුල් පිටපත නැවත ස්ථාපිත කරන ලදී.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>කළමනාකරණ ක්‍රියාව සංස්කරණය කරන්න</translation>
+        <translation>උපස්ථ ප්‍රතිකාලයක් සාදමින්</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
@@ -742,7 +742,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Git වශයෙන් කණ්ඩායමක් නැව්මට හෝදාගනිය.</translation>
+        <translation>ගිත් තත්ත්වය පරීක්ෂා කළ නොහැකි විය. නැවත සංකේතනය කිරීම අත්හිටුවන ලදී.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
