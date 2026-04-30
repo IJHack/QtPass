@@ -659,7 +659,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>%1 හෝ ඉස්ථත්‍රයෙහි සංකේතය විලාසිතයි.</translation>
+        <translation>%1 සඳහා අත්සන අවලංගුය.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="149"/>
@@ -681,7 +681,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation>%1 හෝදුරුවක් ඉස්ථතා කළ නොහැක.</translation>
+        <translation>%1 අත්සන් කිරීම අසාර්ථක විය.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
@@ -692,8 +692,8 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>ගියාල්ල සමඟ ඉස්ථතා කරන පවුල්ල කණ්ඩායම හෝදුරුවක් ඉස්ථතා කළ නොහැක.
-එය මගින් පවුල්ල කණ්ඩායම හෝදුරුව විස්තර කරන සහ ඉස්ථතා කළ හැකිය!</translation>
+        <translation>රහස් අත්සන් කිරීමේ යතුරු කිසිවක් ලබාගත නොහැක.
+ඔබට පරිශීලක ලැයිස්තුව වෙනස් කළ නොහැකි වනු ඇත!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
@@ -708,7 +708,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Check selected users!</source>
-        <translation>වෙනස් කරන විශේෂ කලුතුරුවන් ඉගෙනකියි!</translation>
+        <translation>තෝරාගත් පරිශීලකයන් පරීක්ෂා කරන්න!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="275"/>
@@ -721,7 +721,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>වෙනස් කරන වේදාංගල ශැබා හැකි වේදාංගල සමහර නැත</translation>
+        <translation>නැවත සංකේතනය අසාර්ථක විය</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
