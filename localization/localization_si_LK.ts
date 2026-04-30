@@ -605,29 +605,29 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>කෝඩ් ප්‍රතිකරණය</translation>
+        <translation>පිටපත් පුවරුවට පිටපත් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>ගොඩයට සිටෙන්දී...</translation>
+        <translation>ගොනුවට සුරකින්න...</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>%1 හාර්ය කළමනාකරණය</translation>
+        <translation>%1 සඳහා පොදු යතුර</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation>ප්‍රතිඵල ලබා ගත!</translation>
+        <translation>පිටපත් කරන ලදී!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>හසුරු කළමනාකරණය කරන</translation>
+        <translation>පොදු යතුර සුරකින්න</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
