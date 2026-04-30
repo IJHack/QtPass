@@ -504,7 +504,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation>මුරපද මතක් සඳහා පවතී නැත</translation>
+        <translation>පද්ධති තැටිය ලබා ගත නොහැක</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
