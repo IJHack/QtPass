@@ -212,7 +212,11 @@ void TestLocale::loadIsIdempotent() {
                                                         "succeeded")
                                              .arg(locale)));
         const QString got = translator.translate("QObject", "LTR");
-        QCOMPARE_NE(got, staleLTR);
+        // QVERIFY rather than QCOMPARE_NE — the latter is Qt 6.4+ only and
+        // this suite still runs on Qt 5.15. The qInfo() above identifies
+        // the locale; the values are short enough that QVERIFY's output
+        // ("'got != staleLTR' returned FALSE") is enough to debug.
+        QVERIFY(got != staleLTR);
       };
 
   loadAndCheck("ar_MA", "RTL");                // falls back to ar (RTL)
