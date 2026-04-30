@@ -37,22 +37,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished">ব্যবহারকারী পরিচালনা:</translation>
+        <translation type="unfinished">কনটেন্ট প্যানেলের আচরণ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide content</source>
-        <translation type="unfinished">প্রতিফলন সরান</translation>
+        <translation type="unfinished">কনটেন্ট লুকান</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation type="unfinished">পাসওয়ার্ড দেখানা</translation>
+        <translation type="unfinished">পাসওয়ার্ড লুকান</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished">পার্শ্ববর্তী পৃষ্ঠাটি খালি করার জন্য:</translation>
+        <translation type="unfinished">উল্লিখিত সময়ের পরে প্যানেল স্বয়ংক্রিয়ভাবে মুছুন:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
@@ -442,7 +442,7 @@ URL
         <location filename="../src/configdialog.cpp" line="728"/>
         <location filename="../src/configdialog.cpp" line="985"/>
         <source>Error</source>
-        <translation type="unfinished">ভগ্নাবশিষ্ট</translation>
+        <translation type="unfinished">ত্রুটি</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
@@ -540,7 +540,7 @@ URL
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation type="unfinished">অনুক্রমিক বাইট সংখ্যা</translation>
+        <translation type="unfinished">পাবলিক কী</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
@@ -555,7 +555,7 @@ URL
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished">১ এর পাবলিক কেয় (Public key for %1)</translation>
+        <translation type="unfinished">%1 এর পাবলিক কী</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
@@ -592,7 +592,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation type="unfinished">এ .gpgid ফাইলের সিগনচার পроверুন!</translation>
+        <translation type="unfinished">এ .gpgid ফাইলের স্বাক্ষর যাচাই করুন!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -626,7 +626,7 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Check selected users!</source>
-        <translation type="unfinished">মনেকর্তাদের পровер করুন!</translation>
+        <translation type="unfinished">মনোনিত ব্যবহারকারীদের যাচাই করুন!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="275"/>
@@ -755,7 +755,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation type="unfinished">ব্যালিড করুন</translation>
+        <translation type="unfinished">ইমপোর্ট</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -773,7 +773,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation type="unfinished">ক্যারি কী</translation>
+        <translation type="unfinished">কী ইমপোর্ট</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
@@ -1102,7 +1102,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
-        <translation type="unfinished">পাসওয়ার্ড এবং অন্তর্নির্মিত দৃশ্য হסתרিভ</translation>
+        <translation type="unfinished">পাসওয়ার্ড এবং কনটেন্ট গোপন করা হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
@@ -1239,7 +1239,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1487"/>
         <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Error</source>
-        <translation type="unfinished">ভগ্নাবশেষ</translation>
+        <translation type="unfinished">ত্রুটি</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
@@ -1360,13 +1360,13 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation type="unfinished">এনক্রিপশন ত্রাণাদর্শ হয়েছে: অবহুকী GPG কীটি না খোजা বা অকৃত্য। .gpg-id-এ কী ID টি সঠিক এবং ইমপোর্ট করা হয়েছে তা পровер করুন।</translation>
+        <translation type="unfinished">এনক্রিপশন ব্যর্থ হয়েছে: প্রাপক GPG কী খুঁজে পাওয়া যায়নি বা অবৈধ। .gpg-id-এ কী ID টি সঠিক এবং ইমপোর্ট করা হয়েছে তা যাচাই করুন।</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation type="unfinished">এনক্রিপশন ত্রাণাদর্শ হয়েছে: আপনার GPG কীটি সত্যিই সঠিক কিনা পровер করুন।</translation>
+        <translation type="unfinished">এনক্রিপশন ব্যর্থ হয়েছে। আপনার GPG কী সঠিক কিনা যাচাই করুন।</translation>
     </message>
 </context>
 <context>
@@ -1578,9 +1578,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">নোট: সуществующие файлы изменяться не будут и сохранят старые разрешения до тех пор, пока вы их не редактируете. Синие записи имеют доступ к секретному ключу, выберите один из них для дешифровки.
-Чёрные записи имеют доступный шифратор и он доверен, выберите одну из них, чтобы позволить другим разблокировать.
-Красные записи недействительны, вы не сможете зашифровать к ним.</translation>
+        <translation type="unfinished">এই ফোল্ডারে সংরক্ষিত পাসওয়ার্ড ডিক্রিপ্ট করতে পারবেন এমন ব্যবহারকারী নির্বাচন করুন।
+নোট: বিদ্যমান ফাইল পরিবর্তিত হবে না এবং আপনি সম্পাদনা না করা পর্যন্ত পুরানো অনুমতি বজায় রাখবে।
+নীল এন্ট্রিগুলিতে একটি গোপন কী উপলব্ধ রয়েছে, ডিক্রিপ্ট করতে সক্ষম হতে এদের মধ্যে একটি নির্বাচন করুন।
+কালো এন্ট্রিগুলিতে একটি এনক্রিপশন কী উপলব্ধ রয়েছে এবং এটি বিশ্বস্ত, অন্যদের ডিক্রিপ্ট করার অনুমতি দিতে এদের একটি নির্বাচন করুন।
+লাল এন্ট্রিগুলি বৈধ নয়, আপনি এগুলিতে এনক্রিপ্ট করতে পারবেন না।</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
