@@ -57,7 +57,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">মনস্পেস ফont ব্যবহার</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -237,7 +237,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished">ন্যাটিভ গিট/গপ্জি</translation>
+        <translation type="unfinished">(&amp;V) নেটিভ Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
@@ -266,7 +266,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
         <source>Generate</source>
-        <translation type="unfinished">প্রজেক্ট তৈরি</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
@@ -415,12 +415,12 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished">সবসময় ক্লিপবোর্ডে তীব্রতায় কopi করুন</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished">প্রয়োজন অনুযায়ী ক্লিপবোর্ডে তীব্রতায় কopi করুন</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
@@ -452,7 +452,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation type="unfinished">%1 এর স্বয়ংক্রিয় অনুবাদ লিখুন করে পেশ করুন: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
@@ -477,17 +477,17 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">প্রযুক্তিগত সিস্টেমে আপনার পাসওয়ার্ডগুলো ইনস্টল করুন। Microsoft স্টোর থেকে &lt;strong&gt;Ubuntu&lt;/strong&gt; ইনস্টল করে গুনপিজি (GnuPG) পান। যদি আগেই ইনস্টল করেছেন, তবে একবার শুরু করে দিন এবং অ্যাটোডিস্পেক্ট বাটনটি ক্লিক করুন।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">প্রযুক্তিগত সিস্টেমে আপনার পাসওয়ার্ডগুলো ইনস্টল করুন। Microsoft স্টোর থেকে &lt;strong&gt;Ubuntu&lt;/strong&gt; ইনস্টল করে গুনপিজি (GnuPG) পান, বা GnuPG.org থেকে &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ডাউনলোড&lt;/a&gt; করুন।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">প্রযুক্তিগত সিস্টেমে আপনার পাসওয়ার্ডগুলো ইনস্টল করুন। আপনার পছন্দকৃত প্যাকেজ ম্যানেজার ব্যবহার করে &lt;strong&gt;gpg&lt;/strong&gt; ইনস্টল করুন, বা GnuPG.org থেকে &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ডাউনলোড&lt;/a&gt; করুন।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -535,7 +535,7 @@ URL
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation type="unfinished">অনুক্রমিক বাইট নেতিবাহীভাবে পরিষেবা</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
@@ -560,7 +560,7 @@ URL
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation type="unfinished">কopiড়া!</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
@@ -877,7 +877,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished">এই কাজটি কিছু মিনিট লাগতে পারে।&lt;br /&gt;আমরা অনেক সর্বদা যোগাযোগ বাইট তৈরি করতে হব। এই প্রাইম গেনারেশনের সময় অন্য কিছু কাজ (ক্যাবেল লিখা, মসোড়টি চালান, ডিস্ক ব্যবহার) করতে একটু উপযোগী হবে; এটি সর্বদা অসম্পূর্ণ সংখ্যাগenerator-এর জন্য অধিক ইন্ট্রোজেকশন অর্জনের একটি ভাল ধারণা দেবে।</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -998,7 +998,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished">এটিপিও তৈরি এবং ক্লিপবোর্ডে কopi করুন</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
@@ -1270,7 +1270,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Directory does not exist: %1</source>
-        <translation type="unfinished">মappaর অস্তিত্ব নেই: %1</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
@@ -1292,21 +1292,19 @@ Continue?</source>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation type="unfinished">অনুক্রমিক ব্যাপক ব্যবহারকারীর জন্য অ্যাক্সেস ব্যবহারকারীর পাবলিক কি নেওয়া</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;পাবলিক কীটি অ্যাস্ট্রের প্রক্রিয়া&lt;/h3&gt;&lt;p&gt;একটি চিন্তাভাবনা কী নির্দিষ্ট করেনি। এটি QtPass সেটিংস &amp;gt; GPG কীগুলোতে নির্ধারণ করুন, বা তerminal-এ এই কমান্ডটি চালান।&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;তারপরে ফাইলটি আপনার টিমম্যাব্র এবং সহকর্মীদে পাঠান।&lt;/p&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished">অনুক্রমিক ব্যবহারকারীর জন্য পাবলিক কি নেওয়া সম্ভব হয়নি.
-
-%2</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
@@ -1321,7 +1319,7 @@ Continue?</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;GPG দিয়ে পাসওয়ার্ড শেয়ার করুন&lt;/h3&gt;&lt;p&gt;অন্যান্য ব্যবহারকারীদের সাথে পাসওয়ার্ড শেয়ার করতে:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;আপনার পাবলিক কি&lt;/b&gt; এক্সপোর্ট করুন এবং তাদের সাথে পাঠান।&lt;/li&gt;&lt;li&gt;&lt;b&gt;অ্যামিড টিমমেম্বারদের&lt;/b&gt; পাবলিক কি আপনার GPG কিরিংতে ইমপোর্ট করুন।&lt;/li&gt;&lt;li&gt;&lt;b&gt;পাসওয়ার্ডগুলোকে পুনরায় এনক্রিপ্ট করুন&lt;/b&gt; তাই সব অনুমতি দিতে পারে ব্যবহারকারীদে তাদের ডিক্রপ্ট করতে পারেন।&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;এমন মানসিক সুযোগ বা কি আছে যার সাথে একটি সুপারিশ দেওয়া হয়, তাই সব শেয়ার ফোল্ডারের জন্য একই GPG কি ব্যবহার করুন।&lt;/p&gt;&lt;p&gt;FAQ-এ বিস্তারিত দেখুন।&lt;/p&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1329,7 +1327,7 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation type="unfinished">ব্যাপক শব্দের অপরিচিত উত্তর: অমূল্য পাসওয়ার্ডের দৈর্ঘ্য অনুচ্ছেদে ব্যবস্থাপনায় নির্ধারণ করা হয়নি।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
@@ -1382,7 +1380,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation type="unfinished">গénেরেট</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
@@ -1462,7 +1460,7 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation type="unfinished">WebDAV-এ সambন্ধে ফাইল্সেড শুরু করতে ব্যবসা হয়নি:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="275"/>
@@ -1517,7 +1515,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
         <source>Copied to clipboard</source>
-        <translation type="unfinished">কopiয়ে কপিরিয়ারে</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1538,32 +1536,32 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation type="unfinished">প্রদর্শন</translation>
+        <translation type="unfinished">(&amp;S) দেখান</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished">বন্ধ</translation>
+        <translation type="unfinished">(&amp;H) লুকান</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished">কমিউটার</translation>
+        <translation type="unfinished">(&amp;n) ছোট করুন</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished">এক্সেমিটার</translation>
+        <translation type="unfinished">(&amp;x) বড় করুন</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished">পুনঃসংগ্রহ</translation>
+        <translation type="unfinished">(&amp;R) পুনরুদ্ধার</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">বের হও</translation>
+        <translation type="unfinished">(&amp;Q) বের হন</translation>
     </message>
 </context>
 <context>
@@ -1571,9 +1569,7 @@ Continue?</source>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation type="unfinished">পাসওয়ার্ডগুলো অনুমোদিত করতে যে ব্যবহারকারীদের নির্বাচন করুন। ধারণা: সуществующие файлы изменяться не будут и сохранят старые разрешения до тех пор, пока вы их не редактируете. Синие записи имеют доступ к секретному ключу, выберите один из них для дешифровки.
-Чёрные записи имеют доступный шифратор и он доверен, выберите одну из них, чтобы позволить другим разблокировать.
-Красные записи недействительны, вы не сможете зашифровать к ним.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
