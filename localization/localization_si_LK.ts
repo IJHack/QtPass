@@ -605,7 +605,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>කෝඩ් ප්‍රතිකරණය</translation>
+        <translation>පිටපත් පුවරුවට පිටපත් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
