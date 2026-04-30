@@ -1153,24 +1153,22 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <translation>Faili mpya</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file:
 (Will be placed in %1 )</source>
-        <translation type="unfinished">Faili jipya la nenosiri:
+        <translation type="obsolete">Faili jipya la nenosiri:
 (Itawekwa katika %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation type="unfinished">Folda Mpya:
+        <translation type="obsolete">Folda Mpya:
 (Itawekwa katika %1 )</translation>
     </message>
     <message>
-        <source>New password file:
+        <location filename="../src/mainwindow.cpp" line="1037"/>
+        <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="vanished">Faili mpya ya nenosiri:
-(Itawekwa katika %1 )</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
@@ -1248,10 +1246,10 @@ Hutaweza kubadilisha orodha ya watumiaji!</translation>
         <translation>Hii ni nini?</translation>
     </message>
     <message>
-        <source>New Folder:
+        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="vanished">Folda Mpya:
-(Itawekwa katika %1 )</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>

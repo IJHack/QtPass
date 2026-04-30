@@ -1153,24 +1153,22 @@ You will not be able to change the user list!</source>
         <translation>نئی فائل</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file:
 (Will be placed in %1 )</source>
-        <translation type="unfinished">نئی پاس ورڈ فائل:
+        <translation type="obsolete">نئی پاس ورڈ فائل:
 (یہ %1 میں رکھی جائے گی)</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation type="unfinished">نیا فولڈر:
+        <translation type="obsolete">نیا فولڈر:
 (یہ %1 میں رکھا جائے گا)</translation>
     </message>
     <message>
-        <source>New password file:
+        <location filename="../src/mainwindow.cpp" line="1037"/>
+        <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="vanished">نئی پاس ورڈ فائل:
-(%1 میں رکھی جائے گی)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
@@ -1248,10 +1246,10 @@ You will not be able to change the user list!</source>
         <translation>یہ کیا ہے؟</translation>
     </message>
     <message>
-        <source>New Folder:
+        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="vanished">نیا فولڈر:
-(%1 میں رکھا جائے گا)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>

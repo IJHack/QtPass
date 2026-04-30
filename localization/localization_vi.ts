@@ -1151,24 +1151,22 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <translation>Tệp mới</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file:
 (Will be placed in %1 )</source>
-        <translation type="unfinished">Tệp mật khẩu mới:
+        <translation type="obsolete">Tệp mật khẩu mới:
 (Sẽ được đặt trong %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation type="unfinished">Thư mục mới:
+        <translation type="obsolete">Thư mục mới:
 (Sẽ được đặt trong %1 )</translation>
     </message>
     <message>
-        <source>New password file:
+        <location filename="../src/mainwindow.cpp" line="1037"/>
+        <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="vanished">Tệp mật khẩu mới:
-(Sẽ được đặt trong %1 )</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
@@ -1246,10 +1244,10 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <translation>Đây là gì?</translation>
     </message>
     <message>
-        <source>New Folder:
+        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="vanished">Thư mục mới:
-(Sẽ được đặt trong %1 )</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>

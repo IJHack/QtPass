@@ -1151,24 +1151,22 @@ You will not be able to change the user list!</source>
         <translation>ไฟล์ใหม่</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file:
 (Will be placed in %1 )</source>
-        <translation type="unfinished">ไฟล์รหัสผ่านใหม่:
+        <translation type="obsolete">ไฟล์รหัสผ่านใหม่:
 (จะถูกวางไว้ใน %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation type="unfinished">โฟลเดอร์ใหม่:
+        <translation type="obsolete">โฟลเดอร์ใหม่:
 (จะถูกวางไว้ใน %1 )</translation>
     </message>
     <message>
-        <source>New password file:
+        <location filename="../src/mainwindow.cpp" line="1037"/>
+        <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="vanished">ไฟล์รหัสผ่านใหม่:
-(จะถูกวางใน %1 )</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
@@ -1246,10 +1244,10 @@ You will not be able to change the user list!</source>
         <translation>นี่คืออะไร?</translation>
     </message>
     <message>
-        <source>New Folder:
+        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="vanished">โฟลเดอร์ใหม่:
-(จะถูกวางใน %1 )</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
