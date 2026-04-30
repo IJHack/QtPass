@@ -1,3 +1,4 @@
+---
 # zizmor configuration — see https://docs.zizmor.sh/configuration/
 #
 # We pin every `uses:` to a specific version tag (v8.6.0, v6.0.2, ...) and
