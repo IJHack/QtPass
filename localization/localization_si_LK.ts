@@ -731,7 +731,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>කළමනාකරණ ක්‍රියාව සංස්කරණය කරන්න</translation>
+        <translation>උපස්ථ commit එකක් සාදමින්</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
