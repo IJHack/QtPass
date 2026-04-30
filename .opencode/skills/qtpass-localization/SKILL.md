@@ -159,9 +159,11 @@ Use the `xx_YY` form only when the translation is genuinely region-specific (Bra
    # -> Updating 'localization/localization_<lang>.ts'...
    ```
 
-4. After confirming the file is populated with `type="unfinished"` entries, translators must fill each entry with a best-effort translation (keeping `type="unfinished"`) before opening a PR. This applies to files registered via `TRANSLATIONS +=` in `src/src.pro`. Entries must not be left empty so the repository localization rule ("Fill empty translation entries with best-effort translations marked `type=\"unfinished\"`") is enforced.
+4. The skeleton ships as-is once the file is populated by `lupdate`: all entries `type="unfinished"`, ready for Weblate translators to fill. A bootstrap PR does **not** need pre-filled best-effort translations — empty `<translation type="unfinished">` is the deliverable.
 
-5. Translate strings via Qt Linguist or hand-edit the `.ts` XML, then push for Weblate to track.
+   The "fill empty entries with best-effort, mark `type="unfinished"`" guidance applies only when **patching an existing locale** flagged by reviewers — not to fresh-skeleton bootstrap PRs.
+
+5. Optionally hand-edit a few high-value strings (window title, About box) via Qt Linguist before pushing, then let Weblate handle the rest.
 
 ### Worked example
 
