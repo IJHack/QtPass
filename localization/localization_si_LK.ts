@@ -423,7 +423,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
         <source>New Profile</source>
-        <translation>ම෋ක පුද්ගලය</translation>
+        <translation>නව පැතිකඩ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
@@ -448,12 +448,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation>පුරාතන කණගමක් නවකරන්න?</translation>
+        <translation>මුරපද ගබඩාවක් සාදන්නද?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>%1 විස්තරයෙන් පුරාතන කණගමක් නවකරන්න අතර කියල හැක?</translation>
+        <translation>%1 හි මුරපද ගබඩාවක් සෑදීමට ඔබ කැමතිද?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
@@ -464,7 +464,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>මුරපද කළමනාව %1 එක සැකසි නොහැක</translation>
+        <translation>%1 ස්ථානයේ මුරපද ගබඩාව සෑදීමට අසමත් විය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
@@ -489,7 +489,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
         <source>Fill in all required fields</source>
-        <translation>සම්බන්ධිත ක්‍රියාත්මක අංකන වෙනස් කරන</translation>
+        <translation>අවශ්‍ය සියලු ක්ෂේත්‍ර පුරවන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
