@@ -835,7 +835,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;পাসফ্রাজের দৈর্ঘ্যে অনুসরণ করা হয় না, এবং এটি ধীরে ধীরে বিকল্প হওয়া উচিত। উপাদান সুরক্ষার দৃষ্টিভঙ্গি থেকে, পাসফ্রাজ বন্ধনীটি অন্য কোনও ব্যক্তি আপনার প্রивেট কিউইটি পাওয়ার হলে একমাত্র সুরক্ষিত দৃষ্টিভঙ্গি। &lt;br/&gt;আদর্শভাবে, পাসফ্রাজ কোনও শব্দ থেকে অনুসরণ করা উচিত নয় এবং সাইনেট্রিক বর্ণগুলির মিশ্রণ করতে হবে এবং অবশ্যই অবশ্যই অব্যবহৃত বর্ণগুলি ব্যবহার করা উচিত। &lt;br/&gt;কোনও সুযোগে গুণী GnuPG এর সুরক্ষিত ব্যবহারের জন্য একটি ভাল পাসফ্রাজ অত্যন্ত গুরুত্বপূর্ণ।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -1351,13 +1351,13 @@ Continue?</source>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation type="unfinished">এনক্রিপশন ত্রাণাদর্শ হয়েছে: GPG কীটি সময়ের বাইরে আসেছে। এই কীটিটি পুনরুত্তর দিন বা বদল দিন।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation type="unfinished">এনক্রিপশন ত্রাণাদর্শ হয়েছে: GPG কীটি অনুমোদন থেকে বাদ দেওয়া হয়েছে।</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
