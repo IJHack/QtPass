@@ -159,9 +159,13 @@ void TestLocale::layoutDirection() {
   QFETCH(QString, locale);
   QFETCH(QString, expected);
   QTranslator translator;
-  QVERIFY(translator.load(QLocale(locale), QStringLiteral("localization"),
-                          QStringLiteral("_"), QStringLiteral(":/localization"),
-                          QStringLiteral(".qm")));
+  QVERIFY2(
+      translator.load(QLocale(locale), QStringLiteral("localization"),
+                      QStringLiteral("_"), QStringLiteral(":/localization"),
+                      QStringLiteral(".qm")),
+      qUtf8Printable(QStringLiteral("Failed to load %1 for layoutDirection "
+                                    "test")
+                         .arg(locale)));
   QCoreApplication::installTranslator(&translator);
   // RAII guard: ensure the translator is uninstalled even if the assertion
   // below short-circuits the function — otherwise we'd leak it into the next
@@ -195,10 +199,31 @@ void TestLocale::loadIsIdempotent() {
                                 .arg(locale, expectedLTR, got)));
   };
 
-  loadAndCheck("ar_MA", "RTL"); // falls back to ar (RTL)
-  loadAndCheck("nl_NL", "LTR"); // exact Dutch (LTR)
-  loadAndCheck("en_US", "LTR"); // exact English (LTR)
-  loadAndCheck("fa_IR", "RTL"); // falls back to fa (RTL)
+  // Negative case: per QTranslator's contract ("The previous translation is
+  // cleared regardless of whether the new translation was successfully
+  // loaded") a failed load() must wipe whatever the translator was holding.
+  // Probe with an unknown locale and verify the prior LTR/RTL value is gone.
+  const auto loadUnknownAndCheckCleared =
+      [&translator](const QString &locale, const QString &staleLTR) {
+        const bool loaded = translator.load(
+            QLocale(locale), QStringLiteral("localization"),
+            QStringLiteral("_"), QStringLiteral(":/localization"),
+            QStringLiteral(".qm"));
+        QVERIFY2(!loaded, qUtf8Printable(QStringLiteral("load(%1) unexpectedly "
+                                                        "succeeded")
+                                             .arg(locale)));
+        const QString got = translator.translate("QObject", "LTR");
+        QVERIFY2(got != staleLTR,
+                 qUtf8Printable(QStringLiteral("after failed load(%1): stale "
+                                               "translation %2 remained active")
+                                    .arg(locale, staleLTR)));
+      };
+
+  loadAndCheck("ar_MA", "RTL");                // falls back to ar (RTL)
+  loadUnknownAndCheckCleared("tlh_KX", "RTL"); // failed load must clear state
+  loadAndCheck("nl_NL", "LTR");                // exact Dutch (LTR)
+  loadAndCheck("en_US", "LTR");                // exact English (LTR)
+  loadAndCheck("fa_IR", "RTL");                // falls back to fa (RTL)
 }
 
 QTEST_MAIN(TestLocale)
