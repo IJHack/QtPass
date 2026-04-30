@@ -632,7 +632,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>කාලිස් වරගය ( *.asc );;වෙනත් කළමනාකරණය ( *)</translation>
+        <translation>ASCII-ආමර් කළ යතුර (*.asc);;සියලු ගොනු (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
