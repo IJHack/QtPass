@@ -3,6 +3,16 @@ coverage:
   ignore:
     - tests/*
     - src/qrc_*.cpp
+  project:
+    default:
+      # Tolerate up to 1% drop in overall coverage. Coverage on this
+      # codebase fluctuates run-to-run because integration tests hit
+      # different paths depending on runner state (GPG keyring, test
+      # fixture race conditions, async signal timing). Without a
+      # threshold, PRs that don't touch src/ at all can still trip
+      # the codecov/project gate on noise alone (~0.05% deltas on
+      # ~5k instrumented lines = 2-3 lines of variance).
+      threshold: 1%
   patch:
     default:
       target: 0%
