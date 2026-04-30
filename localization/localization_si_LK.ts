@@ -469,7 +469,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
         <source>Password store not initialised</source>
-        <translation>මුරපද ගබඩාව සංකේතනය කර නැත</translation>
+        <translation>මුරපද ගබඩාව ආරම්භ වී නැත</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
@@ -484,7 +484,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
         <source>Profile: %1 at %2</source>
-        <translation>පැතිකඩ: %1 හි %2</translation>
+        <translation>පැතිකඩ: %2 හි %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1272"/>
