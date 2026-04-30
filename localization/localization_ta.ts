@@ -443,7 +443,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் கணினியில் gnupg ஐ நிறுவவும். &lt;br&gt; உங்களுக்கு பிடித்த தொகுப்பு மேலாளரைப் பயன்படுத்தி &lt;strong&gt;gpg&lt;/strong&gt; ஐ நிறுவவும் &lt;br&gt; அல்லது &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;பதிவிறக்கம்&lt;/a&gt; செய்யவும், gnupg.org இலிருந்து</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -524,7 +524,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">உங்கள் கணினியில் gnupg ஐ நிறுவவும். &lt;br&gt; நுண்மென் ச்டோரிலிருந்து &lt;strong&gt;உபுண்டு&lt;/strong&gt; ஐ நிறுவவும் &lt;br&gt; அல்லது &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;பதிவிறக்கம்&lt;/a&gt; செய்யவும், gnupg.org இலிருந்து</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -979,7 +979,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>வல்லுநர் விருப்பங்களுக்கு &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/unattented-gpg-key-genary.html&quot;&gt; gnupg கையேடு &lt;/a&gt; ஐப் பாருங்கள்</translation>
+        <translation>வல்லுநர் விருப்பங்களுக்கு &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; gnupg கையேடு &lt;/a&gt; ஐப் பாருங்கள்</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
