@@ -703,7 +703,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>.ග්‍රාපින්ඩ හෝ .ග්‍රාපින්ඩ කණ්ඩායමක් නැවත කළ ලදී.</translation>
+        <translation>.gpg-id ලිවීම සඳහා විවෘත කිරීමට අසමත් විය.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
