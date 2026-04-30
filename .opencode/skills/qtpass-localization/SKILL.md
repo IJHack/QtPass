@@ -127,27 +127,43 @@ tr("Delete " + filename + "?")  // Can't be translated properly
 
 ## Adding New Language
 
-1. Copy base translation file:
+Don't copy `localization_en_US.ts` — that imports stale English-as-translation strings that have to be cleared one by one. Bootstrap an empty skeleton and let `lupdate` (driven by `qmake6`) populate it with the current source strings as `type="unfinished"`.
+
+### Locale code: language-only vs language+country
+
+Prefer the **language-only** code (e.g. `fa`, `ar`, `de`) when the translation is the standard form understood across regions (Modern Standard Arabic, Standard German, Standard Persian).
+
+Qt's locale fallback maps `fa_IR`, `ar_MA`, `de_AT` etc. to the language-only file automatically — one `fa.ts` covers Iran, Afghanistan (Dari), and every other Persian-speaking user.
+
+Use the `xx_YY` form only when the translation is genuinely region-specific (Brazilian vs European Portuguese, Simplified vs Traditional Chinese, regional Spanish variants).
+
+### Bootstrap workflow
+
+1. Create a 4-line skeleton (`lupdate` refuses to populate a 0-byte file):
 
    ```bash
-   cp localization/localization_en_US.ts localization/localization_XX_YY.ts
+   cat > localization/localization_<lang>.ts <<'EOF'
+   <?xml version="1.0" encoding="utf-8"?>
+   <!DOCTYPE TS>
+   <TS version="2.1" language="<lang>">
+   </TS>
+   EOF
    ```
 
-2. Update language code (ISO 639-1 + country code)
+2. Register it in `src/src.pro` (alphabetically) under `TRANSLATIONS +=`. Note: `qtpass.pro` is the parent project file; the actual list lives in `src/src.pro`.
 
-3. Add to build config in `qtpass.pro`:
-
-   ```pro
-   TRANSLATIONS += localization/localization_XX_YY.ts
-   ```
-
-4. Run qmake to register:
+3. Run `make distclean && qmake6` — the build's lupdate step populates the file with all 304 source strings as `type="unfinished"`. Confirm via:
 
    ```bash
-   qmake6
+   qmake6 2>&1 | grep "localization_<lang>.ts"
+   # -> Updating 'localization/localization_<lang>.ts'...
    ```
 
-5. Translate strings using Qt Linguist
+4. Translate strings via Qt Linguist or hand-edit the `.ts` XML, then push for Weblate to track.
+
+### Worked example
+
+Adding Persian (`fa`) for Iranian/Afghan/Tajik users involved exactly: 4-line skeleton, one `TRANSLATIONS +=` line in `src/src.pro`, one `make distclean && qmake6`. No copy step. Result: 304 entries marked `type="unfinished"` (302 empty + 2 numerusform plural skeletons), ready for Weblate.
 
 ## Building Translations
 
