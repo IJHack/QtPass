@@ -1,123 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="lt_LT">
+<TS version="2.1" language="hu">
 <context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Konfigūracija</translation>
+        <translation>Konfiguráció</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="46"/>
-        <source>Settings</source>
-        <translation>Nustatymai</translation>
+        <location filename="../src/configdialog.ui" line="816"/>
+        <source>Pass</source>
+        <translation>Pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="72"/>
-        <source>Clipboard behaviour:</source>
-        <translation>Iškarpinės veikimas:</translation>
+        <source>...</source>
+        <translation type="vanished">...</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="91"/>
-        <source>Use primary selection</source>
-        <translation>Naudoti pirminį pasirinkimą</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="98"/>
-        <source>Autoclear after:</source>
-        <translation>Automatiškai išvalyti po:</translation>
+        <location filename="../src/configdialog.ui" line="740"/>
+        <source>Native</source>
+        <translation>Natív</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation>Sekundės</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="147"/>
-        <source>Content panel behaviour:</source>
-        <translation>Turinio skydelio veikimas:</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="159"/>
-        <source>Hide content</source>
-        <translation>Slėpti turinį</translation>
+        <translation>Perc</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation>Slėpti slaptažodį</translation>
+        <translation>Jelszó elrejtése</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="159"/>
+        <source>Hide content</source>
+        <translation>Oldal elrejtése</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="46"/>
+        <source>Settings</source>
+        <translation>Beállítások</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="72"/>
+        <source>Clipboard behaviour:</source>
+        <translation>Vágólap viselkedése:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="91"/>
+        <source>Use primary selection</source>
+        <translation>Elsődleges kijelölés használata</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="98"/>
+        <source>Autoclear after:</source>
+        <translation>Automatikus törlés:</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="147"/>
+        <source>Content panel behaviour:</source>
+        <translation>A tartalompanel viselkedése:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Automatiškai išvalyti skydelį po:</translation>
+        <translation>Automatikus törlés panel után:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Naudoti vienodo pločio šriftą</translation>
+        <translation>Használjon monospace betűtípust</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>Rodyti failo turinį kaip yra</translation>
+        <translation>A fájlok tartalmának megjelenítése jelenlegi állapotában</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>Be eilučių laužymo</translation>
+        <translation>Nincs sortörés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>Rodyti proceso išvestį</translation>
+        <translation>Folyamat kimenetének megjelenítése</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
         <source>Password Generation:</source>
-        <translation>Slaptažodžio generavimas:</translation>
+        <translation>Jelszó generáló:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation>Slaptažodžio ilgis:</translation>
+        <translation>Jelszó hosszúság:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
         <source>Characters</source>
-        <translation>Simboliai</translation>
+        <translation>Karakterek</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
         <source>Use characters:</source>
-        <translation>Naudoti simbolius:</translation>
+        <translation>Karakterek használata:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
         <source>Select character set for password generation</source>
-        <translation>Pasirinkti simbolių rinkinį slaptažodžio generavimui</translation>
+        <translation>Válassza ki a karakterkészletet a jelszó generálásához</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
         <source>All Characters</source>
-        <translation>Visi simboliai</translation>
+        <translation>Összes karakter</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
         <source>Alphabetical</source>
-        <translation>Abėcėliniai</translation>
+        <translation>Betűrendes</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
         <source>Alphanumerical</source>
-        <translation>Raidiniai-skaitiniai</translation>
+        <translation>Alfanumerikus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
         <source>Custom</source>
-        <translation>Pasirinktinis</translation>
+        <translation>Egyedi</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
@@ -125,29 +139,77 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="443"/>
-        <source>Use PWGen</source>
-        <translation>Naudoti PWGen</translation>
+        <location filename="../src/configdialog.ui" line="460"/>
+        <source>Include special symbols</source>
+        <translation>Speciális szimbólumok beillesztése</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="599"/>
+        <source>Enable content search (pass grep)</source>
+        <translation>Tartalomkeresés engedélyezése (pass grep)</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="602"/>
+        <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
+        <translation>Engedélyezze a keresést a jelszófájlok tartalmában. Minden fájl visszafejtését igényli, és nagy tárolók esetén lassú lehet.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="776"/>
+        <source>Generate</source>
+        <translation>Generálás</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="779"/>
+        <source>Generate GPG key pair</source>
+        <translation>GPG kulcspár generálása</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="952"/>
+        <source>Profile name, used to identify this configuration profile</source>
+        <translation>Profil neve, amely azonosítja ezt a konfigurációs profilt</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="960"/>
+        <source>Path to the password store directory</source>
+        <translation>Elérési út a jelszótár könyvtárához</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="965"/>
+        <source>Signing Key</source>
+        <translation>Aláírókulcs</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="968"/>
+        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
+        <translation>Opcionális: GPG kulcs a .gpg-id fájlok aláírásához az integritás ellenőrzéséhez. Hagyja üresen, kivéve, ha meg kell védenie a felhasználói listát a manipulációtól.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1008"/>
+        <source>Current path</source>
+        <translation>Jelenlegi útvonal</translation>
+    </message>
+    <message>
+        <source>Use pwgen</source>
+        <translation type="vanished">pwgen használata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
-        <translation>Neįtraukti didžiųjų raidžių</translation>
+        <translation>Nagybetűk kizárása</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="460"/>
-        <source>Include special symbols</source>
-        <translation>Įtraukti specialius simbolius</translation>
+        <source>Include special symbols </source>
+        <translation type="vanished">Speciális szimbólumok </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Generuoti lengvai įsimenamus, bet mažiau saugius slaptažodžius</translation>
+        <translation>Könnyen megjegyezhető, de kevésbé biztonságos jelszavak létrehozása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
         <source>Exclude numbers</source>
-        <translation>Neįtraukti skaitmenų</translation>
+        <translation>Számok kizárása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
@@ -155,99 +217,335 @@
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="505"/>
-        <source>Use Git</source>
-        <translation>Naudoti Git</translation>
+        <source>Use git</source>
+        <translation type="vanished">Git használata</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>Automatiškai pridėti .gpg-id failus</translation>
+        <translation>.gpg-id fájlok automatikus hozzáadása</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically push</source>
-        <translation>Automatiškai siųsti (push)</translation>
+        <translation>Automatikusan leküldés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation>Automatiškai gauti (pull)</translation>
+        <translation>Automatikus lekérés</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
         <source>Extensions:</source>
-        <translation>Plėtiniai:</translation>
+        <translation>Kiterjesztések:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="574"/>
-        <source>Use QRencode</source>
-        <translation>Naudoti QRencode</translation>
+        <source>Use qrencode</source>
+        <translation type="vanished">Qrencode használata</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="588"/>
-        <source>Use pass-otp extension</source>
-        <translation>Naudoti pass-otp plėtinį</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="599"/>
-        <source>Enable content search (pass grep)</source>
-        <translation>Įjungti turinio paiešką (pass grep)</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="602"/>
-        <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Leidžia ieškoti slaptažodžių failo turinyje. Reikalauja iššifruoti kiekvieną failą ir gali būti lėta didelėse saugyklose.</translation>
+        <source>Use pass otp extension</source>
+        <translation type="vanished">Használja a pass OTP kiterjesztést</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
         <source>System:</source>
-        <translation>Sistema:</translation>
+        <translation>Rendszer:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation>Naudoti dėklo piktogramą</translation>
+        <translation>Használja a Rendszertálca ikont</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
         <source>Start minimized</source>
-        <translation>Paleisti sumažinta</translation>
+        <translation>Kezdés minimalizálva</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation>Slėpti uždarant</translation>
+        <translation>Elrejtés bezárásakor</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
         <source>Always on top</source>
-        <translation>Visada viršuje</translation>
+        <translation>Mindig felül</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
         <source>Programs</source>
-        <translation>Programos</translation>
+        <translation>Programok</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
         <source>Select password storage program:</source>
-        <translation>Pasirinkti slaptažodžių saugojimo programą:</translation>
+        <translation>Jelszótároló program kiválasztása:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="709"/>
-        <source>Nati&amp;ve Git/GPG</source>
-        <translation>&amp;Vietinis Git/GPG</translation>
+        <source>Nati&amp;ve git/gpg</source>
+        <translation type="vanished">Native git/gpg</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;Naudoti pass</translation>
+        <translation>&amp;pass használata</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="740"/>
-        <source>Native</source>
-        <translation>Vietinis</translation>
+        <source>git</source>
+        <translation type="vanished">git</translation>
+    </message>
+    <message>
+        <source>gpg</source>
+        <translation type="vanished">gpg</translation>
+    </message>
+    <message>
+        <source>pwgen</source>
+        <translation type="vanished">pwgen</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="827"/>
+        <source>pass</source>
+        <translation>pass</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="846"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="877"/>
+        <source>Autodetect</source>
+        <translation>Automatikus felismerés</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="900"/>
+        <source>Profiles</source>
+        <translation>Profilok</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="949"/>
+        <source>Name</source>
+        <translation>név</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="957"/>
+        <source>Path</source>
+        <translation>Elérési út</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="978"/>
+        <source>Add</source>
+        <translation>Hozzáadása</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="993"/>
+        <source>Delete</source>
+        <translation>Töröl</translation>
+    </message>
+    <message>
+        <source>Current password-store</source>
+        <translation type="vanished">Jelenlegi jelszótároló</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1028"/>
+        <source>Template</source>
+        <translation>Sablon</translation>
+    </message>
+    <message>
+        <source>Templates add extra fields in the password generation dialogue and in the password view.</source>
+        <translation type="vanished">A sablonok további mezőket adnak hozzá a jelszó előállítási párbeszédpanelhez és a jelszó nézethez.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1058"/>
+        <source>Use template</source>
+        <translation>Sablonhasználat</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1065"/>
+        <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
+        <translation>Minden sor megjelenítése ami egy szóval kezdődik, amit egy kettőspont követ jelszómezőben, nem csak a felsoroltakban</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1068"/>
+        <source>Show all fields templated</source>
+        <translation>Az összes mező megjelenítése</translation>
+    </message>
+    <message>
+        <source>login
+url
+email</source>
+        <translation type="vanished">belépés
+url
+e-mail</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1095"/>
+        <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verzió </translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="68"/>
+        <source>System tray is not available</source>
+        <translation>A tálca nem érhető el</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="95"/>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation>A Pass OTP kiterjesztést telepíteni kell</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="100"/>
+        <source>qrencode needs to be installed</source>
+        <translation>A qrencode-t telepíteni kell</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="125"/>
+        <source>No Clipboard</source>
+        <translation>Nincs vágólap</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="126"/>
+        <source>Always copy to clipboard</source>
+        <translation>Mindig másolja a vágólapra</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="127"/>
+        <source>On-demand copy to clipboard</source>
+        <translation>Igény szerinti másolás a vágólapra</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="210"/>
+        <location filename="../src/configdialog.cpp" line="226"/>
+        <source>This field is required</source>
+        <translation>Ez a mező kötelező</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="720"/>
+        <source>Create profile directory?</source>
+        <translation>Profilkönyvtár létrehozása?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="721"/>
+        <source>Would you like to create a password store at %1?</source>
+        <translation>Létrehoz egy jelszótárolót itt: %1?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="729"/>
+        <source>Could not create profile directory: %1</source>
+        <translation>A profilkönyvtár nem hozható létre: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="747"/>
+        <source>Select recipients for %1</source>
+        <translation>Válassza ki a(z) %1 címzettjeit</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="773"/>
+        <source>New Profile</source>
+        <translation>Új profil</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="810"/>
+        <source>No profile selected</source>
+        <translation>Nincs kiválasztott profil</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="811"/>
+        <source>No profile selected to delete</source>
+        <translation>Nincs kijelölve törölhető profil</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="911"/>
+        <source>GnuPG not found</source>
+        <translation>A GnuPG nem található</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="914"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
+        <translation>Kérjük, telepítse a GnuPG-t a rendszerére.&lt;br&gt;Telepítse az &lt;strong&gt;Ubuntut&lt;/strong&gt; a Microsoft Store-ból a letöltéshez.&lt;br&gt;Ha már megtette, győződjön meg róla, hogy egyszer elindította, és&lt;br&gt;kattintson az „Automatikus észlelés” gombra a következő párbeszédpanelen.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="919"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation>Kérjük, telepítse a GnuPG-t a rendszerére.&lt;br&gt;Telepítse az &lt;strong&gt;Ubuntut&lt;/strong&gt; a Microsoft Store-ból&lt;br&gt;vagy &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;töltse le&lt;/a&gt; a GnuPG.org oldalról</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="925"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation>Telepítse a GnuPG-t a rendszerre. &lt;br&gt; telepítése &lt;strong&gt; GPG &lt;/strong&gt; segítségével kedvenc Package Manager &lt;br&gt; vagy &lt; a href = &quot;https://www.gnupg.org/download/#sec-1-2&quot; &gt; Letöltés &lt;/a&gt; ez-ból GnuPG.org</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="979"/>
+        <source>Create password-store?</source>
+        <translation>Jelszó-készlet létrehozása?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="980"/>
+        <source>Would you like to create a password-store at %1?</source>
+        <translation>Szeretne jelszótárolót létrehozni a (z) %1 helyen?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="728"/>
+        <location filename="../src/configdialog.cpp" line="985"/>
+        <source>Error</source>
+        <translation>Hiba</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="986"/>
+        <source>Failed to create password-store at: %1</source>
+        <translation>Nem sikerült létrehozni a jelszótárolót a következő címen: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1017"/>
+        <source>Password store not initialised</source>
+        <translation>A jelszótároló nem inicializálódott</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1018"/>
+        <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
+        <translation>A(z) %1 mappa nem tűnik jelszótárolónak, vagy még nincs inicializálva.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1263"/>
+        <source>New profile: %1 at %2</source>
+        <translation>Új profil: %1 itt: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1267"/>
+        <source>Profile: %1 at %2</source>
+        <translation>Profil: %1 itt: %2</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1272"/>
+        <source>Fill in all required fields</source>
+        <translation>Töltse ki az összes kötelező mezőt</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="443"/>
+        <source>Use PWGen</source>
+        <translation>Használja a PWGen-t</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="505"/>
+        <source>Use Git</source>
+        <translation>Használj Gitet</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="574"/>
+        <source>Use QRencode</source>
+        <translation>QRencode használata</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="588"/>
+        <source>Use pass-otp extension</source>
+        <translation>Használja a pass-otp kiterjesztést</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="709"/>
+        <source>Nati&amp;ve Git/GPG</source>
+        <translation>Natí&amp;v Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -264,16 +562,6 @@
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="776"/>
-        <source>Generate</source>
-        <translation>Generuoti</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="779"/>
-        <source>Generate GPG key pair</source>
-        <translation>Sukurti GPG raktų porą</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="786"/>
         <source>GPG</source>
         <translation>GPG</translation>
@@ -284,250 +572,18 @@
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="816"/>
-        <source>Pass</source>
-        <translation>pass</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="827"/>
-        <source>pass</source>
-        <translation>pass</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="846"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="877"/>
-        <source>Autodetect</source>
-        <translation>Automatinis nustatymas</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="900"/>
-        <source>Profiles</source>
-        <translation>Profiliai</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="949"/>
-        <source>Name</source>
-        <translation>Vardas</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="952"/>
-        <source>Profile name, used to identify this configuration profile</source>
-        <translation>Profilio pavadinimas, naudojamas identifikuoti šį konfigūracijos profilį</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="957"/>
-        <source>Path</source>
-        <translation>Kelias</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="960"/>
-        <source>Path to the password store directory</source>
-        <translation>Slaptažodžių saugyklos katalogo kelias</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="965"/>
-        <source>Signing Key</source>
-        <translation>Pasirašymo raktas</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="968"/>
-        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Neprivaloma: GPG raktas, naudojamas .gpg-id failų vientisumui tikrinti. Palikite tuščią, jei nereikia apsaugoti vartotojų sąrašo nuo pakeitimų.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="978"/>
-        <source>Add</source>
-        <translation>Pridėti</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="993"/>
-        <source>Delete</source>
-        <translation>Ištrinti</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1008"/>
-        <source>Current path</source>
-        <translation>Dabartinis kelias</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1028"/>
-        <source>Template</source>
-        <translation>Šablonas</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Šablonai prideda papildomus laukus slaptažodžio generavimo dialogo ir slaptažodžio rodinyje.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1058"/>
-        <source>Use template</source>
-        <translation>Naudoti šabloną</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1065"/>
-        <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Rodyti visas eilutes, pradedančias žodžiu, po kurio eina dvitaškis, kaip slaptažodžio laukus, ne tik išvardytas</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1068"/>
-        <source>Show all fields templated</source>
-        <translation>Rodyti visus šablonų laukus</translation>
+        <translation>A sablonok további mezőket adnak hozzá a jelszógenerálási párbeszédpanelen és a jelszó nézetben.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
         <source>login
 URL
 e-mail</source>
-        <translation>prisijungimas
+        <translation>login
 URL
-el. paštas</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1095"/>
-        <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; versija </translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="68"/>
-        <source>System tray is not available</source>
-        <translation>Sistemos dėklas nepasiekiamas</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="95"/>
-        <source>Pass OTP extension needs to be installed</source>
-        <translation>Reikia įdiegti Pass OTP plėtinį</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="100"/>
-        <source>qrencode needs to be installed</source>
-        <translation>Reikia įdiegti qrencode</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="125"/>
-        <source>No Clipboard</source>
-        <translation>Nėra iškarpinės</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="126"/>
-        <source>Always copy to clipboard</source>
-        <translation>Visada kopijuoti į iškarpinę</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="127"/>
-        <source>On-demand copy to clipboard</source>
-        <translation>Kopijuoti į iškarpinę pagal poreikį</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="210"/>
-        <location filename="../src/configdialog.cpp" line="226"/>
-        <source>This field is required</source>
-        <translation>Šis laukas yra reikalingas</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="720"/>
-        <source>Create profile directory?</source>
-        <translation>Sukurti profilio katalogą?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
-        <source>Would you like to create a password store at %1?</source>
-        <translation>Ar norite sukurti slaptažodžių saugyklą %1?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="728"/>
-        <location filename="../src/configdialog.cpp" line="985"/>
-        <source>Error</source>
-        <translation>Klaida</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
-        <source>Could not create profile directory: %1</source>
-        <translation>Nepavyko sukurti profilio katalogo: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="747"/>
-        <source>Select recipients for %1</source>
-        <translation>Pasirinkite gavėjus %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="773"/>
-        <source>New Profile</source>
-        <translation>Naujas profilis</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="810"/>
-        <source>No profile selected</source>
-        <translation>Nepasirinktas profilis</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="811"/>
-        <source>No profile selected to delete</source>
-        <translation>Nepasirinktas profilis ištrinimui</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="911"/>
-        <source>GnuPG not found</source>
-        <translation>GnuPG nėra rasta</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="914"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store, kad jį gautumėte.&lt;br&gt;Jei jau tai padarėte, įsitikinkite, kad kartą jį paleidote, ir&lt;br&gt;kitame dialogo lange spustelėkite &quot;Automatiškai aptikti&quot;.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="919"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;Ubuntu&lt;/strong&gt; iš Microsoft Store&lt;br&gt;arba &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;atsisiųskite&lt;/a&gt; jį iš GnuPG.org</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="925"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Prašome įdiegti GnuPG savo sistemoje.&lt;br&gt;Įdiekite &lt;strong&gt;gpg&lt;/strong&gt; naudodami mėgstamą paketų valdymo sistemą&lt;br&gt;arba &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;atsisiųskite&lt;/a&gt; jį iš GnuPG.org</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="979"/>
-        <source>Create password-store?</source>
-        <translation>Sukurti slaptažodžių saugyklą?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="980"/>
-        <source>Would you like to create a password-store at %1?</source>
-        <translation>Ar norėtumėte sukurti slaptažodžių saugyklą %1?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="986"/>
-        <source>Failed to create password-store at: %1</source>
-        <translation>Nepavyko sukurti slaptažodžių saugyklos: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1017"/>
-        <source>Password store not initialised</source>
-        <translation>Slaptažodžių saugykla neinicializuota</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1018"/>
-        <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Aplanke %1 nėra slaptažodžių saugykla arba ji dar nebuvo inicijuota.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1263"/>
-        <source>New profile: %1 at %2</source>
-        <translation>Naujas profilis: %1 at %2</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1267"/>
-        <source>Profile: %1 at %2</source>
-        <translation>Profilis: %1 at %2</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1272"/>
-        <source>Fill in all required fields</source>
-        <translation>Įrašykite visus reikiamus laukus</translation>
+e-mail</translation>
     </message>
 </context>
 <context>
@@ -535,195 +591,195 @@ el. paštas</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation>Eksportuoti viešąjį raktą</translation>
+        <translation>Nyilvános kulcs exportálása</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation>Viešasis raktas</translation>
+        <translation>Nyilvános kulcs</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>Kopijuoti į iškarpinę</translation>
+        <translation>Másolás a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Išsaugoti į failą...</translation>
+        <translation>Mentés fájlba…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>%1 viešasis raktas</translation>
+        <translation>%1 nyilvános kulcsa</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation>Nukopijuota!</translation>
+        <translation>Másolva!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Išsaugoti Viešąjį Raktą</translation>
+        <translation>Nyilvános kulcs mentése</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>ASCII šarvuotas raktas (*.asc);;Visi failai (*)</translation>
+        <translation>ASCII-armored kulcs (*.asc);;Minden fájl (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation>Nepavyko atidaryti %1 rašymui: %2</translation>
+        <translation>%1 nem nyitható meg írásra: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>Nepavyko rašyti į %1: %2</translation>
+        <translation>Nem sikerült írni ide: %1: %2</translation>
     </message>
 </context>
 <context>
     <name>ImitatePass</name>
     <message>
+        <location filename="../src/imitatepass.cpp" line="732"/>
+        <location filename="../src/imitatepass.cpp" line="787"/>
+        <source>Updating password-store</source>
+        <translation>Jelszó-tároló frissítése</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="149"/>
+        <location filename="../src/imitatepass.cpp" line="598"/>
+        <source>Can not edit</source>
+        <translation>Nem lehet szerkeszteni</translation>
+    </message>
+    <message>
         <location filename="../src/imitatepass.cpp" line="141"/>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
-        <source>Check .gpg-id file signature!</source>
-        <translation>Peržiūrėti .gpg-id failo parašą!</translation>
+        <source>Check .gpgid file signature!</source>
+        <translation>Ellenőrizd a .gpgid fájl aláírását!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>%1 parašas yra neteisingas.</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="149"/>
-        <location filename="../src/imitatepass.cpp" line="598"/>
-        <source>Can not edit</source>
-        <translation>Negalima redaguoti</translation>
+        <translation>A(z) %1 aláírása érvénytelen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Nepavyko nuskaityti naudojamo šifravimo rakto, .gpg-id failas trūksta arba yra neteisingas.</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="260"/>
-        <source>Cannot update</source>
-        <translation>Nepavyko atnaujinti</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="261"/>
-        <source>Failed to open .gpg-id for writing.</source>
-        <translation>Nepavyko atidaryti .gpg-id rašymui.</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="274"/>
-        <source>Check selected users!</source>
-        <translation>Patikrinkite pasirinktus vartotojus!</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="275"/>
-        <source>None of the selected keys have a secret key available.
-You will not be able to decrypt any newly added passwords!</source>
-        <translation>Nė vienas iš pasirinktų raktų neturi slapto rakto.
-Negalėsite iššifruoti jokių naujai pridėtų slaptažodžių!</translation>
+        <translation>Nem sikerült beolvasni a használandó titkosítási kulcsot, a .gpg-id fájl hiányzik vagy érvénytelen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
         <source>GPG signing failed!</source>
-        <translation>GPG pasirašymas nepavyko!</translation>
+        <translation>GPG aláírás sikertelen!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation>Nepavyko sertifikuoti %1.</translation>
+        <translation>%1 aláírása sikertelen.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation>Nėra pasirašymo rakto!</translation>
+        <translation>Nincs aláíró kulcs!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Nė vienas iš slaptų pasirašymo raktų nėra pasiekiamas.
-Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
+        <translation>Egyik titkos aláírókulcs sem érhető el.
+A felhasználói listát nem fogja tudni módosítani!</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="260"/>
+        <source>Cannot update</source>
+        <translation>Nem frissíthető</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="261"/>
+        <source>Failed to open .gpg-id for writing.</source>
+        <translation>Nem sikerült megnyitni .gpg-id íráshoz.</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="274"/>
+        <source>Check selected users!</source>
+        <translation>Kiválasztott felhasználók ellenőrzése!</translation>
+    </message>
+    <message>
+        <location filename="../src/imitatepass.cpp" line="275"/>
+        <source>None of the selected keys have a secret key available.
+You will not be able to decrypt any newly added passwords!</source>
+        <translation>A kiválasztott kulcsok egyikében sincs titkos kulcs.
+Nem fogja tudni megfejteni az újonnan hozzáadott jelszavakat!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>Pakartotinis šifravimas nepavyko</translation>
+        <translation>Az újratitkosítás sikertelen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Nepavyko pakeisti %1. Originalas buvo atkurtas.</translation>
+        <translation>Nem sikerült lecserélni a(z) %1 fájlt. Az eredeti visszaállításra került.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>Kuriamas atsarginis commit</translation>
+        <translation>Biztonsági mentés véglegesítése</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Backup commit failed</source>
-        <translation>Atsarginio įrašo įvykdymas nepavyko</translation>
+        <translation>A biztonsági mentés véglegesítése sikertelen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Nepavyko inspektuoti Git būsenos. Pakartotinis šifravimas buvo atsisakytas.</translation>
+        <translation>Nem sikerült ellenőrizni a git állapotát. Az újratitkosítás megszakítva.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>Pakartotinis šifravimas buvo nutrauktas, nes nepavyko sukurti Git atsarginės kopijos.</translation>
+        <translation>Az újratitkosítás megszakadt, mert nem sikerült git biztonsági mentést létrehozni.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Pakartotinis šifravimas iš aplanko %1</translation>
-    </message>
-    <message>
-        <location filename="../src/imitatepass.cpp" line="732"/>
-        <location filename="../src/imitatepass.cpp" line="787"/>
-        <source>Updating password-store</source>
-        <translation>Atnaujinimas slaptažodžių saugykloje</translation>
+        <translation>Új titkosítás a (z) %1 mappából</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="757"/>
         <source>GPG ID verification failed</source>
-        <translation>Nepavyko patvirtinti GPG ID</translation>
+        <translation>GPG-azonosító ellenőrzése sikertelen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Nepavyko patikrinti .gpg-id katalogui.</translation>
+        <translation>Nem sikerült ellenőrizni a könyvtár .gpg-id fájlját.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Nepavyko iš naujo užšifruoti %1</translation>
+        <translation>Nem sikerült újra titkosítani %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Pakartotinis šifravimas baigtas: %1 sėkmingai, %2 nepavyko</translation>
+        <translation>Újratitkosítás befejezve: %1 sikeres, %2 sikertelen</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Pakartotinis šifravimas baigtas: %1 failai iš naujo užšifruoti</translation>
+        <translation>Újratitkosítás befejezve: %1 fájl újratitkosítva</translation>
     </message>
 </context>
 <context>
@@ -732,42 +788,42 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation>Importuoti GPG raktą</translation>
+        <translation>GPG-kulcs importálása</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Importuokite GPG viešąjį raktą iš failo arba įklijuokite jį žemiau. Raktas turi būti ASCII šarvuoto formato.</translation>
+        <translation>Importáljon egy GPG nyilvános kulcsot fájlból, vagy illessze be alább. A kulcsnak ASCII-armored formátumban kell lennie.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>Iš failo...</translation>
+        <translation>Fájlból…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation>Iš iškarpinės</translation>
+        <translation>Vágólapról</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Įklijuokite čia ASCII šarvuotą GPG raktą...</translation>
+        <translation>Illesszen be ide egy ASCII-armored GPG-kulcsot…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation>Importuoti</translation>
+        <translation>Importálás</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>ASCII šarvuotas GPG raktas</translation>
+        <translation>ASCII-armored GPG-kulcs</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation>Visi failai</translation>
+        <translation>Minden fájl</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -775,34 +831,34 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation>Importuoti raktą</translation>
+        <translation>Kulcs importálása</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation>Nepavyko atverti failo: %1</translation>
+        <translation>A fájl nem nyitható meg: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>%1 neatrodo kaip ASCII šarvuotas GPG raktas. Pirmiausia konvertuokite jį naudodami &lt;code&gt;gpg --armor --export&lt;/code&gt;, arba įklijuokite šarvuotą bloką per &lt;b&gt;Iš iškarpinės&lt;/b&gt;.</translation>
+        <translation>%1 nem tűnik ASCII-armored GPG-kulcsnak. Először alakítsa át a &lt;code&gt;gpg --armor --export&lt;/code&gt; paranccsal, vagy illessze be az ASCII-armored blokkot a &lt;b&gt;Vágólapról&lt;/b&gt; lehetőséggel.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation>GPG import nepavyko:
+        <translation>A GPG-importálás meghiúsult:
 %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Nepavyko išgauti importuoto rakto ID iš GPG išvesties.</translation>
+        <translation>Az importált kulcs azonosítója nem olvasható ki a GPG kimenetéből.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Sėkmingai importavo raktą: %1</translation>
+        <translation>Kulcs sikeresen importálva: %1</translation>
     </message>
 </context>
 <context>
@@ -810,77 +866,109 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Generuoti GnuPG raktų porą</translation>
+        <translation>GnuPG kulcspár generálása</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Sukurti naują raktų porą</translation>
+        <translation>Új kulcspár létrehozása</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>El. paštas</translation>
+        <translation>E-mail</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
-        <translation>Vardas</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation>Slaptafrazė</translation>
+        <translation>Jelszó</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Slaptafrazės ilgis nėra ribojamas, ir ji turi būti kruopščiai pasirinkta. Saugumo požiūriu slaptafrazė privačiajam raktui atrakinti yra viena silpniausių vietų GnuPG (ir kitose viešojo rakto šifravimo sistemose), nes tai vienintelė apsauga, kurią turite, jei kitas asmuo gauna jūsų privatųjį raktą. &lt;br/&gt;Idealiu atveju slaptafrazėje neturėtų būti naudojami žodyno žodžiai, ji turėtų maišyti raidžių registrą bei naudoti ne raidinius simbolius.&lt;br/&gt;Gera slaptafrazė yra būtina saugiam GnuPG naudojimui.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;A jelszó hosszára nincs korlátozás, és gondosan kell megválasztani. Biztonsági szempontból a privát kulcs feloldására szolgáló jelszó a GnuPG (és más nyilvános kulcsú titkosító rendszerek) egyik leggyengébb pontja, mivel ez az egyetlen védelem, amivel rendelkezel, ha egy másik személy megszerzi a privát kulcsodat. &lt;br/&gt;Ideális esetben a jelszó nem tartalmazhat szótári szavakat, és keverednie kell benne az ábécé karaktereinek kis- és nagybetűivel, valamint nem ábécés karakterekkel is.&lt;br/&gt;Egy jó jelszó elengedhetetlen a GnuPG biztonságos használatához.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Pakartoti slaptafrazę</translation>
+        <translation>Ismételt menet</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation>Ekspertas</translation>
+        <translation>Profi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Šablono turinys nustatytas pagal GPG versiją.</translation>
+        <translation>A sablon tartalma a GPG verzió alapján lesz beállítva.</translation>
+    </message>
+    <message>
+        <source>#           QtPass GPG key generator
+#
+#      first test version please comment
+#
+%echo Generating a default key
+Key-Type: default
+Subkey-Type: default
+Name-Real:
+Name-Comment: QtPass
+Name-Email:
+Expire-Date: 0
+%no-protection
+# Do a commit here, so that we can later print &quot;done&quot; :-)
+%commit
+%echo done</source>
+        <translation type="vanished"># QtPass GPG kulcsgenerátor
+#
+# első tesztverzió, kérjük, kommentáld
+#
+% echo Alapértelmezett kulcs generálása
+Key-Type: alapértelmezett
+Alkulcs típusa: alapértelmezett
+Név-Real:
+Név-megjegyzés: QtPass
+Név-E-mail:
+Lejárat-dátum: 0
+% No-védelem
+# Tegyen kötelezettséget itt, hogy később kinyomtassuk a &quot;kész&quot; -t :-)
+%elkövetni
+% visszhang kész</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Eksperto parinktims peržiūrėkite &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG vadovą&lt;/a&gt;</translation>
+        <translation>Szakértői lehetőségekért tekintse meg a &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG kézikönyvet&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
-        <translation>Nelegalus vardas</translation>
+        <translation>Érvénytelen név</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>Vardas turi būti bent 5 simboliais ilgas.</translation>
+        <translation>A névnek legalább 5 karakter hosszúnak kell lennie.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation>Neteisingas el. pašto adresas</translation>
+        <translation>Érvénytelen emailcím</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Įrašytas el. pašto adresas nėra teisingas.</translation>
+        <translation>A beírt e-mail cím nem érvényes e-mail cím.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Ši operacija gali užtrukti kelias minutes.&lt;br /&gt;Reikia sugeneruoti daug atsitiktinių baitų. Geriausia atlikti kitas veiklas (rašyti klaviatūra, judinti pelę, naudoti diskus) pirminių skaičių generavimo metu; tai padeda atsitiktinių skaičių generatoriui surinkti pakankamai entropijos.</translation>
+        <translation>Ez a művelet néhány percet vehet igénybe. &lt;br /&gt; Sok véletlen bájtot kell generálnunk. Jó ötlet, ha az első generálés során végezzünk más műveleteket is (írja be a billentyűzetet, mozgassa az egeret, használja a lemezeket); ez nagyobb esélyt ad a véletlenszám-generátor számára, hogy nagyobb legyen az entrópia.</translation>
     </message>
 </context>
 <context>
@@ -891,21 +979,94 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <translation>QtPass</translation>
     </message>
     <message>
+        <location filename="../src/mainwindow.ui" line="428"/>
+        <source>Git push</source>
+        <translation>Git push</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="433"/>
+        <source>Update</source>
+        <translation>Frissítés</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="436"/>
+        <source>Git pull</source>
+        <translation>Git pull</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="452"/>
+        <source>Configuration</source>
+        <translation>Konfiguráció</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="449"/>
+        <source>Config</source>
+        <translation>Konfig</translation>
+    </message>
+    <message>
+        <source>qtpass</source>
+        <translation type="vanished">qtpass</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="501"/>
+        <location filename="../src/mainwindow.cpp" line="514"/>
+        <source>Updating password-store</source>
+        <translation>Jelszó-tároló frissítése</translation>
+    </message>
+    <message>
+        <source>Clipboard cleared</source>
+        <translation type="vanished">Vágólap tiszta</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="625"/>
+        <location filename="../src/mainwindow.cpp" line="924"/>
+        <source>Content hidden</source>
+        <translation>Oldal elrejtve</translation>
+    </message>
+    <message>
+        <source>QProcess::FailedToStart</source>
+        <translation type="vanished">QProcess:NemIndultEl</translation>
+    </message>
+    <message>
+        <source>QProcess::Crashed</source>
+        <translation type="vanished">QProcess:Összeomlás</translation>
+    </message>
+    <message>
+        <source>QProcess::Timedout</source>
+        <translation type="vanished">QProcess:Időtúllépés</translation>
+    </message>
+    <message>
+        <source>QProcess::ReadError</source>
+        <translation type="vanished">QProcess:OlvasásiHiba</translation>
+    </message>
+    <message>
+        <source>QProcess::WriteError</source>
+        <translation type="vanished">IrásHiba</translation>
+    </message>
+    <message>
+        <source>QProcess::UnknownError</source>
+        <translation type="vanished">IsmeretlenHiba</translation>
+    </message>
+    <message>
+        <source>Copied to clipboard</source>
+        <translation type="vanished">a vágólapra másolt</translation>
+    </message>
+    <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>Pasirinkite profilį</translation>
+        <translation>Válassza ki a profilt</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="700"/>
         <location filename="../src/mainwindow.cpp" line="883"/>
         <source>Search Password</source>
-        <translation>Ieškoti slaptažodžio</translation>
+        <translation>Jelszó keresése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Ieškoti slaptažodžio turinyje (pass grep)</translation>
+        <translation>Keresés a jelszó tartalmában (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -915,17 +1076,17 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Turinio paieškos perjungimas</translation>
+        <translation>Tartalomkeresés kapcsoló</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Peržiūrėti turinio paiešką, kad ieškotumėte slaptažodžių failuose</translation>
+        <translation>Tartalomkeresési mód be- és kikapcsolása jelszófájlokban való kereséshez</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation>Neatskirantis rašybos būdo paieška</translation>
+        <translation>Kis- és nagybetűre nem érzékeny keresés</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -935,40 +1096,39 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Neatskirantis rašybos būdo peržiūra</translation>
+        <translation>Kis- és nagybetűre nem érzékeny váltás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation>Perjungti nelyginius ir lyginius turinio paieškos rezultatus</translation>
+        <translation>Kis- és nagybetűket nem megkülönböztető tartalomkeresés be- és kikapcsolása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation>Rezultatai</translation>
+        <translation>Eredmények</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Welcome to QtPass</source>
-        <translation>Sveiki atvykę, QtPass</translation>
+        <translation>Üdvözöljük a QtPass-ban</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="322"/>
-        <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
-&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt;QtPass yra grafinė sąsaja, skirta &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, standartinei Unix slaptažodžių tvarkyklei.&lt;/p&gt;
-&lt;p&gt;Praneškite apie bet kokias &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problemas&lt;/a&gt;, kurias galite turėti su šia programine įranga.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentacija&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Pirminis kodas&lt;/a&gt;&lt;/p&gt;</translation>
+        <location filename="../src/mainwindow.cpp" line="323"/>
+        <source>Clear output</source>
+        <translation>Kimenet törlése</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="322"/>
+        <source>Clear</source>
+        <translation>Törlés</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
-        <translation>Pridėti slaptažodį</translation>
+        <translation>Jelszóhozzáadás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -980,21 +1140,21 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1372"/>
         <source>Add folder</source>
-        <translation>Pridėti katalogą</translation>
+        <translation>Mappa hozzáadása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
         <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Edit</source>
-        <translation>Redaguoti</translation>
+        <translation>Szerkesztése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
         <location filename="../src/mainwindow.cpp" line="1394"/>
         <source>Delete</source>
-        <translation>Ištrinti</translation>
+        <translation>Töröl</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
@@ -1004,7 +1164,7 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Sukurti OTP ir nukopijuoti į iškarpinę</translation>
+        <translation>OTP generálása és másolás a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
@@ -1014,277 +1174,279 @@ Jūs negalėsite pakeisti naudotojų sąrašo!</translation>
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
         <source>Push</source>
-        <translation>Siųsti</translation>
+        <translation>Feltöltés</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="428"/>
-        <source>Git push</source>
-        <translation>Git siuntimas</translation>
+        <source>git push</source>
+        <translation type="vanished">git push</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.ui" line="433"/>
-        <source>Update</source>
-        <translation>Atnaujinti</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="436"/>
-        <source>Git pull</source>
-        <translation>Git gavimas</translation>
+        <source>git pull</source>
+        <translation type="vanished">git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1374"/>
         <source>Users</source>
-        <translation>Vartotojai</translation>
+        <translation>Felhasználók</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="444"/>
         <source>Manage who can read password in folder</source>
-        <translation>Valdyti, kurie gali skaityti slaptažodį kataloge</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="449"/>
-        <source>Config</source>
-        <translation>Konfig</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="452"/>
-        <source>Configuration</source>
-        <translation>Konfigūracija</translation>
+        <translation>Jelszó olvasásának engedélyezése a mappában</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Sveikiname su QtPass %1</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="322"/>
-        <source>Clear</source>
-        <translation>Išvalyti</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="323"/>
-        <source>Clear output</source>
-        <translation>Išvalyti išvestį</translation>
+        <translation>Üdvözöljük a QtPass-ban %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation>Išvesties procesas</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="501"/>
-        <location filename="../src/mainwindow.cpp" line="514"/>
-        <source>Updating password-store</source>
-        <translation>Atnaujinama slaptažodžių saugykla</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="625"/>
-        <location filename="../src/mainwindow.cpp" line="924"/>
-        <source>Content hidden</source>
-        <translation>Turinys užkrytas</translation>
+        <translation>Folyamat kimenete</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="629"/>
         <location filename="../src/mainwindow.cpp" line="1641"/>
         <source>Password</source>
-        <translation>Slaptažodis</translation>
+        <translation>Jelszó</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="666"/>
         <source>OTP Code</source>
-        <translation>OTP kodas</translation>
+        <translation>OTP kód</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
-        <translation>OTP kodas nukopijuotas į iškarpinę</translation>
+        <translation>OTP kód másolva a vágólapra</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Nėra OTP kodų šio slaptažodžio įrašyje</translation>
+        <translation>Nem található OTP kód ebben a jelszóbejegyzésben</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
-        <translation>Slaptažodis ir turinys paslėpti</translation>
+        <translation>Jelszó és tartalom elrejtve</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
         <source>Looking for: %1</source>
-        <translation>Ieškoma: %1</translation>
+        <translation>Keresés: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
-        <translation>Ieškoma…</translation>
+        <translation>Keresés…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation>Paieškos turinį (regex)</translation>
+        <translation>Tartalom keresése (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation>Nerasta atitikmenų.</translation>
+        <translation>Nincs egyezés.</translation>
+    </message>
+    <message numerus="yes">
+        <source>Found %n match(es) in %1 entr(ies).</source>
+        <translation type="vanished">
+            <numerusform>Talált %n találat %1 bejegyzésben.</numerusform>
+        </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation>
-            <numerusform>Rasta %n atitikmuo(s)</numerusform>
-            <numerusform>Rastos %n atitikmės</numerusform>
-            <numerusform>Rastos %n atitikmių</numerusform>
+            <numerusform>%n találat</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>rodo %n atitikmus.</numerusform>
-            <numerusform>rodo %n atitikimus.</numerusform>
-            <numerusform>rodo %n atitikmių.</numerusform>
+            <numerusform>%n bejegyzésben.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <location filename="../src/mainwindow.cpp" line="1467"/>
         <source>New file</source>
-        <translation>Naujas failas</translation>
+        <translation>Új fájl</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>Naujas slaptažodžių failas:
-(Bus patalpintas %1)</translation>
+        <translation>Új jelszófájl:
+(A következő mappába kerül: %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
         <source> and the whole content?</source>
-        <translation> ir visą turinį?</translation>
+        <translation> és a teljes tartalom?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> ir viso turinio? &lt;br&gt;&lt;strong&gt;Dėmesio: aplanke yra netikėti failai, patikrinkite juos prieš tęsdami.&lt;/strong&gt;</translation>
+        <translation> és a teljes tartalom? &lt;br&gt;&lt;strong&gt;Figyelem: váratlan fájlok vannak a megadott mappában, ellenőrizze őket a folytatás előtt.&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation>Trinti aplanką?</translation>
+        <translation>Mappa törlése?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation>Trinti slaptažodį?</translation>
+        <translation>Jelszó törlése?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Ar tikrai norite trinti %1%2?</translation>
+        <translation>Biztosan törölni szeretnéd ezt: %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>No password selected for OTP generation</source>
-        <translation>Nėra pasirinkto slaptažodžio dėl OTP gavimo</translation>
+        <translation>Nincs kiválasztva jelszó az OTP generálásához</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1242"/>
         <source>Profile changed to %1</source>
-        <translation>Profilis pakeistas į %1</translation>
+        <translation>Profil módosítva erre %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>Open folder with file manager</source>
-        <translation>Atidarykite aplanką su failų valdymo programomu</translation>
+        <translation>Mappa megnyitása fájlkezelővel</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
-        <translation>Pervadinti aplanką</translation>
+        <translation>Mappa átnevezése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation>Pervadinti slaptažodį</translation>
+        <translation>Jelszó átnevezése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation>Bendrinti</translation>
+        <translation>Megosztás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Iš naujo užšifruoti visus slaptažodžius</translation>
+        <translation>Az összes jelszó újratitkosítása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation>Eksportuoti mano viešąjį raktą...</translation>
+        <translation>Saját nyilvános kulcs exportálása…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation>Pridėti gavėją...</translation>
+        <translation>Címzett hozzáadása…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation>Ką tai yra?</translation>
+        <translation>Mi ez?</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1747"/>
+        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <source>Export Public Key</source>
+        <translation>Nyilvános kulcs exportálása</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1748"/>
+        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Exportálja a nyilvános kulcsát&lt;/h3&gt;&lt;p&gt;Nincs aláíró kulcs beállítva. Állítson be egyet a QtPass Beállítások &amp;gt; GPG-kulcsok menüpontban, vagy futtassa ezt egy terminálban:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Ezután küldje el a fájlt a csapattagjainak.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1768"/>
+        <source>Could not export public key for %1.
+
+%2</source>
+        <translation>%1 nyilvános kulcsa nem exportálható.
+
+%2</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1770"/>
+        <source>No output from gpg.</source>
+        <translation>Nincs kimenet a gpg-től.</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <source>Sharing Passwords with GPG</source>
+        <translation>Jelszavak megosztása GPG-vel</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1798"/>
+        <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
+        <translation>&lt;h3&gt;Jelszavak megosztása GPG-vel&lt;/h3&gt;&lt;p&gt;Jelszavak megosztása más felhasználókkal:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Exportálja a nyilvános kulcsát&lt;/b&gt; és küldje el a csapattagoknak&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importálja a csapattagok nyilvános kulcsait&lt;/b&gt; a GPG-kulcstartójába&lt;/li&gt;&lt;li&gt;&lt;b&gt;Titkosítsa újra a jelszavakat&lt;/b&gt;, hogy minden címzett vissza tudja fejteni&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Csak a megfelelő titkos kulccsal rendelkezők tudják visszafejteni a jelszavakat.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tipp:&lt;/b&gt; Használja ugyanazt a GPG-kulcsot minden megosztott mappához.&lt;/p&gt;&lt;p&gt;Lásd a GYIK-et a részletekért.&lt;/p&gt;</translation>
+    </message>
+    <message>
+        <source>Re-encrypt</source>
+        <translation type="vanished">Újra titkosítás</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Naujas aplankas:
-(Bus patalpintas %1)</translation>
+        <translation>Új mappa:
+(A következő mappába kerül: %1)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
         <location filename="../src/mainwindow.cpp" line="1487"/>
         <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Error</source>
-        <translation>Klaida</translation>
+        <translation>Hiba</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation>Nepavyko sukurti aplankio: %1</translation>
+        <translation>Nem sikerült létrehozni a következő mappát: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Nepavyko sukurti .gpg-id failo: %1</translation>
+        <translation>Nem sikerült létrehozni a .gpg-id fájlt itt: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename file</source>
-        <translation>Pervadinti failą</translation>
+        <translation>Fájl átnevezése</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
-        <translation>Pervadinti aplanką į: </translation>
+        <translation>Mappa átnevezése erre: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation>Pervadinti failą į: </translation>
+        <translation>Fájl átnevezése erre: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Directory does not exist: %1</source>
-        <translation>Aplanko nėra egzistuojančio: %1</translation>
+        <translation>A könyvtár nem létezik: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>Iš naujo užšifruokite slaptažodžius</translation>
+        <translation>Jelszavak újratitkosítása</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
@@ -1295,48 +1457,24 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Iš naujo užšifruoti visus slaptažodžius aplanke %1?
+        <translation>Újra titkosítja az összes jelszót a(z) %1 mappában?
 
-Tai iš naujo užšifruos VISUS slaptažodžių failus šiame aplanke naudojant dabartinius gavėjus, apibrėžtus .gpg-id.
+Ez újra titkosítja az ÖSSZES jelszófájlt ebben a mappában a .gpg-id fájlban meghatározott jelenlegi címzettek használatával.
 
-Tai gali perrašyti daug failų ir negali būti lengvai atšaukta.
+Ez sok fájlt átírhat, és nem lehet könnyen visszavonni.
 
-Tęsti?</translation>
+Folytatja?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
-        <source>Export Public Key</source>
-        <translation>Eksportuoti viešąjį raktą</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1748"/>
-        <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Eksportuokite savo viešąjį raktą&lt;/h3&gt;&lt;p&gt;Nesukonfigūruotas pasirašymo raktas. Nustatykite jį QtPass Nustatymai &amp;gt; GPG raktai arba paleiskite tai terminale:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;jūsų-rakto-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Tada nusiųskite failą savo komandos nariams.&lt;/p&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1768"/>
-        <source>Could not export public key for %1.
-
-%2</source>
-        <translation>Nepavyko eksportuoti viešojo rakto %1.
-
-%2</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1770"/>
-        <source>No output from gpg.</source>
-        <translation>gpg neturėjo išvesties.</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
-        <source>Sharing Passwords with GPG</source>
-        <translation>Slaptažodžių dalijimas su GPG</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.cpp" line="1798"/>
-        <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Slaptažodžių dalijimas su GPG&lt;/h3&gt;&lt;p&gt;Paleiskite slaptažodžius kitoms asmenims:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportuokite savo viešąjį slaptažodį&lt;/b&gt; ir siųskite jį kompanijams&lt;/li&gt;&lt;li&gt;&lt;b&gt;Įeikite kompanijų viešus slaptažodžius&lt;/b&gt; į Jūsų GPG atmintį&lt;/li&gt;&lt;li&gt;&lt;b&gt;Papildomai šifruokite slaptažodžius&lt;/b&gt;, kad visi gavėjai galėtų jį dešifruoti&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Tik tiems, kurie turi atitinkamą privatus slaptažodį, galima dešifruoti slaptažodžius.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Puiki idėja:&lt;/b&gt; Naudojant vieną GPG slaptažodį visiems dalijamams katalogams.&lt;/p&gt;&lt;p&gt;Peržiūrėkite FAQ, kad gautumėte daugiau informacijos.&lt;/p&gt;</translation>
+        <location filename="../src/mainwindow.ui" line="322"/>
+        <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
+&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
+        <translation>&lt;p&gt;A QtPass egy grafikus felhasználói felület a &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;passhoz&lt;/a&gt;, a szabványos unix jelszókezelőhöz.&lt;/p&gt;
+&lt;p&gt;Kérjük, jelentse a szoftverrel kapcsolatos esetleges &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;problémákat&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Dokumentáció&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;Forráskód&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1344,46 +1482,46 @@ Tęsti?</translation>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation>Neteisingas slaptažodžio ilgis</translation>
+        <translation>Érvénytelen jelszóhossz</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation>Negalima sukurti slaptažodo su nuliu ilgiu.</translation>
+        <translation>Nem lehet nulla hosszúságú jelszót generálni.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
         <source>No characters chosen</source>
-        <translation>Nėra pasirinktų simbolių</translation>
+        <translation>Nincsenek kiválasztott karakterek</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Negalima sukurti slaptažodo, nėra pasirinkamų simbolius konfigūracijos uždaryje!</translation>
+        <translation>Nem sikerült jelszót generálni, nincsenek karakterek beállítva a konfigurációban!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>Šifravimas atlikės ne sėkmingai: GPG raktas išmatęs laiką. Prašome jį atnaujinti ar pakeisti.</translation>
+        <translation>A titkosítás sikertelen: a GPG-kulcs lejárt. Kérjük, újítsa meg vagy cserélje ki.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation>Šifravimas atlikės ne sėkmingai: buvo atsisakytas GPG raktas.</translation>
+        <translation>A titkosítás sikertelen: a GPG-kulcsot visszavonták.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Šifravimas atlikės ne sėkmingai: nėra arba neteisingas gavėjo GPG raktas. Patikrinkite, ar .gpg-id failuje yra teisinga ir įimportuota raktinė ID.</translation>
+        <translation>A titkosítás sikertelen: a címzett GPG-kulcsa nem található vagy érvénytelen. Ellenőrizze, hogy a .gpg-id fájlban szereplő kulcsazonosító helyes-e, és importálva van-e.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>Šifravimas atlikės ne sėkmingai. Patikrinkite, ar Jūsų GPG raktas yra teisingas.</translation>
+        <translation>A titkosítás sikertelen. Ellenőrizze, hogy a GPG-kulcsa érvényes-e.</translation>
     </message>
 </context>
 <context>
@@ -1392,47 +1530,47 @@ Tęsti?</translation>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation>Slaptažodis</translation>
+        <translation>Jelszó</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation>Generuoti</translation>
+        <translation>Generálás</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation>Rodyti slaptažodį</translation>
+        <translation>Jelszó megjelenítése</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation>Simbolių rinkinys:</translation>
+        <translation>Karakterkészlet:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation>Visi simboliai</translation>
+        <translation>Összes karakter</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation>Abėcėliniai</translation>
+        <translation>Betűrendes</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation>Raidiniai-skaitiniai</translation>
+        <translation>Alfanumerikus</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation>Pasirinktinis</translation>
+        <translation>Egyedi</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation>Ilgis:</translation>
+        <translation>Hossz:</translation>
     </message>
 </context>
 <context>
@@ -1447,108 +1585,112 @@ Tęsti?</translation>
 <context>
     <name>QtPass</name>
     <message>
+        <location filename="../src/qtpass.cpp" line="275"/>
+        <source>QProcess::FailedToStart</source>
+        <translation>QProcess:NemIndultEl</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="278"/>
+        <source>QProcess::Crashed</source>
+        <translation>QProcess:Összeomlás</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="281"/>
+        <source>QProcess::Timedout</source>
+        <translation>QProcess:Időtúllépés</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="284"/>
+        <source>QProcess::ReadError</source>
+        <translation>QProcess:OlvasásiHiba</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="287"/>
+        <source>QProcess::WriteError</source>
+        <translation>IrásHiba</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="290"/>
+        <source>QProcess::UnknownError</source>
+        <translation>IsmeretlenHiba</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="306"/>
+        <source>GPG key pair generation failed</source>
+        <translation>GPG kulcspár generálása sikertelen</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="380"/>
+        <source>GPG key pair generated successfully</source>
+        <translation>GPG kulcspár sikeresen generálva</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="465"/>
+        <source>Clipboard cleared</source>
+        <translation>Vágólap tiszta</translation>
+    </message>
+    <message>
+        <location filename="../src/qtpass.cpp" line="512"/>
+        <source>Copied to clipboard</source>
+        <translation>a vágólapra másolt</translation>
+    </message>
+    <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Sukurti GPG raktų porą</translation>
+        <translation>GPG kulcspár generálása</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Netika prieigos prisijungimas prie WebDAV:
+        <translation>Sikertelen WebDAV-csatlakozás:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>QtPass WebDAV password</source>
-        <translation>QtPass WebDAV slaptažodis</translation>
+        <translation>QtPass WebDAV jelszó</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Įrašykite slaptažodį, kad prisijungtumėte prie WebDAV:</translation>
+        <translation>Írja be a jelszót a WebDAV-hoz való csatlakozáshoz:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>Fusedav išeina nekonsultuojant
+        <translation>A fusedav váratlanul kilépett
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Nepavyko paleisti fusedav, norėdami susisiekti su WebDAV:
+        <translation>Nem sikerült elindítani a fusedav-ot a WebDAV-hoz való csatlakozáshoz:
 </translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="275"/>
-        <source>QProcess::FailedToStart</source>
-        <translation>QProcess::Nepavyko paleisti</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="278"/>
-        <source>QProcess::Crashed</source>
-        <translation>QProcess::Išnyko</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="281"/>
-        <source>QProcess::Timedout</source>
-        <translation>Laikas ištekliai</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="284"/>
-        <source>QProcess::ReadError</source>
-        <translation>Nepavyko skaityti</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="287"/>
-        <source>QProcess::WriteError</source>
-        <translation>Nepavyko rašyti</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="290"/>
-        <source>QProcess::UnknownError</source>
-        <translation>Nežinomas klaida</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="306"/>
-        <source>GPG key pair generation failed</source>
-        <translation>GPG raktų pusiaukūrimas atšaukė</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="380"/>
-        <source>GPG key pair generated successfully</source>
-        <translation>GPG raktų pusiaukūrimas sėkmingas</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="465"/>
-        <source>Clipboard cleared</source>
-        <translation>Iškurto kopijavimo langelio turinį</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation>Nekurto kopijavimo langelio turinį</translation>
-    </message>
-    <message>
-        <location filename="../src/qtpass.cpp" line="512"/>
-        <source>Copied to clipboard</source>
-        <translation>Išsaugota į atmintį</translation>
+        <translation>A vágólap nincs kiürítve</translation>
     </message>
 </context>
 <context>
     <name>StoreModel</name>
     <message>
+        <source>force overwrite?</source>
+        <translation type="vanished">kényszerített felülírás?</translation>
+    </message>
+    <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation>Priversti pakeisti?</translation>
+        <translation>Kényszerített felülírás?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation>pakeisti %1 su %2?</translation>
+        <translation>felülírja a(z) %1 részt %2-vel?</translation>
     </message>
 </context>
 <context>
@@ -1556,32 +1698,32 @@ Tęsti?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&amp;Rodyti</translation>
+        <translation>&amp;Megmutat</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation>&amp;Slėpti</translation>
+        <translation>&amp;Elrejt</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>Su&amp;mažinti</translation>
+        <translation>Mi&amp;nimalizálás</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>Pa&amp;didinti</translation>
+        <translation>Ma&amp;ximalizálás</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp;Atkurti</translation>
+        <translation>&amp;Visszaállítás</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Uždaryti</translation>
+        <translation>&amp;Kilépés</translation>
     </message>
 </context>
 <context>
@@ -1589,7 +1731,7 @@ Tęsti?</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>Peržiūros prieigos vartotojai</translation>
+        <translation>Olvasási hozzáférésű felhasználók</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1598,71 +1740,71 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Pasirinkite, kurie naudotojai turėtų turėti galimybę iššifruoti šiame aplanke saugomus slaptažodžius.
-Pastaba: esami failai nebus pakeisti ir išlaikys senus leidimus, kol jų neredaguosite.
-Mėlynos eilutės turi prieinamą slaptąjį raktą — pasirinkite vieną iš jų, kad galėtumėte iššifruoti.
-Juodos eilutės turi prieinamą šifravimo raktą ir jis yra patikimas — pasirinkite vieną iš jų, kad leistumėte kitiems iššifruoti.
-Raudonos eilutės netinkamos, jūs negalėsite jų užšifruoti.</translation>
+        <translation>Válassza ki, hogy mely felhasználók tudják visszafejteni a mappában tárolt jelszavakat.
+Megjegyzés: A meglévő fájlok nem módosulnak, és a régi jogosultságok megmaradnak, amíg Ön nem szerkeszti őket.
+A kék bejegyzésekhez titkos kulcs tartozik, válasszon ki egyet a visszafejtéshez.
+A fekete bejegyzésekhez titkosító kulcs tartozik, és az megbízható, válasszon ki egyet, hogy mások is visszafejthessék.
+A piros bejegyzések érvénytelenek, nem fog tudni titkosítani velük.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
         <source>Search for users</source>
-        <translation>Leškoti vartotojų</translation>
+        <translation>Felhasználók keresése</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation>Rodyti nevartojamus raktus</translation>
+        <translation>Nem használható kulcsok megjelenítése</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation>Įrašyti raktą...</translation>
+        <translation>Kulcs importálása…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Įrašykite GPG raktą iš failo arba leidynio</translation>
+        <translation>GPG-kulcs importálása fájlból vagy vágólapról</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation>Trūksta raktų sąrašo</translation>
+        <translation>Hiányzó kulcslista</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Nepavyko gauti pasiekiamų GPG raktų sąrašo</translation>
+        <translation>Nem sikerült lekérni az elérhető GPG-kulcsok listáját</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation>Nėra rasti šifravimo raktas</translation>
+        <translation>Kulcs nem található a kulcstartóban</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
         <source>created</source>
-        <translation>atsimena</translation>
+        <translation>létrehozva</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="310"/>
         <source>expires</source>
-        <translation>Ištrintas</translation>
+        <translation>lejár</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="333"/>
         <source>[INVALID] </source>
-        <translation>[NEGALIOJA] </translation>
+        <translation>[ÉRVÉNYTELEN] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="336"/>
         <source>[EXPIRED] </source>
-        <translation>[GALIOJIMAS NEBEGALIOJA] </translation>
+        <translation>[LEJÁRT] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[PARTIAL] </source>
-        <translation>[DALINIS] </translation>
+        <translation>[RÉSZLEGES] </translation>
     </message>
 </context>
 </TS>

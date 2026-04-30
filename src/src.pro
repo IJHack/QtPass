@@ -8,12 +8,12 @@ CONFIG += c++17 staticlib
 CONFIG(release, debug|release):DEFINES += QT_NO_DEBUG_OUTPUT
 
 TRANSLATIONS    +=  ../localization/localization_ar.ts \
-                    ../localization/localization_ca_ES.ts \
-                    ../localization/localization_cs_CZ.ts \
-                    ../localization/localization_da_DK.ts \
+                    ../localization/localization_ca.ts \
+                    ../localization/localization_cs.ts \
+                    ../localization/localization_da.ts \
                     ../localization/localization_de_DE.ts \
                     ../localization/localization_de_LU.ts \
-                    ../localization/localization_el_GR.ts \
+                    ../localization/localization_el.ts \
                     ../localization/localization_en_GB.ts \
                     ../localization/localization_en_US.ts \
                     ../localization/localization_es_ES.ts \
@@ -21,46 +21,46 @@ TRANSLATIONS    +=  ../localization/localization_ar.ts \
                     ../localization/localization_es_EC.ts \
                     ../localization/localization_es_AR.ts \
                     ../localization/localization_es_UY.ts \
-                    ../localization/localization_et_EE.ts \
+                    ../localization/localization_et.ts \
                     ../localization/localization_fa.ts \
                     ../localization/localization_fr_BE.ts \
                     ../localization/localization_fr_FR.ts \
                     ../localization/localization_fr_LU.ts \
-                    ../localization/localization_gl_ES.ts \
-                    ../localization/localization_he_IL.ts \
-                    ../localization/localization_hu_HU.ts \
-                    ../localization/localization_it_IT.ts \
-                    ../localization/localization_ko_KR.ts \
+                    ../localization/localization_gl.ts \
+                    ../localization/localization_he.ts \
+                    ../localization/localization_hu.ts \
+                    ../localization/localization_it.ts \
+                    ../localization/localization_ko.ts \
                     ../localization/localization_lb_LU.ts \
-                    ../localization/localization_nb_NO.ts \
+                    ../localization/localization_nb.ts \
                     ../localization/localization_nl_BE.ts \
                     ../localization/localization_nl_NL.ts \
                     ../localization/localization_fy_NL.ts \
-                    ../localization/localization_pl_PL.ts \
+                    ../localization/localization_pl.ts \
                     ../localization/localization_pt_BR.ts \
                     ../localization/localization_pt_PT.ts \
-                    ../localization/localization_ru_RU.ts \
-                    ../localization/localization_sk_SK.ts \
-                    ../localization/localization_sq_AL.ts \
-                    ../localization/localization_sv_SE.ts \
-                    ../localization/localization_tr_TR.ts \
+                    ../localization/localization_ru.ts \
+                    ../localization/localization_sk.ts \
+                    ../localization/localization_sq.ts \
+                    ../localization/localization_sv.ts \
+                    ../localization/localization_tr.ts \
                     ../localization/localization_zh_CN.ts \
-                    ../localization/localization_cy_GB.ts \
-                    ../localization/localization_hr_HR.ts \
-                    ../localization/localization_af_ZA.ts \
-                    ../localization/localization_ro_RO.ts \
-                    ../localization/localization_si_LK.ts \
+                    ../localization/localization_cy.ts \
+                    ../localization/localization_hr.ts \
+                    ../localization/localization_af.ts \
+                    ../localization/localization_ro.ts \
+                    ../localization/localization_si.ts \
                     ../localization/localization_sr_RS.ts \
                     ../localization/localization_sr_Cyrl.ts \
-                    ../localization/localization_ja_JP.ts \
-                    ../localization/localization_bg_BG.ts \
-                    ../localization/localization_fi_FI.ts \
-                    ../localization/localization_uk_UA.ts \
-                    ../localization/localization_ta_IN.ts \
-                    ../localization/localization_id_ID.ts \
-                    ../localization/localization_lt_LT.ts \
-                    ../localization/localization_lv_LV.ts \
-                    ../localization/localization_sl_SI.ts \
+                    ../localization/localization_ja.ts \
+                    ../localization/localization_bg.ts \
+                    ../localization/localization_fi.ts \
+                    ../localization/localization_uk.ts \
+                    ../localization/localization_ta.ts \
+                    ../localization/localization_id.ts \
+                    ../localization/localization_lt.ts \
+                    ../localization/localization_lv.ts \
+                    ../localization/localization_sl.ts \
                     ../localization/localization_zh_Hant.ts
 
 CONFIG += lrelease embed_translations

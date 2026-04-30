@@ -1,123 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="cy_GB">
+<TS version="2.1" language="sq">
 <context>
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>Ffurfweddiad</translation>
+        <translation>Konfigurim</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
         <source>Settings</source>
-        <translation>Gosodiadau</translation>
+        <translation>Cilësimet</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation>Ymddygiad y Clipfwrdd:</translation>
+        <translation>Sjellja e klipboardit:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
         <source>Use primary selection</source>
-        <translation>Defnyddiwch ddetholiad cynradd</translation>
+        <translation>Përdorni përzgjedhjen parësore</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation>Autoclear ar ôl:</translation>
+        <translation>Pastrim Automatik pas:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation>Eiliadau</translation>
+        <translation>Sekonda</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation>Ymddygiad panel cynnwys:</translation>
+        <translation>Sjellja e panelit të përmbajtjes:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide content</source>
-        <translation>Cuddio&apos;r cynnwys</translation>
+        <translation>Fshih përmbajtjen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation>Cuddio&apos;r cyfrinair</translation>
+        <translation>Fshih fjalëkalimin</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Panel autoclear ar ôl:</translation>
+        <translation>Pastrim automatik i panelit pas:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Defnyddiwch ffont monospace</translation>
+        <translation>Përdorni një font monospace</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>Arddangos cynnwys y ffeiliau fel y mae</translation>
+        <translation>Shfaq përmbajtjen e skedarëve siç është</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>Dim lapio llinell</translation>
+        <translation>Pa mbështjellje rreshtash</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation>Dangos allbwn y broses</translation>
+        <translation>Trego daljen e procesit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
         <source>Password Generation:</source>
-        <translation>Cynhyrchu Cyfrinair:</translation>
+        <translation>Gjenerimi i fjalëkalimit:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation>Hyd Cyfrinair:</translation>
+        <translation>Gjatësia e fjalëkalimit:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
         <source>Characters</source>
-        <translation>Cymeriadau</translation>
+        <translation>Karaktere</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
         <source>Use characters:</source>
-        <translation>Defnyddiwch gymeriadau:</translation>
+        <translation>Përdorni karaktere:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
         <source>Select character set for password generation</source>
-        <translation>Dewis set nodau ar gyfer cynhyrchu cyfrinair</translation>
+        <translation>Zgjidhni setin e karaktereve për gjenerimin e fjalëkalimit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
         <source>All Characters</source>
-        <translation>Pob Cymeriad</translation>
+        <translation>Të gjitha karakteret</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
         <source>Alphabetical</source>
-        <translation>Nhrefn yr wyddor</translation>
+        <translation>Alfabetike</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
         <source>Alphanumerical</source>
-        <translation>Alffaniwmerig</translation>
+        <translation>Alfanumerike</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
         <source>Custom</source>
-        <translation>Personol</translation>
+        <translation>Personalizuar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
@@ -125,29 +125,33 @@
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="443"/>
-        <source>Use PWGen</source>
-        <translation>Defnyddio PWGen</translation>
+        <location filename="../src/configdialog.ui" line="460"/>
+        <source>Include special symbols</source>
+        <translation>Përfshini simbole të veçanta</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1008"/>
+        <source>Current path</source>
+        <translation>Shtegu aktual</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
-        <translation>Peidiwch â chynnwys priflythrennau</translation>
+        <translation>Përjashtoni shkronjat e mëdha</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="460"/>
-        <source>Include special symbols</source>
-        <translation>Cynnwys symbolau arbennig</translation>
+        <source>Include special symbols </source>
+        <translation type="vanished">Përfshini simbole të veçanta </translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Cynhyrchu cyfrineiriau hawdd i gof ond llai diogel</translation>
+        <translation>Gjeneroni fjalëkalime të thjeshta për tu memorizuar, por më pak të sigurta</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
         <source>Exclude numbers</source>
-        <translation>Eithrio rhifau</translation>
+        <translation>Përjashtoni numrat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
@@ -155,99 +159,341 @@
         <translation>Git:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="505"/>
-        <source>Use Git</source>
-        <translation>Defnyddio Git</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>Ychwanegwch ffeiliau .gpg-id yn awtomatig</translation>
+        <translation>Shtoni automatikisht skedarë .gpg-id</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically push</source>
-        <translation>Gwthio&apos;n awtomatig</translation>
+        <translation>Shty automatikisht</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation>Tynnu&apos;n awtomatig</translation>
+        <translation>Tërhiq automatikisht</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
         <source>Extensions:</source>
-        <translation>Estyniadau:</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="574"/>
-        <source>Use QRencode</source>
-        <translation>Defnyddio QRencode</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="588"/>
-        <source>Use pass-otp extension</source>
-        <translation>Defnyddio estyniad pass-otp</translation>
+        <translation>Zgjatime:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation>Galluogi chwilio am gynnwys (pass grep)</translation>
+        <translation>Aktivizo kërkimin e përmbajtjes (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Caniatáu chwilio y tu mewn i gynnwys ffeiliau cyfrinair. Mae angen dadgryptio pob ffeil a gall fod yn araf ar storfeydd mawr.</translation>
+        <translation>Lejo kërkimin brenda përmbajtjes së skedarëve të fjalëkalimeve. Kërkon deshifrimin e çdo skedari dhe mund të jetë i ngadaltë në depo të mëdha fjalëkalimesh.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
         <source>System:</source>
-        <translation>System:</translation>
+        <translation>Sistem:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation>Defnyddiwch eicon Hambwrdd System</translation>
+        <translation>Përdorni ikonën e trayit</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
         <source>Start minimized</source>
-        <translation>Dechrau lleihau</translation>
+        <translation>Filloni të minimizuar</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation>Cuddio ar gau</translation>
+        <translation>Fsheheni kur ta mbyllni</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
         <source>Always on top</source>
-        <translation>Bob amser ar ben</translation>
+        <translation>Gjithmonë në krye</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
         <source>Programs</source>
-        <translation>Rhaglenni</translation>
+        <translation>Programe</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
         <source>Select password storage program:</source>
-        <translation>Dewis rhaglen storio cyfrinair:</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="709"/>
-        <source>Nati&amp;ve Git/GPG</source>
-        <translation>&amp;Brodorol Git/GPG</translation>
+        <translation>Zgjidhni programin e ruajtjes së fjalëkalimit:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation>&amp;Defnydd pass</translation>
+        <translation>&amp;Përdorni kalimin (pass)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
         <source>Native</source>
-        <translation>Brodorol</translation>
+        <translation>Vendase</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="776"/>
+        <source>Generate</source>
+        <translation>Gjenero</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="779"/>
+        <source>Generate GPG key pair</source>
+        <translation>Gjeneroni çiftin e çelësave GPG</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="816"/>
+        <source>Pass</source>
+        <translation>Kaloj</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="827"/>
+        <source>pass</source>
+        <translation>kaloj</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="846"/>
+        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="877"/>
+        <source>Autodetect</source>
+        <translation>Detektim automatik</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="900"/>
+        <source>Profiles</source>
+        <translation>Profilet</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="949"/>
+        <source>Name</source>
+        <translation>Emri</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="952"/>
+        <source>Profile name, used to identify this configuration profile</source>
+        <translation>Emri i profilit, i përdorur për të identifikuar këtë profil konfigurimi</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="957"/>
+        <source>Path</source>
+        <translation>Shtegu</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="960"/>
+        <source>Path to the password store directory</source>
+        <translation>Shtegu për në direktorinë e ruajtjes së fjalëkalimeve</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="965"/>
+        <source>Signing Key</source>
+        <translation>Çelësi i Nënshkrimit</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="968"/>
+        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
+        <translation>Opsionale: Çelësi GPG për të nënshkruar skedarët .gpg-id për verifikimin e integritetit. Lëreni bosh përveçse nëse keni nevojë të mbroni listën e përdoruesve nga ndërhyrjet.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="978"/>
+        <source>Add</source>
+        <translation>Shto</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="993"/>
+        <source>Delete</source>
+        <translation>Fshij</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1028"/>
+        <source>Template</source>
+        <translation>Shabllon</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1058"/>
+        <source>Use template</source>
+        <translation>Përdorni shabllonin</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1065"/>
+        <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
+        <translation>Trego të gjitha rreshtat që fillojnë me një fjalë të ndjekur nga dy pika si fusha në fushat e fjalëkalimit, jo vetëm ato të listuarat</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1068"/>
+        <source>Show all fields templated</source>
+        <translation>Trego modelin e të gjitha fushave</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="1095"/>
+        <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="68"/>
+        <source>System tray is not available</source>
+        <translation>Tabaka e sistemit nuk është në dispozicion</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="95"/>
+        <source>Pass OTP extension needs to be installed</source>
+        <translation>Zgjatimi Pass OTP duhet të instalohet</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="100"/>
+        <source>qrencode needs to be installed</source>
+        <translation>qrencode duhet të instalohet</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="125"/>
+        <source>No Clipboard</source>
+        <translation>Asnjë Klipboard</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="126"/>
+        <source>Always copy to clipboard</source>
+        <translation>Gjithmonë kopjoni në klipboard</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="127"/>
+        <source>On-demand copy to clipboard</source>
+        <translation>Kopjoni në klipboard sipas kërkesës</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="210"/>
+        <location filename="../src/configdialog.cpp" line="226"/>
+        <source>This field is required</source>
+        <translation>Kjo fushë është e detyrueshme</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="720"/>
+        <source>Create profile directory?</source>
+        <translation>Të krijohet dosja e profilit?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="721"/>
+        <source>Would you like to create a password store at %1?</source>
+        <translation>Dëshiron të krijosh një magazinë fjalëkalimesh në %1?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="729"/>
+        <source>Could not create profile directory: %1</source>
+        <translation>Dosja e profilit nuk u krijua dot: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="747"/>
+        <source>Select recipients for %1</source>
+        <translation>Zgjidh marrësit për %1</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="773"/>
+        <source>New Profile</source>
+        <translation>Profili i ri</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="810"/>
+        <source>No profile selected</source>
+        <translation>Asnjë profil i zgjedhur</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="811"/>
+        <source>No profile selected to delete</source>
+        <translation>Asnjë profil i zgjedhur për të fshirë</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="911"/>
+        <source>GnuPG not found</source>
+        <translation>GnuPG nuk u gjet</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="914"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
+        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj.&lt;br&gt;Instaloni &lt;strong&gt;Ubuntu&lt;/strong&gt; nga Microsoft Store për ta marrë.&lt;br&gt;Nëse tashmë e keni bërë një gjë të tillë, sigurohuni që e keni filluar një herë dhe klikoni &quot;Autodetect&quot; në dialogun tjetër.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="919"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj.&lt;br&gt;Instaloni &lt;strong&gt;Ubuntu&lt;/strong&gt; nga Microsoft Store&lt;br&gt;ose &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;shkarkoni&lt;/a&gt; nga GnuPG.org</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="925"/>
+        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
+        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. Instaloni &lt;strong&gt; gpg &lt;/strong&gt; duke përdorur menaxherin tuaj të preferuar të paketave (package manager) &lt;br&gt; ose &lt;a href = &quot;https://www.gnupg.org/download/#sec-1- 2 &quot;&gt; shkarkoni &lt;/a&gt; nga GnuPG.org</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="979"/>
+        <source>Create password-store?</source>
+        <translation>Krijoni password-store?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="980"/>
+        <source>Would you like to create a password-store at %1?</source>
+        <translation>Dëshiron të krijosh një password-store në %1?</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="728"/>
+        <location filename="../src/configdialog.cpp" line="985"/>
+        <source>Error</source>
+        <translation>Gabim</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="986"/>
+        <source>Failed to create password-store at: %1</source>
+        <translation>Dështoi në krijimin e ruajtjes së fjalëkalimeve në: %1</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1017"/>
+        <source>Password store not initialised</source>
+        <translation>Password store jo i inicializuar</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1018"/>
+        <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
+        <translation>Dosja %1 nuk duket të jetë një dyqan me fjalëkalime ose ende nuk është inicializuar.</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1263"/>
+        <source>New profile: %1 at %2</source>
+        <translation>Profil i ri: %1 në %2</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1267"/>
+        <source>Profile: %1 at %2</source>
+        <translation>Profil: %1 në %2</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="1272"/>
+        <source>Fill in all required fields</source>
+        <translation>Plotëso të gjitha fushat e kërkuara</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="443"/>
+        <source>Use PWGen</source>
+        <translation>Përdorni PWGen</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="505"/>
+        <source>Use Git</source>
+        <translation>Përdorni Git</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="574"/>
+        <source>Use QRencode</source>
+        <translation>Përdorni QRencode</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="588"/>
+        <source>Use pass-otp extension</source>
+        <translation>Përdorni zgjatimin pass-otp</translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="709"/>
+        <source>Nati&amp;ve Git/GPG</source>
+        <translation>&amp;Vendas Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -264,16 +510,6 @@
         <translation>…</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="776"/>
-        <source>Generate</source>
-        <translation>Gynhyrchu</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="779"/>
-        <source>Generate GPG key pair</source>
-        <translation>Cynhyrchu pâr allweddi GPG</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="786"/>
         <source>GPG</source>
         <translation>GPG</translation>
@@ -284,99 +520,9 @@
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="816"/>
-        <source>Pass</source>
-        <translation>Pass</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="827"/>
-        <source>pass</source>
-        <translation>pass</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="846"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="877"/>
-        <source>Autodetect</source>
-        <translation>Canfod awtomatig</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="900"/>
-        <source>Profiles</source>
-        <translation>Proffiliau</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="949"/>
-        <source>Name</source>
-        <translation>Enw</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="952"/>
-        <source>Profile name, used to identify this configuration profile</source>
-        <translation>Enw proffil, a ddefnyddir i adnabod y proffil ffurfweddu hwn</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="957"/>
-        <source>Path</source>
-        <translation>Llwybr</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="960"/>
-        <source>Path to the password store directory</source>
-        <translation>Llwybr i&apos;r cyfeiriadur storio cyfrineiriau</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="965"/>
-        <source>Signing Key</source>
-        <translation>Allwedd Lofnodi</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="968"/>
-        <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Dewisol: Allwedd GPG i lofnodi ffeiliau .gpg-id ar gyfer gwirio cyfanrwydd. Gadewch yn wag oni bai bod angen i chi amddiffyn y rhestr defnyddwyr rhag cael ei halogi.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="978"/>
-        <source>Add</source>
-        <translation>Ychwanegu</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="993"/>
-        <source>Delete</source>
-        <translation>Dileu</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1008"/>
-        <source>Current path</source>
-        <translation>Llwybr presennol</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1028"/>
-        <source>Template</source>
-        <translation>Templed</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Mae templedi yn ychwanegu meysydd ychwanegol yn y ddeialog cynhyrchu cyfrinair, ac yn y golwg cyfrinair.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1058"/>
-        <source>Use template</source>
-        <translation>Defnyddio templed</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1065"/>
-        <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Dangos pob llinell sy&apos;n dechrau gyda gair a ddilynir gan colon fel meysydd mewn meysydd cyfrinair, nid yn unig y rhai rhestredig</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1068"/>
-        <source>Show all fields templated</source>
-        <translation>Dangos pob maes a templwyd</translation>
+        <translation>Modelet shtojnë fusha shtesë në dialogun e gjenerimit të fjalëkalimit dhe në pamjen e fjalëkalimit.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1080"/>
@@ -387,202 +533,60 @@ e-mail</source>
 URL
 e-mail</translation>
     </message>
-    <message>
-        <location filename="../src/configdialog.ui" line="1095"/>
-        <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; fersiwn </translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="68"/>
-        <source>System tray is not available</source>
-        <translation>Dydy cafn cysawd ddim ar gael</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="95"/>
-        <source>Pass OTP extension needs to be installed</source>
-        <translation>Mae angen gosod estyniad Pass OTP</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="100"/>
-        <source>qrencode needs to be installed</source>
-        <translation>Mae angen gosod qrencode</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="125"/>
-        <source>No Clipboard</source>
-        <translation>Dim Clipfwrdd</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="126"/>
-        <source>Always copy to clipboard</source>
-        <translation>Copïo i&apos;r Clipfwrdd bob tro</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="127"/>
-        <source>On-demand copy to clipboard</source>
-        <translation>Copi ar alw i&apos;r Clipfwrdd</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="210"/>
-        <location filename="../src/configdialog.cpp" line="226"/>
-        <source>This field is required</source>
-        <translation>Mae&apos;r maes hwn yn ofynnol</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="720"/>
-        <source>Create profile directory?</source>
-        <translation>Creu cyfeiriadur proffil?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
-        <source>Would you like to create a password store at %1?</source>
-        <translation>Hoffech chi greu storfa gyfrineiriau yn %1?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
-        <source>Could not create profile directory: %1</source>
-        <translation>Methwyd creu cyfeiriadur proffil: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="747"/>
-        <source>Select recipients for %1</source>
-        <translation>Dewiswch dderbynwyr ar gyfer %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="773"/>
-        <source>New Profile</source>
-        <translation>Proffil newydd</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="810"/>
-        <source>No profile selected</source>
-        <translation>Dim proffil wedi&apos;i ddewis</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="811"/>
-        <source>No profile selected to delete</source>
-        <translation>Dim proffil wedi&apos;i ddewis i&apos;w ddileu</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="911"/>
-        <source>GnuPG not found</source>
-        <translation>Heb ganfod GnuPG</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="914"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; Ubuntu &lt;/strong&gt; o&apos;r Microsoft Store i&apos;w gael. &lt;br&gt; Os gwnaethoch hynny eisoes, gwnewch yn siŵr eich bod wedi ei gychwyn unwaith a &lt;br&gt; cliciwch &quot;Autodetect&quot; yn yr ymgom nesaf.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="919"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; Ubuntu &lt;/strong&gt; o Microsoft Store &lt;br&gt; or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; lawrlwytho &lt;/a&gt; hi o GnuPG.org</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="925"/>
-        <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; GPG &lt;/strong&gt; gan ddefnyddio eich hoff rheolwr pecyn &lt;br&gt; neu &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lawrlwytho &lt;/a&gt; hi o GnuPG.org</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="979"/>
-        <source>Create password-store?</source>
-        <translation>Creu siop cyfrinair?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="980"/>
-        <source>Would you like to create a password-store at %1?</source>
-        <translation>Hoffech chi greu siop-gyfrinair yn %1?</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="728"/>
-        <location filename="../src/configdialog.cpp" line="985"/>
-        <source>Error</source>
-        <translation>Gwall</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="986"/>
-        <source>Failed to create password-store at: %1</source>
-        <translation>Methwyd creu storfa-gyfrinair yn: %1</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1017"/>
-        <source>Password store not initialised</source>
-        <translation>Storfa cyfrinair heb ei ymgychwyn</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1018"/>
-        <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Nid yw&apos;r ffolder %1 yn ymddangos fel storfa cyfrinair neu nid yw wedi&apos;i ymgychwyn eto.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1263"/>
-        <source>New profile: %1 at %2</source>
-        <translation>Proffil newydd: %1 yn %2</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1267"/>
-        <source>Profile: %1 at %2</source>
-        <translation>Proffil: %1 yn %2</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="1272"/>
-        <source>Fill in all required fields</source>
-        <translation>Llenwch yr holl feysydd gofynnol</translation>
-    </message>
 </context>
 <context>
     <name>ExportPublicKeyDialog</name>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation>Allforio Allwedd Gyhoeddus</translation>
+        <translation>Eksporto çelësin publik</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
         <source>Public key</source>
-        <translation>Allwedd gyhoeddus</translation>
+        <translation>Çelësi publik</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>Copïo i&apos;r clipfwrdd</translation>
+        <translation>Kopjo në klipboard</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
         <source>Save to File...</source>
-        <translation>Cadw i Ffeil...</translation>
+        <translation>Ruaj në skedar…</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>Allwedd gyhoeddus ar gyfer %1</translation>
+        <translation>Çelësi publik për %1</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
         <source>Copied!</source>
-        <translation>Wedi&apos;i gopïo!</translation>
+        <translation>U kopjua!</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="83"/>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>Cadw&apos;r allwedd gyhoeddus</translation>
+        <translation>Ruaj çelësin publik</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>Allwedd ASCII-armored (*.asc);;Pob ffeil (*)</translation>
+        <translation>Çelës ASCII-armored (*.asc);;Të gjithë skedarët (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
         <source>Could not open %1 for writing: %2</source>
-        <translation>Methwyd agor %1 i ysgrifennu iddo: %2</translation>
+        <translation>%1 nuk u hap dot për shkrim: %2</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="101"/>
         <source>Could not write to %1: %2</source>
-        <translation>Methwyd ysgrifennu i %1: %2</translation>
+        <translation>Nuk u shkrua dot në %1: %2</translation>
     </message>
 </context>
 <context>
@@ -592,138 +596,138 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation>Gwiriwch llofnod y ffeil .gpgid!</translation>
+        <translation>Kontrolloni nënshkrimin e skedarit .gpgid!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>Llofnod %1 yn annilys.</translation>
+        <translation>Nënshkrimi për %1 është i pavlefshëm.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="149"/>
         <location filename="../src/imitatepass.cpp" line="598"/>
         <source>Can not edit</source>
-        <translation>Methu golygu</translation>
+        <translation>Nuk mund të modifikoni</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Methwyd darllen allwedd amgryptio i&apos;w ddefnyddio, .gpg-id File ar goll neu annilys.</translation>
+        <translation>Nuk mund të lexohet çelësi i enkriptimit për t’u përdorur, skedari .gpg-id mungon ose i pavlefshëm.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
         <source>GPG signing failed!</source>
-        <translation>Methodd llofnodi GPG!</translation>
+        <translation>Nënshkrimi i GPG dështoi!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
         <source>Failed to sign %1.</source>
-        <translation>Methwyd llofnodi %1.</translation>
+        <translation>Dështoi në nënshkrimin e %1.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation>Dim allwedd lofnodi!</translation>
+        <translation>Pa çelës nënshkrimi!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>Nid oes yr un o&apos;r allweddi lofnodi cyfrinachol ar gael.
-Ni fyddwch yn gallu newid y rhestr defnyddwyr!</translation>
+        <translation>Asnjë nga çelësat sekretë të nënshkrimit nuk është i disponueshëm.
+Nuk do të jeni në gjendje të ndryshoni listën e përdoruesve!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
-        <translation>Methu diweddaru</translation>
+        <translation>Nuk mund të modifikohet</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>Methwyd agor .gpg-id ar gyfer ysgrifennu.</translation>
+        <translation>Nuk mund të hapet .gpg-id për shkrim.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
         <source>Check selected users!</source>
-        <translation>Gwirio&apos;r defnyddwyr a ddewiswyd!</translation>
+        <translation>Kontrolloni përdoruesit e zgjedhur!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Does dim allwedd gyfrinachol ar gael gan yr un o&apos;r bysellau a ddewiswyd.
-Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</translation>
+        <translation>Asnjë nga çelësat e zgjedhur nuk ka një çelës sekret në dispozicion.
+Ju nuk do të jeni në gjendje të deshifroni ndonjë fjalëkalim të shtuar rishtazi!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>Methodd ail-amgryptio</translation>
+        <translation>Ri-enkriptimi dështoi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>Methwyd disodli %1. Mae&apos;r gwreiddiol wedi&apos;i adfer.</translation>
+        <translation>Zëvendësimi i %1 dështoi. Origjinali është rikthyer.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
         <source>Creating backup commit</source>
-        <translation>Creu ymrwymiad wrth gefn</translation>
+        <translation>Krijimi i një kopje rezervë të kryer</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="698"/>
         <location filename="../src/imitatepass.cpp" line="706"/>
         <source>Backup commit failed</source>
-        <translation>Methodd yr ymrwymiad wrth gefn</translation>
+        <translation>Kryerja e kopjes rezervë dështoi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>Methwyd archwilio statws git. Cafodd yr ail-amgryptio ei atal.</translation>
+        <translation>Nuk mund të inspektohej statusi i git. Ri-enkriptimi u ndërpre.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>Cafodd yr ail-amgryptio ei atal oherwydd na ellid creu copi wrth gefn git.</translation>
+        <translation>Ri-enkriptimi u ndërpre sepse nuk mund të krijohej një kopje rezervë git.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Ail-amgryptio o blygell %1</translation>
+        <translation>Ri-kriptimi nga dosja %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
         <location filename="../src/imitatepass.cpp" line="787"/>
         <source>Updating password-store</source>
-        <translation>Diweddaru&apos;r siop cyfrinair</translation>
+        <translation>Përditësimi i dyqanit me fjalëkalime</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="757"/>
         <source>GPG ID verification failed</source>
-        <translation>Methodd dilysu ID GPG</translation>
+        <translation>Verifikimi i ID-së së GPG dështoi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>Methwyd gwirio .gpg-id ar gyfer y cyfeiriadur.</translation>
+        <translation>Nuk mund të verifikohej .gpg-id për direktorinë.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Methwyd ail-amgryptio %1</translation>
+        <translation>Dështoi në rikriptimin e %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Ail-amgryptio wedi&apos;i gwblhau: llwyddodd %1, methodd %2</translation>
+        <translation>Ri-enkriptimi përfundoi: %1 pati sukses, %2 dështoi</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Ail-amgryptio wedi&apos;i gwblhau: %1 ffeil wedi&apos;u hail-amgryptio</translation>
+        <translation>Ri-enkriptimi përfundoi: %1 skedarë u rienkriptuan</translation>
     </message>
 </context>
 <context>
@@ -732,42 +736,42 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation>Mewnforio allwedd GPG</translation>
+        <translation>Importo çelësin GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation>Mewnforiwch allwedd gyhoeddus GPG o ffeil neu gludwch hi isod. Dylai&apos;r allwedd fod ar ffurf ASCII-armored.</translation>
+        <translation>Importo një çelës publik GPG nga skedari ose ngjite atë më poshtë. Çelësi duhet të jetë në format ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
         <source>From File...</source>
-        <translation>O ffeil…</translation>
+        <translation>Nga skedari…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
         <source>From Clipboard</source>
-        <translation>O&apos;r clipfwrdd</translation>
+        <translation>Nga klipboardi</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
         <source>Paste an ASCII-armored GPG key here...</source>
-        <translation>Gludwch allwedd GPG ASCII-armored yma…</translation>
+        <translation>Ngjit një çelës GPG ASCII-armored këtu…</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation>Mewnforio</translation>
+        <translation>Importo</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>ASCII-armored GPG key</source>
-        <translation>Allwedd GPG ASCII-armored</translation>
+        <translation>Çelës GPG ASCII-armored</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation>Pob ffeil</translation>
+        <translation>Të gjithë skedarët</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -775,34 +779,34 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
         <location filename="../src/importkeydialog.cpp" line="167"/>
         <location filename="../src/importkeydialog.cpp" line="171"/>
         <source>Import Key</source>
-        <translation>Mewnforio allwedd</translation>
+        <translation>Importo çelësin</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="52"/>
         <source>Could not open file: %1</source>
-        <translation>Methwyd agor y ffeil: %1</translation>
+        <translation>Skedari nuk u hap dot: %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation>Nid yw %1 yn edrych fel allwedd GPG ASCII-armored. Trosiwch hi&apos;n gyntaf gyda &lt;code&gt;gpg --armor --export&lt;/code&gt;, neu gludwch y bloc ASCII-armored drwy &lt;b&gt;O&apos;r clipfwrdd&lt;/b&gt;.</translation>
+        <translation>%1 nuk duket si një çelës GPG ASCII-armored. Konvertoje fillimisht me &lt;code&gt;gpg --armor --export&lt;/code&gt;, ose ngjit blokun ASCII-armored përmes &lt;b&gt;Nga klipboardi&lt;/b&gt;.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
         <source>GPG import failed:
 %1</source>
-        <translation>Methwyd y mewnforio GPG:
+        <translation>Importimi GPG dështoi:
 %1</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>Methwyd darllen ID yr allwedd a fewnforiwyd o allbwn GPG.</translation>
+        <translation>ID-ja e çelësit të importuar nuk u lexua dot nga dalja GPG.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation>Allwedd wedi&apos;i mewnforio&apos;n llwyddiannus: %1</translation>
+        <translation>Çelësi u importua me sukses: %1</translation>
     </message>
 </context>
 <context>
@@ -810,79 +814,47 @@ Ni fyddwch yn gallu dadgryptio unrhyw gyfrineiriau sydd newydd eu hychwanegu!</t
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Cynhyrchu GnuPG keypair</translation>
+        <translation>Gjeneroni çiftin e çelësave GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Cynhyrchu pâr allweddol newydd</translation>
+        <translation>Gjeneroni një palë të re çelësash</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
         <source>Email</source>
-        <translation>E-bost</translation>
+        <translation>Email</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
         <source>Name</source>
-        <translation>Enw</translation>
+        <translation>Emri</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation>Ymadrodd cyfrin</translation>
+        <translation>Frazë kalimi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt; &lt;head/&gt; &lt;body&gt; &lt;p&gt; nid oes terfyn ar hyd ymadrodd cyfrin, a dylid ei ddewis yn ofalus. O safbwynt diogelwch, yr ymadrodd cyfrin i ddatgloi&apos;r allwedd breifat yw un o&apos;r pwyntiau gwannaf yn GnuPG (a systemau amgryptio allweddol cyhoeddus eraill hefyd) gan mai dyma&apos;r unig amddiffyniad sydd gennych os yw unigolyn arall yn cael eich allwedd breifat. &lt;br/&gt; yn ddelfrydol, ni ddylai&apos;r ymadrodd cyfrin ddefnyddio geiriau o eiriadur a dylai gymysgu&apos;r achos o gymeriadau yn nhrefn yr wyddor yn ogystal â defnyddio nodau nad ydynt yn yr wyddor. &lt;br/&gt; Mae Cyfrin-ymadrodd da yn hanfodol i&apos;r defnydd diogel o GnuPG. &lt;/p&gt; &lt;/body&gt; &lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Nuk ka kufizim në gjatësinë e një fjalëkalimi dhe duhet të zgjidhet me kujdes. Nga perspektiva e sigurisë, fjalëkalimi për të zhbllokuar çelësin privat është një nga pikat më të dobëta në GnuPG (dhe gjithashtu në sisteme të tjera të enkriptimit me çelës publik) pasi është mbrojtja e vetme që keni nëse një individ tjetër merr çelësin tuaj privat. &lt;br/&gt;Idealisht, fjalëkalimi nuk duhet të përdorë fjalë nga një fjalor dhe duhet të përziejë shkronjat e vogla dhe të vogla të karaktereve alfabetike, si dhe të përdorë karaktere jo-alfabetike.&lt;br/&gt;Një fjalëkalim i mirë është thelbësor për përdorimin e sigurt të GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Ailadrodd pass</translation>
+        <translation>Kalimi i përsëritur</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
         <source>Expert</source>
-        <translation>Arbenigol</translation>
+        <translation>Ekspert</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Bydd cynnwys y templed yn cael ei osod yn seiliedig ar fersiwn GPG.</translation>
-    </message>
-    <message>
-        <source>#           QtPass GPG key generator
-#
-#      first test version please comment
-#
-%echo Generating a default key
-Key-Type: RSA
-Subkey-Type: RSA
-Name-Real:
-Name-Comment: QtPass
-Name-Email:
-Expire-Date: 0
-%no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
-%commit
-%echo done</source>
-        <translation type="vanished">#           QtPass GPG key generator
-#
-#      first test version please comment
-#
-%echo Generating a default key
-Key-Type: RSA
-Subkey-Type: RSA
-Name-Real:
-Name-Comment: QtPass
-Name-Email:
-Expire-Date: 0
-%no-protection
-# Do a commit here, so that we can later print &quot;done&quot; :-)
-%commit
-%echo done</translation>
+        <translation>Përmbajtja e shabllonit do të vendoset bazuar në versionin GPG.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -900,9 +872,9 @@ Expire-Date: 0
 # Do a commit here, so that we can later print &quot;done&quot; :-)
 %commit
 %echo done</source>
-        <translation type="vanished">#           QtPass GPG key generator
+        <translation type="vanished">#           QtPass GPG gjererues i çelësave
 #
-#      first test version please comment
+#      versioni i parë i testit ju lutemi komentoni
 #
 %echo Generating a default key
 Key-Type: default
@@ -919,32 +891,32 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>Ar gyfer dewisiadau arbenigol edrychwch ar y &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; GnuPG manual &lt;/a&gt;</translation>
+        <translation>Për opsionet e ekspertëve shikoni &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; Manuali GnuPG &lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
         <source>Invalid name</source>
-        <translation>Enw annilys</translation>
+        <translation>Emër i pavlefshëm</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>Rhaid i&apos;r enw fod o leiaf 5 nod o hyd.</translation>
+        <translation>Emri duhet të jetë i gjatë së paku 5 karaktere.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation>E-bost annilys</translation>
+        <translation>Email i pavlefshem</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation>Dydy&apos;r cyfeiriad e-bost deipioch chi ddim yn gyfeiriad e-bost dilys.</translation>
+        <translation>Adresa e emailit që keni vendosur nuk është e vlefshme.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>Gall y llawdriniaeth hon gymryd rhai munudau. &lt;br /&gt; Mae angen i ni gynhyrchu llawer o bytes ar hap. Mae&apos;n syniad da cyflawni rhyw weithred arall (teipiwch ar y bysellfwrdd, symud y llygoden, defnyddio&apos;r disgiau) yn ystod y brif genhedlaeth; mae hyn yn rhoi gwell cyfle i&apos;r generadur rhif ar hap ennill digon o entropi.</translation>
+        <translation>Ky operacion mund të zgjasë disa minuta. &lt;br /&gt; Ne duhet të gjenerojmë shumë byte të rastit. është një ide e mirë për të kryer ndonjë veprim tjetër (shkruani në tastierë, lëvizni miun, përdorni disqet) gjatë gjenerimit kryesor; kjo i jep gjeneratorit të numrave të rastit një shans më të mirë për të fituar entropi të mjaftueshme.</translation>
     </message>
 </context>
 <context>
@@ -957,19 +929,19 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation>Dewis proffil</translation>
+        <translation>Zgjidhni profilin</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="700"/>
         <location filename="../src/mainwindow.cpp" line="883"/>
         <source>Search Password</source>
-        <translation>Cyfrinair chwilio</translation>
+        <translation>Fjalëkalimi i kërkimit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Chwilio y tu mewn i gynnwys cyfrinair (pass grep)</translation>
+        <translation>Kërko brenda përmbajtjes së fjalëkalimit (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -979,17 +951,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation>Togl chwilio cynnwys</translation>
+        <translation>Aktivizimi i kërkimit të përmbajtjes</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Togglo modd chwilio cynnwys i chwilio y tu mewn i ffeiliau cyfrinair</translation>
+        <translation>Aktivizo/çaktivizo modalitetin e kërkimit të përmbajtjes për të kërkuar brenda skedarëve të fjalëkalimeve</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
         <source>Case-insensitive search</source>
-        <translation>Chwilio nad yw&apos;n sensitif i fachau/llythrennau mawr</translation>
+        <translation>Kërkim pa dallim mes shkronjave të mëdha dhe të vogla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
@@ -999,50 +971,39 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
         <source>Case-insensitive toggle</source>
-        <translation>Togl ansensitif i fachau/llythrennau bach</translation>
+        <translation>Aktivizimi i kërkimit pa dallim mes shkronjave të mëdha dhe të vogla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
         <source>Toggle case-insensitive content search</source>
-        <translation>Togglo chwiliad cynnwys sy&apos;n ansensitif i fach-lythrennau</translation>
+        <translation>Aktivizo/çaktivizo kërkimin e përmbajtjes pa dallim mes shkronjave të mëdha dhe të vogla</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation>Canlyniadau</translation>
+        <translation>Përfundime</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Welcome to QtPass</source>
-        <translation>Croeso i QtPass</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="322"/>
-        <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
-&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt; Mae QtPass yn GUI ar gyfer &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pasio &lt;/a&gt;, y rheolwr cyfrinair safonol unix. &lt;/p&gt;
-&lt;p&gt; Rhowch wybod am unrhyw faterion &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; &lt;/a&gt; a allai fod gennych gyda&apos;r feddalwedd hon. &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dogfennaeth &lt;/a&gt; &lt;/p&gt;
-&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Cod Ffynhonnell &lt;/a&gt; &lt;/p&gt;</translation>
+        <translation>Mirësevini në QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation>Clirio&apos;r allbwn</translation>
+        <translation>Pastro daljen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation>Clirio</translation>
+        <translation>Pastro</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
-        <translation>Ychwanegu cyfrinair</translation>
+        <translation>Shtoni fjalëkalimin</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -1054,21 +1015,21 @@ Expire-Date: 0
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1372"/>
         <source>Add folder</source>
-        <translation>Ychwanegu plygell</translation>
+        <translation>Shto folder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
         <location filename="../src/mainwindow.cpp" line="1380"/>
         <source>Edit</source>
-        <translation>Golygu</translation>
+        <translation>Modifiko</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
         <location filename="../src/mainwindow.cpp" line="1394"/>
         <source>Delete</source>
-        <translation>Dileu</translation>
+        <translation>Fshij</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
@@ -1078,7 +1039,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Cynhyrchu OTP a chopïo i&apos;r Clipfwrdd</translation>
+        <translation>Gjenero OTP dhe kopjo në klipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
@@ -1088,320 +1049,319 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
         <source>Push</source>
-        <translation>Gwthio</translation>
+        <translation>Shty</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="428"/>
         <source>Git push</source>
-        <translation>Git gwthio</translation>
-    </message>
-    <message>
-        <location filename="../src/mainwindow.ui" line="433"/>
-        <source>Update</source>
-        <translation>Diweddaru</translation>
+        <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="436"/>
         <source>Git pull</source>
-        <translation>Git tynnu</translation>
+        <translation>Git pull</translation>
+    </message>
+    <message>
+        <source>git push</source>
+        <translation type="vanished">git push</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="433"/>
+        <source>Update</source>
+        <translation>Përditëso</translation>
+    </message>
+    <message>
+        <source>git pull</source>
+        <translation type="vanished">git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1374"/>
         <source>Users</source>
-        <translation>Defnyddwyr</translation>
+        <translation>Përdoruesit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="444"/>
         <source>Manage who can read password in folder</source>
-        <translation>Rheoli pwy all ddarllen cyfrinair mewn ffolder</translation>
+        <translation>Menaxhoni kush mund të lexojë fjalëkalimin në folder</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="449"/>
         <source>Config</source>
-        <translation>Ffurfweddu</translation>
+        <translation>Konfig</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
         <source>Configuration</source>
-        <translation>Ffurfweddiad</translation>
+        <translation>Konfigurime</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
         <source>Welcome to QtPass %1</source>
-        <translation>Croeso i QtPass %1</translation>
+        <translation>Mirësevini në QtPass %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation>Allbwn y broses</translation>
+        <translation>Dalja e procesit</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="501"/>
         <location filename="../src/mainwindow.cpp" line="514"/>
         <source>Updating password-store</source>
-        <translation>Diweddaru&apos;r siop cyfrinair</translation>
+        <translation>Përditësimi i dyqanit me fjalëkalime</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="625"/>
         <location filename="../src/mainwindow.cpp" line="924"/>
         <source>Content hidden</source>
-        <translation>Cynnwys wedi&apos;i guddio</translation>
+        <translation>Përmbajtja e fshehur</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="629"/>
         <location filename="../src/mainwindow.cpp" line="1641"/>
         <source>Password</source>
-        <translation>Cyfrinair</translation>
+        <translation>Fjalëkalim</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="666"/>
         <source>OTP Code</source>
-        <translation>Cod OTP</translation>
+        <translation>Kodi OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
-        <translation>Cod OTP wedi&apos;i gopïo i&apos;r clipfwrdd</translation>
+        <translation>Kodi OTP u kopjua në klipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>No OTP code found in this password entry</source>
-        <translation>Ni chanfuwyd cod OTP yn y cofnod cyfrinair hwn</translation>
+        <translation>Nuk u gjet asnjë kod OTP në këtë hyrje fjalëkalimi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="704"/>
         <source>Password and Content hidden</source>
-        <translation>Cyfrinair a chynnwys wedi&apos;i guddio</translation>
+        <translation>Fjalëkalimi dhe përmbajtja të fshehura</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="784"/>
         <source>Looking for: %1</source>
-        <translation>Wrthi&apos;n chwilio am: %1</translation>
+        <translation>Duke kërkuar: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
-        <translation>Yn chwilio…</translation>
+        <translation>Duke kërkuar…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation>Chwilio cynnwys (mynegiant rheolaidd)</translation>
+        <translation>Kërko përmbajtje (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation>Ni chanfuwyd unrhyw gyfatebiaethau.</translation>
+        <translation>Nuk u gjetën përputhje.</translation>
     </message>
     <message numerus="yes">
         <source>Found %n match(es) in %1 entr(ies).</source>
         <translation type="vanished">
-            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
-            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
-            <numerusform>Canfuwyd %n gyfatebiaeth mewn %1 cofnod.</numerusform>
-            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 cofnod.</numerusform>
-            <numerusform>Canfuwyd %n cyfatebiaeth mewn %1 o gofnodion.</numerusform>
+            <numerusform>U gjet %n përputhje në %1 hyrje.</numerusform>
+            <numerusform>U gjetën %n përputhje në %1 hyrje.</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation>
-            <numerusform>Ni chanfuwyd cyfatebiad</numerusform>
-            <numerusform>Canfuwyd 1 cyfatebiad</numerusform>
-            <numerusform>Canfuwyd 2 gyfatebiad</numerusform>
-            <numerusform>Canfuwyd %n chyfatebiad</numerusform>
-            <numerusform>Canfuwyd %n cyfatebiad</numerusform>
+            <numerusform>U gjet %n përputhje</numerusform>
+            <numerusform>U gjetën %n përputhje</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation>
-            <numerusform>mewn dim cofnod.</numerusform>
-            <numerusform>mewn 1 cofnod.</numerusform>
-            <numerusform>mewn 2 gofnod.</numerusform>
-            <numerusform>mewn %n chofnod.</numerusform>
-            <numerusform>mewn %n cofnod.</numerusform>
+            <numerusform>në %n hyrje.</numerusform>
+            <numerusform>në %n hyrje.</numerusform>
         </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <location filename="../src/mainwindow.cpp" line="1467"/>
         <source>New file</source>
-        <translation>Ffeil newydd</translation>
+        <translation>Dosje e re</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation>Ffeil cyfrinair newydd: 
-(Bydd yn cael ei roi yn %1)</translation>
+        <translation>Skedar i ri i fjalëkalimit: 
+(Do të vendoset brenda %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
         <source> and the whole content?</source>
-        <translation> a&apos;r holl gynnwys?</translation>
+        <translation> dhe gjithë përmbajtjen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation> a&apos;r holl gynnwys? &lt;br&gt; &lt;strong&gt; sylw: Mae ffeiliau annisgwyl yn y ffolder a roddir, gwiriwch nhw cyn parhau. &lt;/strong&gt;</translation>
+        <translation> dhe gjithë përmbajtjen? &lt;br&gt;&lt;strong&gt; Vëmendje: ka skedarë të papritur në dosjen e dhënë, kontrolloni ato përpara se të vazhdoni. &lt;/ strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation>Dileu plygell?</translation>
+        <translation>Fshini dosjen?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation>Dileu cyfrinair?</translation>
+        <translation>Fshini fjalëkalimin?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation>Ydych chi&apos;n siŵr eich bod am ddileu %1%2?</translation>
+        <translation>Jeni i sigurt që dëshironi të fshini %1%2?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>No password selected for OTP generation</source>
-        <translation>Dim cyfrinair wedi&apos;i ddewis ar gyfer cynhyrchu OTP</translation>
+        <translation>Nuk është zgjedhur fjalëkalim për gjenerimin e OTP-së</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1242"/>
         <source>Profile changed to %1</source>
-        <translation>Wedi newid y proffil i %1</translation>
+        <translation>Profili ndryshoi në %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
         <source>Open folder with file manager</source>
-        <translation>Agor plygell gyda&apos;r rheolwr ffeiliau</translation>
+        <translation>Hap dosjen me menaxherin e skedarëve</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
-        <translation>Ailenwi plygell</translation>
+        <translation>Riemërtoni dosjen</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation>Ailenwi&apos;r cyfrinair</translation>
+        <translation>Riemërtoni fjalëkalimin</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation>Rhannu</translation>
+        <translation>Shpërnda</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Ail-amgryptio pob cyfrinair</translation>
+        <translation>Rikriptoji të gjitha fjalëkalimet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation>Allforio fy allwedd gyhoeddus…</translation>
+        <translation>Eksporto çelësin tim publik…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
         <source>Add recipient...</source>
-        <translation>Ychwanegu derbynnydd…</translation>
+        <translation>Shto marrës…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
         <source>What is this?</source>
-        <translation>Beth yw hwn?</translation>
+        <translation>Çfarë është kjo?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation>Allforio&apos;r allwedd gyhoeddus</translation>
+        <translation>Eksporto çelësin publik</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Allforio&apos;ch allwedd gyhoeddus&lt;/h3&gt;&lt;p&gt;Nid oes allwedd lofnodi wedi&apos;i ffurfweddu. Gosodwch un yn Gosodiadau QtPass &amp;gt; allweddi GPG, neu rhedwch hwn mewn terfynell:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Yna anfonwch y ffeil at aelodau eich tîm.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Eksportoni çelësin tuaj publik&lt;/h3&gt;&lt;p&gt;Nuk është konfiguruar asnjë çelës nënshkrimi. Caktoni një te Cilësimet e QtPass &amp;gt; Çelësat GPG, ose ekzekutoni këtë në një terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Pastaj dërgojini skedarin anëtarëve të ekipit tuaj.&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation>Methwyd allforio&apos;r allwedd gyhoeddus ar gyfer %1.
+        <translation>Çelësi publik për %1 nuk u eksportua dot.
 
 %2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
-        <translation>Dim allbwn gan gpg.</translation>
+        <translation>Nuk ka dalje nga gpg.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Rhannu cyfrineiriau gyda GPG</translation>
+        <translation>Ndarja e fjalëkalimeve me GPG</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Rhannu cyfrineiriau gyda GPG&lt;/h3&gt;&lt;p&gt;I rannu cyfrineiriau gyda defnyddwyr eraill:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Allforiwch eich allwedd gyhoeddus&lt;/b&gt; ac anfonwch hi at aelodau eich tîm&lt;/li&gt;&lt;li&gt;&lt;b&gt;Mewnforiwch allweddi cyhoeddus aelodau eich tîm&lt;/b&gt; i&apos;ch allweddell GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Ail-amgryptiwch y cyfrineiriau&lt;/b&gt; fel y gall pob derbynnydd eu dadgryptio&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Dim ond pobl sydd ag allwedd gyfrinachol gyfatebol sy&apos;n gallu dadgryptio&apos;r cyfrineiriau.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Awgrym:&lt;/b&gt; Defnyddiwch yr un allwedd GPG ar gyfer pob ffolder a rennir.&lt;/p&gt;&lt;p&gt;Gweler y Cwestiynau Cyffredin am ragor o fanylion.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Ndarja e fjalëkalimeve me GPG&lt;/h3&gt;&lt;p&gt;Për të ndarë fjalëkalime me përdorues të tjerë:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Eksportoni çelësin tuaj publik&lt;/b&gt; dhe dërgojeni te anëtarët e ekipit&lt;/li&gt;&lt;li&gt;&lt;b&gt;Importoni çelësat publikë të anëtarëve të ekipit&lt;/b&gt; në keyring-un tuaj GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Rikriptojini fjalëkalimet&lt;/b&gt; që të gjithë marrësit të mund t&apos;i dekriptojnë&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Vetëm personat që kanë një çelës të fshehtë të përputhshëm mund t&apos;i dekriptojnë fjalëkalimet.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Këshillë:&lt;/b&gt; Përdorni të njëjtin çelës GPG për të gjitha dosjet e ndara.&lt;/p&gt;&lt;p&gt;Shihni FAQ për më shumë detaje.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
-        <translation type="vanished">Ail-amgryptio</translation>
+        <translation type="vanished">Rikripto</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation>Plygell newydd: 
-(Bydd yn cael ei roi yn %1)</translation>
+        <translation>Dosje e re:
+(Do të vendoset brenda %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
         <location filename="../src/mainwindow.cpp" line="1487"/>
         <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Error</source>
-        <translation>Gwall</translation>
+        <translation>Gabim</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation>Methwyd creu ffolder: %1</translation>
+        <translation>Dështoi në krijimin e dosjes: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>Methwyd creu ffeil .gpg-id yn: %1</translation>
+        <translation>Dështoi në krijimin e skedarit .gpg-id në: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename file</source>
-        <translation>Ailenwi ffeil</translation>
+        <translation>Riemërtoni skedarin</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
         <source>Rename Folder To: </source>
-        <translation>Ailenwi plygell yn: </translation>
+        <translation>Riemërtoni Dosjen ne: </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1546"/>
         <source>Rename File To: </source>
-        <translation>Ailenwi ffeil i: </translation>
+        <translation>Riemërtoni Skedarin ne : </translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1697"/>
         <source>Directory does not exist: %1</source>
-        <translation>Nid yw&apos;r cyfeiriadur yn bodoli: %1</translation>
+        <translation>Drejtoria nuk ekziston: %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>Ail-amgryptio cyfrineiriau</translation>
+        <translation>Rikripto fjalëkalimet</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
@@ -1412,13 +1372,24 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Ail-amgryptio pob cyfrinair yn %1?
+        <translation>Të rienkriptohen të gjitha fjalëkalimet në %1?
 
-Bydd hyn yn ail-amgryptio POB ffeil cyfrinair yn y ffolder hon gan ddefnyddio&apos;r derbynwyr cyfredol a ddiffinnir yn .gpg-id.
+Kjo do të rienkriptojë TË GJITHA skedarët e fjalëkalimeve në këtë dosje duke përdorur marrësit aktualë të përcaktuar në .gpg-id.
 
-Efallai y bydd hyn yn ailysgrifennu llawer o ffeiliau ac ni ellir ei ddadwneud yn hawdd.
+Kjo mund të rishkruajë shumë skedarë dhe nuk mund të anulohet lehtë.
 
-Parhau?</translation>
+Të vazhdohet?</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.ui" line="322"/>
+        <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
+&lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
+        <translation>&lt;p&gt; QtPass është një GUI për &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; pass&lt;/a&gt;, menaxheri standard me fjalëkalim unix. &lt;/p&gt;
+&lt;p&gt; Ju lutemi raportoni çdo &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; çështje &lt;/a&gt; që mund të keni me këtë softuer. &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dokumentacioni &lt;/a&gt; &lt;/p&gt;
+&lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Burimi i kodit &lt;/a&gt; &lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1426,46 +1397,46 @@ Parhau?</translation>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation>Hyd cyfrinair annilys</translation>
+        <translation>Gjatësi e pavlefshme e fjalëkalimit</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation>Methu cynhyrchu cyfrinair gyda hyd sero.</translation>
+        <translation>Nuk mund të gjenerohet fjalëkalim me gjatësi zero.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
         <source>No characters chosen</source>
-        <translation>Dim nodau wedi&apos;u dewis</translation>
+        <translation>Asnjë karaktere e zgjedhur</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation>Does dim modd creu cyfrinair, does dim nodau i&apos;w dewis o&apos;r set yn y cyfluniad!</translation>
+        <translation>Nuk mund të gjeneroni fjalëkalim, nuk ka karaktere për të zgjedhur nga konfigurimi!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
         <location filename="../src/pass.cpp" line="565"/>
         <source>Encryption failed: GPG key has expired. Please renew or replace it.</source>
-        <translation>Methodd amgryptio: Mae allwedd GPG wedi dod i ben. Adnewyddwch neu amnewidiwch hi.</translation>
+        <translation>Enkriptimi dështoi: Çelësi GPG ka skaduar. Ju lutemi ta rinovoni ose zëvendësoni atë.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="551"/>
         <location filename="../src/pass.cpp" line="570"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation>Methodd amgryptio: Mae allwedd GPG wedi&apos;i dirymu.</translation>
+        <translation>Enkriptimi dështoi: Çelësi GPG është revokuar.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="555"/>
         <location filename="../src/pass.cpp" line="575"/>
         <source>Encryption failed: recipient GPG key not found or invalid. Check that the key ID in .gpg-id is correct and imported.</source>
-        <translation>Methodd amgryptio: ni chanfuwyd allwedd GPG y derbynnydd neu mae&apos;n annilys. Gwiriwch fod ID yr allwedd yn .gpg-id yn gywir ac wedi&apos;i fewnforio.</translation>
+        <translation>Enkriptimi dështoi: çelësi GPG i marrësit nuk u gjet ose është i pavlefshëm. Kontrolloni që ID-ja e çelësit në .gpg-id është e saktë dhe e importuar.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="559"/>
         <location filename="../src/pass.cpp" line="579"/>
         <source>Encryption failed. Check that your GPG key is valid.</source>
-        <translation>Methodd amgryptio. Gwiriwch fod eich allwedd GPG yn ddilys.</translation>
+        <translation>Enkriptimi dështoi. Kontrolloni që çelësi juaj GPG të jetë i vlefshëm.</translation>
     </message>
 </context>
 <context>
@@ -1474,47 +1445,47 @@ Parhau?</translation>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
         <source>Password</source>
-        <translation>Cyfrinair</translation>
+        <translation>Fjalëkalim</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
         <source>Generate</source>
-        <translation>Gynhyrchu</translation>
+        <translation>Gjenero</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
         <source>Show password</source>
-        <translation>Dangos cyfrinair</translation>
+        <translation>Shfaq fjalëkalimin</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
         <source>Character Set:</source>
-        <translation>Set nodau:</translation>
+        <translation>Seti i Karaktereve:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation>Pob Cymeriad</translation>
+        <translation>Të gjitha karakteret</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation>Nhrefn yr wyddor</translation>
+        <translation>Alfabetike</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation>Alffaniwmerig</translation>
+        <translation>Alfanumerike</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation>Personol</translation>
+        <translation>E përshtatur</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
         <source>Length:</source>
-        <translation>Hyd:</translation>
+        <translation>Gjatësia:</translation>
     </message>
 </context>
 <context>
@@ -1523,6 +1494,7 @@ Parhau?</translation>
         <location filename="../main/main.cpp" line="155"/>
         <location filename="../main/main.cpp" line="159"/>
         <source>LTR</source>
+        <translatorcomment>Kjo është për të mbajtur ndërfaqen nga e majta në të djathtë.</translatorcomment>
         <translation>LTR</translation>
     </message>
 </context>
@@ -1531,37 +1503,37 @@ Parhau?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation>Cynhyrchu pâr allweddol GPG</translation>
+        <translation>Duke gjeneruar çiftin e çelësave të GPG-së</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
         <source>Failed to connect WebDAV:
 </source>
-        <translation>Methwyd cysylltu WebDAV:
+        <translation>Nuk arriti të lidhej WebDAV:
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="240"/>
         <source>QtPass WebDAV password</source>
-        <translation>Cyfrinair QtPass WebDAV</translation>
+        <translation>Fjalëkalim QtPass WebDAV</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="241"/>
         <source>Enter password to connect to WebDAV:</source>
-        <translation>Rhowch gyfrinair i gysylltu â WebDAV:</translation>
+        <translation>Vendosni fjalëkalimin për t&apos;u lidhur me WebDAV:</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav wedi gadael yn annisgwyl
+        <translation>fuseav doli papritur
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Wedi methu cychwyn fusedav i gysylltu WebDAV:
+        <translation>Dështoi fillimi i fusedav për të lidhur WebDAV:
 </translation>
     </message>
     <message>
@@ -1597,44 +1569,44 @@ Parhau?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation>Methodd cynhyrchu pâr allweddi GPG</translation>
+        <translation>Gjenerimi i çiftit të çelësave GPG dështoi</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
         <source>GPG key pair generated successfully</source>
-        <translation>Pâr allweddi GPG wedi&apos;i gynhyrchu&apos;n llwyddiannus</translation>
+        <translation>Çifti i çelësave GPG u gjenerua me sukses</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard cleared</source>
-        <translation>Cliriwyd y Clipfwrdd</translation>
+        <translation>Klipboard pastruar</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation>Clipfwrdd heb ei glirio</translation>
+        <translation>Klipboardi nuk është pastruar</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
         <source>Copied to clipboard</source>
-        <translation>Copïo i&apos;r Clipfwrdd</translation>
+        <translation>Kopjuar në klipboard</translation>
     </message>
 </context>
 <context>
     <name>StoreModel</name>
     <message>
         <source>force overwrite?</source>
-        <translation type="vanished">gorfodi trosysgrifo?</translation>
+        <translation type="vanished">rishkruaj me forcë?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="411"/>
         <source>Force overwrite?</source>
-        <translation>Gorfodi trosysgrifennu?</translation>
+        <translation>Të detyrohet mbishkrimi?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation>trosysgrifo %1 gyda %2?</translation>
+        <translation>rishkruaj %1 me %2?</translation>
     </message>
 </context>
 <context>
@@ -1642,32 +1614,32 @@ Parhau?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation>&amp;Dangos</translation>
+        <translation>&amp;Shfaq</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation>&amp;Cuddio</translation>
+        <translation>&amp;Fsheh</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>&amp;Lleihau</translation>
+        <translation>Mi&amp;nimize</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>&amp;Uchafu</translation>
+        <translation>Ma&amp;ximize</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp;Adfer</translation>
+        <translation>&amp;Restore</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Cwffio</translation>
+        <translation>&amp;Quit</translation>
     </message>
 </context>
 <context>
@@ -1675,17 +1647,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
         <source>Read access users</source>
-        <translation>Darllen defnyddwyr mynediad</translation>
-    </message>
-    <message>
-        <source>Select which users should be able to decrypt passwords stored in this folder.
-Note: Existing files will not be modified, and retain the old permissions until you edit them.
-Blue entries have a secret key available, select one of these to be able to decrypt.
-Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="vanished">Dewis pa ddefnyddwyr ddylai fod yn gallu dadgryptio cyfrineiriau sydd wedi&apos;u storio yn y ffolder hon.
-Nodyn: ni chaiff y ffeiliau presennol eu haddasu, a chadw&apos;r hen ganiatadau nes i chi eu golygu.
-Mae gan gofnodion glas Allwedd gyfrinachol ar gael, dewiswch un o&apos;r rhain i allu dadgryptio.
-Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</translation>
+        <translation>Lexoni përdoruesit me akses</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
@@ -1694,71 +1656,95 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Dewiswch pa ddefnyddwyr ddylai allu dadgryptio cyfrineiriau sydd wedi&apos;u storio yn y ffolder hon.
-Nodyn: Ni fydd ffeiliau presennol yn cael eu haddasu, a byddant yn cadw&apos;r hen ganiatâd nes i chi eu golygu.
-Mae gan gofnodion glas allwedd gyfrinachol ar gael, dewiswch un o&apos;r rhain i allu dadgryptio.
-Mae gan gofnodion du allwedd amgryptio ar gael ac mae&apos;n ddibynadwy, dewiswch un o&apos;r rhain i ganiatáu i bobl eraill ddadgryptio.
-Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</translation>
-    </message>
-    <message>
-        <location filename="../src/usersdialog.ui" line="70"/>
-        <source>Search for users</source>
-        <translation>Chwilio am ddefnyddwyr</translation>
-    </message>
-    <message>
-        <location filename="../src/usersdialog.ui" line="77"/>
-        <source>Show unusable keys</source>
-        <translation>Dangos bysellau na ellir eu</translation>
+        <translation>Zgjidhni cilët përdorues duhet të jenë në gjendje të deshifrojnë fjalëkalimet e ruajtura në këtë dosje.
+Shënim: Skedarët ekzistues nuk do të modifikohen dhe do të ruajnë lejet e vjetra derisa t&apos;i modifikoni.
+Hyrjet blu kanë një çelës sekret në dispozicion, zgjidhni një prej tyre për të qenë në gjendje të deshifrojnë.
+Hyrjet e zeza kanë një çelës enkriptimi në dispozicion dhe është i besueshëm, zgjidhni një prej tyre për të lejuar persona të tjerë ta deshifrojnë.
+Hyrjet e kuqe nuk janë të vlefshme, nuk do të jeni në gjendje të enkriptoni me to.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation>Mewnforio allwedd…</translation>
+        <translation>Importo çelësin…</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation>Mewnforio allwedd GPG o ffeil neu o&apos;r clipfwrdd</translation>
+        <translation>Importo një çelës GPG nga skedari ose nga klipboardi</translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified, and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="vanished">Zgjidhni cilët përdorues duhet të jenë në gjendje të deshifrojnë fjalëkalimet e ruajtura në këtë dosje.
+Shënim: Skedarët ekzistues nuk do të modifikohen dhe mbajnë lejet e vjetra deri sa t&apos;i përpunoni ato.
+Hyrjet blu kanë në dispozicion një çelës sekret, zgjidhni njërën nga këto që të mund të deshifroni.
+Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apos;i kodoni këto.</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="70"/>
+        <source>Search for users</source>
+        <translation>Kërkoni për përdoruesit</translation>
+    </message>
+    <message>
+        <source>Select which users should be able to decrypt passwords stored in this folder.
+Note: Existing files will not be modified and retain the old permissions until you edit them.
+Blue entries have a secret key available, select one of these to be able to decrypt.
+Red entries are not valid, you will not be able to encrypt to these.</source>
+        <translation type="vanished">Zgjidhni cilët përdorues duhet të jenë në gjendje të deshifrojnë fjalëkalimet e ruajtura në këtë dosje.
+Shënim: Skedarët ekzistues nuk do të modifikohen dhe mbajnë lejet e vjetra deri sa t&apos;i përpunoni ato.
+Hyrjet blu kanë në dispozicion një çelës sekret, zgjidhni njërën nga këto që të mund të deshifroni.
+Regjistrimet e kuqe nuk janë të vlefshme, ju nuk do të jeni në gjendje t&apos;i kodoni këto.</translation>
+    </message>
+    <message>
+        <source>Search Users</source>
+        <translation type="vanished">Kërkoni përdoruesit</translation>
+    </message>
+    <message>
+        <location filename="../src/usersdialog.ui" line="77"/>
+        <source>Show unusable keys</source>
+        <translation>Trego çelësa të papërdorshëm</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation>Keylist ar goll</translation>
+        <translation>Lista kryesore mungon</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Methwyd cyrchu rhestr o allweddi GPG sydd ar gael</translation>
+        <translation>Nuk mund të marr listën e çelësave të disponueshëm GPG</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="153"/>
         <source>Key not found in keyring</source>
-        <translation>Bysell heb ei ganfod yn y cylch allweddi</translation>
+        <translation>çelësi nuk u gjet në keyring</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="306"/>
         <source>created</source>
-        <translation>creu</translation>
+        <translation>krijuar</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="310"/>
         <source>expires</source>
-        <translation>i ben</translation>
+        <translation>skadon</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="333"/>
         <source>[INVALID] </source>
-        <translation>[ANNILYS] </translation>
+        <translation>[I PAVLEFSHËM] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="336"/>
         <source>[EXPIRED] </source>
-        <translation>[WEDI DOD I BEN] </translation>
+        <translation>[SKADUAR] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[PARTIAL] </source>
-        <translation>[RHANNOL] </translation>
+        <translation>[PJESËRISHT] </translation>
     </message>
 </context>
 </TS>
