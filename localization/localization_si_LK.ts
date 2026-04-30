@@ -423,7 +423,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
         <source>New Profile</source>
-        <translation>නව පුද්ගලය</translation>
+        <translation>නව පැතිකඩ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
