@@ -3,6 +3,7 @@
 #include <QCoreApplication>
 #include <QLocale>
 #include <QObject>
+#include <QScopeGuard>
 #include <QString>
 #include <QTranslator>
 #include <QtTest>
@@ -100,7 +101,7 @@ void TestLocale::loadFallback_data() {
   QTest::newRow("ru_RU -> ru") << "ru_RU";
   QTest::newRow("sv_SE -> sv") << "sv_SE";
   QTest::newRow("uk_UA -> uk") << "uk_UA";
-  QTest::newRow("ja_JP_TRADITIONAL -> ja") << "ja_JP";
+  QTest::newRow("ja_JP_TRADITIONAL -> ja") << "ja_JP_TRADITIONAL";
   QTest::newRow("fa_IR -> fa") << "fa_IR";
   QTest::newRow("fa_AF -> fa") << "fa_AF";
   QTest::newRow("hi_IN -> hi") << "hi_IN";
@@ -162,27 +163,42 @@ void TestLocale::layoutDirection() {
                           QStringLiteral("_"), QStringLiteral(":/localization"),
                           QStringLiteral(".qm")));
   QCoreApplication::installTranslator(&translator);
+  // RAII guard: ensure the translator is uninstalled even if the assertion
+  // below short-circuits the function — otherwise we'd leak it into the next
+  // data row and pollute QObject::tr() globally.
+  auto cleanup = qScopeGuard(
+      [&translator] { QCoreApplication::removeTranslator(&translator); });
   // main.cpp does: tr("LTR") == "RTL" ? RightToLeft : LeftToRight.
   // Each .ts file ships an "LTR" source string whose translation is "RTL"
   // for right-to-left scripts.
-  const QString got = QObject::tr("LTR");
-  QCoreApplication::removeTranslator(&translator);
-  QCOMPARE(got, expected);
+  QCOMPARE(QObject::tr("LTR"), expected);
 }
 
 void TestLocale::loadIsIdempotent() {
   QTranslator translator;
   // Loading multiple locales in sequence on the same translator should
-  // not leak state — Qt's contract is that each load() resets it.
-  QVERIFY(translator.load(QLocale("ar_MA"), QStringLiteral("localization"),
-                          QStringLiteral("_"), QStringLiteral(":/localization"),
-                          QStringLiteral(".qm")));
-  QVERIFY(translator.load(QLocale("nl_NL"), QStringLiteral("localization"),
-                          QStringLiteral("_"), QStringLiteral(":/localization"),
-                          QStringLiteral(".qm")));
-  QVERIFY(translator.load(QLocale("en_US"), QStringLiteral("localization"),
-                          QStringLiteral("_"), QStringLiteral(":/localization"),
-                          QStringLiteral(".qm")));
+  // not leak state — Qt's contract is that each load() resets it. Each step
+  // not only verifies load() succeeded but also confirms the translator
+  // returns text from the just-loaded locale (and not the previous one) by
+  // probing the LTR/RTL pivot string from main.cpp.
+  const auto loadAndCheck = [&translator](const QString &locale,
+                                          const QString &expectedLTR) {
+    const bool loaded = translator.load(
+        QLocale(locale), QStringLiteral("localization"), QStringLiteral("_"),
+        QStringLiteral(":/localization"), QStringLiteral(".qm"));
+    QVERIFY2(loaded,
+             qUtf8Printable(QStringLiteral("load(%1) failed").arg(locale)));
+    const QString got = translator.translate("QObject", "LTR");
+    QVERIFY2(got == expectedLTR,
+             qUtf8Printable(QStringLiteral("after load(%1): tr(\"LTR\") "
+                                           "expected %2 but got %3")
+                                .arg(locale, expectedLTR, got)));
+  };
+
+  loadAndCheck("ar_MA", "RTL"); // falls back to ar (RTL)
+  loadAndCheck("nl_NL", "LTR"); // exact Dutch (LTR)
+  loadAndCheck("en_US", "LTR"); // exact English (LTR)
+  loadAndCheck("fa_IR", "RTL"); // falls back to fa (RTL)
 }
 
 QTEST_MAIN(TestLocale)
