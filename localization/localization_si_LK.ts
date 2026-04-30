@@ -595,7 +595,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
         <source>Export Public Key</source>
-        <translation type="unfinished">පොදු යතුර නිර්යාත කරන්න</translation>
+        <translation>පොදු යතුර නිර්යාත කරන්න</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
@@ -1225,7 +1225,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="666"/>
         <source>OTP Code</source>
-        <translation type="unfinished">OTP කේතය</translation>
+        <translation>OTP කේතය</translation>
     </message>
     <message>
         <source>Clipboard cleared</source>
@@ -1456,7 +1456,7 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation type="unfinished">පොදු යතුර නිර්යාත කරන්න</translation>
+        <translation>පොදු යතුර නිර්යාත කරන්න</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
