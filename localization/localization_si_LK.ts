@@ -615,7 +615,7 @@ e-mail</translation>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation>%1 හාර්ය කළමනාකරණය</translation>
+        <translation>%1 සඳහා පොදු යතුර</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
