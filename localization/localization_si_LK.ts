@@ -398,7 +398,7 @@ email</translation>
         <location filename="../src/configdialog.cpp" line="210"/>
         <location filename="../src/configdialog.cpp" line="226"/>
         <source>This field is required</source>
-        <translation>මෙම තූක්කය අවශ්‍ය</translation>
+        <translation>මෙම ක්ෂේත්‍රය අවශ්‍ය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
