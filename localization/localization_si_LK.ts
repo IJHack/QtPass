@@ -453,7 +453,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>%1 විස්තරයෙන් පුරාතන කණගමක් නවකරන්න අතර කියල හැක?</translation>
+        <translation>%1 හි මුරපද ගබඩාවක් සෑදීමට ඔබ කැමතිද?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="728"/>
