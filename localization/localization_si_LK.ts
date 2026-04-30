@@ -161,7 +161,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished">මුරපද ගබඩා නාමාවලියට යන මාර්ගය</translation>
+        <translation>මුරපද ගබඩා නාමාවලියට යන මාර්ගය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished">&amp;Pass භාවිතා කරන්න</translation>
+        <translation>&amp;Pass භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
@@ -307,7 +307,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="827"/>
         <source>pass</source>
-        <translation type="unfinished">පසු</translation>
+        <translation>පසු</translation>
     </message>
     <message>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
@@ -413,7 +413,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished">පැතිකඩ නාමාවලිය සෑදිය නොහැකි විය: %1</translation>
+        <translation>පැතිකඩ නාමාවලිය සෑදිය නොහැකි විය: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
@@ -428,7 +428,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="810"/>
         <source>No profile selected</source>
-        <translation type="unfinished">කිසිදු පැතිකඩක් තෝරා නැත</translation>
+        <translation>කිසිදු පැතිකඩක් තෝරා නැත</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
