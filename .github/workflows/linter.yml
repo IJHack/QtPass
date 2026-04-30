@@ -109,14 +109,19 @@ jobs:
           persist-credentials: false
 
       # super-linter.env is appended verbatim to $GITHUB_ENV which only
-      # accepts KEY=value lines — no comments, no blank lines. Keep that
-      # file pure; rationale for FILTER_REGEX_EXCLUDE etc. lives here.
+      # accepts KEY=value lines — no comments, no blank lines, alphabetical
+      # order (dotenv-linter rule). Rationale for the non-obvious vars:
       #
-      # FILTER_REGEX_EXCLUDE=^localization/ skips translation files from
-      # codespell (it's not language-aware and flags valid Afrikaans/etc.
-      # words as English typos). The .codespellrc `skip` directive can't do
-      # this because super-linter passes individual files to codespell,
-      # bypassing its file-discovery layer.
+      # FILTER_REGEX_EXCLUDE=^localization/ — skips translation files from
+      #   all linters (codespell isn't language-aware and flags valid
+      #   Afrikaans/etc. words as English typos). The .codespellrc `skip`
+      #   directive can't do this because super-linter passes files
+      #   individually to codespell, bypassing its file-discovery layer.
+      # GITHUB_ACTIONS_ZIZMOR_CONFIG_FILE=.github/zizmor.yml — point zizmor
+      #   at our config (default is zizmor.yaml at repo root).
+      # STRIP_DEFAULT_WORKSPACE_FOR_REGEX=true — make FILTER_REGEX_*
+      #   regexes match against workspace-relative paths instead of
+      #   /github/workspace/-prefixed absolute paths.
       - if: steps.need_lint.outputs.run_lint == 'true'
         run: cat .github/super-linter.env >> "$GITHUB_ENV"
 
