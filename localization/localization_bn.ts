@@ -82,12 +82,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation>পাসওয়ার্ডের দৈর্ঘ্য:</translation>
+        <translation type="unfinished">পাসওয়ার্ডের দৈর্ঘ্য:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
         <source>Characters</source>
-        <translation>অক্ষর</translation>
+        <translation type="unfinished">অক্ষর</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
         <source>Select character set for password generation</source>
-        <translation type="unfinished">পাসওয়ার্ড গénération জন্য কারেক্টারসেট নির্বাচন করুন</translation>
+        <translation type="unfinished">পাসওয়ার্ড জেনারেশনের জন্য অক্ষর সেট নির্বাচন করুন</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789</translation>
+        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -252,7 +252,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
         <source>Git</source>
-        <translation>গিট</translation>
+        <translation type="unfinished">গিট</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
         <source>GPG</source>
-        <translation>জিপিজি</translation>
+        <translation type="unfinished">জিপিজি</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
         <source>Path</source>
-        <translation>পাথ</translation>
+        <translation type="unfinished">পাথ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
         <source>Template</source>
-        <translation>টেমপ্লেট</translation>
+        <translation type="unfinished">টেমপ্লেট</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
@@ -572,7 +572,7 @@ URL
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation>এএসসিআই-আর্মড কী (*.asc);;সব ফাইল (*)</translation>
+        <translation type="unfinished">এএসসিআই-আর্মড কী (*.asc);;সব ফাইল (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -797,7 +797,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation>GPG আউটপুট থেকে আমদানিকৃত কী আইডি বিশ্লেষণ করা যায়নি।</translation>
+        <translation type="unfinished">GPG আউটপুট থেকে আমদানিকৃত কী আইডি বিশ্লেষণ করা যায়নি।</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
