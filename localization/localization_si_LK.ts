@@ -627,7 +627,7 @@ e-mail</translation>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation>හසුරු කළමනාකරණය කරන</translation>
+        <translation>පොදු යතුර සුරකින්න</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
