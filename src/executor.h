@@ -184,7 +184,7 @@ private slots:
   void finished(int exitCode, QProcess::ExitStatus exitStatus);
 signals:
   /**
-   * @brief finished    signal that is emited when process finishes
+   * @brief finished    signal that is emitted when process finishes
    *
    * @param id          id of the process
    * @param exitCode    return code of the process
@@ -194,11 +194,11 @@ signals:
   void finished(int id, int exitCode, const QString &output,
                 const QString &errout);
   /**
-   * @brief starting    signal that is emited when process starts
+   * @brief starting    signal that is emitted when process starts
    */
   void starting();
   /**
-   * @brief error       signal that is emited when process finishes with an
+   * @brief error       signal that is emitted when process finishes with an
    * error
    *
    * @param id          id of the process

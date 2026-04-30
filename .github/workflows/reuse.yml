@@ -22,5 +22,7 @@ jobs:
       contents: read
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - name: REUSE Compliance Check
         uses: fsfe/reuse-action@v6

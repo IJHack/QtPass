@@ -19,6 +19,8 @@ jobs:
       docs: ${{ steps.filter.outputs.docs }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - uses: dorny/paths-filter@v4
         id: filter
         with:
@@ -48,14 +50,18 @@ jobs:
         id: need_docs
         shell: bash
         run: |
-          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.docs }}" == "true" ]] || \
+          if [[ "${NEEDS_CHANGES_OUTPUTS_SRC}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_DOCS}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]]; then
             echo "run_docs=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_docs=false" >> "$GITHUB_OUTPUT"
           fi
+        env:
+          NEEDS_CHANGES_OUTPUTS_SRC: ${{ needs.changes.outputs.src }}
+          NEEDS_CHANGES_OUTPUTS_TESTS: ${{ needs.changes.outputs.tests }}
+          NEEDS_CHANGES_OUTPUTS_DOCS: ${{ needs.changes.outputs.docs }}
 
       - name: No changes - skipping
         if: steps.need_docs.outputs.run_docs != 'true'
@@ -63,6 +69,8 @@ jobs:
 
       - uses: actions/checkout@v6
         if: steps.need_docs.outputs.run_docs == 'true'
+        with:
+          persist-credentials: false
 
       - name: Install Qt
         if: steps.need_docs.outputs.run_docs == 'true'

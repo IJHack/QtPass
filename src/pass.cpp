@@ -898,7 +898,7 @@ auto Pass::getRecipientList(const QString &for_file) -> QStringList {
 /**
  * @brief Pass::getRecipientString formatted string for use with GPG
  * @param for_file which file (folder) would you like recipients for
- * @param separator formating separator eg: " -r "
+ * @param separator formatting separator eg: " -r "
  * @param count
  * @return recipient string
  */

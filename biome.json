@@ -1,6 +1,10 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "files": {
-    "includes": ["**", "!localization/**"]
+    "includes": ["**", "!localization", "!CHANGELOG.md"]
+  },
+  "formatter": {
+    "indentStyle": "space",
+    "indentWidth": 2
   }
 }

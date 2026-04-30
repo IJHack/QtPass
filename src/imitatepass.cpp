@@ -1023,7 +1023,7 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
 }
 
 /**
- * @brief executeWrapper    overrided so that every execution is a transaction
+ * @brief executeWrapper    overridden so that every execution is a transaction
  * @param id
  * @param app
  * @param args

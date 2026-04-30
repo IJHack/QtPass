@@ -175,7 +175,7 @@ void ConfigDialog::setGitPath(const QString &path) {
 }
 
 /**
- * @brief ConfigDialog::usePass set wether or not we want to use pass.
+ * @brief ConfigDialog::usePass set whether or not we want to use pass.
  * Update radio buttons accordingly.
  * @param usePass
  */

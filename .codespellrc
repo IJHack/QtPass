@@ -1,0 +1,8 @@
+[codespell]
+# Skip translation files (codespell isn't language-aware and flags genuine
+# non-English words as misspellings) and CHANGELOG history (typos in past
+# release notes — rewriting history isn't worth it).
+skip = ./localization/*,./CHANGELOG.md,./.git/*
+# fpr — gpg --fingerprint shorthand used in skill docs
+# ue — Python identifier (counter for unfinished+empty translation entries)
+ignore-words-list = fpr,ue,tru,doubleclick,pre-selected

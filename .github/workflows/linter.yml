@@ -26,6 +26,8 @@ jobs:
       localization: ${{ steps.filter.outputs.localization }}
     steps:
       - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
       - uses: dorny/paths-filter@v4
         id: filter
         with:
@@ -68,21 +70,32 @@ jobs:
         id: need_lint
         shell: bash
         run: |
-          if [[ "${{ needs.changes.outputs.src }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.tests }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.code }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.qt }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.yaml }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.markdown }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.scripts }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.json }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.github }}" == "true" ]] || \
-             [[ "${{ needs.changes.outputs.localization }}" == "true" ]] || \
+          if [[ "${NEEDS_CHANGES_OUTPUTS_SRC}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_TESTS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_CODE}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_QT}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_YAML}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_MARKDOWN}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_SCRIPTS}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_JSON}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_GITHUB}" == "true" ]] || \
+             [[ "${NEEDS_CHANGES_OUTPUTS_LOCALIZATION}" == "true" ]] || \
              [[ "${{ github.event_name }}" == "merge_group" ]]; then
             echo "run_lint=true" >> "$GITHUB_OUTPUT"
           else
             echo "run_lint=false" >> "$GITHUB_OUTPUT"
           fi
+        env:
+          NEEDS_CHANGES_OUTPUTS_SRC: ${{ needs.changes.outputs.src }}
+          NEEDS_CHANGES_OUTPUTS_TESTS: ${{ needs.changes.outputs.tests }}
+          NEEDS_CHANGES_OUTPUTS_CODE: ${{ needs.changes.outputs.code }}
+          NEEDS_CHANGES_OUTPUTS_QT: ${{ needs.changes.outputs.qt }}
+          NEEDS_CHANGES_OUTPUTS_YAML: ${{ needs.changes.outputs.yaml }}
+          NEEDS_CHANGES_OUTPUTS_MARKDOWN: ${{ needs.changes.outputs.markdown }}
+          NEEDS_CHANGES_OUTPUTS_SCRIPTS: ${{ needs.changes.outputs.scripts }}
+          NEEDS_CHANGES_OUTPUTS_JSON: ${{ needs.changes.outputs.json }}
+          NEEDS_CHANGES_OUTPUTS_GITHUB: ${{ needs.changes.outputs.github }}
+          NEEDS_CHANGES_OUTPUTS_LOCALIZATION: ${{ needs.changes.outputs.localization }}
 
       - name: No changes - skipping
         if: steps.need_lint.outputs.run_lint != 'true'
@@ -93,6 +106,7 @@ jobs:
         uses: actions/checkout@v6
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - if: steps.need_lint.outputs.run_lint == 'true'
         run: cat .github/super-linter.env >> "$GITHUB_ENV"
