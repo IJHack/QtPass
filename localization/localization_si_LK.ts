@@ -692,8 +692,8 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="383"/>
         <source>None of the secret signing keys is available.
 You will not be able to change the user list!</source>
-        <translation>ගියාල්ල සමඟ ඉස්ථතා කරන පවුල්ල කණ්ඩායම හෝදුරුවක් ඉස්ථතා කළ නොහැක.
-එය මගින් පවුල්ල කණ්ඩායම හෝදුරුව විස්තර කරන සහ ඉස්ථතා කළ හැකිය!</translation>
+        <translation>රහස් අත්සන් කිරීමේ යතුරු කිසිවක් ලබාගත නොහැක.
+ඔබට පරිශීලක ලැයිස්තුව වෙනස් කළ නොහැකි වනු ඇත!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
