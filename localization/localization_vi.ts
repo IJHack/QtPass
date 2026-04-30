@@ -1166,7 +1166,8 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Tệp mật khẩu mới:
+(Sẽ được đặt trong %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
@@ -1247,7 +1248,8 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>Thư mục mới:
+(Sẽ được đặt trong %1 )</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1478"/>
