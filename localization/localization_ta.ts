@@ -443,7 +443,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>உங்கள் கணினியில் gnupg ஐ நிறுவவும். &lt;br&gt; உங்களுக்கு பிடித்த தொகுப்பு மேலாளரைப் பயன்படுத்தி &lt;strong&gt; gpg &lt;/strong&gt; ஐ நிறுவவும் &lt;br&gt; அல்லது &lt;a href = &quot; 2 &quot;&gt; பதிவிறக்கம் &lt;/a&gt; இது gnupg.org இலிருந்து</translation>
+        <translation type="unfinished">உங்கள் கணினியில் gnupg ஐ நிறுவவும். &lt;br&gt; உங்களுக்கு பிடித்த தொகுப்பு மேலாளரைப் பயன்படுத்தி &lt;strong&gt;gpg&lt;/strong&gt; ஐ நிறுவவும் &lt;br&gt; அல்லது &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;பதிவிறக்கம்&lt;/a&gt; செய்யவும், gnupg.org இலிருந்து</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -524,7 +524,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>உங்கள் கணினியில் gnupg ஐ நிறுவவும். &quot;&gt; பதிவிறக்கம் &lt;/a&gt; இது gnupg.org இலிருந்து</translation>
+        <translation type="unfinished">உங்கள் கணினியில் gnupg ஐ நிறுவவும். &lt;br&gt; நுண்மென் ச்டோரிலிருந்து &lt;strong&gt;உபுண்டு&lt;/strong&gt; ஐ நிறுவவும் &lt;br&gt; அல்லது &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;பதிவிறக்கம்&lt;/a&gt; செய்யவும், gnupg.org இலிருந்து</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -979,7 +979,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation>வல்லுநர் விருப்பங்களுக்கு &lt;a href = &quot;https://www.gnupg.org/documentation/manuals/gnupg/unattented-gpg-key-genary.html&quot;&gt; gnupg கையேடு &lt;/a&gt; ஐப் பாருங்கள்</translation>
+        <translation>வல்லுநர் விருப்பங்களுக்கு &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt; gnupg கையேடு &lt;/a&gt; ஐப் பாருங்கள்</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
@@ -1621,10 +1621,10 @@ Continue?</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt; Qtpass என்பது &lt;a href = &quot;https://www.passwordstore.org/&quot;&gt; பாச் &lt;/a&gt;, நிலையான யூனிக்ச் கடவுச்சொல் நிர்வாகிக்கான ஒரு குய் ஆகும். &lt;/p&gt;
- &lt;p&gt; தயவுசெய்து எந்த &lt;a href = &quot;https://github.com/ijhack/qtpass/issues&quot;&gt; சிக்கல்கள் &lt;/a&gt; இந்த மென்பொருளைக் கொண்டிருக்கலாம். &lt;/p&gt;
- &lt;p&gt; &lt;a href = &quot;https://qtpass.org/&quot;&gt; ஆவணங்கள் &lt;/a&gt; &lt;/p&gt;
- &lt;p&gt; &lt;a href = &quot;https://github.com/ijhack/qtpass&quot;&gt; சோர்ச் கோட் &lt;/a&gt; &lt;/p&gt;</translation>
+        <translation>&lt;p&gt; Qtpass என்பது &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; பாச் &lt;/a&gt;, நிலையான யூனிக்ச் கடவுச்சொல் நிர்வாகிக்கான ஒரு குய் ஆகும். &lt;/p&gt;
+ &lt;p&gt; தயவுசெய்து எந்த &lt;a href=&quot;https://github.com/ijhack/qtpass/issues&quot;&gt; சிக்கல்கள் &lt;/a&gt; இந்த மென்பொருளைக் கொண்டிருக்கலாம். &lt;/p&gt;
+ &lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; ஆவணங்கள் &lt;/a&gt; &lt;/p&gt;
+ &lt;p&gt; &lt;a href=&quot;https://github.com/ijhack/qtpass&quot;&gt; சோர்ச் கோட் &lt;/a&gt; &lt;/p&gt;</translation>
     </message>
 </context>
 <context>

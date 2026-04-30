@@ -1596,8 +1596,8 @@ Gaan voort?</translation>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation>&lt;p&gt; QtPass is &apos;n GUI vir &lt;a href=&quot;https://www.passwordstore.org/&quot; &gt; Pass &lt;/a&gt;, die standaard Unix wagwoord Bestuurder. &lt;/p&gt;
-&lt;p&gt; rapporteer asseblief enige &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot; &gt; kwessies &lt;/a&gt; die jy dalk met hierdie sagteware kan hê . &lt;/p&gt;
+        <translation>&lt;p&gt; QtPass is &apos;n GUI vir &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt; Pass &lt;/a&gt;, die standaard Unix wagwoord Bestuurder. &lt;/p&gt;
+&lt;p&gt; rapporteer asseblief enige &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt; kwessies &lt;/a&gt; die jy dalk met hierdie sagteware kan hê . &lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;https://qtpass.org/&quot;&gt; Dokumentasie &lt;/a&gt; &lt;/p&gt;
 &lt;p&gt; &lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt; Bronkode &lt;/a&gt; &lt;/p&gt;</translation>
     </message>
