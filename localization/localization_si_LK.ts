@@ -652,7 +652,7 @@ e-mail</translation>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpgid file signature!</source>
-        <translation>.ග්‍රාපින් සංකේතය කිවමද!</translation>
+        <translation>.gpgid ගොනු අත්සන පරීක්ෂා කරන්න!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -676,7 +676,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
         <source>GPG signing failed!</source>
-        <translation>GPG සංකේතනය පවුල් හැබීම්!</translation>
+        <translation>GPG අත්සන් කිරීම අසාර්ථකයි!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="315"/>
@@ -686,7 +686,7 @@ e-mail</translation>
     <message>
         <location filename="../src/imitatepass.cpp" line="382"/>
         <source>No signing key!</source>
-        <translation>ගියාල්ල කණ්ඩායම හෝදුරුවක් ඉස්ථතා කළ නොහැක!</translation>
+        <translation>අත්සන් කිරීම සඳහා යතුරක් නොමැත!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="383"/>
@@ -698,12 +698,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="260"/>
         <source>Cannot update</source>
-        <translation>පරිගණක කළ හැකිය වීමට නොහැක</translation>
+        <translation>යාවත්කාලීන කළ නොහැක</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>.ග්‍රාපින්ඩ හෝ .ග්‍රාපින්ඩ කණ්ඩායමක් නැවත කළ ලදී.</translation>
+        <translation>.gpg-id ලිවීම සඳහා විවෘත කිරීමට අසමත් විය.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
