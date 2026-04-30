@@ -479,7 +479,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
         <source>New profile: %1 at %2</source>
-        <translation>%2 වෙලාවේ %1 අගය පළමු කළ ඇත</translation>
+        <translation>%2 හි %1 නව පැතිකඩ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1267"/>
