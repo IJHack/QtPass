@@ -117,11 +117,14 @@ jobs:
       #   Afrikaans/etc. words as English typos). The .codespellrc `skip`
       #   directive can't do this because super-linter passes files
       #   individually to codespell, bypassing its file-discovery layer.
-      # GITHUB_ACTIONS_ZIZMOR_CONFIG_FILE=.github/zizmor.yml — point zizmor
-      #   at our config (default is zizmor.yaml at repo root).
       # STRIP_DEFAULT_WORKSPACE_FOR_REGEX=true — make FILTER_REGEX_*
       #   regexes match against workspace-relative paths instead of
       #   /github/workspace/-prefixed absolute paths.
+      #
+      # zizmor config lives at zizmor.yaml at the repo root because that's
+      # super-linter's default discovery location. The GITHUB_*_CONFIG_FILE
+      # override didn't work — likely because GitHub Actions reserves the
+      # GITHUB_* namespace for vars set via $GITHUB_ENV.
       - if: steps.need_lint.outputs.run_lint == 'true'
         run: cat .github/super-linter.env >> "$GITHUB_ENV"
 
