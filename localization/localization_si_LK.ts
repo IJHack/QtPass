@@ -448,7 +448,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation>පුරාතන කණගමක් නවකරන්න?</translation>
+        <translation>මුරපද ගබඩාවක් සාදන්නද?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
