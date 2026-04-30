@@ -387,12 +387,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation>මෙහිදී කොපියා මුරවල</translation>
+        <translation>සෑම විටම පසුරු පුවරුවට පිටපත් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation>තහවුරු සඳහා කොපියා මුරවල</translation>
+        <translation>අවශ්‍ය විට පසුරු පුවරුවට පිටපත් කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
@@ -418,7 +418,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Select recipients for %1</source>
-        <translation>%1 නොවැල්සුන් සායනය කරන්න</translation>
+        <translation>%1 සඳහා ලබන්නන් තෝරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
@@ -433,12 +433,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
         <source>No profile selected to delete</source>
-        <translation>මෙහි නොවැල්සුන් සායනය කර ඇත එක මුරපද අක්ෂර රජයට පහළ කිරීමට නොහැක</translation>
+        <translation>මකා දැමීමට පැතිකඩක් තෝරා නොමැත</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
         <source>GnuPG not found</source>
-        <translation>GnuPG ඉක්මන් වේදාවෙයි</translation>
+        <translation>GnuPG සොයාගත නොහැකි විය</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
