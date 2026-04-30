@@ -529,12 +529,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
         <source>Use PWGen</source>
-        <translation>PWGen විජිතයන්ට කරන්න</translation>
+        <translation>PWGen භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
         <source>Use Git</source>
-        <translation>Git පවුල්කමක් කරන්න</translation>
+        <translation>Git භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
@@ -544,12 +544,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Use pass-otp extension</source>
-        <translation>ප්‍රතිඵල කණගම සැකසුවන් ඉදාහරණය</translation>
+        <translation>pass-otp දිගුව භාවිතා කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>(&amp;V) නට්‍රිකාල් ගිත්/GPG</translation>
+        <translation>ස්වදේශීය (&amp;V) Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -568,7 +568,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
         <source>GPG</source>
-        <translation>ග්‍රාජික ප්‍රතිබදු</translation>
+        <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
