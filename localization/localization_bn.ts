@@ -247,7 +247,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
         <source>Native</source>
-        <translation type="unfinished">ভাষার নির্বাচন</translation>
+        <translation type="unfinished">স্থানীয়</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -1337,12 +1337,12 @@ Continue?</source>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
         <source>No characters chosen</source>
-        <translation type="unfinished">কোনো বিশেষ চিহ্ন নির্বাচিত হয়নি</translation>
+        <translation type="unfinished">কোনো অক্ষর নির্বাচিত হয়নি</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="203"/>
         <source>Can&apos;t generate password, there are no characters to choose from set in the configuration!</source>
-        <translation type="unfinished">পাসওয়ার্ড তৈরি করতে পারছি না, বিশেষ চিহ্নগুলোর অনুসারে নির্বাচন করা যায় না!</translation>
+        <translation type="unfinished">পাসওয়ার্ড তৈরি করা যায় না, কনফিগারেশনে নির্বাচন করার মতো কোনো অক্ষর উপলব্ধ নেই!</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="546"/>
@@ -1633,17 +1633,17 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="333"/>
         <source>[INVALID] </source>
-        <translation type="unfinished">[অপরিচিত]</translation>
+        <translation type="unfinished">[অবৈধ]</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="336"/>
         <source>[EXPIRED] </source>
-        <translation type="unfinished">[প্রাপকালীন] </translation>
+        <translation type="unfinished">[মেয়াদ উত্তীর্ণ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="340"/>
         <source>[PARTIAL] </source>
-        <translation type="unfinished">[অংশীদার] </translation>
+        <translation type="unfinished">[আংশিক] </translation>
     </message>
 </context>
 </TS>
