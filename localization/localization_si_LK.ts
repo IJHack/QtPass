@@ -726,7 +726,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>%1 විස්තරයක් නැව්මට කනෑම හෝදාගනිය ලබා ගතුවේ.</translation>
+        <translation>%1 ප්‍රතිස්ථාපනය කිරීමට අසමත් විය. මුල් පිටපත නැවත ස්ථාපිත කරන ලදී.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
