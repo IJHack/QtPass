@@ -721,7 +721,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>වෙනස් කරන වේදාංගල ශැබා හැකි වේදාංගල සමහර නැත</translation>
+        <translation>නැවත සංකේතනය අසාර්ථක විය</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
