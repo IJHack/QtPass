@@ -316,7 +316,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="952"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished">প্রোফাইল নাম, এই কনফিগারেশন প্রোফাইলটি আর্থিকভাবে সংজ্ঞায়িত করার জন্য</translation>
+        <translation type="unfinished">প্রোফাইল নাম, এই কনফিগারেশন প্রোফাইল চিহ্নিত করতে ব্যবহৃত হয়</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
@@ -810,12 +810,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished">GnuPG ক্যাপিয়ার তৈরি</translation>
+        <translation type="unfinished">GnuPG কী জোড়া তৈরি করা</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation type="unfinished">নতুন একটি ক্যাপিয়ার তৈরি</translation>
+        <translation type="unfinished">নতুন কী জোড়া তৈরি করুন</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
@@ -870,12 +870,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation type="unfinished">অব্যাহত ইমেইল</translation>
+        <translation type="unfinished">অবৈধ ইমেইল</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
         <source>The email address you typed is not a valid email address.</source>
-        <translation type="unfinished">আপনি লিখেছেন একটি অব্যাহত ইমেইল ঠিকানা।</translation>
+        <translation type="unfinished">আপনি যে ইমেইল ঠিকানা লিখেছেন তা একটি বৈধ ইমেইল ঠিকানা নয়।</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
@@ -915,12 +915,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
         <source>Content search toggle</source>
-        <translation type="unfinished">কন্টেন্ট সার্চ বুলিডি করুন</translation>
+        <translation type="unfinished">কন্টেন্ট অনুসন্ধান টগল করুন</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation type="unfinished">পাসওয়ার্ড ফাইলগুলোর ভিতরে সার্চ করতে কন্টেন্ট সার্চ বুলিডি করুন</translation>
+        <translation type="unfinished">পাসওয়ার্ড ফাইলগুলোর ভিতরে অনুসন্ধান করতে কন্টেন্ট অনুসন্ধান মোড টগল করুন</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
@@ -1183,7 +1183,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
         <source>No password selected for OTP generation</source>
-        <translation type="unfinished">OTP গенেরেশনে কোনো পাসওয়ার্ড নির্বাচিত হয়নি</translation>
+        <translation type="unfinished">OTP তৈরির জন্য কোনো পাসওয়ার্ড নির্বাচিত হয়নি</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1242"/>
@@ -1435,7 +1435,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="160"/>
         <source>Generating GPG key pair</source>
-        <translation type="unfinished">GPG ব্যাপ্টিস্ম গенেরেট করা</translation>
+        <translation type="unfinished">GPG কী জোড়া তৈরি করা হচ্ছে</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="223"/>
@@ -1509,12 +1509,12 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
         <source>Clipboard cleared</source>
-        <translation type="unfinished">কপি-পেস্ট অবশিষ্ট নেই</translation>
+        <translation type="unfinished">ক্লিপবোর্ড মুছে ফেলা হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="467"/>
         <source>Clipboard not cleared</source>
-        <translation type="unfinished">কপি-পেস্ট অপূর্ণভাবে সমাধা করা হয়নি</translation>
+        <translation type="unfinished">ক্লিপবোর্ড মুছে ফেলা হয়নি</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="512"/>
@@ -1631,7 +1631,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="310"/>
         <source>expires</source>
-        <translation type="unfinished">মুক্তিপূরণ হবে</translation>
+        <translation type="unfinished">মেয়াদ শেষ হবে</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="333"/>
