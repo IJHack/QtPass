@@ -474,7 +474,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>%1 දිග මුරපද කළමනාවක් සංකේතනය කර නැත හෝ ඇසුරක්ෂිත නොහැක.</translation>
+        <translation>%1 ෆෝල්ඩරය මුරපද ගබඩාවක් ලෙස නොපෙනේ හෝ තවම ආරම්භ කර නොමැත.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
