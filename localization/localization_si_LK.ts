@@ -176,7 +176,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
         <source>Current path</source>
-        <translation type="unfinished">වත්මන් මාර්ගය</translation>
+        <translation>වත්මන් මාර්ගය</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -218,17 +218,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
         <source>Automatically push</source>
-        <translation type="unfinished">ස්වයංක්‍රීයව තල්ලු කරන්න</translation>
+        <translation>ස්වයංක්‍රීයව තල්ලු කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation type="unfinished">ස්වයංක්‍රීයව ලබා ගන්න</translation>
+        <translation>ස්වයංක්‍රීයව ලබා ගන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
         <source>Extensions:</source>
-        <translation type="unfinished">විස්තාරක:</translation>
+        <translation>විස්තාරක:</translation>
     </message>
     <message>
         <source>Use pass otp extension</source>
@@ -237,27 +237,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
         <source>System:</source>
-        <translation type="unfinished">පද්ධතිය:</translation>
+        <translation>පද්ධතිය:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished">පද්ධති තැටි අයිකනය භාවිත කරන්න</translation>
+        <translation>පද්ධති තැටි අයිකනය භාවිත කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
         <source>Start minimized</source>
-        <translation type="unfinished">අවම කළ තත්ත්වයෙන් ආරම්භ කරන්න</translation>
+        <translation>අවම කළ තත්ත්වයෙන් ආරම්භ කරන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation type="unfinished">වසා දමන විට සඟවන්න</translation>
+        <translation>වසා දමන විට සඟවන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
         <source>Always on top</source>
-        <translation type="unfinished">සෑමවිටම ඉහළින්</translation>
+        <translation>සෑමවිටම ඉහළින්</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
@@ -267,7 +267,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
         <source>Select password storage program:</source>
-        <translation type="unfinished">මුරපද ගබඩා කිරීමේ වැඩසටහන තෝරන්න:</translation>
+        <translation>මුරපද ගබඩා කිරීමේ වැඩසටහන තෝරන්න:</translation>
     </message>
     <message>
         <source>Nati&amp;ve git/gpg</source>
@@ -359,7 +359,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation type="unfinished">ලැයිස්තුගත කර ඇති ඒවා පමණක් නොව, වචනයකින් ආරම්භ වී එයට පසු කොලනයක් (:) ඇති සියලු පේළි මුරපද ක්ෂේත්‍ර ලෙස පෙන්වන්න</translation>
+        <translation>ලැයිස්තුගත කර ඇති ඒවා පමණක් නොව, වචනයකින් ආරම්භ වී එයට පසු කොලනයක් (:) ඇති සියලු පේළි මුරපද ක්ෂේත්‍ර ලෙස පෙන්වන්න</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1068"/>
@@ -377,12 +377,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished">&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; අනුවාදය </translation>
+        <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; අනුවාදය </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
         <source>No Clipboard</source>
-        <translation type="unfinished">පසුරු පුවරුවක් නැත</translation>
+        <translation>පසුරු පුවරුවක් නැත</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
@@ -403,12 +403,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished">පැතිකඩ නාමාවලිය සෑදීමට අවශ්‍යද?</translation>
+        <translation>පැතිකඩ නාමාවලිය සෑදීමට අවශ්‍යද?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished">ඔබට %1 හි මුරපද ගබඩාවක් සාදීමට අවශ්‍යද?</translation>
+        <translation>ඔබට %1 හි මුරපද ගබඩාවක් සාදීමට අවශ්‍යද?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
