@@ -213,10 +213,7 @@ void TestLocale::loadIsIdempotent() {
                                                         "succeeded")
                                              .arg(locale)));
         const QString got = translator.translate("QObject", "LTR");
-        QVERIFY2(got != staleLTR,
-                 qUtf8Printable(QStringLiteral("after failed load(%1): stale "
-                                               "translation %2 remained active")
-                                    .arg(locale, staleLTR)));
+        QCOMPARE_NE(got, staleLTR);
       };
 
   loadAndCheck("ar_MA", "RTL");                // falls back to ar (RTL)
