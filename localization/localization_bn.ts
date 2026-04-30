@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished">ক্লিপবোর্ড ক্যাবিটি:</translation>
+        <translation>ক্লিপবোর্ড আচরণ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -26,13 +26,13 @@
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished">অটো ক্লের পর:</translation>
+        <translation>স্বয়ংক্রিয় মুছে ফেলার সময়:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation type="unfinished">সেকেন্ড</translation>
+        <translation>সেকেন্ড</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
@@ -82,12 +82,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
         <source>Password Length:</source>
-        <translation type="unfinished">পাসওয়ার্ড দীর্ঘতা:</translation>
+        <translation>পাসওয়ার্ডের দৈর্ঘ্য:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
         <source>Characters</source>
-        <translation type="unfinished">কারেক্টারস</translation>
+        <translation>অক্ষর</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
@@ -252,7 +252,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
         <source>Git</source>
-        <translation type="unfinished">গিট</translation>
+        <translation>গিট</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
@@ -276,7 +276,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
         <source>GPG</source>
-        <translation type="unfinished">GPG</translation>
+        <translation>জিপিজি</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
@@ -321,7 +321,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
         <source>Path</source>
-        <translation type="unfinished">পথ</translation>
+        <translation>পাথ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="960"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
         <source>Template</source>
-        <translation type="unfinished">টেমপ্লেট</translation>
+        <translation>টেমপ্লেট</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
@@ -572,7 +572,7 @@ URL
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished">ASCII-রম্যাড কেয় (ASCII-armored key (*.asc));;সব ফাইল (All files (*))</translation>
+        <translation>এএসসিআই-আর্মড কী (*.asc);;সব ফাইল (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -730,12 +730,12 @@ You will not be able to change the user list!</source>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
         <source>Import GPG Key</source>
-        <translation type="unfinished">GPG কী ইন্টারক্স করুন</translation>
+        <translation>GPG কী আমদানি করুন</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation type="unfinished">ফাইল থেকে GPG পাবলিক কী ইন্টারক্স করুন বা নিচে লিখুন। কীটি ASCII-রমড ফর্মেটে থাকতে হবে।</translation>
+        <translation>ফাইল থেকে একটি GPG পাবলিক কী আমদানি করুন অথবা নিচে পেস্ট করুন। কীটি ASCII-আর্মড ফরম্যাটে হওয়া উচিত।</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -794,12 +794,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="127"/>
         <source>Could not parse imported key id from GPG output.</source>
-        <translation type="unfinished">GPG আউটপুট থেকে ইন্টারপোজড কি আইডি বিশ্লেষণ করতে পারা যায় নাই।</translation>
+        <translation>GPG আউটপুট থেকে আমদানিকৃত কী আইডি বিশ্লেষণ করা যায়নি।</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="172"/>
         <source>Successfully imported key: %1</source>
-        <translation type="unfinished">কি: %1 সফলভাবে ইন্টারপোজড হয়েছে:</translation>
+        <translation>কী: %1 সফলভাবে আমদানি হয়েছে</translation>
     </message>
 </context>
 <context>
@@ -1008,12 +1008,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
         <source>Push</source>
-        <translation type="unfinished">পাশ করুন</translation>
+        <translation>পুশ করুন</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="428"/>
         <source>Git push</source>
-        <translation type="unfinished">গিট-এ পাশ করুন</translation>
+        <translation>গিট পুশ করুন</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="433"/>
@@ -1059,7 +1059,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation type="unfinished">আউটপুট নিরাপদ করুন</translation>
+        <translation>আউটপুট পরিষ্কার করুন</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
@@ -1205,7 +1205,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
         <source>Share</source>
-        <translation type="unfinished">বাংলাদেশে শেয়ার</translation>
+        <translation>শেয়ার করুন</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1412"/>
@@ -1215,7 +1215,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1417"/>
         <source>Export my public key...</source>
-        <translation type="unfinished">আমার পাবলিক কেয় নেতিবাহুত সেবার্থে অ্যাস্ট্র</translation>
+        <translation>আমার পাবলিক কী রপ্তানি করুন...</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1423"/>
@@ -1454,7 +1454,8 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="258"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation type="unfinished">ফাইল্সেড অপরাধীভাবে প্রাথমিকতা ছাড়িয়ে যায়</translation>
+        <translation>fusedav অপ্রত্যাশিতভাবে বন্ধ হয়ে গেছে
+</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="262"/>
@@ -1465,42 +1466,42 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="275"/>
         <source>QProcess::FailedToStart</source>
-        <translation type="unfinished">প্রক্রিপ্ট অটোস্টার্ট</translation>
+        <translation>QProcess::শুরু করতে ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="278"/>
         <source>QProcess::Crashed</source>
-        <translation type="unfinished">প্রক্রিপ্ট ক্রেশড</translation>
+        <translation>QProcess::ক্র্যাশ হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="281"/>
         <source>QProcess::Timedout</source>
-        <translation type="unfinished">সময়ের অপরিচালনা</translation>
+        <translation>QProcess::সময় শেষ হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="284"/>
         <source>QProcess::ReadError</source>
-        <translation type="unfinished">ডিস্যুকশন তথ্যের পড়নের ত্রুটি</translation>
+        <translation>QProcess::পড়ার ত্রুটি</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="287"/>
         <source>QProcess::WriteError</source>
-        <translation type="unfinished">ডিস্যুকশন তথ্যের লিখনের ত্রুটি</translation>
+        <translation>QProcess::লেখার ত্রুটি</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="290"/>
         <source>QProcess::UnknownError</source>
-        <translation type="unfinished">অজানা ত্রুটি</translation>
+        <translation>QProcess::অজানা ত্রুটি</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished">GPG চিহ্নাধীন কয়েল সংজ্ঞাপন ব্যবহার করতে অক্ষম</translation>
+        <translation>জিপিজি কী জোড়া তৈরি ব্যর্থ হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
         <source>GPG key pair generated successfully</source>
-        <translation type="unfinished">GPG চিহ্নাধীন কয়েল সফলভাবে সংজ্ঞাপন করা হয়েছে</translation>
+        <translation>জিপিজি কী জোড়া সফলভাবে তৈরি হয়েছে</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="465"/>
