@@ -227,7 +227,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
         <source>Programs</source>
-        <translation>برنامه ها</translation>
+        <translation>برنامه‌ها</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
