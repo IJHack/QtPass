@@ -1226,9 +1226,9 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Найдено %n совпадение</numerusform>
+            <numerusform>Найдено %n совпадения</numerusform>
+            <numerusform>Найдено %n совпадений</numerusform>
         </translation>
     </message>
     <message>
@@ -1429,9 +1429,9 @@ Expire-Date: 0
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>в %n записи.</numerusform>
+            <numerusform>в %n записях.</numerusform>
+            <numerusform>в %n записях.</numerusform>
         </translation>
     </message>
     <message>
