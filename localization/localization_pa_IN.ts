@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation>ਸੈਟਿੰਗਜ਼</translation>
+        <translation type="unfinished">ਸੈੱਟਿੰਗਜ਼</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
@@ -132,7 +132,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
-        <translation>ਹੇਠਾਂ ਦੇ ਬੱਡੀ ਲੇਖਾਂ ਦੇ ਮੁੱਢਲੇ ਅੱਖਰਾਂ ਨੂੰ ਛੱਡੋ</translation>
+        <translation type="unfinished">ਵੱਡੇ ਅੱਖਰ ਸ਼ਾਮਲ ਨਾ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
@@ -157,7 +157,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
         <source>Use Git</source>
-        <translation>ਜੀਟਲ ਨੂੰ ਉਪਯੋਗ ਕਰੋ</translation>
+        <translation type="unfinished">ਗਿਟ ਨੂੰ ਉਪਯੋਗ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
@@ -237,7 +237,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation>(&amp;v) ਅਸਲੀ ਗਿਟ/ਜੀਪੀਐਚ</translation>
+        <translation type="unfinished">(&amp;v) ਅਸਲੀ ਗਿਟ/ਜੀਪੀਜੀ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
         <source>Template</source>
-        <translation>ਟੈਬਲਿਟ</translation>
+        <translation type="unfinished">ਟੈਂਪਲੇਟ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
