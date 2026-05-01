@@ -925,7 +925,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>සමඟ්‍යන්තර විශාලයක් කොටස් සහ හෝ ඉතිහාසයක් විශාලයක් සමඟ්‍යන්තර විශාලයක් කොටස් නැව්ද.</translation>
+        <translation type="unfinished">නම අවම වශයෙන් අක්ෂර 5ක් දිගු විය යුතුය.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
