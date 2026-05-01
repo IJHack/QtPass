@@ -49,7 +49,7 @@ Or install native binaries: `cargo install zizmor`, distro packages for clang-fo
 
 ### Tooling-version highlights
 
-- **clang-format 21.1.2** — modern; matches recent distros. (Was 17.0.6 in v7.1.0 — a notable mismatch source pre-v8 bump.)
+- **clang-format 20** — modern; matches recent distros. (Was 17.0.6 in v7.1.0 — a notable mismatch source pre-v8 bump.)
 - **zizmor 1.23.1** — default policy is `hash-pin`; we override to `ref-pin` in the config (version tags + dependabot cooldown).
 - **commitlint 20** — picks up `.commitlintrc.js` from the repository root.
 - **JSHint** — only runs via Hound (not super-linter v8). Default ES5; we set `esversion: 11` in `.jshintrc`.
