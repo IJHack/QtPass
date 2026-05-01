@@ -502,7 +502,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
         <source>Failed to create password-store at: %1</source>
-        <translation type="unfinished">%1 येथे पासवर्ड-स्टोअर तयार करण्यात अयशस्वी: %1</translation>
+        <translation type="unfinished">%1 येथे पासवर्ड-स्टोअर तयार करण्यात अयशस्वी</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
