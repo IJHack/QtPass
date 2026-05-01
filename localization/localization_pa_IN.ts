@@ -26,23 +26,23 @@
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished"> </translation>
+        <translation type="unfinished">ਆਟੋਕਲੀਅਰ ਬਾਅਦ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation type="unfinished"> ਮਿੰਟ</translation>
+        <translation>ਸਕਿੰਟ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation type="unfinished">  </translation>
+        <translation type="unfinished">ਸਮੱਗਰੀ ਪੈਨਲ ਵਿਵਹਾਰ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
         <source>Hide content</source>
-        <translation type="unfinished"> </translation>
+        <translation type="unfinished">ਸਮੱਗਰੀ ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">ਅੰਕੜਿਆਂ ਅਤੇ ਸੰਖਿਆਵਾਂ ਦੇ ਅੰਕੜੇ</translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -296,17 +296,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
         <source>Autodetect</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਆਟੋਡਿਟੈਕਟ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="900"/>
         <source>Profiles</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪ੍ਰੋਫਾਈਲਜ਼</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="949"/>
@@ -331,12 +331,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="965"/>
         <source>Signing Key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਸਾਈਨਿੰਗ ਕੀ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਵਿਕਲਪਿਕ: ਅਖੰਡਤਾ ਪ੍ਰਮਾਣਿਤ ਲਈ .gpg-id ਫਾਈਲਾਂ ਨੂੰ ਹਸਤਾਖਰ ਕਰਨ ਲਈ GPG ਕੀ। ਖਾਲੀ ਛੱਡੋ ਜਦੋਂ ਤੱਕ ਤੁਹਾਨੂੰ ਵਰਤੋਂਕਾਰ ਸੂਚੀ ਨੂੰ ਛੇੜਛਾੜ ਤੋਂ ਬਚਾਉਣ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -346,7 +346,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="993"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਮਿਟਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
@@ -383,12 +383,14 @@
         <source>login
 URL
 e-mail</source>
-        <translation type="unfinished">ਲੋਗਿੰ ਐਮੇਅਲ</translation>
+        <translation type="unfinished">ਲੋਗਿਨ
+URL
+ਈ‑ਮੇਲ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1095"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; ਸੰਸਕਰਨ </translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
@@ -445,7 +447,7 @@ e-mail</source>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਡਾਇਰੈਕਟਰੀ ਨਹੀਂ ਬਣਾਈ ਜਾ ਸਕਦੀ: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
@@ -475,22 +477,22 @@ e-mail</source>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਸਿਸਟਮ ਤੇ GnuPG ਇੰਸਟਾਲ ਕਰੋ।&lt;br&gt;ਇਸਨੂੰ ਪ੍ਰਾਪਤ ਕਰਨ ਲਈ Microsoft Store ਤੋਂ &lt;strong&gt;Ubuntu&lt;/strong&gt; ਇੰਸਟਾਲ ਕਰੋ।&lt;br&gt;ਜੇ ਤੁਸੀਂ ਪਹਿਲਾਂ ਹੀ ਕੀਤਾ ਹੈ, ਤਾਂ ਯਕੀਨੀ ਬਣਾਓ ਕਿ ਤੁਸੀਂ ਇਸਨੂੰ ਇੱਕ ਵਾਰ ਸ਼ੁਰੂ ਕੀਤਾ ਹੈ ਅਤੇ&lt;br&gt;ਅਗਲੇ ਸੰਵਾਦ ਵਿੱਚ &quot;Autodetect&quot; ਤੇ ਕਲਿੱਕ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਸਿਸਟਮ ਤੇ GnuPG ਇੰਸਟਾਲ ਕਰੋ।&lt;br&gt;Microsoft Store ਤੋਂ &lt;strong&gt;Ubuntu&lt;/strong&gt; ਇੰਸਟਾਲ ਕਰੋ&lt;br&gt;ਜਾਂ GnuPG.org ਤੋਂ ਇਸਨੂੰ &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ਡਾਉਨਲੋਡ&lt;/a&gt; ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕਿਰਪਾ ਕਰਕੇ ਆਪਣੇ ਸਿਸਟਮ ਤੇ GnuPG ਇੰਸਟਾਲ ਕਰੋ।&lt;br&gt;ਆਪਣੇ ਮਨਪਸੰਦ ਪੈਕੇਜ ਮੈਨੇਜਰ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹੋਏ &lt;strong&gt;gpg&lt;/strong&gt; ਇੰਸਟਾਲ ਕਰੋ&lt;br&gt;ਜਾਂ GnuPG.org ਤੋਂ ਇਸਨੂੰ &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;ਡਾਉਨਲੋਡ&lt;/a&gt; ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
         <source>Create password-store?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ-ਸਟੋਰ ਬਣਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
@@ -553,7 +555,7 @@ e-mail</source>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="28"/>
         <source>Public key for %1</source>
-        <translation type="unfinished">ਪ੍ਰਿਵੇਟ ਕੀ ਲਈ %1</translation>
+        <translation type="unfinished">%1 ਲਈ ਜਨਤਕ ਕੀ</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="67"/>
@@ -565,12 +567,12 @@ e-mail</source>
         <location filename="../src/exportpublickeydialog.cpp" line="90"/>
         <location filename="../src/exportpublickeydialog.cpp" line="100"/>
         <source>Save Public Key</source>
-        <translation type="unfinished">ਪ੍ਰਿਵੇਟ ਕੀ ਬਚਾਉਣਾ</translation>
+        <translation type="unfinished">ਜਨਤਕ ਕੀ ਸੰਭਾਲੋ</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="84"/>
         <source>ASCII-armored key (*.asc);;All files (*)</source>
-        <translation type="unfinished">ਐਸੀਐਸੀ-ਅਰਮੋਰ ਕੀ (.asc);;ਸਾਰੇ ਡਾਟਫਾਈਲ (*)</translation>
+        <translation type="unfinished">ASCII-armored ਕੀ (*.asc);;ਸਾਰੀਆਂ ਫਾਈਲਾਂ (*)</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.cpp" line="91"/>
@@ -733,7 +735,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਫਾਈਲ ਤੋਂ GPG ਜਨਤਕ ਕੀ ਆਯਾਤ ਕਰੋ ਜਾਂ ਇਸਨੂੰ ਹੇਠਾਂ ਪੇਸਟ ਕਰੋ। ਕੀ ASCII-armored ਫਾਰਮੈਟ ਵਿੱਚ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
@@ -781,7 +783,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="67"/>
         <source>%1 does not look like an ASCII-armored GPG key. Convert it with &lt;code&gt;gpg --armor --export&lt;/code&gt; first, or paste the armored block via &lt;b&gt;From Clipboard&lt;/b&gt;.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ASCII-armored GPG ਕੀ ਵਰਗੀ ਨਹੀਂ ਲੱਗਦੀ। ਪਹਿਲਾਂ ਇਸਨੂੰ &lt;code&gt;gpg --armor --export&lt;/code&gt; ਨਾਲ ਬਦਲੋ, ਜਾਂ &lt;b&gt;From Clipboard&lt;/b&gt; ਰਾਹੀਂ armored block ਨੂੰ ਪੇਸਟ ਕਰੋ।</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="117"/>
@@ -830,7 +832,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;ਪਾਸਫ੍ਰੇਜ਼ ਦੀ ਲੰਬਾਈ ਦੀ ਕੋਈ ਸੀਮਾ ਨਹੀਂ ਹੈ, ਅਤੇ ਇਸਨੂੰ ਸਾਵਧਾਨੀ ਨਾਲ ਚੁਣਿਆ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ। ਸੁਰੱਖਿਆ ਦੇ ਦ੍ਰਿਸ਼ਟੀਕੋਣ ਤੋਂ, ਨਿੱਜੀ ਕੁੰਜੀ ਨੂੰ ਅਨਲੌਕ ਕਰਨ ਲਈ ਪਾਸਫ੍ਰੇਜ਼ GnuPG (ਅਤੇ ਹੋਰ ਜਨਤਕ-ਕੁੰਜੀ ਏਨਕ੍ਰਿਪਸ਼ਨ ਸਿਸਟਮਾਂ) ਵਿੱਚ ਸਭ ਤੋਂ ਕਮਜ਼ੋਰ ਬਿੰਦੂਆਂ ਵਿੱਚੋਂ ਇੱਕ ਹੈ ਕਿਉਂਕਿ ਇਹ ਇੱਕੋ ਇੱਕ ਸੁਰੱਖਿਆ ਹੈ ਜੇ ਕੋਈ ਹੋਰ ਵਿਅਕਤੀ ਤੁਹਾਡੀ ਨਿੱਜੀ ਕੁੰਜੀ ਪ੍ਰਾਪਤ ਕਰ ਲੈਂਦਾ ਹੈ। &lt;br/&gt;ਆਦਰਸ਼ ਰੂਪ ਵਿੱਚ, ਪਾਸਫ੍ਰੇਜ਼ ਵਿੱਚ ਸ਼ਬਦਕੋਸ਼ ਦੇ ਸ਼ਬਦਾਂ ਦੀ ਵਰਤੋਂ ਨਹੀਂ ਕਰਨੀ ਚਾਹੀਦੀ ਅਤੇ ਵਰਣਮਾਲਾ ਦੇ ਅੱਖਰਾਂ ਦੇ ਕੇਸ ਨੂੰ ਮਿਲਾਉਣਾ ਚਾਹੀਦਾ ਹੈ ਅਤੇ ਗੈਰ-ਵਰਣਮਾਲਾ ਅੱਖਰਾਂ ਦੀ ਵਰਤੋਂ ਕਰਨੀ ਚਾਹੀਦੀ ਹੈ।&lt;br/&gt;GnuPG ਦੀ ਸੁਰੱਖਿਅਤ ਵਰਤੋਂ ਲਈ ਇੱਕ ਚੰਗਾ ਪਾਸਫ੍ਰੇਜ਼ ਬਹੁਤ ਜ਼ਰੂਰੀ ਹੈ।&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -850,7 +852,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਮਾਹਰ ਵਿਕਲਪਾਂ ਲਈ &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt; ਦੇਖੋ</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="168"/>
@@ -875,7 +877,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਇਸ ਓਪਰੇਸ਼ਨ ਨੂੰ ਕੁਝ ਮਿੰਟ ਲੱਗ ਸਕਦੇ ਹਨ।&lt;br /&gt;ਸਾਨੂੰ ਬਹੁਤ ਸਾਰੇ ਬੇਤਰਤੀਬ ਬਾਈਟਸ ਉਤਪੰਨ ਕਰਨ ਦੀ ਲੋੜ ਹੈ। ਪ੍ਰਾਈਮ ਜਨਰੇਸ਼ਨ ਦੌਰਾਨ ਕੁਝ ਹੋਰ ਕਾਰਵਾਈ ਕਰਨਾ ਚੰਗਾ ਵਿਚਾਰ ਹੈ (ਕੀਬੋਰਡ 'ਤੇ ਟਾਈਪ ਕਰੋ, ਮਾਊਸ ਨੂੰ ਹਿਲਾਓ, ਡਿਸਕਾਂ ਦੀ ਵਰਤੋਂ ਕਰੋ); ਇਹ ਬੇਤਰਤੀਬ ਨੰਬਰ ਜਨਰੇਟਰ ਨੂੰ ਲੋੜੀਂਦੀ ਐਂਟ੍ਰੌਪੀ ਪ੍ਰਾਪਤ ਕਰਨ ਦਾ ਬਿਹਤਰ ਮੌਕਾ ਦਿੰਦਾ ਹੈ।</translation>
     </message>
 </context>
 <context>
@@ -883,29 +885,29 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
         <source>Select profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ ਚੁਣੋ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="700"/>
         <location filename="../src/mainwindow.cpp" line="883"/>
         <source>Search Password</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਖੋਜੋ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਸਮੱਗਰੀ ਦੇ ਅੰਦਰ ਖੋਜੋ (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished">␀</translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
@@ -945,7 +947,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
         <source>Welcome to QtPass</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">QtPass ਵਿੱਚ ਤੁਹਾਡਾ ਸੁਆਗਤ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -953,19 +955,22 @@ You will not be able to change the user list!</source>
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;SourceCode&lt;/a&gt;&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;QtPass &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt; ਲਈ ਇੱਕ GUI ਹੈ, ਸਟੈਂਡਰਡ unix ਪਾਸਵਰਡ ਮੈਨੇਜਰ।&lt;/p&gt;
+&lt;p&gt;ਕਿਰਪਾ ਕਰਕੇ ਇਸ ਸਾਫਟਵੇਅਰ ਨਾਲ ਤੁਹਾਡੀਆਂ ਕੋਈ ਵੀ &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;ਸਮੱਸਿਆਵਾਂ&lt;/a&gt; ਰਿਪੋਰਟ ਕਰੋ।&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;ਦਸਤਾਵੇਜ਼ੀਕਰਨ&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/IJHack/qtpass&quot;&gt;ਸਰੋਤ ਕੋਡ&lt;/a&gt;&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
         <source>Add password</source>
-        <translation type="unfinished">Ctrl+N</translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਜੋੜੋ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="390"/>
@@ -1115,12 +1120,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished">ਸਾਰੇ ਡਿਵਾਈਸਾਂ ਉੱਤੇ ਸਿੰਕ ਕਰੋ</translation>
+        <translation type="unfinished">ਸਮੱਗਰੀ ਖੋਜੋ (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕੋਈ ਮੇਲ ਨਹੀਂ ਮਿਲਿਆ।</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
@@ -1142,38 +1147,39 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1036"/>
         <location filename="../src/mainwindow.cpp" line="1467"/>
         <source>New file</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਨਵੀਂ ਫਾਈਲ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
-        <source>New password file: 
+        <source>New password file:
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਨਵੀਂ ਪਾਸਵਰਡ ਫਾਈਲ:
+(%1 ਵਿੱਚ ਰੱਖੀ ਜਾਵੇਗੀ)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
         <source> and the whole content?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> ਅਤੇ ਸਾਰੀ ਸਮੱਗਰੀ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1084"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> ਅਤੇ ਸਾਰੀ ਸਮੱਗਰੀ? &lt;br&gt;&lt;strong&gt;ਧਿਆਨ ਦਿਓ: ਦਿੱਤੇ ਗਏ ਫੋਲਡਰ ਵਿੱਚ ਅਣਕਿਆਸੀ ਫਾਈਲਾਂ ਹਨ, ਜਾਰੀ ਰੱਖਣ ਤੋਂ ਪਹਿਲਾਂ ਉਹਨਾਂ ਦੀ ਜਾਂਚ ਕਰੋ।&lt;/strong&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਫੋਲਡਰ ਮਿਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪਾਸਵਰਡ ਮਿਟਾਉਣਾ ਹੈ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1094"/>
         <source>Are you sure you want to delete %1%2?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਕੀ ਤੁਸੀਂ ਯਕੀਨੀ ਤੌਰ 'ਤੇ %1%2 ਨੂੰ ਮਿਟਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
@@ -1183,7 +1189,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1242"/>
         <source>Profile changed to %1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਪ੍ਰੋਫਾਈਲ %1 ਵਿੱਚ ਬਦਲੀ ਗਈ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1371"/>
@@ -1283,40 +1289,48 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਵਿੱਚ ਸਾਰੇ ਪਾਸਵਰਡਾਂ ਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕਰਨਾ ਹੈ?
+
+ਇਹ .gpg-id ਵਿੱਚ ਪਰਿਭਾਸ਼ਿਤ ਮੌਜੂਦਾ ਪ੍ਰਾਪਤਕਰਤਾਵਾਂ ਦੀ ਵਰਤੋਂ ਕਰਦੇ ਹੋਏ ਇਸ ਫੋਲਡਰ ਵਿੱਚ ਸਾਰੀਆਂ ਪਾਸਵਰਡ ਫਾਈਲਾਂ ਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕਰੇਗਾ।
+
+ਇਹ ਬਹੁਤ ਸਾਰੀਆਂ ਫਾਈਲਾਂ ਨੂੰ ਦੁਬਾਰਾ ਲਿਖ ਸਕਦਾ ਹੈ ਅਤੇ ਆਸਾਨੀ ਨਾਲ ਅਣਕੀਤਾ ਨਹੀਂ ਕੀਤਾ ਜਾ ਸਕਦਾ।
+
+ਜਾਰੀ ਰੱਖਣਾ ਹੈ?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1747"/>
         <location filename="../src/mainwindow.cpp" line="1767"/>
         <source>Export Public Key</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਜਨਤਕ ਕੀ ਐਕਸਪੋਰਟ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1748"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;ਆਪਣੀ ਜਨਤਕ ਕੀ ਐਕਸਪੋਰਟ ਕਰੋ&lt;/h3&gt;&lt;p&gt;ਕੋਈ ਸਾਈਨਿੰਗ ਕੀ ਸੰਰਚਿਤ ਨਹੀਂ ਹੈ। QtPass ਸੈਟਿੰਗਜ਼ &amp;gt; GPG ਕੁੰਜੀਆਂ ਵਿੱਚ ਇੱਕ ਸੈੱਟ ਕਰੋ, ਜਾਂ ਟਰਮੀਨਲ ਵਿੱਚ ਇਹ ਚਲਾਓ:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;ਫਿਰ ਫਾਈਲ ਆਪਣੇ ਸਾਥੀਆਂ ਨੂੰ ਭੇਜੋ।&lt;/p&gt;</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1768"/>
         <source>Could not export public key for %1.
 
 %2</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਲਈ ਜਨਤਕ ਕੀ ਐਕਸਪੋਰਟ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।
+
+%2</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1770"/>
         <source>No output from gpg.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">gpg ਤੋਂ ਕੋਈ ਆਉਟਪੁੱਟ ਨਹੀਂ।</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1797"/>
         <source>Sharing Passwords with GPG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">GPG ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨਾ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1798"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h3&gt;GPG ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨਾ&lt;/h3&gt;&lt;p&gt;ਹੋਰ ਵਰਤੋਂਕਾਰਾਂ ਨਾਲ ਪਾਸਵਰਡ ਸਾਂਝੇ ਕਰਨ ਲਈ:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;ਆਪਣੀ ਜਨਤਕ ਕੁੰਜੀ ਐਕਸਪੋਰਟ ਕਰੋ&lt;/b&gt; ਅਤੇ ਇਸਨੂੰ ਸਾਥੀਆਂ ਨੂੰ ਭੇਜੋ&lt;/li&gt;&lt;li&gt;&lt;b&gt;ਸਾਥੀਆਂ ਦੀਆਂ ਜਨਤਕ ਕੁੰਜੀਆਂ ਨੂੰ ਆਯਾਤ ਕਰੋ&lt;/b&gt; ਆਪਣੀ GPG keyring ਵਿੱਚ&lt;/li&gt;&lt;li&gt;&lt;b&gt;ਪਾਸਵਰਡਾਂ ਨੂੰ ਦੁਬਾਰਾ ਏਨਕ੍ਰਿਪਟ ਕਰੋ&lt;/b&gt; ਤਾਂ ਜੋ ਸਾਰੇ ਪ੍ਰਾਪਤਕਰਤਾ ਉਹਨਾਂ ਨੂੰ ਡਿਕ੍ਰਿਪਟ ਕਰ ਸਕਣ&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;ਸਿਰਫ਼ ਉਹ ਲੋਕ ਜਿਨ੍ਹਾਂ ਕੋਲ ਮੇਲ ਖਾਂਦੀ ਗੁਪਤ ਕੁੰਜੀ ਹੈ, ਪਾਸਵਰਡਾਂ ਨੂੰ ਡਿਕ੍ਰਿਪਟ ਕਰ ਸਕਦੇ ਹਨ।&lt;/p&gt;&lt;p&gt;&lt;b&gt;ਸੁਝਾਅ:&lt;/b&gt; ਸਾਰੇ ਸਾਂਝੇ ਫੋਲਡਰਾਂ ਲਈ ਇੱਕੋ GPG ਕੁੰਜੀ ਦੀ ਵਰਤੋਂ ਕਰੋ।&lt;/p&gt;&lt;p&gt;ਹੋਰ ਵੇਰਵਿਆਂ ਲਈ FAQ ਵੇਖੋ।&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -1525,7 +1539,7 @@ Continue?</source>
     <message>
         <location filename="../src/storemodel.cpp" line="412"/>
         <source>overwrite %1 with %2?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%1 ਨੂੰ %2 ਨਾਲ ਓਵਰਰਾਈਟ ਕਰਨਾ ਹੈ?</translation>
     </message>
 </context>
 <context>
@@ -1533,22 +1547,22 @@ Continue?</source>
     <message>
         <location filename="../src/trayicon.cpp" line="67"/>
         <source>&amp;Show</source>
-        <translation type="unfinished">&amp;Dekho</translation>
+        <translation type="unfinished">&amp;ਦਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="69"/>
         <source>&amp;Hide</source>
-        <translation type="unfinished">&amp;Rakhna Band</translation>
+        <translation type="unfinished">&amp;ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished">&amp;Samaan Kamzor Karna</translation>
+        <translation type="unfinished">ਛੋ&amp;ਟਾ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished">&amp;Samaan Badalna</translation>
+        <translation type="unfinished">ਵੱ&amp;ਡਾ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
@@ -1575,7 +1589,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ਚੁਣੋ ਕਿ ਕਿਹੜੇ ਵਰਤੋਂਕਾਰ ਇਸ ਫੋਲਡਰ ਵਿੱਚ ਸਟੋਰ ਕੀਤੇ ਪਾਸਵਰਡਾਂ ਨੂੰ ਡਿਕ੍ਰਿਪਟ ਕਰਨ ਦੇ ਯੋਗ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ।
+ਨੋਟ: ਮੌਜੂਦਾ ਫਾਈਲਾਂ ਨੂੰ ਸੋਧਿਆ ਨਹੀਂ ਜਾਵੇਗਾ, ਅਤੇ ਉਹ ਪੁਰਾਣੀਆਂ ਇਜਾਜ਼ਤਾਂ ਨੂੰ ਉਦੋਂ ਤੱਕ ਬਰਕਰਾਰ ਰੱਖਣਗੀਆਂ ਜਦੋਂ ਤੱਕ ਤੁਸੀਂ ਉਹਨਾਂ ਨੂੰ ਸੰਪਾਦਿਤ ਨਹੀਂ ਕਰਦੇ।
+ਨੀਲੀਆਂ ਐਂਟਰੀਆਂ ਕੋਲ ਗੁਪਤ ਕੁੰਜੀ ਉਪਲਬਧ ਹੈ, ਡਿਕ੍ਰਿਪਟ ਕਰਨ ਦੇ ਯੋਗ ਹੋਣ ਲਈ ਇਹਨਾਂ ਵਿੱਚੋਂ ਇੱਕ ਚੁਣੋ।
+ਕਾਲੀਆਂ ਐਂਟਰੀਆਂ ਕੋਲ ਏਨਕ੍ਰਿਪਸ਼ਨ ਕੁੰਜੀ ਉਪਲਬਧ ਹੈ ਅਤੇ ਇਹ ਭਰੋਸੇਯੋਗ ਹੈ, ਹੋਰ ਲੋਕਾਂ ਨੂੰ ਡਿਕ੍ਰਿਪਟ ਕਰਨ ਦੀ ਆਗਿਆ ਦੇਣ ਲਈ ਇਹਨਾਂ ਵਿੱਚੋਂ ਇੱਕ ਚੁਣੋ।
+ਲਾਲ ਐਂਟਰੀਆਂ ਵੈਧ ਨਹੀਂ ਹਨ, ਤੁਸੀਂ ਇਹਨਾਂ ਨੂੰ ਏਨਕ੍ਰਿਪਟ ਨਹੀਂ ਕਰ ਸਕੋਗੇ।</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
