@@ -58,7 +58,7 @@ Or install native binaries: `cargo install zizmor`, distro packages for clang-fo
 
 `act` works well for most workflows but the super-linter image has version drift and event-mock issues — see "Reproducing CI locally" above for the reliable alternative.
 
-**Always run local CI before pushing PRs.** Use `act` to run GitHub Actions workflows locally.
+**Always run local CI before pushing PRs.** Use `act` for most workflows; for super-linter workflows, prefer the Docker-based alternative described above (version drift and event-mock issues make `act` unreliable there).
 
 ### Why Use act?
 
