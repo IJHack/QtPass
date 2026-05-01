@@ -356,17 +356,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
         <source>Template</source>
-        <translation type="unfinished">Templat</translation>
+        <translation>Templat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
-        <translation>Template menambahkan kolom tambahan pada dialog pembuatan kata sandi dan pada tampilan kata sandi.</translation>
+        <translation>Templat menambahkan kolom tambahan pada dialog pembuatan kata sandi dan pada tampilan kata sandi.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
         <source>Use template</source>
-        <translation>Gunakan template</translation>
+        <translation>Gunakan templat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
@@ -830,17 +830,17 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation type="unfinished">Frasa sandi</translation>
+        <translation>Frasa sandi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tidak ada batas panjang passphrase, dan passphrase harus dipilih dengan hati-hati. Dari sisi keamanan, passphrase untuk membuka kunci privat adalah salah satu titik terlemah di GnuPG (dan sistem enkripsi kunci publik lain) karena passphrase adalah satu-satunya perlindungan yang Anda miliki jika orang lain mendapatkan kunci privat Anda. &lt;br/&gt;Idealnya passphrase tidak menggunakan kata-kata dari kamus dan menggabungkan huruf besar/kecil serta karakter non-alfabet.&lt;br/&gt;Passphrase yang baik sangat penting untuk penggunaan GnuPG yang aman.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tidak ada batas panjang frasa sandi, dan frasa sandi harus dipilih dengan hati-hati. Dari sisi keamanan, frasa sandi untuk membuka kunci privat adalah salah satu titik terlemah di GnuPG (dan sistem enkripsi kunci publik lain) karena frasa sandi adalah satu-satunya perlindungan yang Anda miliki jika orang lain mendapatkan kunci privat Anda. &lt;br/&gt;Idealnya frasa sandi tidak menggunakan kata-kata dari kamus dan menggabungkan huruf besar/kecil serta karakter non-alfabet.&lt;br/&gt;Frasa sandi yang baik sangat penting untuk penggunaan GnuPG yang aman.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
         <source>Repeat pass</source>
-        <translation>Ulangi passphrase</translation>
+        <translation>Ulangi frasa sandi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
