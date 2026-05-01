@@ -107,12 +107,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
         <source>Alphabetical</source>
-        <translation>ਅੰਕੜਿਆਂ ਦੇ ਅੰਕੜੇ</translation>
+        <translation type="unfinished">ਵਰਨਮਾਲਾ ਅਧਾਰਿਤ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
         <source>Alphanumerical</source>
-        <translation>ਅੰਕੜਿਆਂ ਅਤੇ ਸੰਖਿਆਵਾਂ ਦੇ ਅੰਕੜੇ</translation>
+        <translation type="unfinished">ਅੱਖਰਾਂ ਅਤੇ ਅੰਕਾਂ ਵਾਲਾ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
@@ -152,7 +152,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
         <source>Git:</source>
-        <translation>ਜੀਟਲ ਦੇ ਪ੍ਰੋਜੈਕਟ ਵਿੱਚ ਜਾਣੋ:</translation>
+        <translation type="unfinished">ਗਿਟ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
@@ -162,7 +162,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
-        <translation>ਅਤੇਵਿਆਂ ਗੈਸਟੀਡੀ-ਐਡੀ ਫਾਈਲਾਂ ਨੂੰ ਜ਼ਮੀਨੀ ਕਰੋ</translation>
+        <translation type="unfinished">.gpg-id ਫਾਈਲਾਂ ਨੂੰ ਆਪਣੇ ਆਪ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
@@ -207,7 +207,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation>ਵਾਇਰੀ ਐਕਸ਼ਨ ਪਿਕਚਰ</translation>
+        <translation type="unfinished">ਸਿਸਟਮ ਟਰੇ ਆਈਕਨ ਵਰਤੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
