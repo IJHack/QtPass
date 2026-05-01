@@ -19,7 +19,7 @@ QtPass is a multi-platform GUI for [pass](https://www.passwordstore.org/),
 the standard Unix password manager, providing a secure and intuitive way to
 manage your passwords.
 
-_Available in 42 languages_
+_Available in over 60 languages_
 
 ## Features
 
@@ -33,6 +33,9 @@ _Available in 42 languages_
 - Git integration for version control
 - Smartcard and USB token support (OpenPGP, YubiKey)
 - Configurable shoulder surfing protection
+- Share submenu: re-encrypt folder, export your public key, add recipients
+- Import GPG keys from file or clipboard without leaving the app
+- Process output panel with command labels, color-coded errors, and auto-scroll
 - Experimental WebDAV support
 - Easy onboarding for new users
 
@@ -74,7 +77,7 @@ Windows
 
 #### Dependencies
 
-- QtPass requires Qt 5.12 or later (Qt 6 supported)
+- QtPass requires Qt 5.15 or later (Qt 6 recommended; build with `qmake6`)
 - The Linguist package is required to compile translations
 - For fallback icons, the SVG library is required
 
@@ -192,7 +195,6 @@ attack I can think of at least two options:
 - Optional table view of decrypted folder contents
 - Opening of (basic auth) URLs in default browser?
   Possibly with helper plugin for filling out forms?
-- WebDAV (configuration) support
 - Some other form of remote storage that allows for
   accountability / auditing (web API to retrieve the .gpg files?)
 
