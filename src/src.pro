@@ -36,6 +36,7 @@ TRANSLATIONS    +=  ../localization/localization_ar.ts \
                     ../localization/localization_nl_BE.ts \
                     ../localization/localization_nl_NL.ts \
                     ../localization/localization_fy_NL.ts \
+                    ../localization/localization_pa_IN.ts \
                     ../localization/localization_pl.ts \
                     ../localization/localization_pt_BR.ts \
                     ../localization/localization_pt_PT.ts \
