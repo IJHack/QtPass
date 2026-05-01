@@ -71,7 +71,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽabcdefghijklmnopqrstuvwxyzáčďéěíňóřšťúůýž0123456789</translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽabcdefghijklmnopqrstuvwxyzáčďéěíňóřšťúůýž0123456789</translation>
     </message>
     <message>
         <source>Use pwgen</source>
@@ -490,7 +490,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">Nainstalujte si prosím do svého systému GnuPG. &lt;br&gt; Nainstalujte si z obchodu Microsoft Store &lt;strong&gt; Ubuntu &lt;/strong&gt;. Pokud jste tak již učinili, ujistěte se, že jste jej jednou spustili a &lt;br&gt; klikněte na „Automaticky“ v dalším dialogu.</translation>
+        <translation>Nainstalujte si prosím do svého systému GnuPG. &lt;br&gt; Nainstalujte si z obchodu Microsoft Store &lt;strong&gt; Ubuntu &lt;/strong&gt;. Pokud jste tak již učinili, ujistěte se, že jste jej jednou spustili a &lt;br&gt; klikněte na „Automaticky“ v dalším dialogu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
