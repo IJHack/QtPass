@@ -1336,8 +1336,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>Found %n match</numerusform>
+            <numerusform>Found %n matches</numerusform>
         </translation>
     </message>
     <message>
@@ -1471,8 +1471,8 @@ p, li { white-space: pre-wrap; }
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>in %n entry.</numerusform>
+            <numerusform>in %n entries.</numerusform>
         </translation>
     </message>
     <message>
