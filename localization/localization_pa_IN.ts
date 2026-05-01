@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation>ਕਲਪੀ ਵਿਚਾਰਧਾਰਾ:</translation>
+        <translation type="unfinished">ਕਲਿੱਪਬੋਰਡ ਵਿਹਾਰ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -52,22 +52,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>ਪੈਨਲ ਬਾਅਦ ਦੇ ਉਸ਼ੂਮ ਕਰੋ:</translation>
+        <translation type="unfinished">ਪੈਨਲ ਆਪਣੇ-ਆਪ ਸਾਫ਼ ਕਰੋ ਬਾਅਦ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>ਇੱਕ ਵਿਸਥਾਰੀ ਫੋਨਟ ਵਰਤੋ</translation>
+        <translation type="unfinished">ਮੋਨੋਸਪੇਸ ਫੌਂਟ ਵਰਤੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation>ਅਜਿਹੇ ਪਹਿਲੂ ਦੇ ਮਾਹਿਓ ਦਿਖਾਓ</translation>
+        <translation type="unfinished">ਫਾਈਲ ਦੀ ਸਮੱਗਰੀ ਨੂੰ ਜਿਵੇਂ ਹੈ ਦਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation>ਨਾ ਲਾਈਨ ਡ੍ਰਾਪਿੰਗ</translation>
+        <translation type="unfinished">ਲਾਈਨ ਰੈਪਿੰਗ ਨਹੀਂ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
