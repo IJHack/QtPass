@@ -25,8 +25,7 @@ max-cache-ttl 7200
 
 ### I don't get a passphrase / PIN dialog
 
-- You'll need to install a pinentry package (often called `pinentry-qt`, `pinentry-qt5`, or a similar name like `pinentry-gtk` depending on your distribution; search in your package manager) and
-  possibly set the full path to that executable in your `~/.gnupg/gpg-agent.conf`
+- You'll need to install a pinentry package. On modern distributions `pinentry-qt` (Qt 6) is the usual choice; `pinentry-qt5` and `pinentry-gtk` are common fallbacks if your distro hasn't moved to Qt 6 yet. Search your package manager. You may also need to set the full path to that executable in your `~/.gnupg/gpg-agent.conf`,
   for example: `pinentry-program /usr/bin/pinentry-qt`
 - On some systems it might be necessary to create a symbolic
   link `/usr/bin/pinentry` to your pinentry application of choice
@@ -99,6 +98,26 @@ The Signing Key field in profile configuration is **optional** and usually shoul
 It is only needed if you want to create **detached signatures** for your `.gpg-id` files to verify the recipients list hasn't been tampered with. Most users can ignore this field.
 
 Common mistake: Putting your GPG key ID here will cause "Signature does not exist" errors when saving passwords. Leave it empty unless you specifically need signature verification.
+
+### How do I import someone else's GPG key?
+
+Open the **Users** dialog (the _Users_ button in the toolbar) and click **Import key**. You can:
+
+- Pick an ASCII-armored `.asc` file from disk, or
+- Paste the armored key block from your clipboard.
+
+Once imported, QtPass refreshes the user list and selects the new key so you can tick it as a recipient. Binary keyrings aren't accepted in this dialog — convert them first with `gpg --armor --export <KEYID>`.
+
+### What does the Share submenu do?
+
+Right-click on a **folder** in the password tree to access the **Share** submenu. It bundles the recipient-management actions in one place:
+
+- **Re-encrypt all passwords** — runs `pass init` on the folder so its contents match the current `.gpg-id` recipients.
+- **Export my public key…** — saves your public key as an ASCII-armored file you can hand to a teammate.
+- **Add recipient…** — opens the user dialog scoped to this folder so you can toggle who can decrypt its passwords.
+- **What is this?** — short explainer dialog linking the three flows.
+
+The submenu only appears on folders, not individual password files.
 
 ### OTP QR codes don't work on macOS
 
@@ -183,9 +202,24 @@ If you encounter Qt installation issues, you'll have to install the current vers
 
 ### How do I set the language manually?
 
-QtPass uses the system language. Changing it depends on your system:
+QtPass uses the system language (via `QLocale::system()`). Changing it depends on your platform:
 
-- on Linux: `LANGUAGE=fr qtpass` will run QtPass in French.
+- **Linux / BSD:** `LANGUAGE=fr qtpass` will run QtPass in French. `LC_ALL` and `LANG` work too; see the GNU gettext docs for the precedence order.
+- **macOS:** environment variables like `LANG` are **not** honored by Qt on macOS — Qt reads CoreFoundation locale instead. Override per-app with:
+
+  ```sh
+  defaults write com.IJHack.QtPass AppleLanguages '(fr)'
+  ```
+
+  Or pass the override as a launch argument:
+
+  ```sh
+  open -a QtPass --args -AppleLanguages '(fr)'
+  ```
+
+  Use `defaults delete com.IJHack.QtPass AppleLanguages` to revert.
+
+- **Windows:** there is no environment-variable override — Qt reads the Windows display language via `GetUserDefaultLocaleName()`. Change the **system display language** in _Settings → Time & Language → Language_, or add the desired language and move it to the top of your preferred-language list.
 
 ## How can I help improve QtPass?
 
