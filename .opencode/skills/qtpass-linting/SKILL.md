@@ -11,7 +11,7 @@ metadata:
 
 ## Super-linter v8 specifics (CI pin: v8.6.0)
 
-The lint workflow uses `super-linter/super-linter@v8` which resolves to image **`ghcr.io/super-linter/super-linter:v8.6.0`**. Critical quirks learned the hard way:
+The lint workflow uses `super-linter/super-linter@v8.6.0` which resolves to image **`ghcr.io/super-linter/super-linter:v8.6.0`**. Critical quirks learned the hard way:
 
 ### Config file locations
 
