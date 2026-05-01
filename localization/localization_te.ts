@@ -237,12 +237,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished">స్థానిక Git/GPG</translation>
+        <translation type="unfinished">(&amp;v) స్థానిక Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
         <source>&amp;Use pass</source>
-        <translation type="unfinished">pass ఉపయోగించండి</translation>
+        <translation type="unfinished">&amp;pass ఉపయోగించండి</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
@@ -835,7 +835,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;పాస్‌ఫ్రేజ్ పొడవుపై ఎటువంటి పరిమితి లేదు మరియు దీన్ని జాగ్రత్తగా ఆనుకోవాలి. భద్రత దృక్కోణం నుండి, ప్రైవేట్ కీని అన్‌లాక్ చేయడానికి పాస్‌ఫ్రేజ్ GnuPG (మరియు ఇతర పబ్లిక్-కీ ఎన్క్రిప్షన్ సిస్టమ్‌లలో కూడా) లో బలహీనమైన అంశాలలో ఒకటి, ఎందుకంటే మరొక వ్యక్తి మీ ప్రైవేట్ కీని పొందితే మీకు ఉన్న ఏకైక రక్షణ ఇది. &lt;br/&gt;ఆదర్శవంతంగా, పాస్‌ఫ్రేజ్ డిక్షనరీ నుండి పదాలను ఉపయోగించకూడదు మరియు అక్షర అక్షరాల కేస్‌ను మిక్స్ చేయాలి అలాగే అక్షర-యేతర అక్షరాలను ఉపయోగించాలి.&lt;br/&gt;GnuPG యొక్క సురక్షిత ఉపయోగానికి మంచి పాస్‌ఫ్రేజ్ కీలకం.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;పాస్‌ఫ్రేజ్ పొడవుపై ఎటువంటి పరిమితి లేదు మరియు దీన్ని జాగ్రత్తగా ఎన్నుకోవాలి. భద్రత దృక్కోణం నుండి, ప్రైవేట్ కీని అన్‌లాక్ చేయడానికి పాస్‌ఫ్రేజ్ GnuPG (మరియు ఇతర పబ్లిక్-కీ ఎన్క్రిప్షన్ సిస్టమ్‌లలో కూడా) లో బలహీనమైన అంశాలలో ఒకటి, ఎందుకంటే మరొక వ్యక్తి మీ ప్రైవేట్ కీని పొందితే మీకు ఉన్న ఏకైక రక్షణ ఇది. &lt;br/&gt;ఆదర్శవంతంగా, పాస్‌ఫ్రేజ్ డిక్షనరీ నుండి పదాలను ఉపయోగించకూడదు మరియు అక్షర అక్షరాల కేస్‌ను మిక్స్ చేయాలి అలాగే అక్షర-యేతర అక్షరాలను ఉపయోగించాలి.&lt;br/&gt;GnuPG యొక్క సురక్షిత ఉపయోగానికి మంచి పాస్‌ఫ్రేజ్ కీలకం.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
