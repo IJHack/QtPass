@@ -519,7 +519,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">කරුණාකර ඔබේ පද්ධතියේ GnuPG ස්ථාපනය කරන්න.&lt;br&gt;එය ලබා ගැනීමට Microsoft Store වෙතින් &lt;strong&gt;Ubuntu&lt;/strong&gt; ස්ථාපනය කරන්න.&lt;br&gt;ඔබ දැනටමත් එසේ කර ඇත්නම්, ඔබ එය එක් වරක් ආරම්භ කර ඇති බවට වග බලා ගන්න, ඊළඟ සංවාදයේදී &quot;ස්වයංක්‍රීයව හඳුනාගැනීම&quot; ක්ලික් කරන්න.</translation>
+        <translation>කරුණාකර ඔබේ පද්ධතියේ GnuPG ස්ථාපනය කරන්න.&lt;br&gt;එය ලබා ගැනීමට Microsoft Store වෙතින් &lt;strong&gt;Ubuntu&lt;/strong&gt; ස්ථාපනය කරන්න.&lt;br&gt;ඔබ දැනටමත් එසේ කර ඇත්නම්, ඔබ එය එක් වරක් ආරම්භ කර ඇති බවට වග බලා ගන්න, ඊළඟ සංවාදයේදී &quot;ස්වයංක්‍රීයව හඳුනාගැනීම&quot; ක්ලික් කරන්න.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
@@ -925,7 +925,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished">නම අවම වශයෙන් අක්ෂර 5ක් දිගු විය යුතුය.</translation>
+        <translation>නම අවම වශයෙන් අක්ෂර 5ක් දිගු විය යුතුය.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
@@ -1502,7 +1502,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation type="unfinished">.gpg-id ගොනුව %1 හි සෑදීමට අසමත් විය</translation>
+        <translation>.gpg-id ගොනුව %1 හි සෑදීමට අසමත් විය</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
@@ -1869,7 +1869,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation type="unfinished">යතුරු ලැයිස්තුව නැත</translation>
+        <translation>යතුරු ලැයිස්තුව නැත</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
