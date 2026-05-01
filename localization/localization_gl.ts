@@ -422,7 +422,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Instala GnuPG no teu sistema. &lt;b&gt;Instala &lt;strong&gt;gpg&lt;/strong&gt; usando o teu xestor de paquetes&lt;br&gt;ou &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descargao&lt;/a&gt; desde GnuPG.org</translation>
+        <translation type="unfinished">Instala GnuPG no teu sistema.&lt;br&gt;Instala &lt;strong&gt;gpg&lt;/strong&gt; usando o teu xestor de paquetes&lt;br&gt;ou &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;descárgao&lt;/a&gt; desde GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>

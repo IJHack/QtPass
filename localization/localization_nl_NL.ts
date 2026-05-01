@@ -523,7 +523,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;Ubuntu&lt;/strong&gt;uit de Microsoft Store om het te verkrijgen.&lt;br&gt;Als je dit al hebt gedaan, zorg er dan voor dat je het eenmaal hebt gestart en klik dan op &quot;Automatisch detecteren&quot; in het volgende venster.</translation>
+        <translation type="unfinished">Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;Ubuntu&lt;/strong&gt;uit de Microsoft Store om het te verkrijgen.&lt;br&gt;Als je dit al hebt gedaan, zorg er dan voor dat je het eenmaal hebt gestart en&lt;br&gt;klik dan op &quot;Automatisch detecteren&quot; in het volgende venster.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
