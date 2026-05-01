@@ -58,6 +58,7 @@ TRANSLATIONS    +=  ../localization/localization_ar.ts \
                     ../localization/localization_fi.ts \
                     ../localization/localization_uk.ts \
                     ../localization/localization_ta.ts \
+                    ../localization/localization_te.ts \
                     ../localization/localization_id.ts \
                     ../localization/localization_lt.ts \
                     ../localization/localization_lv.ts \
