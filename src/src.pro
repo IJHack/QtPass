@@ -62,6 +62,7 @@ TRANSLATIONS    +=  ../localization/localization_ar.ts \
                     ../localization/localization_id.ts \
                     ../localization/localization_lt.ts \
                     ../localization/localization_lv.ts \
+                    ../localization/localization_mr.ts \
                     ../localization/localization_sl.ts \
                     ../localization/localization_zh_Hant.ts \
                     ../localization/localization_vi.ts \
