@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation>Clipboard behaviour:</translation>
+        <translation>Clipboard behavior:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
-        <translation>Content panel behaviour:</translation>
+        <translation>Content panel behavior:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
@@ -194,7 +194,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>Generate easy to memorise but less secure passwords</translation>
+        <translation>Generate easy to memorize but less secure passwords</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
@@ -242,7 +242,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation>Use Tray icon</translation>
+        <translation>Use TrayIcon</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
@@ -1003,7 +1003,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="201"/>
         <source>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</source>
-        <translation>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilise the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</translation>
+        <translation>This operation can take some minutes.&lt;br /&gt;We need to generate a lot of random bytes. It is a good idea to perform some other action (type on the keyboard, move the mouse, utilize the disks) during the prime generation; this gives the random number generator a better chance to gain enough entropy.</translation>
     </message>
 </context>
 <context>

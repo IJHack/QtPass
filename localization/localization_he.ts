@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation>אוטומטי לאחר:</translation>
+        <translation type="unfinished">ניקוי אוטומטי לאחר:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -47,12 +47,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation>הסתר ססמא</translation>
+        <translation type="unfinished">הסתר סיסמה</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>פאנל אוטומטי לאחר:</translation>
+        <translation>ניקוי אוטומטי של הלוח לאחר:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
-        <translation>אי-כלילת אותיות רישיות</translation>
+        <translation type="unfinished">אל תכלול אותיות רישיות</translation>
     </message>
     <message>
         <source>Include special symbols </source>
@@ -206,7 +206,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation>הסתתר מקרוב</translation>
+        <translation type="unfinished">הסתר בעת סגירה</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>

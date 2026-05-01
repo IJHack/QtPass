@@ -534,7 +534,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
         <source>Use Git</source>
-        <translation type="unfinished">கிட்டைப் பயன்படுத்தவும்</translation>
+        <translation>கிட்டைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
@@ -554,7 +554,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
         <source>Git</source>
-        <translation type="unfinished">கிட்</translation>
+        <translation>கிட்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
@@ -1082,12 +1082,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="428"/>
         <source>Git push</source>
-        <translation type="unfinished">கிட் புஷ்</translation>
+        <translation>கிட் புஷ்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="436"/>
         <source>Git pull</source>
-        <translation type="unfinished">கிட் இழுத்தல்</translation>
+        <translation>கிட் இழுத்தல்</translation>
     </message>
     <message>
         <source>git pull</source>
@@ -1803,7 +1803,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished">GPG விசை ஜோடி உருவாக்கம் தோல்வியடைந்தது</translation>
+        <translation>GPG விசை ஜோடி உருவாக்கம் தோல்வியடைந்தது</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
