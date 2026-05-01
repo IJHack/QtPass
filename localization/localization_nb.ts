@@ -901,7 +901,7 @@ Utløpsdato: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>Navn må være mer enn 5 tegn.</translation>
+        <translation type="unfinished">Navnet må ha minst 5 tegn.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
