@@ -142,7 +142,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished">ਗੁੱਝ ਯਾਦ ਰੱਖਣ ਵਾਲੇ ਪਰ ਘੱਟ ਸੁਰੱਖਿਅਤ ਪੈਸਵਰਡ ਪੈਦਾ ਕਰੋ</translation>
+        <translation type="unfinished">ਆਸਾਨ ਯਾਦ ਰੱਖਣ ਵਾਲੇ ਪਰ ਘੱਟ ਸੁਰੱਖਿਅਤ ਪੈਸਵਰਡ ਪੈਦਾ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
@@ -247,7 +247,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
         <source>Native</source>
-        <translation>ਨੇਤਿਵ</translation>
+        <translation type="unfinished">ਮੂਲ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -545,7 +545,7 @@ URL
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished">ਕਾਪੀ ਕਰੋ ਕਲਿੱਪਬੋਰਡ</translation>
+        <translation type="unfinished">ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -865,12 +865,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>ਨਾਮ ਦੀ ਕਦਮੀ 5 ਚਰਕਿਆਂ ਤੋਂ ਵੱਧ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।</translation>
+        <translation type="unfinished">ਨਾਮ ਦੀ ਕਦਮੀ 5 ਅੱਖਰਾਂ ਤੋਂ ਵੱਧ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation>ਬੈਲੰਡ ਇਮੇਲ</translation>
+        <translation type="unfinished">ਗਲਤ ਈਮੇਲ</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
@@ -1009,7 +1009,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
         <source>Ctrl+G</source>
-        <translation>^C+G</translation>
+        <translation type="unfinished">Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
@@ -1045,7 +1045,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="449"/>
         <source>Config</source>
-        <translation>ਕਾਨੂੰਨ</translation>
+        <translation type="unfinished">ਸੰਰਚਨਾ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
@@ -1060,7 +1060,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation>ਅਣਡੋਲਤਾ</translation>
+        <translation type="unfinished">ਸਾਫ਼ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
