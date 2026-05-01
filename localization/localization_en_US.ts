@@ -1335,7 +1335,7 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>Found %n match</numerusform>
             <numerusform>Found %n matches</numerusform>
         </translation>
@@ -1470,7 +1470,7 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation>
+        <translation type="unfinished">
             <numerusform>in %n entry.</numerusform>
             <numerusform>in %n entries.</numerusform>
         </translation>
