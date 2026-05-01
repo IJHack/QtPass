@@ -236,7 +236,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯabcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя0123456789</translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯabcdefghijklmnopqrstuvwxyzабвгдеёжзийклмнопрстуфхцчшщъыьэюя0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
@@ -1225,7 +1225,7 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Найдено %n совпадение</numerusform>
             <numerusform>Найдено %n совпадения</numerusform>
             <numerusform>Найдено %n совпадений</numerusform>
@@ -1428,7 +1428,7 @@ Expire-Date: 0
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>в %n записи.</numerusform>
             <numerusform>в %n записях.</numerusform>
             <numerusform>в %n записях.</numerusform>
