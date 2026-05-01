@@ -1624,22 +1624,22 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation>Mi&amp;nimize</translation>
+        <translation type="unfinished">Mi&amp;nimizo</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation>Ma&amp;ximize</translation>
+        <translation type="unfinished">Ma&amp;ksimizo</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation>&amp;Restore</translation>
+        <translation type="unfinished">&amp;Rikthe</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Quit</translation>
+        <translation type="unfinished">&amp;Dil</translation>
     </message>
 </context>
 <context>
