@@ -1000,7 +1000,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation>O nome debe ter máis de 4 caracteres.</translation>
+        <translation type="unfinished">O nome debe ter polo menos 5 caracteres.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
