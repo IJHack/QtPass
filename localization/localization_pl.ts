@@ -418,7 +418,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;gpg&lt;/strong&gt; używając twojego ulubionego menedżera proramów&lt;br&gt;lub &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;zainstaluj&lt;/a&gt; z GnuPG.org</translation>
+        <translation type="unfinished">Zainstaluj GnuPG na swoim systemie.&lt;br&gt;Zainstaluj &lt;strong&gt;gpg&lt;/strong&gt; używając twojego ulubionego menedżera programów&lt;br&gt;lub &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;zainstaluj&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -479,7 +479,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
         <source>Use QRencode</source>
-        <translation>Uzyj QRencode</translation>
+        <translation type="unfinished">Użyj QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
@@ -810,12 +810,12 @@ Nie będziesz w stanie rozszyfrować żadnych nowych haseł!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Generuj pare kluczy GnuPG</translation>
+        <translation type="unfinished">Generuj parę kluczy GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
         <source>Generate a new key pair</source>
-        <translation>Generuj nową pare kluczy</translation>
+        <translation type="unfinished">Generuj nową parę kluczy</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
