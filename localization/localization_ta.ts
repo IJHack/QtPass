@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">ஒரு மோனோஸ்பேஸ் எழுத்துருவைப் பயன்படுத்தவும்</translation>
+        <translation>ஒரு மோனோஸ்பேஸ் எழுத்துருவைப் பயன்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">விருப்பத்திற்குரியது: முழுமைத்தன்மை சரிபார்ப்பிற்காக .gpg-id கோப்புகளில் கையொப்பமிட பயன்படுத்தப்படும் GPG விசை. பயனர் பட்டியலை மாற்றம் செய்யப்படுவதிலிருந்து பாதுகாக்க வேண்டிய அவசியம் இல்லையெனில் இதை காலியாக விடுங்கள்.</translation>
+        <translation>விருப்பத்திற்குரியது: முழுமைத்தன்மை சரிபார்ப்பிற்காக .gpg-id கோப்புகளில் கையொப்பமிட பயன்படுத்தப்படும் GPG விசை. பயனர் பட்டியலை மாற்றம் செய்யப்படுவதிலிருந்து பாதுகாக்க வேண்டிய அவசியம் இல்லையெனில் இதை காலியாக விடுங்கள்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
@@ -747,7 +747,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation type="unfinished">கிட் காப்புப்பிரதியை உருவாக்க முடியாததால் மீள் குறியாக்கம் நிறுத்தப்பட்டது.</translation>
+        <translation>கிட் காப்புப்பிரதியை உருவாக்க முடியாததால் மீள் குறியாக்கம் நிறுத்தப்பட்டது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
@@ -773,12 +773,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">%1 ஐ மீண்டும் மறைகுறியாக்க முடியவில்லை</translation>
+        <translation>%1 ஐ மீண்டும் மறைகுறியாக்க முடியவில்லை</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">மறு-குறியாக்கம் முடிந்தது: %1 வெற்றி, %2 தோல்வி</translation>
+        <translation>மறு-குறியாக்கம் முடிந்தது: %1 வெற்றி, %2 தோல்வி</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
