@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation type="unfinished">ਸੈੱਟਿੰਗਜ਼</translation>
+        <translation type="unfinished">ਸੰਰਚਨਾ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
@@ -127,7 +127,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
         <source>Use PWGen</source>
-        <translation>ਵੀ ਪੈਸਵਰਡ ਨੂੰ ਤਿਆਰ ਕਰੋ</translation>
+        <translation type="unfinished">PWGen ਵਰਤੋਂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
@@ -271,7 +271,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
         <source>Generate GPG key pair</source>
-        <translation>ਸੀ ਐਨ ਗੋਪ ਕੀ ਜੋੜ ਦੇ ਤੌਰ ਤੇ</translation>
+        <translation type="unfinished">GPG ਕੁੰਜੀ ਜੋੜੀ ਬਣਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
@@ -415,12 +415,12 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation>ਸਦਾ ਕੱਪੀਬੋਰਡ ਵਿੱਚ ਕੁਲੈਂਟ ਕਰੋ</translation>
+        <translation type="unfinished">ਸਦਾ ਕਲਿਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation>ਮੰਗ ਅਨੁਸਾਰ ਕੱਪੀਬੋਰਡ ਵਿੱਚ ਕੁਲੈਂਟ ਕਰੋ</translation>
+        <translation type="unfinished">ਮੰਗ ਅਨੁਸਾਰ ਕਲਿਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
@@ -442,7 +442,7 @@ URL
         <location filename="../src/configdialog.cpp" line="728"/>
         <location filename="../src/configdialog.cpp" line="985"/>
         <source>Error</source>
-        <translation>ਘਟਨਾ ਦੀ ਗੱਲ ਹੈ</translation>
+        <translation type="unfinished">ਗਲਤੀ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
@@ -1050,7 +1050,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
         <source>Configuration</source>
-        <translation>ਸੈੱਟਿੰਗਜ਼</translation>
+        <translation type="unfinished">ਸੰਰਚਨਾ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
@@ -1246,7 +1246,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1487"/>
         <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Error</source>
-        <translation>ਖ਼ਰਾਬੀ</translation>
+        <translation type="unfinished">ਗਲਤੀ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
