@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>தன்னியக்க குழுவை அழி:</translation>
+        <translation>பலகம் தானாக அழிக்கப்படும் நேரம்:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
