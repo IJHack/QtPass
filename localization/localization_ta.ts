@@ -742,7 +742,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation type="unfinished">கிட் நிலையை சரிபார்க்க முடியவில்லை. மீள் குறியாக்கம் நிறுத்தப்பட்டது.</translation>
+        <translation>கிட் நிலையை சரிபார்க்க முடியவில்லை. மீள் குறியாக்கம் நிறுத்தப்பட்டது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
@@ -768,17 +768,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation type="unfinished">அடைவைப் பொறுத்து .gpg-id ஐ சரிபார்க்க முடியவில்லை.</translation>
+        <translation>அடைவைப் பொறுத்து .gpg-id ஐ சரிபார்க்க முடியவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>%1 உருவாக்கல் மாற்றம் தேவையாக விளக்கப்படவில்லை</translation>
+        <translation type="unfinished">%1 ஐ மீண்டும் மறைகுறியாக்க முடியவில்லை</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>ரூக்கு உருவாக்கல் மாற்றம் சரணி வழங்கப்பட்டது: %1 தேவையானவை, %2 முடிவுகள்</translation>
+        <translation type="unfinished">மறு-குறியாக்கம் முடிந்தது: %1 வெற்றி, %2 தோல்வி</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
@@ -870,7 +870,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished">GnuPG விசை ஜோடியை உருவாக்கு</translation>
+        <translation>GnuPG விசை ஜோடியை உருவாக்கு</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
