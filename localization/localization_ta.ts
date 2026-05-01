@@ -1062,7 +1062,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished">Ctrl+N</translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
@@ -1077,7 +1077,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
         <source>Ctrl+G</source>
-        <translation type="unfinished">Ctrl+G</translation>
+        <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="428"/>

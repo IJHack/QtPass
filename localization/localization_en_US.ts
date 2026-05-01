@@ -146,7 +146,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
         <source>Generate</source>
-        <translation type="unfinished">Generate</translation>
+        <translation>Generate</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
@@ -1335,7 +1335,7 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>Found %n match</numerusform>
             <numerusform>Found %n matches</numerusform>
         </translation>
@@ -1470,7 +1470,7 @@ p, li { white-space: pre-wrap; }
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>in %n entry.</numerusform>
             <numerusform>in %n entries.</numerusform>
         </translation>

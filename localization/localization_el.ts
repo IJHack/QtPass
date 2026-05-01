@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩabcdefghijklmnopqrstuvwxyzαβγδεζηθικλμνξοπρστυφχψω0123456789</translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩabcdefghijklmnopqrstuvwxyzαβγδεζηθικλμνξοπρστυφχψω0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>

@@ -6,7 +6,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
         <source>Configuration</source>
-        <translation type="unfinished">ਸੰਰਚਨਾ</translation>
+        <translation>ਸੰਰਚਨਾ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
@@ -16,7 +16,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
         <source>Clipboard behaviour:</source>
-        <translation type="unfinished">ਕਲਿੱਪਬੋਰਡ ਵਿਹਾਰ:</translation>
+        <translation>ਕਲਿੱਪਬੋਰਡ ਵਿਹਾਰ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
@@ -52,22 +52,22 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished">ਪੈਨਲ ਆਪਣੇ-ਆਪ ਸਾਫ਼ ਕਰੋ ਬਾਅਦ:</translation>
+        <translation>ਪੈਨਲ ਆਪਣੇ-ਆਪ ਸਾਫ਼ ਕਰੋ ਬਾਅਦ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">ਮੋਨੋਸਪੇਸ ਫੌਂਟ ਵਰਤੋ</translation>
+        <translation>ਮੋਨੋਸਪੇਸ ਫੌਂਟ ਵਰਤੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
         <source>Display the files content as-is</source>
-        <translation type="unfinished">ਫਾਈਲ ਦੀ ਸਮੱਗਰੀ ਨੂੰ ਜਿਵੇਂ ਹੈ ਦਿਖਾਓ</translation>
+        <translation>ਫਾਈਲ ਦੀ ਸਮੱਗਰੀ ਨੂੰ ਜਿਵੇਂ ਹੈ ਦਿਖਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
         <source>No line wrapping</source>
-        <translation type="unfinished">ਲਾਈਨ ਰੈਪਿੰਗ ਨਹੀਂ</translation>
+        <translation>ਲਾਈਨ ਰੈਪਿੰਗ ਨਹੀਂ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
@@ -107,12 +107,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
         <source>Alphabetical</source>
-        <translation type="unfinished">ਵਰਨਮਾਲਾ ਅਧਾਰਿਤ</translation>
+        <translation>ਵਰਨਮਾਲਾ ਅਧਾਰਿਤ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished">ਅੱਖਰਾਂ ਅਤੇ ਅੰਕਾਂ ਵਾਲਾ</translation>
+        <translation>ਅੱਖਰਾਂ ਅਤੇ ਅੰਕਾਂ ਵਾਲਾ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
@@ -127,12 +127,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
         <source>Use PWGen</source>
-        <translation type="unfinished">PWGen ਵਰਤੋਂ ਕਰੋ</translation>
+        <translation>PWGen ਵਰਤੋਂ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
-        <translation type="unfinished">ਵੱਡੇ ਅੱਖਰ ਸ਼ਾਮਲ ਨਾ ਕਰੋ</translation>
+        <translation>ਵੱਡੇ ਅੱਖਰ ਸ਼ਾਮਲ ਨਾ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
@@ -142,7 +142,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation type="unfinished">ਆਸਾਨ ਯਾਦ ਰੱਖਣ ਵਾਲੇ ਪਰ ਘੱਟ ਸੁਰੱਖਿਅਤ ਪੈਸਵਰਡ ਪੈਦਾ ਕਰੋ</translation>
+        <translation>ਆਸਾਨ ਯਾਦ ਰੱਖਣ ਵਾਲੇ ਪਰ ਘੱਟ ਸੁਰੱਖਿਅਤ ਪੈਸਵਰਡ ਪੈਦਾ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
@@ -152,17 +152,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
         <source>Git:</source>
-        <translation type="unfinished">ਗਿਟ:</translation>
+        <translation>ਗਿਟ:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
         <source>Use Git</source>
-        <translation type="unfinished">ਗਿਟ ਨੂੰ ਉਪਯੋਗ ਕਰੋ</translation>
+        <translation>ਗਿਟ ਨੂੰ ਉਪਯੋਗ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
-        <translation type="unfinished">.gpg-id ਫਾਈਲਾਂ ਨੂੰ ਆਪਣੇ ਆਪ ਸ਼ਾਮਲ ਕਰੋ</translation>
+        <translation>.gpg-id ਫਾਈਲਾਂ ਨੂੰ ਆਪਣੇ ਆਪ ਸ਼ਾਮਲ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
@@ -207,7 +207,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
         <source>Use TrayIcon</source>
-        <translation type="unfinished">ਸਿਸਟਮ ਟਰੇ ਆਈਕਨ ਵਰਤੋ</translation>
+        <translation>ਸਿਸਟਮ ਟਰੇ ਆਈਕਨ ਵਰਤੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
@@ -217,7 +217,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation type="unfinished">ਬੰਦ ਹੋਣ &apos;ਤੇ ਲੁਕਾਓ</translation>
+        <translation>ਬੰਦ ਹੋਣ &apos;ਤੇ ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
@@ -237,7 +237,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished">(&amp;v) ਅਸਲੀ ਗਿਟ/ਜੀਪੀਜੀ</translation>
+        <translation>(&amp;v) ਅਸਲੀ ਗਿਟ/ਜੀਪੀਜੀ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
@@ -247,12 +247,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
         <source>Native</source>
-        <translation type="unfinished">ਮੂਲ</translation>
+        <translation>ਮੂਲ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
         <source>Git</source>
-        <translation type="unfinished">ਗਿਟ</translation>
+        <translation>ਗਿਟ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
@@ -271,17 +271,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
         <source>Generate GPG key pair</source>
-        <translation type="unfinished">GPG ਕੁੰਜੀ ਜੋੜੀ ਬਣਾਓ</translation>
+        <translation>GPG ਕੁੰਜੀ ਜੋੜੀ ਬਣਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
         <source>GPG</source>
-        <translation type="unfinished">ਜੀਪੀਜੀ</translation>
+        <translation>ਜੀਪੀਜੀ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
         <source>PWGen</source>
-        <translation type="unfinished">PWGen</translation>
+        <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
         <source>Template</source>
-        <translation type="unfinished">ਟੈਂਪਲੇਟ</translation>
+        <translation>ਟੈਂਪਲੇਟ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
@@ -395,7 +395,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation type="unfinished">ਸਿਸਟਮ ਟਰੇ ਨਹੀਂ ਮਿਲਦਾ</translation>
+        <translation>ਸਿਸਟਮ ਟਰੇ ਨਹੀਂ ਮਿਲਦਾ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
@@ -405,7 +405,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished">ਕਿਊਆਰਐਨਕੋਡ ਦੀ ਇੰਸਟਾਲ ਕਰਨੀ ਜ਼ਰੂਰੀ ਹੈ</translation>
+        <translation>ਕਿਊਆਰਐਨਕੋਡ ਦੀ ਇੰਸਟਾਲ ਕਰਨੀ ਜ਼ਰੂਰੀ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
@@ -415,12 +415,12 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="126"/>
         <source>Always copy to clipboard</source>
-        <translation type="unfinished">ਸਦਾ ਕਲਿਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
+        <translation>ਸਦਾ ਕਲਿਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="127"/>
         <source>On-demand copy to clipboard</source>
-        <translation type="unfinished">ਮੰਗ ਅਨੁਸਾਰ ਕਲਿਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
+        <translation>ਮੰਗ ਅਨੁਸਾਰ ਕਲਿਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="210"/>
@@ -431,7 +431,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished">ਕੀ ਪ੍ਰੋਫਾਈਲ ਡਾਇਰੈਕਟਰੀ ਬਣਾਈ ਜਾਵੇ?</translation>
+        <translation>ਕੀ ਪ੍ਰੋਫਾਈਲ ਡਾਇਰੈਕਟਰੀ ਬਣਾਈ ਜਾਵੇ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
@@ -442,7 +442,7 @@ URL
         <location filename="../src/configdialog.cpp" line="728"/>
         <location filename="../src/configdialog.cpp" line="985"/>
         <source>Error</source>
-        <translation type="unfinished">ਗਲਤੀ</translation>
+        <translation>ਗਲਤੀ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="729"/>
@@ -467,12 +467,12 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
         <source>No profile selected to delete</source>
-        <translation type="unfinished">ਮਿਟਾਉਣ ਲਈ ਕੋਈ ਪ੍ਰੋਫਾਈਲ ਚੁਣਿਆ ਨਹੀਂ ਹੈ</translation>
+        <translation>ਮਿਟਾਉਣ ਲਈ ਕੋਈ ਪ੍ਰੋਫਾਈਲ ਚੁਣਿਆ ਨਹੀਂ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
         <source>GnuPG not found</source>
-        <translation type="unfinished">ਜੀਨੂਪੀਜੀ ਖੋਜਿਆ ਨਹੀਂ ਗਿਆ</translation>
+        <translation>ਜੀਨੂਪੀਜੀ ਖੋਜਿਆ ਨਹੀਂ ਗਿਆ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
@@ -497,7 +497,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation type="unfinished">ਕੀ ਤੁਸੀਂ %1 ਤੇ ਪਾਸਵਰਡ-ਸਟੋਰ ਬਣਾਉਣਾ ਚਾਹੋਗੇ?</translation>
+        <translation>ਕੀ ਤੁਸੀਂ %1 ਤੇ ਪਾਸਵਰਡ-ਸਟੋਰ ਬਣਾਉਣਾ ਚਾਹੋਗੇ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
@@ -545,7 +545,7 @@ URL
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation type="unfinished">ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
+        <translation>ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -757,7 +757,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation type="unfinished">ਇੰਪੋਰਟ</translation>
+        <translation>ਇੰਪੋਰਟ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -767,7 +767,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation type="unfinished">ਸਾਰੀਆਂ ਫਾਈਲਾਂ</translation>
+        <translation>ਸਾਰੀਆਂ ਫਾਈਲਾਂ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
@@ -810,7 +810,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation type="unfinished">GnuPG ਕੁੰਜੀ ਜੋੜੀ ਬਣਾਓ</translation>
+        <translation>GnuPG ਕੁੰਜੀ ਜੋੜੀ ਬਣਾਓ</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
@@ -870,7 +870,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>
         <source>Invalid email</source>
-        <translation type="unfinished">ਗਲਤ ਈਮੇਲ</translation>
+        <translation>ਗਲਤ ਈਮੇਲ</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="181"/>
@@ -1045,12 +1045,12 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="449"/>
         <source>Config</source>
-        <translation type="unfinished">ਸੰਰਚਨਾ</translation>
+        <translation>ਸੰਰਚਨਾ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
         <source>Configuration</source>
-        <translation type="unfinished">ਸੰਰਚਨਾ</translation>
+        <translation>ਸੰਰਚਨਾ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
@@ -1060,7 +1060,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation type="unfinished">ਸਾਫ਼ ਕਰੋ</translation>
+        <translation>ਸਾਫ਼ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
@@ -1162,7 +1162,8 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1037"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
-        <translation type="unfinished"></translation>
+        <translation>ਨਵੀਂ ਪਾਸਵਰਡ ਫਾਈਲ:
+(%1 ਵਿੱਚ ਰੱਖੀ ਜਾਵੇਗੀ)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
@@ -1251,7 +1252,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="1487"/>
         <location filename="../src/mainwindow.cpp" line="1696"/>
         <source>Error</source>
-        <translation type="unfinished">ਗਲਤੀ</translation>
+        <translation>ਗਲਤੀ</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
@@ -1420,12 +1421,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation type="unfinished">ਵਰਨਮਾਲਾ ਅਧਾਰਿਤ</translation>
+        <translation>ਵਰਨਮਾਲਾ ਅਧਾਰਿਤ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished">ਅੱਖਰਾਂ ਅਤੇ ਅੰਕਾਂ ਵਾਲਾ</translation>
+        <translation>ਅੱਖਰਾਂ ਅਤੇ ਅੰਕਾਂ ਵਾਲਾ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>

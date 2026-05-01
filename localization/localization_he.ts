@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation type="unfinished">ניקוי אוטומטי לאחר:</translation>
+        <translation>ניקוי אוטומטי לאחר:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -47,7 +47,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
         <source>Hide password</source>
-        <translation type="unfinished">הסתר סיסמה</translation>
+        <translation>הסתר סיסמה</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
@@ -137,7 +137,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
-        <translation type="unfinished">אל תכלול אותיות רישיות</translation>
+        <translation>אל תכלול אותיות רישיות</translation>
     </message>
     <message>
         <source>Include special symbols </source>
@@ -206,7 +206,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation type="unfinished">הסתר בעת סגירה</translation>
+        <translation>הסתר בעת סגירה</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
@@ -639,7 +639,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpg-id file signature!</source>
-        <translation type="unfinished">בדוק את חתימת קובץ .gpg-id!</translation>
+        <translation>בדוק את חתימת קובץ .gpg-id!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
@@ -1048,7 +1048,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
         <source>Configuration</source>
-        <translation type="unfinished">הגדרות</translation>
+        <translation>הגדרות</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="293"/>
@@ -1121,7 +1121,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>נמצאה %n התאמה</numerusform>
             <numerusform>נמצאו %n התאמות</numerusform>
         </translation>
@@ -1129,7 +1129,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
-        <translation type="unfinished">
+        <translation>
             <numerusform>ב-%n רשומה.</numerusform>
             <numerusform>ב-%n רשומות.</numerusform>
         </translation>
@@ -1396,22 +1396,22 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
         <source>All Characters</source>
-        <translation type="unfinished">כל התווים</translation>
+        <translation>כל התווים</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation type="unfinished">אלפביתי</translation>
+        <translation>אלפביתי</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation type="unfinished">אלפנומריים</translation>
+        <translation>אלפנומריים</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
         <source>Custom</source>
-        <translation type="unfinished">מותאם</translation>
+        <translation>מותאם</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>

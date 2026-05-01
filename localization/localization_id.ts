@@ -237,7 +237,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
         <source>Nati&amp;ve Git/GPG</source>
-        <translation type="unfinished">&amp;Asli Git/GPG</translation>
+        <translation>&amp;Asli Git/GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
@@ -247,7 +247,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
         <source>Native</source>
-        <translation type="unfinished">Asli</translation>
+        <translation>Asli</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
@@ -356,7 +356,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
         <source>Template</source>
-        <translation type="unfinished">Templat</translation>
+        <translation>Templat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
@@ -830,7 +830,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation type="unfinished">Frasa sandi</translation>
+        <translation>Frasa sandi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>

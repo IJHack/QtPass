@@ -122,7 +122,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZÇËabcdefghijklmnopqrstuvwxyzçë0123456789</translation>
+        <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZÇËabcdefghijklmnopqrstuvwxyzçë0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
@@ -412,7 +412,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">Ju lutemi instaloni GnuPG në sistemin tuaj.&lt;br&gt;Instaloni &lt;strong&gt;Ubuntu&lt;/strong&gt; nga Microsoft Store për ta marrë.&lt;br&gt;Nëse tashmë e keni bërë një gjë të tillë, sigurohuni që e keni filluar një herë dhe klikoni &quot;Autodetect&quot; në dialogun tjetër.</translation>
+        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj.&lt;br&gt;Instaloni &lt;strong&gt;Ubuntu&lt;/strong&gt; nga Microsoft Store për ta marrë.&lt;br&gt;Nëse tashmë e keni bërë një gjë të tillë, sigurohuni që e keni filluar një herë dhe klikoni &quot;Autodetect&quot; në dialogun tjetër.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
@@ -422,7 +422,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">Ju lutemi instaloni GnuPG në sistemin tuaj. Instaloni &lt;strong&gt; gpg &lt;/strong&gt; duke përdorur menaxherin tuaj të preferuar të paketave (package manager) &lt;br&gt; ose &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; shkarkoni &lt;/a&gt; nga GnuPG.org</translation>
+        <translation>Ju lutemi instaloni GnuPG në sistemin tuaj. Instaloni &lt;strong&gt; gpg &lt;/strong&gt; duke përdorur menaxherin tuaj të preferuar të paketave (package manager) &lt;br&gt; ose &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; shkarkoni &lt;/a&gt; nga GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -1624,22 +1624,22 @@ Të vazhdohet?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="72"/>
         <source>Mi&amp;nimize</source>
-        <translation type="unfinished">Mi&amp;nimizo</translation>
+        <translation>Mi&amp;nimizo</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="75"/>
         <source>Ma&amp;ximize</source>
-        <translation type="unfinished">Ma&amp;ksimizo</translation>
+        <translation>Ma&amp;ksimizo</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="78"/>
         <source>&amp;Restore</source>
-        <translation type="unfinished">&amp;Rikthe</translation>
+        <translation>&amp;Rikthe</translation>
     </message>
     <message>
         <location filename="../src/trayicon.cpp" line="81"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Dil</translation>
+        <translation>&amp;Dil</translation>
     </message>
 </context>
 <context>
