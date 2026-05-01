@@ -523,12 +523,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;Ubuntu&lt;/strong&gt;uit de Microsoft Store om het te verkrijgen.&lt;br&gt;Als je dit al hebt gedaan, zorg er dan voor dat je het eenmaal hebt gestart en&lt;br&gt;klik dan op &quot;Automatisch detecteren&quot; in het volgende venster.</translation>
+        <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;Ubuntu&lt;/strong&gt; uit de Microsoft Store om het te verkrijgen.&lt;br&gt;Als je dit al hebt gedaan, zorg er dan voor dat je het eenmaal hebt gestart en&lt;br&gt;klik dan op &quot;Automatisch detecteren&quot; in het volgende venster.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer&lt;strong&gt;Ubuntu&lt;/strong&gt;uit de Microsoft Store&lt;br&gt;of&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; het van GnuPG.org</translation>
+        <translation>Installeer GnuPG op je systeem.&lt;br&gt;Installeer &lt;strong&gt;Ubuntu&lt;/strong&gt; uit de Microsoft Store&lt;br&gt;of &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; het van GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
