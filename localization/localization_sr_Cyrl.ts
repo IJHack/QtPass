@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation type="unfinished">Користити фонт исте ширине</translation>
+        <translation>Користити фонт исте ширине</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
         <source>Include special symbols</source>
-        <translation type="unfinished">Укључи специјалне симболе</translation>
+        <translation>Укључи специјалне симболе</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -652,7 +652,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation type="unfinished">Потпис за %1 није исправан.</translation>
+        <translation>Потпис за %1 није исправан.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="149"/>
@@ -910,7 +910,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Садржај шаблона će se postaviti na temelju верзије ГПГ.</translation>
+        <translation type="unfinished">Садржај шаблона ће се поставити на основу верзије ГПГ.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1040,7 +1040,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Генерише ОТП и копира у одељак за međuspremnik</translation>
+        <translation type="unfinished">Генерише ОТП и копира у одељак за међуспремник</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
