@@ -26,7 +26,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
         <source>Autoclear after:</source>
-        <translation>தன்னியக்க கற்றல் பிறகு:</translation>
+        <translation type="unfinished">தன்னியக்க அழிப்பு பிறகு:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>தன்னியக்க குழு: பிறகு:</translation>
+        <translation type="unfinished">தன்னியக்க குழுவை அழி:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
@@ -126,7 +126,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
-        <translation>Abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz0123456789</translation>
+        <translation type="unfinished">ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
@@ -464,7 +464,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>தரவு அளவுக்கான உணவு வடிவம் உருவாக்குவதில் தோல்வி: %1</translation>
+        <translation type="unfinished">கடவுச்சொல் களஞ்சியத்தை இங்கு உருவாக்க முடியவில்லை: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1017"/>
@@ -703,7 +703,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>எழுதத் தவறிவிட்டது .சிபிசி-ஐடி எழுதுவதற்கு.</translation>
+        <translation type="unfinished">எழுதுவதற்கு .gpg-id ஐ திறக்க முடியவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
