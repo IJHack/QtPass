@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Корисити фонт исте ширине</translation>
+        <translation type="unfinished">Користити фонт исте ширине</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
         <source>Include special symbols</source>
-        <translation>Укључи специјанле симболе</translation>
+        <translation type="unfinished">Укључи специјалне симболе</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
@@ -354,7 +354,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
         <source>Use template</source>
-        <translation>Користе шаблон</translation>
+        <translation type="unfinished">Користи шаблон</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
@@ -514,7 +514,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
         <source>qrencode needs to be installed</source>
-        <translation>Треба да се уставе qrencode</translation>
+        <translation type="unfinished">Треба да се инсталира qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
@@ -652,7 +652,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="320"/>
         <location filename="../src/imitatepass.cpp" line="506"/>
         <source>Signature for %1 is invalid.</source>
-        <translation>Постпис за %1 није исправан.</translation>
+        <translation type="unfinished">Потпис за %1 није исправан.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="149"/>
