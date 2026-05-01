@@ -1803,7 +1803,7 @@ Continue?</source>
     <message>
         <location filename="../src/qtpass.cpp" line="306"/>
         <source>GPG key pair generation failed</source>
-        <translation type="unfinished">GPG சூத்திரங்கள் உருவாக்கல் தோல்வியடைந்தது</translation>
+        <translation type="unfinished">GPG விசை ஜோடி உருவாக்கம் தோல்வியடைந்தது</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="380"/>
