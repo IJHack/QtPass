@@ -1502,7 +1502,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
         <source>Failed to create .gpg-id file in: %1</source>
-        <translation>ක්‍රම අයිඩිතය කොට ඇත: %1</translation>
+        <translation type="unfinished">.gpg-id ගොනුව %1 හි සෑදීමට අසමත් විය</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1510"/>
@@ -1869,7 +1869,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="76"/>
         <source>Keylist missing</source>
-        <translation>කළමනාකරුව හෝ විද්‍යුත් කලනය කළමනාකරුව නගර කරන්න</translation>
+        <translation type="unfinished">යතුරු ලැයිස්තුව නැත</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="77"/>
