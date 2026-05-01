@@ -252,7 +252,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
         <source>Git</source>
-        <translation>ਜ਼ਿਟ</translation>
+        <translation type="unfinished">ਗਿਟ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="756"/>
@@ -276,12 +276,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
         <source>GPG</source>
-        <translation>ਜੀ ਪੀ ਜੀ</translation>
+        <translation type="unfinished">ਜੀਪੀਜੀ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
         <source>PWGen</source>
-        <translation>ਪੀ ਵਾਈ ਜੈਨੇਰੇਟ</translation>
+        <translation type="unfinished">ਪੀਵਾਈਜੈਨੇਰੇਟ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
@@ -1415,12 +1415,12 @@ Continue?</source>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
         <source>Alphabetical</source>
-        <translation>ਅਖ਼ਲੀਫ਼ਿਕ</translation>
+        <translation type="unfinished">ਵਰਨਮਾਲਾ ਅਧਾਰਿਤ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
         <source>Alphanumerical</source>
-        <translation>ਅਖ਼ਲੋ-ਸੰਖਿਆਈ</translation>
+        <translation type="unfinished">ਅੱਖਰਾਂ ਅਤੇ ਅੰਕਾਂ ਵਾਲਾ</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
