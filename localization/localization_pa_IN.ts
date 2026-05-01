@@ -545,7 +545,7 @@ URL
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
         <source>Copy to Clipboard</source>
-        <translation>ਕਾਪੀ ਕਰੋ ਟੈਬਲੈਟ</translation>
+        <translation type="unfinished">ਕਾਪੀ ਕਰੋ ਕਲਿੱਪਬੋਰਡ</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
@@ -757,7 +757,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
         <source>Import</source>
-        <translation>ਆਈਨਫੋਰਮ</translation>
+        <translation type="unfinished">ਇੰਪੋਰਟ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
@@ -767,7 +767,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/importkeydialog.cpp" line="43"/>
         <source>All Files</source>
-        <translation>ਸਾਰੇ ਡਾਇਰੈਕਟਰੀ</translation>
+        <translation type="unfinished">ਸਾਰੀਆਂ ਫਾਈਲਾਂ</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.cpp" line="51"/>
