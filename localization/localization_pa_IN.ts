@@ -865,7 +865,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.cpp" line="169"/>
         <source>Name must be at least 5 characters long.</source>
-        <translation type="unfinished">ਨਾਮ ਦੀ ਕਦਮੀ 5 ਅੱਖਰਾਂ ਤੋਂ ਵੱਧ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ।</translation>
+        <translation>ਨਾਮ ਦੀ ਕਦਮੀ ਘੱਟੋ-ਘੱਟ 5 ਅੱਖਰ ਹੋਣੇ ਚਾਹੀਦੇ ਹਨ।</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.cpp" line="180"/>

@@ -52,7 +52,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation type="unfinished">ניקוי אוטומטי של הפאנל לאחר:</translation>
+        <translation>ניקוי אוטומטי של הלוח לאחר:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
