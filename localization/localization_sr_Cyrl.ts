@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Опциона: Кључ GPG за потписување фајлова са проширењем .gpg-id за вредновање интегритета. Оставе празно осим ако потребно заштитите листу корисника од манипулације.</translation>
+        <translation>Опционо: Кључ GPG за потписивање фајлова са проширењем .gpg-id за верификацију интегритета. Оставите празно, осим ако вам није потребно да заштитите листу корисника од манипулације.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
@@ -443,7 +443,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Молимо, поставете GnuPG на вашу рачунарску опрему.&lt;br&gt;Установите &lt;strong&gt;gpg&lt;/strong&gt; користећи свој избор пакета за управљање пакетима&lt;br&gt;или преузми га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
+        <translation type="unfinished">Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;gpg&lt;/strong&gt; користећи свој избор пакета за управљање пакетима&lt;br&gt;или преузмите га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -519,12 +519,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Молимо, поставете GnuPG на вашу рачунарску опрему.&lt;br&gt;Установите &lt;strong&gt;Ubuntu&lt;/strong&gt; са Microsoft Store да бисте га добили.&lt;br&gt;Ако сте већ то урадили, уверете се да сте га једном покренули и кликните &quot;Аутодетекција&quot; у следећем дијалогу.</translation>
+        <translation type="unfinished">Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;Ubuntu&lt;/strong&gt; са Microsoft Store да бисте га добили.&lt;br&gt;Ако сте већ то урадили, уверите се да сте га једном покренули и кликните &quot;Аутодетекција&quot; у следећем дијалогу.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Молимо, поставете GnuPG на вашу рачунарску опрему.&lt;br&gt;Установите &lt;strong&gt;Ubuntu&lt;/strong&gt; са Microsoft Store&lt;br&gt;или преузми га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
+        <translation type="unfinished">Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;Ubuntu&lt;/strong&gt; са Microsoft Store&lt;br&gt;или преузмите га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
