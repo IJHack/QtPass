@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>விதிமுறையின் சரி பார்க்கவும் காகத்து: .gpg-id இலக்குகளை உறவு வசதியான வழிமுறையில் எண்ணுவதற்கான GPG சூழ்நிலை. இதை தவறவிடுவதாக இல்லை என்றால் இதை வارிசையாக இருப்படுத்தவும்.</translation>
+        <translation type="unfinished">விருப்பத்திற்குரியது: முழுமைத்தன்மை சரிபார்ப்பிற்காக .gpg-id கோப்புகளில் கையொப்பமிட பயன்படுத்தப்படும் GPG விசை. பயனர் பட்டியலை மாற்றம் செய்யப்படுவதிலிருந்து பாதுகாக்க வேண்டிய அவசியம் இல்லையெனில் இதை காலியாக விடுங்கள்.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
@@ -747,7 +747,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
         <source>Re-encryption was aborted because a git backup could not be created.</source>
-        <translation>கிட் உருவாக்கல் உண்டையால் குறியாக்கல் தனிப்ரச்சிணை எதிர்த்து முடிவுகள் இழந்தது.</translation>
+        <translation type="unfinished">கிட் காப்புப்பிரதியை உருவாக்க முடியாததால் மீள் குறியாக்கம் நிறுத்தப்பட்டது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
@@ -910,7 +910,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>GPG வேர்ஷன் பாதியாக தமத்துவ உள்விதங்கள் அமையும்.</translation>
+        <translation type="unfinished">GPG பதிப்பின் அடிப்படையில் வார்ப்புரு உள்ளடக்கங்கள் அமைக்கப்படும்.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1565,7 +1565,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation>%1 பண்டலை உருவாக்கும் விதிமுறை இயல்லாதது</translation>
+        <translation type="unfinished">%1 கோப்பகத்தை உருவாக்க முடியவில்லை</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
@@ -1596,7 +1596,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>பட்டாம் கடவுச்சொற்களை பரவலாக எழுதுதல்</translation>
+        <translation type="unfinished">கடவுச்சொற்களை மீண்டும் குறியாக்கம் செய்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
