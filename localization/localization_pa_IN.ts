@@ -592,7 +592,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="319"/>
         <location filename="../src/imitatepass.cpp" line="505"/>
         <source>Check .gpg-id file signature!</source>
-        <translation>ਚੈਕ ਐਗਜ਼ੀਪਿਰੇਸ਼ਨ ਐਗਜ਼-ਆਈਡੀ ਫਾਈਲ ਦੀ ਸਿਗਨੇਚਰ!</translation>
+        <translation>.gpg-id ਫਾਈਲ ਦੇ ਦਸਤਖਤ ਦੀ ਜਾਂਚ ਕਰੋ!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="142"/>
@@ -621,7 +621,7 @@ URL
     <message>
         <location filename="../src/imitatepass.cpp" line="261"/>
         <source>Failed to open .gpg-id for writing.</source>
-        <translation>ਲਿਖਣ ਲਈ .gpg-ਐਇਡ ਉਸਾਰਨ ਵਿੱਚ ਅਸਫਲ ਹੋਣ.</translation>
+        <translation>ਲਿਖਣ ਲਈ .gpg-id ਖੋਲ੍ਹਣ ਵਿੱਚ ਅਸਫਲ।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="274"/>
@@ -708,7 +708,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>ਡਿਰੈਕਟਰੀ ਲਈ .ਜੀ.ਪੀ.ਜੀ-ਐਇਡ ਯਾਦੀ ਸਹੀ ਨਹੀਂ ਕੀਤੀ ਗਈ.</translation>
+        <translation>ਡਾਇਰੈਕਟਰੀ ਲਈ .gpg-id ਦੀ ਪੁਸ਼ਟੀ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
