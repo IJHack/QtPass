@@ -217,7 +217,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
         <source>Hide on close</source>
-        <translation>ਬੰਦ ਹੋਣ &apos;ਤੇ ਗਵਾਹੀ ਕਰੋ</translation>
+        <translation type="unfinished">ਬੰਦ ਹੋਣ &apos;ਤੇ ਲੁਕਾਓ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
@@ -395,7 +395,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation>ਸੰਚਾਰ ਟ੍ਰੇਅ ਨਹੀਂ ਮਿਲਦਾ</translation>
+        <translation type="unfinished">ਸਿਸਟਮ ਟਰੇ ਨਹੀਂ ਮਿਲਦਾ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
@@ -467,7 +467,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="811"/>
         <source>No profile selected to delete</source>
-        <translation>ਕੋਈ ਪ੍ਰੋਫਾਈਲ ਦੇਖਣ ਲਈ ਚੁਣਿਆ ਨਹੀਂ ਹੈ ਅਤੇ ਉਸ ਨੂੰ ਮਾਰ ਦਿੱਤਾ ਜਾ ਸਕਦਾ ਹੈ</translation>
+        <translation type="unfinished">ਮਿਟਾਉਣ ਲਈ ਕੋਈ ਪ੍ਰੋਫਾਈਲ ਚੁਣਿਆ ਨਹੀਂ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
@@ -497,7 +497,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="980"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>ਤੁਸੀਂ ਇੱਕ ਪਾਸਵਰਡ ਸਟੋਰ ਬਣਾਉਣ ਦੀ ਯੋਜਨਾ ਕਿਉਂਕਿ %1?</translation>
+        <translation type="unfinished">ਕੀ ਤੁਸੀਂ %1 ਤੇ ਪਾਸਵਰਡ-ਸਟੋਰ ਬਣਾਉਣਾ ਚਾਹੋਗੇ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="986"/>
@@ -810,7 +810,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>ਕੀ ਪੰਜਵੇਂ ਨੂੰ ਸਿੰਕ ਕਰੋ</translation>
+        <translation type="unfinished">GnuPG ਕੁੰਜੀ ਜੋੜੀ ਬਣਾਓ</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
