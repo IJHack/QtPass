@@ -9,7 +9,54 @@ metadata:
 
 # QtPass Linting and CI Workflow
 
-## The Act Pattern
+## Super-linter v8 specifics (CI pin: v8.6.0)
+
+The lint workflow uses `super-linter/super-linter@v8` which resolves to image **`ghcr.io/super-linter/super-linter:v8.6.0`**. Critical quirks learned the hard way:
+
+### Config file locations
+
+`LINTER_RULES_PATH` defaults to **`.github/linters/`** — every per-linter config file that super-linter explicitly passes via `--config <path>` lives there, not at repo root.
+
+| Linter | Config file                   |
+| ------ | ----------------------------- |
+| zizmor | `.github/linters/zizmor.yaml` |
+
+Other linters auto-discover their own dotfiles like `.codespellrc`, `.clang-format`, `.commitlintrc.js`, `.jshintrc`, `.jshintignore`, `.yaml-lint.yml`, `.codecov.yml` from repo root via the linter's own conventions — those don't go under `.github/linters/`.
+
+### `super-linter.env` rules
+
+- **Pure `KEY=value` only** — no comments, no blank lines, **alphabetical** (dotenv-linter `UnorderedKey` rule). The workflow does `cat super-linter.env >> $GITHUB_ENV` and `$GITHUB_ENV` rejects everything else.
+- Document the rationale for non-obvious vars **in the workflow YAML** (above the `cat` step), not in the env file.
+- **`GITHUB_*` env vars set via `$GITHUB_ENV` don't propagate** to docker-based actions like super-linter. So you cannot override e.g. `GITHUB_ACTIONS_ZIZMOR_CONFIG_FILE` this way — put the config at the default-discovered location instead.
+
+### Reproducing CI locally
+
+`act` is **unreliable** for super-linter — the floating `:v7`/`:v8` tags drift, and act's mock GitHub event JSON lacks fields that v8 super-linter needs (`forced` for push events). The reliable reproduction is the exact CI image via docker:
+
+```bash
+# Run a specific linter (e.g. zizmor) the way CI does
+docker run --rm -v "$PWD:/work" -w /work \
+  --entrypoint zizmor ghcr.io/super-linter/super-linter:v8.6.0 \
+  --config .github/linters/zizmor.yaml .github/workflows/
+
+# Or clang-format check
+docker run --rm -v "$PWD:/work" -w /work \
+  --entrypoint clang-format ghcr.io/super-linter/super-linter:v8.6.0 \
+  --style=file --dry-run --Werror path/to/file.cpp
+```
+
+Or install native binaries: `cargo install zizmor`, distro packages for clang-format/yamllint/codespell.
+
+### Tooling-version highlights
+
+- **clang-format 21.1.2** — modern; matches recent distros. (Was 17.0.6 in v7.1.0 — a notable mismatch source pre-v8 bump.)
+- **zizmor 1.23.1** — default policy is `hash-pin`; we override to `ref-pin` in the config (version tags + dependabot cooldown).
+- **commitlint 20** — picks up `.commitlintrc.js` from repo root.
+- **JSHint** — only runs via Hound (not super-linter v8). Default ES5; we set `esversion: 11` in `.jshintrc`.
+
+## The Act Pattern (caveat: super-linter is tricky)
+
+`act` works well for most workflows but the super-linter image has version drift and event-mock issues — see "Reproducing CI locally" above for the reliable alternative.
 
 **Always run local CI before pushing PRs.** Use `act` to run GitHub Actions workflows locally.
 
