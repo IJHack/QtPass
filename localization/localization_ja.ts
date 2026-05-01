@@ -443,7 +443,7 @@ url
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>システムにGnuPGをインストールしてください。&lt;br&gt;お好みのパッケージマネージャーを使用して&lt;strong&gt;gpg&lt;/strong&gt;をインストールするか、&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.orgからダウンロード&lt;/a&gt;してください。</translation>
+        <translation type="unfinished">システムにGnuPGをインストールしてください。&lt;br&gt;お好みのパッケージマネージャーを使用して&lt;strong&gt;gpg&lt;/strong&gt;をインストールするか、&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.orgからダウンロード&lt;/a&gt;してください。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -524,7 +524,7 @@ url
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>システムにGnuPGをインストールしてください。&lt;br&gt;Microsoft Storeから&lt;strong&gt;Ubuntu&lt;/strong&gt;をインストールするか、&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.orgからダウンロード&lt;/a&gt;してください。</translation>
+        <translation type="unfinished">システムにGnuPGをインストールしてください。&lt;br&gt;Microsoft Storeから&lt;strong&gt;Ubuntu&lt;/strong&gt;をインストールするか、&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.orgからダウンロード&lt;/a&gt;してください。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
