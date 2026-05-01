@@ -1491,8 +1491,8 @@ Të vazhdohet?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="155"/>
-        <location filename="../main/main.cpp" line="159"/>
+        <location filename="../main/main.cpp" line="161"/>
+        <location filename="../main/main.cpp" line="165"/>
         <source>LTR</source>
         <translatorcomment>Kjo është për të mbajtur ndërfaqen nga e majta në të djathtë.</translatorcomment>
         <translation>LTR</translation>

@@ -1154,9 +1154,20 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
+        <source>New password file: 
+(Will be placed in %1 )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>New password file:
 (Will be placed in %1 )</source>
-        <translation>కొత్త పాస్‌వర్డ్ ఫైల్:
+        <translation type="vanished">కొత్త పాస్‌వర్డ్ ఫైల్:
 (%1 లో ఉంచబడుతుంది)</translation>
     </message>
     <message>
@@ -1235,10 +1246,9 @@ You will not be able to change the user list!</source>
         <translation>ఇది ఏమిటి?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation>కొత్త ఫోల్డర్:
+        <translation type="vanished">కొత్త ఫోల్డర్:
 (%1 లో ఉంచబడుతుంది)</translation>
     </message>
     <message>

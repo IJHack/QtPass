@@ -1627,8 +1627,8 @@ Fortsätta?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="155"/>
-        <location filename="../main/main.cpp" line="159"/>
+        <location filename="../main/main.cpp" line="161"/>
+        <location filename="../main/main.cpp" line="165"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>

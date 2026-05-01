@@ -1154,9 +1154,20 @@ You will not be able to change the user list!</source>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1037"/>
+        <source>New password file: 
+(Will be placed in %1 )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <source>New Folder: 
+(Will be placed in %1 )</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>New password file:
 (Will be placed in %1 )</source>
-        <translation>नवीन पासवर्ड फाइल:
+        <translation type="vanished">नवीन पासवर्ड फाइल:
 (%1 मध्ये ठेवली जाईल)</translation>
     </message>
     <message>
@@ -1235,10 +1246,9 @@ You will not be able to change the user list!</source>
         <translation>हे काय आहे?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
         <source>New Folder:
 (Will be placed in %1 )</source>
-        <translation>नवीन फोल्डर:
+        <translation type="vanished">नवीन फोल्डर:
 (%1 मध्ये ठेवला जाईल)</translation>
     </message>
     <message>
