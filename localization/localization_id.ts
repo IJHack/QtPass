@@ -356,7 +356,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1028"/>
         <source>Template</source>
-        <translation>Templat</translation>
+        <translation type="unfinished">Templat</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
@@ -830,7 +830,7 @@ Anda tidak akan dapat mengubah daftar pengguna!</translation>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
         <source>Passphrase</source>
-        <translation>Frasa sandi</translation>
+        <translation type="unfinished">Frasa sandi</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
