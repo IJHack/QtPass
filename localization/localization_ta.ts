@@ -721,12 +721,12 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>இரண்டாம் தனிப்பட்ட உள்ளடக்கல் தவறவு</translation>
+        <translation type="unfinished">மீள் குறியாக்கம் தோல்வியடைந்தது</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
         <source>Failed to replace %1. Original has been restored.</source>
-        <translation>%1 மூலத்திற்கு மாற்றம் செய்யப்படவில்லை. முன்னோக்கி உள்ளது.</translation>
+        <translation type="unfinished">%1-ஐ மாற்ற முடியவில்லை. அசல் நிலை மீட்டமைக்கப்பட்டது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="692"/>
@@ -742,7 +742,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="699"/>
         <source>Could not inspect git status. Re-encryption was aborted.</source>
-        <translation>கிட் அட்டவணையின் சுவார்ச்சி மாற்றம் செய்யப்படவில்லை. குறியாக்கல் தனிப்ரச்சிணை எதிர்த்து முடிவுகள் இழந்தது.</translation>
+        <translation type="unfinished">கிட் நிலையை சரிபார்க்க முடியவில்லை. மீள் குறியாக்கம் நிறுத்தப்பட்டது.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="707"/>
@@ -768,7 +768,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="758"/>
         <source>Could not verify .gpg-id for directory.</source>
-        <translation>துறைக்கு .gpg-id மாற்றம் தேவையாக விளக்கப்படவில்லை.</translation>
+        <translation type="unfinished">அடைவைப் பொறுத்து .gpg-id ஐ சரிபார்க்க முடியவில்லை.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
@@ -870,7 +870,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
         <source>Generate GnuPG keypair</source>
-        <translation>Gnenearne gnupg gnukg keypair</translation>
+        <translation type="unfinished">GnuPG விசை ஜோடியை உருவாக்கு</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
