@@ -910,7 +910,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished">GPG பதிப்பின் அடிப்படையில் வார்ப்புரு உள்ளடக்கங்கள் அமைக்கப்படும்.</translation>
+        <translation>GPG பதிப்பின் அடிப்படையில் வார்ப்புரு உள்ளடக்கங்கள் அமைக்கப்படும்.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1446,12 +1446,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="668"/>
         <source>OTP code copied to clipboard</source>
-        <translation type="unfinished">OTP குறியீடு கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது</translation>
+        <translation>OTP குறியீடு கிளிப்போர்டுக்கு நகலெடுக்கப்பட்டது</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="670"/>
         <source>No OTP code found in this password entry</source>
-        <translation type="unfinished">இந்த கடவுச்சொல் பதிவில் OTP குறியீடு எதுவும் கிடைக்கவில்லை</translation>
+        <translation>இந்த கடவுச்சொல் பதிவில் OTP குறியீடு எதுவும் கிடைக்கவில்லை</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
@@ -1565,7 +1565,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1479"/>
         <source>Failed to create folder: %1</source>
-        <translation type="unfinished">%1 கோப்பகத்தை உருவாக்க முடியவில்லை</translation>
+        <translation>%1 கோப்பகத்தை உருவாக்க முடியவில்லை</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1488"/>
@@ -1596,7 +1596,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">கடவுச்சொற்களை மீண்டும் குறியாக்கம் செய்</translation>
+        <translation>கடவுச்சொற்களை மீண்டும் குறியாக்கம் செய்</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
