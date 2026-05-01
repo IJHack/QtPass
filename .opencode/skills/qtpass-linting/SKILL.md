@@ -15,23 +15,23 @@ The lint workflow uses `super-linter/super-linter@v8` which resolves to image **
 
 ### Config file locations
 
-`LINTER_RULES_PATH` defaults to **`.github/linters/`** — every per-linter config file that super-linter explicitly passes via `--config <path>` lives there, not at repo root.
+`LINTER_RULES_PATH` defaults to **`.github/linters/`** — every per-linter config file that super-linter explicitly passes via `--config <path>` lives there, not at the repository root.
 
 | Linter | Config file                   |
 | ------ | ----------------------------- |
 | zizmor | `.github/linters/zizmor.yaml` |
 
-Other linters auto-discover their own dotfiles like `.codespellrc`, `.clang-format`, `.commitlintrc.js`, `.jshintrc`, `.jshintignore`, `.yaml-lint.yml`, `.codecov.yml` from repo root via the linter's own conventions — those don't go under `.github/linters/`.
+Other linters auto-discover their own dotfiles like `.codespellrc`, `.clang-format`, `.commitlintrc.js`, `.jshintrc`, `.jshintignore`, `.yaml-lint.yml`, `.codecov.yml` from the repository root via the linter's own conventions — those don't go under `.github/linters/`.
 
 ### `super-linter.env` rules
 
-- **Pure `KEY=value` only** — no comments, no blank lines, **alphabetical** (dotenv-linter `UnorderedKey` rule). The workflow does `cat super-linter.env >> $GITHUB_ENV` and `$GITHUB_ENV` rejects everything else.
+- **Pure `KEY=value` only** — no comments, no empty lines, **alphabetical** (dotenv-linter `UnorderedKey` rule). The workflow does `cat super-linter.env >> $GITHUB_ENV` and `$GITHUB_ENV` rejects everything else.
 - Document the rationale for non-obvious vars **in the workflow YAML** (above the `cat` step), not in the env file.
 - **`GITHUB_*` env vars set via `$GITHUB_ENV` don't propagate** to docker-based actions like super-linter. So you cannot override e.g. `GITHUB_ACTIONS_ZIZMOR_CONFIG_FILE` this way — put the config at the default-discovered location instead.
 
 ### Reproducing CI locally
 
-`act` is **unreliable** for super-linter — the floating `:v7`/`:v8` tags drift, and act's mock GitHub event JSON lacks fields that v8 super-linter needs (`forced` for push events). The reliable reproduction is the exact CI image via docker:
+`act` is **unreliable** for super-linter — the floating `:v7`/`:v8` tags drift, and act's mock GitHub event JSON lacks fields that v8 super-linter needs (`forced` for push events). The reliable reproduction is the exact CI image via Docker:
 
 ```bash
 # Run a specific linter (e.g. zizmor) the way CI does
@@ -51,7 +51,7 @@ Or install native binaries: `cargo install zizmor`, distro packages for clang-fo
 
 - **clang-format 21.1.2** — modern; matches recent distros. (Was 17.0.6 in v7.1.0 — a notable mismatch source pre-v8 bump.)
 - **zizmor 1.23.1** — default policy is `hash-pin`; we override to `ref-pin` in the config (version tags + dependabot cooldown).
-- **commitlint 20** — picks up `.commitlintrc.js` from repo root.
+- **commitlint 20** — picks up `.commitlintrc.js` from the repository root.
 - **JSHint** — only runs via Hound (not super-linter v8). Default ES5; we set `esversion: 11` in `.jshintrc`.
 
 ## The Act Pattern (caveat: super-linter is tricky)
