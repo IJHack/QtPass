@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Опциона: Кључ GPG за потписивање фајлова са проширењем .gpg-id за верификацију интегритета. Оставите празно осим ако потребно заштитите листу корисника од манипулације.</translation>
+        <translation>Опционо: Кључ GPG за потписивање фајлова са проширењем .gpg-id за верификацију интегритета. Оставите празно, осим ако вам није потребно да заштитите листу корисника од манипулације.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
