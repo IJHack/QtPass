@@ -142,7 +142,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
         <source>Generate easy to memorize but less secure passwords</source>
-        <translation>ਗੁੱਝ ਯਾਦ ਰੱਖਣ ਵਾਲੇ ਪਰ ਘੱਟ ਸੁਰੱਖਿਅਤ ਪੈਸਵਰਡ ਪੈਨ ਕਰੋ</translation>
+        <translation type="unfinished">ਗੁੱਝ ਯਾਦ ਰੱਖਣ ਵਾਲੇ ਪਰ ਘੱਟ ਸੁਰੱਖਿਅਤ ਪੈਸਵਰਡ ਪੈਦਾ ਕਰੋ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
         <source>PWGen</source>
-        <translation type="unfinished">ਪੀਵਾਈਜੈਨੇਰੇਟ</translation>
+        <translation type="unfinished">PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
@@ -405,7 +405,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
         <source>qrencode needs to be installed</source>
-        <translation>ਕੁਆਰੋਡੀਨੇ ਦੀ ਇੰਸਟਾਲ ਕਰਨੀ ਜ਼ਰੂਰੀ ਹੈ</translation>
+        <translation type="unfinished">ਕਿਊਆਰਐਨਕੋਡ ਦੀ ਇੰਸਟਾਲ ਕਰਨੀ ਜ਼ਰੂਰੀ ਹੈ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="125"/>
@@ -431,7 +431,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="720"/>
         <source>Create profile directory?</source>
-        <translation>ਪ੍ਰੋਫਾਈਲ ਦਿਰੈਸ਼ੋਰੀ ਬਣਾਉਣ ਦਾ ਇਲੈਕਟ੍ਰਨ?</translation>
+        <translation type="unfinished">ਕੀ ਪ੍ਰੋਫਾਈਲ ਡਾਇਰੈਕਟਰੀ ਬਣਾਈ ਜਾਵੇ?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="721"/>
@@ -472,7 +472,7 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="911"/>
         <source>GnuPG not found</source>
-        <translation>ਗਨੂਪੀ ਖੋਜਿਆ ਨਹੀਂ ਗਿਆ</translation>
+        <translation type="unfinished">ਜੀਨੂਪੀਜੀ ਖੋਜਿਆ ਨਹੀਂ ਗਿਆ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
