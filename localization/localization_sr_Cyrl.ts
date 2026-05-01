@@ -354,7 +354,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1058"/>
         <source>Use template</source>
-        <translation type="unfinished">Користи шаблон</translation>
+        <translation>Користи шаблон</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1065"/>
@@ -514,7 +514,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="100"/>
         <source>qrencode needs to be installed</source>
-        <translation type="unfinished">Треба да се инсталира qrencode</translation>
+        <translation>Треба да се инсталира qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
