@@ -412,7 +412,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">Installéiert GnuPG op Ärem System. &lt;br&gt; Install &lt;strong&gt; Ubuntu &lt;/strong&gt; vum Microsoft Store fir et ze kréien. &lt;br&gt; Wann Dir dëst scho gemaach hutt, gitt sécher datt Dir et eemol ugefangen hutt a klickt op &quot;Autodetekt&quot; an den nächsten Dialog.</translation>
+        <translation>Installéiert GnuPG op Ärem System. &lt;br&gt; Install &lt;strong&gt; Ubuntu &lt;/strong&gt; vum Microsoft Store fir et ze kréien. &lt;br&gt; Wann Dir dëst scho gemaach hutt, gitt sécher datt Dir et eemol ugefangen hutt a klickt op &quot;Autodetekt&quot; an den nächsten Dialog.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
