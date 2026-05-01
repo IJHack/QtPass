@@ -1122,16 +1122,16 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/mainwindow.cpp" line="934"/>
         <source>Found %n match(es)</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>נמצאה %n התאמה</numerusform>
+            <numerusform>נמצאו %n התאמות</numerusform>
         </translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
         <source>in %n entr(ies).</source>
         <translation type="unfinished">
-            <numerusform></numerusform>
-            <numerusform></numerusform>
+            <numerusform>ב-%n רשומה.</numerusform>
+            <numerusform>ב-%n רשומות.</numerusform>
         </translation>
     </message>
     <message>
