@@ -25,7 +25,7 @@ Other linters auto-discover their own dotfiles like `.codespellrc`, `.clang-form
 
 ### `super-linter.env` rules
 
-- **Pure `KEY=value` only** — no comments, no empty lines, **alphabetical** (dotenv-linter `UnorderedKey` rule). The workflow does `cat super-linter.env >> $GITHUB_ENV` and `$GITHUB_ENV` rejects everything else.
+- **Pure `KEY=value` only** — no comments, no empty lines, **alphabetical** (dotenv-linter `UnorderedKey` rule). The workflow does `cat .github/super-linter.env >> $GITHUB_ENV` and `$GITHUB_ENV` rejects everything else.
 - Document the rationale for non-obvious vars **in the workflow YAML** (above the `cat` step), not in the env file.
 - **`GITHUB_*` env vars set via `$GITHUB_ENV` don't propagate** to docker-based actions like super-linter. So you cannot override e.g. `GITHUB_ACTIONS_ZIZMOR_CONFIG_FILE` this way — put the config at the default-discovered location instead.
 
