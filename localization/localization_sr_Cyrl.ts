@@ -534,7 +534,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
         <source>Use Git</source>
-        <translation type="unfinished">Користите Гит</translation>
+        <translation>Користите Гит</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
