@@ -232,7 +232,7 @@
     </message>
     <message>
         <source>Use pass otp extension</source>
-        <translation type="vanished">Use pass otp extension</translation>
+        <translation type="vanished">Користи pass otp екстензију</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
