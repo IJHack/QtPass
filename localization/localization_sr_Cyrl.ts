@@ -36,7 +36,7 @@
     </message>
     <message>
         <source>Password Behaviour:</source>
-        <translation type="vanished">Password Behaviour:</translation>
+        <translation type="vanished">Начин рада лозинке:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
