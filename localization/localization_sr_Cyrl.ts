@@ -1040,7 +1040,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Генерише ОТП и копира у одељак за међуспремник</translation>
+        <translation>Генериши ОТП и копирај у међуспремник</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
