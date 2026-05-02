@@ -715,7 +715,7 @@ You will not be able to change the user list!</source>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
         <translation type="unfinished">Ниједан од изабраних кључева нема доступан тајни кључ.
-Нећете моћи да дешифрујете ново додате лозинке!</translation>
+Нећете моћи да дешифрујете новододате лозинке!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
@@ -783,7 +783,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">Поновно шифровање је завршено: %1 датотека поново шифровано</translation>
+        <translation type="unfinished">Поновно шифровање је завршено: поново шифровано %1 датотека</translation>
     </message>
 </context>
 <context>
@@ -1341,7 +1341,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation>Желиште да избришете парол?</translation>
+        <translation type="unfinished">Желите да избришете парол?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
@@ -1350,7 +1350,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation>Желиште да избришете директорију?</translation>
+        <translation type="unfinished">Желите да избришете директоријум?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -1454,12 +1454,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
-        <translation>Реимејни директорију</translation>
+        <translation type="unfinished">Преименуј директоријум</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation>Реимејни парол</translation>
+        <translation type="unfinished">Преименуј лозинку</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
@@ -1566,7 +1566,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">Поново шифруј лозинке</translation>
+        <translation>Поново шифруј лозинке</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
@@ -1860,7 +1860,7 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation type="unfinished">Изаберите кориснике који могу да дешифрују лозинке чуване у овом фолдеру.
+        <translation>Изаберите кориснике који могу да дешифрују лозинке чуване у овом фолдеру.
 Напомена: Постојеће датотеке неће бити измењене, а старе дозволе ће бити задржане док их не уредите.
 Плави уноси имају доступан тајни кључ, изаберите неки од њих да бисте могли да дешифрујете.
 Црни уноси имају доступан кључ за шифровање и он је поуздан, изаберите неки од њих да бисте дозволили другима да дешифрују.
