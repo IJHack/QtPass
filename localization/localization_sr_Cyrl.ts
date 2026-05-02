@@ -504,7 +504,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation type="unfinished">Системска трака је недоступна</translation>
+        <translation>Системска трака је недоступна</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
