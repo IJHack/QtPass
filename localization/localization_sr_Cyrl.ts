@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished">Опционо: Кључ GPG за потписивање датотека са проширењем .gpg-id за верификацију интегритета. Оставите празно, осим ако вам није потребно да заштитите листу корисника од манипулације.</translation>
+        <translation>Опционо: Кључ GPG за потписивање датотека са проширењем .gpg-id за верификацију интегритета. Оставите празно, осим ако вам није потребно да заштитите листу корисника од манипулације.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
@@ -443,7 +443,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;gpg&lt;/strong&gt; користећи свој омиљени менаџер пакета&lt;br&gt;или преузмите га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
+        <translation>Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;gpg&lt;/strong&gt; користећи свој омиљени менаџер пакета&lt;br&gt;или преузмите га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -474,7 +474,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation type="unfinished">Фасцикла %1 не изгледа као паролски архив или још увек није иницијализована.</translation>
+        <translation>Фасцикла %1 не изгледа као паролски архив или још увек није иницијализована.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
@@ -664,7 +664,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation type="unfinished">Није могуће прочитати кључ за шифровање, .gpg-id датотека не постоји или није исправна.</translation>
+        <translation>Није могуће прочитати кључ за шифровање, .gpg-id датотека не постоји или није исправна.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -752,7 +752,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation type="unfinished">Поново се шифрује из фасцикле %1</translation>
+        <translation>Поново се шифрује из фасцикле %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
