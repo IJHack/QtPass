@@ -721,7 +721,7 @@ You will not be able to decrypt any newly added passwords!</source>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation type="unfinished">Поновно шифровање неуспело</translation>
+        <translation>Поновно шифровање није успело</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
@@ -773,12 +773,12 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation type="unfinished">Неуспело поновно шифровање %1</translation>
+        <translation>Поновно шифровање %1 није успело</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation type="unfinished">Поновно шифровање је завршено: %1 успешно, %2 неуспело</translation>
+        <translation>Поновно шифровање је завршено: %1 је успело, %2 није успело</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
