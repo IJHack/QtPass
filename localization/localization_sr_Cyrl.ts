@@ -539,7 +539,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
         <source>Use QRencode</source>
-        <translation type="unfinished">Користите QRencode</translation>
+        <translation>Користите QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
