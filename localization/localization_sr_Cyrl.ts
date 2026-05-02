@@ -35,10 +35,6 @@
         <translation>Секунде</translation>
     </message>
     <message>
-        <source>Password Behaviour:</source>
-        <translation type="vanished">Password Behaviour:</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
         <translation>Начин рада панела садржаја:</translation>
@@ -179,10 +175,6 @@
         <translation>Тренутна путања</translation>
     </message>
     <message>
-        <source>Use pwgen</source>
-        <translation type="vanished">Use pwgen</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
         <translation>Искључи велика слова</translation>
@@ -207,10 +199,6 @@
         <translation>Гит:</translation>
     </message>
     <message>
-        <source>Use git</source>
-        <translation type="vanished">Use git</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Аутоматски додај .gpg-id датотеке</translation>
@@ -229,10 +217,6 @@
         <location filename="../src/configdialog.ui" line="565"/>
         <source>Extensions:</source>
         <translation>Екстензије:</translation>
-    </message>
-    <message>
-        <source>Use pass otp extension</source>
-        <translation type="vanished">Use pass otp extension</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
