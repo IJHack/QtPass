@@ -714,14 +714,14 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation>Ниједан од одабраних кључева има доступан тајни кључ.
-Нећете моћи да декриптујете нове додате лозинке!</translation>
+        <translation type="unfinished">Ниједан од изабраних кључева нема доступан тајни кључ.
+Нећете моћи да дешифрујете ново додате лозинке!</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="662"/>
         <location filename="../src/imitatepass.cpp" line="769"/>
         <source>Re-encryption failed</source>
-        <translation>Поновно енкриптирање неуспело</translation>
+        <translation>Поновно шифровање није успело</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="663"/>
@@ -773,17 +773,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="770"/>
         <source>Failed to re-encrypt %1</source>
-        <translation>Неуспело поновно енкриптирање %1</translation>
+        <translation>Поновно шифровање %1 није успело</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="776"/>
         <source>Re-encryption completed: %1 succeeded, %2 failed</source>
-        <translation>Поновно енкриптирање је завршено: %1 успешно, %2 неуспело</translation>
+        <translation>Поновно шифровање је завршено: %1 је успело, %2 није успело</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation>Поновно енкриптирање је завршено: %1 фајлова поново енкриптирано</translation>
+        <translation type="unfinished">Поновно шифровање је завршено: %1 датотека поново шифровано</translation>
     </message>
 </context>
 <context>
@@ -1566,7 +1566,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation>Повторно енкриптирање лозинки</translation>
+        <translation type="unfinished">Поново шифруј лозинке</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
@@ -1577,11 +1577,11 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Повторно енкриптирање свих лозинки у %1?
+        <translation type="unfinished">Поновно шифровање свих лозинки у %1?
 
-Ово ће повторно енкриптирати СВЕ фајлове са лозинкама у овом фолдеру користећи текуће примаоце дефинисане у .gpg-id.
+Ово ће поново шифровати СВЕ датотеке са лозинкама у овом фолдеру користећи текуће примаоце дефинисане у .gpg-id.
 
-Ово може да препише многе фајлове и неможе се лако вратити назад.
+Ово може да препише много датотека и не може се лако вратити назад.
 
 Наставити?</translation>
     </message>
@@ -1860,11 +1860,11 @@ Note: Existing files will not be modified, and retain the old permissions until 
 Blue entries have a secret key available, select one of these to be able to decrypt.
 Black entries have an encryption key available and it is trusted, select one of these to allow other people to decrypt.
 Red entries are not valid, you will not be able to encrypt to these.</source>
-        <translation>Избери кориснике који могу да декриптују лозинке чуване у овом папку.
-Напомена: Постојећи фајлови ће се не променити, а старе дозволе ће бити задржане док их не уредиш.
-Плаве улазе имају доступну тајну кључ, избери један од ових да би могао да декриптује.
-Црне улазе имају доступни шифровани кључ и је поуздан, избери један од ових да би други људи могли да декриптују.
-Црвене улазе нису валидне, нећете бити у стању да криптујете на њих.</translation>
+        <translation type="unfinished">Изаберите кориснике који могу да дешифрују лозинке чуване у овом фолдеру.
+Напомена: Постојеће датотеке неће бити измењене, а старе дозволе ће бити задржане док их не уредите.
+Плави уноси имају доступан тајни кључ, изаберите неки од њих да бисте могли да дешифрујете.
+Црни уноси имају доступан кључ за шифровање и он је поуздан, изаберите неки од њих да бисте дозволили другима да дешифрују.
+Црвени уноси нису важећи, нећете моћи да шифрујете за њих.</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
