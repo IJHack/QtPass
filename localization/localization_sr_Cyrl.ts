@@ -61,7 +61,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Користи фонт исте ширине</translation>
+        <translation>Користити фонт исте ширине</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -443,7 +443,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;gpg&lt;/strong&gt; користећи свој избор пакета за управљање пакетима&lt;br&gt;или преузмите га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
+        <translation>Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;gpg&lt;/strong&gt; користећи свој избор пакета за управљање пакетима&lt;br&gt;или преузмите га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -519,12 +519,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="914"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation type="unfinished">Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;Ubuntu&lt;/strong&gt; са Microsoft Store да бисте га добили.&lt;br&gt;Ако сте већ то урадили, уверите се да сте га једном покренули и кликните &quot;Аутодетекција&quot; у следећем дијалогу.</translation>
+        <translation>Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;Ubuntu&lt;/strong&gt; са Microsoft Store да бисте га добили.&lt;br&gt;Ако сте већ то урадили, уверите се да сте га једном покренули и кликните &quot;Аутодетекција&quot; у следећем дијалогу.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="919"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation type="unfinished">Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;Ubuntu&lt;/strong&gt; са Microsoft Store&lt;br&gt;или преузмите га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
+        <translation>Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;Ubuntu&lt;/strong&gt; са Microsoft Store&lt;br&gt;или преузмите га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
@@ -910,7 +910,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation type="unfinished">Садржај шаблона ће се поставити на основу верзије ГПГ.</translation>
+        <translation>Садржај шаблона će se postaviti na temelju верзије ГПГ.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -1040,7 +1040,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation type="unfinished">Генерише ОТП и копира у одељак за међуспремник</translation>
+        <translation>Генерише ОТП и копира у одељак за međuspremnik</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
