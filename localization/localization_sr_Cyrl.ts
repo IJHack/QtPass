@@ -56,12 +56,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Аутоматско чишћење панела након:</translation>
+        <translation>Аутоочиштење панела након:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
         <source>Use a monospace font</source>
-        <translation>Користи фонт исте ширине</translation>
+        <translation>Користити фонт исте ширине</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="968"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Опционо: Кључ GPG за потписивање датотека са проширењем .gpg-id за верификацију интегритета. Оставите празно, осим ако вам није потребно да заштитите листу корисника од манипулације.</translation>
+        <translation>Опционо: Кључ GPG за потписивање фајлова са проширењем .gpg-id за верификацију интегритета. Оставите празно, осим ако вам није потребно да заштитите листу корисника од манипулације.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1008"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
         <source>Native</source>
-        <translation>Изворни</translation>
+        <translation>Натив</translation>
     </message>
     <message>
         <source>git</source>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
         <source>Path</source>
-        <translation>Путања</translation>
+        <translation>Пут</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -443,7 +443,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="925"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;gpg&lt;/strong&gt; користећи свој омиљени менаџер пакета&lt;br&gt;или преузмите га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
+        <translation>Молимо, поставите GnuPG на вашу рачунарску опрему.&lt;br&gt;Инсталирајте &lt;strong&gt;gpg&lt;/strong&gt; користећи свој избор пакета за управљање пакетима&lt;br&gt;или преузмите га са &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.org&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="979"/>
@@ -474,7 +474,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1018"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
-        <translation>Фасцикла %1 не изгледа као паролски архив или још увек није иницијализована.</translation>
+        <translation>Фајл %1 не изгледа као паролски архив или још увек није почео да ради.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1263"/>
@@ -504,7 +504,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>System tray is not available</source>
-        <translation>Системска трака је недоступна</translation>
+        <translation>Системски трај је недоступан</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="95"/>
@@ -534,17 +534,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
         <source>Use Git</source>
-        <translation>Користите Гит</translation>
+        <translation>Користејте Гит</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
         <source>Use QRencode</source>
-        <translation>Користите QRencode</translation>
+        <translation>Користејте QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Use pass-otp extension</source>
-        <translation>Користите продужетак pass-otp</translation>
+        <translation>Користејте продужетак pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
@@ -895,7 +895,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Нема ограничења дужине шифрене фразе, а треба је пажљиво изабрати. Са перспективе безбедности, шифрена фраза за откључавање приватног кључа је једна од слабих тачака у GnuPG (и другим системима јавне криптографије) јер је то једино заштита ако неки други појединац добије ваш приватни кључ. &lt;br/&gt;Идеална шифрена фраза не треба да користи речи из речника и треба да меша слова велика и мала, и да користи и не-абецедне карактере.&lt;br/&gt;Добра шифрена фраза је кључна за сигурно коришћење GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Нема ограничења дужине шифрене фразе, а треба је пажљivo изабрана. Са перспективе безбедности, шифрени кључ за откључавање приватног кључа је једно од слабих тачака у GnuPG (и другим системима јавне криптографије) јер је то једино заштита ако неки други појединац добије ваш приватни кључ. &lt;br/&gt;Идеална шифрена фраза не треба да користи речи из рјечника и треба да меша слова велика и мала, те да користи и не-абецедне карактере.&lt;br/&gt;Добра шифрена фраза је кључна за сигурно коришћење GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
@@ -910,7 +910,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
         <source>Template contents will be set based on GPG version.</source>
-        <translation>Садржај шаблона ће се поставити на основу верзије ГПГ.</translation>
+        <translation>Садржај шаблона će se postaviti na temelju верзије ГПГ.</translation>
     </message>
     <message>
         <source>#           QtPass GPG key generator
@@ -980,7 +980,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation>QtPass</translation>
+        <translation>КтПас</translation>
     </message>
     <message>
         <source>Add</source>
@@ -1040,7 +1040,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
         <source>Generate OTP and copy to clipboard</source>
-        <translation>Генериши ОТП и копирај у међуспремник</translation>
+        <translation>Генерише ОТП и копира у одељак за međuspremnik</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
