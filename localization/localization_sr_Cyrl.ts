@@ -56,7 +56,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
         <source>Autoclear panel after:</source>
-        <translation>Аутоочиштење панела након:</translation>
+        <translation type="unfinished">Аутоматско чишћење панела након:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
@@ -281,7 +281,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
         <source>Native</source>
-        <translation>Натив</translation>
+        <translation type="unfinished">Изворни</translation>
     </message>
     <message>
         <source>git</source>
@@ -326,7 +326,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="957"/>
         <source>Path</source>
-        <translation>Пут</translation>
+        <translation type="unfinished">Путања</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
@@ -980,7 +980,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
         <source>QtPass</source>
-        <translation>КтПас</translation>
+        <translation type="unfinished">QtPass</translation>
     </message>
     <message>
         <source>Add</source>
