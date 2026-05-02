@@ -207,10 +207,6 @@
         <translation>Гит:</translation>
     </message>
     <message>
-        <source>Use git</source>
-        <translation type="vanished">Use git</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="519"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Аутоматски додај .gpg-id датотеке</translation>
