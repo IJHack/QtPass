@@ -714,7 +714,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/imitatepass.cpp" line="275"/>
         <source>None of the selected keys have a secret key available.
 You will not be able to decrypt any newly added passwords!</source>
-        <translation type="unfinished">Ниједан од изабраних кључева нема доступан тајни кључ.
+        <translation>Ниједан од изабраних кључева нема доступан тајни кључ.
 Нећете моћи да дешифрујете новододате лозинке!</translation>
     </message>
     <message>
@@ -783,7 +783,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="782"/>
         <source>Re-encryption completed: %1 files re-encrypted</source>
-        <translation type="unfinished">Поновно шифровање је завршено: поново шифровано %1 датотека</translation>
+        <translation>Поновно шифровање је завршено: поново шифровано %1 датотека</translation>
     </message>
 </context>
 <context>
