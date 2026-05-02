@@ -1350,7 +1350,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete folder?</source>
-        <translation type="unfinished">Желите да избришете директоријум?</translation>
+        <translation>Желите да избришете директоријум?</translation>
     </message>
     <message>
         <source> and whole content</source>
@@ -1454,12 +1454,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1386"/>
         <source>Rename folder</source>
-        <translation type="unfinished">Преименуј директоријум</translation>
+        <translation>Преименуј директоријум</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1390"/>
         <source>Rename password</source>
-        <translation type="unfinished">Преименуј лозинку</translation>
+        <translation>Преименуј лозинку</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1400"/>
@@ -1577,7 +1577,7 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation type="unfinished">Поновно шифровање свих лозинки у %1?
+        <translation>Поновно шифровање свих лозинки у %1?
 
 Ово ће поново шифровати СВЕ датотеке са лозинкама у овом фолдеру користећи текуће примаоце дефинисане у .gpg-id.
 
