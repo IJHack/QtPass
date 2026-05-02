@@ -1341,7 +1341,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1093"/>
         <source>Delete password?</source>
-        <translation type="unfinished">Желите да избришете парол?</translation>
+        <translation>Желите да избришете лозинку?</translation>
     </message>
     <message>
         <source>Are you sure you want to delete %1?</source>
