@@ -179,10 +179,6 @@
         <translation>Тренутна путања</translation>
     </message>
     <message>
-        <source>Use pwgen</source>
-        <translation type="vanished">Use pwgen</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="450"/>
         <source>Exclude capital letters</source>
         <translation>Искључи велика слова</translation>
