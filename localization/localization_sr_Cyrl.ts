@@ -664,7 +664,7 @@ URL
         <location filename="../src/imitatepass.cpp" line="150"/>
         <location filename="../src/imitatepass.cpp" line="599"/>
         <source>Could not read encryption key to use, .gpg-id file missing or invalid.</source>
-        <translation>Није могуће прочитати кључ за шифровање, .gpg-id датотека не постоји или није исправна.</translation>
+        <translation>Није могуће прочитати кључ за крипцију, .gpg-id датотека не постоји или није исправна.</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="314"/>
@@ -752,7 +752,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/imitatepass.cpp" line="729"/>
         <source>Re-encrypting from folder %1</source>
-        <translation>Поново се шифрује из фасцикле %1</translation>
+        <translation>Поново се криптује из фасцикле %1</translation>
     </message>
     <message>
         <location filename="../src/imitatepass.cpp" line="732"/>
