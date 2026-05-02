@@ -35,10 +35,6 @@
         <translation>Секунде</translation>
     </message>
     <message>
-        <source>Password Behaviour:</source>
-        <translation type="vanished">Начин рада лозинке:</translation>
-    </message>
-    <message>
         <location filename="../src/configdialog.ui" line="147"/>
         <source>Content panel behaviour:</source>
         <translation>Начин рада панела садржаја:</translation>
@@ -221,10 +217,6 @@
         <location filename="../src/configdialog.ui" line="565"/>
         <source>Extensions:</source>
         <translation>Екстензије:</translation>
-    </message>
-    <message>
-        <source>Use pass otp extension</source>
-        <translation type="vanished">Користи pass otp екстензију</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
