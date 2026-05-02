@@ -544,7 +544,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
         <source>Use pass-otp extension</source>
-        <translation type="unfinished">Користите продужетак pass-otp</translation>
+        <translation>Користите продужетак pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
