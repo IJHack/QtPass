@@ -1566,7 +1566,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1702"/>
         <source>Re-encrypt passwords</source>
-        <translation type="unfinished">Поновно шифровање лозинки</translation>
+        <translation type="unfinished">Поново шифруј све лозинке</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1703"/>
