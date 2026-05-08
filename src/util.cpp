@@ -88,6 +88,14 @@ auto Util::findPasswordStore() -> QString {
   initialiseEnvironment();
   if (_env.contains("PASSWORD_STORE_DIR")) {
     path = _env.value("PASSWORD_STORE_DIR");
+    // Expand a leading "~" — env vars set in non-shell contexts (systemd
+    // units, .desktop entries, quoted shell assignments) skip the shell's
+    // tilde expansion, leaving "~" as a literal directory component.
+    if (path == "~") {
+      path = QDir::homePath();
+    } else if (path.startsWith("~/")) {
+      path = QDir::homePath() + path.mid(1);
+    }
   } else {
 #ifdef Q_OS_WIN
     path = QDir(QDir::homePath()).filePath("password-store");
