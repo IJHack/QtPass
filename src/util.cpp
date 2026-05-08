@@ -72,10 +72,10 @@ void Util::initialiseSshAuthSock() {
   // Auto-probe via gpgconf (canonical for gpg-agent's SSH support).
   QString out;
   QString err;
-  if (Executor::executeBlocking(QStringLiteral("gpgconf"),
-                                {QStringLiteral("--list-dirs"),
-                                 QStringLiteral("agent-ssh-socket")},
-                                &out, &err) == 0) {
+  if (Executor::executeBlocking(
+          QStringLiteral("gpgconf"),
+          {QStringLiteral("--list-dirs"), QStringLiteral("agent-ssh-socket")},
+          &out, &err) == 0) {
     const QString socket = out.trimmed();
     if (!socket.isEmpty()) {
       qputenv("SSH_AUTH_SOCK", socket.toUtf8());
@@ -91,10 +91,10 @@ void Util::initialiseSshAuthSock() {
   // per-session environment but not in the inherited process env.
   out.clear();
   err.clear();
-  if (Executor::executeBlocking(QStringLiteral("launchctl"),
-                                {QStringLiteral("getenv"),
-                                 QStringLiteral("SSH_AUTH_SOCK")},
-                                &out, &err) == 0) {
+  if (Executor::executeBlocking(
+          QStringLiteral("launchctl"),
+          {QStringLiteral("getenv"), QStringLiteral("SSH_AUTH_SOCK")}, &out,
+          &err) == 0) {
     const QString socket = out.trimmed();
     if (!socket.isEmpty()) {
       qputenv("SSH_AUTH_SOCK", socket.toUtf8());
