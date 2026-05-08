@@ -17,6 +17,7 @@
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
+#include <QHash>
 #include <QSaveFile>
 #include <QTextStream>
 #include <algorithm>
@@ -88,9 +89,10 @@ auto Util::findPasswordStore() -> QString {
   initialiseEnvironment();
   if (_env.contains("PASSWORD_STORE_DIR")) {
     path = _env.value("PASSWORD_STORE_DIR");
-    // Expand a leading "~" — env vars set in non-shell contexts (systemd
-    // units, .desktop entries, quoted shell assignments) skip the shell's
-    // tilde expansion, leaving "~" as a literal directory component.
+    // Expand current-user tilde forms ("~" and "~/...") — env vars set in
+    // non-shell contexts (systemd units, .desktop entries, quoted shell
+    // assignments) skip shell tilde expansion, leaving "~" literal.
+    // Note: "~username" forms are intentionally not resolved here.
     if (path == "~") {
       path = QDir::homePath();
     } else if (path.startsWith("~/")) {
@@ -145,7 +147,11 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
 
   if (_env.contains("PATH")) {
     QString path = _env.value("PATH");
-    const QChar delimiter = QDir::separator() == '\\' ? ';' : ':';
+#ifdef Q_OS_WIN
+    const QChar delimiter = ';';
+#else
+    const QChar delimiter = ':';
+#endif
     QStringList entries = path.split(delimiter);
 
     for (const QString &entryConst : entries) {
@@ -170,22 +176,35 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
   }
 #ifdef Q_OS_WIN
   if (ret.isEmpty()) {
-    static const QRegularExpression whitespaceRegex(QStringLiteral("\\s"));
-    const bool hasWhitespace = binary.contains(whitespaceRegex);
+    // Cache per-binary WSL lookup result — the wsl --version probe is a
+    // blocking subprocess that can run several times per session for
+    // missing binaries; once decided, the answer doesn't change at runtime.
+    static QHash<QString, QString> wslBinaryCache;
+    const bool hasWhitespace =
+        std::any_of(binary.cbegin(), binary.cend(),
+                    [](const QChar ch) { return ch.isSpace(); });
     if (!hasWhitespace) {
-      QString wslCommand = QStringLiteral("wsl ") + binary;
+      auto cached = wslBinaryCache.constFind(binary);
+      if (cached != wslBinaryCache.constEnd()) {
+        ret = cached.value();
+      } else {
+        QString wslCommand = QStringLiteral("wsl ") + binary;
 #ifdef QT_DEBUG
-      dbg() << "Util::findBinaryInPath(): falling back to WSL for binary"
-            << binary;
+        dbg() << "Util::findBinaryInPath(): falling back to WSL for binary"
+              << binary;
 #endif
-      QString out, err;
-      if (Executor::executeBlocking(wslCommand, {"--version"}, &out, &err) ==
-              0 &&
-          !out.isEmpty() && err.isEmpty()) {
+        QString out, err;
+        QString cachedResult;
+        if (Executor::executeBlocking(wslCommand, {"--version"}, &out, &err) ==
+                0 &&
+            !out.isEmpty() && err.isEmpty()) {
 #ifdef QT_DEBUG
-        dbg() << "Util::findBinaryInPath(): using WSL binary" << wslCommand;
+          dbg() << "Util::findBinaryInPath(): using WSL binary" << wslCommand;
 #endif
-        ret = wslCommand;
+          cachedResult = wslCommand;
+        }
+        wslBinaryCache.insert(binary, cachedResult);
+        ret = cachedResult;
       }
     }
   }
@@ -216,12 +235,17 @@ auto Util::configIsValid() -> bool {
                                  : QtPassSettings::getGpgExecutable();
 
   if (executable.startsWith(QStringLiteral("wsl "))) {
-    QString out;
-    QString err;
-    if (Executor::executeBlocking(QStringLiteral("wsl"),
-                                  {QStringLiteral("--version")}, &out,
-                                  &err) == 0 &&
-        !out.isEmpty() && err.isEmpty()) {
+    // Probe WSL once per session — availability doesn't change at runtime
+    // and the executeBlocking call is a blocking subprocess.
+    static const bool wslAvailable = []() {
+      QString out;
+      QString err;
+      return Executor::executeBlocking(QStringLiteral("wsl"),
+                                       {QStringLiteral("--version")}, &out,
+                                       &err) == 0 &&
+             !out.isEmpty() && err.isEmpty();
+    }();
+    if (wslAvailable) {
       return true;
     }
   }
