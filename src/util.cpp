@@ -90,11 +90,9 @@ auto Util::findPasswordStore() -> QString {
     path = _env.value("PASSWORD_STORE_DIR");
   } else {
 #ifdef Q_OS_WIN
-    path = QDir::homePath() + QDir::separator() + "password-store" +
-           QDir::separator();
+    path = QDir(QDir::homePath()).filePath("password-store");
 #else
-    path = QDir::homePath() + QDir::separator() + ".password-store" +
-           QDir::separator();
+    path = QDir(QDir::homePath()).filePath(".password-store");
 #endif
   }
   return Util::normalizeFolderPath(path);
@@ -127,8 +125,9 @@ auto Util::normalizeFolderPath(const QString &path) -> QString {
  * found.
  */
 auto Util::findBinaryInPath(const QString &binary) -> QString {
-  if (binary.isEmpty())
+  if (binary.isEmpty()) {
     return {};
+  }
 
   initialiseEnvironment();
 
