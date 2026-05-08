@@ -272,7 +272,7 @@ namespace {
  * @return Full path ending in "gpgconf", or "gpgconf" as a fallback.
  */
 auto resolveWslGpgconfPath(const QString &lastPart) -> QString {
-  int lastSep = lastPart.lastIndexOf('/');
+  qsizetype lastSep = lastPart.lastIndexOf('/');
   if (lastSep < 0) {
     lastSep = lastPart.lastIndexOf('\\');
   }
@@ -907,7 +907,7 @@ auto Pass::getRecipientString(const QString &for_file, const QString &separator,
   Q_UNUSED(separator)
   QStringList recipients = Pass::getRecipientList(for_file);
   if (count) {
-    *count = recipients.size();
+    *count = static_cast<int>(recipients.size());
   }
   return recipients;
 }

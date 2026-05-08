@@ -575,7 +575,7 @@ void ConfigDialog::setProfiles(QHash<QString, QHash<QString, QString>> profiles,
   // Cache profiles for use in onProfileTableSelectionChanged
   m_profiles = profiles;
 
-  ui->profileTable->setRowCount(profiles.count());
+  ui->profileTable->setRowCount(static_cast<int>(profiles.count()));
   QHashIterator<QString, QHash<QString, QString>> i(profiles);
   int n = 0;
   while (i.hasNext()) {

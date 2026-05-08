@@ -34,7 +34,7 @@ auto FileContent::parse(const QString &fileContent,
   NamedValues namedValues;
   for (const QString &line : AS_CONST(lines)) {
     if (line.contains(":")) {
-      int colon = line.indexOf(':');
+      qsizetype colon = line.indexOf(':');
       QString name = line.left(colon);
       QString value = line.right(line.length() - colon - 1);
       if ((allFields &&
