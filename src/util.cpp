@@ -88,16 +88,22 @@ auto Util::findPasswordStore() -> QString {
   initialiseEnvironment();
   if (_env.contains("PASSWORD_STORE_DIR")) {
     path = _env.value("PASSWORD_STORE_DIR");
+    // Expand a leading "~" — env vars set in non-shell contexts (systemd
+    // units, .desktop entries, quoted shell assignments) skip the shell's
+    // tilde expansion, leaving "~" as a literal directory component.
+    if (path == "~") {
+      path = QDir::homePath();
+    } else if (path.startsWith("~/")) {
+      path = QDir::homePath() + path.mid(1);
+    }
   } else {
 #ifdef Q_OS_WIN
-    path = QDir::homePath() + QDir::separator() + "password-store" +
-           QDir::separator();
+    path = QDir(QDir::homePath()).filePath("password-store");
 #else
-    path = QDir::homePath() + QDir::separator() + ".password-store" +
-           QDir::separator();
+    path = QDir(QDir::homePath()).filePath(".password-store");
 #endif
   }
-  return Util::normalizeFolderPath(path);
+  return Util::normalizeFolderPath(QDir::cleanPath(path));
 }
 
 auto Util::normalizeFolderPath(const QString &path) -> QString {
@@ -127,8 +133,9 @@ auto Util::normalizeFolderPath(const QString &path) -> QString {
  * found.
  */
 auto Util::findBinaryInPath(const QString &binary) -> QString {
-  if (binary.isEmpty())
+  if (binary.isEmpty()) {
     return {};
+  }
 
   initialiseEnvironment();
 
