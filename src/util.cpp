@@ -39,16 +39,6 @@ QProcessEnvironment Util::_env;
 bool Util::_envInitialised = false;
 
 /**
- * @brief Initializes the process environment and augments PATH with
- * platform-specific GPG locations.
- * @example
- * Util::initialiseEnvironment();
- *
- * @note On macOS, appends common MacGPG2 and /usr/local/bin paths if available.
- * @note On Windows, appends common WinGPG and GnuPG installation paths if
- * available.
- */
-/**
  * @brief Probe and set SSH_AUTH_SOCK if missing — see header for full rules.
  *
  * Implementation notes:
@@ -116,6 +106,16 @@ void Util::initialiseSshAuthSock() {
 #endif
 }
 
+/**
+ * @brief Initializes the process environment and augments PATH with
+ * platform-specific GPG locations.
+ * @example
+ * Util::initialiseEnvironment();
+ *
+ * @note On macOS, appends common MacGPG2 and /usr/local/bin paths if available.
+ * @note On Windows, appends common WinGPG and GnuPG installation paths if
+ * available.
+ */
 void Util::initialiseEnvironment() {
   if (!_envInitialised) {
     _env = QProcessEnvironment::systemEnvironment();
