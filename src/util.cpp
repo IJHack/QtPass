@@ -295,7 +295,7 @@ auto Util::getDir(const QModelIndex &index, bool forPass,
  * @return QRegularExpression reference
  */
 auto Util::endsWithGpg() -> const QRegularExpression & {
-  static const QRegularExpression expr{"\\.gpg$"};
+  static const QRegularExpression expr{R"(\.gpg$)"};
   return expr;
 }
 
