@@ -433,6 +433,20 @@ public:
   static void setPassExecutable(const QString &passExecutable);
 
   /**
+   * @brief Get the user-supplied SSH_AUTH_SOCK override path.
+   * @param defaultValue String returned if not saved.
+   * @return Override path, or empty if auto-probe should be used.
+   */
+  static auto
+  getSshAuthSockOverride(const QString &defaultValue = QVariant().toString())
+      -> QString;
+  /**
+   * @brief Save the user-supplied SSH_AUTH_SOCK override path.
+   * @param value Override path, or empty to clear and re-enable auto-probe.
+   */
+  static void setSshAuthSockOverride(const QString &value);
+
+  /**
    * @brief Get git executable path.
    * @param defaultValue String returned if not saved.
    * @return Path to git executable.

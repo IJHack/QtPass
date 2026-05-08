@@ -42,6 +42,7 @@ public:
   static const QString passStore;
   static const QString passSigningKey;
   static const QString passExecutable;
+  static const QString sshAuthSockOverride;
   static const QString gitExecutable;
   static const QString gpgExecutable;
   static const QString pwgenExecutable;

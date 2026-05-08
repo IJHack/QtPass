@@ -206,6 +206,14 @@ private Q_SLOTS:
   void grepScanStoreEmptyDirReturnsEmpty();
   void grepImitatePassEmptyStoreEmitsEmpty();
   void grepImitatePassInvalidRegexEmitsEmpty();
+  // SSH_AUTH_SOCK auto-probe (issue #543)
+  void sshAuthSockOverrideRoundtrip();
+  void sshAuthSockOverrideEmptyByDefault();
+  void initialiseSshAuthSockHonoursExistingEnv();
+  void initialiseSshAuthSockUsesOverride();
+  void initialiseSshAuthSockOverrideWinsOverProbe();
+  void initialiseSshAuthSockNoOverrideNoEnvProbes();
+  void initialiseSshAuthSockEmptyOverrideFallsThrough();
 };
 
 /**
@@ -2030,6 +2038,140 @@ void tst_util::grepImitatePassInvalidRegexEmitsEmpty() {
   QCOMPARE(spy.count(), 1);
   const auto results = spy[0][0].value<GrepResults>();
   QVERIFY(results.isEmpty());
+}
+
+// ---------------------------------------------------------------------------
+// SSH_AUTH_SOCK auto-probe tests (issue #543)
+//
+// RAII helper restores SSH_AUTH_SOCK + the override setting around each test
+// so we don't pollute the developer's environment or each other's state.
+// ---------------------------------------------------------------------------
+namespace {
+class SshAuthSockGuard {
+public:
+  SshAuthSockGuard()
+      : hadEnv_(qEnvironmentVariableIsSet("SSH_AUTH_SOCK")),
+        prevEnv_(qgetenv("SSH_AUTH_SOCK")),
+        prevOverride_(QtPassSettings::getSshAuthSockOverride()) {}
+  ~SshAuthSockGuard() {
+    if (hadEnv_) {
+      qputenv("SSH_AUTH_SOCK", prevEnv_);
+    } else {
+      qunsetenv("SSH_AUTH_SOCK");
+    }
+    QtPassSettings::setSshAuthSockOverride(prevOverride_);
+  }
+  SshAuthSockGuard(const SshAuthSockGuard &) = delete;
+  auto operator=(const SshAuthSockGuard &) -> SshAuthSockGuard & = delete;
+
+private:
+  bool hadEnv_;
+  QByteArray prevEnv_;
+  QString prevOverride_;
+};
+} // namespace
+
+/**
+ * @brief getter/setter roundtrip for sshAuthSockOverride.
+ */
+void tst_util::sshAuthSockOverrideRoundtrip() {
+  SshAuthSockGuard guard;
+  const QString sentinel =
+      QStringLiteral("/tmp/qtpass-test-sock-") + QUuid::createUuid().toString();
+  QtPassSettings::setSshAuthSockOverride(sentinel);
+  QCOMPARE(QtPassSettings::getSshAuthSockOverride(), sentinel);
+  QtPassSettings::setSshAuthSockOverride(QString{});
+  QCOMPARE(QtPassSettings::getSshAuthSockOverride(), QString{});
+}
+
+/**
+ * @brief default value of getSshAuthSockOverride is empty.
+ */
+void tst_util::sshAuthSockOverrideEmptyByDefault() {
+  SshAuthSockGuard guard;
+  QtPassSettings::setSshAuthSockOverride(QString{});
+  QCOMPARE(QtPassSettings::getSshAuthSockOverride(), QString{});
+}
+
+/**
+ * @brief initialiseSshAuthSock leaves the env unchanged when SSH_AUTH_SOCK is
+ *        already set.
+ */
+void tst_util::initialiseSshAuthSockHonoursExistingEnv() {
+  SshAuthSockGuard guard;
+  const QByteArray existing("/tmp/qtpass-existing-sock");
+  qputenv("SSH_AUTH_SOCK", existing);
+  // Even if an override is configured, the existing env wins.
+  QtPassSettings::setSshAuthSockOverride(
+      QStringLiteral("/tmp/qtpass-override-sock"));
+  Util::initialiseSshAuthSock();
+  QCOMPARE(qgetenv("SSH_AUTH_SOCK"), existing);
+}
+
+/**
+ * @brief initialiseSshAuthSock applies the user-supplied override when env is
+ *        unset.
+ */
+void tst_util::initialiseSshAuthSockUsesOverride() {
+  SshAuthSockGuard guard;
+  qunsetenv("SSH_AUTH_SOCK");
+  const QString override = QStringLiteral("/tmp/qtpass-override-sock");
+  QtPassSettings::setSshAuthSockOverride(override);
+  Util::initialiseSshAuthSock();
+  QCOMPARE(qgetenv("SSH_AUTH_SOCK"), override.toUtf8());
+}
+
+/**
+ * @brief When both env is set AND override is set, the existing env wins —
+ *        the override is only consulted as a fallback for missing env.
+ */
+void tst_util::initialiseSshAuthSockOverrideWinsOverProbe() {
+  SshAuthSockGuard guard;
+  qunsetenv("SSH_AUTH_SOCK");
+  const QString override = QStringLiteral("/tmp/qtpass-override-sock");
+  QtPassSettings::setSshAuthSockOverride(override);
+  Util::initialiseSshAuthSock();
+  // Override should have applied — must NOT match a gpgconf result that may
+  // exist on the build host.
+  QCOMPARE(qgetenv("SSH_AUTH_SOCK"), override.toUtf8());
+}
+
+/**
+ * @brief With env unset and no override, initialiseSshAuthSock either probes
+ *        gpgconf successfully (CI may have it installed) or leaves env empty.
+ *        Both outcomes are valid; the test verifies it doesn't crash and
+ *        the resulting state is consistent.
+ */
+void tst_util::initialiseSshAuthSockNoOverrideNoEnvProbes() {
+  SshAuthSockGuard guard;
+  qunsetenv("SSH_AUTH_SOCK");
+  QtPassSettings::setSshAuthSockOverride(QString{});
+  Util::initialiseSshAuthSock();
+  // Either gpgconf set it (non-empty), or it stayed empty. Both fine.
+  // The contract is: never crash, never set garbage.
+  const QByteArray result = qgetenv("SSH_AUTH_SOCK");
+  if (!result.isEmpty()) {
+    // If anything was set, it should look like a path (start with /).
+    QVERIFY2(result.startsWith('/'),
+             qPrintable(QStringLiteral("Probed value should be a path: ") +
+                        QString::fromUtf8(result)));
+  }
+}
+
+/**
+ * @brief An empty override string should not be treated as a "set" override —
+ *        it should fall through to the auto-probe.
+ */
+void tst_util::initialiseSshAuthSockEmptyOverrideFallsThrough() {
+  SshAuthSockGuard guard;
+  qunsetenv("SSH_AUTH_SOCK");
+  QtPassSettings::setSshAuthSockOverride(QString{});
+  Util::initialiseSshAuthSock();
+  // After calling: SSH_AUTH_SOCK is either set by gpgconf probe or unset.
+  // Both are acceptable; importantly, it must NOT be set to the empty string.
+  if (qEnvironmentVariableIsSet("SSH_AUTH_SOCK")) {
+    QVERIFY(!qgetenv("SSH_AUTH_SOCK").isEmpty());
+  }
 }
 
 QTEST_MAIN(tst_util)

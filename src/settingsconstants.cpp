@@ -47,6 +47,7 @@ const QString SettingsConstants::addGPGId = "addGPGId";
 const QString SettingsConstants::passStore = "passStore";
 const QString SettingsConstants::passSigningKey = "passSigningKey";
 const QString SettingsConstants::passExecutable = "passExecutable";
+const QString SettingsConstants::sshAuthSockOverride = "sshAuthSockOverride";
 const QString SettingsConstants::gitExecutable = "gitExecutable";
 const QString SettingsConstants::gpgExecutable = "gpgExecutable";
 const QString SettingsConstants::pwgenExecutable = "pwgenExecutable";

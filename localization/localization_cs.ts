@@ -156,7 +156,7 @@
         <translation>Vybrat program správce hesel:</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1008"/>
+        <location filename="../src/configdialog.ui" line="1029"/>
         <source>Current path</source>
         <translation>Aktuální cesta</translation>
     </message>
@@ -205,27 +205,27 @@
         <translation type="vanished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#0000ff;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="900"/>
+        <location filename="../src/configdialog.ui" line="921"/>
         <source>Profiles</source>
         <translation>Profily</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="949"/>
+        <location filename="../src/configdialog.ui" line="970"/>
         <source>Name</source>
         <translation>Jméno</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="957"/>
+        <location filename="../src/configdialog.ui" line="978"/>
         <source>Path</source>
         <translation>Cesta</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/configdialog.ui" line="999"/>
         <source>Add</source>
         <translation>Přidat</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="993"/>
+        <location filename="../src/configdialog.ui" line="1014"/>
         <source>Delete</source>
         <translation>Smazat</translation>
     </message>
@@ -234,7 +234,7 @@
         <translation type="vanished">Aktuální úložiště hesel</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1028"/>
+        <location filename="../src/configdialog.ui" line="1049"/>
         <source>Template</source>
         <translation>Šablona</translation>
     </message>
@@ -243,17 +243,17 @@
         <translation type="vanished">Šablony přidávají další pole v dialogu generování hesla a v náhledu hesla.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1058"/>
+        <location filename="../src/configdialog.ui" line="1079"/>
         <source>Use template</source>
         <translation>Použít šablonu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1065"/>
+        <location filename="../src/configdialog.ui" line="1086"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Zobrazit všechny řádky začínající slovem následovaným středníkem jako pole v polích hesla, nejen vypsaná</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1068"/>
+        <location filename="../src/configdialog.ui" line="1089"/>
         <source>Show all fields templated</source>
         <translation>Zobrazit všechna pole v šabloně</translation>
     </message>
@@ -266,119 +266,119 @@ url
 email</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1095"/>
+        <location filename="../src/configdialog.ui" line="1116"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; verze </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="125"/>
+        <location filename="../src/configdialog.cpp" line="126"/>
         <source>No Clipboard</source>
         <translation>Bez schránky</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="126"/>
+        <location filename="../src/configdialog.cpp" line="127"/>
         <source>Always copy to clipboard</source>
         <translation>Vždy zkopírovat do schránky</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="127"/>
+        <location filename="../src/configdialog.cpp" line="128"/>
         <source>On-demand copy to clipboard</source>
         <translation>Na vyžádání zkopírovat do schránky</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="210"/>
-        <location filename="../src/configdialog.cpp" line="226"/>
+        <location filename="../src/configdialog.cpp" line="211"/>
+        <location filename="../src/configdialog.cpp" line="227"/>
         <source>This field is required</source>
         <translation>Toto pole je povinné</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="720"/>
+        <location filename="../src/configdialog.cpp" line="722"/>
         <source>Create profile directory?</source>
         <translation>Vytvořit adresář profilu?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="721"/>
+        <location filename="../src/configdialog.cpp" line="723"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Chcete vytvořit úložiště hesel v %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="729"/>
+        <location filename="../src/configdialog.cpp" line="731"/>
         <source>Could not create profile directory: %1</source>
         <translation>Adresář profilu se nepodařilo vytvořit: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="747"/>
+        <location filename="../src/configdialog.cpp" line="749"/>
         <source>Select recipients for %1</source>
         <translation>Vyberte příjemce pro %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="773"/>
+        <location filename="../src/configdialog.cpp" line="775"/>
         <source>New Profile</source>
         <translation>Nový profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="810"/>
+        <location filename="../src/configdialog.cpp" line="812"/>
         <source>No profile selected</source>
         <translation>Nebyl vybrán profil</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="811"/>
+        <location filename="../src/configdialog.cpp" line="813"/>
         <source>No profile selected to delete</source>
         <translation>Nebyl vybrán profil ke smazání</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="911"/>
+        <location filename="../src/configdialog.cpp" line="913"/>
         <source>GnuPG not found</source>
         <translation>GnuPG nenalezeno</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="925"/>
+        <location filename="../src/configdialog.cpp" line="927"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Nainstalujte prosím GnuPG na svůj systém.&lt;br&gt;Nainstalujte &lt;strong&gt;gpg&lt;/strong&gt; za použití upřednostňovaného správce balíků&lt;br&gt;nebo ho &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;stáhněte&lt;/a&gt; z GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="979"/>
+        <location filename="../src/configdialog.cpp" line="981"/>
         <source>Create password-store?</source>
         <translation>Vytvořit úložiště hesel?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="980"/>
+        <location filename="../src/configdialog.cpp" line="982"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Chcete vytvořit úložiště hesel v %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="728"/>
-        <location filename="../src/configdialog.cpp" line="985"/>
+        <location filename="../src/configdialog.cpp" line="730"/>
+        <location filename="../src/configdialog.cpp" line="987"/>
         <source>Error</source>
         <translation>Chyba</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="986"/>
+        <location filename="../src/configdialog.cpp" line="988"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Nepodařilo se vytvořit úložiště hesel v: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1017"/>
+        <location filename="../src/configdialog.cpp" line="1019"/>
         <source>Password store not initialised</source>
         <translation>Úložiště hesel není vytvořeno</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1018"/>
+        <location filename="../src/configdialog.cpp" line="1020"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Adresář %1 nevypadá jako úložiště hesel, nebo ještě nebyl vytvořen.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1263"/>
+        <location filename="../src/configdialog.cpp" line="1265"/>
         <source>New profile: %1 at %2</source>
         <translation>Nový profil: %1 v %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1267"/>
+        <location filename="../src/configdialog.cpp" line="1269"/>
         <source>Profile: %1 at %2</source>
         <translation>Profil: %1 v %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1272"/>
+        <location filename="../src/configdialog.cpp" line="1274"/>
         <source>Fill in all required fields</source>
         <translation>Vyplňte všechna povinná pole</translation>
     </message>
@@ -473,27 +473,27 @@ email</translation>
         <translation>Automaticky</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="68"/>
+        <location filename="../src/configdialog.cpp" line="69"/>
         <source>System tray is not available</source>
         <translation>Systémová přihrádka není k dispozici</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="95"/>
+        <location filename="../src/configdialog.cpp" line="96"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation>Je třeba nainstalovat rozšíření OTP pass</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="100"/>
+        <location filename="../src/configdialog.cpp" line="101"/>
         <source>qrencode needs to be installed</source>
         <translation>je třeba nainstalovat nástroj qrencode</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="914"/>
+        <location filename="../src/configdialog.cpp" line="916"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Nainstalujte si prosím do svého systému GnuPG. &lt;br&gt; Nainstalujte si z obchodu Microsoft Store &lt;strong&gt; Ubuntu &lt;/strong&gt;. Pokud jste tak již učinili, ujistěte se, že jste jej jednou spustili a &lt;br&gt; klikněte na „Automaticky“ v dalším dialogu.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="919"/>
+        <location filename="../src/configdialog.cpp" line="921"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Nainstalujte prosím do svého systému GnuPG. &lt;br&gt; Nainstalujte &lt;strong&gt; Ubuntu &lt;/strong&gt; z Microsoft Store &lt;br&gt; nebo &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; stáhněte si ji &lt;/a&gt; z GnuPG.org</translation>
     </message>
@@ -537,7 +537,7 @@ email</translation>
         <location filename="../src/configdialog.ui" line="763"/>
         <location filename="../src/configdialog.ui" line="806"/>
         <location filename="../src/configdialog.ui" line="837"/>
-        <location filename="../src/configdialog.ui" line="1015"/>
+        <location filename="../src/configdialog.ui" line="1036"/>
         <source>…</source>
         <translation>…</translation>
     </message>
@@ -552,32 +552,47 @@ email</translation>
         <translation>PWGen</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="952"/>
+        <location filename="../src/configdialog.ui" line="888"/>
+        <source>SSH_AUTH_SOCK override:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="891"/>
+        <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="898"/>
+        <source>(auto-probe via gpgconf)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.ui" line="973"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Název profilu, používaný k identifikaci tohoto profilu konfigurace</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="960"/>
+        <location filename="../src/configdialog.ui" line="981"/>
         <source>Path to the password store directory</source>
         <translation>Cesta do adresáře pro ukládání hesel</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="965"/>
+        <location filename="../src/configdialog.ui" line="986"/>
         <source>Signing Key</source>
         <translation>Podpisový klíč</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="968"/>
+        <location filename="../src/configdialog.ui" line="989"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Volitelné: GPG klíč pro podepisování souborů .gpg-id za účelem ověření integrity. Ponechte prázdné, pokud nepotřebujete chránit seznam uživatelů před neoprávněnou úpravou.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1049"/>
+        <location filename="../src/configdialog.ui" line="1070"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Šablony přidávají další pole v dialogu pro generování hesla a v zobrazení hesla.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.ui" line="1080"/>
+        <location filename="../src/configdialog.ui" line="1101"/>
         <source>login
 URL
 e-mail</source>
@@ -1656,8 +1671,8 @@ Pokračovat?</translation>
 <context>
     <name>QObject</name>
     <message>
-        <location filename="../main/main.cpp" line="161"/>
-        <location filename="../main/main.cpp" line="165"/>
+        <location filename="../main/main.cpp" line="167"/>
+        <location filename="../main/main.cpp" line="171"/>
         <source>LTR</source>
         <translation>LTR</translation>
     </message>
@@ -1665,93 +1680,93 @@ Pokračovat?</translation>
 <context>
     <name>QtPass</name>
     <message>
-        <location filename="../src/qtpass.cpp" line="160"/>
+        <location filename="../src/qtpass.cpp" line="168"/>
         <source>Generating GPG key pair</source>
         <translation>Generování páru GPG klíčů</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="223"/>
+        <location filename="../src/qtpass.cpp" line="231"/>
         <source>Failed to connect WebDAV:
 </source>
         <translation>Selhalo připojení k WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="240"/>
+        <location filename="../src/qtpass.cpp" line="248"/>
         <source>QtPass WebDAV password</source>
         <translation>QtPass WebDAV heslo</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="241"/>
+        <location filename="../src/qtpass.cpp" line="249"/>
         <source>Enter password to connect to WebDAV:</source>
         <translation>Vložte heslo pro připojení k WebDAV:</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="258"/>
+        <location filename="../src/qtpass.cpp" line="266"/>
         <source>fusedav exited unexpectedly
 </source>
         <translation>fusedav neočekávaně skončil
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="262"/>
+        <location filename="../src/qtpass.cpp" line="270"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
         <translation>Selhalo spuštění fusedav pro připojení k WebDAV:
 </translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="275"/>
+        <location filename="../src/qtpass.cpp" line="283"/>
         <source>QProcess::FailedToStart</source>
         <translation>QProcess::FailedToStart</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="278"/>
+        <location filename="../src/qtpass.cpp" line="286"/>
         <source>QProcess::Crashed</source>
         <translation>QProcess::Crashed</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="281"/>
+        <location filename="../src/qtpass.cpp" line="289"/>
         <source>QProcess::Timedout</source>
         <translation>QProcess::Timedout</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="284"/>
+        <location filename="../src/qtpass.cpp" line="292"/>
         <source>QProcess::ReadError</source>
         <translation>QProcess::ReadError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="287"/>
+        <location filename="../src/qtpass.cpp" line="295"/>
         <source>QProcess::WriteError</source>
         <translation>QProcess::WriteError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="290"/>
+        <location filename="../src/qtpass.cpp" line="298"/>
         <source>QProcess::UnknownError</source>
         <translation>QProcess::UnknownError</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="306"/>
+        <location filename="../src/qtpass.cpp" line="314"/>
         <source>GPG key pair generation failed</source>
         <translation>Generování páru klíčů GPG selhalo</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="380"/>
+        <location filename="../src/qtpass.cpp" line="388"/>
         <source>GPG key pair generated successfully</source>
         <translation>Pár klíčů GPG byl úspěšně vygenerován</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="465"/>
+        <location filename="../src/qtpass.cpp" line="473"/>
         <source>Clipboard cleared</source>
         <translation>Schránka vymazána</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="467"/>
+        <location filename="../src/qtpass.cpp" line="475"/>
         <source>Clipboard not cleared</source>
         <translation>Schránka nevymazána</translation>
     </message>
     <message>
-        <location filename="../src/qtpass.cpp" line="512"/>
+        <location filename="../src/qtpass.cpp" line="520"/>
         <source>Copied to clipboard</source>
         <translation>zkopírovat do schránky</translation>
     </message>
@@ -1776,32 +1791,32 @@ Pokračovat?</translation>
 <context>
     <name>TrayIcon</name>
     <message>
-        <location filename="../src/trayicon.cpp" line="67"/>
+        <location filename="../src/trayicon.cpp" line="52"/>
         <source>&amp;Show</source>
         <translation>Z&amp;obrazit</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="69"/>
+        <location filename="../src/trayicon.cpp" line="54"/>
         <source>&amp;Hide</source>
         <translation>&amp;Skrýt</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="72"/>
+        <location filename="../src/trayicon.cpp" line="57"/>
         <source>Mi&amp;nimize</source>
         <translation>Mi&amp;nimalizovat</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="75"/>
+        <location filename="../src/trayicon.cpp" line="60"/>
         <source>Ma&amp;ximize</source>
         <translation>Ma&amp;ximalizovat</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="78"/>
+        <location filename="../src/trayicon.cpp" line="63"/>
         <source>&amp;Restore</source>
         <translation>Obno&amp;vit</translation>
     </message>
     <message>
-        <location filename="../src/trayicon.cpp" line="81"/>
+        <location filename="../src/trayicon.cpp" line="66"/>
         <source>&amp;Quit</source>
         <translation>Ukonči&amp;t</translation>
     </message>
@@ -1879,42 +1894,42 @@ Modře označené záznamy poskytují tajný klíč, vyberte jeden z nich, kter�
         <translation type="vanished">Nelze získat seznam dostupných gpg klíčů</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="76"/>
+        <location filename="../src/usersdialog.cpp" line="77"/>
         <source>Keylist missing</source>
         <translation>Chybí seznam klíčů</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="77"/>
+        <location filename="../src/usersdialog.cpp" line="78"/>
         <source>Could not fetch list of available GPG keys</source>
         <translation>Nelze načíst seznam dostupných klíčů GPG</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="153"/>
+        <location filename="../src/usersdialog.cpp" line="154"/>
         <source>Key not found in keyring</source>
         <translation>Klíč nebyl v klíčence nalezen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="306"/>
+        <location filename="../src/usersdialog.cpp" line="307"/>
         <source>created</source>
         <translation>vytvořen</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="310"/>
+        <location filename="../src/usersdialog.cpp" line="311"/>
         <source>expires</source>
         <translation>vyprší</translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="333"/>
+        <location filename="../src/usersdialog.cpp" line="334"/>
         <source>[INVALID] </source>
         <translation>[NEPLATNÝ] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="336"/>
+        <location filename="../src/usersdialog.cpp" line="337"/>
         <source>[EXPIRED] </source>
         <translation>[PLATNOST VYPRŠELA] </translation>
     </message>
     <message>
-        <location filename="../src/usersdialog.cpp" line="340"/>
+        <location filename="../src/usersdialog.cpp" line="341"/>
         <source>[PARTIAL] </source>
         <translation>[ČÁSTEČNÝ] </translation>
     </message>

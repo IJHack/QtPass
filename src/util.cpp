@@ -48,6 +48,74 @@ bool Util::_envInitialised = false;
  * @note On Windows, appends common WinGPG and GnuPG installation paths if
  * available.
  */
+/**
+ * @brief Probe and set SSH_AUTH_SOCK if missing — see header for full rules.
+ *
+ * Implementation notes:
+ * - Reads QtPassSettings::getSshAuthSockOverride() for the manual override
+ *   path; if non-empty, uses it verbatim.
+ * - Otherwise runs `gpgconf --list-dirs agent-ssh-socket` (gpg-agent's
+ *   canonical socket reporter). On macOS, additionally tries `launchctl
+ *   getenv SSH_AUTH_SOCK`.
+ * - All probes go through Executor::executeBlocking with short, bounded
+ *   subprocess executions; any failure is silently absorbed (the user just
+ *   doesn't get the auto-fix).
+ */
+void Util::initialiseSshAuthSock() {
+  // Honour any value already in the environment — terminal launches,
+  // explicit `.desktop` Exec= overrides, and parent-process exports must win.
+  if (!qgetenv("SSH_AUTH_SOCK").isEmpty()) {
+    return;
+  }
+
+  // Manual override from settings takes precedence over auto-probe.
+  const QString override = QtPassSettings::getSshAuthSockOverride();
+  if (!override.isEmpty()) {
+    qputenv("SSH_AUTH_SOCK", override.toUtf8());
+#ifdef QT_DEBUG
+    dbg() << "Util::initialiseSshAuthSock(): set from settings override:"
+          << override;
+#endif
+    return;
+  }
+
+  // Auto-probe via gpgconf (canonical for gpg-agent's SSH support).
+  QString out;
+  QString err;
+  if (Executor::executeBlocking(QStringLiteral("gpgconf"),
+                                {QStringLiteral("--list-dirs"),
+                                 QStringLiteral("agent-ssh-socket")},
+                                &out, &err) == 0) {
+    const QString socket = out.trimmed();
+    if (!socket.isEmpty()) {
+      qputenv("SSH_AUTH_SOCK", socket.toUtf8());
+#ifdef QT_DEBUG
+      dbg() << "Util::initialiseSshAuthSock(): set from gpgconf:" << socket;
+#endif
+      return;
+    }
+  }
+
+#ifdef Q_OS_MACOS
+  // On macOS, GUI-launched apps may have SSH_AUTH_SOCK in launchd's
+  // per-session environment but not in the inherited process env.
+  out.clear();
+  err.clear();
+  if (Executor::executeBlocking(QStringLiteral("launchctl"),
+                                {QStringLiteral("getenv"),
+                                 QStringLiteral("SSH_AUTH_SOCK")},
+                                &out, &err) == 0) {
+    const QString socket = out.trimmed();
+    if (!socket.isEmpty()) {
+      qputenv("SSH_AUTH_SOCK", socket.toUtf8());
+#ifdef QT_DEBUG
+      dbg() << "Util::initialiseSshAuthSock(): set from launchctl:" << socket;
+#endif
+    }
+  }
+#endif
+}
+
 void Util::initialiseEnvironment() {
   if (!_envInitialised) {
     _env = QProcessEnvironment::systemEnvironment();
