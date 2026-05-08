@@ -172,7 +172,7 @@ auto Util::findBinaryInPath(const QString &binary) -> QString {
   if (ret.isEmpty()) {
     static const QRegularExpression whitespaceRegex(QStringLiteral("\\s"));
     const bool hasWhitespace = binary.contains(whitespaceRegex);
-    if (!binary.isEmpty() && !hasWhitespace) {
+    if (!hasWhitespace) {
       QString wslCommand = QStringLiteral("wsl ") + binary;
 #ifdef QT_DEBUG
       dbg() << "Util::findBinaryInPath(): falling back to WSL for binary"
@@ -265,6 +265,11 @@ auto Util::getDir(const QModelIndex &index, bool forPass,
   return filePath;
 }
 
+/**
+ * @brief Returns a regex matching strings that end with the .gpg extension.
+ *
+ * @return QRegularExpression reference
+ */
 auto Util::endsWithGpg() -> const QRegularExpression & {
   static const QRegularExpression expr{"\\.gpg$"};
   return expr;
@@ -288,11 +293,35 @@ auto Util::protocolRegex() -> const QRegularExpression & {
   return regex;
 }
 
+/**
+ * @brief Returns a regex matching newline characters (CR or LF).
+ *
+ * Useful for detecting or sanitising line breaks in text content.
+ *
+ * @return QRegularExpression reference
+ */
 auto Util::newLinesRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{"[\r\n]"};
   return regex;
 }
 
+/**
+ * @brief Validate whether a string is an accepted GPG key identifier.
+ *
+ * Accepted formats:
+ * - Hexadecimal key IDs / fingerprints, length 8 to 40 hex characters,
+ *   optionally prefixed with `0x` or `0X`.
+ * - Identifiers wrapped in angle brackets (`<...>`); brackets are stripped
+ *   before validation.
+ * - Special routing prefixes: `@`, `/`, `#`, `&` (used by GnuPG to look up
+ *   keys via mail-server / keyring / fingerprint substring matchers).
+ * - Email-style user IDs (any value containing `@`).
+ *
+ * Empty input is invalid.
+ *
+ * @param keyId Input key identifier string to validate.
+ * @return true if the input matches any accepted format; false otherwise.
+ */
 auto Util::isValidKeyId(const QString &keyId) -> bool {
   static const QRegularExpression hexPrefixRegex{"^0[xX]"};
   static const QRegularExpression specialPrefixRegex{"^[@/#&]"};
