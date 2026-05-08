@@ -101,42 +101,39 @@ $(function() {
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span></div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_tray_icon.html#a40737136f8d85dad4a10ddb58619157a">   33</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_tray_icon.html#a40737136f8d85dad4a10ddb58619157a">showMessage</a>(<span class="keyword">const</span> QString &amp;title, <span class="keyword">const</span> QString &amp;msg, <span class="keywordtype">int</span> time);</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span></div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_tray_icon.html#ab4cb316b0b39606fcb9b796cbed59bd1">   39</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="class_tray_icon.html#ab4cb316b0b39606fcb9b796cbed59bd1">setVisible</a>(<span class="keywordtype">bool</span> visible);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_tray_icon.html#ac43b5d2538c69cfcf6399eb29b9ddb47">   45</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_tray_icon.html#ac43b5d2538c69cfcf6399eb29b9ddb47">getIsAllocated</a>() -&gt; bool;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>signals:</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc">   53</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc">showHideParent</a>();</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span></div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8">   59</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8">iconActivated</a>(QSystemTrayIcon::ActivationReason reason);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">void</span> createActions();</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">void</span> createTrayIcon();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  QAction *showAction;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  QAction *hideAction;</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  QAction *minimizeAction;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  QAction *maximizeAction;</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  QAction *restoreAction;</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  QAction *quitAction;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  QSystemTrayIcon *sysTrayIcon;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  QMenu *trayIconMenu;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  QMainWindow *parentwin;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">bool</span> isAllocated;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_tray_icon.html#ac43b5d2538c69cfcf6399eb29b9ddb47">   39</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_tray_icon.html#ac43b5d2538c69cfcf6399eb29b9ddb47">getIsAllocated</a>() -&gt; bool;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>signals:</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc">   47</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc">showHideParent</a>();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8">   53</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8">iconActivated</a>(QSystemTrayIcon::ActivationReason reason);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">void</span> createActions();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">void</span> createTrayIcon();</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  QAction *showAction{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  QAction *hideAction{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  QAction *minimizeAction{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  QAction *maximizeAction{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  QAction *restoreAction{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  QAction *quitAction{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  QSystemTrayIcon *sysTrayIcon{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  QMenu *trayIconMenu{<span class="keyword">nullptr</span>};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  QMainWindow *parentwin;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordtype">bool</span> isAllocated{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>};</div>
 </div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span><span class="preprocessor">#endif </span><span class="comment">// SRC_TRAYICON_H_</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#endif </span><span class="comment">// SRC_TRAYICON_H_</span></div>
 <div class="ttc" id="aclass_tray_icon_html_a20f8b921d79beca21f6dcb98741d57fc"><div class="ttname"><a href="class_tray_icon.html#a20f8b921d79beca21f6dcb98741d57fc">TrayIcon::showHideParent</a></div><div class="ttdeci">void showHideParent()</div><div class="ttdoc">Toggle the visibility of the associated main window.</div></div>
 <div class="ttc" id="aclass_tray_icon_html_a36c341a8b31884cd45060a92258e92b8"><div class="ttname"><a href="class_tray_icon.html#a36c341a8b31884cd45060a92258e92b8">TrayIcon::iconActivated</a></div><div class="ttdeci">void iconActivated(QSystemTrayIcon::ActivationReason reason)</div><div class="ttdoc">Handle activation events from the system tray icon.</div></div>
 <div class="ttc" id="aclass_tray_icon_html_a40737136f8d85dad4a10ddb58619157a"><div class="ttname"><a href="class_tray_icon.html#a40737136f8d85dad4a10ddb58619157a">TrayIcon::showMessage</a></div><div class="ttdeci">void showMessage(const QString &amp;title, const QString &amp;msg, int time)</div><div class="ttdoc">Display a transient notification message via the tray icon.</div></div>
 <div class="ttc" id="aclass_tray_icon_html_a587e1467cf97c27f4269f1c47c1e4ac5"><div class="ttname"><a href="class_tray_icon.html#a587e1467cf97c27f4269f1c47c1e4ac5">TrayIcon::TrayIcon</a></div><div class="ttdeci">TrayIcon(QMainWindow *parent)</div><div class="ttdoc">Construct a TrayIcon associated with the given main window.</div></div>
-<div class="ttc" id="aclass_tray_icon_html_ab4cb316b0b39606fcb9b796cbed59bd1"><div class="ttname"><a href="class_tray_icon.html#ab4cb316b0b39606fcb9b796cbed59bd1">TrayIcon::setVisible</a></div><div class="ttdeci">void setVisible(bool visible)</div><div class="ttdoc">Show or hide the tray icon and its associated UI.</div></div>
 <div class="ttc" id="aclass_tray_icon_html_ac43b5d2538c69cfcf6399eb29b9ddb47"><div class="ttname"><a href="class_tray_icon.html#ac43b5d2538c69cfcf6399eb29b9ddb47">TrayIcon::getIsAllocated</a></div><div class="ttdeci">auto getIsAllocated() -&gt; bool</div><div class="ttdoc">Check whether tray resources have been allocated and initialized.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

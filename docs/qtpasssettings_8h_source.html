@@ -102,7 +102,7 @@ $(function() {
 <div class="foldopen" id="foldopen00035" data-start="{" data-end="};">
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="class_qt_pass_settings.html">   35</a></span><span class="keyword">class </span>QtPassSettings : <span class="keyword">public</span> QSettings {</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">explicit</span> QtPassSettings();</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">explicit</span> QtPassSettings() = <span class="keyword">delete</span>;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  QtPassSettings(<span class="keyword">const</span> QString &amp;organization, <span class="keyword">const</span> QSettings::Format format)</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>      : QSettings(organization, format) {}</div>

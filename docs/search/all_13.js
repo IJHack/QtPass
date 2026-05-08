@@ -11,7 +11,7 @@ var searchData=
   ['useqrencode_8',['useQrencode',['../class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9',1,'ConfigDialog']]],
   ['userdialog_9',['userDialog',['../class_main_window.html#a056b66175a3d3ffc3146535726bb4e50',1,'MainWindow']]],
   ['userinfo_10',['UserInfo',['../struct_user_info.html',1,'UserInfo'],['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo::UserInfo()']]],
-  ['usersdialog_11',['UsersDialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#ae6e0d6aeb3519a01c154a6f087c1d9fb',1,'UsersDialog::UsersDialog()']]],
+  ['usersdialog_11',['UsersDialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07',1,'UsersDialog::UsersDialog()']]],
   ['useselection_12',['useSelection',['../class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6',1,'ConfigDialog']]],
   ['usetemplate_13',['useTemplate',['../class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a',1,'ConfigDialog']]],
   ['usetrayicon_14',['useTrayIcon',['../class_config_dialog.html#aac383b23ed9b34eb52918de2b10d9567',1,'ConfigDialog']]],

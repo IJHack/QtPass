@@ -94,27 +94,28 @@ $(function() {
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>  Q_OBJECT</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5">   27</a></span>  <a class="code hl_function" href="class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5">SingleApplication</a>(<span class="keywordtype">int</span> &amp;argc, <span class="keywordtype">char</span> *argv[], QString uniqueKey);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_single_application.html#a9408850aec7bca2e43e386f35ed780f4">   32</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_single_application.html#a9408850aec7bca2e43e386f35ed780f4">isRunning</a>() -&gt; bool;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="class_single_application.html#ad63149f60ac6676dda4397a90116e351">   38</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_single_application.html#ad63149f60ac6676dda4397a90116e351">sendMessage</a>(<span class="keyword">const</span> QString &amp;message) -&gt; bool;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span> slots:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238">   44</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238">receiveMessage</a>();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>signals:</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="class_single_application.html#ab893aad585d0cc3ee82659709a6a069b">   51</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_single_application.html#ab893aad585d0cc3ee82659709a6a069b">messageAvailable</a>(<span class="keyword">const</span> QString &amp;message);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">bool</span> _isRunning;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  QString _uniqueKey;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  QSharedMemory sharedMemory;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  QScopedPointer&lt;QLocalServer&gt; localServer;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> timeout = 1000;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>};</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5">   27</a></span>  <a class="code hl_function" href="class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5">SingleApplication</a>(<span class="keywordtype">int</span> &amp;argc, <span class="keywordtype">char</span> *argv[], <span class="comment">// NOLINT(modernize-avoid-c-arrays)</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                    QString uniqueKey);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="class_single_application.html#a9408850aec7bca2e43e386f35ed780f4">   33</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_single_application.html#a9408850aec7bca2e43e386f35ed780f4">isRunning</a>() -&gt; bool;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="class_single_application.html#ad63149f60ac6676dda4397a90116e351">   39</a></span>  <span class="keyword">auto</span> <a class="code hl_function" href="class_single_application.html#ad63149f60ac6676dda4397a90116e351">sendMessage</a>(<span class="keyword">const</span> QString &amp;message) -&gt; bool;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">public</span> slots:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238">   45</a></span>  <span class="keywordtype">void</span> <a class="code hl_slot" href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238">receiveMessage</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>signals:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="class_single_application.html#ab893aad585d0cc3ee82659709a6a069b">   52</a></span>  <span class="keywordtype">void</span> <a class="code hl_signal" href="class_single_application.html#ab893aad585d0cc3ee82659709a6a069b">messageAvailable</a>(<span class="keyword">const</span> QString &amp;message);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordtype">bool</span> _isRunning;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  QString _uniqueKey;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  QSharedMemory sharedMemory;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  QScopedPointer&lt;QLocalServer&gt; localServer;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> timeout = 1000;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
 </div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="preprocessor">#endif </span><span class="comment">// SRC_SINGLEAPPLICATION_H_</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif </span><span class="comment">// SRC_SINGLEAPPLICATION_H_</span></div>
 <div class="ttc" id="aclass_single_application_html_a3257ffeb5c48de33e6ded14902c9f238"><div class="ttname"><a href="class_single_application.html#a3257ffeb5c48de33e6ded14902c9f238">SingleApplication::receiveMessage</a></div><div class="ttdeci">void receiveMessage()</div><div class="ttdoc">Slot invoked when an incoming IPC message arrives.</div></div>
 <div class="ttc" id="aclass_single_application_html_a55e5986206cf99fe05d33169d9eb71f5"><div class="ttname"><a href="class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5">SingleApplication::SingleApplication</a></div><div class="ttdeci">SingleApplication(int &amp;argc, char *argv[], QString uniqueKey)</div><div class="ttdoc">Construct a SingleApplication with a unique instance key.</div></div>
 <div class="ttc" id="aclass_single_application_html_a9408850aec7bca2e43e386f35ed780f4"><div class="ttname"><a href="class_single_application.html#a9408850aec7bca2e43e386f35ed780f4">SingleApplication::isRunning</a></div><div class="ttdeci">auto isRunning() -&gt; bool</div><div class="ttdoc">Query whether another instance is already running.</div></div>

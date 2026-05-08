@@ -103,11 +103,11 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:acf06e7727153cca2cd8b4a912517a2bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">GPG user ID / full name.  <br /></td></tr>
 <tr class="memitem:a7ea1df76d75ada608ce5a641bd53f7e6" id="r_a7ea1df76d75ada608ce5a641bd53f7e6"><td class="memItemLeft">QString&#160;</td><td class="memItemRight"><a class="el" href="#a7ea1df76d75ada608ce5a641bd53f7e6">key_id</a></td></tr>
 <tr class="memdesc:a7ea1df76d75ada608ce5a641bd53f7e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hexadecimal representation of the GnuPG key identifier.  <br /></td></tr>
-<tr class="memitem:af09fb1cdf748f23cb6a74fa7e2972766" id="r_af09fb1cdf748f23cb6a74fa7e2972766"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#af09fb1cdf748f23cb6a74fa7e2972766">validity</a></td></tr>
+<tr class="memitem:af09fb1cdf748f23cb6a74fa7e2972766" id="r_af09fb1cdf748f23cb6a74fa7e2972766"><td class="memItemLeft">char&#160;</td><td class="memItemRight"><a class="el" href="#af09fb1cdf748f23cb6a74fa7e2972766">validity</a> {'-'}</td></tr>
 <tr class="memdesc:af09fb1cdf748f23cb6a74fa7e2972766"><td class="mdescLeft">&#160;</td><td class="mdescRight">GnuPG representation of validity. <a href="http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS">http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS</a>.  <br /></td></tr>
-<tr class="memitem:a0779dd42b6e6810c191b08b788ebaf99" id="r_a0779dd42b6e6810c191b08b788ebaf99"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0779dd42b6e6810c191b08b788ebaf99">have_secret</a></td></tr>
+<tr class="memitem:a0779dd42b6e6810c191b08b788ebaf99" id="r_a0779dd42b6e6810c191b08b788ebaf99"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a0779dd42b6e6810c191b08b788ebaf99">have_secret</a> {false}</td></tr>
 <tr class="memdesc:a0779dd42b6e6810c191b08b788ebaf99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether secret key is available (can decrypt with this key).  <br /></td></tr>
-<tr class="memitem:a163a4e36d5d12cbfc3c13c60f33c5f1f" id="r_a163a4e36d5d12cbfc3c13c60f33c5f1f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a163a4e36d5d12cbfc3c13c60f33c5f1f">enabled</a></td></tr>
+<tr class="memitem:a163a4e36d5d12cbfc3c13c60f33c5f1f" id="r_a163a4e36d5d12cbfc3c13c60f33c5f1f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a163a4e36d5d12cbfc3c13c60f33c5f1f">enabled</a> {false}</td></tr>
 <tr class="memdesc:a163a4e36d5d12cbfc3c13c60f33c5f1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether this user/key is enabled for normal use.  <br /></td></tr>
 <tr class="memitem:af6b3e6dc6e34553f764e577d2994f5aa" id="r_af6b3e6dc6e34553f764e577d2994f5aa"><td class="memItemLeft">QDateTime&#160;</td><td class="memItemRight"><a class="el" href="#af6b3e6dc6e34553f764e577d2994f5aa">expiry</a></td></tr>
 <tr class="memdesc:af6b3e6dc6e34553f764e577d2994f5aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Date/time when key expires.  <br /></td></tr>
@@ -283,7 +283,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool UserInfo::enabled</td>
+          <td class="memname">bool UserInfo::enabled {false}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -319,7 +319,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool UserInfo::have_secret</td>
+          <td class="memname">bool UserInfo::have_secret {false}</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -373,7 +373,7 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char UserInfo::validity</td>
+          <td class="memname">char UserInfo::validity {'-'}</td>
         </tr>
       </table>
 </div><div class="memdoc">
