@@ -286,7 +286,7 @@ auto Executor::executeBlocking(const QStringList &env, const QString &app,
   QProcess process;
   QProcessEnvironment penv;
   for (const QString &var : env) {
-    int idx = var.indexOf('=');
+    qsizetype idx = var.indexOf('=');
     if (idx > 0) {
       penv.insert(var.left(idx), var.mid(idx + 1));
     }

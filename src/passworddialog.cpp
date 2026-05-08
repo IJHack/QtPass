@@ -300,8 +300,8 @@ void PasswordDialog::cycleTemplate() {
   QStringList names = m_availableTemplates.keys();
   std::sort(names.begin(), names.end());
 
-  int currentIdx = names.indexOf(m_currentTemplateName);
-  int nextIdx;
+  qsizetype currentIdx = names.indexOf(m_currentTemplateName);
+  qsizetype nextIdx;
   if (currentIdx < 0) {
     nextIdx = 0;
   } else {

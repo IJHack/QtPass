@@ -249,7 +249,7 @@ void QtPass::mountWebDav() {
     }
   }
   QString error = fusedav.readAllStandardError();
-  int prompt = error.indexOf("Password:");
+  qsizetype prompt = error.indexOf("Password:");
   if (prompt >= 0) {
     error.remove(0, prompt + 10);
   }
