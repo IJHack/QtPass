@@ -27,7 +27,7 @@ auto buildClipboardMimeData(const QString &text) -> QMimeData *;
  * @return QByteArray with raw bytes
  */
 static inline auto dwordBytes(quint32 value) -> QByteArray {
-  return QByteArray(reinterpret_cast<const char *>(&value), sizeof(value));
+  return {reinterpret_cast<const char *>(&value), sizeof(value)};
 }
 
 /**
@@ -44,7 +44,7 @@ public:
    * @param mainWindow Pointer to the application's MainWindow.
    */
   QtPass(MainWindow *mainWindow);
-  ~QtPass();
+  ~QtPass() override;
 
   /**
    * @brief Initialize internal state and signal connections.
@@ -89,7 +89,7 @@ private:
 
   QTimer clearClipboardTimer;
   QString clippedText;
-  bool freshStart;
+  bool freshStart{true};
 
   void setMainWindow();
   void connectPassSignalHandlers(Pass *pass);

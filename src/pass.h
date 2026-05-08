@@ -50,7 +50,7 @@ struct ResolvedGpgconfCommand {
 class Pass : public QObject {
   Q_OBJECT
 
-  bool wrapperRunning;
+  bool wrapperRunning{false};
   QStringList env;
 
 protected:

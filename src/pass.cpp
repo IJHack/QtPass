@@ -66,7 +66,7 @@ auto effectiveCharset(const PasswordConfiguration &passConfig) -> QString {
 /**
  * @brief Pass::Pass wrapper for using either pass or the pass imitation
  */
-Pass::Pass() : wrapperRunning(false), env(QProcess::systemEnvironment()) {
+Pass::Pass() : env(QProcess::systemEnvironment()) {
   connect(&exec,
           static_cast<void (Executor::*)(int, int, const QString &,
                                          const QString &)>(&Executor::finished),
@@ -298,7 +298,7 @@ auto resolveWslGpgconfPath(const QString &lastPart) -> QString {
 QString findGpgconfInGpgDir(const QString &gpgPath) {
   QFileInfo gpgInfo(gpgPath);
   if (!gpgInfo.isAbsolute()) {
-    return QString();
+    return {};
   }
 
   QDir dir(gpgInfo.absolutePath());
@@ -314,7 +314,7 @@ QString findGpgconfInGpgDir(const QString &gpgPath) {
   if (candidate.isExecutable()) {
     return candidate.filePath();
   }
-  return QString();
+  return {};
 }
 
 // Compatibility shim for Qt < 5.15 where QProcess::splitCommand is not
@@ -476,7 +476,7 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
   QString p_out;
   if (Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args,
                                 &p_out) != 0) {
-    return QList<UserInfo>();
+    return {};
   }
   return parseGpgColonOutput(p_out, secret);
 }

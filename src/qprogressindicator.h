@@ -112,8 +112,8 @@ public:
    */
   [[nodiscard]] auto color() const -> const QColor & { return m_color; }
 
-  [[nodiscard]] virtual auto sizeHint() const -> QSize;
-  [[nodiscard]] auto heightForWidth(int w) const -> int;
+  [[nodiscard]] auto sizeHint() const -> QSize override;
+  [[nodiscard]] auto heightForWidth(int w) const -> int override;
 
 public slots:
   /*! Starts the spin animation.
@@ -149,8 +149,8 @@ public slots:
   void setColor(const QColor &color);
 
 protected:
-  virtual void timerEvent(QTimerEvent *event);
-  virtual void paintEvent(QPaintEvent *event);
+  void timerEvent(QTimerEvent *event) override;
+  void paintEvent(QPaintEvent *event) override;
 
 private:
   int m_angle;

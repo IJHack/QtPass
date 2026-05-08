@@ -533,7 +533,7 @@ auto ImitatePass::getKeysFromFile(const QString &fileName) -> QStringList {
   const int result = Executor::executeBlocking(
       QtPassSettings::getGpgExecutable(), args, &keys, &err);
   if (result != 0 && keys.isEmpty() && err.isEmpty()) {
-    return QStringList();
+    return {};
   }
   QStringList actualKeys;
   keys += err;
@@ -818,7 +818,7 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
 #ifdef QT_DEBUG
         dbg() << "Destination file already exists";
 #endif
-        return QString();
+        return {};
       }
       destFile = dest;
     } else if (destFileInfo.isDir()) {
@@ -838,7 +838,7 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
 #ifdef QT_DEBUG
       dbg() << "Destination is a file";
 #endif
-      return QString();
+      return {};
     } else {
       destFile = dest;
     }
@@ -846,7 +846,7 @@ auto ImitatePass::resolveMoveDestination(const QString &src,
 #ifdef QT_DEBUG
     dbg() << "Source file does not exist";
 #endif
-    return QString();
+    return {};
   }
   return destFile;
 }

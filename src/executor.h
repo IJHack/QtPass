@@ -60,7 +60,7 @@ class Executor : public QObject {
 
   QQueue<execQueueItem> m_execQueue;
   QProcess m_process;
-  bool running;
+  bool running{false};
   void executeNext();
   void startProcess(const QString &app, const QStringList &args);
   static void startProcessBlocking(QProcess &internal, const QString &app,

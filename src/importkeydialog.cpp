@@ -160,7 +160,7 @@ auto ImportKeyDialog::parseGpgImportOutput(const QString &output) -> QString {
       return match.captured(1);
     }
   }
-  return QString();
+  return {};
 }
 
 void ImportKeyDialog::showError(const QString &message) {
