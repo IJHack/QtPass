@@ -38,7 +38,7 @@ private:
    * @brief Private default constructor to enforce singleton usage and prevent
    * direct instantiation.
    */
-  explicit QtPassSettings();
+  explicit QtPassSettings() = delete;
 
   QtPassSettings(const QString &organization, const QSettings::Format format)
       : QSettings(organization, format) {}

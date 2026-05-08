@@ -23,11 +23,11 @@ struct PasswordConfiguration {
   /**
    * @brief Currently active character set selection.
    */
-  characterSet selected;
+  characterSet selected{ALLCHARS};
   /**
    * @brief Length of the password.
    */
-  int length;
+  int length{16};
   /**
    * @brief The different character sets.
    */
@@ -35,7 +35,7 @@ struct PasswordConfiguration {
   /**
    * @brief Construct a PasswordConfiguration with sensible defaults.
    */
-  PasswordConfiguration() : selected(ALLCHARS), length(16) {
+  PasswordConfiguration() {
     Characters[ALLCHARS] =
         "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890~!@#$%^&"
         "*()_-+={}[]|:;<>,.?"; /*AllChars*/

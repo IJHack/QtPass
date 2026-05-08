@@ -200,7 +200,7 @@ void MainWindow::focusInput() {
   if (!isVisible()) {
     return;
   }
-  QLineEdit *lineEdit = findChild<QLineEdit *>(QStringLiteral("lineEdit"));
+  auto *lineEdit = findChild<QLineEdit *>(QStringLiteral("lineEdit"));
   if (lineEdit == nullptr || !lineEdit->isVisible()) {
     return;
   }
@@ -916,11 +916,11 @@ void MainWindow::onGrepFinished(
   const bool hideContent = QtPassSettings::isHideContent();
   int totalLines = 0;
   for (const auto &pair : results) {
-    QTreeWidgetItem *entryItem = new QTreeWidgetItem(ui->grepResultsList);
+    auto *entryItem = new QTreeWidgetItem(ui->grepResultsList);
     entryItem->setText(0, pair.first);
     entryItem->setData(0, Qt::UserRole, pair.first);
     for (const QString &line : pair.second) {
-      QTreeWidgetItem *lineItem = new QTreeWidgetItem(entryItem);
+      auto *lineItem = new QTreeWidgetItem(entryItem);
       lineItem->setText(0, hideContent ? "***" + tr("Content hidden") + "***"
                                        : line);
       lineItem->setData(0, Qt::UserRole, pair.first);
@@ -1397,7 +1397,7 @@ void MainWindow::showContextMenu(const QPoint &pos) {
       QString dirPath = QDir::cleanPath(
           Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel));
 
-      QMenu *shareMenu = new QMenu(tr("Share"), &contextMenu);
+      auto *shareMenu = new QMenu(tr("Share"), &contextMenu);
       contextMenu.addMenu(shareMenu);
 
       QString gpgIdPath = Pass::getGpgIdPath(dirPath);
@@ -1977,7 +1977,7 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
   case Enums::INVALID:
     break;
   }
-  return QString();
+  return {};
 }
 
 /**

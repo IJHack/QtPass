@@ -15,6 +15,7 @@
 #include <QSet>
 #include <QSignalBlocker>
 #include <QWidget>
+#include <utility>
 
 #ifdef QT_DEBUG
 #include "debughelper.h"
@@ -24,8 +25,8 @@
  * @param dir Password directory
  * @param parent
  */
-UsersDialog::UsersDialog(const QString &dir, QWidget *parent)
-    : QDialog(parent), ui(new Ui::UsersDialog), m_dir(dir) {
+UsersDialog::UsersDialog(QString dir, QWidget *parent)
+    : QDialog(parent), ui(new Ui::UsersDialog), m_dir(std::move(dir)) {
 
   ui->setupUi(this);
 

@@ -1,2 +1,3 @@
-Checks: 'modernize-*,performance-*'
+Checks: 'modernize-*,performance-*,-modernize-use-trailing-return-type,-modernize-use-nodiscard'
 WarningsAsErrors: '*'
+HeaderFilterRegex: '^(?!.*qprogressindicator).*$'

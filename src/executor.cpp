@@ -19,7 +19,7 @@
  * @brief Executor::Executor executes external applications
  * @param parent
  */
-Executor::Executor(QObject *parent) : QObject(parent), running(false) {
+Executor::Executor(QObject *parent) : QObject(parent) {
   connect(&m_process,
           static_cast<void (QProcess::*)(int, QProcess::ExitStatus)>(
               &QProcess::finished),

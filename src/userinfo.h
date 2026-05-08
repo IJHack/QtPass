@@ -14,7 +14,7 @@ struct UserInfo {
   /**
    * @brief Construct a UserInfo with default (invalid/disabled) state.
    */
-  UserInfo() : validity('-'), have_secret(false), enabled(false) {}
+  UserInfo() {}
 
   /**
    * @brief Check full validity per GnuPG validity codes.
@@ -48,15 +48,15 @@ struct UserInfo {
    * @brief GnuPG representation of validity.
    * http://git.gnupg.org/cgi-bin/gitweb.cgi?p=gnupg.git;a=blob_plain;f=doc/DETAILS
    */
-  char validity;
+  char validity{'-'};
   /**
    * @brief Whether secret key is available (can decrypt with this key).
    */
-  bool have_secret;
+  bool have_secret{false};
   /**
    * @brief Whether this user/key is enabled for normal use.
    */
-  bool enabled;
+  bool enabled{false};
   /**
    * @brief Date/time when key expires.
    */

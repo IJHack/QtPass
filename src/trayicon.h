@@ -33,12 +33,6 @@ public:
   void showMessage(const QString &title, const QString &msg, int time);
 
   /**
-   * @brief Show or hide the tray icon and its associated UI.
-   * @param visible true to make the tray icon visible, false to hide it.
-   */
-  void setVisible(bool visible);
-
-  /**
    * @brief Check whether tray resources have been allocated and initialized.
    * @return true if tray resources are allocated and initialized.
    */
@@ -62,18 +56,18 @@ private:
   void createActions();
   void createTrayIcon();
 
-  QAction *showAction;
-  QAction *hideAction;
-  QAction *minimizeAction;
-  QAction *maximizeAction;
-  QAction *restoreAction;
-  QAction *quitAction;
+  QAction *showAction{nullptr};
+  QAction *hideAction{nullptr};
+  QAction *minimizeAction{nullptr};
+  QAction *maximizeAction{nullptr};
+  QAction *restoreAction{nullptr};
+  QAction *quitAction{nullptr};
 
-  QSystemTrayIcon *sysTrayIcon;
-  QMenu *trayIconMenu;
+  QSystemTrayIcon *sysTrayIcon{nullptr};
+  QMenu *trayIconMenu{nullptr};
   QMainWindow *parentwin;
 
-  bool isAllocated;
+  bool isAllocated{false};
 };
 
 #endif // SRC_TRAYICON_H_

@@ -24,7 +24,8 @@ public:
    * @param argv Program argv forwarded to QApplication.
    * @param uniqueKey Key used to identify and scope the single instance.
    */
-  SingleApplication(int &argc, char *argv[], QString uniqueKey);
+  SingleApplication(int &argc, char *argv[], // NOLINT(modernize-avoid-c-arrays)
+                    QString uniqueKey);
   /**
    * @brief Query whether another instance is already running.
    * @return true if another instance with the same key is running.

@@ -12,16 +12,15 @@
  * operation.
  */
 class simpleTransaction {
-  int transactionDepth;
-  Enums::PROCESS lastInTransaction;
+  int transactionDepth{0};
+  Enums::PROCESS lastInTransaction{Enums::INVALID};
   std::queue<std::pair<Enums::PROCESS, Enums::PROCESS>> transactionQueue;
 
 public:
   /**
    * @brief Construct a simpleTransaction in its initial idle state.
    */
-  simpleTransaction()
-      : transactionDepth(0), lastInTransaction(Enums::INVALID) {}
+  simpleTransaction() {}
   /**
    * @brief transactionStart this function is used to mark start of the sequence
    *                         of processes that shall be treated as one

@@ -33,8 +33,7 @@
  * @brief Constructs a QtPass instance.
  * @param mainWindow The main window reference
  */
-QtPass::QtPass(MainWindow *mainWindow)
-    : m_mainWindow(mainWindow), freshStart(true) {
+QtPass::QtPass(MainWindow *mainWindow) : m_mainWindow(mainWindow) {
   setClipboardTimer();
   clearClipboardTimer.setSingleShot(true);
   connect(&clearClipboardTimer, &QTimer::timeout, this,

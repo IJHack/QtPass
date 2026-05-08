@@ -128,7 +128,7 @@ auto Util::normalizeFolderPath(const QString &path) -> QString {
  */
 auto Util::findBinaryInPath(const QString &binary) -> QString {
   if (binary.isEmpty())
-    return QString();
+    return {};
 
   initialiseEnvironment();
 
@@ -277,7 +277,7 @@ auto Util::endsWithGpg() -> const QRegularExpression & {
  */
 auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
-      "((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^\" <>\\)\\]\\[]+)"};
+      R"(((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^" <>\)\]\[]+))"};
   return regex;
 }
 
@@ -437,5 +437,5 @@ auto Util::getFolderTemplate(const QString &folderPath,
       break;
     }
   }
-  return QString();
+  return {};
 }
