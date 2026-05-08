@@ -95,7 +95,7 @@ auto Util::findPasswordStore() -> QString {
     path = QDir(QDir::homePath()).filePath(".password-store");
 #endif
   }
-  return Util::normalizeFolderPath(path);
+  return Util::normalizeFolderPath(QDir::cleanPath(path));
 }
 
 auto Util::normalizeFolderPath(const QString &path) -> QString {
