@@ -44,6 +44,9 @@ public:
    * @param mainWindow Pointer to the application's MainWindow.
    */
   QtPass(MainWindow *mainWindow);
+  /**
+   * @brief Destroy the QtPass instance and clean up signal connections.
+   */
   ~QtPass() override;
 
   /**
