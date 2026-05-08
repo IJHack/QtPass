@@ -15,10 +15,7 @@
  * it (currently) only Quits.
  * @param parent
  */
-TrayIcon::TrayIcon(QMainWindow *parent)
-    : showAction(nullptr), hideAction(nullptr), minimizeAction(nullptr),
-      maximizeAction(nullptr), restoreAction(nullptr), quitAction(nullptr),
-      sysTrayIcon(nullptr), trayIconMenu(nullptr), isAllocated(false) {
+TrayIcon::TrayIcon(QMainWindow *parent) {
   parentwin = parent;
 
   if (QSystemTrayIcon::isSystemTrayAvailable()) {
@@ -41,18 +38,6 @@ TrayIcon::TrayIcon(QMainWindow *parent)
     dbg() << "No tray icon for this OS possibly also not show options?";
   }
 #endif
-}
-
-/**
- * @brief TrayIcon::setVisible show or hide the icon.
- * @param visible
- */
-void TrayIcon::setVisible(bool visible) {
-  if (visible) {
-    parentwin->show();
-  } else {
-    parentwin->hide();
-  }
 }
 
 /**
