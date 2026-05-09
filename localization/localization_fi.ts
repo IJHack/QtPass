@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK-ohitus:</translation>
+        <translation>SSH_AUTH_SOCK-ohitus:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Valinnainen polku SSH_AUTH_SOCK-ohitukselle. Jätä tyhjäksi automaattista tunnistusta varten gpgconf-ohjelman kautta (issue #543).</translation>
+        <translation>Valinnainen polku SSH_AUTH_SOCK-ohitukselle. Jätä tyhjäksi automaattista tunnistusta varten gpgconf-ohjelman kautta (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(automaattinen tunnistus gpgconf-ohjelman kautta)</translation>
+        <translation>(automaattinen tunnistus gpgconf-ohjelman kautta)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -418,22 +418,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Polku ei ole olemassa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Polku ei ole luettavissa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Polku ei ole Unix-domeenisoketti.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Mahdollisesti virheellinen SSH_AUTH_SOCK-ohitus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,11 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK-ohitusarvo voi olla virheellinen.
+
+%1
+
+Arvo tallennetaan silti sellaisenaan kuin se on syötetty.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>
