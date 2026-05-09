@@ -306,17 +306,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">Diystyru SSH_AUTH_SOCK:</translation>
+        <translation>Diystyru SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Llwybr dewisol i ddiystyru SSH_AUTH_SOCK. Gadewch yn wag i awtoganfod drwy gpgconf (mater #543).</translation>
+        <translation>Llwybr dewisol i ddiystyru SSH_AUTH_SOCK. Gadewch yn wag i awtoganfod drwy gpgconf (mater #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(awtoganfod drwy gpgconf)</translation>
+        <translation>(awtoganfod drwy gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -446,22 +446,22 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Nid yw&apos;r llwybr yn bodoli.</translation>
+        <translation>Nid yw&apos;r llwybr yn bodoli.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Nid yw&apos;r llwybr yn ddarllenadwy.</translation>
+        <translation>Nid yw&apos;r llwybr yn ddarllenadwy.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Nid yw&apos;r llwybr yn soced parth Unix.</translation>
+        <translation>Nid yw&apos;r llwybr yn soced parth Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Goruchwylio SSH_AUTH_SOCK annilys o bosibl</translation>
+        <translation>Goruchwylio SSH_AUTH_SOCK annilys o bosibl</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,7 @@ e-mail</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Efallai bod gwerth goruchwylio SSH_AUTH_SOCK yn annilys.
+        <translation>Efallai bod gwerth goruchwylio SSH_AUTH_SOCK yn annilys.
 
 %1
 
