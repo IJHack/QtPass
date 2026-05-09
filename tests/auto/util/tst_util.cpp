@@ -212,6 +212,7 @@ private Q_SLOTS:
   void initialiseSshAuthSockHonoursExistingEnv();
   void initialiseSshAuthSockUsesOverride();
   void initialiseSshAuthSockNoOverrideNoEnvProbes();
+  void initialiseSshAuthSockOverrideSkipsAgentValidation();
   void initialiseSshAuthSockEmptyOverrideFallsThrough();
 };
 
@@ -2140,6 +2141,25 @@ void tst_util::initialiseSshAuthSockNoOverrideNoEnvProbes() {
              qPrintable(QStringLiteral("Probed value should be a path: ") +
                         QString::fromUtf8(result)));
   }
+}
+
+/**
+ * @brief An explicit override is adopted verbatim — no ssh-add validation
+ *        runs against it. The user explicitly asked for THIS path, so
+ *        QtPass trusts it even if no agent is currently listening (e.g.
+ *        the user starts their agent after launching QtPass).
+ */
+void tst_util::initialiseSshAuthSockOverrideSkipsAgentValidation() {
+  SshAuthSockGuard guard;
+  qunsetenv("SSH_AUTH_SOCK");
+  // A path that almost certainly has no listener — validation would fail.
+  // Override should win regardless.
+  const QString deadSocket =
+      QStringLiteral("/tmp/qtpass-deliberately-dead-sock-") +
+      QUuid::createUuid().toString();
+  QtPassSettings::setSshAuthSockOverride(deadSocket);
+  Util::initialiseSshAuthSock();
+  QCOMPARE(qgetenv("SSH_AUTH_SOCK"), deadSocket.toUtf8());
 }
 
 /**
