@@ -428,7 +428,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Tee ei ole Unix-domeenisokkel.</translation>
+        <translation>Tee ei ole Unixi domeenipesa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
