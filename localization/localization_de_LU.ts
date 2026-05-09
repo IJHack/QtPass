@@ -355,7 +355,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1019"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Passwortspeicher konnte nicht unter %1 erstellt werden.</translation>
+        <translation>Passwortspeicher konnte nicht unter %1 erstellt werden</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1050"/>
