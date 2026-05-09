@@ -262,17 +262,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">تجاوز SSH_AUTH_SOCK:</translation>
+        <translation>تجاوز SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">مسار اختياري لتجاوز SSH_AUTH_SOCK. اتركه فارغًا للاكتشاف التلقائي عبر gpgconf (المشكلة #543).</translation>
+        <translation>مسار اختياري لتجاوز SSH_AUTH_SOCK. اتركه فارغًا للاكتشاف التلقائي عبر gpgconf (المشكلة #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(الاكتشاف التلقائي عبر gpgconf)</translation>
+        <translation>(الاكتشاف التلقائي عبر gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -383,22 +383,22 @@
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">المسار غير موجود.</translation>
+        <translation>المسار غير موجود.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">المسار غير قابل للقراءة.</translation>
+        <translation>المسار غير قابل للقراءة.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">المسار ليس مقبس نطاق Unix.</translation>
+        <translation>المسار ليس مقبس نطاق Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">تجاوز SSH_AUTH_SOCK قد يكون غير صالح</translation>
+        <translation>تجاوز SSH_AUTH_SOCK قد يكون غير صالح</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -407,7 +407,7 @@
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">قيمة تجاوز SSH_AUTH_SOCK قد تكون غير صالحة.
+        <translation>قيمة تجاوز SSH_AUTH_SOCK قد تكون غير صالحة.
 
 %1
 

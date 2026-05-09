@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">Презаписване на SSH_AUTH_SOCK:</translation>
+        <translation>Презаписване на SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Незадължителен път за презаписване на SSH_AUTH_SOCK. Оставете празно за автоматично откриване чрез gpgconf (проблем #543).</translation>
+        <translation>Незадължителен път за презаписване на SSH_AUTH_SOCK. Оставете празно за автоматично откриване чрез gpgconf (проблем #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(автоматично откриване чрез gpgconf)</translation>
+        <translation>(автоматично откриване чрез gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -418,22 +418,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Пътят не съществува.</translation>
+        <translation>Пътят не съществува.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Пътят не е четим.</translation>
+        <translation>Пътят не е четим.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Пътят не е Unix домейн сокет.</translation>
+        <translation>Пътят не е Unix домейн сокет.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Потенциално невалидно заместване на SSH_AUTH_SOCK</translation>
+        <translation>Потенциално невалидно заместване на SSH_AUTH_SOCK</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Стойността за заместване на SSH_AUTH_SOCK може да е невалидна.
+        <translation>Стойността за заместване на SSH_AUTH_SOCK може да е невалидна.
 
 %1
 
