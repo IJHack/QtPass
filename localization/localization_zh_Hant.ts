@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK 覆蓋：</translation>
+        <translation type="unfinished">SSH_AUTH_SOCK 覆寫：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">覆蓋 SSH_AUTH_SOCK 的可選路徑。留空透過 gpgconf 自動探測 (issue #543)。</translation>
+        <translation type="unfinished">覆寫 SSH_AUTH_SOCK 的可選路徑。留空透過 gpgconf 自動偵測 (issue #543)。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(透過 gpgconf 自動探測)</translation>
+        <translation type="unfinished">（透過 gpgconf 自動偵測）</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
