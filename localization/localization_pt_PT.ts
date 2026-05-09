@@ -147,17 +147,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation>Substituição de SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation>Caminho opcional para substituir SSH_AUTH_SOCK. Deixe vazio para pesquisa automática via gpgconf (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation>(pesquisa automática via gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -383,22 +383,22 @@
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>O caminho não existe.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation>O caminho não é legível.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation>O caminho não é um socket de domínio Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation>Substituição de SSH_AUTH_SOCK potencialmente inválida</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -407,7 +407,11 @@
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation>O valor da substituição de SSH_AUTH_SOCK pode ser inválido.
+
+%1
+
+O valor ainda será salvo conforme inserido.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>

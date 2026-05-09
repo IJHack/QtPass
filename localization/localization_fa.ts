@@ -306,17 +306,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">بازنویسی SSH_AUTH_SOCK:</translation>
+        <translation>بازنویسی SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">مسیر اختیاری برای بازنویسی SSH_AUTH_SOCK. خالی بگذارید تا به‌صورت خودکار از طریق gpgconf بررسی شود (issue #543).</translation>
+        <translation>مسیر اختیاری برای بازنویسی SSH_AUTH_SOCK. خالی بگذارید تا به‌صورت خودکار از طریق gpgconf بررسی شود (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(بررسی خودکار از طریق gpgconf)</translation>
+        <translation>(بررسی خودکار از طریق gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -446,22 +446,22 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>مسیر وجود ندارد.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation>مسیر قابل خواندن نیست.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation>مسیر یک سوکت دامنه یونیکس نیست.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation>بازنویسی SSH_AUTH_SOCK احتمالاً نامعتبر است</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,11 @@ URL
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation>مقدار بازنویسی SSH_AUTH_SOCK ممکن است نامعتبر باشد.
+
+%1
+
+مقدار همچنان مطابق ورودی ذخیره خواهد شد.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>

@@ -266,17 +266,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH_AUTH_SOCK-overstyring:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation>Valgfri bane for å overstyre SSH_AUTH_SOCK. La stå tom for automatisk oppdagelse via gpgconf (problem #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation>(automatisk oppdagelse via gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -387,22 +387,22 @@
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Banen finnes ikke.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Banen er ikke lesbar.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation>Banen er ikke en Unix-domenesokkel.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation>Potensielt ugyldig SSH_AUTH_SOCK-overstyring</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -411,7 +411,11 @@
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Verdien for SSH_AUTH_SOCK-overstyring kan være ugyldig.
+
+%1
+
+Verdien vil fortsatt bli lagret som oppgitt.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>

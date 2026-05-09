@@ -306,17 +306,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK ओव्हरराइड:</translation>
+        <translation>SSH_AUTH_SOCK ओव्हरराइड:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">SSH_AUTH_SOCK ओव्हरराइड करण्यासाठी पर्यायी मार्ग. gpgconf द्वारे स्वयं-शोधासाठी रिक्त ठेवा (issue #543).</translation>
+        <translation>SSH_AUTH_SOCK ओव्हरराइड करण्यासाठी पर्यायी मार्ग. gpgconf द्वारे स्वयं-शोधासाठी रिक्त ठेवा (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(gpgconf द्वारे स्वयं-शोध)</translation>
+        <translation>(gpgconf द्वारे स्वयं-शोध)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -446,22 +446,22 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>हा मार्ग अस्तित्वात नाही.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation>हा मार्ग वाचनीय नाही.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation>हा मार्ग युनिक्स डोमेन सॉकेट नाही.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation>संभाव्य अवैद SSH_AUTH_SOCK ओव्हरराइड</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,11 @@ URL
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH_AUTH_SOCK ओव्हरराइड मूल्य अवैद असू शकते.
+
+%1
+
+मूल्य प्रविष्ट केल्याप्रमाणे अजूनही जतन केले जाईल.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>
