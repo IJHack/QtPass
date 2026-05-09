@@ -1768,7 +1768,7 @@ Pokračovat?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="520"/>
         <source>Copied to clipboard</source>
-        <translation>zkopírovat do schránky</translation>
+        <translation>Zkopírováno do schránky</translation>
     </message>
 </context>
 <context>

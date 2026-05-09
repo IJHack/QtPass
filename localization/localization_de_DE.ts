@@ -564,7 +564,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Optionaler Pfad zum Überschreiben von SSH_AUTH_SOCK. Leer lassen, um per gpgconf automatisch zu ermitteln (Issue `#543`).</translation>
+        <translation type="unfinished">Optionaler Pfad zum Überschreiben von SSH_AUTH_SOCK. Leer lassen, um per gpgconf automatisch zu ermitteln (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>

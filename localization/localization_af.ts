@@ -156,12 +156,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK-omskakeling:</translation>
+        <translation type="unfinished">SSH_AUTH_SOCK-overskrywing:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Opsionele pad om SSH_AUTH_SOCK te oorleer. Laat leeg om via gpgconf outomaties te bepaal (kwessie `#543`).</translation>
+        <translation type="unfinished">Opsionele pad om SSH_AUTH_SOCK te oorskryf. Laat leeg om via gpgconf outomaties te bepaal (kwessie #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>

@@ -1746,7 +1746,7 @@ Nastaviti?</translation>
         <location filename="../main/main.cpp" line="167"/>
         <location filename="../main/main.cpp" line="171"/>
         <source>LTR</source>
-        <translation>Lijevo-na-desno</translation>
+        <translation>LTR</translation>
     </message>
 </context>
 <context>
@@ -1754,7 +1754,7 @@ Nastaviti?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="168"/>
         <source>Generating GPG key pair</source>
-        <translation>Generiraj par GPG ključeva</translation>
+        <translation>Generiranje GPG para ključeva</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="231"/>

@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Neobligāts ceļš, lai pārrakstītu SSH_AUTH_SOCK. Atstājiet tukšu automātiskai noteikšanai, izmantojot gpgconf (issue `#543`).</translation>
+        <translation type="unfinished">Neobligāts ceļš, lai pārrakstītu SSH_AUTH_SOCK. Atstājiet tukšu, lai tas tiktu automātiski noteikts, izmantojot gpgconf (problēma #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>

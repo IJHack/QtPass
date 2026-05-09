@@ -1682,7 +1682,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="66"/>
         <source>&amp;Quit</source>
-        <translation>&amp;Cwffio</translation>
+        <translation type="unfinished">&amp;Gadael</translation>
     </message>
 </context>
 <context>

@@ -1733,7 +1733,7 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="337"/>
         <source>[EXPIRED] </source>
-        <translation>[ΛΗΞΕ] </translation>
+        <translation>[ΛΗΓΜΕΝΟ] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="341"/>

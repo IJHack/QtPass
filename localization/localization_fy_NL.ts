@@ -534,7 +534,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="916"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Ynstallearje asjebleaft GnuPG op jo systeem.&lt;br&gt;Ynstallearje &lt;strong&gt;Ubuntu&lt;/strong&gt; fanút de Microsoft Store om it te krijen.&lt;br&gt;As jo dat al dien hawwe, soargje derfoar dat jo it ien kear starte hawwe en&lt;br&gt;klikje op &quot;Autodeteksje&quot; yn it folgjende dialoochfinster.</translation>
+        <translation>Ynstallearje asjebleaft GnuPG op jo systeem.&lt;br&gt;Ynstallearje &lt;strong&gt;Ubuntu&lt;/strong&gt; fanút de Microsoft Store om it te krijen.&lt;br&gt;As jo dat al dien hawwe, soargje derfoar dat jo it ien kear starte hawwe en&lt;br&gt;klikje op &quot;Automatyske deteksje&quot; yn it folgjende dialoochfinster.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="921"/>

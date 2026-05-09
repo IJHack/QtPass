@@ -171,7 +171,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Opcionális elérési út az SSH_AUTH_SOCK felülírásához. Hagyja üresen az automatikus felderítéshez gpgconf segítségével (issue `#543`).</translation>
+        <translation type="unfinished">Opcionális elérési út az SSH_AUTH_SOCK felülírásához. Hagyja üresen az automatikus felderítéshez gpgconf segítségével (hiba #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>

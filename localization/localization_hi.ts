@@ -311,7 +311,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">SSH_AUTH_SOCK को ओवरराइड करने के लिए वैकल्पिक पथ। gpgconf के माध्यम से स्वतः-जांच के लिए खाली छोड़ें (issue `#543`).</translation>
+        <translation type="unfinished">SSH_AUTH_SOCK को ओवरराइड करने के लिए वैकल्पिक पथ। gpgconf के माध्यम से स्वतः-जांच के लिए खाली छोड़ें (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>

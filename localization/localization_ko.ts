@@ -186,7 +186,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="989"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>필요한 경우 외에는 공백으로 두고, .gpg-id 파일의 무결성 검증을 위해 서명하는 GPG 키를 입력하세요.</translation>
+        <translation>선택 사항: 무결성 검증을 위해 .gpg-id 파일에 서명하는 GPG 키. 사용자 목록 변조로부터 보호해야 하는 경우가 아니면 비워 두십시오.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1029"/>
@@ -374,7 +374,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>비밀번호 필드에 있는 콜론이 따라오는 모든 단어들이 있는 행을 표시</translation>
+        <translation>비밀번호 필드에서 단어 뒤에 콜론이 오는 모든 줄을 필드로 표시 (나열된 항목뿐만 아니라)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1089"/>

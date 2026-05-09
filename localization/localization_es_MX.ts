@@ -370,7 +370,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Ruta opcional para sobrescribir SSH_AUTH_SOCK. Déjelo vacío para detectarlo automáticamente vía gpgconf (issue `#543`).</translation>
+        <translation type="unfinished">Ruta opcional para sobrescribir SSH_AUTH_SOCK. Deja vacío para detectarlo automáticamente vía gpgconf (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>

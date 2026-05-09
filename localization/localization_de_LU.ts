@@ -355,7 +355,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="988"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Passwort-Speicher unter konnte nicht erstellt werden: %1</translation>
+        <translation>Passwortspeicher konnte nicht unter %1 erstellt werden.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1019"/>
@@ -563,7 +563,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Optionaler Pfad zum Überschreiben von SSH_AUTH_SOCK. Leer lassen, um per gpgconf automatisch zu ermitteln (Issue `#543`).</translation>
+        <translation type="unfinished">Optionaler Pfad zum Überschreiben von SSH_AUTH_SOCK. Leer lassen, um per gpgconf automatisch zu ermitteln (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>

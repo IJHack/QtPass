@@ -267,7 +267,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">مسار اختياري لتجاوز SSH_AUTH_SOCK. اتركه فارغًا للاكتشاف التلقائي عبر gpgconf (المشكلة `#543`).</translation>
+        <translation type="unfinished">مسار اختياري لتجاوز SSH_AUTH_SOCK. اتركه فارغًا للاكتشاف التلقائي عبر gpgconf (المشكلة #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
