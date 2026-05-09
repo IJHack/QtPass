@@ -166,17 +166,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK felülírása:</translation>
+        <translation>SSH_AUTH_SOCK felülírása:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Opcionális elérési út az SSH_AUTH_SOCK felülírásához. Hagyja üresen az automatikus felderítéshez gpgconf segítségével (hiba #543).</translation>
+        <translation>Opcionális elérési út az SSH_AUTH_SOCK felülírásához. Hagyja üresen az automatikus felderítéshez gpgconf segítségével (hiba #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(automatikus felderítés gpgconf segítségével)</translation>
+        <translation>(automatikus felderítés gpgconf segítségével)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -439,22 +439,22 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az elérési út nem létezik.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az elérési út nem olvasható.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az elérési út nem Unix-domainsocket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Lehet, hogy érvénytelen SSH_AUTH_SOCK felülírás</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -463,7 +463,11 @@ e-mail</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Az SSH_AUTH_SOCK felülírási értéke érvénytelen lehet.
+
+%1
+
+Az érték még akkor is el lesz mentve, ahogy be lett írva.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>
