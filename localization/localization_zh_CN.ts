@@ -146,12 +146,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation>SSH_AUTH_SOCK 绕过：</translation>
+        <translation>SSH_AUTH_SOCK 覆盖：</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation>绕过 SSH_AUTH_SOCK 的可选路径。留空通过 gpgconf 自动探测 (issue #543)。</translation>
+        <translation>覆盖 SSH_AUTH_SOCK 的可选路径。留空通过 gpgconf 自动探测 (issue #543)。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
