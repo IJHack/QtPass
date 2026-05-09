@@ -111,6 +111,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:aa0c3bc2c8ac287693db38b9231904c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write templates to .templates file in password store.  <br /></td></tr>
 <tr class="memitem:a6210b70947cabf0ae3621077bd4ceaf0" id="r_a6210b70947cabf0ae3621077bd4ceaf0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6210b70947cabf0ae3621077bd4ceaf0">getFolderTemplate</a> (const QString &amp;folderPath, const QString &amp;storePath) -&gt; QString</td></tr>
 <tr class="memdesc:a6210b70947cabf0ae3621077bd4ceaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get default template for a folder. Looks in folder, then parent folders up to root.  <br /></td></tr>
+<tr class="memitem:a33baf1b515dcaa5640c55a528096a4a7" id="r_a33baf1b515dcaa5640c55a528096a4a7"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a33baf1b515dcaa5640c55a528096a4a7">initialiseSshAuthSock</a> ()</td></tr>
+<tr class="memdesc:a33baf1b515dcaa5640c55a528096a4a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure SSH_AUTH_SOCK is set for child processes.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
@@ -322,6 +324,41 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Template name or empty if none found. </dd></dl>
+
+</div>
+</div>
+<a id="a33baf1b515dcaa5640c55a528096a4a7" name="a33baf1b515dcaa5640c55a528096a4a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33baf1b515dcaa5640c55a528096a4a7">&#9670;&#160;</a></span>initialiseSshAuthSock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Util::initialiseSshAuthSock </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ensure SSH_AUTH_SOCK is set for child processes. </p>
+<p>GUI-launched applications don't inherit shell-set environment variables (<span class="tt">.bashrc</span>/<span class="tt">.zshrc</span>/etc.), so users with gpg-agent's SSH support or other external SSH agents see <span class="tt">git push</span>/<span class="tt">git pull</span> fail when <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a> launches from a desktop launcher rather than a terminal. Issue #543.</p>
+<p>Resolution order:</p><ol type="1">
+<li>If <span class="tt">SSH_AUTH_SOCK</span> is already set (terminal launch, .desktop override, parent process), do nothing.</li>
+<li>If a <span class="tt">sshAuthSockOverride</span> setting is configured in <a class="el" href="class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application-level operations for the QtP...">QtPass</a>, use it verbatim — the override is an explicit user choice, no validation.</li>
+<li>Probe <span class="tt">gpgconf --list-dirs agent-ssh-socket</span> (canonical for gpg-agent), then validate the candidate with <span class="tt">ssh-add -l</span> (must exit 0 or 1) before adopting. Validation prevents silently switching users from a working external SSH agent to an empty gpg-agent SSH socket.</li>
+<li>On macOS, fall back to <span class="tt">launchctl getenv SSH_AUTH_SOCK</span>, with the same <span class="tt">ssh-add -l</span> validation.</li>
+</ol>
+<p>Sets the variable via qputenv so child processes inherit it. </p>
 
 </div>
 </div>

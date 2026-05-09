@@ -210,6 +210,10 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:a1bedf6d09f7ed13de785940d77c92f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pass executable path.  <br /></td></tr>
 <tr class="memitem:ab97129498f8b41e600f205611dab3bcf" id="r_ab97129498f8b41e600f205611dab3bcf"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab97129498f8b41e600f205611dab3bcf">setPassExecutable</a> (const QString &amp;passExecutable)</td></tr>
 <tr class="memdesc:ab97129498f8b41e600f205611dab3bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save pass executable path.  <br /></td></tr>
+<tr class="memitem:a0615a4d51d8357232590ebe4abbf8f26" id="r_a0615a4d51d8357232590ebe4abbf8f26"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0615a4d51d8357232590ebe4abbf8f26">getSshAuthSockOverride</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
+<tr class="memdesc:a0615a4d51d8357232590ebe4abbf8f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the user-supplied SSH_AUTH_SOCK override path.  <br /></td></tr>
+<tr class="memitem:ab5961e15e166f31ff05c74a9e330ed17" id="r_ab5961e15e166f31ff05c74a9e330ed17"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab5961e15e166f31ff05c74a9e330ed17">setSshAuthSockOverride</a> (const QString &amp;value)</td></tr>
+<tr class="memdesc:ab5961e15e166f31ff05c74a9e330ed17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the user-supplied SSH_AUTH_SOCK override path.  <br /></td></tr>
 <tr class="memitem:a97ccce4e0d62fa0afa4f901a0c0b5a95" id="r_a97ccce4e0d62fa0afa4f901a0c0b5a95"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a97ccce4e0d62fa0afa4f901a0c0b5a95">getGitExecutable</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
 <tr class="memdesc:a97ccce4e0d62fa0afa4f901a0c0b5a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get git executable path.  <br /></td></tr>
 <tr class="memitem:a0dbc45500e3af30d01e54dc5705490b2" id="r_a0dbc45500e3af30d01e54dc5705490b2"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a0dbc45500e3af30d01e54dc5705490b2">setGitExecutable</a> (const QString &amp;gitExecutable)</td></tr>
@@ -1381,6 +1385,40 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Window size as QSize. </dd></dl>
+
+</div>
+</div>
+<a id="a0615a4d51d8357232590ebe4abbf8f26" name="a0615a4d51d8357232590ebe4abbf8f26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0615a4d51d8357232590ebe4abbf8f26">&#9670;&#160;</a></span>getSshAuthSockOverride()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto QtPassSettings::getSshAuthSockOverride </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toString()</span></td><td>)</td>
+          <td> -&gt;  QString</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the user-supplied SSH_AUTH_SOCK override path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">defaultValue</td><td>String returned if not saved. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Override path, or empty if auto-probe should be used. </dd></dl>
 
 </div>
 </div>
@@ -3994,6 +4032,39 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">size</td><td>Window size to save. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab5961e15e166f31ff05c74a9e330ed17" name="ab5961e15e166f31ff05c74a9e330ed17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5961e15e166f31ff05c74a9e330ed17">&#9670;&#160;</a></span>setSshAuthSockOverride()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPassSettings::setSshAuthSockOverride </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Save the user-supplied SSH_AUTH_SOCK override path. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Override path, or empty to clear and re-enable auto-probe. </td></tr>
   </table>
   </dd>
 </dl>
