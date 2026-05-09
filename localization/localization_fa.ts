@@ -408,139 +408,168 @@ URL
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; نسخه </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="69"/>
+        <location filename="../src/configdialog.cpp" line="74"/>
         <source>System tray is not available</source>
         <translation>سینی سیستم در دسترس نیست</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="96"/>
+        <location filename="../src/configdialog.cpp" line="101"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation>افزونه Pass OTP باید نصب شود</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="101"/>
+        <location filename="../src/configdialog.cpp" line="106"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode باید نصب شود</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="126"/>
+        <location filename="../src/configdialog.cpp" line="131"/>
         <source>No Clipboard</source>
         <translation>بدون کلیپ‌بورد</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="127"/>
+        <location filename="../src/configdialog.cpp" line="132"/>
         <source>Always copy to clipboard</source>
         <translation>همیشه در کلیپ‌بورد کپی شود</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="128"/>
+        <location filename="../src/configdialog.cpp" line="133"/>
         <source>On-demand copy to clipboard</source>
         <translation>کپی به کلیپ‌بورد در صورت درخواست</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="211"/>
-        <location filename="../src/configdialog.cpp" line="227"/>
+        <location filename="../src/configdialog.cpp" line="216"/>
+        <location filename="../src/configdialog.cpp" line="232"/>
         <source>This field is required</source>
         <translation>این فیلد الزامی است</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="722"/>
+        <location filename="../src/configdialog.cpp" line="263"/>
+        <source>The path does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="265"/>
+        <source>The path is not readable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="272"/>
+        <source>The path is not a Unix domain socket.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="278"/>
+        <source>Potentially invalid SSH_AUTH_SOCK override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="279"/>
+        <source>The SSH_AUTH_SOCK override value may be invalid.
+
+%1
+
+The value will still be saved as entered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="753"/>
         <source>Create profile directory?</source>
         <translation>پوشه نمایه ایجاد شود؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="723"/>
+        <location filename="../src/configdialog.cpp" line="754"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>آیا می‌خواهید یک مخزن رمز عبور در %1 ایجاد کنید؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="730"/>
-        <location filename="../src/configdialog.cpp" line="987"/>
+        <location filename="../src/configdialog.cpp" line="761"/>
+        <location filename="../src/configdialog.cpp" line="1018"/>
         <source>Error</source>
         <translation>خطا</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="731"/>
+        <location filename="../src/configdialog.cpp" line="762"/>
         <source>Could not create profile directory: %1</source>
         <translation>نتوانست پوشه نمایه ایجاد کند: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="749"/>
+        <location filename="../src/configdialog.cpp" line="780"/>
         <source>Select recipients for %1</source>
         <translation>انتخاب گیرندگان برای %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="775"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>New Profile</source>
         <translation>نمایه جدید</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="812"/>
+        <location filename="../src/configdialog.cpp" line="843"/>
         <source>No profile selected</source>
         <translation>هیچ نمایه‌ای انتخاب نشده</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="813"/>
+        <location filename="../src/configdialog.cpp" line="844"/>
         <source>No profile selected to delete</source>
         <translation>هیچ نمایه‌ای برای حذف انتخاب نشده</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="913"/>
+        <location filename="../src/configdialog.cpp" line="944"/>
         <source>GnuPG not found</source>
         <translation>GnuPG یافت نشد</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="916"/>
+        <location filename="../src/configdialog.cpp" line="947"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>لطفاً GnuPG را بر روی سیستم خود نصب کنید.&lt;br&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt; را از فروشگاه Microsoft نصب کنید تا آن را دریافت کنید.&lt;br&gt;اگر قبلاً این کار را انجام داده‌اید، مطمئن شوید که یک بار آن را راه‌اندازی کرده‌اید و&lt;br&gt;در گفتگوی بعدی روی &quot;تشخیص خودکار&quot; کلیک کنید.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="921"/>
+        <location filename="../src/configdialog.cpp" line="952"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>لطفاً GnuPG را بر روی سیستم خود نصب کنید.&lt;br&gt;&lt;strong&gt;Ubuntu&lt;/strong&gt; را از فروشگاه Microsoft نصب کنید&lt;br&gt;یا آن را از GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;دانلود&lt;/a&gt; کنید</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="927"/>
+        <location filename="../src/configdialog.cpp" line="958"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>لطفاً GnuPG را بر روی سیستم خود نصب کنید.&lt;br&gt;&lt;strong&gt;gpg&lt;/strong&gt; را با استفاده از مدیر بسته مورد علاقه خود نصب کنید&lt;br&gt;یا آن را از GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;دانلود&lt;/a&gt; کنید</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="981"/>
+        <location filename="../src/configdialog.cpp" line="1012"/>
         <source>Create password-store?</source>
         <translation>مخزن رمز عبور ایجاد شود؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="982"/>
+        <location filename="../src/configdialog.cpp" line="1013"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>آیا می‌خواهید یک مخزن رمز عبور در %1 ایجاد کنید؟</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="988"/>
+        <location filename="../src/configdialog.cpp" line="1019"/>
         <source>Failed to create password-store at: %1</source>
         <translation>ایجاد مخزن رمز عبور در %1 ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1019"/>
+        <location filename="../src/configdialog.cpp" line="1050"/>
         <source>Password store not initialised</source>
         <translation>مخزن رمز عبور مقداردهی اولیه نشده</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1020"/>
+        <location filename="../src/configdialog.cpp" line="1051"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>به نظر نمی‌رسد پوشه %1 یک مخزن رمز عبور باشد یا هنوز مقداردهی اولیه نشده است.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1265"/>
+        <location filename="../src/configdialog.cpp" line="1296"/>
         <source>New profile: %1 at %2</source>
         <translation>نمایه جدید: %1 در %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1269"/>
+        <location filename="../src/configdialog.cpp" line="1300"/>
         <source>Profile: %1 at %2</source>
         <translation>نمایه: %1 در %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1274"/>
+        <location filename="../src/configdialog.cpp" line="1305"/>
         <source>Fill in all required fields</source>
         <translation>تمام فیلدهای الزامی را پر کنید</translation>
     </message>

@@ -395,114 +395,143 @@ url
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; バージョン </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="126"/>
+        <location filename="../src/configdialog.cpp" line="131"/>
         <source>No Clipboard</source>
         <translation>クリップボードなし</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="127"/>
+        <location filename="../src/configdialog.cpp" line="132"/>
         <source>Always copy to clipboard</source>
         <translation>常にクリップボードにコピーする</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="128"/>
+        <location filename="../src/configdialog.cpp" line="133"/>
         <source>On-demand copy to clipboard</source>
         <translation>クリップボードへのオンデマンドコピー</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="211"/>
-        <location filename="../src/configdialog.cpp" line="227"/>
+        <location filename="../src/configdialog.cpp" line="216"/>
+        <location filename="../src/configdialog.cpp" line="232"/>
         <source>This field is required</source>
         <translation>このフィールドは必須です</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="722"/>
+        <location filename="../src/configdialog.cpp" line="263"/>
+        <source>The path does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="265"/>
+        <source>The path is not readable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="272"/>
+        <source>The path is not a Unix domain socket.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="278"/>
+        <source>Potentially invalid SSH_AUTH_SOCK override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="279"/>
+        <source>The SSH_AUTH_SOCK override value may be invalid.
+
+%1
+
+The value will still be saved as entered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="753"/>
         <source>Create profile directory?</source>
         <translation>プロファイルディレクトリを作成しますか？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="723"/>
+        <location filename="../src/configdialog.cpp" line="754"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>%1 にパスワードストアを作成しますか？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="731"/>
+        <location filename="../src/configdialog.cpp" line="762"/>
         <source>Could not create profile directory: %1</source>
         <translation>プロファイルディレクトリを作成できませんでした: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="749"/>
+        <location filename="../src/configdialog.cpp" line="780"/>
         <source>Select recipients for %1</source>
         <translation>%1 の受信者を選択</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="775"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>New Profile</source>
         <translation>新規プロファイル</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="812"/>
+        <location filename="../src/configdialog.cpp" line="843"/>
         <source>No profile selected</source>
         <translation>プロファイルは選択されていません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="813"/>
+        <location filename="../src/configdialog.cpp" line="844"/>
         <source>No profile selected to delete</source>
         <translation>削除するプロファイルが選択されていません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="913"/>
+        <location filename="../src/configdialog.cpp" line="944"/>
         <source>GnuPG not found</source>
         <translation>GnuPG が見つかりません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="927"/>
+        <location filename="../src/configdialog.cpp" line="958"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>システムにGnuPGをインストールしてください。&lt;br&gt;お好みのパッケージマネージャーを使用して&lt;strong&gt;gpg&lt;/strong&gt;をインストールするか、&lt;br&gt;&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.orgからダウンロード&lt;/a&gt;してください。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="981"/>
+        <location filename="../src/configdialog.cpp" line="1012"/>
         <source>Create password-store?</source>
         <translation>password-store を作成しますか？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="982"/>
+        <location filename="../src/configdialog.cpp" line="1013"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>%1 に password-store を作成しますか？</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="730"/>
-        <location filename="../src/configdialog.cpp" line="987"/>
+        <location filename="../src/configdialog.cpp" line="761"/>
+        <location filename="../src/configdialog.cpp" line="1018"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="988"/>
+        <location filename="../src/configdialog.cpp" line="1019"/>
         <source>Failed to create password-store at: %1</source>
         <translation>パスワードストアの作成に失敗しました: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1019"/>
+        <location filename="../src/configdialog.cpp" line="1050"/>
         <source>Password store not initialised</source>
         <translation>パスワードストアが初期化されていません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1020"/>
+        <location filename="../src/configdialog.cpp" line="1051"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>フォルダ %1 は、password-store ではないようです。または、まだ初期化されていません。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1265"/>
+        <location filename="../src/configdialog.cpp" line="1296"/>
         <source>New profile: %1 at %2</source>
         <translation>新規プロファイル: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1269"/>
+        <location filename="../src/configdialog.cpp" line="1300"/>
         <source>Profile: %1 at %2</source>
         <translation>プロファイル: %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1274"/>
+        <location filename="../src/configdialog.cpp" line="1305"/>
         <source>Fill in all required fields</source>
         <translation>必須項目をすべて入力してください</translation>
     </message>
@@ -517,27 +546,27 @@ url
         <translation>自動検出</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="69"/>
+        <location filename="../src/configdialog.cpp" line="74"/>
         <source>System tray is not available</source>
         <translation>システムトレイは使用できません</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="96"/>
+        <location filename="../src/configdialog.cpp" line="101"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation>Pass 拡張機能をインストールする必要があります</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="101"/>
+        <location filename="../src/configdialog.cpp" line="106"/>
         <source>qrencode needs to be installed</source>
         <translation>qrencode をインストールする必要があります</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="916"/>
+        <location filename="../src/configdialog.cpp" line="947"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>システムに GnuPG をインストールしてください。&lt;br&gt;Microsoft Storeから &lt;strong&gt;Ubuntu&lt;/strong&gt; をインストールして入手してください。&lt;br&gt;すでにインストールしている場合は、一度起動し、&lt;br&gt;次のダイアログで &quot;自動検出&quot; をクリックしてください。</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="921"/>
+        <location filename="../src/configdialog.cpp" line="952"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>システムにGnuPGをインストールしてください。&lt;br&gt;Microsoft Storeから&lt;strong&gt;Ubuntu&lt;/strong&gt;をインストールするか、&lt;br&gt;&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;GnuPG.orgからダウンロード&lt;/a&gt;してください。</translation>
     </message>

@@ -128,7 +128,11 @@ public:
    * 1. If `SSH_AUTH_SOCK` is already set (terminal launch, .desktop override,
    *    parent process), do nothing.
    * 2. If a `sshAuthSockOverride` setting is configured in QtPass, use it
-   *    verbatim — the override is an explicit user choice, no validation.
+   *    verbatim as an explicit user choice (no validation is performed here).
+   *    Users should ensure this path points to a valid, accessible SSH agent
+   *    socket; otherwise SSH operations may fail for child processes. The
+   *    Settings dialog shows a non-blocking warning at save time when the
+   *    override path looks bogus (missing, unreadable, or not a socket).
    * 3. Probe `gpgconf --list-dirs agent-ssh-socket` (canonical for gpg-agent),
    *    then validate the candidate with `ssh-add -l` (must exit 0 or 1) before
    *    adopting. Validation prevents silently switching users from a working

@@ -11,6 +11,7 @@
 #include <QClipboard>
 #include <QDir>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QSystemTrayIcon>
@@ -18,6 +19,10 @@
 #include <utility>
 #ifdef Q_OS_WIN
 #include <windows.h>
+#endif
+
+#ifdef Q_OS_UNIX
+#include <sys/stat.h>
 #endif
 
 #ifdef QT_DEBUG
@@ -250,7 +255,33 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setPassExecutable(ui->passPath->text());
   QtPassSettings::setGitExecutable(ui->gitPath->text());
   QtPassSettings::setGpgExecutable(ui->gpgPath->text());
-  QtPassSettings::setSshAuthSockOverride(ui->sshAuthSockOverride->text());
+  const QString sshAuthSockOverride = ui->sshAuthSockOverride->text().trimmed();
+  if (!sshAuthSockOverride.isEmpty()) {
+    QString reason;
+    QFileInfo fi(sshAuthSockOverride);
+    if (!fi.exists()) {
+      reason = tr("The path does not exist.");
+    } else if (!fi.isReadable()) {
+      reason = tr("The path is not readable.");
+    }
+#ifdef Q_OS_UNIX
+    if (reason.isEmpty()) {
+      struct stat st;
+      if (::stat(sshAuthSockOverride.toLocal8Bit().constData(), &st) != 0 ||
+          !S_ISSOCK(st.st_mode)) {
+        reason = tr("The path is not a Unix domain socket.");
+      }
+    }
+#endif
+    if (!reason.isEmpty()) {
+      QMessageBox::warning(
+          this, tr("Potentially invalid SSH_AUTH_SOCK override"),
+          tr("The SSH_AUTH_SOCK override value may be invalid.\n\n%1\n\n"
+             "The value will still be saved as entered.")
+              .arg(reason));
+    }
+  }
+  QtPassSettings::setSshAuthSockOverride(sshAuthSockOverride);
   QtPassSettings::setPassStore(
       Util::normalizeFolderPath(ui->storePath->text()));
   QtPassSettings::setUsePass(ui->radioButtonPass->isChecked());
