@@ -306,17 +306,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK ওভাররাইড:</translation>
+        <translation>SSH_AUTH_SOCK ওভাররাইড:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">SSH_AUTH_SOCK ওভাররাইড করতে ঐচ্ছিক পাথ। gpgconf-এর মাধ্যমে স্বয়ংক্রিয়ভাবে শনাক্ত করতে খালি রাখুন (ইস্যু #543)।</translation>
+        <translation>SSH_AUTH_SOCK ওভাররাইড করতে ঐচ্ছিক পাথ। gpgconf-এর মাধ্যমে স্বয়ংক্রিয়ভাবে শনাক্ত করতে খালি রাখুন (ইস্যু #543)।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(gpgconf-এর মাধ্যমে স্বয়ংক্রিয় শনাক্ত)</translation>
+        <translation>(gpgconf-এর মাধ্যমে স্বয়ংক্রিয় শনাক্ত)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -446,22 +446,22 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">পথটি বিদ্যমান নেই।</translation>
+        <translation>পথটি বিদ্যমান নেই।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">পথটি পাঠযোগ্য নয়।</translation>
+        <translation>পথটি পাঠযোগ্য নয়।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">পথটি একটি Unix ডোমেইন সকেট নয়।</translation>
+        <translation>পথটি একটি Unix ডোমেইন সকেট নয়।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">সম্ভাব্য অবৈধ SSH_AUTH_SOCK ওভাররাইড</translation>
+        <translation>সম্ভাব্য অবৈধ SSH_AUTH_SOCK ওভাররাইড</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,7 @@ URL
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">SSH_AUTH_SOCK ওভাররাইড মান অবৈধ হতে পারে।
+        <translation>SSH_AUTH_SOCK ওভাররাইড মান অবৈধ হতে পারে।
 
 %1
 
