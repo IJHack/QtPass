@@ -306,17 +306,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK pārrakstīšana:</translation>
+        <translation>SSH_AUTH_SOCK pārrakstīšana:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Neobligāts ceļš, lai pārrakstītu SSH_AUTH_SOCK. Atstājiet tukšu, lai tas tiktu automātiski noteikts, izmantojot gpgconf (problēma #543).</translation>
+        <translation>Neobligāts ceļš, lai pārrakstītu SSH_AUTH_SOCK. Atstājiet tukšu, lai tas tiktu automātiski noteikts, izmantojot gpgconf (problēma #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(automātiska noteikšana, izmantojot gpgconf)</translation>
+        <translation>(automātiska noteikšana, izmantojot gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -446,22 +446,22 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ceļš neeksistē.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ceļš nav nolasāms.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ceļš nav Unix domēna ligzda.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Iespējams nederīga SSH_AUTH_SOCK pārrakstīšana</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,11 @@ e-pasts</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK pārrakstīšanas vērtība var būt nederīga.
+
+%1
+
+Vērtība joprojām tiks saglabāta tā, kā tika ievadīta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>
