@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK-overskrywing:</translation>
+        <translation>SSH_AUTH_SOCK-overskrywing:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Opsionele pad om SSH_AUTH_SOCK te oorskryf. Laat leeg om via gpgconf outomaties te bepaal (kwessie #543).</translation>
+        <translation>Opsionele pad om SSH_AUTH_SOCK te oorskryf. Laat leeg om via gpgconf outomaties te bepaal (kwessie #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(outomaties bepaal via gpgconf)</translation>
+        <translation>(outomaties bepaal via gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -418,22 +418,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Die pad bestaan nie.</translation>
+        <translation>Die pad bestaan nie.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Die pad is nie leesbaar nie.</translation>
+        <translation>Die pad is nie leesbaar nie.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Die pad is nie &apos;n Unix-domein-sok nie.</translation>
+        <translation>Die pad is nie &apos;n Unix-domein-sok nie.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Moontlik ongeldige SSH_AUTH_SOCK-oorskryf</translation>
+        <translation>Moontlik ongeldige SSH_AUTH_SOCK-oorskryf</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,11 +442,11 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Die SSH_AUTH_SOCK-oorskryfwaarde is moontlik ongeldig.
+        <translation>Die SSH_AUTH_SOCK-oorskryfwaarde is moontlik ongeldig.
 
 %1
 
-Die waarde sal steeds gestoer word soos ingevoer.</translation>
+Die waarde sal steeds gestoor word soos ingevoer.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>

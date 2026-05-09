@@ -446,22 +446,22 @@ el. paštas</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kelias neegzistuoja.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kelias nėra skaitomas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Kelias nėra Unix domeno lizdas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Galimas neteisingas SSH_AUTH_SOCK perrašymas</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,11 @@ el. paštas</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK perrašymo vertė gali būti neteisinga.
+
+%1
+
+Vertė vis tiek bus išsaugota tokia, kokia įvesta.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>
