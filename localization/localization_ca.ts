@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">Substitució de SSH_AUTH_SOCK:</translation>
+        <translation>Substitució de SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Ruta opcional per substituir SSH_AUTH_SOCK. Deixeu en blanc per a la detecció automàtica via gpgconf (issue #543).</translation>
+        <translation>Ruta opcional per substituir SSH_AUTH_SOCK. Deixeu en blanc per a la detecció automàtica via gpgconf (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(detecció automàtica via gpgconf)</translation>
+        <translation>(detecció automàtica via gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -418,22 +418,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">El camí no existeix.</translation>
+        <translation>El camí no existeix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">El camí no és llegible.</translation>
+        <translation>El camí no és llegible.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">El camí no és un socket de domini Unix.</translation>
+        <translation>El camí no és un socket de domini Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Substitució de SSH_AUTH_SOCK potencialment no vàlida</translation>
+        <translation>Substitució de SSH_AUTH_SOCK potencialment no vàlida</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">El valor de substitució de SSH_AUTH_SOCK pot ser no vàlid.
+        <translation>El valor de substitució de SSH_AUTH_SOCK pot ser no vàlid.
 
 %1
 
