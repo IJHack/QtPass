@@ -310,17 +310,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH_AUTH_SOCK geçersiz kılma:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH_AUTH_SOCK'u geçersiz kılmak için isteğe bağlı yol. gpgconf ile otomatik yoklama için boş bırakın (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation>(gpgconf ile otomatik yoklama)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -450,22 +450,22 @@ e-posta</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yol mevcut değil.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yol okunabilir değil.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yol bir Unix alan soketi değil.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation>Potansiyel olarak geçersiz SSH_AUTH_SOCK geçersiz kılma</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -474,7 +474,11 @@ e-posta</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation>SSH_AUTH_SOCK geçersiz kılma değeri geçersiz olabilir.
+
+%1
+
+Değer girildiği şekilde kaydedilmeye devam edecektir.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>
