@@ -441,40 +441,12 @@ email</translation>
 
 %1
 
-The value will still be stored as entered.</source>
+The value will still be saved as entered.</source>
         <translation>Die SSH_AUTH_SOCK-oorskryfwaarde is moontlik ongeldig.
 
 %1
 
-Die waarde sal steeds gestoer word soos ingevoer.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="265"/>
-        <source>The path is not readable.</source>
-        <translation type="unfinished">Die pad is nie leesbaar nie.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="272"/>
-        <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Die pad is nie &apos;n Unix-domein-sok nie.</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="278"/>
-        <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Moontlik ongeldige SSH_AUTH_SOCK-oorskryf</translation>
-    </message>
-    <message>
-        <location filename="../src/configdialog.cpp" line="279"/>
-        <source>The SSH_AUTH_SOCK override value may be invalid.
-
-%1
-
-The value will still be saved as entered.</source>
-        <translation type="unfinished">Die SSH_AUTH_SOCK-oorskryfwaarde is moontlik ongeldig.
-
-%1
-
-Die waarde sal steeds gestoer word soos ingevoer.</translation>
+Die waarde sal steeds gestoor word soos ingevoer.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>
