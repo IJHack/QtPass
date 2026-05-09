@@ -5,252 +5,303 @@
     <name>ConfigDialog</name>
     <message>
         <location filename="../src/configdialog.ui" line="20"/>
+        <location filename="../src/ui_configdialog.h" line="915"/>
         <source>Configuration</source>
         <translation>Cấu hình</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="46"/>
+        <location filename="../src/ui_configdialog.h" line="964"/>
         <source>Settings</source>
         <translation>Cài đặt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="72"/>
+        <location filename="../src/ui_configdialog.h" line="916"/>
         <source>Clipboard behaviour:</source>
         <translation>Hành vi clipboard:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="91"/>
+        <location filename="../src/ui_configdialog.h" line="917"/>
         <source>Use primary selection</source>
         <translation>Sử dụng lựa chọn chính</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="98"/>
+        <location filename="../src/ui_configdialog.h" line="918"/>
         <source>Autoclear after:</source>
         <translation>Tự động xóa sau:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
+        <location filename="../src/ui_configdialog.h" line="919"/>
+        <location filename="../src/ui_configdialog.h" line="924"/>
         <source>Seconds</source>
         <translation>Giây</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="147"/>
+        <location filename="../src/ui_configdialog.h" line="920"/>
         <source>Content panel behaviour:</source>
         <translation>Hành vi bảng nội dung:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="159"/>
+        <location filename="../src/ui_configdialog.h" line="921"/>
         <source>Hide content</source>
         <translation>Ẩn nội dung</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
+        <location filename="../src/ui_configdialog.h" line="922"/>
         <source>Hide password</source>
         <translation>Ẩn mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="175"/>
+        <location filename="../src/ui_configdialog.h" line="923"/>
         <source>Autoclear panel after:</source>
         <translation>Tự động xóa bảng sau:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="224"/>
+        <location filename="../src/ui_configdialog.h" line="925"/>
         <source>Use a monospace font</source>
         <translation>Sử dụng phông chữ monospace</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="231"/>
+        <location filename="../src/ui_configdialog.h" line="926"/>
         <source>Display the files content as-is</source>
         <translation>Hiển thị nội dung tệp nguyên bản</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="238"/>
+        <location filename="../src/ui_configdialog.h" line="927"/>
         <source>No line wrapping</source>
         <translation>Không ngắt dòng</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
+        <location filename="../src/ui_configdialog.h" line="928"/>
         <source>Show process output</source>
         <translation>Hiển thị đầu ra quá trình</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
+        <location filename="../src/ui_configdialog.h" line="929"/>
         <source>Password Generation:</source>
         <translation>Tạo mật khẩu:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="289"/>
+        <location filename="../src/ui_configdialog.h" line="930"/>
         <source>Password Length:</source>
         <translation>Độ dài mật khẩu:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="323"/>
+        <location filename="../src/ui_configdialog.h" line="931"/>
         <source>Characters</source>
         <translation>Ký tự</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="351"/>
+        <location filename="../src/ui_configdialog.h" line="932"/>
         <source>Use characters:</source>
         <translation>Sử dụng ký tự:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="369"/>
+        <location filename="../src/ui_configdialog.h" line="939"/>
         <source>Select character set for password generation</source>
         <translation>Chọn bộ ký tự để tạo mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="373"/>
+        <location filename="../src/ui_configdialog.h" line="933"/>
         <source>All Characters</source>
         <translation>Tất cả ký tự</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="378"/>
+        <location filename="../src/ui_configdialog.h" line="934"/>
         <source>Alphabetical</source>
         <translation>Chữ cái</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="383"/>
+        <location filename="../src/ui_configdialog.h" line="935"/>
         <source>Alphanumerical</source>
         <translation>Chữ và số</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="388"/>
+        <location filename="../src/ui_configdialog.h" line="936"/>
         <source>Custom</source>
         <translation>Tùy chỉnh</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="426"/>
+        <location filename="../src/ui_configdialog.h" line="941"/>
         <source>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</source>
         <translation>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="443"/>
+        <location filename="../src/ui_configdialog.h" line="942"/>
         <source>Use PWGen</source>
         <translation>Sử dụng PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="450"/>
+        <location filename="../src/ui_configdialog.h" line="943"/>
         <source>Exclude capital letters</source>
         <translation>Loại trừ chữ hoa</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="460"/>
+        <location filename="../src/ui_configdialog.h" line="944"/>
         <source>Include special symbols</source>
         <translation>Bao gồm ký tự đặc biệt</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="467"/>
+        <location filename="../src/ui_configdialog.h" line="945"/>
         <source>Generate easy to memorize but less secure passwords</source>
         <translation>Tạo mật khẩu dễ nhớ nhưng kém an toàn hơn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="474"/>
+        <location filename="../src/ui_configdialog.h" line="946"/>
         <source>Exclude numbers</source>
         <translation>Loại trừ số</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="493"/>
+        <location filename="../src/ui_configdialog.h" line="947"/>
         <source>Git:</source>
         <translation>Git:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="505"/>
+        <location filename="../src/ui_configdialog.h" line="948"/>
         <source>Use Git</source>
         <translation>Sử dụng Git</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="519"/>
+        <location filename="../src/ui_configdialog.h" line="949"/>
         <source>Automatically add .gpg-id files</source>
         <translation>Tự động thêm tệp .gpg-id</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="526"/>
+        <location filename="../src/ui_configdialog.h" line="950"/>
         <source>Automatically push</source>
         <translation>Tự động push</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
+        <location filename="../src/ui_configdialog.h" line="951"/>
         <source>Automatically pull</source>
         <translation>Tự động pull</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
+        <location filename="../src/ui_configdialog.h" line="952"/>
         <source>Extensions:</source>
         <translation>Tiện ích mở rộng:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="574"/>
+        <location filename="../src/ui_configdialog.h" line="953"/>
         <source>Use QRencode</source>
         <translation>Sử dụng QRencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="588"/>
+        <location filename="../src/ui_configdialog.h" line="954"/>
         <source>Use pass-otp extension</source>
         <translation>Sử dụng tiện ích mở rộng pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
+        <location filename="../src/ui_configdialog.h" line="955"/>
         <source>Enable content search (pass grep)</source>
         <translation>Bật tìm kiếm nội dung (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
+        <location filename="../src/ui_configdialog.h" line="957"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
         <translation>Cho phép tìm kiếm bên trong nội dung tệp mật khẩu. Yêu cầu giải mã mọi tệp và có thể chậm với kho lớn.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
+        <location filename="../src/ui_configdialog.h" line="959"/>
         <source>System:</source>
         <translation>Hệ thống:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="636"/>
+        <location filename="../src/ui_configdialog.h" line="960"/>
         <source>Use TrayIcon</source>
         <translation>Sử dụng biểu tượng khay</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="643"/>
+        <location filename="../src/ui_configdialog.h" line="961"/>
         <source>Start minimized</source>
         <translation>Khởi động thu nhỏ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="650"/>
+        <location filename="../src/ui_configdialog.h" line="962"/>
         <source>Hide on close</source>
         <translation>Ẩn khi đóng</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="657"/>
+        <location filename="../src/ui_configdialog.h" line="963"/>
         <source>Always on top</source>
         <translation>Luôn ở trên cùng</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="682"/>
+        <location filename="../src/ui_configdialog.h" line="989"/>
         <source>Programs</source>
         <translation>Chương trình</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="700"/>
+        <location filename="../src/ui_configdialog.h" line="965"/>
         <source>Select password storage program:</source>
         <translation>Chọn chương trình lưu trữ mật khẩu:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="709"/>
+        <location filename="../src/ui_configdialog.h" line="966"/>
         <source>Nati&amp;ve Git/GPG</source>
         <translation>Git/GPG gốc (&amp;v)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="716"/>
+        <location filename="../src/ui_configdialog.h" line="967"/>
         <source>&amp;Use pass</source>
         <translation>Sử dụng pass (&amp;U)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="740"/>
+        <location filename="../src/ui_configdialog.h" line="968"/>
         <source>Native</source>
         <translation>Gốc</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="746"/>
+        <location filename="../src/ui_configdialog.h" line="969"/>
         <source>Git</source>
         <translation>Git</translation>
     </message>
@@ -260,141 +311,173 @@
         <location filename="../src/configdialog.ui" line="806"/>
         <location filename="../src/configdialog.ui" line="837"/>
         <location filename="../src/configdialog.ui" line="1036"/>
+        <location filename="../src/ui_configdialog.h" line="970"/>
+        <location filename="../src/ui_configdialog.h" line="971"/>
+        <location filename="../src/ui_configdialog.h" line="978"/>
+        <location filename="../src/ui_configdialog.h" line="981"/>
+        <location filename="../src/ui_configdialog.h" line="1008"/>
         <source>…</source>
         <translation>…</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
+        <location filename="../src/ui_configdialog.h" line="972"/>
         <source>Generate</source>
         <translation>Tạo</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="779"/>
+        <location filename="../src/ui_configdialog.h" line="974"/>
         <source>Generate GPG key pair</source>
         <translation>Tạo cặp khóa GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="786"/>
+        <location filename="../src/ui_configdialog.h" line="976"/>
         <source>GPG</source>
         <translation>GPG</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="799"/>
+        <location filename="../src/ui_configdialog.h" line="977"/>
         <source>PWGen</source>
         <translation>PWGen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="816"/>
+        <location filename="../src/ui_configdialog.h" line="979"/>
         <source>Pass</source>
         <translation>Pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="827"/>
+        <location filename="../src/ui_configdialog.h" line="980"/>
         <source>pass</source>
         <translation>pass</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="846"/>
+        <location filename="../src/ui_configdialog.h" line="982"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;www.passwordstore.org&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="877"/>
+        <location filename="../src/ui_configdialog.h" line="983"/>
         <source>Autodetect</source>
         <translation>Tự động phát hiện</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
+        <location filename="../src/ui_configdialog.h" line="984"/>
         <source>SSH_AUTH_SOCK override:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
+        <location filename="../src/ui_configdialog.h" line="986"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
+        <location filename="../src/ui_configdialog.h" line="988"/>
         <source>(auto-probe via gpgconf)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
+        <location filename="../src/ui_configdialog.h" line="1009"/>
         <source>Profiles</source>
         <translation>Hồ sơ</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="970"/>
+        <location filename="../src/ui_configdialog.h" line="991"/>
         <source>Name</source>
         <translation>Tên</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
+        <location filename="../src/ui_configdialog.h" line="993"/>
         <source>Profile name, used to identify this configuration profile</source>
         <translation>Tên hồ sơ, được sử dụng để nhận dạng hồ sơ cấu hình này</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
+        <location filename="../src/ui_configdialog.h" line="996"/>
         <source>Path</source>
         <translation>Đường dẫn</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
+        <location filename="../src/ui_configdialog.h" line="998"/>
         <source>Path to the password store directory</source>
         <translation>Đường dẫn đến thư mục kho mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="986"/>
+        <location filename="../src/ui_configdialog.h" line="1001"/>
         <source>Signing Key</source>
         <translation>Khóa ký</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="989"/>
+        <location filename="../src/ui_configdialog.h" line="1003"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
         <translation>Tùy chọn: Khóa GPG để ký tệp .gpg-id nhằm xác minh tính toàn vẹn. Để trống trừ khi bạn cần bảo vệ danh sách người dùng khỏi bị giả mạo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="999"/>
+        <location filename="../src/ui_configdialog.h" line="1005"/>
         <source>Add</source>
         <translation>Thêm</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1014"/>
+        <location filename="../src/ui_configdialog.h" line="1006"/>
         <source>Delete</source>
         <translation>Xóa</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1029"/>
+        <location filename="../src/ui_configdialog.h" line="1007"/>
         <source>Current path</source>
         <translation>Đường dẫn hiện tại</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1049"/>
+        <location filename="../src/ui_configdialog.h" line="1019"/>
         <source>Template</source>
         <translation>Mẫu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1070"/>
+        <location filename="../src/ui_configdialog.h" line="1010"/>
         <source>Templates add extra fields in the password generation dialogue, and in the password view.</source>
         <translation>Mẫu thêm các trường bổ sung trong hộp thoại tạo mật khẩu và trong chế độ xem mật khẩu.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1079"/>
+        <location filename="../src/ui_configdialog.h" line="1011"/>
         <source>Use template</source>
         <translation>Sử dụng mẫu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
+        <location filename="../src/ui_configdialog.h" line="1013"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
         <translation>Hiển thị tất cả các dòng bắt đầu bằng một từ theo sau là dấu hai chấm dưới dạng trường trong các trường mật khẩu, không chỉ những trường đã liệt kê</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1089"/>
+        <location filename="../src/ui_configdialog.h" line="1015"/>
         <source>Show all fields templated</source>
         <translation>Hiển thị tất cả các trường được định dạng mẫu</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1101"/>
+        <location filename="../src/ui_configdialog.h" line="1016"/>
         <source>login
 URL
 e-mail</source>
@@ -404,143 +487,173 @@ e-mail</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1116"/>
+        <location filename="../src/ui_configdialog.h" line="1020"/>
         <source>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; version </source>
         <translation>&lt;a href=&quot;https://QtPass.org/&quot;&gt;QtPass&lt;/a&gt; phiên bản </translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="69"/>
+        <location filename="../src/configdialog.cpp" line="74"/>
         <source>System tray is not available</source>
         <translation>Khay hệ thống không khả dụng</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="96"/>
+        <location filename="../src/configdialog.cpp" line="101"/>
         <source>Pass OTP extension needs to be installed</source>
         <translation>Cần cài đặt tiện ích mở rộng Pass OTP</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="101"/>
+        <location filename="../src/configdialog.cpp" line="106"/>
         <source>qrencode needs to be installed</source>
         <translation>Cần cài đặt qrencode</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="126"/>
+        <location filename="../src/configdialog.cpp" line="131"/>
         <source>No Clipboard</source>
         <translation>Không có Clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="127"/>
+        <location filename="../src/configdialog.cpp" line="132"/>
         <source>Always copy to clipboard</source>
         <translation>Luôn sao chép vào clipboard</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="128"/>
+        <location filename="../src/configdialog.cpp" line="133"/>
         <source>On-demand copy to clipboard</source>
         <translation>Sao chép vào clipboard theo yêu cầu</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="211"/>
-        <location filename="../src/configdialog.cpp" line="227"/>
+        <location filename="../src/configdialog.cpp" line="216"/>
+        <location filename="../src/configdialog.cpp" line="232"/>
         <source>This field is required</source>
         <translation>Trường này là bắt buộc</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="722"/>
+        <location filename="../src/configdialog.cpp" line="263"/>
+        <source>The path does not exist.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="265"/>
+        <source>The path is not readable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="272"/>
+        <source>The path is not a Unix domain socket.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="278"/>
+        <source>Potentially invalid SSH_AUTH_SOCK override</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="279"/>
+        <source>The SSH_AUTH_SOCK override value may be invalid.
+
+%1
+
+The value will still be saved as entered.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/configdialog.cpp" line="753"/>
         <source>Create profile directory?</source>
         <translation>Tạo thư mục hồ sơ?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="723"/>
+        <location filename="../src/configdialog.cpp" line="754"/>
         <source>Would you like to create a password store at %1?</source>
         <translation>Bạn có muốn tạo kho mật khẩu tại %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="730"/>
-        <location filename="../src/configdialog.cpp" line="987"/>
+        <location filename="../src/configdialog.cpp" line="761"/>
+        <location filename="../src/configdialog.cpp" line="1018"/>
         <source>Error</source>
         <translation>Lỗi</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="731"/>
+        <location filename="../src/configdialog.cpp" line="762"/>
         <source>Could not create profile directory: %1</source>
         <translation>Không thể tạo thư mục hồ sơ: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="749"/>
+        <location filename="../src/configdialog.cpp" line="780"/>
         <source>Select recipients for %1</source>
         <translation>Chọn người nhận cho %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="775"/>
+        <location filename="../src/configdialog.cpp" line="806"/>
         <source>New Profile</source>
         <translation>Hồ sơ mới</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="812"/>
+        <location filename="../src/configdialog.cpp" line="843"/>
         <source>No profile selected</source>
         <translation>Không có hồ sơ nào được chọn</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="813"/>
+        <location filename="../src/configdialog.cpp" line="844"/>
         <source>No profile selected to delete</source>
         <translation>Không có hồ sơ nào được chọn để xóa</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="913"/>
+        <location filename="../src/configdialog.cpp" line="944"/>
         <source>GnuPG not found</source>
         <translation>Không tìm thấy GnuPG</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="916"/>
+        <location filename="../src/configdialog.cpp" line="947"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
         <translation>Vui lòng cài đặt GnuPG trên hệ thống của bạn.&lt;br&gt;Cài đặt &lt;strong&gt;Ubuntu&lt;/strong&gt; từ Microsoft Store để có nó.&lt;br&gt;Nếu bạn đã làm như vậy, hãy đảm bảo bạn đã khởi động nó một lần và&lt;br&gt;nhấp &quot;Tự động phát hiện&quot; trong hộp thoại tiếp theo.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="921"/>
+        <location filename="../src/configdialog.cpp" line="952"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Vui lòng cài đặt GnuPG trên hệ thống của bạn.&lt;br&gt;Cài đặt &lt;strong&gt;Ubuntu&lt;/strong&gt; từ Microsoft Store&lt;br&gt;hoặc &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;tải xuống&lt;/a&gt; từ GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="927"/>
+        <location filename="../src/configdialog.cpp" line="958"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
         <translation>Vui lòng cài đặt GnuPG trên hệ thống của bạn.&lt;br&gt;Cài đặt &lt;strong&gt;gpg&lt;/strong&gt; bằng trình quản lý gói yêu thích của bạn&lt;br&gt;hoặc &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;tải xuống&lt;/a&gt; từ GnuPG.org</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="981"/>
+        <location filename="../src/configdialog.cpp" line="1012"/>
         <source>Create password-store?</source>
         <translation>Tạo kho mật khẩu?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="982"/>
+        <location filename="../src/configdialog.cpp" line="1013"/>
         <source>Would you like to create a password-store at %1?</source>
         <translation>Bạn có muốn tạo kho mật khẩu tại %1?</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="988"/>
+        <location filename="../src/configdialog.cpp" line="1019"/>
         <source>Failed to create password-store at: %1</source>
         <translation>Không thể tạo kho mật khẩu tại: %1</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1019"/>
+        <location filename="../src/configdialog.cpp" line="1050"/>
         <source>Password store not initialised</source>
         <translation>Kho mật khẩu chưa được khởi tạo</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1020"/>
+        <location filename="../src/configdialog.cpp" line="1051"/>
         <source>The folder %1 doesn&apos;t seem to be a password store or is not yet initialised.</source>
         <translation>Thư mục %1 dường như không phải là kho mật khẩu hoặc chưa được khởi tạo.</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1265"/>
+        <location filename="../src/configdialog.cpp" line="1296"/>
         <source>New profile: %1 at %2</source>
         <translation>Hồ sơ mới: %1 tại %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1269"/>
+        <location filename="../src/configdialog.cpp" line="1300"/>
         <source>Profile: %1 at %2</source>
         <translation>Hồ sơ: %1 tại %2</translation>
     </message>
     <message>
-        <location filename="../src/configdialog.cpp" line="1274"/>
+        <location filename="../src/configdialog.cpp" line="1305"/>
         <source>Fill in all required fields</source>
         <translation>Điền vào tất cả các trường bắt buộc</translation>
     </message>
@@ -549,21 +662,25 @@ e-mail</translation>
     <name>ExportPublicKeyDialog</name>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="14"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="99"/>
         <source>Export Public Key</source>
         <translation>Xuất khóa công khai</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="27"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="100"/>
         <source>Public key</source>
         <translation>Khóa công khai</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="52"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="101"/>
         <source>Copy to Clipboard</source>
         <translation>Sao chép vào Clipboard</translation>
     </message>
     <message>
         <location filename="../src/exportpublickeydialog.ui" line="59"/>
+        <location filename="../src/ui_exportpublickeydialog.h" line="102"/>
         <source>Save to File...</source>
         <translation>Lưu vào tệp...</translation>
     </message>
@@ -746,31 +863,37 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <message>
         <location filename="../src/importkeydialog.ui" line="14"/>
         <location filename="../src/importkeydialog.cpp" line="42"/>
+        <location filename="../src/ui_importkeydialog.h" line="120"/>
         <source>Import GPG Key</source>
         <translation>Nhập khóa GPG</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="27"/>
+        <location filename="../src/ui_importkeydialog.h" line="121"/>
         <source>Import a GPG public key from file or paste it below. The key should be in ASCII-armored format.</source>
         <translation>Nhập khóa công khai GPG từ tệp hoặc dán nó bên dưới. Khóa phải ở định dạng ASCII-armored.</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="42"/>
+        <location filename="../src/ui_importkeydialog.h" line="122"/>
         <source>From File...</source>
         <translation>Từ tệp...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="49"/>
+        <location filename="../src/ui_importkeydialog.h" line="123"/>
         <source>From Clipboard</source>
         <translation>Từ Clipboard</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="71"/>
+        <location filename="../src/ui_importkeydialog.h" line="124"/>
         <source>Paste an ASCII-armored GPG key here...</source>
         <translation>Dán khóa GPG ASCII-armored ở đây...</translation>
     </message>
     <message>
         <location filename="../src/importkeydialog.ui" line="93"/>
+        <location filename="../src/ui_importkeydialog.h" line="125"/>
         <source>Import</source>
         <translation>Nhập</translation>
     </message>
@@ -824,51 +947,61 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <name>KeygenDialog</name>
     <message>
         <location filename="../src/keygendialog.ui" line="14"/>
+        <location filename="../src/ui_keygendialog.h" line="230"/>
         <source>Generate GnuPG keypair</source>
         <translation>Tạo cặp khóa GnuPG</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="42"/>
+        <location filename="../src/ui_keygendialog.h" line="231"/>
         <source>Generate a new key pair</source>
         <translation>Tạo cặp khóa mới</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="91"/>
+        <location filename="../src/ui_keygendialog.h" line="232"/>
         <source>Email</source>
         <translation>Email</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="123"/>
+        <location filename="../src/ui_keygendialog.h" line="233"/>
         <source>Name</source>
         <translation>Tên</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="155"/>
+        <location filename="../src/ui_keygendialog.h" line="234"/>
         <source>Passphrase</source>
         <translation>Cụm mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="200"/>
+        <location filename="../src/ui_keygendialog.h" line="235"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;There is no limit on the length of a passphrase, and it should be carefully chosen. From the perspective of security, the passphrase to unlock the private key is one of the weakest points in GnuPG (and other public-key encryption systems as well) since it is the only protection you have if another individual gets your private key. &lt;br/&gt;Ideally, the passphrase should not use words from a dictionary and should mix the case of alphabetic characters as well as use non-alphabetic characters.&lt;br/&gt;A good passphrase is crucial to the secure use of GnuPG.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Không có giới hạn về độ dài của cụm mật khẩu và nó nên được chọn cẩn thận. Từ quan điểm bảo mật, cụm mật khẩu để mở khóa khóa riêng tư là một trong những điểm yếu nhất trong GnuPG (và các hệ thống mã hóa khóa công khai khác) vì đó là sự bảo vệ duy nhất bạn có nếu người khác lấy được khóa riêng tư của bạn. &lt;br/&gt;Lý tưởng nhất, cụm mật khẩu không nên sử dụng từ trong từ điển và nên kết hợp chữ hoa chữ thường cũng như sử dụng ký tự không phải chữ cái.&lt;br/&gt;Một cụm mật khẩu tốt là rất quan trọng để sử dụng GnuPG an toàn.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="210"/>
+        <location filename="../src/ui_keygendialog.h" line="236"/>
         <source>Repeat pass</source>
         <translation>Nhập lại mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="227"/>
+        <location filename="../src/ui_keygendialog.h" line="237"/>
         <source>Expert</source>
         <translation>Chuyên gia</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="246"/>
+        <location filename="../src/ui_keygendialog.h" line="238"/>
         <source>Template contents will be set based on GPG version.</source>
         <translation>Nội dung mẫu sẽ được đặt dựa trên phiên bản GPG.</translation>
     </message>
     <message>
         <location filename="../src/keygendialog.ui" line="259"/>
+        <location filename="../src/ui_keygendialog.h" line="239"/>
         <source>For expert options check out the &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;GnuPG manual&lt;/a&gt;</source>
         <translation>Để biết các tùy chọn chuyên gia, hãy xem &lt;a href=&quot;https://www.gnupg.org/documentation/manuals/gnupg/Unattended-GPG-key-generation.html&quot;&gt;hướng dẫn GnuPG&lt;/a&gt;</translation>
     </message>
@@ -902,11 +1035,13 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
     <name>MainWindow</name>
     <message>
         <location filename="../src/mainwindow.ui" line="14"/>
+        <location filename="../src/ui_mainwindow.h" line="307"/>
         <source>QtPass</source>
         <translation>QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="68"/>
+        <location filename="../src/ui_mainwindow.h" line="350"/>
         <source>Select profile</source>
         <translation>Chọn hồ sơ</translation>
     </message>
@@ -914,61 +1049,73 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <location filename="../src/mainwindow.ui" line="120"/>
         <location filename="../src/mainwindow.cpp" line="700"/>
         <location filename="../src/mainwindow.cpp" line="883"/>
+        <location filename="../src/ui_mainwindow.h" line="352"/>
         <source>Search Password</source>
         <translation>Tìm kiếm mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
+        <location filename="../src/ui_mainwindow.h" line="354"/>
         <source>Search inside password content (pass grep)</source>
         <translation>Tìm kiếm bên trong nội dung mật khẩu (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
+        <location filename="../src/ui_mainwindow.h" line="356"/>
         <source>⌕</source>
         <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
+        <location filename="../src/ui_mainwindow.h" line="358"/>
         <source>Content search toggle</source>
         <translation>Chuyển đổi tìm kiếm nội dung</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
+        <location filename="../src/ui_mainwindow.h" line="361"/>
         <source>Toggle content search mode to search inside password files</source>
         <translation>Chuyển đổi chế độ tìm kiếm nội dung để tìm kiếm bên trong tệp mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
+        <location filename="../src/ui_mainwindow.h" line="364"/>
         <source>Case-insensitive search</source>
         <translation>Tìm kiếm không phân biệt chữ hoa chữ thường</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
+        <location filename="../src/ui_mainwindow.h" line="366"/>
         <source>Aa</source>
         <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
+        <location filename="../src/ui_mainwindow.h" line="368"/>
         <source>Case-insensitive toggle</source>
         <translation>Chuyển đổi không phân biệt chữ hoa chữ thường</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="155"/>
+        <location filename="../src/ui_mainwindow.h" line="371"/>
         <source>Toggle case-insensitive content search</source>
         <translation>Chuyển đổi tìm kiếm nội dung không phân biệt chữ hoa chữ thường</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
+        <location filename="../src/ui_mainwindow.h" line="374"/>
         <source>Results</source>
         <translation>Kết quả</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="263"/>
+        <location filename="../src/ui_mainwindow.h" line="375"/>
         <source>Welcome to QtPass</source>
         <translation>Chào mừng đến với QtPass</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
+        <location filename="../src/ui_mainwindow.h" line="376"/>
         <source>&lt;p&gt;QtPass is a GUI for &lt;a href=&quot;https://www.passwordstore.org/&quot;&gt;pass&lt;/a&gt;, the standard unix password manager.&lt;/p&gt;
 &lt;p&gt;Please report any &lt;a href=&quot;https://github.com/IJHack/qtpass/issues&quot;&gt;issues&lt;/a&gt; you might have with this software.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://qtpass.org/&quot;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
@@ -982,11 +1129,14 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
         <location filename="../src/mainwindow.cpp" line="1373"/>
+        <location filename="../src/ui_mainwindow.h" line="308"/>
+        <location filename="../src/ui_mainwindow.h" line="310"/>
         <source>Add password</source>
         <translation>Thêm mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
+        <location filename="../src/ui_mainwindow.h" line="313"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
@@ -994,6 +1144,8 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <location filename="../src/mainwindow.ui" line="390"/>
         <location filename="../src/mainwindow.ui" line="393"/>
         <location filename="../src/mainwindow.cpp" line="1372"/>
+        <location filename="../src/ui_mainwindow.h" line="315"/>
+        <location filename="../src/ui_mainwindow.h" line="317"/>
         <source>Add folder</source>
         <translation>Thêm thư mục</translation>
     </message>
@@ -1001,6 +1153,8 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
         <location filename="../src/mainwindow.cpp" line="1380"/>
+        <location filename="../src/ui_mainwindow.h" line="319"/>
+        <location filename="../src/ui_mainwindow.h" line="321"/>
         <source>Edit</source>
         <translation>Chỉnh sửa</translation>
     </message>
@@ -1008,62 +1162,75 @@ Bạn sẽ không thể thay đổi danh sách người dùng!</translation>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
         <location filename="../src/mainwindow.cpp" line="1394"/>
+        <location filename="../src/ui_mainwindow.h" line="323"/>
+        <location filename="../src/ui_mainwindow.h" line="325"/>
         <source>Delete</source>
         <translation>Xóa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="414"/>
+        <location filename="../src/ui_mainwindow.h" line="327"/>
         <source>OTP</source>
         <translation>OTP</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="417"/>
+        <location filename="../src/ui_mainwindow.h" line="329"/>
         <source>Generate OTP and copy to clipboard</source>
         <translation>Tạo OTP và sao chép vào clipboard</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="420"/>
+        <location filename="../src/ui_mainwindow.h" line="332"/>
         <source>Ctrl+G</source>
         <translation>Ctrl+G</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="425"/>
+        <location filename="../src/ui_mainwindow.h" line="334"/>
         <source>Push</source>
         <translation>Push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="428"/>
+        <location filename="../src/ui_mainwindow.h" line="336"/>
         <source>Git push</source>
         <translation>Git push</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="433"/>
+        <location filename="../src/ui_mainwindow.h" line="338"/>
         <source>Update</source>
         <translation>Cập nhật</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="436"/>
+        <location filename="../src/ui_mainwindow.h" line="340"/>
         <source>Git pull</source>
         <translation>Git pull</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
         <location filename="../src/mainwindow.cpp" line="1374"/>
+        <location filename="../src/ui_mainwindow.h" line="342"/>
         <source>Users</source>
         <translation>Người dùng</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="444"/>
+        <location filename="../src/ui_mainwindow.h" line="344"/>
         <source>Manage who can read password in folder</source>
         <translation>Quản lý ai có thể đọc mật khẩu trong thư mục</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="449"/>
+        <location filename="../src/ui_mainwindow.h" line="346"/>
         <source>Config</source>
         <translation>Cấu hình</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="452"/>
+        <location filename="../src/ui_mainwindow.h" line="348"/>
         <source>Configuration</source>
         <translation>Cấu hình</translation>
     </message>
@@ -1414,46 +1581,56 @@ Tiếp tục?</translation>
     <message>
         <location filename="../src/passworddialog.ui" line="14"/>
         <location filename="../src/passworddialog.ui" line="65"/>
+        <location filename="../src/ui_passworddialog.h" line="174"/>
+        <location filename="../src/ui_passworddialog.h" line="176"/>
         <source>Password</source>
         <translation>Mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="75"/>
+        <location filename="../src/ui_passworddialog.h" line="177"/>
         <source>Generate</source>
         <translation>Tạo</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="86"/>
+        <location filename="../src/ui_passworddialog.h" line="178"/>
         <source>Show password</source>
         <translation>Hiển thị mật khẩu</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="106"/>
+        <location filename="../src/ui_passworddialog.h" line="179"/>
         <source>Character Set:</source>
         <translation>Bộ ký tự:</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="114"/>
+        <location filename="../src/ui_passworddialog.h" line="180"/>
         <source>All Characters</source>
         <translation>Tất cả ký tự</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="119"/>
+        <location filename="../src/ui_passworddialog.h" line="181"/>
         <source>Alphabetical</source>
         <translation>Chữ cái</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="124"/>
+        <location filename="../src/ui_passworddialog.h" line="182"/>
         <source>Alphanumerical</source>
         <translation>Chữ và số</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="129"/>
+        <location filename="../src/ui_passworddialog.h" line="183"/>
         <source>Custom</source>
         <translation>Tùy chỉnh</translation>
     </message>
     <message>
         <location filename="../src/passworddialog.ui" line="143"/>
+        <location filename="../src/ui_passworddialog.h" line="185"/>
         <source>Length:</source>
         <translation>Độ dài:</translation>
     </message>
@@ -1611,11 +1788,13 @@ Tiếp tục?</translation>
     <name>UsersDialog</name>
     <message>
         <location filename="../src/usersdialog.ui" line="20"/>
+        <location filename="../src/ui_usersdialog.h" line="111"/>
         <source>Read access users</source>
         <translation>Người dùng có quyền đọc</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="45"/>
+        <location filename="../src/ui_usersdialog.h" line="112"/>
         <source>Select which users should be able to decrypt passwords stored in this folder.
 Note: Existing files will not be modified, and retain the old permissions until you edit them.
 Blue entries have a secret key available, select one of these to be able to decrypt.
@@ -1629,21 +1808,25 @@ Các mục màu đỏ không hợp lệ, bạn sẽ không thể mã hóa với 
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="70"/>
+        <location filename="../src/ui_usersdialog.h" line="117"/>
         <source>Search for users</source>
         <translation>Tìm kiếm người dùng</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
+        <location filename="../src/ui_usersdialog.h" line="118"/>
         <source>Show unusable keys</source>
         <translation>Hiển thị các khóa không thể sử dụng</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
+        <location filename="../src/ui_usersdialog.h" line="119"/>
         <source>Import key...</source>
         <translation>Nhập khóa...</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
+        <location filename="../src/ui_usersdialog.h" line="121"/>
         <source>Import a GPG key from file or clipboard</source>
         <translation>Nhập khóa GPG từ tệp hoặc clipboard</translation>
     </message>
