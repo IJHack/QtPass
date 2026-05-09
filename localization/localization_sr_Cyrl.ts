@@ -412,7 +412,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Путања није Unix домен сокет.</translation>
+        <translation type="unfinished">Путања није Unix доменска утичница.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
