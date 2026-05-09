@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK oerskriuwe:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Opsjoneel paad om SSH_AUTH_SOCK te oerskriuwen. Lit leech foar autodeteksje fia gpgconf (kwestje #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(autodeteksje fia gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -2008,7 +2008,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="341"/>
         <source>[PARTIAL] </source>
-        <translation>[PART] </translation>
+        <translation>[DIELLIK] </translation>
     </message>
 </context>
 </TS>

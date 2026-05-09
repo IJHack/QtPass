@@ -266,17 +266,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Παράκαμψη SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Προαιρετική διαδρομή για παράκαμψη του SSH_AUTH_SOCK. Αφήστε κενό για αυτόματο εντοπισμό μέσω gpgconf (ζήτημα #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(αυτόματος εντοπισμός μέσω gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -1549,14 +1549,14 @@ Continue?</source>
         <location filename="../src/qtpass.cpp" line="266"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>Το fusevav τερματίστηκε απροσδόκητα
+        <translation>Το fusedav τερματίστηκε απροσδόκητα
 </translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="270"/>
         <source>Failed to start fusedav to connect WebDAV:
 </source>
-        <translation>Αποτυχία εκκίνησης του fusevav για σύνδεση στο WebDAV:
+        <translation>Αποτυχία εκκίνησης του fusedav για σύνδεση στο WebDAV:
 </translation>
     </message>
     <message>

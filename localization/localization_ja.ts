@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK の上書き:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK を上書きするオプションのパス。空欄にすると gpgconf 経由で自動検出します (issue #543)。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(gpgconf 経由で自動検出)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -238,7 +238,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="533"/>
         <source>Automatically pull</source>
-        <translation>自動 push</translation>
+        <translation>自動 pull</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="565"/>
@@ -1947,12 +1947,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.cpp" line="307"/>
         <source>created</source>
-        <translation>作成しました</translation>
+        <translation>作成日</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="311"/>
         <source>expires</source>
-        <translation>有効期限が切れます</translation>
+        <translation>有効期限</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="334"/>

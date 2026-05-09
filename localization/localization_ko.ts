@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK 재정의:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK를 재정의할 선택 경로. gpgconf를 통한 자동 탐지를 위해 비워 두세요 (이슈 #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(gpgconf를 통한 자동 탐지)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="989"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>필요한 경우 외에는 공백으로 두고, .gpg-id 파일의Integrity 검증을 위해 서명하는 GPG 키를 입력하세요.</translation>
+        <translation>필요한 경우 외에는 공백으로 두고, .gpg-id 파일의 무결성 검증을 위해 서명하는 GPG 키를 입력하세요.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1029"/>

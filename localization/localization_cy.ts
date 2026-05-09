@@ -306,17 +306,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Diystyru SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Llwybr dewisol i ddiystyru SSH_AUTH_SOCK. Gadewch yn wag i awtoganfod drwy gpgconf (mater #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(awtoganfod drwy gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -491,12 +491,12 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="921"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; Ubuntu &lt;/strong&gt; o Microsoft Store &lt;br&gt; or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; lawrlwytho &lt;/a&gt; hi o GnuPG.org</translation>
+        <translation>Gosodwch GnuPG ar eich system.&lt;br&gt;Gosodwch &lt;strong&gt;Ubuntu&lt;/strong&gt; o Microsoft Store&lt;br&gt;neu &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lawrlwythwch&lt;/a&gt; hi o GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="927"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Gosodwch GnuPG ar eich system. &lt;br&gt; gosod &lt;strong&gt; GPG &lt;/strong&gt; gan ddefnyddio eich hoff rheolwr pecyn &lt;br&gt; neu &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lawrlwytho &lt;/a&gt; hi o GnuPG.org</translation>
+        <translation>Gosodwch GnuPG ar eich system.&lt;br&gt;Gosodwch &lt;strong&gt;gpg&lt;/strong&gt; gan ddefnyddio eich hoff rheolwr pecyn&lt;br&gt;neu &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lawrlwythwch&lt;/a&gt; hi o GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="981"/>

@@ -306,17 +306,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK perrašymas:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Pasirinktinis kelias SSH_AUTH_SOCK perrašymui. Palikite tuščią, kad būtų automatiškai aptikta per gpgconf (problema #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(automatinis aptikimas per gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -1657,12 +1657,12 @@ Raudonos eilutės netinkamos, jūs negalėsite jų užšifruoti.</translation>
     <message>
         <location filename="../src/usersdialog.cpp" line="307"/>
         <source>created</source>
-        <translation>atsimena</translation>
+        <translation>sukurta</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="311"/>
         <source>expires</source>
-        <translation>Ištrintas</translation>
+        <translation>baigiasi</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="334"/>
