@@ -294,22 +294,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Cesta neexistuje.</translation>
+        <translation>Cesta neexistuje.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Cesta není čitelná.</translation>
+        <translation>Cesta není čitelná.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Cesta není unixový doménový soket.</translation>
+        <translation>Cesta není unixový doménový soket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Potenciálně neplatné přepsání SSH_AUTH_SOCK</translation>
+        <translation>Potenciálně neplatné přepsání SSH_AUTH_SOCK</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -318,7 +318,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Hodnota přepsání SSH_AUTH_SOCK může být neplatná.
+        <translation>Hodnota přepsání SSH_AUTH_SOCK může být neplatná.
 
 %1
 
@@ -587,17 +587,17 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">Přepsání SSH_AUTH_SOCK:</translation>
+        <translation>Přepsání SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Volitelná cesta pro přepsání SSH_AUTH_SOCK. Nechte prázdné pro automatické zjištění přes gpgconf (issue #543).</translation>
+        <translation>Volitelná cesta pro přepsání SSH_AUTH_SOCK. Nechte prázdné pro automatické zjištění přes gpgconf (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(automatické zjištění přes gpgconf)</translation>
+        <translation>(automatické zjištění přes gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
