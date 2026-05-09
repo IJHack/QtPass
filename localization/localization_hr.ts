@@ -418,17 +418,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Putanja ne postoji.</translation>
+        <translation>Putanja ne postoji.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Putanja nije čitljiva.</translation>
+        <translation>Putanja nije čitljiva.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Putanja nije Unix domenski soket.</translation>
+        <translation>Putanja nije Unix domenski soket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
