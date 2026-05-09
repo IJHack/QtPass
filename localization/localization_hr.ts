@@ -1988,7 +1988,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="311"/>
         <source>expires</source>
-        <translation>isteći će</translation>
+        <translation>istječe</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="334"/>

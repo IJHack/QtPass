@@ -554,7 +554,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">přepsání SSH_AUTH_SOCK:</translation>
+        <translation type="unfinished">Přepsání SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
