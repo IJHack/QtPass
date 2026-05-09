@@ -156,27 +156,27 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK override:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(auto-probe via gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
         <source>Profile name, used to identify this configuration profile</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Profile name, used to identify this configuration profile</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
         <source>Path to the password store directory</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Path to the password store directory</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="986"/>
@@ -186,7 +186,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="989"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1029"/>

@@ -250,7 +250,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Zobrazit všechny řádky začínající slovem následovaným středníkem jako pole v polích hesla, nejen vypsaná</translation>
+        <translation>Zobrazit všechny řádky začínající slovem následovaným dvojtečkou jako pole v polích hesla, nejen vypsaná</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1089"/>
@@ -554,17 +554,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">přepsání SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Volitelná cesta pro přepsání SSH_AUTH_SOCK. Nechte prázdné pro automatické zjištění přes gpgconf (issue `#543`).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(automatické zjištění přes gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>

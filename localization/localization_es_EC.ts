@@ -365,17 +365,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Anulación de SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ruta opcional para anular SSH_AUTH_SOCK. Dejar en blanco para auto-detección vía gpgconf (issue `#543`).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(auto-detección vía gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -390,7 +390,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="986"/>
         <source>Signing Key</source>
-        <translation>Firma</translation>
+        <translation>Clave de firma</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="989"/>
@@ -1916,7 +1916,7 @@ Entradas rojas no son válidos, usted no será capaz de cifrar a estos.</transla
     <message>
         <location filename="../src/usersdialog.cpp" line="337"/>
         <source>[EXPIRED] </source>
-        <translation>[VENCIÓ] </translation>
+        <translation>[VENCIDA] </translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="341"/>

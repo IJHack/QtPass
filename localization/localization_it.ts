@@ -157,17 +157,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sovrascrittura SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Percorso opzionale per sovrascrivere SSH_AUTH_SOCK. Lasciare vuoto per rilevamento automatico tramite gpgconf (issue `#543`).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(rilevamento automatico tramite gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -1829,12 +1829,12 @@ Continuare?</translation>
     <message>
         <location filename="../src/qtpass.cpp" line="314"/>
         <source>GPG key pair generation failed</source>
-        <translation>GPG chiave coppia generazione fallito</translation>
+        <translation>Generazione della coppia di chiavi GPG non riuscita</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="388"/>
         <source>GPG key pair generated successfully</source>
-        <translation>Coppia chiave GPG generato con successo</translation>
+        <translation>Coppia di chiavi GPG generata con successo</translation>
     </message>
     <message>
         <location filename="../src/qtpass.cpp" line="473"/>

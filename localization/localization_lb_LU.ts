@@ -266,17 +266,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK iwwerschreiwen:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Optionale Pfad fir SSH_AUTH_SOCK ze iwwerschreiwen. Eidel loossen fir automatesch Detektioun via gpgconf (issue `#543`).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(automatesch Detektioun via gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -437,7 +437,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="927"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Installéiert GnuPG op Ärem System. &lt;br&gt; Installéiert &lt;strong&gt; gpg &lt;/strong&gt; mat Ärem Liiblingspakmanager &lt;br&gt; oder &lt;a href=&quot;https://www.gnupg.org/download/#sec-1- 2&quot;&gt; download &lt;/a&gt; et vu GnuPG.org</translation>
+        <translation>Installéiert GnuPG op Ärem System. &lt;br&gt; Installéiert &lt;strong&gt; gpg &lt;/strong&gt; mat Ärem Liiblingspakmanager &lt;br&gt; oder &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt; download &lt;/a&gt; et vu GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="981"/>

@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK-ohitus:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Valinnainen polku SSH_AUTH_SOCK-ohitukselle. Jätä tyhjäksi automaattista tunnistusta varten gpgconf-ohjelman kautta (issue `#543`).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(automaattinen tunnistus gpgconf-ohjelman kautta)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -458,7 +458,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="927"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Asenna GnuPG järjestelmääsi.&lt;br&gt;Asenna &lt;strong&gt;gpg&lt;/strong&gt; käyttäen suosimaasi paketinhallintatyökalua&lt;br&gt;tai&lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lataa&lt;/a&gt; se osoitteesta GnuPG.org</translation>
+        <translation>Asenna GnuPG järjestelmääsi.&lt;br&gt;Asenna &lt;strong&gt;gpg&lt;/strong&gt; käyttäen suosimaasi paketinhallintatyökalua&lt;br&gt;tai &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;lataa&lt;/a&gt; se osoitteesta GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="981"/>

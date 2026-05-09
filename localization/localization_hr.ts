@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK nadjačavanje:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Opcionalna putanja za nadjačavanje SSH_AUTH_SOCK. Ostavite prazno za automatsko otkrivanje putem gpgconf (issue `#543`).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">(automatsko otkrivanje putem gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -1777,7 +1777,7 @@ Nastaviti?</translation>
         <location filename="../src/qtpass.cpp" line="266"/>
         <source>fusedav exited unexpectedly
 </source>
-        <translation>fusedav neočekivano prekint
+        <translation>fusedav neočekivano prekinuo
 </translation>
     </message>
     <message>
@@ -1973,7 +1973,7 @@ Red entries are not valid, you will not be able to encrypt to these.</translatio
     <message>
         <location filename="../src/usersdialog.cpp" line="78"/>
         <source>Could not fetch list of available GPG keys</source>
-        <translation>Nije moguće dohvatiti popis dostupne GPG ključeve</translation>
+        <translation>Nije moguće dohvatiti popis dostupnih GPG ključeva</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.cpp" line="154"/>
