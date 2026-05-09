@@ -485,22 +485,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stien eksisterer ikke.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stien er ikke læsbar.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Stien er ikke en Unix-domænesocket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Potentielt ugyldig SSH_AUTH_SOCK-tilsidesættelse</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -509,7 +509,11 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK-tilsidesættelsesværdien er muligvis ugyldig.
+
+%1
+
+Værdien gemmes stadig som indtastet.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>

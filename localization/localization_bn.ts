@@ -530,22 +530,22 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পথটি বিদ্যমান নেই।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পথটি পাঠযোগ্য নয়।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">পথটি একটি Unix ডোমেইন সকেট নয়।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">সম্ভাব্য অবৈধ SSH_AUTH_SOCK ওভাররাইড</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -554,7 +554,11 @@ URL
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SSH_AUTH_SOCK ওভাররাইড মান অবৈধ হতে পারে।
+
+%1
+
+মানটি যেভাবে লেখা হয়েছে সেভাবেই সংরক্ষিত হবে।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>

@@ -535,22 +535,22 @@
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La ruta no existe.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La ruta no es legible.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La ruta no es un socket de dominio Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sustitución de SSH_AUTH_SOCK potencialmente inválida</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -559,7 +559,11 @@
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">El valor de sustitución de SSH_AUTH_SOCK puede ser inválido.
+
+%1
+
+El valor se guardará tal como fue ingresado.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>

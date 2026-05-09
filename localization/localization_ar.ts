@@ -452,22 +452,22 @@
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">المسار غير موجود.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">المسار غير قابل للقراءة.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">المسار ليس مقبس نطاق Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">تجاوز SSH_AUTH_SOCK قد يكون غير صالح</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -476,7 +476,11 @@
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">قيمة تجاوز SSH_AUTH_SOCK قد تكون غير صالحة.
+
+%1
+
+سيتم حفظ القيمة كما تم إدخالها.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>

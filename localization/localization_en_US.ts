@@ -485,22 +485,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The path does not exist.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The path is not readable.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The path is not a Unix domain socket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Potentially invalid SSH_AUTH_SOCK override</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -509,7 +509,11 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">The SSH_AUTH_SOCK override value may be invalid.
+
+%1
+
+The value will still be saved as entered.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>

@@ -530,22 +530,22 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nid yw&apos;r llwybr yn bodoli.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nid yw&apos;r llwybr yn ddarllenadwy.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nid yw&apos;r llwybr yn soced parth Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Goruchwylio SSH_AUTH_SOCK annilys o bosibl</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -554,7 +554,11 @@ e-mail</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Efallai bod gwerth goruchwylio SSH_AUTH_SOCK yn annilys.
+
+%1
+
+Bydd y gwerth yn dal i gael ei gadw fel y&apos;i nodwyd.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>
@@ -1904,7 +1908,7 @@ Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</
         <location filename="../src/usersdialog.ui" line="77"/>
         <location filename="../src/ui_usersdialog.h" line="118"/>
         <source>Show unusable keys</source>
-        <translation>Dangos bysellau na ellir eu</translation>
+        <translation type="unfinished">Dangos bysellau na ellir eu defnyddio</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>

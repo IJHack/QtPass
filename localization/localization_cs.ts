@@ -337,22 +337,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cesta neexistuje.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cesta není čitelná.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Cesta není unixový doménový soket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Potenciálně neplatné přepsání SSH_AUTH_SOCK</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -361,7 +361,11 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hodnota přepsání SSH_AUTH_SOCK může být neplatná.
+
+%1
+
+Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>
