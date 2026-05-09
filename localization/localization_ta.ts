@@ -428,7 +428,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">பாதை யூனிக்ஸ் டொமைன் சாக்கெட் அல்ல.</translation>
+        <translation type="unfinished">பாதை Unix domain socket அல்ல.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
