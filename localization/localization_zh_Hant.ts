@@ -433,7 +433,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">可能無效的 SSH_AUTH_SOCK 覆蓋</translation>
+        <translation type="unfinished">可能無效的 SSH_AUTH_SOCK 覆寫</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">SSH_AUTH_SOCK 覆蓋值可能無效。
+        <translation type="unfinished">SSH_AUTH_SOCK 覆寫值可能無效。
 
 %1
 
