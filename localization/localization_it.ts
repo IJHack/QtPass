@@ -187,7 +187,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="989"/>
         <source>Optional: GPG key to sign .gpg-id files for integrity verification. Leave empty unless you need to protect the user list from tampering.</source>
-        <translation>Opzionale: chiave GPG per firmare i file .gpg-id per la verifica dell&apos;integrità. Lasciare vuoto a meno che non è necessario proteggere l&apos;elenco degli utenti da manomissione.</translation>
+        <translation>Opzionale: chiave GPG per firmare i file .gpg-id per la verifica dell&apos;integrità. Lasciare vuoto a meno che non sia necessario proteggere l&apos;elenco degli utenti da manomissione.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1029"/>
@@ -375,7 +375,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="1086"/>
         <source>Show all lines beginning with a word followed by a colon as fields in password fields, not only the listed ones</source>
-        <translation>Mostra tutte le righe che iniziano con una parola seguita da due punti come campo nel campo password, non solo quelli elencati</translation>
+        <translation>Mostra tutte le righe che iniziano con una parola seguita da due punti come campi nei campi password, non solo quelli elencati</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="1089"/>
@@ -459,7 +459,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="813"/>
         <source>No profile selected to delete</source>
-        <translation>Nessun profilo selezionato per eliminare</translation>
+        <translation>Nessun profilo selezionato da eliminare</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="913"/>
