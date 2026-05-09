@@ -266,17 +266,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">Παράκαμψη SSH_AUTH_SOCK:</translation>
+        <translation>Παράκαμψη SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Προαιρετική διαδρομή για παράκαμψη του SSH_AUTH_SOCK. Αφήστε κενό για αυτόματο εντοπισμό μέσω gpgconf (ζήτημα #543).</translation>
+        <translation>Προαιρετική διαδρομή για παράκαμψη του SSH_AUTH_SOCK. Αφήστε κενό για αυτόματο εντοπισμό μέσω gpgconf (ζήτημα #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(αυτόματος εντοπισμός μέσω gpgconf)</translation>
+        <translation>(αυτόματος εντοπισμός μέσω gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -387,22 +387,22 @@
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Η διαδρομή δεν υπάρχει.</translation>
+        <translation>Η διαδρομή δεν υπάρχει.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Η διαδρομή δεν είναι αναγνώσιμη.</translation>
+        <translation>Η διαδρομή δεν είναι αναγνώσιμη.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Η διαδρομή δεν είναι Unix domain socket.</translation>
+        <translation>Η διαδρομή δεν είναι Unix domain socket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Πιθανώς μη έγκυρη παράκαμψη SSH_AUTH_SOCK</translation>
+        <translation>Πιθανώς μη έγκυρη παράκαμψη SSH_AUTH_SOCK</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -411,7 +411,7 @@
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Η τιμή παράκαμψης SSH_AUTH_SOCK μπορεί να μην είναι έγκυρη.
+        <translation>Η τιμή παράκαμψης SSH_AUTH_SOCK μπορεί να μην είναι έγκυρη.
 
 %1
 

@@ -411,22 +411,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Der Pfad existiert nicht.</translation>
+        <translation>Der Pfad existiert nicht.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Der Pfad ist nicht lesbar.</translation>
+        <translation>Der Pfad ist nicht lesbar.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Der Pfad ist kein Unix-Domain-Socket.</translation>
+        <translation>Der Pfad ist kein Unix-Domain-Socket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Möglicherweise ungültige SSH_AUTH_SOCK-Überschreibung</translation>
+        <translation>Möglicherweise ungültige SSH_AUTH_SOCK-Überschreibung</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -435,7 +435,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Der Überschreibungswert für SSH_AUTH_SOCK ist möglicherweise ungültig.
+        <translation>Der Überschreibungswert für SSH_AUTH_SOCK ist möglicherweise ungültig.
 
 %1
 
@@ -591,17 +591,17 @@ Der Wert wird dennoch wie eingegeben gespeichert.</translation>
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK überschreiben:</translation>
+        <translation>SSH_AUTH_SOCK überschreiben:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Optionaler Pfad zum Überschreiben von SSH_AUTH_SOCK. Leer lassen, um per gpgconf automatisch zu ermitteln (issue #543).</translation>
+        <translation>Optionaler Pfad zum Überschreiben von SSH_AUTH_SOCK. Leer lassen, um per gpgconf automatisch zu ermitteln (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(automatisch per gpgconf ermitteln)</translation>
+        <translation>(automatisch per gpgconf ermitteln)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
