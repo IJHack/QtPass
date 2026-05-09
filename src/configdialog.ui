@@ -881,6 +881,27 @@
         </layout>
        </item>
        <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_sshAuthSock">
+         <item>
+          <widget class="QLabel" name="labelSshAuthSock">
+           <property name="text">
+            <string>SSH_AUTH_SOCK override:</string>
+           </property>
+           <property name="toolTip">
+            <string>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="sshAuthSockOverride">
+           <property name="placeholderText">
+            <string>(auto-probe via gpgconf)</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>

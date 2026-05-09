@@ -511,6 +511,16 @@ void QtPassSettings::setPassExecutable(const QString &passExecutable) {
   getInstance()->setValue(SettingsConstants::passExecutable, passExecutable);
 }
 
+auto QtPassSettings::getSshAuthSockOverride(const QString &defaultValue)
+    -> QString {
+  return getInstance()
+      ->value(SettingsConstants::sshAuthSockOverride, defaultValue)
+      .toString();
+}
+void QtPassSettings::setSshAuthSockOverride(const QString &value) {
+  getInstance()->setValue(SettingsConstants::sshAuthSockOverride, value);
+}
+
 auto QtPassSettings::getGitExecutable(const QString &defaultValue) -> QString {
   return getInstance()
       ->value(SettingsConstants::gitExecutable, defaultValue)

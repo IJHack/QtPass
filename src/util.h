@@ -116,6 +116,30 @@ public:
   static auto getFolderTemplate(const QString &folderPath,
                                 const QString &storePath) -> QString;
 
+  /**
+   * @brief Ensure SSH_AUTH_SOCK is set for child processes.
+   *
+   * GUI-launched applications don't inherit shell-set environment variables
+   * (`.bashrc`/`.zshrc`/etc.), so users with gpg-agent's SSH support or other
+   * external SSH agents see `git push`/`git pull` fail when QtPass launches
+   * from a desktop launcher rather than a terminal. Issue #543.
+   *
+   * Resolution order:
+   * 1. If `SSH_AUTH_SOCK` is already set (terminal launch, .desktop override,
+   *    parent process), do nothing.
+   * 2. If a `sshAuthSockOverride` setting is configured in QtPass, use it
+   *    verbatim — the override is an explicit user choice, no validation.
+   * 3. Probe `gpgconf --list-dirs agent-ssh-socket` (canonical for gpg-agent),
+   *    then validate the candidate with `ssh-add -l` (must exit 0 or 1) before
+   *    adopting. Validation prevents silently switching users from a working
+   *    external SSH agent to an empty gpg-agent SSH socket.
+   * 4. On macOS, fall back to `launchctl getenv SSH_AUTH_SOCK`, with the same
+   *    `ssh-add -l` validation.
+   *
+   * Sets the variable via qputenv so child processes inherit it.
+   */
+  static void initialiseSshAuthSock();
+
 private:
   static void initialiseEnvironment();
   static QProcessEnvironment _env;

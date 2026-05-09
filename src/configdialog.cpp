@@ -49,6 +49,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   setGitPath(QtPassSettings::getGitExecutable());
   ui->gpgPath->setText(QtPassSettings::getGpgExecutable());
   ui->storePath->setText(QtPassSettings::getPassStore());
+  ui->sshAuthSockOverride->setText(QtPassSettings::getSshAuthSockOverride());
 
   ui->spinBoxAutoclearSeconds->setValue(QtPassSettings::getAutoclearSeconds());
   ui->spinBoxAutoclearPanelSeconds->setValue(
@@ -249,6 +250,7 @@ void ConfigDialog::on_accepted() {
   QtPassSettings::setPassExecutable(ui->passPath->text());
   QtPassSettings::setGitExecutable(ui->gitPath->text());
   QtPassSettings::setGpgExecutable(ui->gpgPath->text());
+  QtPassSettings::setSshAuthSockOverride(ui->sshAuthSockOverride->text());
   QtPassSettings::setPassStore(
       Util::normalizeFolderPath(ui->storePath->text()));
   QtPassSettings::setUsePass(ui->radioButtonPass->isChecked());
