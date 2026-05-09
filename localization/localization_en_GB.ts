@@ -156,17 +156,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK override:</translation>
+        <translation>SSH_AUTH_SOCK override:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</translation>
+        <translation>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(auto-probe via gpgconf)</translation>
+        <translation>(auto-probe via gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="973"/>
@@ -418,22 +418,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">The path does not exist.</translation>
+        <translation>The path does not exist.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">The path is not readable.</translation>
+        <translation>The path is not readable.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">The path is not a Unix domain socket.</translation>
+        <translation>The path is not a Unix domain socket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Potentially invalid SSH_AUTH_SOCK override</translation>
+        <translation>Potentially invalid SSH_AUTH_SOCK override</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">The SSH_AUTH_SOCK override value may be invalid.
+        <translation>The SSH_AUTH_SOCK override value may be invalid.
 
 %1
 
