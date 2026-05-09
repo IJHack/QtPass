@@ -306,17 +306,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">Timpa SSH_AUTH_SOCK:</translation>
+        <translation>Timpa SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Jalur opsional untuk menimpa SSH_AUTH_SOCK. Kosongkan untuk deteksi otomatis melalui gpgconf (issue #543).</translation>
+        <translation>Jalur opsional untuk menimpa SSH_AUTH_SOCK. Kosongkan untuk deteksi otomatis melalui gpgconf (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(deteksi otomatis melalui gpgconf)</translation>
+        <translation>(deteksi otomatis melalui gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -446,22 +446,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jalur tidak ada.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jalur tidak dapat dibaca.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Jalur bukan soket domain Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Timpa SSH_AUTH_SOCK yang berpotensi tidak valid</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,11 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Nilai timpa SSH_AUTH_SOCK mungkin tidak valid.
+
+%1
+
+Nilai akan tetap disimpan seperti yang dimasukkan.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="753"/>
