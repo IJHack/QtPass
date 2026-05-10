@@ -306,17 +306,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">Ubadilishaji wa SSH_AUTH_SOCK:</translation>
+        <translation>Ubadilishaji wa SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Njia ya hiari ya kubadilisha SSH_AUTH_SOCK. Acha tupu kwa utafutaji otomatiki kupitia gpgconf (issue #543).</translation>
+        <translation>Njia ya hiari ya kubadilisha SSH_AUTH_SOCK. Acha tupu kwa utafutaji otomatiki kupitia gpgconf (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(utafutaji otomatiki kupitia gpgconf)</translation>
+        <translation>(utafutaji otomatiki kupitia gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -446,22 +446,22 @@ barua pepe</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Njia haipo.</translation>
+        <translation>Njia haipo.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Njia haisomiki.</translation>
+        <translation>Njia haisomiki.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Njia si tundiko la kikoa cha Unix.</translation>
+        <translation>Njia si tundiko la kikoa cha Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Ubadilishaji wa SSH_AUTH_SOCK unaowezekana kuwa batili</translation>
+        <translation>Ubadilishaji wa SSH_AUTH_SOCK unaowezekana kuwa batili</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,7 @@ barua pepe</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Thamani ya ubadilishaji wa SSH_AUTH_SOCK inaweza kuwa batili.
+        <translation>Thamani ya ubadilishaji wa SSH_AUTH_SOCK inaweza kuwa batili.
 
 %1
 

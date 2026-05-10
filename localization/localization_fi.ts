@@ -418,22 +418,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Polku ei ole olemassa.</translation>
+        <translation>Polku ei ole olemassa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Polku ei ole luettavissa.</translation>
+        <translation>Polku ei ole luettavissa.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Polku ei ole Unix-domeenisoketti.</translation>
+        <translation>Polku ei ole Unix-domeenisoketti.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Mahdollisesti virheellinen SSH_AUTH_SOCK-ohitus</translation>
+        <translation>Mahdollisesti virheellinen SSH_AUTH_SOCK-ohitus</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">SSH_AUTH_SOCK-ohitusarvo voi olla virheellinen.
+        <translation>SSH_AUTH_SOCK-ohitusarvo voi olla virheellinen.
 
 %1
 

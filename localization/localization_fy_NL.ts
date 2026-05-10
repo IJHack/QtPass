@@ -418,22 +418,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">It paad bestiet net.</translation>
+        <translation>It paad bestiet net.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">It paad is net te lêzen.</translation>
+        <translation>It paad is net te lêzen.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">It paad is gjin Unix-domeinsocket.</translation>
+        <translation>It paad is gjin Unix-domeinsocket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Miskien ûnjildich SSH_AUTH_SOCK-oerskriuwing</translation>
+        <translation>Miskien ûnjildich SSH_AUTH_SOCK-oerskriuwing</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">De SSH_AUTH_SOCK-oerskriuwing-wearde kin ûnjildich wêze.
+        <translation>De SSH_AUTH_SOCK-oerskriuwing-wearde kin ûnjildich wêze.
 
 %1
 

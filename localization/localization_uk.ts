@@ -418,22 +418,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Шлях не існує.</translation>
+        <translation>Шлях не існує.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Шлях не читається.</translation>
+        <translation>Шлях не читається.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Шлях не є доменним сокетом Unix.</translation>
+        <translation>Шлях не є доменним сокетом Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Можливо недійсне перевизначення SSH_AUTH_SOCK</translation>
+        <translation>Можливо недійсне перевизначення SSH_AUTH_SOCK</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Значення перевизначення SSH_AUTH_SOCK може бути недійсним.
+        <translation>Значення перевизначення SSH_AUTH_SOCK може бути недійсним.
 
 %1
 
