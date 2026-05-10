@@ -449,12 +449,12 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation>Az elérési út nem Unix-domainsocket.</translation>
+        <translation>Az elérési út nem Unix domain socket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation>Lehet, hogy érvénytelen SSH_AUTH_SOCK felülírás</translation>
+        <translation>Az SSH_AUTH_SOCK felülírás esetleg érvénytelen</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>

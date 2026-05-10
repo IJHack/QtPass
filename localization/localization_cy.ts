@@ -410,7 +410,7 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="74"/>
         <source>System tray is not available</source>
-        <translation>Dydy cafn cysawd ddim ar gael</translation>
+        <translation>Dydy hambwrdd system ddim ar gael</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="101"/>
