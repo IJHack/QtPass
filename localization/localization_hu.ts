@@ -439,22 +439,22 @@ e-mail</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Az elérési út nem létezik.</translation>
+        <translation>Az elérési út nem létezik.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Az elérési út nem olvasható.</translation>
+        <translation>Az elérési út nem olvasható.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Az elérési út nem Unix-domainsocket.</translation>
+        <translation>Az elérési út nem Unix-domainsocket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Lehet, hogy érvénytelen SSH_AUTH_SOCK felülírás</translation>
+        <translation>Lehet, hogy érvénytelen SSH_AUTH_SOCK felülírás</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -463,7 +463,7 @@ e-mail</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Az SSH_AUTH_SOCK felülírási értéke érvénytelen lehet.
+        <translation>Az SSH_AUTH_SOCK felülírási értéke érvénytelen lehet.
 
 %1
 

@@ -418,12 +418,12 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Tee ei eksisteeri.</translation>
+        <translation>Tee ei eksisteeri.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Tee ei ole loetav.</translation>
+        <translation>Tee ei ole loetav.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
@@ -433,7 +433,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Võibolla kehtetu SSH_AUTH_SOCK alistamine</translation>
+        <translation>Võibolla kehtetu SSH_AUTH_SOCK alistamine</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">SSH_AUTH_SOCK alistamise väärtus võib olla kehtetu.
+        <translation>SSH_AUTH_SOCK alistamise väärtus võib olla kehtetu.
 
 %1
 

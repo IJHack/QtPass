@@ -306,17 +306,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">SSH_AUTH_SOCK ఓవర్రైడ్:</translation>
+        <translation>SSH_AUTH_SOCK ఓవర్రైడ్:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">SSH_AUTH_SOCK ను ఓవర్రైడ్ చేయడానికి ఐచ్ఛిక మార్గం. gpgconf ద్వారా స్వయంచాలక పరిశోధన కోసం ఖాళీగా వదలండి (issue #543).</translation>
+        <translation>SSH_AUTH_SOCK ను ఓవర్రైడ్ చేయడానికి ఐచ్ఛిక మార్గం. gpgconf ద్వారా స్వయంచాలక పరిశోధన కోసం ఖాళీగా వదలండి (issue #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(gpgconf ద్వారా స్వయంచాలక పరిశోధన)</translation>
+        <translation>(gpgconf ద్వారా స్వయంచాలక పరిశోధన)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -446,22 +446,22 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">మార్గం లేదు.</translation>
+        <translation>మార్గం లేదు.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">మార్గం చదవడం సాధ్యం కాదు.</translation>
+        <translation>మార్గం చదవడం సాధ్యం కాదు.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">మార్గం యూనిక్స్ డొమైన్ సాకెట్ కాదు.</translation>
+        <translation>మార్గం యూనిక్స్ డొమైన్ సాకెట్ కాదు.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">సంభావ్యంగా చెల్లని SSH_AUTH_SOCK ఓవర్రైడ్</translation>
+        <translation>సంభావ్యంగా చెల్లని SSH_AUTH_SOCK ఓవర్రైడ్</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,7 @@ URL
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">SSH_AUTH_SOCK ఓవర్రైడ్ విలువ చెల్లనిది కావచ్చు.
+        <translation>SSH_AUTH_SOCK ఓవర్రైడ్ విలువ చెల్లనిది కావచ్చు.
 
 %1
 

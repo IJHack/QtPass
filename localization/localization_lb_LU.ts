@@ -387,22 +387,22 @@
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">De Pfad existéiert net.</translation>
+        <translation>De Pfad existéiert net.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">De Pfad ass net liessbar.</translation>
+        <translation>De Pfad ass net liessbar.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">De Pfad ass kee Unix-Domänensocket.</translation>
+        <translation>De Pfad ass kee Unix-Domänensocket.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Méiglicherweis onëllegeg SSH_AUTH_SOCK-Iwwerschreiwung</translation>
+        <translation>Méiglicherweis onëllegeg SSH_AUTH_SOCK-Iwwerschreiwung</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -411,7 +411,7 @@
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">D'SSH_AUTH_SOCK-Iwwerschreiwung ka onëllegeg sinn.
+        <translation>D'SSH_AUTH_SOCK-Iwwerschreiwung ka onëllegeg sinn.
 
 %1
 

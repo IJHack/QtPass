@@ -418,22 +418,22 @@ url
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">パスが存在しません。</translation>
+        <translation>パスが存在しません。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">パスが読み取れません。</translation>
+        <translation>パスが読み取れません。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">パスが Unix ドメインソケットではありません。</translation>
+        <translation>パスが Unix ドメインソケットではありません。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">無効な可能性のある SSH_AUTH_SOCK の上書き</translation>
+        <translation>無効な可能性のある SSH_AUTH_SOCK の上書き</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ url
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">SSH_AUTH_SOCK の上書き値が無効な可能性があります。
+        <translation>SSH_AUTH_SOCK の上書き値が無効な可能性があります。
 
 %1
 

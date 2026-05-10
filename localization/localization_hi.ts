@@ -446,22 +446,22 @@ URL
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">पथ मौजूद नहीं है।</translation>
+        <translation>पथ मौजूद नहीं है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">पथ पठनीय नहीं है।</translation>
+        <translation>पथ पठनीय नहीं है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">पथ एक Unix डोमेन सॉकेट नहीं है।</translation>
+        <translation>पथ एक Unix डोमेन सॉकेट नहीं है।</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">संभावित रूप से अमान्य SSH_AUTH_SOCK ओवरराइड</translation>
+        <translation>संभावित रूप से अमान्य SSH_AUTH_SOCK ओवरराइड</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,7 @@ URL
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">SSH_AUTH_SOCK ओवरराइड मान अमान्य हो सकता है।
+        <translation>SSH_AUTH_SOCK ओवरराइड मान अमान्य हो सकता है।
 
 %1
 

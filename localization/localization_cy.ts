@@ -1715,7 +1715,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/trayicon.cpp" line="66"/>
         <source>&amp;Quit</source>
-        <translation type="unfinished">&amp;Gadael</translation>
+        <translation>&amp;Gadael</translation>
     </message>
 </context>
 <context>
@@ -1756,7 +1756,7 @@ Nid yw cofnodion coch yn ddilys, ni fyddwch yn gallu amgryptio i&apos;r rhain.</
     <message>
         <location filename="../src/usersdialog.ui" line="77"/>
         <source>Show unusable keys</source>
-        <translation type="unfinished">Dangos bysellau na ellir eu defnyddio</translation>
+        <translation>Dangos bysellau na ellir eu defnyddio</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>

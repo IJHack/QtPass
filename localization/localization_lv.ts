@@ -446,22 +446,22 @@ e-pasts</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Ceļš neeksistē.</translation>
+        <translation>Ceļš neeksistē.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Ceļš nav nolasāms.</translation>
+        <translation>Ceļš nav nolasāms.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Ceļš nav Unix domēna ligzda.</translation>
+        <translation>Ceļš nav Unix domēna ligzda.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Iespējams nederīga SSH_AUTH_SOCK pārrakstīšana</translation>
+        <translation>Iespējams nederīga SSH_AUTH_SOCK pārrakstīšana</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -470,7 +470,7 @@ e-pasts</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">SSH_AUTH_SOCK pārrakstīšanas vērtība var būt nederīga.
+        <translation>SSH_AUTH_SOCK pārrakstīšanas vērtība var būt nederīga.
 
 %1
 

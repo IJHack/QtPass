@@ -399,22 +399,22 @@ email</source>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">路径不存在。</translation>
+        <translation>路径不存在。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">路径不可读。</translation>
+        <translation>路径不可读。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">路径不是 Unix 域套接字。</translation>
+        <translation>路径不是 Unix 域套接字。</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">SSH_AUTH_SOCK 覆盖值可能无效</translation>
+        <translation>可能无效的 SSH_AUTH_SOCK 覆盖</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -423,7 +423,7 @@ email</source>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">SSH_AUTH_SOCK 覆盖值可能无效。
+        <translation>SSH_AUTH_SOCK 覆盖值可能无效。
 
 %1
 

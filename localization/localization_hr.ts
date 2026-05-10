@@ -433,7 +433,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Potencijalno neispravno nadjačavanje SSH_AUTH_SOCK</translation>
+        <translation>Potencijalno neispravno nadjačavanje SSH_AUTH_SOCK</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Vrijednost nadjačavanja SSH_AUTH_SOCK može biti neispravna.
+        <translation>Vrijednost nadjačavanja SSH_AUTH_SOCK može biti neispravna.
 
 %1
 

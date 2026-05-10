@@ -266,17 +266,17 @@
     <message>
         <location filename="../src/configdialog.ui" line="888"/>
         <source>SSH_AUTH_SOCK override:</source>
-        <translation type="unfinished">Mbivendosje SSH_AUTH_SOCK:</translation>
+        <translation>Mbivendosje SSH_AUTH_SOCK:</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation type="unfinished">Shteg opsional për të mbivendosur SSH_AUTH_SOCK. Lëreni bosh për detektim automatik përmes gpgconf (problemi #543).</translation>
+        <translation>Shteg opsional për të mbivendosur SSH_AUTH_SOCK. Lëreni bosh për detektim automatik përmes gpgconf (problemi #543).</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
         <source>(auto-probe via gpgconf)</source>
-        <translation type="unfinished">(detektim automatik përmes gpgconf)</translation>
+        <translation>(detektim automatik përmes gpgconf)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="921"/>
@@ -387,22 +387,22 @@
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">Shtegu nuk ekziston.</translation>
+        <translation>Shtegu nuk ekziston.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">Shtegu nuk është i lexueshëm.</translation>
+        <translation>Shtegu nuk është i lexueshëm.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">Shtegu nuk është një socket i domenit të Unix.</translation>
+        <translation>Shtegu nuk është një socket i domenit të Unix.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">Mbivendosje e mundshme e pavlefshme e SSH_AUTH_SOCK</translation>
+        <translation>Mbivendosje e mundshme e pavlefshme e SSH_AUTH_SOCK</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -411,7 +411,7 @@
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">Vlera e mbivendosjes së SSH_AUTH_SOCK mund të jetë e pavlefshme.
+        <translation>Vlera e mbivendosjes së SSH_AUTH_SOCK mund të jetë e pavlefshme.
 
 %1
 

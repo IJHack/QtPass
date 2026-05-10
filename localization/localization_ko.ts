@@ -418,22 +418,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished">경로가 존재하지 않습니다.</translation>
+        <translation>경로가 존재하지 않습니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished">경로를 읽을 수 없습니다.</translation>
+        <translation>경로를 읽을 수 없습니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished">경로가 Unix 도메인 소켓이 아닙니다.</translation>
+        <translation>경로가 Unix 도메인 소켓이 아닙니다.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished">잠재적으로 잘못된 SSH_AUTH_SOCK 재정의</translation>
+        <translation>잠재적으로 잘못된 SSH_AUTH_SOCK 재정의</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="279"/>
@@ -442,7 +442,7 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished">SSH_AUTH_SOCK 재정의 값이 잘못되었을 수 있습니다.
+        <translation>SSH_AUTH_SOCK 재정의 값이 잘못되었을 수 있습니다.
 
 %1
 
