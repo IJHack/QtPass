@@ -390,7 +390,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="986"/>
         <source>Signing Key</source>
-        <translation>Firma</translation>
+        <translation>Clave de firma</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="989"/>
