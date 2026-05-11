@@ -26,7 +26,7 @@
         <location filename="../src/configdialog.ui" line="115"/>
         <location filename="../src/configdialog.ui" line="198"/>
         <source>Seconds</source>
-        <translation>Perc</translation>
+        <translation>Másodperc</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="166"/>
@@ -342,7 +342,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="970"/>
         <source>Name</source>
-        <translation>név</translation>
+        <translation>Név</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="978"/>
