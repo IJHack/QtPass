@@ -141,7 +141,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation>Lubab otsida paroolifailide sisust. Nõuab iga faili dekrüpteerimist ja võib suurte hoidlate puhul olla aeglane.</translation>
+        <translation>Lubab otsida salasõnafailide sisust. Nõuab iga faili dekrüptimist ja võib suurte hoidlate puhul olla aeglane.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="776"/>
@@ -161,7 +161,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation>Valikuline tee SSH_AUTH_SOCK alistamiseks. Jätke tühjaks automaatseks tuvastamiseks gpgconf kaudu (issue #543).</translation>
+        <translation>Valikuline asukoht SSH_AUTH_SOCK sürjutamiseks. Automaatseks tuvastamiseks gpgconf kaudu (veateade #543) jäta tühjaks.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
@@ -176,7 +176,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="981"/>
         <source>Path to the password store directory</source>
-        <translation>Tee paroolihoidla kataloogi</translation>
+        <translation>Salasõnahoidla kausta asukoht</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="986"/>
@@ -418,17 +418,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation>Tee ei eksisteeri.</translation>
+        <translation>Aaukohta pole olemas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
         <source>The path is not readable.</source>
-        <translation>Tee ei ole loetav.</translation>
+        <translation>Asukoht ei ole loetav.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation>Tee ei ole Unixi domeenipesa.</translation>
+        <translation>Asukoht ei ole Unixi domeenisokkel.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="278"/>
@@ -456,7 +456,7 @@ Väärtus salvestatakse ikkagi sisestatud kujul.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="754"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation>Kas soovite luua paroolihoidla asukohta %1?</translation>
+        <translation>Kas soovid luua salasõnahoidla asukohta %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="762"/>
@@ -512,7 +512,7 @@ Väärtus salvestatakse ikkagi sisestatud kujul.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1019"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>Paroolisalvestuse loomine ebaõnnestus aadressil %1</translation>
+        <translation>salasõnahoidla loomine ei õnnestunus asukohas: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1050"/>
@@ -1197,7 +1197,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="127"/>
         <source>Search inside password content (pass grep)</source>
-        <translation>Otsi paroolide sisust (pass grep)</translation>
+        <translation>Otsi salasõnade sisust (pass grep)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
@@ -1212,7 +1212,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.ui" line="136"/>
         <source>Toggle content search mode to search inside password files</source>
-        <translation>Lülita sisuotsingu režiim, et otsida paroolifailide sisust</translation>
+        <translation>Lülita sisuotsingu režiim, et otsida salasõnafailide sisust</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="146"/>
@@ -1527,12 +1527,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1014"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Vigane nimi</translation>
+        <translation>Vigane nimi</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1015"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>See nimi lahenduks väljaspool salasõnahoidlat. Palun vali mõni muu nimi.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1139"/>
@@ -1557,7 +1557,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1437"/>
         <source>Re-encrypt all passwords</source>
-        <translation>Krüpteeri kõik paroolid uuesti</translation>
+        <translation>Krüpti kõik salasõnad uuesti</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1442"/>
@@ -1602,12 +1602,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1831"/>
         <source>Sharing Passwords with GPG</source>
-        <translation>Paroolide jagamine GPG-ga</translation>
+        <translation>Salasõnade jagamine GPG-ga</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1832"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
-        <translation>&lt;h3&gt;Paroolide jagamine GPG-ga&lt;/h3&gt;&lt;p&gt;Paroolide jagamiseks teiste kasutajatega:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Ekspordi oma avalik võti&lt;/b&gt; ja saada see meeskonnakaaslastele&lt;/li&gt;&lt;li&gt;&lt;b&gt;Impordi meeskonnakaaslaste avalikud võtmed&lt;/b&gt; oma GPG võtmehoidlasse&lt;/li&gt;&lt;li&gt;&lt;b&gt;Krüpteeri paroolid uuesti&lt;/b&gt;, et kõik saajad saaksid neid dekrüpteerida&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Paroole saavad dekrüpteerida ainult inimesed, kellel on vastav salajane võti.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vihje:&lt;/b&gt; Kasuta kõikide jagatud kaustade jaoks sama GPG võtit.&lt;/p&gt;&lt;p&gt;Lisateavet leiad KKK-st.&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;Salasõnade jagamine GPG-ga&lt;/h3&gt;&lt;p&gt;Salasõnade jagamiseks teiste kasutajatega:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Ekspordi oma avalik võti&lt;/b&gt; ja saada see meeskonnakaaslastele&lt;/li&gt;&lt;li&gt;&lt;b&gt;Impordi meeskonnakaaslaste avalikud võtmed&lt;/b&gt; oma GPG võtmehoidlasse&lt;/li&gt;&lt;li&gt;&lt;b&gt;Krüpti salasõnad uuesti&lt;/b&gt;, et kõik saajad saaksid neid dekrüptida&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Salasõnu saavad dekrüptida ainult need, kellel on vastav salajane võti.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Vihje:&lt;/b&gt; Kasuta kõikide jagatud kaustade jaoks sama GPG võtit.&lt;/p&gt;&lt;p&gt;Lisateavet leiad KKK-st.&lt;/p&gt;</translation>
     </message>
     <message>
         <source>Re-encrypt</source>
@@ -1665,13 +1665,13 @@ This will re-encrypt ALL password files in this folder using the current recipie
 This may rewrite many files and cannot be undone easily.
 
 Continue?</source>
-        <translation>Kas krüpteerida kõik paroolid kaustas %1 uuesti?
+        <translation>Kas krüpteerid kõik salasõnad %1 kaustas uuesti?
 
-See krüpteerib KÕIK selles kaustas olevad paroolifailid uuesti, kasutades .gpg-id-s määratletud praeguseid adressaate.
+See krüptib KÕIK selles kaustas olevad salasõnafailid uuesti, kasutades .gpg-id-s määratletud praeguseid adressaate.
 
 See võib palju faile ümber kirjutada ja seda ei saa kergesti tagasi võtta.
 
-Jätkata?</translation>
+Kas jätkame?</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="322"/>
@@ -1690,12 +1690,12 @@ Jätkata?</translation>
     <message>
         <location filename="../src/pass.cpp" line="158"/>
         <source>Invalid password length</source>
-        <translation>Kehtetu parooli pikkus</translation>
+        <translation>Salasõna vale pikkus</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="159"/>
         <source>Can&apos;t generate password with zero length.</source>
-        <translation>Nullpikkusega parooli ei saa genereerida.</translation>
+        <translation>Nullpikkusega salasõnu ei saa genereerida.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="202"/>
@@ -1893,7 +1893,7 @@ Jätkata?</translation>
     <message>
         <location filename="../src/storemodel.cpp" line="424"/>
         <source>Force overwrite?</source>
-        <translation>Kas sundida ülekirjutamist?</translation>
+        <translation>Kas kirjutame sundkorras üle?</translation>
     </message>
     <message>
         <location filename="../src/storemodel.cpp" line="425"/>
