@@ -2318,6 +2318,9 @@ void tst_util::writeGpgIdFileSetsOwnerOnlyPerms() {
   QVERIFY2(!perms.testFlag(QFile::WriteGroup), "expected WriteGroup to be unset");
   QVERIFY2(!perms.testFlag(QFile::ReadOther), "expected ReadOther to be unset");
   QVERIFY2(!perms.testFlag(QFile::WriteOther), "expected WriteOther to be unset");
+  QVERIFY2(!perms.testFlag(QFile::ExeOwner), "expected ExeOwner to be unset");
+  QVERIFY2(!perms.testFlag(QFile::ExeGroup), "expected ExeGroup to be unset");
+  QVERIFY2(!perms.testFlag(QFile::ExeOther), "expected ExeOther to be unset");
 #endif
 }
 
