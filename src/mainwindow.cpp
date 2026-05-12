@@ -1523,6 +1523,10 @@ void MainWindow::addFolder() {
       }
     }
     gpgId.close();
+    // Lock to owner-only access; see ImitatePass::writeGpgIdFile for
+    // rationale (NFS / USB / unusual umask scenarios). Best-effort on
+    // platforms where setPermissions is a no-op.
+    QFile::setPermissions(gpgIdFile, QFile::ReadOwner | QFile::WriteOwner);
   }
 }
 

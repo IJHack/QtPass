@@ -10,6 +10,9 @@
 #include <QTemporaryDir>
 #include <QUuid>
 #include <QtTest>
+#ifndef Q_OS_WIN
+#include <sys/stat.h>
+#endif
 
 #include "../../../src/enums.h"
 #include "../../../src/filecontent.h"
@@ -221,6 +224,8 @@ private Q_SLOTS:
   void isPathInStoreRejectsSymlinkEscape();
   void isPathInStoreAllowsNewChild();
   void isPathInStoreRejectsEmptyArgs();
+  // .gpg-id permission hardening (security)
+  void writeGpgIdFileSetsOwnerOnlyPerms();
 };
 
 /**
@@ -2274,6 +2279,46 @@ void tst_util::isPathInStoreRejectsEmptyArgs() {
   // Non-existent root.
   QVERIFY(!Util::isPathInStore(QStringLiteral("/no/such/dir"),
                                QStringLiteral("/no/such/dir/foo")));
+}
+
+/**
+ * @brief writeGpgIdFile should lock the produced .gpg-id to owner-only
+ *        permissions, regardless of the process umask. On Windows
+ *        setPermissions is best-effort and Qt's Unix-permission bits don't
+ *        round-trip, so the assertion is Unix-only.
+ */
+void tst_util::writeGpgIdFileSetsOwnerOnlyPerms() {
+#ifdef Q_OS_WIN
+  QSKIP("Unix permission bits don't round-trip through Qt on Windows");
+#else
+  QTemporaryDir tempDir;
+  QVERIFY(tempDir.isValid());
+  const QString gpgIdFile = tempDir.path() + "/.gpg-id";
+
+  // Force a permissive umask so we know the close() would have produced
+  // 0644 in the absence of our setPermissions call.
+  const mode_t oldUmask = ::umask(0022);
+
+  UserInfo user;
+  user.key_id = QStringLiteral("ABCDEF1234567890");
+  user.enabled = true;
+  user.have_secret = true;
+  QList<UserInfo> users{user};
+
+  ImitatePass pass;
+  pass.writeGpgIdFile(gpgIdFile, users);
+
+  ::umask(oldUmask);
+
+  QVERIFY(QFile::exists(gpgIdFile));
+  const QFile::Permissions perms = QFile(gpgIdFile).permissions();
+  QVERIFY(perms.testFlag(QFile::ReadOwner));
+  QVERIFY(perms.testFlag(QFile::WriteOwner));
+  QVERIFY(!perms.testFlag(QFile::ReadGroup));
+  QVERIFY(!perms.testFlag(QFile::WriteGroup));
+  QVERIFY(!perms.testFlag(QFile::ReadOther));
+  QVERIFY(!perms.testFlag(QFile::WriteOther));
+#endif
 }
 
 QTEST_MAIN(tst_util)
