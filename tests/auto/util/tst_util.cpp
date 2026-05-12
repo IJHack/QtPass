@@ -2312,12 +2312,12 @@ void tst_util::writeGpgIdFileSetsOwnerOnlyPerms() {
 
   QVERIFY(QFile::exists(gpgIdFile));
   const QFile::Permissions perms = QFile(gpgIdFile).permissions();
-  QVERIFY(perms.testFlag(QFile::ReadOwner));
-  QVERIFY(perms.testFlag(QFile::WriteOwner));
-  QVERIFY(!perms.testFlag(QFile::ReadGroup));
-  QVERIFY(!perms.testFlag(QFile::WriteGroup));
-  QVERIFY(!perms.testFlag(QFile::ReadOther));
-  QVERIFY(!perms.testFlag(QFile::WriteOther));
+  QVERIFY2(perms.testFlag(QFile::ReadOwner), "expected ReadOwner to be set");
+  QVERIFY2(perms.testFlag(QFile::WriteOwner), "expected WriteOwner to be set");
+  QVERIFY2(!perms.testFlag(QFile::ReadGroup), "expected ReadGroup to be unset");
+  QVERIFY2(!perms.testFlag(QFile::WriteGroup), "expected WriteGroup to be unset");
+  QVERIFY2(!perms.testFlag(QFile::ReadOther), "expected ReadOther to be unset");
+  QVERIFY2(!perms.testFlag(QFile::WriteOther), "expected WriteOther to be unset");
 #endif
 }
 
