@@ -269,6 +269,12 @@ void ImitatePass::writeGpgIdFile(const QString &gpgIdFile,
     }
   }
   gpgId.close();
+  // Lock the file to owner-only access. The .gpg-id leaks which keys the
+  // store is encrypted to; while the typical ~/.password-store is 0700,
+  // users may relocate the store onto NFS/SMB/USB where the parent dir
+  // perms are more lax. On platforms where setPermissions is a no-op
+  // (Windows), this is silently best-effort.
+  QFile::setPermissions(gpgIdFile, QFile::ReadOwner | QFile::WriteOwner);
   if (!secret_selected) {
     emit critical(
         tr("Check selected users!"),
