@@ -1037,14 +1037,14 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="398"/>
         <location filename="../src/mainwindow.ui" line="401"/>
-        <location filename="../src/mainwindow.cpp" line="1380"/>
+        <location filename="../src/mainwindow.cpp" line="1405"/>
         <source>Edit</source>
         <translation>Редагувати</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="406"/>
         <location filename="../src/mainwindow.ui" line="409"/>
-        <location filename="../src/mainwindow.cpp" line="1394"/>
+        <location filename="../src/mainwindow.cpp" line="1419"/>
         <source>Delete</source>
         <translation>Видалити</translation>
     </message>
@@ -1132,7 +1132,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="441"/>
-        <location filename="../src/mainwindow.cpp" line="1374"/>
+        <location filename="../src/mainwindow.cpp" line="1399"/>
         <source>Users</source>
         <translation>Користувачі</translation>
     </message>
@@ -1298,7 +1298,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="629"/>
-        <location filename="../src/mainwindow.cpp" line="1641"/>
+        <location filename="../src/mainwindow.cpp" line="1675"/>
         <source>Password</source>
         <translation>Пароль</translation>
     </message>
@@ -1359,35 +1359,35 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1036"/>
-        <location filename="../src/mainwindow.cpp" line="1467"/>
+        <location filename="../src/mainwindow.cpp" line="1058"/>
+        <location filename="../src/mainwindow.cpp" line="1492"/>
         <source>New file</source>
         <translation>Новий файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1037"/>
+        <location filename="../src/mainwindow.cpp" line="1059"/>
         <source>New password file: 
 (Will be placed in %1 )</source>
         <translation>Новий файл для пароля: 
 (Буде розміщено в %1 )</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1074"/>
+        <location filename="../src/mainwindow.cpp" line="1099"/>
         <source> and the whole content?</source>
         <translation> та весь вміст?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1084"/>
+        <location filename="../src/mainwindow.cpp" line="1109"/>
         <source> and the whole content? &lt;br&gt;&lt;strong&gt;Attention: there are unexpected files in the given folder, check them before continue.&lt;/strong&gt;</source>
         <translation> і весь вміст? &lt;br&gt;&lt;strong&gt;Увага: у вказаній папці є неочікувані файли, перевірте їх, перш ніж продовжити.&lt;/strong&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1094"/>
+        <location filename="../src/mainwindow.cpp" line="1119"/>
         <source>Are you sure you want to delete %1%2?</source>
         <translation>Ви впевнені, що хочете видалити %1%2?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1093"/>
+        <location filename="../src/mainwindow.cpp" line="1118"/>
         <source>Delete password?</source>
         <translation>Видалити пароль?</translation>
     </message>
@@ -1396,7 +1396,7 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Are you sure you want to delete %1?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1093"/>
+        <location filename="../src/mainwindow.cpp" line="1118"/>
         <source>Delete folder?</source>
         <translation>Видалити папку?</translation>
     </message>
@@ -1421,31 +1421,31 @@ p, li { white-space: pre-wrap; }
         <translation type="vanished">Generating GPG key pair</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1242"/>
+        <location filename="../src/mainwindow.cpp" line="1267"/>
         <source>Profile changed to %1</source>
         <translation>Профіль змінено на %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1371"/>
+        <location filename="../src/mainwindow.cpp" line="1396"/>
         <source>Open folder with file manager</source>
         <translation>Відкрити папку за допомогою файлового менеджера</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="390"/>
         <location filename="../src/mainwindow.ui" line="393"/>
-        <location filename="../src/mainwindow.cpp" line="1372"/>
+        <location filename="../src/mainwindow.cpp" line="1397"/>
         <source>Add folder</source>
         <translation>Додати папку</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="379"/>
         <location filename="../src/mainwindow.ui" line="382"/>
-        <location filename="../src/mainwindow.cpp" line="1373"/>
+        <location filename="../src/mainwindow.cpp" line="1398"/>
         <source>Add password</source>
         <translation>Додати пароль</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1468"/>
+        <location filename="../src/mainwindow.cpp" line="1493"/>
         <source>New Folder: 
 (Will be placed in %1 )</source>
         <translation>Нова папка: 
@@ -1498,17 +1498,17 @@ p, li { white-space: pre-wrap; }
         </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1114"/>
+        <location filename="../src/mainwindow.cpp" line="1139"/>
         <source>No password selected for OTP generation</source>
         <translation>Пароль для генерації OTP не вибрано</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1386"/>
+        <location filename="../src/mainwindow.cpp" line="1411"/>
         <source>Rename folder</source>
         <translation>Перейменувати папку</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1390"/>
+        <location filename="../src/mainwindow.cpp" line="1415"/>
         <source>Rename password</source>
         <translation>Перейменувати пароль</translation>
     </message>
@@ -1522,75 +1522,85 @@ p, li { white-space: pre-wrap; }
         <translation>Вихід процесу</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1400"/>
+        <location filename="../src/mainwindow.cpp" line="1014"/>
+        <source>Invalid name</source>
+        <translation type="unfinished">Недійсна назва</translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1015"/>
+        <source>That name would resolve outside the password store. Please choose a different name.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../src/mainwindow.cpp" line="1425"/>
         <source>Share</source>
         <translation>Поширити</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1412"/>
+        <location filename="../src/mainwindow.cpp" line="1437"/>
         <source>Re-encrypt all passwords</source>
         <translation>Перешифрувати всі паролі</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1417"/>
+        <location filename="../src/mainwindow.cpp" line="1442"/>
         <source>Export my public key...</source>
         <translation>Експортувати мій відкритий ключ...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1423"/>
+        <location filename="../src/mainwindow.cpp" line="1448"/>
         <source>Add recipient...</source>
         <translation>Додати одержувача...</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1428"/>
+        <location filename="../src/mainwindow.cpp" line="1453"/>
         <source>What is this?</source>
         <translation>Що це?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1478"/>
-        <location filename="../src/mainwindow.cpp" line="1487"/>
-        <location filename="../src/mainwindow.cpp" line="1696"/>
+        <location filename="../src/mainwindow.cpp" line="1506"/>
+        <location filename="../src/mainwindow.cpp" line="1515"/>
+        <location filename="../src/mainwindow.cpp" line="1730"/>
         <source>Error</source>
         <translation>Помилка</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1479"/>
+        <location filename="../src/mainwindow.cpp" line="1507"/>
         <source>Failed to create folder: %1</source>
         <translation>Не вдалося створити папку: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1488"/>
+        <location filename="../src/mainwindow.cpp" line="1516"/>
         <source>Failed to create .gpg-id file in: %1</source>
         <translation>Не вдалося створити файл .gpg-id у: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1510"/>
-        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow.cpp" line="1538"/>
+        <location filename="../src/mainwindow.cpp" line="1577"/>
         <source>Rename file</source>
         <translation>Перейменувати файл</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1510"/>
+        <location filename="../src/mainwindow.cpp" line="1538"/>
         <source>Rename Folder To: </source>
         <translation>Перейменувати папку на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1546"/>
+        <location filename="../src/mainwindow.cpp" line="1577"/>
         <source>Rename File To: </source>
         <translation>Перейменувати файл на: </translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1697"/>
+        <location filename="../src/mainwindow.cpp" line="1731"/>
         <source>Directory does not exist: %1</source>
         <translation>Каталог не існує: %1</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1702"/>
+        <location filename="../src/mainwindow.cpp" line="1736"/>
         <source>Re-encrypt passwords</source>
         <translation>Перешифрувати паролі</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1703"/>
+        <location filename="../src/mainwindow.cpp" line="1737"/>
         <source>Re-encrypt all passwords in %1?
 
 This will re-encrypt ALL password files in this folder using the current recipients defined in .gpg-id.
@@ -1607,18 +1617,18 @@ Continue?</source>
 Продовжити?</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1747"/>
-        <location filename="../src/mainwindow.cpp" line="1767"/>
+        <location filename="../src/mainwindow.cpp" line="1781"/>
+        <location filename="../src/mainwindow.cpp" line="1801"/>
         <source>Export Public Key</source>
         <translation>Експортувати відкритий ключ</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1748"/>
+        <location filename="../src/mainwindow.cpp" line="1782"/>
         <source>&lt;h3&gt;Export Your Public Key&lt;/h3&gt;&lt;p&gt;No signing key is configured. Set one in QtPass Settings &amp;gt; GPG keys, or run this in a terminal:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Then send the file to your teammates.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Експорт вашого відкритого ключа&lt;/h3&gt;&lt;p&gt;Ключ підпису не налаштовано. Встановіть його в налаштуваннях QtPass &gt; Ключі GPG або виконайте це в терміналі:&lt;/p&gt;&lt;pre&gt;gpg --armor --export --output my_key.asc &amp;lt;your-key-id&amp;gt;&lt;/pre&gt;&lt;p&gt;Потім надішліть файл своїм товаришам по команді.&lt;/p&gt;</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1768"/>
+        <location filename="../src/mainwindow.cpp" line="1802"/>
         <source>Could not export public key for %1.
 
 %2</source>
@@ -1627,17 +1637,17 @@ Continue?</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1770"/>
+        <location filename="../src/mainwindow.cpp" line="1804"/>
         <source>No output from gpg.</source>
         <translation>Немає виводу з gpg.</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1797"/>
+        <location filename="../src/mainwindow.cpp" line="1831"/>
         <source>Sharing Passwords with GPG</source>
         <translation>Спільне використання паролів з GPG</translation>
     </message>
     <message>
-        <location filename="../src/mainwindow.cpp" line="1798"/>
+        <location filename="../src/mainwindow.cpp" line="1832"/>
         <source>&lt;h3&gt;Sharing Passwords with GPG&lt;/h3&gt;&lt;p&gt;To share passwords with other users:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Export your public key&lt;/b&gt; and send it to teammates&lt;/li&gt;&lt;li&gt;&lt;b&gt;Import teammates&apos; public keys&lt;/b&gt; into your GPG keyring&lt;/li&gt;&lt;li&gt;&lt;b&gt;Re-encrypt passwords&lt;/b&gt; so all recipients can decrypt them&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Only people who have a matching secret key can decrypt the passwords.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Tip:&lt;/b&gt; Use the same GPG key for all shared folders.&lt;/p&gt;&lt;p&gt;See the FAQ for more details.&lt;/p&gt;</source>
         <translation>&lt;h3&gt;Спільний доступ до паролів за допомогою GPG&lt;/h3&gt;&lt;p&gt;Щоб поділитися паролями з іншими користувачами:&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;b&gt;Експортуйте свій відкритий ключ&lt;/b&gt; та надішліть його товаришам по команді&lt;/li&gt;&lt;li&gt;&lt;b&gt;Імпортуйте відкриті ключі товаришів по команді&lt;/b&gt; у свою смужку ключів GPG&lt;/li&gt;&lt;li&gt;&lt;b&gt;Повторно зашифруйте паролі&lt;/b&gt;, щоб усі одержувачі могли їх розшифрувати&lt;/li&gt;&lt;/ol&gt;&lt;p&gt;Розшифрувати паролі можуть лише ті, хто має відповідний секретний ключ.&lt;/p&gt;&lt;p&gt;&lt;b&gt;Порада:&lt;/b&gt; Використовуйте той самий ключ GPG для всіх спільних папок.&lt;/p&gt;&lt;p&gt;Див. розділ FAQ для отримання додаткової інформації.&lt;/p&gt;</translation>
     </message>
@@ -1863,12 +1873,12 @@ Continue?</source>
         <translation type="vanished">примусово перезаписати?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="411"/>
+        <location filename="../src/storemodel.cpp" line="424"/>
         <source>Force overwrite?</source>
         <translation>Примусове перезаписування?</translation>
     </message>
     <message>
-        <location filename="../src/storemodel.cpp" line="412"/>
+        <location filename="../src/storemodel.cpp" line="425"/>
         <source>overwrite %1 with %2?</source>
         <translation>перезаписати %1 на %2?</translation>
     </message>

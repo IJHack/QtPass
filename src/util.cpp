@@ -243,6 +243,48 @@ auto Util::normalizeFolderPath(const QString &path) -> QString {
   return QDir::toNativeSeparators(normalizedPath);
 }
 
+auto Util::isPathInStore(const QString &storeRoot, const QString &candidate)
+    -> bool {
+  if (storeRoot.isEmpty() || candidate.isEmpty()) {
+    return false;
+  }
+  const QString rootCanon = QDir(storeRoot).canonicalPath();
+  if (rootCanon.isEmpty()) {
+    return false;
+  }
+
+  QString resolved;
+  const QFileInfo fi(QDir::cleanPath(QFileInfo(candidate).absoluteFilePath()));
+  if (fi.exists()) {
+    resolved = fi.canonicalFilePath();
+  } else {
+    // Walk up to the nearest existing ancestor so we can canonicalise it
+    // (resolves any symlinks on the way to the store root), then re-append
+    // the leaf components below that ancestor.
+    QDir parent = fi.dir();
+    QStringList tail;
+    tail.prepend(fi.fileName());
+    while (!parent.exists()) {
+      tail.prepend(parent.dirName());
+      if (!parent.cdUp()) {
+        return false;
+      }
+    }
+    const QString parentCanon = parent.canonicalPath();
+    if (parentCanon.isEmpty()) {
+      return false;
+    }
+    resolved = QDir::cleanPath(parentCanon + QLatin1Char('/') +
+                               tail.join(QLatin1Char('/')));
+  }
+
+  if (resolved.isEmpty()) {
+    return false;
+  }
+  return resolved == rootCanon ||
+         resolved.startsWith(rootCanon + QLatin1Char('/'));
+}
+
 /**
  * @brief Finds the absolute path of a binary by searching the PATH environment
  * variable.

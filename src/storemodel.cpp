@@ -351,6 +351,19 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
   QString cleanedSrc = QDir::cleanPath(srcFileInfo.absoluteFilePath());
   QString cleanedDest = QDir::cleanPath(destFileinfo.absoluteFilePath());
 
+  // Both endpoints must resolve inside the password store after symlink
+  // resolution. Drop data is encoded by the dragged item but could be
+  // crafted; canonical-path checks stop drops that would move/copy outside
+  // the store or follow a symlink out (e.g. a symlink within the store
+  // pointing at /etc).
+  const QString storeRoot = QtPassSettings::getPassStore();
+  if (!Util::isPathInStore(storeRoot, cleanedSrc) ||
+      !Util::isPathInStore(storeRoot, cleanedDest)) {
+    qWarning() << "executeDropAction: rejecting drop that escapes the store"
+               << "(src=" << cleanedSrc << "dest=" << cleanedDest << ")";
+    return false;
+  }
+
   switch (info.kind) {
   case dragAndDropInfoPasswordStore::ItemKind::Directory:
     return handleDirDrop(cleanedSrc, destFileinfo, srcFileInfo, action);
