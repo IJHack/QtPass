@@ -31,6 +31,9 @@ private Q_SLOTS:
   void canDropFileOnDir();
   void canDropFileOnFile();
   void canDropDirOnFile();
+  void dropMimeDataRejectsSourceOutsideStore();
+  void dropMimeDataRejectsAbsoluteOutsideSource();
+  void dropMimeDataRejectsSymlinkEscape();
   void lessThan();
   void lessThanDirsFirst();
   void supportedDropActions();
@@ -454,6 +457,65 @@ void tst_storemodel::canDropDirOnFile() {
                            fx.folderPath);
   QVERIFY(
       !fx.sm.canDropMimeData(mime.get(), Qt::MoveAction, 0, 0, fx.fileProxy()));
+}
+
+// ---------------------------------------------------------------------------
+// dropMimeData() path-traversal rejection (security regression for #1464)
+//
+// canDropMimeData is a UI policy layer (kind/column/MIME-type constraints)
+// and intentionally does not touch the filesystem. The store-boundary check
+// lives one layer down in executeDropAction. These tests exercise that
+// layer with crafted mime data whose source path escapes the store and
+// verify the drop is refused (returns false) without ever reaching Pass::Move
+// or Pass::Copy.
+// ---------------------------------------------------------------------------
+
+void tst_storemodel::dropMimeDataRejectsSourceOutsideStore() {
+  DropFixture fx;
+  // The fs model rooted at the store has no concept of /etc/passwd as a
+  // child; crafting that path into the mime payload simulates a malicious
+  // (or buggy) source that doesn't go through StoreModel::mimeData().
+  auto mime = makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File,
+                           QStringLiteral("/etc/passwd"));
+  QVERIFY2(
+      !fx.sm.dropMimeData(mime.get(), Qt::MoveAction, 0, 0, fx.folderProxy()),
+      "drop with src=/etc/passwd must be refused");
+}
+
+void tst_storemodel::dropMimeDataRejectsAbsoluteOutsideSource() {
+  DropFixture fx;
+  // Use a path inside QTemporaryDir's parent (system tempdir) but outside
+  // the store to exercise the canonical-path check on a path that exists
+  // on disk, not just one that the filesystem can't resolve.
+  QTemporaryDir outside;
+  QVERIFY2(outside.isValid(), "outside temp dir should be valid");
+  auto mime = makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File,
+                           outside.path() + "/elsewhere.gpg");
+  QVERIFY2(
+      !fx.sm.dropMimeData(mime.get(), Qt::CopyAction, 0, 0, fx.folderProxy()),
+      "drop with src in a sibling tempdir must be refused");
+}
+
+void tst_storemodel::dropMimeDataRejectsSymlinkEscape() {
+#ifdef Q_OS_WIN
+  QSKIP("symlink creation requires elevation on Windows");
+#else
+  DropFixture fx;
+  // A symlink physically inside the store that resolves outside —
+  // canonical-path resolution catches this even though the path string
+  // starts with the store root.
+  QTemporaryDir outside;
+  QVERIFY2(outside.isValid(), "outside temp dir should be valid");
+  const QString linkPath = fx.tempDir.path() + "/escape";
+  QVERIFY2(QFile::link(outside.path(), linkPath),
+           "QFile::link should create symlink in store");
+
+  auto mime =
+      makeMimeData(dragAndDropInfoPasswordStore::ItemKind::File, linkPath);
+  QVERIFY2(
+      !fx.sm.dropMimeData(mime.get(), Qt::MoveAction, 0, 0, fx.folderProxy()),
+      "drop with src=<symlink-out-of-store> must be refused");
+#endif
 }
 
 QTEST_MAIN(tst_storemodel)
