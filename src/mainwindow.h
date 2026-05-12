@@ -310,6 +310,7 @@ private:
   auto firstFile(QModelIndex parentIndex) -> QModelIndex;
   auto getFile(const QModelIndex &, bool) -> QString;
   void setPassword(const QString &, bool isNew = true);
+  auto confirmPathInStore(const QString &candidate) -> bool;
 
   void updateProfileBox();
   void initTrayIcon();

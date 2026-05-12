@@ -996,6 +996,28 @@ auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {
 }
 
 /**
+ * @brief MainWindow::confirmPathInStore reject paths that resolve outside
+ * the password store and warn the user.
+ *
+ * Used before file/folder creation, move, and rename to stop user-typed
+ * names like "../../etc/passwd" or absolute paths from escaping the
+ * configured store root via the input dialogs.
+ *
+ * @param candidate Absolute candidate path to validate.
+ * @return true if the path is inside the password store; false otherwise (a
+ * warning dialog is shown in that case).
+ */
+auto MainWindow::confirmPathInStore(const QString &candidate) -> bool {
+  if (Util::isPathInStore(QtPassSettings::getPassStore(), candidate)) {
+    return true;
+  }
+  QMessageBox::warning(this, tr("Invalid name"),
+                       tr("That name would resolve outside the password "
+                          "store. Please choose a different name."));
+  return false;
+}
+
+/**
  * @brief MainWindow::setPassword open passworddialog
  * @param file which pgp file
  * @param isNew insert (not update)
@@ -1043,6 +1065,9 @@ void MainWindow::addPassword() {
     return;
   }
   file = dir + file;
+  if (!confirmPathInStore(QtPassSettings::getPassStore() + file)) {
+    return;
+  }
   setPassword(file);
 }
 
@@ -1474,6 +1499,9 @@ void MainWindow::addFolder() {
     return;
   }
   newdir.prepend(dir);
+  if (!confirmPathInStore(newdir)) {
+    return;
+  }
   if (!QDir().mkdir(newdir)) {
     QMessageBox::warning(this, tr("Error"),
                          tr("Failed to create folder: %1").arg(newdir));
@@ -1514,6 +1542,9 @@ void MainWindow::renameFolder() {
   }
   QString destDir = srcDir;
   destDir.replace(srcDir.lastIndexOf(srcDirName), srcDirName.length(), newName);
+  if (!confirmPathInStore(destDir)) {
+    return;
+  }
   QtPassSettings::getPass()->Move(srcDir, destDir);
 }
 
@@ -1549,6 +1580,9 @@ void MainWindow::renamePassword() {
     return;
   }
   QString newFile = QDir(filePath).filePath(newName);
+  if (!confirmPathInStore(newFile)) {
+    return;
+  }
   QtPassSettings::getPass()->Move(file, newFile);
 }
 

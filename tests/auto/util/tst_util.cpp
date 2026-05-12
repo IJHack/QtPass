@@ -214,6 +214,13 @@ private Q_SLOTS:
   void initialiseSshAuthSockNoOverrideNoEnvProbes();
   void initialiseSshAuthSockOverrideSkipsAgentValidation();
   void initialiseSshAuthSockEmptyOverrideFallsThrough();
+  // Path-traversal hardening (security)
+  void isPathInStoreHappyPath();
+  void isPathInStoreRejectsDotDotEscape();
+  void isPathInStoreRejectsAbsoluteOutside();
+  void isPathInStoreRejectsSymlinkEscape();
+  void isPathInStoreAllowsNewChild();
+  void isPathInStoreRejectsEmptyArgs();
 };
 
 /**
@@ -2176,6 +2183,97 @@ void tst_util::initialiseSshAuthSockEmptyOverrideFallsThrough() {
   if (qEnvironmentVariableIsSet("SSH_AUTH_SOCK")) {
     QVERIFY(!qgetenv("SSH_AUTH_SOCK").isEmpty());
   }
+}
+
+/**
+ * @brief isPathInStore returns true when the candidate is the store root or
+ *        a path strictly inside it.
+ */
+void tst_util::isPathInStoreHappyPath() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString root = store.path();
+  // Root itself.
+  QVERIFY(Util::isPathInStore(root, root));
+  // A child file (not yet existing).
+  QVERIFY(Util::isPathInStore(root, root + "/foo.gpg"));
+  // A grandchild.
+  QDir(root).mkpath("nested/dir");
+  QVERIFY(Util::isPathInStore(root, root + "/nested/dir/bar.gpg"));
+}
+
+/**
+ * @brief User-typed names containing .. components must not resolve outside
+ *        the store.
+ */
+void tst_util::isPathInStoreRejectsDotDotEscape() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString root = store.path();
+  QVERIFY(!Util::isPathInStore(root, root + "/../escape.gpg"));
+  QVERIFY(!Util::isPathInStore(root, root + "/sub/../../escape.gpg"));
+  QVERIFY(!Util::isPathInStore(
+      root, root + "/../" + QFileInfo(root).fileName() + "-sibling/file"));
+}
+
+/**
+ * @brief Absolute paths outside the store must be rejected.
+ */
+void tst_util::isPathInStoreRejectsAbsoluteOutside() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString root = store.path();
+  QVERIFY(!Util::isPathInStore(root, QStringLiteral("/etc/passwd")));
+  QVERIFY(!Util::isPathInStore(root, QStringLiteral("/tmp/elsewhere.gpg")));
+}
+
+/**
+ * @brief A symlink inside the store pointing outside must be rejected
+ *        because canonicalisation resolves the link.
+ */
+void tst_util::isPathInStoreRejectsSymlinkEscape() {
+#ifdef Q_OS_WIN
+  QSKIP("symlink creation requires elevation on Windows");
+#else
+  QTemporaryDir store;
+  QTemporaryDir outside;
+  QVERIFY(store.isValid());
+  QVERIFY(outside.isValid());
+  const QString root = store.path();
+  // Create a symlink inside the store that points to a path outside.
+  const QString linkPath = root + "/escape";
+  QVERIFY(QFile::link(outside.path(), linkPath));
+  // Path itself, and any child under it, must be rejected.
+  QVERIFY(!Util::isPathInStore(root, linkPath));
+  QVERIFY(!Util::isPathInStore(root, linkPath + "/sneaky.gpg"));
+#endif
+}
+
+/**
+ * @brief A not-yet-existing child whose parent is inside the store is
+ *        accepted — this is the common "create new password" case.
+ */
+void tst_util::isPathInStoreAllowsNewChild() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  const QString root = store.path();
+  QDir(root).mkpath("sub");
+  QVERIFY(Util::isPathInStore(root, root + "/sub/new-file.gpg"));
+  QVERIFY(Util::isPathInStore(root, root + "/sub/deeper/yet-deeper.gpg"));
+}
+
+/**
+ * @brief Empty arguments are rejected without crashing.
+ */
+void tst_util::isPathInStoreRejectsEmptyArgs() {
+  QTemporaryDir store;
+  QVERIFY(store.isValid());
+  QVERIFY(!Util::isPathInStore(QString(), store.path() + "/foo"));
+  QVERIFY(!Util::isPathInStore(store.path(), QString()));
+  QVERIFY(!Util::isPathInStore(QString(), QString()));
+  // Non-existent root.
+  QVERIFY(!Util::isPathInStore(QStringLiteral("/no/such/dir"),
+                               QStringLiteral("/no/such/dir/foo")));
 }
 
 QTEST_MAIN(tst_util)
