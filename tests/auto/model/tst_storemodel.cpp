@@ -297,10 +297,7 @@ auto makeMimeData(dragAndDropInfoPasswordStore::ItemKind kind,
   QDataStream stream(&encoded, QIODevice::WriteOnly);
   stream << info;
 
-  // std::unique_ptr<T>(new T) rather than std::make_unique<T>() because
-  // tests/tests.pri pins the test build to c++11 (see Qt 5.15 CI), and
-  // make_unique is c++14.
-  std::unique_ptr<QMimeData> mime(new QMimeData);
+  auto mime = std::make_unique<QMimeData>();
   mime->setData("application/vnd+qtpass.dragAndDropInfoPasswordStore", encoded);
   return mime;
 }
