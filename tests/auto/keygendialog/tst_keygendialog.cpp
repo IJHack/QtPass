@@ -64,8 +64,8 @@ void tst_keygendialog::expertCheckboxTogglesTemplateEditor() {
   auto *checkBox = dialog.findChild<QCheckBox *>(QStringLiteral("checkBox"));
   auto *editor =
       dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
-  QVERIFY(checkBox != nullptr);
-  QVERIFY(editor != nullptr);
+  QVERIFY2(checkBox != nullptr, "checkBox != nullptr");
+  QVERIFY2(editor != nullptr, "editor != nullptr");
 
   // Default state: checkbox unchecked, editor read-only / disabled.
   checkBox->setChecked(false);
@@ -90,8 +90,8 @@ void tst_keygendialog::nameTextUpdatesNameRealLine() {
   auto *nameEdit = dialog.findChild<QLineEdit *>(QStringLiteral("name"));
   auto *editor =
       dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
-  QVERIFY(nameEdit != nullptr);
-  QVERIFY(editor != nullptr);
+  QVERIFY2(nameEdit != nullptr, "nameEdit != nullptr");
+  QVERIFY2(editor != nullptr, "editor != nullptr");
 
   // The slot fires on textChanged(); setText() is enough to trigger it.
   nameEdit->setText(QStringLiteral("QtPass Tester"));
@@ -108,8 +108,8 @@ void tst_keygendialog::emailTextUpdatesNameEmailLine() {
   auto *emailEdit = dialog.findChild<QLineEdit *>(QStringLiteral("email"));
   auto *editor =
       dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
-  QVERIFY(emailEdit != nullptr);
-  QVERIFY(editor != nullptr);
+  QVERIFY2(emailEdit != nullptr, "emailEdit != nullptr");
+  QVERIFY2(editor != nullptr, "editor != nullptr");
 
   emailEdit->setText(QStringLiteral("tester@qtpass.example"));
   QVERIFY2(editor->toPlainText().contains(
@@ -127,12 +127,12 @@ void tst_keygendialog::matchingPassphrasesEnableButtonBox() {
   auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
   auto *buttonBox =
       dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
-  QVERIFY(pp1 != nullptr);
-  QVERIFY(pp2 != nullptr);
-  QVERIFY(buttonBox != nullptr);
+  QVERIFY2(pp1 != nullptr, "pp1 != nullptr");
+  QVERIFY2(pp2 != nullptr, "pp2 != nullptr");
+  QVERIFY2(buttonBox != nullptr, "buttonBox != nullptr");
 
-  pp1->setText(QStringLiteral("secret"));
-  pp2->setText(QStringLiteral("secret"));
+  pp1->setText(QStringLiteral("testkey123"));
+  pp2->setText(QStringLiteral("testkey123"));
   QVERIFY2(buttonBox->isEnabled(), "matching passphrases enable OK");
 }
 
@@ -145,12 +145,12 @@ void tst_keygendialog::mismatchedPassphrasesDisableButtonBox() {
   auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
   auto *buttonBox =
       dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
-  QVERIFY(pp1 != nullptr);
-  QVERIFY(pp2 != nullptr);
-  QVERIFY(buttonBox != nullptr);
+  QVERIFY2(pp1 != nullptr, "pp1 != nullptr");
+  QVERIFY2(pp2 != nullptr, "pp2 != nullptr");
+  QVERIFY2(buttonBox != nullptr, "buttonBox != nullptr");
 
-  pp1->setText(QStringLiteral("secret"));
-  pp2->setText(QStringLiteral("different"));
+  pp1->setText(QStringLiteral("testkey123"));
+  pp2->setText(QStringLiteral("testkey456"));
   QVERIFY2(!buttonBox->isEnabled(), "mismatched passphrases disable OK");
 }
 
