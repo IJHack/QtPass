@@ -425,8 +425,9 @@ void tst_integration::imitatePass_grepSkipsUndecryptableFiles() {
   const QString corrupt2 = storeDir.path() + "/corrupt.gpg";
   QFile c1(corrupt1);
   QVERIFY2(c1.open(QIODevice::WriteOnly), "should create garbage-token.gpg");
-  qint64 bytesWritten1 = c1.write("not a real gpg payload but contains the token word\n");
-  QVERIFY2(bytesWritten1 == 55, "failed to write test payload to c1");
+  const char *payload1 = "not a real gpg payload but contains the token word\n";
+  qint64 bytesWritten1 = c1.write(payload1);
+  QVERIFY2(bytesWritten1 == static_cast<qint64>(strlen(payload1)), "failed to write test payload to c1");
   c1.close();
   QFile c2(corrupt2);
   QVERIFY2(c2.open(QIODevice::WriteOnly), "should create corrupt.gpg");
