@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['helpers_2eh_0',['helpers.h',['../helpers_8h.html',1,'']]]
+  ['profileinit_2eh_0',['profileinit.h',['../profileinit_8h.html',1,'']]]
 ];
