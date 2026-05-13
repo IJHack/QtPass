@@ -13,6 +13,8 @@
  *   - pass otp extension (optional – OTP tests skipped when absent)
  */
 
+#include <algorithm>
+
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
@@ -208,6 +210,7 @@ private Q_SLOTS:
   // ImitatePass backend
   void imitatePass_insertAndShow();
   void imitatePass_insertAndGrep();
+  void imitatePass_grepSkipsUndecryptableFiles();
   void imitatePass_insertMoveAndShow();
   void imitatePass_insertCopyAndShow();
   void imitatePass_insertAndRemove();
@@ -382,6 +385,75 @@ void tst_integration::imitatePass_insertAndGrep() {
 
   const auto results = grepSpy[0][0].value<GrepResults>();
   QVERIFY2(results.size() == 2, "grep should find both entries");
+}
+
+// Verifies the env-aware Executor failure path used by
+// ImitatePass::grepMatchFile(): when gpg returns non-zero on a corrupt /
+// foreign .gpg file inside the store, grepScanStore must drop that file's
+// results and keep walking — not abort the whole scan or surface garbage.
+//
+// Plants two legitimate entries, then drops two non-gpg payloads with a
+// .gpg extension into the store (one with the "token" substring and one
+// without, both undecryptable). Grep for "token" must come back with
+// exactly the two legitimate matches.
+void tst_integration::imitatePass_grepSkipsUndecryptableFiles() {
+  QTemporaryDir storeDir;
+  ImitatePass pass;
+  INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
+
+  QVERIFY2(QDir(storeDir.path()).mkpath("work"),
+           ("failed to create work directory at " + storeDir.path()).toUtf8());
+
+  QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
+  QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
+  pass.Insert(QStringLiteral("work/github"),
+              QStringLiteral("s3cr3t\ntoken: abc123\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  insertSpy.clear();
+  insertErrorSpy.clear();
+  pass.Insert(QStringLiteral("work/gitlab"),
+              QStringLiteral("another\ntoken: xyz789\n"), false);
+  QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
+
+  // Plant two .gpg files that aren't valid gpg ciphertext at all. Their
+  // file name contains "token" — but since gpg --decrypt will fail with
+  // non-zero exit on the garbage payload, grepMatchFile must throw away
+  // the would-be plaintext (including the embedded "token" substring)
+  // and grepScanStore must continue past the failure.
+  const QString corrupt1 = storeDir.path() + "/work/garbage-token.gpg";
+  const QString corrupt2 = storeDir.path() + "/corrupt.gpg";
+  QFile c1(corrupt1);
+  QVERIFY2(c1.open(QIODevice::WriteOnly), "should create garbage-token.gpg");
+  const char *payload1 = "not a real gpg payload but contains the token word\n";
+  qint64 bytesWritten1 = c1.write(payload1);
+  QVERIFY2(bytesWritten1 == static_cast<qint64>(strlen(payload1)), "failed to write test payload to c1");
+  c1.close();
+  QFile c2(corrupt2);
+  QVERIFY2(c2.open(QIODevice::WriteOnly), "should create corrupt.gpg");
+  QByteArray corruptData("\xFF\xFE\x00\x01 binary junk\n", 17);
+  qint64 bytesWritten2 = c2.write(corruptData);
+  QVERIFY2(bytesWritten2 == corruptData.size(), "failed to write test payload to c2");
+  c2.close();
+
+  QSignalSpy grepSpy(&pass, &Pass::finishedGrep);
+  pass.Grep(QStringLiteral("token"));
+  QVERIFY2(waitForSignal(grepSpy, 20000), "finishedGrep not emitted");
+
+  const auto results = grepSpy[0][0].value<GrepResults>();
+  // The two real entries must be present; neither of the corrupt files
+  // may contribute a match even though one contains "token" in its raw
+  // bytes — gpg failed to decrypt them, so grepMatchFile returned empty.
+  QVERIFY2(
+      results.size() == 2,
+      qPrintable(
+          QStringLiteral("expected 2 matches, got %1").arg(results.size())));
+  QStringList paths;
+  for (const auto &pair : results)
+    paths << pair.first;
+  std::sort(paths.begin(), paths.end());
+  QCOMPARE(paths, (QStringList{QStringLiteral("work/github"),
+                               QStringLiteral("work/gitlab")}));
 }
 
 void tst_integration::imitatePass_insertMoveAndShow() {
