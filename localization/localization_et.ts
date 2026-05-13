@@ -161,7 +161,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="891"/>
         <source>Optional path to override SSH_AUTH_SOCK. Leave empty to auto-probe via gpgconf (issue #543).</source>
-        <translation>Valikuline asukoht SSH_AUTH_SOCK sürjutamiseks. Automaatseks tuvastamiseks gpgconf kaudu (veateade #543) jäta tühjaks.</translation>
+        <translation>Valikuline asukoht SSH_AUTH_SOCK alistamiseks. Automaatseks tuvastamiseks gpgconf kaudu (veateade #543) jäta tühjaks.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="898"/>
@@ -418,7 +418,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path does not exist.</source>
-        <translation>Aaukohta pole olemas.</translation>
+        <translation>Asukohta pole olemas.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="265"/>
@@ -512,7 +512,7 @@ Väärtus salvestatakse ikkagi sisestatud kujul.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1019"/>
         <source>Failed to create password-store at: %1</source>
-        <translation>salasõnahoidla loomine ei õnnestunus asukohas: %1</translation>
+        <translation>salasõnahoidla loomine ei õnnestunud asukohas: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1050"/>

@@ -1269,7 +1269,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1015"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation>Ta nazwa nie będzie rozpoznawana w bazie haseł. Wybierz inną nazwę.</translation>
+        <translation>Ta nazwa będzie rozwiązywana poza magazynem haseł. Wybierz inną nazwę.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1058"/>
