@@ -27,6 +27,7 @@
 #ifdef Q_OS_WIN
 #include <windows.h>
 #else
+#include <sys/stat.h>
 #include <sys/time.h>
 #endif
 #include "qtpasssettings.h"
@@ -283,6 +284,29 @@ auto Util::isPathInStore(const QString &storeRoot, const QString &candidate)
   }
   return resolved == rootCanon ||
          resolved.startsWith(rootCanon + QLatin1Char('/'));
+}
+
+auto Util::sshAuthSockOverrideStatus(const QString &path)
+    -> SshAuthSockOverrideStatus {
+  const QFileInfo fi(path);
+  if (!fi.exists()) {
+    return SshAuthSockOverrideStatus::DoesNotExist;
+  }
+  if (!fi.isReadable()) {
+    return SshAuthSockOverrideStatus::NotReadable;
+  }
+#ifdef Q_OS_UNIX
+  // S_ISSOCK isn't exposed by QFileInfo; go through stat(2). On Windows
+  // ssh-agent uses a named pipe (\\.\pipe\openssh-ssh-agent.<sid>) and the
+  // socket check would always fail, so skip it there — exists + readable is
+  // the best we can do.
+  struct stat st{};
+  if (::stat(path.toLocal8Bit().constData(), &st) != 0 ||
+      !S_ISSOCK(st.st_mode)) {
+    return SshAuthSockOverrideStatus::NotUnixDomainSocket;
+  }
+#endif
+  return SshAuthSockOverrideStatus::Valid;
 }
 
 /**

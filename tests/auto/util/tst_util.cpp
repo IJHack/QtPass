@@ -11,7 +11,12 @@
 #include <QUuid>
 #include <QtTest>
 #ifndef Q_OS_WIN
+#include <sys/socket.h>
 #include <sys/stat.h>
+#include <sys/un.h>
+#include <unistd.h>
+
+#include <cstring>
 #endif
 
 #include "../../../src/enums.h"
@@ -226,6 +231,11 @@ private Q_SLOTS:
   void isPathInStoreRejectsEmptyArgs();
   // .gpg-id permission hardening (security)
   void writeGpgIdFileSetsOwnerOnlyPerms();
+  // SSH_AUTH_SOCK override soft-validation (Settings dialog warning)
+  void sshAuthSockOverrideStatusDoesNotExist();
+  void sshAuthSockOverrideStatusRegularFileRejected();
+  void sshAuthSockOverrideStatusNotReadable();
+  void sshAuthSockOverrideStatusValid();
 };
 
 /**
@@ -2324,6 +2334,116 @@ void tst_util::writeGpgIdFileSetsOwnerOnlyPerms() {
   QVERIFY2(!perms.testFlag(QFile::ExeOwner), "expected ExeOwner to be unset");
   QVERIFY2(!perms.testFlag(QFile::ExeGroup), "expected ExeGroup to be unset");
   QVERIFY2(!perms.testFlag(QFile::ExeOther), "expected ExeOther to be unset");
+#endif
+}
+
+// ---------------------------------------------------------------------------
+// Util::sshAuthSockOverrideStatus tests
+//
+// Backs the Settings dialog soft-warning logic added in #1439. The dialog
+// shows a non-blocking warning when the user-typed override path is bogus
+// (missing, unreadable, or not a Unix domain socket) but still saves the
+// value as entered. These tests drive the pure validation function directly
+// so we don't need a Qt event loop / QMessageBox spy.
+// ---------------------------------------------------------------------------
+
+/**
+ * @brief A non-existent path is classified DoesNotExist.
+ */
+void tst_util::sshAuthSockOverrideStatusDoesNotExist() {
+  QTemporaryDir tmp;
+  QVERIFY2(tmp.isValid(), "tmp dir should be valid");
+  QCOMPARE(Util::sshAuthSockOverrideStatus(tmp.path() + "/no-such-socket"),
+           Util::SshAuthSockOverrideStatus::DoesNotExist);
+}
+
+/**
+ * @brief A regular file that exists but isn't a Unix domain socket is
+ *        rejected on Unix. Skipped on Windows where the socket check is a
+ *        no-op (ssh-agent uses a named pipe there).
+ */
+void tst_util::sshAuthSockOverrideStatusRegularFileRejected() {
+#ifdef Q_OS_WIN
+  QSKIP("socket-type check is Unix-only");
+#else
+  QTemporaryDir tmp;
+  QVERIFY2(tmp.isValid(), "tmp dir should be valid");
+  const QString filePath = tmp.path() + "/regular-file";
+  QFile f(filePath);
+  QVERIFY2(f.open(QIODevice::WriteOnly), "should be able to create a file");
+  f.close();
+  QCOMPARE(Util::sshAuthSockOverrideStatus(filePath),
+           Util::SshAuthSockOverrideStatus::NotUnixDomainSocket);
+#endif
+}
+
+/**
+ * @brief A file that exists but has no read permission is classified
+ *        NotReadable. Skipped on Windows because Qt's permission bits
+ *        don't round-trip the same way.
+ */
+void tst_util::sshAuthSockOverrideStatusNotReadable() {
+#ifdef Q_OS_WIN
+  QSKIP("Unix permission bits don't round-trip on Windows");
+#else
+  // Root user on Linux ignores read-mode bits, so the test would
+  // falsely return Valid. Skip in that case.
+  if (::geteuid() == 0) {
+    QSKIP("root sees all files as readable; skip");
+  }
+  QTemporaryDir tmp;
+  QVERIFY2(tmp.isValid(), "tmp dir should be valid");
+  const QString filePath = tmp.path() + "/unreadable";
+  QFile f(filePath);
+  QVERIFY2(f.open(QIODevice::WriteOnly), "should be able to create a file");
+  f.close();
+  QVERIFY2(QFile::setPermissions(filePath, QFile::Permissions{}),
+           "should be able to chmod 0 on the file");
+  QCOMPARE(Util::sshAuthSockOverrideStatus(filePath),
+           Util::SshAuthSockOverrideStatus::NotReadable);
+  // Restore something so QTemporaryDir can clean up.
+  QFile::setPermissions(filePath, QFile::ReadOwner | QFile::WriteOwner);
+#endif
+}
+
+/**
+ * @brief A real Unix domain socket (bind(2)) is classified Valid.
+ *        Unix-only.
+ */
+void tst_util::sshAuthSockOverrideStatusValid() {
+#ifdef Q_OS_WIN
+  QSKIP("socket creation API differs on Windows");
+#else
+  QTemporaryDir tmp;
+  QVERIFY2(tmp.isValid(), "tmp dir should be valid");
+  const QString sockPath = tmp.path() + "/agent.sock";
+  const QByteArray sockBytes = sockPath.toLocal8Bit();
+
+  // sun_path is typically 108 bytes on Linux; QTemporaryDir gives us a
+  // short /tmp/qttest_XXXXXX prefix, so this should fit easily.
+  QVERIFY2(sockBytes.size() < static_cast<int>(sizeof(sockaddr_un{}.sun_path)),
+           "socket path too long for sockaddr_un");
+
+  const int fd = ::socket(AF_UNIX, SOCK_STREAM, 0);
+  QVERIFY2(fd >= 0, "socket(AF_UNIX) failed");
+
+  sockaddr_un addr{};
+  addr.sun_family = AF_UNIX;
+  std::memcpy(addr.sun_path, sockBytes.constData(),
+              static_cast<size_t>(sockBytes.size()));
+
+  const int br = ::bind(fd, reinterpret_cast<sockaddr *>(&addr), sizeof(addr));
+  if (br != 0) {
+    ::close(fd);
+    QFAIL("bind(AF_UNIX) failed");
+  }
+
+  QCOMPARE(Util::sshAuthSockOverrideStatus(sockPath),
+           Util::SshAuthSockOverrideStatus::Valid);
+
+  ::close(fd);
+  // QTemporaryDir will rm -rf the directory on destruction, removing the
+  // socket file along with it.
 #endif
 }
 
