@@ -101,8 +101,10 @@ void tst_storemodel::flagsWithInvalidIndex() {
 void tst_storemodel::mimeTypes() {
   StoreModel sm;
   QStringList types = sm.mimeTypes();
-  QVERIFY(
-      types.contains("application/vnd.qtpass.dragAndDropInfoPasswordStore"));
+  QVERIFY2(
+      types.contains("application/vnd.qtpass.dragAndDropInfoPasswordStore"),
+      "mimeTypes() should advertise "
+      "application/vnd.qtpass.dragAndDropInfoPasswordStore");
 }
 
 void tst_storemodel::lessThan() {
@@ -218,9 +220,11 @@ void tst_storemodel::mimeData() {
   QModelIndex sourceIndex = fsm.index(tempDir.path() + "/testfile.gpg");
   QModelIndex proxyIndex = sm.mapFromSource(sourceIndex);
   QMimeData *data = sm.mimeData(QModelIndexList() << proxyIndex);
-  QVERIFY(data != nullptr);
-  QVERIFY(
-      data->hasFormat("application/vnd.qtpass.dragAndDropInfoPasswordStore"));
+  QVERIFY2(data != nullptr, "mimeData() should return a non-null QMimeData");
+  QVERIFY2(
+      data->hasFormat("application/vnd.qtpass.dragAndDropInfoPasswordStore"),
+      "mimeData() should carry "
+      "application/vnd.qtpass.dragAndDropInfoPasswordStore");
   delete data;
 }
 
