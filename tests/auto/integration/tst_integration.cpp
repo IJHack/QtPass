@@ -13,6 +13,8 @@
  *   - pass otp extension (optional – OTP tests skipped when absent)
  */
 
+#include <algorithm>
+
 #include <QCoreApplication>
 #include <QDir>
 #include <QFile>
@@ -399,7 +401,8 @@ void tst_integration::imitatePass_grepSkipsUndecryptableFiles() {
   ImitatePass pass;
   INIT_IMITATE_STORE_OR_FAIL(storeDir, pass);
 
-  QVERIFY(QDir(storeDir.path()).mkpath("work"));
+  QVERIFY2(QDir(storeDir.path()).mkpath("work"),
+           ("failed to create work directory at " + storeDir.path()).toUtf8());
 
   QSignalSpy insertSpy(&pass, &Pass::finishedInsert);
   QSignalSpy insertErrorSpy(&pass, &Pass::processErrorExit);
@@ -426,7 +429,8 @@ void tst_integration::imitatePass_grepSkipsUndecryptableFiles() {
   c1.close();
   QFile c2(corrupt2);
   QVERIFY2(c2.open(QIODevice::WriteOnly), "should create corrupt.gpg");
-  c2.write("\xFF\xFE\x00\x01 binary junk\n", 24);
+  QByteArray corruptData("\xFF\xFE\x00\x01 binary junk\n", 17);
+  c2.write(corruptData);
   c2.close();
 
   QSignalSpy grepSpy(&pass, &Pass::finishedGrep);
