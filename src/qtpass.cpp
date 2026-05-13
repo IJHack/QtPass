@@ -39,24 +39,8 @@ QtPass::QtPass(MainWindow *mainWindow) : m_mainWindow(mainWindow) {
   connect(&clearClipboardTimer, &QTimer::timeout, this,
           &QtPass::clearClipboard);
 
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#if defined(_MSC_VER)
-#pragma warning(push)
-#pragma warning(disable : 4996)
-#elif defined(__clang__) || defined(__GNUC__)
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif
-#endif
-  QObject::connect(qApp, &QApplication::aboutToQuit, this,
+  QObject::connect(QApplication::instance(), &QApplication::aboutToQuit, this,
                    &QtPass::clearClipboard);
-#if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
-#if defined(_MSC_VER)
-#pragma warning(pop)
-#elif defined(__clang__) || defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif
-#endif
 
   setMainWindow();
 }
