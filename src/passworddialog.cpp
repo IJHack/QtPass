@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "passworddialog.h"
 #include "filecontent.h"
-#include "helpers.h"
 #include "pass.h"
 #include "passwordconfiguration.h"
 #include "qtpasssettings.h"

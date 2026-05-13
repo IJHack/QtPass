@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "filecontent.h"
 
-#include "helpers.h"
 #include <utility>
 
 /**
@@ -32,7 +31,7 @@ auto FileContent::parse(const QString &fileContent,
   QStringList remainingData;
   QStringList remainingDataDisplay;
   NamedValues namedValues;
-  for (const QString &line : AS_CONST(lines)) {
+  for (const QString &line : std::as_const(lines)) {
     if (line.contains(":")) {
       qsizetype colon = line.indexOf(':');
       QString name = line.left(colon);

@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
 #include "gpgkeystate.h"
-#include "helpers.h"
 #include "qtpasssettings.h"
 #include "util.h"
 #include <QCoreApplication>
@@ -468,7 +467,7 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
   QStringList args = {"--no-tty", "--with-colons", "--with-fingerprint"};
   args.append(secret ? "--list-secret-keys" : "--list-keys");
 
-  for (const QString &keystring : AS_CONST(keystrings)) {
+  for (const QString &keystring : std::as_const(keystrings)) {
     if (!keystring.isEmpty()) {
       args.append(keystring);
     }
