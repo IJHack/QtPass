@@ -107,7 +107,6 @@ void TrayIcon::iconActivated(QSystemTrayIcon::ActivationReason reason) {
     showHideParent();
     break;
   case QSystemTrayIcon::MiddleClick:
-    showMessage("test", "test msg", 1000);
     break;
   default: {
   }
