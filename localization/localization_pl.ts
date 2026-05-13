@@ -1264,12 +1264,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1014"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Niepoprawna nazwa</translation>
+        <translation>Niepoprawna nazwa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1015"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta nazwa nie będzie rozpoznawana w bazie haseł. Wybierz inną nazwę.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1058"/>

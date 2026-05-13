@@ -1399,12 +1399,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1014"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Ogiltigt namn</translation>
+        <translation>Ogiltigt namn</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1015"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det namnet skulle tolkas utanför lösenordslagret. Välj ett annat namn.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1059"/>

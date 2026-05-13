@@ -1510,12 +1510,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1014"/>
         <source>Invalid name</source>
-        <translation type="unfinished">不合法的姓名</translation>
+        <translation>无效名称</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1015"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>此名称会在密码存储库外解析。请选择不同的名称。</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1425"/>
