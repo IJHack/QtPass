@@ -74,6 +74,7 @@ $(function() {
 <div id="doc-content">
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="class_util-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Util Class Reference</div></div>
@@ -85,8 +86,19 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="util_8h_source.html">util.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-pub-types" class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a664c86105abd5d58160ec9415f4fc832" id="r_a664c86105abd5d58160ec9415f4fc832"><td class="memItemLeft">enum class &#160;</td><td class="memItemRight"><a class="el" href="#a664c86105abd5d58160ec9415f4fc832">SshAuthSockOverrideStatus</a> { <b>Valid</b>
+, <b>DoesNotExist</b>
+, <b>NotReadable</b>
+, <b>NotUnixDomainSocket</b>
+ }</td></tr>
+<tr class="memdesc:a664c86105abd5d58160ec9415f4fc832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Classify a non-empty SSH_AUTH_SOCK override path supplied by the user.  <a href="#a664c86105abd5d58160ec9415f4fc832">More...</a><br /></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-static-methods" class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a339d22cd90ff067165a354e3918db10f" id="r_a339d22cd90ff067165a354e3918db10f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a339d22cd90ff067165a354e3918db10f">sshAuthSockOverrideStatus</a> (const QString &amp;path) -&gt; <a class="el" href="#a664c86105abd5d58160ec9415f4fc832">SshAuthSockOverrideStatus</a></td></tr>
+<tr class="memdesc:a339d22cd90ff067165a354e3918db10f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate an SSH_AUTH_SOCK override path. Caller is expected to skip validation when the input is empty / whitespace-only.  <br /></td></tr>
 <tr class="memitem:aa93547aecfd166a3e0eac955370cc05c" id="r_aa93547aecfd166a3e0eac955370cc05c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa93547aecfd166a3e0eac955370cc05c">findBinaryInPath</a> (const QString &amp;binary) -&gt; QString</td></tr>
 <tr class="memdesc:aa93547aecfd166a3e0eac955370cc05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate an executable by searching the process PATH and (on Windows) falling back to WSL.  <br /></td></tr>
 <tr class="memitem:abfddcff8c37fbb33e86605e4fb7250db" id="r_abfddcff8c37fbb33e86605e4fb7250db"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abfddcff8c37fbb33e86605e4fb7250db">findPasswordStore</a> () -&gt; QString</td></tr>
@@ -120,7 +132,42 @@ Static Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
 
 <p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00020">20</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
-</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+</div><a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Member Enumeration Documentation</h2>
+<a id="a664c86105abd5d58160ec9415f4fc832" name="a664c86105abd5d58160ec9415f4fc832"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664c86105abd5d58160ec9415f4fc832">&#9670;&#160;</a></span>SshAuthSockOverrideStatus</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum class <a class="el" href="#a664c86105abd5d58160ec9415f4fc832">Util::SshAuthSockOverrideStatus</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel strong">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Classify a non-empty SSH_AUTH_SOCK override path supplied by the user. </p>
+<p>Empty / unset input is handled by the caller (no warning when the field is blank). For a non-empty path, this returns one of:</p>
+<ul>
+<li><span class="tt">Valid</span> — exists, readable, and on Unix is a Unix domain socket.</li>
+<li><span class="tt">DoesNotExist</span> — <span class="tt">QFileInfo::exists()</span> returned false.</li>
+<li><span class="tt">NotReadable</span> — exists but <span class="tt">QFileInfo::isReadable()</span> returned false.</li>
+<li><span class="tt">NotUnixDomainSocket</span> — Unix-only: <span class="tt">stat()</span> says it's not <span class="tt">S_ISSOCK</span>.</li>
+</ul>
+<p>On Windows the socket check is skipped — ssh-agent uses a named pipe. </p>
+
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00036">36</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="af67c5e8a8475d367aad069275251558d" name="af67c5e8a8475d367aad069275251558d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af67c5e8a8475d367aad069275251558d">&#9670;&#160;</a></span>configIsValid()</h2>
 
@@ -564,6 +611,40 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Hash of template name to field list. </dd></dl>
+
+</div>
+</div>
+<a id="a339d22cd90ff067165a354e3918db10f" name="a339d22cd90ff067165a354e3918db10f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a339d22cd90ff067165a354e3918db10f">&#9670;&#160;</a></span>sshAuthSockOverrideStatus()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto Util::sshAuthSockOverrideStatus </td>
+          <td>(</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>path</em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="#a664c86105abd5d58160ec9415f4fc832">SshAuthSockOverrideStatus</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate an SSH_AUTH_SOCK override path. Caller is expected to skip validation when the input is empty / whitespace-only. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>Non-empty candidate path. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Classification per <a class="el" href="#a664c86105abd5d58160ec9415f4fc832" title="Classify a non-empty SSH_AUTH_SOCK override path supplied by the user.">SshAuthSockOverrideStatus</a>. </dd></dl>
 
 </div>
 </div>

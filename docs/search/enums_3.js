@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['process_0',['PROCESS',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69',1,'Enums::PROCESS'],['../simpletransaction_8cpp.html#ac8b64f00258db4fec59578fddbe8ea69',1,'PROCESS:&#160;enums.h']]]
+  ['sshauthsockoverridestatus_0',['SshAuthSockOverrideStatus',['../class_util.html#a664c86105abd5d58160ec9415f4fc832',1,'Util']]]
 ];
