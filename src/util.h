@@ -20,6 +20,34 @@ class StoreModel;
 class Util {
 public:
   /**
+   * @brief Classify a non-empty SSH_AUTH_SOCK override path supplied by the
+   *        user.
+   *
+   * Empty / unset input is handled by the caller (no warning when the field
+   * is blank). For a non-empty path, this returns one of:
+   *
+   * - `Valid` — exists, readable, and on Unix is a Unix domain socket.
+   * - `DoesNotExist` — `QFileInfo::exists()` returned false.
+   * - `NotReadable` — exists but `QFileInfo::isReadable()` returned false.
+   * - `NotUnixDomainSocket` — Unix-only: `stat()` says it's not `S_ISSOCK`.
+   *
+   * On Windows the socket check is skipped — ssh-agent uses a named pipe.
+   */
+  enum class SshAuthSockOverrideStatus {
+    Valid,
+    DoesNotExist,
+    NotReadable,
+    NotUnixDomainSocket,
+  };
+  /**
+   * @brief Validate an SSH_AUTH_SOCK override path. Caller is expected to
+   *        skip validation when the input is empty / whitespace-only.
+   * @param path Non-empty candidate path.
+   * @return Classification per SshAuthSockOverrideStatus.
+   */
+  static auto sshAuthSockOverrideStatus(const QString &path)
+      -> SshAuthSockOverrideStatus;
+  /**
    * @brief Locate an executable by searching the process PATH and (on Windows)
    * falling back to WSL.
    * @param binary Executable name or relative path to locate (e.g., "gpg" or

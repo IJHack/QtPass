@@ -11,7 +11,6 @@
 #include <QClipboard>
 #include <QDir>
 #include <QFileDialog>
-#include <QFileInfo>
 #include <QMessageBox>
 #include <QPushButton>
 #include <QSystemTrayIcon>
@@ -19,10 +18,6 @@
 #include <utility>
 #ifdef Q_OS_WIN
 #include <windows.h>
-#endif
-
-#ifdef Q_OS_UNIX
-#include <sys/stat.h>
 #endif
 
 #ifdef QT_DEBUG
@@ -258,21 +253,19 @@ void ConfigDialog::on_accepted() {
   const QString sshAuthSockOverride = ui->sshAuthSockOverride->text().trimmed();
   if (!sshAuthSockOverride.isEmpty()) {
     QString reason;
-    QFileInfo fi(sshAuthSockOverride);
-    if (!fi.exists()) {
+    switch (Util::sshAuthSockOverrideStatus(sshAuthSockOverride)) {
+    case Util::SshAuthSockOverrideStatus::Valid:
+      break;
+    case Util::SshAuthSockOverrideStatus::DoesNotExist:
       reason = tr("The path does not exist.");
-    } else if (!fi.isReadable()) {
+      break;
+    case Util::SshAuthSockOverrideStatus::NotReadable:
       reason = tr("The path is not readable.");
+      break;
+    case Util::SshAuthSockOverrideStatus::NotUnixDomainSocket:
+      reason = tr("The path is not a Unix domain socket.");
+      break;
     }
-#ifdef Q_OS_UNIX
-    if (reason.isEmpty()) {
-      struct stat st;
-      if (::stat(sshAuthSockOverride.toLocal8Bit().constData(), &st) != 0 ||
-          !S_ISSOCK(st.st_mode)) {
-        reason = tr("The path is not a Unix domain socket.");
-      }
-    }
-#endif
     if (!reason.isEmpty()) {
       QMessageBox::warning(
           this, tr("Potentially invalid SSH_AUTH_SOCK override"),
