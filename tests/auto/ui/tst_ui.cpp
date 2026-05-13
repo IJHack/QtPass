@@ -1,10 +1,15 @@
 // SPDX-FileCopyrightText: 2018 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QCheckBox>
+#include <QComboBox>
 #include <QCoreApplication>
 #include <QDialog>
+#include <QHash>
+#include <QLabel>
 #include <QLineEdit>
 #include <QPointer>
 #include <QSignalSpy>
+#include <QSpinBox>
 #include <QtTest>
 
 #include "../../../src/deselectabletreeview.h"
@@ -27,6 +32,15 @@ private Q_SLOTS:
   void cleanupTestCase();
   void passwordDialogBasic();
   void passwordDialogWithTemplate();
+  void passwordDialogShowCheckboxTogglesEchoMode();
+  void passwordDialogSetLengthUpdatesSpinBox();
+  void passwordDialogSetPasswordCharTemplateUpdatesCombo();
+  void passwordDialogUsePwgenDisablesTemplateSelector();
+  void passwordDialogSetPassPopulatesField();
+  void passwordDialogSetAvailableTemplatesAppliesDefault();
+  void passwordDialogCycleTemplateAdvancesToNext();
+  void passwordDialogCycleTemplateWrapsToFirst();
+  void passwordDialogCycleTemplateNoOpWhenEmpty();
   void qrCodePopupDeletesOnClose();
   void qrCodePopupHasDeleteOnCloseAttribute();
   void createQRCodePopupSetsDeleteOnClose();
@@ -153,6 +167,179 @@ void tst_ui::passwordDialogWithTemplate() {
   d->setPass("mypassword\nusername: testuser");
   QString result = d->getPassword();
   QVERIFY(result.contains("mypassword"));
+}
+
+/**
+ * @brief The "Show password" checkbox flips the password line-edit echo
+ *        mode between Password (hidden) and Normal (visible).
+ */
+void tst_ui::passwordDialogShowCheckboxTogglesEchoMode() {
+  PasswordConfiguration config;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  auto *line = d->findChild<QLineEdit *>(QStringLiteral("lineEditPassword"));
+  auto *checkBox = d->findChild<QCheckBox *>(QStringLiteral("checkBoxShow"));
+  QVERIFY2(line != nullptr, "lineEditPassword widget must exist");
+  QVERIFY2(checkBox != nullptr, "checkBoxShow widget must exist");
+
+  QCOMPARE(line->echoMode(), QLineEdit::Password);
+  checkBox->setChecked(true);
+  QCOMPARE(line->echoMode(), QLineEdit::Normal);
+  checkBox->setChecked(false);
+  QCOMPARE(line->echoMode(), QLineEdit::Password);
+}
+
+/**
+ * @brief setLength writes through to the password-length spinbox.
+ */
+void tst_ui::passwordDialogSetLengthUpdatesSpinBox() {
+  PasswordConfiguration config;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  auto *spin = d->findChild<QSpinBox *>(QStringLiteral("spinBox_pwdLength"));
+  QVERIFY2(spin != nullptr, "spinBox_pwdLength widget must exist");
+  d->setLength(32);
+  QCOMPARE(spin->value(), 32);
+  d->setLength(8);
+  QCOMPARE(spin->value(), 8);
+}
+
+/**
+ * @brief setPasswordCharTemplate selects the matching index in the
+ *        character-template combo box.
+ */
+void tst_ui::passwordDialogSetPasswordCharTemplateUpdatesCombo() {
+  PasswordConfiguration config;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  auto *combo =
+      d->findChild<QComboBox *>(QStringLiteral("passwordTemplateSwitch"));
+  QVERIFY2(combo != nullptr, "passwordTemplateSwitch widget must exist");
+  const int n = combo->count();
+  QVERIFY2(n > 0, "the combo must come pre-populated with character sets");
+  // setPasswordCharTemplate forwards the value through; values past the
+  // last index are clamped/ignored by QComboBox, so confine the test to
+  // valid indices.
+  d->setPasswordCharTemplate(0);
+  QCOMPARE(combo->currentIndex(), 0);
+  if (n > 1) {
+    d->setPasswordCharTemplate(1);
+    QCOMPARE(combo->currentIndex(), 1);
+  }
+}
+
+/**
+ * @brief usePwgen(true) disables the in-app template selector + label
+ *        because pwgen runs an external generator; usePwgen(false)
+ *        restores them.
+ */
+void tst_ui::passwordDialogUsePwgenDisablesTemplateSelector() {
+  PasswordConfiguration config;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  auto *combo =
+      d->findChild<QComboBox *>(QStringLiteral("passwordTemplateSwitch"));
+  auto *label = d->findChild<QLabel *>(QStringLiteral("label_characterset"));
+  QVERIFY2(combo != nullptr, "passwordTemplateSwitch widget must exist");
+  QVERIFY2(label != nullptr, "label_characterset widget must exist");
+
+  d->usePwgen(true);
+  QVERIFY2(!combo->isEnabled(), "pwgen mode must disable the combo box");
+  QVERIFY2(!label->isEnabled(), "pwgen mode must disable the label");
+
+  d->usePwgen(false);
+  QVERIFY2(combo->isEnabled(), "non-pwgen restores the combo box");
+  QVERIFY2(label->isEnabled(), "non-pwgen restores the label");
+}
+
+/**
+ * @brief setPass() is a thin wrapper around setPassword() — the password
+ *        ends up in the first line returned by getPassword.
+ */
+void tst_ui::passwordDialogSetPassPopulatesField() {
+  PasswordConfiguration config;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  d->setPass(QStringLiteral("hunter2\n"));
+  QVERIFY2(d->getPassword().startsWith(QStringLiteral("hunter2")),
+           "setPass should populate the password line");
+}
+
+/**
+ * @brief setAvailableTemplates applies the named default — visible by
+ *        the corresponding template field widgets appearing in the form.
+ */
+void tst_ui::passwordDialogSetAvailableTemplatesAppliesDefault() {
+  PasswordConfiguration config;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  QHash<QString, QStringList> templates;
+  templates[QStringLiteral("login")] =
+      QStringList{QStringLiteral("username"), QStringLiteral("url")};
+  templates[QStringLiteral("creditcard")] =
+      QStringList{QStringLiteral("number"), QStringLiteral("cvv")};
+
+  d->setAvailableTemplates(templates, QStringLiteral("login"));
+
+  // setTemplate names each line-edit after its field; we should see the
+  // "login"-template fields populated.
+  QVERIFY2(d->findChild<QLineEdit *>(QStringLiteral("username")) != nullptr,
+           "username field must exist after login template");
+  QVERIFY2(d->findChild<QLineEdit *>(QStringLiteral("url")) != nullptr,
+           "url field must exist after login template");
+  // creditcard fields must NOT be present.
+  QVERIFY2(d->findChild<QLineEdit *>(QStringLiteral("number")) == nullptr,
+           "number field belongs to the unselected creditcard template");
+}
+
+/**
+ * @brief cycleTemplate() advances to the next alphabetical template.
+ *        Sorted order: creditcard, login. Default = login → cycle → creditcard.
+ */
+void tst_ui::passwordDialogCycleTemplateAdvancesToNext() {
+  PasswordConfiguration config;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  QHash<QString, QStringList> templates;
+  templates[QStringLiteral("login")] = QStringList{QStringLiteral("username")};
+  templates[QStringLiteral("creditcard")] = QStringList{QStringLiteral("cvv")};
+  d->setAvailableTemplates(templates, QStringLiteral("creditcard"));
+  QVERIFY(d->findChild<QLineEdit *>(QStringLiteral("cvv")) != nullptr);
+
+  d->cycleTemplate();
+  QVERIFY2(d->findChild<QLineEdit *>(QStringLiteral("username")) != nullptr,
+           "cycling from creditcard should land on login");
+  QVERIFY2(d->findChild<QLineEdit *>(QStringLiteral("cvv")) == nullptr,
+           "old template fields must be cleared on cycle");
+}
+
+/**
+ * @brief cycleTemplate() wraps from the last alphabetical template back
+ *        to the first.
+ */
+void tst_ui::passwordDialogCycleTemplateWrapsToFirst() {
+  PasswordConfiguration config;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  QHash<QString, QStringList> templates;
+  templates[QStringLiteral("login")] = QStringList{QStringLiteral("username")};
+  templates[QStringLiteral("creditcard")] = QStringList{QStringLiteral("cvv")};
+  d->setAvailableTemplates(templates, QStringLiteral("login"));
+  QVERIFY(d->findChild<QLineEdit *>(QStringLiteral("username")) != nullptr);
+
+  d->cycleTemplate();
+  QVERIFY2(d->findChild<QLineEdit *>(QStringLiteral("cvv")) != nullptr,
+           "cycling from login (last) should wrap to creditcard");
+}
+
+/**
+ * @brief cycleTemplate() is a no-op when no templates were registered.
+ */
+void tst_ui::passwordDialogCycleTemplateNoOpWhenEmpty() {
+  PasswordConfiguration config;
+  QScopedPointer<PasswordDialog> d(new PasswordDialog(config, nullptr));
+  // The early-return path in cycleTemplate() must not crash or apply a
+  // template (template fields would carry a known objectName like
+  // "username" or "cvv"; their absence is the signal that nothing
+  // happened).
+  d->cycleTemplate();
+  d->cycleTemplate();
+  QVERIFY2(d->findChild<QLineEdit *>(QStringLiteral("username")) == nullptr,
+           "no template was registered, so no template fields should appear");
+  QVERIFY2(d->findChild<QLineEdit *>(QStringLiteral("cvv")) == nullptr,
+           "no template was registered, so no template fields should appear");
 }
 
 /**
