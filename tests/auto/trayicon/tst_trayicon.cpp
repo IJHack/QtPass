@@ -82,7 +82,7 @@ void tst_trayicon::iconActivatedTriggerTogglesVisibility() {
   QMainWindow parent;
   TrayIcon tray(&parent);
   parent.show();
-  QTRY_VERIFY(parent.isVisible());
+  QTRY_VERIFY2(parent.isVisible(), "parent must be visible after show()");
 
   tray.iconActivated(QSystemTrayIcon::Trigger);
   QTRY_VERIFY2(!parent.isVisible(), "Trigger should toggle visibility");
@@ -96,7 +96,7 @@ void tst_trayicon::iconActivatedDoubleClickTogglesVisibility() {
   QMainWindow parent;
   TrayIcon tray(&parent);
   parent.show();
-  QTRY_VERIFY(parent.isVisible());
+  QTRY_VERIFY2(parent.isVisible(), "parent must be visible after show()");
 
   tray.iconActivated(QSystemTrayIcon::DoubleClick);
   QTRY_VERIFY2(!parent.isVisible(), "DoubleClick should toggle visibility");
@@ -110,7 +110,7 @@ void tst_trayicon::iconActivatedMiddleClickIsNoOp() {
   QMainWindow parent;
   TrayIcon tray(&parent);
   parent.show();
-  QTRY_VERIFY(parent.isVisible());
+  QTRY_VERIFY2(parent.isVisible(), "parent must be visible after show()");
 
   tray.iconActivated(QSystemTrayIcon::MiddleClick);
   // Give any pending toggle a chance to land. The assertion is "still
@@ -127,7 +127,7 @@ void tst_trayicon::iconActivatedUnknownReasonIsNoOp() {
   QMainWindow parent;
   TrayIcon tray(&parent);
   parent.show();
-  QTRY_VERIFY(parent.isVisible());
+  QTRY_VERIFY2(parent.isVisible(), "parent must be visible after show()");
 
   tray.iconActivated(QSystemTrayIcon::Unknown);
   QTest::qWait(50);
