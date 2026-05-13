@@ -39,6 +39,7 @@ tests/auto/exportpublickeydialog/tst_exportpublickeydialog
 tests/auto/importkeydialog/tst_importkeydialog
 tests/auto/keygendialog/tst_keygendialog
 tests/auto/trayicon/tst_trayicon
+tests/auto/configdialog/tst_configdialog
 tests/auto/locale/tst_locale
 tests/auto/locale/.qm/
 tests/auto/locale/qmake_qmake_qm_files.qrc
