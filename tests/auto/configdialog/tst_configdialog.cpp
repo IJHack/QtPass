@@ -60,9 +60,11 @@ void tst_configdialog::useSelectionTogglesCheckbox() {
   QVERIFY2(cb != nullptr, "checkBoxSelection widget must exist");
 
   dialog.useSelection(true);
-  QVERIFY(cb->isChecked());
+  QVERIFY2(cb->isChecked(),
+           "useSelection(true) should check checkBoxSelection");
   dialog.useSelection(false);
-  QVERIFY(!cb->isChecked());
+  QVERIFY2(!cb->isChecked(),
+           "useSelection(false) should uncheck checkBoxSelection");
 }
 
 /**
@@ -74,9 +76,11 @@ void tst_configdialog::useAutoclearTogglesCheckbox() {
   QVERIFY2(cb != nullptr, "checkBoxAutoclear widget must exist");
 
   dialog.useAutoclear(true);
-  QVERIFY(cb->isChecked());
+  QVERIFY2(cb->isChecked(),
+           "useAutoclear(true) should check checkBoxAutoclear");
   dialog.useAutoclear(false);
-  QVERIFY(!cb->isChecked());
+  QVERIFY2(!cb->isChecked(),
+           "useAutoclear(false) should uncheck checkBoxAutoclear");
 }
 
 /**
@@ -89,9 +93,11 @@ void tst_configdialog::useAutoclearPanelTogglesCheckbox() {
   QVERIFY2(cb != nullptr, "checkBoxAutoclearPanel widget must exist");
 
   dialog.useAutoclearPanel(true);
-  QVERIFY(cb->isChecked());
+  QVERIFY2(cb->isChecked(),
+           "useAutoclearPanel(true) should check checkBoxAutoclearPanel");
   dialog.useAutoclearPanel(false);
-  QVERIFY(!cb->isChecked());
+  QVERIFY2(!cb->isChecked(),
+           "useAutoclearPanel(false) should uncheck checkBoxAutoclearPanel");
 }
 
 /**
@@ -103,9 +109,9 @@ void tst_configdialog::useGitTogglesCheckbox() {
   QVERIFY2(cb != nullptr, "checkBoxUseGit widget must exist");
 
   dialog.useGit(true);
-  QVERIFY(cb->isChecked());
+  QVERIFY2(cb->isChecked(), "useGit(true) should check checkBoxUseGit");
   dialog.useGit(false);
-  QVERIFY(!cb->isChecked());
+  QVERIFY2(!cb->isChecked(), "useGit(false) should uncheck checkBoxUseGit");
 }
 
 /**
@@ -117,9 +123,9 @@ void tst_configdialog::useOtpTogglesCheckbox() {
   QVERIFY2(cb != nullptr, "checkBoxUseOtp widget must exist");
 
   dialog.useOtp(true);
-  QVERIFY(cb->isChecked());
+  QVERIFY2(cb->isChecked(), "useOtp(true) should check checkBoxUseOtp");
   dialog.useOtp(false);
-  QVERIFY(!cb->isChecked());
+  QVERIFY2(!cb->isChecked(), "useOtp(false) should uncheck checkBoxUseOtp");
 }
 
 /**
@@ -132,9 +138,11 @@ void tst_configdialog::useGrepSearchTogglesCheckbox() {
   QVERIFY2(cb != nullptr, "checkBoxUseGrepSearch widget must exist");
 
   dialog.useGrepSearch(true);
-  QVERIFY(cb->isChecked());
+  QVERIFY2(cb->isChecked(),
+           "useGrepSearch(true) should check checkBoxUseGrepSearch");
   dialog.useGrepSearch(false);
-  QVERIFY(!cb->isChecked());
+  QVERIFY2(!cb->isChecked(),
+           "useGrepSearch(false) should uncheck checkBoxUseGrepSearch");
 }
 
 /**
@@ -160,9 +168,11 @@ void tst_configdialog::usePwgenTogglesCheckbox() {
   // Now with a non-empty path the value flows through.
   pwgenPath->setText(QStringLiteral("/usr/bin/pwgen"));
   dialog.usePwgen(true);
-  QVERIFY(cb->isChecked());
+  QVERIFY2(cb->isChecked(),
+           "usePwgen(true) with a configured pwgenPath should check "
+           "checkBoxUsePwgen");
   dialog.usePwgen(false);
-  QVERIFY(!cb->isChecked());
+  QVERIFY2(!cb->isChecked(), "usePwgen(false) should uncheck checkBoxUsePwgen");
 }
 
 /**
@@ -175,9 +185,11 @@ void tst_configdialog::useTemplateTogglesCheckbox() {
   QVERIFY2(cb != nullptr, "checkBoxUseTemplate widget must exist");
 
   dialog.useTemplate(true);
-  QVERIFY(cb->isChecked());
+  QVERIFY2(cb->isChecked(),
+           "useTemplate(true) should check checkBoxUseTemplate");
   dialog.useTemplate(false);
-  QVERIFY(!cb->isChecked());
+  QVERIFY2(!cb->isChecked(),
+           "useTemplate(false) should uncheck checkBoxUseTemplate");
 }
 
 QTEST_MAIN(tst_configdialog)
