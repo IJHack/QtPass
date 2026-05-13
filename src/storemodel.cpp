@@ -193,7 +193,7 @@ auto StoreModel::flags(const QModelIndex &index) const -> Qt::ItemFlags {
  */
 auto StoreModel::mimeTypes() const -> QStringList {
   QStringList types;
-  types << "application/vnd+qtpass.dragAndDropInfoPasswordStore";
+  types << "application/vnd.qtpass.dragAndDropInfoPasswordStore";
   return types;
 }
 
@@ -223,7 +223,7 @@ auto StoreModel::mimeData(const QModelIndexList &indexes) const -> QMimeData * {
   }
 
   auto *mimeData = new QMimeData();
-  mimeData->setData("application/vnd+qtpass.dragAndDropInfoPasswordStore",
+  mimeData->setData("application/vnd.qtpass.dragAndDropInfoPasswordStore",
                     encodedData);
   return mimeData;
 }
@@ -248,12 +248,12 @@ auto StoreModel::canDropMimeData(const QMimeData *data, Qt::DropAction action,
 #endif
 
   if (data == nullptr ||
-      !data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore")) {
+      !data->hasFormat("application/vnd.qtpass.dragAndDropInfoPasswordStore")) {
     return false;
   }
 
   QByteArray encodedData =
-      data->data("application/vnd+qtpass.dragAndDropInfoPasswordStore");
+      data->data("application/vnd.qtpass.dragAndDropInfoPasswordStore");
   if (encodedData.isEmpty()) {
     return false;
   }
@@ -324,7 +324,7 @@ auto StoreModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
 auto StoreModel::parseDropData(const QMimeData *data,
                                dragAndDropInfoPasswordStore *outInfo) -> bool {
   QByteArray encodedData =
-      data->data("application/vnd+qtpass.dragAndDropInfoPasswordStore");
+      data->data("application/vnd.qtpass.dragAndDropInfoPasswordStore");
   if (encodedData.isEmpty()) {
     return false;
   }

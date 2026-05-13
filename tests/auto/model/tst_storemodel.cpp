@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <memory>
+
 #include <QDataStream>
 #include <QDir>
 #include <QFileSystemModel>
 #include <QMimeData>
 #include <QtTest>
-
-#include <memory>
 
 #include "../../../src/storemodel.h"
 
@@ -102,7 +102,7 @@ void tst_storemodel::mimeTypes() {
   StoreModel sm;
   QStringList types = sm.mimeTypes();
   QVERIFY(
-      types.contains("application/vnd+qtpass.dragAndDropInfoPasswordStore"));
+      types.contains("application/vnd.qtpass.dragAndDropInfoPasswordStore"));
 }
 
 void tst_storemodel::lessThan() {
@@ -220,7 +220,7 @@ void tst_storemodel::mimeData() {
   QMimeData *data = sm.mimeData(QModelIndexList() << proxyIndex);
   QVERIFY(data != nullptr);
   QVERIFY(
-      data->hasFormat("application/vnd+qtpass.dragAndDropInfoPasswordStore"));
+      data->hasFormat("application/vnd.qtpass.dragAndDropInfoPasswordStore"));
   delete data;
 }
 
@@ -298,7 +298,7 @@ auto makeMimeData(dragAndDropInfoPasswordStore::ItemKind kind,
   stream << info;
 
   auto mime = std::make_unique<QMimeData>();
-  mime->setData("application/vnd+qtpass.dragAndDropInfoPasswordStore", encoded);
+  mime->setData("application/vnd.qtpass.dragAndDropInfoPasswordStore", encoded);
   return mime;
 }
 
@@ -404,7 +404,7 @@ void tst_storemodel::canDropWrongMimeType() {
 void tst_storemodel::canDropEmptyEncodedData() {
   DropFixture fx;
   QMimeData mime;
-  mime.setData("application/vnd+qtpass.dragAndDropInfoPasswordStore",
+  mime.setData("application/vnd.qtpass.dragAndDropInfoPasswordStore",
                QByteArray());
   QVERIFY(
       !fx.sm.canDropMimeData(&mime, Qt::MoveAction, 0, 0, fx.folderProxy()));
