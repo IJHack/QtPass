@@ -427,13 +427,15 @@ void tst_integration::imitatePass_grepSkipsUndecryptableFiles() {
   QVERIFY2(c1.open(QIODevice::WriteOnly), "should create garbage-token.gpg");
   const char *payload1 = "not a real gpg payload but contains the token word\n";
   qint64 bytesWritten1 = c1.write(payload1);
-  QVERIFY2(bytesWritten1 == static_cast<qint64>(strlen(payload1)), "failed to write test payload to c1");
+  QVERIFY2(bytesWritten1 == static_cast<qint64>(strlen(payload1)),
+           "failed to write test payload to c1");
   c1.close();
   QFile c2(corrupt2);
   QVERIFY2(c2.open(QIODevice::WriteOnly), "should create corrupt.gpg");
   QByteArray corruptData("\xFF\xFE\x00\x01 binary junk\n", 17);
   qint64 bytesWritten2 = c2.write(corruptData);
-  QVERIFY2(bytesWritten2 == corruptData.size(), "failed to write test payload to c2");
+  QVERIFY2(bytesWritten2 == corruptData.size(),
+           "failed to write test payload to c2");
   c2.close();
 
   QSignalSpy grepSpy(&pass, &Pass::finishedGrep);
