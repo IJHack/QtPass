@@ -454,7 +454,7 @@ void Pass::GenerateGPGKeys(QString batch) {
   }
 
   executeWrapper(GPG_GENKEYS, gpgPath, {"--gen-key", "--no-tty", "--batch"},
-                 std::move(batch));
+                 std::move(batch), true, true);
 }
 
 /**

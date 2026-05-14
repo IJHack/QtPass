@@ -2036,7 +2036,7 @@ void tst_util::grepImitatePassEmptyStoreEmitsEmpty() {
 
   TestPass pass;
   QSignalSpy spy(&pass, &Pass::finishedGrep);
-  pass.Grep(QStringLiteral("anything"));
+  pass.Grep(QStringLiteral("anything"), false);
   // Wait up to 3 s for the background thread to emit
   QVERIFY2(spy.wait(TEST_SIGNAL_TIMEOUT_MS),
            "Timed out waiting for Pass::finishedGrep signal");
@@ -2054,7 +2054,7 @@ void tst_util::grepImitatePassInvalidRegexEmitsEmpty() {
   TestPass pass;
   QSignalSpy spy(&pass, &Pass::finishedGrep);
   // An invalid regex (unmatched '[') must still emit an empty result
-  pass.Grep(QStringLiteral("[invalid"));
+  pass.Grep(QStringLiteral("[invalid"), false);
   QVERIFY2(spy.wait(TEST_SIGNAL_TIMEOUT_MS),
            "Timed out waiting for Pass::finishedGrep signal");
   QCOMPARE(spy.count(), 1);

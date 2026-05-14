@@ -135,7 +135,7 @@ public:
    * @param force Overwrite existing.
    */
   virtual void Move(const QString srcDir, const QString dest,
-                    const bool force = false) = 0;
+                    const bool force) = 0;
   /**
    * @brief Copy password file or directory.
    * @param srcDir Source path.
@@ -143,7 +143,7 @@ public:
    * @param force Overwrite existing.
    */
   virtual void Copy(const QString srcDir, const QString dest,
-                    const bool force = false) = 0;
+                    const bool force) = 0;
   /**
    * @brief Initialize new password store.
    * @param path Root of password store.
@@ -155,7 +155,7 @@ public:
    * @param pattern Search pattern (regular expression).
    * @param caseInsensitive true for case-insensitive search.
    */
-  virtual void Grep(QString pattern, bool caseInsensitive = false) = 0;
+  virtual void Grep(QString pattern, bool caseInsensitive) = 0;
 
   /**
    * @brief Generate random password.
@@ -266,7 +266,7 @@ protected:
    */
   virtual void executeWrapper(PROCESS id, const QString &app,
                               const QStringList &args, QString input,
-                              bool readStdout = true, bool readStderr = true);
+                              bool readStdout, bool readStderr);
 
 protected slots:
   /**

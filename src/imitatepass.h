@@ -192,8 +192,7 @@ protected:
    * @param readStderr Whether to capture stderr.
    */
   void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
-                      QString input, bool readStdout = true,
-                      bool readStderr = true) override;
+                      QString input, bool readStdout, bool readStderr) override;
 
 public:
   /**
@@ -240,13 +239,13 @@ public:
    * @param newValue Password content to store.
    * @param overwrite true to overwrite an existing file.
    */
-  void Insert(QString file, QString newValue, bool overwrite = false) override;
+  void Insert(QString file, QString newValue, bool overwrite) override;
   /**
    * @brief Remove password.
    * @param file Path to the file or directory to remove.
    * @param isDir true if removing a directory.
    */
-  void Remove(QString file, bool isDir = false) override;
+  void Remove(QString file, bool isDir) override;
   /**
    * @brief Initialize store.
    * @param path Root path of the password store.
@@ -278,16 +277,14 @@ public:
    * @param dest Destination path.
    * @param force true to overwrite existing destination.
    */
-  void Move(const QString src, const QString dest,
-            const bool force = false) override;
+  void Move(const QString src, const QString dest, const bool force) override;
   /**
    * @brief Copy password file.
    * @param src Source path.
    * @param dest Destination path.
    * @param force true to overwrite existing destination.
    */
-  void Copy(const QString src, const QString dest,
-            const bool force = false) override;
+  void Copy(const QString src, const QString dest, const bool force) override;
   /**
    * @brief Search all password content by GPG-decrypting each .gpg file.
    *
@@ -298,7 +295,7 @@ public:
    * @param pattern Search pattern (QRegularExpression).
    * @param caseInsensitive true for case-insensitive search.
    */
-  void Grep(QString pattern, bool caseInsensitive = false) override;
+  void Grep(QString pattern, bool caseInsensitive) override;
 
 private:
   int m_grepSeq = 0;

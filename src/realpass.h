@@ -76,13 +76,13 @@ public:
    * @param newValue Password content.
    * @param overwrite true to overwrite existing.
    */
-  void Insert(QString file, QString newValue, bool overwrite = false) override;
+  void Insert(QString file, QString newValue, bool overwrite) override;
   /**
    * @brief Remove password or directory.
    * @param file Path to remove.
    * @param isDir true if removing directory.
    */
-  void Remove(QString file, bool isDir = false) override;
+  void Remove(QString file, bool isDir) override;
   /**
    * @brief Initialize password store.
    * @param path Store root path.
@@ -98,22 +98,20 @@ public:
    * @param dest Destination path.
    * @param force Overwrite existing.
    */
-  void Move(const QString src, const QString dest,
-            const bool force = false) override;
+  void Move(const QString src, const QString dest, const bool force) override;
   /**
    * @brief Copy password file or directory.
    * @param src Source path.
    * @param dest Destination path.
    * @param force Overwrite existing.
    */
-  void Copy(const QString src, const QString dest,
-            const bool force = false) override;
+  void Copy(const QString src, const QString dest, const bool force) override;
   /**
    * @brief Search password content via 'pass grep'.
    * @param pattern Search pattern.
    * @param caseInsensitive true for case-insensitive search.
    */
-  void Grep(QString pattern, bool caseInsensitive = false) override;
+  void Grep(QString pattern, bool caseInsensitive) override;
 };
 
 #endif // SRC_REALPASS_H_
