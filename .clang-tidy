@@ -1,3 +1,3 @@
-Checks: 'modernize-*,performance-*,bugprone-*,-modernize-use-trailing-return-type,-modernize-use-nodiscard,-bugprone-throwing-static-initialization,-bugprone-easily-swappable-parameters'
+Checks: 'modernize-*,performance-*,bugprone-*,google-explicit-constructor,google-build-using-namespace,google-runtime-int,-modernize-use-trailing-return-type,-modernize-use-nodiscard,-bugprone-throwing-static-initialization,-bugprone-easily-swappable-parameters'
 WarningsAsErrors: '*'
 HeaderFilterRegex: '^(?!.*qprogressindicator).*$'
