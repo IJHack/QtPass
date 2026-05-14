@@ -1990,11 +1990,10 @@ auto MainWindow::getProcessName(Enums::PROCESS pid) -> QString {
   case Enums::GIT_MOVE:
     return QStringLiteral("git mv"); // no-tr
   case Enums::GIT_COPY:
-    // ImitatePass::Copy literally invokes `git cp` (a git-extras
-    // subcommand), so the label matches what's run. Stock-git users
-    // without git-extras will see the underlying "'cp' is not a git
-    // command" failure surfaced in the process output panel.
-    return QStringLiteral("git cp"); // no-tr
+    // ImitatePass::Copy invokes `git cp` (a git-extras subcommand).
+    // Surface this requirement in the user-visible process label so
+    // failures are less confusing on systems without git-extras.
+    return QStringLiteral("git cp (requires git-extras)"); // no-tr
   case Enums::PASS_INSERT:
     return QStringLiteral("pass insert"); // no-tr
   case Enums::PASS_REMOVE:
