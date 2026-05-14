@@ -380,7 +380,7 @@ void tst_integration::imitatePass_insertAndGrep() {
   QVERIFY2(waitForSignal(insertSpy), gpgInsertErrorMsg(insertErrorSpy));
 
   QSignalSpy grepSpy(&pass, &Pass::finishedGrep);
-  pass.Grep(QStringLiteral("token"));
+  pass.Grep(QStringLiteral("token"), false);
   QVERIFY2(waitForSignal(grepSpy, 20000), "finishedGrep not emitted");
 
   const auto results = grepSpy[0][0].value<GrepResults>();
@@ -439,7 +439,7 @@ void tst_integration::imitatePass_grepSkipsUndecryptableFiles() {
   c2.close();
 
   QSignalSpy grepSpy(&pass, &Pass::finishedGrep);
-  pass.Grep(QStringLiteral("token"));
+  pass.Grep(QStringLiteral("token"), false);
   QVERIFY2(waitForSignal(grepSpy, 20000), "finishedGrep not emitted");
 
   const auto results = grepSpy[0][0].value<GrepResults>();
@@ -473,7 +473,7 @@ void tst_integration::imitatePass_insertMoveAndShow() {
   QVERIFY2(QFile::exists(src), "source .gpg must exist before move");
 
   // Without git, Move is synchronous — no signal emitted.
-  pass.Move(src, dst);
+  pass.Move(src, dst, false);
   QVERIFY2(!QFile::exists(src), "source should be gone after move");
   QVERIFY2(QFile::exists(dst), "destination should exist after move");
 
@@ -498,7 +498,7 @@ void tst_integration::imitatePass_insertCopyAndShow() {
   const QString dst = storeDir.path() + "/copy.gpg";
 
   // Without git, Copy is synchronous — no finishedCopy signal emitted.
-  pass.Copy(src, dst);
+  pass.Copy(src, dst, false);
   QVERIFY2(QFile::exists(src), "source should still exist after copy");
   QVERIFY2(QFile::exists(dst), "destination should exist after copy");
 
@@ -748,7 +748,7 @@ void tst_integration::realPass_insertAndGrep() {
   QVERIFY2(waitForSignal(insertSpy, 20000), gpgInsertErrorMsg(insertErrorSpy));
 
   QSignalSpy grepSpy(&pass, &Pass::finishedGrep);
-  pass.Grep(QStringLiteral("url"));
+  pass.Grep(QStringLiteral("url"), false);
   QVERIFY2(waitForSignal(grepSpy, 30000), "RealPass finishedGrep not emitted");
 
   const auto results = grepSpy[0][0].value<GrepResults>();

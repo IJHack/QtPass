@@ -388,9 +388,9 @@ auto StoreModel::handleDirDrop(const QString &cleanedSrc,
   QString cleanedDestDir = QDir::cleanPath(destDir.absolutePath());
 
   if (action == Qt::MoveAction) {
-    QtPassSettings::getPass()->Move(cleanedSrc, cleanedDestDir);
+    QtPassSettings::getPass()->Move(cleanedSrc, cleanedDestDir, false);
   } else if (action == Qt::CopyAction) {
-    QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDestDir);
+    QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDestDir, false);
   }
   return true;
 }
@@ -409,9 +409,9 @@ auto StoreModel::handleFileToDirDrop(const QString &cleanedSrc,
                                      const QString &cleanedDest,
                                      Qt::DropAction action) -> bool {
   if (action == Qt::MoveAction) {
-    QtPassSettings::getPass()->Move(cleanedSrc, cleanedDest);
+    QtPassSettings::getPass()->Move(cleanedSrc, cleanedDest, false);
   } else if (action == Qt::CopyAction) {
-    QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDest);
+    QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDest, false);
   }
   return true;
 }

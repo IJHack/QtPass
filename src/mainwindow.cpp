@@ -1549,7 +1549,7 @@ void MainWindow::renameFolder() {
   if (!confirmPathInStore(destDir)) {
     return;
   }
-  QtPassSettings::getPass()->Move(srcDir, destDir);
+  QtPassSettings::getPass()->Move(srcDir, destDir, false);
 }
 
 /**
@@ -1587,7 +1587,7 @@ void MainWindow::renamePassword() {
   if (!confirmPathInStore(newFile)) {
     return;
   }
-  QtPassSettings::getPass()->Move(file, newFile);
+  QtPassSettings::getPass()->Move(file, newFile, false);
 }
 
 /**
