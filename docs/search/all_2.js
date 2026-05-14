@@ -18,7 +18,7 @@ var searchData=
   ['config_15',['config',['../class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56',1,'MainWindow']]],
   ['configdialog_16',['ConfigDialog',['../class_config_dialog.html',1,'ConfigDialog'],['../class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1',1,'ConfigDialog::ConfigDialog()']]],
   ['configisvalid_17',['configIsValid',['../class_util.html#af67c5e8a8475d367aad069275251558d',1,'Util']]],
-  ['copy_18',['Copy',['../class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a',1,'ImitatePass::Copy()'],['../class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49',1,'Pass::Copy()'],['../class_real_pass.html#a640ea218267605b9ca78c21ca5677690',1,'RealPass::Copy()']]],
+  ['copy_18',['Copy',['../class_imitate_pass.html#a7748aba981f125a9d663cb9b40358d4a',1,'ImitatePass::Copy()'],['../class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1',1,'Pass::Copy()'],['../class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e',1,'RealPass::Copy()']]],
   ['copytexttoclipboard_19',['copyTextToClipboard',['../class_qt_pass.html#acba134fb5281aedee11899a03976aa95',1,'QtPass']]],
   ['createbackupcommit_20',['createBackupCommit',['../class_imitate_pass.html#a086365ec85674590afbd883df0b27a80',1,'ImitatePass']]],
   ['created_21',['created',['../struct_user_info.html#ac7919fbe53ce83369fc4bcfef8934ff6',1,'UserInfo']]],

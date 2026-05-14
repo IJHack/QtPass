@@ -172,14 +172,14 @@ void&#160;</td><td class="memItemRight"><b>init</b> ()</td></tr>
 <tr class="memdesc:a86ad2005a6517f9c304a9e156755778c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert or update password.  <br /></td></tr>
 <tr class="memitem:a5aedb6df7aa57385eb19a78cdbd3e764" id="r_a5aedb6df7aa57385eb19a78cdbd3e764"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a5aedb6df7aa57385eb19a78cdbd3e764">Remove</a> (QString file, bool isDir)=0</td></tr>
 <tr class="memdesc:a5aedb6df7aa57385eb19a78cdbd3e764"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove password file or directory.  <br /></td></tr>
-<tr class="memitem:ab9dde6644865bd583dc09a52d17ffb49" id="r_ab9dde6644865bd583dc09a52d17ffb49"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#ab9dde6644865bd583dc09a52d17ffb49">Move</a> (const QString srcDir, const QString dest, const bool force=false)=0</td></tr>
-<tr class="memdesc:ab9dde6644865bd583dc09a52d17ffb49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move password file or directory.  <br /></td></tr>
-<tr class="memitem:a1a41ce3d629b20902e9d14ff285c1f49" id="r_a1a41ce3d629b20902e9d14ff285c1f49"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a1a41ce3d629b20902e9d14ff285c1f49">Copy</a> (const QString srcDir, const QString dest, const bool force=false)=0</td></tr>
-<tr class="memdesc:a1a41ce3d629b20902e9d14ff285c1f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy password file or directory.  <br /></td></tr>
+<tr class="memitem:a386cbd930f4feac9275170912d45b3a3" id="r_a386cbd930f4feac9275170912d45b3a3"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a386cbd930f4feac9275170912d45b3a3">Move</a> (const QString srcDir, const QString dest, const bool force)=0</td></tr>
+<tr class="memdesc:a386cbd930f4feac9275170912d45b3a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move password file or directory.  <br /></td></tr>
+<tr class="memitem:a2e0e5b18743a91c1b2cfe4372a4087c1" id="r_a2e0e5b18743a91c1b2cfe4372a4087c1"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a2e0e5b18743a91c1b2cfe4372a4087c1">Copy</a> (const QString srcDir, const QString dest, const bool force)=0</td></tr>
+<tr class="memdesc:a2e0e5b18743a91c1b2cfe4372a4087c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy password file or directory.  <br /></td></tr>
 <tr class="memitem:aee98d184ed11013a9a9dc08d05fbb1a2" id="r_aee98d184ed11013a9a9dc08d05fbb1a2"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aee98d184ed11013a9a9dc08d05fbb1a2">Init</a> (QString path, const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;users)=0</td></tr>
 <tr class="memdesc:aee98d184ed11013a9a9dc08d05fbb1a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize new password store.  <br /></td></tr>
-<tr class="memitem:aeb0ec5b8842c1c27e40dafc2ebcad509" id="r_aeb0ec5b8842c1c27e40dafc2ebcad509"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aeb0ec5b8842c1c27e40dafc2ebcad509">Grep</a> (QString pattern, bool caseInsensitive=false)=0</td></tr>
-<tr class="memdesc:aeb0ec5b8842c1c27e40dafc2ebcad509"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search password content for a pattern.  <br /></td></tr>
+<tr class="memitem:a3d45abeffc8d61f58828959e74b26176" id="r_a3d45abeffc8d61f58828959e74b26176"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a3d45abeffc8d61f58828959e74b26176">Grep</a> (QString pattern, bool caseInsensitive)=0</td></tr>
+<tr class="memdesc:a3d45abeffc8d61f58828959e74b26176"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search password content for a pattern.  <br /></td></tr>
 <tr class="memitem:abeaa28bc8d5250f107cfc587c608e97b" id="r_abeaa28bc8d5250f107cfc587c608e97b"><td class="memItemLeft">virtual auto&#160;</td><td class="memItemRight"><a class="el" href="#abeaa28bc8d5250f107cfc587c608e97b">generatePassword</a> (unsigned int length, const QString &amp;charset) -&gt; QString</td></tr>
 <tr class="memdesc:abeaa28bc8d5250f107cfc587c608e97b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random password.  <br /></td></tr>
 <tr class="memitem:a0c29f7bd4ca235d00d9dac6a37e14f4f" id="r_a0c29f7bd4ca235d00d9dac6a37e14f4f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a0c29f7bd4ca235d00d9dac6a37e14f4f">GenerateGPGKeys</a> (QString batch)</td></tr>
@@ -227,8 +227,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a4f63e4e86c7ffec6df333e466fb38c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random number in range.  <br /></td></tr>
 <tr class="memitem:a4ecc5514ea969ceb06f439698bf6aa9a" id="r_a4ecc5514ea969ceb06f439698bf6aa9a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4ecc5514ea969ceb06f439698bf6aa9a">setEnvVar</a> (const QString &amp;key, const QString &amp;value)</td></tr>
 <tr class="memdesc:a4ecc5514ea969ceb06f439698bf6aa9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove an environment variable.  <br /></td></tr>
-<tr class="memitem:a079b1947604a0faeb35ddad8d60aa283" id="r_a079b1947604a0faeb35ddad8d60aa283"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a079b1947604a0faeb35ddad8d60aa283">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout=true, bool readStderr=true)</td></tr>
-<tr class="memdesc:a079b1947604a0faeb35ddad8d60aa283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute wrapper with input.  <br /></td></tr>
+<tr class="memitem:aec26dcea250e655b2b50d9858edf9d8f" id="r_aec26dcea250e655b2b50d9858edf9d8f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aec26dcea250e655b2b50d9858edf9d8f">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout, bool readStderr)</td></tr>
+<tr class="memdesc:aec26dcea250e655b2b50d9858edf9d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute wrapper with input.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -308,8 +308,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1a41ce3d629b20902e9d14ff285c1f49" name="a1a41ce3d629b20902e9d14ff285c1f49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a41ce3d629b20902e9d14ff285c1f49">&#9670;&#160;</a></span>Copy()</h2>
+<a id="a2e0e5b18743a91c1b2cfe4372a4087c1" name="a2e0e5b18743a91c1b2cfe4372a4087c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e0e5b18743a91c1b2cfe4372a4087c1">&#9670;&#160;</a></span>Copy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -330,7 +330,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -350,7 +350,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_imitate_pass.html#a97538d83d4f6a583f840db0865e8609a">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a640ea218267605b9ca78c21ca5677690">RealPass</a>.</p>
+<p>Implemented in <a class="el" href="class_imitate_pass.html#a7748aba981f125a9d663cb9b40358d4a">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a18b236aa64e27f35289a7c51a46abb0e">RealPass</a>.</p>
 
 </div>
 </div>
@@ -448,8 +448,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a079b1947604a0faeb35ddad8d60aa283" name="a079b1947604a0faeb35ddad8d60aa283"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a079b1947604a0faeb35ddad8d60aa283">&#9670;&#160;</a></span>executeWrapper() <span class="overload">[2/2]</span></h2>
+<a id="aec26dcea250e655b2b50d9858edf9d8f" name="aec26dcea250e655b2b50d9858edf9d8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec26dcea250e655b2b50d9858edf9d8f">&#9670;&#160;</a></span>executeWrapper() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -480,12 +480,12 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>readStdout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>readStdout</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>readStderr</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>readStderr</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -508,7 +508,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="class_imitate_pass.html#aa2ade77096c04fb94536d675bfaae8fe">ImitatePass</a>.</p>
+<p>Reimplemented in <a class="el" href="class_imitate_pass.html#a2a19726a201781d415a6b98a83b98d96">ImitatePass</a>.</p>
 
 </div>
 </div>
@@ -1519,8 +1519,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aeb0ec5b8842c1c27e40dafc2ebcad509" name="aeb0ec5b8842c1c27e40dafc2ebcad509"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb0ec5b8842c1c27e40dafc2ebcad509">&#9670;&#160;</a></span>Grep()</h2>
+<a id="a3d45abeffc8d61f58828959e74b26176" name="a3d45abeffc8d61f58828959e74b26176"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d45abeffc8d61f58828959e74b26176">&#9670;&#160;</a></span>Grep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1536,7 +1536,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>caseInsensitive</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>caseInsensitive</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1555,7 +1555,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_imitate_pass.html#a7789a916aca076ad7ceaf4ef093239d3">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ae231e77648f429687ca7e2cf14275b07">RealPass</a>.</p>
+<p>Implemented in <a class="el" href="class_imitate_pass.html#a4c18253700bd6127c546325448f14829">ImitatePass</a>, and <a class="el" href="class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3">RealPass</a>.</p>
 
 </div>
 </div>
@@ -1641,7 +1641,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_imitate_pass.html#a84de97293ca1a100b1e466b4a79ec601">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a45193fab522965fe8b1c8f8996e6a49a">RealPass</a>.</p>
+<p>Implemented in <a class="el" href="class_imitate_pass.html#a4c62fe3ae4f151582f6360599a610dd6">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830">RealPass</a>.</p>
 
 </div>
 </div>
@@ -1707,8 +1707,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab9dde6644865bd583dc09a52d17ffb49" name="ab9dde6644865bd583dc09a52d17ffb49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9dde6644865bd583dc09a52d17ffb49">&#9670;&#160;</a></span>Move()</h2>
+<a id="a386cbd930f4feac9275170912d45b3a3" name="a386cbd930f4feac9275170912d45b3a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a386cbd930f4feac9275170912d45b3a3">&#9670;&#160;</a></span>Move()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1729,7 +1729,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1749,7 +1749,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_imitate_pass.html#a9653850cc56714b9774221204339bbf2">ImitatePass</a>, and <a class="el" href="class_real_pass.html#ad9f71cf753e5fce4772bec086237d033">RealPass</a>.</p>
+<p>Implemented in <a class="el" href="class_imitate_pass.html#ae647ee1e408862bb6d66ee4d6324f0b1">ImitatePass</a>, and <a class="el" href="class_real_pass.html#acbbb510bd58cdceae53d34985453fc83">RealPass</a>.</p>
 
 </div>
 </div>
@@ -1862,7 +1862,7 @@ Protected Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="class_imitate_pass.html#ab9cef44c64dae297da55e08266f1c1c5">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a96679194b4a0e6b99eb41cf25349c7fd">RealPass</a>.</p>
+<p>Implemented in <a class="el" href="class_imitate_pass.html#a181e512eff4b82f5078af432c369d4ee">ImitatePass</a>, and <a class="el" href="class_real_pass.html#a0fcac7c5005e6d1a0d09373b5476ca9c">RealPass</a>.</p>
 
 </div>
 </div>

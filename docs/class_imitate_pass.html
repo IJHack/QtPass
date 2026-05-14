@@ -186,20 +186,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:acfffcbf097c9d4615c01e064e335d65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Show decrypted password.  <br /></td></tr>
 <tr class="memitem:a18eac6111a1d77a3f8ded93b7be16270" id="r_a18eac6111a1d77a3f8ded93b7be16270"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a18eac6111a1d77a3f8ded93b7be16270">OtpGenerate</a> (QString file) override</td></tr>
 <tr class="memdesc:a18eac6111a1d77a3f8ded93b7be16270"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate OTP.  <br /></td></tr>
-<tr class="memitem:a84de97293ca1a100b1e466b4a79ec601" id="r_a84de97293ca1a100b1e466b4a79ec601"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a84de97293ca1a100b1e466b4a79ec601">Insert</a> (QString file, QString newValue, bool overwrite=false) override</td></tr>
-<tr class="memdesc:a84de97293ca1a100b1e466b4a79ec601"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert new password.  <br /></td></tr>
-<tr class="memitem:ab9cef44c64dae297da55e08266f1c1c5" id="r_ab9cef44c64dae297da55e08266f1c1c5"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab9cef44c64dae297da55e08266f1c1c5">Remove</a> (QString file, bool isDir=false) override</td></tr>
-<tr class="memdesc:ab9cef44c64dae297da55e08266f1c1c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove password.  <br /></td></tr>
+<tr class="memitem:a4c62fe3ae4f151582f6360599a610dd6" id="r_a4c62fe3ae4f151582f6360599a610dd6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4c62fe3ae4f151582f6360599a610dd6">Insert</a> (QString file, QString newValue, bool overwrite) override</td></tr>
+<tr class="memdesc:a4c62fe3ae4f151582f6360599a610dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert new password.  <br /></td></tr>
+<tr class="memitem:a181e512eff4b82f5078af432c369d4ee" id="r_a181e512eff4b82f5078af432c369d4ee"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a181e512eff4b82f5078af432c369d4ee">Remove</a> (QString file, bool isDir) override</td></tr>
+<tr class="memdesc:a181e512eff4b82f5078af432c369d4ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove password.  <br /></td></tr>
 <tr class="memitem:a6fe6b48df3fb04071c8c2c1d5c1d1206" id="r_a6fe6b48df3fb04071c8c2c1d5c1d1206"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6fe6b48df3fb04071c8c2c1d5c1d1206">Init</a> (QString path, const QList&lt; <a class="el" href="struct_user_info.html">UserInfo</a> &gt; &amp;users) override</td></tr>
 <tr class="memdesc:a6fe6b48df3fb04071c8c2c1d5c1d1206"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize store.  <br /></td></tr>
 <tr class="memitem:af331446d163c31f1fca714646c0f6244" id="r_af331446d163c31f1fca714646c0f6244"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#af331446d163c31f1fca714646c0f6244">reencryptPath</a> (const QString &amp;dir)</td></tr>
 <tr class="memdesc:af331446d163c31f1fca714646c0f6244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-encrypt entire directory.  <br /></td></tr>
-<tr class="memitem:a9653850cc56714b9774221204339bbf2" id="r_a9653850cc56714b9774221204339bbf2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9653850cc56714b9774221204339bbf2">Move</a> (const QString src, const QString dest, const bool force=false) override</td></tr>
-<tr class="memdesc:a9653850cc56714b9774221204339bbf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move password file.  <br /></td></tr>
-<tr class="memitem:a97538d83d4f6a583f840db0865e8609a" id="r_a97538d83d4f6a583f840db0865e8609a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a97538d83d4f6a583f840db0865e8609a">Copy</a> (const QString src, const QString dest, const bool force=false) override</td></tr>
-<tr class="memdesc:a97538d83d4f6a583f840db0865e8609a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy password file.  <br /></td></tr>
-<tr class="memitem:a7789a916aca076ad7ceaf4ef093239d3" id="r_a7789a916aca076ad7ceaf4ef093239d3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7789a916aca076ad7ceaf4ef093239d3">Grep</a> (QString pattern, bool caseInsensitive=false) override</td></tr>
-<tr class="memdesc:a7789a916aca076ad7ceaf4ef093239d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search all password content by GPG-decrypting each .gpg file.  <br /></td></tr>
+<tr class="memitem:ae647ee1e408862bb6d66ee4d6324f0b1" id="r_ae647ee1e408862bb6d66ee4d6324f0b1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae647ee1e408862bb6d66ee4d6324f0b1">Move</a> (const QString src, const QString dest, const bool force) override</td></tr>
+<tr class="memdesc:ae647ee1e408862bb6d66ee4d6324f0b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move password file.  <br /></td></tr>
+<tr class="memitem:a7748aba981f125a9d663cb9b40358d4a" id="r_a7748aba981f125a9d663cb9b40358d4a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7748aba981f125a9d663cb9b40358d4a">Copy</a> (const QString src, const QString dest, const bool force) override</td></tr>
+<tr class="memdesc:a7748aba981f125a9d663cb9b40358d4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy password file.  <br /></td></tr>
+<tr class="memitem:a4c18253700bd6127c546325448f14829" id="r_a4c18253700bd6127c546325448f14829"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4c18253700bd6127c546325448f14829">Grep</a> (QString pattern, bool caseInsensitive) override</td></tr>
+<tr class="memdesc:a4c18253700bd6127c546325448f14829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search all password content by GPG-decrypting each .gpg file.  <br /></td></tr>
 <tr class="inherit_header pub_methods_class_pass"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_class_pass')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Public Member Functions inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
 <tr class="memitem:a5d0cea4019f5c123fb4a4417de8d95b9 inherit pub_methods_class_pass" id="r_a5d0cea4019f5c123fb4a4417de8d95b9"><td class="memItemLeft">
 &#160;</td><td class="memItemRight"><b>Pass</b> ()</td></tr>
@@ -245,8 +245,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:adfd24194a7787a48b6eddbe8d31fc563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve destination for move operation.  <br /></td></tr>
 <tr class="memitem:aa0b75b53b2a2d62b0fbffbb5d2d7efe4" id="r_aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">finished</a> (int id, int exitCode, const QString &amp;out, const QString &amp;err) override</td></tr>
 <tr class="memdesc:aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle process completion.  <br /></td></tr>
-<tr class="memitem:aa2ade77096c04fb94536d675bfaae8fe" id="r_aa2ade77096c04fb94536d675bfaae8fe"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa2ade77096c04fb94536d675bfaae8fe">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout=true, bool readStderr=true) override</td></tr>
-<tr class="memdesc:aa2ade77096c04fb94536d675bfaae8fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute command wrapper.  <br /></td></tr>
+<tr class="memitem:a2a19726a201781d415a6b98a83b98d96" id="r_a2a19726a201781d415a6b98a83b98d96"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2a19726a201781d415a6b98a83b98d96">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout, bool readStderr) override</td></tr>
+<tr class="memdesc:a2a19726a201781d415a6b98a83b98d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute command wrapper.  <br /></td></tr>
 <tr class="inherit_header pro_methods_class_pass"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_pass')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
 <tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
@@ -330,8 +330,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a97538d83d4f6a583f840db0865e8609a" name="a97538d83d4f6a583f840db0865e8609a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97538d83d4f6a583f840db0865e8609a">&#9670;&#160;</a></span>Copy()</h2>
+<a id="a7748aba981f125a9d663cb9b40358d4a" name="a7748aba981f125a9d663cb9b40358d4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7748aba981f125a9d663cb9b40358d4a">&#9670;&#160;</a></span>Copy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -352,7 +352,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -372,7 +372,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="class_pass.html#a1a41ce3d629b20902e9d14ff285c1f49">Pass</a>.</p>
+<p>Implements <a class="el" href="class_pass.html#a2e0e5b18743a91c1b2cfe4372a4087c1">Pass</a>.</p>
 
 </div>
 </div>
@@ -536,8 +536,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="aa2ade77096c04fb94536d675bfaae8fe" name="aa2ade77096c04fb94536d675bfaae8fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2ade77096c04fb94536d675bfaae8fe">&#9670;&#160;</a></span>executeWrapper()</h2>
+<a id="a2a19726a201781d415a6b98a83b98d96" name="a2a19726a201781d415a6b98a83b98d96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a19726a201781d415a6b98a83b98d96">&#9670;&#160;</a></span>executeWrapper()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -568,12 +568,12 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>readStdout</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>, </td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>readStdout</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>readStderr</em></span><span class="paramdefsep"> = </span><span class="paramdefval">true</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>readStderr</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -596,7 +596,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented from <a class="el" href="class_pass.html#a079b1947604a0faeb35ddad8d60aa283">Pass</a>.</p>
+<p>Reimplemented from <a class="el" href="class_pass.html#aec26dcea250e655b2b50d9858edf9d8f">Pass</a>.</p>
 
 </div>
 </div>
@@ -882,8 +882,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a7789a916aca076ad7ceaf4ef093239d3" name="a7789a916aca076ad7ceaf4ef093239d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7789a916aca076ad7ceaf4ef093239d3">&#9670;&#160;</a></span>Grep()</h2>
+<a id="a4c18253700bd6127c546325448f14829" name="a4c18253700bd6127c546325448f14829"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c18253700bd6127c546325448f14829">&#9670;&#160;</a></span>Grep()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -899,7 +899,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>caseInsensitive</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>caseInsensitive</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -910,7 +910,7 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Search all password content by GPG-decrypting each .gpg file. </p>
-<p>Pattern is interpreted as a QRegularExpression (PCRE-like), which differs from <a class="el" href="class_real_pass.html#ae231e77648f429687ca7e2cf14275b07" title="Search password content via &#39;pass grep&#39;.">RealPass::Grep</a> which uses system <span class="tt">pass grep</span> (POSIX BRE via grep). The same pattern may produce different matches across the two backends.</p>
+<p>Pattern is interpreted as a QRegularExpression (PCRE-like), which differs from <a class="el" href="class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3" title="Search password content via &#39;pass grep&#39;.">RealPass::Grep</a> which uses system <span class="tt">pass grep</span> (POSIX BRE via grep). The same pattern may produce different matches across the two backends.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pattern</td><td>Search pattern (QRegularExpression). </td></tr>
@@ -919,7 +919,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="class_pass.html#aeb0ec5b8842c1c27e40dafc2ebcad509">Pass</a>.</p>
+<p>Implements <a class="el" href="class_pass.html#a3d45abeffc8d61f58828959e74b26176">Pass</a>.</p>
 
 </div>
 </div>
@@ -963,8 +963,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a84de97293ca1a100b1e466b4a79ec601" name="a84de97293ca1a100b1e466b4a79ec601"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84de97293ca1a100b1e466b4a79ec601">&#9670;&#160;</a></span>Insert()</h2>
+<a id="a4c62fe3ae4f151582f6360599a610dd6" name="a4c62fe3ae4f151582f6360599a610dd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c62fe3ae4f151582f6360599a610dd6">&#9670;&#160;</a></span>Insert()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -985,7 +985,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>overwrite</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>overwrite</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1009,8 +1009,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="a9653850cc56714b9774221204339bbf2" name="a9653850cc56714b9774221204339bbf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9653850cc56714b9774221204339bbf2">&#9670;&#160;</a></span>Move()</h2>
+<a id="ae647ee1e408862bb6d66ee4d6324f0b1" name="ae647ee1e408862bb6d66ee4d6324f0b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae647ee1e408862bb6d66ee4d6324f0b1">&#9670;&#160;</a></span>Move()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1031,7 +1031,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">const bool</td>          <td class="paramname"><span class="paramname"><em>force</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -1051,7 +1051,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="class_pass.html#ab9dde6644865bd583dc09a52d17ffb49">Pass</a>.</p>
+<p>Implements <a class="el" href="class_pass.html#a386cbd930f4feac9275170912d45b3a3">Pass</a>.</p>
 
 </div>
 </div>
@@ -1154,8 +1154,8 @@ Additional Inherited Members</h2></td></tr>
 
 </div>
 </div>
-<a id="ab9cef44c64dae297da55e08266f1c1c5" name="ab9cef44c64dae297da55e08266f1c1c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9cef44c64dae297da55e08266f1c1c5">&#9670;&#160;</a></span>Remove()</h2>
+<a id="a181e512eff4b82f5078af432c369d4ee" name="a181e512eff4b82f5078af432c369d4ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a181e512eff4b82f5078af432c369d4ee">&#9670;&#160;</a></span>Remove()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1171,7 +1171,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isDir</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>isDir</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
