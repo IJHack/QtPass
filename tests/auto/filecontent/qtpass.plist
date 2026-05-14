@@ -12,8 +12,6 @@
 	<string>icon.icns</string>
 	<key>CFBundleIdentifier</key>
 	<string>org.qtpass</string>
-	<key>CFBundlePackageType</key>
-	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>@SHORT_VERSION@</string>
 	<key>CFBundleSignature</key>
