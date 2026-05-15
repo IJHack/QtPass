@@ -65,7 +65,8 @@ void tst_mainwindow::initTestCase() {
   QVERIFY2(m_storeDir.isValid(), "temp store dir must be created");
 
   // Minimal valid pass store: just a .gpg-id file
-  QFile gpgId(QDir::cleanPath(QDir(m_storeDir.path()).filePath(QStringLiteral(".gpg-id"))));
+  QFile gpgId(QDir::cleanPath(
+      QDir(m_storeDir.path()).filePath(QStringLiteral(".gpg-id"))));
   QVERIFY2(gpgId.open(QIODevice::WriteOnly), ".gpg-id must be writable");
   gpgId.write("0000000000000000\n");
   gpgId.close();
