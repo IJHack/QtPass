@@ -16,6 +16,7 @@
  */
 
 #include <QApplication>
+#include <QDir>
 #include <QFile>
 #include <QScopedPointer>
 #include <QStatusBar>
@@ -64,7 +65,7 @@ void tst_mainwindow::initTestCase() {
   QVERIFY2(m_storeDir.isValid(), "temp store dir must be created");
 
   // Minimal valid pass store: just a .gpg-id file
-  QFile gpgId(m_storeDir.path() + QStringLiteral("/.gpg-id"));
+  QFile gpgId(QDir::cleanPath(m_storeDir.path() + QStringLiteral("/.gpg-id")));
   QVERIFY2(gpgId.open(QIODevice::WriteOnly), ".gpg-id must be writable");
   gpgId.write("0000000000000000\n");
   gpgId.close();
@@ -77,7 +78,7 @@ void tst_mainwindow::initTestCase() {
 
   // Point QtPassSettings at the temp store and use gpg (not pass) mode so
   // configIsValid() only requires the .gpg-id file + a gpg binary.
-  QtPassSettings::setPassStore(m_storeDir.path());
+  QtPassSettings::setPassStore(QDir::cleanPath(m_storeDir.path()));
   QtPassSettings::setUsePass(false);
 
   // Verify gpg is reachable. We also pre-set the executable path so that
@@ -96,7 +97,7 @@ void tst_mainwindow::initTestCase() {
 
 void tst_mainwindow::init() {
   // Re-apply store settings in case a previous test modified them.
-  QtPassSettings::setPassStore(m_storeDir.path());
+  QtPassSettings::setPassStore(QDir::cleanPath(m_storeDir.path()));
   QtPassSettings::setUsePass(false);
   QtPassSettings::setShowProcessOutput(true);
   // Re-apply gpg path: initExecutables() inside the constructor overwrites
@@ -204,14 +205,14 @@ void tst_mainwindow::flashTextHtmlRenderedInBrowser() {
   QVERIFY2(browser != nullptr, "textBrowser must exist");
 
   m_window->flashText(QStringLiteral("<b>bold</b>"), false, true);
-  // toHtml() includes the full document wrapper; the source fragment must
-  // survive the round-trip and be rendered (not escaped).
-  QVERIFY2(browser->toHtml().contains(QStringLiteral("<b>bold</b>")),
-           "flashText with isHtml=true must render <b>bold</b> tags in "
-           "browser->toHtml(), not escape them");
-  QVERIFY2(!browser->toHtml().contains(QStringLiteral("&lt;b&gt;bold&lt;/b&gt;")),
-           "flashText with isHtml=true must NOT produce escaped "
-           "&lt;b&gt;bold&lt;/b&gt; in browser->toHtml()");
+  // Qt's rich text engine converts <b> to font-weight CSS internally, so
+  // toHtml() never emits literal <b> tags. Verify the text content appears
+  // and that the HTML was rendered (not escaped as &lt;b&gt;).
+  QVERIFY2(browser->toHtml().contains(QStringLiteral("bold")),
+           "flashText with isHtml=true must set content in textBrowser");
+  QVERIFY2(
+      !browser->toHtml().contains(QStringLiteral("&lt;b&gt;bold&lt;/b&gt;")),
+      "flashText with isHtml=true must not escape HTML tags");
 }
 
 /**
