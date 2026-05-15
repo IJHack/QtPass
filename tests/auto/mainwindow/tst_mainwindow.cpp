@@ -34,6 +34,7 @@ class tst_mainwindow : public QObject {
 
   QTemporaryDir m_storeDir;
   QScopedPointer<MainWindow> m_window;
+  QString m_gpgPath;
 
 private Q_SLOTS:
   void initTestCase();
@@ -69,13 +70,18 @@ void tst_mainwindow::initTestCase() {
   QtPassSettings::setPassStore(m_storeDir.path());
   QtPassSettings::setUsePass(false);
 
-  // Verify gpg is reachable; initExecutables() will set the path, but we
-  // check early so the QSKIP fires before any MainWindow is constructed.
-  QString gpg = Util::findBinaryInPath(QStringLiteral("gpg2"));
-  if (gpg.isEmpty())
-    gpg = Util::findBinaryInPath(QStringLiteral("gpg"));
-  if (gpg.isEmpty())
+  // Verify gpg is reachable. We also pre-set the executable path so that
+  // QtPass::init() → initExecutables() finds it even when only "gpg" (not
+  // "gpg2") exists in PATH (e.g. Ubuntu CI where gpg2 is not a separate
+  // binary). Without this, initExecutables() leaves the path empty,
+  // configIsValid() returns false, and config() opens a blocking modal
+  // dialog that times out the test after 300 s.
+  m_gpgPath = Util::findBinaryInPath(QStringLiteral("gpg2"));
+  if (m_gpgPath.isEmpty())
+    m_gpgPath = Util::findBinaryInPath(QStringLiteral("gpg"));
+  if (m_gpgPath.isEmpty())
     QSKIP("gpg not available — skipping MainWindow construction tests");
+  QtPassSettings::setGpgExecutable(m_gpgPath);
 }
 
 void tst_mainwindow::init() {
@@ -83,6 +89,11 @@ void tst_mainwindow::init() {
   QtPassSettings::setPassStore(m_storeDir.path());
   QtPassSettings::setUsePass(false);
   QtPassSettings::setShowProcessOutput(true);
+  // Re-apply gpg path: initExecutables() inside the constructor overwrites
+  // the setting to findBinaryInPath("gpg2"), which is empty on systems where
+  // only "gpg" exists. Setting it here ensures configIsValid() sees a valid
+  // executable and does not fall back to the blocking config() dialog.
+  QtPassSettings::setGpgExecutable(m_gpgPath);
   m_window.reset(new MainWindow);
 }
 
