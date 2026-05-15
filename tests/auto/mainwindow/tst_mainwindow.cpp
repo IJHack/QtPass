@@ -35,6 +35,10 @@ class tst_mainwindow : public QObject {
   QTemporaryDir m_storeDir;
   QScopedPointer<MainWindow> m_window;
   QString m_gpgPath;
+  QString m_savedPassStore;
+  bool m_savedUsePass;
+  bool m_savedShowProcessOutput;
+  QString m_savedGpgExecutable;
 
 private Q_SLOTS:
   void initTestCase();
@@ -64,6 +68,12 @@ void tst_mainwindow::initTestCase() {
   QVERIFY2(gpgId.open(QIODevice::WriteOnly), ".gpg-id must be writable");
   gpgId.write("0000000000000000\n");
   gpgId.close();
+
+  // Save original settings before modifying them
+  m_savedPassStore = QtPassSettings::getPassStore();
+  m_savedUsePass = QtPassSettings::isUsePass();
+  m_savedShowProcessOutput = QtPassSettings::isShowProcessOutput();
+  m_savedGpgExecutable = QtPassSettings::getGpgExecutable();
 
   // Point QtPassSettings at the temp store and use gpg (not pass) mode so
   // configIsValid() only requires the .gpg-id file + a gpg binary.
@@ -100,10 +110,13 @@ void tst_mainwindow::init() {
 void tst_mainwindow::cleanup() { m_window.reset(); }
 
 void tst_mainwindow::cleanupTestCase() {
-  // Restore a clean state so the user's live config is not left pointing
+  // Restore all saved settings so the user's live config is not left pointing
   // at our temp store (which will be deleted when m_storeDir goes out of
   // scope).
-  QtPassSettings::setPassStore(QString());
+  QtPassSettings::setPassStore(m_savedPassStore);
+  QtPassSettings::setUsePass(m_savedUsePass);
+  QtPassSettings::setShowProcessOutput(m_savedShowProcessOutput);
+  QtPassSettings::setGpgExecutable(m_savedGpgExecutable);
 }
 
 // ---------------------------------------------------------------------------
@@ -192,9 +205,13 @@ void tst_mainwindow::flashTextHtmlRenderedInBrowser() {
 
   m_window->flashText(QStringLiteral("<b>bold</b>"), false, true);
   // toHtml() includes the full document wrapper; the source fragment must
-  // survive the round-trip.
-  QVERIFY2(browser->toHtml().contains(QStringLiteral("bold")),
-           "HTML content must appear in textBrowser");
+  // survive the round-trip and be rendered (not escaped).
+  QVERIFY2(browser->toHtml().contains(QStringLiteral("<b>bold</b>")),
+           "flashText with isHtml=true must render <b>bold</b> tags in "
+           "browser->toHtml(), not escape them");
+  QVERIFY2(!browser->toHtml().contains(QStringLiteral("&lt;b&gt;bold&lt;/b&gt;")),
+           "flashText with isHtml=true must NOT produce escaped "
+           "&lt;b&gt;bold&lt;/b&gt; in browser->toHtml()");
 }
 
 /**
