@@ -27,6 +27,11 @@ private Q_SLOTS:
   void parseWhitespaceOnlyContent();
   void parseOnlyNamedFields();
   void parseTemplateFieldsWithEmptyValues();
+  void parseAllFieldsModeIncludesExtraFields();
+  void parseAllFieldsModeExcludesUrlLines();
+  void parseCrlfNamedValuesAreTrimmed();
+  void parseMultipleOtpauthLinesAllHidden();
+  void parseOtpauthCaseInsensitiveHidden();
 };
 
 void tst_filecontent::parsePlainPassword() {
@@ -231,6 +236,61 @@ void tst_filecontent::parseTemplateFieldsWithEmptyValues() {
     QVERIFY2(nv[1].name == "username", "second field should be username");
     QVERIFY2(nv[1].value.isEmpty(), "username value should be empty");
   }
+}
+
+void tst_filecontent::parseAllFieldsModeIncludesExtraFields() {
+  QString content = "secret\nnote: some note\nkey: value";
+  FileContent fc = FileContent::parse(content, QStringList(), true);
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY2(nv.size() == 2,
+           "allFields=true should include all name:value pairs");
+  QVERIFY2(nv[0].name == "note" && nv[0].value == "some note",
+           "first field should be note");
+  QVERIFY2(nv[1].name == "key" && nv[1].value == "value",
+           "second field should be key");
+  QVERIFY2(fc.getRemainingData().isEmpty(),
+           "no remaining data when all fields are named");
+}
+
+void tst_filecontent::parseAllFieldsModeExcludesUrlLines() {
+  QString content = "secret\nhttp://example.com\nkey: value";
+  FileContent fc = FileContent::parse(content, QStringList(), true);
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY2(nv.size() == 1, "URL-like lines should not become named values");
+  QVERIFY2(nv[0].name == "key" && nv[0].value == "value",
+           "non-url field should be parsed");
+  QVERIFY2(fc.getRemainingData().contains("http://example.com"),
+           "URL line should stay in remaining data");
+}
+
+void tst_filecontent::parseCrlfNamedValuesAreTrimmed() {
+  QString content = "secret\r\nusername: john\r\n";
+  FileContent fc = FileContent::parse(content, {"username"}, false);
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY2(nv.size() == 1, "CRLF file should yield one named value");
+  QVERIFY2(nv[0].value == "john",
+           "value.trimmed() must strip trailing \\r from CRLF lines");
+}
+
+void tst_filecontent::parseMultipleOtpauthLinesAllHidden() {
+  QString content =
+      "secret\notpauth://totp/A?secret=x\notpauth://totp/B?secret=y";
+  FileContent fc = FileContent::parse(content, QStringList(), false);
+  QVERIFY2(fc.getRemainingData().contains("otpauth://totp/A"),
+           "otpauth lines must appear in getRemainingData");
+  QVERIFY2(fc.getRemainingData().contains("otpauth://totp/B"),
+           "both otpauth lines must appear in getRemainingData");
+  QVERIFY2(fc.getRemainingDataForDisplay().isEmpty(),
+           "getRemainingDataForDisplay must hide all otpauth lines");
+}
+
+void tst_filecontent::parseOtpauthCaseInsensitiveHidden() {
+  QString content = "secret\nOTPAUTH://totp/Example?secret=key";
+  FileContent fc = FileContent::parse(content, QStringList(), false);
+  QVERIFY2(fc.getRemainingData().contains("OTPAUTH://"),
+           "uppercase OTPAUTH should be in remaining data");
+  QVERIFY2(fc.getRemainingDataForDisplay().isEmpty(),
+           "uppercase OTPAUTH must be hidden from display");
 }
 
 QTEST_MAIN(tst_filecontent)

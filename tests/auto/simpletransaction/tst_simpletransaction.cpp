@@ -15,6 +15,12 @@ private Q_SLOTS:
   void nestedTransaction();
   void transactionStartEndExplicit();
   void transactionQueueOrder();
+  void transactionIsOverWrongIdReturnsInvalid();
+  void transactionIsOverEmptyQueueReturnsInvalid();
+  void transactionEndWithoutStartIsNoop();
+  void transactionStartEndWithoutAddIsNoop();
+  void transactionEndResultDiffersFromAdd();
+  void deeplyNestedTransactionUsesLastAdd();
 };
 
 void tst_simpletransaction::transactionAddAndComplete() {
@@ -79,6 +85,49 @@ void tst_simpletransaction::transactionQueueOrder() {
   QVERIFY2(r2 == Enums::PASS_REMOVE, "PASS_REMOVE should complete second");
   Enums::PROCESS r3 = st.transactionIsOver(Enums::PASS_SHOW);
   QVERIFY2(r3 == Enums::PASS_SHOW, "PASS_SHOW should complete third");
+}
+
+void tst_simpletransaction::transactionIsOverWrongIdReturnsInvalid() {
+  simpleTransaction st;
+  st.transactionAdd(Enums::PASS_SHOW);
+  QCOMPARE(st.transactionIsOver(Enums::PASS_INSERT), Enums::INVALID);
+}
+
+void tst_simpletransaction::transactionIsOverEmptyQueueReturnsInvalid() {
+  simpleTransaction st;
+  QCOMPARE(st.transactionIsOver(Enums::PASS_SHOW), Enums::INVALID);
+}
+
+void tst_simpletransaction::transactionEndWithoutStartIsNoop() {
+  simpleTransaction st;
+  st.transactionEnd(Enums::PASS_SHOW);
+  QCOMPARE(st.transactionIsOver(Enums::PASS_SHOW), Enums::INVALID);
+}
+
+void tst_simpletransaction::transactionStartEndWithoutAddIsNoop() {
+  simpleTransaction st;
+  st.transactionStart();
+  st.transactionEnd(Enums::PASS_SHOW);
+  QCOMPARE(st.transactionIsOver(Enums::PASS_SHOW), Enums::INVALID);
+}
+
+void tst_simpletransaction::transactionEndResultDiffersFromAdd() {
+  simpleTransaction st;
+  st.transactionStart();
+  st.transactionAdd(Enums::PASS_SHOW);
+  st.transactionEnd(Enums::PASS_INSERT);
+  QCOMPARE(st.transactionIsOver(Enums::PASS_SHOW), Enums::PASS_INSERT);
+}
+
+void tst_simpletransaction::deeplyNestedTransactionUsesLastAdd() {
+  simpleTransaction st;
+  st.transactionStart();
+  st.transactionAdd(Enums::GIT_ADD);
+  st.transactionStart();
+  st.transactionAdd(Enums::GIT_COMMIT);
+  st.transactionEnd(Enums::GIT_COMMIT);
+  st.transactionEnd(Enums::GIT_PUSH);
+  QCOMPARE(st.transactionIsOver(Enums::GIT_COMMIT), Enums::GIT_PUSH);
 }
 
 QTEST_MAIN(tst_simpletransaction)
