@@ -32,6 +32,15 @@ private Q_SLOTS:
   void parseCrlfNamedValuesAreTrimmed();
   void parseMultipleOtpauthLinesAllHidden();
   void parseOtpauthCaseInsensitiveHidden();
+  void namedValuesDefaultConstructorIsEmpty();
+  void namedValueEqualityOperator();
+  void namedValueInequalityByName();
+  void namedValueInequalityByValue();
+  void namedValuesTakeValueRemovesOnlyFirst();
+  void parseUnicodePassword();
+  void parseUnicodeFieldValue();
+  void parseFieldWithSpacesAroundColon();
+  void getRemainingDataEmptyWhenAllTemplate();
 };
 
 void tst_filecontent::parsePlainPassword() {
@@ -291,6 +300,73 @@ void tst_filecontent::parseOtpauthCaseInsensitiveHidden() {
            "uppercase OTPAUTH should be in remaining data");
   QVERIFY2(fc.getRemainingDataForDisplay().isEmpty(),
            "uppercase OTPAUTH must be hidden from display");
+}
+
+void tst_filecontent::namedValuesDefaultConstructorIsEmpty() {
+  NamedValues nv;
+  QVERIFY2(nv.isEmpty(), "default-constructed NamedValues must be empty");
+}
+
+void tst_filecontent::namedValueEqualityOperator() {
+  NamedValue a{"user", "john"};
+  NamedValue b{"user", "john"};
+  QVERIFY2(a == b, "identical NamedValues must compare equal");
+}
+
+void tst_filecontent::namedValueInequalityByName() {
+  NamedValue a{"user", "john"};
+  NamedValue b{"login", "john"};
+  QVERIFY2(!(a == b), "NamedValues with different names must not be equal");
+}
+
+void tst_filecontent::namedValueInequalityByValue() {
+  NamedValue a{"user", "john"};
+  NamedValue b{"user", "jane"};
+  QVERIFY2(!(a == b), "NamedValues with different values must not be equal");
+}
+
+void tst_filecontent::namedValuesTakeValueRemovesOnlyFirst() {
+  NamedValues nv = {{"key", "first"}, {"key", "second"}};
+  QString taken = nv.takeValue("key");
+  QVERIFY2(taken == "first", "takeValue must return the first match");
+  QVERIFY2(nv.size() == 1, "takeValue must remove only the first match");
+  QVERIFY2(nv[0].value == "second", "second entry must remain after takeValue");
+}
+
+void tst_filecontent::parseUnicodePassword() {
+  QString content = "pässwörд\nusername: alice";
+  FileContent fc = FileContent::parse(content, {"username"}, false);
+  QVERIFY2(fc.getPassword() == "pässwörд",
+           "unicode password must be preserved verbatim");
+}
+
+void tst_filecontent::parseUnicodeFieldValue() {
+  QString content = "pass\nkommentar: héllo wörld";
+  FileContent fc = FileContent::parse(content, {"kommentar"}, false);
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY2(nv.size() == 1, "unicode field must be parsed");
+  QVERIFY2(nv[0].value == "héllo wörld",
+           "unicode field value must be preserved");
+}
+
+void tst_filecontent::parseFieldWithSpacesAroundColon() {
+  // allFields=true: name and value are trimmed on append, so
+  // "user : alice" produces name="user", value="alice"
+  QString content = "pass\nuser : alice";
+  FileContent fc = FileContent::parse(content, QStringList(), true);
+  NamedValues nv = fc.getNamedValues();
+  QVERIFY2(nv.size() == 1,
+           "field with spaces around colon should be parsed in allFields mode");
+  QVERIFY2(nv[0].name == "user", "name must be trimmed");
+  QVERIFY2(nv[0].value == "alice", "value must be trimmed");
+}
+
+void tst_filecontent::getRemainingDataEmptyWhenAllTemplate() {
+  QString content = "secret\nuser: alice\nurl: example.com";
+  QStringList templateFields = {"user", "url"};
+  FileContent fc = FileContent::parse(content, templateFields, false);
+  QVERIFY2(fc.getRemainingData().isEmpty(),
+           "remaining data must be empty when all fields match the template");
 }
 
 QTEST_MAIN(tst_filecontent)
