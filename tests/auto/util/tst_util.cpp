@@ -2508,6 +2508,9 @@ void tst_util::readTemplatesEmptySectionIgnored() {
   out << "[]\nfield\n[valid]\nkey\n";
   f.close();
 
+  QTest::ignoreMessage(
+      QtWarningMsg, QRegularExpression("Empty template section in "
+                                       "\\.templates file, ignoring fields"));
   auto result = Util::readTemplates(tmp.path());
   QVERIFY2(!result.contains(""), "empty section name must be ignored");
   QVERIFY2(result.contains("valid"), "valid section must still be parsed");
@@ -2564,6 +2567,10 @@ void tst_util::writeTemplatesSortedKeys() {
            ".templates must open");
   QString content = QString::fromUtf8(f.readAll());
   f.close();
+  QVERIFY2(content.indexOf("[alpha]") != -1,
+           "[alpha] section must be present in written file");
+  QVERIFY2(content.indexOf("[zebra]") != -1,
+           "[zebra] section must be present in written file");
   QVERIFY2(content.indexOf("[alpha]") < content.indexOf("[zebra]"),
            "sections must be written in alphabetical order");
 }
