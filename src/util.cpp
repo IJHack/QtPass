@@ -659,7 +659,6 @@ auto Util::getFolderTemplate(const QString &folderPath,
                              const QString &storePath) -> QString {
   QDir storeDir(storePath);
   QString cleanStoreAbs = QDir::cleanPath(storeDir.absolutePath());
-  QString sep = QDir::separator();
   QDir dir(folderPath);
   while (true) {
     if (dir.exists(".default_template")) {
@@ -682,7 +681,7 @@ auto Util::getFolderTemplate(const QString &folderPath,
     if (currentPath == cleanStoreAbs) {
       break;
     }
-    if (!currentPath.startsWith(cleanStoreAbs + sep)) {
+    if (!currentPath.startsWith(cleanStoreAbs + "/")) {
       break;
     }
     if (!dir.cdUp()) {
