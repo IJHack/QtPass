@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QSet>
 #include <QString>
 #include <QtTest>
 
