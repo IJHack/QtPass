@@ -1,5 +1,6 @@
 // SPDX-FileCopyrightText: 2026 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
+#include <QStandardPaths>
 #include <QtTest>
 
 #include "../../../src/executor.h"
@@ -24,6 +25,13 @@ private Q_SLOTS:
   void executeBlockingWithEnvSetsVariable();
   void executeBlockingTwoArgOverload();
   void executeBlockingConstQStringRef();
+  void executeAsyncFinishedSignal();
+  void executeAsyncCapturesStdout();
+  void executeAsyncNonZeroExitCode();
+  void executeAsyncStartingSignal();
+  void executeAsyncMultipleSequential();
+  void executeAsyncWithWorkDir();
+  void cancelNextWhileRunningReturnsMinusOne();
 #endif
   void executeBlockingNotFound();
   void executeBlockingGpgVersion();
@@ -32,6 +40,9 @@ private Q_SLOTS:
   void executeBlockingGpgKillAgent();
   void resolveGpgconfCommand();
   void executeBlockingWithEnvNotFound();
+  void environmentDefaultsEmpty();
+  void setAndGetEnvironment();
+  void cancelNextEmptyReturnsMinusOne();
 };
 
 #ifndef Q_OS_WIN
@@ -292,6 +303,135 @@ void tst_executor::resolveGpgconfCommand() {
     QVERIFY2(result.program == "gpgconf", "Absolute path should fallback");
   }
 }
+
+void tst_executor::environmentDefaultsEmpty() {
+  Executor exec;
+  QVERIFY2(exec.environment().isEmpty(),
+           "default executor environment must be empty");
+}
+
+void tst_executor::setAndGetEnvironment() {
+  Executor exec;
+  QStringList env = {"QTPASS_FOO=bar", "QTPASS_BAZ=qux"};
+  exec.setEnvironment(env);
+  QStringList expected = env;
+  expected.sort();
+  QStringList actual = exec.environment();
+  actual.sort();
+  QCOMPARE(actual, expected);
+}
+
+void tst_executor::cancelNextEmptyReturnsMinusOne() {
+  Executor exec;
+  QCOMPARE(exec.cancelNext(), -1);
+}
+
+#ifndef Q_OS_WIN
+void tst_executor::executeAsyncFinishedSignal() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
+                            &Executor::finished));
+  QVERIFY2(spy.isValid(),
+           "spy must connect to Executor::finished(int,int,...) signal");
+  exec.execute(42, sh, {"-c", "echo async-hello"}, true, false);
+  QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
+  const QList<QVariant> args = spy.first();
+  QCOMPARE(args.at(0).toInt(), 42);
+  QCOMPARE(args.at(1).toInt(), 0);
+  QVERIFY2(args.at(2).toString().contains("async-hello"),
+           "stdout must contain 'async-hello'");
+}
+
+void tst_executor::executeAsyncCapturesStdout() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
+                            &Executor::finished));
+  QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
+  exec.execute(1, sh, {"-c", "echo captured-output"}, true, false);
+  QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
+  const QString output = spy.first().at(2).toString();
+  QVERIFY2(output.contains("captured-output"),
+           "stdout must contain 'captured-output'");
+}
+
+void tst_executor::executeAsyncNonZeroExitCode() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
+                            &Executor::finished));
+  QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
+  exec.execute(7, sh, {"-c", "exit 1"}, false, false);
+  QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
+  const int exitCode = spy.first().at(1).toInt();
+  QVERIFY2(exitCode != 0, "sh -c 'exit 1' must exit with non-zero code");
+}
+
+void tst_executor::executeAsyncStartingSignal() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy startSpy(&exec, &Executor::starting);
+  QSignalSpy doneSpy(&exec,
+                     qOverload<int, int, const QString &, const QString &>(
+                         &Executor::finished));
+  QVERIFY2(doneSpy.isValid(),
+           "doneSpy must connect to Executor::finished signal");
+  exec.execute(3, sh, {"-c", "echo starting-test"}, false, false);
+  QTRY_COMPARE_WITH_TIMEOUT(doneSpy.count(), 1, 5000);
+  QVERIFY2(startSpy.count() >= 1, "starting signal must have been emitted");
+}
+
+void tst_executor::executeAsyncMultipleSequential() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
+                            &Executor::finished));
+  QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
+  exec.execute(10, sh, {"-c", "echo first"}, true, false);
+  exec.execute(11, sh, {"-c", "echo second"}, true, false);
+  QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 2, 5000);
+  QCOMPARE(spy.at(0).at(0).toInt(), 10);
+  QCOMPARE(spy.at(1).at(0).toInt(), 11);
+}
+
+void tst_executor::executeAsyncWithWorkDir() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  QTemporaryDir tmp;
+  QVERIFY2(tmp.isValid(), "temp dir must be valid");
+  Executor exec;
+  QSignalSpy spy(&exec, qOverload<int, int, const QString &, const QString &>(
+                            &Executor::finished));
+  QVERIFY2(spy.isValid(), "spy must connect to Executor::finished signal");
+  exec.execute(5, tmp.path(), sh, {"-c", "pwd"}, true, false);
+  QTRY_COMPARE_WITH_TIMEOUT(spy.count(), 1, 5000);
+  const QString output = spy.first().at(2).toString().trimmed();
+  QVERIFY2(QDir::cleanPath(output) == QDir::cleanPath(tmp.path()),
+           "working directory must match the tmp path");
+}
+
+void tst_executor::cancelNextWhileRunningReturnsMinusOne() {
+  const QString sh = QStandardPaths::findExecutable("sh");
+  if (sh.isEmpty())
+    QSKIP("sh not found in PATH");
+  Executor exec;
+  exec.execute(1, sh, {"-c", "sleep 2"}, false, false);
+  exec.execute(2, sh, {"-c", "echo queued"}, false, false);
+  QCOMPARE(exec.cancelNext(), -1);
+}
+#endif
 
 QTEST_MAIN(tst_executor)
 #include "tst_executor.moc"
