@@ -23,7 +23,8 @@ void tst_profileinit::needsInitFalseForNonexistentPath() {
   // Build a guaranteed-absent path inside the system temp tree.
   QTemporaryDir base;
   QVERIFY2(base.isValid(), "base temp dir must be created");
-  const QString absent = QDir(base.path()).filePath(QStringLiteral("nonexistent_subdir"));
+  const QString absent =
+      QDir(base.path()).filePath(QStringLiteral("nonexistent_subdir"));
   QVERIFY2(!ProfileInit::needsInit(absent),
            "needsInit must return false for a path that does not exist");
 }

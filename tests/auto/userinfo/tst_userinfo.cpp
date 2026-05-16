@@ -46,15 +46,13 @@ void tst_userinfo::fullyValidWithU() {
 void tst_userinfo::fullyValidFalseForM() {
   UserInfo u;
   u.validity = 'm';
-  QVERIFY2(!u.fullyValid(),
-           "fullyValid() must return false for validity='m'");
+  QVERIFY2(!u.fullyValid(), "fullyValid() must return false for validity='m'");
 }
 
 void tst_userinfo::fullyValidFalseForOther() {
   UserInfo u;
   u.validity = '-';
-  QVERIFY2(!u.fullyValid(),
-           "fullyValid() must return false for validity='-'");
+  QVERIFY2(!u.fullyValid(), "fullyValid() must return false for validity='-'");
 }
 
 void tst_userinfo::marginallyValidWithM() {
