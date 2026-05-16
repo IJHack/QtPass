@@ -16,6 +16,9 @@
  * @return true if the path needs initialization.
  */
 auto ProfileInit::needsInit(const QString &path) -> bool {
+  if (path.isEmpty()) {
+    return false;
+  }
   QDir dir(path);
   if (!dir.exists()) {
     return false;
