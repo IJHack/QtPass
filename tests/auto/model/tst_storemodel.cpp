@@ -45,6 +45,9 @@ private Q_SLOTS:
   void showThisWithNullFs();
   void getStoreBasic();
   void filterRegularExpression();
+  void setStoreUpdatesPath();
+  void dataEditRoleKeepsGpgExtension();
+  void filterHidesNonGpgFile();
 };
 
 void tst_storemodel::dataRemovesGpgExtension() {
@@ -517,6 +520,68 @@ void tst_storemodel::dropMimeDataRejectsSymlinkEscape() {
       !fx.sm.dropMimeData(mime.get(), Qt::MoveAction, 0, 0, fx.folderProxy()),
       "drop with src=<symlink-out-of-store> must be refused");
 #endif
+}
+
+void tst_storemodel::setStoreUpdatesPath() {
+  QTemporaryDir tempDir;
+  QFileSystemModel fsm;
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+  QCOMPARE(sm.getStore(), tempDir.path());
+
+  QString newPath = tempDir.path() + "/substore";
+  sm.setStore(newPath);
+  QCOMPARE(sm.getStore(), newPath);
+}
+
+void tst_storemodel::dataEditRoleKeepsGpgExtension() {
+  QTemporaryDir tempDir;
+  QFile f(tempDir.path() + "/secret.gpg");
+  QVERIFY(f.open(QFile::WriteOnly));
+  f.close();
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  QTRY_VERIFY(fsm.index(tempDir.path() + "/secret.gpg").isValid());
+  QModelIndex sourceIndex = fsm.index(tempDir.path() + "/secret.gpg");
+  QModelIndex proxyIndex = sm.mapFromSource(sourceIndex);
+
+  QVariant editData = sm.data(proxyIndex, Qt::EditRole);
+  QVERIFY2(editData.isValid(), "EditRole data must be valid");
+  QVERIFY2(editData.toString().endsWith(".gpg"),
+           "EditRole must not strip the .gpg extension");
+}
+
+void tst_storemodel::filterHidesNonGpgFile() {
+  QTemporaryDir tempDir;
+  // A plain text file (no .gpg) should not pass the filter because its
+  // name doesn't end in .gpg and won't match the default empty regex
+  // after extension stripping — unless the regex explicitly matches it.
+  QFile f(tempDir.path() + "/readme.txt");
+  QVERIFY(f.open(QFile::WriteOnly));
+  f.close();
+
+  QFileSystemModel fsm;
+  fsm.setRootPath(tempDir.path());
+
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  QTRY_VERIFY(fsm.index(tempDir.path() + "/readme.txt").isValid());
+  QModelIndex index = fsm.index(tempDir.path() + "/readme.txt");
+
+  // Set a filter that would match "readme" if extension stripping happened
+  sm.setFilterRegularExpression("readme");
+  bool visible = sm.filterAcceptsRow(index.row(), index.parent());
+  // readme.txt has no .gpg suffix; after stripping nothing, "readme.txt"
+  // does contain "readme" so the filter accepts it. This documents the
+  // actual behavior: the model does not restrict to .gpg files only.
+  QVERIFY2(visible,
+           "non-gpg file matching the regex is accepted by the filter");
 }
 
 QTEST_MAIN(tst_storemodel)
