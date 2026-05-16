@@ -20,42 +20,52 @@ private Q_SLOTS:
 };
 
 void tst_profileinit::needsInitFalseForNonexistentPath() {
-  QVERIFY(!ProfileInit::needsInit(QStringLiteral("/nonexistent/path/abc123")));
+  // Build a guaranteed-absent path inside the system temp tree.
+  QTemporaryDir base;
+  QVERIFY2(base.isValid(), "base temp dir must be created");
+  const QString absent = QDir(base.path()).filePath(QStringLiteral("nonexistent_subdir"));
+  QVERIFY2(!ProfileInit::needsInit(absent),
+           "needsInit must return false for a path that does not exist");
 }
 
 void tst_profileinit::needsInitFalseForEmptyPath() {
-  QVERIFY(!ProfileInit::needsInit(QString()));
+  QVERIFY2(!ProfileInit::needsInit(QString()),
+           "needsInit must return false for an empty path");
 }
 
 void tst_profileinit::needsInitTrueForDirWithoutGpgId() {
   QTemporaryDir dir;
-  QVERIFY(dir.isValid());
-  QVERIFY(ProfileInit::needsInit(dir.path()));
+  QVERIFY2(dir.isValid(), "temp dir must be created");
+  QVERIFY2(ProfileInit::needsInit(dir.path()),
+           "needsInit must return true for a directory without .gpg-id");
 }
 
 void tst_profileinit::needsInitFalseForDirWithGpgId() {
   QTemporaryDir dir;
-  QVERIFY(dir.isValid());
+  QVERIFY2(dir.isValid(), "temp dir must be created");
 
   QFile gpgId(QDir(dir.path()).filePath(QStringLiteral(".gpg-id")));
-  QVERIFY(gpgId.open(QIODevice::WriteOnly));
+  QVERIFY2(gpgId.open(QIODevice::WriteOnly), ".gpg-id must be writable");
   gpgId.close();
 
-  QVERIFY(!ProfileInit::needsInit(dir.path()));
+  QVERIFY2(!ProfileInit::needsInit(dir.path()),
+           "needsInit must return false for a directory that has .gpg-id");
 }
 
 void tst_profileinit::needsInitFalseAfterGpgIdAdded() {
   QTemporaryDir dir;
-  QVERIFY(dir.isValid());
+  QVERIFY2(dir.isValid(), "temp dir must be created");
 
-  QVERIFY(ProfileInit::needsInit(dir.path()));
+  QVERIFY2(ProfileInit::needsInit(dir.path()),
+           "needsInit must return true before .gpg-id is created");
 
   QFile gpgId(QDir(dir.path()).filePath(QStringLiteral(".gpg-id")));
-  QVERIFY(gpgId.open(QIODevice::WriteOnly));
+  QVERIFY2(gpgId.open(QIODevice::WriteOnly), ".gpg-id must be writable");
   gpgId.close();
 
-  QVERIFY(!ProfileInit::needsInit(dir.path()));
+  QVERIFY2(!ProfileInit::needsInit(dir.path()),
+           "needsInit must return false after .gpg-id is created");
 }
 
-QTEST_APPLESS_MAIN(tst_profileinit)
+QTEST_MAIN(tst_profileinit)
 #include "tst_profileinit.moc"

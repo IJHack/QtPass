@@ -34,91 +34,96 @@ void tst_userinfo::defaultValidityIsInvalid() {
 void tst_userinfo::fullyValidWithF() {
   UserInfo u;
   u.validity = 'f';
-  QVERIFY(u.fullyValid());
+  QVERIFY2(u.fullyValid(), "fullyValid() must return true for validity='f'");
 }
 
 void tst_userinfo::fullyValidWithU() {
   UserInfo u;
   u.validity = 'u';
-  QVERIFY(u.fullyValid());
+  QVERIFY2(u.fullyValid(), "fullyValid() must return true for validity='u'");
 }
 
 void tst_userinfo::fullyValidFalseForM() {
   UserInfo u;
   u.validity = 'm';
-  QVERIFY(!u.fullyValid());
+  QVERIFY2(!u.fullyValid(),
+           "fullyValid() must return false for validity='m'");
 }
 
 void tst_userinfo::fullyValidFalseForOther() {
   UserInfo u;
   u.validity = '-';
-  QVERIFY(!u.fullyValid());
+  QVERIFY2(!u.fullyValid(),
+           "fullyValid() must return false for validity='-'");
 }
 
 void tst_userinfo::marginallyValidWithM() {
   UserInfo u;
   u.validity = 'm';
-  QVERIFY(u.marginallyValid());
+  QVERIFY2(u.marginallyValid(),
+           "marginallyValid() must return true for validity='m'");
 }
 
 void tst_userinfo::marginallyValidFalseForF() {
   UserInfo u;
   u.validity = 'f';
-  QVERIFY(!u.marginallyValid());
+  QVERIFY2(!u.marginallyValid(),
+           "marginallyValid() must return false for validity='f'");
 }
 
 void tst_userinfo::marginallyValidFalseForU() {
   UserInfo u;
   u.validity = 'u';
-  QVERIFY(!u.marginallyValid());
+  QVERIFY2(!u.marginallyValid(),
+           "marginallyValid() must return false for validity='u'");
 }
 
 void tst_userinfo::isValidWithF() {
   UserInfo u;
   u.validity = 'f';
-  QVERIFY(u.isValid());
+  QVERIFY2(u.isValid(), "isValid() must return true for validity='f'");
 }
 
 void tst_userinfo::isValidWithU() {
   UserInfo u;
   u.validity = 'u';
-  QVERIFY(u.isValid());
+  QVERIFY2(u.isValid(), "isValid() must return true for validity='u'");
 }
 
 void tst_userinfo::isValidWithM() {
   UserInfo u;
   u.validity = 'm';
-  QVERIFY(u.isValid());
+  QVERIFY2(u.isValid(), "isValid() must return true for validity='m'");
 }
 
 void tst_userinfo::isValidFalseForDash() {
   UserInfo u;
   u.validity = '-';
-  QVERIFY(!u.isValid());
+  QVERIFY2(!u.isValid(), "isValid() must return false for validity='-'");
 }
 
 void tst_userinfo::isValidFalseForN() {
   UserInfo u;
-  u.validity = 'n'; // not valid per GPG
-  QVERIFY(!u.isValid());
+  u.validity = 'n';
+  QVERIFY2(!u.isValid(), "isValid() must return false for validity='n'");
 }
 
 void tst_userinfo::isValidFalseForUnknown() {
   UserInfo u;
   u.validity = '?';
-  QVERIFY(!u.isValid());
+  QVERIFY2(!u.isValid(), "isValid() must return false for validity='?'");
 }
 
 void tst_userinfo::defaultFieldValues() {
   UserInfo u;
   QCOMPARE(u.validity, '-');
-  QVERIFY(!u.have_secret);
-  QVERIFY(!u.enabled);
-  QVERIFY(u.name.isEmpty());
-  QVERIFY(u.key_id.isEmpty());
-  QVERIFY(!u.expiry.isValid());
-  QVERIFY(!u.created.isValid());
+  QVERIFY2(!u.have_secret, "default have_secret must be false");
+  QVERIFY2(!u.enabled, "default enabled must be false");
+  QVERIFY2(u.name.isEmpty(), "default name must be empty");
+  QVERIFY2(u.key_id.isEmpty(), "default key_id must be empty");
+  QVERIFY2(!u.expiry.isValid(), "default expiry must be invalid");
+  QVERIFY2(!u.created.isValid(), "default created must be invalid");
 }
 
-QTEST_APPLESS_MAIN(tst_userinfo)
+QTEST_MAIN(tst_userinfo)
 #include "tst_userinfo.moc"
