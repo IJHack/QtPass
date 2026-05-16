@@ -681,7 +681,9 @@ auto Util::getFolderTemplate(const QString &folderPath,
     if (currentPath == cleanStoreAbs) {
       break;
     }
-    if (!currentPath.startsWith(cleanStoreAbs + "/")) {
+    if (!currentPath.startsWith(cleanStoreAbs) ||
+        currentPath.length() <= cleanStoreAbs.length() ||
+        currentPath.at(cleanStoreAbs.length()) != QChar('/')) {
       break;
     }
     if (!dir.cdUp()) {
