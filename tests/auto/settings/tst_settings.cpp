@@ -221,6 +221,10 @@ const BoolSetting boolSettings[] = {
     {"useAutoclearPanel", QtPassSettings::setUseAutoclearPanel,
      QtPassSettings::isUseAutoclearPanel},
     {"maximized", QtPassSettings::setMaximized, QtPassSettings::isMaximized},
+    {"useGrepSearch", QtPassSettings::setUseGrepSearch,
+     QtPassSettings::isUseGrepSearch},
+    {"showProcessOutput", QtPassSettings::setShowProcessOutput,
+     QtPassSettings::isShowProcessOutput},
 };
 } // namespace
 
@@ -307,6 +311,8 @@ const StringSetting stringSettings[] = {
     {"profile", QtPassSettings::setProfile, QtPassSettings::getProfile},
     {"passTemplate", QtPassSettings::setPassTemplate,
      QtPassSettings::getPassTemplate},
+    {"sshAuthSockOverride", QtPassSettings::setSshAuthSockOverride,
+     QtPassSettings::getSshAuthSockOverride},
 };
 } // namespace
 
@@ -366,6 +372,8 @@ void tst_settings::stringRoundTrip_data() {
   addString("profile", "personal");
   addString("passTemplate", "username: {username}\npassword: {password}");
   addString("passTemplate", "user: {username}\npass: {password}");
+  addString("sshAuthSockOverride", "/run/user/1000/gnupg/S.gpg-agent.ssh");
+  addString("sshAuthSockOverride", "");
 }
 
 void tst_settings::stringRoundTrip() {
