@@ -15,6 +15,12 @@ private Q_SLOTS:
   void nestedTransaction();
   void transactionStartEndExplicit();
   void transactionQueueOrder();
+  void transactionIsOverWrongIdReturnsInvalid();
+  void transactionIsOverEmptyQueueReturnsInvalid();
+  void transactionEndWithoutStartIsNoop();
+  void transactionStartEndWithoutAddIsNoop();
+  void transactionEndResultDiffersFromAdd();
+  void deeplyNestedTransactionUsesLastAdd();
 };
 
 void tst_simpletransaction::transactionAddAndComplete() {
@@ -79,6 +85,68 @@ void tst_simpletransaction::transactionQueueOrder() {
   QVERIFY2(r2 == Enums::PASS_REMOVE, "PASS_REMOVE should complete second");
   Enums::PROCESS r3 = st.transactionIsOver(Enums::PASS_SHOW);
   QVERIFY2(r3 == Enums::PASS_SHOW, "PASS_SHOW should complete third");
+}
+
+void tst_simpletransaction::transactionIsOverWrongIdReturnsInvalid() {
+  simpleTransaction st;
+  st.transactionAdd(Enums::PASS_SHOW);
+  QVERIFY2(
+      st.transactionIsOver(Enums::PASS_INSERT) == Enums::INVALID,
+      "transactionIsOver(PASS_INSERT) must return INVALID when queue front "
+      "holds PASS_SHOW");
+}
+
+void tst_simpletransaction::transactionIsOverEmptyQueueReturnsInvalid() {
+  simpleTransaction st;
+  QVERIFY2(st.transactionIsOver(Enums::PASS_SHOW) == Enums::INVALID,
+           "transactionIsOver(PASS_SHOW) must return INVALID on empty queue");
+}
+
+void tst_simpletransaction::transactionEndWithoutStartIsNoop() {
+  simpleTransaction st;
+  st.transactionEnd(Enums::PASS_SHOW);
+  QVERIFY2(
+      st.transactionIsOver(Enums::PASS_SHOW) == Enums::INVALID,
+      "transactionEnd(PASS_SHOW) without transactionStart must not enqueue "
+      "anything; transactionIsOver(PASS_SHOW) must return INVALID");
+}
+
+void tst_simpletransaction::transactionStartEndWithoutAddIsNoop() {
+  simpleTransaction st;
+  st.transactionStart();
+  st.transactionEnd(Enums::PASS_SHOW);
+  QVERIFY2(
+      st.transactionIsOver(Enums::PASS_SHOW) == Enums::INVALID,
+      "transactionStart + transactionEnd(PASS_SHOW) without transactionAdd "
+      "must not enqueue anything; transactionIsOver(PASS_SHOW) must return "
+      "INVALID");
+}
+
+void tst_simpletransaction::transactionEndResultDiffersFromAdd() {
+  simpleTransaction st;
+  st.transactionStart();
+  st.transactionAdd(Enums::PASS_SHOW);
+  st.transactionEnd(Enums::PASS_INSERT);
+  QVERIFY2(
+      st.transactionIsOver(Enums::PASS_SHOW) == Enums::PASS_INSERT,
+      "transactionIsOver(PASS_SHOW) must return PASS_INSERT: transactionAdd "
+      "sets the trigger (PASS_SHOW), transactionEnd sets the result "
+      "(PASS_INSERT)");
+}
+
+void tst_simpletransaction::deeplyNestedTransactionUsesLastAdd() {
+  simpleTransaction st;
+  st.transactionStart();
+  st.transactionAdd(Enums::GIT_ADD);
+  st.transactionStart();
+  st.transactionAdd(Enums::GIT_COMMIT);
+  st.transactionEnd(Enums::GIT_COMMIT);
+  st.transactionEnd(Enums::GIT_PUSH);
+  QVERIFY2(
+      st.transactionIsOver(Enums::GIT_COMMIT) == Enums::GIT_PUSH,
+      "transactionIsOver(GIT_COMMIT) must return GIT_PUSH: inner "
+      "transactionAdd(GIT_COMMIT) overwrites GIT_ADD as the trigger; outer "
+      "transactionEnd(GIT_PUSH) sets the result");
 }
 
 QTEST_MAIN(tst_simpletransaction)
