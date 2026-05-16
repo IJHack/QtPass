@@ -16,6 +16,10 @@ private Q_SLOTS:
   void passwordConfigurationCharacterSets();
   void passwordConfigurationLength();
   void passwordConfigurationCustomChars();
+  void charsetCountIsCorrect();
+  void alphanumericContainsNoSpecialChars();
+  void alphabeticalContainsNoDigits();
+  void customCharsDefaultMatchAllChars();
 };
 
 void tst_passwordconfig::initTestCase() {
@@ -73,6 +77,39 @@ void tst_passwordconfig::passwordConfigurationCustomChars() {
   QString custom = "abc123";
   config.Characters[PasswordConfiguration::CUSTOM] = custom;
   QCOMPARE(config.Characters[PasswordConfiguration::CUSTOM], custom);
+}
+
+void tst_passwordconfig::charsetCountIsCorrect() {
+  QCOMPARE(static_cast<int>(PasswordConfiguration::CHARSETS_COUNT), 4);
+}
+
+void tst_passwordconfig::alphanumericContainsNoSpecialChars() {
+  PasswordConfiguration config;
+  const QString &chars = config.Characters[PasswordConfiguration::ALPHANUMERIC];
+  for (QChar c : chars) {
+    QVERIFY2(c.isLetterOrNumber(),
+             qPrintable(QString("ALPHANUMERIC contains non-alphanumeric char: "
+                                "'%1'")
+                            .arg(c)));
+  }
+}
+
+void tst_passwordconfig::alphabeticalContainsNoDigits() {
+  PasswordConfiguration config;
+  const QString &chars = config.Characters[PasswordConfiguration::ALPHABETICAL];
+  for (QChar c : chars) {
+    QVERIFY2(c.isLetter(),
+             qPrintable(QString("ALPHABETICAL contains non-letter char: "
+                                "'%1'")
+                            .arg(c)));
+  }
+}
+
+void tst_passwordconfig::customCharsDefaultMatchAllChars() {
+  PasswordConfiguration config;
+  QVERIFY2(config.Characters[PasswordConfiguration::CUSTOM] ==
+               config.Characters[PasswordConfiguration::ALLCHARS],
+           "CUSTOM character set must default to ALLCHARS");
 }
 
 QTEST_MAIN(tst_passwordconfig)
