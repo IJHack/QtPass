@@ -28,6 +28,12 @@ private Q_SLOTS:
   void parseGpgColonOutputWithGrpRecord();
   void parseGpgColonOutputUnknownRecordTypes();
   void parseGpgColonOutputAllPublicRecordTypes();
+  void multipleUidRecordsOnlyFirstNameUsed();
+  void pubRecordDoesNotSetHaveSecret();
+  void secRecordSetsHaveSecretOnlyWhenSecretTrue();
+  void createdDateParsedFromEpoch();
+  void expiryDateParsedFromEpoch();
+  void fprWithEmptyKeyIdIsNoop();
 };
 
 void tst_gpgkeystate::parseMultiKeyPublic() {
@@ -382,6 +388,83 @@ void tst_gpgkeystate::parseGpgColonOutputAllPublicRecordTypes() {
   QVERIFY2(result.first().key_id == QStringLiteral("MAINKEY001"),
            "key_id should reflect the pub record");
   QVERIFY2(!result.first().name.isEmpty(), "UID name should be populated");
+}
+
+void tst_gpgkeystate::multipleUidRecordsOnlyFirstNameUsed() {
+  const QString input = QStringLiteral(
+      "pub:u:4096:1:KEYID001:1774947438:::u::::\n"
+      "uid:u::::1774947438::H1::First Name <first@test.org>::::\n"
+      "uid:u::::1774947438::H2::Second Name <second@test.org>::::\n");
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QVERIFY2(result.size() == 1, "one key expected");
+  QVERIFY2(result.first().name == QStringLiteral("First Name <first@test.org>"),
+           "only the first uid record should set the name");
+}
+
+void tst_gpgkeystate::pubRecordDoesNotSetHaveSecret() {
+  const QString input =
+      QStringLiteral("pub:u:4096:1:PUBKEY001:1774947438:::u::::\n"
+                     "uid:u::::1774947438::H::Alice <alice@test.org>::::\n");
+  QList<UserInfo> result = parseGpgColonOutput(input, true);
+  QVERIFY2(result.size() == 1, "one key expected");
+  QVERIFY2(!result.first().have_secret,
+           "pub record must not set have_secret even when secret=true");
+}
+
+void tst_gpgkeystate::secRecordSetsHaveSecretOnlyWhenSecretTrue() {
+  const QString secLine =
+      QStringLiteral("sec:u:4096:1:SECKEY001:1774947438:::u::::\n"
+                     "uid:u::::1774947438::H::Bob <bob@test.org>::::\n");
+
+  QList<UserInfo> withSecret = parseGpgColonOutput(secLine, true);
+  QVERIFY2(withSecret.size() == 1, "one key expected with secret=true");
+  QVERIFY2(withSecret.first().have_secret,
+           "sec record must set have_secret when secret=true");
+
+  QList<UserInfo> withoutSecret = parseGpgColonOutput(secLine, false);
+  QVERIFY2(withoutSecret.size() == 1, "one key expected with secret=false");
+  QVERIFY2(!withoutSecret.first().have_secret,
+           "sec record must not set have_secret when secret=false");
+}
+
+void tst_gpgkeystate::createdDateParsedFromEpoch() {
+  const qint64 epoch = 1700000000;
+  const QString input = QString("pub:u:4096:1:DATEKEY01:%1:::u::::\n"
+                                "uid:u::::%1::H::Date Test <dt@test.org>::::\n")
+                            .arg(epoch);
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QVERIFY2(result.size() == 1, "one key expected");
+  QVERIFY2(result.first().created.isValid(),
+           "created date must be valid when epoch is present");
+  QVERIFY2(result.first().created.toSecsSinceEpoch() == epoch,
+           "created date must round-trip through epoch seconds");
+}
+
+void tst_gpgkeystate::expiryDateParsedFromEpoch() {
+  const qint64 created = 1700000000;
+  const qint64 expiry = 1800000000;
+  const QString input =
+      QString("pub:u:4096:1:EXPKEY001:%1:%2:u::::\n"
+              "uid:u::::%1::H::Expiry Test <et@test.org>::::\n")
+          .arg(created)
+          .arg(expiry);
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QVERIFY2(result.size() == 1, "one key expected");
+  QVERIFY2(result.first().expiry.isValid(),
+           "expiry date must be valid when epoch is present");
+  QVERIFY2(result.first().expiry.toSecsSinceEpoch() == expiry,
+           "expiry date must round-trip through epoch seconds");
+}
+
+void tst_gpgkeystate::fprWithEmptyKeyIdIsNoop() {
+  UserInfo user;
+  QStringList props;
+  for (int i = 0; i < 10; ++i)
+    props.append(QString());
+  props[9] = QStringLiteral("SOMEFINGERPRINT");
+  handleFprRecord(props, user);
+  QVERIFY2(user.key_id.isEmpty(),
+           "fpr record must not update key_id when key_id is empty");
 }
 
 QTEST_MAIN(tst_gpgkeystate)
