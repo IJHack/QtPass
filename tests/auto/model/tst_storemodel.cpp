@@ -545,7 +545,7 @@ void tst_storemodel::setStoreUpdatesPath() {
 void tst_storemodel::dataEditRoleKeepsGpgExtension() {
   QTemporaryDir tempDir;
   QFile f(tempDir.path() + "/secret.gpg");
-  QVERIFY(f.open(QFile::WriteOnly));
+  QVERIFY2(f.open(QFile::WriteOnly), "Failed to open test file for writing");
   f.close();
 
   QFileSystemModel fsm;
@@ -570,7 +570,7 @@ void tst_storemodel::filterAcceptsNonGpgFileMatchingRegex() {
   // name doesn't end in .gpg and won't match the default empty regex
   // after extension stripping — unless the regex explicitly matches it.
   QFile f(tempDir.path() + "/readme.txt");
-  QVERIFY(f.open(QFile::WriteOnly));
+  QVERIFY2(f.open(QFile::WriteOnly), "Failed to open test file for writing");
   f.close();
 
   QFileSystemModel fsm;
