@@ -528,16 +528,16 @@ void tst_storemodel::setStoreUpdatesPath() {
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
   QVERIFY2(sm.getStore() == tempDir.path(),
-           qPrintable(QStringLiteral(
-               "store should default to temporary directory: expected %1 but was %2")
+           qPrintable(QStringLiteral("store should default to temporary "
+                                     "directory: expected %1 but was %2")
                           .arg(tempDir.path())
                           .arg(sm.getStore())));
 
   QString newPath = tempDir.path() + "/substore";
   sm.setStore(newPath);
   QVERIFY2(sm.getStore() == newPath,
-           qPrintable(QStringLiteral(
-               "store should update to substore after setStore: expected %1 but was %2")
+           qPrintable(QStringLiteral("store should update to substore after "
+                                     "setStore: expected %1 but was %2")
                           .arg(newPath)
                           .arg(sm.getStore())));
 }
