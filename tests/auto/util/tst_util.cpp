@@ -40,6 +40,9 @@ static constexpr int DISTRIBUTION_MAX_PERCENT = 120;
 static constexpr int PERCENT_BASE = 100;
 static constexpr int RANDOMNESS_TEST_SAMPLE_COUNT = 200;
 static constexpr int RANDOMNESS_TEST_PASSWORD_LENGTH = 32;
+// Permissive chi-square cutoff for df=9: set above the p=0.995 critical
+// value (~23.59) to reduce false test failures while still catching
+// meaningful distribution bias.
 static constexpr double CHI_SQUARE_PERMISSIVE_THRESHOLD_DF9 = 30.0;
 
 /**
@@ -1221,19 +1224,12 @@ void tst_util::isValidKeyIdWithEmail() {
 }
 
 void tst_util::isValidKeyIdInvalid() {
-  // NOTE: 40 is intentional and derived from the current Util::isValidKeyId
-  // implementation detail: its key-id regex accepts 8-40 hexadecimal
-  // characters (optionally with a 0x prefix). This test verifies that a
-  // value just above that upper bound is rejected.
-  //
-  // Keep boundary expectations aligned with production validation rules.
-  // This test checks that one character above the configured max is rejected.
-  // If Util::isValidKeyId's accepted range changes, update this constant.
-  constexpr int ASSUMED_MAX_KEY_ID_LENGTH = 40;
-  constexpr int TOO_LONG_KEY_ID_LENGTH = ASSUMED_MAX_KEY_ID_LENGTH + 1;
+  // Boundary check: one character above the currently accepted maximum
+  // hexadecimal key-id length should be rejected.
+  constexpr int kTooLongKeyIdLength = 41; // current max (40) + 1
   QVERIFY(!Util::isValidKeyId(""));
   QVERIFY(!Util::isValidKeyId("short"));
-  QVERIFY(!Util::isValidKeyId(QString(TOO_LONG_KEY_ID_LENGTH, 'a')));
+  QVERIFY(!Util::isValidKeyId(QString(kTooLongKeyIdLength, 'a')));
   QVERIFY(!Util::isValidKeyId("invalidchars!"));
   QVERIFY(!Util::isValidKeyId("space in key"));
 }
@@ -2080,7 +2076,7 @@ void tst_util::grepImitatePassInvalidRegexEmitsEmpty() {
 // RAII helper restores SSH_AUTH_SOCK + the override setting around each test
 // so we don't pollute the developer's environment or each other's state.
 // ---------------------------------------------------------------------------
-namespace {
+namespace testutils {
 class SshAuthSockGuard {
 public:
   SshAuthSockGuard()
@@ -2103,13 +2099,13 @@ private:
   QByteArray prevEnv_;
   QString prevOverride_;
 };
-} // namespace
+} // namespace testutils
 
 /**
  * @brief getter/setter roundtrip for sshAuthSockOverride.
  */
 void tst_util::sshAuthSockOverrideRoundtrip() {
-  SshAuthSockGuard guard;
+  testutils::SshAuthSockGuard guard;
   const QString sentinel =
       QStringLiteral("/tmp/qtpass-test-sock-") + QUuid::createUuid().toString();
   QtPassSettings::setSshAuthSockOverride(sentinel);
@@ -2122,7 +2118,7 @@ void tst_util::sshAuthSockOverrideRoundtrip() {
  * @brief default value of getSshAuthSockOverride is empty.
  */
 void tst_util::sshAuthSockOverrideEmptyByDefault() {
-  SshAuthSockGuard guard;
+  testutils::SshAuthSockGuard guard;
   QtPassSettings::setSshAuthSockOverride(QString{});
   QCOMPARE(QtPassSettings::getSshAuthSockOverride(), QString{});
 }
@@ -2132,7 +2128,7 @@ void tst_util::sshAuthSockOverrideEmptyByDefault() {
  *        already set.
  */
 void tst_util::initialiseSshAuthSockHonoursExistingEnv() {
-  SshAuthSockGuard guard;
+  testutils::SshAuthSockGuard guard;
   const QByteArray existing("/tmp/qtpass-existing-sock");
   qputenv("SSH_AUTH_SOCK", existing);
   // Even if an override is configured, the existing env wins.
@@ -2147,7 +2143,7 @@ void tst_util::initialiseSshAuthSockHonoursExistingEnv() {
  *        unset.
  */
 void tst_util::initialiseSshAuthSockUsesOverride() {
-  SshAuthSockGuard guard;
+  testutils::SshAuthSockGuard guard;
   qunsetenv("SSH_AUTH_SOCK");
   const QString override = QStringLiteral("/tmp/qtpass-override-sock");
   QtPassSettings::setSshAuthSockOverride(override);
@@ -2162,7 +2158,7 @@ void tst_util::initialiseSshAuthSockUsesOverride() {
  *        the resulting state is consistent.
  */
 void tst_util::initialiseSshAuthSockNoOverrideNoEnvProbes() {
-  SshAuthSockGuard guard;
+  testutils::SshAuthSockGuard guard;
   qunsetenv("SSH_AUTH_SOCK");
   QtPassSettings::setSshAuthSockOverride(QString{});
   Util::initialiseSshAuthSock();
@@ -2184,7 +2180,7 @@ void tst_util::initialiseSshAuthSockNoOverrideNoEnvProbes() {
  *        the user starts their agent after launching QtPass).
  */
 void tst_util::initialiseSshAuthSockOverrideSkipsAgentValidation() {
-  SshAuthSockGuard guard;
+  testutils::SshAuthSockGuard guard;
   qunsetenv("SSH_AUTH_SOCK");
   // A path that almost certainly has no listener — validation would fail.
   // Override should win regardless.
@@ -2201,7 +2197,7 @@ void tst_util::initialiseSshAuthSockOverrideSkipsAgentValidation() {
  *        it should fall through to the auto-probe.
  */
 void tst_util::initialiseSshAuthSockEmptyOverrideFallsThrough() {
-  SshAuthSockGuard guard;
+  testutils::SshAuthSockGuard guard;
   qunsetenv("SSH_AUTH_SOCK");
   QtPassSettings::setSshAuthSockOverride(QString{});
   Util::initialiseSshAuthSock();

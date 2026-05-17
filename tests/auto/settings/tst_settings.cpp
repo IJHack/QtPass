@@ -158,8 +158,9 @@ void tst_settings::setAndGetGeometry() {
 
 void tst_settings::getPassStore() {
   QString store = QtPassSettings::getPassStore();
-  QVERIFY2(store.isEmpty() || store.startsWith("/") || store.contains("/"),
-           "Pass store should be empty or a plausible path");
+  const bool plausiblePath = store.isEmpty() || QDir::isAbsolutePath(store) ||
+                             store.contains('/') || store.contains('\\');
+  QVERIFY2(plausiblePath, "Pass store should be empty or a plausible path");
 }
 
 void tst_settings::setAndGetPassStore() {
@@ -512,18 +513,21 @@ void tst_settings::setAndGetMultipleProfiles() {
   QVERIFY(readProfiles.contains("profile2"));
   QVERIFY(readProfiles["profile1"].contains("path"));
   QVERIFY(readProfiles["profile2"].contains("path"));
-  // Verify new git options are in profile (issue #112)
-  QVERIFY(readProfiles["profile1"].contains("useGit"));
-  QVERIFY(readProfiles["profile1"].contains("autoPush"));
-  QVERIFY(readProfiles["profile1"].contains("autoPull"));
-  // Verify git options default to empty (unset) - compare QString directly
-  // instead of toInt() which treats "true" as 0
-  QVERIFY2(readProfiles["profile1"].value("useGit").isEmpty(),
-           "useGit should default to empty");
-  QVERIFY2(readProfiles["profile1"].value("autoPush").isEmpty(),
-           "autoPush should default to empty");
-  QVERIFY2(readProfiles["profile1"].value("autoPull").isEmpty(),
-           "autoPull should default to empty");
+  // Verify new git options are in all profiles (issue #112)
+  const QStringList profileNames = {"profile1", "profile2"};
+  for (const QString &profileName : profileNames) {
+    QVERIFY(readProfiles[profileName].contains("useGit"));
+    QVERIFY(readProfiles[profileName].contains("autoPush"));
+    QVERIFY(readProfiles[profileName].contains("autoPull"));
+    // Verify git options default to empty (unset) - compare QString directly
+    // instead of toInt() which treats "true" as 0
+    QVERIFY2(readProfiles[profileName].value("useGit").isEmpty(),
+             "useGit should default to empty");
+    QVERIFY2(readProfiles[profileName].value("autoPush").isEmpty(),
+             "autoPush should default to empty");
+    QVERIFY2(readProfiles[profileName].value("autoPull").isEmpty(),
+             "autoPull should default to empty");
+  }
 }
 
 void tst_settings::profileGitOptions() {
