@@ -3,9 +3,12 @@
 #include <QApplication>
 #include <QCheckBox>
 #include <QLineEdit>
+#include <QSpinBox>
+#include <QSystemTrayIcon>
 #include <QtTest>
 
 #include "../../../src/configdialog.h"
+#include "../../../src/passwordconfiguration.h"
 
 /**
  * @class tst_configdialog
@@ -38,6 +41,11 @@ private Q_SLOTS:
   void useGrepSearchTogglesCheckbox();
   void usePwgenTogglesCheckbox();
   void useTemplateTogglesCheckbox();
+  void useTrayIconTogglesCheckbox();
+  void useQrencodeTogglesCheckbox();
+  void setPwgenPathSetsLineEdit();
+  void setPwgenPathEmptyDisablesPwgenCheckbox();
+  void setAndGetPasswordConfigurationRoundTrip();
 };
 
 /**
@@ -190,6 +198,63 @@ void tst_configdialog::useTemplateTogglesCheckbox() {
   dialog.useTemplate(false);
   QVERIFY2(!cb->isChecked(),
            "useTemplate(false) should uncheck checkBoxUseTemplate");
+}
+
+void tst_configdialog::useTrayIconTogglesCheckbox() {
+  if (!QSystemTrayIcon::isSystemTrayAvailable())
+    QSKIP("system tray not available in this environment");
+  ConfigDialog dialog(nullptr);
+  auto *cb =
+      dialog.findChild<QCheckBox *>(QStringLiteral("checkBoxUseTrayIcon"));
+  QVERIFY2(cb != nullptr, "checkBoxUseTrayIcon widget must exist");
+  dialog.useTrayIcon(true);
+  QVERIFY2(cb->isChecked(),
+           "useTrayIcon(true) should check checkBoxUseTrayIcon");
+  dialog.useTrayIcon(false);
+  QVERIFY2(!cb->isChecked(),
+           "useTrayIcon(false) should uncheck checkBoxUseTrayIcon");
+}
+
+void tst_configdialog::useQrencodeTogglesCheckbox() {
+  ConfigDialog dialog(nullptr);
+  auto *cb =
+      dialog.findChild<QCheckBox *>(QStringLiteral("checkBoxUseQrencode"));
+  QVERIFY2(cb != nullptr, "checkBoxUseQrencode widget must exist");
+  dialog.useQrencode(true);
+  QVERIFY2(cb->isChecked(),
+           "useQrencode(true) should check checkBoxUseQrencode");
+  dialog.useQrencode(false);
+  QVERIFY2(!cb->isChecked(),
+           "useQrencode(false) should uncheck checkBoxUseQrencode");
+}
+
+void tst_configdialog::setPwgenPathSetsLineEdit() {
+  ConfigDialog dialog(nullptr);
+  auto *pathEdit = dialog.findChild<QLineEdit *>(QStringLiteral("pwgenPath"));
+  QVERIFY2(pathEdit != nullptr, "pwgenPath widget must exist");
+  dialog.setPwgenPath(QStringLiteral("/usr/bin/pwgen"));
+  QCOMPARE(pathEdit->text(), QStringLiteral("/usr/bin/pwgen"));
+}
+
+void tst_configdialog::setPwgenPathEmptyDisablesPwgenCheckbox() {
+  ConfigDialog dialog(nullptr);
+  auto *cb = dialog.findChild<QCheckBox *>(QStringLiteral("checkBoxUsePwgen"));
+  QVERIFY2(cb != nullptr, "checkBoxUsePwgen widget must exist");
+  dialog.setPwgenPath(QString());
+  QVERIFY2(!cb->isChecked(), "setPwgenPath('') must uncheck checkBoxUsePwgen");
+  QVERIFY2(!cb->isEnabled(), "setPwgenPath('') must disable checkBoxUsePwgen");
+}
+
+void tst_configdialog::setAndGetPasswordConfigurationRoundTrip() {
+  ConfigDialog dialog(nullptr);
+  PasswordConfiguration cfg;
+  cfg.length = 32;
+  cfg.selected = PasswordConfiguration::ALPHANUMERIC;
+  dialog.setPasswordConfiguration(cfg);
+  PasswordConfiguration result = dialog.getPasswordConfiguration();
+  QCOMPARE(result.length, 32);
+  QCOMPARE(static_cast<int>(result.selected),
+           static_cast<int>(PasswordConfiguration::ALPHANUMERIC));
 }
 
 QTEST_MAIN(tst_configdialog)

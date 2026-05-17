@@ -34,6 +34,10 @@ private Q_SLOTS:
   void createdDateParsedFromEpoch();
   void expiryDateParsedFromEpoch();
   void fprWithEmptyKeyIdIsNoop();
+  void parseGpgColonOutputEmpty();
+  void parseGpgColonOutputPubWithoutUid();
+  void parseGpgColonOutputOnlySubRecords();
+  void parseGpgColonOutputShortLinesIgnored();
 };
 
 void tst_gpgkeystate::parseMultiKeyPublic() {
@@ -465,6 +469,47 @@ void tst_gpgkeystate::fprWithEmptyKeyIdIsNoop() {
   handleFprRecord(props, user);
   QVERIFY2(user.key_id.isEmpty(),
            "fpr record must not update key_id when key_id is empty");
+}
+
+void tst_gpgkeystate::parseGpgColonOutputEmpty() {
+  QList<UserInfo> result = parseGpgColonOutput(QString(), false);
+  QVERIFY2(result.isEmpty(), "empty input must produce an empty list");
+}
+
+void tst_gpgkeystate::parseGpgColonOutputPubWithoutUid() {
+  // A pub record with a key_id but no uid record: the name is taken from the
+  // pub record's userid field (field index 9).
+  const QString input =
+      QStringLiteral("pub:u:4096:1:NOUIDKEY1:1774947438:::u::::Name Only:\n");
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QVERIFY2(result.size() == 1,
+           "pub record without uid must still produce one UserInfo");
+  QVERIFY2(result.first().key_id == QStringLiteral("NOUIDKEY1"),
+           "key_id must be set from pub record");
+}
+
+void tst_gpgkeystate::parseGpgColonOutputOnlySubRecords() {
+  // sub/ssb records without a preceding pub record must be ignored entirely.
+  const QString input =
+      QStringLiteral("sub:u:4096:1:ORPHANSUB1:1774947438::::::esa:::\n"
+                     "ssb:u:4096:1:ORPHANSSB1:1774947438::::::esa:::\n");
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QVERIFY2(result.isEmpty(),
+           "orphan sub/ssb records without a pub parent must be ignored");
+}
+
+void tst_gpgkeystate::parseGpgColonOutputShortLinesIgnored() {
+  // Lines with fewer than GPG_MIN_FIELDS colon-separated fields must be
+  // silently skipped without crashing.
+  const QString input = QStringLiteral(
+      "pub:u:4096\n"
+      "pub:u:4096:1:VALIDKEY1:1774947438:::u::::\n"
+      "uid:u::::1774947438::H::Valid User <valid@test.org>::::\n");
+  QList<UserInfo> result = parseGpgColonOutput(input, false);
+  QVERIFY2(result.size() == 1,
+           "short lines must be skipped; only the well-formed key is parsed");
+  QVERIFY2(result.first().key_id == QStringLiteral("VALIDKEY1"),
+           "key_id must be parsed from the well-formed pub record");
 }
 
 QTEST_MAIN(tst_gpgkeystate)

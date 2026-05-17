@@ -34,6 +34,10 @@ private Q_SLOTS:
   void emailTextUpdatesNameEmailLine();
   void matchingPassphrasesEnableButtonBox();
   void mismatchedPassphrasesDisableButtonBox();
+  void emptyPassphrasesEnableButtonBox();
+  void secondPassphraseChangeTriggersStateUpdate();
+  void clearingFirstPassphraseDisablesButtonBox();
+  void nameAndEmailBothUpdateTemplate();
 };
 
 /**
@@ -152,6 +156,83 @@ void tst_keygendialog::mismatchedPassphrasesDisableButtonBox() {
   pp1->setText(QStringLiteral("testkey123"));
   pp2->setText(QStringLiteral("testkey456"));
   QVERIFY2(!buttonBox->isEnabled(), "mismatched passphrases disable OK");
+}
+
+void tst_keygendialog::emptyPassphrasesEnableButtonBox() {
+  KeygenDialog dialog(nullptr);
+  auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
+  auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  auto *buttonBox =
+      dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+  QVERIFY2(pp1 != nullptr, "passphrase1 widget must exist");
+  QVERIFY2(pp2 != nullptr, "passphrase2 widget must exist");
+  QVERIFY2(buttonBox != nullptr, "buttonBox widget must exist");
+
+  // Set to non-empty first to ensure signals fire when cleared.
+  pp1->setText(QStringLiteral("testkey123"));
+  pp2->setText(QStringLiteral("testkey123"));
+  pp1->setText(QString());
+  pp2->setText(QString());
+  QVERIFY2(
+      buttonBox->isEnabled(),
+      "both empty passphrases should enable buttonBox (no-protection mode)");
+}
+
+void tst_keygendialog::secondPassphraseChangeTriggersStateUpdate() {
+  KeygenDialog dialog(nullptr);
+  auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
+  auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  auto *buttonBox =
+      dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+  QVERIFY2(pp1 != nullptr, "passphrase1 widget must exist");
+  QVERIFY2(pp2 != nullptr, "passphrase2 widget must exist");
+  QVERIFY2(buttonBox != nullptr, "buttonBox widget must exist");
+
+  pp1->setText(QStringLiteral("testkey123"));
+  pp2->setText(QStringLiteral("testkey123"));
+  QVERIFY2(buttonBox->isEnabled(),
+           "matching passphrases should enable buttonBox");
+  pp2->setText(QStringLiteral("testkey456"));
+  QVERIFY2(!buttonBox->isEnabled(),
+           "changing pp2 to a mismatch should disable buttonBox");
+}
+
+void tst_keygendialog::clearingFirstPassphraseDisablesButtonBox() {
+  KeygenDialog dialog(nullptr);
+  auto *pp1 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase1"));
+  auto *pp2 = dialog.findChild<QLineEdit *>(QStringLiteral("passphrase2"));
+  auto *buttonBox =
+      dialog.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+  QVERIFY2(pp1 != nullptr, "passphrase1 widget must exist");
+  QVERIFY2(pp2 != nullptr, "passphrase2 widget must exist");
+  QVERIFY2(buttonBox != nullptr, "buttonBox widget must exist");
+
+  pp1->setText(QStringLiteral("testkey123"));
+  pp2->setText(QStringLiteral("testkey123"));
+  QVERIFY2(buttonBox->isEnabled(),
+           "matching passphrases should enable buttonBox");
+  pp1->setText(QString());
+  QVERIFY2(!buttonBox->isEnabled(),
+           "clearing pp1 while pp2 is non-empty must disable buttonBox");
+}
+
+void tst_keygendialog::nameAndEmailBothUpdateTemplate() {
+  KeygenDialog dialog(nullptr);
+  auto *nameEdit = dialog.findChild<QLineEdit *>(QStringLiteral("name"));
+  auto *emailEdit = dialog.findChild<QLineEdit *>(QStringLiteral("email"));
+  auto *editor =
+      dialog.findChild<QPlainTextEdit *>(QStringLiteral("plainTextEdit"));
+  QVERIFY2(nameEdit != nullptr, "name widget must exist");
+  QVERIFY2(emailEdit != nullptr, "email widget must exist");
+  QVERIFY2(editor != nullptr, "plainTextEdit widget must exist");
+
+  nameEdit->setText(QStringLiteral("Test User"));
+  emailEdit->setText(QStringLiteral("user@test.example"));
+  const QString tpl = editor->toPlainText();
+  QVERIFY2(tpl.contains(QStringLiteral("Name-Real: Test User")),
+           "template must contain Name-Real: Test User");
+  QVERIFY2(tpl.contains(QStringLiteral("Name-Email: user@test.example")),
+           "template must contain Name-Email: user@test.example");
 }
 
 QTEST_MAIN(tst_keygendialog)
