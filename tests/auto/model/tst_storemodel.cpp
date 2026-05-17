@@ -47,7 +47,7 @@ private Q_SLOTS:
   void filterRegularExpression();
   void setStoreUpdatesPath();
   void dataEditRoleKeepsGpgExtension();
-  void filterHidesNonGpgFile();
+  void filterAcceptsNonGpgFileMatchingRegex();
 };
 
 void tst_storemodel::dataRemovesGpgExtension() {
@@ -556,7 +556,7 @@ void tst_storemodel::dataEditRoleKeepsGpgExtension() {
            "EditRole must not strip the .gpg extension");
 }
 
-void tst_storemodel::filterHidesNonGpgFile() {
+void tst_storemodel::filterAcceptsNonGpgFileMatchingRegex() {
   QTemporaryDir tempDir;
   // A plain text file (no .gpg) should not pass the filter because its
   // name doesn't end in .gpg and won't match the default empty regex
