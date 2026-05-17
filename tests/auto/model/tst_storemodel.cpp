@@ -566,9 +566,10 @@ void tst_storemodel::dataEditRoleKeepsGpgExtension() {
 
 void tst_storemodel::filterAcceptsNonGpgFileMatchingRegex() {
   QTemporaryDir tempDir;
-  // A plain text file (no .gpg) should not pass the filter because its
-  // name doesn't end in .gpg and won't match the default empty regex
-  // after extension stripping — unless the regex explicitly matches it.
+  // This test sets the filter to "readme" explicitly. A plain text file
+  // without a .gpg extension should not pass the filter unless the filter
+  // explicitly matches its basename. This test only covers the explicit
+  // "readme" filter behavior.
   QFile f(tempDir.path() + "/readme.txt");
   QVERIFY2(f.open(QFile::WriteOnly), "Failed to open test file for writing");
   f.close();
