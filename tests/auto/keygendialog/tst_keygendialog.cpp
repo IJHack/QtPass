@@ -209,7 +209,8 @@ void tst_keygendialog::clearingFirstPassphraseDisablesButtonBox() {
 
   pp1->setText(QStringLiteral("testkey123"));
   pp2->setText(QStringLiteral("testkey123"));
-  QVERIFY2(buttonBox->isEnabled(), "matching passphrases should enable buttonBox");
+  QVERIFY2(buttonBox->isEnabled(),
+           "matching passphrases should enable buttonBox");
   pp1->setText(QString());
   QVERIFY2(!buttonBox->isEnabled(),
            "clearing pp1 while pp2 is non-empty must disable buttonBox");

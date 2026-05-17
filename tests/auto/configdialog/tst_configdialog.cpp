@@ -241,10 +241,8 @@ void tst_configdialog::setPwgenPathEmptyDisablesPwgenCheckbox() {
   auto *cb = dialog.findChild<QCheckBox *>(QStringLiteral("checkBoxUsePwgen"));
   QVERIFY2(cb != nullptr, "checkBoxUsePwgen widget must exist");
   dialog.setPwgenPath(QString());
-  QVERIFY2(!cb->isChecked(),
-           "setPwgenPath('') must uncheck checkBoxUsePwgen");
-  QVERIFY2(!cb->isEnabled(),
-           "setPwgenPath('') must disable checkBoxUsePwgen");
+  QVERIFY2(!cb->isChecked(), "setPwgenPath('') must uncheck checkBoxUsePwgen");
+  QVERIFY2(!cb->isEnabled(), "setPwgenPath('') must disable checkBoxUsePwgen");
 }
 
 void tst_configdialog::setAndGetPasswordConfigurationRoundTrip() {
