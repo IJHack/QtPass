@@ -527,17 +527,25 @@ void tst_storemodel::setStoreUpdatesPath() {
   QFileSystemModel fsm;
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
-  QCOMPARE(sm.getStore(), tempDir.path());
+  QVERIFY2(sm.getStore() == tempDir.path(),
+           qPrintable(QStringLiteral("store should default to temporary "
+                                     "directory: expected %1 but was %2")
+                          .arg(tempDir.path())
+                          .arg(sm.getStore())));
 
   QString newPath = tempDir.path() + "/substore";
   sm.setStore(newPath);
-  QCOMPARE(sm.getStore(), newPath);
+  QVERIFY2(sm.getStore() == newPath,
+           qPrintable(QStringLiteral("store should update to substore after "
+                                     "setStore: expected %1 but was %2")
+                          .arg(newPath)
+                          .arg(sm.getStore())));
 }
 
 void tst_storemodel::dataEditRoleKeepsGpgExtension() {
   QTemporaryDir tempDir;
   QFile f(tempDir.path() + "/secret.gpg");
-  QVERIFY(f.open(QFile::WriteOnly));
+  QVERIFY2(f.open(QFile::WriteOnly), "Failed to open test file for writing");
   f.close();
 
   QFileSystemModel fsm;
@@ -558,11 +566,12 @@ void tst_storemodel::dataEditRoleKeepsGpgExtension() {
 
 void tst_storemodel::filterAcceptsNonGpgFileMatchingRegex() {
   QTemporaryDir tempDir;
-  // A plain text file (no .gpg) should not pass the filter because its
-  // name doesn't end in .gpg and won't match the default empty regex
-  // after extension stripping — unless the regex explicitly matches it.
+  // This test sets the filter to "readme" explicitly. A plain text file
+  // without a .gpg extension should not pass the filter unless the filter
+  // explicitly matches its basename. This test only covers the explicit
+  // "readme" filter behavior.
   QFile f(tempDir.path() + "/readme.txt");
-  QVERIFY(f.open(QFile::WriteOnly));
+  QVERIFY2(f.open(QFile::WriteOnly), "Failed to open test file for writing");
   f.close();
 
   QFileSystemModel fsm;

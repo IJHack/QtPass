@@ -480,12 +480,13 @@ void tst_gpgkeystate::parseGpgColonOutputPubWithoutUid() {
   // A pub record with a key_id but no uid record: the name is taken from the
   // pub record's userid field (field index 9).
   const QString input =
-      QStringLiteral("pub:u:4096:1:NOUIDKEY1:1774947438:::u::::Name Only:\n");
+      QStringLiteral("pub:u:4096:1:NOUIDKEY1:1774947438:::u:Name Only:\n");
   QList<UserInfo> result = parseGpgColonOutput(input, false);
   QVERIFY2(result.size() == 1,
            "pub record without uid must still produce one UserInfo");
   QVERIFY2(result.first().key_id == QStringLiteral("NOUIDKEY1"),
            "key_id must be set from pub record");
+  QCOMPARE(result.first().name, QStringLiteral("Name Only"));
 }
 
 void tst_gpgkeystate::parseGpgColonOutputOnlySubRecords() {
