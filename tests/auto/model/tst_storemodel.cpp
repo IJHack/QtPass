@@ -527,11 +527,19 @@ void tst_storemodel::setStoreUpdatesPath() {
   QFileSystemModel fsm;
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
-  QCOMPARE(sm.getStore(), tempDir.path());
+  QVERIFY2(sm.getStore() == tempDir.path(),
+           qPrintable(QStringLiteral(
+               "store should default to temporary directory: expected %1 but was %2")
+                          .arg(tempDir.path())
+                          .arg(sm.getStore())));
 
   QString newPath = tempDir.path() + "/substore";
   sm.setStore(newPath);
-  QCOMPARE(sm.getStore(), newPath);
+  QVERIFY2(sm.getStore() == newPath,
+           qPrintable(QStringLiteral(
+               "store should update to substore after setStore: expected %1 but was %2")
+                          .arg(newPath)
+                          .arg(sm.getStore())));
 }
 
 void tst_storemodel::dataEditRoleKeepsGpgExtension() {

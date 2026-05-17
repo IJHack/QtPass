@@ -486,6 +486,7 @@ void tst_gpgkeystate::parseGpgColonOutputPubWithoutUid() {
            "pub record without uid must still produce one UserInfo");
   QVERIFY2(result.first().key_id == QStringLiteral("NOUIDKEY1"),
            "key_id must be set from pub record");
+  QCOMPARE(result.first().name, QStringLiteral("Name Only"));
 }
 
 void tst_gpgkeystate::parseGpgColonOutputOnlySubRecords() {
