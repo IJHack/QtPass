@@ -1564,12 +1564,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1014"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Ongeldige naam</translation>
+        <translation>Ongeldige naam</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1015"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die naam werkt niet binnen het wachtwoordsysteem. Kies een andere naam.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1425"/>
