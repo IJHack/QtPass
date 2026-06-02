@@ -88,7 +88,7 @@
     <message>
         <location filename="../src/configdialog.ui" line="245"/>
         <source>Show process output</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать вывод процесса</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="277"/>
@@ -133,12 +133,12 @@
     <message>
         <location filename="../src/configdialog.ui" line="599"/>
         <source>Enable content search (pass grep)</source>
-        <translation type="unfinished"></translation>
+        <translation>Включить поиск по содержимому (передать grep)</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="602"/>
         <source>Allow searching inside password file contents. Requires decrypting every file and can be slow on large stores.</source>
-        <translation type="unfinished"></translation>
+        <translation>Разрешить поиск внутри содержимого файлов паролей. Требует расшифровки каждого файла и может быть медленным при большом хранилище.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.ui" line="624"/>
@@ -346,17 +346,17 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="1289"/>
         <source>New profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Новый профиль: %1 в %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1293"/>
         <source>Profile: %1 at %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Профиль: %1 в %2</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1298"/>
         <source>Fill in all required fields</source>
-        <translation type="unfinished"></translation>
+        <translation>Заполните все обязательные поля</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="836"/>
@@ -387,22 +387,22 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="260"/>
         <source>The path does not exist.</source>
-        <translation type="unfinished"></translation>
+        <translation>Путь не существует.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="263"/>
         <source>The path is not readable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Путь недоступен для чтения.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="266"/>
         <source>The path is not a Unix domain socket.</source>
-        <translation type="unfinished"></translation>
+        <translation>Путь не является сокетом Unix-домена.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="271"/>
         <source>Potentially invalid SSH_AUTH_SOCK override</source>
-        <translation type="unfinished"></translation>
+        <translation>Потенциально недопустимое переопределение SSH_AUTH_SOCK</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="272"/>
@@ -411,22 +411,26 @@ email</translation>
 %1
 
 The value will still be saved as entered.</source>
-        <translation type="unfinished"></translation>
+        <translation>Значение переопределения SSH_AUTH_SOCK может быть недопустимым.
+
+%1
+
+Введённое значение всё равно будет сохранено.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="746"/>
         <source>Create profile directory?</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать каталог профиля?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="747"/>
         <source>Would you like to create a password store at %1?</source>
-        <translation type="unfinished"></translation>
+        <translation>Создать хранилище паролей в %1?</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="755"/>
         <source>Could not create profile directory: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось создать каталог профиля: %1</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="773"/>
