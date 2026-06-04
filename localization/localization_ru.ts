@@ -440,7 +440,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="799"/>
         <source>New Profile</source>
-        <translation type="unfinished"></translation>
+        <translation>Новый профиль</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="837"/>
@@ -1371,7 +1371,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="130"/>
         <source>⌕</source>
-        <translation type="unfinished"></translation>
+        <translation>⌕</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="133"/>
@@ -1391,7 +1391,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="149"/>
         <source>Aa</source>
-        <translation type="unfinished"></translation>
+        <translation>Aa</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="152"/>
@@ -1406,17 +1406,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.ui" line="211"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Результаты</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="323"/>
         <source>Clear output</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистить результаты</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="322"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Очистить</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.ui" line="385"/>
@@ -1441,7 +1441,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="331"/>
         <source>Process Output</source>
-        <translation type="unfinished"></translation>
+        <translation>Вывод процесса</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="666"/>
@@ -1461,17 +1461,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="834"/>
         <source>Searching…</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск…</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="865"/>
         <source>Search content (regex)</source>
-        <translation type="unfinished"></translation>
+        <translation>Поиск контента (regex)</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="911"/>
         <source>No matches found.</source>
-        <translation type="unfinished"></translation>
+        <translation>Совпадений не найдено.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="935"/>
@@ -1893,12 +1893,12 @@ Red entries are not valid, you will not be able to encrypt to these.</source>
     <message>
         <location filename="../src/usersdialog.ui" line="84"/>
         <source>Import key...</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать ключ...</translation>
     </message>
     <message>
         <location filename="../src/usersdialog.ui" line="87"/>
         <source>Import a GPG key from file or clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Импортировать ключ GPG из файла или буфера обмена</translation>
     </message>
     <message>
         <source>Select which users should be able to decrypt passwords stored in this folder.
