@@ -1524,12 +1524,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1014"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Недійсна назва</translation>
+        <translation>Недійсна назва</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1015"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation>Це ім&apos;я буде розпізнано поза межами сховища паролів. Виберіть інше ім&apos;я.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1425"/>
