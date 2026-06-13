@@ -1029,20 +1029,13 @@ void ImitatePass::finished(int id, int exitCode, const QString &out,
 }
 
 /**
- * @brief executeWrapper    overridden so that every execution is a transaction
- * @param id
- * @param app
- * @param args
- * @param input
- * @param readStdout
- * @param readStderr
+ * @brief Register a transaction before each wrapped execution.
+ *
+ * Native mode treats every git/gpg invocation as a transaction; the base
+ * Pass::executeWrapper calls this hook just before dispatching.
+ * @param id Process identifier of the command about to run.
  */
-void ImitatePass::executeWrapper(PROCESS id, const QString &app,
-                                 const QStringList &args, QString input,
-                                 bool readStdout, bool readStderr) {
-  transactionAdd(id);
-  Pass::executeWrapper(id, app, args, input, readStdout, readStderr);
-}
+void ImitatePass::beforeExecute(PROCESS id) { transactionAdd(id); }
 
 /**
  * @brief Decrypt one .gpg file and return lines matching rx.

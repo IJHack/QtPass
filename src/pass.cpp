@@ -117,12 +117,15 @@ void Pass::executeWrapper(PROCESS id, const QString &app,
 void Pass::executeWrapper(PROCESS id, const QString &app,
                           const QStringList &args, QString input,
                           bool readStdout, bool readStderr) {
+  beforeExecute(id);
 #ifdef QT_DEBUG
   dbg() << app << args;
 #endif
   exec.execute(id, QtPassSettings::getPassStore(), app, args, std::move(input),
                readStdout, readStderr);
 }
+
+void Pass::beforeExecute(PROCESS /*id*/) {}
 
 /**
  * @brief Initializes the pass wrapper environment.
