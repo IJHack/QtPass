@@ -1,10 +1,12 @@
 // SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "configdialog.h"
+#include "appsettings.h"
 #include "keygendialog.h"
 #include "mainwindow.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
+#include "settingsserializer.h"
 #include "sshauthsock.h"
 #include "ui_configdialog.h"
 #include "usersdialog.h"
@@ -46,44 +48,14 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     // Let window manager handle positioning for first launch
   }
 
-  ui->passPath->setText(QtPassSettings::getPassExecutable());
-  setGitPath(QtPassSettings::getGitExecutable());
-  ui->gpgPath->setText(QtPassSettings::getGpgExecutable());
-  ui->storePath->setText(QtPassSettings::getPassStore());
-  ui->sshAuthSockOverride->setText(QtPassSettings::getSshAuthSockOverride());
+  applySettings(SettingsSerializer::load(*QtPassSettings::getInstance()));
 
-  ui->spinBoxAutoclearSeconds->setValue(QtPassSettings::getAutoclearSeconds());
-  ui->spinBoxAutoclearPanelSeconds->setValue(
-      QtPassSettings::getAutoclearPanelSeconds());
-  ui->checkBoxHidePassword->setChecked(QtPassSettings::isHidePassword());
-  ui->checkBoxHideContent->setChecked(QtPassSettings::isHideContent());
-  ui->checkBoxUseMonospace->setChecked(QtPassSettings::isUseMonospace());
-  ui->checkBoxDisplayAsIs->setChecked(QtPassSettings::isDisplayAsIs());
-  ui->checkBoxNoLineWrapping->setChecked(QtPassSettings::isNoLineWrapping());
-  ui->checkBoxAddGPGId->setChecked(QtPassSettings::isAddGPGId(true));
-
-  if (QSystemTrayIcon::isSystemTrayAvailable()) {
-    ui->checkBoxHideOnClose->setChecked(QtPassSettings::isHideOnClose());
-    ui->checkBoxStartMinimized->setChecked(QtPassSettings::isStartMinimized());
-  } else {
+  if (!QSystemTrayIcon::isSystemTrayAvailable()) {
     ui->checkBoxUseTrayIcon->setEnabled(false);
     ui->checkBoxUseTrayIcon->setToolTip(tr("System tray is not available"));
     ui->checkBoxHideOnClose->setEnabled(false);
     ui->checkBoxStartMinimized->setEnabled(false);
   }
-
-  ui->checkBoxAvoidCapitals->setChecked(QtPassSettings::isAvoidCapitals());
-  ui->checkBoxAvoidNumbers->setChecked(QtPassSettings::isAvoidNumbers());
-  ui->checkBoxLessRandom->setChecked(QtPassSettings::isLessRandom());
-  ui->checkBoxUseSymbols->setChecked(QtPassSettings::isUseSymbols());
-  ui->plainTextEditTemplate->setPlainText(QtPassSettings::getPassTemplate());
-  ui->checkBoxTemplateAllFields->setChecked(
-      QtPassSettings::isTemplateAllFields());
-  ui->checkBoxShowProcessOutput->setChecked(
-      QtPassSettings::isShowProcessOutput());
-  ui->checkBoxAutoPull->setChecked(QtPassSettings::isAutoPull());
-  ui->checkBoxAutoPush->setChecked(QtPassSettings::isAutoPush());
-  ui->checkBoxAlwaysOnTop->setChecked(QtPassSettings::isAlwaysOnTop());
 
 #if defined(Q_OS_WIN)
   ui->checkBoxUseOtp->hide();
@@ -102,21 +74,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     ui->checkBoxUseQrencode->setToolTip(tr("qrencode needs to be installed"));
   }
 
-  usePass(QtPassSettings::isUsePass());
-  useAutoclear(QtPassSettings::isUseAutoclear());
-  useAutoclearPanel(QtPassSettings::isUseAutoclearPanel());
-  useTrayIcon(QtPassSettings::isUseTrayIcon());
-
   setProfiles(QtPassSettings::getProfiles(), QtPassSettings::getProfile());
-
-  useGit(QtPassSettings::isUseGit());
-
-  useOtp(QtPassSettings::isUseOtp());
-  useGrepSearch(QtPassSettings::isUseGrepSearch());
-  useQrencode(QtPassSettings::isUseQrencode());
-
-  usePwgen(QtPassSettings::isUsePwgen());
-  useTemplate(QtPassSettings::isUseTemplate());
 
   ui->profileTable->verticalHeader()->hide();
   ui->profileTable->horizontalHeader()->setSectionResizeMode(
@@ -151,6 +109,101 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   connect(ui->profileTable, &QTableWidget::itemSelectionChanged, this,
           &ConfigDialog::onProfileTableSelectionChanged);
   connect(this, &ConfigDialog::accepted, this, &ConfigDialog::on_accepted);
+}
+
+void ConfigDialog::applySettings(const AppSettings &settings) {
+  ui->passPath->setText(settings.passExecutable);
+  setGitPath(settings.gitExecutable);
+  ui->gpgPath->setText(settings.gpgExecutable);
+  ui->storePath->setText(settings.passStore);
+  ui->sshAuthSockOverride->setText(settings.sshAuthSockOverride);
+
+  ui->spinBoxAutoclearSeconds->setValue(settings.autoclearSeconds);
+  ui->spinBoxAutoclearPanelSeconds->setValue(settings.autoclearPanelSeconds);
+  ui->checkBoxHidePassword->setChecked(settings.hidePassword);
+  ui->checkBoxHideContent->setChecked(settings.hideContent);
+  ui->checkBoxUseMonospace->setChecked(settings.useMonospace);
+  ui->checkBoxDisplayAsIs->setChecked(settings.displayAsIs);
+  ui->checkBoxNoLineWrapping->setChecked(settings.noLineWrapping);
+  ui->checkBoxAddGPGId->setChecked(settings.addGPGId);
+  ui->checkBoxHideOnClose->setChecked(settings.hideOnClose);
+  ui->checkBoxStartMinimized->setChecked(settings.startMinimized);
+
+  ui->checkBoxAvoidCapitals->setChecked(settings.avoidCapitals);
+  ui->checkBoxAvoidNumbers->setChecked(settings.avoidNumbers);
+  ui->checkBoxLessRandom->setChecked(settings.lessRandom);
+  ui->checkBoxUseSymbols->setChecked(settings.useSymbols);
+  ui->plainTextEditTemplate->setPlainText(settings.passTemplate);
+  ui->checkBoxTemplateAllFields->setChecked(settings.templateAllFields);
+  ui->checkBoxShowProcessOutput->setChecked(settings.showProcessOutput);
+  ui->checkBoxAutoPull->setChecked(settings.autoPull);
+  ui->checkBoxAutoPush->setChecked(settings.autoPush);
+  ui->checkBoxAlwaysOnTop->setChecked(settings.alwaysOnTop);
+
+  // Dependent helpers: set after the plain values above so the enable/disable
+  // logic they trigger sees the final widget states.
+  usePass(settings.usePass);
+  useAutoclear(settings.useAutoclear);
+  useAutoclearPanel(settings.useAutoclearPanel);
+  useTrayIcon(settings.useTrayIcon);
+  useGit(settings.useGit);
+  useOtp(settings.useOtp);
+  useGrepSearch(settings.useGrepSearch);
+  useQrencode(settings.useQrencode);
+  usePwgen(settings.usePwgen);
+  useTemplate(settings.useTemplate);
+}
+
+auto ConfigDialog::readSettings() -> AppSettings {
+  // Start from the persisted settings so keys this dialog does not own
+  // (window geometry, WebDAV, profiles, etc.) survive the save.
+  AppSettings settings =
+      SettingsSerializer::load(*QtPassSettings::getInstance());
+
+  settings.passExecutable = ui->passPath->text();
+  settings.gitExecutable = ui->gitPath->text();
+  settings.gpgExecutable = ui->gpgPath->text();
+  settings.sshAuthSockOverride = ui->sshAuthSockOverride->text().trimmed();
+  settings.passStore = Util::normalizeFolderPath(ui->storePath->text());
+  settings.usePass = ui->radioButtonPass->isChecked();
+  settings.clipBoardType =
+      static_cast<Enums::clipBoardType>(ui->comboBoxClipboard->currentIndex());
+  settings.useSelection = ui->checkBoxSelection->isChecked();
+  settings.useAutoclear = ui->checkBoxAutoclear->isChecked();
+  settings.autoclearSeconds = ui->spinBoxAutoclearSeconds->value();
+  settings.useAutoclearPanel = ui->checkBoxAutoclearPanel->isChecked();
+  settings.autoclearPanelSeconds = ui->spinBoxAutoclearPanelSeconds->value();
+  settings.hidePassword = ui->checkBoxHidePassword->isChecked();
+  settings.hideContent = ui->checkBoxHideContent->isChecked();
+  settings.useMonospace = ui->checkBoxUseMonospace->isChecked();
+  settings.displayAsIs = ui->checkBoxDisplayAsIs->isChecked();
+  settings.noLineWrapping = ui->checkBoxNoLineWrapping->isChecked();
+  settings.addGPGId = ui->checkBoxAddGPGId->isChecked();
+  settings.useTrayIcon = ui->checkBoxUseTrayIcon->isEnabled() &&
+                         ui->checkBoxUseTrayIcon->isChecked();
+  settings.hideOnClose = ui->checkBoxHideOnClose->isEnabled() &&
+                         ui->checkBoxHideOnClose->isChecked();
+  settings.startMinimized = ui->checkBoxStartMinimized->isEnabled() &&
+                            ui->checkBoxStartMinimized->isChecked();
+  settings.useGit = ui->checkBoxUseGit->isChecked();
+  settings.useOtp = ui->checkBoxUseOtp->isChecked();
+  settings.useGrepSearch = ui->checkBoxUseGrepSearch->isChecked();
+  settings.useQrencode = ui->checkBoxUseQrencode->isChecked();
+  settings.pwgenExecutable = ui->pwgenPath->text();
+  settings.usePwgen = ui->checkBoxUsePwgen->isChecked();
+  settings.avoidCapitals = ui->checkBoxAvoidCapitals->isChecked();
+  settings.avoidNumbers = ui->checkBoxAvoidNumbers->isChecked();
+  settings.lessRandom = ui->checkBoxLessRandom->isChecked();
+  settings.useSymbols = ui->checkBoxUseSymbols->isChecked();
+  settings.passwordConfiguration = getPasswordConfiguration();
+  settings.useTemplate = ui->checkBoxUseTemplate->isChecked();
+  settings.passTemplate = ui->plainTextEditTemplate->toPlainText();
+  settings.templateAllFields = ui->checkBoxTemplateAllFields->isChecked();
+  settings.showProcessOutput = ui->checkBoxShowProcessOutput->isChecked();
+  settings.alwaysOnTop = ui->checkBoxAlwaysOnTop->isChecked();
+  settings.version = VERSION;
+
+  return settings;
 }
 
 /**
@@ -248,9 +301,6 @@ void ConfigDialog::validate(QTableWidgetItem *item) {
  * @return void - This method does not return a value.
  */
 void ConfigDialog::on_accepted() {
-  QtPassSettings::setPassExecutable(ui->passPath->text());
-  QtPassSettings::setGitExecutable(ui->gitPath->text());
-  QtPassSettings::setGpgExecutable(ui->gpgPath->text());
   const QString sshAuthSockOverride = ui->sshAuthSockOverride->text().trimmed();
   if (!sshAuthSockOverride.isEmpty()) {
     QString reason;
@@ -275,52 +325,20 @@ void ConfigDialog::on_accepted() {
               .arg(reason));
     }
   }
-  QtPassSettings::setSshAuthSockOverride(sshAuthSockOverride);
-  QtPassSettings::setPassStore(
-      Util::normalizeFolderPath(ui->storePath->text()));
-  QtPassSettings::setUsePass(ui->radioButtonPass->isChecked());
-  QtPassSettings::setClipBoardType(ui->comboBoxClipboard->currentIndex());
-  QtPassSettings::setUseSelection(ui->checkBoxSelection->isChecked());
-  QtPassSettings::setUseAutoclear(ui->checkBoxAutoclear->isChecked());
-  QtPassSettings::setAutoclearSeconds(ui->spinBoxAutoclearSeconds->value());
-  QtPassSettings::setUseAutoclearPanel(ui->checkBoxAutoclearPanel->isChecked());
-  QtPassSettings::setAutoclearPanelSeconds(
-      ui->spinBoxAutoclearPanelSeconds->value());
-  QtPassSettings::setHidePassword(ui->checkBoxHidePassword->isChecked());
-  QtPassSettings::setHideContent(ui->checkBoxHideContent->isChecked());
-  QtPassSettings::setUseMonospace(ui->checkBoxUseMonospace->isChecked());
-  QtPassSettings::setDisplayAsIs(ui->checkBoxDisplayAsIs->isChecked());
-  QtPassSettings::setNoLineWrapping(ui->checkBoxNoLineWrapping->isChecked());
-  QtPassSettings::setAddGPGId(ui->checkBoxAddGPGId->isChecked());
-  QtPassSettings::setUseTrayIcon(ui->checkBoxUseTrayIcon->isEnabled() &&
-                                 ui->checkBoxUseTrayIcon->isChecked());
-  QtPassSettings::setHideOnClose(ui->checkBoxHideOnClose->isEnabled() &&
-                                 ui->checkBoxHideOnClose->isChecked());
-  QtPassSettings::setStartMinimized(ui->checkBoxStartMinimized->isEnabled() &&
-                                    ui->checkBoxStartMinimized->isChecked());
-  QHash<QString, QHash<QString, QString>> existingProfiles =
-      QtPassSettings::getProfiles();
-  QtPassSettings::setProfiles(getProfiles());
-  QtPassSettings::setUseGit(ui->checkBoxUseGit->isChecked());
-  QtPassSettings::setUseOtp(ui->checkBoxUseOtp->isChecked());
-  QtPassSettings::setUseGrepSearch(ui->checkBoxUseGrepSearch->isChecked());
-  QtPassSettings::setUseQrencode(ui->checkBoxUseQrencode->isChecked());
-  QtPassSettings::setPwgenExecutable(ui->pwgenPath->text());
-  QtPassSettings::setUsePwgen(ui->checkBoxUsePwgen->isChecked());
-  QtPassSettings::setAvoidCapitals(ui->checkBoxAvoidCapitals->isChecked());
-  QtPassSettings::setAvoidNumbers(ui->checkBoxAvoidNumbers->isChecked());
-  QtPassSettings::setLessRandom(ui->checkBoxLessRandom->isChecked());
-  QtPassSettings::setUseSymbols(ui->checkBoxUseSymbols->isChecked());
-  QtPassSettings::setPasswordConfiguration(getPasswordConfiguration());
-  QtPassSettings::setUseTemplate(ui->checkBoxUseTemplate->isChecked());
-  QtPassSettings::setPassTemplate(ui->plainTextEditTemplate->toPlainText());
-  QtPassSettings::setTemplateAllFields(
-      ui->checkBoxTemplateAllFields->isChecked());
-  QtPassSettings::setShowProcessOutput(
-      ui->checkBoxShowProcessOutput->isChecked());
-  QtPassSettings::setAlwaysOnTop(ui->checkBoxAlwaysOnTop->isChecked());
 
-  QtPassSettings::setVersion(VERSION);
+  const QHash<QString, QHash<QString, QString>> existingProfiles =
+      QtPassSettings::getProfiles();
+
+  const AppSettings settings = readSettings();
+  SettingsSerializer::save(*QtPassSettings::getInstance(), settings);
+  // The serialiser writes the usePass key directly; re-apply it through the
+  // setter so the cached Pass backend is invalidated (pass = nullptr) and the
+  // correct backend is rebuilt on next use. (Backend lifecycle is tracked for
+  // extraction in #1513 item 4.)
+  QtPassSettings::setUsePass(settings.usePass);
+
+  // Profiles are not part of AppSettings yet, so persist them separately.
+  QtPassSettings::setProfiles(getProfiles());
 
   // Initialize new profiles that need pass/git initialization
   initializeNewProfiles(existingProfiles);

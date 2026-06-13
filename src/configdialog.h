@@ -3,6 +3,7 @@
 #ifndef SRC_CONFIGDIALOG_H_
 #define SRC_CONFIGDIALOG_H_
 
+#include "appsettings.h"
 #include "enums.h"
 #include "passwordconfiguration.h"
 
@@ -178,6 +179,27 @@ private:
   void setGitPath(const QString &);
   void setProfiles(QHash<QString, QHash<QString, QString>>, const QString &);
   void usePass(bool usePass);
+
+  /**
+   * @brief Load the dialog's value widgets from an AppSettings struct.
+   *
+   * Mirrors the legacy per-getter constructor loads. Sets values only; the
+   * constructor still handles environment-dependent gating (tray/OTP/qrencode
+   * availability, clipboard combo population, primary-selection support) and
+   * the profile table. Password-generation and pwgen-path widgets are
+   * intentionally not loaded here, matching the previous behaviour.
+   * @param settings Values to display.
+   */
+  void applySettings(const AppSettings &settings);
+  /**
+   * @brief Build an AppSettings struct from the dialog's widgets.
+   *
+   * Starts from the currently persisted settings and overwrites only the
+   * fields this dialog owns, so unrelated keys (window geometry, WebDAV,
+   * profiles, etc.) are preserved on save.
+   * @return Settings reflecting the dialog state.
+   */
+  auto readSettings() -> AppSettings;
 
   void setGroupBoxState();
   auto selectExecutable() -> QString;

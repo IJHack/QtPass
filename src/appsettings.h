@@ -68,7 +68,7 @@ struct AppSettings {
   bool noLineWrapping{false}; ///< Disable line wrapping in the panel.
 
   // --- Features ---
-  bool addGPGId{false};          ///< Auto-add `.gpg-id` files to git.
+  bool addGPGId{true};           ///< Auto-add `.gpg-id` files to git.
   bool useGit{false};            ///< Enable git integration.
   bool useGrepSearch{false};     ///< Enable content (grep) search.
   bool useOtp{false};            ///< Enable pass-otp support.
