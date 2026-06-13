@@ -150,6 +150,7 @@ jobs:
           name: qtpass-lcov
           fail_ci_if_error: false
           verbose: true
+          use_pypi: true
           token: ${{ secrets.CODECOV_TOKEN }}
 
       - name: Upload test results to Codecov
@@ -159,6 +160,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           files: "tests/auto/*/qtpass.junit.xml"
           report_type: test_results
+          use_pypi: true
           fail_ci_if_error: true
 
       - name: Upload coverage to Coveralls
