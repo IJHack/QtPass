@@ -273,8 +273,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:adfd24194a7787a48b6eddbe8d31fc563"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve destination for move operation.  <br /></td></tr>
 <tr class="memitem:aa0b75b53b2a2d62b0fbffbb5d2d7efe4" id="r_aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aa0b75b53b2a2d62b0fbffbb5d2d7efe4">finished</a> (int id, int exitCode, const QString &amp;out, const QString &amp;err) override</td></tr>
 <tr class="memdesc:aa0b75b53b2a2d62b0fbffbb5d2d7efe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle process completion.  <br /></td></tr>
-<tr class="memitem:a2a19726a201781d415a6b98a83b98d96" id="r_a2a19726a201781d415a6b98a83b98d96"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2a19726a201781d415a6b98a83b98d96">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout, bool readStderr) override</td></tr>
-<tr class="memdesc:a2a19726a201781d415a6b98a83b98d96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute command wrapper.  <br /></td></tr>
+<tr class="memitem:afea4899feebac58489e710f4f8eba501" id="r_afea4899feebac58489e710f4f8eba501"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afea4899feebac58489e710f4f8eba501">beforeExecute</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id) override</td></tr>
+<tr class="memdesc:afea4899feebac58489e710f4f8eba501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open a transaction for every execution.  <br /></td></tr>
 <tr class="inherit_header pro_methods_class_pass"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pro_methods_class_pass')"><span class="dynarrow"><span class="arrowhead closed"></span></span>Protected Member Functions inherited from <a class="el" href="class_pass.html">Pass</a></td></tr>
 <tr class="memitem:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass" id="r_a66f59138ffe856fd421410d9af9ddc62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a66f59138ffe856fd421410d9af9ddc62">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, bool readStdout=true, bool readStderr=true)</td></tr>
 <tr class="memdesc:a66f59138ffe856fd421410d9af9ddc62 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute external wrapper command.  <br /></td></tr>
@@ -284,6 +284,8 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a4f63e4e86c7ffec6df333e466fb38c3b inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random number in range.  <br /></td></tr>
 <tr class="memitem:a4ecc5514ea969ceb06f439698bf6aa9a inherit pro_methods_class_pass" id="r_a4ecc5514ea969ceb06f439698bf6aa9a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a4ecc5514ea969ceb06f439698bf6aa9a">setEnvVar</a> (const QString &amp;key, const QString &amp;value)</td></tr>
 <tr class="memdesc:a4ecc5514ea969ceb06f439698bf6aa9a inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove an environment variable.  <br /></td></tr>
+<tr class="memitem:a23d30214443a4bc0d0508491872f06c3 inherit pro_methods_class_pass" id="r_a23d30214443a4bc0d0508491872f06c3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="class_pass.html#a23d30214443a4bc0d0508491872f06c3">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout, bool readStderr)</td></tr>
+<tr class="memdesc:a23d30214443a4bc0d0508491872f06c3 inherit pro_methods_class_pass"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute wrapper with input.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-friends" class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -324,6 +326,41 @@ Additional Inherited Members</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="imitatepass_8h_source.html#l00026">26</a> of file <a class="el" href="imitatepass_8h_source.html">imitatepass.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="afea4899feebac58489e710f4f8eba501" name="afea4899feebac58489e710f4f8eba501"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afea4899feebac58489e710f4f8eba501">&#9670;&#160;</a></span>beforeExecute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ImitatePass::beforeExecute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Open a transaction for every execution. </p>
+<p>In native (imitate) mode each wrapped command is a git/gpg transaction; register it before the subprocess runs. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Process identifier. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="class_pass.html#a31ea796fe4d60101a9562d893647bcde">Pass</a>.</p>
+
+</div>
+</div>
 <a id="a607cc25575bf718f57333bb7854870b4" name="a607cc25575bf718f57333bb7854870b4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a607cc25575bf718f57333bb7854870b4">&#9670;&#160;</a></span>checkSigningKeys()</h2>
 
@@ -561,70 +598,6 @@ Additional Inherited Members</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="a2a19726a201781d415a6b98a83b98d96" name="a2a19726a201781d415a6b98a83b98d96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a19726a201781d415a6b98a83b98d96">&#9670;&#160;</a></span>executeWrapper()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ImitatePass::executeWrapper </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>app</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QStringList &amp;</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em>input</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>readStdout</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>readStderr</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Execute command wrapper. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">id</td><td>Process identifier. </td></tr>
-    <tr><td class="paramname">app</td><td>Executable path. </td></tr>
-    <tr><td class="paramname">args</td><td>Command arguments. </td></tr>
-    <tr><td class="paramname">input</td><td>Data to write to stdin. </td></tr>
-    <tr><td class="paramname">readStdout</td><td>Whether to capture stdout. </td></tr>
-    <tr><td class="paramname">readStderr</td><td>Whether to capture stderr. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="class_pass.html#aec26dcea250e655b2b50d9858edf9d8f">Pass</a>.</p>
 
 </div>
 </div>

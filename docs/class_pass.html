@@ -255,8 +255,10 @@ Protected Member Functions</h2></td></tr>
 <tr class="memdesc:a4f63e4e86c7ffec6df333e466fb38c3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate random number in range.  <br /></td></tr>
 <tr class="memitem:a4ecc5514ea969ceb06f439698bf6aa9a" id="r_a4ecc5514ea969ceb06f439698bf6aa9a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4ecc5514ea969ceb06f439698bf6aa9a">setEnvVar</a> (const QString &amp;key, const QString &amp;value)</td></tr>
 <tr class="memdesc:a4ecc5514ea969ceb06f439698bf6aa9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set or remove an environment variable.  <br /></td></tr>
-<tr class="memitem:aec26dcea250e655b2b50d9858edf9d8f" id="r_aec26dcea250e655b2b50d9858edf9d8f"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#aec26dcea250e655b2b50d9858edf9d8f">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout, bool readStderr)</td></tr>
-<tr class="memdesc:aec26dcea250e655b2b50d9858edf9d8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute wrapper with input.  <br /></td></tr>
+<tr class="memitem:a23d30214443a4bc0d0508491872f06c3" id="r_a23d30214443a4bc0d0508491872f06c3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a23d30214443a4bc0d0508491872f06c3">executeWrapper</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id, const QString &amp;app, const QStringList &amp;args, QString input, bool readStdout, bool readStderr)</td></tr>
+<tr class="memdesc:a23d30214443a4bc0d0508491872f06c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute wrapper with input.  <br /></td></tr>
+<tr class="memitem:a31ea796fe4d60101a9562d893647bcde" id="r_a31ea796fe4d60101a9562d893647bcde"><td class="memItemLeft">virtual void&#160;</td><td class="memItemRight"><a class="el" href="#a31ea796fe4d60101a9562d893647bcde">beforeExecute</a> (<a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a> id)</td></tr>
+<tr class="memdesc:a31ea796fe4d60101a9562d893647bcde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hook invoked just before a wrapped command is dispatched.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-attribs" class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -302,6 +304,41 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
+<a id="a31ea796fe4d60101a9562d893647bcde" name="a31ea796fe4d60101a9562d893647bcde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ea796fe4d60101a9562d893647bcde">&#9670;&#160;</a></span>beforeExecute()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void Pass::beforeExecute </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Hook invoked just before a wrapped command is dispatched. </p>
+<p>Default is a no-op; backends override it to wrap execution (e.g. <a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> registers a transaction). Keeps the dispatch surface a single non-virtual executeWrapper instead of an overridden one. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">id</td><td>Process identifier of the command about to run. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="class_imitate_pass.html#afea4899feebac58489e710f4f8eba501">ImitatePass</a>.</p>
+
+</div>
+</div>
 <a id="a4f63e4e86c7ffec6df333e466fb38c3b" name="a4f63e4e86c7ffec6df333e466fb38c3b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f63e4e86c7ffec6df333e466fb38c3b">&#9670;&#160;</a></span>boundedRandom()</h2>
 
@@ -476,8 +513,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aec26dcea250e655b2b50d9858edf9d8f" name="aec26dcea250e655b2b50d9858edf9d8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec26dcea250e655b2b50d9858edf9d8f">&#9670;&#160;</a></span>executeWrapper() <span class="overload">[2/2]</span></h2>
+<a id="a23d30214443a4bc0d0508491872f06c3" name="a23d30214443a4bc0d0508491872f06c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23d30214443a4bc0d0508491872f06c3">&#9670;&#160;</a></span>executeWrapper() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -486,7 +523,7 @@ Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void Pass::executeWrapper </td>
+          <td class="memname">void Pass::executeWrapper </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69">PROCESS</a></td>          <td class="paramname"><span class="paramname"><em>id</em></span>, </td>
         </tr>
@@ -518,7 +555,7 @@ Protected Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel protected">protected</span><span class="mlabel virtual">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel protected">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -535,8 +572,6 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-
-<p>Reimplemented in <a class="el" href="class_imitate_pass.html#a2a19726a201781d415a6b98a83b98d96">ImitatePass</a>.</p>
 
 </div>
 </div>
