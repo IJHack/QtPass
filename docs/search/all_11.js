@@ -93,13 +93,12 @@ var searchData=
   ['simpletransaction_90',['simpleTransaction',['../classsimple_transaction.html',1,'simpleTransaction'],['../classsimple_transaction.html#ac798d38ad0b66f05cd58b5c9e9845491',1,'simpleTransaction::simpleTransaction()']]],
   ['singleapplication_91',['SingleApplication',['../class_single_application.html',1,'SingleApplication'],['../class_single_application.html#a55e5986206cf99fe05d33169d9eb71f5',1,'SingleApplication::SingleApplication()']]],
   ['source_92',['From source',['../index.html#source',1,'']]],
-  ['sshauthsockoverridestatus_93',['SshAuthSockOverrideStatus',['../class_util.html#a664c86105abd5d58160ec9415f4fc832',1,'Util']]],
-  ['sshauthsockoverridestatus_94',['sshAuthSockOverrideStatus',['../class_util.html#a339d22cd90ff067165a354e3918db10f',1,'Util']]],
-  ['starting_95',['starting',['../class_executor.html#acfcfc18b0b973791530302eb8179e038',1,'Executor']]],
-  ['startingexecutewrapper_96',['startingExecuteWrapper',['../class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6',1,'Pass']]],
-  ['startreencryptpath_97',['startReencryptPath',['../class_imitate_pass.html#aecffecc95bd1c0281849dbfe11231e36',1,'ImitatePass::startReencryptPath()'],['../class_main_window.html#a02ec9927bda826675653c0af916c8f33',1,'MainWindow::startReencryptPath()']]],
-  ['statusmsg_98',['statusMsg',['../class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb',1,'Pass']]],
-  ['storemodel_99',['StoreModel',['../class_store_model.html',1,'StoreModel'],['../class_store_model.html#a1d113aadab8e115cdd963f2246333664',1,'StoreModel::StoreModel()']]],
-  ['supporteddragactions_100',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
-  ['supporteddropactions_101',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]]
+  ['sshauthsock_93',['SshAuthSock',['../class_ssh_auth_sock.html',1,'']]],
+  ['starting_94',['starting',['../class_executor.html#acfcfc18b0b973791530302eb8179e038',1,'Executor']]],
+  ['startingexecutewrapper_95',['startingExecuteWrapper',['../class_pass.html#a0345d3ffdb213234031e9c84fe8ca7c6',1,'Pass']]],
+  ['startreencryptpath_96',['startReencryptPath',['../class_imitate_pass.html#aecffecc95bd1c0281849dbfe11231e36',1,'ImitatePass::startReencryptPath()'],['../class_main_window.html#a02ec9927bda826675653c0af916c8f33',1,'MainWindow::startReencryptPath()']]],
+  ['statusmsg_97',['statusMsg',['../class_pass.html#a3a8bd6ab55ed8b2338955f01573bc2fb',1,'Pass']]],
+  ['storemodel_98',['StoreModel',['../class_store_model.html',1,'StoreModel'],['../class_store_model.html#a1d113aadab8e115cdd963f2246333664',1,'StoreModel::StoreModel()']]],
+  ['supporteddragactions_99',['supportedDragActions',['../class_store_model.html#aa0d2f19f9d92f85e5a7696f747bd5648',1,'StoreModel']]],
+  ['supporteddropactions_100',['supportedDropActions',['../class_store_model.html#af6982f1562988c413ae9e95e87a713a1',1,'StoreModel']]]
 ];

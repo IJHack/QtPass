@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment">// SPDX-License-Identifier: GPL-3.0-or-later</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;mainwindow.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;util.h&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;sshauthsock.h&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#if SINGLE_APP</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;singleapplication.h&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#endif</span></div>
@@ -209,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="comment">// Probe / set SSH_AUTH_SOCK before any subprocess runs (issue #543).</span></div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="comment">// GUI launchers don&#39;t inherit shell-set env vars, so users with</span></div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="comment">// gpg-agent&#39;s SSH support get failed git push/pull until this fires.</span></div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <a class="code hl_function" href="class_util.html#a33baf1b515dcaa5640c55a528096a4a7">Util::initialiseSshAuthSock</a>();</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <a class="code hl_function" href="class_ssh_auth_sock.html#a6de61973760144a621c897ba58ef8749">SshAuthSock::initialise</a>();</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="comment">// Setup and load translator for localization.</span></div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="comment">//</span></div>
@@ -277,7 +277,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>}</div>
 <div class="ttc" id="aclass_main_window_html"><div class="ttname"><a href="class_main_window.html">MainWindow</a></div><div class="ttdoc">Main application window orchestrating UI, user interactions, and external process handlers.</div><div class="ttdef"><b>Definition</b> <a href="mainwindow_8h_source.html#l00049">mainwindow.h:49</a></div></div>
 <div class="ttc" id="aclass_main_window_html_a4fad7c4dec11ceaebcb8a0141280ba4b"><div class="ttname"><a href="class_main_window.html#a4fad7c4dec11ceaebcb8a0141280ba4b">MainWindow::messageAvailable</a></div><div class="ttdeci">void messageAvailable(const QString &amp;message)</div><div class="ttdoc">Handle an incoming inter-process message (single-instance mode).</div></div>
-<div class="ttc" id="aclass_util_html_a33baf1b515dcaa5640c55a528096a4a7"><div class="ttname"><a href="class_util.html#a33baf1b515dcaa5640c55a528096a4a7">Util::initialiseSshAuthSock</a></div><div class="ttdeci">static void initialiseSshAuthSock()</div><div class="ttdoc">Ensure SSH_AUTH_SOCK is set for child processes.</div></div>
+<div class="ttc" id="aclass_ssh_auth_sock_html_a6de61973760144a621c897ba58ef8749"><div class="ttname"><a href="class_ssh_auth_sock.html#a6de61973760144a621c897ba58ef8749">SshAuthSock::initialise</a></div><div class="ttdeci">static void initialise()</div><div class="ttdoc">Ensure SSH_AUTH_SOCK is set for child processes.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

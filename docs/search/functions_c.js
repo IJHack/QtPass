@@ -4,5 +4,6 @@ var searchData=
   ['ongrepfinished_1',['onGrepFinished',['../class_main_window.html#a270b5f2701f275c3de734f4150a3d897',1,'MainWindow']]],
   ['onprocessoutput_2',['onProcessOutput',['../class_main_window.html#ad84f015fe7d94961af6fcfc26532e33c',1,'MainWindow']]],
   ['onpush_3',['onPush',['../class_main_window.html#a6961588ebf3c0640200e0cfa920af3be',1,'MainWindow']]],
-  ['otpgenerate_4',['OtpGenerate',['../class_imitate_pass.html#a18eac6111a1d77a3f8ded93b7be16270',1,'ImitatePass::OtpGenerate()'],['../class_pass.html#abfe228b7e546aeb0e33bb8102f2e7f19',1,'Pass::OtpGenerate()'],['../class_real_pass.html#a39c56e5ad8b46fc6c4f00b7000bccc99',1,'RealPass::OtpGenerate()']]]
+  ['otpgenerate_4',['OtpGenerate',['../class_imitate_pass.html#a18eac6111a1d77a3f8ded93b7be16270',1,'ImitatePass::OtpGenerate()'],['../class_pass.html#abfe228b7e546aeb0e33bb8102f2e7f19',1,'Pass::OtpGenerate()'],['../class_real_pass.html#a39c56e5ad8b46fc6c4f00b7000bccc99',1,'RealPass::OtpGenerate()']]],
+  ['overridestatus_5',['overrideStatus',['../class_ssh_auth_sock.html#abdb660987ea5a58787e0ef6a5173654e',1,'SshAuthSock']]]
 ];

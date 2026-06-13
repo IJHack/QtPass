@@ -7,7 +7,7 @@ var searchData=
   ['init_4',['Init',['../class_imitate_pass.html#a6fe6b48df3fb04071c8c2c1d5c1d1206',1,'ImitatePass::Init()'],['../class_pass.html#aee98d184ed11013a9a9dc08d05fbb1a2',1,'Pass::Init()'],['../class_real_pass.html#a12a7e631a5040eee70da06585fe047ba',1,'RealPass::Init()']]],
   ['init_5',['init',['../class_pass.html#a012c47a55b3cc3467ad0f013716f623a',1,'Pass::init()'],['../class_qt_pass.html#ad0a4d7627e6303e412d4a832a8bad77c',1,'QtPass::init()']]],
   ['initexecutables_6',['initExecutables',['../class_qt_pass_settings.html#accde18f59a051107c85755993fcefdac',1,'QtPassSettings']]],
-  ['initialisesshauthsock_7',['initialiseSshAuthSock',['../class_util.html#a33baf1b515dcaa5640c55a528096a4a7',1,'Util']]],
+  ['initialise_7',['initialise',['../class_ssh_auth_sock.html#a6de61973760144a621c897ba58ef8749',1,'SshAuthSock']]],
   ['insert_8',['Insert',['../class_imitate_pass.html#a4c62fe3ae4f151582f6360599a610dd6',1,'ImitatePass::Insert()'],['../class_pass.html#a86ad2005a6517f9c304a9e156755778c',1,'Pass::Insert()'],['../class_real_pass.html#a5b057992bb1c2a55d9febbca4535f830',1,'RealPass::Insert()']]],
   ['isaddgpgid_9',['isAddGPGId',['../class_qt_pass_settings.html#ad1b27f9ca2bbbe85cfa361ecfdc3f9ac',1,'QtPassSettings']]],
   ['isalwaysontop_10',['isAlwaysOnTop',['../class_qt_pass_settings.html#aff8eb58a6814a95f12c4369f0187ab97',1,'QtPassSettings']]],
