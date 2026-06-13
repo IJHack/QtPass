@@ -95,6 +95,7 @@ SOURCES   += mainwindow.cpp \
              qtpasssettings.cpp \
              settingsconstants.cpp \
              settingsserializer.cpp \
+             passbackendfactory.cpp \
              pass.cpp \
              gpgkeystate.cpp \
              realpass.cpp \
@@ -128,6 +129,7 @@ HEADERS   += mainwindow.h \
              enums.h \
              settingsconstants.h \
              settingsserializer.h \
+             passbackendfactory.h \
              pass.h \
              gpgkeystate.h \
              realpass.h \

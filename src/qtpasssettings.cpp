@@ -13,6 +13,7 @@
 
 #include "qtpasssettings.h"
 #include "pass.h"
+#include "passbackendfactory.h"
 
 #include "util.h"
 
@@ -24,14 +25,6 @@
 #include <utility>
 
 bool QtPassSettings::initialized = false;
-
-Pass *QtPassSettings::pass;
-// Go via pointer to avoid dynamic initialization,
-// due to "random" initialization order relative to other
-// globals, especially around QObject metadata dynamic initialization
-// can lead to crashes depending on compiler, linker etc.
-QScopedPointer<RealPass> QtPassSettings::realPass;
-QScopedPointer<ImitatePass> QtPassSettings::imitatePass;
 
 QtPassSettings *QtPassSettings::m_instance = nullptr;
 /**
@@ -180,17 +173,7 @@ void QtPassSettings::setProfiles(
 }
 
 auto QtPassSettings::getPass() -> Pass * {
-  if (!pass) {
-    if (isUsePass()) {
-      pass = getRealPass();
-    } else {
-      pass = getImitatePass();
-    }
-    if (pass) {
-      pass->init();
-    }
-  }
-  return pass;
+  return PassBackendFactory::getPass();
 }
 
 auto QtPassSettings::getVersion(const QString &defaultValue) -> QString {
@@ -307,7 +290,8 @@ auto QtPassSettings::isUsePass(const bool &defaultValue) -> bool {
 }
 void QtPassSettings::setUsePass(const bool &usePass) {
   getInstance()->setValue(SettingsConstants::usePass, usePass);
-  pass = nullptr;
+  // Backend selection changed: force re-selection on next getPass().
+  PassBackendFactory::invalidate();
 }
 
 auto QtPassSettings::getClipBoardTypeRaw(
@@ -906,14 +890,8 @@ void QtPassSettings::setShowProcessOutput(const bool &showProcessOutput) {
 }
 
 auto QtPassSettings::getRealPass() -> RealPass * {
-  if (realPass.isNull()) {
-    realPass.reset(new RealPass());
-  }
-  return realPass.data();
+  return PassBackendFactory::getRealPass();
 }
 auto QtPassSettings::getImitatePass() -> ImitatePass * {
-  if (imitatePass.isNull()) {
-    imitatePass.reset(new ImitatePass());
-  }
-  return imitatePass.data();
+  return PassBackendFactory::getImitatePass();
 }
