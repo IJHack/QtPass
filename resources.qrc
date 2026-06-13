@@ -19,5 +19,6 @@
         <file alias="folder-new.svg">icons/folder-new.svg</file>
         <file alias="view.svg">icons/view.svg</file>
         <file alias="hide.svg">icons/hide.svg</file>
+        <file alias="open-url.svg">icons/open-url.svg</file>
     </qresource>
 </RCC>

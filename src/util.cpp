@@ -20,6 +20,7 @@
 #include <QHash>
 #include <QSaveFile>
 #include <QTextStream>
+#include <QUrl>
 #include <algorithm>
 #if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
 #include <QStringConverter>
@@ -507,6 +508,47 @@ auto Util::protocolRegex() -> const QRegularExpression & {
   static const QRegularExpression regex{
       R"(((?:https?|ftp|ssh|sftp|ftps|webdav|webdavs)://[^" <>\)\]\[]+))"};
   return regex;
+}
+
+/**
+ * @brief Validate a value as a launchable http(s) URL.
+ *
+ * Security gate for the "open in browser" action. See util.h for the full
+ * contract. Deliberately stricter than protocolRegex(): only http/https,
+ * valid host, no embedded credentials, no control characters.
+ *
+ * @param value Candidate URL string.
+ * @return true if launchable in a browser, false otherwise.
+ */
+auto Util::isLaunchableWebUrl(const QString &value) -> bool {
+  const QString trimmed = value.trimmed();
+  if (trimmed.isEmpty()) {
+    return false;
+  }
+  // Reject control characters first, before QUrl normalisation can hide a
+  // CR/LF/NUL injection into the OS URL handler.
+  for (const QChar &c : trimmed) {
+    if (c == QLatin1Char('\r') || c == QLatin1Char('\n') ||
+        c == QChar(QChar::Null)) {
+      return false;
+    }
+  }
+  const QUrl url(trimmed, QUrl::StrictMode);
+  if (!url.isValid()) {
+    return false;
+  }
+  const QString scheme = url.scheme().toLower();
+  if (scheme != QLatin1String("http") && scheme != QLatin1String("https")) {
+    return false;
+  }
+  if (url.host().isEmpty()) {
+    return false;
+  }
+  // Embedded userinfo (user:pass@host) would leak into browser history.
+  if (!url.userName().isEmpty() || !url.password().isEmpty()) {
+    return false;
+  }
+  return true;
 }
 
 /**

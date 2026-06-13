@@ -125,6 +125,25 @@ public:
    */
   static auto protocolRegex() -> const QRegularExpression &;
   /**
+   * @brief Check whether a value is a safe, launchable web URL.
+   *
+   * Stricter than protocolRegex(): intended to gate an "open in browser"
+   * action, where launching a non-web scheme would be a security risk.
+   * Returns true only when the trimmed value:
+   * - contains no control characters (CR, LF, NUL),
+   * - parses to a valid QUrl,
+   * - has scheme exactly "http" or "https" (case-insensitive),
+   * - has a non-empty host,
+   * - carries no embedded userinfo (user:password@host).
+   *
+   * Deliberately rejects file://, javascript:, data:, ftp/ssh/webdav and
+   * scheme-less inputs (e.g. "www.example.com").
+   *
+   * @param value Candidate URL string (typically a password-file field).
+   * @return true if the value is a launchable http(s) URL, false otherwise.
+   */
+  static auto isLaunchableWebUrl(const QString &value) -> bool;
+  /**
    * @brief Returns a regex to match newline characters.
    * @return Reference to static regex
    */

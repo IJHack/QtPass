@@ -147,6 +147,8 @@ private Q_SLOTS:
   void buildClipboardMimeDataMac();
   void utilRegexEnsuresGpg();
   void utilRegexProtocol();
+  void isLaunchableWebUrlAccepts();
+  void isLaunchableWebUrlRejects();
   void utilRegexNewLines();
   void reencryptPathNormalization();
   void reencryptPathAbsolutePath();
@@ -1556,6 +1558,43 @@ void tst_util::utilRegexProtocol() {
   QVERIFY2(rex.match("https://secure.com").hasMatch(), "Should match https://");
   QVERIFY2(rex.match("ssh://host").hasMatch(), "Should match ssh://");
   QVERIFY2(!rex.match("://no-protocol").hasMatch(), "Should not match invalid");
+}
+
+void tst_util::isLaunchableWebUrlAccepts() {
+  QVERIFY(Util::isLaunchableWebUrl("https://example.com"));
+  QVERIFY(Util::isLaunchableWebUrl("http://example.com"));
+  QVERIFY(Util::isLaunchableWebUrl("https://example.com/path?q=1#frag"));
+  QVERIFY(Util::isLaunchableWebUrl("https://nas.local:8080"));
+  // Surrounding whitespace is trimmed.
+  QVERIFY(Util::isLaunchableWebUrl("  https://example.com  "));
+  // Scheme is case-insensitive.
+  QVERIFY(Util::isLaunchableWebUrl("HTTPS://example.com"));
+  QVERIFY(Util::isLaunchableWebUrl("HtTp://Example.com"));
+}
+
+void tst_util::isLaunchableWebUrlRejects() {
+  QVERIFY2(!Util::isLaunchableWebUrl(""), "empty");
+  QVERIFY2(!Util::isLaunchableWebUrl("   "), "whitespace only");
+  // Scheme-less inputs must be rejected (no auto-prefixing).
+  QVERIFY2(!Util::isLaunchableWebUrl("www.example.com"), "scheme-less");
+  QVERIFY2(!Util::isLaunchableWebUrl("example.com"), "bare host");
+  // Non-web schemes the launcher must never hand to the OS.
+  QVERIFY2(!Util::isLaunchableWebUrl("file:///etc/passwd"), "file");
+  QVERIFY2(!Util::isLaunchableWebUrl("javascript:alert(1)"), "javascript");
+  QVERIFY2(!Util::isLaunchableWebUrl("data:text/html,<b>x</b>"), "data");
+  QVERIFY2(!Util::isLaunchableWebUrl("ftp://host/file"), "ftp");
+  QVERIFY2(!Util::isLaunchableWebUrl("ssh://host"), "ssh");
+  QVERIFY2(!Util::isLaunchableWebUrl("webdav://host"), "webdav");
+  // Embedded credentials leak into browser history.
+  QVERIFY2(!Util::isLaunchableWebUrl("https://user:pass@example.com"), "creds");
+  // Missing host.
+  QVERIFY2(!Util::isLaunchableWebUrl("https://"), "no host");
+  // Control-character injection.
+  QVERIFY2(!Util::isLaunchableWebUrl("https://example.com\r\nHost: evil"),
+           "CRLF");
+  QVERIFY2(
+      !Util::isLaunchableWebUrl(QString("https://e.com") + QChar(0) + ".com"),
+      "NUL");
 }
 
 void tst_util::utilRegexNewLines() {
