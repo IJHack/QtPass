@@ -3,6 +3,7 @@ var searchData=
   ['qpushbuttonasqrcode_0',['QPushButtonAsQRCode',['../class_q_push_button_as_q_r_code.html',1,'QPushButtonAsQRCode'],['../class_q_push_button_as_q_r_code.html#a8b9e33d9c6a605b6071267d0f5bd3c00',1,'QPushButtonAsQRCode::QPushButtonAsQRCode()']]],
   ['qpushbuttonshowpassword_1',['QPushButtonShowPassword',['../class_q_push_button_show_password.html',1,'QPushButtonShowPassword'],['../class_q_push_button_show_password.html#a1e81689266a6cde3a115466da1aee783',1,'QPushButtonShowPassword::QPushButtonShowPassword()']]],
   ['qpushbuttonwithclipboard_2',['QPushButtonWithClipboard',['../class_q_push_button_with_clipboard.html',1,'QPushButtonWithClipboard'],['../class_q_push_button_with_clipboard.html#a9fcd74d855d552598d1ebf4910f53666',1,'QPushButtonWithClipboard::QPushButtonWithClipboard()']]],
-  ['qtpass_3',['QtPass',['../class_qt_pass.html',1,'QtPass'],['../class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad',1,'QtPass::QtPass()'],['../index.html',1,'QtPass']]],
-  ['qtpasssettings_4',['QtPassSettings',['../class_qt_pass_settings.html',1,'']]]
+  ['qrencodeexecutable_3',['qrencodeExecutable',['../struct_app_settings.html#a0fed2d2dfaaaa0835fa767451eff7882',1,'AppSettings']]],
+  ['qtpass_4',['QtPass',['../class_qt_pass.html',1,'QtPass'],['../class_qt_pass.html#aa9f6862ff8875c387423b462ac7f9cad',1,'QtPass::QtPass()'],['../index.html',1,'QtPass']]],
+  ['qtpasssettings_5',['QtPassSettings',['../class_qt_pass_settings.html',1,'']]]
 ];

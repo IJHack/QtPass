@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['selected_0',['selected',['../struct_password_configuration.html#abd7cb31711fc6cb0792d43860c14cfc0',1,'PasswordConfiguration']]]
+  ['maximized_0',['maximized',['../struct_app_settings.html#a8bc918dfa07476cab7a7486020e88dbd',1,'AppSettings']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['templateallfields_0',['templateAllFields',['../class_settings_constants.html#ae703d41511419b500a03f57b32023a6b',1,'SettingsConstants']]]
+  ['templateallfields_0',['templateAllFields',['../struct_app_settings.html#abf7c1a08e3aeb6528162cef23c65a04d',1,'AppSettings']]]
 ];

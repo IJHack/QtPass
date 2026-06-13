@@ -13,7 +13,7 @@ var searchData=
   ['clipboard_5falways_10',['CLIPBOARD_ALWAYS',['../namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da00dc0ed766a614a278d3f392089c814e',1,'Enums']]],
   ['clipboard_5fnever_11',['CLIPBOARD_NEVER',['../namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef',1,'Enums']]],
   ['clipboard_5fon_5fdemand_12',['CLIPBOARD_ON_DEMAND',['../namespace_enums.html#aa36f045555e72e4d536b48aac12ee52daf4f60eefd26af9c92962895d9a55ae2b',1,'Enums']]],
-  ['clipboardtype_13',['clipBoardType',['../namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d',1,'Enums']]],
+  ['clipboardtype_13',['clipBoardType',['../struct_app_settings.html#a731f7b91129a33d6835e56611e72dbe8',1,'AppSettings::clipBoardType'],['../namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d',1,'Enums::clipBoardType']]],
   ['closeevent_14',['closeEvent',['../class_config_dialog.html#ad5f28221ebec0701bb56c43780a452b3',1,'ConfigDialog::closeEvent()'],['../class_keygen_dialog.html#a37012091a78f400d9bdc7b6f6b5949ef',1,'KeygenDialog::closeEvent()'],['../class_main_window.html#a05fb9d72c044aa3bb7d187b994704e2f',1,'MainWindow::closeEvent()'],['../class_users_dialog.html#ac1ca78f350c1f7655e0d32a1f1a07ba5',1,'UsersDialog::closeEvent()']]],
   ['config_15',['config',['../class_main_window.html#aeb8091ab5531144b76c1fbb0d63deb56',1,'MainWindow']]],
   ['configdialog_16',['ConfigDialog',['../class_config_dialog.html',1,'ConfigDialog'],['../class_config_dialog.html#a815d6d8ddf1de9386427ddef691a02a1',1,'ConfigDialog::ConfigDialog()']]],

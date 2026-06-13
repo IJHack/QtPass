@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['key_5fid_0',['key_id',['../struct_user_info.html#a7ea1df76d75ada608ce5a641bd53f7e6',1,'UserInfo']]],
-  ['kind_1',['kind',['../structdrag_and_drop_info_password_store.html#ab4bf9c0e8d5cce80a689fd57b3b97541',1,'dragAndDropInfoPasswordStore']]]
+  ['geometry_0',['geometry',['../struct_app_settings.html#a089999182d33c9d008917be239f553a4',1,'AppSettings']]],
+  ['gitexecutable_1',['gitExecutable',['../struct_app_settings.html#a50480ce075727936c03f0ad797e5f4ae',1,'AppSettings']]],
+  ['gpgexecutable_2',['gpgExecutable',['../struct_app_settings.html#a0d19db5f33a7d4728142617f99cb55db',1,'AppSettings']]],
+  ['gpghome_3',['gpgHome',['../struct_app_settings.html#a536aba611f1643063f9c38c8af91d29c',1,'AppSettings']]]
 ];

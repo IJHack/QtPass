@@ -1610,9 +1610,15 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Search password content for a pattern. </p>
+<dl class="section warning"><dt>Warning</dt><dd>The regular-expression dialect is <b>backend-dependent</b>, so the same pattern can match differently depending on the configured backend:<ul>
+<li><a class="el" href="class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command-line tool.">RealPass</a> shells out to <span class="tt">pass grep</span>, which uses <b>POSIX BRE</b> (GNU grep default): e.g. <span class="tt">+</span>, <span class="tt">?</span>, <span class="tt">|</span>, <span class="tt">()</span> are literal unless backslash-escaped.</li>
+<li><a class="el" href="class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable.">ImitatePass</a> evaluates the pattern with <span class="tt">QRegularExpression</span>, which is <b>PCRE</b>-style: those metacharacters are special without escaping.</li>
+</ul>
+</dd></dl>
+<p>This Liskov wart is documented rather than papered over: a reliable BRE↔PCRE translation is intractable and <span class="tt">grep -P</span> is unavailable on macOS/BSD. Keep patterns to the common subset (literals, anchors <span class="tt">^</span>/<span class="tt">$</span>, <span class="tt">.</span>, <span class="tt">*</span>, bracket classes) for backend-independent results.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pattern</td><td>Search pattern (regular expression). </td></tr>
+    <tr><td class="paramname">pattern</td><td>Search pattern (regular expression; see dialect note). </td></tr>
     <tr><td class="paramname">caseInsensitive</td><td>true for case-insensitive search. </td></tr>
   </table>
   </dd>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['qrencodeexecutable_0',['qrencodeExecutable',['../class_settings_constants.html#acd17501a9a69d4aff8092aeee37d3d33',1,'SettingsConstants']]]
+  ['qrencodeexecutable_0',['qrencodeExecutable',['../struct_app_settings.html#a0fed2d2dfaaaa0835fa767451eff7882',1,'AppSettings']]]
 ];

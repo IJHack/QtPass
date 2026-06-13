@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['savestate_0',['savestate',['../class_settings_constants.html#a053c1a12c4d9503e87de1750529bab4a',1,'SettingsConstants']]],
-  ['selected_1',['selected',['../struct_password_configuration.html#a28756e64706f58e8c48450b902ff5083',1,'PasswordConfiguration']]],
-  ['size_2',['size',['../class_settings_constants.html#aa24168ac65bc6e2234e41df49f3c57ff',1,'SettingsConstants']]],
-  ['splitterleft_3',['splitterLeft',['../class_settings_constants.html#a95469c1eb31639a4b77394808f995d20',1,'SettingsConstants']]],
-  ['splitterright_4',['splitterRight',['../class_settings_constants.html#adde31e400372c0b385d6400d6ad6b6f4',1,'SettingsConstants']]],
-  ['startminimized_5',['startMinimized',['../class_settings_constants.html#aafa5676073803ea4b2a8f9fdcf46598e',1,'SettingsConstants']]]
+  ['savestate_0',['savestate',['../struct_app_settings.html#aafa1f97c50a90866f9523851b2eaa058',1,'AppSettings']]],
+  ['selected_1',['selected',['../struct_password_configuration.html#abd7cb31711fc6cb0792d43860c14cfc0',1,'PasswordConfiguration']]],
+  ['showprocessoutput_2',['showProcessOutput',['../struct_app_settings.html#a61d0d4c9f61852bac9fe3be71a9b1814',1,'AppSettings']]],
+  ['size_3',['size',['../struct_app_settings.html#afe3a1f506b45e40657e0aac7566ab895',1,'AppSettings']]],
+  ['sshauthsockoverride_4',['sshAuthSockOverride',['../struct_app_settings.html#a175df77744647e5759f0e2f1a0d177a1',1,'AppSettings']]],
+  ['startminimized_5',['startMinimized',['../struct_app_settings.html#a663732cc2174f4adeadc4244bbfbe7e2',1,'AppSettings']]]
 ];

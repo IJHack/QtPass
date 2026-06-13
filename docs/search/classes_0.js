@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['configdialog_0',['ConfigDialog',['../class_config_dialog.html',1,'']]]
+  ['appsettings_0',['AppSettings',['../struct_app_settings.html',1,'']]]
 ];

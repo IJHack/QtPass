@@ -5,5 +5,6 @@ var searchData=
   ['namedvalues_2',['NamedValues',['../class_named_values.html',1,'NamedValues'],['../class_named_values.html#ae05206d5b3c53ee4545089e8f7997b4f',1,'NamedValues::NamedValues()']]],
   ['needsinit_3',['needsInit',['../class_profile_init.html#a1e036856179d70b9418af13561e4c7ac',1,'ProfileInit']]],
   ['newlinesregex_4',['newLinesRegex',['../class_util.html#a0ba6ef4e4542287d5b257252728d1aa4',1,'Util']]],
-  ['normalizefolderpath_5',['normalizeFolderPath',['../class_util.html#ab23a1afdcad63df9101660fd6e53b763',1,'Util']]]
+  ['nolinewrapping_5',['noLineWrapping',['../struct_app_settings.html#a4898b5fbd42cc0b4e6959d1851656673',1,'AppSettings']]],
+  ['normalizefolderpath_6',['normalizeFolderPath',['../class_util.html#ab23a1afdcad63df9101660fd6e53b763',1,'Util']]]
 ];
