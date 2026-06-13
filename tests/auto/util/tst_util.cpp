@@ -28,6 +28,7 @@
 #include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/simpletransaction.h"
+#include "../../../src/sshauthsock.h"
 #include "../../../src/userinfo.h"
 #include "../../../src/util.h"
 
@@ -2178,7 +2179,7 @@ void tst_util::initialiseSshAuthSockHonoursExistingEnv() {
   // Even if an override is configured, the existing env wins.
   QtPassSettings::setSshAuthSockOverride(
       QStringLiteral("/tmp/qtpass-override-sock"));
-  Util::initialiseSshAuthSock();
+  SshAuthSock::initialise();
   QCOMPARE(qgetenv("SSH_AUTH_SOCK"), existing);
 }
 
@@ -2191,7 +2192,7 @@ void tst_util::initialiseSshAuthSockUsesOverride() {
   qunsetenv("SSH_AUTH_SOCK");
   const QString override = QStringLiteral("/tmp/qtpass-override-sock");
   QtPassSettings::setSshAuthSockOverride(override);
-  Util::initialiseSshAuthSock();
+  SshAuthSock::initialise();
   QCOMPARE(qgetenv("SSH_AUTH_SOCK"), override.toUtf8());
 }
 
@@ -2205,7 +2206,7 @@ void tst_util::initialiseSshAuthSockNoOverrideNoEnvProbes() {
   testutils::SshAuthSockGuard guard;
   qunsetenv("SSH_AUTH_SOCK");
   QtPassSettings::setSshAuthSockOverride(QString{});
-  Util::initialiseSshAuthSock();
+  SshAuthSock::initialise();
   // Either gpgconf set it (non-empty), or it stayed empty. Both fine.
   // The contract is: never crash, never set garbage.
   const QByteArray result = qgetenv("SSH_AUTH_SOCK");
@@ -2232,7 +2233,7 @@ void tst_util::initialiseSshAuthSockOverrideSkipsAgentValidation() {
       QStringLiteral("/tmp/qtpass-deliberately-dead-sock-") +
       QUuid::createUuid().toString();
   QtPassSettings::setSshAuthSockOverride(deadSocket);
-  Util::initialiseSshAuthSock();
+  SshAuthSock::initialise();
   QCOMPARE(qgetenv("SSH_AUTH_SOCK"), deadSocket.toUtf8());
 }
 
@@ -2244,7 +2245,7 @@ void tst_util::initialiseSshAuthSockEmptyOverrideFallsThrough() {
   testutils::SshAuthSockGuard guard;
   qunsetenv("SSH_AUTH_SOCK");
   QtPassSettings::setSshAuthSockOverride(QString{});
-  Util::initialiseSshAuthSock();
+  SshAuthSock::initialise();
   // After calling: SSH_AUTH_SOCK is either set by gpgconf probe or unset.
   // Both are acceptable; importantly, it must NOT be set to the empty string.
   if (qEnvironmentVariableIsSet("SSH_AUTH_SOCK")) {
@@ -2405,8 +2406,8 @@ void tst_util::writeGpgIdFileSetsOwnerOnlyPerms() {
 void tst_util::sshAuthSockOverrideStatusDoesNotExist() {
   QTemporaryDir tmp;
   QVERIFY2(tmp.isValid(), "tmp dir should be valid");
-  QCOMPARE(Util::sshAuthSockOverrideStatus(tmp.path() + "/no-such-socket"),
-           Util::SshAuthSockOverrideStatus::DoesNotExist);
+  QCOMPARE(SshAuthSock::overrideStatus(tmp.path() + "/no-such-socket"),
+           SshAuthSock::OverrideStatus::DoesNotExist);
 }
 
 /**
@@ -2424,8 +2425,8 @@ void tst_util::sshAuthSockOverrideStatusRegularFileRejected() {
   QFile f(filePath);
   QVERIFY2(f.open(QIODevice::WriteOnly), "should be able to create a file");
   f.close();
-  QCOMPARE(Util::sshAuthSockOverrideStatus(filePath),
-           Util::SshAuthSockOverrideStatus::NotUnixDomainSocket);
+  QCOMPARE(SshAuthSock::overrideStatus(filePath),
+           SshAuthSock::OverrideStatus::NotUnixDomainSocket);
 #endif
 }
 
@@ -2451,8 +2452,8 @@ void tst_util::sshAuthSockOverrideStatusNotReadable() {
   f.close();
   QVERIFY2(QFile::setPermissions(filePath, QFile::Permissions{}),
            "should be able to chmod 0 on the file");
-  QCOMPARE(Util::sshAuthSockOverrideStatus(filePath),
-           Util::SshAuthSockOverrideStatus::NotReadable);
+  QCOMPARE(SshAuthSock::overrideStatus(filePath),
+           SshAuthSock::OverrideStatus::NotReadable);
   // Restore something so QTemporaryDir can clean up.
   QFile::setPermissions(filePath, QFile::ReadOwner | QFile::WriteOwner);
 #endif
@@ -2490,8 +2491,8 @@ void tst_util::sshAuthSockOverrideStatusValid() {
     QFAIL("bind(AF_UNIX) failed");
   }
 
-  QCOMPARE(Util::sshAuthSockOverrideStatus(sockPath),
-           Util::SshAuthSockOverrideStatus::Valid);
+  QCOMPARE(SshAuthSock::overrideStatus(sockPath),
+           SshAuthSock::OverrideStatus::Valid);
 
   ::close(fd);
   // QTemporaryDir will rm -rf the directory on destruction, removing the
