@@ -16,7 +16,7 @@ var searchData=
   ['getdialogpos_13',['getDialogPos',['../class_qt_pass_settings.html#a16bbe6462ac8bbf26bc057ff65cd9028',1,'QtPassSettings']]],
   ['getdialogsize_14',['getDialogSize',['../class_qt_pass_settings.html#a556d04858217dd5165fa7c91e8de1edf',1,'QtPassSettings']]],
   ['getdir_15',['getDir',['../class_util.html#a43035d8b47eb0a01bb0274e800cd8ef0',1,'Util']]],
-  ['getfoldertemplate_16',['getFolderTemplate',['../class_util.html#a6210b70947cabf0ae3621077bd4ceaf0',1,'Util']]],
+  ['getfoldertemplate_16',['getFolderTemplate',['../class_template_i_o.html#add783a19b718e10eb8a5cc02681fd87f',1,'TemplateIO']]],
   ['getgeometry_17',['getGeometry',['../class_qt_pass_settings.html#a9919a3d64fe7ebad42799b113af93799',1,'QtPassSettings']]],
   ['getgitexecutable_18',['getGitExecutable',['../class_qt_pass_settings.html#a97ccce4e0d62fa0afa4f901a0c0b5a95',1,'QtPassSettings']]],
   ['getgpgexecutable_19',['getGpgExecutable',['../class_qt_pass_settings.html#abaecefd0015e15cc55824e9093c10ded',1,'QtPassSettings']]],
