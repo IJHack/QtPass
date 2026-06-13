@@ -30,6 +30,7 @@
 #include "../../../src/qtpasssettings.h"
 #include "../../../src/simpletransaction.h"
 #include "../../../src/sshauthsock.h"
+#include "../../../src/templateio.h"
 #include "../../../src/userinfo.h"
 #include "../../../src/util.h"
 
@@ -2506,7 +2507,7 @@ void tst_util::sshAuthSockOverrideStatusValid() {
 void tst_util::readTemplatesNoFile() {
   QTemporaryDir tmp;
   QVERIFY2(tmp.isValid(), "tmp dir must be valid");
-  auto result = Util::readTemplates(tmp.path());
+  auto result = TemplateIO::readTemplates(tmp.path());
   QVERIFY2(result.isEmpty(), "missing .templates file must return empty hash");
 }
 
@@ -2520,7 +2521,7 @@ void tst_util::readTemplatesSingleSection() {
   out << "[login]\nusername\npassword\n";
   f.close();
 
-  auto result = Util::readTemplates(tmp.path());
+  auto result = TemplateIO::readTemplates(tmp.path());
   QVERIFY2(result.size() == 1, "one section expected");
   QVERIFY2(result.contains("login"), "section 'login' must be present");
   QCOMPARE(result.value("login"), QStringList({"username", "password"}));
@@ -2536,7 +2537,7 @@ void tst_util::readTemplatesMultipleSections() {
   out << "[web]\nurl\nusername\n\n[ssh]\nhost\nport\n";
   f.close();
 
-  auto result = Util::readTemplates(tmp.path());
+  auto result = TemplateIO::readTemplates(tmp.path());
   QVERIFY2(result.size() == 2, "two sections expected");
   QCOMPARE(result.value("web"), QStringList({"url", "username"}));
   QCOMPARE(result.value("ssh"), QStringList({"host", "port"}));
@@ -2555,7 +2556,7 @@ void tst_util::readTemplatesEmptySectionIgnored() {
   QTest::ignoreMessage(
       QtWarningMsg, QRegularExpression("Empty template section in "
                                        "\\.templates file, ignoring fields"));
-  auto result = Util::readTemplates(tmp.path());
+  auto result = TemplateIO::readTemplates(tmp.path());
   QVERIFY2(!result.contains(""), "empty section name must be ignored");
   QVERIFY2(result.contains("valid"), "valid section must still be parsed");
 }
@@ -2570,7 +2571,7 @@ void tst_util::readTemplatesCommentsIgnored() {
   out << "# top-level comment\n[section]\n# inline comment\nfield\n";
   f.close();
 
-  auto result = Util::readTemplates(tmp.path());
+  auto result = TemplateIO::readTemplates(tmp.path());
   QVERIFY2(result.contains("section"), "section must be parsed");
   QCOMPARE(result.value("section"), QStringList({"field"}));
 }
@@ -2582,8 +2583,9 @@ void tst_util::writeTemplatesRoundTrip() {
   original.insert("login", {"username", "password"});
   original.insert("ssh", {"host", "port"});
 
-  QVERIFY2(Util::writeTemplates(tmp.path(), original), "write must succeed");
-  auto roundTripped = Util::readTemplates(tmp.path());
+  QVERIFY2(TemplateIO::writeTemplates(tmp.path(), original),
+           "write must succeed");
+  auto roundTripped = TemplateIO::readTemplates(tmp.path());
   QCOMPARE(roundTripped.value("login"), original.value("login"));
   QCOMPARE(roundTripped.value("ssh"), original.value("ssh"));
 }
@@ -2592,9 +2594,9 @@ void tst_util::writeTemplatesEmptyHash() {
   QTemporaryDir tmp;
   QVERIFY2(tmp.isValid(), "tmp dir must be valid");
   QHash<QString, QStringList> empty;
-  QVERIFY2(Util::writeTemplates(tmp.path(), empty),
+  QVERIFY2(TemplateIO::writeTemplates(tmp.path(), empty),
            "write of empty hash must succeed");
-  auto result = Util::readTemplates(tmp.path());
+  auto result = TemplateIO::readTemplates(tmp.path());
   QVERIFY2(result.isEmpty(), "reading back empty write must yield empty hash");
 }
 
@@ -2604,7 +2606,7 @@ void tst_util::writeTemplatesSortedKeys() {
   QHash<QString, QStringList> tmpl;
   tmpl.insert("zebra", {"z"});
   tmpl.insert("alpha", {"a"});
-  QVERIFY2(Util::writeTemplates(tmp.path(), tmpl), "write must succeed");
+  QVERIFY2(TemplateIO::writeTemplates(tmp.path(), tmpl), "write must succeed");
 
   QFile f(QDir(tmp.path()).filePath(".templates"));
   QVERIFY2(f.open(QIODevice::ReadOnly | QIODevice::Text),
@@ -2632,7 +2634,7 @@ void tst_util::getFolderTemplateInCurrent() {
   out << "mytemplate\n";
   f.close();
 
-  QString result = Util::getFolderTemplate(subPath, store.path());
+  QString result = TemplateIO::getFolderTemplate(subPath, store.path());
   QCOMPARE(result, QStringLiteral("mytemplate"));
 }
 
@@ -2649,7 +2651,7 @@ void tst_util::getFolderTemplateInParent() {
   out << "parenttemplate\n";
   f.close();
 
-  QString result = Util::getFolderTemplate(deepPath, store.path());
+  QString result = TemplateIO::getFolderTemplate(deepPath, store.path());
   QCOMPARE(result, QStringLiteral("parenttemplate"));
 }
 
@@ -2660,7 +2662,7 @@ void tst_util::getFolderTemplateNoneFound() {
   storeDir.mkdir("sub");
   const QString subPath = storeDir.filePath("sub");
 
-  QString result = Util::getFolderTemplate(subPath, store.path());
+  QString result = TemplateIO::getFolderTemplate(subPath, store.path());
   QVERIFY2(result.isEmpty(), "no .default_template must return empty string");
 }
 
@@ -2677,7 +2679,7 @@ void tst_util::getFolderTemplateCommentIgnored() {
   out << "# this is a comment\n";
   f.close();
 
-  QString result = Util::getFolderTemplate(subPath, store.path());
+  QString result = TemplateIO::getFolderTemplate(subPath, store.path());
   QVERIFY2(result.isEmpty(),
            ".default_template with only a comment must return empty string");
 }
