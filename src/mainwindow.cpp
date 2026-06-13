@@ -1674,7 +1674,10 @@ void MainWindow::addToGridLayout(int position, const QString &field,
   // Show an explicit "open in browser" button when the value is a safe
   // http(s) URL. The inline clickable link still works for URLs embedded in
   // prose; this button is the discoverable affordance for url fields.
-  if (Util::isLaunchableWebUrl(trimmedValue)) {
+  // Never on the password field: its value is a secret and must not be
+  // surfaced in a tooltip or handed to the browser.
+  if (trimmedField != tr("Password") &&
+      Util::isLaunchableWebUrl(trimmedValue)) {
     auto *urlButton = new QPushButton(this);
     urlButton->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet"),
                                         QIcon(":/icons/open-url.svg")));
