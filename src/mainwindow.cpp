@@ -34,6 +34,7 @@
 #include <QLineEdit>
 #include <QMenu>
 #include <QMessageBox>
+#include <QPushButton>
 #include <QScrollBar>
 #include <QShortcut>
 #include <QTextCursor>
@@ -41,6 +42,7 @@
 #include <QTimer>
 #include <QToolButton>
 #include <QTreeWidget>
+#include <QUrl>
 #include <utility>
 
 /**
@@ -1667,6 +1669,31 @@ void MainWindow::addToGridLayout(int position, const QString &field,
             &QtPass::showTextAsQRCode);
     qrbutton->setStyleSheet(buttonStyle);
     frame->layout()->addWidget(qrbutton);
+  }
+
+  // Show an explicit "open in browser" button when the value is a safe
+  // http(s) URL. The inline clickable link still works for URLs embedded in
+  // prose; this button is the discoverable affordance for url fields.
+  // Never on the password field: its value is a secret and must not be
+  // surfaced in a tooltip or handed to the browser.
+  if (trimmedField != tr("Password") &&
+      Util::isLaunchableWebUrl(trimmedValue)) {
+    auto *urlButton = new QPushButton(this);
+    urlButton->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet"),
+                                        QIcon(":/icons/open-url.svg")));
+    urlButton->setToolTip(
+        tr("Open %1 in browser").arg(trimmedValue.toHtmlEscaped()));
+    urlButton->setStyleSheet(buttonStyle);
+    urlButton->setCursor(Qt::PointingHandCursor);
+    connect(urlButton, &QPushButton::clicked, this, [trimmedValue]() {
+      // Re-validate before launching (defence in depth: the value is
+      // immutable here, but never hand an unvalidated string to the OS
+      // URL handler).
+      if (Util::isLaunchableWebUrl(trimmedValue)) {
+        QDesktopServices::openUrl(QUrl(trimmedValue));
+      }
+    });
+    frame->layout()->addWidget(urlButton);
   }
 
   // set the echo mode to password, if the field is "password"
