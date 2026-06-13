@@ -586,6 +586,8 @@ void tst_settings::serializerLoadDefaults() {
   QCOMPARE(s.showProcessOutput, false);
   QCOMPARE(s.useGrepSearch, false);
   QCOMPARE(s.clipBoardType, Enums::CLIPBOARD_NEVER);
+  // addGPGId defaults to true (every isAddGPGId() call site passes true).
+  QCOMPARE(s.addGPGId, true);
   QCOMPARE(s.autoclearSeconds, 0);
   QCOMPARE(s.passStore, QString());
   // PasswordConfiguration default length is 16, not 0.
