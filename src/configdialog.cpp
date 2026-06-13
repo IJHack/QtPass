@@ -179,12 +179,19 @@ auto ConfigDialog::readSettings() -> AppSettings {
   settings.displayAsIs = ui->checkBoxDisplayAsIs->isChecked();
   settings.noLineWrapping = ui->checkBoxNoLineWrapping->isChecked();
   settings.addGPGId = ui->checkBoxAddGPGId->isChecked();
-  settings.useTrayIcon = ui->checkBoxUseTrayIcon->isEnabled() &&
-                         ui->checkBoxUseTrayIcon->isChecked();
-  settings.hideOnClose = ui->checkBoxHideOnClose->isEnabled() &&
-                         ui->checkBoxHideOnClose->isChecked();
-  settings.startMinimized = ui->checkBoxStartMinimized->isEnabled() &&
-                            ui->checkBoxStartMinimized->isChecked();
+  // Only overwrite these environment-gated preferences when their control is
+  // enabled. When disabled (e.g. no system tray available) keep the persisted
+  // value loaded above rather than clobbering it to false, so the preference
+  // survives until the user can change it on a capable environment.
+  if (ui->checkBoxUseTrayIcon->isEnabled()) {
+    settings.useTrayIcon = ui->checkBoxUseTrayIcon->isChecked();
+  }
+  if (ui->checkBoxHideOnClose->isEnabled()) {
+    settings.hideOnClose = ui->checkBoxHideOnClose->isChecked();
+  }
+  if (ui->checkBoxStartMinimized->isEnabled()) {
+    settings.startMinimized = ui->checkBoxStartMinimized->isChecked();
+  }
   settings.useGit = ui->checkBoxUseGit->isChecked();
   settings.useOtp = ui->checkBoxUseOtp->isChecked();
   settings.useGrepSearch = ui->checkBoxUseGrepSearch->isChecked();
