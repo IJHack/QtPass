@@ -183,16 +183,13 @@ protected:
                 const QString &err) override;
 
   /**
-   * @brief Execute command wrapper.
+   * @brief Open a transaction for every execution.
+   *
+   * In native (imitate) mode each wrapped command is a git/gpg transaction;
+   * register it before the subprocess runs.
    * @param id Process identifier.
-   * @param app Executable path.
-   * @param args Command arguments.
-   * @param input Data to write to stdin.
-   * @param readStdout Whether to capture stdout.
-   * @param readStderr Whether to capture stderr.
    */
-  void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
-                      QString input, bool readStdout, bool readStderr) override;
+  void beforeExecute(PROCESS id) override;
 
 public:
   /**

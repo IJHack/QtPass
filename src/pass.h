@@ -264,9 +264,17 @@ protected:
    * @param readStdout Capture stdout.
    * @param readStderr Capture stderr.
    */
-  virtual void executeWrapper(PROCESS id, const QString &app,
-                              const QStringList &args, QString input,
-                              bool readStdout, bool readStderr);
+  void executeWrapper(PROCESS id, const QString &app, const QStringList &args,
+                      QString input, bool readStdout, bool readStderr);
+  /**
+   * @brief Hook invoked just before a wrapped command is dispatched.
+   *
+   * Default is a no-op; backends override it to wrap execution (e.g.
+   * ImitatePass registers a transaction). Keeps the dispatch surface a
+   * single non-virtual executeWrapper instead of an overridden one.
+   * @param id Process identifier of the command about to run.
+   */
+  virtual void beforeExecute(PROCESS id);
 
 protected slots:
   /**
