@@ -152,7 +152,20 @@ public:
   virtual void Init(QString path, const QList<UserInfo> &users) = 0;
   /**
    * @brief Search password content for a pattern.
-   * @param pattern Search pattern (regular expression).
+   *
+   * @warning The regular-expression dialect is **backend-dependent**, so the
+   * same pattern can match differently depending on the configured backend:
+   * - RealPass shells out to `pass grep`, which uses **POSIX BRE** (GNU grep
+   *   default): e.g. `+`, `?`, `|`, `()` are literal unless backslash-escaped.
+   * - ImitatePass evaluates the pattern with `QRegularExpression`, which is
+   *   **PCRE**-style: those metacharacters are special without escaping.
+   *
+   * This Liskov wart is documented rather than papered over: a reliable
+   * BRE↔PCRE translation is intractable and `grep -P` is unavailable on
+   * macOS/BSD. Keep patterns to the common subset (literals, anchors `^`/`$`,
+   * `.`, `*`, bracket classes) for backend-independent results.
+   *
+   * @param pattern Search pattern (regular expression; see dialect note).
    * @param caseInsensitive true for case-insensitive search.
    */
   virtual void Grep(QString pattern, bool caseInsensitive) = 0;
