@@ -5,11 +5,15 @@
 #include <QDir>
 #include <QFile>
 #include <QSettings>
+#include <QTemporaryDir>
 
 #include <utility>
 
+#include "../../../src/appsettings.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/qtpasssettings.h"
+#include "../../../src/settingsconstants.h"
+#include "../../../src/settingsserializer.h"
 
 class tst_settings : public QObject {
   Q_OBJECT
@@ -46,6 +50,9 @@ private Q_SLOTS:
   void setAndGetMultipleProfiles();
   void profileGitOptions();
   void setAndGetProfileDefault();
+  void serializerLoadDefaults();
+  void serializerRoundTrip();
+  void serializerKeyCompatibility();
 
 private:
   QString m_settingsBackupPath;
@@ -564,6 +571,165 @@ void tst_settings::setAndGetProfileDefault() {
   const QString expectedProfile = QStringLiteral("defaultProfile");
   QtPassSettings::setProfile(expectedProfile);
   QCOMPARE(QtPassSettings::getProfile(), expectedProfile);
+}
+
+void tst_settings::serializerLoadDefaults() {
+  // An empty store must yield the documented defaults.
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QSettings qs(dir.filePath("empty.ini"), QSettings::IniFormat);
+
+  const AppSettings s = SettingsSerializer::load(qs);
+
+  QCOMPARE(s.usePass, false);
+  QCOMPARE(s.useGit, false);
+  QCOMPARE(s.showProcessOutput, false);
+  QCOMPARE(s.useGrepSearch, false);
+  QCOMPARE(s.clipBoardType, Enums::CLIPBOARD_NEVER);
+  QCOMPARE(s.autoclearSeconds, 0);
+  QCOMPARE(s.passStore, QString());
+  // PasswordConfiguration default length is 16, not 0.
+  QCOMPARE(s.passwordConfiguration.length, 16);
+  QCOMPARE(s.passwordConfiguration.selected, PasswordConfiguration::ALLCHARS);
+}
+
+void tst_settings::serializerRoundTrip() {
+  // save() then load() must reproduce every field.
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QSettings qs(dir.filePath("roundtrip.ini"), QSettings::IniFormat);
+
+  AppSettings out;
+  out.version = QStringLiteral("9.9.9");
+  out.usePass = true;
+  out.passStore = QStringLiteral("/tmp/store");
+  out.passSigningKey = QStringLiteral("DEADBEEF");
+  out.passExecutable = QStringLiteral("/usr/bin/pass");
+  out.gitExecutable = QStringLiteral("/usr/bin/git");
+  out.gpgExecutable = QStringLiteral("/usr/bin/gpg2");
+  out.pwgenExecutable = QStringLiteral("/usr/bin/pwgen");
+  out.qrencodeExecutable = QStringLiteral("/usr/bin/qrencode");
+  out.sshAuthSockOverride = QStringLiteral("/run/agent.sock");
+  out.clipBoardType = Enums::CLIPBOARD_ALWAYS;
+  out.useSelection = true;
+  out.useAutoclear = true;
+  out.autoclearSeconds = 42;
+  out.useAutoclearPanel = true;
+  out.autoclearPanelSeconds = 7;
+  out.hidePassword = true;
+  out.hideContent = true;
+  out.useMonospace = true;
+  out.displayAsIs = true;
+  out.noLineWrapping = true;
+  out.addGPGId = true;
+  out.useGit = true;
+  out.useGrepSearch = true;
+  out.useOtp = true;
+  out.useQrencode = true;
+  out.usePwgen = true;
+  out.useWebDav = true;
+  out.webDavUrl = QStringLiteral("https://dav.example/");
+  out.webDavUser = QStringLiteral("alice");
+  out.webDavPassword = QStringLiteral("s3cr3t");
+  out.autoPull = true;
+  out.autoPush = true;
+  out.showProcessOutput = true;
+  out.passTemplate = QStringLiteral("login\nurl");
+  out.useTemplate = true;
+  out.templateAllFields = true;
+  out.passwordConfiguration.length = 24;
+  out.passwordConfiguration.selected = PasswordConfiguration::ALPHANUMERIC;
+  out.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] =
+      QStringLiteral("abc123");
+  out.avoidCapitals = true;
+  out.avoidNumbers = true;
+  out.lessRandom = true;
+  out.useSymbols = true;
+  out.useTrayIcon = true;
+  out.hideOnClose = true;
+  out.startMinimized = true;
+  out.alwaysOnTop = true;
+  out.activeProfile = QStringLiteral("work");
+  out.maximized = true;
+  out.pos = QPoint(10, 20);
+  out.size = QSize(640, 480);
+
+  SettingsSerializer::save(qs, out);
+  const AppSettings in = SettingsSerializer::load(qs);
+
+  QCOMPARE(in.version, out.version);
+  QCOMPARE(in.usePass, out.usePass);
+  QCOMPARE(in.passStore, out.passStore);
+  QCOMPARE(in.passSigningKey, out.passSigningKey);
+  QCOMPARE(in.passExecutable, out.passExecutable);
+  QCOMPARE(in.gitExecutable, out.gitExecutable);
+  QCOMPARE(in.gpgExecutable, out.gpgExecutable);
+  QCOMPARE(in.pwgenExecutable, out.pwgenExecutable);
+  QCOMPARE(in.qrencodeExecutable, out.qrencodeExecutable);
+  QCOMPARE(in.sshAuthSockOverride, out.sshAuthSockOverride);
+  QCOMPARE(in.clipBoardType, out.clipBoardType);
+  QCOMPARE(in.useSelection, out.useSelection);
+  QCOMPARE(in.useAutoclear, out.useAutoclear);
+  QCOMPARE(in.autoclearSeconds, out.autoclearSeconds);
+  QCOMPARE(in.useAutoclearPanel, out.useAutoclearPanel);
+  QCOMPARE(in.autoclearPanelSeconds, out.autoclearPanelSeconds);
+  QCOMPARE(in.hidePassword, out.hidePassword);
+  QCOMPARE(in.hideContent, out.hideContent);
+  QCOMPARE(in.useMonospace, out.useMonospace);
+  QCOMPARE(in.displayAsIs, out.displayAsIs);
+  QCOMPARE(in.noLineWrapping, out.noLineWrapping);
+  QCOMPARE(in.addGPGId, out.addGPGId);
+  QCOMPARE(in.useGit, out.useGit);
+  QCOMPARE(in.useGrepSearch, out.useGrepSearch);
+  QCOMPARE(in.useOtp, out.useOtp);
+  QCOMPARE(in.useQrencode, out.useQrencode);
+  QCOMPARE(in.usePwgen, out.usePwgen);
+  QCOMPARE(in.useWebDav, out.useWebDav);
+  QCOMPARE(in.webDavUrl, out.webDavUrl);
+  QCOMPARE(in.webDavUser, out.webDavUser);
+  QCOMPARE(in.webDavPassword, out.webDavPassword);
+  QCOMPARE(in.autoPull, out.autoPull);
+  QCOMPARE(in.autoPush, out.autoPush);
+  QCOMPARE(in.showProcessOutput, out.showProcessOutput);
+  QCOMPARE(in.passTemplate, out.passTemplate);
+  QCOMPARE(in.useTemplate, out.useTemplate);
+  QCOMPARE(in.templateAllFields, out.templateAllFields);
+  QCOMPARE(in.passwordConfiguration.length, out.passwordConfiguration.length);
+  QCOMPARE(in.passwordConfiguration.selected,
+           out.passwordConfiguration.selected);
+  QCOMPARE(in.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM],
+           out.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM]);
+  QCOMPARE(in.avoidCapitals, out.avoidCapitals);
+  QCOMPARE(in.avoidNumbers, out.avoidNumbers);
+  QCOMPARE(in.lessRandom, out.lessRandom);
+  QCOMPARE(in.useSymbols, out.useSymbols);
+  QCOMPARE(in.useTrayIcon, out.useTrayIcon);
+  QCOMPARE(in.hideOnClose, out.hideOnClose);
+  QCOMPARE(in.startMinimized, out.startMinimized);
+  QCOMPARE(in.alwaysOnTop, out.alwaysOnTop);
+  QCOMPARE(in.activeProfile, out.activeProfile);
+  QCOMPARE(in.maximized, out.maximized);
+  QCOMPARE(in.pos, out.pos);
+  QCOMPARE(in.size, out.size);
+}
+
+void tst_settings::serializerKeyCompatibility() {
+  // The serializer must write the same QSettings keys the legacy getters read,
+  // so existing config files keep working after migration.
+  QTemporaryDir dir;
+  QVERIFY(dir.isValid());
+  QSettings qs(dir.filePath("keys.ini"), QSettings::IniFormat);
+
+  AppSettings out;
+  out.usePass = true;
+  out.passStore = QStringLiteral("/tmp/store");
+  out.autoclearSeconds = 13;
+  SettingsSerializer::save(qs, out);
+
+  QCOMPARE(qs.value(SettingsConstants::usePass).toBool(), true);
+  QCOMPARE(qs.value(SettingsConstants::passStore).toString(),
+           QStringLiteral("/tmp/store"));
+  QCOMPARE(qs.value(SettingsConstants::autoclearSeconds).toInt(), 13);
 }
 
 QTEST_MAIN(tst_settings)

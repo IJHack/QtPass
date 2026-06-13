@@ -94,6 +94,7 @@ SOURCES   += mainwindow.cpp \
              qpushbuttonshowpassword.cpp \
              qtpasssettings.cpp \
              settingsconstants.cpp \
+             settingsserializer.cpp \
              pass.cpp \
              gpgkeystate.cpp \
              realpass.cpp \
@@ -123,8 +124,10 @@ HEADERS   += mainwindow.h \
              qpushbuttonasqrcode.h \
              qpushbuttonshowpassword.h \
              qtpasssettings.h \
+             appsettings.h \
              enums.h \
              settingsconstants.h \
+             settingsserializer.h \
              pass.h \
              gpgkeystate.h \
              realpass.h \
