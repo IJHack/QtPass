@@ -30,6 +30,17 @@ class RealPass : public Pass {
   void executePass(PROCESS id, const QStringList &args,
                    QString input = QString(), bool readStdout = true,
                    bool readStderr = true);
+  /**
+   * @brief Shared implementation of Move and Copy via `pass mv`/`pass cp`.
+   * @param id Process id (PASS_MOVE or PASS_COPY).
+   * @param subcommand The pass subcommand, "mv" or "cp".
+   * @param src Source path.
+   * @param dest Destination path.
+   * @param force Overwrite an existing destination; without it a
+   *        file-onto-file request is a no-op (pass would otherwise force).
+   */
+  void passMoveOrCopy(PROCESS id, const QString &subcommand, const QString &src,
+                      const QString &dest, bool force);
 
 public:
   /**
