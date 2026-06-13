@@ -81,6 +81,7 @@ SOURCES   += mainwindow.cpp \
              util.cpp \
              sshauthsock.cpp \
              pathvalidator.cpp \
+             templateio.cpp \
              usersdialog.cpp \
              keygendialog.cpp \
              trayicon.cpp \
@@ -109,6 +110,7 @@ HEADERS   += mainwindow.h \
              util.h \
              sshauthsock.h \
              pathvalidator.h \
+             templateio.h \
              usersdialog.h \
              keygendialog.h \
              trayicon.h \

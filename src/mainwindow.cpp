@@ -18,6 +18,7 @@
 #include "qpushbuttonwithclipboard.h"
 #include "qtpass.h"
 #include "qtpasssettings.h"
+#include "templateio.h"
 #include "trayicon.h"
 #include "ui_mainwindow.h"
 #include "usersdialog.h"
@@ -1035,9 +1036,11 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
     if (folder.isEmpty()) {
       folder = storePath;
     }
-    QHash<QString, QStringList> templates = Util::readTemplates(storePath);
+    QHash<QString, QStringList> templates =
+        TemplateIO::readTemplates(storePath);
     if (!templates.isEmpty()) {
-      QString defaultTemplate = Util::getFolderTemplate(folder, storePath);
+      QString defaultTemplate =
+          TemplateIO::getFolderTemplate(folder, storePath);
       d.setAvailableTemplates(templates, defaultTemplate);
       new QShortcut(QKeySequence(Qt::CTRL | Qt::Key_T), &d,
                     [&d]() { d.cycleTemplate(); });
