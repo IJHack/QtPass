@@ -65,6 +65,21 @@ class Executor : public QObject {
   void startProcess(const QString &app, const QStringList &args);
   static void startProcessBlocking(QProcess &internal, const QString &app,
                                    const QStringList &args);
+  /**
+   * @brief Shared blocking run: start @p process, optionally feed @p input on
+   * stdin, wait, and capture stdout/stderr. Backs the executeBlocking
+   * overloads. The caller configures @p process (e.g. environment) first.
+   * @param process Pre-configured QProcess to run.
+   * @param app Executable path.
+   * @param args Command arguments.
+   * @param input Data to write to stdin (empty = none).
+   * @param process_out If non-null, receives stdout.
+   * @param process_err If non-null, receives stderr.
+   * @return Process exit code, or -1 on start/crash failure.
+   */
+  static auto runBlocking(QProcess &process, const QString &app,
+                          const QStringList &args, const QString &input,
+                          QString *process_out, QString *process_err) -> int;
 
 public:
   /**
