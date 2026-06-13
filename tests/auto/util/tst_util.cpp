@@ -1561,15 +1561,20 @@ void tst_util::utilRegexProtocol() {
 }
 
 void tst_util::isLaunchableWebUrlAccepts() {
-  QVERIFY(Util::isLaunchableWebUrl("https://example.com"));
-  QVERIFY(Util::isLaunchableWebUrl("http://example.com"));
-  QVERIFY(Util::isLaunchableWebUrl("https://example.com/path?q=1#frag"));
-  QVERIFY(Util::isLaunchableWebUrl("https://nas.local:8080"));
-  // Surrounding whitespace is trimmed.
-  QVERIFY(Util::isLaunchableWebUrl("  https://example.com  "));
-  // Scheme is case-insensitive.
-  QVERIFY(Util::isLaunchableWebUrl("HTTPS://example.com"));
-  QVERIFY(Util::isLaunchableWebUrl("HtTp://Example.com"));
+  const QStringList accepted = {
+      QStringLiteral("https://example.com"),
+      QStringLiteral("http://example.com"),
+      QStringLiteral("https://example.com/path?q=1#frag"),
+      QStringLiteral("https://nas.local:8080"),
+      QStringLiteral("  https://example.com  "), // surrounding whitespace
+      QStringLiteral("HTTPS://example.com"),     // scheme case-insensitive
+      QStringLiteral("HtTp://Example.com"),
+  };
+  for (const QString &url : accepted) {
+    QVERIFY2(
+        Util::isLaunchableWebUrl(url),
+        qPrintable(QStringLiteral("expected launchable web URL: %1").arg(url)));
+  }
 }
 
 void tst_util::isLaunchableWebUrlRejects() {
