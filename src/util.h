@@ -134,7 +134,7 @@ public:
    * - parses to a valid QUrl,
    * - has scheme exactly "http" or "https" (case-insensitive),
    * - has a non-empty host,
-   * - carries no embedded userinfo (user:password@host).
+   * - carries no embedded userinfo (user:password\@host).
    *
    * Deliberately rejects file://, javascript:, data:, ftp/ssh/webdav and
    * scheme-less inputs (e.g. "www.example.com").
