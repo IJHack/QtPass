@@ -9,6 +9,7 @@
  */
 
 #include "templateio.h"
+#include <QDebug>
 #include <QDir>
 #include <QFile>
 #include <QSaveFile>
@@ -100,6 +101,17 @@ auto TemplateIO::getFolderTemplate(const QString &folderPath,
   QString cleanStoreAbs = QDir::cleanPath(storeDir.absolutePath());
   QDir dir(folderPath);
   while (true) {
+    QString currentPath = QDir::cleanPath(dir.absolutePath());
+    const bool atStoreRoot = currentPath == cleanStoreAbs;
+    const bool insideStore =
+        currentPath.startsWith(cleanStoreAbs) &&
+        currentPath.length() > cleanStoreAbs.length() &&
+        currentPath.at(cleanStoreAbs.length()) == QChar('/');
+    // Reject paths outside the store before opening any file; only the store
+    // root and its descendants are probed for .default_template.
+    if (!atStoreRoot && !insideStore) {
+      break;
+    }
     if (dir.exists(".default_template")) {
       QFile file(dir.filePath(".default_template"));
       if (file.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -116,13 +128,7 @@ auto TemplateIO::getFolderTemplate(const QString &folderPath,
         }
       }
     }
-    QString currentPath = QDir::cleanPath(dir.absolutePath());
-    if (currentPath == cleanStoreAbs) {
-      break;
-    }
-    if (!currentPath.startsWith(cleanStoreAbs) ||
-        currentPath.length() <= cleanStoreAbs.length() ||
-        currentPath.at(cleanStoreAbs.length()) != QChar('/')) {
+    if (atStoreRoot) {
       break;
     }
     if (!dir.cdUp()) {
