@@ -237,8 +237,10 @@ auto Executor::runBlocking(QProcess &process, const QString &app,
       dbg() << "Not all input written:" << app;
 #endif
     }
-    process.closeWriteChannel();
   }
+  // Always close stdin so a child blocking on EOF doesn't hang when no
+  // input is written (these are one-shot blocking runs that never stream).
+  process.closeWriteChannel();
   process.waitForFinished(-1);
   if (process.exitStatus() != QProcess::NormalExit) {
     // Process failed to start or crashed; return -1 to indicate error.
