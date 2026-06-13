@@ -121,37 +121,7 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
  * @param force overwrite
  */
 void RealPass::Move(const QString src, const QString dest, const bool force) {
-  QFileInfo srcFileInfo = QFileInfo(src);
-  QFileInfo destFileInfo = QFileInfo(dest);
-
-  // force mode?
-  // pass uses always the force mode, when call from eg. QT. so we have to
-  // check if this are to files and the user didn't want to move force
-  if (!force && srcFileInfo.isFile() && destFileInfo.isFile()) {
-    return;
-  }
-
-  QString passSrc = QDir(QtPassSettings::getPassStore())
-                        .relativeFilePath(QDir(src).absolutePath());
-  QString passDest = QDir(QtPassSettings::getPassStore())
-                         .relativeFilePath(QDir(dest).absolutePath());
-
-  // remove the .gpg because pass will not work
-  if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
-    passSrc.replace(Util::endsWithGpg(), "");
-  }
-  if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
-    passDest.replace(Util::endsWithGpg(), "");
-  }
-
-  QStringList args;
-  args << "mv";
-  if (force) {
-    args << "-f";
-  }
-  args << passSrc;
-  args << passDest;
-  executePass(PASS_MOVE, args);
+  passMoveOrCopy(PASS_MOVE, QStringLiteral("mv"), src, dest, force);
 }
 
 /**
@@ -161,8 +131,23 @@ void RealPass::Move(const QString src, const QString dest, const bool force) {
  * @param force overwrite
  */
 void RealPass::Copy(const QString src, const QString dest, const bool force) {
+  passMoveOrCopy(PASS_COPY, QStringLiteral("cp"), src, dest, force);
+}
+
+/**
+ * @brief RealPass::passMoveOrCopy shared `pass mv` / `pass cp` implementation.
+ * @param id PASS_MOVE or PASS_COPY.
+ * @param subcommand "mv" or "cp".
+ * @param src source file or folder.
+ * @param dest destination file or folder.
+ * @param force overwrite.
+ */
+void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
+                              const QString &src, const QString &dest,
+                              const bool force) {
   QFileInfo srcFileInfo = QFileInfo(src);
   QFileInfo destFileInfo = QFileInfo(dest);
+
   // force mode?
   // pass uses always the force mode, when call from eg. QT. so we have to
   // check if this are to files and the user didn't want to move force
@@ -182,14 +167,15 @@ void RealPass::Copy(const QString src, const QString dest, const bool force) {
   if (destFileInfo.isFile() && destFileInfo.suffix() == "gpg") {
     passDest.replace(Util::endsWithGpg(), "");
   }
+
   QStringList args;
-  args << "cp";
+  args << subcommand;
   if (force) {
     args << "-f";
   }
   args << passSrc;
   args << passDest;
-  executePass(PASS_COPY, args);
+  executePass(id, args);
 }
 
 /**
