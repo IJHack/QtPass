@@ -1678,7 +1678,8 @@ void MainWindow::addToGridLayout(int position, const QString &field,
     auto *urlButton = new QPushButton(this);
     urlButton->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet"),
                                         QIcon(":/icons/open-url.svg")));
-    urlButton->setToolTip(tr("Open %1 in browser").arg(trimmedValue));
+    urlButton->setToolTip(
+        tr("Open %1 in browser").arg(trimmedValue.toHtmlEscaped()));
     urlButton->setStyleSheet(buttonStyle);
     urlButton->setCursor(Qt::PointingHandCursor);
     connect(urlButton, &QPushButton::clicked, this, [trimmedValue]() {
