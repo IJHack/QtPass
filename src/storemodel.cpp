@@ -365,67 +365,36 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
   }
 
   switch (info.kind) {
-  case dragAndDropInfoPasswordStore::ItemKind::Directory:
-    return handleDirDrop(cleanedSrc, destFileinfo, srcFileInfo, action);
+  case dragAndDropInfoPasswordStore::ItemKind::Directory: {
+    // Dropping a folder onto a folder: move/copy it *into* the target.
+    if (!destFileinfo.isDir()) {
+      return false;
+    }
+    const QString destDir =
+        QDir::cleanPath(QDir(cleanedDest).filePath(srcFileInfo.fileName()));
+    return performDrop(cleanedSrc, destDir, action, false);
+  }
   case dragAndDropInfoPasswordStore::ItemKind::File:
-    return handleFileDrop(cleanedSrc, cleanedDest, destFileinfo, action);
+    // File onto a folder drops into it (no clash); file onto an existing
+    // file asks before overwriting.
+    if (destFileinfo.isDir()) {
+      return performDrop(cleanedSrc, cleanedDest, action, false);
+    }
+    return performDrop(
+        cleanedSrc, cleanedDest, action,
+        QMessageBox::question(
+            qobject_cast<QWidget *>(QObject::parent()), tr("Force overwrite?"),
+            tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc),
+            QMessageBox::Yes | QMessageBox::No) == QMessageBox::Yes);
   default:
     qWarning() << "executeDropAction: unexpected ItemKind, ignoring drop";
     return false;
   }
 }
 
-auto StoreModel::handleDirDrop(const QString &cleanedSrc,
-                               const QFileInfo &destFileinfo,
-                               const QFileInfo &srcFileInfo,
-                               Qt::DropAction action) -> bool {
-  if (!destFileinfo.isDir()) {
-    return false;
-  }
-
-  QDir destDir = QDir(QDir::cleanPath(destFileinfo.absoluteFilePath()))
-                     .filePath(srcFileInfo.fileName());
-  QString cleanedDestDir = QDir::cleanPath(destDir.absolutePath());
-
-  if (action == Qt::MoveAction) {
-    QtPassSettings::getPass()->Move(cleanedSrc, cleanedDestDir, false);
-  } else if (action == Qt::CopyAction) {
-    QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDestDir, false);
-  }
-  return true;
-}
-
-auto StoreModel::handleFileDrop(const QString &cleanedSrc,
-                                const QString &cleanedDest,
-                                const QFileInfo &destFileinfo,
-                                Qt::DropAction action) -> bool {
-  if (destFileinfo.isDir()) {
-    return handleFileToDirDrop(cleanedSrc, cleanedDest, action);
-  }
-  return handleFileToFileDrop(cleanedSrc, cleanedDest, action);
-}
-
-auto StoreModel::handleFileToDirDrop(const QString &cleanedSrc,
-                                     const QString &cleanedDest,
-                                     Qt::DropAction action) -> bool {
-  if (action == Qt::MoveAction) {
-    QtPassSettings::getPass()->Move(cleanedSrc, cleanedDest, false);
-  } else if (action == Qt::CopyAction) {
-    QtPassSettings::getPass()->Copy(cleanedSrc, cleanedDest, false);
-  }
-  return true;
-}
-
-auto StoreModel::handleFileToFileDrop(const QString &cleanedSrc,
-                                      const QString &cleanedDest,
-                                      Qt::DropAction action) -> bool {
-  QWidget *parentWidget = qobject_cast<QWidget *>(parent());
-  int answer = QMessageBox::question(
-      parentWidget, tr("Force overwrite?"),
-      tr("overwrite %1 with %2?").arg(cleanedDest, cleanedSrc),
-      QMessageBox::Yes | QMessageBox::No);
-  bool force = answer == QMessageBox::Yes;
-
+auto StoreModel::performDrop(const QString &cleanedSrc,
+                             const QString &cleanedDest, Qt::DropAction action,
+                             bool force) -> bool {
   if (action == Qt::MoveAction) {
     QtPassSettings::getPass()->Move(cleanedSrc, cleanedDest, force);
   } else if (action == Qt::CopyAction) {

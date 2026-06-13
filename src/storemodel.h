@@ -73,18 +73,16 @@ private:
   auto executeDropAction(const dragAndDropInfoPasswordStore &info,
                          Qt::DropAction action, const QModelIndex &parent)
       -> bool;
-  auto handleDirDrop(const QString &cleanedSrc, const QFileInfo &destFileinfo,
-                     const QFileInfo &srcFileInfo, Qt::DropAction action)
-      -> bool;
-  auto handleFileDrop(const QString &cleanedSrc, const QString &cleanedDest,
-                      const QFileInfo &destFileinfo, Qt::DropAction action)
-      -> bool;
-  auto handleFileToDirDrop(const QString &cleanedSrc,
-                           const QString &cleanedDest, Qt::DropAction action)
-      -> bool;
-  auto handleFileToFileDrop(const QString &cleanedSrc,
-                            const QString &cleanedDest, Qt::DropAction action)
-      -> bool;
+  /**
+   * @brief Perform the actual Move/Copy for a validated drop.
+   * @param cleanedSrc Canonical source path (inside the store).
+   * @param cleanedDest Canonical destination path (inside the store).
+   * @param action Qt::MoveAction or Qt::CopyAction.
+   * @param force Overwrite an existing destination.
+   * @return true once the operation has been dispatched.
+   */
+  static auto performDrop(const QString &cleanedSrc, const QString &cleanedDest,
+                          Qt::DropAction action, bool force) -> bool;
 
 public:
   /**
