@@ -3,6 +3,7 @@
 #include "storemodel.h"
 #include "qtpasssettings.h"
 
+#include "pathvalidator.h"
 #include "util.h"
 #include <QApplication>
 #include <QDebug>
@@ -357,8 +358,8 @@ auto StoreModel::executeDropAction(const dragAndDropInfoPasswordStore &info,
   // the store or follow a symlink out (e.g. a symlink within the store
   // pointing at /etc).
   const QString storeRoot = QtPassSettings::getPassStore();
-  if (!Util::isPathInStore(storeRoot, cleanedSrc) ||
-      !Util::isPathInStore(storeRoot, cleanedDest)) {
+  if (!PathValidator::isPathInStore(storeRoot, cleanedSrc) ||
+      !PathValidator::isPathInStore(storeRoot, cleanedDest)) {
     qWarning() << "executeDropAction: rejecting drop that escapes the store"
                << "(src=" << cleanedSrc << "dest=" << cleanedDest << ")";
     return false;

@@ -24,6 +24,7 @@
 #include "../../../src/imitatepass.h"
 #include "../../../src/pass.h"
 #include "../../../src/passwordconfiguration.h"
+#include "../../../src/pathvalidator.h"
 #include "../../../src/qprogressindicator.h"
 #include "../../../src/qtpass.h"
 #include "../../../src/qtpasssettings.h"
@@ -2262,12 +2263,12 @@ void tst_util::isPathInStoreHappyPath() {
   QVERIFY(store.isValid());
   const QString root = store.path();
   // Root itself.
-  QVERIFY(Util::isPathInStore(root, root));
+  QVERIFY(PathValidator::isPathInStore(root, root));
   // A child file (not yet existing).
-  QVERIFY(Util::isPathInStore(root, root + "/foo.gpg"));
+  QVERIFY(PathValidator::isPathInStore(root, root + "/foo.gpg"));
   // A grandchild.
   QDir(root).mkpath("nested/dir");
-  QVERIFY(Util::isPathInStore(root, root + "/nested/dir/bar.gpg"));
+  QVERIFY(PathValidator::isPathInStore(root, root + "/nested/dir/bar.gpg"));
 }
 
 /**
@@ -2278,9 +2279,9 @@ void tst_util::isPathInStoreRejectsDotDotEscape() {
   QTemporaryDir store;
   QVERIFY(store.isValid());
   const QString root = store.path();
-  QVERIFY(!Util::isPathInStore(root, root + "/../escape.gpg"));
-  QVERIFY(!Util::isPathInStore(root, root + "/sub/../../escape.gpg"));
-  QVERIFY(!Util::isPathInStore(
+  QVERIFY(!PathValidator::isPathInStore(root, root + "/../escape.gpg"));
+  QVERIFY(!PathValidator::isPathInStore(root, root + "/sub/../../escape.gpg"));
+  QVERIFY(!PathValidator::isPathInStore(
       root, root + "/../" + QFileInfo(root).fileName() + "-sibling/file"));
 }
 
@@ -2291,8 +2292,9 @@ void tst_util::isPathInStoreRejectsAbsoluteOutside() {
   QTemporaryDir store;
   QVERIFY(store.isValid());
   const QString root = store.path();
-  QVERIFY(!Util::isPathInStore(root, QStringLiteral("/etc/passwd")));
-  QVERIFY(!Util::isPathInStore(root, QStringLiteral("/tmp/elsewhere.gpg")));
+  QVERIFY(!PathValidator::isPathInStore(root, QStringLiteral("/etc/passwd")));
+  QVERIFY(!PathValidator::isPathInStore(root,
+                                        QStringLiteral("/tmp/elsewhere.gpg")));
 }
 
 /**
@@ -2312,8 +2314,8 @@ void tst_util::isPathInStoreRejectsSymlinkEscape() {
   const QString linkPath = root + "/escape";
   QVERIFY(QFile::link(outside.path(), linkPath));
   // Path itself, and any child under it, must be rejected.
-  QVERIFY(!Util::isPathInStore(root, linkPath));
-  QVERIFY(!Util::isPathInStore(root, linkPath + "/sneaky.gpg"));
+  QVERIFY(!PathValidator::isPathInStore(root, linkPath));
+  QVERIFY(!PathValidator::isPathInStore(root, linkPath + "/sneaky.gpg"));
 #endif
 }
 
@@ -2326,8 +2328,9 @@ void tst_util::isPathInStoreAllowsNewChild() {
   QVERIFY(store.isValid());
   const QString root = store.path();
   QDir(root).mkpath("sub");
-  QVERIFY(Util::isPathInStore(root, root + "/sub/new-file.gpg"));
-  QVERIFY(Util::isPathInStore(root, root + "/sub/deeper/yet-deeper.gpg"));
+  QVERIFY(PathValidator::isPathInStore(root, root + "/sub/new-file.gpg"));
+  QVERIFY(
+      PathValidator::isPathInStore(root, root + "/sub/deeper/yet-deeper.gpg"));
 }
 
 /**
@@ -2336,12 +2339,12 @@ void tst_util::isPathInStoreAllowsNewChild() {
 void tst_util::isPathInStoreRejectsEmptyArgs() {
   QTemporaryDir store;
   QVERIFY(store.isValid());
-  QVERIFY(!Util::isPathInStore(QString(), store.path() + "/foo"));
-  QVERIFY(!Util::isPathInStore(store.path(), QString()));
-  QVERIFY(!Util::isPathInStore(QString(), QString()));
+  QVERIFY(!PathValidator::isPathInStore(QString(), store.path() + "/foo"));
+  QVERIFY(!PathValidator::isPathInStore(store.path(), QString()));
+  QVERIFY(!PathValidator::isPathInStore(QString(), QString()));
   // Non-existent root.
-  QVERIFY(!Util::isPathInStore(QStringLiteral("/no/such/dir"),
-                               QStringLiteral("/no/such/dir/foo")));
+  QVERIFY(!PathValidator::isPathInStore(QStringLiteral("/no/such/dir"),
+                                        QStringLiteral("/no/such/dir/foo")));
 }
 
 /**

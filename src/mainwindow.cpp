@@ -12,6 +12,7 @@
 #include "exportpublickeydialog.h"
 #include "filecontent.h"
 #include "passworddialog.h"
+#include "pathvalidator.h"
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
@@ -1010,7 +1011,7 @@ auto MainWindow::firstFile(QModelIndex parentIndex) -> QModelIndex {
  * warning dialog is shown in that case).
  */
 auto MainWindow::confirmPathInStore(const QString &candidate) -> bool {
-  if (Util::isPathInStore(QtPassSettings::getPassStore(), candidate)) {
+  if (PathValidator::isPathInStore(QtPassSettings::getPassStore(), candidate)) {
     return true;
   }
   QMessageBox::warning(this, tr("Invalid name"),
