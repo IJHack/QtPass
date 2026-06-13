@@ -42,28 +42,6 @@ public:
    */
   static auto normalizeFolderPath(const QString &path) -> QString;
   /**
-   * @brief Check that a candidate path resolves inside the password store
-   * root, after following symlinks and resolving `..` components.
-   *
-   * For candidates that already exist on disk the path is canonicalised via
-   * `QFileInfo::canonicalFilePath()` (which resolves symlinks). For
-   * candidates that do not yet exist (typical "create new file" flow) we
-   * walk up to the nearest existing ancestor, canonicalise that, then
-   * re-append the leaf components. This catches both user-typed `..`
-   * escapes and symlinks pointing outside the store.
-   *
-   * @param storeRoot Password store root (typically
-   * `QtPassSettings::getPassStore()`).
-   * @param candidate Path to validate. May be absolute or relative; relative
-   * paths are interpreted against the current working directory before
-   * resolution.
-   * @return true if `candidate` resolves to a path equal to or strictly
-   * inside `storeRoot`; false otherwise (including when `storeRoot` itself
-   * does not exist).
-   */
-  static auto isPathInStore(const QString &storeRoot, const QString &candidate)
-      -> bool;
-  /**
    * @brief Verify that the required configuration is complete.
    * @return bool `true` if the password store's `.gpg-id` exists AND the
    * configured executable (pass or gpg, depending on settings) exists or is a

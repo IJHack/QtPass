@@ -80,6 +80,7 @@ SOURCES   += mainwindow.cpp \
              storemodel.cpp \
              util.cpp \
              sshauthsock.cpp \
+             pathvalidator.cpp \
              usersdialog.cpp \
              keygendialog.cpp \
              trayicon.cpp \
@@ -107,6 +108,7 @@ HEADERS   += mainwindow.h \
              storemodel.h \
              util.h \
              sshauthsock.h \
+             pathvalidator.h \
              usersdialog.h \
              keygendialog.h \
              trayicon.h \
