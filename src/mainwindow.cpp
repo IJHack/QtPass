@@ -693,8 +693,8 @@ void MainWindow::clearPanel(bool notify) {
   if (grepWasVisible) {
     ui->grepResultsList->setVisible(false);
     ui->treeView->setVisible(true);
-    if (m_grepMode) {
-      m_grepMode = false;
+    if (m_grep.inGrepMode()) {
+      m_grep.clearGrepMode();
       ui->grepButton->blockSignals(true);
       ui->grepButton->setChecked(false);
       ui->grepButton->blockSignals(false);
@@ -783,7 +783,7 @@ void MainWindow::onConfig() { config(); }
  * @param arg1
  */
 void MainWindow::on_lineEdit_textChanged(const QString &arg1) {
-  if (m_grepMode)
+  if (m_grep.inGrepMode())
     return;
   ui->statusBar->showMessage(tr("Looking for: %1").arg(arg1), 1000);
   ui->treeView->expandAll();
@@ -830,21 +830,17 @@ void MainWindow::on_lineEdit_returnPressed() {
   dbg() << "on_lineEdit_returnPressed" << proxyModel.rowCount();
 #endif
 
-  if (m_grepMode) {
+  if (m_grep.inGrepMode()) {
     const QString query = ui->lineEdit->text();
     if (!query.isEmpty()) {
-      m_grepCancelled = false;
       ui->grepResultsList->clear();
       ui->statusBar->showMessage(tr("Searching…"));
-      if (!m_grepBusy) {
-        m_grepBusy = true;
+      if (m_grep.beginSearch()) {
         QApplication::setOverrideCursor(Qt::WaitCursor);
       }
       QtPassSettings::getPass()->Grep(query, ui->grepCaseButton->isChecked());
     } else {
-      m_grepCancelled = true;
-      if (m_grepBusy) {
-        m_grepBusy = false;
+      if (m_grep.cancelSearch()) {
         QApplication::restoreOverrideCursor();
       }
       ui->grepResultsList->clear();
@@ -864,8 +860,8 @@ void MainWindow::on_lineEdit_returnPressed() {
  * @brief Toggle grep (content search) mode.
  */
 void MainWindow::on_grepButton_toggled(bool checked) {
-  m_grepMode = checked;
   if (checked) {
+    m_grep.enterGrepMode();
     ui->lineEdit->setPlaceholderText(tr("Search content (regex)"));
     // The regex dialect depends on the backend (see Pass::Grep): the pass
     // backend uses POSIX BRE via `pass grep`, the native backend uses PCRE.
@@ -883,9 +879,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->grepResultsList->setVisible(false);
     // Keep treeView visible until results arrive
   } else {
-    if (m_grepBusy) {
-      m_grepBusy = false;
-      m_grepCancelled = true;
+    if (m_grep.leaveGrepMode()) {
       QApplication::restoreOverrideCursor();
     }
     searchTimer.stop();
@@ -908,16 +902,15 @@ void MainWindow::on_grepButton_toggled(bool checked) {
  */
 void MainWindow::onGrepFinished(
     const QList<QPair<QString, QStringList>> &results) {
-  if (m_grepBusy) {
-    m_grepBusy = false;
+  const GrepSearchController::FinishOutcome outcome = m_grep.finishSearch();
+  if (outcome.restoreCursor) {
     QApplication::restoreOverrideCursor();
   }
-  if (m_grepCancelled) {
-    m_grepCancelled = false;
+  if (outcome.discard) {
     return;
   }
   setUiElementsEnabled(true);
-  if (!m_grepMode)
+  if (!m_grep.inGrepMode())
     return;
   ui->grepResultsList->clear();
   if (results.isEmpty()) {
@@ -1912,7 +1905,7 @@ void MainWindow::updateGrepButtonVisibility() {
   const bool enabled = QtPassSettings::isUseGrepSearch();
   ui->grepButton->setVisible(enabled);
   ui->grepCaseButton->setVisible(enabled);
-  if (!enabled && m_grepMode) {
+  if (!enabled && m_grep.inGrepMode()) {
     ui->grepButton->setChecked(false);
   }
 }

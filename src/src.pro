@@ -107,6 +107,7 @@ SOURCES   += mainwindow.cpp \
              profileinit.cpp
 
 HEADERS   += mainwindow.h \
+             grepsearchcontroller.h \
              configdialog.h \
              storemodel.h \
              util.h \
