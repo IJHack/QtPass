@@ -1664,7 +1664,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Aquest nom es resoldria fora de l'emmagatzematge de contrasenyes. Si us plau, trieu un nom diferent.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
@@ -1727,7 +1727,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Obre %1 al navegador</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1763"/>

@@ -1619,7 +1619,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tento název by odkazoval mimo úložiště hesel. Zvolte prosím jiný název.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1428"/>
@@ -1682,7 +1682,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Otevřít %1 v prohlížeči</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1763"/>

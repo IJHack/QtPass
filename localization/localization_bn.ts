@@ -1341,7 +1341,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">এই নামটি পাসওয়ার্ড স্টোরের বাইরে নির্দেশ করবে। অনুগ্রহ করে একটি ভিন্ন নাম বেছে নিন।</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1061"/>
@@ -1474,7 +1474,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ব্রাউজারে %1 খুলুন</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1763"/>

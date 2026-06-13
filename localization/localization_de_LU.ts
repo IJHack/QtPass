@@ -1576,7 +1576,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Dieser Name würde außerhalb des Passwortspeichers aufgelöst werden. Bitte wählen Sie einen anderen Namen.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1102"/>
@@ -1648,7 +1648,7 @@ Hiermit können keine neu hinzugefügefügten Passwörter entschlüsselt werden!
     <message>
         <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Öffnen Sie %1 im Browser</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1763"/>

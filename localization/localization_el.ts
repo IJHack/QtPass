@@ -1384,7 +1384,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Αυτό το όνομα θα επιλυόταν έξω από το αποθετήριο κωδικών πρόσβασης. Επιλέξτε διαφορετικό όνομα.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1061"/>
@@ -1477,7 +1477,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Άνοιγμα %1 στο πρόγραμμα περιήγησης</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1813"/>

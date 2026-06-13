@@ -1606,7 +1606,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1018"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Това име би се разрешило извън хранилището за пароли. Моля, изберете друго име.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1142"/>
@@ -1651,7 +1651,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Отвори %1 в браузъра</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1813"/>
