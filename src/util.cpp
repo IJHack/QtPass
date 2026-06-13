@@ -268,6 +268,9 @@ auto Util::isPathInStore(const QString &storeRoot, const QString &candidate)
     tail.prepend(fi.fileName());
     while (!parent.exists()) {
       tail.prepend(parent.dirName());
+      // The filesystem root always exists, so the loop terminates there
+      // before cdUp() can fail; this guard is defensive against a
+      // pathological QDir that can neither exist nor ascend.
       if (!parent.cdUp()) {
         return false;
       }

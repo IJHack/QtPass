@@ -220,12 +220,11 @@ static auto decodeAssumingUtf8(const QByteArray &in) -> QString {
  * Note: Returning error code instead of throwing to maintain compatibility
  * with the existing error handling pattern used throughout QtPass.
  */
-auto Executor::executeBlocking(const QString &app, const QStringList &args,
-                               const QString &input, QString *process_out,
-                               QString *process_err) -> int {
-  QProcess internal;
-  startProcessBlocking(internal, app, args);
-  if (!internal.waitForStarted(-1)) {
+auto Executor::runBlocking(QProcess &process, const QString &app,
+                           const QStringList &args, const QString &input,
+                           QString *process_out, QString *process_err) -> int {
+  startProcessBlocking(process, app, args);
+  if (!process.waitForStarted(-1)) {
 #ifdef QT_DEBUG
     dbg() << "Process failed to start:" << app;
 #endif
@@ -233,28 +232,33 @@ auto Executor::executeBlocking(const QString &app, const QStringList &args,
   }
   if (!input.isEmpty()) {
     QByteArray data = input.toUtf8();
-    if (internal.write(data) != data.length()) {
+    if (process.write(data) != data.length()) {
 #ifdef QT_DEBUG
       dbg() << "Not all input written:" << app;
 #endif
     }
-    internal.closeWriteChannel();
+    process.closeWriteChannel();
   }
-  internal.waitForFinished(-1);
-  if (internal.exitStatus() == QProcess::NormalExit) {
-    QString pout = decodeAssumingUtf8(internal.readAllStandardOutput());
-    QString perr = decodeAssumingUtf8(internal.readAllStandardError());
-    if (process_out != nullptr) {
-      *process_out = pout;
-    }
-    if (process_err != nullptr) {
-      *process_err = perr;
-    }
-    return internal.exitCode();
+  process.waitForFinished(-1);
+  if (process.exitStatus() != QProcess::NormalExit) {
+    // Process failed to start or crashed; return -1 to indicate error.
+    // The calling code checks for non-zero exit codes for error handling.
+    return -1;
   }
-  // Process failed to start or crashed; return -1 to indicate error.
-  // The calling code checks for non-zero exit codes for error handling.
-  return -1;
+  if (process_out != nullptr) {
+    *process_out = decodeAssumingUtf8(process.readAllStandardOutput());
+  }
+  if (process_err != nullptr) {
+    *process_err = decodeAssumingUtf8(process.readAllStandardError());
+  }
+  return process.exitCode();
+}
+
+auto Executor::executeBlocking(const QString &app, const QStringList &args,
+                               const QString &input, QString *process_out,
+                               QString *process_err) -> int {
+  QProcess internal;
+  return runBlocking(internal, app, args, input, process_out, process_err);
 }
 
 /**
@@ -292,24 +296,7 @@ auto Executor::executeBlocking(const QStringList &env, const QString &app,
     }
   }
   process.setProcessEnvironment(penv);
-  startProcessBlocking(process, app, args);
-  if (!process.waitForStarted(-1)) {
-#ifdef QT_DEBUG
-    dbg() << "Process failed to start:" << app;
-#endif
-    return -1;
-  }
-  process.waitForFinished(-1);
-  if (process.exitStatus() != QProcess::NormalExit) {
-    return -1;
-  }
-  if (process_out) {
-    *process_out = decodeAssumingUtf8(process.readAllStandardOutput());
-  }
-  if (process_err) {
-    *process_err = decodeAssumingUtf8(process.readAllStandardError());
-  }
-  return process.exitCode();
+  return runBlocking(process, app, args, QString(), process_out, process_err);
 }
 
 /**
