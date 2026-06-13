@@ -18,11 +18,12 @@ var searchData=
   ['passwordconfiguration_15',['PasswordConfiguration',['../struct_password_configuration.html',1,'PasswordConfiguration'],['../struct_password_configuration.html#ac5767646f5116892b972d32ae6bbf561',1,'PasswordConfiguration::PasswordConfiguration()']]],
   ['passworddialog_16',['PasswordDialog',['../class_password_dialog.html',1,'PasswordDialog'],['../class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e',1,'PasswordDialog::PasswordDialog(PasswordConfiguration passConfig, QWidget *parent=nullptr)'],['../class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98',1,'PasswordDialog::PasswordDialog(QString file, const bool &amp;isNew, QWidget *parent=nullptr)']]],
   ['path_17',['path',['../structdrag_and_drop_info_password_store.html#ac3d6eb02633ddfd1a290cbaf27ca5390',1,'dragAndDropInfoPasswordStore']]],
-  ['process_18',['PROCESS',['../class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772',1,'Pass::PROCESS'],['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69',1,'Enums::PROCESS']]],
-  ['process_5fcount_19',['PROCESS_COUNT',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e',1,'Enums']]],
-  ['processerrorexit_20',['processErrorExit',['../class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f',1,'Pass']]],
-  ['profileinit_21',['ProfileInit',['../class_profile_init.html',1,'']]],
-  ['profileinit_2eh_22',['profileinit.h',['../profileinit_8h.html',1,'']]],
-  ['program_23',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
-  ['protocolregex_24',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]]
+  ['pathvalidator_18',['PathValidator',['../class_path_validator.html',1,'']]],
+  ['process_19',['PROCESS',['../class_pass.html#a2e71b5174b4ef25a1e91d8c56177b772',1,'Pass::PROCESS'],['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69',1,'Enums::PROCESS']]],
+  ['process_5fcount_20',['PROCESS_COUNT',['../namespace_enums.html#ac8b64f00258db4fec59578fddbe8ea69ac90162dac1b4a84e7c3c0ef49863ba0e',1,'Enums']]],
+  ['processerrorexit_21',['processErrorExit',['../class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f',1,'Pass']]],
+  ['profileinit_22',['ProfileInit',['../class_profile_init.html',1,'']]],
+  ['profileinit_2eh_23',['profileinit.h',['../profileinit_8h.html',1,'']]],
+  ['program_24',['program',['../struct_resolved_gpgconf_command.html#ae34ff02051398b8688497a4fb373e1d3',1,'ResolvedGpgconfCommand']]],
+  ['protocolregex_25',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]]
 ];

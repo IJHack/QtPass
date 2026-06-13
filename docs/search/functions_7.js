@@ -25,7 +25,7 @@ var searchData=
   ['islessrandom_22',['isLessRandom',['../class_qt_pass_settings.html#a9439fbb331e7ba518955d8922c422f60',1,'QtPassSettings']]],
   ['ismaximized_23',['isMaximized',['../class_qt_pass_settings.html#a30ec7de5247d54b2196854cb1077ccdf',1,'QtPassSettings']]],
   ['isnolinewrapping_24',['isNoLineWrapping',['../class_qt_pass_settings.html#ad7c28aad5a5873051fa38a9abf95127f',1,'QtPassSettings']]],
-  ['ispathinstore_25',['isPathInStore',['../class_util.html#a48af3cf0e0d5acbfbdf9e1f56e5e42b2',1,'Util']]],
+  ['ispathinstore_25',['isPathInStore',['../class_path_validator.html#a15120558ca5dd41cdd9c485ae08030c7',1,'PathValidator']]],
   ['isrunning_26',['isRunning',['../class_single_application.html#a9408850aec7bca2e43e386f35ed780f4',1,'SingleApplication']]],
   ['isshowprocessoutput_27',['isShowProcessOutput',['../class_qt_pass_settings.html#a86f9ccbb490cdcc4ffb3fcd6a2112def',1,'QtPassSettings']]],
   ['isstartminimized_28',['isStartMinimized',['../class_qt_pass_settings.html#af13aa67fbd0f721bdd12c60bd155f8ba',1,'QtPassSettings']]],

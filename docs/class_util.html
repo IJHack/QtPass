@@ -121,8 +121,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:abfddcff8c37fbb33e86605e4fb7250db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the password store directory.  <br /></td></tr>
 <tr class="memitem:ab23a1afdcad63df9101660fd6e53b763" id="r_ab23a1afdcad63df9101660fd6e53b763"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab23a1afdcad63df9101660fd6e53b763">normalizeFolderPath</a> (const QString &amp;path) -&gt; QString</td></tr>
 <tr class="memdesc:ab23a1afdcad63df9101660fd6e53b763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with the native directory separator.  <br /></td></tr>
-<tr class="memitem:a48af3cf0e0d5acbfbdf9e1f56e5e42b2" id="r_a48af3cf0e0d5acbfbdf9e1f56e5e42b2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a48af3cf0e0d5acbfbdf9e1f56e5e42b2">isPathInStore</a> (const QString &amp;storeRoot, const QString &amp;candidate) -&gt; bool</td></tr>
-<tr class="memdesc:a48af3cf0e0d5acbfbdf9e1f56e5e42b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check that a candidate path resolves inside the password store root, after following symlinks and resolving <span class="tt">..</span> components.  <br /></td></tr>
 <tr class="memitem:af67c5e8a8475d367aad069275251558d" id="r_af67c5e8a8475d367aad069275251558d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af67c5e8a8475d367aad069275251558d">configIsValid</a> () -&gt; bool</td></tr>
 <tr class="memdesc:af67c5e8a8475d367aad069275251558d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that the required configuration is complete.  <br /></td></tr>
 <tr class="memitem:a43035d8b47eb0a01bb0274e800cd8ef0" id="r_a43035d8b47eb0a01bb0274e800cd8ef0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a43035d8b47eb0a01bb0274e800cd8ef0">getDir</a> (const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const <a class="el" href="class_store_model.html">StoreModel</a> &amp;storeModel) -&gt; QString</td></tr>
@@ -396,46 +394,6 @@ Static Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>true if the value is a launchable http(s) URL, false otherwise. </dd></dl>
-
-</div>
-</div>
-<a id="a48af3cf0e0d5acbfbdf9e1f56e5e42b2" name="a48af3cf0e0d5acbfbdf9e1f56e5e42b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48af3cf0e0d5acbfbdf9e1f56e5e42b2">&#9670;&#160;</a></span>isPathInStore()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto Util::isPathInStore </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>storeRoot</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>candidate</em></span>&#160;) -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check that a candidate path resolves inside the password store root, after following symlinks and resolving <span class="tt">..</span> components. </p>
-<p>For candidates that already exist on disk the path is canonicalised via <span class="tt">QFileInfo::canonicalFilePath()</span> (which resolves symlinks). For candidates that do not yet exist (typical "create new file" flow) we walk up to the nearest existing ancestor, canonicalise that, then re-append the leaf components. This catches both user-typed <span class="tt">..</span> escapes and symlinks pointing outside the store.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">storeRoot</td><td>Password store root (typically <span class="tt"><a class="el" href="class_qt_pass_settings.html#a0de322eb0b4907a730325e4008c0b4b6" title="Get password store directory path.">QtPassSettings::getPassStore()</a></span>). </td></tr>
-    <tr><td class="paramname">candidate</td><td>Path to validate. May be absolute or relative; relative paths are interpreted against the current working directory before resolution. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if <span class="tt">candidate</span> resolves to a path equal to or strictly inside <span class="tt">storeRoot</span>; false otherwise (including when <span class="tt">storeRoot</span> itself does not exist). </dd></dl>
 
 </div>
 </div>
