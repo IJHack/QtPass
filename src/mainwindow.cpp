@@ -867,6 +867,14 @@ void MainWindow::on_grepButton_toggled(bool checked) {
   m_grepMode = checked;
   if (checked) {
     ui->lineEdit->setPlaceholderText(tr("Search content (regex)"));
+    // The regex dialect depends on the backend (see Pass::Grep): the pass
+    // backend uses POSIX BRE via `pass grep`, the native backend uses PCRE.
+    ui->lineEdit->setToolTip(
+        QtPassSettings::isUsePass()
+            ? tr("Content search uses POSIX basic regular expressions "
+                 "(pass grep).")
+            : tr("Content search uses Perl-compatible regular expressions "
+                 "(PCRE)."));
     ui->lineEdit->clear();
     searchTimer.stop();
     proxyModel.setFilterRegularExpression(QRegularExpression());
@@ -885,6 +893,7 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->lineEdit->clear();
     ui->lineEdit->blockSignals(false);
     ui->lineEdit->setPlaceholderText(tr("Search Password"));
+    ui->lineEdit->setToolTip(QString());
     ui->grepResultsList->clear();
     ui->grepResultsList->setVisible(false);
     ui->treeView->setVisible(true);

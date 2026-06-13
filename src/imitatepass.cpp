@@ -1091,6 +1091,10 @@ auto ImitatePass::grepScanStore(const QStringList &env, const QString &gpgExe,
 /**
  * @brief Search all password content by GPG-decrypting each .gpg file.
  *
+ * The pattern is evaluated with `QRegularExpression` (**PCRE**), which differs
+ * from the POSIX BRE dialect of the `pass` backend — see Pass::Grep for the
+ * cross-backend caveat.
+ *
  * Runs a background thread to avoid blocking the UI. Results are emitted on
  * the main thread via QMetaObject::invokeMethod. A sequence counter discards
  * results from superseded searches.

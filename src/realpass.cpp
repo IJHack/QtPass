@@ -180,7 +180,11 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
 
 /**
  * @brief Search all password content via 'pass grep'.
- * @param pattern Search pattern.
+ *
+ * The pattern is interpreted by `pass grep` (GNU grep, **POSIX BRE**), which
+ * differs from the PCRE dialect used by the native backend — see
+ * Pass::Grep for the cross-backend caveat.
+ * @param pattern Search pattern (POSIX BRE).
  * @param caseInsensitive true for case-insensitive search.
  */
 void RealPass::Grep(QString pattern, bool caseInsensitive) {
