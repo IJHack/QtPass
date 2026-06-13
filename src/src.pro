@@ -79,6 +79,7 @@ SOURCES   += mainwindow.cpp \
              configdialog.cpp \
              storemodel.cpp \
              util.cpp \
+             sshauthsock.cpp \
              usersdialog.cpp \
              keygendialog.cpp \
              trayicon.cpp \
@@ -105,6 +106,7 @@ HEADERS   += mainwindow.h \
              configdialog.h \
              storemodel.h \
              util.h \
+             sshauthsock.h \
              usersdialog.h \
              keygendialog.h \
              trayicon.h \

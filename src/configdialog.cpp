@@ -5,6 +5,7 @@
 #include "mainwindow.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
+#include "sshauthsock.h"
 #include "ui_configdialog.h"
 #include "usersdialog.h"
 #include "util.h"
@@ -253,16 +254,16 @@ void ConfigDialog::on_accepted() {
   const QString sshAuthSockOverride = ui->sshAuthSockOverride->text().trimmed();
   if (!sshAuthSockOverride.isEmpty()) {
     QString reason;
-    switch (Util::sshAuthSockOverrideStatus(sshAuthSockOverride)) {
-    case Util::SshAuthSockOverrideStatus::Valid:
+    switch (SshAuthSock::overrideStatus(sshAuthSockOverride)) {
+    case SshAuthSock::OverrideStatus::Valid:
       break;
-    case Util::SshAuthSockOverrideStatus::DoesNotExist:
+    case SshAuthSock::OverrideStatus::DoesNotExist:
       reason = tr("The path does not exist.");
       break;
-    case Util::SshAuthSockOverrideStatus::NotReadable:
+    case SshAuthSock::OverrideStatus::NotReadable:
       reason = tr("The path is not readable.");
       break;
-    case Util::SshAuthSockOverrideStatus::NotUnixDomainSocket:
+    case SshAuthSock::OverrideStatus::NotUnixDomainSocket:
       reason = tr("The path is not a Unix domain socket.");
       break;
     }
