@@ -20,16 +20,16 @@ private Q_SLOTS:
 
 void tst_grepsearchcontroller::defaultsToTreeMode() {
   GrepSearchController c;
-  QVERIFY(!c.inGrepMode());
+  QVERIFY2(!c.inGrepMode(), "A fresh controller must start in tree mode");
 }
 
 void tst_grepsearchcontroller::enterAndLeaveMode() {
   GrepSearchController c;
   c.enterGrepMode();
-  QVERIFY(c.inGrepMode());
+  QVERIFY2(c.inGrepMode(), "enterGrepMode must activate grep mode");
   // No search in flight: leaving does not ask to restore the cursor.
   QCOMPARE(c.leaveGrepMode(), false);
-  QVERIFY(!c.inGrepMode());
+  QVERIFY2(!c.inGrepMode(), "leaveGrepMode must deactivate grep mode");
 }
 
 void tst_grepsearchcontroller::beginSearchShowsCursorOnce() {
@@ -47,14 +47,14 @@ void tst_grepsearchcontroller::cancelRestoresCursorOnlyWhenBusy() {
   // Cancel with no busy search: nothing to restore.
   QCOMPARE(c.cancelSearch(), false);
   // Now make it busy, then cancel: restore the cursor.
-  QVERIFY(c.beginSearch());
+  QVERIFY2(c.beginSearch(), "First search must report newly busy");
   QCOMPARE(c.cancelSearch(), true);
 }
 
 void tst_grepsearchcontroller::finishRestoresCursorAndKeepsResults() {
   GrepSearchController c;
   c.enterGrepMode();
-  QVERIFY(c.beginSearch());
+  QVERIFY2(c.beginSearch(), "First search must report newly busy");
   const GrepSearchController::FinishOutcome outcome = c.finishSearch();
   QCOMPARE(outcome.restoreCursor, true);
   QCOMPARE(outcome.discard, false);
@@ -63,8 +63,9 @@ void tst_grepsearchcontroller::finishRestoresCursorAndKeepsResults() {
 void tst_grepsearchcontroller::finishDiscardsWhenCancelled() {
   GrepSearchController c;
   c.enterGrepMode();
-  QVERIFY(c.beginSearch());
-  QVERIFY(c.cancelSearch()); // cancelled while busy
+  QVERIFY2(c.beginSearch(), "First search must report newly busy");
+  QVERIFY2(c.cancelSearch(),
+           "Cancelling a busy search must report restore-cursor");
   const GrepSearchController::FinishOutcome outcome = c.finishSearch();
   // cancelSearch already cleared busy, so no cursor restore here, but the
   // late-arriving results must be discarded.
@@ -77,10 +78,10 @@ void tst_grepsearchcontroller::finishDiscardsWhenCancelled() {
 void tst_grepsearchcontroller::leaveWhileBusyInterruptsAndDiscards() {
   GrepSearchController c;
   c.enterGrepMode();
-  QVERIFY(c.beginSearch());
+  QVERIFY2(c.beginSearch(), "First search must report newly busy");
   // Toggling grep off mid-search restores the cursor...
   QCOMPARE(c.leaveGrepMode(), true);
-  QVERIFY(!c.inGrepMode());
+  QVERIFY2(!c.inGrepMode(), "leaveGrepMode must deactivate grep mode");
   // ...and the in-flight results are discarded when they arrive.
   QCOMPARE(c.finishSearch().discard, true);
 }
@@ -88,9 +89,9 @@ void tst_grepsearchcontroller::leaveWhileBusyInterruptsAndDiscards() {
 void tst_grepsearchcontroller::clearGrepModeLeavesBusyUntouched() {
   GrepSearchController c;
   c.enterGrepMode();
-  QVERIFY(c.beginSearch());
+  QVERIFY2(c.beginSearch(), "First search must report newly busy");
   c.clearGrepMode();
-  QVERIFY(!c.inGrepMode());
+  QVERIFY2(!c.inGrepMode(), "clearGrepMode must deactivate grep mode");
   // clearGrepMode does not cancel: the busy search still restores the cursor
   // and keeps its results on completion.
   const GrepSearchController::FinishOutcome outcome = c.finishSearch();
