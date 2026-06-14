@@ -108,7 +108,12 @@ public:
 
   /**
    * @brief Return the active key generation dialog, if any.
-   * @return Pointer to the keygen QDialog, or nullptr.
+   *
+   * The returned pointer is non-owning: the dialog's lifetime is managed
+   * elsewhere (cleanKeygenDialog() closes and forgets it), so callers must
+   * observe it only and never delete it.
+   * @return Non-owning pointer to the keygen QDialog, or nullptr when none is
+   * active.
    */
   auto getKeygenDialog() -> QDialog * { return m_keygenDialog; }
 
