@@ -1759,7 +1759,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Open %1 in browser</translation>
+        <translation>Open %1 in browser</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1763"/>

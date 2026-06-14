@@ -1716,7 +1716,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>在浏览器打开 %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1763"/>

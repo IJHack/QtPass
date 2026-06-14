@@ -1500,7 +1500,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1686"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Otwórz %1 w&#xa0;przeglądarce</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1813"/>
