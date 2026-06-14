@@ -7,7 +7,9 @@ var searchData=
   ['deselect_4',['deselect',['../class_main_window.html#ad4cf3e2c819cac398728a82f1cf05f3e',1,'MainWindow']]],
   ['deselectabletreeview_5',['DeselectableTreeView',['../class_deselectable_tree_view.html',1,'DeselectableTreeView'],['../class_deselectable_tree_view.html#a78b4bc9a59d8db8531a1e270a7793b26',1,'DeselectableTreeView::DeselectableTreeView()']]],
   ['directory_6',['Directory',['../structdrag_and_drop_info_password_store.html#a7a1b3ea381e0fa228467c6d29398d0f6ae73cda510e8bb947f7e61089e5581494',1,'dragAndDropInfoPasswordStore']]],
-  ['displayasis_7',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
-  ['draganddropinfopasswordstore_8',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
-  ['dropmimedata_9',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]]
+  ['discard_7',['discard',['../struct_grep_search_controller_1_1_finish_outcome.html#aa12d73ecc749e62f884be80576823595',1,'GrepSearchController::FinishOutcome']]],
+  ['displayasis_8',['displayAsIs',['../struct_app_settings.html#a0155acdb11aac2b6b8a88d1ed392365d',1,'AppSettings']]],
+  ['displayfields_9',['displayFields',['../class_password_display_panel.html#a7cf423497c5f523cf86f0b7b6a0cce7d',1,'PasswordDisplayPanel']]],
+  ['draganddropinfopasswordstore_10',['dragAndDropInfoPasswordStore',['../structdrag_and_drop_info_password_store.html',1,'']]],
+  ['dropmimedata_11',['dropMimeData',['../class_store_model.html#a7eddcc6b50d64067e2ccf10c8ac82b8e',1,'StoreModel']]]
 ];

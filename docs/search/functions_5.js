@@ -19,7 +19,8 @@ var searchData=
   ['finishedotpgenerate_16',['finishedOtpGenerate',['../class_pass.html#a271b2f277c8242e3542578ced47fb0b6',1,'Pass']]],
   ['finishedremove_17',['finishedRemove',['../class_pass.html#af08e80e76ffd6581f35e701e6c8b533e',1,'Pass']]],
   ['finishedshow_18',['finishedShow',['../class_pass.html#affead66e0aca2e275dc21dbde18066fb',1,'Pass']]],
-  ['flags_19',['flags',['../class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d',1,'StoreModel']]],
-  ['flashtext_20',['flashText',['../class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89',1,'MainWindow']]],
-  ['fullyvalid_21',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
+  ['finishsearch_19',['finishSearch',['../class_grep_search_controller.html#a7ba10cf18a8566d0bb3ff1312bfd5c5c',1,'GrepSearchController']]],
+  ['flags_20',['flags',['../class_store_model.html#ab8ebcb53ce116b2ff658a6d49134531d',1,'StoreModel']]],
+  ['flashtext_21',['flashText',['../class_main_window.html#aae7cd7af04cedf4a17ede44bffafec89',1,'MainWindow']]],
+  ['fullyvalid_22',['fullyValid',['../struct_user_info.html#a93677d46e6641eb4148c5f09ed5850a5',1,'UserInfo']]]
 ];

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['webdavpassword_0',['webDavPassword',['../struct_app_settings.html#a0eb27f0d6a4fef772d74d970b0b54c96',1,'AppSettings']]],
-  ['webdavurl_1',['webDavUrl',['../struct_app_settings.html#a73e2c453289ce29790bcc9994daca21e',1,'AppSettings']]],
-  ['webdavuser_2',['webDavUser',['../struct_app_settings.html#a912ddc9b9f836119deda6b7c6afb9099',1,'AppSettings']]]
+  ['validity_0',['validity',['../struct_user_info.html#af09fb1cdf748f23cb6a74fa7e2972766',1,'UserInfo']]],
+  ['value_1',['value',['../struct_named_value.html#a7e9785f69be8f0cce61f22113bbf725d',1,'NamedValue']]],
+  ['version_2',['version',['../struct_app_settings.html#aaf6d5f6bafc91640cf07293134308634',1,'AppSettings']]]
 ];

@@ -1,5 +1,17 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="Node000000" title=" " alt="" coords="5,5,91,31"/>
-<area shape="rect" id="Node000001" href="$class_qt_pass_settings.html" title="Singleton that stores QtPass settings, handles persistence and defaults." alt="" coords="139,5,257,31"/>
-<area shape="poly" id="edge19_Node000000_Node000001" title=" " alt="" coords="104,15,139,15,139,21,104,21"/>
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,80,80,105"/>
+<area shape="rect" id="Node000001" href="$class_executor.html" title="Runs non&#45;interactive external commands in FIFO order using a single QProcess." alt="" coords="172,5,251,31"/>
+<area shape="poly" id="edge10_Node000000_Node000001" title=" " alt="" coords="72,70,127,40,171,24,173,30,129,44,75,75"/>
+<area shape="rect" id="Node000002" href="$class_pass.html" title="Abstract base class for password store operations." alt="" coords="186,55,237,80"/>
+<area shape="poly" id="edge11_Node000000_Node000002" title=" " alt="" coords="93,82,185,68,186,74,94,88"/>
+<area shape="rect" id="Node000006" href="$class_password_display_panel.html" title="Renders decrypted password&#45;file fields into MainWindow&#39;s grid." alt="" coords="128,104,295,129"/>
+<area shape="poly" id="edge14_Node000000_Node000006" title=" " alt="" coords="94,97,128,102,127,107,93,102"/>
+<area shape="rect" id="Node000007" href="$class_qt_pass.html" title="Orchestrates clipboard management, pass signal handling, and application&#45;level operations for the QtP..." alt="" coords="178,153,245,179"/>
+<area shape="poly" id="edge15_Node000000_Node000007" title=" " alt="" coords="76,110,129,138,179,155,177,160,127,143,74,115"/>
+<area shape="rect" id="Node000003" href="$class_imitate_pass.html" title="Implementation that imitates &#39;pass&#39; when the real tool is unavailable." alt="" coords="343,153,441,179"/>
+<area shape="poly" id="edge12_Node000002_Node000003" title=" " alt="" coords="251,73,296,89,343,120,379,151,376,155,340,124,293,94,249,78"/>
+<area shape="rect" id="Node000005" href="$class_real_pass.html" title="Implementation of Pass that wraps the &#39;pass&#39; command&#45;line tool." alt="" coords="352,55,432,80"/>
+<area shape="poly" id="edge13_Node000002_Node000005" title=" " alt="" coords="250,65,352,65,352,70,250,70"/>
+<area shape="rect" id="Node000004" href="$classsimple_transaction.html" title="Tracks a sequence of processes that should be treated as one atomic operation." alt="" coords="141,203,281,228"/>
+<area shape="poly" id="edge16_Node000004_Node000003" title=" " alt="" coords="271,196,344,176,345,181,273,201"/>
 </map>

@@ -77,5 +77,6 @@ var searchData=
   ['gpgexecutable_74',['gpgExecutable',['../struct_app_settings.html#a0d19db5f33a7d4728142617f99cb55db',1,'AppSettings']]],
   ['gpghome_75',['gpgHome',['../struct_app_settings.html#a536aba611f1643063f9c38c8af91d29c',1,'AppSettings']]],
   ['gpgsupportsed25519_76',['gpgSupportsEd25519',['../class_pass.html#a95709a3bc0597e6ebcf20439018d90ea',1,'Pass']]],
-  ['grep_77',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]]
+  ['grep_77',['Grep',['../class_imitate_pass.html#a4c18253700bd6127c546325448f14829',1,'ImitatePass::Grep()'],['../class_pass.html#a3d45abeffc8d61f58828959e74b26176',1,'Pass::Grep()'],['../class_real_pass.html#af2aa9ea3311b5a9470392759e20516b3',1,'RealPass::Grep()']]],
+  ['grepsearchcontroller_78',['GrepSearchController',['../class_grep_search_controller.html',1,'']]]
 ];
