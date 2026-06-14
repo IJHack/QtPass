@@ -40,7 +40,8 @@ void tst_passworddisplaypanel::displayFieldsSkipsEmptyPassword() {
   PasswordDisplayPanel panel(grid, container, &parent);
 
   panel.displayFields(QString(), NamedValues{});
-  QCOMPARE(grid->count(), 0);
+  QVERIFY2(grid->count() == 0,
+           "An empty password with no fields must leave the grid empty");
 }
 
 void tst_passworddisplaypanel::clearRemovesAllRows() {
@@ -53,7 +54,7 @@ void tst_passworddisplaypanel::clearRemovesAllRows() {
   panel.displayFields(QStringLiteral("secret"), NamedValues{});
   QVERIFY2(grid->count() > 0, "precondition: grid populated");
   panel.clear();
-  QCOMPARE(grid->count(), 0);
+  QVERIFY2(grid->count() == 0, "clear() must remove every grid row");
 }
 
 void tst_passworddisplaypanel::appendFieldAddsOneRow() {

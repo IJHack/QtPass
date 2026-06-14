@@ -23,6 +23,7 @@
 #include <QIcon>
 #include <QLabel>
 #include <QLineEdit>
+#include <QPalette>
 #include <QPushButton>
 #include <QTextBrowser>
 #include <QUrl>
@@ -157,8 +158,13 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     frame->layout()->addWidget(line);
   }
 
-  frame->setStyleSheet(
-      ".QFrame{border: 1px solid lightgrey; border-radius: 5px;}");
+  // Derive the border colour from the palette so it adapts to light/dark
+  // themes instead of a hardcoded light grey.
+  const QString borderColor =
+      m_widgetParent->palette().color(QPalette::Mid).name();
+  frame->setStyleSheet(QStringLiteral(".QFrame{border: 1px solid %1; "
+                                      "border-radius: 5px;}")
+                           .arg(borderColor));
 
   // set into the layout
   m_grid->addWidget(new QLabel(trimmedField), position, 0);
