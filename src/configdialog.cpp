@@ -6,7 +6,6 @@
 #include "mainwindow.h"
 #include "profileinit.h"
 #include "qtpasssettings.h"
-#include "settingsserializer.h"
 #include "sshauthsock.h"
 #include "ui_configdialog.h"
 #include "usersdialog.h"
@@ -48,7 +47,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     // Let window manager handle positioning for first launch
   }
 
-  applySettings(SettingsSerializer::load(*QtPassSettings::getInstance()));
+  applySettings(QtPassSettings::load());
 
   if (!QSystemTrayIcon::isSystemTrayAvailable()) {
     ui->checkBoxUseTrayIcon->setEnabled(false);
@@ -157,8 +156,7 @@ void ConfigDialog::applySettings(const AppSettings &settings) {
 auto ConfigDialog::readSettings() -> AppSettings {
   // Start from the persisted settings so keys this dialog does not own
   // (window geometry, WebDAV, profiles, etc.) survive the save.
-  AppSettings settings =
-      SettingsSerializer::load(*QtPassSettings::getInstance());
+  AppSettings settings = QtPassSettings::load();
 
   settings.passExecutable = ui->passPath->text();
   settings.gitExecutable = ui->gitPath->text();
@@ -336,13 +334,9 @@ void ConfigDialog::on_accepted() {
   const QHash<QString, QHash<QString, QString>> existingProfiles =
       QtPassSettings::getProfiles();
 
-  const AppSettings settings = readSettings();
-  SettingsSerializer::save(*QtPassSettings::getInstance(), settings);
-  // The serialiser writes the usePass key directly; re-apply it through the
-  // setter so the cached Pass backend is invalidated (pass = nullptr) and the
-  // correct backend is rebuilt on next use. (Backend lifecycle is tracked for
-  // extraction in #1513 item 4.)
-  QtPassSettings::setUsePass(settings.usePass);
+  // Persist via the facade, which also invalidates the cached Pass backend so
+  // a changed "use pass" mode takes effect.
+  QtPassSettings::save(readSettings());
 
   // Profiles are not part of AppSettings yet, so persist them separately.
   QtPassSettings::setProfiles(getProfiles());

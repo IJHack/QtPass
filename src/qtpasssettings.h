@@ -3,6 +3,7 @@
 #ifndef SRC_QTPASSSETTINGS_H_
 #define SRC_QTPASSSETTINGS_H_
 
+#include "appsettings.h"
 #include "enums.h"
 #include "imitatepass.h"
 #include "passwordconfiguration.h"
@@ -55,6 +56,24 @@ public:
    * @return Pointer to the QtPassSettings instance.
    */
   static auto getInstance() -> QtPassSettings *;
+
+  /**
+   * @brief Load all flat settings into an AppSettings value object.
+   *
+   * Convenience facade over SettingsSerializer using the singleton store.
+   * Note: nested/keyed settings (profiles, per-dialog geometry) are not part
+   * of AppSettings and still use their dedicated accessors.
+   * @return Current settings.
+   */
+  static auto load() -> AppSettings;
+  /**
+   * @brief Persist an AppSettings value object to the singleton store.
+   *
+   * Writes via SettingsSerializer and invalidates the cached Pass backend so a
+   * changed "use pass" mode takes effect on the next getPass().
+   * @param settings Values to save.
+   */
+  static void save(const AppSettings &settings);
 
   // Window settings
   /**

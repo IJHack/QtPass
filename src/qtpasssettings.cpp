@@ -14,6 +14,7 @@
 #include "qtpasssettings.h"
 #include "pass.h"
 #include "passbackendfactory.h"
+#include "settingsserializer.h"
 
 #include "util.h"
 
@@ -51,6 +52,18 @@ auto QtPassSettings::getInstance() -> QtPassSettings * {
   }
 
   return m_instance;
+}
+
+auto QtPassSettings::load() -> AppSettings {
+  return SettingsSerializer::load(*getInstance());
+}
+
+void QtPassSettings::save(const AppSettings &settings) {
+  SettingsSerializer::save(*getInstance(), settings);
+  // A settings save may have changed the "use pass" mode; drop the cached
+  // backend so the correct one is rebuilt on next use (matches the previous
+  // setUsePass() side effect).
+  PassBackendFactory::invalidate();
 }
 
 /**
