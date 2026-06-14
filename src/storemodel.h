@@ -116,6 +116,18 @@ public:
                         const QString &passStore);
 
   /**
+   * @brief Set the source filesystem root and map it to a proxy index.
+   *
+   * Wraps the recurring `mapFromSource(fs->setRootPath(path))` dance used to
+   * point the tree view at a directory, so callers don't reach through to the
+   * wrapped QFileSystemModel.
+   * @param path Directory to make the source root.
+   * @return Proxy index for `path`, or an invalid index if no source model is
+   * set.
+   */
+  auto rootIndexFor(const QString &path) -> QModelIndex;
+
+  /**
    * @brief Update the store path used for filtering without changing the source
    * model.
    * @param passStore New root path of password store.

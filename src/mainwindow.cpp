@@ -491,8 +491,7 @@ void MainWindow::config() {
       updateProfileBox();
       const QString passStore = QtPassSettings::getPassStore();
       proxyModel.setStore(passStore);
-      ui->treeView->setRootIndex(
-          proxyModel.mapFromSource(model.setRootPath(passStore)));
+      ui->treeView->setRootIndex(proxyModel.rootIndexFor(passStore));
       deselect();
       ui->treeView->setCurrentIndex(QModelIndex());
 
@@ -816,8 +815,8 @@ void MainWindow::onTimeoutSearch() {
   query.replace(QStringLiteral(" "), ".*");
   QRegularExpression regExp(query, QRegularExpression::CaseInsensitiveOption);
   proxyModel.setFilterRegularExpression(regExp);
-  ui->treeView->setRootIndex(proxyModel.mapFromSource(
-      model.setRootPath(QtPassSettings::getPassStore())));
+  ui->treeView->setRootIndex(
+      proxyModel.rootIndexFor(QtPassSettings::getPassStore()));
 
   if (proxyModel.rowCount() > 0 && !query.isEmpty()) {
     selectFirstFile();
@@ -881,8 +880,8 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->lineEdit->clear();
     searchTimer.stop();
     proxyModel.setFilterRegularExpression(QRegularExpression());
-    ui->treeView->setRootIndex(proxyModel.mapFromSource(
-        model.setRootPath(QtPassSettings::getPassStore())));
+    ui->treeView->setRootIndex(
+        proxyModel.rootIndexFor(QtPassSettings::getPassStore()));
     ui->grepResultsList->setVisible(false);
     // Keep treeView visible until results arrive
   } else {
@@ -899,8 +898,8 @@ void MainWindow::on_grepButton_toggled(bool checked) {
     ui->grepResultsList->setVisible(false);
     ui->treeView->setVisible(true);
     proxyModel.setFilterRegularExpression(QRegularExpression());
-    ui->treeView->setRootIndex(proxyModel.mapFromSource(
-        model.setRootPath(QtPassSettings::getPassStore())));
+    ui->treeView->setRootIndex(
+        proxyModel.rootIndexFor(QtPassSettings::getPassStore()));
   }
 }
 
@@ -984,8 +983,7 @@ void MainWindow::on_grepResultsList_itemClicked(QTreeWidgetItem *item,
  * tree
  */
 void MainWindow::selectFirstFile() {
-  QModelIndex index = proxyModel.mapFromSource(
-      model.setRootPath(QtPassSettings::getPassStore()));
+  QModelIndex index = proxyModel.rootIndexFor(QtPassSettings::getPassStore());
   index = firstFile(index);
   ui->treeView->setCurrentIndex(index);
 }
@@ -1287,8 +1285,7 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
 
   const QString passStore = QtPassSettings::getPassStore();
   proxyModel.setStore(passStore);
-  ui->treeView->setRootIndex(
-      proxyModel.mapFromSource(model.setRootPath(passStore)));
+  ui->treeView->setRootIndex(proxyModel.rootIndexFor(passStore));
   deselect();
   ui->treeView->setCurrentIndex(QModelIndex());
 }

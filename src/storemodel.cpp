@@ -113,6 +113,13 @@ void StoreModel::setModelAndStore(QFileSystemModel *sourceModel,
   store = passStore;
 }
 
+auto StoreModel::rootIndexFor(const QString &path) -> QModelIndex {
+  if (fs == nullptr) {
+    return {};
+  }
+  return mapFromSource(fs->setRootPath(QDir::cleanPath(path)));
+}
+
 void StoreModel::setStore(const QString &passStore) {
 #if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
   // beginFilterChange() is available since Qt 6.9, but the Direction-scoped

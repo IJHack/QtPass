@@ -48,6 +48,8 @@ private Q_SLOTS:
   void setStoreUpdatesPath();
   void dataEditRoleKeepsGpgExtension();
   void filterAcceptsNonGpgFileMatchingRegex();
+  void rootIndexForNullFs();
+  void rootIndexForMatchesManualMapping();
 };
 
 void tst_storemodel::dataRemovesGpgExtension() {
@@ -591,6 +593,26 @@ void tst_storemodel::filterAcceptsNonGpgFileMatchingRegex() {
   // actual behavior: the model does not restrict to .gpg files only.
   QVERIFY2(visible,
            "non-gpg file matching the regex is accepted by the filter");
+}
+
+void tst_storemodel::rootIndexForNullFs() {
+  StoreModel sm;
+  // No source model wired yet.
+  QVERIFY2(!sm.rootIndexFor(QStringLiteral("/tmp")).isValid(),
+           "rootIndexFor must return an invalid index without a source model");
+}
+
+void tst_storemodel::rootIndexForMatchesManualMapping() {
+  QTemporaryDir tempDir;
+  QVERIFY2(tempDir.isValid(), "precondition: temporary directory created");
+  QFileSystemModel fsm;
+  StoreModel sm;
+  sm.setModelAndStore(&fsm, tempDir.path());
+
+  const QModelIndex viaHelper = sm.rootIndexFor(tempDir.path());
+  const QModelIndex manual =
+      sm.mapFromSource(fsm.setRootPath(QDir::cleanPath(tempDir.path())));
+  QCOMPARE(viaHelper, manual);
 }
 
 QTEST_MAIN(tst_storemodel)
