@@ -604,13 +604,14 @@ void tst_storemodel::rootIndexForNullFs() {
 
 void tst_storemodel::rootIndexForMatchesManualMapping() {
   QTemporaryDir tempDir;
-  QVERIFY(tempDir.isValid());
+  QVERIFY2(tempDir.isValid(), "precondition: temporary directory created");
   QFileSystemModel fsm;
   StoreModel sm;
   sm.setModelAndStore(&fsm, tempDir.path());
 
   const QModelIndex viaHelper = sm.rootIndexFor(tempDir.path());
-  const QModelIndex manual = sm.mapFromSource(fsm.setRootPath(tempDir.path()));
+  const QModelIndex manual =
+      sm.mapFromSource(fsm.setRootPath(QDir::cleanPath(tempDir.path())));
   QCOMPARE(viaHelper, manual);
 }
 

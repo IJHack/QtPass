@@ -117,7 +117,7 @@ auto StoreModel::rootIndexFor(const QString &path) -> QModelIndex {
   if (fs == nullptr) {
     return {};
   }
-  return mapFromSource(fs->setRootPath(path));
+  return mapFromSource(fs->setRootPath(QDir::cleanPath(path)));
 }
 
 void StoreModel::setStore(const QString &passStore) {
