@@ -88,6 +88,7 @@ SOURCES   += mainwindow.cpp \
              passworddialog.cpp \
              exportpublickeydialog.cpp \
              importkeydialog.cpp \
+             passworddisplaypanel.cpp \
              qprogressindicator.cpp \
              qpushbuttonwithclipboard.cpp \
              qpushbuttonasqrcode.cpp \
@@ -120,6 +121,7 @@ HEADERS   += mainwindow.h \
              passworddialog.h \
              exportpublickeydialog.h \
              importkeydialog.h \
+             passworddisplaypanel.h \
              qprogressindicator.h \
              deselectabletreeview.h \
              qpushbuttonwithclipboard.h \

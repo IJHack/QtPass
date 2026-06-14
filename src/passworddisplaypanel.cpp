@@ -1,0 +1,174 @@
+// SPDX-FileCopyrightText: 2014 Anne Jan Brouwer
+// SPDX-License-Identifier: GPL-3.0-or-later
+
+/**
+ * @class PasswordDisplayPanel
+ * @brief Password-field rendering implementation.
+ *
+ * @see passworddisplaypanel.h
+ */
+
+#include "passworddisplaypanel.h"
+#include "qpushbuttonasqrcode.h"
+#include "qpushbuttonshowpassword.h"
+#include "qpushbuttonwithclipboard.h"
+#include "qtpasssettings.h"
+#include "util.h"
+
+#include <QBoxLayout>
+#include <QDesktopServices>
+#include <QFrame>
+#include <QGridLayout>
+#include <QHBoxLayout>
+#include <QIcon>
+#include <QLabel>
+#include <QLineEdit>
+#include <QPalette>
+#include <QPushButton>
+#include <QTextBrowser>
+#include <QUrl>
+
+PasswordDisplayPanel::PasswordDisplayPanel(QGridLayout *grid,
+                                           QBoxLayout *container,
+                                           QWidget *widgetParent,
+                                           QObject *parent)
+    : QObject(parent), m_grid(grid), m_container(container),
+      m_widgetParent(widgetParent) {}
+
+void PasswordDisplayPanel::clear() {
+  while (m_grid->count() > 0) {
+    QLayoutItem *item = m_grid->takeAt(0);
+    delete item->widget();
+    delete item;
+  }
+  m_container->setSpacing(0);
+}
+
+void PasswordDisplayPanel::displayFields(const QString &password,
+                                         const NamedValues &namedValues) {
+  if (!password.isEmpty()) {
+    // The password is hidden in addField when needed.
+    addField(0, QObject::tr("Password"), password);
+  }
+  for (int j = 0; j < namedValues.length(); ++j) {
+    const NamedValue &nv = namedValues.at(j);
+    addField(j + 1, nv.name, nv.value);
+  }
+  m_container->setSpacing(m_grid->count() == 0 ? 0 : 6);
+}
+
+void PasswordDisplayPanel::appendField(const QString &field,
+                                       const QString &value) {
+  // Each row is two grid items (label + value frame), so the next free row is
+  // count() / 2 — the same sequential scheme displayFields() uses.
+  addField(m_grid->count() / 2, field, value);
+}
+
+void PasswordDisplayPanel::addField(int position, const QString &field,
+                                    const QString &value) {
+  QString trimmedField = field.trimmed();
+  QString trimmedValue = value.trimmed();
+
+  const QString buttonStyle =
+      "border-style: none; background: transparent; padding: 0; margin: 0; "
+      "icon-size: 16px; color: inherit;";
+
+  // Combine the Copy button and the line edit in one widget
+  auto *frame = new QFrame();
+  QLayout *ly = new QHBoxLayout();
+  ly->setContentsMargins(5, 2, 2, 2);
+  ly->setSpacing(0);
+  frame->setLayout(ly);
+  if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
+    auto *fieldLabel =
+        new QPushButtonWithClipboard(trimmedValue, m_widgetParent);
+    connect(fieldLabel, &QPushButtonWithClipboard::clicked, this,
+            &PasswordDisplayPanel::copyRequested);
+
+    fieldLabel->setStyleSheet(buttonStyle);
+    frame->layout()->addWidget(fieldLabel);
+  }
+
+  if (QtPassSettings::isUseQrencode()) {
+    auto *qrbutton = new QPushButtonAsQRCode(trimmedValue, m_widgetParent);
+    connect(qrbutton, &QPushButtonAsQRCode::clicked, this,
+            &PasswordDisplayPanel::qrRequested);
+    qrbutton->setStyleSheet(buttonStyle);
+    frame->layout()->addWidget(qrbutton);
+  }
+
+  // Show an explicit "open in browser" button when the value is a safe
+  // http(s) URL. The inline clickable link still works for URLs embedded in
+  // prose; this button is the discoverable affordance for url fields.
+  // Never on the password field: its value is a secret and must not be
+  // surfaced in a tooltip or handed to the browser.
+  if (trimmedField != QObject::tr("Password") &&
+      Util::isLaunchableWebUrl(trimmedValue)) {
+    auto *urlButton = new QPushButton(m_widgetParent);
+    urlButton->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet"),
+                                        QIcon(":/icons/open-url.svg")));
+    urlButton->setToolTip(
+        QObject::tr("Open %1 in browser").arg(trimmedValue.toHtmlEscaped()));
+    urlButton->setStyleSheet(buttonStyle);
+    urlButton->setCursor(Qt::PointingHandCursor);
+    connect(urlButton, &QPushButton::clicked, this, [trimmedValue]() {
+      // Re-validate before launching (defence in depth: the value is
+      // immutable here, but never hand an unvalidated string to the OS
+      // URL handler).
+      if (Util::isLaunchableWebUrl(trimmedValue)) {
+        QDesktopServices::openUrl(QUrl(trimmedValue));
+      }
+    });
+    frame->layout()->addWidget(urlButton);
+  }
+
+  // set the echo mode to password, if the field is "password"
+  const QString lineStyle =
+      QtPassSettings::isUseMonospace()
+          ? "border-style: none; background: transparent; font-family: "
+            "monospace;"
+          : "border-style: none; background: transparent;";
+
+  if (QtPassSettings::isHidePassword() &&
+      trimmedField == QObject::tr("Password")) {
+    auto *line = new QLineEdit();
+    line->setObjectName(trimmedField);
+    line->setText(trimmedValue);
+    line->setReadOnly(true);
+    line->setStyleSheet(lineStyle);
+    line->setContentsMargins(0, 0, 0, 0);
+    line->setEchoMode(QLineEdit::Password);
+    auto *showButton = new QPushButtonShowPassword(line, m_widgetParent);
+    showButton->setStyleSheet(buttonStyle);
+    showButton->setContentsMargins(0, 0, 0, 0);
+    frame->layout()->addWidget(showButton);
+    frame->layout()->addWidget(line);
+  } else {
+    auto *line = new QTextBrowser();
+    line->setOpenExternalLinks(true);
+    line->setOpenLinks(true);
+    line->setMaximumHeight(26);
+    line->setMinimumHeight(26);
+    line->setSizePolicy(
+        QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
+    line->setObjectName(trimmedField);
+    trimmedValue.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");
+    line->setText(trimmedValue);
+    line->setReadOnly(true);
+    line->setStyleSheet(lineStyle);
+    line->setContentsMargins(0, 0, 0, 0);
+    frame->layout()->addWidget(line);
+  }
+
+  // Derive the border colour from the palette so it adapts to light/dark
+  // themes instead of a hardcoded light grey.
+  const QString borderColor =
+      m_widgetParent->palette().color(QPalette::Mid).name();
+  frame->setStyleSheet(QStringLiteral(".QFrame{border: 1px solid %1; "
+                                      "border-radius: 5px;}")
+                           .arg(borderColor));
+
+  // set into the layout
+  m_grid->addWidget(new QLabel(trimmedField), position, 0);
+  m_grid->addWidget(frame, position, 1);
+}
