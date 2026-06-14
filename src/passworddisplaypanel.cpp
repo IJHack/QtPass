@@ -59,7 +59,9 @@ void PasswordDisplayPanel::displayFields(const QString &password,
 
 void PasswordDisplayPanel::appendField(const QString &field,
                                        const QString &value) {
-  addField(m_grid->count() + 1, field, value);
+  // Each row is two grid items (label + value frame), so the next free row is
+  // count() / 2 — the same sequential scheme displayFields() uses.
+  addField(m_grid->count() / 2, field, value);
 }
 
 void PasswordDisplayPanel::addField(int position, const QString &field,
