@@ -12,6 +12,7 @@
 #include "exportpublickeydialog.h"
 #include "filecontent.h"
 #include "passworddialog.h"
+#include "passworddisplaypanel.h"
 #include "pathvalidator.h"
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
@@ -118,6 +119,13 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
           &MainWindow::showBrowserContextMenu);
 
   updateProfileBox();
+
+  m_displayPanel = new PasswordDisplayPanel(
+      ui->gridLayout, ui->verticalLayoutPassword, this, this);
+  connect(m_displayPanel, &PasswordDisplayPanel::copyRequested, m_qtPass,
+          &QtPass::copyTextToClipboard);
+  connect(m_displayPanel, &PasswordDisplayPanel::qrRequested, m_qtPass,
+          &QtPass::showTextAsQRCode);
 
   QtPassSettings::getPass()->updateEnv();
   clearPanelTimer.setInterval(MS_PER_SECOND *
@@ -589,7 +597,7 @@ void MainWindow::deselect() {
 }
 
 void MainWindow::executeWrapperStarted() {
-  clearTemplateWidgets();
+  m_displayPanel->clear();
   ui->textBrowser->clear();
   setUiElementsEnabled(false);
   clearPanelTimer.stop();
@@ -622,28 +630,13 @@ void MainWindow::passShowHandler(const QString &p_output) {
   m_qtPass->setClippedText(password, p_output);
 
   // first clear the current view:
-  clearTemplateWidgets();
+  m_displayPanel->clear();
 
   // show what is needed:
   if (QtPassSettings::isHideContent()) {
     output = "***" + tr("Content hidden") + "***";
   } else if (!QtPassSettings::isDisplayAsIs()) {
-    if (!password.isEmpty()) {
-      // set the password, it is hidden if needed in addToGridLayout
-      addToGridLayout(0, tr("Password"), password);
-    }
-
-    NamedValues namedValues = fileContent.getNamedValues();
-    for (int j = 0; j < namedValues.length(); ++j) {
-      const NamedValue &nv = namedValues.at(j);
-      addToGridLayout(j + 1, nv.name, nv.value);
-    }
-    if (ui->gridLayout->count() == 0) {
-      ui->verticalLayoutPassword->setSpacing(0);
-    } else {
-      ui->verticalLayoutPassword->setSpacing(6);
-    }
-
+    m_displayPanel->displayFields(password, fileContent.getNamedValues());
     output = fileContent.getRemainingDataForDisplay();
   }
 
@@ -667,7 +660,7 @@ void MainWindow::passShowHandler(const QString &p_output) {
  */
 void MainWindow::passOtpHandler(const QString &p_output) {
   if (!p_output.isEmpty()) {
-    addToGridLayout(ui->gridLayout->count() + 1, tr("OTP Code"), p_output);
+    m_displayPanel->appendField(tr("OTP Code"), p_output);
     m_qtPass->copyTextToClipboard(p_output);
     showStatusMessage(tr("OTP code copied to clipboard"));
   } else {
@@ -683,11 +676,7 @@ void MainWindow::passOtpHandler(const QString &p_output) {
  * @brief MainWindow::clearPanel hide the information from shoulder surfers
  */
 void MainWindow::clearPanel(bool notify) {
-  while (ui->gridLayout->count() > 0) {
-    QLayoutItem *item = ui->gridLayout->takeAt(0);
-    delete item->widget();
-    delete item;
-  }
+  m_displayPanel->clear();
   const bool grepWasVisible = ui->grepResultsList->isVisible();
   ui->grepResultsList->clear();
   if (grepWasVisible) {
@@ -1601,19 +1590,6 @@ void MainWindow::renamePassword() {
 }
 
 /**
- * @brief MainWindow::clearTemplateWidgets empty the template widget fields in
- * the UI
- */
-void MainWindow::clearTemplateWidgets() {
-  while (ui->gridLayout->count() > 0) {
-    QLayoutItem *item = ui->gridLayout->takeAt(0);
-    delete item->widget();
-    delete item;
-  }
-  ui->verticalLayoutPassword->setSpacing(0);
-}
-
-/**
  * @brief Copies the password of the selected file from the tree view to the
  * clipboard.
  * @example
@@ -1639,114 +1615,6 @@ void MainWindow::copyPasswordFromTreeview() {
 void MainWindow::passwordFromFileToClipboard(const QString &text) {
   QStringList tokens = text.split('\n');
   m_qtPass->copyTextToClipboard(tokens[0]);
-}
-
-/**
- * @brief MainWindow::addToGridLayout add a field to the template grid
- * @param position
- * @param field
- * @param value
- */
-void MainWindow::addToGridLayout(int position, const QString &field,
-                                 const QString &value) {
-  QString trimmedField = field.trimmed();
-  QString trimmedValue = value.trimmed();
-
-  const QString buttonStyle =
-      "border-style: none; background: transparent; padding: 0; margin: 0; "
-      "icon-size: 16px; color: inherit;";
-
-  // Combine the Copy button and the line edit in one widget
-  auto *frame = new QFrame();
-  QLayout *ly = new QHBoxLayout();
-  ly->setContentsMargins(5, 2, 2, 2);
-  ly->setSpacing(0);
-  frame->setLayout(ly);
-  if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
-    auto *fieldLabel = new QPushButtonWithClipboard(trimmedValue, this);
-    connect(fieldLabel, &QPushButtonWithClipboard::clicked, m_qtPass,
-            &QtPass::copyTextToClipboard);
-
-    fieldLabel->setStyleSheet(buttonStyle);
-    frame->layout()->addWidget(fieldLabel);
-  }
-
-  if (QtPassSettings::isUseQrencode()) {
-    auto *qrbutton = new QPushButtonAsQRCode(trimmedValue, this);
-    connect(qrbutton, &QPushButtonAsQRCode::clicked, m_qtPass,
-            &QtPass::showTextAsQRCode);
-    qrbutton->setStyleSheet(buttonStyle);
-    frame->layout()->addWidget(qrbutton);
-  }
-
-  // Show an explicit "open in browser" button when the value is a safe
-  // http(s) URL. The inline clickable link still works for URLs embedded in
-  // prose; this button is the discoverable affordance for url fields.
-  // Never on the password field: its value is a secret and must not be
-  // surfaced in a tooltip or handed to the browser.
-  if (trimmedField != tr("Password") &&
-      Util::isLaunchableWebUrl(trimmedValue)) {
-    auto *urlButton = new QPushButton(this);
-    urlButton->setIcon(QIcon::fromTheme(QStringLiteral("applications-internet"),
-                                        QIcon(":/icons/open-url.svg")));
-    urlButton->setToolTip(
-        tr("Open %1 in browser").arg(trimmedValue.toHtmlEscaped()));
-    urlButton->setStyleSheet(buttonStyle);
-    urlButton->setCursor(Qt::PointingHandCursor);
-    connect(urlButton, &QPushButton::clicked, this, [trimmedValue]() {
-      // Re-validate before launching (defence in depth: the value is
-      // immutable here, but never hand an unvalidated string to the OS
-      // URL handler).
-      if (Util::isLaunchableWebUrl(trimmedValue)) {
-        QDesktopServices::openUrl(QUrl(trimmedValue));
-      }
-    });
-    frame->layout()->addWidget(urlButton);
-  }
-
-  // set the echo mode to password, if the field is "password"
-  const QString lineStyle =
-      QtPassSettings::isUseMonospace()
-          ? "border-style: none; background: transparent; font-family: "
-            "monospace;"
-          : "border-style: none; background: transparent;";
-
-  if (QtPassSettings::isHidePassword() && trimmedField == tr("Password")) {
-    auto *line = new QLineEdit();
-    line->setObjectName(trimmedField);
-    line->setText(trimmedValue);
-    line->setReadOnly(true);
-    line->setStyleSheet(lineStyle);
-    line->setContentsMargins(0, 0, 0, 0);
-    line->setEchoMode(QLineEdit::Password);
-    auto *showButton = new QPushButtonShowPassword(line, this);
-    showButton->setStyleSheet(buttonStyle);
-    showButton->setContentsMargins(0, 0, 0, 0);
-    frame->layout()->addWidget(showButton);
-    frame->layout()->addWidget(line);
-  } else {
-    auto *line = new QTextBrowser();
-    line->setOpenExternalLinks(true);
-    line->setOpenLinks(true);
-    line->setMaximumHeight(26);
-    line->setMinimumHeight(26);
-    line->setSizePolicy(
-        QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum));
-    line->setObjectName(trimmedField);
-    trimmedValue.replace(Util::protocolRegex(), R"(<a href="\1">\1</a>)");
-    line->setText(trimmedValue);
-    line->setReadOnly(true);
-    line->setStyleSheet(lineStyle);
-    line->setContentsMargins(0, 0, 0, 0);
-    frame->layout()->addWidget(line);
-  }
-
-  frame->setStyleSheet(
-      ".QFrame{border: 1px solid lightgrey; border-radius: 5px;}");
-
-  // set into the layout
-  ui->gridLayout->addWidget(new QLabel(trimmedField), position, 0);
-  ui->gridLayout->addWidget(frame, position, 1);
 }
 
 /**

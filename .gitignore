@@ -68,3 +68,4 @@ opencode.json
 .opencode/*.local.json
 .opencode/scheduled_tasks.lock
 tests/auto/grepsearchcontroller/tst_grepsearchcontroller
+tests/auto/passworddisplaypanel/tst_passworddisplaypanel
