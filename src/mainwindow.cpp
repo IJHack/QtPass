@@ -906,10 +906,12 @@ void MainWindow::onGrepFinished(
   if (outcome.restoreCursor) {
     QApplication::restoreOverrideCursor();
   }
+  // Re-enable the UI before the discard check so a cancelled search can never
+  // leave controls disabled.
+  setUiElementsEnabled(true);
   if (outcome.discard) {
     return;
   }
-  setUiElementsEnabled(true);
   if (!m_grep.inGrepMode())
     return;
   ui->grepResultsList->clear();
