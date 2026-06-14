@@ -9,5 +9,6 @@ var searchData=
   ['removedir_6',['removeDir',['../class_imitate_pass.html#a8740d9937714c8b6219d1857d7e2ff2c',1,'ImitatePass']]],
   ['resolvegpgconfcommand_7',['resolveGpgconfCommand',['../class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6',1,'Pass']]],
   ['resolvemovedestination_8',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
-  ['restorewindow_9',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]]
+  ['restorewindow_9',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
+  ['rootindexfor_10',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
 ];

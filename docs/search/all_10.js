@@ -11,5 +11,6 @@ var searchData=
   ['resolvegpgconfcommand_8',['resolveGpgconfCommand',['../class_pass.html#a4425df7bb17f93be39e1142c2fd4c6a6',1,'Pass']]],
   ['resolvemovedestination_9',['resolveMoveDestination',['../class_imitate_pass.html#adfd24194a7787a48b6eddbe8d31fc563',1,'ImitatePass']]],
   ['restorecursor_10',['restoreCursor',['../struct_grep_search_controller_1_1_finish_outcome.html#ac239184fd57227541a8be6147f6616b8',1,'GrepSearchController::FinishOutcome']]],
-  ['restorewindow_11',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]]
+  ['restorewindow_11',['restoreWindow',['../class_main_window.html#a9630f0fe0e0941a7996d68014f837ed5',1,'MainWindow']]],
+  ['rootindexfor_12',['rootIndexFor',['../class_store_model.html#a9830413c7cf960e473adfa98311c3bcd',1,'StoreModel']]]
 ];
