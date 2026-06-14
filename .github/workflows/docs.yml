@@ -80,11 +80,33 @@ jobs:
       - name: Install Doxygen
         if: steps.need_docs.outputs.run_docs == 'true'
         run: |
-          # Install newer Doxygen from official release
-          curl -fsL https://doxygen.nl/files/doxygen-1.17.0.linux.bin.tar.gz -o doxygen.tar.gz
+          # Pinned Doxygen release. doxygen.nl has intermittent outages, so try
+          # the identical GitHub release asset (CDN-backed) first and fall back
+          # to doxygen.nl, retrying each source before giving up.
+          DOXYGEN_VERSION=1.17.0
+          tarball="doxygen-${DOXYGEN_VERSION}.linux.bin.tar.gz"
+          github_tag="Release_${DOXYGEN_VERSION//./_}"
+          urls=(
+            "https://github.com/doxygen/doxygen/releases/download/${github_tag}/${tarball}"
+            "https://doxygen.nl/files/${tarball}"
+          )
+          downloaded=0
+          for url in "${urls[@]}"; do
+            echo "Fetching Doxygen from ${url}"
+            if curl -fsSL --retry 3 --retry-delay 5 --retry-all-errors \
+                "${url}" -o doxygen.tar.gz; then
+              downloaded=1
+              break
+            fi
+            echo "::warning::Failed to download Doxygen from ${url}"
+          done
+          if [ "${downloaded}" -ne 1 ]; then
+            echo "::error::Could not download Doxygen ${DOXYGEN_VERSION}"
+            exit 1
+          fi
           tar -xzf doxygen.tar.gz
-          sudo cp -r doxygen-1.17.0/bin/* /usr/local/bin/
-          rm -rf doxygen.tar.gz doxygen-1.17.0
+          sudo cp -r "doxygen-${DOXYGEN_VERSION}/bin/"* /usr/local/bin/
+          rm -rf doxygen.tar.gz "doxygen-${DOXYGEN_VERSION}"
           # Install graphviz via apt
           sudo apt-get update && sudo apt-get install -y graphviz
 
