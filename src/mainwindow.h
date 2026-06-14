@@ -298,6 +298,10 @@ private:
   StoreModel proxyModel;
   QScopedPointer<QItemSelectionModel> selectionModel;
   QTimer clearPanelTimer, searchTimer;
+  // Re-enables the UI if a backend operation disables it but never reports
+  // completion (see setUiElementsEnabled).
+  QTimer m_uiWatchdog;
+  static constexpr int UiWatchdogMs = 30000;
   QDialog *m_keygenDialog{};
   QString m_currentDir;
   TrayIcon *m_tray{};

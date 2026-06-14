@@ -138,6 +138,19 @@ MainWindow::MainWindow(const QString &searchText, QWidget *parent)
 
   connect(&searchTimer, &QTimer::timeout, this, &MainWindow::onTimeoutSearch);
 
+  // Install the search-box key filter once, not on every setUiElementsEnabled
+  // call.
+  ui->lineEdit->installEventFilter(this);
+
+  // Safety net: if a backend operation disables the UI but never signals
+  // completion, re-enable after a timeout so the window can't get stuck.
+  m_uiWatchdog.setSingleShot(true);
+  m_uiWatchdog.setInterval(UiWatchdogMs);
+  connect(&m_uiWatchdog, &QTimer::timeout, this, [this]() {
+    showStatusMessage(tr("Operation timed out; re-enabling interface."));
+    setUiElementsEnabled(true);
+  });
+
   initToolBarButtons();
   initStatusBar();
   initProcessOutputPanel();
@@ -707,9 +720,14 @@ void MainWindow::clearPanel(bool notify) {
  * @param state
  */
 void MainWindow::setUiElementsEnabled(bool state) {
+  // Arm the watchdog while the UI is disabled; disarm once re-enabled.
+  if (state) {
+    m_uiWatchdog.stop();
+  } else {
+    m_uiWatchdog.start();
+  }
   ui->treeView->setEnabled(state);
   ui->lineEdit->setEnabled(state);
-  ui->lineEdit->installEventFilter(this);
   ui->actionAddPassword->setEnabled(state);
   ui->actionAddFolder->setEnabled(state);
   ui->actionUsers->setEnabled(state);
