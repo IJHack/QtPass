@@ -1,7 +1,7 @@
 var searchData=
 [
   ['sanitizekeyidforfilename_0',['sanitizeKeyIdForFilename',['../class_export_public_key_dialog.html#a1aa1f6ab4e3ae089795ab5cd37d952e8',1,'ExportPublicKeyDialog']]],
-  ['save_1',['save',['../class_settings_serializer.html#a8f027af895ac755143345eff96118cb2',1,'SettingsSerializer']]],
+  ['save_1',['save',['../class_qt_pass_settings.html#ae359880612f89fc35f08831fa9a3a732',1,'QtPassSettings::save()'],['../class_settings_serializer.html#a8f027af895ac755143345eff96118cb2',1,'SettingsSerializer::save()']]],
   ['savestate_2',['savestate',['../struct_app_settings.html#aafa1f97c50a90866f9523851b2eaa058',1,'AppSettings']]],
   ['selected_3',['selected',['../struct_password_configuration.html#abd7cb31711fc6cb0792d43860c14cfc0',1,'PasswordConfiguration']]],
   ['sendmessage_4',['sendMessage',['../class_single_application.html#ad63149f60ac6676dda4397a90116e351',1,'SingleApplication']]],

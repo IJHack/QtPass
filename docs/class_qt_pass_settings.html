@@ -129,6 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a3d38816e907ea2ea01842a8ab488260c" id="r_a3d38816e907ea2ea01842a8ab488260c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3d38816e907ea2ea01842a8ab488260c">getInstance</a> () -&gt; <a class="el" href="class_qt_pass_settings.html">QtPassSettings</a> *</td></tr>
 <tr class="memdesc:a3d38816e907ea2ea01842a8ab488260c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the singleton instance.  <br /></td></tr>
+<tr class="memitem:a6d6d2c5444b24ed89a71e7dc6dff877e" id="r_a6d6d2c5444b24ed89a71e7dc6dff877e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6d6d2c5444b24ed89a71e7dc6dff877e">load</a> () -&gt; <a class="el" href="struct_app_settings.html">AppSettings</a></td></tr>
+<tr class="memdesc:a6d6d2c5444b24ed89a71e7dc6dff877e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all flat settings into an <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> value object.  <br /></td></tr>
+<tr class="memitem:ae359880612f89fc35f08831fa9a3a732" id="r_ae359880612f89fc35f08831fa9a3a732"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae359880612f89fc35f08831fa9a3a732">save</a> (const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;settings)</td></tr>
+<tr class="memdesc:ae359880612f89fc35f08831fa9a3a732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Persist an <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> value object to the singleton store.  <br /></td></tr>
 <tr class="memitem:a6f238c4845f87423bcd4cedbf12fc390" id="r_a6f238c4845f87423bcd4cedbf12fc390"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6f238c4845f87423bcd4cedbf12fc390">getVersion</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
 <tr class="memdesc:a6f238c4845f87423bcd4cedbf12fc390"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get saved application version.  <br /></td></tr>
 <tr class="memitem:a03ae30049a0011939ca6e15dad4426d5" id="r_a03ae30049a0011939ca6e15dad4426d5"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a03ae30049a0011939ca6e15dad4426d5">setVersion</a> (const QString &amp;version)</td></tr>
@@ -400,7 +404,7 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 </ul>
 <p>Uses QSettings for persistence with a singleton pattern. All getters accept a default value returned when setting is not yet saved. </p>
 
-<p class="definition">Definition at line <a class="el" href="qtpasssettings_8h_source.html#l00034">34</a> of file <a class="el" href="qtpasssettings_8h_source.html">qtpasssettings.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="qtpasssettings_8h_source.html#l00035">35</a> of file <a class="el" href="qtpasssettings_8h_source.html">qtpasssettings.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
 <a id="a61d77f033cb243df921f36bd2ad7cfe9" name="a61d77f033cb243df921f36bd2ad7cfe9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a61d77f033cb243df921f36bd2ad7cfe9">&#9670;&#160;</a></span>getAutoclearPanelSeconds()</h2>
@@ -2642,6 +2646,67 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if WebDAV is enabled. </dd></dl>
+
+</div>
+</div>
+<a id="a6d6d2c5444b24ed89a71e7dc6dff877e" name="a6d6d2c5444b24ed89a71e7dc6dff877e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d6d2c5444b24ed89a71e7dc6dff877e">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto QtPassSettings::load </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> -&gt;  <a class="el" href="struct_app_settings.html">AppSettings</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load all flat settings into an <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> value object. </p>
+<p>Convenience facade over <a class="el" href="class_settings_serializer.html" title="Maps AppSettings to and from a QSettings store.">SettingsSerializer</a> using the singleton store. Note: nested/keyed settings (profiles, per-dialog geometry) are not part of <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> and still use their dedicated accessors. </p><dl class="section return"><dt>Returns</dt><dd>Current settings. </dd></dl>
+
+</div>
+</div>
+<a id="ae359880612f89fc35f08831fa9a3a732" name="ae359880612f89fc35f08831fa9a3a732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae359880612f89fc35f08831fa9a3a732">&#9670;&#160;</a></span>save()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void QtPassSettings::save </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>settings</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Persist an <a class="el" href="struct_app_settings.html" title="Plain value-object holding all flat QtPass configuration.">AppSettings</a> value object to the singleton store. </p>
+<p>Writes via <a class="el" href="class_settings_serializer.html" title="Maps AppSettings to and from a QSettings store.">SettingsSerializer</a> and invalidates the cached <a class="el" href="class_pass.html" title="Abstract base class for password store operations.">Pass</a> backend so a changed "use pass" mode takes effect on the next <a class="el" href="#ae0abe010de1e0e023e23639717f9f7e5" title="Get currently active pass backend instance.">getPass()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">settings</td><td>Values to save. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
