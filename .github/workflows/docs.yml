@@ -19,7 +19,7 @@ jobs:
       tests: ${{ steps.filter.outputs.tests }}
       docs: ${{ steps.filter.outputs.docs }}
     steps:
-      - uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v6.0.3
         with:
           persist-credentials: false
       - uses: dorny/paths-filter@v4.0.1
@@ -68,7 +68,7 @@ jobs:
         if: steps.need_docs.outputs.run_docs != 'true'
         run: echo "No relevant changes - skipping docs and coverage"
 
-      - uses: actions/checkout@v6.0.2
+      - uses: actions/checkout@v6.0.3
         if: steps.need_docs.outputs.run_docs == 'true'
         with:
           persist-credentials: false
