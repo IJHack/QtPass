@@ -53,6 +53,7 @@ private Q_SLOTS:
   void serializerLoadDefaults();
   void serializerRoundTrip();
   void serializerKeyCompatibility();
+  void facadeLoadReflectsSave();
 
 private:
   QString m_settingsBackupPath;
@@ -732,6 +733,20 @@ void tst_settings::serializerKeyCompatibility() {
   QCOMPARE(qs.value(SettingsConstants::passStore).toString(),
            QStringLiteral("/tmp/store"));
   QCOMPARE(qs.value(SettingsConstants::autoclearSeconds).toInt(), 13);
+}
+
+void tst_settings::facadeLoadReflectsSave() {
+  // QtPassSettings::save then ::load must round-trip through the singleton.
+  AppSettings out = QtPassSettings::load();
+  out.useMonospace = !out.useMonospace;
+  out.autoclearSeconds = 77;
+  out.passSigningKey = QStringLiteral("FACADEKEY");
+  QtPassSettings::save(out);
+
+  const AppSettings in = QtPassSettings::load();
+  QCOMPARE(in.useMonospace, out.useMonospace);
+  QCOMPARE(in.autoclearSeconds, 77);
+  QCOMPARE(in.passSigningKey, QStringLiteral("FACADEKEY"));
 }
 
 QTEST_MAIN(tst_settings)
