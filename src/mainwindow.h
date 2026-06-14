@@ -4,6 +4,7 @@
 #define SRC_MAINWINDOW_H_
 
 #include "enums.h"
+#include "grepsearchcontroller.h"
 #include "storemodel.h"
 
 #include <QFileSystemModel>
@@ -276,9 +277,7 @@ private slots:
 private:
   QtPass *m_qtPass;
   QScopedPointer<Ui::MainWindow> ui;
-  bool m_grepMode = false;
-  bool m_grepBusy = false;
-  bool m_grepCancelled = false;
+  GrepSearchController m_grep;
   bool m_initialShowDone = false;
   bool m_autoScroll = true;
   int m_outputCounter = 0;
