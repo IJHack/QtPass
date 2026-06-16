@@ -1246,7 +1246,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="347"/>
         <source>Clear</source>
-        <translation>বাতিল</translation>
+        <translation>পরিষ্কার করুন</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="348"/>
@@ -1256,7 +1256,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="356"/>
         <source>Process Output</source>
-        <translation>আউটপুট চলাচল করাতে</translation>
+        <translation>প্রক্রিয়ার আউটপুট</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="525"/>
@@ -1268,7 +1268,7 @@ You will not be able to change the user list!</source>
         <location filename="../src/mainwindow.cpp" line="649"/>
         <location filename="../src/mainwindow.cpp" line="938"/>
         <source>Content hidden</source>
-        <translation>কন্টেন্ট পরিশোধিত হলে</translation>
+        <translation>বিষয়বস্তু লুকানো হয়েছে</translation>
     </message>
     <message>
         <source>Password</source>
@@ -1277,7 +1277,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">অপারেশনের সময় শেষ হয়ে গেছে; ইন্টারফেস পুনরায় সক্রিয় করা হচ্ছে।</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="675"/>
@@ -1317,17 +1317,17 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কন্টেন্ট অনুসন্ধান POSIX মৌলিক নিয়মিত এক্সপ্রেশন ব্যবহার করে (pass grep)।</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">কন্টেন্ট অনুসন্ধান Perl-সামঞ্জস্যপূর্ণ নিয়মিত এক্সপ্রেশন ব্যবহার করে (PCRE)।</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
         <source>No matches found.</source>
-        <translation>অনুসরণ করা হয়নি.</translation>
+        <translation>কোনো মিল পাওয়া যায়নি.</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="948"/>
@@ -1510,7 +1510,7 @@ Continue?</source>
 
 এটি .gpg-id-তে সংজ্ঞায়িত বর্তমান প্রাপকদের ব্যবহার করে এই ফোল্ডারের সমস্ত পাসওয়ার্ড ফাইল পুনরায় এনক্রিপ্ট করবে।
 
-এটি অনেক ফাইল মুছে ফেলতে পারে এবং সহজে পূর্বাবস্থায় ফেরানো যাবে না।
+এটি অনেক ফাইল পুনর্লিখন করতে পারে এবং সহজে পূর্বাবস্থায় ফেরানো যাবে না।
 
 চালিয়ে যাবেন?</translation>
     </message>

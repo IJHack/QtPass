@@ -1449,7 +1449,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="709"/>
         <source>Password and Content hidden</source>
-        <translation>S&apos;ha ocultat el porta-retalls i la contrasenya</translation>
+        <translation>S&apos;ha ocultada la contrasenya i el contingut</translation>
     </message>
     <message>
         <source>QProcess::FailedToStart</source>
@@ -1651,7 +1651,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">L'operació ha caducat; s'està reactivant la interfície.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="356"/>
@@ -1661,12 +1661,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La cerca de contingut utilitza expressions regulars bàsiques POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La cerca de contingut utilitza expressions regulars compatibles amb Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>

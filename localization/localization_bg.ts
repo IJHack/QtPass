@@ -474,7 +474,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="86"/>
         <source>On-demand copy to clipboard</source>
-        <translation>Предложение за копиране в буфера</translation>
+        <translation>Копиране в буфера при поискване</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="270"/>
@@ -1560,7 +1560,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Операцията изтече; интерфейсът се активира отново.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="356"/>
@@ -1590,12 +1590,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Търсенето в съдържанието използва POSIX основни регулярни изрази (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Търсенето в съдържанието използва Perl-съвместими регулярни изрази (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>

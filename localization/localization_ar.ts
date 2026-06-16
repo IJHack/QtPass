@@ -426,12 +426,12 @@
     <message>
         <location filename="../src/configdialog.cpp" line="73"/>
         <source>qrencode needs to be installed</source>
-        <translation>يجب تركيب الفرنكود</translation>
+        <translation>يجب تثبيت qrencode</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="84"/>
         <source>No Clipboard</source>
-        <translation>لا مشبك</translation>
+        <translation>لا حافظة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="85"/>
@@ -441,7 +441,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="86"/>
         <source>On-demand copy to clipboard</source>
-        <translation>نسخة محررة على لوحة</translation>
+        <translation>نسخ إلى الحافظة عند الطلب</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="270"/>
@@ -1316,17 +1316,17 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">انتهت مهلة العملية؛ إعادة تمكين الواجهة.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">يستخدم البحث في المحتوى تعبيرات POSIX الأساسية المنتظمة (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">يستخدم البحث في المحتوى التعبيرات المنتظمة المتوافقة مع Perl (PCRE).</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="948"/>
@@ -1408,7 +1408,7 @@ You will not be able to decrypt any newly added passwords!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1282"/>
         <source>Profile changed to %1</source>
-        <translation>تغيرت الأرقام إلى النسبة المئوية%1</translation>
+        <translation>تم تغيير الملف الشخصي إلى %1</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1410"/>

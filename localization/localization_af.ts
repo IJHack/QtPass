@@ -1651,7 +1651,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bewerking het uitgetel; koppelvlak word heractiveer.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="356"/>
@@ -1661,12 +1661,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inhoudesoektog gebruik POSIX basiese regulêre uitdrukkings (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inhoudesoektog gebruik Perl-versoenbare regulêre uitdrukkings (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
@@ -1676,7 +1676,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished">Daardie naam sal buite die wagwoordwinkel oplos. Kies asseblief ’n ander naam.</translation>
+        <translation type="unfinished">Daardie naam sal buite die wagwoordstoor oplos. Kies asseblief ‘n ander naam.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1439"/>
