@@ -131,11 +131,15 @@ void Pass::init() {
     env.insert(QStringLiteral("PATH"),
                QStringLiteral("/usr/local/MacGPG2/bin:") +
                    env.value(QStringLiteral("PATH")));
-  // Add missing /usr/local/bin
-  if (!env.value(QStringLiteral("PATH"))
-           .contains(QStringLiteral("/usr/local/bin")))
-    env.insert(QStringLiteral("PATH"), QStringLiteral("/usr/local/bin:") +
-                                           env.value(QStringLiteral("PATH")));
+  // Add missing /usr/local/bin (exact component match, no leading colon)
+  const QString currentPath = env.value(QStringLiteral("PATH"));
+  if (!currentPath.split(':', Qt::SkipEmptyParts)
+           .contains(QStringLiteral("/usr/local/bin"))) {
+    env.insert(QStringLiteral("PATH"),
+               currentPath.isEmpty()
+                   ? QStringLiteral("/usr/local/bin")
+                   : QStringLiteral("/usr/local/bin:") + currentPath);
+  }
 #endif
 
   if (!QtPassSettings::getGpgHome().isEmpty()) {

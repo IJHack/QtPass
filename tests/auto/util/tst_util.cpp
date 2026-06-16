@@ -1728,9 +1728,8 @@ void tst_util::updateEnvSetsExpectedVars() {
   const QProcessEnvironment env = pass.environment();
   QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_DIR")),
            "updateEnv should set PASSWORD_STORE_DIR");
-  QVERIFY2(
-      env.value(QStringLiteral("PASSWORD_STORE_DIR")).contains(tmpDir.path()),
-      "updateEnv should set PASSWORD_STORE_DIR to configured store path");
+  QCOMPARE(QDir::cleanPath(env.value(QStringLiteral("PASSWORD_STORE_DIR"))),
+           QDir::cleanPath(tmpDir.path()));
   QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH")),
            "updateEnv should set PASSWORD_STORE_GENERATED_LENGTH");
   QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET")),
