@@ -1381,17 +1381,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation>Przekroczono limit czasu operacji. Ponownie włącz interfejs.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyszukiwanie treści odbywa się za pomocą podstawowych wyrażeń regularnych POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation>Przeszukiwanie treści odbywa się przy użyciu wyrażeń regularnych zgodnych z językiem Perl (PCRE).</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="948"/>
@@ -1755,12 +1755,12 @@ Kontynuować?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="105"/>
         <location filename="../src/passworddisplaypanel.cpp" line="133"/>
         <source>Password</source>
-        <translation type="unfinished">Hasło</translation>
+        <translation>Hasło</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Otwórz %1 w&#xa0;przeglądarce</translation>
+        <translation>Otwórz %1 w&#xa0;przeglądarce</translation>
     </message>
 </context>
 <context>
