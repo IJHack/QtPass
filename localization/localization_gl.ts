@@ -1476,7 +1476,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A operación esgotou o tempo; reactivando a interface.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="675"/>
@@ -1516,12 +1516,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A busca de contido usa expresións regulares básicas POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">A busca de contido usa expresións regulares compatibles con Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
@@ -1885,7 +1885,7 @@ Continuar?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abrir %1 no navegador</translation>
     </message>
 </context>
 <context>

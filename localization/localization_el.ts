@@ -539,7 +539,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="971"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>Παρακαλείσθε να εγκαταστήσετε το GnuPG στο σύστημά σας.&lt;br&gt;Εγκατάσταση &lt;strong&gt;gpg&lt;/strong&gt; χρησιμοποιώντας το αγαπημένο σας package manager&lt;br&gt;ή &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;λήψη&lt;/a&gt; από GnuPG.org</translation>
+        <translation>Παρακαλείσθε να εγκαταστήσετε το GnuPG στο σύστημά σας.&lt;br&gt;Εγκατάσταση &lt;strong&gt;gpg&lt;/strong&gt; χρησιμοποιώντας τον αγαπημένο σας διαχειριστή πακέτων&lt;br&gt;ή &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;λήψη&lt;/a&gt; από GnuPG.org</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1025"/>
@@ -1360,17 +1360,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Λήξη χρονικού ορίου· επανενεργοποίηση διεπαφής.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η αναζήτηση περιεχομένου χρησιμοποιεί βασικές κανονικές εκφράσεις POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Η αναζήτηση περιεχομένου χρησιμοποιεί κανονικές εκφράσεις συμβατές με Perl (PCRE).</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="948"/>

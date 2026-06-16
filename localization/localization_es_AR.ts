@@ -1503,16 +1503,16 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
         <source>Invalid name</source>
-        <translation type="unfinished">Nombre no válido</translation>
+        <translation>Nombre no válido</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ese nombre apuntaría fuera del almacén de contraseñas. Por favor, elija un nombre diferente.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
-        <source>New password file: 
+        <source>New password file:
 (Will be placed in %1 )</source>
         <translation>Nuevo archivo de contraseñas:
 (Se colocará en %1)</translation>
@@ -1554,17 +1554,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La operación superó el tiempo de espera; se está reactivando la interfaz.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La búsqueda de contenido utiliza expresiones regulares básicas POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La búsqueda de contenido utiliza expresiones regulares compatibles con Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1439"/>
@@ -1879,12 +1879,12 @@ Esto puede sobrescribir muchos archivos y no se puede deshacer fácilmente.
         <location filename="../src/passworddisplaypanel.cpp" line="105"/>
         <location filename="../src/passworddisplaypanel.cpp" line="133"/>
         <source>Password</source>
-        <translation type="unfinished">Contraseña</translation>
+        <translation>Contraseña</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abrir %1 en el navegador</translation>
     </message>
 </context>
 <context>

@@ -1336,7 +1336,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">این نام خارج از مخزن رمز عبور حل می‌شود. لطفاً نام دیگری انتخاب کنید.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1073"/>
@@ -1359,17 +1359,17 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">مهلت عملیات به پایان رسید؛ رابط کاربری مجدداً فعال می‌شود.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">جستجوی محتوا از عبارات منظم پایه POSIX استفاده می‌کند (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">جستجوی محتوا از عبارات منظم سازگار با Perl استفاده می‌کند (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1074"/>
@@ -1680,7 +1680,7 @@ Continue?</source>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">باز کردن %1 در مرورگر</translation>
     </message>
 </context>
 <context>

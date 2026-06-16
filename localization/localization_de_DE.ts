@@ -1315,17 +1315,17 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Zeitüberschreitung; Benutzeroberfläche wird wieder aktiviert.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inhaltssuche verwendet grundlegende reguläre POSIX-Ausdrücke (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Inhaltssuche verwendet Perl-kompatible reguläre Ausdrücke (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1134"/>
@@ -1806,7 +1806,7 @@ Fortfahren?</translation>
         <location filename="../src/pass.cpp" line="553"/>
         <location filename="../src/pass.cpp" line="572"/>
         <source>Encryption failed: GPG key has been revoked.</source>
-        <translation>Verschlüsselung versagt: GPG-Schlüssel wurde aufgehoben.</translation>
+        <translation>Verschlüsselung fehlgeschlagen: GPG-Schlüssel wurde widerrufen.</translation>
     </message>
     <message>
         <location filename="../src/pass.cpp" line="557"/>

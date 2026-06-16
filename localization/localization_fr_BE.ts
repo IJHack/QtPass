@@ -1532,7 +1532,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La connexion a expiré ; réactivation de l'interface.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="356"/>
@@ -1567,12 +1567,12 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La recherche de contenu utilise les expressions régulières de base POSIX (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">La recherche de contenu utilise les expressions régulières compatibles Perl (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
@@ -1595,7 +1595,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ce nom pointerait en dehors du coffre de mots de passe. Veuillez choisir un autre nom.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1114"/>
@@ -1888,7 +1888,7 @@ Continuez&#x202f;?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ouvrir %1 dans le navigateur</translation>
     </message>
 </context>
 <context>

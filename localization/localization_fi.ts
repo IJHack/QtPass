@@ -1592,7 +1592,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Toiminto aikakatkaistiin; käyttöliittymä otetaan uudelleen käyttöön.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="356"/>
@@ -1622,12 +1622,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sisältöhaku käyttää POSIX-perussäännöllisiä lausekkeita (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Sisältöhaku käyttää Perl-yhteensopivia säännöllisiä lausekkeita (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
@@ -1650,7 +1650,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tuo nimi viittaisi salasanavaraston ulkopuolelle. Valitse eri nimi.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1154"/>
@@ -1928,7 +1928,7 @@ Jatketaanko?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Avaa %1 selaimessa</translation>
     </message>
 </context>
 <context>
