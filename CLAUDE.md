@@ -67,12 +67,13 @@ Both inherit from `Pass` (`src/pass.h`), an abstract base exposing the password 
 **Core classes:**
 
 - `MainWindow` — central UI orchestrator; owns the `Pass` instance and `StoreModel`
-- `Pass` / `RealPass` / `ImitatePass` — password store operations (add, edit, delete, copy, show, Git)
+- `Pass` / `RealPass` / `ImitatePass` — password store operations (add, edit, delete, copy, show, Git); `PassBackendFactory` (`src/passbackendfactory.h`) owns backend selection/lifecycle
 - `Executor` (`src/executor.h`) — FIFO queue for external process execution; all `gpg`/`git`/`pass` calls go through here
-- `StoreModel` (`src/storemodel.h`) — `QSortFilterProxyModel` wrapping `QFileSystemModel` for the password tree
-- `QtPassSettings` (`src/qtpasssettings.h`) — singleton managing all app configuration via `QSettings`
+- `StoreModel` (`src/storemodel.h`) — `QSortFilterProxyModel` wrapping `QFileSystemModel` for the password tree; `rootIndexFor()` maps a directory to the tree root
+- `QtPassSettings` (`src/qtpasssettings.h`) — singleton managing all app configuration via `QSettings`; `AppSettings` (`src/appsettings.h`) + `SettingsSerializer` (`src/settingsserializer.h`) are the value-object/load-save facade
 - `FileContent` (`src/filecontent.h`) — parses password files; supports template fields beyond the first line
-- `Util` (`src/util.h`) — static helpers for path normalization and binary discovery
+- `Util` (`src/util.h`) — static path/binary-discovery helpers, now narrowed: `PathValidator` (store-boundary checks), `SshAuthSock` (SSH_AUTH_SOCK discovery), and `TemplateIO` (`.templates`/`.default_template` I/O) are split out
+- `MainWindow` helpers: `GrepSearchController` (`src/grepsearchcontroller.h`) owns content-search state; `PasswordDisplayPanel` (`src/passworddisplaypanel.h`) renders decrypted fields into the grid
 
 **Signal/slot flow:** `MainWindow` calls `Pass` methods → `Pass` queues commands via `Executor` → `Executor` emits signals with stdout/stderr → `Pass` processes output and emits higher-level signals → `MainWindow` updates the UI.
 

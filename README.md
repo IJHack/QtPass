@@ -30,6 +30,7 @@ _Available in over 60 languages_
 - Multiple profiles support
 - OTP (One-Time Password) support
 - Password generation with configurable complexity
+- Content search across decrypted entries (regex; opt-in)
 - Git integration for version control
 - Smartcard and USB token support (OpenPGP, YubiKey)
 - Configurable shoulder surfing protection

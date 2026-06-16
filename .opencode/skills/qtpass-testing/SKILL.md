@@ -27,7 +27,13 @@ make -j4
 make lcov
 ```
 
-## Existing Test Suites (8 total)
+## Existing Test Suites
+
+> The suites below are representative, not exhaustive — `tests/auto/auto.pro`
+> `SUBDIRS` is the source of truth. Newer suites include `settings`,
+> `configdialog`, `mainwindow`, `importkeydialog`, `exportpublickeydialog`,
+> `keygendialog`, `trayicon`, `userinfo`, `profileinit`, `grepsearchcontroller`
+> and `passworddisplaypanel`.
 
 ### tests/auto/gpgkeystate/tst_gpgkeystate.cpp
 
