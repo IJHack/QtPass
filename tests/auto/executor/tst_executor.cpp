@@ -134,7 +134,8 @@ void tst_executor::executeBlockingWithEnvSetsVariable() {
   // Verify that a variable injected via the env parameter is visible inside
   // the process.
   QProcessEnvironment env;
-  env.insert(QStringLiteral("QTPASS_TEST_VAR"), QStringLiteral("injected_value"));
+  env.insert(QStringLiteral("QTPASS_TEST_VAR"),
+             QStringLiteral("injected_value"));
   QString output;
   int result = Executor::executeBlocking(
       env, "sh", {"-c", "echo $QTPASS_TEST_VAR"}, &output);

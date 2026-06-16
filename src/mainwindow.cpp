@@ -1717,8 +1717,7 @@ void MainWindow::exportPublicKey() {
   args.append(identity.split(' ', Qt::SkipEmptyParts));
   QString stdOut;
   QString stdErr;
-  int exitCode =
-      Executor::executeBlocking(gpgExe, args, &stdOut, &stdErr);
+  int exitCode = Executor::executeBlocking(gpgExe, args, &stdOut, &stdErr);
   if (exitCode != 0 || stdOut.isEmpty()) {
     QMessageBox::warning(this, tr("Export Public Key"),
                          tr("Could not export public key for %1.\n\n%2")

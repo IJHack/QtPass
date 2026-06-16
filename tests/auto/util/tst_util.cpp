@@ -1713,8 +1713,9 @@ void tst_util::setEnvVarRemoves() {
 
 void tst_util::setEnvVarNoopOnMissingRemove() {
   TestPass pass;
+  const QProcessEnvironment before = pass.environment();
   pass.callSetEnvVar(QStringLiteral("NONEXISTENT_KEY="), QString());
-  QVERIFY(!pass.environment().contains(QStringLiteral("NONEXISTENT_KEY")));
+  QCOMPARE(pass.environment(), before);
 }
 
 void tst_util::updateEnvSetsExpectedVars() {
@@ -1727,8 +1728,9 @@ void tst_util::updateEnvSetsExpectedVars() {
   const QProcessEnvironment env = pass.environment();
   QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_DIR")),
            "updateEnv should set PASSWORD_STORE_DIR");
-  QVERIFY2(env.value(QStringLiteral("PASSWORD_STORE_DIR")).contains(tmpDir.path()),
-           "updateEnv should set PASSWORD_STORE_DIR to configured store path");
+  QVERIFY2(
+      env.value(QStringLiteral("PASSWORD_STORE_DIR")).contains(tmpDir.path()),
+      "updateEnv should set PASSWORD_STORE_DIR to configured store path");
   QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH")),
            "updateEnv should set PASSWORD_STORE_GENERATED_LENGTH");
   QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET")),
@@ -1749,8 +1751,9 @@ void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
   QtPassSettings::setPasswordConfiguration(config);
 
   const QProcessEnvironment env = pass.environment();
-  QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET")),
-           "PASSWORD_STORE_CHARACTER_SET should be set even when CUSTOM is empty");
+  QVERIFY2(
+      env.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET")),
+      "PASSWORD_STORE_CHARACTER_SET should be set even when CUSTOM is empty");
   QVERIFY2(!env.value(QStringLiteral("PASSWORD_STORE_CHARACTER_SET")).isEmpty(),
            "charset should fall back to ALLCHARS, not be empty");
 }

@@ -134,9 +134,8 @@ void Pass::init() {
   // Add missing /usr/local/bin
   if (!env.value(QStringLiteral("PATH"))
            .contains(QStringLiteral("/usr/local/bin")))
-    env.insert(QStringLiteral("PATH"),
-               QStringLiteral("/usr/local/bin:") +
-                   env.value(QStringLiteral("PATH")));
+    env.insert(QStringLiteral("PATH"), QStringLiteral("/usr/local/bin:") +
+                                           env.value(QStringLiteral("PATH")));
 #endif
 
   if (!QtPassSettings::getGpgHome().isEmpty()) {
