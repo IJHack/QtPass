@@ -7,8 +7,6 @@
 #include <QSettings>
 #include <QTemporaryDir>
 
-#include <utility>
-
 #include "../../../src/appsettings.h"
 #include "../../../src/passwordconfiguration.h"
 #include "../../../src/qtpasssettings.h"
@@ -94,7 +92,7 @@ void tst_settings::cleanupTestCase() {
 
   // Restore original settings after all tests
   // This ensures make check doesn't change user's live config
-  if (m_isPortableMode && !m_settingsBackupPath.isEmpty()) {
+  if (m_isPortableMode) {
     QString settingsFile = QtPassSettings::getInstance()->fileName();
     QtPassSettings::getInstance()->sync();
     QVERIFY2(QFile::remove(settingsFile) || !QFile::exists(settingsFile),
@@ -108,8 +106,8 @@ void tst_settings::cleanupTestCase() {
 
 void tst_settings::getPasswordConfigurationDefault() {
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
-  QVERIFY(config.length >= 0);
-  QVERIFY(config.selected >= 0);
+  QCOMPARE(config.length, 16);
+  QCOMPARE(config.selected, PasswordConfiguration::ALLCHARS);
 }
 
 void tst_settings::setAndGetPasswordConfiguration() {
@@ -506,11 +504,11 @@ void tst_settings::setAndGetMultipleProfiles() {
   QHash<QString, QHash<QString, QString>> profiles;
   QHash<QString, QString> profile1;
   profile1["path"] = "/path/to/store1";
-  profiles["profile1"] = std::move(profile1);
+  profiles["profile1"] = profile1;
 
   QHash<QString, QString> profile2;
   profile2["path"] = "/path/to/store2";
-  profiles["profile2"] = std::move(profile2);
+  profiles["profile2"] = profile2;
 
   QtPassSettings::setProfiles(profiles);
   QHash<QString, QHash<QString, QString>> readProfiles =
