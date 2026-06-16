@@ -298,11 +298,11 @@ private:
   int m_grepSeq = 0;
   QList<QThread *> m_grepThreads;
 
-  static auto grepMatchFile(const QStringList &env, const QString &gpgExe,
-                            const QString &filePath,
+  static auto grepMatchFile(const QProcessEnvironment &env,
+                            const QString &gpgExe, const QString &filePath,
                             const QRegularExpression &rx) -> QStringList;
-  static auto grepScanStore(const QStringList &env, const QString &gpgExe,
-                            const QString &storeDir,
+  static auto grepScanStore(const QProcessEnvironment &env,
+                            const QString &gpgExe, const QString &storeDir,
                             const QRegularExpression &rx)
       -> QList<QPair<QString, QStringList>>;
 };

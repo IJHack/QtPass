@@ -55,7 +55,7 @@ auto isSshAgentReachable(const QString &candidate) -> bool {
   QString out;
   QString err;
   const int exitCode =
-      Executor::executeBlocking(env.toStringList(), QStringLiteral("ssh-add"),
+      Executor::executeBlocking(env, QStringLiteral("ssh-add"),
                                 {QStringLiteral("-l")}, &out, &err);
   // OpenSSH ssh-add(1) exit codes: 0 = success / has keys, 1 = no
   // identities present, 2 = couldn't open a connection. Anything else is

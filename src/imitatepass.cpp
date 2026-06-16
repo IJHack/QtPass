@@ -1040,8 +1040,8 @@ void ImitatePass::beforeExecute(PROCESS id) { transactionAdd(id); }
 /**
  * @brief Decrypt one .gpg file and return lines matching rx.
  */
-auto ImitatePass::grepMatchFile(const QStringList &env, const QString &gpgExe,
-                                const QString &filePath,
+auto ImitatePass::grepMatchFile(const QProcessEnvironment &env,
+                                const QString &gpgExe, const QString &filePath,
                                 const QRegularExpression &rx) -> QStringList {
   QString plaintext;
   const int rc =
@@ -1066,8 +1066,8 @@ auto ImitatePass::grepMatchFile(const QStringList &env, const QString &gpgExe,
 /**
  * @brief Walk the store, decrypt every .gpg file, collect matches.
  */
-auto ImitatePass::grepScanStore(const QStringList &env, const QString &gpgExe,
-                                const QString &storeDir,
+auto ImitatePass::grepScanStore(const QProcessEnvironment &env,
+                                const QString &gpgExe, const QString &storeDir,
                                 const QRegularExpression &rx)
     -> QList<QPair<QString, QStringList>> {
   QList<QPair<QString, QStringList>> results;
@@ -1143,7 +1143,7 @@ void ImitatePass::Grep(QString pattern, bool caseInsensitive) {
   }
   const QString gpgExe = QtPassSettings::getGpgExecutable();
   const QString storeDir = QtPassSettings::getPassStore();
-  const QStringList env = exec.environment();
+  const QProcessEnvironment env = exec.environment();
   QPointer<ImitatePass> self(this);
 
   auto emitResults = [self, seq](QList<QPair<QString, QStringList>> results) {

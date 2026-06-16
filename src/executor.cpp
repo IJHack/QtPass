@@ -286,18 +286,12 @@ auto Executor::executeBlocking(const QString &app, const QStringList &args,
  * @param process_err Standard error
  * @return Exit code
  */
-auto Executor::executeBlocking(const QStringList &env, const QString &app,
-                               const QStringList &args, QString *process_out,
-                               QString *process_err) -> int {
+auto Executor::executeBlocking(const QProcessEnvironment &env,
+                               const QString &app, const QStringList &args,
+                               QString *process_out, QString *process_err)
+    -> int {
   QProcess process;
-  QProcessEnvironment penv;
-  for (const QString &var : env) {
-    qsizetype idx = var.indexOf('=');
-    if (idx > 0) {
-      penv.insert(var.left(idx), var.mid(idx + 1));
-    }
-  }
-  process.setProcessEnvironment(penv);
+  process.setProcessEnvironment(env);
   return runBlocking(process, app, args, QString(), process_out, process_err);
 }
 
@@ -306,12 +300,12 @@ auto Executor::executeBlocking(const QStringList &env, const QString &app,
  * for executor processes
  * @param env
  */
-void Executor::setEnvironment(const QStringList &env) {
-  m_process.setEnvironment(env);
+void Executor::setEnvironment(const QProcessEnvironment &env) {
+  m_process.setProcessEnvironment(env);
 }
 
-auto Executor::environment() const -> QStringList {
-  return m_process.environment();
+auto Executor::environment() const -> QProcessEnvironment {
+  return m_process.processEnvironment();
 }
 
 /**

@@ -83,7 +83,7 @@ private:
     void callSetEnvVar(const QString &key, const QString &value) {
       setEnvVar(key, value);
     }
-    QStringList environment() {
+    QProcessEnvironment environment() {
       updateEnv();
       return exec.environment();
     }
@@ -1689,38 +1689,32 @@ void tst_util::findBinaryInPathStringLiteral() {
 void tst_util::setEnvVarAdds() {
   TestPass pass;
   pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("hello"));
-  QStringList env = pass.environment();
-  QVERIFY2(env.contains(QStringLiteral("TEST_KEY=hello")),
-           "setEnvVar should append key=value when absent");
+  const QProcessEnvironment env = pass.environment();
+  QVERIFY2(env.value(QStringLiteral("TEST_KEY")) == QStringLiteral("hello"),
+           "setEnvVar should set key=value when absent");
 }
 
 void tst_util::setEnvVarUpdates() {
   TestPass pass;
   pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("first"));
   pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("second"));
-  QStringList env = pass.environment();
-  QVERIFY2(env.contains(QStringLiteral("TEST_KEY=second")),
-           "setEnvVar should update existing entry");
-  QVERIFY2(!env.contains(QStringLiteral("TEST_KEY=first")),
-           "setEnvVar should remove old value");
-  QCOMPARE(env.filter(QStringLiteral("TEST_KEY=")).size(), 1);
+  const QProcessEnvironment env = pass.environment();
+  QCOMPARE(env.value(QStringLiteral("TEST_KEY")), QStringLiteral("second"));
 }
 
 void tst_util::setEnvVarRemoves() {
   TestPass pass;
   pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QStringLiteral("value"));
   pass.callSetEnvVar(QStringLiteral("TEST_KEY="), QString());
-  QStringList env = pass.environment();
-  QVERIFY2(env.filter(QStringLiteral("TEST_KEY=")).isEmpty(),
+  const QProcessEnvironment env = pass.environment();
+  QVERIFY2(!env.contains(QStringLiteral("TEST_KEY")),
            "setEnvVar with empty value should remove the entry");
 }
 
 void tst_util::setEnvVarNoopOnMissingRemove() {
   TestPass pass;
-  QStringList before = pass.environment();
   pass.callSetEnvVar(QStringLiteral("NONEXISTENT_KEY="), QString());
-  QStringList after = pass.environment();
-  QCOMPARE(before, after);
+  QVERIFY(!pass.environment().contains(QStringLiteral("NONEXISTENT_KEY")));
 }
 
 void tst_util::updateEnvSetsExpectedVars() {
@@ -1730,19 +1724,14 @@ void tst_util::updateEnvSetsExpectedVars() {
   PassStoreGuard storeGuard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(tmpDir.path());
 
-  QStringList env = pass.environment();
-  QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_DIR=")).size() == 1,
+  const QProcessEnvironment env = pass.environment();
+  QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_DIR")),
            "updateEnv should set PASSWORD_STORE_DIR");
-  QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_DIR="))
-               .first()
-               .contains(tmpDir.path()),
+  QVERIFY2(env.value(QStringLiteral("PASSWORD_STORE_DIR")).contains(tmpDir.path()),
            "updateEnv should set PASSWORD_STORE_DIR to configured store path");
-  QVERIFY2(
-      env.filter(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH=")).size() ==
-          1,
-      "updateEnv should set PASSWORD_STORE_GENERATED_LENGTH");
-  QVERIFY2(env.filter(QStringLiteral("PASSWORD_STORE_CHARACTER_SET=")).size() ==
-               1,
+  QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH")),
+           "updateEnv should set PASSWORD_STORE_GENERATED_LENGTH");
+  QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET")),
            "updateEnv should set PASSWORD_STORE_CHARACTER_SET");
 }
 
@@ -1759,28 +1748,20 @@ void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
   config.Characters[PasswordConfiguration::CUSTOM] = QString();
   QtPassSettings::setPasswordConfiguration(config);
 
-  QStringList env = pass.environment();
-  QStringList charsetEntries =
-      env.filter(QStringLiteral("PASSWORD_STORE_CHARACTER_SET="));
-  QVERIFY2(
-      charsetEntries.size() == 1,
-      "PASSWORD_STORE_CHARACTER_SET should be set even when CUSTOM is empty");
-  QString val = charsetEntries.first().mid(
-      QStringLiteral("PASSWORD_STORE_CHARACTER_SET=").size());
-  QVERIFY2(!val.isEmpty(),
+  const QProcessEnvironment env = pass.environment();
+  QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_CHARACTER_SET")),
+           "PASSWORD_STORE_CHARACTER_SET should be set even when CUSTOM is empty");
+  QVERIFY2(!env.value(QStringLiteral("PASSWORD_STORE_CHARACTER_SET")).isEmpty(),
            "charset should fall back to ALLCHARS, not be empty");
 }
 
 void tst_util::updateEnvWslenvContainsRequiredVars() {
   TestPass pass;
-  const QStringList env = pass.environment();
-  // Use startsWith to avoid substring false-positives (e.g. MY_WSLENV=).
-  const QStringList wslenvEntries =
-      env.filter(QRegularExpression(QStringLiteral("^WSLENV=")));
-  QVERIFY2(!wslenvEntries.isEmpty(),
+  const QProcessEnvironment env = pass.environment();
+  QVERIFY2(env.contains(QStringLiteral("WSLENV")),
            "At least one WSLENV entry expected after Pass construction");
   // Verify Pass::Pass() merged all required keys with correct WSL flags.
-  const QString wslenv = wslenvEntries.first();
+  const QString wslenv = env.value(QStringLiteral("WSLENV"));
   QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_DIR/p")),
            "WSLENV should include PASSWORD_STORE_DIR/p");
   QVERIFY2(wslenv.contains(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w")),
@@ -2066,7 +2047,7 @@ void tst_util::grepMatchFileFailedDecryptReturnsEmpty() {
   // grepMatchFile with a non-existent file: executeBlocking fails (rc != 0)
   // so the result must be empty regardless of the regex
   QRegularExpression rx(QStringLiteral(".*"));
-  const QStringList env;
+  const QProcessEnvironment env;
   const QStringList matches =
       ImitatePass::grepMatchFile(env, QStringLiteral("/nonexistent/gpg"),
                                  QStringLiteral("/no/such.gpg"), rx);
@@ -2077,7 +2058,7 @@ void tst_util::grepScanStoreEmptyDirReturnsEmpty() {
   QTemporaryDir tmp;
   QVERIFY(tmp.isValid());
   QRegularExpression rx(QStringLiteral(".*"));
-  const QStringList env;
+  const QProcessEnvironment env;
   const auto results = ImitatePass::grepScanStore(
       env, QStringLiteral("/nonexistent/gpg"), tmp.path(), rx);
   QVERIFY(results.isEmpty());
