@@ -26,7 +26,7 @@ var searchData=
   ['getimitatepass_23',['getImitatePass',['../class_pass_backend_factory.html#a5a14430b6795b7dc6e5d83a78734037d',1,'PassBackendFactory::getImitatePass()'],['../class_qt_pass_settings.html#a9d6e6cd009f6fa307d9fccd821fd45ad',1,'QtPassSettings::getImitatePass() -&gt; ImitatePass *']]],
   ['getinstance_24',['getInstance',['../class_qt_pass_settings.html#a3d38816e907ea2ea01842a8ab488260c',1,'QtPassSettings']]],
   ['getisallocated_25',['getIsAllocated',['../class_tray_icon.html#ac43b5d2538c69cfcf6399eb29b9ddb47',1,'TrayIcon']]],
-  ['getkeygendialog_26',['getKeygenDialog',['../class_main_window.html#ae5b8c234b3175974bc135317232d1e1c',1,'MainWindow']]],
+  ['getkeygendialog_26',['getKeyGenDialog',['../class_main_window.html#a8c7b9be447abef349b66c214980988d3',1,'MainWindow']]],
   ['getkeysfromfile_27',['getKeysFromFile',['../class_imitate_pass.html#aef532636a761beee3ecdd5dcedbfc834',1,'ImitatePass']]],
   ['getnamedvalues_28',['getNamedValues',['../class_file_content.html#a89393e371a598cb3e0d7d149dbc431b1',1,'FileContent']]],
   ['getpass_29',['getPass',['../class_pass_backend_factory.html#a0de7edf419660c1e7910e2aa097fa364',1,'PassBackendFactory::getPass()'],['../class_qt_pass_settings.html#ae0abe010de1e0e023e23639717f9f7e5',1,'QtPassSettings::getPass() -&gt; Pass *']]],
