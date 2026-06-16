@@ -115,7 +115,7 @@ public:
    * @return Non-owning pointer to the keygen QDialog, or nullptr when none is
    * active.
    */
-  auto getKeygenDialog() -> QDialog * { return m_keygenDialog; }
+  auto getKeyGenDialog() -> QDialog * { return m_keyGenDialog; }
 
   /**
    * @brief Destroy and clear the key generation dialog.
@@ -265,7 +265,7 @@ private slots:
   void on_lineEdit_textChanged(const QString &arg1);
   void on_lineEdit_returnPressed();
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-  void on_profileBox_currentIndexChanged(QString);
+  void on_profileBox_currentIndexChanged(const QString &);
 #else
   void on_profileBox_currentTextChanged(const QString &);
 #endif
@@ -285,7 +285,7 @@ private:
   QScopedPointer<Ui::MainWindow> ui;
   GrepSearchController m_grep;
   PasswordDisplayPanel *m_displayPanel = nullptr;
-  bool m_initialShowDone = false;
+  bool m_firstShowCompleted = false;
   bool m_autoScroll = true;
   int m_outputCounter = 0;
   static constexpr int MaxOutputLines = 1000;
@@ -307,7 +307,7 @@ private:
   // completion (see setUiElementsEnabled).
   QTimer m_uiWatchdog;
   static constexpr int UiWatchdogMs = 30000;
-  QDialog *m_keygenDialog{};
+  QDialog *m_keyGenDialog{};
   QString m_currentDir;
   TrayIcon *m_tray{};
 

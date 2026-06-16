@@ -235,7 +235,7 @@ void MainWindow::focusInput() {
   // landed; setting it eagerly in showEvent() would consume the
   // one-shot if focusInput returned early (mid-rebuild widget state)
   // and we'd never retry.
-  m_initialShowDone = true;
+  m_firstShowCompleted = true;
 }
 
 /**
@@ -264,13 +264,13 @@ void MainWindow::changeEvent(QEvent *event) {
  */
 void MainWindow::showEvent(QShowEvent *event) {
   QMainWindow::showEvent(event);
-  if (m_initialShowDone) {
+  if (m_firstShowCompleted) {
     return;
   }
   // Queue the focus pulse for the next event-loop tick so the platform
   // map round-trip and any pending widget rebuilds (e.g. setWindowFlags
   // from the config wizard path) settle before we look up the line
-  // edit. The `m_initialShowDone` latch is set inside focusInput()
+  // edit. The `m_firstShowCompleted` latch is set inside focusInput()
   // *after* it actually focuses, so a transient failed lookup just
   // re-queues on the next show rather than silently dropping.
   QMetaObject::invokeMethod(this, &MainWindow::focusInput,
@@ -396,10 +396,10 @@ auto MainWindow::getCurrentTreeViewIndex() -> QModelIndex {
 }
 
 void MainWindow::cleanKeygenDialog() {
-  if (m_keygenDialog != nullptr) {
-    m_keygenDialog->close();
+  if (m_keyGenDialog != nullptr) {
+    m_keyGenDialog->close();
   }
-  m_keygenDialog = nullptr;
+  m_keyGenDialog = nullptr;
 }
 
 /**
@@ -1213,7 +1213,7 @@ void MainWindow::messageAvailable(const QString &message) {
  * @param keygenWindow
  */
 void MainWindow::generateKeyPair(const QString &batch, QDialog *keygenWindow) {
-  m_keygenDialog = keygenWindow;
+  m_keyGenDialog = keygenWindow;
   emit generateGPGKeyPair(batch);
 }
 
@@ -1252,7 +1252,7 @@ void MainWindow::updateProfileBox() {
  * @param name
  */
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
-void MainWindow::on_profileBox_currentIndexChanged(QString name) {
+void MainWindow::on_profileBox_currentIndexChanged(const QString &name) {
 #else
 /**
  * @brief Handles changes to the selected profile in the profile combo box.

@@ -132,19 +132,19 @@ void tst_mainwindow::constructionDoesNotCrash() {
 }
 
 /**
- * @brief getKeygenDialog() returns nullptr before any keygen is started.
+ * @brief getKeyGenDialog() returns nullptr before any keygen is started.
  */
 void tst_mainwindow::getKeygenDialogInitiallyNull() {
-  QCOMPARE(m_window->getKeygenDialog(), nullptr);
+  QCOMPARE(m_window->getKeyGenDialog(), nullptr);
 }
 
 /**
  * @brief cleanKeygenDialog() is a no-op (and harmless) when no dialog exists.
  */
 void tst_mainwindow::cleanKeygenDialogWithNullIsHarmless() {
-  QCOMPARE(m_window->getKeygenDialog(), nullptr);
+  QCOMPARE(m_window->getKeyGenDialog(), nullptr);
   m_window->cleanKeygenDialog();
-  QCOMPARE(m_window->getKeygenDialog(), nullptr);
+  QCOMPARE(m_window->getKeyGenDialog(), nullptr);
 }
 
 /**
