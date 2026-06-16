@@ -292,7 +292,7 @@ void QtPass::processError(QProcess::ProcessError error) {
  * @param p_error The error message
  */
 void QtPass::processErrorExit(int exitCode, const QString &p_error) {
-  if (nullptr != m_mainWindow->getKeygenDialog()) {
+  if (nullptr != m_mainWindow->getKeyGenDialog()) {
     m_mainWindow->cleanKeygenDialog();
     if (exitCode != 0) {
       m_mainWindow->showStatusMessage(tr("GPG key pair generation failed"),
@@ -363,7 +363,7 @@ void QtPass::finishedInsert(const QString &p_output, const QString &p_errout) {
  */
 void QtPass::onKeyGenerationComplete(const QString &p_output,
                                      const QString &p_errout) {
-  if (nullptr != m_mainWindow->getKeygenDialog()) {
+  if (nullptr != m_mainWindow->getKeyGenDialog()) {
 #ifdef QT_DEBUG
     qDebug() << "Keygen Done";
 #endif
