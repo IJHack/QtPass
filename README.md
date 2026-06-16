@@ -8,7 +8,6 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/9rjnj72rdir7u9eg/branch/main?svg=true)](https://ci.appveyor.com/project/annejan/qtpass/branch/main)
 [![CodeFactor](https://www.codefactor.io/repository/github/ijhack/qtpass/badge)](https://www.codefactor.io/repository/github/ijhack/qtpass)
 
-[![Coverity scan](https://scan.coverity.com/projects/5266/badge.svg)](https://scan.coverity.com/projects/ijhack-qtpass)
 [![Coverage Status](https://coveralls.io/repos/github/IJHack/QtPass/badge.svg)](https://coveralls.io/github/IJHack/QtPass)
 [![codecov](https://codecov.io/gh/IJHack/QtPass/branch/main/graph/badge.svg)](https://codecov.io/gh/IJHack/QtPass)
 
