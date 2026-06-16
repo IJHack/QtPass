@@ -165,7 +165,7 @@ void tst_settings::setAndGetGeometry() {
 void tst_settings::getPassStore() {
   QString store = QtPassSettings::getPassStore();
   const bool plausiblePath = store.isEmpty() || QDir::isAbsolutePath(store) ||
-                             store.contains(QDir::separator());
+                             store.contains('/') || store.contains('\\');
   QVERIFY2(plausiblePath, "Pass store should be empty or a plausible path");
 }
 
