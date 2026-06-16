@@ -54,9 +54,8 @@ auto isSshAgentReachable(const QString &candidate) -> bool {
   env.insert(QStringLiteral("SSH_AUTH_SOCK"), candidate);
   QString out;
   QString err;
-  const int exitCode =
-      Executor::executeBlocking(env.toStringList(), QStringLiteral("ssh-add"),
-                                {QStringLiteral("-l")}, &out, &err);
+  const int exitCode = Executor::executeBlocking(
+      env, QStringLiteral("ssh-add"), {QStringLiteral("-l")}, &out, &err);
   // OpenSSH ssh-add(1) exit codes: 0 = success / has keys, 1 = no
   // identities present, 2 = couldn't open a connection. Anything else is
   // also treated as unreachable (e.g. ssh-add not on PATH).

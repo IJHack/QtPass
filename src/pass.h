@@ -8,6 +8,7 @@
 #include "userinfo.h"
 
 #include <QProcess>
+#include <QProcessEnvironment>
 #include <QQueue>
 #include <QString>
 #include <QStringList>
@@ -51,7 +52,7 @@ class Pass : public QObject {
   Q_OBJECT
 
   bool wrapperRunning{false};
-  QStringList env;
+  QProcessEnvironment env;
 
 protected:
   /**

@@ -106,12 +106,12 @@ void tst_executor::executeBlockingSpecialChars() {
 }
 
 // Tests for the third executeBlocking overload:
-//   executeBlocking(const QStringList &env, const QString &app, ...)
-// This overload was changed from (QString app) to (const QString &app).
+//   executeBlocking(const QProcessEnvironment &env, const QString &app, ...)
 
 void tst_executor::executeBlockingWithEnv() {
   // Basic: custom env, echo succeeds, output captured.
-  QStringList env = {"MY_VAR=hello_env"};
+  QProcessEnvironment env;
+  env.insert(QStringLiteral("MY_VAR"), QStringLiteral("hello_env"));
   QString output;
   int result = Executor::executeBlocking(env, "sh", {"-c", "echo ok"}, &output);
   QVERIFY2(result == 0, "sh with custom env should exit 0");
@@ -119,9 +119,9 @@ void tst_executor::executeBlockingWithEnv() {
 }
 
 void tst_executor::executeBlockingWithEnvEmpty() {
-  // Empty env list: process starts with an empty environment.
+  // Empty env: process starts with an empty environment.
   // On POSIX, running 'env' with empty environment should succeed.
-  QStringList env;
+  const QProcessEnvironment env;
   QString output;
   QString err;
   int result =
@@ -133,7 +133,9 @@ void tst_executor::executeBlockingWithEnvEmpty() {
 void tst_executor::executeBlockingWithEnvSetsVariable() {
   // Verify that a variable injected via the env parameter is visible inside
   // the process.
-  QStringList env = {"QTPASS_TEST_VAR=injected_value"};
+  QProcessEnvironment env;
+  env.insert(QStringLiteral("QTPASS_TEST_VAR"),
+             QStringLiteral("injected_value"));
   QString output;
   int result = Executor::executeBlocking(
       env, "sh", {"-c", "echo $QTPASS_TEST_VAR"}, &output);
@@ -177,7 +179,8 @@ void tst_executor::executeBlockingNotFound() {
 
 void tst_executor::executeBlockingWithEnvNotFound() {
   // The env-based overload should also fail gracefully for a missing binary.
-  QStringList env = {"MY_VAR=irrelevant"};
+  QProcessEnvironment env;
+  env.insert(QStringLiteral("MY_VAR"), QStringLiteral("irrelevant"));
   QString output;
   int result = Executor::executeBlocking(env, "nonexistent_command_env_xyz", {},
                                          &output);
@@ -312,13 +315,13 @@ void tst_executor::environmentDefaultsEmpty() {
 
 void tst_executor::setAndGetEnvironment() {
   Executor exec;
-  QStringList env = {"QTPASS_FOO=bar", "QTPASS_BAZ=qux"};
+  QProcessEnvironment env;
+  env.insert(QStringLiteral("QTPASS_FOO"), QStringLiteral("bar"));
+  env.insert(QStringLiteral("QTPASS_BAZ"), QStringLiteral("qux"));
   exec.setEnvironment(env);
-  QStringList expected = env;
-  expected.sort();
-  QStringList actual = exec.environment();
-  actual.sort();
-  QCOMPARE(actual, expected);
+  const QProcessEnvironment actual = exec.environment();
+  QCOMPARE(actual.value(QStringLiteral("QTPASS_FOO")), QStringLiteral("bar"));
+  QCOMPARE(actual.value(QStringLiteral("QTPASS_BAZ")), QStringLiteral("qux"));
 }
 
 void tst_executor::cancelNextEmptyReturnsMinusOne() {

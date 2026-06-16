@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include <QProcess>
+#include <QProcessEnvironment>
 #include <QQueue>
 
 /**
@@ -167,28 +168,28 @@ public:
 
   /**
    * @brief Run a command synchronously with a custom environment.
-   * @param env Environment variable list in "KEY=value" format.
+   * @param env Process environment for the child process.
    * @param app Executable path.
    * @param args Command arguments.
    * @param process_out If non-null, receives stdout output.
    * @param process_err If non-null, receives stderr output.
    * @return Process exit code.
    */
-  static auto executeBlocking(const QStringList &env, const QString &app,
-                              const QStringList &args,
+  static auto executeBlocking(const QProcessEnvironment &env,
+                              const QString &app, const QStringList &args,
                               QString *process_out = nullptr,
                               QString *process_err = nullptr) -> int;
 
   /**
    * @brief Set the environment passed to all child processes.
-   * @param env Environment variable list in "KEY=value" format.
+   * @param env Process environment for child processes.
    */
-  void setEnvironment(const QStringList &env);
+  void setEnvironment(const QProcessEnvironment &env);
   /**
    * @brief Return the environment passed to child processes.
-   * @return Environment as a list of "KEY=value" strings.
+   * @return Process environment.
    */
-  auto environment() const -> QStringList;
+  auto environment() const -> QProcessEnvironment;
 
   /**
    * @brief Cancel the next queued command without executing it.

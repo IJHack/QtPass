@@ -11,7 +11,6 @@
 #include <QProcess>
 #include <QRandomGenerator>
 #include <QRegularExpression>
-#include <algorithm>
 #include <utility>
 
 #ifdef QT_DEBUG
@@ -65,7 +64,7 @@ auto effectiveCharset(const PasswordConfiguration &passConfig) -> QString {
 /**
  * @brief Pass::Pass wrapper for using either pass or the pass imitation
  */
-Pass::Pass() : env(QProcess::systemEnvironment()) {
+Pass::Pass() : env(QProcessEnvironment::systemEnvironment()) {
   connect(&exec,
           static_cast<void (Executor::*)(int, int, const QString &,
                                          const QString &)>(&Executor::finished),
@@ -82,21 +81,16 @@ Pass::Pass() : env(QProcess::systemEnvironment()) {
       QStringLiteral("PASSWORD_STORE_DIR/p"),
       QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH/w"),
       QStringLiteral("PASSWORD_STORE_CHARACTER_SET/w")};
-  const QString wslenvPrefix = QStringLiteral("WSLENV=");
-  auto it =
-      std::find_if(env.begin(), env.end(), [&wslenvPrefix](const QString &s) {
-        return s.startsWith(wslenvPrefix);
-      });
-  if (it == env.end()) {
-    env.append(wslenvPrefix + wslenvVars.join(':'));
+  const QString existing = env.value(QStringLiteral("WSLENV"));
+  if (existing.isEmpty()) {
+    env.insert(QStringLiteral("WSLENV"), wslenvVars.join(':'));
   } else {
-    QStringList parts =
-        it->mid(wslenvPrefix.size()).split(':', Qt::SkipEmptyParts);
+    QStringList parts = existing.split(':', Qt::SkipEmptyParts);
     for (const QString &v : wslenvVars) {
       if (!parts.contains(v))
         parts.append(v);
     }
-    *it = wslenvPrefix + parts.join(':');
+    env.insert(QStringLiteral("WSLENV"), parts.join(':'));
   }
 }
 
@@ -132,18 +126,26 @@ void Pass::beforeExecute(PROCESS /*id*/) {}
  */
 void Pass::init() {
 #ifdef __APPLE__
-  // If it exists, add the gpgtools to PATH
-  if (QFile("/usr/local/MacGPG2/bin").exists())
-    env.replaceInStrings("PATH=", "PATH=/usr/local/MacGPG2/bin:");
-  // Add missing /usr/local/bin
-  if (env.filter("/usr/local/bin").isEmpty())
-    env.replaceInStrings("PATH=", "PATH=/usr/local/bin:");
+  // If it exists, prepend gpgtools to PATH
+  if (QFile(QStringLiteral("/usr/local/MacGPG2/bin")).exists())
+    env.insert(QStringLiteral("PATH"),
+               QStringLiteral("/usr/local/MacGPG2/bin:") +
+                   env.value(QStringLiteral("PATH")));
+  // Add missing /usr/local/bin (exact component match, no leading colon)
+  const QString currentPath = env.value(QStringLiteral("PATH"));
+  if (!currentPath.split(':', Qt::SkipEmptyParts)
+           .contains(QStringLiteral("/usr/local/bin"))) {
+    env.insert(QStringLiteral("PATH"),
+               currentPath.isEmpty()
+                   ? QStringLiteral("/usr/local/bin")
+                   : QStringLiteral("/usr/local/bin:") + currentPath);
+  }
 #endif
 
   if (!QtPassSettings::getGpgHome().isEmpty()) {
     QDir absHome(QtPassSettings::getGpgHome());
     absHome.makeAbsolute();
-    env << "GNUPGHOME=" + absHome.path();
+    env.insert(QStringLiteral("GNUPGHOME"), absHome.path());
   }
 }
 
@@ -806,12 +808,11 @@ void Pass::setEnvVar(const QString &key, const QString &value) {
                << key;
     return;
   }
-  env.erase(std::remove_if(
-                env.begin(), env.end(),
-                [&key](const QString &entry) { return entry.startsWith(key); }),
-            env.end());
-  if (!value.isEmpty())
-    env.append(key + value);
+  const QString varName = key.chopped(1);
+  if (value.isEmpty())
+    env.remove(varName);
+  else
+    env.insert(varName, value);
 }
 
 /**
