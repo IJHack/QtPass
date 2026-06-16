@@ -72,7 +72,9 @@ void tst_grepsearchcontroller::finishDiscardsWhenCancelled() {
   QCOMPARE(outcome.restoreCursor, false);
   QCOMPARE(outcome.discard, true);
   // The discard flag is consumed: a subsequent finish keeps results.
-  QCOMPARE(c.finishSearch().discard, false);
+  const GrepSearchController::FinishOutcome subsequent = c.finishSearch();
+  QCOMPARE(subsequent.restoreCursor, false);
+  QCOMPARE(subsequent.discard, false);
 }
 
 void tst_grepsearchcontroller::leaveWhileBusyInterruptsAndDiscards() {
