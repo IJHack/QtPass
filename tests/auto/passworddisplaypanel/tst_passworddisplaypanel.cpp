@@ -35,11 +35,12 @@ void tst_passworddisplaypanel::init() {
 }
 
 void tst_passworddisplaypanel::cleanup() {
+  delete m_panel;
+  m_panel = nullptr;
   delete m_parent;
   m_parent = nullptr;
   m_grid = nullptr;
   m_container = nullptr;
-  m_panel = nullptr;
 }
 
 void tst_passworddisplaypanel::displayFieldsAddsRows() {
