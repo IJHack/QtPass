@@ -6,14 +6,14 @@
 
 - Import GPG keys from file or clipboard via the Users dialog [#1517](https://github.com/IJHack/QtPass/pull/1517)
 - Export your public key and add recipients from the Share submenu
-- Opt-in content search across decrypted entries (regex)
+- Opt-in content search across decrypted entries (regular expression)
 - Manual `SSH_AUTH_SOCK` override with `gpgconf` auto-probe fallback
 - Process output panel with command labels, colour-coded errors and auto-scroll [#252](https://github.com/IJHack/QtPass/issues/252), [#1172](https://github.com/IJHack/QtPass/pull/1172)
 
 ### Code Quality (umbrella [#1508](https://github.com/IJHack/QtPass/issues/1508))
 
 - Split the `Util` grab-bag into `PathValidator`, `SshAuthSock` and `TemplateIO`, and consolidated `StoreModel` drag-drop [#1514](https://github.com/IJHack/QtPass/issues/1514)
-- Tightened the `Pass` interface: `beforeExecute()` hook, `Move`/`Copy` dedup, documented Grep regex dialect, and `PassBackendFactory` [#1513](https://github.com/IJHack/QtPass/issues/1513)
+- Tightened the `Pass` interface: `beforeExecute()` hook, `Move`/`Copy` dedup, documented Grep regular-expression dialect, and `PassBackendFactory` [#1513](https://github.com/IJHack/QtPass/issues/1513)
 - Decomposed `MainWindow` into `GrepSearchController`, `PasswordDisplayPanel`, a UI watchdog, and `StoreModel::rootIndexFor` [#1512](https://github.com/IJHack/QtPass/issues/1512)
 - Introduced `AppSettings` + `SettingsSerializer` with a `QtPassSettings::load()`/`save()` facade [#1511](https://github.com/IJHack/QtPass/issues/1511)
 
