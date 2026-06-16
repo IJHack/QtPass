@@ -400,7 +400,7 @@ email</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="971"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;gpg&lt;/strong&gt; using your favorite package manager&lt;br&gt;or &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;download&lt;/a&gt; it from GnuPG.org</source>
-        <translation>GnuPG ist nicht installiert. &lt;br&gt;Installiere &lt;strong&gt;gpg&lt;/strong&gt; mit deinem favoriten Paket Manager&lt;br&gt;oder von GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;herunterladen&lt;/a&gt;</translation>
+        <translation>GnuPG ist nicht installiert. &lt;br&gt;Installiere &lt;strong&gt;gpg&lt;/strong&gt; mit deinem bevorzugten Paketmanager&lt;br&gt;oder von GnuPG.org &lt;a href=&quot;https://www.gnupg.org/download/#sec-1-2&quot;&gt;herunterladen&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="1025"/>

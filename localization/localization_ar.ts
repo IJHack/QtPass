@@ -421,7 +421,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>
         <source>Pass OTP extension needs to be installed</source>
-        <translation>يلزم تركيب نظام &quot; إمداد &quot; بالمرور</translation>
+        <translation>يلزم تثبيت إضافة pass-otp</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="73"/>
@@ -436,7 +436,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="85"/>
         <source>Always copy to clipboard</source>
-        <translation>دائماً ما ينسخون لوح المشبك</translation>
+        <translation>النسخ دائمًا إلى الحافظة</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="86"/>
@@ -545,7 +545,7 @@ The value will still be saved as entered.</source>
     <message>
         <location filename="../src/configdialog.cpp" line="1026"/>
         <source>Would you like to create a password-store at %1?</source>
-        <translation>هل تريد أن تخلق مخزن كلمة سر بنسبة %1؟</translation>
+        <translation>هل تريد إنشاء مخزن كلمات مرور في %1؟</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="774"/>

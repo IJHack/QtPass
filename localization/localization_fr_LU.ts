@@ -1747,7 +1747,7 @@ Continue?</source>
 
 Cela re-encryptera tous les fichiers de mot de passe dans ce dossier en utilisant les destinataires actuels définis dans .gpg-id.
 
-Ça peut écraser plusieurs fichiers et ne peut pas être facilement réparé.
+Ça peut réécrire de nombreux fichiers et ne peut pas être facilement annulé.
 
 Continuez&#x202f;?</translation>
     </message>

@@ -1433,7 +1433,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Byddai'r enw hwnnw yn datrys y tu allan i'r storfa cyfrineiriau. Dewiswch enw gwahanol.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1073"/>
@@ -1754,7 +1754,7 @@ Parhau?</translation>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Agor %1 mewn porwr</translation>
     </message>
 </context>
 <context>

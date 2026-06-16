@@ -420,7 +420,7 @@
     <message>
         <location filename="../src/configdialog.cpp" line="54"/>
         <source>System tray is not available</source>
-        <translation>Η κασέτα συστήματος δεν είναι διαθέσιμη</translation>
+        <translation>Ο δίσκος συστήματος δεν είναι διαθέσιμος</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="68"/>

@@ -1327,7 +1327,7 @@ You will not be able to change the user list!</source>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
         <source>No matches found.</source>
-        <translation>কোনো মিল পাওয়া যায়নি.</translation>
+        <translation>কোনো মিল পাওয়া যায়নি।</translation>
     </message>
     <message numerus="yes">
         <location filename="../src/mainwindow.cpp" line="948"/>

@@ -1651,7 +1651,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Bewerking het uitgetel; koppelvlak word heractiveer.</translation>
+        <translation type="unfinished">Bewerking het uitgetel; koppelvlak word heraktiveer.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="356"/>
@@ -1661,12 +1661,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Inhoudesoektog gebruik POSIX basiese regulêre uitdrukkings (pass grep).</translation>
+        <translation type="unfinished">Inhoudssoektog gebruik POSIX basiese regulêre uitdrukkings (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Inhoudesoektog gebruik Perl-versoenbare regulêre uitdrukkings (PCRE).</translation>
+        <translation type="unfinished">Inhoudssoektog gebruik Perl-versoenbare regulêre uitdrukkings (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>

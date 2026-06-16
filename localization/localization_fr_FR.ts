@@ -568,7 +568,7 @@ La valeur sera néanmoins enregistrée telle quelle.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="960"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>S&apos;il vous plaît installer GnuPG sur votre système. &lt;br&gt;Installez &lt;strong&gt;Ubuntu&lt;/strong&gt; du Microsoft Store pour l&apos;obtenir. &lt;br&gt;Si vous l&apos;avez déjà fait, assurez-vous de l&apos;avoir commencé une fois et&lt;br&gt;cliquez sur &quot;Autodetect&quot; dans le dialogue suivant.</translation>
+        <translation>Veuillez installer GnuPG sur votre système.&lt;br&gt;Installez &lt;strong&gt;Ubuntu&lt;/strong&gt; depuis le Microsoft Store pour l&apos;obtenir.&lt;br&gt;Si vous l&apos;avez déjà fait, assurez-vous de l&apos;avoir lancé au moins une fois et&lt;br&gt;cliquez sur « Détection automatique » dans le dialogue suivant.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="965"/>
@@ -1611,7 +1611,7 @@ Expire-Date: 0
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">La connexion a expiré ; réactivation de l'interface.</translation>
+        <translation type="unfinished">L'opération a expiré ; réactivation de l'interface.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="356"/>

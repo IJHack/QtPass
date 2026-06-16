@@ -529,7 +529,7 @@ O valor seguirase a gardar tal como se introduciu.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="960"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Instala GnuPG no teu sistema.&lt;br&gt;Instala &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store para obtelo.&lt;br&gt;Se xa o fixeches, asegúrate de que está activo e &lt;br&gt;preme en &quot;Autodetectar&quot; na seguinte xanela.</translation>
+        <translation>Instala GnuPG no teu sistema.&lt;br&gt;Instala &lt;strong&gt;Ubuntu&lt;/strong&gt; desde Microsoft Store para obtelo.&lt;br&gt;Se xa o fixeches, asegúrate de que está activo e &lt;br&gt;preme en &quot;Detección automática&quot; na seguinte xanela.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="965"/>
@@ -1552,7 +1552,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="1028"/>
         <source>That name would resolve outside the password store. Please choose a different name.</source>
-        <translation>Ese nome é visible fóra do almacén de claves. Por favor escolle un nome diferente.</translation>
+        <translation>Ese nome resolvería fóra do almacén de contrasinais. Por favor escolle un nome diferente.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1073"/>

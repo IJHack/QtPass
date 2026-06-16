@@ -1661,12 +1661,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Indholdsøgning bruger POSIX grundlæggende regulære udtryk (pass grep).</translation>
+        <translation type="unfinished">indholdssøgning bruger POSIX grundlæggende regulære udtryk (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Indholdsøgning bruger Perl-kompatible regulære udtryk (PCRE).</translation>
+        <translation type="unfinished">indholdssøgning bruger Perl-kompatible regulære udtryk (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="1027"/>
