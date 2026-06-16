@@ -8,7 +8,7 @@
 - Export your public key and add recipients from the Share submenu
 - Opt-in content search across decrypted entries (regex)
 - Manual `SSH_AUTH_SOCK` override with `gpgconf` auto-probe fallback
-- Process output panel with command labels, colour-coded errors and auto-scroll
+- Process output panel with command labels, colour-coded errors and auto-scroll [#252](https://github.com/IJHack/QtPass/issues/252), [#1172](https://github.com/IJHack/QtPass/pull/1172)
 
 ### Code Quality (umbrella [#1508](https://github.com/IJHack/QtPass/issues/1508))
 
@@ -20,6 +20,8 @@
 ### Build / CI
 
 - Made the Doxygen download resilient to doxygen.nl outages (GitHub-release mirror + retries) [#1538](https://github.com/IJHack/QtPass/pull/1538)
+
+[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.7.0...HEAD)
 
 ## [1.7.0](https://github.com/IJHack/QtPass/tree/v1.7.0) (2026-04-20)
 
@@ -48,7 +50,7 @@
 - Use ed25519 for GPG key generation when available [#790](https://github.com/IJHack/QtPass/pull/790)
 - Improved GPG key parsing with new `gpgkeystate` module
 
-### New Features
+### New Features <!-- markdownlint-disable-line MD024 -->
 
 - Added auto-detect Git in existing password-store
 - Use ed25519 (ECC) for GPG key generation when GPG supports it
@@ -100,12 +102,6 @@
 - CI/CD workflow optimizations
 
 [Full Changelog](https://github.com/IJHack/QtPass/compare/v1.5.1...v1.6.0)
-
-## [Unreleased](https://github.com/IJHack/QtPass/tree/HEAD)
-
-- Added process output panel in main window status bar [#252](https://github.com/IJHack/QtPass/issues/252), [#1172](https://github.com/IJHack/QtPass/pull/1172)
-
-[Full Changelog](https://github.com/IJHack/QtPass/compare/v1.7.0...HEAD)
 
 ## [1.5.1](https://github.com/IJHack/QtPass/tree/v1.5.1) (2026-03-22)
 
