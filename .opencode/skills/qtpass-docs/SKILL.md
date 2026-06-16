@@ -131,6 +131,11 @@ doxygen Doxyfile
 ls docs/index.html
 ```
 
+CI pins **Doxygen 1.17.0** and treats warnings as errors; a local Doxygen of a
+different version may report differently. The `docs.yml` install step fetches
+the pinned binary from the GitHub release mirror first, then doxygen.nl, with
+retries (doxygen.nl outages previously caused spurious `docs` failures).
+
 ## Common Pitfalls
 
 ### Forgetting to Run Prettier

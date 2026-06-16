@@ -147,6 +147,8 @@ act push -W .github/workflows/reuse.yml
 
 The CI enforces zero Doxygen warnings via `docs.yml`. `WARN_AS_ERROR = FAIL_ON_WARNINGS` in `Doxyfile` causes the step to fail on any undocumented public symbol.
 
+CI pins **Doxygen 1.17.0** (local Doxygen may be older and miss/add warnings). The `docs.yml` install step downloads that pinned binary from the GitHub release mirror first, falling back to doxygen.nl, with retries — doxygen.nl has intermittent outages that previously caused spurious `docs` failures (a red `docs` check is often a download blip, not your change; re-run before debugging).
+
 ### Run Doxygen Locally
 
 ```bash

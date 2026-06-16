@@ -21,6 +21,12 @@
     <li>Per-folder user selection for multi recipient encryption</li>
     <li>Configuration options for backends and executable/folder locations</li>
     <li>Copying password to clipboard</li>
+    <li>Password generation with configurable complexity</li>
+    <li>OTP (one-time password) support</li>
+    <li>Smartcard and USB token support (OpenPGP, YubiKey)</li>
+    <li>Importing GPG keys from file or clipboard</li>
+    <li>Re-encrypting a folder, exporting your public key and adding recipients</li>
+    <li>Opt-in content search across decrypted entries</li>
     <li>Configurable shoulder surfing protection options</li>
     <li>Experimental WebDAV support</li>
    </ul>
@@ -43,4 +49,8 @@
       <image width="900" height="637">https://qtpass.org/images/config.png</image>
     </screenshot>
   </screenshots>
+  <releases>
+    <release version="1.7.0" date="2026-04-20"/>
+    <release version="1.6.0" date="2026-04-13"/>
+  </releases>
 </component>
