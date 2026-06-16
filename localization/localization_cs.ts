@@ -584,7 +584,7 @@ Hodnota bude přesto uložena tak, jak byla zadána.</translation>
     <message>
         <location filename="../src/configdialog.cpp" line="960"/>
         <source>Please install GnuPG on your system.&lt;br&gt;Install &lt;strong&gt;Ubuntu&lt;/strong&gt; from the Microsoft Store to get it.&lt;br&gt;If you already did so, make sure you started it once and&lt;br&gt;click &quot;Autodetect&quot; in the next dialog.</source>
-        <translation>Nainstalujte prosím GnuPG do svého systému.&lt;br&gt;Nainstalujte &lt;strong&gt;Ubuntu&lt;/strong&gt; z obchodu Microsoft Store.&lt;br&gt;Pokud jste tak již učinili, ujistěte se, že jste jej jednou spustili, a&lt;br&gt;v dalším dialogu klikněte na „Automaticky”.</translation>
+        <translation>Nainstalujte prosím GnuPG do svého systému.&lt;br&gt;Nainstalujte &lt;strong&gt;Ubuntu&lt;/strong&gt; z obchodu Microsoft Store.&lt;br&gt;Pokud jste tak již učinili, ujistěte se, že jste jej jednou spustili, a&lt;br&gt;v dalším dialogu klikněte na „Automaticky“.</translation>
     </message>
     <message>
         <location filename="../src/configdialog.cpp" line="965"/>

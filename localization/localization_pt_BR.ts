@@ -1873,12 +1873,12 @@ Continua?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="105"/>
         <location filename="../src/passworddisplaypanel.cpp" line="133"/>
         <source>Password</source>
-        <translation type="unfinished">Senha</translation>
+        <translation>Senha</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Abrir %1 no navegador</translation>
     </message>
 </context>
 <context>
