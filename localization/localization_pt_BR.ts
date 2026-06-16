@@ -1873,7 +1873,7 @@ Continua?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="105"/>
         <location filename="../src/passworddisplaypanel.cpp" line="133"/>
         <source>Password</source>
-        <translation type="unfinished">Password</translation>
+        <translation type="unfinished">Senha</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
