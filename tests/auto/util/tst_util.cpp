@@ -107,6 +107,23 @@ private:
     SettingGuard &operator=(const SettingGuard &) = delete;
   };
 
+  template <typename T, T AppSettings::*Field> struct AppSettingsGuard {
+    T original;
+    explicit AppSettingsGuard(const T &newVal)
+        : original(QtPassSettings::load().*Field) {
+      AppSettings s = QtPassSettings::load();
+      s.*Field = newVal;
+      QtPassSettings::save(s);
+    }
+    ~AppSettingsGuard() {
+      AppSettings s = QtPassSettings::load();
+      s.*Field = original;
+      QtPassSettings::save(s);
+    }
+    AppSettingsGuard(const AppSettingsGuard &) = delete;
+    AppSettingsGuard &operator=(const AppSettingsGuard &) = delete;
+  };
+
 private Q_SLOTS:
   void cleanupTestCase();
   void normalizeFolderPath();
@@ -671,8 +688,7 @@ void tst_util::createGpgIdFileEmptyKeys() {
 }
 
 void tst_util::generateRandomPassword() {
-  SettingGuard<bool, QtPassSettings::setUsePwgen> disablePwgenGuard{
-      QtPassSettings::load().usePwgen, false};
+  AppSettingsGuard<bool, &AppSettings::usePwgen> disablePwgenGuard{false};
 
   ImitatePass pass;
   QString charset = "abcdefghijklmnopqrstuvwxyz";
@@ -760,8 +776,7 @@ void tst_util::generateRandomPassword() {
 }
 
 void tst_util::boundedRandom() {
-  SettingGuard<bool, QtPassSettings::setUsePwgen> disablePwgenGuard{
-      QtPassSettings::load().usePwgen, false};
+  AppSettingsGuard<bool, &AppSettings::usePwgen> disablePwgenGuard{false};
 
   ImitatePass pass;
 

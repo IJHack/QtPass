@@ -78,18 +78,19 @@ auto QtPass::init() -> bool {
 #ifdef QT_DEBUG
     dbg() << "assuming fresh install";
 #endif
-    const AppSettings s = QtPassSettings::load();
-    if (s.autoclearSeconds < 5) {
-      QtPassSettings::setAutoclearSeconds(10);
-    }
-    if (s.autoclearPanelSeconds < 5) {
-      QtPassSettings::setAutoclearPanelSeconds(10);
-    }
-    QtPassSettings::setUsePwgen(!s.pwgenExecutable.isEmpty());
-    QtPassSettings::setPassTemplate(QStringLiteral("login\nurl"));
+    AppSettings s = QtPassSettings::load();
+    if (s.autoclearSeconds < 5)
+      s.autoclearSeconds = 10;
+    if (s.autoclearPanelSeconds < 5)
+      s.autoclearPanelSeconds = 10;
+    s.usePwgen = !s.pwgenExecutable.isEmpty();
+    s.passTemplate = QStringLiteral("login\nurl");
+    QtPassSettings::save(s);
   } else {
-    if (QtPassSettings::getPassTemplate().isEmpty()) {
-      QtPassSettings::setPassTemplate(QStringLiteral("login\nurl"));
+    AppSettings s = QtPassSettings::load();
+    if (s.passTemplate.isEmpty()) {
+      s.passTemplate = QStringLiteral("login\nurl");
+      QtPassSettings::save(s);
     }
   }
 

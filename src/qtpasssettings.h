@@ -230,18 +230,6 @@ public:
    */
   static auto getAutoclearSeconds(const int &defaultValue = QVariant().toInt())
       -> int;
-  /**
-   * @brief Save autoclear seconds.
-   * @param autoClearSeconds Seconds to wait before clearing.
-   */
-  static void setAutoclearSeconds(const int &autoClearSeconds);
-
-  /**
-   * @brief Save panel autoclear seconds.
-   * @param autoClearPanelSeconds Seconds to wait before clearing panel.
-   */
-  static void setAutoclearPanelSeconds(const int &autoClearPanelSeconds);
-
   // Pass store path
   /**
    * @brief Get password store directory path.
@@ -370,12 +358,6 @@ public:
   static void setQrencodeExecutable(const QString &qrencodeExecutable);
 
   /**
-   * @brief Save pwgen support flag.
-   * @param usePwgen Whether to enable pwgen support.
-   */
-  static void setUsePwgen(const bool &usePwgen);
-
-  /**
    * @brief Get complete password generation configuration.
    * @return Password generation configuration.
    */
@@ -401,20 +383,6 @@ public:
    */
   static auto isAutoPush(const bool &defaultValue = QVariant().toBool())
       -> bool;
-  /**
-   * @brief Get pass entry template.
-   * @param defaultValue String returned if not saved.
-   * @return Pass template.
-   */
-  static auto
-  getPassTemplate(const QString &defaultValue = QVariant().toString())
-      -> QString;
-  /**
-   * @brief Save pass entry template.
-   * @param passTemplate Pass template.
-   */
-  static void setPassTemplate(const QString &passTemplate);
-
   /**
    * @brief Get showProcessOutput setting.
    * @param defaultValue Default value if not set.
