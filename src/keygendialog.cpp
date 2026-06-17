@@ -18,8 +18,9 @@
  * @brief KeygenDialog::KeygenDialog basic constructor.
  * @param parent
  */
-KeygenDialog::KeygenDialog(ConfigDialog *parent)
-    : QDialog(parent), ui(new Ui::KeygenDialog), m_progressIndicator(nullptr) {
+KeygenDialog::KeygenDialog(const QString &gpgExe, ConfigDialog *parent)
+    : QDialog(parent), ui(new Ui::KeygenDialog), m_progressIndicator(nullptr),
+      m_gpgExe(gpgExe) {
   ui->setupUi(this);
   dialog = parent;
 
@@ -38,8 +39,7 @@ KeygenDialog::KeygenDialog(ConfigDialog *parent)
     // Let window manager handle positioning for first launch
   }
 
-  ui->plainTextEdit->setPlainText(
-      Pass::getDefaultKeyTemplate(QtPassSettings::getGpgExecutable()));
+  ui->plainTextEdit->setPlainText(Pass::getDefaultKeyTemplate(m_gpgExe));
 }
 
 /**

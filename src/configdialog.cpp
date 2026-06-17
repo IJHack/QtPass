@@ -490,7 +490,7 @@ void ConfigDialog::on_toolButtonGpg_clicked() {
  * @brief ConfigDialog::on_pushButtonGenerateKey_clicked open keygen dialog.
  */
 void ConfigDialog::on_pushButtonGenerateKey_clicked() {
-  KeygenDialog d(this);
+  KeygenDialog d(ui->gpgPath->text(), this);
   d.exec();
 }
 
@@ -996,7 +996,7 @@ auto ConfigDialog::checkSecretKeys() -> bool {
 #endif
 
   if ((gpg.startsWith("wsl ") || QFile(gpg).exists()) && names.empty()) {
-    KeygenDialog d(this);
+    KeygenDialog d(gpg, this);
     return d.exec();
   }
   return true;

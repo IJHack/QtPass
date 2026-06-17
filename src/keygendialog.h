@@ -24,10 +24,11 @@ class KeygenDialog : public QDialog {
 
 public:
   /**
-   * @brief Construct a KeygenDialog with an optional parent ConfigDialog.
+   * @brief Construct a KeygenDialog.
+   * @param gpgExe Path to the gpg executable.
    * @param parent Parent dialog, or nullptr.
    */
-  explicit KeygenDialog(ConfigDialog *parent = nullptr);
+  explicit KeygenDialog(const QString &gpgExe, ConfigDialog *parent = nullptr);
   ~KeygenDialog() override;
 
 protected:
@@ -51,6 +52,7 @@ private:
   void no_protection(bool enable);
   ConfigDialog *dialog;
   std::unique_ptr<QProgressIndicator> m_progressIndicator;
+  QString m_gpgExe;
 };
 
 #endif // SRC_KEYGENDIALOG_H_
