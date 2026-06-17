@@ -1725,7 +1725,6 @@ void tst_util::updateEnvSetsExpectedVars() {
   PassStoreGuard storeGuard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(tmpDir.path());
   AppSettings s = QtPassSettings::load();
-  s.passStore = QtPassSettings::getPassStore();
   pass.init(s);
 
   const QProcessEnvironment env = pass.environment();
@@ -1752,7 +1751,6 @@ void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
   config.Characters[PasswordConfiguration::CUSTOM] = QString();
   QtPassSettings::setPasswordConfiguration(config);
   AppSettings s = QtPassSettings::load();
-  s.passStore = QtPassSettings::getPassStore();
   pass.init(s);
 
   const QProcessEnvironment env = pass.environment();
@@ -1766,7 +1764,6 @@ void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
 void tst_util::updateEnvWslenvContainsRequiredVars() {
   TestPass pass;
   AppSettings s = QtPassSettings::load();
-  s.passStore = QtPassSettings::getPassStore();
   pass.init(s);
   const QProcessEnvironment env = pass.environment();
   QVERIFY2(env.contains(QStringLiteral("WSLENV")),

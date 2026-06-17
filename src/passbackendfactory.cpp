@@ -13,6 +13,8 @@
 #include "pass.h"
 #include "qtpasssettings.h"
 
+#include <QDir>
+
 Pass *PassBackendFactory::pass = nullptr;
 QScopedPointer<RealPass> PassBackendFactory::realPass;
 QScopedPointer<ImitatePass> PassBackendFactory::imitatePass;
@@ -20,7 +22,10 @@ QScopedPointer<ImitatePass> PassBackendFactory::imitatePass;
 auto PassBackendFactory::getPass() -> Pass * {
   if (!pass) {
     AppSettings s = QtPassSettings::load();
-    s.passStore = QtPassSettings::getPassStore();
+    // Ensure store directory exists (first-run side effect — load() normalises
+    // the path but does not create the directory).
+    if (!QDir(s.passStore).exists())
+      QDir().mkdir(s.passStore);
     if (s.usePass) {
       pass = getRealPass();
     } else {

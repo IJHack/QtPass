@@ -180,8 +180,8 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
     }
     args.append(QString::number(length));
     // executeBlocking returns 0 on success, non-zero on failure
-    if (Executor::executeBlocking(m_settings.pwgenExecutable, args,
-                                  &passwd) == 0) {
+    if (Executor::executeBlocking(m_settings.pwgenExecutable, args, &passwd) ==
+        0) {
       static const QRegularExpression literalNewLines{"[\\n\\r]"};
       passwd.remove(literalNewLines);
     } else {
@@ -197,8 +197,8 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
     // Validate charset - if CUSTOM is selected but chars are empty,
     // fall back to ALLCHARS to prevent weak passwords (issue #780)
     const QString cs = fallbackCharset(
-        charset,
-        m_settings.passwordConfiguration.Characters[PasswordConfiguration::ALLCHARS]);
+        charset, m_settings.passwordConfiguration
+                     .Characters[PasswordConfiguration::ALLCHARS]);
     if (cs.length() > 0) {
       passwd = generateRandomPassword(cs, length);
     } else {
@@ -217,7 +217,8 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
  * @return true if ed25519 is supported
  */
 bool Pass::gpgSupportsEd25519(const QString &gpgExecutable) {
-  const QString exe = gpgExecutable.isEmpty() ? QStringLiteral("gpg") : gpgExecutable;
+  const QString exe =
+      gpgExecutable.isEmpty() ? QStringLiteral("gpg") : gpgExecutable;
   QString out, err;
   if (Executor::executeBlocking(exe, {"--version"}, &out, &err) != 0) {
     return false;
