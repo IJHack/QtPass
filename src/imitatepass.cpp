@@ -64,18 +64,24 @@ auto ImitatePass::pgit(const QString &path) const -> QString {
   QString normalizedPath = QDir::cleanPath(path);
   if (!m_settings.gitExecutable.startsWith(QStringLiteral("wsl ")))
     return normalizedPath;
-  QString res =
-      QStringLiteral("$(wslpath ") + normalizedPath + QLatin1Char(')');
-  return res.replace('\\', '/');
+  QString wslPath;
+  const int rc = Executor::executeBlocking(
+      QStringLiteral("wsl"), {QStringLiteral("wslpath"), normalizedPath},
+      &wslPath);
+  const QString translated = wslPath.trimmed();
+  return (rc == 0 && !translated.isEmpty()) ? translated : normalizedPath;
 }
 
 auto ImitatePass::pgpg(const QString &path) const -> QString {
   QString normalizedPath = QDir::cleanPath(path);
   if (!m_settings.gpgExecutable.startsWith(QStringLiteral("wsl ")))
     return normalizedPath;
-  QString res =
-      QStringLiteral("$(wslpath ") + normalizedPath + QLatin1Char(')');
-  return res.replace('\\', '/');
+  QString wslPath;
+  const int rc = Executor::executeBlocking(
+      QStringLiteral("wsl"), {QStringLiteral("wslpath"), normalizedPath},
+      &wslPath);
+  const QString translated = wslPath.trimmed();
+  return (rc == 0 && !translated.isEmpty()) ? translated : normalizedPath;
 }
 
 /**
@@ -1040,8 +1046,12 @@ auto ImitatePass::grepMatchFile(const QProcessEnvironment &env,
                                 const QRegularExpression &rx) -> QStringList {
   QString translatedPath = filePath;
   if (gpgExe.startsWith(QStringLiteral("wsl "))) {
-    translatedPath = QStringLiteral("$(wslpath ") + filePath + QLatin1Char(')');
-    translatedPath.replace('\\', '/');
+    QString wslPath;
+    const int wrc = Executor::executeBlocking(
+        QStringLiteral("wsl"), {QStringLiteral("wslpath"), filePath}, &wslPath);
+    const QString translated = wslPath.trimmed();
+    if (wrc == 0 && !translated.isEmpty())
+      translatedPath = translated;
   }
   QString plaintext;
   const int rc =
