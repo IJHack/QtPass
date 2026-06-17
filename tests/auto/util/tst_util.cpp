@@ -671,8 +671,20 @@ void tst_util::createGpgIdFileEmptyKeys() {
 }
 
 void tst_util::generateRandomPassword() {
-  SettingGuard<bool, QtPassSettings::setUsePwgen> disablePwgenGuard{
-      QtPassSettings::load().usePwgen, false};
+  const bool savedUsePwgen = QtPassSettings::load().usePwgen;
+  struct RestoreUsePwgen {
+    bool saved;
+    ~RestoreUsePwgen() {
+      AppSettings s = QtPassSettings::load();
+      s.usePwgen = saved;
+      QtPassSettings::save(s);
+    }
+  } pwgenRestore{savedUsePwgen};
+  {
+    AppSettings s = QtPassSettings::load();
+    s.usePwgen = false;
+    QtPassSettings::save(s);
+  }
 
   ImitatePass pass;
   QString charset = "abcdefghijklmnopqrstuvwxyz";
@@ -760,8 +772,20 @@ void tst_util::generateRandomPassword() {
 }
 
 void tst_util::boundedRandom() {
-  SettingGuard<bool, QtPassSettings::setUsePwgen> disablePwgenGuard{
-      QtPassSettings::load().usePwgen, false};
+  const bool savedUsePwgen = QtPassSettings::load().usePwgen;
+  struct RestoreUsePwgen {
+    bool saved;
+    ~RestoreUsePwgen() {
+      AppSettings s = QtPassSettings::load();
+      s.usePwgen = saved;
+      QtPassSettings::save(s);
+    }
+  } pwgenRestore{savedUsePwgen};
+  {
+    AppSettings s = QtPassSettings::load();
+    s.usePwgen = false;
+    QtPassSettings::save(s);
+  }
 
   ImitatePass pass;
 

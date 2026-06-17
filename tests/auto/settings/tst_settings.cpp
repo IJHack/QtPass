@@ -293,15 +293,12 @@ void tst_settings::setAndGetPasswordLength() {
 namespace {
 struct IntSetting {
   const char *name;
-  void (*setter)(const int &);
   int AppSettings::*field;
 };
 
 const IntSetting intSettings[] = {
-    {"autoclearSeconds", QtPassSettings::setAutoclearSeconds,
-     &AppSettings::autoclearSeconds},
-    {"autoclearPanelSeconds", QtPassSettings::setAutoclearPanelSeconds,
-     &AppSettings::autoclearPanelSeconds},
+    {"autoclearSeconds", &AppSettings::autoclearSeconds},
+    {"autoclearPanelSeconds", &AppSettings::autoclearPanelSeconds},
 };
 
 struct StringSetting {
@@ -342,7 +339,9 @@ void tst_settings::intRoundTrip() {
 
   for (const auto &s : intSettings) {
     if (setting == s.name) {
-      s.setter(testValue);
+      AppSettings toSave = QtPassSettings::load();
+      toSave.*s.field = testValue;
+      QtPassSettings::save(toSave);
       QCOMPARE(QtPassSettings::load().*s.field, testValue);
       return;
     }

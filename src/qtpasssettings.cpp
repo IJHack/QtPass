@@ -299,16 +299,6 @@ auto QtPassSettings::getAutoclearSeconds(const int &defaultValue) -> int {
       ->value(SettingsConstants::autoclearSeconds, defaultValue)
       .toInt();
 }
-void QtPassSettings::setAutoclearSeconds(const int &autoClearSeconds) {
-  getInstance()->setValue(SettingsConstants::autoclearSeconds,
-                          autoClearSeconds);
-}
-void QtPassSettings::setAutoclearPanelSeconds(
-    const int &autoClearPanelSeconds) {
-  getInstance()->setValue(SettingsConstants::autoclearPanelSeconds,
-                          autoClearPanelSeconds);
-}
-
 /**
  * @brief Retrieves the password store path, normalizes it, and ensures the
  * directory exists.
@@ -520,10 +510,6 @@ void QtPassSettings::setQrencodeExecutable(const QString &qrencodeExecutable) {
                           qrencodeExecutable);
 }
 
-void QtPassSettings::setUsePwgen(const bool &usePwgen) {
-  getInstance()->setValue(SettingsConstants::usePwgen, usePwgen);
-}
-
 auto QtPassSettings::isHideOnClose(const bool &defaultValue) -> bool {
   return getInstance()
       ->value(SettingsConstants::hideOnClose, defaultValue)
@@ -539,14 +525,6 @@ auto QtPassSettings::isAutoPush(const bool &defaultValue) -> bool {
   return getInstance()
       ->value(SettingsConstants::autoPush, defaultValue)
       .toBool();
-}
-auto QtPassSettings::getPassTemplate(const QString &defaultValue) -> QString {
-  return getInstance()
-      ->value(SettingsConstants::passTemplate, defaultValue)
-      .toString();
-}
-void QtPassSettings::setPassTemplate(const QString &passTemplate) {
-  getInstance()->setValue(SettingsConstants::passTemplate, passTemplate);
 }
 
 auto QtPassSettings::isShowProcessOutput(const bool &defaultValue) -> bool {
