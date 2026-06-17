@@ -1624,7 +1624,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="150"/>
         <source>Operation timed out; re-enabling interface.</source>
-        <translation type="unfinished">Toiming aegus; liides aktiveeritakse uuesti.</translation>
+        <translation>Toiming aegus; liides aktiveeritakse uuesti.</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="356"/>
@@ -1654,12 +1654,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../src/mainwindow.cpp" line="876"/>
         <source>Content search uses POSIX basic regular expressions (pass grep).</source>
-        <translation type="unfinished">Sisuotsing kasutab POSIX-i põhilisi regulaaravaldisi (pass grep).</translation>
+        <translation>Sisuotsing kasutab POSIX-i põhilisi regulaaravaldisi (pass grep).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="878"/>
         <source>Content search uses Perl-compatible regular expressions (PCRE).</source>
-        <translation type="unfinished">Sisuotsing kasutab Perliga ühilduvaid regulaaravaldisi (PCRE).</translation>
+        <translation>Sisuotsing kasutab Perliga ühilduvaid regulaaravaldisi (PCRE).</translation>
     </message>
     <message>
         <location filename="../src/mainwindow.cpp" line="925"/>
@@ -1959,12 +1959,12 @@ Kas jätkame?</translation>
         <location filename="../src/passworddisplaypanel.cpp" line="105"/>
         <location filename="../src/passworddisplaypanel.cpp" line="133"/>
         <source>Password</source>
-        <translation type="unfinished">Salasõna</translation>
+        <translation>Salasõna</translation>
     </message>
     <message>
         <location filename="../src/passworddisplaypanel.cpp" line="111"/>
         <source>Open %1 in browser</source>
-        <translation type="unfinished">Ava %1 veebibrauseris</translation>
+        <translation>Ava %1 veebibrauseris</translation>
     </message>
 </context>
 <context>
