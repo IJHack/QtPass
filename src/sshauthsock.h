@@ -69,8 +69,10 @@ public:
    *    `ssh-add -l` validation.
    *
    * Sets the variable via qputenv so child processes inherit it.
+   *
+   * @param override Manual override path from settings (empty → auto-probe).
    */
-  static void initialise();
+  static void initialise(const QString &override = {});
 
 private:
   SshAuthSock() = default;

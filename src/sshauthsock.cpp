@@ -10,7 +10,6 @@
 
 #include "sshauthsock.h"
 #include "executor.h"
-#include "qtpasssettings.h"
 #include <QFileInfo>
 #include <QProcessEnvironment>
 #ifndef Q_OS_WIN
@@ -89,8 +88,8 @@ auto SshAuthSock::overrideStatus(const QString &path) -> OverrideStatus {
  * @brief Probe and set SSH_AUTH_SOCK if missing — see header for full rules.
  *
  * Implementation notes:
- * - Reads QtPassSettings::getSshAuthSockOverride() for the manual override
- *   path; if non-empty, uses it verbatim (no validation — explicit override).
+ * - Receives the manual override path as the @p override parameter; if
+ *   non-empty, uses it verbatim (no validation — explicit override).
  * - Otherwise runs `gpgconf --list-dirs agent-ssh-socket` (gpg-agent's
  *   canonical socket reporter). On macOS, additionally tries `launchctl
  *   getenv SSH_AUTH_SOCK`.
@@ -101,7 +100,7 @@ auto SshAuthSock::overrideStatus(const QString &path) -> OverrideStatus {
  *   subprocess executions; any failure is silently absorbed (the user just
  *   doesn't get the auto-fix).
  */
-void SshAuthSock::initialise() {
+void SshAuthSock::initialise(const QString &override) {
   // Honour any value already in the environment — terminal launches,
   // explicit `.desktop` Exec= overrides, and parent-process exports must win.
   if (!qgetenv("SSH_AUTH_SOCK").isEmpty()) {
@@ -109,7 +108,6 @@ void SshAuthSock::initialise() {
   }
 
   // Manual override from settings takes precedence over auto-probe.
-  const QString override = QtPassSettings::getSshAuthSockOverride();
   if (!override.isEmpty()) {
     qputenv("SSH_AUTH_SOCK", override.toUtf8());
 #ifdef QT_DEBUG

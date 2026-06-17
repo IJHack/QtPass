@@ -47,7 +47,8 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     // Let window manager handle positioning for first launch
   }
 
-  applySettings(QtPassSettings::load());
+  const AppSettings s = QtPassSettings::load();
+  applySettings(s);
 
   if (!QSystemTrayIcon::isSystemTrayAvailable()) {
     ui->checkBoxUseTrayIcon->setEnabled(false);
@@ -85,7 +86,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
   ui->comboBoxClipboard->addItem(tr("Always copy to clipboard"));
   ui->comboBoxClipboard->addItem(tr("On-demand copy to clipboard"));
 
-  int currentIndex = QtPassSettings::getClipBoardTypeRaw();
+  int currentIndex = static_cast<int>(s.clipBoardType);
   ui->comboBoxClipboard->setCurrentIndex(currentIndex);
   on_comboBoxClipboard_activated(currentIndex);
 
@@ -94,7 +95,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     useSelection(false);
     ui->checkBoxSelection->setVisible(false);
   } else {
-    useSelection(QtPassSettings::isUseSelection());
+    useSelection(s.useSelection);
   }
 
   if (!Util::configIsValid()) {
@@ -212,14 +213,9 @@ auto ConfigDialog::readSettings() -> AppSettings {
 }
 
 /**
- * @brief ConfigDialog::~ConfigDialog config destructor, makes sure the
- * mainWindow knows about git, gpg and pass executables.
+ * @brief ConfigDialog::~ConfigDialog config destructor.
  */
-ConfigDialog::~ConfigDialog() {
-  QtPassSettings::setGitExecutable(ui->gitPath->text());
-  QtPassSettings::setGpgExecutable(ui->gpgPath->text());
-  QtPassSettings::setPassExecutable(ui->passPath->text());
-}
+ConfigDialog::~ConfigDialog() = default;
 
 /**
  * @brief ConfigDialog::setGitPath set the git executable path.

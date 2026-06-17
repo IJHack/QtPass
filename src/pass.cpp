@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
 #include "gpgkeystate.h"
-#include "qtpasssettings.h" // TODO(#1511 PR-C): remove once getGpgIdPath is migrated
+#include "qtpasssettings.h" // TODO(#1511): remove once static getGpgIdPath chain is migrated
 #include "util.h"
 #include <QCoreApplication>
 #include <QDebug>

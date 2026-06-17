@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include "mainwindow.h"
+#include "qtpasssettings.h"
 #include "sshauthsock.h"
 #if SINGLE_APP
 #include "singleapplication.h"
@@ -148,7 +149,7 @@ auto main(int argc, char *argv[]) -> int {
   // Probe / set SSH_AUTH_SOCK before any subprocess runs (issue #543).
   // GUI launchers don't inherit shell-set env vars, so users with
   // gpg-agent's SSH support get failed git push/pull until this fires.
-  SshAuthSock::initialise();
+  SshAuthSock::initialise(QtPassSettings::getSshAuthSockOverride());
 
   // Setup and load translator for localization.
   //
