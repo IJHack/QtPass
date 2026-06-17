@@ -154,7 +154,9 @@ class tst_integration : public QObject {
 
   // Initialize a Pass object with the test keyring and store.
   static void setupPass(Pass &pass) {
-    pass.init();
+    AppSettings s = QtPassSettings::load();
+    s.passStore = QtPassSettings::getPassStore();
+    pass.init(s);
     pass.updateEnv();
   }
 
@@ -173,7 +175,9 @@ class tst_integration : public QObject {
       if (bytesWritten != payload.size())
         return QStringLiteral("failed to write .gpg-id");
     }
-    pass.init();
+    AppSettings s = QtPassSettings::load();
+    s.passStore = QtPassSettings::getPassStore();
+    pass.init(s);
     pass.updateEnv();
     return QString();
   }

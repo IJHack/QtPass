@@ -1724,6 +1724,9 @@ void tst_util::updateEnvSetsExpectedVars() {
   QVERIFY(tmpDir.isValid());
   PassStoreGuard storeGuard(QtPassSettings::getPassStore());
   QtPassSettings::setPassStore(tmpDir.path());
+  AppSettings s = QtPassSettings::load();
+  s.passStore = QtPassSettings::getPassStore();
+  pass.init(s);
 
   const QProcessEnvironment env = pass.environment();
   QVERIFY2(env.contains(QStringLiteral("PASSWORD_STORE_DIR")),
@@ -1748,6 +1751,9 @@ void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
   config.selected = PasswordConfiguration::CUSTOM;
   config.Characters[PasswordConfiguration::CUSTOM] = QString();
   QtPassSettings::setPasswordConfiguration(config);
+  AppSettings s = QtPassSettings::load();
+  s.passStore = QtPassSettings::getPassStore();
+  pass.init(s);
 
   const QProcessEnvironment env = pass.environment();
   QVERIFY2(
@@ -1759,6 +1765,9 @@ void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
 
 void tst_util::updateEnvWslenvContainsRequiredVars() {
   TestPass pass;
+  AppSettings s = QtPassSettings::load();
+  s.passStore = QtPassSettings::getPassStore();
+  pass.init(s);
   const QProcessEnvironment env = pass.environment();
   QVERIFY2(env.contains(QStringLiteral("WSLENV")),
            "At least one WSLENV entry expected after Pass construction");

@@ -9,6 +9,7 @@
  */
 
 #include "passbackendfactory.h"
+#include "appsettings.h"
 #include "pass.h"
 #include "qtpasssettings.h"
 
@@ -18,13 +19,15 @@ QScopedPointer<ImitatePass> PassBackendFactory::imitatePass;
 
 auto PassBackendFactory::getPass() -> Pass * {
   if (!pass) {
-    if (QtPassSettings::isUsePass()) {
+    AppSettings s = QtPassSettings::load();
+    s.passStore = QtPassSettings::getPassStore();
+    if (s.usePass) {
       pass = getRealPass();
     } else {
       pass = getImitatePass();
     }
     if (pass) {
-      pass->init();
+      pass->init(s);
     }
   }
   return pass;

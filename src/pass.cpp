@@ -2,7 +2,7 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "pass.h"
 #include "gpgkeystate.h"
-#include "qtpasssettings.h"
+#include "qtpasssettings.h" // TODO(#1511 PR-C): remove once getGpgIdPath is migrated
 #include "util.h"
 #include <QCoreApplication>
 #include <QDebug>
@@ -115,16 +115,18 @@ void Pass::executeWrapper(PROCESS id, const QString &app,
 #ifdef QT_DEBUG
   dbg() << app << args;
 #endif
-  exec.execute(id, QtPassSettings::getPassStore(), app, args, std::move(input),
+  exec.execute(id, m_settings.passStore, app, args, std::move(input),
                readStdout, readStderr);
 }
 
 void Pass::beforeExecute(PROCESS /*id*/) {}
 
 /**
- * @brief Initializes the pass wrapper environment.
+ * @brief Initializes the pass wrapper with a settings snapshot.
+ * @param settings Application settings to use for this backend lifetime.
  */
-void Pass::init() {
+void Pass::init(const AppSettings &settings) {
+  m_settings = settings;
 #ifdef __APPLE__
   // If it exists, prepend gpgtools to PATH
   if (QFile(QStringLiteral("/usr/local/MacGPG2/bin")).exists())
@@ -142,8 +144,8 @@ void Pass::init() {
   }
 #endif
 
-  if (!QtPassSettings::getGpgHome().isEmpty()) {
-    QDir absHome(QtPassSettings::getGpgHome());
+  if (!m_settings.gpgHome.isEmpty()) {
+    QDir absHome(m_settings.gpgHome);
     absHome.makeAbsolute();
     env.insert(QStringLiteral("GNUPGHOME"), absHome.path());
   }
@@ -164,23 +166,21 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
     return {};
   }
   QString passwd;
-  if (QtPassSettings::isUsePwgen()) {
+  if (m_settings.usePwgen) {
     // --secure goes first as it overrides --no-* otherwise
     QStringList args;
     args.append("-1");
-    if (!QtPassSettings::isLessRandom()) {
+    if (!m_settings.lessRandom) {
       args.append("--secure");
     }
-    args.append(QtPassSettings::isAvoidCapitals() ? "--no-capitalize"
-                                                  : "--capitalize");
-    args.append(QtPassSettings::isAvoidNumbers() ? "--no-numerals"
-                                                 : "--numerals");
-    if (QtPassSettings::isUseSymbols()) {
+    args.append(m_settings.avoidCapitals ? "--no-capitalize" : "--capitalize");
+    args.append(m_settings.avoidNumbers ? "--no-numerals" : "--numerals");
+    if (m_settings.useSymbols) {
       args.append("--symbols");
     }
     args.append(QString::number(length));
     // executeBlocking returns 0 on success, non-zero on failure
-    if (Executor::executeBlocking(QtPassSettings::getPwgenExecutable(), args,
+    if (Executor::executeBlocking(m_settings.pwgenExecutable, args,
                                   &passwd) == 0) {
       static const QRegularExpression literalNewLines{"[\\n\\r]"};
       passwd.remove(literalNewLines);
@@ -197,8 +197,8 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
     // Validate charset - if CUSTOM is selected but chars are empty,
     // fall back to ALLCHARS to prevent weak passwords (issue #780)
     const QString cs = fallbackCharset(
-        charset, QtPassSettings::getPasswordConfiguration()
-                     .Characters[PasswordConfiguration::ALLCHARS]);
+        charset,
+        m_settings.passwordConfiguration.Characters[PasswordConfiguration::ALLCHARS]);
     if (cs.length() > 0) {
       passwd = generateRandomPassword(cs, length);
     } else {
@@ -216,10 +216,10 @@ auto Pass::generatePassword(unsigned int length, const QString &charset)
  * GPG 2.1+ supports ed25519 which is much faster for key generation
  * @return true if ed25519 is supported
  */
-bool Pass::gpgSupportsEd25519() {
+bool Pass::gpgSupportsEd25519(const QString &gpgExecutable) {
+  const QString exe = gpgExecutable.isEmpty() ? QStringLiteral("gpg") : gpgExecutable;
   QString out, err;
-  if (Executor::executeBlocking(QtPassSettings::getGpgExecutable(),
-                                {"--version"}, &out, &err) != 0) {
+  if (Executor::executeBlocking(exe, {"--version"}, &out, &err) != 0) {
     return false;
   }
   QRegularExpression versionRegex(R"(gpg \(GnuPG\) (\d+)\.(\d+))");
@@ -237,8 +237,8 @@ bool Pass::gpgSupportsEd25519() {
  * Uses ed25519 if supported, otherwise falls back to RSA
  * @return GPG batch template string
  */
-QString Pass::getDefaultKeyTemplate() {
-  if (gpgSupportsEd25519()) {
+QString Pass::getDefaultKeyTemplate(const QString &gpgExecutable) {
+  if (gpgSupportsEd25519(gpgExecutable)) {
     return QStringLiteral("%echo Generating a default key\n"
                           "Key-Type: EdDSA\n"
                           "Key-Curve: Ed25519\n"
@@ -445,7 +445,7 @@ auto Pass::resolveGpgconfCommand(const QString &gpgPath)
 void Pass::GenerateGPGKeys(QString batch) {
   // Kill any stale GPG agents that might be holding locks on the key database
   // This helps avoid "database locked" timeouts during key generation
-  QString gpgPath = QtPassSettings::getGpgExecutable();
+  const QString gpgPath = m_settings.gpgExecutable;
   if (!gpgPath.isEmpty()) {
     ResolvedGpgconfCommand resolvedGpgconf = resolveGpgconfCommand(gpgPath);
     QStringList killArgs = resolvedGpgconf.arguments;
@@ -478,8 +478,7 @@ auto Pass::listKeys(QStringList keystrings, bool secret) -> QList<UserInfo> {
     }
   }
   QString p_out;
-  if (Executor::executeBlocking(QtPassSettings::getGpgExecutable(), args,
-                                &p_out) != 0) {
+  if (Executor::executeBlocking(m_settings.gpgExecutable, args, &p_out) != 0) {
     return {};
   }
   return parseGpgColonOutput(p_out, secret);
@@ -825,11 +824,10 @@ void Pass::setEnvVar(const QString &key, const QString &value) {
  */
 void Pass::updateEnv() {
   setEnvVar(QStringLiteral("PASSWORD_STORE_SIGNING_KEY="),
-            QtPassSettings::getPassSigningKey());
-  setEnvVar(QStringLiteral("PASSWORD_STORE_DIR="),
-            QtPassSettings::getPassStore());
+            m_settings.passSigningKey);
+  setEnvVar(QStringLiteral("PASSWORD_STORE_DIR="), m_settings.passStore);
 
-  PasswordConfiguration passConfig = QtPassSettings::getPasswordConfiguration();
+  const PasswordConfiguration &passConfig = m_settings.passwordConfiguration;
   setEnvVar(QStringLiteral("PASSWORD_STORE_GENERATED_LENGTH="),
             QString::number(passConfig.length));
 
