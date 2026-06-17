@@ -66,8 +66,8 @@ public:
    */
   static auto getDir(const QModelIndex &index, bool forPass,
                      const QFileSystemModel &model,
-                     const StoreModel &storeModel,
-                     const QString &passStore) -> QString;
+                     const StoreModel &storeModel, const QString &passStore)
+      -> QString;
   /**
    * @brief Returns a regex to match .gpg file extensions.
    * @return Reference to static regex

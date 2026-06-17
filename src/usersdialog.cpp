@@ -102,9 +102,9 @@ void UsersDialog::markSecretKeys(QList<UserInfo> &users) {
 
 void UsersDialog::loadRecipients() {
   int count = 0;
-  QStringList recipients = Pass::getRecipientString(
-      m_dir.isEmpty() ? "" : m_dir, QtPassSettings::getPassStore(), " ",
-      &count);
+  QStringList recipients =
+      Pass::getRecipientString(m_dir.isEmpty() ? "" : m_dir,
+                               QtPassSettings::getPassStore(), " ", &count);
 
   QList<UserInfo> selectedUsers =
       QtPassSettings::getPass()->listKeys(recipients);

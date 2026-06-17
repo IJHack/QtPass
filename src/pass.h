@@ -231,8 +231,8 @@ public:
    * @param passStore Root directory of the password store.
    * @return Path to .gpg-id file.
    */
-  static auto getGpgIdPath(const QString &for_file,
-                            const QString &passStore) -> QString;
+  static auto getGpgIdPath(const QString &for_file, const QString &passStore)
+      -> QString;
   /**
    * @brief Get list of recipients for a password file.
    * @param for_file Path to password file.
