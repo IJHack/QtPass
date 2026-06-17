@@ -88,8 +88,8 @@ auto SshAuthSock::overrideStatus(const QString &path) -> OverrideStatus {
  * @brief Probe and set SSH_AUTH_SOCK if missing — see header for full rules.
  *
  * Implementation notes:
- * - Reads QtPassSettings::getSshAuthSockOverride() for the manual override
- *   path; if non-empty, uses it verbatim (no validation — explicit override).
+ * - Receives the manual override path as the @p override parameter; if
+ *   non-empty, uses it verbatim (no validation — explicit override).
  * - Otherwise runs `gpgconf --list-dirs agent-ssh-socket` (gpg-agent's
  *   canonical socket reporter). On macOS, additionally tries `launchctl
  *   getenv SSH_AUTH_SOCK`.
