@@ -305,7 +305,11 @@ void tst_integration::initTestCase() {
   qputenv("GNUPGHOME", m_gnupgHome.path().toLocal8Bit());
   QtPassSettings::getInstance()->setValue(SettingsConstants::gpgHome,
                                           m_gnupgHome.path());
-  QtPassSettings::setGpgExecutable(m_gpgExe);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
   m_originalPassSigningKey = QtPassSettings::load().passSigningKey;
   QtPassSettings::setPassSigningKey(QString());
   qRegisterMetaType<GrepResults>("GrepResults");
@@ -617,9 +621,9 @@ void tst_integration::imitatePass_gitInitAndCommit() {
 
   RestoreUseGit restoreUseGit;
 
-  QtPassSettings::setGitExecutable(gitExe);
   {
     AppSettings s = QtPassSettings::load();
+    s.gitExecutable = gitExe;
     s.useGit = true;
     QtPassSettings::save(s);
   }
@@ -692,8 +696,12 @@ void tst_integration::realPass_insertAndShow() {
   QVERIFY(storeDir.isValid());
 
   QtPassSettings::setPassStore(storeDir.path());
-  QtPassSettings::setPassExecutable(passExe);
-  QtPassSettings::setGpgExecutable(m_gpgExe);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
   QtPassSettings::setUsePass(true);
 
   // Initialise the store via `pass init`.
@@ -733,8 +741,12 @@ void tst_integration::realPass_insertAndGrep() {
   QVERIFY(storeDir.isValid());
 
   QtPassSettings::setPassStore(storeDir.path());
-  QtPassSettings::setPassExecutable(passExe);
-  QtPassSettings::setGpgExecutable(m_gpgExe);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
   QtPassSettings::setUsePass(true);
 
   QProcess initProc;
@@ -789,8 +801,12 @@ void tst_integration::imitatePass_otpGenerate() {
   QVERIFY(storeDir.isValid());
 
   QtPassSettings::setPassStore(storeDir.path());
-  QtPassSettings::setPassExecutable(passExe);
-  QtPassSettings::setGpgExecutable(m_gpgExe);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passExecutable = passExe;
+    s.gpgExecutable = m_gpgExe;
+    QtPassSettings::save(s);
+  }
   QtPassSettings::setUsePass(true);
 
   QProcessEnvironment env = QProcessEnvironment::systemEnvironment();

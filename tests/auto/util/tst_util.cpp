@@ -838,15 +838,30 @@ void tst_util::configIsValid() {
   gpgIdFile.write("test@example.com\n");
   gpgIdFile.close();
 
-  SettingGuard<QString, QtPassSettings::setGpgExecutable> gpgGuard{
-      QtPassSettings::load().gpgExecutable, QString()};
+  const QString savedGpgExe = QtPassSettings::load().gpgExecutable;
+  struct RestoreGpg {
+    QString saved;
+    ~RestoreGpg() {
+      AppSettings s = QtPassSettings::load();
+      s.gpgExecutable = saved;
+      QtPassSettings::save(s);
+    }
+  } gpgRestore{savedGpgExe};
 
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = QString();
+    QtPassSettings::save(s);
+  }
   isValid = Util::configIsValid(QtPassSettings::load());
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
                      "executable is missing");
 
-  QtPassSettings::setGpgExecutable(
-      QStringLiteral("definitely_nonexistent_gpg_binary_12345"));
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = QStringLiteral("definitely_nonexistent_gpg_binary_12345");
+    QtPassSettings::save(s);
+  }
   isValid = Util::configIsValid(QtPassSettings::load());
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "
                      "executable is invalid");

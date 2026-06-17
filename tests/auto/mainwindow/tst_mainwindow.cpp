@@ -94,7 +94,11 @@ void tst_mainwindow::initTestCase() {
     m_gpgPath = Util::findBinaryInPath(QStringLiteral("gpg"));
   if (m_gpgPath.isEmpty())
     QSKIP("gpg not available — skipping MainWindow construction tests");
-  QtPassSettings::setGpgExecutable(m_gpgPath);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_gpgPath;
+    QtPassSettings::save(s);
+  }
 }
 
 void tst_mainwindow::init() {
@@ -110,7 +114,11 @@ void tst_mainwindow::init() {
   // the setting to findBinaryInPath("gpg2"), which is empty on systems where
   // only "gpg" exists. Setting it here ensures configIsValid() sees a valid
   // executable and does not fall back to the blocking config() dialog.
-  QtPassSettings::setGpgExecutable(m_gpgPath);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_gpgPath;
+    QtPassSettings::save(s);
+  }
   m_window.reset(new MainWindow);
 }
 
@@ -127,7 +135,11 @@ void tst_mainwindow::cleanupTestCase() {
     s.showProcessOutput = m_savedShowProcessOutput;
     QtPassSettings::save(s);
   }
-  QtPassSettings::setGpgExecutable(m_savedGpgExecutable);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.gpgExecutable = m_savedGpgExecutable;
+    QtPassSettings::save(s);
+  }
 }
 
 // ---------------------------------------------------------------------------
