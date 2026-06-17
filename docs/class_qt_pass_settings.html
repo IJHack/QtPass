@@ -190,14 +190,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:accde18f59a051107c85755993fcefdac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize executable paths by auto-detecting them. <br /></td></tr>
 <tr class="memitem:a1bedf6d09f7ed13de785940d77c92f14" id="r_a1bedf6d09f7ed13de785940d77c92f14"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1bedf6d09f7ed13de785940d77c92f14">getPassExecutable</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
 <tr class="memdesc:a1bedf6d09f7ed13de785940d77c92f14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pass executable path.  <br /></td></tr>
-<tr class="memitem:ab97129498f8b41e600f205611dab3bcf" id="r_ab97129498f8b41e600f205611dab3bcf"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab97129498f8b41e600f205611dab3bcf">setPassExecutable</a> (const QString &amp;passExecutable)</td></tr>
-<tr class="memdesc:ab97129498f8b41e600f205611dab3bcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save pass executable path.  <br /></td></tr>
-<tr class="memitem:a0dbc45500e3af30d01e54dc5705490b2" id="r_a0dbc45500e3af30d01e54dc5705490b2"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a0dbc45500e3af30d01e54dc5705490b2">setGitExecutable</a> (const QString &amp;gitExecutable)</td></tr>
-<tr class="memdesc:a0dbc45500e3af30d01e54dc5705490b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save git executable path.  <br /></td></tr>
-<tr class="memitem:a3a571496209e6069bcbd76483fb5be95" id="r_a3a571496209e6069bcbd76483fb5be95"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a3a571496209e6069bcbd76483fb5be95">setGpgExecutable</a> (const QString &amp;gpgExecutable)</td></tr>
-<tr class="memdesc:a3a571496209e6069bcbd76483fb5be95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save GPG executable path.  <br /></td></tr>
-<tr class="memitem:a2748b280aa2b1871f97e3ffdad9029a4" id="r_a2748b280aa2b1871f97e3ffdad9029a4"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a2748b280aa2b1871f97e3ffdad9029a4">setPwgenExecutable</a> (const QString &amp;pwgenExecutable)</td></tr>
-<tr class="memdesc:a2748b280aa2b1871f97e3ffdad9029a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save pwgen executable path.  <br /></td></tr>
 <tr class="memitem:a15e5619edfc478765e728fac1bb9c6cf" id="r_a15e5619edfc478765e728fac1bb9c6cf"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a15e5619edfc478765e728fac1bb9c6cf">isUseWebDav</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
 <tr class="memdesc:a15e5619edfc478765e728fac1bb9c6cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether WebDAV integration is enabled.  <br /></td></tr>
 <tr class="memitem:af2548c1c64c4daccdc1df6f505935588" id="r_af2548c1c64c4daccdc1df6f505935588"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af2548c1c64c4daccdc1df6f505935588">getProfile</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
@@ -1629,72 +1621,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 </div>
 </div>
-<a id="a0dbc45500e3af30d01e54dc5705490b2" name="a0dbc45500e3af30d01e54dc5705490b2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dbc45500e3af30d01e54dc5705490b2">&#9670;&#160;</a></span>setGitExecutable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QtPassSettings::setGitExecutable </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gitExecutable</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Save git executable path. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">gitExecutable</td><td>Path to git. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3a571496209e6069bcbd76483fb5be95" name="a3a571496209e6069bcbd76483fb5be95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a571496209e6069bcbd76483fb5be95">&#9670;&#160;</a></span>setGpgExecutable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QtPassSettings::setGpgExecutable </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>gpgExecutable</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Save GPG executable path. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">gpgExecutable</td><td>Path to GPG executable. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a55a473b77fe0450ce08e19544d495c6f" name="a55a473b77fe0450ce08e19544d495c6f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a55a473b77fe0450ce08e19544d495c6f">&#9670;&#160;</a></span>setMaximized()</h2>
 
@@ -1722,39 +1648,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maximized</td><td>Maximized state to save. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ab97129498f8b41e600f205611dab3bcf" name="ab97129498f8b41e600f205611dab3bcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab97129498f8b41e600f205611dab3bcf">&#9670;&#160;</a></span>setPassExecutable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QtPassSettings::setPassExecutable </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passExecutable</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Save pass executable path. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">passExecutable</td><td>Path to pass. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2067,39 +1960,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
   <table class="params">
     <tr><td class="paramname">profileName</td><td>Name of the profile. </td></tr>
     <tr><td class="paramname">useGit</td><td>Git setting value. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a2748b280aa2b1871f97e3ffdad9029a4" name="a2748b280aa2b1871f97e3ffdad9029a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2748b280aa2b1871f97e3ffdad9029a4">&#9670;&#160;</a></span>setPwgenExecutable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void QtPassSettings::setPwgenExecutable </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>pwgenExecutable</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Save pwgen executable path. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pwgenExecutable</td><td>Path to pwgen. </td></tr>
   </table>
   </dd>
 </dl>
