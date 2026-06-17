@@ -785,7 +785,8 @@ void ConfigDialog::initializeNewProfiles(
 
     // Show user selection dialog for GPG recipients
     // UsersDialog will run pass init when accepted
-    UsersDialog usersDialog(cleanPath, this);
+    UsersDialog usersDialog(QtPassSettings::getPass(), QtPassSettings::load(),
+                            cleanPath, this);
     usersDialog.setWindowTitle(tr("Select recipients for %1").arg(name));
     const int result = usersDialog.exec();
 

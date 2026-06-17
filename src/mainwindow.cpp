@@ -1191,7 +1191,7 @@ void MainWindow::onUsers() {
                                    proxyModel, QtPassSettings::getPassStore())
                     : m_currentDir;
 
-  UsersDialog d(dir, this);
+  UsersDialog d(QtPassSettings::getPass(), QtPassSettings::load(), dir, this);
   if (!d.exec()) {
     ui->treeView->setFocus();
   }
@@ -1749,7 +1749,7 @@ void MainWindow::exportPublicKey() {
  * keyring still has to happen via gpg (or QtPass settings) first.
  */
 void MainWindow::addRecipient(const QString &dir) {
-  UsersDialog d(dir, this);
+  UsersDialog d(QtPassSettings::getPass(), QtPassSettings::load(), dir, this);
   d.exec();
 }
 

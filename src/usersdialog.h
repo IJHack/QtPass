@@ -3,6 +3,7 @@
 #ifndef SRC_USERSDIALOG_H_
 #define SRC_USERSDIALOG_H_
 
+#include "appsettings.h"
 #include "userinfo.h"
 
 #include <QDialog>
@@ -13,6 +14,7 @@ namespace Ui {
 class UsersDialog;
 }
 
+class Pass;
 class QCloseEvent;
 class QKeyEvent;
 class QListWidgetItem;
@@ -31,10 +33,13 @@ class UsersDialog : public QDialog {
 public:
   /**
    * @brief Construct users dialog.
+   * @param pass Active Pass backend.
+   * @param s Application settings snapshot.
    * @param dir Password store directory path.
    * @param parent Parent widget.
    */
-  explicit UsersDialog(QString dir, QWidget *parent = nullptr);
+  explicit UsersDialog(Pass *pass, const AppSettings &s, QString dir,
+                       QWidget *parent = nullptr);
   /**
    * @brief Destructor.
    */
@@ -80,6 +85,9 @@ private slots:
 
 private:
   Ui::UsersDialog *ui;
+  Pass *m_pass;                          /**< Active Pass backend */
+  QString m_passStore;                   /**< Password store root path */
+  QString m_gpgExe;                      /**< GPG executable path */
   QList<UserInfo> m_userList;            /**< List of available GPG users */
   QString m_dir;                         /**< Password store directory */
   QString m_lastFilter;                  /**< Last filter text for caching */
