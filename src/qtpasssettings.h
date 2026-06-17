@@ -276,30 +276,6 @@ public:
   getPassExecutable(const QString &defaultValue = QVariant().toString())
       -> QString;
   /**
-   * @brief Save pass executable path.
-   * @param passExecutable Path to pass.
-   */
-  static void setPassExecutable(const QString &passExecutable);
-
-  /**
-   * @brief Save git executable path.
-   * @param gitExecutable Path to git.
-   */
-  static void setGitExecutable(const QString &gitExecutable);
-
-  /**
-   * @brief Save GPG executable path.
-   * @param gpgExecutable Path to GPG executable.
-   */
-  static void setGpgExecutable(const QString &gpgExecutable);
-
-  /**
-   * @brief Save pwgen executable path.
-   * @param pwgenExecutable Path to pwgen.
-   */
-  static void setPwgenExecutable(const QString &pwgenExecutable);
-
-  /**
    * @brief Check whether WebDAV integration is enabled.
    * @param defaultValue Value returned if not saved.
    * @return True if WebDAV is enabled.

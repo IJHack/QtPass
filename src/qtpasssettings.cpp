@@ -361,38 +361,21 @@ void QtPassSettings::setPassSigningKey(const QString &passSigningKey) {
  * @return void - This method does not return a value.
  */
 void QtPassSettings::initExecutables() {
-  const AppSettings s = QtPassSettings::load();
-  QtPassSettings::setPassExecutable(s.passExecutable.isEmpty()
-                                        ? Util::findBinaryInPath("pass")
-                                        : s.passExecutable);
-  QtPassSettings::setGitExecutable(s.gitExecutable.isEmpty()
-                                       ? Util::findBinaryInPath("git")
-                                       : s.gitExecutable);
-  QtPassSettings::setGpgExecutable(s.gpgExecutable.isEmpty()
-                                       ? Util::findBinaryInPath("gpg2")
-                                       : s.gpgExecutable);
-  QtPassSettings::setPwgenExecutable(s.pwgenExecutable.isEmpty()
-                                         ? Util::findBinaryInPath("pwgen")
-                                         : s.pwgenExecutable);
+  AppSettings s = QtPassSettings::load();
+  if (s.passExecutable.isEmpty())
+    s.passExecutable = Util::findBinaryInPath("pass");
+  if (s.gitExecutable.isEmpty())
+    s.gitExecutable = Util::findBinaryInPath("git");
+  if (s.gpgExecutable.isEmpty())
+    s.gpgExecutable = Util::findBinaryInPath("gpg2");
+  if (s.pwgenExecutable.isEmpty())
+    s.pwgenExecutable = Util::findBinaryInPath("pwgen");
+  QtPassSettings::save(s);
 }
 auto QtPassSettings::getPassExecutable(const QString &defaultValue) -> QString {
   return getInstance()
       ->value(SettingsConstants::passExecutable, defaultValue)
       .toString();
-}
-void QtPassSettings::setPassExecutable(const QString &passExecutable) {
-  getInstance()->setValue(SettingsConstants::passExecutable, passExecutable);
-}
-
-void QtPassSettings::setGitExecutable(const QString &gitExecutable) {
-  getInstance()->setValue(SettingsConstants::gitExecutable, gitExecutable);
-}
-
-void QtPassSettings::setGpgExecutable(const QString &gpgExecutable) {
-  getInstance()->setValue(SettingsConstants::gpgExecutable, gpgExecutable);
-}
-void QtPassSettings::setPwgenExecutable(const QString &pwgenExecutable) {
-  getInstance()->setValue(SettingsConstants::pwgenExecutable, pwgenExecutable);
 }
 
 auto QtPassSettings::isUseWebDav(const bool &defaultValue) -> bool {
