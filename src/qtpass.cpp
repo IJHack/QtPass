@@ -50,9 +50,9 @@ QtPass::QtPass(MainWindow *mainWindow) : m_mainWindow(mainWindow) {
  */
 QtPass::~QtPass() {
 #ifdef Q_OS_WIN
-  if (QtPassSettings::isUseWebDav())
-    WNetCancelConnection2A(QtPassSettings::getPassStore().toUtf8().constData(),
-                           0, 1);
+  const AppSettings s = QtPassSettings::load();
+  if (s.useWebDav)
+    WNetCancelConnection2A(s.passStore.toUtf8().constData(), 0, 1);
 #else
   if (fusedav.state() == QProcess::Running) {
     fusedav.terminate();
@@ -78,22 +78,18 @@ auto QtPass::init() -> bool {
 #ifdef QT_DEBUG
     dbg() << "assuming fresh install";
 #endif
-
-    if (QtPassSettings::getAutoclearSeconds() < 5) {
+    const AppSettings s = QtPassSettings::load();
+    if (s.autoclearSeconds < 5) {
       QtPassSettings::setAutoclearSeconds(10);
     }
-    if (QtPassSettings::getAutoclearPanelSeconds() < 5) {
+    if (s.autoclearPanelSeconds < 5) {
       QtPassSettings::setAutoclearPanelSeconds(10);
     }
-    if (!QtPassSettings::getPwgenExecutable().isEmpty()) {
-      QtPassSettings::setUsePwgen(true);
-    } else {
-      QtPassSettings::setUsePwgen(false);
-    }
-    QtPassSettings::setPassTemplate("login\nurl");
+    QtPassSettings::setUsePwgen(!s.pwgenExecutable.isEmpty());
+    QtPassSettings::setPassTemplate(QStringLiteral("login\nurl"));
   } else {
     if (QtPassSettings::getPassTemplate().isEmpty()) {
-      QtPassSettings::setPassTemplate("login\nurl");
+      QtPassSettings::setPassTemplate(QStringLiteral("login\nurl"));
     }
   }
 
