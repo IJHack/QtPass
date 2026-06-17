@@ -1283,9 +1283,11 @@ void tst_util::getGpgIdPathSubfolder() {
   file.write("ABCDEF12\n");
   file.close();
 
-  QString path = Pass::getGpgIdPath(subfolder + "/password.gpg", passStore);
-  QVERIFY2(path == gpgIdFile,
-           qPrintable(QString("Expected %1, got %2").arg(gpgIdFile, path)));
+  QString path = QDir::cleanPath(
+      Pass::getGpgIdPath(subfolder + "/password.gpg", passStore));
+  QString expected = QDir::cleanPath(gpgIdFile);
+  QVERIFY2(path == expected,
+           qPrintable(QString("Expected %1, got %2").arg(expected, path)));
 }
 
 void tst_util::getGpgIdPathNotFound() {

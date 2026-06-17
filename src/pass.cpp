@@ -842,8 +842,8 @@ void Pass::updateEnv() {
  * @param for_file which file (folder) would you like the gpgid file path for.
  * @return path to the gpgid file.
  */
-auto Pass::getGpgIdPath(const QString &for_file,
-                        const QString &passStore) -> QString {
+auto Pass::getGpgIdPath(const QString &for_file, const QString &passStore)
+    -> QString {
   QString normalizedStore = QDir::fromNativeSeparators(passStore);
   QString normalizedFile = QDir::fromNativeSeparators(for_file);
   QString fullPath = normalizedFile.startsWith(normalizedStore)
@@ -856,8 +856,9 @@ auto Pass::getGpgIdPath(const QString &for_file,
   bool found = false;
   while (gpgIdDir.exists()) {
     QString currentPath = QDir::cleanPath(gpgIdDir.absolutePath());
-    if (currentPath != cleanPassStore &&
-        !currentPath.startsWith(cleanPassStore + "/")) {
+    const QString prefix =
+        cleanPassStore.endsWith('/') ? cleanPassStore : cleanPassStore + "/";
+    if (currentPath != cleanPassStore && !currentPath.startsWith(prefix)) {
       break;
     }
     if (QFile(gpgIdDir.absoluteFilePath(".gpg-id")).exists()) {
@@ -869,7 +870,7 @@ auto Pass::getGpgIdPath(const QString &for_file,
     }
   }
   return found ? gpgIdDir.absoluteFilePath(".gpg-id")
-               : QDir(passStore).filePath(".gpg-id");
+               : QDir(normalizedStore).filePath(".gpg-id");
 }
 
 /**
@@ -877,8 +878,8 @@ auto Pass::getGpgIdPath(const QString &for_file,
  * @param for_file which file (folder) would you like recipients for
  * @return recipients gpg-id contents
  */
-auto Pass::getRecipientList(const QString &for_file,
-                            const QString &passStore) -> QStringList {
+auto Pass::getRecipientList(const QString &for_file, const QString &passStore)
+    -> QStringList {
   QFile gpgId(getGpgIdPath(for_file, passStore));
   if (!gpgId.open(QIODevice::ReadOnly | QIODevice::Text)) {
     return {};
@@ -901,10 +902,9 @@ auto Pass::getRecipientList(const QString &for_file,
  * @param count
  * @return recipient string
  */
-auto Pass::getRecipientString(const QString &for_file,
-                              const QString &passStore,
-                              const QString &separator,
-                              int *count) -> QStringList {
+auto Pass::getRecipientString(const QString &for_file, const QString &passStore,
+                              const QString &separator, int *count)
+    -> QStringList {
   Q_UNUSED(separator)
   QStringList recipients = Pass::getRecipientList(for_file, passStore);
   if (count) {
