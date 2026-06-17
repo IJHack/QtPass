@@ -584,8 +584,12 @@ void tst_settings::profileGitOptions() {
 
 void tst_settings::setAndGetProfileDefault() {
   const QString expectedProfile = QStringLiteral("defaultProfile");
-  QtPassSettings::setProfile(expectedProfile);
-  QCOMPARE(QtPassSettings::getProfile(), expectedProfile);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.activeProfile = expectedProfile;
+    QtPassSettings::save(s);
+  }
+  QCOMPARE(QtPassSettings::load().activeProfile, expectedProfile);
 }
 
 void tst_settings::serializerLoadDefaults() {

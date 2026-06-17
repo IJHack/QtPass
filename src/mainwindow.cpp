@@ -1283,12 +1283,13 @@ void MainWindow::on_profileBox_currentTextChanged(const QString &name) {
 
   ui->lineEdit->clear();
 
-  QtPassSettings::setProfile(name);
-
-  QtPassSettings::setPassStore(
-      QtPassSettings::getProfiles().value(name).value("path"));
-  QtPassSettings::setPassSigningKey(
-      QtPassSettings::getProfiles().value(name).value("signingKey"));
+  const QHash<QString, QString> prof =
+      QtPassSettings::getProfiles().value(name);
+  AppSettings s = QtPassSettings::load();
+  s.activeProfile = name;
+  s.passStore = prof.value("path");
+  s.passSigningKey = prof.value("signingKey");
+  QtPassSettings::save(s);
   ui->statusBar->showMessage(tr("Profile changed to %1").arg(name), 2000);
 
   QtPassSettings::getPass()->updateEnv();

@@ -338,10 +338,6 @@ auto QtPassSettings::getPassStore(const QString &defaultValue) -> QString {
 void QtPassSettings::setPassStore(const QString &passStore) {
   getInstance()->setValue(SettingsConstants::passStore, passStore);
 }
-void QtPassSettings::setPassSigningKey(const QString &passSigningKey) {
-  getInstance()->setValue(SettingsConstants::passSigningKey, passSigningKey);
-}
-
 /**
  * @brief Initializes executable paths for Pass, Git, GPG, and Pwgen by locating
  * them in the system PATH.
@@ -378,10 +374,6 @@ auto QtPassSettings::getProfile(const QString &defaultValue) -> QString {
       ->value(SettingsConstants::profile, defaultValue)
       .toString();
 }
-void QtPassSettings::setProfile(const QString &profile) {
-  getInstance()->setValue(SettingsConstants::profile, profile);
-}
-
 /**
  * @brief Gets the useGit setting for a specific profile.
  * @param profileName The profile name.

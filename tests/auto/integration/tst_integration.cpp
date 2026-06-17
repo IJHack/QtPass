@@ -311,7 +311,11 @@ void tst_integration::initTestCase() {
     QtPassSettings::save(s);
   }
   m_originalPassSigningKey = QtPassSettings::load().passSigningKey;
-  QtPassSettings::setPassSigningKey(QString());
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = QString();
+    QtPassSettings::save(s);
+  }
   qRegisterMetaType<GrepResults>("GrepResults");
   qRegisterMetaType<GrepResults>(
       "QList<QPair<QString,QStringList>>"); // Qt5 fallback
@@ -319,7 +323,11 @@ void tst_integration::initTestCase() {
 
 void tst_integration::cleanupTestCase() {
   // Restore original pass signing key
-  QtPassSettings::setPassSigningKey(m_originalPassSigningKey);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passSigningKey = m_originalPassSigningKey;
+    QtPassSettings::save(s);
+  }
 
   // Kill any gpg-agent started in our temporary homedir so it doesn't linger.
   QProcess killer;
