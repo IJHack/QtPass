@@ -33,7 +33,7 @@ UsersDialog::UsersDialog(Pass *pass, const AppSettings &s, QString dir,
     : QDialog(parent), ui(new Ui::UsersDialog), m_pass(pass),
       m_passStore(s.passStore), m_gpgExe(s.gpgExecutable),
       m_dir(std::move(dir)) {
-
+  Q_ASSERT(pass);
   ui->setupUi(this);
 
   restoreDialogState();
