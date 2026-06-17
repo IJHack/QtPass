@@ -8,7 +8,7 @@ var searchData=
   ['passshowhandler_5',['passShowHandler',['../class_main_window.html#a35dcbf29b9cfe87b6f7d597b7abba480',1,'MainWindow']]],
   ['passshowhandlerfinished_6',['passShowHandlerFinished',['../class_main_window.html#a7e1ae254673e36410d4b3a73e1e8ec8e',1,'MainWindow']]],
   ['passwordconfiguration_7',['PasswordConfiguration',['../struct_password_configuration.html#ac5767646f5116892b972d32ae6bbf561',1,'PasswordConfiguration']]],
-  ['passworddialog_8',['PasswordDialog',['../class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e',1,'PasswordDialog::PasswordDialog(PasswordConfiguration passConfig, QWidget *parent=nullptr)'],['../class_password_dialog.html#a2122f5d2737b70e5602a7bced9b5cf98',1,'PasswordDialog::PasswordDialog(QString file, const bool &amp;isNew, QWidget *parent=nullptr)']]],
+  ['passworddialog_8',['PasswordDialog',['../class_password_dialog.html#a61ddeb0b0a60558c150a6fbe35306c2e',1,'PasswordDialog::PasswordDialog(PasswordConfiguration passConfig, QWidget *parent=nullptr)'],['../class_password_dialog.html#a1795ae0584aa5d5237e8819aca573d4c',1,'PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &amp;s, QString file, const bool &amp;isNew, QWidget *parent=nullptr)']]],
   ['passworddisplaypanel_9',['PasswordDisplayPanel',['../class_password_display_panel.html#a9629fe79e18a80f29101b80e3077250d',1,'PasswordDisplayPanel']]],
   ['processerrorexit_10',['processErrorExit',['../class_pass.html#a9bb040e1a33322a27cd85d8a367ef24f',1,'Pass']]],
   ['protocolregex_11',['protocolRegex',['../class_util.html#a73aa66df403921fb49c57548f83490bc',1,'Util']]]

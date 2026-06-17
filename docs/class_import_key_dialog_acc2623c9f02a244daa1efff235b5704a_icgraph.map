@@ -1,0 +1,7 @@
+<map id="ImportKeyDialog::ImportKeyDialog" name="ImportKeyDialog::ImportKeyDialog">
+<area shape="rect" id="Node000001" title="Construct an ImportKeyDialog." alt="" coords="255,29,461,69"/>
+<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="401,18,386,11,358,8,334,10,319,15,314,21,316,28,311,30,309,20,316,10,333,5,358,3,387,6,403,13"/>
+<area shape="rect" id="Node000002" href="$class_import_key_dialog.html#aa3e1e9caffd0ab1ca12ec0725f9ebe2e" title="Parse GPG import output to extract a key id or fingerprint." alt="" coords="5,29,207,69"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="241,52,207,52,207,47,241,47"/>
+<area shape="poly" id="edge3_Node000002_Node000002" title=" " alt="" coords="149,18,134,11,106,8,82,10,67,15,62,21,64,28,59,30,57,20,64,10,81,5,106,3,135,6,151,13"/>
+</map>
