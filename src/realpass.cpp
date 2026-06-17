@@ -2,7 +2,6 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 #include "realpass.h"
 #include "debughelper.h"
-#include "qtpasssettings.h"
 #include "util.h"
 
 #include <QDir>
@@ -34,8 +33,8 @@ void RealPass::GitInit() { executePass(GIT_INIT, {"git", "init"}); }
  *                          finishes
  */
 void RealPass::GitPull_b() {
-  int result = Executor::executeBlocking(QtPassSettings::getPassExecutable(),
-                                         {"git", "pull"});
+  int result =
+      Executor::executeBlocking(m_settings.passExecutable, {"git", "pull"});
   if (result != 0) {
 #ifdef QT_DEBUG
     dbg() << "Git pull failed with code:" << result;
@@ -103,8 +102,17 @@ void RealPass::Init(QString path, const QList<UserInfo> &users) {
   // remove the passStore directory otherwise,
   // pass would create a passStore/passStore/dir
   // but you want passStore/dir
-  QString dirWithoutPassdir =
-      path.remove(0, QtPassSettings::getPassStore().size());
+  QString normalizedPath = QDir::cleanPath(path);
+  QString normalizedStore = QDir::cleanPath(m_settings.passStore);
+  QString dirWithoutPassdir;
+  if (normalizedPath.startsWith(normalizedStore)) {
+    dirWithoutPassdir = normalizedPath.mid(normalizedStore.size());
+    if (dirWithoutPassdir.startsWith('/')) {
+      dirWithoutPassdir.remove(0, 1);
+    }
+  } else {
+    dirWithoutPassdir = normalizedPath;
+  }
   QStringList args = {"init", "--path=" + dirWithoutPassdir};
   foreach (const UserInfo &user, users) {
     if (user.enabled) {
@@ -155,10 +163,12 @@ void RealPass::passMoveOrCopy(PROCESS id, const QString &subcommand,
     return;
   }
 
-  QString passSrc = QDir(QtPassSettings::getPassStore())
-                        .relativeFilePath(QDir(src).absolutePath());
-  QString passDest = QDir(QtPassSettings::getPassStore())
-                         .relativeFilePath(QDir(dest).absolutePath());
+  QString normalizedStore = QDir::cleanPath(m_settings.passStore);
+  QString normalizedSrc = QDir::cleanPath(QDir(src).absolutePath());
+  QString normalizedDest = QDir::cleanPath(QDir(dest).absolutePath());
+
+  QString passSrc = QDir(normalizedStore).relativeFilePath(normalizedSrc);
+  QString passDest = QDir(normalizedStore).relativeFilePath(normalizedDest);
 
   // remove the .gpg because pass will not work
   if (srcFileInfo.isFile() && srcFileInfo.suffix() == "gpg") {
@@ -205,6 +215,6 @@ void RealPass::Grep(QString pattern, bool caseInsensitive) {
  */
 void RealPass::executePass(PROCESS id, const QStringList &args, QString input,
                            bool readStdout, bool readStderr) {
-  executeWrapper(id, QtPassSettings::getPassExecutable(), args,
-                 std::move(input), readStdout, readStderr);
+  executeWrapper(id, m_settings.passExecutable, args, std::move(input),
+                 readStdout, readStderr);
 }

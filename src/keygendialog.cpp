@@ -38,7 +38,8 @@ KeygenDialog::KeygenDialog(ConfigDialog *parent)
     // Let window manager handle positioning for first launch
   }
 
-  ui->plainTextEdit->setPlainText(Pass::getDefaultKeyTemplate());
+  ui->plainTextEdit->setPlainText(
+      Pass::getDefaultKeyTemplate(QtPassSettings::getGpgExecutable()));
 }
 
 /**

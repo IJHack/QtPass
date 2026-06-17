@@ -298,6 +298,21 @@ private:
   int m_grepSeq = 0;
   QList<QThread *> m_grepThreads;
 
+  /**
+   * @brief Translate @p path for git when WSL-routed: wraps in wslpath
+   * substitution, otherwise returns @p path unchanged.
+   * @param path Native filesystem path.
+   * @return Path suitable for the configured git executable.
+   */
+  auto pgit(const QString &path) const -> QString;
+  /**
+   * @brief Translate @p path for gpg when WSL-routed: wraps in wslpath
+   * substitution, otherwise returns @p path unchanged.
+   * @param path Native filesystem path.
+   * @return Path suitable for the configured gpg executable.
+   */
+  auto pgpg(const QString &path) const -> QString;
+
   static auto grepMatchFile(const QProcessEnvironment &env,
                             const QString &gpgExe, const QString &filePath,
                             const QRegularExpression &rx) -> QStringList;

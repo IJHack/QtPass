@@ -3,6 +3,7 @@
 #ifndef SRC_PASS_H_
 #define SRC_PASS_H_
 
+#include "appsettings.h"
 #include "enums.h"
 #include "executor.h"
 #include "userinfo.h"
@@ -56,6 +57,13 @@ class Pass : public QObject {
 
 protected:
   /**
+   * @brief Application settings snapshot injected at init() time.
+   *
+   * Populated by init(AppSettings) and valid for the lifetime of this backend
+   * instance. Subclasses read it in place of calling QtPassSettings directly.
+   */
+  AppSettings m_settings;
+  /**
    * @brief Internal command executor for queuing and running subprocesses.
    */
   Executor exec;
@@ -71,19 +79,22 @@ public:
    */
   Pass();
   /**
-   * @brief Initialize the Pass instance.
+   * @brief Initialize the Pass instance with a settings snapshot.
+   * @param settings Application settings to use for this backend lifetime.
    */
-  void init();
+  void init(const AppSettings &settings);
   /**
    * @brief Check if GPG supports Ed25519 encryption.
+   * @param gpgExecutable Path to the gpg binary (defaults to "gpg").
    * @return true if Ed25519 is supported.
    */
-  static bool gpgSupportsEd25519();
+  static bool gpgSupportsEd25519(const QString &gpgExecutable = {});
   /**
    * @brief Get default key template for new GPG keys.
+   * @param gpgExecutable Path to the gpg binary (defaults to "gpg").
    * @return Default template string.
    */
-  static QString getDefaultKeyTemplate();
+  static QString getDefaultKeyTemplate(const QString &gpgExecutable = {});
 
   ~Pass() override = default;
 
