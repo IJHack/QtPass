@@ -28,6 +28,9 @@ PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
                                QWidget *parent)
     : QDialog(parent), ui(new Ui::PasswordDialog),
       m_passConfig(std::move(passConfig)), m_pass(QtPassSettings::getPass()) {
+  // m_pass is captured once from the singleton here. This constructor is
+  // only reached from tests; production always uses the two-arg overload
+  // that receives an explicit Pass* with a stable, caller-controlled lifetime.
   m_templating = false;
   m_isNew = false;
 
