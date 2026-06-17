@@ -227,12 +227,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0240e98aae2cee6ab3d035ff17c47920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get default key template for new GPG keys.  <br /></td></tr>
 <tr class="memitem:a4425df7bb17f93be39e1142c2fd4c6a6" id="r_a4425df7bb17f93be39e1142c2fd4c6a6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a4425df7bb17f93be39e1142c2fd4c6a6">resolveGpgconfCommand</a> (const QString &amp;gpgPath) -&gt; <a class="el" href="struct_resolved_gpgconf_command.html">ResolvedGpgconfCommand</a></td></tr>
 <tr class="memdesc:a4425df7bb17f93be39e1142c2fd4c6a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resolve the gpgconf command to kill agents.  <br /></td></tr>
-<tr class="memitem:ae6c9a863e2db95c692b22f007032e7c2" id="r_ae6c9a863e2db95c692b22f007032e7c2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae6c9a863e2db95c692b22f007032e7c2">getGpgIdPath</a> (const QString &amp;for_file) -&gt; QString</td></tr>
-<tr class="memdesc:ae6c9a863e2db95c692b22f007032e7c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get .gpg-id file path for a password file.  <br /></td></tr>
-<tr class="memitem:a8a596274c07c599b3154543b62e7b00f" id="r_a8a596274c07c599b3154543b62e7b00f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8a596274c07c599b3154543b62e7b00f">getRecipientList</a> (const QString &amp;for_file) -&gt; QStringList</td></tr>
-<tr class="memdesc:a8a596274c07c599b3154543b62e7b00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of recipients for a password file.  <br /></td></tr>
-<tr class="memitem:a65c074b574b4cea120abe8333255666e" id="r_a65c074b574b4cea120abe8333255666e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a65c074b574b4cea120abe8333255666e">getRecipientString</a> (const QString &amp;for_file, const QString &amp;separator=&quot; &quot;, int *count=nullptr) -&gt; QStringList</td></tr>
-<tr class="memdesc:a65c074b574b4cea120abe8333255666e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get recipients as string.  <br /></td></tr>
+<tr class="memitem:a7b85488c618db05c5ed43788765ccc6b" id="r_a7b85488c618db05c5ed43788765ccc6b"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a7b85488c618db05c5ed43788765ccc6b">getGpgIdPath</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QString</td></tr>
+<tr class="memdesc:a7b85488c618db05c5ed43788765ccc6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get .gpg-id file path for a password file.  <br /></td></tr>
+<tr class="memitem:aecbf5f13da209c44955bad681a63a388" id="r_aecbf5f13da209c44955bad681a63a388"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aecbf5f13da209c44955bad681a63a388">getRecipientList</a> (const QString &amp;for_file, const QString &amp;passStore) -&gt; QStringList</td></tr>
+<tr class="memdesc:aecbf5f13da209c44955bad681a63a388"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get list of recipients for a password file.  <br /></td></tr>
+<tr class="memitem:adc0aa2e7b272f2abe3cfea591a6bc15c" id="r_adc0aa2e7b272f2abe3cfea591a6bc15c"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#adc0aa2e7b272f2abe3cfea591a6bc15c">getRecipientString</a> (const QString &amp;for_file, const QString &amp;passStore, const QString &amp;separator=&quot; &quot;, int *count=nullptr) -&gt; QStringList</td></tr>
+<tr class="memdesc:adc0aa2e7b272f2abe3cfea591a6bc15c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get recipients as string.  <br /></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pro-types" class="groupheader"><a id="pro-types" name="pro-types"></a>
 Protected Types</h2></td></tr>
@@ -1326,8 +1326,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae6c9a863e2db95c692b22f007032e7c2" name="ae6c9a863e2db95c692b22f007032e7c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6c9a863e2db95c692b22f007032e7c2">&#9670;&#160;</a></span>getGpgIdPath()</h2>
+<a id="a7b85488c618db05c5ed43788765ccc6b" name="a7b85488c618db05c5ed43788765ccc6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b85488c618db05c5ed43788765ccc6b">&#9670;&#160;</a></span>getGpgIdPath()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1338,8 +1338,12 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">auto Pass::getGpgIdPath </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>for_file</em></span></td><td>)</td>
-          <td> -&gt;  QString</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>for_file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passStore</em></span>&#160;) -&gt;  QString</td>
         </tr>
       </table>
   </td>
@@ -1353,6 +1357,7 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">for_file</td><td>Path to password file. </td></tr>
+    <tr><td class="paramname">passStore</td><td>Root directory of the password store. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1360,8 +1365,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a8a596274c07c599b3154543b62e7b00f" name="a8a596274c07c599b3154543b62e7b00f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8a596274c07c599b3154543b62e7b00f">&#9670;&#160;</a></span>getRecipientList()</h2>
+<a id="aecbf5f13da209c44955bad681a63a388" name="aecbf5f13da209c44955bad681a63a388"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecbf5f13da209c44955bad681a63a388">&#9670;&#160;</a></span>getRecipientList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1372,8 +1377,12 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">auto Pass::getRecipientList </td>
           <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>for_file</em></span></td><td>)</td>
-          <td> -&gt;  QStringList</td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>for_file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passStore</em></span>&#160;) -&gt;  QStringList</td>
         </tr>
       </table>
   </td>
@@ -1387,6 +1396,7 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">for_file</td><td>Path to password file. </td></tr>
+    <tr><td class="paramname">passStore</td><td>Root directory of the password store. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1394,8 +1404,8 @@ Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a65c074b574b4cea120abe8333255666e" name="a65c074b574b4cea120abe8333255666e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65c074b574b4cea120abe8333255666e">&#9670;&#160;</a></span>getRecipientString()</h2>
+<a id="adc0aa2e7b272f2abe3cfea591a6bc15c" name="adc0aa2e7b272f2abe3cfea591a6bc15c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc0aa2e7b272f2abe3cfea591a6bc15c">&#9670;&#160;</a></span>getRecipientString()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1407,6 +1417,11 @@ Protected Attributes</h2></td></tr>
           <td class="memname">auto Pass::getRecipientString </td>
           <td>(</td>
           <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>for_file</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passStore</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1430,6 +1445,7 @@ Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">for_file</td><td>Path to password file. </td></tr>
+    <tr><td class="paramname">passStore</td><td>Root directory of the password store. </td></tr>
     <tr><td class="paramname">separator</td><td>Separator between recipients. </td></tr>
     <tr><td class="paramname">count</td><td>Pointer to store recipient count. </td></tr>
   </table>

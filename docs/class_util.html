@@ -121,10 +121,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:abfddcff8c37fbb33e86605e4fb7250db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate the password store directory.  <br /></td></tr>
 <tr class="memitem:ab23a1afdcad63df9101660fd6e53b763" id="r_ab23a1afdcad63df9101660fd6e53b763"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ab23a1afdcad63df9101660fd6e53b763">normalizeFolderPath</a> (const QString &amp;path) -&gt; QString</td></tr>
 <tr class="memdesc:ab23a1afdcad63df9101660fd6e53b763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ensure a folder path always ends with the native directory separator.  <br /></td></tr>
-<tr class="memitem:af67c5e8a8475d367aad069275251558d" id="r_af67c5e8a8475d367aad069275251558d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af67c5e8a8475d367aad069275251558d">configIsValid</a> () -&gt; bool</td></tr>
-<tr class="memdesc:af67c5e8a8475d367aad069275251558d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that the required configuration is complete.  <br /></td></tr>
-<tr class="memitem:a43035d8b47eb0a01bb0274e800cd8ef0" id="r_a43035d8b47eb0a01bb0274e800cd8ef0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a43035d8b47eb0a01bb0274e800cd8ef0">getDir</a> (const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const <a class="el" href="class_store_model.html">StoreModel</a> &amp;storeModel) -&gt; QString</td></tr>
-<tr class="memdesc:a43035d8b47eb0a01bb0274e800cd8ef0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected folder path, either relative to the configured pass store or absolute.  <br /></td></tr>
+<tr class="memitem:ac8926b725ca51d6e68f3f383cfae478f" id="r_ac8926b725ca51d6e68f3f383cfae478f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac8926b725ca51d6e68f3f383cfae478f">configIsValid</a> (const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;s) -&gt; bool</td></tr>
+<tr class="memdesc:ac8926b725ca51d6e68f3f383cfae478f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verify that the required configuration is complete.  <br /></td></tr>
+<tr class="memitem:a6cd77a6dfdb6fbbaacce27c15ba81220" id="r_a6cd77a6dfdb6fbbaacce27c15ba81220"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6cd77a6dfdb6fbbaacce27c15ba81220">getDir</a> (const QModelIndex &amp;index, bool forPass, const QFileSystemModel &amp;model, const <a class="el" href="class_store_model.html">StoreModel</a> &amp;storeModel, const QString &amp;passStore) -&gt; QString</td></tr>
+<tr class="memdesc:a6cd77a6dfdb6fbbaacce27c15ba81220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the selected folder path, either relative to the configured pass store or absolute.  <br /></td></tr>
 <tr class="memitem:a8ed01cfd3773e5b0034089f2f952a030" id="r_a8ed01cfd3773e5b0034089f2f952a030"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8ed01cfd3773e5b0034089f2f952a030">endsWithGpg</a> () -&gt; const QRegularExpression &amp;</td></tr>
 <tr class="memdesc:a8ed01cfd3773e5b0034089f2f952a030"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a regex to match .gpg file extensions.  <br /></td></tr>
 <tr class="memitem:a73aa66df403921fb49c57548f83490bc" id="r_a73aa66df403921fb49c57548f83490bc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a73aa66df403921fb49c57548f83490bc">protocolRegex</a> () -&gt; const QRegularExpression &amp;</td></tr>
@@ -139,10 +139,10 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Some static utilities to be used elsewhere. </p>
 
-<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00020">20</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="util_8h_source.html#l00021">21</a> of file <a class="el" href="util_8h_source.html">util.h</a>.</p>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Member Function Documentation</h2>
-<a id="af67c5e8a8475d367aad069275251558d" name="af67c5e8a8475d367aad069275251558d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af67c5e8a8475d367aad069275251558d">&#9670;&#160;</a></span>configIsValid()</h2>
+<a id="ac8926b725ca51d6e68f3f383cfae478f" name="ac8926b725ca51d6e68f3f383cfae478f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8926b725ca51d6e68f3f383cfae478f">&#9670;&#160;</a></span>configIsValid()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +153,7 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">auto Util::configIsValid </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="struct_app_settings.html">AppSettings</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span></td><td>)</td>
           <td> -&gt;  bool</td>
         </tr>
       </table>
@@ -165,6 +165,12 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Verify that the required configuration is complete. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Application settings snapshot (passStore, usePass, executables). </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>bool <span class="tt">true</span> if the password store's <span class="tt">.gpg-id</span> exists AND the configured executable (pass or gpg, depending on settings) exists or is a WSL wrapper; <span class="tt">false</span> otherwise. </dd></dl>
 
 </div>
@@ -259,8 +265,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a43035d8b47eb0a01bb0274e800cd8ef0" name="a43035d8b47eb0a01bb0274e800cd8ef0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43035d8b47eb0a01bb0274e800cd8ef0">&#9670;&#160;</a></span>getDir()</h2>
+<a id="a6cd77a6dfdb6fbbaacce27c15ba81220" name="a6cd77a6dfdb6fbbaacce27c15ba81220"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cd77a6dfdb6fbbaacce27c15ba81220">&#9670;&#160;</a></span>getDir()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -286,7 +292,12 @@ Static Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="class_store_model.html">StoreModel</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>storeModel</em></span>&#160;) -&gt;  QString</td>
+          <td class="paramtype">const <a class="el" href="class_store_model.html">StoreModel</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>storeModel</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>passStore</em></span>&#160;) -&gt;  QString</td>
         </tr>
       </table>
   </td>
@@ -303,6 +314,7 @@ Static Public Member Functions</h2></td></tr>
     <tr><td class="paramname">forPass</td><td>If true, return the path relative to the pass store; otherwise return an absolute path. </td></tr>
     <tr><td class="paramname">model</td><td>Filesystem model used to resolve the index. </td></tr>
     <tr><td class="paramname">storeModel</td><td><a class="el" href="class_store_model.html" title="QSortFilterProxyModel for filtering and displaying password store.">StoreModel</a> used to map view indexes to the filesystem model. </td></tr>
+    <tr><td class="paramname">passStore</td><td>Root directory of the password store. </td></tr>
   </table>
   </dd>
 </dl>
