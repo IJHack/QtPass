@@ -59,15 +59,6 @@ private:
 };
 
 void tst_settings::initTestCase() {
-  // Reset password configuration to structural defaults so
-  // getPasswordConfigurationDefault() passes even after a prior run that wrote
-  // non-default values to persistent (non-portable) settings.
-  {
-    AppSettings s = QtPassSettings::load();
-    s.passwordConfiguration = PasswordConfiguration{};
-    QtPassSettings::save(s);
-  }
-
   // Check for portable mode (qtpass.ini in app directory)
   // Only backup/restore settings file in portable mode
   // On non-portable (registry on Windows), we cannot safely backup
@@ -76,6 +67,8 @@ void tst_settings::initTestCase() {
   m_isPortableMode = QFile::exists(portableIni);
 
   if (m_isPortableMode) {
+    // Backup FIRST so the restored file contains the true original user config,
+    // not the post-reset state written below.
     QtPassSettings::getInstance()->sync();
     QString settingsFile = QtPassSettings::getInstance()->fileName();
     m_settingsBackupPath = settingsFile + ".bak";
@@ -89,6 +82,15 @@ void tst_settings::initTestCase() {
     qWarning() << "Non-portable mode detected: tests may modify persistent "
                   "user settings (e.g. Windows registry). For an isolated "
                   "run, drop a qtpass.ini next to the test binary.";
+  }
+
+  // Reset password configuration to structural defaults so
+  // getPasswordConfigurationDefault() passes even after a prior run that wrote
+  // non-default values to persistent (non-portable) settings.
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passwordConfiguration = PasswordConfiguration{};
+    QtPassSettings::save(s);
   }
 }
 
@@ -276,8 +278,8 @@ void tst_settings::setAndGetClipBoardType() {
 }
 
 void tst_settings::setAndGetPasswordLength() {
-  const int savedLength = QtPassSettings::load().passwordConfiguration.length;
   AppSettings toSave = QtPassSettings::load();
+  const int savedLength = toSave.passwordConfiguration.length;
   toSave.passwordConfiguration.length = 24;
   QtPassSettings::save(toSave);
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
@@ -488,10 +490,16 @@ void tst_settings::setAndGetDialogMaximized() {
 
 void tst_settings::setAndGetPasswordCharsSelection() {
   AppSettings toSave = QtPassSettings::load();
+  const PasswordConfiguration::characterSet savedSelected =
+      toSave.passwordConfiguration.selected;
   toSave.passwordConfiguration.selected = PasswordConfiguration::ALPHABETICAL;
   QtPassSettings::save(toSave);
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QCOMPARE(config.selected, PasswordConfiguration::ALPHABETICAL);
+  // Restore to avoid polluting subsequent tests
+  toSave = QtPassSettings::load();
+  toSave.passwordConfiguration.selected = savedSelected;
+  QtPassSettings::save(toSave);
 }
 
 void tst_settings::setAndGetPasswordChars() {

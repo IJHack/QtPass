@@ -52,14 +52,8 @@ void tst_passwordconfig::passwordConfigurationDefaults() {
 }
 
 void tst_passwordconfig::passwordConfigurationSetters() {
-  // Reset any previous test settings to ensure clean state
-  {
-    AppSettings s = QtPassSettings::load();
-    s.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] =
-        QString();
-    s.passwordConfiguration.selected = PasswordConfiguration::ALLCHARS;
-    QtPassSettings::save(s);
-  }
+  AppSettings saved = QtPassSettings::load();
+  const PasswordConfiguration original = saved.passwordConfiguration;
 
   {
     AppSettings s = QtPassSettings::load();
@@ -72,11 +66,9 @@ void tst_passwordconfig::passwordConfigurationSetters() {
   QCOMPARE(config.length, 24);
   QCOMPARE(config.selected, PasswordConfiguration::CUSTOM);
 
-  // Reset after test
-  AppSettings s = QtPassSettings::load();
-  s.passwordConfiguration.selected = PasswordConfiguration::ALLCHARS;
-  s.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] = QString();
-  QtPassSettings::save(s);
+  // Restore complete passwordConfiguration to avoid polluting subsequent tests
+  saved.passwordConfiguration = original;
+  QtPassSettings::save(saved);
 }
 
 void tst_passwordconfig::passwordConfigurationCharacterSets() {
