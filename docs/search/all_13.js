@@ -13,7 +13,7 @@ var searchData=
   ['useqrencode_10',['useQrencode',['../struct_app_settings.html#ac73a141ef053548af932d5d6cc56e1b9',1,'AppSettings::useQrencode'],['../class_config_dialog.html#a6dbe2089e9c89952aac994d4a359c3f9',1,'ConfigDialog::useQrencode()']]],
   ['userdialog_11',['userDialog',['../class_main_window.html#a056b66175a3d3ffc3146535726bb4e50',1,'MainWindow']]],
   ['userinfo_12',['UserInfo',['../struct_user_info.html',1,'UserInfo'],['../struct_user_info.html#aebbc7aa95fa4142a0059e7dec61acefa',1,'UserInfo::UserInfo()']]],
-  ['usersdialog_13',['UsersDialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#a7a3d75a01a48609ce7571cec09b95f07',1,'UsersDialog::UsersDialog()']]],
+  ['usersdialog_13',['UsersDialog',['../class_users_dialog.html',1,'UsersDialog'],['../class_users_dialog.html#aadc5be04d9f54b8d827348bf9248ae22',1,'UsersDialog::UsersDialog()']]],
   ['useselection_14',['useSelection',['../struct_app_settings.html#a93f7cb2526fc655789315eca6f5590a4',1,'AppSettings::useSelection'],['../class_config_dialog.html#af93386c7b55bd8ae35fda6f096d46eb6',1,'ConfigDialog::useSelection()']]],
   ['usesymbols_15',['useSymbols',['../struct_app_settings.html#a1dcb264e80bf03810dc659faf83498b8',1,'AppSettings']]],
   ['usetemplate_16',['useTemplate',['../struct_app_settings.html#adcdcefd0f896681f9ec31ca33cb5232b',1,'AppSettings::useTemplate'],['../class_config_dialog.html#a791fbb09740f62bff81c104ce61a0c1a',1,'ConfigDialog::useTemplate()']]],
