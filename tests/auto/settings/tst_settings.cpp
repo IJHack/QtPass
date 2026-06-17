@@ -188,17 +188,22 @@ const BoolSetting boolSettings[] = {
     {"useOtp", QtPassSettings::setUseOtp, &AppSettings::useOtp},
     {"useTrayIcon", QtPassSettings::setUseTrayIcon, &AppSettings::useTrayIcon},
     {"usePwgen", QtPassSettings::setUsePwgen, &AppSettings::usePwgen},
-    {"hidePassword", QtPassSettings::setHidePassword, &AppSettings::hidePassword},
+    {"hidePassword", QtPassSettings::setHidePassword,
+     &AppSettings::hidePassword},
     {"hideContent", QtPassSettings::setHideContent, &AppSettings::hideContent},
-    {"useSelection", QtPassSettings::setUseSelection, &AppSettings::useSelection},
-    {"useAutoclear", QtPassSettings::setUseAutoclear, &AppSettings::useAutoclear},
-    {"useMonospace", QtPassSettings::setUseMonospace, &AppSettings::useMonospace},
+    {"useSelection", QtPassSettings::setUseSelection,
+     &AppSettings::useSelection},
+    {"useAutoclear", QtPassSettings::setUseAutoclear,
+     &AppSettings::useAutoclear},
+    {"useMonospace", QtPassSettings::setUseMonospace,
+     &AppSettings::useMonospace},
     {"noLineWrapping", QtPassSettings::setNoLineWrapping,
      &AppSettings::noLineWrapping},
     {"addGPGId", QtPassSettings::setAddGPGId, &AppSettings::addGPGId},
     {"avoidCapitals", QtPassSettings::setAvoidCapitals,
      &AppSettings::avoidCapitals},
-    {"avoidNumbers", QtPassSettings::setAvoidNumbers, &AppSettings::avoidNumbers},
+    {"avoidNumbers", QtPassSettings::setAvoidNumbers,
+     &AppSettings::avoidNumbers},
     {"lessRandom", QtPassSettings::setLessRandom, &AppSettings::lessRandom},
     {"useSymbols", QtPassSettings::setUseSymbols, &AppSettings::useSymbols},
     {"displayAsIs", QtPassSettings::setDisplayAsIs, &AppSettings::displayAsIs},
@@ -242,10 +247,12 @@ void tst_settings::boolRoundTrip() {
     if (setting == s.name) {
       s.setter(testValue);
       const AppSettings loaded = QtPassSettings::load();
-      QVERIFY2(loaded.*s.field == testValue,
-               qPrintable(QString("%1 should be %2")
+      const bool actual = loaded.*s.field;
+      QVERIFY2(actual == testValue,
+               qPrintable(QString("%1 should be %2, got %3")
                               .arg(setting)
-                              .arg(testValue ? "true" : "false")));
+                              .arg(testValue ? "true" : "false")
+                              .arg(actual ? "true" : "false")));
       return;
     }
   }
@@ -302,7 +309,8 @@ const StringSetting stringSettings[] = {
     {"webDavPassword", QtPassSettings::setWebDavPassword,
      &AppSettings::webDavPassword},
     {"profile", QtPassSettings::setProfile, &AppSettings::activeProfile},
-    {"passTemplate", QtPassSettings::setPassTemplate, &AppSettings::passTemplate},
+    {"passTemplate", QtPassSettings::setPassTemplate,
+     &AppSettings::passTemplate},
     {"sshAuthSockOverride", QtPassSettings::setSshAuthSockOverride,
      &AppSettings::sshAuthSockOverride},
 };
