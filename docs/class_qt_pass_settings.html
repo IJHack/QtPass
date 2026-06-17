@@ -153,8 +153,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2250c3d54340c0dbfbaae2a6bbb5b6d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get saved window size.  <br /></td></tr>
 <tr class="memitem:a4e77ad087cfd568eff6a8ac95f59f48b" id="r_a4e77ad087cfd568eff6a8ac95f59f48b"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a4e77ad087cfd568eff6a8ac95f59f48b">setSize</a> (const QSize &amp;size)</td></tr>
 <tr class="memdesc:a4e77ad087cfd568eff6a8ac95f59f48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save window size.  <br /></td></tr>
-<tr class="memitem:a30ec7de5247d54b2196854cb1077ccdf" id="r_a30ec7de5247d54b2196854cb1077ccdf"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a30ec7de5247d54b2196854cb1077ccdf">isMaximized</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a30ec7de5247d54b2196854cb1077ccdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get maximized state.  <br /></td></tr>
 <tr class="memitem:a55a473b77fe0450ce08e19544d495c6f" id="r_a55a473b77fe0450ce08e19544d495c6f"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a55a473b77fe0450ce08e19544d495c6f">setMaximized</a> (const bool &amp;maximized)</td></tr>
 <tr class="memdesc:a55a473b77fe0450ce08e19544d495c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save maximized state.  <br /></td></tr>
 <tr class="memitem:a41481e1e44a7db8f1bae4371017dd023" id="r_a41481e1e44a7db8f1bae4371017dd023"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a41481e1e44a7db8f1bae4371017dd023">getDialogGeometry</a> (const QString &amp;key, const QByteArray &amp;defaultValue=QVariant().toByteArray()) -&gt; QByteArray</td></tr>
@@ -173,58 +171,34 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:add630c087ff82264697fe6619f1a3be1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get dialog maximized state.  <br /></td></tr>
 <tr class="memitem:a74255fb520598be4800eda9c5f4cf0c5" id="r_a74255fb520598be4800eda9c5f4cf0c5"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a74255fb520598be4800eda9c5f4cf0c5">setDialogMaximized</a> (const QString &amp;key, const bool &amp;maximized)</td></tr>
 <tr class="memdesc:a74255fb520598be4800eda9c5f4cf0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save dialog maximized state.  <br /></td></tr>
-<tr class="memitem:aa2bb9d901d72cba879280b34f6f95399" id="r_aa2bb9d901d72cba879280b34f6f95399"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2bb9d901d72cba879280b34f6f95399">isUsePass</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:aa2bb9d901d72cba879280b34f6f95399"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether to use pass (true) or GPG (false).  <br /></td></tr>
 <tr class="memitem:abfe9f251d4037975f3f42c2322159bb3" id="r_abfe9f251d4037975f3f42c2322159bb3"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#abfe9f251d4037975f3f42c2322159bb3">setUsePass</a> (const bool &amp;usePass)</td></tr>
 <tr class="memdesc:abfe9f251d4037975f3f42c2322159bb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save use pass setting.  <br /></td></tr>
-<tr class="memitem:a003c48cf1fe61f172e3252e88815f0f3" id="r_a003c48cf1fe61f172e3252e88815f0f3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a003c48cf1fe61f172e3252e88815f0f3">getClipBoardTypeRaw</a> (const <a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d">Enums::clipBoardType</a> &amp;defaultValue=<a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a>) -&gt; int</td></tr>
-<tr class="memdesc:a003c48cf1fe61f172e3252e88815f0f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get clipboard type preference.  <br /></td></tr>
-<tr class="memitem:a14599d5904d2e158de03c16494db8edd" id="r_a14599d5904d2e158de03c16494db8edd"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a14599d5904d2e158de03c16494db8edd">getClipBoardType</a> (const <a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d">Enums::clipBoardType</a> &amp;defaultValue=<a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a>) -&gt; <a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d">Enums::clipBoardType</a></td></tr>
-<tr class="memdesc:a14599d5904d2e158de03c16494db8edd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get clipboard type as enum.  <br /></td></tr>
 <tr class="memitem:acea381df2014ac07e6c52b89167d41a2" id="r_acea381df2014ac07e6c52b89167d41a2"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acea381df2014ac07e6c52b89167d41a2">setClipBoardType</a> (const int &amp;clipBoardType)</td></tr>
 <tr class="memdesc:acea381df2014ac07e6c52b89167d41a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save clipboard type.  <br /></td></tr>
-<tr class="memitem:a3790763f4ab618afebbdf70479fddc90" id="r_a3790763f4ab618afebbdf70479fddc90"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3790763f4ab618afebbdf70479fddc90">isUseSelection</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a3790763f4ab618afebbdf70479fddc90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether to use selection (X11) for clipboard.  <br /></td></tr>
 <tr class="memitem:a73fc1b25736040e0a00e8c1f757a4c78" id="r_a73fc1b25736040e0a00e8c1f757a4c78"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a73fc1b25736040e0a00e8c1f757a4c78">setUseSelection</a> (const bool &amp;useSelection)</td></tr>
 <tr class="memdesc:a73fc1b25736040e0a00e8c1f757a4c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save use selection setting.  <br /></td></tr>
-<tr class="memitem:ae5f7bd28913f3407227eaccef087b8ee" id="r_ae5f7bd28913f3407227eaccef087b8ee"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae5f7bd28913f3407227eaccef087b8ee">isUseAutoclear</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:ae5f7bd28913f3407227eaccef087b8ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether to use autoclear for clipboard.  <br /></td></tr>
 <tr class="memitem:ab83fcae2cbd44c990f039057ce1aa598" id="r_ab83fcae2cbd44c990f039057ce1aa598"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab83fcae2cbd44c990f039057ce1aa598">setUseAutoclear</a> (const bool &amp;useAutoclear)</td></tr>
 <tr class="memdesc:ab83fcae2cbd44c990f039057ce1aa598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save use autoclear setting.  <br /></td></tr>
 <tr class="memitem:ae18fe9b401aac964c72e7d7711283afe" id="r_ae18fe9b401aac964c72e7d7711283afe"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ae18fe9b401aac964c72e7d7711283afe">getAutoclearSeconds</a> (const int &amp;defaultValue=QVariant().toInt()) -&gt; int</td></tr>
 <tr class="memdesc:ae18fe9b401aac964c72e7d7711283afe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get autoclear delay in seconds.  <br /></td></tr>
 <tr class="memitem:af80acc9e9f0e993a993c36e8092dd3fd" id="r_af80acc9e9f0e993a993c36e8092dd3fd"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af80acc9e9f0e993a993c36e8092dd3fd">setAutoclearSeconds</a> (const int &amp;autoClearSeconds)</td></tr>
 <tr class="memdesc:af80acc9e9f0e993a993c36e8092dd3fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save autoclear seconds.  <br /></td></tr>
-<tr class="memitem:a8e220d21a77ee74af6b6f0d59c959ece" id="r_a8e220d21a77ee74af6b6f0d59c959ece"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a8e220d21a77ee74af6b6f0d59c959ece">isUseAutoclearPanel</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a8e220d21a77ee74af6b6f0d59c959ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether to use panel autoclear.  <br /></td></tr>
 <tr class="memitem:ad3d0bc0f401ceeb25e9718a44ff7690d" id="r_ad3d0bc0f401ceeb25e9718a44ff7690d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ad3d0bc0f401ceeb25e9718a44ff7690d">setUseAutoclearPanel</a> (const bool &amp;useAutoclearPanel)</td></tr>
 <tr class="memdesc:ad3d0bc0f401ceeb25e9718a44ff7690d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save use autoclear panel setting.  <br /></td></tr>
 <tr class="memitem:a61d77f033cb243df921f36bd2ad7cfe9" id="r_a61d77f033cb243df921f36bd2ad7cfe9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a61d77f033cb243df921f36bd2ad7cfe9">getAutoclearPanelSeconds</a> (const int &amp;defaultValue=QVariant().toInt()) -&gt; int</td></tr>
 <tr class="memdesc:a61d77f033cb243df921f36bd2ad7cfe9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get panel autoclear delay in seconds.  <br /></td></tr>
 <tr class="memitem:ae813a84084ac256a2bbeee3502a17439" id="r_ae813a84084ac256a2bbeee3502a17439"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae813a84084ac256a2bbeee3502a17439">setAutoclearPanelSeconds</a> (const int &amp;autoClearPanelSeconds)</td></tr>
 <tr class="memdesc:ae813a84084ac256a2bbeee3502a17439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save panel autoclear seconds.  <br /></td></tr>
-<tr class="memitem:aa2717890f1a1de284179379539e6b977" id="r_aa2717890f1a1de284179379539e6b977"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aa2717890f1a1de284179379539e6b977">isHidePassword</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:aa2717890f1a1de284179379539e6b977"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether to hide password in UI.  <br /></td></tr>
 <tr class="memitem:ace82c94af00fba9fd49c32d4f2574e60" id="r_ace82c94af00fba9fd49c32d4f2574e60"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ace82c94af00fba9fd49c32d4f2574e60">setHidePassword</a> (const bool &amp;hidePassword)</td></tr>
 <tr class="memdesc:ace82c94af00fba9fd49c32d4f2574e60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save hide password setting.  <br /></td></tr>
-<tr class="memitem:a3da81eb987a51e298064626536f16177" id="r_a3da81eb987a51e298064626536f16177"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3da81eb987a51e298064626536f16177">isHideContent</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a3da81eb987a51e298064626536f16177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether to hide content (password + username).  <br /></td></tr>
 <tr class="memitem:aceb109460c1dcdb6a72e7164a7528090" id="r_aceb109460c1dcdb6a72e7164a7528090"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aceb109460c1dcdb6a72e7164a7528090">setHideContent</a> (const bool &amp;hideContent)</td></tr>
 <tr class="memdesc:aceb109460c1dcdb6a72e7164a7528090"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save hide content setting.  <br /></td></tr>
-<tr class="memitem:a93c5d0d81756c6ede0c7302160b1bc0a" id="r_a93c5d0d81756c6ede0c7302160b1bc0a"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a93c5d0d81756c6ede0c7302160b1bc0a">isUseMonospace</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a93c5d0d81756c6ede0c7302160b1bc0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether to use monospace font.  <br /></td></tr>
 <tr class="memitem:a2836f4fbe0d6374d72ea6d631e89b0fa" id="r_a2836f4fbe0d6374d72ea6d631e89b0fa"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a2836f4fbe0d6374d72ea6d631e89b0fa">setUseMonospace</a> (const bool &amp;useMonospace)</td></tr>
 <tr class="memdesc:a2836f4fbe0d6374d72ea6d631e89b0fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save use monospace setting.  <br /></td></tr>
-<tr class="memitem:a56ab62f0a13f16445c13003883a57452" id="r_a56ab62f0a13f16445c13003883a57452"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a56ab62f0a13f16445c13003883a57452">isDisplayAsIs</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a56ab62f0a13f16445c13003883a57452"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether to display password as-is (no modification).  <br /></td></tr>
 <tr class="memitem:ad1ed6b000b859ca9747f8646c987a99f" id="r_ad1ed6b000b859ca9747f8646c987a99f"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ad1ed6b000b859ca9747f8646c987a99f">setDisplayAsIs</a> (const bool &amp;displayAsIs)</td></tr>
 <tr class="memdesc:ad1ed6b000b859ca9747f8646c987a99f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save display as-is setting.  <br /></td></tr>
-<tr class="memitem:ad7c28aad5a5873051fa38a9abf95127f" id="r_ad7c28aad5a5873051fa38a9abf95127f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad7c28aad5a5873051fa38a9abf95127f">isNoLineWrapping</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:ad7c28aad5a5873051fa38a9abf95127f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether to disable line wrapping.  <br /></td></tr>
 <tr class="memitem:ac463092fe55a3f66a87305b70bcce2c1" id="r_ac463092fe55a3f66a87305b70bcce2c1"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ac463092fe55a3f66a87305b70bcce2c1">setNoLineWrapping</a> (const bool &amp;noLineWrapping)</td></tr>
 <tr class="memdesc:ac463092fe55a3f66a87305b70bcce2c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save no line wrapping setting.  <br /></td></tr>
-<tr class="memitem:ad1b27f9ca2bbbe85cfa361ecfdc3f9ac" id="r_ad1b27f9ca2bbbe85cfa361ecfdc3f9ac"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ad1b27f9ca2bbbe85cfa361ecfdc3f9ac">isAddGPGId</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:ad1b27f9ca2bbbe85cfa361ecfdc3f9ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get whether to auto-add GPG ID when receiving files.  <br /></td></tr>
 <tr class="memitem:ae6ebfef6950f26ab7db56ffc68f2e1bc" id="r_ae6ebfef6950f26ab7db56ffc68f2e1bc"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae6ebfef6950f26ab7db56ffc68f2e1bc">setAddGPGId</a> (const bool &amp;addGPGId)</td></tr>
 <tr class="memdesc:ae6ebfef6950f26ab7db56ffc68f2e1bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save add GPG ID setting.  <br /></td></tr>
 <tr class="memitem:a0de322eb0b4907a730325e4008c0b4b6" id="r_a0de322eb0b4907a730325e4008c0b4b6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a0de322eb0b4907a730325e4008c0b4b6">getPassStore</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
@@ -246,12 +220,8 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:a0615a4d51d8357232590ebe4abbf8f26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the user-supplied SSH_AUTH_SOCK override path.  <br /></td></tr>
 <tr class="memitem:ab5961e15e166f31ff05c74a9e330ed17" id="r_ab5961e15e166f31ff05c74a9e330ed17"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab5961e15e166f31ff05c74a9e330ed17">setSshAuthSockOverride</a> (const QString &amp;value)</td></tr>
 <tr class="memdesc:ab5961e15e166f31ff05c74a9e330ed17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the user-supplied SSH_AUTH_SOCK override path.  <br /></td></tr>
-<tr class="memitem:a97ccce4e0d62fa0afa4f901a0c0b5a95" id="r_a97ccce4e0d62fa0afa4f901a0c0b5a95"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a97ccce4e0d62fa0afa4f901a0c0b5a95">getGitExecutable</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
-<tr class="memdesc:a97ccce4e0d62fa0afa4f901a0c0b5a95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get git executable path.  <br /></td></tr>
 <tr class="memitem:a0dbc45500e3af30d01e54dc5705490b2" id="r_a0dbc45500e3af30d01e54dc5705490b2"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a0dbc45500e3af30d01e54dc5705490b2">setGitExecutable</a> (const QString &amp;gitExecutable)</td></tr>
 <tr class="memdesc:a0dbc45500e3af30d01e54dc5705490b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save git executable path.  <br /></td></tr>
-<tr class="memitem:abaecefd0015e15cc55824e9093c10ded" id="r_abaecefd0015e15cc55824e9093c10ded"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#abaecefd0015e15cc55824e9093c10ded">getGpgExecutable</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
-<tr class="memdesc:abaecefd0015e15cc55824e9093c10ded"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get GPG executable path.  <br /></td></tr>
 <tr class="memitem:a3a571496209e6069bcbd76483fb5be95" id="r_a3a571496209e6069bcbd76483fb5be95"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a3a571496209e6069bcbd76483fb5be95">setGpgExecutable</a> (const QString &amp;gpgExecutable)</td></tr>
 <tr class="memdesc:a3a571496209e6069bcbd76483fb5be95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save GPG executable path.  <br /></td></tr>
 <tr class="memitem:a5561c5e69521ab0e690fc09074270fcc" id="r_a5561c5e69521ab0e690fc09074270fcc"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5561c5e69521ab0e690fc09074270fcc">getPwgenExecutable</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
@@ -264,16 +234,10 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:a15e5619edfc478765e728fac1bb9c6cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether WebDAV integration is enabled.  <br /></td></tr>
 <tr class="memitem:a6fc0c2783408100c4c3ca0923e868ae5" id="r_a6fc0c2783408100c4c3ca0923e868ae5"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a6fc0c2783408100c4c3ca0923e868ae5">setUseWebDav</a> (const bool &amp;useWebDav)</td></tr>
 <tr class="memdesc:a6fc0c2783408100c4c3ca0923e868ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save WebDAV integration flag.  <br /></td></tr>
-<tr class="memitem:a2e558fcadd77cae52a46138d119e10c2" id="r_a2e558fcadd77cae52a46138d119e10c2"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2e558fcadd77cae52a46138d119e10c2">getWebDavUrl</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
-<tr class="memdesc:a2e558fcadd77cae52a46138d119e10c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get WebDAV URL.  <br /></td></tr>
 <tr class="memitem:a211af4caf2bd5626dcc9d763061d1556" id="r_a211af4caf2bd5626dcc9d763061d1556"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a211af4caf2bd5626dcc9d763061d1556">setWebDavUrl</a> (const QString &amp;webDavUrl)</td></tr>
 <tr class="memdesc:a211af4caf2bd5626dcc9d763061d1556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save WebDAV URL.  <br /></td></tr>
-<tr class="memitem:a6668924f1b7aaf965b2a07dcf95b4bc0" id="r_a6668924f1b7aaf965b2a07dcf95b4bc0"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a6668924f1b7aaf965b2a07dcf95b4bc0">getWebDavUser</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
-<tr class="memdesc:a6668924f1b7aaf965b2a07dcf95b4bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get WebDAV username.  <br /></td></tr>
 <tr class="memitem:aaefaf5812c3428a6c9a894b5909e0829" id="r_aaefaf5812c3428a6c9a894b5909e0829"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aaefaf5812c3428a6c9a894b5909e0829">setWebDavUser</a> (const QString &amp;webDavUser)</td></tr>
 <tr class="memdesc:aaefaf5812c3428a6c9a894b5909e0829"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save WebDAV username.  <br /></td></tr>
-<tr class="memitem:ac0d690c3f037f5c5cecc12be8716457f" id="r_ac0d690c3f037f5c5cecc12be8716457f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#ac0d690c3f037f5c5cecc12be8716457f">getWebDavPassword</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
-<tr class="memdesc:ac0d690c3f037f5c5cecc12be8716457f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get WebDAV password.  <br /></td></tr>
 <tr class="memitem:aa633927e61af95b7a4e6429de7c93bb1" id="r_aa633927e61af95b7a4e6429de7c93bb1"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aa633927e61af95b7a4e6429de7c93bb1">setWebDavPassword</a> (const QString &amp;webDavPassword)</td></tr>
 <tr class="memdesc:aa633927e61af95b7a4e6429de7c93bb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save WebDAV password.  <br /></td></tr>
 <tr class="memitem:af2548c1c64c4daccdc1df6f505935588" id="r_af2548c1c64c4daccdc1df6f505935588"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af2548c1c64c4daccdc1df6f505935588">getProfile</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
@@ -304,32 +268,18 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:a4f37675f0f13d6765677a525d787d059"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether OTP support is enabled.  <br /></td></tr>
 <tr class="memitem:ab93d706903bec188ae4440ddd2f4d223" id="r_ab93d706903bec188ae4440ddd2f4d223"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab93d706903bec188ae4440ddd2f4d223">setUseOtp</a> (const bool &amp;useOtp)</td></tr>
 <tr class="memdesc:ab93d706903bec188ae4440ddd2f4d223"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save OTP support flag.  <br /></td></tr>
-<tr class="memitem:a995d2a5d9cbcefc3fd107407a99269a3" id="r_a995d2a5d9cbcefc3fd107407a99269a3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a995d2a5d9cbcefc3fd107407a99269a3">isUseQrencode</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a995d2a5d9cbcefc3fd107407a99269a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether qrencode support is enabled.  <br /></td></tr>
 <tr class="memitem:a82215f2a9aba3021352284b113640335" id="r_a82215f2a9aba3021352284b113640335"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a82215f2a9aba3021352284b113640335">setUseQrencode</a> (const bool &amp;useQrencode)</td></tr>
 <tr class="memdesc:a82215f2a9aba3021352284b113640335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save qrencode support flag.  <br /></td></tr>
-<tr class="memitem:af02cbeee00274dab6db15b0ee406afe1" id="r_af02cbeee00274dab6db15b0ee406afe1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af02cbeee00274dab6db15b0ee406afe1">getQrencodeExecutable</a> (const QString &amp;defaultValue=QVariant().toString()) -&gt; QString</td></tr>
-<tr class="memdesc:af02cbeee00274dab6db15b0ee406afe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get qrencode executable path.  <br /></td></tr>
 <tr class="memitem:a245a6070294e235080db309cbdd9c5db" id="r_a245a6070294e235080db309cbdd9c5db"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a245a6070294e235080db309cbdd9c5db">setQrencodeExecutable</a> (const QString &amp;qrencodeExecutable)</td></tr>
 <tr class="memdesc:a245a6070294e235080db309cbdd9c5db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save qrencode executable path.  <br /></td></tr>
-<tr class="memitem:a30e0d71d6dbe01b9bbeac9795f96cb8e" id="r_a30e0d71d6dbe01b9bbeac9795f96cb8e"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a30e0d71d6dbe01b9bbeac9795f96cb8e">isUsePwgen</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a30e0d71d6dbe01b9bbeac9795f96cb8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether pwgen support is enabled.  <br /></td></tr>
 <tr class="memitem:a1a9ed8c969e58b7e1c2264c37f9d3d0a" id="r_a1a9ed8c969e58b7e1c2264c37f9d3d0a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1a9ed8c969e58b7e1c2264c37f9d3d0a">setUsePwgen</a> (const bool &amp;usePwgen)</td></tr>
 <tr class="memdesc:a1a9ed8c969e58b7e1c2264c37f9d3d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save pwgen support flag.  <br /></td></tr>
-<tr class="memitem:a9e57a15f56c8bb5c2ee756ddd3a4f4c9" id="r_a9e57a15f56c8bb5c2ee756ddd3a4f4c9"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9e57a15f56c8bb5c2ee756ddd3a4f4c9">isAvoidCapitals</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a9e57a15f56c8bb5c2ee756ddd3a4f4c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether uppercase characters should be avoided.  <br /></td></tr>
 <tr class="memitem:a894eea7726ecfc7c0386c67ab58188ae" id="r_a894eea7726ecfc7c0386c67ab58188ae"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a894eea7726ecfc7c0386c67ab58188ae">setAvoidCapitals</a> (const bool &amp;avoidCapitals)</td></tr>
 <tr class="memdesc:a894eea7726ecfc7c0386c67ab58188ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save uppercase avoidance flag.  <br /></td></tr>
-<tr class="memitem:a9228ebce725e3eee1d9e14fa8806e55d" id="r_a9228ebce725e3eee1d9e14fa8806e55d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9228ebce725e3eee1d9e14fa8806e55d">isAvoidNumbers</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a9228ebce725e3eee1d9e14fa8806e55d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether numeric characters should be avoided.  <br /></td></tr>
 <tr class="memitem:a9888c6fafb0371ef5e6626b07d0cf556" id="r_a9888c6fafb0371ef5e6626b07d0cf556"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a9888c6fafb0371ef5e6626b07d0cf556">setAvoidNumbers</a> (const bool &amp;avoidNumbers)</td></tr>
 <tr class="memdesc:a9888c6fafb0371ef5e6626b07d0cf556"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save numeric avoidance flag.  <br /></td></tr>
-<tr class="memitem:a9439fbb331e7ba518955d8922c422f60" id="r_a9439fbb331e7ba518955d8922c422f60"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a9439fbb331e7ba518955d8922c422f60">isLessRandom</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a9439fbb331e7ba518955d8922c422f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether less random password generation is enabled.  <br /></td></tr>
 <tr class="memitem:a1faa8fe4f45dd738e66089e7ed35027a" id="r_a1faa8fe4f45dd738e66089e7ed35027a"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1faa8fe4f45dd738e66089e7ed35027a">setLessRandom</a> (const bool &amp;lessRandom)</td></tr>
 <tr class="memdesc:a1faa8fe4f45dd738e66089e7ed35027a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save less-random generation flag.  <br /></td></tr>
-<tr class="memitem:a67c4c20b37ebd85dafe373e40c0ec765" id="r_a67c4c20b37ebd85dafe373e40c0ec765"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a67c4c20b37ebd85dafe373e40c0ec765">isUseSymbols</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a67c4c20b37ebd85dafe373e40c0ec765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether symbol characters are enabled.  <br /></td></tr>
 <tr class="memitem:ab0e0d315f619d3499527dbe46b62d4ac" id="r_ab0e0d315f619d3499527dbe46b62d4ac"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ab0e0d315f619d3499527dbe46b62d4ac">setUseSymbols</a> (const bool &amp;useSymbols)</td></tr>
 <tr class="memdesc:ab0e0d315f619d3499527dbe46b62d4ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save symbol usage flag.  <br /></td></tr>
 <tr class="memitem:a5ea4fd4cf00b38267cfa34b5b585de40" id="r_a5ea4fd4cf00b38267cfa34b5b585de40"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a5ea4fd4cf00b38267cfa34b5b585de40">getPasswordConfiguration</a> () -&gt; <a class="el" href="struct_password_configuration.html">PasswordConfiguration</a></td></tr>
@@ -342,24 +292,18 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:a00f38fb14aa44ad2d8bd7cfe252df035"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save password character selection mode.  <br /></td></tr>
 <tr class="memitem:a1694c5680b0a74330742f94dfcdc1377" id="r_a1694c5680b0a74330742f94dfcdc1377"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1694c5680b0a74330742f94dfcdc1377">setPasswordChars</a> (const QString &amp;passwordChars)</td></tr>
 <tr class="memdesc:a1694c5680b0a74330742f94dfcdc1377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save custom password characters.  <br /></td></tr>
-<tr class="memitem:a80743b992d167a19aca4643f031a987d" id="r_a80743b992d167a19aca4643f031a987d"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a80743b992d167a19aca4643f031a987d">isUseTrayIcon</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a80743b992d167a19aca4643f031a987d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether tray icon support is enabled.  <br /></td></tr>
 <tr class="memitem:acb60cb13c897918325db41df48dc2f6f" id="r_acb60cb13c897918325db41df48dc2f6f"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#acb60cb13c897918325db41df48dc2f6f">setUseTrayIcon</a> (const bool &amp;useTrayIcon)</td></tr>
 <tr class="memdesc:acb60cb13c897918325db41df48dc2f6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save tray icon support flag.  <br /></td></tr>
 <tr class="memitem:a1772cf257c6fc26421e6b70a4680687f" id="r_a1772cf257c6fc26421e6b70a4680687f"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a1772cf257c6fc26421e6b70a4680687f">isHideOnClose</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
 <tr class="memdesc:a1772cf257c6fc26421e6b70a4680687f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether closing the window hides the application.  <br /></td></tr>
 <tr class="memitem:ae8c4250fa4faac6ebb92fc730782e23d" id="r_ae8c4250fa4faac6ebb92fc730782e23d"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#ae8c4250fa4faac6ebb92fc730782e23d">setHideOnClose</a> (const bool &amp;hideOnClose)</td></tr>
 <tr class="memdesc:ae8c4250fa4faac6ebb92fc730782e23d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save hide-on-close flag.  <br /></td></tr>
-<tr class="memitem:af13aa67fbd0f721bdd12c60bd155f8ba" id="r_af13aa67fbd0f721bdd12c60bd155f8ba"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#af13aa67fbd0f721bdd12c60bd155f8ba">isStartMinimized</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:af13aa67fbd0f721bdd12c60bd155f8ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether application should start minimized.  <br /></td></tr>
 <tr class="memitem:aa3a29ba7e6d807dde9595f0df71b9e30" id="r_aa3a29ba7e6d807dde9595f0df71b9e30"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#aa3a29ba7e6d807dde9595f0df71b9e30">setStartMinimized</a> (const bool &amp;startMinimized)</td></tr>
 <tr class="memdesc:aa3a29ba7e6d807dde9595f0df71b9e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save start-minimized flag.  <br /></td></tr>
 <tr class="memitem:aff8eb58a6814a95f12c4369f0187ab97" id="r_aff8eb58a6814a95f12c4369f0187ab97"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#aff8eb58a6814a95f12c4369f0187ab97">isAlwaysOnTop</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
 <tr class="memdesc:aff8eb58a6814a95f12c4369f0187ab97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether main window should stay always on top.  <br /></td></tr>
 <tr class="memitem:a3d679e9875fb99c71927fd20fc365e89" id="r_a3d679e9875fb99c71927fd20fc365e89"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a3d679e9875fb99c71927fd20fc365e89">setAlwaysOnTop</a> (const bool &amp;alwaysOnTop)</td></tr>
 <tr class="memdesc:a3d679e9875fb99c71927fd20fc365e89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save always-on-top flag.  <br /></td></tr>
-<tr class="memitem:a2af4067e86bb990a202ec6b70f074471" id="r_a2af4067e86bb990a202ec6b70f074471"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2af4067e86bb990a202ec6b70f074471">isAutoPull</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a2af4067e86bb990a202ec6b70f074471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether automatic pull is enabled.  <br /></td></tr>
 <tr class="memitem:af5811e35f2ded2bd3884ed52987f1056" id="r_af5811e35f2ded2bd3884ed52987f1056"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#af5811e35f2ded2bd3884ed52987f1056">setAutoPull</a> (const bool &amp;autoPull)</td></tr>
 <tr class="memdesc:af5811e35f2ded2bd3884ed52987f1056"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save automatic pull flag.  <br /></td></tr>
 <tr class="memitem:a2df5530ff5930281eff264172535d4f6" id="r_a2df5530ff5930281eff264172535d4f6"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a2df5530ff5930281eff264172535d4f6">isAutoPush</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
@@ -370,12 +314,8 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 <tr class="memdesc:a233704c2fda184f2eb1f8f784a305fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get pass entry template.  <br /></td></tr>
 <tr class="memitem:a3b6e49641ba7f6a62864c0ec29892aa0" id="r_a3b6e49641ba7f6a62864c0ec29892aa0"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a3b6e49641ba7f6a62864c0ec29892aa0">setPassTemplate</a> (const QString &amp;passTemplate)</td></tr>
 <tr class="memdesc:a3b6e49641ba7f6a62864c0ec29892aa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save pass entry template.  <br /></td></tr>
-<tr class="memitem:a84d0b5e30a064a537160328efc19d2f3" id="r_a84d0b5e30a064a537160328efc19d2f3"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a84d0b5e30a064a537160328efc19d2f3">isUseTemplate</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a84d0b5e30a064a537160328efc19d2f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether template usage is enabled.  <br /></td></tr>
 <tr class="memitem:a1ec95713fc36405bf6b7cdc5eebeb768" id="r_a1ec95713fc36405bf6b7cdc5eebeb768"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a1ec95713fc36405bf6b7cdc5eebeb768">setUseTemplate</a> (const bool &amp;useTemplate)</td></tr>
 <tr class="memdesc:a1ec95713fc36405bf6b7cdc5eebeb768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save template usage flag.  <br /></td></tr>
-<tr class="memitem:a3812c424de85c27064210f588ddc25a1" id="r_a3812c424de85c27064210f588ddc25a1"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a3812c424de85c27064210f588ddc25a1">isTemplateAllFields</a> (const bool &amp;defaultValue=QVariant().toBool()) -&gt; bool</td></tr>
-<tr class="memdesc:a3812c424de85c27064210f588ddc25a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether template applies to all fields.  <br /></td></tr>
 <tr class="memitem:a27bbbe29e23e1aab60f088c8b45e1370" id="r_a27bbbe29e23e1aab60f088c8b45e1370"><td class="memItemLeft">static void&#160;</td><td class="memItemRight"><a class="el" href="#a27bbbe29e23e1aab60f088c8b45e1370">setTemplateAllFields</a> (const bool &amp;templateAllFields)</td></tr>
 <tr class="memdesc:a27bbbe29e23e1aab60f088c8b45e1370"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save template-all-fields flag.  <br /></td></tr>
 <tr class="memitem:a86f9ccbb490cdcc4ffb3fcd6a2112def" id="r_a86f9ccbb490cdcc4ffb3fcd6a2112def"><td class="memItemLeft">static auto&#160;</td><td class="memItemRight"><a class="el" href="#a86f9ccbb490cdcc4ffb3fcd6a2112def">isShowProcessOutput</a> (const bool &amp;defaultValue=false) -&gt; bool</td></tr>
@@ -471,74 +411,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Seconds before clipboard is cleared. </dd></dl>
-
-</div>
-</div>
-<a id="a14599d5904d2e158de03c16494db8edd" name="a14599d5904d2e158de03c16494db8edd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14599d5904d2e158de03c16494db8edd">&#9670;&#160;</a></span>getClipBoardType()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::getClipBoardType </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d">Enums::clipBoardType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a></span></td><td>)</td>
-          <td> -&gt;  <a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d">Enums::clipBoardType</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get clipboard type as enum. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Default value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Clipboard type as <a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d" title="Defines when to copy passwords to clipboard.">Enums::clipBoardType</a>. </dd></dl>
-
-</div>
-</div>
-<a id="a003c48cf1fe61f172e3252e88815f0f3" name="a003c48cf1fe61f172e3252e88815f0f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a003c48cf1fe61f172e3252e88815f0f3">&#9670;&#160;</a></span>getClipBoardTypeRaw()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::getClipBoardTypeRaw </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d">Enums::clipBoardType</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval"><a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52da31db8f69c6cbc253e7b3a7d90a48caef">Enums::CLIPBOARD_NEVER</a></span></td><td>)</td>
-          <td> -&gt;  int</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get clipboard type preference. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Default value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Clipboard type as <a class="el" href="namespace_enums.html#aa36f045555e72e4d536b48aac12ee52d" title="Defines when to copy passwords to clipboard.">Enums::clipBoardType</a>. </dd></dl>
 
 </div>
 </div>
@@ -690,74 +562,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Window geometry as QByteArray. </dd></dl>
-
-</div>
-</div>
-<a id="a97ccce4e0d62fa0afa4f901a0c0b5a95" name="a97ccce4e0d62fa0afa4f901a0c0b5a95"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a97ccce4e0d62fa0afa4f901a0c0b5a95">&#9670;&#160;</a></span>getGitExecutable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::getGitExecutable </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toString()</span></td><td>)</td>
-          <td> -&gt;  QString</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get git executable path. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>String returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Path to git executable. </dd></dl>
-
-</div>
-</div>
-<a id="abaecefd0015e15cc55824e9093c10ded" name="abaecefd0015e15cc55824e9093c10ded"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abaecefd0015e15cc55824e9093c10ded">&#9670;&#160;</a></span>getGpgExecutable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::getGpgExecutable </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toString()</span></td><td>)</td>
-          <td> -&gt;  QString</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get GPG executable path. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>String returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Path to GPG executable. </dd></dl>
 
 </div>
 </div>
@@ -1290,40 +1094,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 </div>
 </div>
-<a id="af02cbeee00274dab6db15b0ee406afe1" name="af02cbeee00274dab6db15b0ee406afe1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af02cbeee00274dab6db15b0ee406afe1">&#9670;&#160;</a></span>getQrencodeExecutable()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::getQrencodeExecutable </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toString()</span></td><td>)</td>
-          <td> -&gt;  QString</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get qrencode executable path. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>String returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Path to qrencode executable. </dd></dl>
-
-</div>
-</div>
 <a id="ac52b7ef718ee01e521d4e07d07a08e31" name="ac52b7ef718ee01e521d4e07d07a08e31"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac52b7ef718ee01e521d4e07d07a08e31">&#9670;&#160;</a></span>getRealPass()</h2>
 
@@ -1488,142 +1258,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 </div>
 </div>
-<a id="ac0d690c3f037f5c5cecc12be8716457f" name="ac0d690c3f037f5c5cecc12be8716457f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0d690c3f037f5c5cecc12be8716457f">&#9670;&#160;</a></span>getWebDavPassword()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::getWebDavPassword </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toString()</span></td><td>)</td>
-          <td> -&gt;  QString</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get WebDAV password. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>String returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>WebDAV password. </dd></dl>
-
-</div>
-</div>
-<a id="a2e558fcadd77cae52a46138d119e10c2" name="a2e558fcadd77cae52a46138d119e10c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e558fcadd77cae52a46138d119e10c2">&#9670;&#160;</a></span>getWebDavUrl()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::getWebDavUrl </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toString()</span></td><td>)</td>
-          <td> -&gt;  QString</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get WebDAV URL. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>String returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>WebDAV URL. </dd></dl>
-
-</div>
-</div>
-<a id="a6668924f1b7aaf965b2a07dcf95b4bc0" name="a6668924f1b7aaf965b2a07dcf95b4bc0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6668924f1b7aaf965b2a07dcf95b4bc0">&#9670;&#160;</a></span>getWebDavUser()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::getWebDavUser </td>
-          <td>(</td>
-          <td class="paramtype">const QString &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toString()</span></td><td>)</td>
-          <td> -&gt;  QString</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get WebDAV username. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>String returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>WebDAV username. </dd></dl>
-
-</div>
-</div>
-<a id="ad1b27f9ca2bbbe85cfa361ecfdc3f9ac" name="ad1b27f9ca2bbbe85cfa361ecfdc3f9ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1b27f9ca2bbbe85cfa361ecfdc3f9ac">&#9670;&#160;</a></span>isAddGPGId()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isAddGPGId </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get whether to auto-add GPG ID when receiving files. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if auto-adding is enabled. </dd></dl>
-
-</div>
-</div>
 <a id="aff8eb58a6814a95f12c4369f0187ab97" name="aff8eb58a6814a95f12c4369f0187ab97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aff8eb58a6814a95f12c4369f0187ab97">&#9670;&#160;</a></span>isAlwaysOnTop()</h2>
 
@@ -1658,40 +1292,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 </div>
 </div>
-<a id="a2af4067e86bb990a202ec6b70f074471" name="a2af4067e86bb990a202ec6b70f074471"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2af4067e86bb990a202ec6b70f074471">&#9670;&#160;</a></span>isAutoPull()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isAutoPull </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether automatic pull is enabled. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if automatic pull is enabled. </dd></dl>
-
-</div>
-</div>
 <a id="a2df5530ff5930281eff264172535d4f6" name="a2df5530ff5930281eff264172535d4f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2df5530ff5930281eff264172535d4f6">&#9670;&#160;</a></span>isAutoPush()</h2>
 
@@ -1723,74 +1323,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if automatic push is enabled. </dd></dl>
-
-</div>
-</div>
-<a id="a9e57a15f56c8bb5c2ee756ddd3a4f4c9" name="a9e57a15f56c8bb5c2ee756ddd3a4f4c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9e57a15f56c8bb5c2ee756ddd3a4f4c9">&#9670;&#160;</a></span>isAvoidCapitals()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isAvoidCapitals </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether uppercase characters should be avoided. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if uppercase characters are avoided. </dd></dl>
-
-</div>
-</div>
-<a id="a9228ebce725e3eee1d9e14fa8806e55d" name="a9228ebce725e3eee1d9e14fa8806e55d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9228ebce725e3eee1d9e14fa8806e55d">&#9670;&#160;</a></span>isAvoidNumbers()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isAvoidNumbers </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether numeric characters should be avoided. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if numeric characters are avoided. </dd></dl>
 
 </div>
 </div>
@@ -1833,74 +1365,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 </div>
 </div>
-<a id="a56ab62f0a13f16445c13003883a57452" name="a56ab62f0a13f16445c13003883a57452"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56ab62f0a13f16445c13003883a57452">&#9670;&#160;</a></span>isDisplayAsIs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isDisplayAsIs </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get whether to display password as-is (no modification). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if displaying as-is. </dd></dl>
-
-</div>
-</div>
-<a id="a3da81eb987a51e298064626536f16177" name="a3da81eb987a51e298064626536f16177"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3da81eb987a51e298064626536f16177">&#9670;&#160;</a></span>isHideContent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isHideContent </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get whether to hide content (password + username). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if content is hidden. </dd></dl>
-
-</div>
-</div>
 <a id="a1772cf257c6fc26421e6b70a4680687f" name="a1772cf257c6fc26421e6b70a4680687f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1772cf257c6fc26421e6b70a4680687f">&#9670;&#160;</a></span>isHideOnClose()</h2>
 
@@ -1935,142 +1399,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 </div>
 </div>
-<a id="aa2717890f1a1de284179379539e6b977" name="aa2717890f1a1de284179379539e6b977"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2717890f1a1de284179379539e6b977">&#9670;&#160;</a></span>isHidePassword()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isHidePassword </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get whether to hide password in UI. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if password is hidden. </dd></dl>
-
-</div>
-</div>
-<a id="a9439fbb331e7ba518955d8922c422f60" name="a9439fbb331e7ba518955d8922c422f60"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9439fbb331e7ba518955d8922c422f60">&#9670;&#160;</a></span>isLessRandom()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isLessRandom </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether less random password generation is enabled. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if less random generation is enabled. </dd></dl>
-
-</div>
-</div>
-<a id="a30ec7de5247d54b2196854cb1077ccdf" name="a30ec7de5247d54b2196854cb1077ccdf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30ec7de5247d54b2196854cb1077ccdf">&#9670;&#160;</a></span>isMaximized()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isMaximized </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get maximized state. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if window is maximized. </dd></dl>
-
-</div>
-</div>
-<a id="ad7c28aad5a5873051fa38a9abf95127f" name="ad7c28aad5a5873051fa38a9abf95127f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7c28aad5a5873051fa38a9abf95127f">&#9670;&#160;</a></span>isNoLineWrapping()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isNoLineWrapping </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get whether to disable line wrapping. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if line wrapping disabled. </dd></dl>
-
-</div>
-</div>
 <a id="a86f9ccbb490cdcc4ffb3fcd6a2112def" name="a86f9ccbb490cdcc4ffb3fcd6a2112def"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a86f9ccbb490cdcc4ffb3fcd6a2112def">&#9670;&#160;</a></span>isShowProcessOutput()</h2>
 
@@ -2102,142 +1430,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Whether process output should be displayed. </dd></dl>
-
-</div>
-</div>
-<a id="af13aa67fbd0f721bdd12c60bd155f8ba" name="af13aa67fbd0f721bdd12c60bd155f8ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af13aa67fbd0f721bdd12c60bd155f8ba">&#9670;&#160;</a></span>isStartMinimized()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isStartMinimized </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether application should start minimized. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if application should start minimized. </dd></dl>
-
-</div>
-</div>
-<a id="a3812c424de85c27064210f588ddc25a1" name="a3812c424de85c27064210f588ddc25a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3812c424de85c27064210f588ddc25a1">&#9670;&#160;</a></span>isTemplateAllFields()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isTemplateAllFields </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether template applies to all fields. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if template applies to all fields. </dd></dl>
-
-</div>
-</div>
-<a id="ae5f7bd28913f3407227eaccef087b8ee" name="ae5f7bd28913f3407227eaccef087b8ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5f7bd28913f3407227eaccef087b8ee">&#9670;&#160;</a></span>isUseAutoclear()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isUseAutoclear </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get whether to use autoclear for clipboard. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if autoclear is enabled. </dd></dl>
-
-</div>
-</div>
-<a id="a8e220d21a77ee74af6b6f0d59c959ece" name="a8e220d21a77ee74af6b6f0d59c959ece"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e220d21a77ee74af6b6f0d59c959ece">&#9670;&#160;</a></span>isUseAutoclearPanel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isUseAutoclearPanel </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get whether to use panel autoclear. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if panel autoclear is enabled. </dd></dl>
 
 </div>
 </div>
@@ -2309,40 +1501,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
 
 </div>
 </div>
-<a id="a93c5d0d81756c6ede0c7302160b1bc0a" name="a93c5d0d81756c6ede0c7302160b1bc0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93c5d0d81756c6ede0c7302160b1bc0a">&#9670;&#160;</a></span>isUseMonospace()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isUseMonospace </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get whether to use monospace font. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if using monospace font. </dd></dl>
-
-</div>
-</div>
 <a id="a4f37675f0f13d6765677a525d787d059" name="a4f37675f0f13d6765677a525d787d059"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4f37675f0f13d6765677a525d787d059">&#9670;&#160;</a></span>isUseOtp()</h2>
 
@@ -2374,244 +1532,6 @@ static void&#160;</td><td class="memItemRight"><b>initExecutables</b> ()</td></t
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if OTP support is enabled. </dd></dl>
-
-</div>
-</div>
-<a id="aa2bb9d901d72cba879280b34f6f95399" name="aa2bb9d901d72cba879280b34f6f95399"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2bb9d901d72cba879280b34f6f95399">&#9670;&#160;</a></span>isUsePass()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isUsePass </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get whether to use pass (true) or GPG (false). </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved (defaults to false). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if using pass, false if using GPG. </dd></dl>
-
-</div>
-</div>
-<a id="a30e0d71d6dbe01b9bbeac9795f96cb8e" name="a30e0d71d6dbe01b9bbeac9795f96cb8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30e0d71d6dbe01b9bbeac9795f96cb8e">&#9670;&#160;</a></span>isUsePwgen()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isUsePwgen </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether pwgen support is enabled. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if pwgen support is enabled. </dd></dl>
-
-</div>
-</div>
-<a id="a995d2a5d9cbcefc3fd107407a99269a3" name="a995d2a5d9cbcefc3fd107407a99269a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a995d2a5d9cbcefc3fd107407a99269a3">&#9670;&#160;</a></span>isUseQrencode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isUseQrencode </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether qrencode support is enabled. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if qrencode support is enabled. </dd></dl>
-
-</div>
-</div>
-<a id="a3790763f4ab618afebbdf70479fddc90" name="a3790763f4ab618afebbdf70479fddc90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3790763f4ab618afebbdf70479fddc90">&#9670;&#160;</a></span>isUseSelection()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isUseSelection </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get whether to use selection (X11) for clipboard. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Boolean returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if using selection. </dd></dl>
-
-</div>
-</div>
-<a id="a67c4c20b37ebd85dafe373e40c0ec765" name="a67c4c20b37ebd85dafe373e40c0ec765"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a67c4c20b37ebd85dafe373e40c0ec765">&#9670;&#160;</a></span>isUseSymbols()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isUseSymbols </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether symbol characters are enabled. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if symbol characters are enabled. </dd></dl>
-
-</div>
-</div>
-<a id="a84d0b5e30a064a537160328efc19d2f3" name="a84d0b5e30a064a537160328efc19d2f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84d0b5e30a064a537160328efc19d2f3">&#9670;&#160;</a></span>isUseTemplate()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isUseTemplate </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether template usage is enabled. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if template usage is enabled. </dd></dl>
-
-</div>
-</div>
-<a id="a80743b992d167a19aca4643f031a987d" name="a80743b992d167a19aca4643f031a987d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a80743b992d167a19aca4643f031a987d">&#9670;&#160;</a></span>isUseTrayIcon()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto QtPassSettings::isUseTrayIcon </td>
-          <td>(</td>
-          <td class="paramtype">const bool &amp;</td>          <td class="paramname"><span class="paramname"><em>defaultValue</em></span><span class="paramdefsep"> = </span><span class="paramdefval">QVariant().toBool()</span></td><td>)</td>
-          <td> -&gt;  bool</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether tray icon support is enabled. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">defaultValue</td><td>Value returned if not saved. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if tray icon support is enabled. </dd></dl>
 
 </div>
 </div>
