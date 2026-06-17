@@ -3,13 +3,15 @@
 #ifndef SRC_PASSWORDDIALOG_H_
 #define SRC_PASSWORDDIALOG_H_
 
-#include "passwordconfiguration.h"
+#include "appsettings.h"
+
 #include <QDialog>
 
 namespace Ui {
 class PasswordDialog;
 }
 
+class Pass;
 class QLineEdit;
 class QWidget;
 
@@ -33,11 +35,14 @@ public:
                           QWidget *parent = nullptr);
   /**
    * @brief Construct a PasswordDialog for editing an existing password file.
+   * @param pass Backend used to show, insert, and generate passwords.
+   * @param s Application settings snapshot (password config, template, pwgen).
    * @param file Path to the password file being edited.
    * @param isNew true if creating a new entry, false if editing existing.
    * @param parent Optional parent widget.
    */
-  PasswordDialog(QString file, const bool &isNew, QWidget *parent = nullptr);
+  PasswordDialog(Pass *pass, const AppSettings &s, QString file,
+                 const bool &isNew, QWidget *parent = nullptr);
   ~PasswordDialog() override;
 
   /**
@@ -108,6 +113,7 @@ private slots:
 private:
   Ui::PasswordDialog *ui;
   PasswordConfiguration m_passConfig;
+  Pass *m_pass{nullptr};
   QStringList m_fields;
   QString m_file;
   bool m_templating{};

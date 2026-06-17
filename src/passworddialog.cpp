@@ -27,7 +27,10 @@
 PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
                                QWidget *parent)
     : QDialog(parent), ui(new Ui::PasswordDialog),
-      m_passConfig(std::move(passConfig)) {
+      m_passConfig(std::move(passConfig)), m_pass(QtPassSettings::getPass()) {
+  // m_pass is captured once from the singleton here. This constructor is
+  // only reached from tests; production always uses the two-arg overload
+  // that receives an explicit Pass* with a stable, caller-controlled lifetime.
   m_templating = false;
   m_isNew = false;
 
@@ -35,8 +38,7 @@ PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
 
-  connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-          &PasswordDialog::setPass);
+  connect(m_pass, &Pass::finishedShow, this, &PasswordDialog::setPass);
 }
 
 /**
@@ -45,29 +47,27 @@ PasswordDialog::PasswordDialog(PasswordConfiguration passConfig,
  * @param isNew
  * @param parent pointer
  */
-PasswordDialog::PasswordDialog(QString file, const bool &isNew, QWidget *parent)
-    : QDialog(parent), ui(new Ui::PasswordDialog), m_file(std::move(file)),
-      m_isNew(isNew) {
+PasswordDialog::PasswordDialog(Pass *pass, const AppSettings &s, QString file,
+                               const bool &isNew, QWidget *parent)
+    : QDialog(parent), ui(new Ui::PasswordDialog), m_pass(pass),
+      m_file(std::move(file)), m_isNew(isNew) {
 
   if (!isNew) {
-    QtPassSettings::getPass()->Show(m_file);
+    m_pass->Show(m_file);
   }
 
   ui->setupUi(this);
 
   setWindowTitle(this->windowTitle() + " " + m_file);
-  m_passConfig = QtPassSettings::getPasswordConfiguration();
-  usePwgen(QtPassSettings::isUsePwgen());
-  setTemplate(QtPassSettings::getPassTemplate(),
-              QtPassSettings::isUseTemplate());
+  m_passConfig = s.passwordConfiguration;
+  usePwgen(s.usePwgen);
+  setTemplate(s.passTemplate, s.useTemplate);
 
   setLength(m_passConfig.length);
   setPasswordCharTemplate(m_passConfig.selected);
 
-  connect(QtPassSettings::getPass(), &Pass::finishedShow, this,
-          &PasswordDialog::setPass);
-  connect(QtPassSettings::getPass(), &Pass::processErrorExit, this,
-          &PasswordDialog::close);
+  connect(m_pass, &Pass::finishedShow, this, &PasswordDialog::setPass);
+  connect(m_pass, &Pass::processErrorExit, this, &PasswordDialog::close);
   connect(this, &PasswordDialog::accepted, this, &PasswordDialog::on_accepted);
   connect(this, &PasswordDialog::rejected, this, &PasswordDialog::on_rejected);
 }
@@ -102,7 +102,7 @@ void PasswordDialog::on_createPasswordButton_clicked() {
     return;
   }
 
-  QString newPass = QtPassSettings::getPass()->generatePassword(
+  QString newPass = m_pass->generatePassword(
       static_cast<unsigned int>(ui->spinBox_pwdLength->value()),
       m_passConfig.Characters[static_cast<PasswordConfiguration::characterSet>(
           currentIndex)]);
@@ -125,7 +125,7 @@ void PasswordDialog::on_accepted() {
     newValue += "\n";
   }
 
-  QtPassSettings::getPass()->Insert(m_file, newValue, !m_isNew);
+  m_pass->Insert(m_file, newValue, !m_isNew);
 }
 
 /**

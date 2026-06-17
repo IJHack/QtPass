@@ -9,10 +9,10 @@
  */
 
 #include "passworddisplaypanel.h"
+#include "appsettings.h"
 #include "qpushbuttonasqrcode.h"
 #include "qpushbuttonshowpassword.h"
 #include "qpushbuttonwithclipboard.h"
-#include "qtpasssettings.h"
 #include "util.h"
 
 #include <QBoxLayout>
@@ -45,27 +45,30 @@ void PasswordDisplayPanel::clear() {
 }
 
 void PasswordDisplayPanel::displayFields(const QString &password,
-                                         const NamedValues &namedValues) {
+                                         const NamedValues &namedValues,
+                                         const AppSettings &s) {
   if (!password.isEmpty()) {
     // The password is hidden in addField when needed.
-    addField(0, QObject::tr("Password"), password);
+    addField(0, QObject::tr("Password"), password, s);
   }
   for (int j = 0; j < namedValues.length(); ++j) {
     const NamedValue &nv = namedValues.at(j);
-    addField(j + 1, nv.name, nv.value);
+    addField(j + 1, nv.name, nv.value, s);
   }
   m_container->setSpacing(m_grid->count() == 0 ? 0 : 6);
 }
 
 void PasswordDisplayPanel::appendField(const QString &field,
-                                       const QString &value) {
+                                       const QString &value,
+                                       const AppSettings &s) {
   // Each row is two grid items (label + value frame), so the next free row is
   // count() / 2 — the same sequential scheme displayFields() uses.
-  addField(m_grid->count() / 2, field, value);
+  addField(m_grid->count() / 2, field, value, s);
 }
 
 void PasswordDisplayPanel::addField(int position, const QString &field,
-                                    const QString &value) {
+                                    const QString &value,
+                                    const AppSettings &s) {
   QString trimmedField = field.trimmed();
   QString trimmedValue = value.trimmed();
 
@@ -79,7 +82,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
   ly->setContentsMargins(5, 2, 2, 2);
   ly->setSpacing(0);
   frame->setLayout(ly);
-  if (QtPassSettings::getClipBoardType() != Enums::CLIPBOARD_NEVER) {
+  if (s.clipBoardType != Enums::CLIPBOARD_NEVER) {
     auto *fieldLabel =
         new QPushButtonWithClipboard(trimmedValue, m_widgetParent);
     connect(fieldLabel, &QPushButtonWithClipboard::clicked, this,
@@ -89,7 +92,7 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
     frame->layout()->addWidget(fieldLabel);
   }
 
-  if (QtPassSettings::isUseQrencode()) {
+  if (s.useQrencode) {
     auto *qrbutton = new QPushButtonAsQRCode(trimmedValue, m_widgetParent);
     connect(qrbutton, &QPushButtonAsQRCode::clicked, this,
             &PasswordDisplayPanel::qrRequested);
@@ -124,13 +127,12 @@ void PasswordDisplayPanel::addField(int position, const QString &field,
 
   // set the echo mode to password, if the field is "password"
   const QString lineStyle =
-      QtPassSettings::isUseMonospace()
+      s.useMonospace
           ? "border-style: none; background: transparent; font-family: "
             "monospace;"
           : "border-style: none; background: transparent;";
 
-  if (QtPassSettings::isHidePassword() &&
-      trimmedField == QObject::tr("Password")) {
+  if (s.hidePassword && trimmedField == QObject::tr("Password")) {
     auto *line = new QLineEdit();
     line->setObjectName(trimmedField);
     line->setText(trimmedValue);

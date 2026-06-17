@@ -23,9 +23,10 @@ class ImportKeyDialog : public QDialog {
 public:
   /**
    * @brief Construct an ImportKeyDialog.
+   * @param gpgExe Path to the gpg executable (falls back to "gpg" if empty).
    * @param parent Optional parent widget.
    */
-  explicit ImportKeyDialog(QWidget *parent = nullptr);
+  explicit ImportKeyDialog(const QString &gpgExe, QWidget *parent = nullptr);
   ~ImportKeyDialog() override;
 
   /**
@@ -71,6 +72,7 @@ private slots:
 private:
   Ui::ImportKeyDialog *ui;
   QString m_importedKeyId;
+  QString m_gpgExe;
 
   auto importFromString(const QString &input) -> bool;
   void showError(const QString &message);

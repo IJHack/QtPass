@@ -8,6 +8,8 @@
 #include <QObject>
 #include <QString>
 
+struct AppSettings;
+
 class QGridLayout;
 class QBoxLayout;
 class QWidget;
@@ -50,15 +52,20 @@ public:
    * @brief Render the password and template fields of a decrypted entry.
    * @param password Password value (row 0); skipped when empty.
    * @param namedValues Template/named fields to render below the password.
+   * @param s AppSettings snapshot supplying display settings (clipboard,
+   *        monospace, hide-password, qrencode).
    */
-  void displayFields(const QString &password, const NamedValues &namedValues);
+  void displayFields(const QString &password, const NamedValues &namedValues,
+                     const AppSettings &s);
 
   /**
    * @brief Append a single field row below the existing ones (e.g. OTP code).
    * @param field Field label.
    * @param value Field value.
+   * @param s AppSettings snapshot supplying display settings.
    */
-  void appendField(const QString &field, const QString &value);
+  void appendField(const QString &field, const QString &value,
+                   const AppSettings &s);
 
 signals:
   /**
@@ -73,7 +80,8 @@ signals:
   void qrRequested(const QString &text);
 
 private:
-  void addField(int position, const QString &field, const QString &value);
+  void addField(int position, const QString &field, const QString &value,
+                const AppSettings &s);
 
   QGridLayout *m_grid;
   QBoxLayout *m_container;

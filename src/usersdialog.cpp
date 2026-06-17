@@ -358,7 +358,7 @@ void UsersDialog::on_lineEdit_textChanged(const QString &filter) {
 void UsersDialog::on_checkBox_clicked() { populateList(ui->lineEdit->text()); }
 
 void UsersDialog::on_importKeyButton_clicked() {
-  ImportKeyDialog dialog(this);
+  ImportKeyDialog dialog(QtPassSettings::getGpgExecutable(), this);
   if (dialog.exec() != QDialog::Accepted) {
     return;
   }

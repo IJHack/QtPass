@@ -629,11 +629,10 @@ void MainWindow::executeWrapperStarted() {
  * @return void - This function does not return a value.
  */
 void MainWindow::passShowHandler(const QString &p_output) {
-  QStringList templ = QtPassSettings::isUseTemplate()
-                          ? QtPassSettings::getPassTemplate().split("\n")
-                          : QStringList();
-  bool allFields =
-      QtPassSettings::isUseTemplate() && QtPassSettings::isTemplateAllFields();
+  const AppSettings s = QtPassSettings::load();
+  QStringList templ =
+      s.useTemplate ? s.passTemplate.split("\n") : QStringList();
+  bool allFields = s.useTemplate && s.templateAllFields;
   FileContent fileContent = FileContent::parse(p_output, templ, allFields);
   QString output = p_output;
   QString password = fileContent.getPassword();
@@ -645,14 +644,14 @@ void MainWindow::passShowHandler(const QString &p_output) {
   m_displayPanel->clear();
 
   // show what is needed:
-  if (QtPassSettings::isHideContent()) {
+  if (s.hideContent) {
     output = "***" + tr("Content hidden") + "***";
-  } else if (!QtPassSettings::isDisplayAsIs()) {
-    m_displayPanel->displayFields(password, fileContent.getNamedValues());
+  } else if (!s.displayAsIs) {
+    m_displayPanel->displayFields(password, fileContent.getNamedValues(), s);
     output = fileContent.getRemainingDataForDisplay();
   }
 
-  if (QtPassSettings::isUseAutoclearPanel()) {
+  if (s.useAutoclearPanel) {
     clearPanelTimer.start();
   }
 
@@ -672,7 +671,8 @@ void MainWindow::passShowHandler(const QString &p_output) {
  */
 void MainWindow::passOtpHandler(const QString &p_output) {
   if (!p_output.isEmpty()) {
-    m_displayPanel->appendField(tr("OTP Code"), p_output);
+    m_displayPanel->appendField(tr("OTP Code"), p_output,
+                                QtPassSettings::load());
     m_qtPass->copyTextToClipboard(p_output);
     showStatusMessage(tr("OTP code copied to clipboard"));
   } else {
@@ -1036,7 +1036,8 @@ auto MainWindow::confirmPathInStore(const QString &candidate) -> bool {
  * @param isNew insert (not update)
  */
 void MainWindow::setPassword(const QString &file, bool isNew) {
-  PasswordDialog d(file, isNew, this);
+  PasswordDialog d(QtPassSettings::getPass(), QtPassSettings::load(), file,
+                   isNew, this);
 
   if (isNew) {
     QString storePath = QtPassSettings::getPassStore();
