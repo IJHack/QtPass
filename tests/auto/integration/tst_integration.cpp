@@ -306,7 +306,7 @@ void tst_integration::initTestCase() {
   QtPassSettings::getInstance()->setValue(SettingsConstants::gpgHome,
                                           m_gnupgHome.path());
   QtPassSettings::setGpgExecutable(m_gpgExe);
-  m_originalPassSigningKey = QtPassSettings::getPassSigningKey();
+  m_originalPassSigningKey = QtPassSettings::load().passSigningKey;
   QtPassSettings::setPassSigningKey(QString());
   qRegisterMetaType<GrepResults>("GrepResults");
   qRegisterMetaType<GrepResults>(

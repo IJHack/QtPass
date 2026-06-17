@@ -237,13 +237,6 @@ public:
   static void setAutoclearSeconds(const int &autoClearSeconds);
 
   /**
-   * @brief Get panel autoclear delay in seconds.
-   * @param defaultValue Integer returned if not saved.
-   * @return Seconds before panel is cleared.
-   */
-  static auto
-  getAutoclearPanelSeconds(const int &defaultValue = QVariant().toInt()) -> int;
-  /**
    * @brief Save panel autoclear seconds.
    * @param autoClearPanelSeconds Seconds to wait before clearing panel.
    */
@@ -263,14 +256,6 @@ public:
    */
   static void setPassStore(const QString &passStore);
 
-  /**
-   * @brief Get GPG signing key for pass.
-   * @param defaultValue String returned if not saved.
-   * @return GPG key ID.
-   */
-  static auto
-  getPassSigningKey(const QString &defaultValue = QVariant().toString())
-      -> QString;
   /**
    * @brief Save GPG signing key.
    * @param passSigningKey Key ID to use for signing.
@@ -308,14 +293,6 @@ public:
    */
   static void setGpgExecutable(const QString &gpgExecutable);
 
-  /**
-   * @brief Get pwgen executable path.
-   * @param defaultValue String returned if not saved.
-   * @return Path to pwgen executable.
-   */
-  static auto
-  getPwgenExecutable(const QString &defaultValue = QVariant().toString())
-      -> QString;
   /**
    * @brief Save pwgen executable path.
    * @param pwgenExecutable Path to pwgen.
