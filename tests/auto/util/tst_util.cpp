@@ -1722,13 +1722,19 @@ void tst_util::updateEnvEmptyCustomCharsetFallsBackToAllChars() {
   PasswordConfiguration original = QtPassSettings::getPasswordConfiguration();
   struct ConfigRollback {
     PasswordConfiguration value;
-    ~ConfigRollback() { QtPassSettings::setPasswordConfiguration(value); }
+    ~ConfigRollback() {
+      AppSettings s = QtPassSettings::load();
+      s.passwordConfiguration = value;
+      QtPassSettings::save(s);
+    }
   } rollback{original};
 
   PasswordConfiguration config = original;
   config.selected = PasswordConfiguration::CUSTOM;
   config.Characters[PasswordConfiguration::CUSTOM] = QString();
-  QtPassSettings::setPasswordConfiguration(config);
+  AppSettings toSave = QtPassSettings::load();
+  toSave.passwordConfiguration = config;
+  QtPassSettings::save(toSave);
   AppSettings s = QtPassSettings::load();
   pass.init(s);
 
@@ -2097,14 +2103,16 @@ public:
   SshAuthSockGuard()
       : hadEnv_(qEnvironmentVariableIsSet("SSH_AUTH_SOCK")),
         prevEnv_(qgetenv("SSH_AUTH_SOCK")),
-        prevOverride_(QtPassSettings::getSshAuthSockOverride()) {}
+        prevOverride_(QtPassSettings::load().sshAuthSockOverride) {}
   ~SshAuthSockGuard() {
     if (hadEnv_) {
       qputenv("SSH_AUTH_SOCK", prevEnv_);
     } else {
       qunsetenv("SSH_AUTH_SOCK");
     }
-    QtPassSettings::setSshAuthSockOverride(prevOverride_);
+    AppSettings s = QtPassSettings::load();
+    s.sshAuthSockOverride = prevOverride_;
+    QtPassSettings::save(s);
   }
   SshAuthSockGuard(const SshAuthSockGuard &) = delete;
   auto operator=(const SshAuthSockGuard &) -> SshAuthSockGuard & = delete;
@@ -2123,19 +2131,25 @@ void tst_util::sshAuthSockOverrideRoundtrip() {
   testutils::SshAuthSockGuard guard;
   const QString sentinel =
       QStringLiteral("/tmp/qtpass-test-sock-") + QUuid::createUuid().toString();
-  QtPassSettings::setSshAuthSockOverride(sentinel);
-  QCOMPARE(QtPassSettings::getSshAuthSockOverride(), sentinel);
-  QtPassSettings::setSshAuthSockOverride(QString{});
-  QCOMPARE(QtPassSettings::getSshAuthSockOverride(), QString{});
+  AppSettings s = QtPassSettings::load();
+  s.sshAuthSockOverride = sentinel;
+  QtPassSettings::save(s);
+  QCOMPARE(QtPassSettings::load().sshAuthSockOverride, sentinel);
+  s = QtPassSettings::load();
+  s.sshAuthSockOverride = QString{};
+  QtPassSettings::save(s);
+  QCOMPARE(QtPassSettings::load().sshAuthSockOverride, QString{});
 }
 
 /**
- * @brief default value of getSshAuthSockOverride is empty.
+ * @brief default value of sshAuthSockOverride is empty.
  */
 void tst_util::sshAuthSockOverrideEmptyByDefault() {
   testutils::SshAuthSockGuard guard;
-  QtPassSettings::setSshAuthSockOverride(QString{});
-  QCOMPARE(QtPassSettings::getSshAuthSockOverride(), QString{});
+  AppSettings s = QtPassSettings::load();
+  s.sshAuthSockOverride = QString{};
+  QtPassSettings::save(s);
+  QCOMPARE(QtPassSettings::load().sshAuthSockOverride, QString{});
 }
 
 /**

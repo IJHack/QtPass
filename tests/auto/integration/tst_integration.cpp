@@ -553,17 +553,25 @@ void tst_integration::imitatePass_nestedDirectoryInsertAndShow() {
 }
 
 namespace {
-// RAII guard to ensure QtPassSettings::setUseGit is restored on any exit path
+// RAII guard to ensure useGit is restored on any exit path
 struct RestoreUseGit {
   bool orig;
   RestoreUseGit() : orig(QtPassSettings::isUseGit()) {}
-  ~RestoreUseGit() { QtPassSettings::setUseGit(orig); }
+  ~RestoreUseGit() {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = orig;
+    QtPassSettings::save(s);
+  }
 };
 } // namespace
 
 void tst_integration::imitatePass_editExistingEntry() {
   RestoreUseGit restoreUseGit;
-  QtPassSettings::setUseGit(false); // Ensure git is off for this test
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = false; // Ensure git is off for this test
+    QtPassSettings::save(s);
+  }
 
   QTemporaryDir storeDir;
   ImitatePass pass;
@@ -610,7 +618,11 @@ void tst_integration::imitatePass_gitInitAndCommit() {
   RestoreUseGit restoreUseGit;
 
   QtPassSettings::setGitExecutable(gitExe);
-  QtPassSettings::setUseGit(true);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.useGit = true;
+    QtPassSettings::save(s);
+  }
 
   QTemporaryDir storeDir;
   ImitatePass pass;
