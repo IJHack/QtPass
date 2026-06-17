@@ -25,7 +25,7 @@ auto PassBackendFactory::getPass() -> Pass * {
     // Ensure store directory exists (first-run side effect — load() normalises
     // the path but does not create the directory).
     if (!QDir(s.passStore).exists())
-      QDir().mkdir(s.passStore);
+      QDir().mkpath(s.passStore);
     if (s.usePass) {
       pass = getRealPass();
     } else {

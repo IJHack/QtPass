@@ -57,7 +57,7 @@ auto QtPassSettings::getInstance() -> QtPassSettings * {
 auto QtPassSettings::load() -> AppSettings {
   AppSettings s = SettingsSerializer::load(*getInstance());
   if (!s.passStore.isEmpty()) {
-    s.passStore = QDir(s.passStore).absolutePath();
+    s.passStore = QDir::cleanPath(QDir(s.passStore).absolutePath());
     if (!s.passStore.endsWith('/'))
       s.passStore += '/';
   }
