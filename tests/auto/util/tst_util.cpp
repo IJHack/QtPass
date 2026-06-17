@@ -672,7 +672,7 @@ void tst_util::createGpgIdFileEmptyKeys() {
 
 void tst_util::generateRandomPassword() {
   SettingGuard<bool, QtPassSettings::setUsePwgen> disablePwgenGuard{
-      QtPassSettings::isUsePwgen(), false};
+      QtPassSettings::load().usePwgen, false};
 
   ImitatePass pass;
   QString charset = "abcdefghijklmnopqrstuvwxyz";
@@ -761,7 +761,7 @@ void tst_util::generateRandomPassword() {
 
 void tst_util::boundedRandom() {
   SettingGuard<bool, QtPassSettings::setUsePwgen> disablePwgenGuard{
-      QtPassSettings::isUsePwgen(), false};
+      QtPassSettings::load().usePwgen, false};
 
   ImitatePass pass;
 
@@ -823,7 +823,7 @@ void tst_util::configIsValid() {
   PassStoreGuard guard(QtPassSettings::getPassStore());
 
   SettingGuard<bool, QtPassSettings::setUsePass> usePassGuard{
-      QtPassSettings::isUsePass(), false};
+      QtPassSettings::load().usePass, false};
 
   // No .gpg-id in this store => config must be invalid.
   QtPassSettings::setPassStore(tempDir.path());
@@ -839,7 +839,7 @@ void tst_util::configIsValid() {
   gpgIdFile.close();
 
   SettingGuard<QString, QtPassSettings::setGpgExecutable> gpgGuard{
-      QtPassSettings::getGpgExecutable(), QString()};
+      QtPassSettings::load().gpgExecutable, QString()};
 
   isValid = Util::configIsValid(QtPassSettings::load());
   QVERIFY2(!isValid, "Expected invalid config when .gpg-id exists but gpg "

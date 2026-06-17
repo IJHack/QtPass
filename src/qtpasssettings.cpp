@@ -248,11 +248,6 @@ void QtPassSettings::setSize(const QSize &size) {
   getInstance()->setValue(SettingsConstants::size, size);
 }
 
-auto QtPassSettings::isMaximized(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::maximized, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setMaximized(const bool &maximized) {
   getInstance()->setValue(SettingsConstants::maximized, maximized);
 }
@@ -302,46 +297,20 @@ void QtPassSettings::setDialogMaximized(const QString &key,
                           maximized);
 }
 
-auto QtPassSettings::isUsePass(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::usePass, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setUsePass(const bool &usePass) {
   getInstance()->setValue(SettingsConstants::usePass, usePass);
   // Backend selection changed: force re-selection on next getPass().
   PassBackendFactory::invalidate();
 }
 
-auto QtPassSettings::getClipBoardTypeRaw(
-    const Enums::clipBoardType &defaultValue) -> int {
-  return getInstance()
-      ->value(SettingsConstants::clipBoardType, static_cast<int>(defaultValue))
-      .toInt();
-}
-
-auto QtPassSettings::getClipBoardType(const Enums::clipBoardType &defaultValue)
-    -> Enums::clipBoardType {
-  return static_cast<Enums::clipBoardType>(getClipBoardTypeRaw(defaultValue));
-}
 void QtPassSettings::setClipBoardType(const int &clipBoardType) {
   getInstance()->setValue(SettingsConstants::clipBoardType, clipBoardType);
 }
 
-auto QtPassSettings::isUseSelection(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::useSelection, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setUseSelection(const bool &useSelection) {
   getInstance()->setValue(SettingsConstants::useSelection, useSelection);
 }
 
-auto QtPassSettings::isUseAutoclear(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::useAutoclear, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setUseAutoclear(const bool &useAutoclear) {
   getInstance()->setValue(SettingsConstants::useAutoclear, useAutoclear);
 }
@@ -356,11 +325,6 @@ void QtPassSettings::setAutoclearSeconds(const int &autoClearSeconds) {
                           autoClearSeconds);
 }
 
-auto QtPassSettings::isUseAutoclearPanel(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::useAutoclearPanel, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setUseAutoclearPanel(const bool &useAutoclearPanel) {
   getInstance()->setValue(SettingsConstants::useAutoclearPanel,
                           useAutoclearPanel);
@@ -377,56 +341,26 @@ void QtPassSettings::setAutoclearPanelSeconds(
                           autoClearPanelSeconds);
 }
 
-auto QtPassSettings::isHidePassword(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::hidePassword, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setHidePassword(const bool &hidePassword) {
   getInstance()->setValue(SettingsConstants::hidePassword, hidePassword);
 }
 
-auto QtPassSettings::isHideContent(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::hideContent, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setHideContent(const bool &hideContent) {
   getInstance()->setValue(SettingsConstants::hideContent, hideContent);
 }
 
-auto QtPassSettings::isUseMonospace(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::useMonospace, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setUseMonospace(const bool &useMonospace) {
   getInstance()->setValue(SettingsConstants::useMonospace, useMonospace);
 }
 
-auto QtPassSettings::isDisplayAsIs(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::displayAsIs, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setDisplayAsIs(const bool &displayAsIs) {
   getInstance()->setValue(SettingsConstants::displayAsIs, displayAsIs);
 }
 
-auto QtPassSettings::isNoLineWrapping(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::noLineWrapping, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setNoLineWrapping(const bool &noLineWrapping) {
   getInstance()->setValue(SettingsConstants::noLineWrapping, noLineWrapping);
 }
 
-auto QtPassSettings::isAddGPGId(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::addGPGId, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setAddGPGId(const bool &addGPGId) {
   getInstance()->setValue(SettingsConstants::addGPGId, addGPGId);
 }
@@ -489,21 +423,19 @@ void QtPassSettings::setPassSigningKey(const QString &passSigningKey) {
  * @return void - This method does not return a value.
  */
 void QtPassSettings::initExecutables() {
-  QString passExecutable =
-      QtPassSettings::getPassExecutable(Util::findBinaryInPath("pass"));
-  QtPassSettings::setPassExecutable(passExecutable);
-
-  QString gitExecutable =
-      QtPassSettings::getGitExecutable(Util::findBinaryInPath("git"));
-  QtPassSettings::setGitExecutable(gitExecutable);
-
-  QString gpgExecutable =
-      QtPassSettings::getGpgExecutable(Util::findBinaryInPath("gpg2"));
-  QtPassSettings::setGpgExecutable(gpgExecutable);
-
-  QString pwgenExecutable =
-      QtPassSettings::getPwgenExecutable(Util::findBinaryInPath("pwgen"));
-  QtPassSettings::setPwgenExecutable(pwgenExecutable);
+  const AppSettings s = QtPassSettings::load();
+  QtPassSettings::setPassExecutable(s.passExecutable.isEmpty()
+                                        ? Util::findBinaryInPath("pass")
+                                        : s.passExecutable);
+  QtPassSettings::setGitExecutable(s.gitExecutable.isEmpty()
+                                       ? Util::findBinaryInPath("git")
+                                       : s.gitExecutable);
+  QtPassSettings::setGpgExecutable(s.gpgExecutable.isEmpty()
+                                       ? Util::findBinaryInPath("gpg2")
+                                       : s.gpgExecutable);
+  QtPassSettings::setPwgenExecutable(s.pwgenExecutable.isEmpty()
+                                         ? Util::findBinaryInPath("pwgen")
+                                         : s.pwgenExecutable);
 }
 auto QtPassSettings::getPassExecutable(const QString &defaultValue) -> QString {
   return getInstance()
@@ -524,20 +456,10 @@ void QtPassSettings::setSshAuthSockOverride(const QString &value) {
   getInstance()->setValue(SettingsConstants::sshAuthSockOverride, value);
 }
 
-auto QtPassSettings::getGitExecutable(const QString &defaultValue) -> QString {
-  return getInstance()
-      ->value(SettingsConstants::gitExecutable, defaultValue)
-      .toString();
-}
 void QtPassSettings::setGitExecutable(const QString &gitExecutable) {
   getInstance()->setValue(SettingsConstants::gitExecutable, gitExecutable);
 }
 
-auto QtPassSettings::getGpgExecutable(const QString &defaultValue) -> QString {
-  return getInstance()
-      ->value(SettingsConstants::gpgExecutable, defaultValue)
-      .toString();
-}
 void QtPassSettings::setGpgExecutable(const QString &gpgExecutable) {
   getInstance()->setValue(SettingsConstants::gpgExecutable, gpgExecutable);
 }
@@ -567,29 +489,14 @@ void QtPassSettings::setUseWebDav(const bool &useWebDav) {
   getInstance()->setValue(SettingsConstants::useWebDav, useWebDav);
 }
 
-auto QtPassSettings::getWebDavUrl(const QString &defaultValue) -> QString {
-  return getInstance()
-      ->value(SettingsConstants::webDavUrl, defaultValue)
-      .toString();
-}
 void QtPassSettings::setWebDavUrl(const QString &webDavUrl) {
   getInstance()->setValue(SettingsConstants::webDavUrl, webDavUrl);
 }
 
-auto QtPassSettings::getWebDavUser(const QString &defaultValue) -> QString {
-  return getInstance()
-      ->value(SettingsConstants::webDavUser, defaultValue)
-      .toString();
-}
 void QtPassSettings::setWebDavUser(const QString &webDavUser) {
   getInstance()->setValue(SettingsConstants::webDavUser, webDavUser);
 }
 
-auto QtPassSettings::getWebDavPassword(const QString &defaultValue) -> QString {
-  return getInstance()
-      ->value(SettingsConstants::webDavPassword, defaultValue)
-      .toString();
-}
 void QtPassSettings::setWebDavPassword(const QString &webDavPassword) {
   getInstance()->setValue(SettingsConstants::webDavPassword, webDavPassword);
 }
@@ -738,68 +645,31 @@ void QtPassSettings::setUseOtp(const bool &useOtp) {
   getInstance()->setValue(SettingsConstants::useOtp, useOtp);
 }
 
-auto QtPassSettings::isUseQrencode(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::useQrencode, defaultValue)
-      .toBool();
-}
-
 void QtPassSettings::setUseQrencode(const bool &useQrencode) {
   getInstance()->setValue(SettingsConstants::useQrencode, useQrencode);
 }
 
-auto QtPassSettings::getQrencodeExecutable(const QString &defaultValue)
-    -> QString {
-  return getInstance()
-      ->value(SettingsConstants::qrencodeExecutable, defaultValue)
-      .toString();
-}
 void QtPassSettings::setQrencodeExecutable(const QString &qrencodeExecutable) {
   getInstance()->setValue(SettingsConstants::qrencodeExecutable,
                           qrencodeExecutable);
 }
 
-auto QtPassSettings::isUsePwgen(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::usePwgen, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setUsePwgen(const bool &usePwgen) {
   getInstance()->setValue(SettingsConstants::usePwgen, usePwgen);
 }
 
-auto QtPassSettings::isAvoidCapitals(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::avoidCapitals, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setAvoidCapitals(const bool &avoidCapitals) {
   getInstance()->setValue(SettingsConstants::avoidCapitals, avoidCapitals);
 }
 
-auto QtPassSettings::isAvoidNumbers(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::avoidNumbers, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setAvoidNumbers(const bool &avoidNumbers) {
   getInstance()->setValue(SettingsConstants::avoidNumbers, avoidNumbers);
 }
 
-auto QtPassSettings::isLessRandom(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::lessRandom, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setLessRandom(const bool &lessRandom) {
   getInstance()->setValue(SettingsConstants::lessRandom, lessRandom);
 }
 
-auto QtPassSettings::isUseSymbols(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::useSymbols, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setUseSymbols(const bool &useSymbols) {
   getInstance()->setValue(SettingsConstants::useSymbols, useSymbols);
 }
@@ -816,11 +686,6 @@ void QtPassSettings::setPasswordChars(const QString &passwordChars) {
   getInstance()->setValue(SettingsConstants::passwordChars, passwordChars);
 }
 
-auto QtPassSettings::isUseTrayIcon(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::useTrayIcon, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setUseTrayIcon(const bool &useTrayIcon) {
   getInstance()->setValue(SettingsConstants::useTrayIcon, useTrayIcon);
 }
@@ -834,11 +699,6 @@ void QtPassSettings::setHideOnClose(const bool &hideOnClose) {
   getInstance()->setValue(SettingsConstants::hideOnClose, hideOnClose);
 }
 
-auto QtPassSettings::isStartMinimized(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::startMinimized, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setStartMinimized(const bool &startMinimized) {
   getInstance()->setValue(SettingsConstants::startMinimized, startMinimized);
 }
@@ -852,11 +712,6 @@ void QtPassSettings::setAlwaysOnTop(const bool &alwaysOnTop) {
   getInstance()->setValue(SettingsConstants::alwaysOnTop, alwaysOnTop);
 }
 
-auto QtPassSettings::isAutoPull(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::autoPull, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setAutoPull(const bool &autoPull) {
   getInstance()->setValue(SettingsConstants::autoPull, autoPull);
 }
@@ -879,20 +734,10 @@ void QtPassSettings::setPassTemplate(const QString &passTemplate) {
   getInstance()->setValue(SettingsConstants::passTemplate, passTemplate);
 }
 
-auto QtPassSettings::isUseTemplate(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::useTemplate, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setUseTemplate(const bool &useTemplate) {
   getInstance()->setValue(SettingsConstants::useTemplate, useTemplate);
 }
 
-auto QtPassSettings::isTemplateAllFields(const bool &defaultValue) -> bool {
-  return getInstance()
-      ->value(SettingsConstants::templateAllFields, defaultValue)
-      .toBool();
-}
 void QtPassSettings::setTemplateAllFields(const bool &templateAllFields) {
   getInstance()->setValue(SettingsConstants::templateAllFields,
                           templateAllFields);
