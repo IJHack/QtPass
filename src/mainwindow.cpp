@@ -501,6 +501,7 @@ void MainWindow::config() {
 
       if (m_qtPass->isFreshStart() && !Util::configIsValid(s)) {
         config();
+        return;
       }
       Pass *activePass = QtPassSettings::getPass();
       activePass->updateEnv();
