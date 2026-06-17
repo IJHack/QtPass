@@ -52,7 +52,6 @@ private:
   void no_protection(bool enable);
   ConfigDialog *dialog;
   std::unique_ptr<QProgressIndicator> m_progressIndicator;
-  QString m_gpgExe;
 };
 
 #endif // SRC_KEYGENDIALOG_H_
