@@ -2167,10 +2167,8 @@ void tst_util::initialiseSshAuthSockHonoursExistingEnv() {
   testutils::SshAuthSockGuard guard;
   const QByteArray existing("/tmp/qtpass-existing-sock");
   qputenv("SSH_AUTH_SOCK", existing);
-  // Even if an override is configured, the existing env wins.
-  QtPassSettings::setSshAuthSockOverride(
-      QStringLiteral("/tmp/qtpass-override-sock"));
-  SshAuthSock::initialise();
+  // Even if an override is supplied, the existing env wins.
+  SshAuthSock::initialise(QStringLiteral("/tmp/qtpass-override-sock"));
   QCOMPARE(qgetenv("SSH_AUTH_SOCK"), existing);
 }
 
@@ -2182,8 +2180,7 @@ void tst_util::initialiseSshAuthSockUsesOverride() {
   testutils::SshAuthSockGuard guard;
   qunsetenv("SSH_AUTH_SOCK");
   const QString override = QStringLiteral("/tmp/qtpass-override-sock");
-  QtPassSettings::setSshAuthSockOverride(override);
-  SshAuthSock::initialise();
+  SshAuthSock::initialise(override);
   QCOMPARE(qgetenv("SSH_AUTH_SOCK"), override.toUtf8());
 }
 
@@ -2196,7 +2193,6 @@ void tst_util::initialiseSshAuthSockUsesOverride() {
 void tst_util::initialiseSshAuthSockNoOverrideNoEnvProbes() {
   testutils::SshAuthSockGuard guard;
   qunsetenv("SSH_AUTH_SOCK");
-  QtPassSettings::setSshAuthSockOverride(QString{});
   SshAuthSock::initialise();
   // Either gpgconf set it (non-empty), or it stayed empty. Both fine.
   // The contract is: never crash, never set garbage.
@@ -2223,8 +2219,7 @@ void tst_util::initialiseSshAuthSockOverrideSkipsAgentValidation() {
   const QString deadSocket =
       QStringLiteral("/tmp/qtpass-deliberately-dead-sock-") +
       QUuid::createUuid().toString();
-  QtPassSettings::setSshAuthSockOverride(deadSocket);
-  SshAuthSock::initialise();
+  SshAuthSock::initialise(deadSocket);
   QCOMPARE(qgetenv("SSH_AUTH_SOCK"), deadSocket.toUtf8());
 }
 
@@ -2235,7 +2230,6 @@ void tst_util::initialiseSshAuthSockOverrideSkipsAgentValidation() {
 void tst_util::initialiseSshAuthSockEmptyOverrideFallsThrough() {
   testutils::SshAuthSockGuard guard;
   qunsetenv("SSH_AUTH_SOCK");
-  QtPassSettings::setSshAuthSockOverride(QString{});
   SshAuthSock::initialise();
   // After calling: SSH_AUTH_SOCK is either set by gpgconf probe or unset.
   // Both are acceptable; importantly, it must NOT be set to the empty string.
