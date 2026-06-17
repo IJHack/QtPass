@@ -98,7 +98,7 @@ ConfigDialog::ConfigDialog(MainWindow *parent)
     useSelection(s.useSelection);
   }
 
-  if (!Util::configIsValid()) {
+  if (!Util::configIsValid(s)) {
     // Show Programs tab, which is likely
     // what the user needs to fix now.
     ui->tabWidget->setCurrentIndex(1);
@@ -919,7 +919,7 @@ auto ConfigDialog::isPassOtpAvailable() -> bool {
  * @brief ConfigDialog::wizard first-time use wizard.
  */
 void ConfigDialog::wizard() {
-  (void)Util::configIsValid();
+  (void)Util::configIsValid(QtPassSettings::load());
   on_autodetectButton_clicked();
 
   if (!checkGpgExistence()) {

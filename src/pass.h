@@ -228,23 +228,29 @@ public:
   /**
    * @brief Get .gpg-id file path for a password file.
    * @param for_file Path to password file.
+   * @param passStore Root directory of the password store.
    * @return Path to .gpg-id file.
    */
-  static auto getGpgIdPath(const QString &for_file) -> QString;
+  static auto getGpgIdPath(const QString &for_file, const QString &passStore)
+      -> QString;
   /**
    * @brief Get list of recipients for a password file.
    * @param for_file Path to password file.
+   * @param passStore Root directory of the password store.
    * @return List of recipient key IDs.
    */
-  static auto getRecipientList(const QString &for_file) -> QStringList;
+  static auto getRecipientList(const QString &for_file,
+                               const QString &passStore) -> QStringList;
   /**
    * @brief Get recipients as string.
    * @param for_file Path to password file.
+   * @param passStore Root directory of the password store.
    * @param separator Separator between recipients.
    * @param count Pointer to store recipient count.
    * @return List of recipient key IDs.
    */
   static auto getRecipientString(const QString &for_file,
+                                 const QString &passStore,
                                  const QString &separator = " ",
                                  int *count = nullptr) -> QStringList;
 

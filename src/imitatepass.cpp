@@ -137,14 +137,14 @@ void ImitatePass::OtpGenerate(QString file) {
  */
 void ImitatePass::Insert(QString file, QString newValue, bool overwrite) {
   file = file + ".gpg";
-  QString gpgIdPath = Pass::getGpgIdPath(file);
+  QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
   if (!verifyGpgIdFile(gpgIdPath)) {
     emit critical(tr("Check .gpg-id file signature!"),
                   tr("Signature for %1 is invalid.").arg(gpgIdPath));
     return;
   }
   transactionHelper trans(this, PASS_INSERT);
-  QStringList recipients = Pass::getRecipientList(file);
+  QStringList recipients = Pass::getRecipientList(file, m_settings.passStore);
   if (recipients.isEmpty()) {
     // Already emit critical signal to notify user of error - no need to throw
     emit critical(tr("Can not edit"),
@@ -501,7 +501,7 @@ auto ImitatePass::removeDir(const QString &dirName) -> bool {
 auto ImitatePass::verifyGpgIdForDir(const QString &file,
                                     QStringList &gpgIdFilesVerified,
                                     QStringList &gpgId) -> bool {
-  QString gpgIdPath = Pass::getGpgIdPath(file);
+  QString gpgIdPath = Pass::getGpgIdPath(file, m_settings.passStore);
   if (gpgIdFilesVerified.contains(gpgIdPath)) {
     return true;
   }
@@ -511,7 +511,7 @@ auto ImitatePass::verifyGpgIdForDir(const QString &file,
     return false;
   }
   gpgIdFilesVerified.append(gpgIdPath);
-  gpgId = getRecipientList(file);
+  gpgId = getRecipientList(file, m_settings.passStore);
   gpgId.sort();
   return true;
 }

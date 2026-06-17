@@ -495,7 +495,8 @@ void MainWindow::config() {
       deselect();
       ui->treeView->setCurrentIndex(QModelIndex());
 
-      if (m_qtPass->isFreshStart() && !Util::configIsValid()) {
+      if (m_qtPass->isFreshStart() &&
+          !Util::configIsValid(QtPassSettings::load())) {
         config();
       }
       QtPassSettings::getPass()->updateEnv();
@@ -566,8 +567,8 @@ auto MainWindow::getFile(const QModelIndex &index, bool forPass) -> QString {
  */
 void MainWindow::on_treeView_clicked(const QModelIndex &index) {
   bool cleared = ui->treeView->currentIndex().flags() == Qt::NoItemFlags;
-  m_currentDir =
-      Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
+  m_currentDir = Util::getDir(ui->treeView->currentIndex(), false, model,
+                              proxyModel, QtPassSettings::getPassStore());
   // Clear any previously cached clipped text before showing new password
   m_qtPass->clearClippedText();
   QString file = getFile(index, true);
@@ -1041,8 +1042,8 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
 
   if (isNew) {
     QString storePath = QtPassSettings::getPassStore();
-    QString folder =
-        Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
+    QString folder = Util::getDir(ui->treeView->currentIndex(), false, model,
+                                  proxyModel, QtPassSettings::getPassStore());
     if (folder.isEmpty()) {
       folder = storePath;
     }
@@ -1068,15 +1069,15 @@ void MainWindow::setPassword(const QString &file, bool isNew) {
  */
 void MainWindow::addPassword() {
   bool ok;
-  QString dir =
-      Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel);
-  QString file =
-      QInputDialog::getText(this, tr("New file"),
-                            tr("New password file: \n(Will be placed in %1 )")
-                                .arg(QtPassSettings::getPassStore() +
-                                     Util::getDir(ui->treeView->currentIndex(),
-                                                  true, model, proxyModel)),
-                            QLineEdit::Normal, "", &ok);
+  QString dir = Util::getDir(ui->treeView->currentIndex(), true, model,
+                             proxyModel, QtPassSettings::getPassStore());
+  QString file = QInputDialog::getText(
+      this, tr("New file"),
+      tr("New password file: \n(Will be placed in %1 )")
+          .arg(QtPassSettings::getPassStore() +
+               Util::getDir(ui->treeView->currentIndex(), true, model,
+                            proxyModel, QtPassSettings::getPassStore())),
+      QLineEdit::Normal, "", &ok);
   if (!ok || file.isEmpty()) {
     return;
   }
@@ -1108,7 +1109,8 @@ void MainWindow::onDelete() {
   if (fileOrFolder.isFile()) {
     file = getFile(ui->treeView->currentIndex(), true);
   } else {
-    file = Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel);
+    file = Util::getDir(ui->treeView->currentIndex(), true, model, proxyModel,
+                        QtPassSettings::getPassStore());
     isDir = true;
   }
 
@@ -1181,10 +1183,10 @@ void MainWindow::userDialog(const QString &dir) {
  * gets lists and opens UserDialog.
  */
 void MainWindow::onUsers() {
-  QString dir =
-      m_currentDir.isEmpty()
-          ? Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel)
-          : m_currentDir;
+  QString dir = m_currentDir.isEmpty()
+                    ? Util::getDir(ui->treeView->currentIndex(), false, model,
+                                   proxyModel, QtPassSettings::getPassStore())
+                    : m_currentDir;
 
   UsersDialog d(dir, this);
   if (!d.exec()) {
@@ -1435,12 +1437,14 @@ void MainWindow::showContextMenu(const QPoint &pos) {
     connect(deleteItem, &QAction::triggered, this, &MainWindow::onDelete);
     if (fileOrFolder.isDir()) {
       QString dirPath = QDir::cleanPath(
-          Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel));
+          Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel,
+                       QtPassSettings::getPassStore()));
 
       auto *shareMenu = new QMenu(tr("Share"), &contextMenu);
       contextMenu.addMenu(shareMenu);
 
-      QString gpgIdPath = Pass::getGpgIdPath(dirPath);
+      QString gpgIdPath =
+          Pass::getGpgIdPath(dirPath, QtPassSettings::getPassStore());
       bool gpgIdExists = !gpgIdPath.isEmpty() && QFile(gpgIdPath).exists();
 
       QString exePath = QtPassSettings::isUsePass()
@@ -1489,8 +1493,8 @@ void MainWindow::showBrowserContextMenu(const QPoint &pos) {
  * @brief MainWindow::openFolder open the folder in the default file manager
  */
 void MainWindow::openFolder() {
-  QString dir =
-      Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
+  QString dir = Util::getDir(ui->treeView->currentIndex(), false, model,
+                             proxyModel, QtPassSettings::getPassStore());
 
   QString path = QDir::toNativeSeparators(dir);
   QDesktopServices::openUrl(QUrl::fromLocalFile(path));
@@ -1501,15 +1505,15 @@ void MainWindow::openFolder() {
  */
 void MainWindow::addFolder() {
   bool ok;
-  QString dir =
-      Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel);
-  QString newdir =
-      QInputDialog::getText(this, tr("New file"),
-                            tr("New Folder: \n(Will be placed in %1 )")
-                                .arg(QtPassSettings::getPassStore() +
-                                     Util::getDir(ui->treeView->currentIndex(),
-                                                  true, model, proxyModel)),
-                            QLineEdit::Normal, "", &ok);
+  QString dir = Util::getDir(ui->treeView->currentIndex(), false, model,
+                             proxyModel, QtPassSettings::getPassStore());
+  QString newdir = QInputDialog::getText(
+      this, tr("New file"),
+      tr("New Folder: \n(Will be placed in %1 )")
+          .arg(QtPassSettings::getPassStore() +
+               Util::getDir(ui->treeView->currentIndex(), true, model,
+                            proxyModel, QtPassSettings::getPassStore())),
+      QLineEdit::Normal, "", &ok);
   if (!ok || newdir.isEmpty()) {
     return;
   }
@@ -1550,8 +1554,9 @@ void MainWindow::addFolder() {
  */
 void MainWindow::renameFolder() {
   bool ok;
-  QString srcDir = QDir::cleanPath(
-      Util::getDir(ui->treeView->currentIndex(), false, model, proxyModel));
+  QString srcDir =
+      QDir::cleanPath(Util::getDir(ui->treeView->currentIndex(), false, model,
+                                   proxyModel, QtPassSettings::getPassStore()));
   QString srcDirName = QDir(srcDir).dirName();
   QString newName =
       QInputDialog::getText(this, tr("Rename file"), tr("Rename Folder To: "),
