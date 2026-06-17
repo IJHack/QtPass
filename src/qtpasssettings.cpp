@@ -303,12 +303,6 @@ void QtPassSettings::setAutoclearSeconds(const int &autoClearSeconds) {
   getInstance()->setValue(SettingsConstants::autoclearSeconds,
                           autoClearSeconds);
 }
-
-auto QtPassSettings::getAutoclearPanelSeconds(const int &defaultValue) -> int {
-  return getInstance()
-      ->value(SettingsConstants::autoclearPanelSeconds, defaultValue)
-      .toInt();
-}
 void QtPassSettings::setAutoclearPanelSeconds(
     const int &autoClearPanelSeconds) {
   getInstance()->setValue(SettingsConstants::autoclearPanelSeconds,
@@ -354,12 +348,6 @@ auto QtPassSettings::getPassStore(const QString &defaultValue) -> QString {
 void QtPassSettings::setPassStore(const QString &passStore) {
   getInstance()->setValue(SettingsConstants::passStore, passStore);
 }
-
-auto QtPassSettings::getPassSigningKey(const QString &defaultValue) -> QString {
-  return getInstance()
-      ->value(SettingsConstants::passSigningKey, defaultValue)
-      .toString();
-}
 void QtPassSettings::setPassSigningKey(const QString &passSigningKey) {
   getInstance()->setValue(SettingsConstants::passSigningKey, passSigningKey);
 }
@@ -402,13 +390,6 @@ void QtPassSettings::setGitExecutable(const QString &gitExecutable) {
 
 void QtPassSettings::setGpgExecutable(const QString &gpgExecutable) {
   getInstance()->setValue(SettingsConstants::gpgExecutable, gpgExecutable);
-}
-
-auto QtPassSettings::getPwgenExecutable(const QString &defaultValue)
-    -> QString {
-  return getInstance()
-      ->value(SettingsConstants::pwgenExecutable, defaultValue)
-      .toString();
 }
 void QtPassSettings::setPwgenExecutable(const QString &pwgenExecutable) {
   getInstance()->setValue(SettingsConstants::pwgenExecutable, pwgenExecutable);
