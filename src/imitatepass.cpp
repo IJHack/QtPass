@@ -64,7 +64,8 @@ auto ImitatePass::pgit(const QString &path) const -> QString {
   QString normalizedPath = QDir::cleanPath(path);
   if (!m_settings.gitExecutable.startsWith(QStringLiteral("wsl ")))
     return normalizedPath;
-  QString res = QStringLiteral("$(wslpath ") + normalizedPath + QLatin1Char(')');
+  QString res =
+      QStringLiteral("$(wslpath ") + normalizedPath + QLatin1Char(')');
   return res.replace('\\', '/');
 }
 
@@ -72,7 +73,8 @@ auto ImitatePass::pgpg(const QString &path) const -> QString {
   QString normalizedPath = QDir::cleanPath(path);
   if (!m_settings.gpgExecutable.startsWith(QStringLiteral("wsl ")))
     return normalizedPath;
-  QString res = QStringLiteral("$(wslpath ") + normalizedPath + QLatin1Char(')');
+  QString res =
+      QStringLiteral("$(wslpath ") + normalizedPath + QLatin1Char(')');
   return res.replace('\\', '/');
 }
 
