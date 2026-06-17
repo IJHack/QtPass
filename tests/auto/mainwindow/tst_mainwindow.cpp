@@ -101,7 +101,11 @@ void tst_mainwindow::init() {
   // Re-apply store settings in case a previous test modified them.
   QtPassSettings::setPassStore(QDir::cleanPath(m_storeDir.path()));
   QtPassSettings::setUsePass(false);
-  QtPassSettings::setShowProcessOutput(true);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.showProcessOutput = true;
+    QtPassSettings::save(s);
+  }
   // Re-apply gpg path: initExecutables() inside the constructor overwrites
   // the setting to findBinaryInPath("gpg2"), which is empty on systems where
   // only "gpg" exists. Setting it here ensures configIsValid() sees a valid
@@ -118,7 +122,11 @@ void tst_mainwindow::cleanupTestCase() {
   // scope).
   QtPassSettings::setPassStore(m_savedPassStore);
   QtPassSettings::setUsePass(m_savedUsePass);
-  QtPassSettings::setShowProcessOutput(m_savedShowProcessOutput);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.showProcessOutput = m_savedShowProcessOutput;
+    QtPassSettings::save(s);
+  }
   QtPassSettings::setGpgExecutable(m_savedGpgExecutable);
 }
 
@@ -254,7 +262,9 @@ void tst_mainwindow::onProcessOutputAppendsToPanel() {
  *        (isShowProcessOutput == false).
  */
 void tst_mainwindow::onProcessOutputSkippedWhenPanelHidden() {
-  QtPassSettings::setShowProcessOutput(false);
+  AppSettings s = QtPassSettings::load();
+  s.showProcessOutput = false;
+  QtPassSettings::save(s);
 
   auto *outputEdit =
       m_window->findChild<QTextEdit *>(QStringLiteral("processOutputEdit"));

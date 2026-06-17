@@ -36,8 +36,10 @@ private Q_SLOTS:
 
 void tst_passwordconfig::initTestCase() {
   // Reset any leftover test settings to ensure clean state
-  QtPassSettings::setPasswordChars(QString());
-  QtPassSettings::setPasswordCharsSelection(PasswordConfiguration::ALLCHARS);
+  AppSettings s = QtPassSettings::load();
+  s.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] = QString();
+  s.passwordConfiguration.selected = PasswordConfiguration::ALLCHARS;
+  QtPassSettings::save(s);
 }
 
 void tst_passwordconfig::passwordConfigurationDefaults() {
@@ -51,21 +53,30 @@ void tst_passwordconfig::passwordConfigurationDefaults() {
 
 void tst_passwordconfig::passwordConfigurationSetters() {
   // Reset any previous test settings to ensure clean state
-  QtPassSettings::setPasswordChars(QString());
-  QtPassSettings::setPasswordCharsSelection(PasswordConfiguration::ALLCHARS);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] =
+        QString();
+    s.passwordConfiguration.selected = PasswordConfiguration::ALLCHARS;
+    QtPassSettings::save(s);
+  }
 
-  QtPassSettings::setPasswordLength(24);
-  QtPassSettings::setPasswordCharsSelection(
-      PasswordConfiguration::ALPHANUMERIC);
-  QtPassSettings::setPasswordCharsSelection(3);
+  {
+    AppSettings s = QtPassSettings::load();
+    s.passwordConfiguration.length = 24;
+    s.passwordConfiguration.selected = PasswordConfiguration::CUSTOM;
+    QtPassSettings::save(s);
+  }
 
   PasswordConfiguration config = QtPassSettings::getPasswordConfiguration();
   QCOMPARE(config.length, 24);
-  QCOMPARE(config.selected, 3);
+  QCOMPARE(config.selected, PasswordConfiguration::CUSTOM);
 
   // Reset after test
-  QtPassSettings::setPasswordCharsSelection(PasswordConfiguration::ALLCHARS);
-  QtPassSettings::setPasswordChars(QString());
+  AppSettings s = QtPassSettings::load();
+  s.passwordConfiguration.selected = PasswordConfiguration::ALLCHARS;
+  s.passwordConfiguration.Characters[PasswordConfiguration::CUSTOM] = QString();
+  QtPassSettings::save(s);
 }
 
 void tst_passwordconfig::passwordConfigurationCharacterSets() {

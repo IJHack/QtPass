@@ -221,24 +221,7 @@ public:
    */
   static void setUsePass(const bool &usePass);
 
-  /**
-   * @brief Save clipboard type.
-   * @param clipBoardType Clipboard type to save.
-   */
-  static void setClipBoardType(const int &clipBoardType);
-
   // UI settings
-  /**
-   * @brief Save use selection setting.
-   * @param useSelection true to use selection.
-   */
-  static void setUseSelection(const bool &useSelection);
-
-  /**
-   * @brief Save use autoclear setting.
-   * @param useAutoclear true to enable autoclear.
-   */
-  static void setUseAutoclear(const bool &useAutoclear);
 
   /**
    * @brief Get autoclear delay in seconds.
@@ -254,12 +237,6 @@ public:
   static void setAutoclearSeconds(const int &autoClearSeconds);
 
   /**
-   * @brief Save use autoclear panel setting.
-   * @param useAutoclearPanel true to enable panel autoclear.
-   */
-  static void setUseAutoclearPanel(const bool &useAutoclearPanel);
-
-  /**
    * @brief Get panel autoclear delay in seconds.
    * @param defaultValue Integer returned if not saved.
    * @return Seconds before panel is cleared.
@@ -271,42 +248,6 @@ public:
    * @param autoClearPanelSeconds Seconds to wait before clearing panel.
    */
   static void setAutoclearPanelSeconds(const int &autoClearPanelSeconds);
-
-  /**
-   * @brief Save hide password setting.
-   * @param hidePassword true to hide password.
-   */
-  static void setHidePassword(const bool &hidePassword);
-
-  /**
-   * @brief Save hide content setting.
-   * @param hideContent true to hide content.
-   */
-  static void setHideContent(const bool &hideContent);
-
-  /**
-   * @brief Save use monospace setting.
-   * @param useMonospace true to use monospace font.
-   */
-  static void setUseMonospace(const bool &useMonospace);
-
-  /**
-   * @brief Save display as-is setting.
-   * @param displayAsIs true to display unmodified.
-   */
-  static void setDisplayAsIs(const bool &displayAsIs);
-
-  /**
-   * @brief Save no line wrapping setting.
-   * @param noLineWrapping true to disable wrapping.
-   */
-  static void setNoLineWrapping(const bool &noLineWrapping);
-
-  /**
-   * @brief Save add GPG ID setting.
-   * @param addGPGId true to auto-add GPG IDs.
-   */
-  static void setAddGPGId(const bool &addGPGId);
 
   // Pass store path
   /**
@@ -356,20 +297,6 @@ public:
   static void setPassExecutable(const QString &passExecutable);
 
   /**
-   * @brief Get the user-supplied SSH_AUTH_SOCK override path.
-   * @param defaultValue String returned if not saved.
-   * @return Override path, or empty if auto-probe should be used.
-   */
-  static auto
-  getSshAuthSockOverride(const QString &defaultValue = QVariant().toString())
-      -> QString;
-  /**
-   * @brief Save the user-supplied SSH_AUTH_SOCK override path.
-   * @param value Override path, or empty to clear and re-enable auto-probe.
-   */
-  static void setSshAuthSockOverride(const QString &value);
-
-  /**
    * @brief Save git executable path.
    * @param gitExecutable Path to git.
    */
@@ -396,44 +323,12 @@ public:
   static void setPwgenExecutable(const QString &pwgenExecutable);
 
   /**
-   * @brief Get GPG home directory.
-   * @param defaultValue String returned if not saved.
-   * @return Path to the GPG home directory.
-   */
-  static auto getGpgHome(const QString &defaultValue = QVariant().toString())
-      -> QString;
-
-  /**
    * @brief Check whether WebDAV integration is enabled.
    * @param defaultValue Value returned if not saved.
    * @return True if WebDAV is enabled.
    */
   static auto isUseWebDav(const bool &defaultValue = QVariant().toBool())
       -> bool;
-  /**
-   * @brief Save WebDAV integration flag.
-   * @param useWebDav Whether to enable WebDAV.
-   */
-  static void setUseWebDav(const bool &useWebDav);
-
-  /**
-   * @brief Save WebDAV URL.
-   * @param webDavUrl WebDAV URL.
-   */
-  static void setWebDavUrl(const QString &webDavUrl);
-
-  /**
-   * @brief Save WebDAV username.
-   * @param webDavUser WebDAV username.
-   */
-  static void setWebDavUser(const QString &webDavUser);
-
-  /**
-   * @brief Save WebDAV password.
-   * @param webDavPassword WebDAV password.
-   */
-  static void setWebDavPassword(const QString &webDavPassword);
-
   /**
    * @brief Get active profile name.
    * @param defaultValue String returned if not saved.
@@ -504,41 +399,17 @@ public:
    */
   static auto isUseGit(const bool &defaultValue = QVariant().toBool()) -> bool;
   /**
-   * @brief Save Git integration flag.
-   * @param useGit Whether to enable Git integration.
-   */
-  static void setUseGit(const bool &useGit);
-
-  /**
    * @brief Check whether content search (pass grep) is enabled.
    * @param defaultValue Value returned if not saved (defaults to false).
    * @return True if grep search is enabled.
    */
   static auto isUseGrepSearch(const bool &defaultValue = false) -> bool;
   /**
-   * @brief Save content search flag.
-   * @param useGrepSearch Whether to enable grep search.
-   */
-  static void setUseGrepSearch(const bool &useGrepSearch);
-
-  /**
    * @brief Check whether OTP support is enabled.
    * @param defaultValue Value returned if not saved.
    * @return True if OTP support is enabled.
    */
   static auto isUseOtp(const bool &defaultValue = QVariant().toBool()) -> bool;
-  /**
-   * @brief Save OTP support flag.
-   * @param useOtp Whether to enable OTP support.
-   */
-  static void setUseOtp(const bool &useOtp);
-
-  /**
-   * @brief Save qrencode support flag.
-   * @param useQrencode Whether to enable qrencode support.
-   */
-  static void setUseQrencode(const bool &useQrencode);
-
   /**
    * @brief Save qrencode executable path.
    * @param qrencodeExecutable Path to qrencode executable.
@@ -552,61 +423,10 @@ public:
   static void setUsePwgen(const bool &usePwgen);
 
   /**
-   * @brief Save uppercase avoidance flag.
-   * @param avoidCapitals Whether uppercase characters should be avoided.
-   */
-  static void setAvoidCapitals(const bool &avoidCapitals);
-
-  /**
-   * @brief Save numeric avoidance flag.
-   * @param avoidNumbers Whether numeric characters should be avoided.
-   */
-  static void setAvoidNumbers(const bool &avoidNumbers);
-
-  /**
-   * @brief Save less-random generation flag.
-   * @param lessRandom Whether less-random generation is enabled.
-   */
-  static void setLessRandom(const bool &lessRandom);
-
-  /**
-   * @brief Save symbol usage flag.
-   * @param useSymbols Whether symbol characters are enabled.
-   */
-  static void setUseSymbols(const bool &useSymbols);
-
-  /**
    * @brief Get complete password generation configuration.
    * @return Password generation configuration.
    */
   static auto getPasswordConfiguration() -> PasswordConfiguration;
-  /**
-   * @brief Save complete password generation configuration.
-   * @param config Password generation configuration.
-   */
-  static void setPasswordConfiguration(const PasswordConfiguration &config);
-  /**
-   * @brief Save password length setting.
-   * @param passwordLength Password length.
-   */
-  static void setPasswordLength(const int &passwordLength);
-  /**
-   * @brief Save password character selection mode.
-   * @param passwordCharsSelection Password character selection mode.
-   */
-  static void setPasswordCharsSelection(const int &passwordCharsSelection);
-  /**
-   * @brief Save custom password characters.
-   * @param passwordChars Custom characters used for password generation.
-   */
-  static void setPasswordChars(const QString &passwordChars);
-
-  /**
-   * @brief Save tray icon support flag.
-   * @param useTrayIcon Whether tray icon support is enabled.
-   */
-  static void setUseTrayIcon(const bool &useTrayIcon);
-
   /**
    * @brief Check whether closing the window hides the application.
    * @param defaultValue Value returned if not saved.
@@ -615,18 +435,6 @@ public:
   static auto isHideOnClose(const bool &defaultValue = QVariant().toBool())
       -> bool;
   /**
-   * @brief Save hide-on-close flag.
-   * @param hideOnClose Whether close action should hide the application.
-   */
-  static void setHideOnClose(const bool &hideOnClose);
-
-  /**
-   * @brief Save start-minimized flag.
-   * @param startMinimized Whether application should start minimized.
-   */
-  static void setStartMinimized(const bool &startMinimized);
-
-  /**
    * @brief Check whether main window should stay always on top.
    * @param defaultValue Value returned if not saved.
    * @return True if always-on-top is enabled.
@@ -634,30 +442,12 @@ public:
   static auto isAlwaysOnTop(const bool &defaultValue = QVariant().toBool())
       -> bool;
   /**
-   * @brief Save always-on-top flag.
-   * @param alwaysOnTop Whether always-on-top should be enabled.
-   */
-  static void setAlwaysOnTop(const bool &alwaysOnTop);
-
-  /**
-   * @brief Save automatic pull flag.
-   * @param autoPull Whether automatic pull should be enabled.
-   */
-  static void setAutoPull(const bool &autoPull);
-
-  /**
    * @brief Check whether automatic push is enabled.
    * @param defaultValue Value returned if not saved.
    * @return True if automatic push is enabled.
    */
   static auto isAutoPush(const bool &defaultValue = QVariant().toBool())
       -> bool;
-  /**
-   * @brief Save automatic push flag.
-   * @param autoPush Whether automatic push should be enabled.
-   */
-  static void setAutoPush(const bool &autoPush);
-
   /**
    * @brief Get pass entry template.
    * @param defaultValue String returned if not saved.
@@ -673,29 +463,11 @@ public:
   static void setPassTemplate(const QString &passTemplate);
 
   /**
-   * @brief Save template usage flag.
-   * @param useTemplate Whether template usage should be enabled.
-   */
-  static void setUseTemplate(const bool &useTemplate);
-
-  /**
-   * @brief Save template-all-fields flag.
-   * @param templateAllFields Whether template should apply to all fields.
-   */
-  static void setTemplateAllFields(const bool &templateAllFields);
-
-  /**
    * @brief Get showProcessOutput setting.
    * @param defaultValue Default value if not set.
    * @return Whether process output should be displayed.
    */
   static auto isShowProcessOutput(const bool &defaultValue = false) -> bool;
-  /**
-   * @brief Save showProcessOutput setting.
-   * @param showProcessOutput Whether to show process output.
-   */
-  static void setShowProcessOutput(const bool &showProcessOutput);
-
   /**
    * @brief Get all configured profiles.
    * @return Profile map keyed by profile name.
